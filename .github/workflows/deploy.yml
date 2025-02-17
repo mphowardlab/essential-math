@@ -27,14 +27,6 @@ jobs:
         run: |
           pip install -r requirements.txt
 
-      - name: Get GitHub Pages URL
-        id: pages
-        uses: actions/configure-pages@v4
-
-      - name: Replace base URL
-        run: |
-          sed -i 's/baseurl: ""/baseurl: "${{ steps.pages.outputs.base_url }}"/g' _config.yml
-
       - name: Build book
         run: |
           jupyter-book build .
