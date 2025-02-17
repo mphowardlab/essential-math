@@ -35,6 +35,16 @@ jobs:
         run: |
           pip install -r requirements.txt
 
+      - name: Get GitHub Pages URL
+        id: pages
+        if: github.event.action != 'closed'
+        uses: actions/configure-pages@v4
+
+      - name: Replace base URL
+        if: github.event.action != 'closed'
+        run: |
+          sed -i 's~baseurl: ""~baseurl: "${{ steps.pages.outputs.base_url }}/preview/pr-${{ github.event.number }}"~g' _config.yml
+
       - name: Build book
         if: github.event.action != 'closed'
         run: |
