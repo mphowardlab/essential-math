@@ -5,16 +5,14 @@ on:
     branches:
       - main
 
-env:
-  BASE_URL: /${{ github.event.repository.name }}
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+permissions:
+  contents: write
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
+
+    concurrency: pages-main
 
     steps:
       - name: Checkout book
@@ -29,29 +27,22 @@ jobs:
         run: |
           pip install -r requirements.txt
 
+      - name: Get GitHub Pages URL
+        uses: actions/configure-pages@v4
+
+      - name: Replace base URL
+        run: |
+          sed -i 's/baseurl: ""/baseurl: "${{ steps.pages.outputs.base_url }}"/g' _config.yml
+
       - name: Build book
         run: |
           jupyter-book build .
 
-      - name: Upload book
-        id: deployment
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: "_build/html"
+      - name: Disable Jekyll to serve static HTML
+        run: |
+          touch _build/html/.nojekyll
 
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-
-    permissions:
-      pages: write
-      id-token: write
-
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    steps:
       - name: Deploy book to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: "_build/html"
