@@ -1,9 +1,13 @@
-name: deploy-book
+name: deploy
 
 on:
   push:
     branches:
       - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -11,8 +15,6 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
-    concurrency: pages-main
 
     steps:
       - name: Checkout book
@@ -26,14 +28,6 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-
-      - name: Get GitHub Pages URL
-        id: pages
-        uses: actions/configure-pages@v5
-
-      - name: Replace base URL
-        run: |
-          sed -i 's~baseurl: ""~baseurl: "${{ steps.pages.outputs.base_url }}"~g' _config.yml
 
       - name: Build book
         run: |

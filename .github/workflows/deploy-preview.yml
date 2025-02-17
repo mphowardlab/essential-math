@@ -1,4 +1,4 @@
-name: deploy-book-preview
+name: deploy-preview
 
 on:
   pull_request:
@@ -8,17 +8,17 @@ on:
       - synchronize
       - closed
 
-concurrency: preview-${{ github.ref }}
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
 
 permissions:
   contents: write
   pull-requests: write
 
 jobs:
-  deploy:
+  deploy-preview:
     runs-on: ubuntu-latest
-
-    concurrency: pages-main
 
     steps:
       - name: Checkout book
@@ -35,24 +35,10 @@ jobs:
         run: |
           pip install -r requirements.txt
 
-      - name: Get GitHub Pages URL
-        id: pages
-        if: github.event.action != 'closed'
-        uses: actions/configure-pages@v5
-
-      - name: Replace base URL
-        if: github.event.action != 'closed'
-        run: |
-          sed -i 's~baseurl: ""~baseurl: "${{ steps.pages.outputs.base_url }}/preview/pr-${{ github.event.number }}"~g' _config.yml
-
       - name: Build book
         if: github.event.action != 'closed'
         run: |
           jupyter-book build .
-
-      - name: Disable Jekyll to serve static HTML
-        run: |
-          touch _build/html/.nojekyll
 
       - name: Commit preview to Pages branch
         uses: rossjrw/pr-preview-action@v1
