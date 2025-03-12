@@ -1,18 +1,20 @@
 # Calculus
 
 This module covers topics in differential and integral calculus of one variable.
+
 # Conservation Principles and Mass Balance
 
 ![Conservation Notes](./image.png)
 
 ## 1. Conservation (Rate of Change)
+
 The general conservation equation:
 
 $$
 \text{Accumulation} = \text{In} - \text{Out} + \text{Generation} - \text{Consumption}
 $$
 
-For a general quantity \( A \):
+For a general quantity ( A ):
 
 $$
 \frac{dA}{dt} = \dot{m}_{\text{in}} - \dot{m}_{\text{out}} + g_{\text{gen}} - g_{\text{cons}}
@@ -58,13 +60,13 @@ $$
 C_A \frac{dV}{dt} + V \frac{dC_A}{dt} = \dot{m}_{\text{in}} C_{A0} - \dot{m}_{\text{out}} C_A - k C_A V
 $$
 
-Since \( \frac{dV}{dt} = 0 \), we simplify:
+Since ( \\frac\{dV}\{dt} = 0 ), we simplify:
 
 $$
 V \frac{dC_A}{dt} = \dot{m}_{\text{in}} C_{A0} - \dot{m}_{\text{out}} C_A - k C_A V
 $$
 
-At **steady state**, where \( \frac{dC_A}{dt} = 0 \):
+At **steady state**, where ( \\frac\{dC_A}\{dt} = 0 ):
 
 $$
 0 = \dot{m}_{\text{in}} C_{A0} - \dot{m}_{\text{out}} C_A - k C_A V
