@@ -1,4 +1,3 @@
-# Conservation
 
 **Rate of Change** Accumulation = In – Out + Generation – Consumption
 
@@ -97,3 +96,4 @@ Solving for ( C_A ):
 $$
 C_A = \frac{C_{A0} \dot{V}}{\dot{V} + kV}
 $$
+
