@@ -29,8 +29,8 @@ ______________________________________________________________________
 ![CSTR Diagram](./image.png)
 
 **Reaction:** \$$
-r_A = -k C_A V
-$\$
+
+r_A = -k C_A V \$\$
 
 **Assume mass density is constant.**
 
