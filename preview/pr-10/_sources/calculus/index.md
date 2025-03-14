@@ -1,7 +1,7 @@
 # Conservation
 
-**(Rate of Change)**  
-Accumulation = In – Out + Generation – Consumption  
+**(Rate of Change)** Accumulation = In – Out + Generation – Consumption
+
 ### (Rate of Change)
 
 Accumulation = In – Out + Generation – Consumption
@@ -32,14 +32,11 @@ ______________________________________________________________________
 
 ![CSTR Diagram](./image.png)
 
-<<<<<<< HEAD
-**Reaction:**  
-$$
-=======
-**Reaction:** \$$
->>>>>>> 51c9f740bd16c710b434a332ed2ddd22be9c27ad
-r_A = -kC_A V
-$\$
+# \<<\<<\<<< HEAD **Reaction:** \$\$
+
+**Reaction:** \$\$
+
+> > > > > > > 51c9f740bd16c710b434a332ed2ddd22be9c27ad r_A = -kC_A V \$\$
 
 **Assume mass density is constant.**
 
@@ -77,11 +74,9 @@ $$
 \frac{d(C_A V)}{dt} = C_{A0} \dot{V} - C_A \dot{V} - k C_A V
 $$
 
-Rearranging:
-s
-$$
+Rearranging: s \$$
 C_A \frac{dV}{dt} + V \frac{dC_A}{dt} = (C_{A0} - C_A) \dot{V} - k C_A V
-$$
+$\$
 
 Since ( \\frac\{dV}\{dt} = 0 ):
 
