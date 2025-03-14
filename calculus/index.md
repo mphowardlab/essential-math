@@ -1,7 +1,6 @@
 # Conservation
 
-**Rate of Change**  
-Accumulation = In – Out + Generation – Consumption  
+**Rate of Change** Accumulation = In – Out + Generation – Consumption
 
 $$
 \frac{dA}{dt} = \dot{m}_{in} - \dot{m}_{out} + g_{gen} - g_{cons}
@@ -29,10 +28,9 @@ ______________________________________________________________________
 
 ![CSTR Diagram](./image.png)
 
-**Reaction:**  
-$$
+**Reaction:** \$$
 r_A = -k C_A V
-$$
+$\$
 
 **Assume mass density is constant.**
 
