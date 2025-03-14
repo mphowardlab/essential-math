@@ -1,3 +1,4 @@
+<!-- # Calculus -->
 # Calculus
 
 # Conservation
@@ -5,14 +6,14 @@
 **(Rate of change)** Accumulation = In – Out + Generation – Consumption
 
 $$
-\frac{dA}{dt} = \dot{m}_{\text{in}} - \dot{m}_{\text{out}} + g_{\text{gen}} - g_{\text{cons}}
+\frac{dA}{dt} = \dot{m}_{\text{in}} - \dot{m}_{\text{out}} + r_{\text{gen}} - r_{\text{cons}}
 $$
 
 ______________________________________________________________________
 
 ## **Example 1: Water Draining from a Bucket**
 
-![Water draining from a bucket](./image.png)
+<!-- ![Water draining from a bucket](./image.png) -->
 
 $$
 \frac{dm}{dt} = \dot{m}_{\text{in}} - \dot{m}_{\text{out}} + g_{\text{gen}} - g_{\text{cons}}
@@ -28,7 +29,7 @@ ______________________________________________________________________
 
 ## **Example 2: Continuous Stirred Tank Reactor (CSTR)**
 
-![CSTR Diagram](./image.png)
+<!-- ![CSTR Diagram](./image.png) -->
 
 Reaction:
 
