@@ -5,13 +5,14 @@
 # Conservation
 
 ### (Rate of Change)
-Accumulation = In – Out + Generation – Consumption  
+
+Accumulation = In – Out + Generation – Consumption
 
 ```
 dA/dt = ṁ_in - ṁ_out + g_gen - g_cons
 ```
 
----
+______________________________________________________________________
 
 ## **Example 1: Water Draining from a Bucket**
 
@@ -27,22 +28,24 @@ For **mass balance**:
 dm/dt = ṁ_in - 10
 ```
 
----
+______________________________________________________________________
 
 ## **Example 2: Continuous Stirred Tank Reactor (CSTR)**
 
 ![CSTR Diagram](./image.png)
 
 **Reaction:**
+
 ```
 r_A = -kC_A V
 ```
 
 **Assume mass density is constant.**
 
----
+______________________________________________________________________
 
 ### **Mass Balance**
+
 ```
 dm/dt = ṁ_in - ṁ_out
 ```
@@ -59,9 +62,10 @@ Thus:
 ρ dV/dt = 0  →  dV/dt = 0
 ```
 
----
+______________________________________________________________________
 
 ### **Mole Balance**
+
 ```
 d(n_A)/dt = ṁ_A,in - ṁ_A,out + g_gen - g_cons
 ```
