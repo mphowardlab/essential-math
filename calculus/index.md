@@ -1,24 +1,16 @@
 # Calculus
+# Conservation
 
-This module covers topics in differential and integral calculus of one variable.
-
-# Conservation Principles and Mass Balance
-
-![Conservation Notes](./image.png)
-
-## 1. Conservation (Rate of Change)
-
-The general conservation equation:
-
-$$
-\text{Accumulation} = \text{In} - \text{Out} + \text{Generation} - \text{Consumption}
-$$
-
-For a general quantity ( A ):
+**(Rate of change)**  
+Accumulation = In – Out + Generation – Consumption  
 
 $$
 \frac{dA}{dt} = \dot{m}_{\text{in}} - \dot{m}_{\text{out}} + g_{\text{gen}} - g_{\text{cons}}
 $$
+
+---
+
+## **Example 1: Water Draining from a Bucket**
 
 ![Water draining from a bucket](./image.png)
 
@@ -26,61 +18,89 @@ $$
 \frac{dm}{dt} = \dot{m}_{\text{in}} - \dot{m}_{\text{out}} + g_{\text{gen}} - g_{\text{cons}}
 $$
 
-Since no generation or consumption occurs:
+For **mass balance**:
 
+$$
+\frac{dm}{dt} = \dot{m}_{\text{in}} - 10
+$$
+
+---
+
+## **Example 2: Continuous Stirred Tank Reactor (CSTR)**
+
+![CSTR Diagram](./image.png)
+
+Reaction:
+
+$$
+r_A = -kC_A V
+$$
+
+**Assumption:**  
+Mass density is constant.
+
+---
+
+### **Mass Balance**
 $$
 \frac{dm}{dt} = \dot{m}_{\text{in}} - \dot{m}_{\text{out}}
 $$
 
-![Continuous Stirred Tank Reactor (CSTR)](./image.png)
+Since density \( \rho \) is constant:
 
 $$
-A \rightarrow B
+\frac{d(\rho V)}{dt} = \rho \frac{dV}{dt} = 0
 $$
 
-$$
-r_A = -k C_A
-$$
+Thus:
 
 $$
-\frac{dm}{dt} = \dot{m}_{\text{in}} - \dot{m}_{\text{out}}
+\rho \frac{dV}{dt} = 0 \Rightarrow \frac{dV}{dt} = 0
 $$
 
-Since **mass density is constant**, we assume:
+---
 
+### **Mole Balance**
 $$
-\frac{dV}{dt} = 0 \quad \Rightarrow \quad \frac{d\rho}{dt} = 0
-$$
-
-$$
-\frac{d(C_A V)}{dt} = \dot{m}_{\text{in}} - \dot{m}_{\text{out}} + g_{\text{gen}} - g_{\text{cons}}
+\frac{d(n_A)}{dt} = \dot{n}_{A,\text{in}} - \dot{n}_{A,\text{out}} + g_{\text{gen}} - g_{\text{cons}}
 $$
 
-$$
-C_A \frac{dV}{dt} + V \frac{dC_A}{dt} = \dot{m}_{\text{in}} C_{A0} - \dot{m}_{\text{out}} C_A - k C_A V
-$$
-
-Since ( \\frac\{dV}\{dt} = 0 ), we simplify:
+Expanding:
 
 $$
-V \frac{dC_A}{dt} = \dot{m}_{\text{in}} C_{A0} - \dot{m}_{\text{out}} C_A - k C_A V
+\frac{d(C_A V)}{dt} = C_{A0} \dot{V} - C_A \dot{V} - k C_A V
 $$
 
-At **steady state**, where ( \\frac\{dC_A}\{dt} = 0 ):
+Rearranging:
 
 $$
-0 = \dot{m}_{\text{in}} C_{A0} - \dot{m}_{\text{out}} C_A - k C_A V
+C_A \frac{dV}{dt} + V \frac{dC_A}{dt} = (C_{A0} - C_A) \dot{V} - k C_A V
 $$
 
-$$
-C_A \left( \dot{m}_{\text{out}} + kV \right) = \dot{m}_{\text{in}} C_{A0}
-$$
+Since \( \frac{dV}{dt} = 0 \):
 
 $$
-C_A = \frac{\dot{m}_{\text{in}} C_{A0}}{\dot{m}_{\text{out}} + kV}
+V \frac{dC_A}{dt} = (C_{A0} - C_A) \dot{V} - k C_A V
 $$
 
-![Conservation and Mass Balance Notes](./image.png)
+At **steady state** where \( \frac{dC_A}{dt} = 0 \):
+
+$$
+0 = (C_{A0} - C_A) \dot{V} - k C_A V
+$$
+
+Rearrange:
+
+$$
+C_A ( \dot{V} + kV ) = C_{A0} \dot{V}
+$$
+
+Solving for \( C_A \):
+
+$$
+C_A = \frac{C_{A0} \dot{V}}{\dot{V} + kV}
+$$
+
 
 ```{tableofcontents}
 ```
