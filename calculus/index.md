@@ -1,5 +1,7 @@
 # Conservation
 
+**(Rate of Change)**  
+Accumulation = In – Out + Generation – Consumption  
 ### (Rate of Change)
 
 Accumulation = In – Out + Generation – Consumption
@@ -10,7 +12,7 @@ $$
 
 ______________________________________________________________________
 
-## **Example 1: Water Draining from a Bucket**
+## **Example: Water Draining from a Bucket**
 
 ![Water draining from a bucket](./image.png)
 
@@ -26,11 +28,16 @@ $$
 
 ______________________________________________________________________
 
-## **Example 2: Continuous Stirred Tank Reactor (CSTR)**
+## **Example: Continuous Stirred Tank Reactor (CSTR)**
 
 ![CSTR Diagram](./image.png)
 
+<<<<<<< HEAD
+**Reaction:**  
+$$
+=======
 **Reaction:** \$$
+>>>>>>> 51c9f740bd16c710b434a332ed2ddd22be9c27ad
 r_A = -kC_A V
 $\$
 
@@ -71,7 +78,7 @@ $$
 $$
 
 Rearranging:
-
+s
 $$
 C_A \frac{dV}{dt} + V \frac{dC_A}{dt} = (C_{A0} - C_A) \dot{V} - k C_A V
 $$
