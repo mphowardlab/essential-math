@@ -3,28 +3,28 @@
 **Rate of Change** Accumulation = In – Out + Generation – Consumption
 
 $$
-\frac{dA}{dt} = \dot{m}_{in} - \dot{m}_{out} + g_{gen} - g_{cons}
+\frac{dA}{dt} = \dot{m}_{in} - \dot{m}_{out} + r_{gen} - r_{cons}
 $$
 
 ______________________________________________________________________
 
-**Example: Water Draining from a Bucket**
+**Example 1: Water Draining from a Bucket**
 
 ![Water draining from a bucket](../images/cstr1.png)
 
 $$
-\frac{dm}{dt} = \dot{m}_{in} - \dot{m}_{out} + g_{gen} - g_{cons}
+\frac{dm}{dt} = \dot{m}_{in} - \dot{m}_{out} + r_{gen} - r_{cons}
 $$
 
 For **mass balance**:
 
 $$
-\frac{dm}{dt} = \dot{m}_{in} - 10
+\frac{dm}{dt} = \dot{m}_{in} - 16
 $$
 
 ______________________________________________________________________
 
-**Example: Continuous Stirred Tank Reactor (CSTR)**
+**Example 2: Continuous Stirred Tank Reactor (CSTR)**
 
 ![CSTR Diagram](../images/CSTR2.png)
 
