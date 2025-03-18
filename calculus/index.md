@@ -10,7 +10,7 @@ ______________________________________________________________________
 
 ## **Example: Water Draining from a Bucket**
 
-![Water draining from a bucket](./image.png)
+![Water draining from a bucket](../images/cstr1.png)
 
 $$
 \frac{dm}{dt} = \dot{m}_{in} - \dot{m}_{out} + g_{gen} - g_{cons}
@@ -26,7 +26,7 @@ ______________________________________________________________________
 
 ## **Example: Continuous Stirred Tank Reactor (CSTR)**
 
-![CSTR Diagram](./image.png)
+![CSTR Diagram](../images/CSTR2.png)
 
 **Reaction:** \$$
 r_A = -k C_A V
