@@ -74,7 +74,7 @@ $$
 C_A \frac{dV}{dt} + V \frac{dC_A}{dt} = (C_{A0} - C_A) \dot{V} - k C_A V
 $$
 
-Since \( \frac{dV}{dt} = 0 \):
+Since ( \\frac\{dV}\{dt} = 0 ):
 
 $$
 V \frac{dC_A}{dt} = (C_{A0} - C_A) \dot{V} - k C_A V
@@ -92,7 +92,7 @@ $$
 (C_{A0} - C_A) \dot{V} = k C_A V
 $$
 
-Solving for \( C_A \):
+Solving for ( C_A ):
 
 $$
 C_A = \frac{C_{A0} \dot{V}}{\dot{V} + kV}
