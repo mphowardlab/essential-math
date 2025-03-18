@@ -8,7 +8,7 @@ $$
 
 ______________________________________________________________________
 
-## **Example: Water Draining from a Bucket**
+**Example: Water Draining from a Bucket**
 
 ![Water draining from a bucket](../images/cstr1.png)
 
@@ -24,7 +24,7 @@ $$
 
 ______________________________________________________________________
 
-## **Example: Continuous Stirred Tank Reactor (CSTR)**
+**Example: Continuous Stirred Tank Reactor (CSTR)**
 
 ![CSTR Diagram](../images/CSTR2.png)
 
@@ -42,7 +42,7 @@ $$
 \frac{dm}{dt} = \dot{m}_{in} - \dot{m}_{out}
 $$
 
-Since density ( \\rho ) is constant:
+Since density is constant:
 
 $$
 \frac{d(\rho V)}{dt} = \rho \frac{dV}{dt} = 0
@@ -59,7 +59,7 @@ ______________________________________________________________________
 ### **Mole Balance**
 
 $$
-\frac{d(n_A)}{dt} = \dot{n}_{A,in} - \dot{n}_{A,out} + g_{gen} - g_{cons}
+\frac{d(n_A)}{dt} = \dot{n}_{A,in} - \dot{n}_{A,out} + r_{gen} - r_{cons}
 $$
 
 Expanding:
@@ -74,7 +74,7 @@ $$
 C_A \frac{dV}{dt} + V \frac{dC_A}{dt} = (C_{A0} - C_A) \dot{V} - k C_A V
 $$
 
-Since ( \\frac\{dV}\{dt} = 0 ):
+Since \( \frac{dV}{dt} = 0 \):
 
 $$
 V \frac{dC_A}{dt} = (C_{A0} - C_A) \dot{V} - k C_A V
@@ -92,7 +92,7 @@ $$
 (C_{A0} - C_A) \dot{V} = k C_A V
 $$
 
-Solving for ( C_A ):
+Solving for \( C_A \):
 
 $$
 C_A = \frac{C_{A0} \dot{V}}{\dot{V} + kV}
