@@ -1,4 +1,4 @@
-### **Mass Balance**
+# **Mass Balance**
 
 $$
 \frac{dm}{dt} = \dot{m}_{in} - \dot{m}_{out}
