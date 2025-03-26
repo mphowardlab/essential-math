@@ -1,4 +1,4 @@
-### **Mole Balance**
+# **Mole Balance**
 
 $$
 \frac{d(n_A)}{dt} = \dot{n}_{A,in} - \dot{n}_{A,out} + r_{gen} - r_{cons}
