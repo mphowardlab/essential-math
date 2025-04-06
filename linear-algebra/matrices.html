@@ -57,6 +57,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"d": ["{\\operatorname{d}\\!{#1}}", 1], "dd": ["{\\d{}^{#1} #2 \\over \\d{#3}^{#1}}", 3], "pp": ["{\\partial^{#1} #2 \\over \\partial #3^{#1}}", 3], "td": ["{\\left(\\pp{#1}{#2}{#3} \\right)_{#4}}", 4], "vv": ["\\mathbf{#1}", 1]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'linear-algebra/matrices';</script>
     <link rel="canonical" href="https://mphowardlab.github.io/essential-math/linear-algebra/matrices.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -406,7 +408,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -422,6 +426,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">3.1.1. Definition</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -433,6 +445,107 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="matrices-and-vectors">
 <h1><span class="section-number">3.1. </span>Matrices and vectors<a class="headerlink" href="#matrices-and-vectors" title="Link to this heading">#</a></h1>
+<p>Matrices and vectors are convenient tools for representing linear systems with
+compact notation that can be processed by a computer.</p>
+<div class="admonition-example-flash-distillation admonition">
+<p class="admonition-title">Example: Flash distillation</p>
+<p>You are analyzing the molar flow rates resulting from a flash distillation
+process.</p>
+<img alt="Flash distillation process" src="../_images/flash.svg" />
+<p>The steady-state mole balances for the total process and component A are</p>
+<div class="amsmath math notranslate nohighlight" id="equation-605fb613-97e0-4bbf-96bf-5c8fc32ee5ae">
+<span class="eqno">(3.1)<a class="headerlink" href="#equation-605fb613-97e0-4bbf-96bf-5c8fc32ee5ae" title="Permalink to this equation">#</a></span>\[\begin{align}
+10 &amp;= \dot L + \dot V \\
+5 &amp;= 0.3 \dot L + 0.8 \dot V
+\end{align}\]</div>
+<p>These equations can equivalently be represented using matrices and vectors as</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f19095d0-a811-4c7a-bd8e-f0b77fee97c9">
+<span class="eqno">(3.2)<a class="headerlink" href="#equation-f19095d0-a811-4c7a-bd8e-f0b77fee97c9" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\begin{bmatrix} 10 \\ 5 \end{bmatrix} =
+\begin{bmatrix} 1 &amp; 1 \\ 0.3 &amp; 0.8 \end{bmatrix}
+\begin{bmatrix} \dot L \\ \dot V \end{bmatrix}
+\end{equation}\]</div>
+<p>We will learn why these representations are equivalent shortly. Importantly,
+because our mole balances can be written in this way, they are a <em>system of
+linear equations</em> that can be solved using techniques of linear algebra.</p>
+</div>
+<section id="definition">
+<h2><span class="section-number">3.1.1. </span>Definition<a class="headerlink" href="#definition" title="Link to this heading">#</a></h2>
+<p>A <em>matrix</em> is a rectangular array of quantities, which we call its <em>elements</em>,
+that are laid out in horizontal <em>rows</em> and vertical <em>columns</em>. We will typically
+denote a matrix by a bold, capital letter such as <strong>A</strong>.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-fbc22662-3d33-47ea-9486-3a7ee4d7ca53">
+<span class="eqno">(3.3)<a class="headerlink" href="#equation-fbc22662-3d33-47ea-9486-3a7ee4d7ca53" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\vv{A} = \begin{bmatrix} 0.3 &amp; 1 &amp; -5 \\ 0 &amp; -0.2 &amp; 16 \end{bmatrix}
+\end{equation}\]</div>
+<p>An <em>m</em> x <em>n</em> matrix has <em>m</em> rows and <em>n</em> columns. <strong>A</strong> is a 2 x 3 matrix. We
+will sometimes refer to elements of a matrix by their row and column</p>
+<div class="amsmath math notranslate nohighlight" id="equation-46b7d705-2966-455a-8062-8227dc9d79ba">
+<span class="eqno">(3.4)<a class="headerlink" href="#equation-46b7d705-2966-455a-8062-8227dc9d79ba" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\vv{A} = \begin{bmatrix} A_{11} &amp; A_{12} &amp;
+A_{13} \\ A_{21} &amp; A_{22} &amp; A_{23} \end{bmatrix}
+\end{equation}\]</div>
+<p>For example, <span class="math notranslate nohighlight">\(A_{12} = 1\)</span> and <span class="math notranslate nohighlight">\(A_{23} = 16\)</span> for <strong>A</strong> given above.</p>
+<p>A <em>vector</em> is a matrix with either one column (a <em>column vector</em>) or one row (a
+<em>row vector</em>). We will typically denote a vector by a bold, lowercase letter
+such as <strong>b</strong></p>
+<div class="amsmath math notranslate nohighlight" id="equation-ac7a5823-5ba1-4d80-8276-1773b212edd9">
+<span class="eqno">(3.5)<a class="headerlink" href="#equation-ac7a5823-5ba1-4d80-8276-1773b212edd9" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\vv{b} = \begin{bmatrix} 1 \\ 2 \end{bmatrix} \qquad
+\vv{c} = \begin{bmatrix} -1 &amp; 0 &amp; 1 \end{bmatrix}
+\end{equation}\]</div>
+<p><strong>b</strong> is a 2-element column vector that is also a 2 x 1 matrix, while <strong>c</strong> is a
+3-element row vector that is also a 1 x 3 matrix. When referring to elements of
+a vector, it typical to only use one index</p>
+<div class="amsmath math notranslate nohighlight" id="equation-80bd31c4-3f1c-4fd5-b512-b5654e2a8b6c">
+<span class="eqno">(3.6)<a class="headerlink" href="#equation-80bd31c4-3f1c-4fd5-b512-b5654e2a8b6c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\vv{b} = \begin{bmatrix} b_1 \\ b_2 \end{bmatrix} \qquad
+\vv{c} = \begin{bmatrix} c_1 &amp; c_2 &amp; c_3 \end{bmatrix}
+\end{equation}\]</div>
+<p>For <strong>b</strong> and <strong>c</strong> given above, <span class="math notranslate nohighlight">\(b_2 = 2\)</span> and <span class="math notranslate nohighlight">\(c_2 = 0\)</span>. Note that it becomes
+ambiguous whether you have a column vector or a row vector if you are refering
+to elements in this way.</p>
+<p>There are some other types of “special” matrices.</p>
+<ul>
+<li><p><em>Square matrix</em>: a matrix with equal numbers of rows and columns (an <em>n</em> x <em>n</em>
+matrix).</p>
+<div class="amsmath math notranslate nohighlight" id="equation-dc2eb082-e883-4c7f-9bfb-3964f451c9c0">
+<span class="eqno">(3.7)<a class="headerlink" href="#equation-dc2eb082-e883-4c7f-9bfb-3964f451c9c0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\begin{bmatrix} 1 &amp; 2 \\ 4 &amp; 3 \end{bmatrix}
+\end{equation}\]</div>
+</li>
+<li><p><em>Diagonal matrix</em>: a square matrix with nonzero entries only for the elements
+on the diagonal, <span class="math notranslate nohighlight">\(A_{ii}\)</span> for <span class="math notranslate nohighlight">\(i = 1, ..., n\)</span>.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c32acdda-0915-4ff0-a83c-8ae1d1bb02b1">
+<span class="eqno">(3.8)<a class="headerlink" href="#equation-c32acdda-0915-4ff0-a83c-8ae1d1bb02b1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 3 \end{bmatrix}
+\end{equation}\]</div>
+</li>
+<li><p><em>Upper triangular matrix</em>: a square matrix with nonzero entries only on the
+diagonal or above, <span class="math notranslate nohighlight">\(A_{ij}\)</span> for <span class="math notranslate nohighlight">\(i = 1, ..., n\)</span> and <span class="math notranslate nohighlight">\(j \ge i\)</span>. on the
+diagonal, <span class="math notranslate nohighlight">\(A_{ii}\)</span>.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-57fa24bc-23a6-4fd3-8d91-8fd7c871e57b">
+<span class="eqno">(3.9)<a class="headerlink" href="#equation-57fa24bc-23a6-4fd3-8d91-8fd7c871e57b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\begin{bmatrix} 1 &amp; 2 \\ 0 &amp; 3 \end{bmatrix}
+\end{equation}\]</div>
+</li>
+<li><p><em>Lower triangular matrix</em>: a square matrix with nonzero entries only on the
+diagonal or below, <span class="math notranslate nohighlight">\(A_{ij}\)</span> for <span class="math notranslate nohighlight">\(i = 1, ..., n\)</span> and <span class="math notranslate nohighlight">\(j \le i\)</span>.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f84b7055-acef-426c-99a7-c8d7e419d24a">
+<span class="eqno">(3.10)<a class="headerlink" href="#equation-f84b7055-acef-426c-99a7-c8d7e419d24a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\begin{bmatrix} 1 &amp; 0 \\ 4 &amp; 3 \end{bmatrix}
+\end{equation}\]</div>
+</li>
+<li><p><em>Identity matrix</em>: a diagonal matrix of ones, typically denoted <strong>I</strong>.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1b6b0f94-79d3-4a9e-965f-2d50299b4f56">
+<span class="eqno">(3.11)<a class="headerlink" href="#equation-1b6b0f94-79d3-4a9e-965f-2d50299b4f56" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{bmatrix}
+\end{equation}\]</div>
+</li>
+</ul>
+<p>There are several other types of special matrices, but we will leave those for a
+longer course on linear algebra!</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -489,6 +602,21 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">3.1.1. Definition</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
