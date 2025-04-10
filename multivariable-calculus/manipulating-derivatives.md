@@ -14,7 +14,7 @@ Given that the thermal expansion coefficient $\alpha_V$, the isothermal compress
 \begin{align}
 \alpha_V &= \frac{1}{V} \left( \frac{\partial V}{\partial T} \right)_P \\
 \kappa_T &= -\frac{1}{V} \left( \frac{\partial V}{\partial P} \right)_T \\
-c_P &= \left( \frac{\partial H}{\partial T} \right)_P,
+c_P &= \left( \frac{\partial H}{\partial T} \right)_P
 \end{align}
 where $V$ is the volume and $H$ is the enthalpy and that the following total differentials are known:
 \begin{align}
