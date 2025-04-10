@@ -10,7 +10,7 @@ $$
 
 ***
 
-### Given that:
+Given that:
 
 $$
 \alpha_V = \frac{1}{V} \left( \frac{\partial V}{\partial T} \right)_P
@@ -36,11 +36,11 @@ $$
 dG = -S dT + V dP
 $$
 
-### Express $dU$ using only the "measurables", $T$, $P$, $V$, $\alpha_V$, $\kappa_T$, and $c_P$.
+Express $dU$ using only the "measurables", $T$, $P$, $V$, $\alpha_V$, $\kappa_T$, and $c_P$.
 
 ***
 
-#### Form the derivatives using the given $dU$, then replace what we don't like:
+Form the derivatives using the given $dU$, then replace what we don't like:
 
 $$
 \left( \frac{\partial U}{\partial T} \right)_P = T \left( \frac{\partial S}{\partial T} \right)_P - P \left( \frac{\partial V}{\partial T} \right)_P 
