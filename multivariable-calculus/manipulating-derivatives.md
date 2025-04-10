@@ -30,19 +30,24 @@ Express $\d{U}$ using only the "measurables", $T$, $P$, $V$, $\alpha_V$, $\kappa
 Form the derivatives using the given $\d{U}$, then replace what we don't like:
 
 \begin{align}
-\left( \frac{\partial U}{\partial T} \right)_P = T \left( \frac{\partial S}{\partial T} \right)_P - P \left( \frac{\partial V}{\partial T} \right)_P \\
-= T \left( \frac{c_P}{T} \right) - P V \alpha_V = c_P - P V \alpha_V
+\left( \frac{\partial U}{\partial T} \right)_P 
+&= T \left( \frac{\partial S}{\partial T} \right)_P - P \left( \frac{\partial V}{\partial T} \right)_P \\
+&= T \left( \frac{c_P}{T} \right) - P V \alpha_V \\
+&= c_P - P V \alpha_V
 \end{align}
 
 \begin{align}
-\left( \frac{\partial S}{\partial T} \right)_P =
-\left( \frac{\partial S}{\partial H} \right)_P \left( \frac{\partial H}{\partial T} \right)_P = \\
-\frac{ \left( \frac{\partial H}{\partial T} \right)_P }{ \left( \frac{\partial H}{\partial S} \right)_P } = {\frac{c_P}{T}}
+\left( \frac{\partial S}{\partial T} \right)_P 
+&= \left( \frac{\partial S}{\partial H} \right)_P \left( \frac{\partial H}{\partial T} \right)_P \\
+&= \frac{ \left( \frac{\partial H}{\partial T} \right)_P }{ \left( \frac{\partial H}{\partial S} \right)_P } \\
+&= \frac{c_P}{T}
 \end{align}
 
 \begin{align}
-\left( \frac{\partial U}{\partial P} \right)_T = T \left( \frac{\partial S}{\partial P} \right)_T - P \left( \frac{\partial V}{\partial P} \right)_T \\
-=  -T V \alpha_V - P(-V\kappa_T) = P(-V\kappa_T)  - T V \alpha_V
+\left( \frac{\partial U}{\partial P} \right)_T 
+&= T \left( \frac{\partial S}{\partial P} \right)_T - P \left( \frac{\partial V}{\partial P} \right)_T \\
+&= -T V \alpha_V - P(-V\kappa_T) \\
+&= P V \kappa_T - T V \alpha_V
 \end{align}
 
 \begin{equation}
