@@ -1,3 +1,5 @@
+# Manipulating Derivatives
+
 ## Example:
 
 We want to compute $\Delta U$ as a function of $T$ and $P$, so we need to determine:
