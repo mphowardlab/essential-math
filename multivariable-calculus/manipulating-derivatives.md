@@ -10,32 +10,19 @@ We want to compute $\Delta U$ as a function of $T$ and $P$, so we need to determ
 
 ---
 
-Given that:
-
-\begin{equation}
-\alpha_V = \frac{1}{V} \left( \frac{\partial V}{\partial T} \right)_P
-\end{equation}
-
-\begin{equation}
-\kappa_T = -\frac{1}{V} \left( \frac{\partial V}{\partial P} \right)_T
-\end{equation}
-
-\begin{equation}
-c_P = \left( \frac{\partial H}{\partial T} \right)_P
-\end{equation}
-
-\begin{equation}
-\d{U} = T \d{S} - P \d{V}
-\end{equation}
-
-\begin{equation}
-\d{H} = T \d{S} + V \d{P}
-\end{equation}
-
-\begin{equation}
-\d{G} = -S \d{T} + V \d{P}
-\end{equation}
-
+Given that the thermal expansion coefficient $\alpha_V$, the isothermal compressibility $\kappa_T$, and the constant-pressure heat capacity $c_P$ are defined as:
+\begin{align}
+\alpha_V &= \frac{1}{V} \left( \frac{\partial V}{\partial T} \right)_P \\
+\kappa_T &= -\frac{1}{V} \left( \frac{\partial V}{\partial P} \right)_T \\
+c_P &= \left( \frac{\partial H}{\partial T} \right)_P,
+\end{align}
+where $V$ is the volume and $H$ is the enthalpy and that the following total differentials are known:
+\begin{align}
+\d{U} &= T \d{S} - P \d{V} \\
+\d{H} &= T \d{S} + V \d{P} \\
+\d{G} &= -S \d{T} + V \d{P}
+\end{align}
+where $S$ is the entropy and $G$ is the Gibbs free energy.
 Express $\d{U}$ using only the "measurables", $T$, $P$, $V$, $\alpha_V$, $\kappa_T$, and $c_P$.
 
 ---
