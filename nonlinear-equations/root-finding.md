@@ -58,6 +58,22 @@ Example: $f(x) = e^{-x^2} - x$  use $a_o = 0$, $b_o = 1$ <br>
     |0|0|0|0|0|0|0|
     |9|0.625|0.654|0.653|0.001|-0.002|-0.0007| 
 
-Continue until $f(x_n) \approx 0$
+Continue until $f(x_n) \approx 0$ <br>
+
+
+$ \begin{center}$
+  $  \begin{tabular}{ c c c }$
+   $ \hline$
+    $n & $x_n$ & $g(x_n$) \\$
+    $\hline$
+    $0 & 0 & 1.0 \\$
+    $1 & 1.0 & 0.368  \\$
+    $2 & 0.368 & 0.873 \\$
+    $. & . & . \\$
+    $. & . & . \\$
+    $5 & 0.6530 & 0.6528 $
+    $\hline$
+    $\end{tabular}$
+    $\begin{center}$
 
 
