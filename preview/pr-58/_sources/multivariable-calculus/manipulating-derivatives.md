@@ -35,7 +35,7 @@ Form the derivatives using the given $\d{U}$, then replace what we don't like:
 \end{align}
 
 \begin{align}
-\left( \frac{\partial S}{\partial T} \right)_P = \\
+\left( \frac{\partial S}{\partial T} \right)_P =
 \left( \frac{\partial S}{\partial H} \right)_P \left( \frac{\partial H}{\partial T} \right)_P = \\
 \frac{ \left( \frac{\partial H}{\partial T} \right)_P }{ \left( \frac{\partial H}{\partial S} \right)_P } = {\frac{c_P}{T}}
 \end{align}
