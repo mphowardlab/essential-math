@@ -1,4 +1,4 @@
-# Manipulating Derivatives
+# Manipulating Partial Derivatives
 
 ## Example:
 
