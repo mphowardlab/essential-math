@@ -23,7 +23,7 @@ Y &= \frac{2}{s+k}\\
 Invert Laplace transform
 
 \begin{equation}
-y = L^{-1}[\frac{2}{s+k}] = 2L^{-1}[\frac{1}{s+k}] = 2 e^{-kt}
+y = L^{-1}\frac{2}{s+k} = 2L^{-1}\frac{1}{s+k} = 2 e^{-kt}
 \end{equation}
 
 
@@ -56,7 +56,11 @@ A3 &= \frac{1}{(0-1)} &= -1\\
 
 \begin{align}
 1 &= s^2+A2(s-1)s-(s-1)\\
-s^2\\
+\end{align}
+
+Set all of the s-squared variables equal to each other and solve for A2
+
+\begin{align}
 0 &= 1+A2\\
 A2 &= -1\\
 \end {align}
@@ -67,7 +71,8 @@ Y&=\frac{2}{(s-1)}-\frac{1}{s} - \frac{1}{(s^(2))}\\
 \end{align}
 
 \begin{align}
-y&=L^{-1}[Y]&=2L^{-1}[\frac{1}{(s-1)}]-L^{-1}[\frac{1}{s}]-L^{-1}[\frac{1}{s^2}]\\
+y&=L^-1[Y]
+L^-1[Y] &=2L^-1[\frac{1}{(s-1)}]-L^-1[\frac{1}{s}]-L^-1[\frac{1}{s^2}]\\
 y&=2e^t-1-t\\
 \end{align}
 
