@@ -7,12 +7,19 @@ x_{n+1} = g(x_n)
 \end{equation}
 until $x_{n+1} = x_n$ to the desired precision (error tolerance).<br>
 
-````{example} 
-$f(x) = e^{-x^2} - x = 0$ <br>
-$e^{-x^2} = x$ <br>
+````{example} Using Fixed Point Iteration
+\begin{equation}
+f(x) = e^{-x^2} - x = 0 
+e^{-x^2} = x 
+\end{equation}
+
 where $g(x) = e^{-x^2}$ <br>  
 
 Guess $x_o = 0$, then set up a table: <br>
+
+```{image} ./_images/fixed_point_table.jpg
+:alt: fixed point iteration applied using a table
+```
     |  n |  $x_n$ | $g(x_n)$ | 
     |:---|:------:|---------:|
     |  0 |   0    |    1.0   | 
@@ -22,14 +29,16 @@ Guess $x_o = 0$, then set up a table: <br>
     |  0 |   0    |     0    |
     |  5 | 0.6530 |  0.6528  | 
     
-    for each iteration, $g(x_n)$ is used as the new $x_n$ <br>
-    at $n = 5, 0.6530 \approx 0.6528$ <br>
+for each iteration, $g(x_n)$ is used as the new $x_n$ <br>
+at $n = 5, 0.6530 \approx 0.6528$ <br>
 ````
 
-````{example} 
-$f(x) = e^x - x^3 = 0$ <br>
-$e^x = x^3$ <br>
-$x = ln(x^3) = 3ln(x)$ <br>
+````{example} Rearranging Functions
+\begin{equation}
+f(x) = e^x - x^3 = 0
+e^x = x^3
+x = ln(x^3) = 3ln(x)
+\end{equation}
 where $g(x) = 3ln(x)$ <br>
 ````
 
@@ -44,8 +53,8 @@ Notes for this method:<br>
 Intermediate Value Theorem: If f is continuous on $a \le x \le b$, then it takes on all values from f(a) to f(b). <br>
     If f(a) > 0 and f(b) < 0 (or vice versa), then f(x) = 0 somewhere in between! <br> 
 
-```{image} ./_images/IVT_graph.png
-:alt: Intermediate Value Theorem graphical depiction
+```{image} ./_images/IVT_graph.svg
+:alt: graphical depicition of the Intermediate Value Theorem
 ```
 
 Procedure for using Bisection Search: <br>
@@ -55,8 +64,12 @@ Procedure for using Bisection Search: <br>
     Otherwise, if $f(a_n)$ and $f(c_n)$ have the same sign: $a_{n+1} = x_n$. Else, $b_{n+1} = x_n$ <br>
 4. Repeat from step 2 <br>
 
-````{example} 
+````{example} Using Bisection Search
 $f(x) = e^{-x^2} - x$  use $a_o = 0$, $b_o = 1$ <br>
+
+```{image} ./_images/Bisection_table.png
+:alt: bisection search method applied using a table
+```
 
     |n|$a_n$|$b_n$|$x_n$|$f(a_n)$|$f(b_n)$|$f(x_n)$| 
     |:---|:---:|:---:|:---:|:---:|:---:|---:|
