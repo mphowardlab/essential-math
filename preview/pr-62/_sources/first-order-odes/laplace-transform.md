@@ -53,16 +53,14 @@ A1 &= \frac{1}{1^(1)} &= 1\\
 A3 &= \frac{1}{(0-1)} &= -1\\
 \end{align}
 
-
+Set all of the s-squared variables equal to each other and solve for A2
 \begin{align}
 1 &= s^2+A2(s-1)s-(s-1)\\
 \end{align}
 
-Set all of the s-squared variables equal to each other and solve for A2
-
 \begin{align}
 1+A2&=0\\
-A2&=-1
+A2&=-1\\
 \end {equation}
 
 \begin{align}
