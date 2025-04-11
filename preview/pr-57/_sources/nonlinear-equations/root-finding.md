@@ -8,47 +8,45 @@ x_{n+1} = g(x_n)
 until $x_{n+1} = x_n$ to the desired precision (error tolerance).<br>
 
 ````{example} Using Fixed Point Iteration
-\begin{equation}
+\begin{align}
 f(x) = e^{-x^2} - x = 0 \\
 e^{-x^2} = x 
-\end{equation}
+\end{align}
 
 where $g(x) = e^{-x^2}$ <br>  
 
 Guess $x_o = 0$, then set up a table: <br>
 
-```{image} ./_images/fixed_point_table.jpg
-:alt: fixed point iteration applied using a table
-```
-| n | x_n   | g(x_n)  |
-|---|-------|---------|
-| 0 | 0     | 1.000   |
-| 1 | 1.000 | 0.368   |
-| 2 | 0.368 | 0.873   |
-| . | .     | .       |
-| . | .     | .       |
-| 5 | 0.653 | 0.6528  |
+| n | $x_n$ | $g(x_n)$ |
+|---|-------|----------|
+| 0 | 0     | 1.000    |
+| 1 | 1.000 | 0.368    |
+| 2 | 0.368 | 0.873    |
+| . | .     | .        |
+| . | .     | .        |
+| 5 | 0.653 | 0.6528   |
     
+
 for each iteration, $g(x_n)$ is used as the new $x_n$ <br>
 at $n = 5, 0.6530 \approx 0.6528$ <br>
 ````
 
 ````{example} Rearranging Functions
-\begin{equation}
+\begin{align}
 f(x) = e^x - x^3 = 0 \\
 e^x = x^3 \\
 x = ln(x^3) = 3ln(x)
-\end{equation}
+\end{align}
+
 where $g(x) = 3ln(x)$ <br>
 ````
 
 Notes for this method:<br>
 - This may fail spectacularly! Convergence is only guaranteed when $|g'(x)| \le k < 1$ for all x in an interval around the solution. <br>
 - Can try to help by slowly "mixing" solutions:<br>
-\begin{equation}
-x_{n+1}^* = g(x_n) \\
-x_{n+1} = \alpha x_{n+1}^* + (1-\alpha)x_n 
-\end{equation}
+    $x_{n+1}^* = g(x_n)$ <br>
+    $x_{n+1} = \alpha x_{n+1}^* + (1-\alpha)x_n$ <br>
+    
    
 
 ### Bisection Search 
@@ -73,14 +71,14 @@ $f(x) = e^{-x^2} - x$,  use $a_o = 0$, $b_o = 1$ <br>
 :alt: bisection search method applied using a table
 ```
 
-    | n  | $a_n$ | $b_n$ | $x_n$ | $f(a_n)$ | $f(b_n)$ | $f(x_n)$ | 
-    |----|-------|-------|-------|----------|----------|----------|
-    | 0  | 0     | 1     | 0.5   | 1.0      | -0.632   | 0.279    | 
-    | 1  | 0.5   | 1     | 0.75  | 0.275    | -0.632   | -0.180   | 
-    | 2  | 0.5   | 0.75  | 0.625 | 0.275    | -0.1180  | 0.052    | 
-    | 0  | 0     | 0     | 0     | 0        | 0        | 0        |
-    | 0  | 0     | 0     | 0     | 0        | 0        | 0        |
-    | 9  | 0.625 | 0.654 | 0.653 | 0.001    | -0.002   | -0.0007  | 
+| n  | $a_n$ | $b_n$ | $x_n$ | $f(a_n)$ | $f(b_n)$ | $f(x_n)$ | 
+|----|-------|-------|-------|----------|----------|----------|
+| 0  | 0     | 1     | 0.5   | 1.0      | -0.632   | 0.279    | 
+| 1  | 0.5   | 1     | 0.75  | 0.275    | -0.632   | -0.180   | 
+| 2  | 0.5   | 0.75  | 0.625 | 0.275    | -0.1180  | 0.052    | 
+| .  | .     | .     | .     | .        | .        | .        |
+| .  | .     | .     | .     | .        | .        | .        |
+| 9  | 0.625 | 0.654 | 0.653 | 0.001    | -0.002   | -0.0007  | 
 
 Continue until $f(x_n) \approx 0$
 ````
