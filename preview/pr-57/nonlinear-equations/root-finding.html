@@ -442,40 +442,65 @@ document.write(`
 <section id="fixed-point-iteration">
 <h2><span class="section-number">4.2.1. </span>Fixed Point Iteration<a class="headerlink" href="#fixed-point-iteration" title="Link to this heading">#</a></h2>
 <p>If we want to numerically solve f(x) = 0, rearrange f(x) to get g(x) = x. Then, choose an inital guess <span class="math notranslate nohighlight">\(x_o\)</span> and iterate:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6d7c8b9e-6110-4ae9-abd8-83464170deb9">
-<span class="eqno">(4.1)<a class="headerlink" href="#equation-6d7c8b9e-6110-4ae9-abd8-83464170deb9" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8075230a-ef49-4613-aa68-657e442eaa4d">
+<span class="eqno">(4.1)<a class="headerlink" href="#equation-8075230a-ef49-4613-aa68-657e442eaa4d" title="Permalink to this equation">#</a></span>\[\begin{equation}
 x_{n+1} = g(x_n)
 \end{equation}\]</div>
 <p>until <span class="math notranslate nohighlight">\(x_{n+1} = x_n\)</span> to the desired precision (error tolerance).<br></p>
 <div class="admonition-example-using-fixed-point-iteration admonition">
 <p class="admonition-title">Example: Using Fixed Point Iteration</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8724f8dc-b5bb-4c72-9a89-68f3b3b2987d">
-<span class="eqno">(4.2)<a class="headerlink" href="#equation-8724f8dc-b5bb-4c72-9a89-68f3b3b2987d" title="Permalink to this equation">#</a></span>\[\begin{equation}
-f(x) = e^{-x^2} - x = 0 
+<div class="amsmath math notranslate nohighlight" id="equation-1703dceb-967b-46e3-9b3f-c7c97120f66e">
+<span class="eqno">(4.2)<a class="headerlink" href="#equation-1703dceb-967b-46e3-9b3f-c7c97120f66e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+f(x) = e^{-x^2} - x = 0 \\
 e^{-x^2} = x 
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(g(x) = e^{-x^2}\)</span> <br></p>
 <p>Guess <span class="math notranslate nohighlight">\(x_o = 0\)</span>, then set up a table: <br></p>
 <img alt="fixed point iteration applied using a table" src="../_images/fixed_point_table.jpg" />
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>|  n |  $x_n$ | $g(x_n)$ | 
-|:---|:------:|---------:|
-|  0 |   0    |    1.0   | 
-|  1 | 1.0    |   0.368  | 
-|  2 | 0.368  |  0.873   |
-|  0 |   0    |     0    | 
-|  0 |   0    |     0    |
-|  5 | 0.6530 |  0.6528  | 
-</pre></div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>n</p></th>
+<th class="head"><p>x_n</p></th>
+<th class="head"><p>g(x_n)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1.000</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>1.000</p></td>
+<td><p>0.368</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>0.368</p></td>
+<td><p>0.873</p></td>
+</tr>
+<tr class="row-odd"><td><p>.</p></td>
+<td><p>.</p></td>
+<td><p>.</p></td>
+</tr>
+<tr class="row-even"><td><p>.</p></td>
+<td><p>.</p></td>
+<td><p>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>0.653</p></td>
+<td><p>0.6528</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <p>for each iteration, <span class="math notranslate nohighlight">\(g(x_n)\)</span> is used as the new <span class="math notranslate nohighlight">\(x_n\)</span> <br>
 at <span class="math notranslate nohighlight">\(n = 5, 0.6530 \approx 0.6528\)</span> <br></p>
 </div>
 <div class="admonition-example-rearranging-functions admonition">
 <p class="admonition-title">Example: Rearranging Functions</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8bfcd183-5116-4f20-a738-c350fb89ed55">
-<span class="eqno">(4.3)<a class="headerlink" href="#equation-8bfcd183-5116-4f20-a738-c350fb89ed55" title="Permalink to this equation">#</a></span>\[\begin{equation}
-f(x) = e^x - x^3 = 0
-e^x = x^3
+<div class="amsmath math notranslate nohighlight" id="equation-4f07cf41-1bf8-4f88-8da2-2abafa8c1599">
+<span class="eqno">(4.3)<a class="headerlink" href="#equation-4f07cf41-1bf8-4f88-8da2-2abafa8c1599" title="Permalink to this equation">#</a></span>\[\begin{equation}
+f(x) = e^x - x^3 = 0 \\
+e^x = x^3 \\
 x = ln(x^3) = 3ln(x)
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(g(x) = 3ln(x)\)</span> <br></p>
@@ -484,13 +509,15 @@ x = ln(x^3) = 3ln(x)
 <ul class="simple">
 <li><p>This may fail spectacularly! Convergence is only guaranteed when <span class="math notranslate nohighlight">\(|g'(x)| \le k &lt; 1\)</span> for all x in an interval around the solution. <br></p></li>
 <li><p>Can try to help by slowly “mixing” solutions:<br>
-<span class="math notranslate nohighlight">\(x_{n+1}^* = g(x_n)\)</span> <br>
-<span class="math notranslate nohighlight">\(x_{n+1} = \alpha x_{n+1}^* + (1-\alpha)x_n\)</span> <br></p></li>
+\begin{equation}
+x_{n+1}^* = g(x_n) \
+x_{n+1} = \alpha x_{n+1}^* + (1-\alpha)x_n
+\end{equation}</p></li>
 </ul>
 </section>
 <section id="bisection-search">
 <h2><span class="section-number">4.2.2. </span>Bisection Search<a class="headerlink" href="#bisection-search" title="Link to this heading">#</a></h2>
-<p>Intermediate Value Theorem: If f is continuous on <span class="math notranslate nohighlight">\(a \le x \le b\)</span>, then it takes on all values from f(a) to f(b). <br>
+<p>Intermediate Value Theorem: If f(x) is continuous on <span class="math notranslate nohighlight">\(a \le x \le b\)</span>, then it takes on all values from f(a) to f(b). <br>
 If f(a) &gt; 0 and f(b) &lt; 0 (or vice versa), then f(x) = 0 somewhere in between! <br></p>
 <img alt="graphical depicition of the Intermediate Value Theorem" src="../_images/IVT_graph.svg" />
 <p>Procedure for using Bisection Search: <br></p>
@@ -498,21 +525,21 @@ If f(a) &gt; 0 and f(b) &lt; 0 (or vice versa), then f(x) = 0 somewhere in betwe
 <li><p>Chose <span class="math notranslate nohighlight">\(a_o\)</span> and <span class="math notranslate nohighlight">\(b_o\)</span> so f(a) and f(b) have opposite signs <br></p></li>
 <li><p>Evaluate <span class="math notranslate nohighlight">\(f(x_n)\)</span> at the midpoint: <span class="math notranslate nohighlight">\(x_n = \frac{a_n + b_n}{2}\)</span><br></p></li>
 <li><p>If <span class="math notranslate nohighlight">\(f(x_n) \approx 0\)</span>, a solution is found (within desired precision) <br>
-Otherwise, if <span class="math notranslate nohighlight">\(f(a_n)\)</span> and <span class="math notranslate nohighlight">\(f(c_n)\)</span> have the same sign: <span class="math notranslate nohighlight">\(a_{n+1} = x_n\)</span>. Else, <span class="math notranslate nohighlight">\(b_{n+1} = x_n\)</span> <br></p></li>
+Otherwise, if <span class="math notranslate nohighlight">\(f(a_n)\)</span> and <span class="math notranslate nohighlight">\(f(x_n)\)</span> have the same sign: <span class="math notranslate nohighlight">\(a_{n+1} = x_n\)</span>. Else, <span class="math notranslate nohighlight">\(b_{n+1} = x_n\)</span> <br></p></li>
 <li><p>Repeat from step 2 <br></p></li>
 </ol>
 <div class="admonition-example-using-bisection-search admonition">
 <p class="admonition-title">Example: Using Bisection Search</p>
-<p><span class="math notranslate nohighlight">\(f(x) = e^{-x^2} - x\)</span>  use <span class="math notranslate nohighlight">\(a_o = 0\)</span>, <span class="math notranslate nohighlight">\(b_o = 1\)</span> <br></p>
-<img alt="bisection search method applied using a table" src="nonlinear-equations/_images/Bisection_table.png" />
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>|n|$a_n$|$b_n$|$x_n$|$f(a_n)$|$f(b_n)$|$f(x_n)$| 
-|:---|:---:|:---:|:---:|:---:|:---:|---:|
-|0|0|1|0.5|1.0|-0.632|0.279| 
-|1|0.5|1|0.75|0.275|-0.632|-0.180| 
-|2|0.5|0.75|0.625|0.275|-0.1180|0.052| 
-|0|0|0|0|0|0|0|
-|0|0|0|0|0|0|0|
-|9|0.625|0.654|0.653|0.001|-0.002|-0.0007| 
+<p><span class="math notranslate nohighlight">\(f(x) = e^{-x^2} - x\)</span>,  use <span class="math notranslate nohighlight">\(a_o = 0\)</span>, <span class="math notranslate nohighlight">\(b_o = 1\)</span> <br></p>
+<img alt="bisection search method applied using a table" src="../_images/Bisection_table.jpg" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>| n  | $a_n$ | $b_n$ | $x_n$ | $f(a_n)$ | $f(b_n)$ | $f(x_n)$ | 
+|----|-------|-------|-------|----------|----------|----------|
+| 0  | 0     | 1     | 0.5   | 1.0      | -0.632   | 0.279    | 
+| 1  | 0.5   | 1     | 0.75  | 0.275    | -0.632   | -0.180   | 
+| 2  | 0.5   | 0.75  | 0.625 | 0.275    | -0.1180  | 0.052    | 
+| 0  | 0     | 0     | 0     | 0        | 0        | 0        |
+| 0  | 0     | 0     | 0     | 0        | 0        | 0        |
+| 9  | 0.625 | 0.654 | 0.653 | 0.001    | -0.002   | -0.0007  | 
 </pre></div>
 </div>
 <p>Continue until <span class="math notranslate nohighlight">\(f(x_n) \approx 0\)</span></p>
