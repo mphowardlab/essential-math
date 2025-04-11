@@ -67,9 +67,6 @@ Procedure for using Bisection Search: <br>
 ````{example} Using Bisection Search
 $f(x) = e^{-x^2} - x$,  use $a_o = 0$, $b_o = 1$ <br>
 
-```{image} ./_images/Bisection_table.jpg
-:alt: bisection search method applied using a table
-```
 
 | n  | $a_n$ | $b_n$ | $x_n$ | $f(a_n)$ | $f(b_n)$ | $f(x_n)$ | 
 |----|-------|-------|-------|----------|----------|----------|
@@ -79,6 +76,10 @@ $f(x) = e^{-x^2} - x$,  use $a_o = 0$, $b_o = 1$ <br>
 | .  | .     | .     | .     | .        | .        | .        |
 | .  | .     | .     | .     | .        | .        | .        |
 | 9  | 0.625 | 0.654 | 0.653 | 0.001    | -0.002   | -0.0007  | 
+
+
+For n=0, $f(x_n)$ > 0, so $a_n$ = $x_n$ <br>
+For n=1, $f(x_n)$ < 0, so $b_n$ = $x_n$ <br>
 
 Continue until $f(x_n) \approx 0$
 ````
