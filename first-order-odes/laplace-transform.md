@@ -60,10 +60,9 @@ A3 &= \frac{1}{(0-1)} &= -1\\
 
 Set all of the s-squared variables equal to each other and solve for A2
 
-\begin{align}
-0 &= 1+A2\\
-A2 &= -1\\
-\end {align}
+\begin{equation}
+0=1+A2 \to A2= -1
+\end {equation}
 
 \begin{align}
 Y&=\frac{1}{(s-1)} + \frac{1}{(s-1)}-\frac{1}{s}-\frac{1}{s^(2)}\\
