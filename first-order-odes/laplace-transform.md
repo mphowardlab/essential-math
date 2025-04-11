@@ -70,8 +70,8 @@ Y&=\frac{2}{(s-1)}-\frac{1}{s} - \frac{1}{(s^(2))}\\
 \end{align}
 
 \begin{align}
-y&=L^-1[Y]
-L^-1[Y] &=2L^-1[\frac{1}{(s-1)}]-L^-1[\frac{1}{s}]-L^-1[\frac{1}{s^2}]\\
+y&=L^{-1}[Y]\\
+L^{-1}[Y]&=2L^{-1}[\frac{1}{(s-1)}]-L^{-1}[\frac{1}{s}]-L^{-1}[\frac{1}{s^2}]\\
 y&=2e^t-1-t\\
 \end{align}
 
