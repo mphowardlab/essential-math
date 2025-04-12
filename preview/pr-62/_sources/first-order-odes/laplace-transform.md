@@ -63,7 +63,7 @@ Set all of the s-squared variables equal to each other and solve for A2
 \begin{align}
 1+A2&=0\\
 A2&=-1\\
-\end {align}
+\end{align}
 
 \begin{align}
 Y&=\frac{1}{(s-1)} + \frac{1}{(s-1)}-\frac{1}{s}-\frac{1}{s^(2)}\\
