@@ -2,7 +2,7 @@
 Example: Incompressible flow can be written analogous to an electrical circuit as:
 
 $$
--ΔP = RQ
+ -ΔP = RQ     
 $$
 
 where \( ΔP \) is the pressure change, \( R \) is the resistance to flow, and \( Q \) is the volumetric flow rate. 
@@ -14,21 +14,24 @@ where \( ΔP \) is the pressure change, \( R \) is the resistance to flow, and \
 We can represent the system of equations as follows:
 
 $$
+\begin{align*}
 \begin{aligned}
-{Q_1} + {Q_3} &= {Q_2}  &\xrightarrow{} \\
-{Q_1} - {Q_2} + {Q_3} &= 0 &\\
-20{Q_1} + 10{Q_2} &= 80 &\\
-10{Q_2} + 25{Q_3} &= 90 &
+Q_1 + Q_3 &= Q_2 \\
+Q_1 - Q_2 + Q_3 &= 0 \\
+20Q_1 + 10Q_2 &= 80 \\
+10Q_2 + 25Q_3 &= 90
 \end{aligned}
-
+\quad
+\xrightarrow{\text{rearrange}}
+\quad
 \begin{aligned}
-{Q_1} + {Q_3} - {Q_2} &= 0 \\
-{Q_1} - {Q_2} + {Q_3} &= 0 \\
-20{Q_1} + 10{Q_2}  &= 80 \\
-10{Q_2} + 25{Q_3}  &= 90
+Q_1 + Q_3 - Q_2 &= 0 \\
+Q_1 - Q_2 + Q_3 &= 0 \\
+20Q_1 + 10Q_2 &= 80 \\
+10Q_2 + 25Q_3 &= 90
 \end{aligned}
+\end{align*}
 $$
-
 These equations can be written in matrix form as:
 
 $$
@@ -42,7 +45,7 @@ $$
 
 Next we apply row operations to simplify the matrix
 
-### Gauss-Jordan Elimination Steps
+ Gauss-Jordan Elimination Steps
 
 Start with the augmented matrix:
 
@@ -55,11 +58,11 @@ $$
 \end{bmatrix}
 $$
 
-#### Step 1: Row Operations
+ Step 1: Row Operations
 Elimination of a redundant row and removal of first pivot column
-$$
+$
 R_2 + R_1 \rightarrow R_2, \quad R_3 - 20R_1 \rightarrow R_3
-$$
+$
 
 Resulting matrix:
 
@@ -72,7 +75,7 @@ $$
 \end{bmatrix}
 $$
 
-#### Step 2: Swap Rows
+ Step 2: Swap Rows
 $$
 R_2 \leftrightarrow R_4
 $$
@@ -88,7 +91,7 @@ $$
 \end{bmatrix}
 $$
 
-#### Step 3: Eliminate below diagonal
+ Step 3: Eliminate below diagonal
 
 $$
 R_3 - 3R_2 \rightarrow R_3
@@ -105,7 +108,7 @@ $$
 \end{bmatrix}
 $$
 
-#### Step 4: Simplify Row 3
+ Step 4: Simplify Row 3
 $$
 R_3 \div -95 \rightarrow R_3
 $$
@@ -121,7 +124,7 @@ $$
 \end{bmatrix}
 $$
 
-#### Step 5: Eliminate the Third Column
+ Step 5: Eliminate the Third Column
 
 $$
 R_1 - R_3 \rightarrow R_1, \quad R_2 - 25R_3 \rightarrow R_2
@@ -138,7 +141,7 @@ $$
 \end{bmatrix}
 $$
 
-#### Step 6: Simplify Row 2
+ Step 6: Simplify Row 2
 $$
 R_2 \div 10 \rightarrow R_2
 $$
@@ -154,7 +157,7 @@ $$
 \end{bmatrix}
 $$
 
-#### Step 7: Final Elimination
+ Step 7: Final Elimination
 $$
 R_1 + R_2 \rightarrow R_1
 $$
@@ -170,7 +173,7 @@ $$
 \end{bmatrix}
 $$
 
-### Final Solution:
+ Final Solution:
 
 The solution to the system is:
 
