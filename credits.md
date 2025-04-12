@@ -8,7 +8,7 @@ This work (c) 2025 is licensed under
 ## Contributors
 
 - Michael P. Howard
-
+- Elijah  C. Mitchell
 ## Attributions
 
 Many of these notes were based on my own studies using the excellent textbook:
