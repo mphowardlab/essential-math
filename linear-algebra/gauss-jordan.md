@@ -56,7 +56,7 @@ $$
 $$
 
 #### Step 1: Row Operations
-
+Elimination of a redundant row and removal of first pivot column
 $$
 R_2 + R_1 \rightarrow R_2, \quad R_3 - 20R_1 \rightarrow R_3
 $$
