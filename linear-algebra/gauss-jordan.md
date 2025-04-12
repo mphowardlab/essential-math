@@ -24,6 +24,7 @@ $$
 10{Q_2} + 25{Q_3}  &= 90
 \end{aligned}
 $$
+
 These equations can be written in matrix form as:
 
 $$
@@ -35,12 +36,28 @@ $$
 \end{bmatrix}
 $$
 
-Next, we apply row operations to simplify the matrix:
+Next we apply row operations to simplify the matrix
 
-1. Add row 1 to row 2 and subtract 20 times row 1 from row 3:
-   $$ 
-   \xrightarrow{\text{Row operations: } R_2 + R_1 \rightarrow R_2, \, R_3 - 20R_1 \rightarrow R_3}
-   $$
+### Gauss-Jordan Elimination Steps
+
+Start with the augmented matrix:
+
+$$
+\begin{bmatrix}
+1 & -1 & 1 & 0 \\
+-1 & 1 & -1 & 0 \\
+0 & 30 & -20 & 80 \\
+0 & 10 & 25 & 90
+\end{bmatrix}
+$$
+
+#### Step 1: Row Operations
+
+$$
+R_2 + R_1 \rightarrow R_2, \quad R_3 - 20R_1 \rightarrow R_3
+$$
+
+Resulting matrix:
 
 $$
 \begin{bmatrix}
@@ -51,11 +68,12 @@ $$
 \end{bmatrix}
 $$
 
-2. Swap rows 2 and 4:
+#### Step 2: Swap Rows
+$$
+R_2 \leftrightarrow R_4
+$$
 
-$$
-\xrightarrow{\text{Swap rows: } R_2 \leftrightarrow R_4}
-$$
+Matrix after swapping:
 
 $$
 \begin{bmatrix}
@@ -66,11 +84,13 @@ $$
 \end{bmatrix}
 $$
 
-3. Subtract 3 times row 2 from row 3:
+#### Step 3: Eliminate below diagonal
 
 $$
-\xrightarrow{R_3 - 3R_2 \rightarrow R_3}
+R_3 - 3R_2 \rightarrow R_3
 $$
+
+Resulting matrix:
 
 $$
 \begin{bmatrix}
@@ -81,11 +101,12 @@ $$
 \end{bmatrix}
 $$
 
-4. Divide row 3 by -95:
+#### Step 4: Simplify Row 3
+$$
+R_3 \div -95 \rightarrow R_3
+$$
 
-$$
-\xrightarrow{R_3 \div -95 \rightarrow R_3}
-$$
+Matrix after division:
 
 $$
 \begin{bmatrix}
@@ -96,11 +117,13 @@ $$
 \end{bmatrix}
 $$
 
-5. Subtract row 3 from row 1 and subtract 25 times row 3 from row 2:
+#### Step 5: Eliminate the Third Column
 
 $$
-\xrightarrow{\text{Row operations: } R_1 - R_3 \rightarrow R_1, \, R_2 - 25R_3 \rightarrow R_2}
+R_1 - R_3 \rightarrow R_1, \quad R_2 - 25R_3 \rightarrow R_2
 $$
+
+Resulting matrix:
 
 $$
 \begin{bmatrix}
@@ -111,11 +134,12 @@ $$
 \end{bmatrix}
 $$
 
-6. Divide row 2 by 10:
+#### Step 6: Simplify Row 2
+$$
+R_2 \div 10 \rightarrow R_2
+$$
 
-$$
-\xrightarrow{R_2 \div 10 \rightarrow R_2}
-$$
+Matrix after division:
 
 $$
 \begin{bmatrix}
@@ -126,11 +150,12 @@ $$
 \end{bmatrix}
 $$
 
-7. Add row 2 to row 1:
+#### Step 7: Final Elimination
+$$
+R_1 + R_2 \rightarrow R_1
+$$
 
-$$
-\xrightarrow{R_1 + R_2 \rightarrow R_1}
-$$
+Final matrix:
 
 $$
 \begin{bmatrix}
@@ -141,9 +166,10 @@ $$
 \end{bmatrix}
 $$
 
+### Final Solution:
+
 The solution to the system is:
 
 $$
 Q_1 = 2, \quad Q_2 = 4, \quad Q_3 = 2
 $$
----
