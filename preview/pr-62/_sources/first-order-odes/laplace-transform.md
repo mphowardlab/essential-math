@@ -49,8 +49,10 @@ The best method to narrow down this equation would be to use fraction decomposit
 \begin{align}
 \frac{1}{(s-1)(s^2)} &= \frac{A1}{(s-1)} + \frac{A2}{(s)} + \frac{A3}{(s^2)}\\
 &=\frac{1}{(s-1)}+\frac{A2}{(s)} - \frac{A3}{(s^2)}\\
-A1 &= \frac{1}{1^(1)} &= 1\\
-A3 &= \frac{1}{(0-1)} &= -1\\
+A1 &= \frac{1}{1^(1)}\\
+A1&= 1\\
+A3 &= \frac{1}{(0-1)} \\
+A3&= -1\\
 \end{align}
 
 Set all of the s-squared variables equal to each other and solve for A2
@@ -61,7 +63,7 @@ Set all of the s-squared variables equal to each other and solve for A2
 \begin{align}
 1+A2&=0\\
 A2&=-1\\
-\end {equation}
+\end {align}
 
 \begin{align}
 Y&=\frac{1}{(s-1)} + \frac{1}{(s-1)}-\frac{1}{s}-\frac{1}{s^(2)}\\
