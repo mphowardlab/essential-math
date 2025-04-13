@@ -21,24 +21,21 @@ A matrix is "nonsingular" if it has an inverse, and "singular" if it does not.
 
 If the inverse exists, it is unique and can be used to solve $Ax = b$.
 
-\[
+$$
 Ax = b 
 \xrightarrow{} (A^{-1}A)x = A^{-1}b 
 \xrightarrow{} \boxed{x = A^{-1}b}
-\]
+$$
 
+(*Note: \(Ib = b\) if the multiplication is defined.*)
 
-(\(Ib = b\) if the multiplication is defined.)
+**Two questions:**
 
+1. How do we know if \( A^{-1} \) exists (i.e., \( A \) is nonsingular)?  
+   ⇒ Determinants
 
-
-\textbf{Two questions:}
-\begin{enumerate}
-    \item How do we know if $A^{-1}$ exists ($A$ is nonsingular)?\\
-    \hspace*{1em} \(\Rightarrow\) Determinants
-    \item How do we compute $A^{-1}$?\\
-    \hspace*{1em} \(\Rightarrow\) Gauss-Jordan Elimination
-\end{enumerate}
+2. How do we compute \( A^{-1} \)?  
+   ⇒ Gauss-Jordan Elimination
 
 
 
@@ -48,51 +45,51 @@ Ax = b
 
 Finding the inverse of a is usually hard. There is a general definition using coafactors that we will not cover becuase it is hard to apply. There are also serveral numeric techniques, but we will not cover them because they are computationally intensive. Instead we will cover two options:
 
-### Inverse of a 2×2 Matrix
+Inverse of a $2 \times 2$ Matrix
 
-For a 2×2 matrix  
-\[
+For a $2 \times 2$ matrix  
+$$
 A = \begin{bmatrix} a & b \\ c & d \end{bmatrix},
-\]  
-the inverse is given by:  
-\[
-A^{-1} = \frac{1}{|A|} \begin{bmatrix} d & -b \\ -c & a \end{bmatrix}
-\]  
-*(flip a & d, change signs of b & c)*
+$$  
+the inverse is given by  
+$$
+A^{-1} = \frac{1}{\lvert A \rvert} \begin{bmatrix} d & -b \\ -c & a \end{bmatrix}
+$$  
+*(Flip $a$ and $d$, change the signs of $b$ and $c$)*
+
 
 ---
-
-### Example:
+ Example:
 
 Let  
-\[
+$
 A = \begin{bmatrix} 3 & 1 \\ 2 & 4 \end{bmatrix}
-\]
+$
 
 Compute the determinant:  
-\[
+$
 |A| = (3)(4) - (2)(1) = 12 - 2 = 10
-\]
+$
 
 So the inverse is:  
-\[
-A^{-1} = \frac{1}{10} \begin{bmatrix} 4 & -1 \\ -2 & 3 \end{bmatrix}
+$
+A^{-1} = \frac{1}{10} \begin{bmatrix} 4 & -1 \\ -2 & 3 \end{bmatrix} 
 = \begin{bmatrix} 0.4 & -0.1 \\ -0.2 & 0.3 \end{bmatrix}
-\]
+$
 
 For larger matrices, use the **Gauss–Jordan method** to solve  
-$$
+$
 AA^{-1} = I \quad \text{(Generalization of } Ax = b \text{)}
-$$
+$
 
 - Form augmented matrix  
-  $$
+  $
   \left[ A \,\middle|\, I \right] \quad \text{(}n \times 2n\text{)}
-  $$
+  $
 
 - Perform row operations to bring left side to $I$, so  
-  $$
+  $
   \left[ I \,\middle|\, A^{-1} \right]
-  $$
+  $
 
 - It may be helpful to check $|A| \neq 0$ first, in case $A$ is not invertible.
