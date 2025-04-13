@@ -31,10 +31,10 @@ $$
 
 **Two questions:**
 
-1. How do we know if \( A^{-1} \) exists (i.e., \( A \) is nonsingular)?  
+1. How do we know if \( $A^{-1}$ \) exists (i.e., \( A \) is nonsingular)?  
    ⇒ Determinants
 
-2. How do we compute \( A^{-1} \)?  
+2. How do we compute \( $A^{-1}$ \)?  
    ⇒ Gauss-Jordan Elimination
 
 
@@ -48,14 +48,12 @@ Finding the inverse of a is usually hard. There is a general definition using co
 Inverse of a $2 \times 2$ Matrix
 
 For a $2 \times 2$ matrix  
-$$
+$
 A = \begin{bmatrix} a & b \\ c & d \end{bmatrix},
 $$  
-the inverse is given by  
-$$
-A^{-1} = \frac{1}{\lvert A \rvert} \begin{bmatrix} d & -b \\ -c & a \end{bmatrix}
+ = \frac{1}{\lvert A \rvert} \begin{bmatrix} d & -b \\ -c & a \end{bmatrix}
 $$  
-*(Flip $a$ and $d$, change the signs of $b$ and $c$)*
+(Flip `a` and `d`, change the signs of `b` and `c`)
 
 
 ---
