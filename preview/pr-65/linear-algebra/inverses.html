@@ -428,108 +428,109 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="matrix-inversion">
 <h1><span class="section-number">3.5. </span>Matrix inversion<a class="headerlink" href="#matrix-inversion" title="Link to this heading">#</a></h1>
-<p>Gauss-Jordan elimination works well for solving ( Ax = b ) but the process needs to be repeated for every new b.</p>
-<p>Is there an alternative if we need to solve ( Ax = b ) for many different b?</p>
-<p>Matrix inverse. For a square (nxn) matrix A, the inverse A^{-1} satisfies</p>
-<p>(A*A^{-1}= A^{-1}*A = I ) where I is the nxn identity matrix</p>
-<p>begin{array}{ccc}
-1 &amp; 0 \
+<p>Gauss-Jordan elimination works well for solving  Ax = b  but the process needs to be repeated for every new b.</p>
+<p>Is there an alternative if we need to solve  Ax = b  for many different b?</p>
+<p>Matrix inverse. For a square (nxn) matrix A, the inverse (A^{-1}) satisfies</p>
+<p>[
+A A^{-1} = A^{-1} A = I
+] where I is the nxn identity matrix</p>
+<p>[</p>
+<div class="amsmath math notranslate nohighlight" id="equation-244b32dd-5dee-4a1d-a208-03b00da68097">
+<span class="eqno">(3.12)<a class="headerlink" href="#equation-244b32dd-5dee-4a1d-a208-03b00da68097" title="Permalink to this equation">#</a></span>\[\begin{bmatrix}
+1 &amp; 0 \\
 0 &amp; 1
-\end{array}
-\right]</p>
+\end{bmatrix}\]</div>
+<p>]</p>
 <p>A matrix is “nonsingular” if it has an inverse, and “singular” if it does not.</p>
-<p>If the inverse exists, it is unique and can be used to solve ( Ax = b )</p>
-<p>( Ax = b ) ( A \rightarrow B ) ((A^{-1}A)x = A^(-1)b) ( A \rightarrow B )
-[
-\boxed{x=A^{-1}b}
+<p>If the inverse exists, it is unique and can be used to solve  Ax = b</p>
+<p>[
+Ax = b \quad \Rightarrow \quad (A^{-1} \cdot A) x = A^{-1} \cdot b \quad \Rightarrow \quad \boxed{x = A^{-1} b}
 ]</p>
 <p>((Ib = b) if the multiplication is defined.)</p>
 <p>Two questions:</p>
 <ol class="arabic simple">
 <li><p>How do we know if A^{-1} exists (A is non singular)?
-( A \rightarrow B ) Determinants</p></li>
+( \rightarrow Determinants )</p></li>
 <li><p>How do we compute A^{-1}?
-( A \rightarrow B ) Gauss-Jordan elimination</p></li>
-<li><p>Inverse</p></li>
+( \rightarrow Gauss-Jordan elimination )</p></li>
 </ol>
+<p>2: Inverse</p>
 <p>Finding the inverse of a is usually hard. There is a general definition using coafactors that we will not cover becuase it is hard to apply. There are also serveral numeric techniques, but we will not cover them because they are computationally intensive. Instead we will cover two options:</p>
 <p>For a 2x2 matrix</p>
 <p>A = [</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2ca82d5d-24ee-493e-a1cc-0c9dcf23a3f7">
-<span class="eqno">(3.12)<a class="headerlink" href="#equation-2ca82d5d-24ee-493e-a1cc-0c9dcf23a3f7" title="Permalink to this equation">#</a></span>\[\begin{bmatrix}
+<div class="amsmath math notranslate nohighlight" id="equation-b486818e-13a0-4c09-8977-8966e87877a2">
+<span class="eqno">(3.13)<a class="headerlink" href="#equation-b486818e-13a0-4c09-8977-8966e87877a2" title="Permalink to this equation">#</a></span>\[\begin{bmatrix}
 a &amp; b \\
 c &amp; d
 \end{bmatrix}\]</div>
 <p>],</p>
+<p>\begin{itemize}
+\item For a <span class="math notranslate nohighlight">\(2 \times 2\)</span> matrix <span class="math notranslate nohighlight">\(A = \begin{bmatrix} a &amp; b \\ c &amp; d \end{bmatrix}\)</span>,
+[
+A^{-1} = \frac{1}{|A|} \begin{bmatrix} d &amp; -b \ -c &amp; a \end{bmatrix}
+\quad \text{(flip <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(d\)</span>, change signs of <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(c\)</span>)}
+]
+\end{itemize}</p>
+<p>\textbf{Example:}
+[
+A = \begin{bmatrix} 3 &amp; 1 \ 2 &amp; 4 \end{bmatrix}
+]</p>
 <p>[
-\boxed{A^{-1} = \frac{1}{|A|} [</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3da099bd-627e-4639-98e4-c9141a7587d5">
-<span class="eqno">(3.13)<a class="headerlink" href="#equation-3da099bd-627e-4639-98e4-c9141a7587d5" title="Permalink to this equation">#</a></span>\[\begin{bmatrix}
-a &amp; b \\
-c &amp; d
-\end{bmatrix}\]</div>
-<p>]}]</p>
-<p>(flip a+d, change signs of b+c)</p>
-<p>Ex:</p>
-<p>A = [</p>
-<div class="amsmath math notranslate nohighlight" id="equation-68fe6692-0cff-4a10-9582-9232b499b7ac">
-<span class="eqno">(3.14)<a class="headerlink" href="#equation-68fe6692-0cff-4a10-9582-9232b499b7ac" title="Permalink to this equation">#</a></span>\[\begin{bmatrix}
-3 &amp; 1 \\
-2 &amp; 4
-\end{bmatrix}\]</div>
-<p>]</p>
-<p>[A^{-1} = \frac{1}{10}</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b6d4bb84-447e-4d9b-ab79-e06c97470d6e">
-<span class="eqno">(3.15)<a class="headerlink" href="#equation-b6d4bb84-447e-4d9b-ab79-e06c97470d6e" title="Permalink to this equation">#</a></span>\[\begin{bmatrix}
+|A| = 3 \cdot 4 - 2 \cdot 1 = 12 - 2 = 10
+]
+[
+A^{-1} = \frac{1}{10} \begin{bmatrix} 4 &amp; -1 \ -2 &amp; 3 \end{bmatrix}
+= \begin{bmatrix} 0.4 &amp; -0.1 \ -0.2 &amp; 0.3 \end{bmatrix}
+]</p>
+<p>\textbf{Verify:}
+[
+A^{-1}A = \frac{1}{10}</p>
+<div class="amsmath math notranslate nohighlight" id="equation-3e971a1b-121d-41b0-bbd4-45fc01670340">
+<span class="eqno">(3.14)<a class="headerlink" href="#equation-3e971a1b-121d-41b0-bbd4-45fc01670340" title="Permalink to this equation">#</a></span>\[\begin{bmatrix}
 4 &amp; -1 \\
 -2 &amp; 3
 \end{bmatrix}\]</div>
-<p>=</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5f367e05-a3b7-400e-a13a-7cfb0edcea33">
-<span class="eqno">(3.16)<a class="headerlink" href="#equation-5f367e05-a3b7-400e-a13a-7cfb0edcea33" title="Permalink to this equation">#</a></span>\[\begin{bmatrix}
-0.4 &amp; -0.1 \\
--0.2 &amp; 0.3
-\end{bmatrix}\]</div>
-<p>]</p>
-<p>|A| = 12-2 = 10</p>
-<p>Verify:</p>
-<p>[
-A \cdot A^{-1} = \frac{1}{10}</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e8c8b597-aa78-4f2c-8cd5-f8bac0bf7a18">
-<span class="eqno">(3.17)<a class="headerlink" href="#equation-e8c8b597-aa78-4f2c-8cd5-f8bac0bf7a18" title="Permalink to this equation">#</a></span>\[\begin{bmatrix}
-4 &amp; -1 \\
--2 &amp; 3
-\end{bmatrix}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-769af7c0-246b-499f-aa39-19a5f14331df">
-<span class="eqno">(3.18)<a class="headerlink" href="#equation-769af7c0-246b-499f-aa39-19a5f14331df" title="Permalink to this equation">#</a></span>\[\begin{bmatrix}
+<div class="amsmath math notranslate nohighlight" id="equation-1899d831-0ee1-4081-9ce1-81a6884d44f1">
+<span class="eqno">(3.15)<a class="headerlink" href="#equation-1899d831-0ee1-4081-9ce1-81a6884d44f1" title="Permalink to this equation">#</a></span>\[\begin{bmatrix}
 3 &amp; 1 \\
 2 &amp; 4
 \end{bmatrix}\]</div>
 <p>= \frac{1}{10}</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f61f9ed7-c895-4847-bd04-7bbbed0f46c6">
-<span class="eqno">(3.19)<a class="headerlink" href="#equation-f61f9ed7-c895-4847-bd04-7bbbed0f46c6" title="Permalink to this equation">#</a></span>\[\begin{bmatrix}
-12-2 &amp; 4-4 \\
--6+6 &amp; -2+12
+<div class="amsmath math notranslate nohighlight" id="equation-9410b7b0-0188-4395-a29a-dccda82d5aae">
+<span class="eqno">(3.16)<a class="headerlink" href="#equation-9410b7b0-0188-4395-a29a-dccda82d5aae" title="Permalink to this equation">#</a></span>\[\begin{bmatrix}
+4 \cdot 3 + (-1) \cdot 2 &amp; 4 \cdot 1 + (-1) \cdot 4 \\
+-2 \cdot 3 + 3 \cdot 2 &amp; -2 \cdot 1 + 3 \cdot 4
+\end{bmatrix}\]</div>
+<p>= \frac{1}{10}</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c685695b-1f09-47ab-8482-947ec842b066">
+<span class="eqno">(3.17)<a class="headerlink" href="#equation-c685695b-1f09-47ab-8482-947ec842b066" title="Permalink to this equation">#</a></span>\[\begin{bmatrix}
+12 - 2 &amp; 4 - 4 \\
+-6 + 6 &amp; -2 + 12
+\end{bmatrix}\]</div>
+<p>= \frac{1}{10}</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ff7787bc-2ff9-4655-83e7-92fd5096fc72">
+<span class="eqno">(3.18)<a class="headerlink" href="#equation-ff7787bc-2ff9-4655-83e7-92fd5096fc72" title="Permalink to this equation">#</a></span>\[\begin{bmatrix}
+10 &amp; 0 \\
+0 &amp; 10
 \end{bmatrix}\]</div>
 <p>=</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ed991c35-7913-4f6b-9fc1-012ecdfa849f">
-<span class="eqno">(3.20)<a class="headerlink" href="#equation-ed991c35-7913-4f6b-9fc1-012ecdfa849f" title="Permalink to this equation">#</a></span>\[\begin{bmatrix}
+<div class="amsmath math notranslate nohighlight" id="equation-99358f52-c292-43fe-9c0c-35cd53f96120">
+<span class="eqno">(3.19)<a class="headerlink" href="#equation-99358f52-c292-43fe-9c0c-35cd53f96120" title="Permalink to this equation">#</a></span>\[\begin{bmatrix}
 1 &amp; 0 \\
 0 &amp; 1
 \end{bmatrix}\]</div>
 <p>]</p>
-<p>For bigger matricies, use the Gauss-Jordan methos to solve</p>
-<p>( A \cdot A^{-1} = I ) (generalization of ( Ax = b ))</p>
+<p>For larger matrices, use the \textbf{Gauss-Jordan method} to solve
+[
+AA^{-1} = I \quad \text{(Generalization of } Ax = b \text{)}
+]</p>
 <p>\begin{itemize}
-\item Form augmentd matrix [
-[A ; | ; I]
-] (nx2n)
-\item Perform row operations to bring left side to I, so [
-[I ; | ; A^{-1}]
+\item Form augmented matrix <span class="math notranslate nohighlight">\(\left[ A \,|\, I \right]\)</span> \quad (an <span class="math notranslate nohighlight">\(n \times 2n\)</span> matrix)
+\item Perform row operations to bring the left side to <span class="math notranslate nohighlight">\(I\)</span>, so that:
+[
+\left[ I ,|, A^{-1} \right]
 ]
-\item May be helpful to check [
-|A| \neq 0
-] first in case A is not invertable.
+\item It may be helpful to check that <span class="math notranslate nohighlight">\(|A| \neq 0\)</span> first, in case <span class="math notranslate nohighlight">\(A\)</span> is not invertible.
 \end{itemize}</p>
 </section>
 
