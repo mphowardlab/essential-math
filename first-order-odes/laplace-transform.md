@@ -65,10 +65,14 @@ Set all of the s-squared variables equal to each other and solve for A2
 A2&=-1\\
 \end{align}
 
+Plug in values and solve for Y
+
 \begin{align}
 Y&=\frac{1}{(s-1)} + \frac{1}{(s-1)}-\frac{1}{s}-\frac{1}{s^(2)}\\
 Y&=\frac{2}{(s-1)}-\frac{1}{s} - \frac{1}{(s^(2))}\\
 \end{align}
+
+Solve for y by applying the Inverse Laplace Tansform
 
 \begin{align}
 y&=L^{-1}[Y]\\
