@@ -401,7 +401,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -417,6 +419,15 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-of-a-22-matrix">3.5.1. Inverse of a 2×2 Matrix</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">3.5.2. Example:</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -428,111 +439,78 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="matrix-inversion">
 <h1><span class="section-number">3.5. </span>Matrix inversion<a class="headerlink" href="#matrix-inversion" title="Link to this heading">#</a></h1>
-<p>Gauss-Jordan elimination works well for solving  Ax = b  but the process needs to be repeated for every new b.</p>
+<p>Gauss-Jordan elimination works well for solving  <span class="math notranslate nohighlight">\(Ax = b\)</span>  but the process needs to be repeated for every new b.</p>
 <p>Is there an alternative if we need to solve  Ax = b  for many different b?</p>
 <p>Matrix inverse. For a square (nxn) matrix A, the inverse <span class="math notranslate nohighlight">\(A^{-1}\)</span> satisfies</p>
 <p>[
-A <span class="math notranslate nohighlight">\(A^{-1}\)</span> = <span class="math notranslate nohighlight">\(A^{-1}\)</span> A = I
+<span class="math notranslate nohighlight">\(A\)</span> <span class="math notranslate nohighlight">\(A^{-1}\)</span> = <span class="math notranslate nohighlight">\(A^{-1}\)</span> <span class="math notranslate nohighlight">\(A\)</span> = I
 ] where I is the nxn identity matrix</p>
-<p>\</p>
-<div class="amsmath math notranslate nohighlight" id="equation-331e91e9-6258-4052-9521-0414e8a4e10f">
-<span class="eqno">(3.12)<a class="headerlink" href="#equation-331e91e9-6258-4052-9521-0414e8a4e10f" title="Permalink to this equation">#</a></span>\[\begin{bmatrix}
+<div class="amsmath math notranslate nohighlight" id="equation-b0082f28-79da-4bb5-83f1-08843ddab844">
+<span class="eqno">(3.12)<a class="headerlink" href="#equation-b0082f28-79da-4bb5-83f1-08843ddab844" title="Permalink to this equation">#</a></span>\[\begin{bmatrix}
 1 &amp; 0 \\
 0 &amp; 1
 \end{bmatrix}\]</div>
-<p>\</p>
 <p>A matrix is “nonsingular” if it has an inverse, and “singular” if it does not.</p>
-<p>If the inverse exists, it is \textit{unique} and can be used to solve <span class="math notranslate nohighlight">\(Ax = b\)</span>!</p>
+<p>If the inverse exists, it is unique and can be used to solve <span class="math notranslate nohighlight">\(Ax = b\)</span>.</p>
 <p>[
-Ax = b \Rightarrow (A^{-1}A)x = A^{-1}b \Rightarrow \boxed{x = A^{-1}b}
+Ax = b
+\xrightarrow{} (A^{-1}A)x = A^{-1}b
+\xrightarrow{} \boxed{x = A^{-1}b}
 ]</p>
 <p>((Ib = b) if the multiplication is defined.)</p>
-<p>Two questions:</p>
-<ol class="arabic simple">
-<li><p>How do we know if <span class="math notranslate nohighlight">\(A^{-1}\)</span> exists (A is non singular)?
-\xrightarrow{\text{Determinants}}</p></li>
-<li><p>How do we compute <span class="math notranslate nohighlight">\(A^{-1}\)</span>?
-\xrightarrow{\text{Gauss-Jordan Elimination}}</p></li>
-</ol>
+<p>\textbf{Two questions:}
+\begin{enumerate}
+\item How do we know if <span class="math notranslate nohighlight">\(A^{-1}\)</span> exists (<span class="math notranslate nohighlight">\(A\)</span> is nonsingular)?\
+\hspace*{1em} (\Rightarrow) Determinants
+\item How do we compute <span class="math notranslate nohighlight">\(A^{-1}\)</span>?\
+\hspace*{1em} (\Rightarrow) Gauss-Jordan Elimination
+\end{enumerate}</p>
 <p>2: Inverse</p>
 <p>Finding the inverse of a is usually hard. There is a general definition using coafactors that we will not cover becuase it is hard to apply. There are also serveral numeric techniques, but we will not cover them because they are computationally intensive. Instead we will cover two options:</p>
-<p>For a 2x2 matrix</p>
-<p>A = \</p>
-<div class="amsmath math notranslate nohighlight" id="equation-369bd048-99cd-4530-b174-d65f6787d4b3">
-<span class="eqno">(3.13)<a class="headerlink" href="#equation-369bd048-99cd-4530-b174-d65f6787d4b3" title="Permalink to this equation">#</a></span>\[\begin{bmatrix}
-a &amp; b \\
-c &amp; d
-\end{bmatrix}\]</div>
-<p>$A^{-1}$</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> \item For a $2 \times 2$ matrix $A = \begin{bmatrix} a &amp; b \\ c &amp; d \end{bmatrix}$,
-\[
-A^{-1} = \frac{1}{|A|} \begin{bmatrix} d &amp; -b \\ -c &amp; a \end{bmatrix}
-\quad \text{(flip $a$ and $d$, change signs of $b$ and $c$)}
-\]
-</pre></div>
-</div>
-<p>\end{itemize}</p>
-<p>\textbf{Example:}
+<section id="inverse-of-a-22-matrix">
+<h2><span class="section-number">3.5.1. </span>Inverse of a 2×2 Matrix<a class="headerlink" href="#inverse-of-a-22-matrix" title="Link to this heading">#</a></h2>
+<p>For a 2×2 matrix<br />
+[
+A = \begin{bmatrix} a &amp; b \ c &amp; d \end{bmatrix},
+]<br />
+the inverse is given by:<br />
+[
+A^{-1} = \frac{1}{|A|} \begin{bmatrix} d &amp; -b \ -c &amp; a \end{bmatrix}
+]<br />
+<em>(flip a &amp; d, change signs of b &amp; c)</em></p>
+<hr class="docutils" />
+</section>
+<section id="example">
+<h2><span class="section-number">3.5.2. </span>Example:<a class="headerlink" href="#example" title="Link to this heading">#</a></h2>
+<p>Let<br />
 [
 A = \begin{bmatrix} 3 &amp; 1 \ 2 &amp; 4 \end{bmatrix}
 ]</p>
-<p>[
-|A| = 3 \cdot 4 - 2 \cdot 1 = 12 - 2 = 10
+<p>Compute the determinant:<br />
+[
+|A| = (3)(4) - (2)(1) = 12 - 2 = 10
 ]</p>
-<p>[
+<p>So the inverse is:<br />
+[
 A^{-1} = \frac{1}{10} \begin{bmatrix} 4 &amp; -1 \ -2 &amp; 3 \end{bmatrix}
 = \begin{bmatrix} 0.4 &amp; -0.1 \ -0.2 &amp; 0.3 \end{bmatrix}
 ]</p>
-<p>\textbf{Verify:}
-[
-A^{-1}*A = 1/10</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b4abffc2-1701-4946-acb3-15920d0e9e70">
-<span class="eqno">(3.14)<a class="headerlink" href="#equation-b4abffc2-1701-4946-acb3-15920d0e9e70" title="Permalink to this equation">#</a></span>\[\begin{bmatrix}
-4 &amp; -1 \\
--2 &amp; 3
-\end{bmatrix}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-419fe606-0789-41af-896b-496f19629c2f">
-<span class="eqno">(3.15)<a class="headerlink" href="#equation-419fe606-0789-41af-896b-496f19629c2f" title="Permalink to this equation">#</a></span>\[\begin{bmatrix}
-3 &amp; 1 \\
-2 &amp; 4
-\end{bmatrix}\]</div>
-<p>= 1/10</p>
-<div class="amsmath math notranslate nohighlight" id="equation-99c284b7-09eb-407f-95b0-e54332dcd685">
-<span class="eqno">(3.16)<a class="headerlink" href="#equation-99c284b7-09eb-407f-95b0-e54332dcd685" title="Permalink to this equation">#</a></span>\[\begin{bmatrix}
-4 \cdot 3 + (-1) \cdot 2 &amp; 4 \cdot 1 + (-1) \cdot 4 \\
--2 \cdot 3 + 3 \cdot 2 &amp; -2 \cdot 1 + 3 \cdot 4
-\end{bmatrix}\]</div>
-<p>= 1/10</p>
-<div class="amsmath math notranslate nohighlight" id="equation-57b98898-ab55-4738-b3ab-94135b84b548">
-<span class="eqno">(3.17)<a class="headerlink" href="#equation-57b98898-ab55-4738-b3ab-94135b84b548" title="Permalink to this equation">#</a></span>\[\begin{bmatrix}
-12 - 2 &amp; 4 - 4 \\
--6 + 6 &amp; -2 + 12
-\end{bmatrix}\]</div>
-<p>= 1/10</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6aaa2f54-be2d-493f-807a-b7b31d412447">
-<span class="eqno">(3.18)<a class="headerlink" href="#equation-6aaa2f54-be2d-493f-807a-b7b31d412447" title="Permalink to this equation">#</a></span>\[\begin{bmatrix}
-10 &amp; 0 \\
-0 &amp; 10
-\end{bmatrix}\]</div>
-<p>=</p>
-<div class="amsmath math notranslate nohighlight" id="equation-dc64135e-5c90-4aa6-9990-3c0f4dce9f9b">
-<span class="eqno">(3.19)<a class="headerlink" href="#equation-dc64135e-5c90-4aa6-9990-3c0f4dce9f9b" title="Permalink to this equation">#</a></span>\[\begin{bmatrix}
-1 &amp; 0 \\
-0 &amp; 1
-\end{bmatrix}\]</div>
-<p>\</p>
-<p>For larger matrices, use the \textbf{Gauss-Jordan method} to solve
-[
+<p>For larger matrices, use the <strong>Gauss–Jordan method</strong> to solve<br />
+$<span class="math notranslate nohighlight">\(
 AA^{-1} = I \quad \text{(Generalization of } Ax = b \text{)}
-]</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> Form augmented matrix $\left[ A \,|\, I \right]$  (an $n \times 2n$ matrix)
- Perform row operations to bring the left side to $I$, so that:
-\[
-</pre></div>
-</div>
-<p>\left[ I ,\middle|, A^{-1} \right]
-]
-\item It may be helpful to check that <span class="math notranslate nohighlight">\(|A| \neq 0\)</span> first, in case <span class="math notranslate nohighlight">\(A\)</span> is not invertible.</p>
+\)</span>$</p>
+<ul class="simple">
+<li><p>Form augmented matrix<br />
+$<span class="math notranslate nohighlight">\(
+\left[ A \,\middle|\, I \right] \quad \text{(}n \times 2n\text{)}
+\)</span>$</p></li>
+<li><p>Perform row operations to bring left side to <span class="math notranslate nohighlight">\(I\)</span>, so<br />
+$<span class="math notranslate nohighlight">\(
+\left[ I \,\middle|\, A^{-1} \right]
+\)</span>$</p></li>
+<li><p>It may be helpful to check <span class="math notranslate nohighlight">\(|A| \neq 0\)</span> first, in case <span class="math notranslate nohighlight">\(A\)</span> is not invertible.</p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -589,6 +567,22 @@ AA^{-1} = I \quad \text{(Generalization of } Ax = b \text{)}
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-of-a-22-matrix">3.5.1. Inverse of a 2×2 Matrix</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">3.5.2. Example:</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
