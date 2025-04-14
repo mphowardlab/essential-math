@@ -1,2 +1,4 @@
 # Series expansion
-Ex. Taylor Series for 
+Ex. Taylor Series for f(x) 
+\begin{equation}
+
