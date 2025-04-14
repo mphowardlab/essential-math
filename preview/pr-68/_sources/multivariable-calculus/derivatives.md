@@ -8,5 +8,5 @@
         Ex: $f(x,y) = x^2 cos \hspace{1cm} y$<br>
         $\hspace{3cm}\left( \frac{\partial f}{\partial x} \right)_y = 2x cos \hspace{1cm}y$ <br>
         $\hspace{3cm}\left( \frac{\partial^2 f}{\partial x^2} \right)_y = 2 cos \hspace{1cm} y \hspace{5cm} \frac{\partial^2 f}{\partial x \partial y} = -2x sin \hspace{1cm} y$ <br>
-        If all of f's second derivatives are continuous, the mixed second deviants are symmetric. <br>
-            $\boxed{\frac{\partial^2 f}{\partial x \partial y} = \frac{\partial^2 f}{\partial y \partial x}}  \hspace{5cm}  (\frac{\partial f}{\partial y}_i =-i^2 sin y$
+        If all of f's second derivatives are continuous, the mixed second derivatives are symmetric. <br>
+            $\boxed{\frac{\partial^2 f}{\partial x \partial y} = \frac{\partial^2 f}{\partial y \partial x}}  \hspace{5cm}  \left(\frac{\partial f}{\partial y}_x =-x^2 sin \hspace{1cm} y \hspace{3cm} \frac{\partial^2 f}{\partial x \partial y} = -2x \hspace{1cm} sin \hspace{1cm} y$
