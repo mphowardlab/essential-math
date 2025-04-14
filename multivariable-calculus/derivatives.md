@@ -9,4 +9,10 @@
         $\hspace{1cm}\left( \frac{\partial f}{\partial x} \right)_y = 2x \cos \hspace{.1cm}y$ <br>
         $\hspace{1cm}\left( \frac{\partial^2 f}{\partial x^2} \right)_y = 2 \cos \hspace{.1cm} y \hspace{1cm} \frac{\partial^2 f}{\partial x \partial y} = -2x \sin \hspace{.1cm} y$ <br><br>
         If all of f's second derivatives are continuous, the mixed second derivatives are symmetric. <br>
-            $\hspace{1cm}\boxed{\frac{\partial^2 f}{\partial x \partial y} = \frac{\partial^2 f}{\partial y \partial x}}  \hspace{1cm}  \left(\frac{\partial f}{\partial y}\right) _x =-x^2 \sin \hspace{.1cm} y \hspace{1cm} \frac{\partial^2 f}{\partial x \partial y} = -2x \hspace{.1cm} \sin \hspace{.1cm} y \hspace{.1cm} \checkmark$<br>
+            $\hspace{1cm}\boxed{\frac{\partial^2 f}{\partial x \partial y} = \frac{\partial^2 f}{\partial y \partial x}}  \hspace{1cm}  \left(\frac{\partial f}{\partial y}\right) _x =-x^2 \sin \hspace{.1cm} y \hspace{1cm} \frac{\partial^2 f}{\partial x \partial y} = -2x \hspace{.1cm} \sin \hspace{.1cm} y \hspace{.1cm} \checkmark$<br><br>
+            The <ins>total</ins> <ins>differential</ins> of f is the sum of partial derivatives<br><br>
+            $\hspace{1cm}\boxed{df=\right(frac{\partial f}{\partial y}\left)_y dx + \left(frac{\partial f}{partial y}\right)_x dy }$<br>
+            $\hspace{1cm}$ Ex: df = 2x cos y dx - $x^2$ sin y dy<br><br>
+            The total differental can be used to form other derivatives, based on the dependencies of x and y.<br>
+            $\hspace{1cm}$Ex:x(f) amd y(f) $ \rightarrow $
+
