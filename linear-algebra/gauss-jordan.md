@@ -32,6 +32,7 @@ Q_1 - Q_2 + Q_3 &= 0 \\
 \end{aligned}
 \end{align*}
 $$
+
 These equations can be written in matrix form as:
 
 $$
@@ -59,7 +60,9 @@ $$
 $$
 
  Step 1: Row Operations
+
 Elimination of a redundant row and removal of first pivot column
+
 $
 R_2 + R_1 \rightarrow R_2, \quad R_3 - 20R_1 \rightarrow R_3
 $
@@ -76,6 +79,7 @@ $$
 $$
 
  Step 2: Swap Rows
+
 $$
 R_2 \leftrightarrow R_4
 $$
@@ -109,6 +113,7 @@ $$
 $$
 
  Step 4: Simplify Row 3
+
 $$
 R_3 \div -95 \rightarrow R_3
 $$
@@ -142,6 +147,7 @@ $$
 $$
 
  Step 6: Simplify Row 2
+
 $$
 R_2 \div 10 \rightarrow R_2
 $$
@@ -158,6 +164,7 @@ $$
 $$
 
  Step 7: Final Elimination
+ 
 $$
 R_1 + R_2 \rightarrow R_1
 $$
