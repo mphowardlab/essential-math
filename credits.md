@@ -8,6 +8,7 @@ This work (c) 2025 is licensed under
 ## Contributors
 
 - Michael P. Howard
+- John R. Marshall, IV
 
 ## Attributions
 
