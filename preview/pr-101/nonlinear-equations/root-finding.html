@@ -440,7 +440,7 @@ document.write(`
 <h1><span class="section-number">4.2. </span>Root finding methods<a class="headerlink" href="#root-finding-methods" title="Link to this heading">#</a></h1>
 <section id="newton-raphson-method">
 <h2><span class="section-number">4.2.1. </span>Newton-Raphson Method<a class="headerlink" href="#newton-raphson-method" title="Link to this heading">#</a></h2>
-<p>The idea is to <em>linearize</em> the nonlinear system, then solve the linear problem.\
+<p>The idea is to <em>linearize</em> the nonlinear system, then solve the linear problem.
 This will converge quickly for many functions.</p>
 <p><span class="math notranslate nohighlight">\(\displaystyle f(x) \approx f(x_0) + f'(x_0)(x - x_0)\)</span>.</p>
 <p>Using the first-order Taylor series expansion about <span class="math notranslate nohighlight">\(x_n\)</span>:</p>
@@ -448,27 +448,28 @@ This will converge quickly for many functions.</p>
 <p>We want to find the root, so we set <span class="math notranslate nohighlight">\(f(x_{n+1}) = 0\)</span>:</p>
 <p><span class="math notranslate nohighlight">\(\displaystyle 0 = f(x_n) + f'(x_n)(x_{n+1} - x_n)\)</span></p>
 <p>Solving for <span class="math notranslate nohighlight">\(\displaystyle x_{n+1}\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c308640a-adde-4f74-a281-ae97c1ea4b74">
-<span class="eqno">(4.1)<a class="headerlink" href="#equation-c308640a-adde-4f74-a281-ae97c1ea4b74" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-752a5762-2127-4038-9b1a-9da5297d6634">
+<span class="eqno">(4.1)<a class="headerlink" href="#equation-752a5762-2127-4038-9b1a-9da5297d6634" title="Permalink to this equation">#</a></span>\[\begin{align}
 \includegraphics{newton_raphson_graph.png}
 \end{align}\]</div>
 <p>The figure shows how the method iteratively converges to the root by using the tangent line at the current guess to find a better approximation.</p>
-<p>The algorithm for the Newton-Raphson method is:</p>
+<p>The algorithm for the Newton-Raphson method is: \</p>
 <ol class="arabic simple">
 <li><p>Guess x_0 and set n = 0.</p></li>
-<li><p>Compute <span class="math notranslate nohighlight">\(f(x_n)\)</span> and <span class="math notranslate nohighlight">\(f'(x_n)\)</span>. If <span class="math notranslate nohighlight">\(\f(x_n)\)</span> is ``close’’ to zero, stop.</p></li>
-<li><p>item Update <span class="math notranslate nohighlight">\(x_{n+1}\)</span> using <span class="math notranslate nohighlight">\(\x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}\)</span> then return to step 2.</p></li>
+<li><p>Compute <span class="math notranslate nohighlight">\(f(x_n)\)</span> and <span class="math notranslate nohighlight">\(f'(x_n)\)</span>. If <span class="math notranslate nohighlight">\(f(x_n)\)</span> is ``close’’ to zero, stop.</p></li>
+<li><p>item Update <span class="math notranslate nohighlight">\(x_{n+1}\)</span> using <span class="math notranslate nohighlight">\(x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}\)</span> then return to step 2.</p></li>
 </ol>
 <div class="admonition-example-solve-displaystyle-x-2-2 admonition">
 <p class="admonition-title">Example: Solve <span class="math notranslate nohighlight">\(\displaystyle x^2 = 2\)</span></p>
-<p>We can rewrite this as:
-<span class="math notranslate nohighlight">\(\displaystyle f(x) = x^2 - 2\)</span>
-<span class="math notranslate nohighlight">\(\displaystyle f'(x) = 2x\)</span>
+<p>We can rewrite this as:\
+<span class="math notranslate nohighlight">\(\displaystyle f(x) = x^2 - 2\)</span>\
+<span class="math notranslate nohighlight">\(\displaystyle f'(x) = 2x\)</span>\
 Let the initial guess be <span class="math notranslate nohighlight">\(x_0 = 1\)</span>.</p>
 <p>\section</p>
 <p>\begin{center}
 \begin{tabular}{c|c|c|c|c}
 <span class="math notranslate nohighlight">\(n\)</span> &amp; <span class="math notranslate nohighlight">\(x_n\)</span> &amp; <span class="math notranslate nohighlight">\(f(x_n)\)</span> &amp; <span class="math notranslate nohighlight">\(f'(x_n)\)</span> &amp; <span class="math notranslate nohighlight">\(x_{n+1}\)</span> \
+\hline
 0 &amp; 1.000 &amp; -1.000 &amp; 2.000 &amp; 1.500 \
 1 &amp; 1.500 &amp; 0.250 &amp; 3.000 &amp; 1.417 \
 2 &amp; 1.417 &amp; <span class="math notranslate nohighlight">\(6.94 \times 10^{-3}\)</span> &amp; 2.833 &amp; 1.414 \
@@ -476,12 +477,13 @@ Let the initial guess be <span class="math notranslate nohighlight">\(x_0 = 1\)<
 \end{center}</p>
 </div>
 <div class="admonition-example-solve-e-x-2-x-0 admonition">
-<p class="admonition-title">Example: Solve ( e^{-x^2} - x = 0 )</p>
-<p>We define <span class="math notranslate nohighlight">\(\displaystyle f(x) = e^{-x^2} - x, \quad f'(x) = -2x e^{-x^2} - 1\$
-Using an initial guess \( x_0 = 0 \).
-\begin{center}
+<p class="admonition-title">Example: Solve <span class="math notranslate nohighlight">\(e^{-x^2} - x = 0\)</span></p>
+<p>We define <span class="math notranslate nohighlight">\(f(x) = e^{-x^2} - x\)</span>
+<span class="math notranslate nohighlight">\(f'(x) = -2x e^{-x^2} - 1\$
+Using an initial guess \)</span>x_0 = 0$.</p>
+<p>\begin{center}
 \begin{tabular}{c|c|c|c|c}
-    \)</span>n<span class="math notranslate nohighlight">\( &amp; \)</span>x_n<span class="math notranslate nohighlight">\( &amp; \)</span>f(x_n)<span class="math notranslate nohighlight">\( &amp; \)</span>f’(x_n)<span class="math notranslate nohighlight">\( &amp; \)</span>x_{n+1}$ \
+<span class="math notranslate nohighlight">\(n\)</span> &amp; <span class="math notranslate nohighlight">\(x_n\)</span> &amp; <span class="math notranslate nohighlight">\(f(x_n)\)</span> &amp; <span class="math notranslate nohighlight">\(f'(x_n)\)</span> &amp; <span class="math notranslate nohighlight">\(x_{n+1}\)</span> \
 0 &amp; 0.000 &amp; 1.000 &amp; -1.000 &amp; 1.000 \
 1 &amp; 1.000 &amp; -0.6321 &amp; -1.736 &amp; 0.6358 \
 2 &amp; 0.6358 &amp; 0.03164 &amp; -1.949 &amp; 0.6529 \
@@ -489,7 +491,7 @@ Using an initial guess \( x_0 = 0 \).
 \end{center}</p>
 </div>
 <p>Note that this method can converge much more rapidly than the fixed-point or bisection methods.</p>
-<p>It will fail when f’(x_n) = 0.</p>
+<p>It will fail when <span class="math notranslate nohighlight">\(f'(x_n) = 0\)</span>.</p>
 </section>
 </section>
 
