@@ -34,6 +34,8 @@ $$
  u = e^-st  dv = y' dt                      = \left\[ 0 - y \left\( 0 \right\) \right\] + s \int_0^\infty \e^-st y \dt\
  du = -se^-st   v = y                       = s L \left\[ f \right\] - y \left\( 0 \right\)
                                             = s Y \left\( s \right\) - y \left\( 0 \right\)
+```
+````
 
 
 
