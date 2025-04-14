@@ -8,7 +8,7 @@ $$y'=xe^{-6x} \to \int1dy=\int(xe^{-6x}dx)$$
 
 Remember:
 
-$$\int(e^xdx)=e^x+c (1)
+$$\int(e^xdx)=e^x+c 
 
 \int(xe^{x^2}dx) = \frac{1}{2}e^{x^2}+c$$ (2)
 
@@ -48,7 +48,9 @@ Apply this to the example above:
 
 $$\int(xe^{-6x}dx)$$
 
-Let $u=x$ , which gives $du=dx$ , and $dv=e^{-6x}dx$ , which gives $v=\frac{-1}{6}e^{-6x}$. Then,
+Let $u=x$ , which gives $du=dx$ , and $dv=e^{-6x}dx$ , which gives $v=\frac{-1}{6}e^{-6x}$. 
+
+Then,
 
 $$\int(xe^{-6x}dx) = x\frac{-e^{-6x}}{6} - \int\frac{-e^{-6x}}{6}dx = x\frac{-e^{-6x}}{6} + \frac{-1}{6}\int(e^{-6x}dx) = x\frac{-e^{-6x}}{6} - \frac{-e^{-6x}}{36} + c$$
 ````
@@ -57,7 +59,7 @@ How do we choose u vs. v?
 
 L.I.A.T.E
 
-Logarithmic \to best choice of u
+Logarithmic  (best choice of u)
 
 Inverse
 
@@ -65,7 +67,14 @@ Algebraic
 
 Trigonometric
 
-Exponential \to worst choice of u
+Exponential  (worst choice of u)
 
 ````{example} 1.6.2
 
+$$\int(3x+5)\cos{\frac{x}{4}}dx$$ 
+
+Let $u=3x+5$ , which makes $du=3dx$ , and $dv=\cos{\frac{x}{4}}dx$ , which makes $v=4\sin{\frac{x}{4}}$
+
+Which allows:
+
+$$\int(3x+5)\cos{\frac{x}{4}}dx = (3x+5)[4\sin{\frac{x}{4}}] - \int4\sin{\frac{x}{4}}3dx = (12x+20)[4\sin{\frac{x}{4}}] - 12\int\sin{\frac{x}{4}}dx = (12x+20)[4\sin{\frac{x}{4}}] + 48\cos{\frac{x}{4}} + c$$
