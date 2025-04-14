@@ -65,7 +65,7 @@ We use the augmented matrix form:
 \tag{7}
 \end{equation}
 
-### Step 1: Eliminate row redundancy and simplify
+ Step 1: Eliminate row redundancy and simplify
 
 $$
 R_2 + R_1 \rightarrow R_2, \quad R_3 - 20R_1 \rightarrow R_3
@@ -83,7 +83,7 @@ $$
 
 ---
 
-### Step 2: Swap rows to move pivot
+ Step 2: Swap rows to move pivot
 
 $$
 R_2 \leftrightarrow R_4
@@ -101,7 +101,7 @@ $$
 
 ---
 
-### Step 3: Eliminate below pivot in column 2
+Step 3: Eliminate below pivot in column 2
 
 $$
 R_3 - 3R_2 \rightarrow R_3
@@ -119,7 +119,7 @@ $$
 
 ---
 
-### Step 4: Normalize row 3
+Step 4: Normalize row 3
 
 $$
 R_3 \div -95 \rightarrow R_3
@@ -137,7 +137,7 @@ $$
 
 ---
 
-### Step 5: Eliminate above values in column 3
+Step 5: Eliminate above values in column 3
 
 $$
 R_1 - R_3 \rightarrow R_1, \quad R_2 - 25R_3 \rightarrow R_2
@@ -155,7 +155,7 @@ $$
 
 ---
 
-### Step 6: Normalize row 2
+Step 6: Normalize row 2
 
 $$
 R_2 \div 10 \rightarrow R_2
@@ -173,7 +173,7 @@ $$
 
 ---
 
-### Step 7: Eliminate column 2 in row 1
+Step 7: Eliminate column 2 in row 1
 
 $$
 R_1 + R_2 \rightarrow R_1
