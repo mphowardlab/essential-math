@@ -3,7 +3,12 @@
 When solving seperable ODEs, we may need to integrate complicated functions
 
 ````{example} Example
-$$y'=xe^[-6x]$ \to $\intdy=\int(xe^[-6x]dx)$$
+$$y'=xe^{-6x} \to \int1dy=\int(xe^[-6x]dx)$$
 
-Remember: \begin{align}
-$$\int(e^xdx)=e^x+c$$
+Remember:
+
+$$\int(e^xdx)=e^x+c
+
+\intxe^{x^2} = \frac{1}{2}e^{x^2}+c
+
+We can solve this by u-substitution
