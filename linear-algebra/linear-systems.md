@@ -12,9 +12,12 @@ a_{m1}x_{1} + ... + a_{mn}x_{n} = b_{n}
 \end{equation}
 
 
-Unknowns: \begin{equation} x_{1}, ..., x_{n} \end{equation} (n)
-Coefficients: \begin{equation} a_{mn} (mxn)
-\end{equation}
+Unknowns: 
+\begin{equation} x_{1}, ..., x_{n} \end{equation} (n)
+
+Coefficients: 
+\begin{equation} a_{mn} \end{equation} (mxn)
+
 
 \begin{equation}
 \begin{bmatrix} a_{11} & ... & a_{1n} \\ ... &     & ... \\ a_{m1} & ... & a_{mn} \end{bmatrix}
