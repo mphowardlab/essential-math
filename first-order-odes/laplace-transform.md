@@ -37,6 +37,10 @@ $$
 ```
 ````
 
+Reminder from integration by parts lecture
+
+    F \left\( s \right\) = L \left\[ f \left\( t \right\) \right\] = \int_0^\infty \e^-st \f\left\( t \right\) dt
+
 
 
 
