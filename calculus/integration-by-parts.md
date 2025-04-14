@@ -2,7 +2,9 @@
 
 When solving seperable ODEs, we may need to integrate complicated functions
 
-ex: $$y'=xe^{-6x} \to \int1dy=\int(xe^{-6x}dx)$$
+ex: 
+
+$$y'=xe^{-6x} \to \int1dy=\int(xe^{-6x}dx)$$
 
 Remember:
 
@@ -42,11 +44,28 @@ $$uv=\int(udv)+\int(vdu)
 
 Apply this to the example above:
 
-````{example} Example 1:
+````{example} 1.6.1
 
 $$\int(xe^{-6x}dx)$$
 
-Let $u=x$ , which gives $du=dx$$ , and $dv=e^{-6x}dx$ , which gives $v=\frac{-1}{6}e^{-6x}$. Then,
+Let $u=x$ , which gives $du=dx$ , and $dv=e^{-6x}dx$ , which gives $v=\frac{-1}{6}e^{-6x}$. Then,
 
-$$\int(xe^{-6x}dx) = x\frac{-e^{-6x}}{6} - \int\frac{-e^{-6x}}{6}dx = x\frac{-e^{-6x}}{6} + \frac{-1}{6}\int(e^{-6x}dx) = x\frac{-e^{-6x}}{6} - x\frac{-e^{-6x}}{36} + c$$
+$$\int(xe^{-6x}dx) = x\frac{-e^{-6x}}{6} - \int\frac{-e^{-6x}}{6}dx = x\frac{-e^{-6x}}{6} + \frac{-1}{6}\int(e^{-6x}dx) = x\frac{-e^{-6x}}{6} - \frac{-e^{-6x}}{36} + c$$
 ````
+
+How do we choose u vs. v?
+
+L.I.A.T.E
+
+Logarithmic \to best choice of u
+
+Inverse
+
+Algebraic
+
+Trigonometric
+
+Exponential \to worst choice of u
+
+````{example} 1.6.2
+
