@@ -9,4 +9,4 @@
         $\left( \frac{\partial f}{\partial x} \right)_y = 2x cos y$ <br>
         $\left( \frac{\partial^2 f}{\partial x^2} \right)_y = 2 cos y      \frac{\partial^2 f}{\partial x \partial y} = -2x sin y$ <br>
         If all of f's second derivatives are continuous, the mixed second deviants are symmetric. <br>
-            $\boxed{\frac{\partial^2 f}{\partial x \partial y} = \frac{\partial^2 f}{\partial y \partial x}}    $
+            $\boxed{\frac{\partial^2 f}{\partial x \partial y} = \frac{\partial^2 f}{\partial y \partial x}}    (\frac{\partial f}{\partial y}_i =-i^2 sin y$
