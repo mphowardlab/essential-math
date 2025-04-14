@@ -71,10 +71,34 @@ Exponential  (worst choice of u)
 
 ````{example} 1.6.2
 
-$$\int(3x+5)\cos{\frac{x}{4}}dx$$ 
+$$\int(3x+5)\cos{\frac{x}{4}}dx = ?$$ 
 
 Let $u=3x+5$ , which makes $du=3dx$ , and $dv=\cos{\frac{x}{4}}dx$ , which makes $v=4\sin{\frac{x}{4}}$
 
 Which allows:
 
-$$\int(3x+5)\cos{\frac{x}{4}}dx = (3x+5)[4\sin{\frac{x}{4}}] - \int4\sin{\frac{x}{4}}3dx = (12x+20)[4\sin{\frac{x}{4}}] - 12\int\sin{\frac{x}{4}}dx = (12x+20)[4\sin{\frac{x}{4}}] + 48\cos{\frac{x}{4}} + c$$
+$$\int(3x+5)\cos{\frac{x}{4}}dx = (3x+5)[4\sin{\frac{x}{4}}] - \int4\sin{\frac{x}{4}}3dx = (12x+20)[\sin{\frac{x}{4}}] - 12\int\sin{\frac{x}{4}}dx = (12x+20)[4\sin{\frac{x}{4}}] + 48\cos{\frac{x}{4}} + c$$
+
+So...
+
+$$\int(3x+5)\cos{\frac{x}{4}}dx = (12x+20)[4\sin{\frac{x}{4}}] + 48\cos{\frac{x}{4}} + c$$
+````
+
+````{example} 1.6.3
+
+$$\intx^4e^{\frac{x}{2}}dx = ?$$
+
+Let $u=x^4$ , which makes $du=4x^3$ , and $dv=e^{\frac{x}{2}}dx$ , which makes $v=2e^{\frac{x}{2}}$
+
+$$\intx^4e^{\frac{x}{2}}dx = x^4(2e^{\frac{x}{2}}) - \int2e^{\frac{x}{2}}4x^3dx$$
+
+We will need to integrate by parts again but there is a shortcut!!
+
+| u     | dv                |
+|-------|-------------------|
+| x^4   | e^{\frac{x}{2}}   |
+| 4x^3  | 2e^{\frac{x}{2}}  |
+| 12x^2 | 4e^{\frac{x}{2}}  |
+| 24x   | 8e^{\frac{x}{2}}  |
+| 24    | 16e^{\frac{x}{2}} |
+| 0     | 32e^{\frac{x}{2}} |
