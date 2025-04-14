@@ -11,6 +11,8 @@ where \( ΔP \) is the pressure change, \( R \) is the resistance, and \( Q \) i
 
 ```{image} ./_images/FluidCircuitImage.png
 :alt: Fluid System Modeled as Circuit
+:align: center
+:class: mb-4
 ```
 
 Based on the flow diagram, the balance equations for the nodes and loop are:
