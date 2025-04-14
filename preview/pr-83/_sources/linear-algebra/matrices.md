@@ -115,5 +115,5 @@ longer course on linear algebra!
 
 #new page 
 
-*2. Matrix Operations*
-- *Equality*: A=B
+**2. Matrix Operations**
+- *Equality*: **A**= **B**
