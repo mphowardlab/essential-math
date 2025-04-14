@@ -3,19 +3,19 @@
 
 **<ins>Two Real Solutions</ins>**
 
-![alt text](<_images/Two Real Solutions.png>)
+![Graph of the function x squared minus 1 equals 0. A parabola opening upwards, crossing the x-axis at x = -1 and x = 1, indicating two real roots.](<_images/Two Real Solutions.png>)
 
 $x^2 - 1 = 0$ $\rightarrow$ $x = \pm$ 1
 
 **<ins> One (Duplicate) Solution </ins>**
 
-![alt text](<_images/One (Duplicate) Solution.png>)
+![Graph of the function open parenthesis x minus 1 close parenthesis squared equals 0. A parabola touching the x-axis only at x = 1, indicating one repeated real root.](<_images/One (Duplicate) Solution.png>)
 
 $(x-1)^2 = 0 $ $\rightarrow$ $x = 1$
 
 **<ins> Complex Solution </ins>**
 
-![alt text](<_images/Complex Solution.png>)
+![Graph of the function x squared plus 1 equals 0. A parabola opening upwards with its vertex above the x-axis and no intersection with the x-axis, indicating two complex solutions.](<_images/Complex Solution.png>)
 
 $x^2 + 1 = 0 $ $\rightarrow$ $x =\pm i $
 
