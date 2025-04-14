@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>3.3. Gauss–Jordan elimination &#8212; Essential Mathematics for Chemical Engineers</title>
+    <title>3.3. Gauss–Jordan Elimination &#8212; Essential Mathematics for Chemical Engineers</title>
   
   
   
@@ -63,7 +63,7 @@
     <link rel="canonical" href="https://mphowardlab.github.io/essential-math/linear-algebra/gauss-jordan.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3.5. Determinants" href="determinants.html" />
+    <link rel="next" title="3.4. Determinants" href="determinants.html" />
     <link rel="prev" title="3.2. Systems of linear equations" href="linear-systems.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -191,11 +191,10 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">3. Linear algebra</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="matrices.html">3.1. Matrices and vectors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="linear-systems.html">3.2. Systems of linear equations</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.3. Gauss–Jordan elimination</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="determinants.html">3.5. Determinants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="inverses.html">3.6. Matrix inversion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="eigenvalue-problem.html">3.7. Eigenvalue problem</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.3. Gauss–Jordan Elimination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="determinants.html">3.4. Determinants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inverses.html">3.5. Matrix inversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eigenvalue-problem.html">3.6. Eigenvalue problem</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../nonlinear-equations/index.html">4. Nonlinear equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -415,7 +414,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Gauss–Jordan elimination</h1>
+    <h1>Gauss–Jordan Elimination</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -425,27 +424,19 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">3.3. Gauss–Jordan elimination</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem">3.3.1. Example Problem:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-with-gauss-jordan-elimination">3.3.2. Solving with Gauss-Jordan Elimination</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem">3.3.1. Example Problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussjordan-elimination-steps">3.3.2. Gauss–Jordan Elimination Steps</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-eliminate-row-redundancy-and-simplify">3.3.2.1. Step 1: Eliminate row redundancy and simplify</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-swap-rows-to-move-pivot">3.3.2.2. Step 2: Swap rows to move pivot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-eliminate-below-pivot-in-column-2">3.3.2.3. Step 3: Eliminate below pivot in column 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-normalize-row-3">3.3.2.4. Step 4: Normalize row 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-eliminate-above-values-in-column-3">3.3.2.5. Step 5: Eliminate above values in column 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-normalize-row-2">3.3.2.6. Step 6: Normalize row 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-7-eliminate-column-2-in-row-1">3.3.2.7. Step 7: Eliminate column 2 in row 1</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.4. Gauss–Jordan Elimination</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussjordan-elimination-steps">3.4.1. Gauss–Jordan Elimination Steps</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-eliminate-row-redundancy-and-simplify">3.4.1.1. Step 1: Eliminate row redundancy and simplify</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-swap-rows-to-move-pivot">3.4.1.2. Step 2: Swap rows to move pivot</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-eliminate-below-pivot-in-column-2">3.4.1.3. Step 3: Eliminate below pivot in column 2</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-normalize-row-3">3.4.1.4. Step 4: Normalize row 3</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-eliminate-above-values-in-column-3">3.4.1.5. Step 5: Eliminate above values in column 3</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-normalize-row-2">3.4.1.6. Step 6: Normalize row 2</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-7-eliminate-column-2-in-row-1">3.4.1.7. Step 7: Eliminate column 2 in row 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-result">3.3.3. Final Result</a></li>
 </ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-result">3.4.2. Final Result</a></li>
-</ul>
-</li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -457,202 +448,35 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="gaussjordan-elimination">
-<h1><span class="section-number">3.3. </span>Gauss–Jordan elimination<a class="headerlink" href="#gaussjordan-elimination" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">3.3. </span>Gauss–Jordan Elimination<a class="headerlink" href="#gaussjordan-elimination" title="Link to this heading">#</a></h1>
 <section id="example-problem">
-<h2><span class="section-number">3.3.1. </span>Example Problem:<a class="headerlink" href="#example-problem" title="Link to this heading">#</a></h2>
-<p>Incompressible flow can be written analogous to an electrical circuit as:</p>
-<div class="math notranslate nohighlight">
-\[
- -ΔP = RQ     
-\]</div>
-<p>where ( ΔP ) is the pressure change, ( R ) is the resistance to flow, and ( Q ) is the volumetric flow rate.</p>
-<img alt="Fluid System Modeled as Circuit" src="../_images/FluidCircuitImage.png" />
-<p>We can represent the system of equations as follows:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{align*}
-\begin{aligned}
-Q_1 + Q_3 &amp;= Q_2 \\
-Q_1 - Q_2 + Q_3 &amp;= 0 \\
-20Q_1 + 10Q_2 &amp;= 80 \\
-10Q_2 + 25Q_3 &amp;= 90
-\end{aligned}
-\quad
-\xrightarrow{\text{rearrange}}
-\quad
-\begin{aligned}
-Q_1 + Q_3 - Q_2 &amp;= 0 \\
-Q_1 - Q_2 + Q_3 &amp;= 0 \\
-20Q_1 + 10Q_2 &amp;= 80 \\
-10Q_2 + 25Q_3 &amp;= 90
-\end{aligned}
-\end{align*}
-\end{split}\]</div>
-<p>These equations can be written in matrix form as:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{bmatrix}
-1 &amp; -1 &amp; 1 &amp; 0 \\
--1 &amp; 1 &amp; -1 &amp; 0 \\
-20 &amp; 10 &amp; 0 &amp; 80 \\
-0 &amp; 10 &amp; 25 &amp; 90
-\end{bmatrix}
-\end{split}\]</div>
-<p>Next we apply row operations to simplify the matrix</p>
-</section>
-<section id="solving-with-gauss-jordan-elimination">
-<h2><span class="section-number">3.3.2. </span>Solving with Gauss-Jordan Elimination<a class="headerlink" href="#solving-with-gauss-jordan-elimination" title="Link to this heading">#</a></h2>
-<p>Start with the augmented matrix:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{bmatrix}
-1 &amp; -1 &amp; 1 &amp; 0 \\
--1 &amp; 1 &amp; -1 &amp; 0 \\
-0 &amp; 30 &amp; -20 &amp; 80 \\
-0 &amp; 10 &amp; 25 &amp; 90
-\end{bmatrix}
-\end{split}\]</div>
-<p>Step 1: Row Operations</p>
-<p>Elimination of a redundant row and removal of first pivot column</p>
-<p><span class="math notranslate nohighlight">\(
-R_2 + R_1 \rightarrow R_2, \quad R_3 - 20R_1 \rightarrow R_3
-\)</span></p>
-<p>Resulting matrix:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{bmatrix}
-1 &amp; -1 &amp; 1 &amp; 0 \\
-0 &amp; 0 &amp; 0 &amp; 0 \\
-0 &amp; 30 &amp; -20 &amp; 80 \\
-0 &amp; 10 &amp; 25 &amp; 90
-\end{bmatrix}
-\end{split}\]</div>
-<p>Step 2: Swap Rows</p>
-<div class="math notranslate nohighlight">
-\[
-R_2 \leftrightarrow R_4
-\]</div>
-<p>Matrix after swapping:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{bmatrix}
-1 &amp; -1 &amp; 1 &amp; 0 \\
-0 &amp; 10 &amp; 25 &amp; 90 \\
-0 &amp; 30 &amp; -20 &amp; 80 \\
-0 &amp; 0 &amp; 0 &amp; 0
-\end{bmatrix}
-\end{split}\]</div>
-<p>Step 3: Eliminate below diagonal</p>
-<div class="math notranslate nohighlight">
-\[
-R_3 - 3R_2 \rightarrow R_3
-\]</div>
-<p>Resulting matrix:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{bmatrix}
-1 &amp; -1 &amp; 1 &amp; 0 \\
-0 &amp; 10 &amp; 25 &amp; 90 \\
-0 &amp; 0 &amp; -95 &amp; -190 \\
-0 &amp; 0 &amp; 0 &amp; 0
-\end{bmatrix}
-\end{split}\]</div>
-<p>Step 4: Simplify Row 3</p>
-<div class="math notranslate nohighlight">
-\[
-R_3 \div -95 \rightarrow R_3
-\]</div>
-<p>Matrix after division:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{bmatrix}
-1 &amp; -1 &amp; 1 &amp; 0 \\
-0 &amp; 10 &amp; 25 &amp; 90 \\
-0 &amp; 0 &amp; 1 &amp; 2 \\
-0 &amp; 0 &amp; 0 &amp; 0
-\end{bmatrix}
-\end{split}\]</div>
-<p>Step 5: Eliminate the Third Column</p>
-<div class="math notranslate nohighlight">
-\[
-R_1 - R_3 \rightarrow R_1, \quad R_2 - 25R_3 \rightarrow R_2
-\]</div>
-<p>Resulting matrix:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{bmatrix}
-1 &amp; -1 &amp; 0 &amp; -2 \\
-0 &amp; 10 &amp; 0 &amp; 40 \\
-0 &amp; 0 &amp; 1 &amp; 2 \\
-0 &amp; 0 &amp; 0 &amp; 0
-\end{bmatrix}
-\end{split}\]</div>
-<p>Step 6: Simplify Row 2</p>
-<div class="math notranslate nohighlight">
-\[
-R_2 \div 10 \rightarrow R_2
-\]</div>
-<p>Matrix after division:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{bmatrix}
-1 &amp; -1 &amp; 0 &amp; -2 \\
-0 &amp; 1 &amp; 0 &amp; 4 \\
-0 &amp; 0 &amp; 1 &amp; 2 \\
-0 &amp; 0 &amp; 0 &amp; 0
-\end{bmatrix}
-\end{split}\]</div>
-<p>Step 7: Final Elimination</p>
-<div class="math notranslate nohighlight">
-\[
-R_1 + R_2 \rightarrow R_1
-\]</div>
-<p>Final matrix:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{bmatrix}
-1 &amp; 0 &amp; 0 &amp; 2 \\
-0 &amp; 1 &amp; 0 &amp; 4 \\
-0 &amp; 0 &amp; 1 &amp; 2 \\
-0 &amp; 0 &amp; 0 &amp; 0
-\end{bmatrix}
-\end{split}\]</div>
-<p>Final Solution:</p>
-<p>The solution to the system is:</p>
-<div class="math notranslate nohighlight">
-\[
-Q_1 = 2, \quad Q_2 = 4, \quad Q_3 = 2
-\]</div>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1><span class="section-number">3.4. </span>Gauss–Jordan Elimination<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
-<p>You are analyzing flow through a fluid network. The system can be modeled analogously to an electrical circuit, with:</p>
+<h2><span class="section-number">3.3.1. </span>Example Problem<a class="headerlink" href="#example-problem" title="Link to this heading">#</a></h2>
+<p>Incompressible flow can be written analogous to an electrical circuit as</p>
 <div class="math notranslate nohighlight">
 \[
 -\Delta P = RQ \tag{1}
 \]</div>
-<p>where ( \Delta P ) is the pressure change, ( R ) is the resistance, and ( Q ) is the volumetric flow rate.</p>
+<p>where ( ΔP ) is the pressure change, ( R ) is the resistance, and ( Q ) is the volumetric flow rate.</p>
 <img alt="Fluid System Modeled as Circuit" src="../_images/FluidCircuitImage.png" />
 <p>Based on the flow diagram, the balance equations for the nodes and loop are:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-39b52117-9cd1-42d9-b00c-80836e6e722a">
-<span class="eqno">(3.12)<a class="headerlink" href="#equation-39b52117-9cd1-42d9-b00c-80836e6e722a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2a328354-db2e-4d1e-9a80-7aef8aa1f01b">
+<span class="eqno">(3.12)<a class="headerlink" href="#equation-2a328354-db2e-4d1e-9a80-7aef8aa1f01b" title="Permalink to this equation">#</a></span>\[\begin{align}
 Q_1 + Q_3 &amp;= Q_2 \tag{2} \\
 Q_1 - Q_2 + Q_3 &amp;= 0 \tag{3} \\
 20Q_1 + 10Q_2 &amp;= 80 \tag{4} \\
 10Q_2 + 25Q_3 &amp;= 90 \tag{5}
 \end{align}\]</div>
 <p>Rearranging equations into consistent linear form:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6c5d49db-3536-4336-981e-2109ae18c436">
-<span class="eqno">(3.13)<a class="headerlink" href="#equation-6c5d49db-3536-4336-981e-2109ae18c436" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d7554374-8551-47d9-9516-75168982ab69">
+<span class="eqno">(3.13)<a class="headerlink" href="#equation-d7554374-8551-47d9-9516-75168982ab69" title="Permalink to this equation">#</a></span>\[\begin{align}
 Q_1 - Q_2 + Q_3 &amp;= 0 \tag{2'} \\
 Q_1 - Q_2 + Q_3 &amp;= 0 \tag{3} \\
 20Q_1 + 10Q_2 + 0Q_3 &amp;= 80 \tag{4} \\
 0Q_1 + 10Q_2 + 25Q_3 &amp;= 90 \tag{5}
 \end{align}\]</div>
 <p>Matrix representation:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-044fcfeb-27fb-428c-8619-dc92a980d821">
-<span class="eqno">(3.14)<a class="headerlink" href="#equation-044fcfeb-27fb-428c-8619-dc92a980d821" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2b0bf8da-46ff-40da-a46f-b9f71b13056b">
+<span class="eqno">(3.14)<a class="headerlink" href="#equation-2b0bf8da-46ff-40da-a46f-b9f71b13056b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix}
 1 &amp; -1 &amp; 1 \\
 1 &amp; -1 &amp; 1 \\
@@ -668,12 +492,13 @@ Q_1 \\ Q_2 \\ Q_3
 \end{bmatrix}
 \tag{6}
 \end{equation}\]</div>
+</section>
 <hr class="docutils" />
 <section id="gaussjordan-elimination-steps">
-<h2><span class="section-number">3.4.1. </span>Gauss–Jordan Elimination Steps<a class="headerlink" href="#gaussjordan-elimination-steps" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.3.2. </span>Gauss–Jordan Elimination Steps<a class="headerlink" href="#gaussjordan-elimination-steps" title="Link to this heading">#</a></h2>
 <p>We use the augmented matrix form:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-384c22ce-d15a-4433-9afd-3764ae160402">
-<span class="eqno">(3.15)<a class="headerlink" href="#equation-384c22ce-d15a-4433-9afd-3764ae160402" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-857b2a6e-1672-4429-b59c-09eab79c77c8">
+<span class="eqno">(3.15)<a class="headerlink" href="#equation-857b2a6e-1672-4429-b59c-09eab79c77c8" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix}
 1 &amp; -1 &amp; 1 &amp; 0 \\
 -1 &amp; 1 &amp; -1 &amp; 0 \\
@@ -683,12 +508,13 @@ Q_1 \\ Q_2 \\ Q_3
 \tag{7}
 \end{equation}\]</div>
 <section id="step-1-eliminate-row-redundancy-and-simplify">
-<h3><span class="section-number">3.4.1.1. </span>Step 1: Eliminate row redundancy and simplify<a class="headerlink" href="#step-1-eliminate-row-redundancy-and-simplify" title="Link to this heading">#</a></h3>
-<p>[
+<h3><span class="section-number">3.3.2.1. </span>Step 1: Eliminate row redundancy and simplify<a class="headerlink" href="#step-1-eliminate-row-redundancy-and-simplify" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
 R_2 + R_1 \rightarrow R_2, \quad R_3 - 20R_1 \rightarrow R_3
-]</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6717f591-1c14-4461-b7bb-fe7d634082d1">
-<span class="eqno">(3.16)<a class="headerlink" href="#equation-6717f591-1c14-4461-b7bb-fe7d634082d1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-5abaa1bf-b30a-4c70-92dd-be6826e886d7">
+<span class="eqno">(3.16)<a class="headerlink" href="#equation-5abaa1bf-b30a-4c70-92dd-be6826e886d7" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix}
 1 &amp; -1 &amp; 1 &amp; 0 \\
 0 &amp; 0 &amp; 0 &amp; 0 \\
@@ -700,12 +526,13 @@ R_2 + R_1 \rightarrow R_2, \quad R_3 - 20R_1 \rightarrow R_3
 </section>
 <hr class="docutils" />
 <section id="step-2-swap-rows-to-move-pivot">
-<h3><span class="section-number">3.4.1.2. </span>Step 2: Swap rows to move pivot<a class="headerlink" href="#step-2-swap-rows-to-move-pivot" title="Link to this heading">#</a></h3>
-<p>[
+<h3><span class="section-number">3.3.2.2. </span>Step 2: Swap rows to move pivot<a class="headerlink" href="#step-2-swap-rows-to-move-pivot" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
 R_2 \leftrightarrow R_4
-]</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d1e6cac7-a485-47ef-a225-9f05a17c4df0">
-<span class="eqno">(3.17)<a class="headerlink" href="#equation-d1e6cac7-a485-47ef-a225-9f05a17c4df0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-9a924a13-6f39-453a-b384-05fcef7d15c3">
+<span class="eqno">(3.17)<a class="headerlink" href="#equation-9a924a13-6f39-453a-b384-05fcef7d15c3" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix}
 1 &amp; -1 &amp; 1 &amp; 0 \\
 0 &amp; 10 &amp; 25 &amp; 90 \\
@@ -717,12 +544,13 @@ R_2 \leftrightarrow R_4
 </section>
 <hr class="docutils" />
 <section id="step-3-eliminate-below-pivot-in-column-2">
-<h3><span class="section-number">3.4.1.3. </span>Step 3: Eliminate below pivot in column 2<a class="headerlink" href="#step-3-eliminate-below-pivot-in-column-2" title="Link to this heading">#</a></h3>
-<p>[
+<h3><span class="section-number">3.3.2.3. </span>Step 3: Eliminate below pivot in column 2<a class="headerlink" href="#step-3-eliminate-below-pivot-in-column-2" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
 R_3 - 3R_2 \rightarrow R_3
-]</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d308c715-5e98-4fc2-8221-e6bbd7486196">
-<span class="eqno">(3.18)<a class="headerlink" href="#equation-d308c715-5e98-4fc2-8221-e6bbd7486196" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-922993c9-ab2a-4f55-a5ea-3a43beda7814">
+<span class="eqno">(3.18)<a class="headerlink" href="#equation-922993c9-ab2a-4f55-a5ea-3a43beda7814" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix}
 1 &amp; -1 &amp; 1 &amp; 0 \\
 0 &amp; 10 &amp; 25 &amp; 90 \\
@@ -734,12 +562,13 @@ R_3 - 3R_2 \rightarrow R_3
 </section>
 <hr class="docutils" />
 <section id="step-4-normalize-row-3">
-<h3><span class="section-number">3.4.1.4. </span>Step 4: Normalize row 3<a class="headerlink" href="#step-4-normalize-row-3" title="Link to this heading">#</a></h3>
-<p>[
+<h3><span class="section-number">3.3.2.4. </span>Step 4: Normalize row 3<a class="headerlink" href="#step-4-normalize-row-3" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
 R_3 \div -95 \rightarrow R_3
-]</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ee122b76-8419-46ac-9733-398040ce844f">
-<span class="eqno">(3.19)<a class="headerlink" href="#equation-ee122b76-8419-46ac-9733-398040ce844f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-369ecf46-3e67-4abb-a89a-c8d16d51f4da">
+<span class="eqno">(3.19)<a class="headerlink" href="#equation-369ecf46-3e67-4abb-a89a-c8d16d51f4da" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix}
 1 &amp; -1 &amp; 1 &amp; 0 \\
 0 &amp; 10 &amp; 25 &amp; 90 \\
@@ -751,12 +580,13 @@ R_3 \div -95 \rightarrow R_3
 </section>
 <hr class="docutils" />
 <section id="step-5-eliminate-above-values-in-column-3">
-<h3><span class="section-number">3.4.1.5. </span>Step 5: Eliminate above values in column 3<a class="headerlink" href="#step-5-eliminate-above-values-in-column-3" title="Link to this heading">#</a></h3>
-<p>[
+<h3><span class="section-number">3.3.2.5. </span>Step 5: Eliminate above values in column 3<a class="headerlink" href="#step-5-eliminate-above-values-in-column-3" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
 R_1 - R_3 \rightarrow R_1, \quad R_2 - 25R_3 \rightarrow R_2
-]</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3ed320d4-0e3f-4295-b979-b96dbf1e4d7f">
-<span class="eqno">(3.20)<a class="headerlink" href="#equation-3ed320d4-0e3f-4295-b979-b96dbf1e4d7f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-12add3e1-c5ae-45e2-aa01-508d0f5baad1">
+<span class="eqno">(3.20)<a class="headerlink" href="#equation-12add3e1-c5ae-45e2-aa01-508d0f5baad1" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix}
 1 &amp; -1 &amp; 0 &amp; -2 \\
 0 &amp; 10 &amp; 0 &amp; 40 \\
@@ -768,12 +598,13 @@ R_1 - R_3 \rightarrow R_1, \quad R_2 - 25R_3 \rightarrow R_2
 </section>
 <hr class="docutils" />
 <section id="step-6-normalize-row-2">
-<h3><span class="section-number">3.4.1.6. </span>Step 6: Normalize row 2<a class="headerlink" href="#step-6-normalize-row-2" title="Link to this heading">#</a></h3>
-<p>[
+<h3><span class="section-number">3.3.2.6. </span>Step 6: Normalize row 2<a class="headerlink" href="#step-6-normalize-row-2" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
 R_2 \div 10 \rightarrow R_2
-]</p>
-<div class="amsmath math notranslate nohighlight" id="equation-81f2291c-6075-45a6-a69f-bbc16ab1b29b">
-<span class="eqno">(3.21)<a class="headerlink" href="#equation-81f2291c-6075-45a6-a69f-bbc16ab1b29b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-b903e0fe-3ff7-480b-813a-03fdf2e83a77">
+<span class="eqno">(3.21)<a class="headerlink" href="#equation-b903e0fe-3ff7-480b-813a-03fdf2e83a77" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix}
 1 &amp; -1 &amp; 0 &amp; -2 \\
 0 &amp; 1 &amp; 0 &amp; 4 \\
@@ -785,12 +616,13 @@ R_2 \div 10 \rightarrow R_2
 </section>
 <hr class="docutils" />
 <section id="step-7-eliminate-column-2-in-row-1">
-<h3><span class="section-number">3.4.1.7. </span>Step 7: Eliminate column 2 in row 1<a class="headerlink" href="#step-7-eliminate-column-2-in-row-1" title="Link to this heading">#</a></h3>
-<p>[
+<h3><span class="section-number">3.3.2.7. </span>Step 7: Eliminate column 2 in row 1<a class="headerlink" href="#step-7-eliminate-column-2-in-row-1" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
 R_1 + R_2 \rightarrow R_1
-]</p>
-<div class="amsmath math notranslate nohighlight" id="equation-22b22320-a8a1-43af-b8de-b5d35ac817e2">
-<span class="eqno">(3.22)<a class="headerlink" href="#equation-22b22320-a8a1-43af-b8de-b5d35ac817e2" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-445b3709-3206-49b5-89c0-88554a9b740d">
+<span class="eqno">(3.22)<a class="headerlink" href="#equation-445b3709-3206-49b5-89c0-88554a9b740d" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix}
 1 &amp; 0 &amp; 0 &amp; 2 \\
 0 &amp; 1 &amp; 0 &amp; 4 \\
@@ -803,10 +635,11 @@ R_1 + R_2 \rightarrow R_1
 </section>
 <hr class="docutils" />
 <section id="final-result">
-<h2><span class="section-number">3.4.2. </span>Final Result<a class="headerlink" href="#final-result" title="Link to this heading">#</a></h2>
-<p>[
+<h2><span class="section-number">3.3.3. </span>Final Result<a class="headerlink" href="#final-result" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[
 Q_1 = 2, \quad Q_2 = 4, \quad Q_3 = 2 \tag{15}
-]</p>
+\]</div>
 </section>
 </section>
 
@@ -854,7 +687,7 @@ Q_1 = 2, \quad Q_2 = 4, \quad Q_3 = 2 \tag{15}
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3.5. </span>Determinants</p>
+        <p class="prev-next-title"><span class="section-number">3.4. </span>Determinants</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -874,27 +707,19 @@ Q_1 = 2, \quad Q_2 = 4, \quad Q_3 = 2 \tag{15}
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">3.3. Gauss–Jordan elimination</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem">3.3.1. Example Problem:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-with-gauss-jordan-elimination">3.3.2. Solving with Gauss-Jordan Elimination</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-problem">3.3.1. Example Problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussjordan-elimination-steps">3.3.2. Gauss–Jordan Elimination Steps</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-eliminate-row-redundancy-and-simplify">3.3.2.1. Step 1: Eliminate row redundancy and simplify</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-swap-rows-to-move-pivot">3.3.2.2. Step 2: Swap rows to move pivot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-eliminate-below-pivot-in-column-2">3.3.2.3. Step 3: Eliminate below pivot in column 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-normalize-row-3">3.3.2.4. Step 4: Normalize row 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-eliminate-above-values-in-column-3">3.3.2.5. Step 5: Eliminate above values in column 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-normalize-row-2">3.3.2.6. Step 6: Normalize row 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-7-eliminate-column-2-in-row-1">3.3.2.7. Step 7: Eliminate column 2 in row 1</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.4. Gauss–Jordan Elimination</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussjordan-elimination-steps">3.4.1. Gauss–Jordan Elimination Steps</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-eliminate-row-redundancy-and-simplify">3.4.1.1. Step 1: Eliminate row redundancy and simplify</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-swap-rows-to-move-pivot">3.4.1.2. Step 2: Swap rows to move pivot</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-eliminate-below-pivot-in-column-2">3.4.1.3. Step 3: Eliminate below pivot in column 2</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-normalize-row-3">3.4.1.4. Step 4: Normalize row 3</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-eliminate-above-values-in-column-3">3.4.1.5. Step 5: Eliminate above values in column 3</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-normalize-row-2">3.4.1.6. Step 6: Normalize row 2</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-7-eliminate-column-2-in-row-1">3.4.1.7. Step 7: Eliminate column 2 in row 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-result">3.3.3. Final Result</a></li>
 </ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-result">3.4.2. Final Result</a></li>
-</ul>
-</li>
-</ul>
-
   </nav></div>
 
 </div></div>
