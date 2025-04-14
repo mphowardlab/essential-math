@@ -1,5 +1,5 @@
 # Gauss–Jordan elimination
-Example: Incompressible flow can be written analogous to an electrical circuit as:
+## Example: Incompressible flow can be written analogous to an electrical circuit as:
 
 $$
  -ΔP = RQ     
@@ -46,7 +46,7 @@ $$
 
 Next we apply row operations to simplify the matrix
 
- Gauss-Jordan Elimination Steps
+ ## Solving with Gauss-Jordan Elimination
 
 Start with the augmented matrix:
 
