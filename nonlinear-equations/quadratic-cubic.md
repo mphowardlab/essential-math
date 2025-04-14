@@ -1,4 +1,5 @@
 # Quadratic and cubic polynomials
+
 **<h1><ins>Types of Solutions</h1>**
 
 **<ins>Two Real Solutions</ins>**
