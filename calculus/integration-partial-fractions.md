@@ -41,7 +41,7 @@ A_1+A_3 = 0
  y= \int (\fract{1}{x-3}-\fract{5}{(x-4)^2}-\fract{x}{x^2+3}+\fract{2}{x^2+3}) dx
                                 \int \fract{1}P1+x^2} dx = arctanx
 
-= ln|x-4| + \fract{5}{x-4} - \fract{1}{2} ln (x^2 + 3) + \fract {2}{\sqrt{3}} arctan (\fract{x}{\sqrt{3}}) + C
+= ln|x-4| + \fract{5}{x-4} - \fract{1}{2} ln (x^2 + 3) + \fract {2}{\sqrt{3}} arctan (\fract{x}{\sqrt{3}}) + C 
 
 
 
