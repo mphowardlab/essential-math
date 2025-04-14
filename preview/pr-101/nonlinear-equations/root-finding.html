@@ -448,14 +448,14 @@ This will converge quickly for many functions.</p>
 <p>We want to find the root, so we set <span class="math notranslate nohighlight">\(f(x_{n+1}) = 0\)</span>:</p>
 <p><span class="math notranslate nohighlight">\(\displaystyle 0 = f(x_n) + f'(x_n)(x_{n+1} - x_n)\)</span></p>
 <p>Solving for <span class="math notranslate nohighlight">\(\displaystyle x_{n+1}\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-752a5762-2127-4038-9b1a-9da5297d6634">
-<span class="eqno">(4.1)<a class="headerlink" href="#equation-752a5762-2127-4038-9b1a-9da5297d6634" title="Permalink to this equation">#</a></span>\[\begin{align}
-\includegraphics{newton_raphson_graph.png}
-\end{align}\]</div>
-<p>The figure shows how the method iteratively converges to the root by using the tangent line at the current guess to find a better approximation.</p>
-<p>The algorithm for the Newton-Raphson method is: \</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}\)</span></p>
+<p>\begin{figure}
+\includegraphics{newton_raphson_graph}
+\end{figure}
+The figure shows how the method iteratively converges to the root by using the tangent line at the current guess to find a better approximation.</p>
+<p>The algorithm for the Newton-Raphson method is:</p>
 <ol class="arabic simple">
-<li><p>Guess x_0 and set n = 0.</p></li>
+<li><p>Guess <span class="math notranslate nohighlight">\(x_0\)</span> and set <span class="math notranslate nohighlight">\(n = 0\)</span>.</p></li>
 <li><p>Compute <span class="math notranslate nohighlight">\(f(x_n)\)</span> and <span class="math notranslate nohighlight">\(f'(x_n)\)</span>. If <span class="math notranslate nohighlight">\(f(x_n)\)</span> is ``close’’ to zero, stop.</p></li>
 <li><p>item Update <span class="math notranslate nohighlight">\(x_{n+1}\)</span> using <span class="math notranslate nohighlight">\(x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}\)</span> then return to step 2.</p></li>
 </ol>
@@ -465,30 +465,30 @@ This will converge quickly for many functions.</p>
 <span class="math notranslate nohighlight">\(\displaystyle f(x) = x^2 - 2\)</span>\
 <span class="math notranslate nohighlight">\(\displaystyle f'(x) = 2x\)</span>\
 Let the initial guess be <span class="math notranslate nohighlight">\(x_0 = 1\)</span>.</p>
-<p>\section</p>
-<p>\begin{center}
-\begin{tabular}{c|c|c|c|c}
-<span class="math notranslate nohighlight">\(n\)</span> &amp; <span class="math notranslate nohighlight">\(x_n\)</span> &amp; <span class="math notranslate nohighlight">\(f(x_n)\)</span> &amp; <span class="math notranslate nohighlight">\(f'(x_n)\)</span> &amp; <span class="math notranslate nohighlight">\(x_{n+1}\)</span> \
-\hline
-0 &amp; 1.000 &amp; -1.000 &amp; 2.000 &amp; 1.500 \
-1 &amp; 1.500 &amp; 0.250 &amp; 3.000 &amp; 1.417 \
-2 &amp; 1.417 &amp; <span class="math notranslate nohighlight">\(6.94 \times 10^{-3}\)</span> &amp; 2.833 &amp; 1.414 \
+<div class="amsmath math notranslate nohighlight" id="equation-81e003df-288d-46f3-ae6c-133b7a87f999">
+<span class="eqno">(4.1)<a class="headerlink" href="#equation-81e003df-288d-46f3-ae6c-133b7a87f999" title="Permalink to this equation">#</a></span>\[\begin{align}
+\begin{tabular}{|c|c|c|c|c|}
+$n$ &amp; $x_n$ &amp; $f(x_n)$ &amp; $f'(x_n)$ &amp; $x_{n+1}$ \\
+0 &amp; 1.000 &amp; -1.000 &amp; 2.000 &amp; 1.500 \\
+1 &amp; 1.500 &amp; 0.250 &amp; 3.000 &amp; 1.417 \\
+2 &amp; 1.417 &amp; $6.94 \times 10^{-3}$ &amp; 2.833 &amp; 1.414 \\
 \end{tabular}
-\end{center}</p>
+\end{align}\]</div>
 </div>
 <div class="admonition-example-solve-e-x-2-x-0 admonition">
 <p class="admonition-title">Example: Solve <span class="math notranslate nohighlight">\(e^{-x^2} - x = 0\)</span></p>
 <p>We define <span class="math notranslate nohighlight">\(f(x) = e^{-x^2} - x\)</span>
-<span class="math notranslate nohighlight">\(f'(x) = -2x e^{-x^2} - 1\$
-Using an initial guess \)</span>x_0 = 0$.</p>
-<p>\begin{center}
-\begin{tabular}{c|c|c|c|c}
-<span class="math notranslate nohighlight">\(n\)</span> &amp; <span class="math notranslate nohighlight">\(x_n\)</span> &amp; <span class="math notranslate nohighlight">\(f(x_n)\)</span> &amp; <span class="math notranslate nohighlight">\(f'(x_n)\)</span> &amp; <span class="math notranslate nohighlight">\(x_{n+1}\)</span> \
-0 &amp; 0.000 &amp; 1.000 &amp; -1.000 &amp; 1.000 \
-1 &amp; 1.000 &amp; -0.6321 &amp; -1.736 &amp; 0.6358 \
-2 &amp; 0.6358 &amp; 0.03164 &amp; -1.949 &amp; 0.6529 \
+<span class="math notranslate nohighlight">\(f'(x) = -2x e^{-x^2} - 1\)</span>
+Using an initial guess <span class="math notranslate nohighlight">\(x_0 = 0\)</span>.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-fbc2d09f-0da2-425b-97cf-9943a2cdeee9">
+<span class="eqno">(4.2)<a class="headerlink" href="#equation-fbc2d09f-0da2-425b-97cf-9943a2cdeee9" title="Permalink to this equation">#</a></span>\[\begin{align}
+\begin{tabular}{|c|c|c|c|c|}
+$n$ &amp; $x_n$ &amp; $f(x_n)$ &amp; $f'(x_n)$ &amp; $x_{n+1}$ \\
+0 &amp; 0.000 &amp; 1.000 &amp; -1.000 &amp; 1.000 \\
+1 &amp; 1.000 &amp; -0.6321 &amp; -1.736 &amp; 0.6358 \\
+2 &amp; 0.6358 &amp; 0.03164 &amp; -1.949 &amp; 0.6529 \\
 \end{tabular}
-\end{center}</p>
+\end{align}\]</div>
 </div>
 <p>Note that this method can converge much more rapidly than the fixed-point or bisection methods.</p>
 <p>It will fail when <span class="math notranslate nohighlight">\(f'(x_n) = 0\)</span>.</p>
