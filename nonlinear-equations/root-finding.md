@@ -9,6 +9,11 @@ Using the first-order Taylor series expansion about \( x_n \):
 We want to find the root, so we set \( f(x_{n+1}) = 0 \):
 \[0 = f(x_n) + f'(x_n)(x_{n+1} - x_n)\]
 Solving for \( x_{n+1} \):\[x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}\]
+
+\begin{center}
+\includegraphics[width=0.5\textwidth]{newton_raphson_graph.png}
+\end{center}
+The figure shows how the method iteratively converges to the root by using the tangent line at the current guess to find a better approximation.
     
 The algorithm for the Newton-Raphson method is:
 \begin{enumerate}
