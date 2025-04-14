@@ -14,6 +14,6 @@
             $\hspace{1cm}\boxed{df=\left(frac{\partial f}{\partial y}\right)_y dx + \left(frac{\partial f}{\partial y}\right)_x dy }$<br>
             $\hspace{1cm}$ Ex: df = 2x cos y dx - $x^2$ sin y dy<br><br>
             The total differental can be used to form other derivatives, based on the dependencies of x and y.<br>
-            $\hspace{1cm}Ex: x(t) and y(t) \rightarrow \frac{df}{dt} = 2x \hspace{.1cm} \cos \hspace{.1cm} y \frac{dx}{dt} - x^2 \hspace{.1cm} sin \hspace{.1cm} y \frac{dy}{dt}$<br>
-            $\hspace{1.4cm}x(t,s) and y(t,s \rightarrow \left(\frac{\partial f}{\partial t}\right)_s = 2x \hspace{.1cm} \cos \hspace{.1cm} \left(\frac{\partial x}{\partial t})_s -x^2 \hspace{.1cm} \sin \hspace{.1cm} y \right(\frac{\patial y}{\partial t})_s$
+            $\hspace{1cm}Ex: x(t) \hspace{.1cm}and \hspace{.1cm}y(t) \rightarrow \frac{df}{dt} = 2x \hspace{.1cm} \cos \hspace{.1cm} y \frac{dx}{dt} - x^2 \hspace{.1cm} sin \hspace{.1cm} y \frac{dy}{dt}$<br>
+            $\hspace{1.8cm}x(t,s)\hspace{.1cm} and\hspace{.1cm} y(t,s \rightarrow \left(\frac{\partial f}{\partial t}\right)_s = 2x \hspace{.1cm} \cos \hspace{.1cm} \left(\frac{\partial x}{\partial t})_s -x^2 \hspace{.1cm} \sin \hspace{.1cm} y \right(\frac{\partial y}{\partial t})_s$
 
