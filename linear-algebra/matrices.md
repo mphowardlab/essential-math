@@ -112,3 +112,8 @@ There are some other types of "special" matrices.
 
 There are several other types of special matrices, but we will leave those for a
 longer course on linear algebra!
+
+#new page 
+
+*2. Matrix Operations*
+- *Equality*: A=B
