@@ -441,48 +441,47 @@ document.write(`
 <section id="newton-raphson-method">
 <h2><span class="section-number">4.2.1. </span>Newton-Raphson Method<a class="headerlink" href="#newton-raphson-method" title="Link to this heading">#</a></h2>
 <p>The idea is to <em>linearize</em> the nonlinear system, then solve the linear problem.
-<span class="math notranslate nohighlight">\(\displaystyle \f(x) \approx f(x_0) + f'(x_0)(x - x_0)\)</span>
+<span class="math notranslate nohighlight">\(\displaystyle f(x) \approx f(x_0) + f'(x_0)(x - x_0)\)</span>.
 This will converge quickly for many functions.</p>
 <p>Using the first-order Taylor series expansion about <span class="math notranslate nohighlight">\(x_n\)</span>:
-<span class="math notranslate nohighlight">\(\displaystyle \f(x_{n+1}) \approx f(x_n) + f'(x_n)(x_{n+1} - x_n)\)</span>
+<span class="math notranslate nohighlight">\(\displaystyle f(x_{n+1}) \approx f(x_n) + f'(x_n)(x_{n+1} - x_n)\)</span>
 We want to find the root, so we set <span class="math notranslate nohighlight">\(f(x_{n+1}) = 0\)</span>:
-<span class="math notranslate nohighlight">\(\displaystyle \0 = f(x_n) + f'(x_n)(x_{n+1} - x_n)\)</span>
-Solving for <span class="math notranslate nohighlight">\(\displaystyle \x_{n+1}\)</span>: <span class="math notranslate nohighlight">\(\x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}\)</span></p>
-<p>\begin{center}
-\includegraphics[width=0.5in\textwidth]{newton_raphson_graph.png}
-\end{center}
-The figure shows how the method iteratively converges to the root by using the tangent line at the current guess to find a better approximation.</p>
-<p>The algorithm for the Newton-Raphson method is:
-\begin{enumerate}
-\item Guess <span class="math notranslate nohighlight">\(\x_0\)</span> and set <span class="math notranslate nohighlight">\(\n = 0\)</span>.
-\item Compute <span class="math notranslate nohighlight">\(\f(x_n)\)</span> and <span class="math notranslate nohighlight">\(\f'(x_n)\)</span>. If <span class="math notranslate nohighlight">\(\f(x_n)\)</span> is ``close’’ to zero, stop.
-\item Update <span class="math notranslate nohighlight">\(\x_{n+1}\)</span> using <span class="math notranslate nohighlight">\(\x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}\)</span> then return to step 2.
+<span class="math notranslate nohighlight">\(\displaystyle 0 = f(x_n) + f'(x_n)(x_{n+1} - x_n)\)</span></p>
+<p>Solving for <span class="math notranslate nohighlight">\(\displaystyle x_{n+1}\)</span>: <span class="math notranslate nohighlight">\(x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-e5bfd0b5-d0ed-4a8c-a0dd-9bdb7dfe6261">
+<span class="eqno">(4.1)<a class="headerlink" href="#equation-e5bfd0b5-d0ed-4a8c-a0dd-9bdb7dfe6261" title="Permalink to this equation">#</a></span>\[\begin{align}
+\includegraphics[width=.5in]{newton_raphson_graph.png}
+\end{align}\]</div>
+<p>The figure shows how the method iteratively converges to the root by using the tangent line at the current guess to find a better approximation.</p>
+<p>The algorithm for the Newton-Raphson method is:</p>
+<p>\begin{enumerate}
+\item Guess x_0 and set n = 0.
+\item Compute <span class="math notranslate nohighlight">\(f(x_n)\)</span> and <span class="math notranslate nohighlight">\(f'(x_n)\)</span>. If <span class="math notranslate nohighlight">\(\f(x_n)\)</span> is ``close’’ to zero, stop.
+\item Update <span class="math notranslate nohighlight">\(x_{n+1}\)</span> using <span class="math notranslate nohighlight">\(\x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}\)</span> then return to step 2.
 \end{enumerate}</p>
 <div class="admonition-example-solve-displaystyle-x-2-2 admonition">
-<p class="admonition-title">Example: Solve <span class="math notranslate nohighlight">\(\displaystyle \x^2 = 2\)</span></p>
+<p class="admonition-title">Example: Solve <span class="math notranslate nohighlight">\(\displaystyle x^2 = 2\)</span></p>
 <p>We can rewrite this as:
-$\f(x) = x^2 - 2, \quad f’(x) = 2x$
+$\displaystyle f(x) = x^2 - 2, \quad f’(x) = 2x$
 Let the initial guess be ( x_0 = 1 ).</p>
 <p>\begin{center}
 \begin{tabular}{c|c|c|c|c}
-<span class="math notranslate nohighlight">\(n\)</span> &amp; <span class="math notranslate nohighlight">\(x_n\)</span> &amp; <span class="math notranslate nohighlight">\(f(x_n)\)</span> &amp; <span class="math notranslate nohighlight">\(f'(x_n)\)</span> &amp; <span class="math notranslate nohighlight">\(x_{n+1}\)</span> \
-\hline
-0 &amp; 1.000 &amp; -1.000 &amp; 2.000 &amp; 1.500 \
-1 &amp; 1.500 &amp; 0.250 &amp; 3.000 &amp; 1.417 \
+n &amp; x_n &amp; f(x_n) &amp; f’(x_n) &amp; x_{n+1}\
+0 &amp; 1.000 &amp; -1.000 &amp; 2.000 &amp; 1.500\
+1 &amp; 1.500 &amp; 0.250 &amp; 3.000 &amp; 1.417\
 2 &amp; 1.417 &amp; <span class="math notranslate nohighlight">\(6.94 \times 10^{-3}\)</span> &amp; 2.833 &amp; 1.414 \checkmark
 \end{tabular}
 \end{center}</p>
 </div>
 <div class="admonition-example-solve-e-x-2-x-0 admonition">
-<p class="admonition-title">Example: Solve ( e^{-x^2} - x = 0 )}</p>
-<p>We define:
-[f(x) = e^{-x^2} - x, \quad f’(x) = -2x e^{-x^2} - 1]
-Using an initial guess ( x_0 = 0 ).
+<p class="admonition-title">Example: Solve ( e^{-x^2} - x = 0 )</p>
+<p>We define <span class="math notranslate nohighlight">\(\displaystyle f(x) = e^{-x^2} - x, \quad f'(x) = -2x e^{-x^2} - 1\$
+Using an initial guess \( x_0 = 0 \).
 \begin{center}
 \begin{tabular}{c|c|c|c|c}
-<span class="math notranslate nohighlight">\(n\)</span> &amp; <span class="math notranslate nohighlight">\(x_n\)</span> &amp; <span class="math notranslate nohighlight">\(f(x_n)\)</span> &amp; <span class="math notranslate nohighlight">\(f'(x_n)\)</span> &amp; <span class="math notranslate nohighlight">\(x_{n+1}\)</span> \hline
-0 &amp; 0.000 &amp; 1.000 &amp; -1.000 &amp; 1.000 \
-1 &amp; 1.000 &amp; -0.6321 &amp; -1.736 &amp; 0.6358 \
+    \)</span>n<span class="math notranslate nohighlight">\( &amp; \)</span>x_n<span class="math notranslate nohighlight">\( &amp; \)</span>f(x_n)<span class="math notranslate nohighlight">\( &amp; \)</span>f’(x_n)<span class="math notranslate nohighlight">\( &amp; \)</span>x_{n+1}$\
+0 &amp; 0.000 &amp; 1.000 &amp; -1.000 &amp; 1.000\
+1 &amp; 1.000 &amp; -0.6321 &amp; -1.736 &amp; 0.6358\
 2 &amp; 0.6358 &amp; 0.03164 &amp; -1.949 &amp; 0.6529 \checkmark
 \end{tabular}
 \end{center}</p>
