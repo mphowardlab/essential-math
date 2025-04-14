@@ -23,17 +23,24 @@ Many Laplace transforms are already known, but can be computed using integration
 
 ```{math}
 $$
-\f\left\( t \right\) = t \to L \left\[ f \right\] = \int_0^\infty \e^-st \f\left\( t \right\) = -\frac{te^-st}{s} \right\| _{0}{\infty} - \int_0^\infty \frac{e^-st}{s} \dt\
+f \left\( t \right\) = t \to L \left\[ f \right\] = \int_0^\infty \e^-st \f\left\( t \right\) = -\frac{te^-st}{s} \right\| _{0}{\infty} - \int_0^\infty \frac{e^-st}{s} \dt \\
 u = t   dv = e^-st\dt
-du = dt v = \fract{-1}{s} \e^-st                \fract{-e^-st}{s^2} \right| _{0}^{\infty} = \left\[ \0 - (\frac{-1}{s^2}) \right\] = \frac{1}{s^2}
+du = dt v = \fract{-1}{s} \e^-st  
+            
+\fract{-e^-st}{s^2} \right| _{0}^{\infty} = \left\[ \0 - (\frac{-1}{s^2}) \right\] 
+= \frac{1}{s^2}
 $$
 
 $$
 \f\left\( t \right\) = y' \left\( t \right\) \to L \left\[ y' \right\] = \int_0^\infty \e^-st \y' \left\( t \right\) 
-                                            = -\frac{te^-st}{s} \right\| _{0}{\infty} - \int_0^\infty \ y \left\( frac{e^-st}{s} \right\) \dt\
- u = e^-st  dv = y' dt                      = \left\[ 0 - y \left\( 0 \right\) \right\] + s \int_0^\infty \e^-st y \dt\
- du = -se^-st   v = y                       = s L \left\[ f \right\] - y \left\( 0 \right\)
-                                            = s Y \left\( s \right\) - y \left\( 0 \right\)
+ = -\frac{te^-st}{s} \right\| _{0}{\infty} - \int_0^\infty \ y \left\( frac{e^-st}{s} \right\) \dt\
+ u = e^-st  dv = y' dt                      
+ du = -se^-st   v = y                       
+= \left\[ 0 - y \left\( 0 \right\) \right\] + s \int_0^\infty \e^-st y \dt\
+= s L \left\[ f \right\] - y \left\( 0 \right\)
+= s Y \left\( s \right\) - y \left\( 0 \right\)
+$$
+
 ```
 ````
 
