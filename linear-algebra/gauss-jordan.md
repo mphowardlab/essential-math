@@ -7,7 +7,7 @@ $$
 
 where \( ΔP \) is the pressure change, \( R \) is the resistance to flow, and \( Q \) is the volumetric flow rate. 
 
-```{image} ./_images/Gauss Jordan Ex.jpg
+```{image} ./_images/FluidCircuitImage.png
 :alt: Fluid System Modeled as Circuit
 ```
 
