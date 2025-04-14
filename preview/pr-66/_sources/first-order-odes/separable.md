@@ -4,7 +4,7 @@
 An **ordinary differential equation (ODE)** contains one or more derivatives of an unknown function of one variable.
 
 **Examples:**
-- \( y' = \cos x \)
+- \( y' = cos x \)
 - \( y'' + 9y = 0 \)
 - \( x^2 y''' + 2x^5 y^4 = (x^2 + 2)y^2 \)
 
