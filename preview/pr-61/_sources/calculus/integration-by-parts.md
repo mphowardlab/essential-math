@@ -9,12 +9,27 @@ Remember:
 
 $$\int(e^xdx)=e^x+c
 
-\intxe^{x^2} = \frac{1}{2}e^{x^2}+c$$
+\int(xe^{x^2}dx) = \frac{1}{2}e^{x^2}+c$$
 
 We can solve this by u-substitution: $u=x^2$ , $du=2xdx$
 
 \begin{align}
-\intxe^{x^2}dx = 
+\int(xe^{x^2}dx) =
+
 \int\frac{1}{2}e^udu =
+
 \frac{1}{2}e^u+c
 \end{align}
+
+Then plug u back in and get the final answer:
+
+$$\int(xe^{x^2}dx) = \frac{1}{2}e^{x^2}+c$$ (same as above)
+````
+
+But what to do here?
+
+Product rule:
+
+$$(fg)'=fg'+gf'
+
+\int(d(fg)) = \int(fg'dx) + \
