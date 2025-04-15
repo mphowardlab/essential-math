@@ -86,11 +86,11 @@ $$\int(3x+5)\cos{\frac{x}{4}}dx = (12x+20)[4\sin{\frac{x}{4}}] + 48\cos{\frac{x}
 
 ````{example} 1.6.3
 
-$$\intx^4e^{\frac{x}{2}}dx = ?$$
+$$\int(x^4e^{\frac{x}{2}}dx) = ?$$
 
 Let $u=x^4$ , which makes $du=4x^3$ , and $dv=e^{\frac{x}{2}}dx$ , which makes $v=2e^{\frac{x}{2}}$
 
-$$\intx^4e^{\frac{x}{2}}dx = x^4(2e^{\frac{x}{2}}) - \int2e^{\frac{x}{2}}4x^3dx$$
+$$\int(x^4e^{\frac{x}{2}}dx) = x^4(2e^{\frac{x}{2}}) - \int2e^{\frac{x}{2}}(4x^3)dx$$
 
 We will need to integrate by parts again but there is a shortcut!!
 
@@ -102,3 +102,14 @@ We will need to integrate by parts again but there is a shortcut!!
 | 24x   | 8e^{\frac{x}{2}}  |
 | 24    | 16e^{\frac{x}{2}} |
 | 0     | 32e^{\frac{x}{2}} |
+
+For this shortcut make a chart like depicted below and then starting from the first u, go down one row diagonally and multiply the u and the dv together and then continue this all the way to 0.
+
+Your answer will look like this:
+
+$$\int(x^4e^{\frac{x}{2}}dx) = (x^4)(2e^{\frac{x}{2}}) - (4x^3)(4e^{\frac{x}{2}}) + (12x^2)(8e^{\frac{x}{2}}) - (24x)(16e^{\frac{x}{2}}) + (24)(32e^{\frac{x}{2}})$$
+
+Simplified this will give the final answer of:
+
+$$\int(x^4e^{\frac{x}{2}}dx) = 2x^4e^{\frac{x}{2}} - 16x^3e^{\frac{x}{2}} + 96x^2e^{\frac{x}{2}} - 384xe^{\frac{x}{2}} + 768e^{\frac{x}{2}}$$
+````
