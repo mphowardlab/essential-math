@@ -40,7 +40,7 @@ is a solution for y' = xy.
 ```
 
 To fully specify a problem, an **initial value** is required.
-\being{align}
+\begin{align}
 y(x_0) = y_(0)
 \end{align}
 
