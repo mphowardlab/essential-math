@@ -18,39 +18,44 @@ Solving for $\displaystyle x_{n+1}$:
 
 $\displaystyle x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$
 
-\begin{figure}
-\includegraphics{newton_raphson_graph}
-\end{figure}
+```{figure} img/newton_raphson_graph
 The figure shows how the method iteratively converges to the root by using the tangent line at the current guess to find a better approximation.
+```
     
 The algorithm for the Newton-Raphson method is:
 1. Guess $x_0$ and set $n = 0$.
 2. Compute $f(x_n)$ and $f'(x_n)$. If $f(x_n)$ is ``close'' to zero, stop.
 3. item Update $x_{n+1}$ using $x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$ then return to step 2.
 
+Note that this method can converge much more rapidly than the fixed-point or bisection methods.
+
+It will fail when $f'(x_n) = 0$.
+
 ````{example} Solve $\displaystyle x^2 = 2$
-We can rewrite this as:\\
-$\displaystyle f(x) = x^2 - 2$\\
-$\displaystyle f'(x) = 2x$\\
+We can rewrite this as:
+
+$\displaystyle f(x) = x^2 - 2$
+
+$\displaystyle f'(x) = 2x$
+
 Let the initial guess be $x_0 = 1$.
 
-\begin{align}
-\begin{tabular}{|c|c|c|c|c|}
-$n$ & $x_n$ & $f(x_n)$ & $f'(x_n)$ & $x_{n+1}$ \\
-0 & 1.000 & -1.000 & 2.000 & 1.500 \\
-1 & 1.500 & 0.250 & 3.000 & 1.417 \\
-2 & 1.417 & $6.94 \times 10^{-3}$ & 2.833 & 1.414 \\
-\end{tabular}
-\end{align}
+| \(n\) | \(x_n\) | \(f(x_n)\) | \(f'(x_n)\) | \(x_{n+1}\) |
+|------|--------:|-----------:|------------:|------------:|
+| 0    | 1.000   | -1.000     | 2.000       | 1.500       |
+| 1    | 1.500   | 0.250      | 3.000       | 1.417       |
+| 2    | 1.417   | \(6.94 \times 10^{-3}\) | 2.833 | 1.414 ✓ |
 ````
 
 ````{example} Solve $e^{-x^2} - x = 0$
 We define $f(x) = e^{-x^2} - x$
+
 $f'(x) = -2x e^{-x^2} - 1$
+
 Using an initial guess $x_0 = 0$.
 
 \begin{align}
-\begin{tabular}{|c|c|c|c|c|}
+\begin{tabular}{c|c|c|c|c}
 $n$ & $x_n$ & $f(x_n)$ & $f'(x_n)$ & $x_{n+1}$ \\
 0 & 0.000 & 1.000 & -1.000 & 1.000 \\
 1 & 1.000 & -0.6321 & -1.736 & 0.6358 \\
@@ -58,7 +63,3 @@ $n$ & $x_n$ & $f(x_n)$ & $f'(x_n)$ & $x_{n+1}$ \\
 \end{tabular}
 \end{align}
 ````
-
-Note that this method can converge much more rapidly than the fixed-point or bisection methods.
-
-It will fail when $f'(x_n) = 0$.
