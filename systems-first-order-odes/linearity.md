@@ -3,7 +3,7 @@
 Many dynamic processes can occur simultaneously, giving more than one ODE.
 
 
-----Insert Image
+Image-issue47
 In the image, tank one has concentration one (C1) and tank two has concentration two (C2). Tank one is flowing to tank two. Tank two is flowing to a pump. The pump exit stream is flowing back to tank one. 
 How do the concentrations C1 and C2 in these tanks evovle?
 C2H4 + 0.5 O2 => C2H4O
