@@ -1,5 +1,5 @@
 # Separable Differential Equations
-## Definition and Motivation
+## Definition
 
 An **ordinary differential equation (ODE)** contains one or more derivatives of an unknown function of one variable.
 
