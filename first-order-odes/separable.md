@@ -17,7 +17,7 @@ y' = f(x, y)
 \end{equation}
 with the first being an example of the **implicit form** and the second being an example of the **explicit form**.
 
-When do we see first-order ODEs in Chemical Engineering?
+**When do we see first-order ODEs in Chemical Engineering?**
 - Unsteady mass/energy balances
 - Chemical kinetics
 
