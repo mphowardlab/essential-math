@@ -4,26 +4,26 @@ The idea is to *linearize* the nonlinear system, then solve the linear problem.
 This will converge quickly for many functions.
 
 \begin{equation}
-$\displaystyle f(x) \approx f(x_0) + f'(x_0)(x - x_0)$.
+f(x) \approx f(x_0) + f'(x_0)(x - x_0)
 \end{equation}
 
 Using the first-order Taylor series expansion about $x_n$:
 
 \begin{equation}
-$\displaystyle f(x_{n+1}) \approx f(x_n) + f'(x_n)(x_{n+1} - x_n)$
+f(x_{n+1}) \approx f(x_n) + f'(x_n)(x_{n+1} - x_n)
 \end{equation}
 
 We want to find the root, so we set $f(x_{n+1}) = 0$:
 
 \begin{equation}
-$\displaystyle 0 = f(x_n) + f'(x_n)(x_{n+1} - x_n)$
+0 = f(x_n) + f'(x_n)(x_{n+1} - x_n)
 \end{equation}
 
 Solving for $\displaystyle x_{n+1}$: 
 
 \begin{equation}
-$\displaystyle x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$
-\begin{equation}
+x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}
+\end{equation}
 
 ```{image} img/newton_raphson_graph.png
 :alt: The figure shows how the method iteratively converges to the root by using the tangent line at the current guess to find a better approximation.
