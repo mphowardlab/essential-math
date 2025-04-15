@@ -18,8 +18,9 @@ Solving for $\displaystyle x_{n+1}$:
 
 $\displaystyle x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$
 
-```{figure} img/newton_raphson_graph.png
-The figure shows how the method iteratively converges to the root by using the tangent line at the current guess to find a better approximation.
+```{image} img/newton_raphson_graph.png
+:alt: The figure shows how the method iteratively converges to the root by using the tangent line at the current guess to find a better approximation.
+:align: center
 ```
     
 The algorithm for the Newton-Raphson method is:
@@ -42,9 +43,9 @@ Let the initial guess be $x_0 = 1$.
 
 | $n$ | $x_n$ | $f(x_n)$ | $f'(x_n)$ | $x_{n+1}$ |
 |------|--------:|-----------:|------------:|------------:|
-| 0    | 1.000   | -1.000     | 2.000       | 1.500       |
-| 1    | 1.500   | 0.250      | 3.000       | 1.417       |
-| 2    | 1.417   | $6.94 \times 10^{-3}$ | 2.833 | 1.414 | ✓
+| $0$    | $1.0$   | $-1.0$     | $2.0$       | $1.5$       |
+| $1$    | $1.5$   | $0.25$      | $3.0$       | $1.417$       |
+| $2$    | $1.417$   | $6.94 \times 10^{-3}$ | $2.833$ | $1.414$ ✓|
 ````
 
 ````{example} Solve $e^{-x^2} - x = 0$
@@ -56,8 +57,8 @@ Using an initial guess $x_0 = 0$.
 
 | $n$ | $x_n$  | $f(x_n)$  | $f'(x_n)$  | $x_{n+1}$ |
 |------:|---------:|-------------:|-------------:|------------:|
-| 0     | 0.000    | 1.000        | -1.000       | 1.000       |
-| 1     | 1.000    | -0.6321      | -1.736       | 0.6358      |
-| 2     | 0.6358   | 0.03164      | -1.949       | 0.6529      |  ✓
+| $0$     | $0$    | $1.0$        | $-1.0$       | $1.0$       |
+| $1$     | $1.0$    | $-0.6321$      | $-1.736$       | $0.6358$      |
+| $2$     | $0.6358$   | $0.03164$      | $-1.849$       | $0.6529$   ✓  |
 
 ````
