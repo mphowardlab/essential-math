@@ -50,7 +50,7 @@ Then, let's solve for the particular solution of y(1) = 1:
 Ce^0 = e
 \end{align}
 Therefore, C = 1. Plugging this back into our initial equation gives us:
-/begin{align}
+\begin{align}
 y = e^{x^2/2}
 \end{align}
 
