@@ -4,13 +4,12 @@ The Laplace transform is used in signals/controls.
 It is also a way to solve **differential** equations using **algebra**. 
 
 It is defined as: 
-Laplace Transform
 
 \begin{equation}
-\F(s) = ** L[f(t)] ** = \int_0^\infty \e^-st \f(t)
+F(s) = ** L[f(t)] ** = \int_0^\infty e^-st \f(t)
 \end{equation}
 
-The inverse Laplace transform of F(s) is \f(t)!
+The inverse Laplace transform of **F(s)** is **f(t)**!
 
 Many Laplace transforms are already known, but can be computed using integration by parts.
 
@@ -87,4 +86,3 @@ Apply Laplace transform to both sides of the equation
 \end{align}
 
 If we can invert y(t) = L^-1 [y(s)] usijng tables, we have a solution!
-lll
