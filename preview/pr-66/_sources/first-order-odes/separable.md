@@ -30,9 +30,9 @@ ODEs have **families of solutions** due to integration constants. The **directio
 ````{example} Initial Value Problem
 Given y' = xy and initial condition y(0) = 1, draw a solution curve through the slope field. Then, verify that
 \begin{align}
-y = e^{x^2 / 2}
+y = ce^{x^2 / 2}
 \end{align}
-is a solution for y' = xy.
+is a solution for y' = xy. Find particular solution for y(1) = 1.
 
 **Direction Field Diagram:**
 ```{image} ./_images/directionalfield.png
@@ -44,12 +44,12 @@ is a solution for y' = xy.
 y' = x e^{x^2 / 2}
 \end{align}
 
-To fully specify a problem, an **initial value** is required.
+To fully specify a problem, an **initial value** is required:
 \begin{align}
 y(x_0) = y_0
 \end{align}
 
-Given y(0) = 1, we find that c = 1 and the particular solution is:
+Given y(0) = 1, we can find that x = 1 and the particular solution is:
 \begin{align}
 y = e^{x^2 / 2}
 \end{align}
