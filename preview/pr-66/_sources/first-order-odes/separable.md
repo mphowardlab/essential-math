@@ -71,7 +71,7 @@ g(y) \frac{dy}{dx} = f(x) \\
 \int g(y)dy = \int f(x) dx + C
 \end{align}
 
-````{example}
+````{example} Separation of Variables
 Given \( y' = xy \), separate variables:
 \[ /fac{dy}{y} = x \, dx \]
 
