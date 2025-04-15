@@ -1,8 +1,9 @@
 # Gauss–Jordan Elimination
 Linear equations come up often when dealing with mass balances (i.e. process design).
 ***
-**Set up for a linear equation system:** 
+**General set up for a linear system of equations:** \
+$ a_1{}_1$
+
 ***
-% insert image of system type here
-***
-Ax = b
+$
+\underline{\underline{A}} (\underline{x}) = \underline{b} $
