@@ -72,7 +72,7 @@ g(y) \frac{dy}{dx} = f(x) \\
 \end{align}
 
 ````{example} Separation of Variables
-Given y' = xy separate the variables and solve:
+Given y' = xy, separate the variables and solve:
 \begin{align}
 \int \frac{dy}{y} &= \int x dx \\
 ln(y) &= \frac{x^2}{2} + c_0 \\
