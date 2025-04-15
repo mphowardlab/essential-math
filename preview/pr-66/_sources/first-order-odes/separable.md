@@ -72,7 +72,7 @@ g(y) \frac{dy}{dx} = f(x) \\
 \end{align}
 
 ````{example} Separation of Variables
-Given \( y' = xy \), separate variables:
+Given y' = xy separate the variables and solve:
 \[ /fac{dy}{y} = x \, dx \]
 
 Integrating:
