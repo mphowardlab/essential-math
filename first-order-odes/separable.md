@@ -1,79 +1,231 @@
 # Separable differential equations
 > ### Example 1
-The iceman Ötzi was found to have 52.5% of the C{sup}`14` of a living organism. If the half life of the C{sup}`14` is 5715 years, how long ago did Ötzi die if C{sup}`14` disappears by the first-order reaction.
-$$`\frac{dc}{dt} = -kc`%$$
-*** 
-Solution:
-Assume at death $(t=0)$ and $c(0) = c{sub}`0` $
-$$\int frac{1}{c}\, dc = \int -k\, dt$$
-$$\ln(c) = -kt + B$$
-$$c = A e^(-kt)$$
-$$c(0) = c{sub}`0`= A
-$$c(t) = c{sub}`0` e^(-kt)$$
-It is known that $c(5715 year) = 0.5 c{sub}`0` $ and t is needed where $ c(t) = 0.525 c{sub}`0` $ 
-So take the ratio 
-Equation 1 
- :$$ 0.5 c{sub}`0` = c{sub}`0` e^(-k (5715 years)) $$
- :The initial c cancels out and we are left with
- :$$\ln(0.5) = -k (5715 years) $$
- Equation 2 
- : $$ 0.525 c{sub}`0` = c{sub}`0` e^(-kt) $$
- : Initial c cancels out again 
- : $$\ln(0.525) = - kt $$
- Combine Equation 1 and 2 
- $$ frac{t}{5715 year} = frac {\ln(0.525)}{\ln(0.5)} $$
- $$ t = (5715 year) (frac {\ln(0.525)}{\ln(0.5)}) $$
- **Final Answer**
- $$ t = 5310 years $$
- **Ötzi died approximately 5310 years ago**
+The iceman Ötzi was found to have 52.5% of the C^{14} of a living organism.  
+If the half-life of the C^{14} is 5715 years, how long ago did Ötzi die if C^{14} disappears by the first-order reaction?
+
+```math
+\frac{dc}{dt} = -kc
+```
+
+---
+
+### Solution:
+
+Assume at death:  
+`t = 0`, and `c(0) = c_0`.
+
+Solve the ODE:
+
+```math
+\int \frac{1}{c} \, dc = \int -k \, dt \Rightarrow \ln(c) = -kt + B
+```
+
+Rewriting the solution:
+
+```math
+c = A e^{-kt}
+```
+
+Apply the initial condition:
+
+```math
+c(0) = c_0 = A \Rightarrow c(t) = c_0 e^{-kt}
+```
+
+It is known that:
+
+```math
+c(5715) = 0.5 c_0, \quad c(t) = 0.525 c_0
+```
+
+Take the ratio of the two equations:
+
+```math
+\frac{0.525 c_0}{0.5 c_0} = \frac{e^{-kt}}{e^{-k(5715)}}
+```
+
+Simplify:
+
+```math
+\frac{0.525}{0.5} = e^{k(5715 - t)}
+```
+
+Take the natural log:
+
+```math
+\ln\left(\frac{0.525}{0.5}\right) = k(5715 - t)
+```
+
+Solve for `t`:
+
+```math
+t = 5715 - \frac{\ln(0.525 / 0.5)}{k}
+```
+
+Since:
+
+```math
+k = \frac{\ln(2)}{5715}
+```
+
+Then:
+
+```math
+t = 5715 \cdot \frac{\ln(0.5)}{\ln(0.525)} \approx 5310 \text{ years}
+```
+
+---
+
+### Final Answer:
+
+**Ötzi died approximately 5310 years ago.**
  > ### Example 2
  Newtons law of cooling 
-Estimate the temperature in an office building at 6 a.m. if the heat goes off at 10 p.m. when the building is 70 degrees fahrenheit and the outside if 45 degrees fahrenheit.
-$$ \frac{dT}{dt} = -k(T - T{sub}`outside`) $$
-If $ k = 0.05$ and $T(10p.m.) = T(0) = 70$
-$$\int frac{1}{T - T{sub}`outside`}\, dT = \int -k\, dt$$
-$$ln(T - T{sub}`outside`) = -kt + C $$
-$$T - T{sub}`outside` = C e^(-kt)$$
-$$T = T{sub}`outside`+ C e^(-kt)$$
-Since $T(10p.m.) = T(0) = 70$ then $70 = 45 + C$ so $C = 25$
-$$ T = 45 + 25 e^-(0.05t)$$
-$$ T(8) =  45 + 25 e^-(0.05(8))$$
-$$45 + 25 e^-(0.05(8)) = 62 degrees fahrenheit$$
-**Final Answer** 
-**The temperature at 6 a.m. is approximately 62°F**
+Estimate the temperature in an office building at 6 a.m. if the heat goes off at 10 p.m.,  
+when the building is 70°F and the outside temperature is 45°F.
+
+We are given:
+- Initial temperature: `T(0) = 70°F` at 10 p.m.
+- Outside air temperature: `T_{\text{outside}} = 45°F`
+- Cooling constant: `k = 0.05 \, \text{hr}^{-1}`
+- Time: `t = 8` hours later (6 a.m.)
+
+---
+
+Use Newton’s Law of Cooling:
+
+```math
+\frac{dT}{dt} = -k (T - T_{\text{outside}})
+```
+
+Separate variables and integrate:
+
+```math
+\int \frac{1}{T - T_{\text{outside}}} \, dT = \int -k \, dt
+\Rightarrow \ln(T - T_{\text{outside}}) = -kt + C
+```
+
+Solve for temperature:
+
+```math
+T = T_{\text{outside}} + C e^{-kt}
+```
+
+Use the initial condition `T(0) = 70`:
+
+```math
+70 = 45 + C \Rightarrow C = 25
+```
+
+So:
+
+```math
+T(t) = 45 + 25 e^{-0.05t}
+```
+
+Evaluate at `t = 8`:
+
+```math
+T(8) = 45 + 25 e^{-0.05 \cdot 8} \approx 45 + 25(0.6703) \approx 61.76°F
+```
+
+---
+
+**Final Answer:**  
+**The temperature at 6 a.m. is approximately 62°F.**
 ### Example 3
 Torcelli's Law 
-A 1cm hole opens at the bottom of a 1m cylindrical tank. If there is 2m of water in the tank, when does it drain?
-***
-Solution:
-Known equations:
-$$m = \rho V(t) $$
-so,
-$$m = \rho (frac{\pi (D{sub}`1`)^2}{4}) h(t)$$
-Mass Balance:
-$$\frac{dm}{dt} = -m{sub}`out` $$ 
-also, 
-Equation 1:
-$$ \frac{dm}{dt} = \rho (frac{\pi(D{sub}`2`)^2}{4}) V{sub}`2` $$
-Equation 2
-It is known that $V{sub}`2`= \sqrt{2\cdot g \cdot \rho} $
-Plug equation 3 into equation 2 and set equal to known equation
-$$ \rho (frac{\pi(D{sub}`2`)^2}{4}) \cdot \sqrt{2\cdot gh} = \rho (frac{\pi (D{sub}`1`)^2}{4}) .\cdot  \frac{dh}{dt} $$
-Simplify:
-$$ \frac{dh}{dt} = -(frac{D{sub}`2`}{D{sub}`1`})^2 .\cdot \sqrt{2\cdot gh} $$
-$$\int \frac{1}{\sqrt{h}}, dh = \int -(frac{D{sub}`2`}{D{sub}`1`})^2 .\cdot \sqrt{2\cdot gh},dt$$
-General Solution:
-$$2\sqrt{h} = - -(frac{D{sub}`2`}{D{sub}`1`})^2 .\cdot \sqrt{2\cdot gh} .\cdot t +C$$
-Find Integration Constant C 
-$$h(0) = h{sub}`0` $$ 
-$$ 2 \sqrt{h{sub}`0`} = C $$
-Plug back into General Solution
-$$\sqrt{h} = \sqrt{h{sub}`0`} - 0.5 .\cdot (frac{D{sub}`2`}{D{sub}`1`})^2 .\cdot \sqrt{2\cdot gh} .\cdot t $$
-$$h =  (\sqrt{h{sub}`0`} - 0.5 .\cdot (frac{D{sub}`2`}{D{sub}`1`})^2 .\cdot \sqrt{2\cdot gh} .\cdot t)^2 $$
-When the tank drains $ h=0 $ so, 
-$ 0 = \sqrt{h{sub}`0`- 0.5 .\cdot (frac{D{sub}`2`}{D{sub}`1`})^2 .\cdot \sqrt{2\cdot gh} .\cdot t$
-Plug in known values 
-$$ t = 2 .\cdot (frac{D{sub}`2`}{D{sub}`1`})^2 .\cdot \sqrt{frac{h{sub}`0`}{2g}} $$
-$$ t = 2 .\cdot (frac{1}{0.01})^2 .\cdot \sqrt{frac{2}{2 .\cdot 9.81}} $$
-**Final Answer**
-**The tank is empty after 1.8 hours**
+A 1 cm hole opens at the bottom of a 1 m tall cylindrical tank.  
+If the tank initially contains 2 meters of water, how long will it take to fully drain?
+
+---
+
+We use Torricelli’s Law for the outflow velocity:
+
+```math
+v_2 = \sqrt{2 g h}
+```
+
+Let:
+- `D_1` = diameter of the tank
+- `D_2` = diameter of the hole
+- `h(t)` = height of water in the tank at time `t`
+
+Volume of the tank:
+
+```math
+V(t) = \frac{\pi D_1^2}{4} h(t)
+```
+
+Mass balance:
+
+```math
+\frac{dm}{dt} = -\dot{m}_{\text{out}}
+```
+
+With constant density:
+
+```math
+\frac{dh}{dt} = -\left( \frac{D_2}{D_1} \right)^2 \sqrt{2g h}
+```
+
+Separate and integrate:
+
+```math
+\int \frac{1}{\sqrt{h}} \, dh = -\left( \frac{D_2}{D_1} \right)^2 \sqrt{2g} \int dt
+```
+
+Integrate:
+
+```math
+2 \sqrt{h} = -\left( \frac{D_2}{D_1} \right)^2 \sqrt{2g} \, t + C
+```
+
+Initial condition `h(0) = h_0` gives:
+
+```math
+C = 2 \sqrt{h_0}
+```
+
+So the general solution is:
+
+```math
+\sqrt{h} = \sqrt{h_0} - \frac{1}{2} \left( \frac{D_2}{D_1} \right)^2 \sqrt{2g} \, t
+```
+
+Solve for time when `h = 0`:
+
+```math
+0 = \sqrt{h_0} - \frac{1}{2} \left( \frac{D_2}{D_1} \right)^2 \sqrt{2g} \, t
+```
+
+Rearranged:
+
+```math
+t = 2 \left( \frac{D_1}{D_2} \right)^2 \cdot \frac{\sqrt{h_0}}{\sqrt{2g}}
+```
+
+---
+
+### Plug in Known Values:
+
+- `D_1 = 1 \, \text{m}`
+- `D_2 = 0.01 \, \text{m}`
+- `h_0 = 2 \, \text{m}`
+- `g = 9.81 \, \text{m/s}^2`
+
+```math
+t = 2 \left( \frac{1}{0.01} \right)^2 \cdot \frac{\sqrt{2}}{\sqrt{2 \cdot 9.81}}
+\approx 2 \cdot 10^4 \cdot \frac{1.4142}{4.429} \approx 6400.5 \, \text{seconds}
+```
+
+Convert to hours:
+
+```math
+t \approx \frac{6400.5}{3600} \approx 1.8 \, \text{hours}
+```
+
+---
+
+**Final Answer:**  
+**The tank will be empty after approximately 1.8 hours.**
