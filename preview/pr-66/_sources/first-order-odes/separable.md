@@ -12,11 +12,11 @@ x^2 y''' + 2x^5 y^4 &= (x^2 + 2)y^2
                                                                                                                   
 The **order** of an ODE is its highest derivative. First-order ODEs typically look like:
 \begin{align}
-\F(x, y, y') &= 0 \\  &nbsp; *(implicit form)*
-y' &= f(x, y) &nbsp; *(explicit form)*
+F(x, y, y') &= 0     *(implicit form)*
+y' &= f(x, y)        *(explicit form)*
 \end{align}
 
-**When do we see first-order ODEs in Chemical Engineering?**
+When do we see first-order ODEs in Chemical Engineering?
 - Unsteady mass/energy balances
 - Chemical kinetics
 
