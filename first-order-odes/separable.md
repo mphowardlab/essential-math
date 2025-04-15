@@ -40,11 +40,6 @@ is a solution for y' = xy.
 ```
 
 **Verification:**
-Verify that
-\begin{align}
-y = e^{x^2 / 2}
-\end{align} 
-is a solution for y' = xy:
 \begin{align}
 y' = x e^{x^2 / 2}
 \end{align}
