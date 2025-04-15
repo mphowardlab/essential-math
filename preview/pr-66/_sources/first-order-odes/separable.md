@@ -3,7 +3,7 @@
 
 An **ordinary differential equation (ODE)** contains one or more derivatives of an unknown function of one variable.
 
-**Examples:**
+**Examples of ODEs:**
 \begin{align} 
 y' = cos x \\
 y'' + 9y = 0 \\
