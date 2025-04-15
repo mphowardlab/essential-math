@@ -74,10 +74,10 @@ g(y) \frac{dy}{dx} = f(x) \\
 ````{example} Separation of Variables
 Given y' = xy separate the variables and solve:
 \begin{align}
-\int \frac{dy}{y} &= \int x dx
-ln(y) &= \frac{x^2}{2} + c_0
-y &= e^(\frac{x^2}{2} + c_0)
-C &= e^c_0
+\int \frac{dy}{y} &= \int x dx \\
+ln(y) &= \frac{x^2}{2} + c_0 \\
+y &= e^(\frac{x^2}{2} + c_0) \\
+C &= e^c_0 \\
 y &= C e^\frac{x^2}{2}
 \end{align}
 ````
