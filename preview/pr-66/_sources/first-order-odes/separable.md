@@ -25,9 +25,9 @@ When do we see first-order ODEs in Chemical Engineering?
 
 ## Direction Fields and Initial Value Problems
 
-ODEs have **families of solutions** due to integration constants. A **direction field** (or slope field) is obtained by plotting the slope at \ (x, y) \ from \( y' = f(x, y) \), showing how a point evolves.
+ODEs have **families of solutions** due to integration constants. A **direction field** (or slope field) is obtained by plotting the slope at (x, y) from (y' = f(x, y)), showing how a point evolves.
 
-**Example:**
+````{example}````
 Given \( y' = xy \) and initial condition \( y(0) = 1 \), a solution curve can be drawn through the slope field.
 
 **Direction Field Diagram**
