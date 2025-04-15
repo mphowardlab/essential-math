@@ -79,4 +79,5 @@ ln(y) &= \frac{x^2}{2} + c_0
 y &= e^(\frac{x^2}{2} + c_0)
 C &= e^c_0
 y &= C e^\frac{x^2}{2}
+\end{align}
 ````
