@@ -45,8 +45,14 @@ y(x_0) = y_(0)
 \end{align}
 
 **Verification**
-Verify that \( y = e^{x^2 / 2} \) is a solution for \( y' = xy \):
-- \( y' = x e^{x^2 / 2} \) ✓
+Verify that
+\begin{equation}
+y = e^{x^2 / 2}
+\end{equation} 
+is a solution for y' = xy:
+\begin{equation}
+y' = x e^{x^2 / 2}  ✓
+\end{equation}
 
 Given /( y(0) = 1\), we find that \(c = 1\) and the particular solution is:
 \[ y = e^{x^2 / 2} \]
