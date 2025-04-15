@@ -18,7 +18,7 @@ Solving for $\displaystyle x_{n+1}$:
 
 $\displaystyle x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$
 
-```{figure} img/newton_raphson_graph
+```{figure} img/newton_raphson_graph.png
 The figure shows how the method iteratively converges to the root by using the tangent line at the current guess to find a better approximation.
 ```
     
@@ -40,11 +40,11 @@ $\displaystyle f'(x) = 2x$
 
 Let the initial guess be $x_0 = 1$.
 
-| \(n\) | \(x_n\) | \(f(x_n)\) | \(f'(x_n)\) | \(x_{n+1}\) |
+| $n$ | $x_n$ | $f(x_n)$ | $f'(x_n)$ | $x_{n+1}$ |
 |------|--------:|-----------:|------------:|------------:|
 | 0    | 1.000   | -1.000     | 2.000       | 1.500       |
 | 1    | 1.500   | 0.250      | 3.000       | 1.417       |
-| 2    | 1.417   | \(6.94 \times 10^{-3}\) | 2.833 | 1.414 ✓ |
+| 2    | 1.417   | $6.94 \times 10^{-3}$ | 2.833 | 1.414 | ✓
 ````
 
 ````{example} Solve $e^{-x^2} - x = 0$
@@ -54,12 +54,10 @@ $f'(x) = -2x e^{-x^2} - 1$
 
 Using an initial guess $x_0 = 0$.
 
-\begin{align}
-\begin{tabular}{c|c|c|c|c}
-$n$ & $x_n$ & $f(x_n)$ & $f'(x_n)$ & $x_{n+1}$ \\
-0 & 0.000 & 1.000 & -1.000 & 1.000 \\
-1 & 1.000 & -0.6321 & -1.736 & 0.6358 \\
-2 & 0.6358 & 0.03164 & -1.949 & 0.6529 \\
-\end{tabular}
-\end{align}
+| $n$ | $x_n$  | $f(x_n)$  | $f'(x_n)$  | $x_{n+1}$ |
+|------:|---------:|-------------:|-------------:|------------:|
+| 0     | 0.000    | 1.000        | -1.000       | 1.000       |
+| 1     | 1.000    | -0.6321      | -1.736       | 0.6358      |
+| 2     | 0.6358   | 0.03164      | -1.949       | 0.6529      |  ✓
+
 ````
