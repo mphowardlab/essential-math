@@ -20,7 +20,7 @@ The **order** of an ODE is its highest derivative. First-order ODEs typically lo
 
 ---
 
-## 2. Direction Fields and Initial Value Problems
+## Direction Fields and Initial Value Problems
 
 ODEs have **families of solutions** due to integration constants. A **direction field** (or slope field) is obtained by plotting the slope at \( (x, y) \) from \( y' = f(x, y) \), showing how a point evolves.
 
@@ -40,7 +40,7 @@ Given /( y(0) = 1\), we find that \(c = 1\) and the particular solution is:
 
 ___
 
-## 3. Solving ODEs: Separation of Variables
+## Solving ODEs: Separation of Variables
 
 If an ODE can be separated so that \( y \) and \( x \) are on each side, it can be integrated:
 
