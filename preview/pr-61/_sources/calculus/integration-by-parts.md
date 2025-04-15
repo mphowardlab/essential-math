@@ -119,7 +119,7 @@ $$\int(x^4e^{\frac{x}{2}}dx) = 2x^4e^{\frac{x}{2}} - 16x^3e^{\frac{x}{2}} + 96x^
 
 $$\int(lnxdx) = ?$$
 
-Let $u=lnx$, which makes $du=\frac{1}{x}$, and $dv=dx$, which makes $v=x$
+Let $u=lnx$, which makes $du=\frac{1}{x}dx$, and $dv=dx$, which makes $v=x$
 
 Which allows:
 
@@ -132,4 +132,14 @@ $$\int(lnx) = xlnx - x + c$$
 
 ````{example} 1.6.5
 
-$$\int(x^5)
+$$\int(x^5)(\sqrt(x^3+1))dx = ?$$
+
+Let $u=x^3$, which gives $du=3x^2dx$, and $dv=x^2\sqrt(x^3+1)dx$, which gives $v=\frac{2}{9}(x^3+1)^{\frac{3}{2}}$
+
+Which allows:
+
+$$\int(x^5)(\sqrt(x^3+1))dx = x^3\frac{2}{9}(x^3+1)^{\frac{3}{2}} - \int(\frac{2}{9}(x^3+1)^{\frac{3}{2}})3x^2dx = \frac{2}{9}x^3(x^3+1)^{\frac{3}{2}} - \frac{2}{9}\frac{2}{5}(x^3+1)^{\frac{5}{2}} + c = \frac{2}{9}x^3(x^3+1)^{\frac{3}{2}} - \frac{4}{45}(x^3+1)^{\frac{5}{2}} + c$$
+
+So...
+
+$$\int(x^5)(\sqrt(x^3+1))dx = \frac{2}{9}x^3(x^3+1)^{\frac{3}{2}} - \frac{4}{45}(x^3+1)^{\frac{5}{2}} + c$$
