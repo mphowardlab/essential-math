@@ -34,12 +34,12 @@ y = e^{x^2 / 2}
 \end{align}
 is a solution for y' = xy.
 
-**Direction Field Diagram**
+**Direction Field Diagram:**
 ```{image} ./_images/directionalfield.png
 :alt: Directional Field Diagram
 ```
 
-**Verification**
+**Verification:**
 Verify that
 \begin{align}
 y = e^{x^2 / 2}
