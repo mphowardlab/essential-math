@@ -67,9 +67,9 @@ ___
 If an ODE can be separated so that y and x are on each side, it can be integrated:
 
 \begin{equation}
-g(y) \fac{dy}{dx} = f(x)
-
-\[ \int g(y) \, dy = \int f(x) \, dx + C \]
+g(y) \fac{dy}{dx} = f(x) \\
+\int g(y) * dy = (\int f(x) * dx) + C
+\end{equation}
 
 **Example:**
 Given \( y' = xy \), separate variables:
