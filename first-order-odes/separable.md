@@ -31,6 +31,8 @@ ODEs have **families of solutions** due to integration constants. The **directio
 Given y' = xy and initial condition y(0) = 1, a solution curve can be drawn through the slope field.
 
 **Direction Field Diagram**
+```{image} ./_images/directionalfield.png
+```
 
 To fully specify a problem, an **initial value** \( y(x_0) = y_(0) \) is required.
 
