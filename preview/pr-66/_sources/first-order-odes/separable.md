@@ -4,11 +4,7 @@
 An **ordinary differential equation (ODE)** contains one or more derivatives of an unknown function of one variable.
 
 **Examples:**
-\begin{equation} 
-y' = cos x \\
-y'' + 9y = 0 \\
-x^2 y''' + 2x^5 y^4 &= (x^2 + 2)y^2
-\end{equation}
+<pre> ``` y' = \cos x y'' + 9y = 0 x^2 y''' + 2x^5 y^4 = (x^2 + 2)y^2 ``` </pre>
                                                                                                                   
 The **order** of an ODE is its highest derivative. First-order ODEs typically look like:
 \begin{equation}
