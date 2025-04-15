@@ -73,9 +73,8 @@ g(y) \frac{dy}{dx} = f(x) \\
 
 ````{example} Separation of Variables
 Given y' = xy separate the variables and solve:
-\[ /fac{dy}{y} = x \, dx \]
-
-Integrating:
-
-\[ \ln y = \fac{x^2}{2} + c_0 \Rightarrow y = e^{x^2 / 2 + c_0} = C e^{x^2 / 2}, \quad \text{where } C = e^{c_0} \]
+\begin{align}
+\int \frac{dy}{y} &= \int x dx
+ln(y) &= \frac{x^2}{2} + c_0
+y &= e^ \frac
 ````
