@@ -5,15 +5,15 @@ An **ordinary differential equation (ODE)** contains one or more derivatives of 
 
 **Examples:**
 \begin{equation} 
-y' &= cos x \\
-y'' + 9y &= 0 \\
+y' = cos x \\
+y'' + 9y = 0 \\
 x^2 y''' + 2x^5 y^4 &= (x^2 + 2)y^2
 \end{equation}
                                                                                                                   
 The **order** of an ODE is its highest derivative. First-order ODEs typically look like:
 \begin{equation}
-F(x, y, y') &= 0 \\
-y' &= f(x, y)
+F(x, y, y') = 0 \\
+y' = f(x, y)
 \end{equation}
 with the first being an example of the **implicit form** and the second being an example of the **explicit form**.
 
