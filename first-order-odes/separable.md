@@ -7,7 +7,7 @@ An **ordinary differential equation (ODE)** contains one or more derivatives of 
 \begin{align} 
 y' = cos x \\
 y'' + 9y = 0 \\
-x^2 y''' + 2x^5 y^4 = (x^2 + 2)y^2
+x^2 y''' y' + 2e^x y^4 = (x^2 + 2)y^2
 \end{align}
                                                                                                                   
 The **order** of an ODE is its highest derivative. First-order ODEs typically look like:
