@@ -6,7 +6,7 @@ It is also a way to solve **differential** equations using **algebra**.
 It is defined as: 
 
 \begin{equation}
-F(s) = ** L[f(t)] ** = \int_0^\infty e^-st \f(t)
+F(s) = L[f(t)] = \int_0^\infty e^-st \f(t)
 \end{equation}
 
 The inverse Laplace transform of **F(s)** is **f(t)**!
