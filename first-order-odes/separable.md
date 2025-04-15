@@ -46,7 +46,7 @@ y = e^{x^2 / 2}
 \end{align} 
 is a solution for y' = xy:
 \begin{align}
-y' = x e^{x^2 / 2} \\ ✓
+y' = x e^{x^2 / 2}
 \end{align}
 
 To fully specify a problem, an **initial value** is required.
@@ -64,9 +64,10 @@ ___
 
 ## Solving ODEs: Separation of Variables
 
-If an ODE can be separated so that \( y \) and \( x \) are on each side, it can be integrated:
+If an ODE can be separated so that y and x are on each side, it can be integrated:
 
-\[ g(y) \fac{dy}{dx} = f(x) \]
+\begin{equation}
+g(y) \fac{dy}{dx} = f(x)
 
 \[ \int g(y) \, dy = \int f(x) \, dx + C \]
 
