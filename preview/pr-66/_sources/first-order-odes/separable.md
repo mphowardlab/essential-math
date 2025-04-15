@@ -28,7 +28,7 @@ with the first being an example of the **implicit form** and the second being an
 ODEs have **families of solutions** due to integration constants. The **direction field** (or slope field) is obtained by plotting the slope at (x, y) from (y' = f(x, y)), showing how a point will evolve.
 
 ````{example} Initial Value Problem
-Given \( y' = xy \) and initial condition \( y(0) = 1 \), a solution curve can be drawn through the slope field.
+Given y' = xy and initial condition y(0) = 1, a solution curve can be drawn through the slope field.
 
 **Direction Field Diagram**
 
