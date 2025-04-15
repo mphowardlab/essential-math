@@ -103,6 +103,7 @@ We will need to integrate by parts again but there is a shortcut!!
 | 24    | 16e^{\frac{x}{2}} |
 | 0     | 32e^{\frac{x}{2}} |
 
+
 For this shortcut make a chart like depicted below and then starting from the first u, go down one row diagonally and multiply the u and the dv together and then continue this all the way to 0.
 
 Your answer will look like this:
@@ -113,3 +114,22 @@ Simplified this will give the final answer of:
 
 $$\int(x^4e^{\frac{x}{2}}dx) = 2x^4e^{\frac{x}{2}} - 16x^3e^{\frac{x}{2}} + 96x^2e^{\frac{x}{2}} - 384xe^{\frac{x}{2}} + 768e^{\frac{x}{2}}$$
 ````
+
+````{example} 1.6.4
+
+$$\int(lnxdx) = ?$$
+
+Let $u=lnx$, which makes $du=\frac{1}{x}$, and $dv=dx$, which makes $v=x$
+
+Which allows:
+
+$$\int(lnx) = xlnx - \int(\frac{1}{x}xdx) = xlnx - x + c$$
+
+So...
+
+$$\int(lnx) = xlnx - x + c$$
+````
+
+````{example} 1.6.5
+
+$$\int(x^5)
