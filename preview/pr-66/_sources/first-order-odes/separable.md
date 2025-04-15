@@ -16,7 +16,7 @@ The **order** of an ODE is its highest derivative. First-order ODEs typically lo
 y' &= f(x, y) &nbsp; *(explicit form)*
 \end{align}
 
-### When do we see first-order ODEs in Chemical Engineering?
+**When do we see first-order ODEs in Chemical Engineering?**
 - Unsteady mass/energy balances
 - Chemical kinetics
 
