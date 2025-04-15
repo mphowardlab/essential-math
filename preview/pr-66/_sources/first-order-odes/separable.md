@@ -71,10 +71,11 @@ g(y) \fac{dy}{dx} = f(x) \\
 \int g(y) * dy = (\int f(x) * dx) + C
 \end{equation}
 
-**Example:**
+````{example}
 Given \( y' = xy \), separate variables:
 \[ /fac{dy}{y} = x \, dx \]
 
 Integrating:
 
 \[ \ln y = \fac{x^2}{2} + c_0 \Rightarrow y = e^{x^2 / 2 + c_0} = C e^{x^2 / 2}, \quad \text{where } C = e^{c_0} \]
+````
