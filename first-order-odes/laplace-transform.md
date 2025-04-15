@@ -5,9 +5,9 @@ It is also a way to solve **differential** equations using **algebra**.
 It is defined as: 
 ````{prf:theorem} Laplace Transform
 :label: my-theorem
-$$
+\begin{equation}
 \F\left\( s \right\) = ** L \left\[\ f \left\( t \right\) \right\] ** = \int_0^\infty \e^-st \f\left\( t \right\)
-$$
+\end{equation}
 
 
 
