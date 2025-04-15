@@ -35,7 +35,10 @@ Given y' = xy and initial condition y(0) = 1, draw a solution curve through the 
 :alt: Directional Field Diagram
 ```
 
-To fully specify a problem, an **initial value** \( y(x_0) = y_(0) \) is required.
+To fully specify a problem, an **initial value** is required.
+\being{align}
+y(x_0) = y_(0)
+\end{align}
 
 **Verification**
 Verify that \( y = e^{x^2 / 2} \) is a solution for \( y' = xy \):
