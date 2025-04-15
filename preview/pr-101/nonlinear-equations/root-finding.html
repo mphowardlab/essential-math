@@ -449,40 +449,66 @@ This will converge quickly for many functions.</p>
 <p><span class="math notranslate nohighlight">\(\displaystyle 0 = f(x_n) + f'(x_n)(x_{n+1} - x_n)\)</span></p>
 <p>Solving for <span class="math notranslate nohighlight">\(\displaystyle x_{n+1}\)</span>:</p>
 <p><span class="math notranslate nohighlight">\(\displaystyle x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}\)</span></p>
-<p>\begin{figure}
-\includegraphics{newton_raphson_graph}
-\end{figure}
-The figure shows how the method iteratively converges to the root by using the tangent line at the current guess to find a better approximation.</p>
+<figure class="align-default" id="id1">
+<img alt="nonlinear-equations/img/newton_raphson_graph" src="nonlinear-equations/img/newton_raphson_graph" />
+<figcaption>
+<p><span class="caption-number">Fig. 4.1 </span><span class="caption-text">The figure shows how the method iteratively converges to the root by using the tangent line at the current guess to find a better approximation.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <p>The algorithm for the Newton-Raphson method is:</p>
 <ol class="arabic simple">
 <li><p>Guess <span class="math notranslate nohighlight">\(x_0\)</span> and set <span class="math notranslate nohighlight">\(n = 0\)</span>.</p></li>
 <li><p>Compute <span class="math notranslate nohighlight">\(f(x_n)\)</span> and <span class="math notranslate nohighlight">\(f'(x_n)\)</span>. If <span class="math notranslate nohighlight">\(f(x_n)\)</span> is ``close’’ to zero, stop.</p></li>
 <li><p>item Update <span class="math notranslate nohighlight">\(x_{n+1}\)</span> using <span class="math notranslate nohighlight">\(x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}\)</span> then return to step 2.</p></li>
 </ol>
+<p>Note that this method can converge much more rapidly than the fixed-point or bisection methods.</p>
+<p>It will fail when <span class="math notranslate nohighlight">\(f'(x_n) = 0\)</span>.</p>
 <div class="admonition-example-solve-displaystyle-x-2-2 admonition">
 <p class="admonition-title">Example: Solve <span class="math notranslate nohighlight">\(\displaystyle x^2 = 2\)</span></p>
-<p>We can rewrite this as:\
-<span class="math notranslate nohighlight">\(\displaystyle f(x) = x^2 - 2\)</span>\
-<span class="math notranslate nohighlight">\(\displaystyle f'(x) = 2x\)</span>\
-Let the initial guess be <span class="math notranslate nohighlight">\(x_0 = 1\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-81e003df-288d-46f3-ae6c-133b7a87f999">
-<span class="eqno">(4.1)<a class="headerlink" href="#equation-81e003df-288d-46f3-ae6c-133b7a87f999" title="Permalink to this equation">#</a></span>\[\begin{align}
-\begin{tabular}{|c|c|c|c|c|}
-$n$ &amp; $x_n$ &amp; $f(x_n)$ &amp; $f'(x_n)$ &amp; $x_{n+1}$ \\
-0 &amp; 1.000 &amp; -1.000 &amp; 2.000 &amp; 1.500 \\
-1 &amp; 1.500 &amp; 0.250 &amp; 3.000 &amp; 1.417 \\
-2 &amp; 1.417 &amp; $6.94 \times 10^{-3}$ &amp; 2.833 &amp; 1.414 \\
-\end{tabular}
-\end{align}\]</div>
+<p>We can rewrite this as:</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle f(x) = x^2 - 2\)</span></p>
+<p><span class="math notranslate nohighlight">\(\displaystyle f'(x) = 2x\)</span></p>
+<p>Let the initial guess be <span class="math notranslate nohighlight">\(x_0 = 1\)</span>.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>(n)</p></th>
+<th class="head text-right"><p>(x_n)</p></th>
+<th class="head text-right"><p>(f(x_n))</p></th>
+<th class="head text-right"><p>(f’(x_n))</p></th>
+<th class="head text-right"><p>(x_{n+1})</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td class="text-right"><p>1.000</p></td>
+<td class="text-right"><p>-1.000</p></td>
+<td class="text-right"><p>2.000</p></td>
+<td class="text-right"><p>1.500</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td class="text-right"><p>1.500</p></td>
+<td class="text-right"><p>0.250</p></td>
+<td class="text-right"><p>3.000</p></td>
+<td class="text-right"><p>1.417</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td class="text-right"><p>1.417</p></td>
+<td class="text-right"><p>(6.94 \times 10^{-3})</p></td>
+<td class="text-right"><p>2.833</p></td>
+<td class="text-right"><p>1.414 ✓</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 <div class="admonition-example-solve-e-x-2-x-0 admonition">
 <p class="admonition-title">Example: Solve <span class="math notranslate nohighlight">\(e^{-x^2} - x = 0\)</span></p>
-<p>We define <span class="math notranslate nohighlight">\(f(x) = e^{-x^2} - x\)</span>
-<span class="math notranslate nohighlight">\(f'(x) = -2x e^{-x^2} - 1\)</span>
-Using an initial guess <span class="math notranslate nohighlight">\(x_0 = 0\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fbc2d09f-0da2-425b-97cf-9943a2cdeee9">
-<span class="eqno">(4.2)<a class="headerlink" href="#equation-fbc2d09f-0da2-425b-97cf-9943a2cdeee9" title="Permalink to this equation">#</a></span>\[\begin{align}
-\begin{tabular}{|c|c|c|c|c|}
+<p>We define <span class="math notranslate nohighlight">\(f(x) = e^{-x^2} - x\)</span></p>
+<p><span class="math notranslate nohighlight">\(f'(x) = -2x e^{-x^2} - 1\)</span></p>
+<p>Using an initial guess <span class="math notranslate nohighlight">\(x_0 = 0\)</span>.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ac7a68ba-a951-40fa-8045-fe225df3b41d">
+<span class="eqno">(4.1)<a class="headerlink" href="#equation-ac7a68ba-a951-40fa-8045-fe225df3b41d" title="Permalink to this equation">#</a></span>\[\begin{align}
+\begin{tabular}{c|c|c|c|c}
 $n$ &amp; $x_n$ &amp; $f(x_n)$ &amp; $f'(x_n)$ &amp; $x_{n+1}$ \\
 0 &amp; 0.000 &amp; 1.000 &amp; -1.000 &amp; 1.000 \\
 1 &amp; 1.000 &amp; -0.6321 &amp; -1.736 &amp; 0.6358 \\
@@ -490,8 +516,6 @@ $n$ &amp; $x_n$ &amp; $f(x_n)$ &amp; $f'(x_n)$ &amp; $x_{n+1}$ \\
 \end{tabular}
 \end{align}\]</div>
 </div>
-<p>Note that this method can converge much more rapidly than the fixed-point or bisection methods.</p>
-<p>It will fail when <span class="math notranslate nohighlight">\(f'(x_n) = 0\)</span>.</p>
 </section>
 </section>
 
