@@ -52,7 +52,13 @@ Let $u=x$ , which gives $du=dx$ , and $dv=e^{-6x}dx$ , which gives $v=\frac{-1}{
 
 Then,
 
-$$\int(xe^{-6x}dx) = x\frac{-e^{-6x}}{6} - \int\frac{-e^{-6x}}{6}dx = x\frac{-e^{-6x}}{6} + \frac{-1}{6}\int(e^{-6x}dx) = x\frac{-e^{-6x}}{6} - \frac{-e^{-6x}}{36} + c$$
+$$\int(xe^{-6x}dx) 
+
+= x\frac{-e^{-6x}}{6} - \int\frac{-e^{-6x}}{6}dx 
+
+= x\frac{-e^{-6x}}{6} + \frac{-1}{6}\int(e^{-6x}dx) 
+
+= x\frac{-e^{-6x}}{6} - \frac{-e^{-6x}}{36} + c$$
 ````
 
 How do we choose u vs. v?
@@ -77,7 +83,13 @@ Let $u=3x+5$ , which makes $du=3dx$ , and $dv=\cos{\frac{x}{4}}dx$ , which makes
 
 Which allows:
 
-$$\int(3x+5)\cos{\frac{x}{4}}dx = (3x+5)[4\sin{\frac{x}{4}}] - \int4\sin{\frac{x}{4}}3dx = (12x+20)[\sin{\frac{x}{4}}] - 12\int\sin{\frac{x}{4}}dx = (12x+20)[4\sin{\frac{x}{4}}] + 48\cos{\frac{x}{4}} + c$$
+$$\int(3x+5)\cos{\frac{x}{4}}dx 
+
+= (3x+5)[4\sin{\frac{x}{4}}] - \int4\sin{\frac{x}{4}}3dx 
+
+= (12x+20)[\sin{\frac{x}{4}}] - 12\int\sin{\frac{x}{4}}dx 
+
+= (12x+20)[4\sin{\frac{x}{4}}] + 48\cos{\frac{x}{4}} + c$$
 
 So...
 
@@ -90,7 +102,9 @@ $$\int(x^4e^{\frac{x}{2}}dx) = ?$$
 
 Let $u=x^4$ , which makes $du=4x^3$ , and $dv=e^{\frac{x}{2}}dx$ , which makes $v=2e^{\frac{x}{2}}$
 
-$$\int(x^4e^{\frac{x}{2}}dx) = x^4(2e^{\frac{x}{2}}) - \int2e^{\frac{x}{2}}(4x^3)dx$$
+$$\int(x^4e^{\frac{x}{2}}dx) 
+
+= x^4(2e^{\frac{x}{2}}) - \int2e^{\frac{x}{2}}(4x^3)dx$$
 
 We will need to integrate by parts again but there is a shortcut!!
 
@@ -123,7 +137,11 @@ Let $u=lnx$, which makes $du=\frac{1}{x}dx$, and $dv=dx$, which makes $v=x$
 
 Which allows:
 
-$$\int(lnx) = xlnx - \int(\frac{1}{x}xdx) = xlnx - x + c$$
+$$\int(lnx) 
+
+= xlnx - \int(\frac{1}{x}xdx) 
+
+= xlnx - x + c$$
 
 So...
 
@@ -138,7 +156,13 @@ Let $u=x^3$, which gives $du=3x^2dx$, and $dv=x^2\sqrt(x^3+1)dx$, which gives $v
 
 Which allows:
 
-$$\int(x^5)(\sqrt(x^3+1))dx = x^3\frac{2}{9}(x^3+1)^{\frac{3}{2}} - \int(\frac{2}{9}(x^3+1)^{\frac{3}{2}})3x^2dx = \frac{2}{9}x^3(x^3+1)^{\frac{3}{2}} - \frac{2}{9}\frac{2}{5}(x^3+1)^{\frac{5}{2}} + c = \frac{2}{9}x^3(x^3+1)^{\frac{3}{2}} - \frac{4}{45}(x^3+1)^{\frac{5}{2}} + c$$
+$$\int(x^5)(\sqrt(x^3+1))dx 
+
+= x^3\frac{2}{9}(x^3+1)^{\frac{3}{2}} - \int(\frac{2}{9}(x^3+1)^{\frac{3}{2}})3x^2dx 
+
+= \frac{2}{9}x^3(x^3+1)^{\frac{3}{2}} - \frac{2}{9}\frac{2}{5}(x^3+1)^{\frac{5}{2}} + c 
+
+= \frac{2}{9}x^3(x^3+1)^{\frac{3}{2}} - \frac{4}{45}(x^3+1)^{\frac{5}{2}} + c$$
 
 So...
 
