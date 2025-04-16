@@ -14,6 +14,7 @@ If  x(y, z)  and  y(x, z), then:
 
 **Example:**
 
+```{math}
 Let:
 x = \frac{y^2}{z}
 ```
