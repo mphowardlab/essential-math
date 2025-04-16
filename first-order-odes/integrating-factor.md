@@ -14,5 +14,5 @@ Mole balance on a tank with increasing inlet/outlet flow rate.
 
 Rewrite: 
 \begin{align }
-\dot n_A + ((\dot q * t)\v)_n_A &= C_f,A * \dot q * t
+\dot n_A + ((\dot q * t)\v)_n_A &= C_f,A * \dot q * t+6
 \end{align}
