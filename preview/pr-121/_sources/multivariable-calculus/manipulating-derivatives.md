@@ -40,7 +40,7 @@ And confirm the inversion:
 
 #### Chain Rule
 
-```{msth}
+```{math}
 \left( \frac{\partial x}{\partial y} \right)_z = \left( \frac{\partial x}{\partial w} \right)_z \left( \frac{\partial w}{\partial y} \right)_z
 ```
 **Example:**
