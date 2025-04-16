@@ -10,6 +10,7 @@ If  x(y, z)  and  y(x, z), then:
 
 ```{math}
 \left( \frac{\partial x}{\partial y} \right)_z = \frac{1}{\left( \frac{\partial y}{\partial x} \right)_z}
+```
 
 **Example:**
 
