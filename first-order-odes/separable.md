@@ -140,7 +140,7 @@ Equation 2
 It is known that:
 
 $$
-V_2= \sqrt{2g\rho}
+V_2= \sqrt{2gh}
 $$
 
 Plug equation 3 into equation 2 and set equal to known equation
