@@ -44,7 +44,7 @@ And confirm the inversion:
 ```
 **Example:**
 
-Define \( w = yz \), so \( y = \frac{w}{z} \)
+Define  w = yz , so  y = \frac{w}{z} 
 
 Then:
 ```{math}
