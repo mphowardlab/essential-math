@@ -47,8 +47,12 @@ And confirm the inversion:
 **Example:**
 
 ```{math}
-  w = yz , so   y = \frac{w}{z} 
+  w = yz , 
 ```
+ so   
+ ```{math}
+ y = \frac{w}{z}
+ ```
 Then:
 ```{math}
 x = \frac{(w/z)^2}{z} = \frac{w^2}{z^3}
