@@ -3,7 +3,8 @@
 
 Some ODEs give rise to integrals like:
 
-\( y' = \frac{3x+11}{x^2 - x - 6} \to y = \int \frac{3x+11}{x^2 - x - 6} dx \)
+`y' = \frac{3x+11}{x^2 - x - 6} \to y = \int \frac{3x+11}{x^2 - x - 6} dx`
+
 
 
 This can be done with u-substitution... how to take it?
