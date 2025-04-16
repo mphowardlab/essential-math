@@ -1,8 +1,17 @@
 # Manipulating partial derivatives
-### 1. Derivatives as Functions
-First law of thermodynamics: dU̲ = TdS̲ - PdV̲ <br>
-$\underline{Exact}$ differential for U̲(S̲,V̲). Mathematically, we also have : <br>
-dU̲=$(\frac{\partial \underline{U}}{\partial \underline{S}})_{\underline{V}}d \underline{S} + (\frac{\partial \underline{U}}{\partial \underline{V}})_{\underline{S}}d \underline{V}$ <br>
+## Derivatives as Functions
+
+First law of thermodynamics
+
+\begin{equation}
+\d{\ubar{U}} = T\d{\ubar{S}} - P \d{\ubar{V}}
+\end{equation}
+
+*Exact* differential for $\ubar{U}(\ubar{S},\ubar{V})$
+
+\begin{equation}
+\d{\ubar{U}} = \td{}{\ubar{U}}{\ubar{S}}{\ubar{V}} \d{\ubar{S}} + \td{}{\ubar{U}}{\ubar{V}}{\ubar{S}} \d{\ubar{V}}
+\end{equation}
 Hence, <br>
 T(S̲, V̲)=$(\frac{\partial \underline{U}}{\partial \underline{S}})_{\underline{V}}$ and P(S̲, V̲)=-$(\frac{\partial \underline{U}}{\partial \underline{V}})_{\underline{S}}$ <br>
 <br>
