@@ -33,16 +33,28 @@ And:
 ```{math}
 \frac{1}{\left( \frac{\partial y}{\partial x} \right)_z} = \frac{2y}{z}
 ```
+#### Chain Rule
 
 \left( \frac{\partial x}{\partial y} \right)_z = \left( \frac{\partial x}{\partial w} \right)_z \left( \frac{\partial w}{\partial y} \right)_z
 
-# Manipulating Partial Derivatives
+Define \( w = yz \), so \( y = \frac{w}{z} \)
 
-We sometimes need to find derivatives we don't obtain easily from one of these potentials. For this, we use some calculus rules:
+Then:
+```{math}
+x = \frac{(w/z)^2}{z} = \frac{w^2}{z^3}
+```
 
-#### Inversion
-
-If \( x(y, z) \) and \( y(x, z) \), then:
+Now compute:
+```{math}
+\left( \frac{\partial x}{\partial w} \right)_z = \frac{2w}{z^3}
+```
 
 ```{math}
-\left( \frac{\partial x}{\partial y} \right)_z = \frac{1}{\left( \frac{\partial y}{\partial x} \right)_z}
+\left( \frac{\partial w}{\partial y} \right)_z = z
+```
+
+Therefore:
+```{math}
+\left( \frac{\partial x}{\partial y} \right)_z = \frac{2w}{z^3} \cdot z = \frac{2w}{z^2} = \frac{2yz}{z^2} = \frac{2y}{z}
+```
+
