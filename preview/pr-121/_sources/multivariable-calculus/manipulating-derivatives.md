@@ -2,7 +2,7 @@
 
 We sometimes need to find derivatives we don't obtain easily from one of these potentials. For this, we use some calculus rules:
 
-####Inversion:
+#### Inversion
 
 If x(y,z) and y(x,z) then
 
@@ -20,7 +20,7 @@ We can rearrange this to form y = \pm \sqrt{xz}
 \frac{1}{{partial y}{partial x}_z} = \frac{2y}{z}
 ````
 
-####Chain Rule:
+#### Chain Rule
 
 If x(y,z) then 
 
