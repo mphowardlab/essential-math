@@ -157,13 +157,13 @@ $$
 
 
 $$
-\int \frac{1}{\sqrt{h}}\, dh = \int -(\frac{D_2}{D_1})^2 \sqrt{2gh},dt
+\int \frac{1}{\sqrt{h}}\, dh = \int -(\frac{D_2}{D_1})^2 \sqrt{2gh}\,dt
 $$
 
 General Solution:
 
 $$
-2\sqrt{h} = -(\frac{D_2}{D_1})^2 \sqrt{2\cdot gh}.\cdot t + C
+2\sqrt{h} = -(\frac{D_2}{D_1})^2 \sqrt{2\cdot gh}\cdot t + C
 $$
 
 Find Integration Constant C 
@@ -186,14 +186,14 @@ $$
 
 
 $$
-h =  (\sqrt{h_0} - 0.5(\frac{D_2}{D_1})^2 \sqrt{2gh}(t))^2 
+h =  (\sqrt{h_0} - 0.5(\frac{D_2}{D_1})^2 \sqrt{2gh}\cdot t)^2 
 $$
 
 
 When the tank drains h=0  so, 
 
 $$
-0 = \sqrt{h_0}- 0.5(\frac{D_2}{D_1})^2 \sqrt{2gh}(t)
+0 = \sqrt{h_0}- 0.5(\frac{D_2}{D_1})^2 \sqrt{2gh}\cdot t
 $$
 
 Plug in known values 
