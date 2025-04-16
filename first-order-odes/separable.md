@@ -1,5 +1,5 @@
 # Separable differential equations
-> ### Example 1
+### Example 1
 The iceman Ötzi was found to have 52.5% of the C{sup}`14` of a living organism.  
 If the half-life of the C{sup}`14`is 5715 years, how long ago did Ötzi die if C{sup}`14` disappears by the first-order reaction?
 
@@ -67,8 +67,7 @@ $$
  
  **Final Answer**
  **Ötzi died approximately 5310 years ago**
-
- > ### Example 2
+### Example 2
  Newtons law of cooling 
 Estimate the temperature in an office building at 6 a.m. if the heat goes off at 10 p.m. when the building is 70 degrees fahrenheit and the outside if 45 degrees fahrenheit.
 
@@ -164,7 +163,7 @@ $$
 General Solution:
 
 $$
-2\sqrt{h} = -(\frac{D_2}{D_1})^2 \sqrt{2\cdot gh}.\cdot t +C
+2\sqrt{h} = -(\frac{D_2}{D_1})^2 \sqrt{2\cdot gh}.\cdot t + C
 $$
 
 Find Integration Constant C 
@@ -182,19 +181,19 @@ Plug back into General Solution
 When the tank drains h=0 so, 
 
 $$
-\sqrt{h} = \sqrt{h_0} - 0.5(\frac{D_2}{D_1})^2\sqrt{2gh}.\cdot t 
+\sqrt{h} = \sqrt{h_0} - 0.5(\frac{D_2}{D_1})^2\sqrt{2gh}(t) 
 $$
 
 
 $$
-h =  (\sqrt{h_0} - 0.5(\frac{D_2}{D_1})^2 \sqrt{2gh}.\cdot t)^2 
+h =  (\sqrt{h_0} - 0.5(\frac{D_2}{D_1})^2 \sqrt{2gh}(t))^2 
 $$
 
 
 When the tank drains h=0  so, 
 
 $$
-0 = \sqrt{h_0}- 0.5(\frac{D_2}{D_1})^2 \sqrt{2gh}.\cdot t
+0 = \sqrt{h_0}- 0.5(\frac{D_2}{D_1})^2 \sqrt{2gh}(t)
 $$
 
 Plug in known values 
@@ -203,7 +202,7 @@ $$
 t = 2(\frac{D_2}{D_1})^2 \sqrt{\frac{h_0}{2g}} 
 $$
 $$ 
-t = 2(\frac{1}{0.01})^2 \sqrt{\frac{2}{2 .\cdot 9.81}} 
+t = 2(\frac{1}{0.01})^2 \sqrt{\frac{2}{2 \cdot 9.81}} 
 $$
 
 **Final Answer**
