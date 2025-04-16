@@ -1,19 +1,27 @@
 # Partial fraction decomposition
 1. Partial fraction decomposition
+
 Some ODEs give rise to integrals like:
-y'= \fract{3x+11}{x^2-x-6}  \to y= \int \fract{3x+11}{x^2-x-6} dx
+
+y'= \frac{3x+11}{x^2-x-6}  \to y= \int\frac{3x+11}{x^2-x-6} dx
+
 This can be done with u-substitution... how to take it?
-\fract{3x+11}{x^2-x-6} = \fract{3x+11}{(x-3)(x+2)} = \fract{A_1}{x-3} + \fract{A_2}{x+2} (guess we can do this)
+
+\frac{3x+11}{x^2-x-6} =\fract{3x+11}{(x-3)(x+2)} = \fract{A_1}{x-3} + \fract{A_2}{x+2}
+
+ (guess we can do this)
+
 3x+11 = A_1(x+2) + A_2(x-3)
       = (A_1 + A_2)x + (2A_1 - 3A_2)
 
-A_1 + A_2 = 3
+\( A_1 \) + A_2 = 3
+
 2A_1 - 3A_2 = 11
 
 \begin{bmatrix} 1 & 1 & 3\\ 2 & -3 & 11 \end{bmatrix} \to \begin{bmatrix} 1 & 1 & 3\\ 0 & -5 & 5 \end{bmatrix} \to \begin{bmatrix} 1 & 1 & 3\\ 0 & 1 & -1 \end{bmatrix} \to \begin{bmatrix} 1 & 0 & 4\\ 0 & 1 & -1 \end{bmatrix}
 A_1 = 4  A_2 = -1
 
-y=\int (\fract{4}{x-3}-\fract{1}{x+2})dx = 4ln|x-3| - ln|x+2| + C
+y=\int (\frac{4}{x-3}-\frac{1}{x+2})dx = 4ln|x-3| - ln|x+2| + C
 
 This technique is also called \underline{partial fraction decomposition}
 
