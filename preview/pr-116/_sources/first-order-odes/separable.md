@@ -53,36 +53,60 @@ $$45 + 25 e^-(0.05(8)) = 62 degrees fahrenheit$$
 ### Example 3
 Torcelli's Law 
 A 1cm hole opens at the bottom of a 1m cylindrical tank. If there is 2m of water in the tank, when does it drain?
+![fishy](./images/MAtAppextracreditdrawing.jpg)
 ***
 Solution:
 Known equations:
-$$
-\int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}
-$$
+
 $$m = \rho V(t) $$
+
 so,
+
 $$m = \rho (frac{\pi (D{sub}`1`)^2}{4}) h(t)$$
+
 Mass Balance:
+
 $$\frac{dm}{dt} = -m{sub}`out` $$ 
+
 also, 
 Equation 1:
+
 $$ \frac{dm}{dt} = \rho (frac{\pi(D{sub}`2`)^2}{4}) V{sub}`2` $$
+
 Equation 2
+
 It is known that $V{sub}`2`= \sqrt{2\cdot g \cdot \rho} $
+
 Plug equation 3 into equation 2 and set equal to known equation
+
 $$ \rho (frac{\pi(D{sub}`2`)^2}{4}) \cdot \sqrt{2\cdot gh} = \rho (frac{\pi (D{sub}`1`)^2}{4}) .\cdot  \frac{dh}{dt} $$
+
 Simplify:
+
 $$ \frac{dh}{dt} = -(frac{D{sub}`2`}{D{sub}`1`})^2 .\cdot \sqrt{2\cdot gh} $$
+
+
 $$\int \frac{1}{\sqrt{h}}, dh = \int -(frac{D{sub}`2`}{D{sub}`1`})^2 .\cdot \sqrt{2\cdot gh},dt$$
+
 General Solution:
+
 $$2\sqrt{h} = - -(frac{D{sub}`2`}{D{sub}`1`})^2 .\cdot \sqrt{2\cdot gh} .\cdot t +C$$
+
 Find Integration Constant C 
+
 $$h(0) = h{sub}`0` $$ 
+
+
 $$ 2 \sqrt{h{sub}`0`} = C $$
 Plug back into General Solution
 When the tank drains `h=0` so, 
+
 $$\sqrt{h} = \sqrt{h{sub}`0`} - 0.5 .\cdot (frac{D{sub}`2`}{D{sub}`1`})^2 .\cdot \sqrt{2\cdot gh} .\cdot t $$
+
+
 $$h =  (\sqrt{h{sub}`0`} - 0.5 .\cdot (frac{D{sub}`2`}{D{sub}`1`})^2 .\cdot \sqrt{2\cdot gh} .\cdot t)^2 $$
+
+
 When the tank drains $ h=0 $ so, 
 $ 0 = \sqrt{h{sub}`0`- 0.5 .\cdot (frac{D{sub}`2`}{D{sub}`1`})^2 .\cdot \sqrt{2\cdot gh} .\cdot t$
 Plug in known values 
