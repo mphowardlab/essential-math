@@ -47,7 +47,7 @@ And confirm the inversion:
 **Example:**
 
 ```{math}
-  w = yz , so  y = \frac{w}{z} 
+  w = yz , so   y = \frac{w}{z} 
 ```
 Then:
 ```{math}
