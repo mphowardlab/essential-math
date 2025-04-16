@@ -16,3 +16,6 @@ Rewrite:
 \begin{align }
 \dot n_A + ((\dot q * t)\v)_n_A &= C_f,A * \dot q * t
 \end{align}
+
+
+## 5. Example
