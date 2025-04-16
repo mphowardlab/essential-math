@@ -1,54 +1,48 @@
-# Manipulating partial derivatives
+# Manipulating Partial Derivatives
 
 We sometimes need to find derivatives we don't obtain easily from one of these potentials. For this, we use some calculus rules:
 
 #### Inversion
 
-If x(y, z) and y(x, z), then
+If \( x(y, z) \) and \( y(x, z) \), then:
 
-$$
+```{math}
 \left( \frac{\partial x}{\partial y} \right)_z = \frac{1}{\left( \frac{\partial y}{\partial x} \right)_z}
-$$
 
-````{example}
-Let 
-$$
+Let:
+```{math}
 x = \frac{y^2}{z}
-$$
+```
 
-We can rearrange this to form:  
-$$
+We can rearrange this to:
+```{math}
 y = \pm \sqrt{xz}
-$$
+```
+
+Compute:
+```{math}
+\left( \frac{\partial x}{\partial y} \right)_z = \frac{2y}{z}
+```
 
 Then:
-$$
-\left( \frac{\partial x}{\partial y} \right)_z = \frac{2y}{z}
-$$
+```{math}
+\left( \frac{\partial y}{\partial x} \right)_z = \frac{z}{2y}
+```
 
 And:
-$$
-\left( \frac{\partial y}{\partial x} \right)_z = \frac{1}{2} \cdot \frac{z}{\sqrt{xz}} = \frac{z}{2y}
-$$
-
-Thus:
-$$
+```{math}
 \frac{1}{\left( \frac{\partial y}{\partial x} \right)_z} = \frac{2y}{z}
-$$
+```
 
-Define \( w = yz \), so \( y = \frac{w}{z} \)
+\left( \frac{\partial x}{\partial y} \right)_z = \left( \frac{\partial x}{\partial w} \right)_z \left( \frac{\partial w}{\partial y} \right)_z
 
-Then:
-$$
-x = \frac{(w/z)^2}{z} = \frac{w^2}{z^3}
-$$
+# Manipulating Partial Derivatives
 
-Now compute:
-$$
-\left( \frac{\partial x}{\partial w} \right)_z = \frac{2w}{z^3}, \quad \left( \frac{\partial w}{\partial y} \right)_z = z
-$$
+We sometimes need to find derivatives we don't obtain easily from one of these potentials. For this, we use some calculus rules:
 
-Therefore:
-$$
-\left( \frac{\partial x}{\partial y} \right)_z = \left( \frac{2w}{z^3} \right) z = \frac{2w}{z^2} = \frac{2yz}{z^2} = \frac{2y}{z}
-$$
+#### Inversion
+
+If \( x(y, z) \) and \( y(x, z) \), then:
+
+```{math}
+\left( \frac{\partial x}{\partial y} \right)_z = \frac{1}{\left( \frac{\partial y}{\partial x} \right)_z}
