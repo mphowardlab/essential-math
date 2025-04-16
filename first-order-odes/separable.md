@@ -73,22 +73,22 @@ $$
 Estimate the temperature in an office building at 6 a.m. if the heat goes off at 10 p.m. when the building is 70 degrees fahrenheit and the outside if 45 degrees fahrenheit.
 
 $$ 
-\frac{dT}{dt} = -k(T - T_outside) 
+\frac{dT}{dt} = -k(T - T_{outside}) 
 $$
 
 If  k = 0.05 and T(10p.m.) = T(0) = 70
 
 $$
-\int \frac{1}{T - T_outside}\, dT = \int -k\, dt
+\int \frac{1}{T - T_{outside}}\, dT = \int -k\, dt
 $$
 $$
-ln(T - T_outside) = -kt + C 
+ln(T - T_{outside}) = -kt + C 
 $$
 $$
-T - T_outside = C e^{-kt}
+T - T_{outside} = C e^{-kt}
 $$
 $$
-T = T_outside+ C e^{-kt}
+T = T_{outside}+ C e^{-kt}
 $$
 
 Since T(10p.m.) = T(0) = 70 then 70 = 45 + C so C = 25
@@ -126,7 +126,7 @@ $$
 Mass Balance:
 
 $$
-\frac{dm}{dt} = -m_out 
+\frac{dm}{dt} = -m_{out} 
 $$ 
 
 also, 
@@ -164,7 +164,7 @@ $$
 General Solution:
 
 $$
-2\sqrt{h} = -(\frac{D_2}{D_1})^2 \sqrt{2\cdot gh}t +C
+2\sqrt{h} = -(\frac{D_2}{D_1})^2 \sqrt{2\cdot gh}.\cdot t +C
 $$
 
 Find Integration Constant C 
@@ -182,28 +182,28 @@ Plug back into General Solution
 When the tank drains h=0 so, 
 
 $$
-\sqrt{h} = \sqrt{h_0} - 0.5(\frac{D_2}{D_1})^2\sqrt{2gh}t 
+\sqrt{h} = \sqrt{h_0} - 0.5(\frac{D_2}{D_1})^2\sqrt{2gh}.\cdot t 
 $$
 
 
 $$
-h =  (\sqrt{h_0} - 0.5(\frac{D_2}{D_1})^2 \sqrt{2gh}t)^2 
+h =  (\sqrt{h_0} - 0.5(\frac{D_2}{D_1})^2 \sqrt{2gh}.\cdot t)^2 
 $$
 
 
 When the tank drains h=0  so, 
 
 $$
-0 = \sqrt{h_0}- 0.5(\frac{D_2}{D_1})^2 \sqrt{2gh}t
+0 = \sqrt{h_0}- 0.5(\frac{D_2}{D_1})^2 \sqrt{2gh}.\cdot t
 $$
 
 Plug in known values 
 
 $$ 
-t = 2(\frac{D_2}{D_1})^2 \sqrt{frac{h_0}{2g}} 
+t = 2(\frac{D_2}{D_1})^2 \sqrt{\frac{h_0}{2g}} 
 $$
 $$ 
-t = 2(\frac{1}{0.01})^2 \sqrt{frac{2}{2 .\cdot 9.81}} 
+t = 2(\frac{1}{0.01})^2 \sqrt{\frac{2}{2 .\cdot 9.81}} 
 $$
 
 **Final Answer**
