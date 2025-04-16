@@ -4,7 +4,7 @@ We sometimes need to find derivatives we don't obtain easily from one of these p
 
 #### Inversion
 
-If \( x(y, z) \) and \( y(x, z) \), then
+If \ x(y, z) \ and \ y(x, z) \, then
 
 
 \left( \frac{\partial x}{\partial y} \right)_z = \frac{1}{\left( \frac{\partial y}{\partial x} \right)_z}
