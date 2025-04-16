@@ -10,7 +10,7 @@ If \( x(y, z) \) and \( y(x, z) \), then:
 \left( \frac{\partial x}{\partial y} \right)_z = \frac{1}{\left( \frac{\partial y}{\partial x} \right)_z}
 
 Let:
-```{math}
+
 x = \frac{y^2}{z}
 ```
 
