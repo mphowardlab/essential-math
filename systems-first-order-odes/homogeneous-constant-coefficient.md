@@ -34,7 +34,7 @@ y=(c1*(e^(lambda1*t))*x1)+(c2*(e^(lambda2*t))*x2)+...+(cn*(e^(lambdan*t))*xn)
 \end{align}
 %
 %
-# 2. Example: Reaction Network
+# Example: Reaction Network
 c' = A*c
 A = [-k1 0 0, k1 -k2 0, 0 k2 0]
 disp(A)
