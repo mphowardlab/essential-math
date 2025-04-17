@@ -11,6 +11,8 @@ This work (c) 2025 is licensed under
 - Evan M. Hughes
 - Michelle Schindler
 
+- Gwyneth A. Lovell
+
 ## Attributions
 
 Many of these notes were based on my own studies using the excellent textbook:
