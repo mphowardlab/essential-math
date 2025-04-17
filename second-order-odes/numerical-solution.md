@@ -22,3 +22,13 @@ y_2' = f(t, y_1, y_2) & y_2(0) = y'(0)
 \end{cases}\]
 
 > Note: This actually works for even higher-order ODEs!
+
+
+## Analytical Example
+\[y'' + y' - 2y = 0,  y(0) = 4,  y'(0) = -5\]
+
+We showed:
+
+\[y = e^x + 3e^{-2x}\]
+
+Let’s resolve as a system:
