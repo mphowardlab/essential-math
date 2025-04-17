@@ -5,9 +5,9 @@
 y'=A*y
 \end{equation}
 \begin{align}
-% As an ansatz, assume a solution: $y=(exp
+As an ansatz, assume a solution: 
 \begin{equation}
-(lambda*t))*x 
+y=(exp^lambda*t)*x 
 \end{equation}
 \begin{equation}
 y'=\lambda*(\e^(\lambda*t))*x
