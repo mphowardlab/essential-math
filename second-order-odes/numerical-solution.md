@@ -28,7 +28,9 @@ y_2' = f(t, y_1, y_2) & y_2(0) = y'(0)
 \[y'' + y' - 2y = 0,  y(0) = 4,  y'(0) = -5\]
 
 We showed:
+\[y = e^x + 3e^{-2x}\] 
+ Let’s resolve as a system:
 
-\[y = e^x + 3e^{-2x}\]
-
-Let’s resolve as a system:
+\[\begin{align*}
+y_1 &=y\\y_2 &=y'\\y'' &=-y'+2y
+\end{align*}\]
