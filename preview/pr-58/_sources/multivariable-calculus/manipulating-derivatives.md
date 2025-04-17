@@ -1,7 +1,6 @@
 # Manipulating partial derivatives
 
 ```{example} Change in internal energy
-
 We want to compute the change in molar internal energy $\Delta U$ of a
 substance as we vary the temperature $T$ and pressure $P$ in terms of quantities
 we can measure. In addition to $T$ and $P$, these quantities are the molar
@@ -81,5 +80,4 @@ Putting it all together:
 
 This total differential is now suitable for integration with respect to $T$
 and $P$ using only measurable quantities!
-
 ```
