@@ -8,6 +8,7 @@ This work (c) 2025 is licensed under
 ## Contributors
 
 - Michael P. Howard
+- Gwyneth A. Lovell
 
 ## Attributions
 
