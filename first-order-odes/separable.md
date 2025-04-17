@@ -10,13 +10,20 @@ $$
 Solution:
 Assume at death t=0 and c(0) = c{sub}`0` 
 
-\begin{align}
-\int \frac{1}{c}\, dc = \int -k\, dt//
-\ln(c) = -kt + B//
-c = A e^{-kt}//
-c(0) = c_0 = A//
-c(t) = c_0 e^{-kt}//
-\end{align}
+$$
+\int \frac{1}{c}\, dc = \int -k\, dt
+$$
+$$
+\ln(c) = -kt + B
+$$
+$$
+c = A e^{-kt}
+$$
+$$
+c(0) = c_0 = A
+$$
+c(t) = c_0 e^{-kt}
+$$
 
 It is known that c(5715 year) = 0.5 c{sub}`0`  and t is needed where  c(t) = 0.525 c{sub}`0`  
 
@@ -99,7 +106,7 @@ $$
 ### Example 3
 Torcelli's Law 
 A 1cm hole opens at the bottom of a 1m cylindrical tank. If there is 2m of water in the tank, when does it drain?
-![fishy](./images/MAtAppextracreditdrawing2.jpg)
+![fishy](./images/MAtAppextracreditdrawing3.jpg)
 ***
 Solution:
 Known equations:
