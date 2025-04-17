@@ -27,6 +27,7 @@ x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}
 
 ```{image} ./_images/newton_raphson_graph.svg
 :alt: The figure shows how the method iteratively converges to the root by using the tangent line at the current guess to find a better approximation.
+:width: 300px
 :align: center
 ```
  
