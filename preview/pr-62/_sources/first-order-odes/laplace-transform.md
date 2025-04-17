@@ -7,6 +7,7 @@ Given the initial value problem
 
 \begin{align}
 y' &=-ky \\
+
 y(0) &=2
 \end{align}
 
@@ -14,9 +15,13 @@ Rearrange and apply Laplace transform
 
 \begin{align}
 y'+ky &= 0 \\
+
 L[y'+ky] &= L[0] \\
+
 SY-y(0)+kY &= 0 \\
+
 (s+k)Y-2 &= 0 \\
+
 Y &= \frac{2}{s+k}\\
 \end{align}
 
@@ -31,6 +36,7 @@ Given this initial value problem apply Laplace Transfrom
 
 \begin{align}
 y'-y &= t\\
+
 y(0) &= 1\\
 \end{align}
 
@@ -38,8 +44,11 @@ Apply Laplace Transfrom
 
 \begin{align}
 L[y'-y] &= L[t]\\
+
 SY-y(0)-Y &= \frac{1}{s^2}\\
+
 (s-1)Y-1 &= \frac{1}{s^2}\\
+
 y=\frac{1}{(s-1)} + \frac{1}{(s-1)(s^2)}\\
 \end{align}
 
@@ -48,10 +57,15 @@ The best method to narrow down this equation would be to use fraction decomposit
 
 \begin{align}
 \frac{1}{(s-1)(s^2)} &= \frac{A1}{(s-1)} + \frac{A2}{(s)} + \frac{A3}{(s^2)}\\
+
 &=\frac{1}{(s-1)}+\frac{A2}{(s)} - \frac{A3}{(s^2)}\\
+
 A1 &= \frac{1}{1^(1)}\\
+
 A1&= 1\\
+
 A3 &= \frac{1}{(0-1)} \\
+
 A3&= -1\\
 \end{align}
 
@@ -69,6 +83,7 @@ Plug in values and solve for Y
 
 \begin{align}
 Y&=\frac{1}{(s-1)} + \frac{1}{(s-1)}-\frac{1}{s}-\frac{1}{s^(2)}\\
+
 Y&=\frac{2}{(s-1)}-\frac{1}{s} - \frac{1}{(s^(2))}\\
 \end{align}
 
@@ -76,7 +91,9 @@ Solve for y by applying the Inverse Laplace Tansform
 
 \begin{align}
 y&=L^{-1}[Y]\\
+
 L^{-1}[Y]&=2L^{-1}[\frac{1}{(s-1)}]-L^{-1}[\frac{1}{s}]-L^{-1}[\frac{1}{s^2}]\\
+
 y&=2e^t-1-t\\
 \end{align}
 
