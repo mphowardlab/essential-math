@@ -33,5 +33,7 @@ Ex. $y''+y=0.001x^2$ $y(0)=0$ $y'(0)=1.5$
 $y' = -0.002\sin(x) +c_2 \cos(x) +0.002x -> 1.5 = y'(0) = c_2 -> y=0.002\cos(x) + 1.5sin(x) +0.001x^2 -0.002$
 ***
 Ex. $y''+3y'+2.25y=-10e^-1.5x+cosx$
-1) Find y_n: MATH
-2) Guess y_p: MATH
+1) Find $y_n$: $y{_n}''+3y{_n}'+2.25y_n =0 -> \lambda^2 +3\lambda+2.25 =(\lambda+1.5)^2 = 0 -> \lambda=-1.5 -> y_n = (c_1 + c{_2}x)e^{-1.5x}$
+2) Guess $y_p$: $y_p = k_1 x^2 e^{-1.5 x} + (k_2 \cos(x) +k_3 \sin(x))$
+
+* note that $x^2$ indicates a double root, and the $\cos(x)$ can give cos or sin. 
