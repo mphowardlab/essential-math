@@ -32,5 +32,6 @@ We showed:
  Let’s resolve as a system:
 
 \[\begin{align*}
-y_1 &=y\\y_2 &=y'\\y'' &=-y'+2y
+y_1 &=y     y_2 &=y'     y'' &=-y'+2y
 \end{align*}\]
+
