@@ -17,7 +17,7 @@ y'=\lambda*(\e^(\lambda*t))*x
 \lambda*x=A*x
 \end{equation}
 %
-% This is an eigenvalus problem! lambda is an eigenvalue, and x is an eigenvector of A.
+ This is an eigenvalus problem! lambda is an eigenvalue, and x is an eigenvector of A.
 \end{alaign}
 %
 \begin{align}
