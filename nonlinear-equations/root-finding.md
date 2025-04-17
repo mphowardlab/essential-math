@@ -25,13 +25,11 @@ Solving for $\displaystyle x_{n+1}$:
 x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}
 \end{equation}
 
-```{image} ./_images/newton_raphson_graph.svg
+```{image} ./_images/newton_raphson_graph.png
 :alt: The figure shows how the method iteratively converges to the root by using the tangent line at the current guess to find a better approximation.
-:width: 300px
 :align: center
 ```
  
-    
 The algorithm for the Newton-Raphson method is:
 1. Guess $x_0$ and set $n = 0$.
 2. Compute $f(x_n)$ and $f'(x_n)$. If $f(x_n)$ is ``close'' to zero, stop.
