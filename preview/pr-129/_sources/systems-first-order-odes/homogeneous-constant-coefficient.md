@@ -1,10 +1,12 @@
-# Homogeneous linear first-order ODEs with constant coefficients
-% 1. Homogenous Linear Systems of ODEs With Constant Coefficients
-$y'=A*y
+# 1. Homogeneous linear first-order ODEs with constant coefficients
 %
-% As an ansatz, assume a solution: $y=(e^(lambda*t))*x 
-$y'=lambda*(e^(lambda*t))*x
-$lambda*(e^(lambda*t))*x=A*(e^(lambda*t)*x), ==> $lambda*x=A*x
+%
+y'=A*y
+\begin{align}
+% As an ansatz, assume a solution: $y=(exp(lambda*t))*x 
+$y'=\lambda*(\e^(\lambda*t))*x
+\lambda*(\e^(\lambda*t))*x=A*(\e^(\lambda*t)*x) 
+\lambda*x=A*x
 %
 % This is an eigenvalus problem! lambda is an eigenvalue, and x is an eigenvector of A.
 %
