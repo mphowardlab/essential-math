@@ -1,41 +1,34 @@
-# 1. Homogeneous linear first-order ODEs with constant coefficients
-%
-%
+# Homogeneous linear first-order ODEs with constant coefficients
+
 \begin{equation}
 y'=A*y
 \end{equation}
-\begin{align}
+
 As an ansatz, assume a solution: 
-\begin{equation}
-y=(exp^lambda*t)*x 
-\end{equation}
-\begin{equation}
-y'=\lambda*(\e^(\lambda*t))*x
-\lambda*(\e^(\lambda*t))*x=A*(\e^(\lambda*t)*x) 
-\end{equation}
-\begin{equation}
-\lambda*x=A*x
-\end{equation}
-%
- This is an eigenvalus problem! lambda is an eigenvalue, and x is an eigenvector of A.
-\end{alaign}
-%
+
 \begin{align}
-% We know an n*n matrix has n eigenvalues. Let's suppose the corresponding eigenvectors are all independent. What do we do?
-% -> Superposition principle: For a linear ODE, if y1 and y2 are both solutions, then 
-\begin{equation}
-y=(c1*y1)+(c2*y2)
-\end{equation}
-% is also a solution
-\begin{equation}
-y=(c1*(e^(lambda1*t))*x1)+(c2*(e^(lambda2*t))*x2)+...+(cn*(e^(lambdan*t))*xn)
-\end{equation}
-% (There are some cases this fails, but we will not cover them.)
+$y=(\exp^\lambda*t)*x$ \rightarrow $y'=\lambda*(\e^(\lambda*t))*x$\\
+$\lambda*(\e^(\lambda*t))*x=A*(\e^(\lambda*t)*x)$ \rightarrow $\lambda*x=A*x$
 \end{align}
-%
-%
-# Example: Reaction Network
+
+ This is an eigenvalus problem! lambda is an eigenvalue, and x is an eigenvector of A.
+
+We know an n*n matrix has n eigenvalues. Let's suppose the corresponding eigenvectors are all independent. What do we do?
+Superposition principle: For a linear ODE, if y1 and y2 are both solutions, then
+
+\begin{align}
+$y=(c1*y1)+(c2*y2)$\\
+is also a solution\\
+$y=(c1*(\e^(\lambda1*t))*x1)+(c2*(\e^(\lambda2*t))*x2)+...+(cn*(\e^(\lambdan*t))*xn)$\\
+(There are some cases this fails, but we will not cover them.)
+\end{align}
+
+
+Example: Reaction Network
+
+\begin{equation}
 c' = A*c
+\end{equation}
 A = [-k1 0 0, k1 -k2 0, 0 k2 0]
 disp(A)
 % A is lower triangular, so
