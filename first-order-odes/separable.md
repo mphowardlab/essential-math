@@ -10,21 +10,13 @@ $$
 Solution:
 Assume at death t=0 and c(0) = c{sub}`0` 
 
-$$
+\begin{align}
 \int \frac{1}{c}\, dc = \int -k\, dt
-$$
-$$
 \ln(c) = -kt + B
-$$
-$$
 c = A e^{-kt}
-$$
-$$
 c(0) = c_0 = A
-$$
-$$
 c(t) = c_0 e^{-kt}
-$$
+\end{align}
 
 It is known that c(5715 year) = 0.5 c{sub}`0`  and t is needed where  c(t) = 0.525 c{sub}`0`  
 
