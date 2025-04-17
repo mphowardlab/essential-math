@@ -1,1 +1,0 @@
-# Gauss–Jordan elimination
