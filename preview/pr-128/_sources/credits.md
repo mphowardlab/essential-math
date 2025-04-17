@@ -11,7 +11,7 @@ This work (c) 2025 is licensed under
 - Evan M. Hughes
 - Michelle Schindler
 
-- Gwyneth A. Lovell
+## Attributions
 
 ## Attributions
 
