@@ -40,9 +40,9 @@ f^{(3)}(x)&=-\cos(x)
 
 Evaluating at $x=0$:
 \begin{align}
-f(0)=0
-f'(0)=1
-f''(0)=0
+f(0)=0\\
+f'(0)=1\\
+f''(0)=0\\
 f^{3}(0)=-1
 \end{align}
 
@@ -88,7 +88,7 @@ f(x) \approx x-\frac{x^2}{2}
 Derivate and Evaluate:
 
 \begin{align}
-f(x)&=\frac{1}{1+x} \rightarrow f(0)=1
+f(x)&=\frac{1}{1+x} \rightarrow f(0)=1\\
 f'(x)&=-\frac{1}{(1+x)^2} \rightarrow f'(0)=1
 \end{align}
 
@@ -106,7 +106,7 @@ From part (a) we found...
 f(x)=cos(x) \approx 1-\frac{x^2}{2}
 \end{equation}
 
-Note: We can find the Taylor series of a function f(ax) by substituting ax for x in the Taylor series for f(x)
+Note: We can find the Taylor series of a function $f(ax)$ by substituting $ax$ for $x$ in the Taylor series for $f(x)$.
 
 So:
 
@@ -116,7 +116,7 @@ f(x) \approx 1-\frac{(4x)^2}{2} \approx 1-8x^2
 
 (g) $f(x)=\cos(x-\pi)$ at $x=\pi$
 
-We can use the same method to solve the problem as we did to solve part (f).
+We can use the same method used to solve part (f).
 \begin{equation}
 f(x)=cos(x) \approx 1-\frac{x^2}{2}
 \end{equation}
@@ -131,11 +131,12 @@ Note: There is a constant shift of $x$ and $x_0$
 
 (h) $f(x)=e^x \sin(x)$ at $x=0$
 
-Recall: To find the Taylor expansion of the product of two functions, f(x)·g(x), you may multiply their individual Taylor series expansions.
+Note: To find the Taylor expansion of the product of two functions, f(x)·g(x), you may multiply their individual Taylor series expansions.
 
 Recall:
 The Taylor expansion of $f(x)=e^x$ is $f(x) \approx 1+x$
-The Taylor expansion of $f(x)=\sin(x)$ is $f(x) \approx x-\frac{x^3}{6}
+
+The Taylor expansion of $f(x)=\sin(x)$ is $f(x) \approx x-\frac{x^3}{6}$
 
 So:
 
@@ -145,7 +146,7 @@ f(x) \approx (1+x+\dots)(x-\frac{x^3}{6}+\dots) \approx x+x^2
 
 (i) $f(x)=\cos(x)$ at $x=\pi$
 
-Note: Reuse derivatives from part (a) but evaluate at \pi instead of zero.
+Note: Reuse derivatives from part (a) but evaluate at $\pi$ instead of zero.
     
 \begin{align}
 f(\pi)=-1\\
