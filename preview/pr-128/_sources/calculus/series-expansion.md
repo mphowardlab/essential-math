@@ -83,9 +83,9 @@ So:
 f(x) \approx x-\frac{x^2}{2}
 \end{equation}
 
-(e) $f(x)=\frac{1}{1+x}$
+(e) $f(x)=\frac{1}{1+x}$ at $x=0$
 
-Derivate and Evaluate:
+Derive and Evaluate:
 
 \begin{align}
 f(x)&=\frac{1}{1+x} \rightarrow f(0)=1\\
@@ -106,17 +106,18 @@ From part (a) we found...
 f(x)=cos(x) \approx 1-\frac{x^2}{2}
 \end{equation}
 
-Note: We can find the Taylor series of a function $f(ax)$ by substituting $ax$ for $x$ in the Taylor series for $f(x)$.
+We can find the Taylor series of a function $f(ax)$ by substituting $ax$ for $x$ in the Taylor series for $f(x)$.
 
 So:
 
 \begin{equation}
-f(x) \approx 1-\frac{(4x)^2}{2} \approx 1-8x^2
+f(x)=\cos(4x) \approx 1-\frac{(4x)^2}{2} \approx 1-8x^2
 \end{equation}
 
 (g) $f(x)=\cos(x-\pi)$ at $x=\pi$
 
 We can use the same method used to solve part (f).
+
 \begin{equation}
 f(x)=cos(x) \approx 1-\frac{x^2}{2}
 \end{equation}
@@ -124,16 +125,17 @@ f(x)=cos(x) \approx 1-\frac{x^2}{2}
 So:
 
 \begin{equation}
-f(x) \approx 1-\frac{(x-\pi)^2}{2}
+f(x)=\cos(x-\pi) \approx 1-\frac{(x-\pi)^2}{2}
 \end{equation}
 
 Note: There is a constant shift of $x$ and $x_0$
 
 (h) $f(x)=e^x \sin(x)$ at $x=0$
 
-Note: To find the Taylor expansion of the product of two functions, f(x)·g(x), you may multiply their individual Taylor series expansions.
+To find the Taylor expansion of the product of two functions, f(x)·g(x), you may multiply their individual Taylor series expansions.
 
 Recall:
+
 The Taylor expansion of $f(x)=e^x$ is $f(x) \approx 1+x$
 
 The Taylor expansion of $f(x)=\sin(x)$ is $f(x) \approx x-\frac{x^3}{6}$
