@@ -28,7 +28,7 @@ A_1 = 4  A_2 = -1
 
 $y=\int(\frac{4}{x-3}-\frac{1}{x+2})dx = 4ln|x-3| - ln|x+2| + C$
 
-This technique is also called $\underline{partial fraction decomposition}$
+This technique is also called partial fraction decomposition.
 
 Procedure: For a rational polynomial  $\frac{P(x)}{Q(x)}$ where Q is expressed using either linear $(ax+b)$ or irreducible quadratic $(ax^2 + bx + c)$ factors and the degree of P is less than Q 
 
@@ -43,10 +43,8 @@ $(ax^2 + bx+c)^k $: repeat like for linear factor
 $y'= \frac{x^2-29x+5}{(x-4)^2(x^2+3)}$
 $\frac{x^2-29x+5}{(x-4)^2(x^2+3)} = \frac{A_1}{x-4} + \frac{A_2}{(x-4)^2} + \frac{A_3x+ B_3}{x^2+3}$
 
-$x^2-29x+5 = A_1(x-4)(x^2+3) + A_2(x^2+3)+(A_3x+B_3)(x-4)^2$
-            
-            =$A_1(x^3-4x^2+3x-12)+A_2(x^2+3)+A_3x+B_3)(x^2-8x+16)$
-
+$x^2-29x+5 = A_1(x-4)(x^2+3) + A_2(x^2+3)+(A_3x+B_3)(x-4)^2
+            =A_1(x^3-4x^2+3x-12)+A_2(x^2+3)+A_3x+B_3)(x^2-8x+16)
             =(A_1+A_3)x^3+(-4A_1+A_2-8A_3+B_3)x^2 + (3A_1+16A_3-8B_3)x+(-12A_1+3A_2+16B_3)$
 
 
