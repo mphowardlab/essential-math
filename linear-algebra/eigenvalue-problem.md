@@ -3,4 +3,3 @@
    
 An nxn matrix has n eigenvalues, but they may not be distinct!
 
-\underline{M}
