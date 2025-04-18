@@ -1,6 +1,6 @@
 # Root finding methods
 ## Newton-Raphson Method
-Newtonraphson method
+Newtonraphson method trial
 The idea is to *linearize* the nonlinear system, then solve the linear problem.
 This will converge quickly for many functions.
 
