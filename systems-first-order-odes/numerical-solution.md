@@ -1,1 +1,2 @@
 # Numerical solution methods
+Description: Many ordinary differential equations you will encounter are not solvable by any of the methods discussed thusfar. In such cases, a numerical solution method will result in a fairly accurate solution to the ODE. One such method is Euler's method. Through a series of iterations, Euler's method uses small steps to linearly approximate the solution based on the slope at each point. 
