@@ -54,7 +54,7 @@ y=\frac{1}{s-1} + \frac{1}{s^2(s-1)}
 The best method to narrow down this equation would be to use fraction decomposition
 
 \begin{equation}
-\frac{1}{(s-1)(s^2)} = \frac{A_1}{(s-1)} + \frac{A_2}{s} + \frac{A_3}{s^2}=\frac{1}{(s-1)}+\frac{A2}{(s)} - \frac{A3}{(s^2)}
+\frac{1}{(s-1)(s^2)} = \frac{A_1}{(s-1)} + \frac{A_2}{s} + \frac{A_3}{s^2}=\frac{1}{(s-1)}+\frac{A_2}{(s)} - \frac{A_3}{(s^2)}
 \end{align}
 
 $A_1$ and $A_3$ can be found using the coverup method:
