@@ -1,1 +1,0 @@
-# Separable differential equations
