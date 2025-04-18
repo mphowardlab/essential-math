@@ -1,44 +1,42 @@
-<<<<<<< HEAD
-# Laplace Transform
+# Laplace transform
 
-
-
-Given the initial value problem
-
-\begin{align}
-y' &=-ky \\
-
-y(0) &=2
-\end{align}
-
-Rearrange and apply Laplace transform
-
-\begin{align}
-y'+ky &= 0 \\
-
-L[y'+ky] &= L[0] \\
-
-SY-y(0)+kY &= 0 \\
-
-(s+k)Y-2 &= 0 \\
-
-Y &= \frac{2}{s+k}\\
-\end{align}
-
-Invert Laplace transform
+```{example} Laplace transform
+Solve the initial value problem
 
 \begin{equation}
-y = L^{-1}\frac{2}{s+k} = 2L^{-1}\frac{1}{s+k} = 2 e^{-kt}
+y' =-ky, \quad y(0) =2
 \end{equation}
 
+---
 
-Given this initial value problem apply Laplace Transfrom
+Rearrange, apply Laplace transform $Y = L[y]$, and solve for $Y$:
+
+\begin{align}
+y'+ ky &= 0 \\
+L[y'+ky] &= L[0] \\
+L[y']+kL[y] &= L[0] \\
+sY - y(0) + k Y &= 0 \\
+(s+k) Y - 2 &= 0 \\
+Y &= \frac{2}{s+k}
+\end{align}
+
+Invert Laplace transform:
+
+\begin{equation}
+y = L^{-1}\left[\frac{2}{s+k}\right] = 2L^{-1}\left[\frac{1}{s+k}\right] = 2 e^{-kt}
+\end{equation}
+```
+
+```{example} Laplace transform with partial fractions
+Solve the initial value problem:
 
 \begin{align}
 y'-y &= t\\
 
 y(0) &= 1\\
 \end{align}
+
+---
 
 Apply Laplace Transfrom
 
@@ -49,24 +47,23 @@ SY-y(0)-Y &= \frac{1}{s^2}\\
 
 (s-1)Y-1 &= \frac{1}{s^2}\\
 
-y=\frac{1}{(s-1)} + \frac{1}{(s-1)(s^2)}\\
+y=\frac{1}{s-1} + \frac{1}{s^2(s-1)}\\
 \end{align}
 
 
 The best method to narrow down this equation would be to use fraction decomposition
 
 \begin{align}
-\frac{1}{(s-1)(s^2)} &= \frac{A1}{(s-1)} + \frac{A2}{(s)} + \frac{A3}{(s^2)}\\
+\frac{1}{(s-1)(s^2)} &= \frac{A_1}{(s-1)} + \frac{A_2}{s} + \frac{A_3}{s^2}\\
 
 &=\frac{1}{(s-1)}+\frac{A2}{(s)} - \frac{A3}{(s^2)}\\
+\end{align}
 
-A1 &= \frac{1}{1^(1)}\\
+$A_1$ and $A_3$ can be found using the coverup method:
 
-A1&= 1\\
-
-A3 &= \frac{1}{(0-1)} \\
-
-A3&= -1\\
+\begin{align}
+A1 &= \frac{1}{1^2} = 1\\
+A3 &= \frac{1}{0-1} = -1
 \end{align}
 
 Set all of the s-squared variables equal to each other and solve for A2
@@ -96,6 +93,4 @@ L^{-1}[Y]&=2L^{-1}[\frac{1}{(s-1)}]-L^{-1}[\frac{1}{s}]-L^{-1}[\frac{1}{s^2}]\\
 
 y&=2e^t-1-t\\
 \end{align}
-
-
-
+```
