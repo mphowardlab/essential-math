@@ -438,82 +438,61 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="homogeneous-linear-first-order-odes-with-constant-coefficients">
 <h1><span class="section-number">6.2. </span>Homogeneous linear first-order ODEs with constant coefficients<a class="headerlink" href="#homogeneous-linear-first-order-odes-with-constant-coefficients" title="Link to this heading">#</a></h1>
-<p>$</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4c9d400b-20f6-4508-b6ab-d0f67fdffbd8">
-<span class="eqno">(6.1)<a class="headerlink" href="#equation-4c9d400b-20f6-4508-b6ab-d0f67fdffbd8" title="Permalink to this equation">#</a></span>\[\begin{equation}y'=A*y\end{equation}\]</div>
+<p><span class="math notranslate nohighlight">\(y'=A*y\)</span></p>
 <p>As an ansatz, assume a solution:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-001e5f3a-a19e-40ef-ae62-2764062cfc66">
-<span class="eqno">(6.2)<a class="headerlink" href="#equation-001e5f3a-a19e-40ef-ae62-2764062cfc66" title="Permalink to this equation">#</a></span>\[\begin{align}
-\begin{equation}y=(\exp^\lambda*t)*x \rightarrow y'=\lambda*(\exp^\lambda*t)*x  \end {equation}
-
-\begin{equation}\lambda*(\exp^\lambda*t)*x=A*(\exp^\lambda*t)*x\end{equation} 
-
-\rightarrow \begin{equation}\lambda*x=A*x\end{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8882ef94-5505-41d7-92e8-0959e15deabe">
+<span class="eqno">(6.1)<a class="headerlink" href="#equation-8882ef94-5505-41d7-92e8-0959e15deabe" title="Permalink to this equation">#</a></span>\[\begin{align}
+y&amp;=(\exp^\lambda*t)*x \rightarrow y'=\lambda*(\exp^\lambda*t)*x  \\
+\lambda*(\exp^\lambda*t)*x&amp;=A*(\exp^\lambda*t)*x \\
+\rightarrow \lambda*x&amp;=A*x
 \end{align}\]</div>
 <p>This is an eigenvalus problem! lambda is an eigenvalue, and x is an eigenvector of A.</p>
 <p>We know an n*n matrix has n eigenvalues. Let’s suppose the corresponding eigenvectors are all independent. What do we do?</p>
 <p>Superposition principle: For a linear ODE, if y1 and y2 are both solutions, then</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bd147e32-d7db-4c9f-984f-3b6139b9cfdb">
-<span class="eqno">(6.3)<a class="headerlink" href="#equation-bd147e32-d7db-4c9f-984f-3b6139b9cfdb" title="Permalink to this equation">#</a></span>\[\begin{align} 
-\begin{equation}y=(c1*y1)+(c2*y2)\end{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-da46a31e-fb41-46b9-a21c-60768ec70c55">
+<span class="eqno">(6.2)<a class="headerlink" href="#equation-da46a31e-fb41-46b9-a21c-60768ec70c55" title="Permalink to this equation">#</a></span>\[\begin{align} 
+y&amp;=(c1*y1)+(c2*y2)
 \end{align}\]</div>
 <p>is also a solution.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a1490507-4e6d-4c31-9b08-2721de3bc999">
-<span class="eqno">(6.4)<a class="headerlink" href="#equation-a1490507-4e6d-4c31-9b08-2721de3bc999" title="Permalink to this equation">#</a></span>\[\begin{align}
-\begin{equation}y=(c1*(\exp^(\lambda1*t))*x1)+(c2*(\exp^(\lambda2*t))*x2)+...+(cn*(\exp^(\lambdan*t))*xn) \end{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1e4b7d05-a460-4493-a9f2-9a3f846927aa">
+<span class="eqno">(6.3)<a class="headerlink" href="#equation-1e4b7d05-a460-4493-a9f2-9a3f846927aa" title="Permalink to this equation">#</a></span>\[\begin{align}
+y&amp;=(c1*(\exp^(\lambda1*t))*x1)+(c2*(\exp^(\lambda2*t))*x2)+...+(cn*(\exp^(\lambdan*t))*xn) \\
 \end{align}\]</div>
 <p>(There are some cases this fails, but we will not cover them.)</p>
 <section id="example-reaction-network">
 <h2><span class="section-number">6.2.1. </span>Example: Reaction Network<a class="headerlink" href="#example-reaction-network" title="Link to this heading">#</a></h2>
-<div class="amsmath math notranslate nohighlight" id="equation-41bfa31c-9b13-4ded-bf2d-4801271cd25c">
-<span class="eqno">(6.5)<a class="headerlink" href="#equation-41bfa31c-9b13-4ded-bf2d-4801271cd25c" title="Permalink to this equation">#</a></span>\[\begin{align}
-\begin{equation}c' = A*c \end{equation}
-
-\begin{equation}A = \begin{bmatrix}[-k1 0 0, k1 -k2 0, 0 k2 0]\end{bmatrix}\end{equation}
-\end{align}\]</div>
-<p>A is lower triangular, so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f78dc4b8-2b0a-464f-8d39-2d2ece3efc16">
-<span class="eqno">(6.6)<a class="headerlink" href="#equation-f78dc4b8-2b0a-464f-8d39-2d2ece3efc16" title="Permalink to this equation">#</a></span>\[\begin{align}
-\begin{equation}\lambda1 = -k1 \rightarrow \begin{bmatrix} [0 0 0, k1 -k2+k1 0, 0 k2 k1] \end{bmatrix}\end{equation}
-
-\rightarrow \begin{equation}(k1*x1)-(k2-k1)*x2=0 \end{equation}
-
-\rightarrow \begin{equation}(k2*x2)+(k1*x3)=0\end{equation}
-
-\rightarrow \rightarrow \begin{equation} x1 = \begin{bmatrix}[(-(k2-k1)/k2), -k1/k2, 1]\end{bmatrix} \end{equation}
-
-\begin{equation}\lambda2 = -k2 \rightarrow \begin{bmatrix} [k1-k2 0 0, k1 0 0, 0 k2 k2] \end{bmatrix} \end{equation}
-
-\rightarrow \begin{equation}x2 = \begin{bmatrix}[0, -1, 1]\end{bmatrix} \end{equation}
-
-\begin{equation}\lambda3 = 0 \rightarrow \begin{bmatrix} [-k1 0 0, k1 -k2 0, 0 k2 0]\end{bmatrix}\end{equation}
-
-\rightarrow \begin{equation}x3= [0, 0, 1]\end{equation} 
+<p><span class="math notranslate nohighlight">\(c' =  \begin{bmatrix}[-k1 0 0, k1 -k2 0, 0 k2 0]\end{bmatrix} * c\)</span></p>
+<p>The matrix is lower triangular, so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-526dd81f-3afd-480f-8485-6b902620847e">
+<span class="eqno">(6.4)<a class="headerlink" href="#equation-526dd81f-3afd-480f-8485-6b902620847e" title="Permalink to this equation">#</a></span>\[\begin{align}
+\lambda1 &amp;= -k1 \rightarrow \begin{bmatrix} [0 0 0, k1 -k2+k1 0, 0 k2 k1] \end{bmatrix} \\
+\rightarrow (k1*x1)-(k2-k1)*x2&amp;=0 \\
+\rightarrow (k2*x2)+(k1*x3)&amp;=0 \\
+\rightarrow \rightarrow x1 &amp;= \begin{bmatrix}[(-(k2-k1)/k2), -k1/k2, 1]\end{bmatrix} \\
+\lambda2 &amp;= -k2 \rightarrow \begin{bmatrix} [k1-k2 0 0, k1 0 0, 0 k2 k2] \end{bmatrix} \\
+\rightarrow \begin{equation}x2 &amp;= \begin{bmatrix}[0, -1, 1]\end{bmatrix}  \\
+\lambda3 &amp;= 0 \rightarrow \begin{bmatrix} [-k1 0 0, k1 -k2 0, 0 k2 0]\end{bmatrix} \\
+\rightarrow x3&amp;= [0, 0, 1] \\
 \end{align}\]</div>
 <p>Hence,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ac359a51-e0b7-431b-a0c2-4ed1b71d5748">
-<span class="eqno">(6.7)<a class="headerlink" href="#equation-ac359a51-e0b7-431b-a0c2-4ed1b71d5748" title="Permalink to this equation">#</a></span>\[\begin{align}
-\begin{equation}c=(a1*(\exp^(-k1*t*x1)))+(a2*(\exp^(-k2*t*x2)))+(a3(\exp^(*t*x3)))\end{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7a46beaf-2758-4737-98f8-88d819c11ec4">
+<span class="eqno">(6.5)<a class="headerlink" href="#equation-7a46beaf-2758-4737-98f8-88d819c11ec4" title="Permalink to this equation">#</a></span>\[\begin{align}
+c=(a1*(\exp^(-k1*t*x1)))+(a2*(\exp^(-k2*t*x2)))+(a3(\exp^(*t*x3)))
 \end{align}\]</div>
 <p>Initial Condition:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d0a24821-dc29-409b-8e09-a6ca3a7ba0a4">
-<span class="eqno">(6.8)<a class="headerlink" href="#equation-d0a24821-dc29-409b-8e09-a6ca3a7ba0a4" title="Permalink to this equation">#</a></span>\[\begin{align}
-\begin{equation}C(0) = \begin{Comatrix}[CA0, 0, 0]\end{Comatrix} = \begin{zmatrix}[a1*(-(k2-k1)/k2), -a1*(k1/k2)-a2, a1+a2+a3] \end{zmatrix}\end{equation} 
-
-\rightarrow \begin{equation}a1=-CA0*(k2/(k2-k1))\end{equation}
-
-\rightarrow \begin{equation}a2=-(k1/k2)*a1=CA0*(k1/(k2-k1))\end{equation}
-
-\rightarrow \begin{equation}a3=-a1-a2=Ca0*(k2/(k2-k1))-CA0*(k1/(k2-k1))=CA0\end{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-31611616-0832-47d8-ba91-96caf63890f9">
+<span class="eqno">(6.6)<a class="headerlink" href="#equation-31611616-0832-47d8-ba91-96caf63890f9" title="Permalink to this equation">#</a></span>\[\begin{align}
+C(0) &amp;= \begin{Comatrix}[CA0, 0, 0]\end{Comatrix} = \begin{zmatrix}[a1*(-(k2-k1)/k2), -a1*(k1/k2)-a2, a1+a2+a3] \end{zmatrix} \\
+\rightarrow a1&amp;=-CA0*(k2/(k2-k1)) \\
+\rightarrow a2&amp;=-(k1/k2)*a1=CA0*(k1/(k2-k1)) \\
+\rightarrow a3&amp;=-a1-a2=Ca0*(k2/(k2-k1))-CA0*(k1/(k2-k1))=CA0
 \end{align}\]</div>
 <p>So,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a098c414-c5f4-4086-95a7-918c4d4c981e">
-<span class="eqno">(6.9)<a class="headerlink" href="#equation-a098c414-c5f4-4086-95a7-918c4d4c981e" title="Permalink to this equation">#</a></span>\[\begin{align}
-\begin{equation}CA(t) = a1*(\exp^(-k1*t*(-(k2-k1)/k2)))=CA0*(\exp^(-k1*t))\end{equation}
-
-\begin{equation}CB(t) = a1*(\exp^(-k1*t))*(-k1/k2)+a2*(\exp^(-k2*t))*(-1)=CA0*(k1/(k2-k1))*((\exp^(-k1*t))-(\exp^(-k2*t)))\end{equation}
-
-\begin{equation}CC(t)=a1*(\exp^(-k1*t))+a2*(\exp^(-k2*t))+a3 = CA0*(1-(k2/(k2-k1))*(\exp^(-k1*t))+(k1/(k2-k1))*(\exp^(-k2*t)))\end{equation} \rightarrow This matches our old answer!
+<div class="amsmath math notranslate nohighlight" id="equation-734c8ee2-3fe2-48f3-a36f-348f7ef7b8e2">
+<span class="eqno">(6.7)<a class="headerlink" href="#equation-734c8ee2-3fe2-48f3-a36f-348f7ef7b8e2" title="Permalink to this equation">#</a></span>\[\begin{align}
+CA(t) &amp;= a1*(\exp^(-k1*t*(-(k2-k1)/k2)))&amp;=CA0*(\exp^(-k1*t)) \\
+CB(t) &amp;= a1*(\exp^(-k1*t))*(-k1/k2)+a2*(\exp^(-k2*t))*(-1)&amp;=CA0*(k1/(k2-k1))*((\exp^(-k1*t))-(\exp^(-k2*t))) \\
+CC(t)&amp;=a1*(\exp^(-k1*t))+a2*(\exp^(-k2*t))+a3 &amp;= CA0*(1-(k2/(k2-k1))*(\exp^(-k1*t))+(k1/(k2-k1))*(\exp^(-k2*t))) \rightarrow This matches our old answer!
 \end{align}\]</div>
 </section>
 </section>
