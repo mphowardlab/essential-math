@@ -1,7 +1,7 @@
 # 1. Exact differential equations
 Remember that a function $f(x,y)$ has the **total** **differential**: \
 $df=(\frac{\partial f}{\partial x})_{y}dx$ + $(\frac{\partial f}{\partial y})_{x}dy$\
-If $f=c$ (a constant), then $df=0$ 
+If $f=c$ (a constant), then $df=0$. 
 ***
 How does this apply to ODEs? \
 Suppose we can rewrite our ODE as \
@@ -13,11 +13,10 @@ If $P=(\frac{\partial f}{\partial x})$ and $Q=(\frac{\partial f}{\partial y})$, 
 ***
 Example: 
 $\cos(x+y)dx + [3y^2 + 2y + \cos(x+y)]dy=0$ \
-Where $ \cos(x+y)\to P$ \
-and $[3y^2 + 2y + \cos(x+y)]  \to Q\
-$\frac{\partial P}{\partial y}$
-$=-$\sin(x+y)$\
-$\frac{\partial Q}{\partial x}=-\sin(x+y)$
+Where $ \cos(x+y)\to P$ 
+and $[3y^2 + 2y + \cos(x+y)]  \to Q$ \
+$\frac{\partial P}{\partial y}$=-$\sin(x+y)$\
+$\frac{\partial Q}{\partial x}$=-$\sin(x+y)$
 ***
 If an ODE is exact, we can integrate P or Q to get f, then solve for the integration constant with Q or P.\
 $f=\int Pdx = \int \cos(x+y)dx = \sin(x+y) + k(y)$\
@@ -29,7 +28,7 @@ Therefore, $f=\sin(x+y) + y^3 +y^2 + c^* =c \to \sin(x+y)+y^3 +y^2 =c$ \
 is the general solution of the ODE! 
 ***
 Note that order of integration does not matter. We could also have done: \
-$f=\int Q dy = \int[3y^2+2y+cos(x+y)]dy=y^3+y^2+sin(x+y)+k(x)$\
+$f=\int Q dy = \int[3y^2+2y+\cos(x+y)]dy=y^3+y^2+\sin(x+y)+k(x)$\
 $
 k'=0 \to k=c^*$\
 and arrived at the same answer!
