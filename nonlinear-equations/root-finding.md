@@ -1,6 +1,5 @@
 # Root finding methods
 ## Newton-Raphson Method
-Newtonraphson method trial
 The idea is to *linearize* the nonlinear system, then solve the linear problem.
 This will converge quickly for many functions.
 
@@ -26,10 +25,10 @@ Solving for $\displaystyle x_{n+1}$:
 x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}
 \end{equation}
 
-````{image} ./_images/newtonraphson.svg
+```{image} ./_images/newtonraphson.svg
 :alt: The figure shows how the method iteratively converges to the root by using the tangent line at the current guess to find a better approximation.
 :align: center
-````
+```
  
 The algorithm for the Newton-Raphson method is:
 1. Guess $x_0$ and set $n = 0$.
