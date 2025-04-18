@@ -45,52 +45,49 @@ L[y'-y] &= L[t]\\
 
 SY-y(0)-Y &= \frac{1}{s^2}\\
 
-(s-1)Y-1 &= \frac{1}{s^2}\\
+(s-1) Y-1 &= \frac{1}{s^2}\\
 
-y=\frac{1}{s-1} + \frac{1}{s^2(s-1)}\\
+y=\frac{1}{s-1} + \frac{1}{s^2(s-1)}
 \end{align}
 
 
 The best method to narrow down this equation would be to use fraction decomposition
 
-\begin{align}
-\frac{1}{(s-1)(s^2)} &= \frac{A_1}{(s-1)} + \frac{A_2}{s} + \frac{A_3}{s^2}\\
-
-&=\frac{1}{(s-1)}+\frac{A2}{(s)} - \frac{A3}{(s^2)}\\
+\begin{equation}
+\frac{1}{(s-1)(s^2)} = \frac{A_1}{(s-1)} + \frac{A_2}{s} + \frac{A_3}{s^2}=\frac{1}{(s-1)}+\frac{A2}{(s)} - \frac{A3}{(s^2)}
 \end{align}
 
 $A_1$ and $A_3$ can be found using the coverup method:
 
 \begin{align}
-A1 &= \frac{1}{1^2} = 1\\
-A3 &= \frac{1}{0-1} = -1
+A_1 &= \frac{1}{1^2} = 1\\
+A_3 &= \frac{1}{0-1} = -1
 \end{align}
 
-Set all of the s-squared variables equal to each other and solve for A2
+Set all of the s-squared variables equal to each other and solve for A_2
 \begin{align}
-1 &= s^2+A2(s-1)s-(s-1)\\
+1 &= s^2+A_2(s-1)s-(s-1)\\
 \end{align}
 
+\begin{equation}
+1+A_2 = 0 = A_2= -1
+\end{equation}
+
+Plug in values and solve for $Y
+
 \begin{align}
-1+A2&=0\\
-A2&=-1\\
-\end{align}
+Y&=\frac{1}{s-1} + \frac{1}{s-1}-\frac{1}{s}-\frac{1}{s^2}\\
 
-Plug in values and solve for Y
-
-\begin{align}
-Y&=\frac{1}{(s-1)} + \frac{1}{(s-1)}-\frac{1}{s}-\frac{1}{s^2}\\
-
-Y&=\frac{2}{(s-1)}-\frac{1}{s} - \frac{1}{(s^2)}\\
+Y&=\frac{2}{s-1}-\frac{1}{s} - \frac{1}{s^2}
 \end{align}
 
 Solve for y by applying the Inverse Laplace Tansform
 
 \begin{align}
-y&=L^{-1}[Y]\\
+y&=L^{-1}\left[Y\right]\\
 
-L^{-1}[Y]&=2L^{-1}[\frac{1}{(s-1)}]-L^{-1}[\frac{1}{s}]-L^{-1}[\frac{1}{s^2}]\\
+L^{-1}\left[Y\right]&=2L^{-1}\left[\frac{1}{s-1}\right]-L^{-1}\left[\frac{1}{s}\right]-L^{-1}\left[\frac{1}{s^2}\right]\\
 
-y&=2e^t-1-t\\
+y&=2e^{t}-1-t
 \end{align}
 ```
