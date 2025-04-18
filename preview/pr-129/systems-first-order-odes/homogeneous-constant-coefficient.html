@@ -428,50 +428,64 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="homogeneous-linear-first-order-odes-with-constant-coefficients">
 <h1><span class="section-number">6.2. </span>Homogeneous linear first-order ODEs with constant coefficients<a class="headerlink" href="#homogeneous-linear-first-order-odes-with-constant-coefficients" title="Link to this heading">#</a></h1>
-<div class="amsmath math notranslate nohighlight" id="equation-03b89429-6288-4abf-820d-9005dc066b90">
-<span class="eqno">(6.1)<a class="headerlink" href="#equation-03b89429-6288-4abf-820d-9005dc066b90" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8ffc2bfa-44c3-4eb4-9039-08117e1dbbd3">
+<span class="eqno">(6.1)<a class="headerlink" href="#equation-8ffc2bfa-44c3-4eb4-9039-08117e1dbbd3" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y'=A*y
 \end{equation}\]</div>
 <p>As an ansatz, assume a solution:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c4029803-8984-4c1d-94b8-96d4101e0fa4">
-<span class="eqno">(6.2)<a class="headerlink" href="#equation-c4029803-8984-4c1d-94b8-96d4101e0fa4" title="Permalink to this equation">#</a></span>\[\begin{align}
-$y=(\exp^\lambda*t)*x$ \rightarrow $y'=\lambda*(\e^(\lambda*t))*x$\\
-$\lambda*(\e^(\lambda*t))*x=A*(\e^(\lambda*t)*x)$ \rightarrow $\lambda*x=A*x$
-\end{align}\]</div>
+<p><span class="math notranslate nohighlight">\(\begin{align}\)</span>
+<span class="math notranslate nohighlight">\(y=(\exp^\lambda*t)*x\)</span> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <span class="math notranslate nohighlight">\(y'=\lambda*(\e^(\lambda*t))*x\)</span>\
+<span class="math notranslate nohighlight">\(\lambda*(\e^(\lambda*t))*x=A*(\e^(\lambda*t)*x)\)</span> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <span class="math notranslate nohighlight">\(\lambda*x=A*x\)</span>
+<span class="math notranslate nohighlight">\(\end{align}\)</span></p>
 <p>This is an eigenvalus problem! lambda is an eigenvalue, and x is an eigenvector of A.</p>
 <p>We know an n*n matrix has n eigenvalues. Let’s suppose the corresponding eigenvectors are all independent. What do we do?
 Superposition principle: For a linear ODE, if y1 and y2 are both solutions, then</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c34a897c-3168-44c3-b353-ee31c6c840f7">
-<span class="eqno">(6.3)<a class="headerlink" href="#equation-c34a897c-3168-44c3-b353-ee31c6c840f7" title="Permalink to this equation">#</a></span>\[\begin{align}
-$y=(c1*y1)+(c2*y2)$\\
-is also a solution\\
-$y=(c1*(\e^(\lambda1*t))*x1)+(c2*(\e^(\lambda2*t))*x2)+...+(cn*(\e^(\lambdan*t))*xn)$\\
+<p><span class="math notranslate nohighlight">\(\begin{align}\)</span>
+<span class="math notranslate nohighlight">\(y=(c1*y1)+(c2*y2)\)</span>\
+is also a solution\
+<span class="math notranslate nohighlight">\(y=(c1*(\e^(\lambda1*t))*x1)+(c2*(\e^(\lambda2*t))*x2)+...+(cn*(\e^(\lambdan*t))*xn)\)</span>\
 (There are some cases this fails, but we will not cover them.)
-\end{align}\]</div>
+<span class="math notranslate nohighlight">\(\end{align}\)</span></p>
 <p>Example: Reaction Network</p>
-<div class="amsmath math notranslate nohighlight" id="equation-610dd1ac-3d7a-43fc-b14d-9aeb5f974cb5">
-<span class="eqno">(6.4)<a class="headerlink" href="#equation-610dd1ac-3d7a-43fc-b14d-9aeb5f974cb5" title="Permalink to this equation">#</a></span>\[\begin{equation}
-c' = A*c
-\end{equation}\]</div>
-<p>A = [-k1 0 0, k1 -k2 0, 0 k2 0]
-disp(A)</p>
-<p>lambda1 = -k1
-l1 = [0 0 0, k1 -k2+k1 0, 0 k2 k1]
-x1 = [(-(k2-k1)/k2), -k1/k2, 1]
-lambda2 = -k2
-l2 = [k1-k2 0 0, k1 0 0, 0 k2 k2]
-x2 = [0, -1, 1]
-lambda3 = 0
-l3 = [-k1 0 0, k1 -k2 0, 0 k2 0])
-x3= [0, 0, 1]</p>
-<p>$c=(a1*(e^(-k1<em>t</em>x1)))+(a2*(e^(-k2<em>t</em>x2)))+(a3(e^(<em>t</em>x3)))</p>
-<p>C(0) = [CA0, 0, 0] = [a1*(-(k2-k1)/k2), -a1*(k1/k2)-a2, a1+a2+a3]
-<span class="math notranslate nohighlight">\(a1=-CA0*(k2/(k2-k1))
-\)</span>a2=-(k1/k2)<em>a1=CA0</em>(k1/(k2-k1))
-$a3=-a1-a2=Ca0*(k2/(k2-k1))-CA0*(k1/(k2-k1))=CA0</p>
-<p><span class="math notranslate nohighlight">\(CA(t) = a1*(e^(-k1*t*(-(k2-k1)/k2)))=CA0*(e^(-k1*t))
-\)</span>CB(t) = a1*(e^(-k1<em>t))</em>(-k1/k2)+a2*(e^(-k2<em>t))</em>(-1)=CAo*(k1/(k2-k1))<em>((e^(-k1</em>t))-(e^(-k2<em>t)))
-$CC(t)=a1</em>(e^(-k1<em>t))+a2</em>(e^(-k2<em>t))+a3 = CA0</em>(1-(k2/(k2-k1))<em>(e^(-k1</em>t))+(k1/(k2-k1))<em>(e^(-k2</em>t)))</p>
+<p><span class="math notranslate nohighlight">\(\begin{align}\)</span>
+<span class="math notranslate nohighlight">\(\begin{equation}
+c' = A*c 
+\end{equation}\)</span>
+<span class="math notranslate nohighlight">\(\begin{equation}
+ A = \begin{Amatrix}[-k1 0 0, k1 -k2 0, 0 k2 0]\end{Amatrix}
+\end{equation}\)</span></p>
+<p>A is lower triangular, so
+<span class="math notranslate nohighlight">\(\begin{equation}
+\lambda1 = -k1 \rightarrow \begin{bmatrix} [0 0 0, k1 -k2+k1 0, 0 k2 k1] \end{bmatrix}
+\rightarrow (k1*x1)-(k2-k1)*x2=0
+\rightarrow (k2*x2)+(k1*x3)=0
+\rightarrow \rightarrow x1 = \begin{x1matrix}[(-(k2-k1)/k2), -k1/k2, 1]\end{x1matrix}
+\end{equation}\)</span>
+<span class="math notranslate nohighlight">\(\begin{equation}
+\lambda2 = -k2 \rightarrow \begin{cmatrix} [k1-k2 0 0, k1 0 0, 0 k2 k2] \end{cmatrix}
+\rightarrow x2 = \begin{x2matrix}[0, -1, 1]\end{x2matrix}
+\end{equation}\)</span>
+$\begin{equation}
+\lambda3 = 0 \rightarrow \begin{dmatrix} [-k1 0 0, k1 -k2 0, 0 k2 0]\end{dmatrix}
+\rightarrow x3= [0, 0, 1]
+\end{equation}</p>
+<p>Hence,</p>
+<p><span class="math notranslate nohighlight">\(\begin{equation}\)</span>
+<span class="math notranslate nohighlight">\(c=(a1*(\e^(-k1*t*x1)))+(a2*(\e^(-k2*t*x2)))+(a3(\e^(*t*x3)))
+\end{equation}\)</span></p>
+<p>Initial Condition:
+<span class="math notranslate nohighlight">\(\begin{equation}
+C(0) = \begin{Comatrix}[CA0, 0, 0]\end{Comatrix} = \begin{zmatrix}[a1*(-(k2-k1)/k2), -a1*(k1/k2)-a2, a1+a2+a3] \end{zmatrix}
+\end{equation}\)</span>
+<span class="math notranslate nohighlight">\(\rightarrow\)</span> <span class="math notranslate nohighlight">\(a1=-CA0*(k2/(k2-k1))\)</span>
+<span class="math notranslate nohighlight">\(\rightarrow\)</span> <span class="math notranslate nohighlight">\(a2=-(k1/k2)*a1=CA0*(k1/(k2-k1))\)</span>
+<span class="math notranslate nohighlight">\(\rightarrow\)</span> <span class="math notranslate nohighlight">\(a3=-a1-a2=Ca0*(k2/(k2-k1))-CA0*(k1/(k2-k1))=CA0\)</span></p>
+<p>So,</p>
+<p><span class="math notranslate nohighlight">\(\begin{equation}
+CA(t) = a1*(\e^(-k1*t*(-(k2-k1)/k2)))=CA0*(\e^(-k1*t))\)</span>
+<span class="math notranslate nohighlight">\(CB(t) = a1*(\e^(-k1*t))*(-k1/k2)+a2*(\e^(-k2*t))*(-1)=CA0*(k1/(k2-k1))*((\e^(-k1*t))-(\e^(-k2*t)))\)</span>
+$CC(t)=a1*(\e^(-k1<em>t))+a2</em>(\e^(-k2<em>t))+a3 = CA0</em>(1-(k2/(k2-k1))<em>(\e^(-k1</em>t))+(k1/(k2-k1))<em>(\e^(-k2</em>t))) \rightarrow This matches our old answer!
+\end{align}</p>
 </section>
 
     <script type="text/x-thebe-config">
