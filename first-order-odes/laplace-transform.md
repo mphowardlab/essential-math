@@ -82,9 +82,9 @@ A2&=-1\\
 Plug in values and solve for Y
 
 \begin{align}
-Y&=\frac{1}{(s-1)} + \frac{1}{(s-1)}-\frac{1}{s}-\frac{1}{s^(2)}\\
+Y&=\frac{1}{(s-1)} + \frac{1}{(s-1)}-\frac{1}{s}-\frac{1}{s^2}\\
 
-Y&=\frac{2}{(s-1)}-\frac{1}{s} - \frac{1}{(s^(2))}\\
+Y&=\frac{2}{(s-1)}-\frac{1}{s} - \frac{1}{(s^2)}\\
 \end{align}
 
 Solve for y by applying the Inverse Laplace Tansform
