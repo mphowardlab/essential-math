@@ -56,11 +56,11 @@ F = e^{\int \frac{-3}{x}} = e^{-3ln(x)} = x^{-3} \\
 x^{-3}(x^4+y^2)dx - x^{-3}(xy)dy = 0 \\
 (x+\frac{y^2}{x^{-3}})dx - \frac{y}{x^2}dy = 0 \\
 f(x,y) = \int -\frac{y}{x^2}dy = \frac{-y^2}{2x^2}+k(x) \\
-\frac{\partial f}{\partial x} = \frac{y^2}{x^3} + k'(x) = FP \\
+\frac{\partial f}{\partial x} = \frac{y^2}{x^3} + k'(x) = F \cdot P \\
 \frac{y^2}{x^3} + k'(x) = x + \frac{y^2}{x^3} \\
 k'(x) = x \\
 \int xdx = \frac{x^2}{2} + C^* \\
 \frac{x^2}{2} - \frac{y^2}{2x^2} + C^* = C \\
-\frac{x^2}{2} - \frac{y^2}{2x^2} + = C
+\frac{x^2}{2} - \frac{y^2}{2x^2} = C
 \end{align}
 ````
