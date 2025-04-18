@@ -8,7 +8,7 @@ Suppose we can rewrite our ODE as \
 $P(x,y)dx + Q(x,y)dy = 0$\
 If we can show that $P=(\frac{\partial f}{\partial x})$ and $Q=(\frac{\partial f}{\partial y})$ for some f, then we know that $f(x,y)=c$ is an **implicit** **solution** of the ODE. 
 
-How do we figure that out?
+How do we figure that out?\
 If $P=(\frac{\partial f}{\partial x})$ and $Q=(\frac{\partial f}{\partial y})$, then $\frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x}$ because $\frac{\partial^2 f}{\partial y\partial x}=\frac{\partial^2 f}{\partial x\partial y}$!
 
 Example: 
@@ -27,8 +27,8 @@ $k=y^3+y^2+c^*$\
 Therefore, $f=\sin(x+y) + y^3 +y^2 + c^* =c \to \sin(x+y)+y^3 +y^2 =c$ \
 is the general solution of the ODE! 
 
-Note that order of integration does not matter. We could also have done: \
+Note that order of integration does not matter. We could also have done \
 $f=\int Q dy = \int[3y^2+2y+\cos(x+y)]dy=y^3+y^2+\sin(x+y)+k(x)$\
-$
-k'=0 \to k=c^*$\
+$\frac{\partial f}{\partial x}=\cos(x+y)+k'=P=\cos(x+y) $\
+$k'=0 \to k=c^*$\
 and arrived at the same answer!
