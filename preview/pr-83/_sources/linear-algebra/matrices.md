@@ -118,8 +118,10 @@ longer course on linear algebra!
   
   
 - *Addition*: **C** = **A** + **B** is defined if **A** and **B** have the same size. 
-  
+
+  \begin{center}
   Then, $C_{ij}$ = $A_{ij}$ + $B_{ij}$
+  \end{center}
 
 \begin{equation} 
 \begin{bmatrix} -4 & 6 & 3 \\ 0 & 1 & 2 \end{bmatrix} =
@@ -131,8 +133,10 @@ longer course on linear algebra!
 
 
 - *Scalar Multiplication*: **B** = k**A** multiplies each element of **A** by k. 
-  
-   $B_{ij}$ = k $A_{ij}$
+
+\begin{center}
+$B_{ij}$ = k $A_{ij}$
+\end{center}
 
 \begin{equation} 
 -2 \begin{bmatrix} 1 & 0  \\ 0 & -2  \end{bmatrix} =
@@ -144,18 +148,20 @@ longer course on linear algebra!
 
 Rules of addition and scalar multiplication
 
+\begin{center}
 **A** + **B** = **B** + **A**  (commutative) 
    
 (**A** + **B**) + **C** = **A** + (**B** + **C**)  (associative) 
    
 c(**A** + **B**) = c**A** + c**B**  (distributive) 
+\end{center}
 
 For example, 
 \begin{equation}
 \vv{A} = \begin{bmatrix} -1 & 2  \\ 0 & 5  \end{bmatrix} \qquad
 \vv{B} = \begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix}
 \end{equation} 
-compute 2 **A** - **B** 
+compute 2**A** - **B** 
 
 
 \begin{equation}
@@ -170,22 +176,23 @@ compute 2 **A** - **B**
 
 - Matrix Multiplication: **C** = **AB** is defined if **A** has the same number of columns as **B** has rows.
 
-    $(m \times n)(m \times p)(p \times n)$ 
+   \begin{center}
+   $(m \times n)(m \times p)(p \times n)$ 
   
-    $C_{ij}$ = $\displaystyle \sum_{k=1}^{P}A_ikB_kj$
+   $C_{ij}$ = $\displaystyle \sum_{k=1}^{P}A_ikB_kj$
+  \end{center}
 
 \begin{equation} 
 \begin{bmatrix} 3 & 5 \\ 4 & 0 \\ -6 & -3 \end{bmatrix}
 
 \begin{bmatrix} 2 & -2 \\ 5 & 0 \end{bmatrix} =
 
-\begin{bmatrix} $3\times2 + 5\times5 & 3\times-2 + 5\times0 \\ $4\times2$ + $0\times5$ & $4\times-2$ + $0\times0$ \\ $-6\times2$ + $-3\times5$ & $-6\times2$ + $-3\times0$ \end{bmatrix}
+\begin{bmatrix} 3\times2 + 5\times5 & 3\times-2 + 5\times0 \\ 4\times2 + 0\times5 & 4\times-2 + 0\times0 \\ -6\times2 + -3\times5 & -6\times2 + -3\times0 \end{bmatrix}
 \end{equation}
 
 Multiply with a vector works the same! 
 
 \begin{bmatrix} 3 & 5 \\ 4 & 0 \\ -6 & -3 \end{bmatrix} \qquad
-
 \begin{bmatrix} 1 \\ 1 \end{bmatrix} =
 
 \begin{bmatrix} 8 \\ 4 \\ -9 \end{bmatrix}
@@ -193,6 +200,6 @@ Multiply with a vector works the same!
 Rules of matrix multiplication\
     **A**(**BC**) = (**AB**)**C** (associative)   
     (**A** + **B**)**C** = **AC** + **BC** (distributive) 
-    In general, **AB** $\ne$ **BA** (i.e., \underline{not} commutative 
+    In general, **AB** $\ne$ **BA** (i.e., \underline{not} commutative)
     
   
