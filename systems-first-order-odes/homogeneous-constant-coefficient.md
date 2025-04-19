@@ -14,19 +14,17 @@ This is an eigenvalus problem! lambda is an eigenvalue, and x is an eigenvector 
 
 We know an n*n matrix has n eigenvalues. Let's suppose the corresponding eigenvectors are all independent. What do we do?
 
-Superposition principle: For a linear ODE, if y1 and y2 are both solutions, then
-
 \begin{align} 
-y=(c1*y1)+(c2*y2)
-\end{align}
+Superposition principle: For a linear ODE, if y1 and y2 are both solutions, then \\
 
-is also a solution.
+y=(c1y1)+(c2y2) \\
 
-\begin{align}
-y=(c1*(\exp^(\lambda1*t))*x1)+(c2*(\exp^(\lambda2*t))*x2)+...+(cn*(\exp^(\lambdan*t))*xn) \\
-\end{align}
+is also a solution. \\
+
+\rightarrow y=(c1(\exp^(\lambda1t))x1)+(c2(\exp^(\lambda2t))x2)+...+(cn(\exp^(\lambda(n)t))xn) \\
 
 (There are some cases this fails, but we will not cover them.)
+\end{align}
 
 
 ## Example: Reaction Network
