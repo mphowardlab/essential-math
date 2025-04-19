@@ -7,7 +7,7 @@ $\underline{\underline{A}}$ =
 
 $$
 \begin{bmatrix}
--2 & 2 & 3 \\
+-2 & 2 & -3 \\
 2 & 1 & -6 \\
 -1 & -2 & 0
 \end{bmatrix}
@@ -17,7 +17,7 @@ $$
 
 $$
 \left|\begin{matrix}
--2-\lambda & 2 & 3 \\
+-2-\lambda & 2 & -3 \\
 2 & 1-\lambda & -6 \\
 -1 & -2 & -\lambda
 \end{matrix} \right|
@@ -28,7 +28,7 @@ $$
 $$
 -1
 \left|\begin{matrix}
-2 & 3 \\
+2 & -3 \\
 1-\lambda & -6
 \end{matrix} \right|
 $$ 
@@ -36,8 +36,22 @@ $$
 $$
 -(-2)
 \left|\begin{matrix}
--2-\lambda & 2 & 3 \\
-2 & 1-\lambda & -6 \\
--1 & -2 & -\lambda
+-2-\lambda & -3 \\
+2 & -6
 \end{matrix} \right|
 $$
+
+$$
+-\lambda
+\left|\begin{matrix}
+-2-\lambda & 2 \\
+2 & 1-\lambda 
+\end{matrix} \right|
+$$
+
+
+$= -[-12+3(1-\lambda)]+2[6(2+\lambda)+6]-\lambda[(\lambda+2)(\lambda-1)-4]$
+
+$= (3\lambda+9)+(12\lambda+36)-\lambda(\lambda^2+\lambda-6) = -\lambda^3-\lambda^2+21\lambda+45 $
+
+$= -(\lambda-5)(\lambda+3)^2 = 0 \to \lambda_1 = 5, \lambda_2 = \lambda_3 = -3 $
