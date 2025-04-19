@@ -27,7 +27,7 @@ f'''(x) &= (16x^3+12x)(e^{2x^2}4x)+(48x^2+12)e^{2x^2} \\
 f(x) \approx 0 + 1 \cdot x + \frac{1}{2} \cdot 0 \cdot x^2 + \frac{1}{6} \cdot 12 \cdot x^3 + \ldots = x + 2x^3 + \ldots &&
 \end{flalign}
 
-''''
+````
 
 ````{example} Difficult Series can be computed more easily by breaking them apart
 
@@ -52,4 +52,6 @@ e^x &= \sum_{n=0}^{\infty} \frac{x^n}{n!} = 1 + x +  \frac{x^2}{2} + 0(x^3) \\
 e^{2x^2} &= 1 + 2x^2 + 2x^4 + 0(x^6) \\
 xe^{2x^2} &= x + 2x^3 + 0(x^5) 
 \end{align}
-''''
+
+
+````
