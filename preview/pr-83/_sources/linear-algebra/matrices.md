@@ -120,7 +120,7 @@ longer course on linear algebra!
 - *Addition*: **C** = **A** + **B** is defined if **A** and **B** have the same size. 
 
 \begin{align}
-Then, $C_{ij}$ = $A_{ij}$ + $B_{ij}$
+Then, C_{ij} = A_{ij} + B_{ij}
 \end{align}
 
 
@@ -136,7 +136,9 @@ Then, $C_{ij}$ = $A_{ij}$ + $B_{ij}$
 - *Scalar Multiplication*: **B** = k**A** multiplies each element of **A** by k. 
 
 
-  $B_{ij}$ = k $A_{ij}$
+\begin{align}
+  B_{ij} = kA_{ij}
+\end{align}
 
 \begin{equation} 
 -2 \begin{bmatrix} 1 & 0  \\ 0 & -2  \end{bmatrix} =
@@ -166,27 +168,27 @@ compute 2**A** - **B**
 
 \begin{equation}
 \vv{2A-B} = 2 \begin{bmatrix} -1 & 2  \\ 0 & 5  \end{bmatrix} - 
-\begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix} \
+\begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix} \\
 
 = \begin{bmatrix} -2 & 4  \\ 0 & 10  \end{bmatrix} - 
-\begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix} \
+\begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix} \\
 
 = \begin{bmatrix} -3 & 4  \\ 0 & 9  \end{bmatrix} 
 \end{equation}
 
-- *Matrix Multiplication*: **C** = **AB** is defined if **A** has the same number of columns as **B** has rows.\
-
+- *Matrix Multiplication*: **C** = **AB** is defined if **A** has the same number of columns as **B** has rows.
+\begin{align}
    $(m \times n)(m \times p)(p \times n)$ 
-  
-   $C_{ij}$ = $\displaystyle \sum_{k=1}^{P}A_ikB_kj$ 
 
+   $C_{ij}$ = $\displaystyle \sum_{k=1}^{P}A_ikB_kj$ 
+\end{align}
 
 \begin{equation} 
 \begin{bmatrix} 3 & 5 \\ 4 & 0 \\ -6 & -3 \end{bmatrix}
 
 \begin{bmatrix} 2 & -2 \\ 5 & 0 \end{bmatrix} =
 
-\begin{bmatrix} 3\times2 + 5\times5 & 3\times-2 + 5\times0 \\ 4\times2 + 0\times5 & 4\times-2 + 0\times0 \\ -6\times2 + -3\times5 & -6\times2 + -3\times0 \end{bmatrix}
+\begin{bmatrix} 3\times2 + 5\times5 & 3\times-2 + 5\times0 \\ 4\times2 + 0\times5 & 4\times-2 + 0\times0 \\ -6\times2 + -3\times5 & -6\times-2 + -3\times0 \end{bmatrix}
 \end{equation}
 
 Multiply with a vector works the same! 
@@ -205,6 +207,8 @@ Rules of matrix multiplication
 
    In general, **AB** $\ne$ **BA**   (i.e., $\underline{not}$ commutative)
 :::
+
+
 
 - *Transpose* **A**$^T$ = [$A_{ij}$] "flip" the rows and columns
 
