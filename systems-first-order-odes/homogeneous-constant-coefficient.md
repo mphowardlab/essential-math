@@ -74,5 +74,6 @@ begin{align}
 CA(t) = a1(exp(-k1 * t))(-(k2-k1)/k2) = CA0 * exp(-k1 * t)  \\
 CB(t) = a1(exp(-k1 * t))(-k1/k2) + a2(exp(-k2 * t))(-1) = CA0 * (k1 / (k2 - k1)) * (exp(-k1 * t) - exp(-k2 * t)) \\
 CC(t) = a1(exp(-k1 * t)) + a2(exp(-k2 * t)) + a3 = CA0 * (1 - (k2 / (k2 - k1)) * exp(-k1 * t)) + (k1 / (k2 - k1)) * exp(-k2 * t)  \\
-rightarrow This matches our old answer!
 end{align}
+rightarrow This matches our old answer!
+
