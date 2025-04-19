@@ -155,10 +155,10 @@ Rules of addition and scalar multiplication
 c(**A** + **B**) = c**A** + c**B**  (distributive) 
 
 
-example: For
+example: 
 \begin{equation}
-\vv{A} = \begin{bmatrix} -1 & 2  \\ 0 & 5  \end{bmatrix} and 
-\vv{B} = \begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix}
+For \vv{A} = \begin{bmatrix} -1 & 2  \\ 0 & 5  \end{bmatrix} and 
+ \vv{B} = \begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix}
 \end{equation} 
 compute 2**A** - **B** 
 
@@ -199,16 +199,20 @@ Multiply with a vector works the same!
 Rules of matrix multiplication\
     **A**(**BC**) = (**AB**)**C** (associative)   
     (**A** + **B**)**C** = **AC** + **BC** (distributive) 
-    In general, **AB** $\ne$ **BA** (i.e., not \underline{not} commutative)
+    In general, **AB** $\ne$ **BA** (i.e., \underline{not} commutative)
 
-- *Transpose* **$A^T$** = [$A_{ij}$] "flip" the rows and columns
+- *Transpose* **A**$^T$ = [$A_{ij}$] "flip" the rows and columns
 
 \begin{bmatrix} 1 & 2 \\ 4 & 3 \end{bmatrix} ^T =
 \begin{bmatrix} 1 & 4 \\ 2 & 3 \end{bmatrix} 
 
-Rules for transposition
-  (**$A^T$**)^T = **A**
+Rules for transposition\
+  (**A**$^T$)^T = **A**
   (**A** + **B**)$^T$ = **A**$^T$ + **B**$^T$
+  (**AB**)$^T$ = **B**$^T$ + **A**$^T$ 
+  (c**A**)$^T$ = c**A**$^T$
+
+  "Symmetric" matrices have **A**$^T$ = **A**
 
     
   
