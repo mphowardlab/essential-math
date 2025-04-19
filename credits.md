@@ -9,6 +9,7 @@ This work (c) 2025 is licensed under
 
 - Michael P. Howard
 - Evan M. Hughes
+- Amber McMillan
 - Michelle Schindler
 
 ## Attributions
