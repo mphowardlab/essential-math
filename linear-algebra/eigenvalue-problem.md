@@ -76,5 +76,20 @@ $$
 \end{bmatrix}
 $$
 
+$x_1 + x_3$ = 0
 
+$x_2 +2x_3$ = 0
 
+$x_3$ free
+
+$$
+\underline{x_1} = 
+$$ 
+
+$$
+\begin{bmatrix}
+1 \\
+2  \\
+-1
+\end{bmatrix}
+$$
