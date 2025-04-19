@@ -233,3 +233,5 @@ $$
 \lambda_3=3
 $$
 
+- If $\underline{\underline{A}}$ is symmetric ( $\underline{\underline{A}}^T = \underline{\underline{A}}$ ), its eigenvalues are real.
+- If $\underline{\underline{A}}$ is skew-symmetric ( $\underline{\underline{A}}^T = \underline{\underline{-A}}$ ), its eigenvalues are pure imaginary.
