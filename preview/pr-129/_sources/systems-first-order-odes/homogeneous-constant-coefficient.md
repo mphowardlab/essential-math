@@ -78,11 +78,3 @@ CC(t) = a1(exp(-k1 * t)) + a2(exp(-k2 * t)) + a3 = CA0 * (1 - (k2 /
  (k2 - k1)) * exp(-k1 * t)) + (k1 / (k2 - k1)) * exp(-k2 * t) \\
  \rightarrow This matches our old answer!
 \end{align}
-disp('CA(t) =')
-pretty(CA)
-
-disp('CB(t) =')
-pretty(CB)
-
-disp('CC(t) =')
-pretty(CC)
