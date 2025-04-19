@@ -154,5 +154,14 @@ c( **A** + **B** ) = c**A** + c**B**  (distributive)
 
 \begin{equation} and 
 \vv{B} = \begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix} 
-\end{equation} ,compute 2**A** - **B** 
+\end{equation} , compute 2**A** - **B** 
 
+\begin{equation} and
+\vv{2A-B} = 2 \begin{bmatrix} -1 & 2  \\ 0 & 5  \end{bmatrix} - 
+\begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix} 
+
+= \begin{bmatrix} -2 & 4  \\ 0 & 10  \end{bmatrix} - 
+\begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix} =
+
+\begin{bmatrix} -3 & 4  \\ 0 & 9  \end{bmatrix} 
+\end{equation}
