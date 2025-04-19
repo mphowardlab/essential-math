@@ -4,7 +4,7 @@
 Some ODEs give rise to integrals like:
 
 
-$y' = \frac{3x+11}{x^2 - x - 6}$ $\to$ y=$\int\frac{3x+11}{x^2 - x - 6}$
+$y' = \frac{3x+11}{x^2 - x - 6}$ $\to$ $y$=$\int\frac{3x+11}{x^2 - x - 6} dx$
 
 
 
@@ -41,6 +41,8 @@ $ax^2 + bx + c \to \frac{Ax+B}{ax^2+bx+c}$
 $(ax^2 + bx+c)^k $: repeat like for linear factor
 
 $y'= \frac{x^2-29x+5}{(x-4)^2(x^2+3)}$
+
+
 $\frac{x^2-29x+5}{(x-4)^2(x^2+3)} = \frac{A_1}{x-4} + \frac{A_2}{(x-4)^2} + \frac{A_3x+ B_3}{x^2+3}$
 
 $x^2-29x+5 = A_1(x-4)(x^2+3) + A_2(x^2+3)+(A_3x+B_3)(x-4)^2
