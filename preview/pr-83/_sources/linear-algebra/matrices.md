@@ -149,12 +149,12 @@ Rules of addition and scalar multiplication
    
 c(**A** + **B**) = c**A** + c**B**  (distributive) 
 
-
+For example, 
 \begin{equation}
 \vv{A} = \begin{bmatrix} -1 & 2  \\ 0 & 5  \end{bmatrix} \qquad
-\vv{B} = \begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix} 
-\end{equation} 
+\vv{B} = \begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix} \qquad
 , compute 2**A** - **B** 
+\end{equation} 
 
 \begin{equation}
 \vv{2A-B} = 2 \begin{bmatrix} -1 & 2  \\ 0 & 5  \end{bmatrix} - 
@@ -165,3 +165,7 @@ c(**A** + **B**) = c**A** + c**B**  (distributive)
 
 = \begin{bmatrix} -3 & 4  \\ 0 & 9  \end{bmatrix} 
 \end{equation}
+
+- Matrix Multiplication: **C** = **A****B** is defined if **A** has the same number of columns as **B** has rows.
+    (m\timesn)(m\timesp)(p\timesn)
+  
