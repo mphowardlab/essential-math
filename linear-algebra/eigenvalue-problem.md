@@ -180,7 +180,11 @@ i
 $$
 
 $$
-\lambda_2 = -i
+\lambda_2 = -i:
+\begin{bmatrix}
+i & 1 \\
+-1 & i
+\end{bmatrix}
 \to
 \underline{x_2} =
 \begin{bmatrix}
@@ -200,11 +204,11 @@ $$
 \end{bmatrix}
 $$
 
-$\lambda_1 = 1$
-
-$\lambda_2 = 2$
-
-$\lambda_3 = 3$
+$$
+\lambda_1 = 1,
+\lambda_2 = 2,
+\lambda_3 = 3
+$$
 
 The transpose $\underline{\underline{A}}^T$ has the same eigenvalues as $\underline{\underline{A}}$
 
