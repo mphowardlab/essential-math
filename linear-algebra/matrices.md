@@ -119,8 +119,8 @@ longer course on linear algebra!
   
 - *Addition*: **C** = **A** + **B** is defined if **A** and **B** have the same size. 
 
-
-   Then, $C_{ij}$ = $A_{ij}$ + $B_{ij}$
+\begin{align}
+Then, $C_{ij}$ = $A_{ij}$ + $B_{ij}$
 
 
 \begin{equation}  
@@ -130,6 +130,7 @@ longer course on linear algebra!
 
 \begin{bmatrix} 1 & 5 & 3 \\ 3 & 2 & 2 \end{bmatrix}
 \end{equation}
+\end{align}
 
 
 - *Scalar Multiplication*: **B** = k**A** multiplies each element of **A** by k. 
