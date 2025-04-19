@@ -6,26 +6,26 @@ y'=A*y
 As an ansatz, assume a solution: 
 
 \begin{align}
-y=(\exp\lambda*t)x \rightarrow y'=\lambda(\exp\lambda*t)x  \\
-\lambda(\exp^\lambdat)x=A(\exp^\lambdat)x \rightarrow \lambdax=Ax
+$y=(\exp^\lambda*t)x$ \rightarrow $y'=\lambda(\exp^(\lambda*t))x$  \\
+$\lambda(\exp^\lambda t)x=A(\exp^\lambda t)x$ \rightarrow $\lambda*x=Ax$
 \end{align}
 
 This is an eigenvalus problem! lambda is an eigenvalue, and x is an eigenvector of A.
 
 We know an n*n matrix has n eigenvalues. Let's suppose the corresponding eigenvectors are all independent. What do we do?
 
-Superposition principle: For a linear ODE, if y1 and y2 are both solutions, then \\
+     Superposition principle: For a linear ODE, if y1 and y2 are both solutions, then 
 
 \begin{align}
 y=(c1y1)+(c2y2) 
 \end{align}
+     is also a solution. 
 
-is also a solution. \\
-
-\rightarrow y=(c1(\exp^(\lambda1t))x1)+(c2(\exp^(\lambda2t))x2)+...+(cn(\exp^(\lambda(n)t))xn) \\
-
-(There are some cases this fails, but we will not cover them.)
+\begin{align}
+$\rightarrow y=(c1(\exp^(\lambda1t))x1)+(c2(\exp^(\lambda2t))x2)+...+(cn(\exp^(\lambda(n)t))xn)$ 
 \end{align}
+     (There are some cases this fails, but we will not cover them.)
+
 
 
 ## Example: Reaction Network
