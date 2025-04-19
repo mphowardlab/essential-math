@@ -154,8 +154,8 @@ For example,
 \begin{equation}
 \vv{A} = \begin{bmatrix} -1 & 2  \\ 0 & 5  \end{bmatrix} \qquad
 \vv{B} = \begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix}
-\end{equation} \qquad
-, compute 2**A** - **B** 
+\end{equation}
+     compute 2**A** - **B** 
 
 
 \begin{equation}
