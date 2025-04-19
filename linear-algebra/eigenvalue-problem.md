@@ -1,7 +1,7 @@
 # Eigenvalue problem
 2. Multiple Eigenvalues
    
-An nxn matrix has n eigenvalues, but they may not be distinct!
+   An nxn matrix has n eigenvalues, but they may not be distinct!
 
 $$
 \underline{\underline{A}} = 
@@ -137,7 +137,7 @@ $$
 
 3. Complex Eigenvalues
 
-Matrices may have complex eigenvaules. They always come in conjugate pairs!
+   Matrices may have complex eigenvaules. They always come in conjugate pairs!
 
 $$
 \underline{\underline{A}} =
@@ -175,8 +175,19 @@ $$
 \underline{x_1} =
 \begin{bmatrix}
 1 \\
+i
+\end{bmatrix}
+$$
+
+$$
+\lambda_2 = -i
+\to
+\underline{x_2} =
+\begin{bmatrix}
+1 \\
 -i
 \end{bmatrix}
 $$
 
-
+4. Some useful tricks
+   - The eigenvaules of upper triangular matrices are the values on the diagonal.
