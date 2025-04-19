@@ -114,7 +114,7 @@ There are several other types of special matrices, but we will leave those for a
 longer course on linear algebra!
 
 ## Matrix Operations
-- *Equality*: **A** = **B** if and only if **A** and **B** have the same size and all their corresponding elements are equal.
+- *Equality*: **A** = **B** if and only if **A** and **B** have the same size and all their corresponding elements are equal.\
   
   
 - *Addition*: **C** = **A** + **B** is defined if **A** and **B** have the same size. 
@@ -148,19 +148,18 @@ longer course on linear algebra!
 :::{line-block}
 Rules of addition and scalar multiplication
 
- **A** + **B** = **B** + **A**  (commutative) 
+ **A** + **B** = **B** + **A**    (commutative) 
    
- (**A** + **B**) + **C** = **A** + (**B** + **C**)  (associative) 
+ (**A** + **B**) + **C** = **A** + (**B** + **C**)    (associative) 
    
- c(**A** + **B**) = c**A** + c**B**  (distributive) 
+ c(**A** + **B**) = c**A** + c**B**    (distributive) 
 :::
 
-example:
-
+example: 
 \begin{equation}
-\vv{A} = \begin{bmatrix} -1 & 2  \\ 0 & 5  \end{bmatrix}
-\vv{B} = \begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix}
-\end{equation} 
+\vv{A} = \begin{bmatrix} -1 & 2  \\ 0 & 5  \end{bmatrix}\qquad 
+and \vv{B} = \begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix}
+\end{equation} \qquad
 compute 2**A** - **B** 
 
 
@@ -174,12 +173,11 @@ compute 2**A** - **B**
 = \begin{bmatrix} -3 & 4  \\ 0 & 9  \end{bmatrix} 
 \end{equation}
 
-- Matrix Multiplication: **C** = **AB** is defined if **A** has the same number of columns as **B** has rows.
+- *Matrix Multiplication*: **C** = **AB** is defined if **A** has the same number of columns as **B** has rows.
 
-
-   $(m \times n)(m \times p)(p \times n)$ 
+   $(m \times n)(m \times p)(p \times n)$ \centerline
   
-   $C_{ij}$ = $\displaystyle \sum_{k=1}^{P}A_ikB_kj$
+   $C_{ij}$ = $\displaystyle \sum_{k=1}^{P}A_ikB_kj$ \centerline
 
 
 \begin{equation} 
@@ -197,10 +195,12 @@ Multiply with a vector works the same!
 
 \begin{bmatrix} 8 \\ 4 \\ -9 \end{bmatrix}
 
+ :::{line-block}
 Rules of matrix multiplication\
-    : **A**(**BC**) = (**AB**)**C** (associative)   
-    : (**A** + **B**)**C** = **AC** + **BC** (distributive)\ 
-    : In general, **AB** $\ne$ **BA** (i.e., $\underline{not}$ commutative)
+**A**(**BC**) = (**AB**)**C**   (associative)   
+(**A** + **B**)**C** = **AC** + **BC**   (distributive)
+In general, **AB** $\ne$ **BA**   (i.e., $\underline{not}$ commutative)
+:::
 
 - *Transpose* **A**$^T$ = [$A_{ij}$] "flip" the rows and columns
 
