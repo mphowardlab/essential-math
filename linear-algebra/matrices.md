@@ -142,7 +142,8 @@ longer course on linear algebra!
 
 - *Subtraction*: same as addition of negative **C** = **A** - **B** = **A** + (- **B**) 
 
-Rules of addition and scalar multiplication
+Rules of addition and scalar multiplication\
+
 **A** + **B** = **B** + **A**  (commutative) 
    
 (**A** + **B**) + **C** = **A** + (**B** + **C**)  (associative) 
@@ -152,9 +153,10 @@ c(**A** + **B**) = c**A** + c**B**  (distributive)
 For example, 
 \begin{equation}
 \vv{A} = \begin{bmatrix} -1 & 2  \\ 0 & 5  \end{bmatrix} \qquad
-\vv{B} = \begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix} \qquad
+\vv{B} = \begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix}
+\end{equation} \qquad
 , compute 2**A** - **B** 
-\end{equation} 
+
 
 \begin{equation}
 \vv{2A-B} = 2 \begin{bmatrix} -1 & 2  \\ 0 & 5  \end{bmatrix} - 
@@ -166,6 +168,6 @@ For example,
 = \begin{bmatrix} -3 & 4  \\ 0 & 9  \end{bmatrix} 
 \end{equation}
 
-- Matrix Multiplication: **C** = **A****B** is defined if **A** has the same number of columns as **B** has rows.
-    (m\timesn)(m\timesp)(p\timesn)
+- Matrix Multiplication: **C** = **AB** is defined if **A** has the same number of columns as **B** has rows.\
+    (m \times n)(m \times p)(p \times n)
   
