@@ -114,7 +114,8 @@ There are several other types of special matrices, but we will leave those for a
 longer course on linear algebra!
 
 ## Matrix Operations
-- *Equality*: **A** = **B** if and only if **A** and **B** have the same size and all their corresponding elements are equal. 
+- *Equality*: **A** = **B** if and only if **A** and **B** have the same size and all their corresponding elements are equal.
+  
   
 - *Addition*: **C** = **A** + **B** is defined if **A** and **B** have the same size. 
   
@@ -127,6 +128,7 @@ longer course on linear algebra!
 
 \begin{bmatrix} 1 & 5 & 3 \\ 3 & 2 & 2 \end{bmatrix}
 \end{equation}
+
 
 - *Scalar Multiplication*: **B** = k**A** multiplies each element of **A** by k. 
   
@@ -141,12 +143,11 @@ longer course on linear algebra!
 - *Subtraction*: same as addition of negative **C** = **A** - **B** = **A** + (- **B**) 
 
 Rules of addition and scalar multiplication
-
-   **A** + **B** = **B** + **A**  (commutative) 
+> **A** + **B** = **B** + **A**  (commutative) 
    
-   (**A** + **B**) + **C** = **A** + (**B** + **C**)  (associative) 
+> (**A** + **B**) + **C** = **A** + (**B** + **C**)  (associative) 
    
-   c(**A** + **B**) = c**A** + c**B**  (distributive) 
+> c(**A** + **B**) = c**A** + c**B**  (distributive) 
 
 
 \begin{equation}
@@ -156,7 +157,7 @@ Rules of addition and scalar multiplication
 
 \begin{equation}
 \vv{B} = \begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix} 
-\end{equation} 
+\end{equation} \qquad
 , compute 2**A** - **B** 
 
 \begin{equation}
