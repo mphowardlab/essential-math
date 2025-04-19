@@ -1,13 +1,13 @@
 # Homogeneous linear first-order ODEs with constant coefficients
 
-y'=A*y
+y' = A * y
 
 
 As an ansatz, assume a solution: 
 
 \begin{align}
-y=(\exp^t\lambda)x \rightarrow y'=\lambda(\exp^(t\lambda))x  \\
-\lambda(\exp^t\lambda)x=A(\exp^t\lambda)x \rightarrow \lambda*x=Ax
+y = exp(λt) * x \rightarrow y' = λ * exp(λt) * x  \\
+λ * exp(λt) * x = A * exp(λt) * x \rightarrow λ * x = A * x
 \end{align}
 
 This is an eigenvalus problem! lambda is an eigenvalue, and x is an eigenvector of A.
@@ -18,12 +18,12 @@ We know an n*n matrix has n eigenvalues. Let's suppose the corresponding eigenve
      Superposition principle: For a linear ODE, if y1 and y2 are both solutions, then 
 
 \begin{align}
-y=(c1y1)+(c2y2) 
+y = (c1y1) + (c2y2) 
 \end{align}
 is also a solution. 
 
 \begin{align}
-\rightarrow y=(c1(\exp^\lambda1t)x1)+(c2(\exp^(\lambda2t))x2)+...+(cn(\exp^(\lambda(n)t))xn)$
+\rightarrow y = c1 * exp(λ1*t) * x1 + c2 * exp(λ2*t) * x2 + ... + cn * exp(λn*t) * xn
 \end{align}
 (There are some cases this fails, but we will not cover them.)
 
