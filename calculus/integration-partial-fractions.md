@@ -24,7 +24,7 @@ $2A_1 - 3A_2 = 11$
 
 \begin{bmatrix} 1 & 1 & 3\\ 2 & -3 & 11 \end{bmatrix} \to \begin{bmatrix} 1 & 1 & 3\\ 0 & -5 & 5 \end{bmatrix} \to \begin{bmatrix} 1 & 1 & 3\\ 0 & 1 & -1 \end{bmatrix} \to \begin{bmatrix} 1 & 0 & 4\\ 0 & 1 & -1 \end{bmatrix}
 
-A_1 = 4  A_2 = -1
+$A_1=4$  $A_2=-1$
 
 $y=\int(\frac{4}{x-3}-\frac{1}{x+2})dx = 4ln|x-3| - ln|x+2| + C$
 
@@ -32,7 +32,7 @@ This technique is also called partial fraction decomposition.
 
 Procedure: For a rational polynomial  $\frac{P(x)}{Q(x)}$ where Q is expressed using either linear $(ax+b)$ or irreducible quadratic $(ax^2 + bx + c)$ factors and the degree of P is less than Q 
 
-ax+b $\to$ $\frac{A}{ax+b}$
+$ax+b$ $\to$ $\frac{A}{ax+b}$
 
 $(ax+b)^k \to \frac{A_1}{ax+b} + \frac{A_2}{(ax+b)^2}+ ...+ \frac{A_k}{(ax+b)^k}$
 
@@ -62,7 +62,7 @@ $\begin{bmatrix} 1 & 0 & 1 & 0\\ -4 & 1 & -8 & 1\\ 3 & 0 & 16 & -8\\ -12 & 3 & 0
 
 $ y= \int(\frac{1}{x-3}-\frac{5}{(x-4)^2}-\frac{x}{x^2+3}+\frac{2}{x^2+3}) dx$
                             
-      $\int\frac{1}{1+x^2} dx = arctanx$
+$y= \int (\frac{1}{+x^2}) dx$ = $arctanx$
 
 = $ln|x-4|+\frac{5}{x-4} -\frac{1}{2}ln (x^2 + 3)+\frac{2}{\sqrt{3}} arctan(\frac{x}{\sqrt{3}}) + C$
 
