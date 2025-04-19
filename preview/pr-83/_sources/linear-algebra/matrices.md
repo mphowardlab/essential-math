@@ -148,11 +148,11 @@ longer course on linear algebra!
 
 Rules of addition and scalar multiplication
 
-**A** + **B** = **B** + **A**  (commutative) 
+: **A** + **B** = **B** + **A**  (commutative) 
    
-(**A** + **B**) + **C** = **A** + (**B** + **C**)  (associative) 
+: (**A** + **B**) + **C** = **A** + (**B** + **C**)  (associative) 
    
-c(**A** + **B**) = c**A** + c**B**  (distributive) 
+: c(**A** + **B**) = c**A** + c**B**  (distributive) 
 
 
 example:
@@ -197,9 +197,9 @@ Multiply with a vector works the same!
 \begin{bmatrix} 8 \\ 4 \\ -9 \end{bmatrix}
 
 Rules of matrix multiplication\
-    **A**(**BC**) = (**AB**)**C** (associative)   
-    (**A** + **B**)**C** = **AC** + **BC** (distributive)\ 
-    In general, **AB** $\ne$ **BA** (i.e., $\underline{not}$ commutative)
+    : **A**(**BC**) = (**AB**)**C** (associative)   
+    : (**A** + **B**)**C** = **AC** + **BC** (distributive)\ 
+    : In general, **AB** $\ne$ **BA** (i.e., $\underline{not}$ commutative)
 
 - *Transpose* **A**$^T$ = [$A_{ij}$] "flip" the rows and columns
 
@@ -207,11 +207,10 @@ Rules of matrix multiplication\
 \begin{bmatrix} 1 & 4 \\ 2 & 3 \end{bmatrix} 
 
 Rules for transposition\
-  (**A**$^T$)$^T$ = **A**\
-  (**A** + **B**)$^T$ = **A**$^T$ + **B**$^T$\
-  (**AB**)$^T$ = **B**$^T$ + **A**$^T$\
-  (c**A**)$^T$ = c**A**$^T$
-
+  : (**A**$^T$)$^T$ = **A**\
+  : (**A** + **B**)$^T$ = **A**$^T$ + **B**$^T$\
+  : (**AB**)$^T$ = **B**$^T$ + **A**$^T$\
+  : (c**A**)$^T$ = c**A**$^T$ \
   "Symmetric" matrices have **A**$^T$ = **A**
 
     
