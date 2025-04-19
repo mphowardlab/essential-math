@@ -154,7 +154,8 @@ For example,
 \begin{equation}
 \vv{A} = \begin{bmatrix} -1 & 2  \\ 0 & 5  \end{bmatrix} \qquad
 \vv{B} = \begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix}
-\end{equation} compute 2 **A** - **B** 
+\end{equation} 
+compute 2 **A** - **B** 
 
 
 \begin{equation}
@@ -168,5 +169,17 @@ For example,
 \end{equation}
 
 - Matrix Multiplication: **C** = **AB** is defined if **A** has the same number of columns as **B** has rows.\
-    (m * n)(m * p)(p * n)
+    $(m \times n)(m \times p)(p \times n)$
+    $C_{ij}$ = $\displaystyle \sum_{k=1}^{\P}\A_ikB_kj$
+
+\begin{equation} 
+\begin{bmatrix} 3 & 5 \\ 4 & 0 \\ -6 & -3 \end{bmatrix}
+
+\begin{bmatrix} 2 & -2 \\ 5 & 0 \end{bmatrix} =
+
+\begin{bmatrix} $3\times2$ + $5\times5$ & $3\times-2$ + $5\times0$ \\ $4\times2$ + $0\times5$ & $4\times-2$ + $0\times0$ \\ $-6\times2$ + $-3\times5$ & $-6\times2$ + $-3\times0$ \end{bmatrix}
+\end{equation}
+
+Multiply with a vector works the same! 
+  
   
