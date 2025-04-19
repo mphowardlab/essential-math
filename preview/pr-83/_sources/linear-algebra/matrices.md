@@ -138,7 +138,7 @@ Then, $C_{ij}$ = $A_{ij}$ + $B_{ij}$
 \begin{bmatrix} -2 & 0 \\ 0 & 4 \end{bmatrix}
 \end{equation}
 
-- *Subtraction*: same as addition of negative **C** = **A** - **B** = **A** + (- **B**) \
+- *Subtraction*: same as addition of negative **C** = **A** - **B** = **A** + (- **B**) 
 
 Rules of addition and scalar multiplication:
 
@@ -154,7 +154,5 @@ c( **A** + **B** ) = c**A** + c**B**  (distributive)
 
 \begin{equation} and 
 \vv{B} = \begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix} 
-\end{equation}
-
-,compute 2**A** - **B** 
+\end{equation} ,compute 2**A** - **B** 
 
