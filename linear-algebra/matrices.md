@@ -116,9 +116,9 @@ longer course on linear algebra!
 ## Matrix Operations
 - *Equality*: **A** = **B** if and only if **A** and **B** have the same size and all their corresponding elements are equal. 
   
-- *Addition*: **C** = **A** + **B** is defined if **A** and **B** have the same size. :
+- *Addition*: **C** = **A** + **B** is defined if **A** and **B** have the same size. 
   
-Then, $C_{ij}$ = $A_{ij}$ + $B_{ij}$
+> Then, $C_{ij}$ = $A_{ij}$ + $B_{ij}$
 
 \begin{equation} 
 \begin{bmatrix} -4 & 6 & 3 \\ 0 & 1 & 2 \end{bmatrix} =
@@ -154,7 +154,8 @@ c( **A** + **B** ) = c**A** + c**B**  (distributive)
 
 \begin{equation} and 
 \vv{B} = \begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix} 
-\end{equation} , compute 2**A** - **B** 
+\end{equation} 
+, compute 2**A** - **B** 
 
 \begin{equation} and
 \vv{2A-B} = 2 \begin{bmatrix} -1 & 2  \\ 0 & 5  \end{bmatrix} - 
