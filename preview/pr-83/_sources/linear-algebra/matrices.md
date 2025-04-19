@@ -149,12 +149,12 @@ Rules of addition and scalar multiplication
    c(**A** + **B**) = c**A** + c**B**  (distributive) 
 
 
-\begin{equation} For 
+\begin{equation}
 \vv{A} = \begin{bmatrix} -1 & 2  \\ 0 & 5  \end{bmatrix}
 \end{equation}
 
 
-\begin{equation} and 
+\begin{equation}
 \vv{B} = \begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix} 
 \end{equation} 
 , compute 2**A** - **B** 
