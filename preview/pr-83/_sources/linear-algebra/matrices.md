@@ -170,7 +170,7 @@ compute 2 **A** - **B**
 
 - Matrix Multiplication: **C** = **AB** is defined if **A** has the same number of columns as **B** has rows.\
     $(m \times n)(m \times p)(p \times n)$
-    $C_{ij}$ = $\displaystyle \sum_{k=1}^{\P}\A_ikB_kj$
+    $C_{ij}$ = $\displaystyle \sum_{k=1}^{P}A_ikB_kj$
 
 \begin{equation} 
 \begin{bmatrix} 3 & 5 \\ 4 & 0 \\ -6 & -3 \end{bmatrix}
