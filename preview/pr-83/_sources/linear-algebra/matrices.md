@@ -124,6 +124,7 @@ longer course on linear algebra!
 
 
 \begin{equation} 
+example: 
 \begin{bmatrix} -4 & 6 & 3 \\ 0 & 1 & 2 \end{bmatrix} =
 
 \begin{bmatrix} 5 & -1 & 0 \\ 3 & 1 & 0 \end{bmatrix} +
@@ -135,7 +136,7 @@ longer course on linear algebra!
 - *Scalar Multiplication*: **B** = k**A** multiplies each element of **A** by k. 
 
 
-$B_{ij}$ = k $A_{ij}$
+  $B_{ij}$ = k $A_{ij}$
 
 \begin{equation} 
 -2 \begin{bmatrix} 1 & 0  \\ 0 & -2  \end{bmatrix} =
@@ -200,7 +201,7 @@ Rules of matrix multiplication\
     (**A** + **B**)**C** = **AC** + **BC** (distributive) 
     In general, **AB** $\ne$ **BA** (i.e., (\underline{not}) commutative)
 
-- *Transpose* **A**^T = [$A_{ij}$] "flip" the rows and columns
+- *Transpose* $**A**^T$ = [$A_{ij}$] "flip" the rows and columns
 
 \begin{bmatrix} 1 & 2 \\ 4 & 3 \end{bmatrix} ^T =
 \begin{bmatrix} 1 & 4 \\ 2 & 3 \end{bmatrix} 
