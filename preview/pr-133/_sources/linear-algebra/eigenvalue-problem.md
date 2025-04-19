@@ -76,9 +76,9 @@ $$
 \end{bmatrix}
 $$
 
-$x_1 + x_3$ = 0
+$x_1 + x_3 = 0$
 
-$x_2 +2x_3$ = 0
+$x_2 +2x_3 = 0$
 
 $x_3$ free
 
@@ -93,3 +93,27 @@ $$
 -1
 \end{bmatrix}
 $$
+
+$\lambda_2 = \lambda_3 = -3: $
+
+$$
+\begin{bmatrix}
+1 & 2 & -3 \\
+2 & 4 & -6 \\
+-1 & -2 & 3
+\end{bmatrix}
+$$
+
+$\to\to$
+
+$$
+\begin{bmatrix}
+1 & 2 & -3 \\
+0 & 0 & 0 \\
+0 & 0 & 0
+\end{bmatrix}
+$$
+
+$x_1 + 2x_2 - 3x_3 = 0$
+
+$x_2, x_3$ free
