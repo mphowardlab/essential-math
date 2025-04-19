@@ -128,7 +128,7 @@ longer course on linear algebra!
 \end{equation}
 
 - *Scalar Multiplication*: **B** = k**A** multiplies each element of **A** by k.
-- $B_{ij}$ = k$A_{ij}$
+- $B_{ij}$ = k $A_{ij}$
 - example:
 
 \begin{equation} 
