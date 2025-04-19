@@ -177,11 +177,13 @@ compute 2**A** - **B**
 \end{equation}
 
 - *Matrix Multiplication*: **C** = **AB** is defined if **A** has the same number of columns as **B** has rows.
-\begin{align}
-   $(m \times n)(m \times p)(p \times n)$ 
-
+  \begin{align}
+   $(m \times n)(m \times p)(p \times n)$
+  \end{align}
+  
+  \begin{align}
    $C_{ij}$ = $\displaystyle \sum_{k=1}^{P}A_ikB_kj$ 
-\end{align}
+  \end{align}
 
 \begin{equation} 
 \begin{bmatrix} 3 & 5 \\ 4 & 0 \\ -6 & -3 \end{bmatrix}
@@ -205,9 +207,8 @@ Rules of matrix multiplication
 
    (**A** + **B**)**C** = **AC** + **BC**   (distributive)
 
-   In general, **AB** $\ne$ **BA**   (i.e., $\underline{not}$ commutative)
-:::
-
+   In general, **AB** $\ne$ **BA**   (i.e., $\underline{not}$ commutative)\
+::: 
 
 
 - *Transpose* **A**$^T$ = [$A_{ij}$] "flip" the rows and columns
