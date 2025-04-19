@@ -137,3 +137,26 @@ longer course on linear algebra!
 
 \begin{bmatrix} -2 & 0 \\ 0 & 4 \end{bmatrix}
 \end{equation}
+
+- *Subtraction*: same as addition of negative **C** = **A** - **B** = **A** + (- **B**)
+
+Rules of addition and scalar multiplication 
+
+**A** + **B** = **B** + **A**  (commutative)
+( **A** + **B** ) + **C** = **A** + ( **B** + **C** )  (associative) 
+c ( **A** + **B** ) = c **A** + c **B**  (distributive)
+
+For **A** =
+
+\begin{equation} 
+\begin{bmatrix} -1 & 2  \\ 0 & 5  \end{bmatrix}
+\end{equation}
+
+and **B** = 
+
+\begin{equation} 
+\begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix} 
+\end{equation}
+
+,compute 2 **A** - **B** 
+
