@@ -142,7 +142,7 @@ longer course on linear algebra!
 
 - *Subtraction*: same as addition of negative **C** = **A** - **B** = **A** + (- **B**) 
 
-Rules of addition and scalar multiplication\
+Rules of addition and scalar multiplication
 
 **A** + **B** = **B** + **A**  (commutative) 
    
@@ -154,8 +154,7 @@ For example,
 \begin{equation}
 \vv{A} = \begin{bmatrix} -1 & 2  \\ 0 & 5  \end{bmatrix} \qquad
 \vv{B} = \begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix}
-\end{equation}
-     compute 2**A** - **B** 
+\end{equation} compute 2 **A** - **B** 
 
 
 \begin{equation}
@@ -169,5 +168,5 @@ For example,
 \end{equation}
 
 - Matrix Multiplication: **C** = **AB** is defined if **A** has the same number of columns as **B** has rows.\
-    (m \times n)(m \times p)(p \times n)
+    (m * n)(m * p)(p * n)
   
