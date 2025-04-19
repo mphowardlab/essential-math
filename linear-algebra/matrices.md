@@ -114,11 +114,11 @@ There are several other types of special matrices, but we will leave those for a
 longer course on linear algebra!
 
 ## Matrix Operations
-- *Equality*: **A** = **B** if and only if **A** and **B** have the same size and all their corresponding elements are equal. \
+- *Equality*: **A** = **B** if and only if **A** and **B** have the same size and all their corresponding elements are equal. 
   
-- *Addition*: **C** = **A** + **B** is defined if **A** and **B** have the same size. \
+- *Addition*: **C** = **A** + **B** is defined if **A** and **B** have the same size. :
   
-emsp Then, $C_{ij}$ = $A_{ij}$ + $B_{ij}$
+Then, $C_{ij}$ = $A_{ij}$ + $B_{ij}$
 
 \begin{equation} 
 \begin{bmatrix} -4 & 6 & 3 \\ 0 & 1 & 2 \end{bmatrix} =
@@ -140,11 +140,11 @@ emsp Then, $C_{ij}$ = $A_{ij}$ + $B_{ij}$
 
 - *Subtraction*: same as addition of negative **C** = **A** - **B** = **A** + (- **B**) \
 
-Rules of addition and scalar multiplication \
+Rules of addition and scalar multiplication:
 
 **A** + **B** = **B** + **A**  (commutative) \
 ( **A** + **B** ) + **C** = **A** + ( **B** + **C** )  (associative) \
-c( **A** + **B** ) = c**A** + c**B**  (distributive) \
+c( **A** + **B** ) = c**A** + c**B**  (distributive) 
 
 
 \begin{equation} For 
