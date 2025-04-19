@@ -113,8 +113,10 @@ There are some other types of "special" matrices.
 There are several other types of special matrices, but we will leave those for a
 longer course on linear algebra!
 
-#new page 
-
-##2. Matrix Operations##
+## 2. Matrix Operations
 - *Equality*: **A** = **B** if and only if **A** and **B** have the same size and all their corresponding elements are equal.
 - *Addition*: **C** = **A** + **B** is defined if **A** and **B** have the same size.
+- Then, $C_{ij}$ = $A_{ij}$ + $B_{ij}$
+- example: \begin{equation} \begin{bmatrix} -4 & 6 & 3 \\ 0 & 1 & 2 \end{bmatrix}
+= \begin{bmatrix} 5 & -1 & 0 \\ 3 & 1 & 0 \end{bmatrix} + \begin{bmatrix} 1 & 5 & 3 \\ 3 & 2 & 2 \end{bmatrix}
+\end{equation}
