@@ -116,7 +116,7 @@ longer course on linear algebra!
 ## 2. Matrix Operations
 - *Equality*: **A** = **B** if and only if **A** and **B** have the same size and all their corresponding elements are equal.
 - *Addition*: **C** = **A** + **B** is defined if **A** and **B** have the same size.
-        Then, $C_{ij}$ = $A_{ij}$ + $B_{ij}$
+- Then, $C_{ij}$ = $A_{ij}$ + $B_{ij}$
 - example:
 
 \begin{equation} 
@@ -125,4 +125,14 @@ longer course on linear algebra!
 \begin{bmatrix} 5 & -1 & 0 \\ 3 & 1 & 0 \end{bmatrix} +
 
 \begin{bmatrix} 1 & 5 & 3 \\ 3 & 2 & 2 \end{bmatrix}
+\end{equation}
+
+- *Scalar Multiplication*: **B** = k**A** multiplies each element of **A** by k.
+- $B_{ij}$ = k$A_{ij}$
+- example:
+
+\begin{equation} 
+-2 \begin{bmatrix} 1 & 0  \\ 0 & -2  \end{bmatrix} =
+
+\begin{bmatrix} -2 & 0 \\ 0 & 4 \end{bmatrix}
 \end{equation}
