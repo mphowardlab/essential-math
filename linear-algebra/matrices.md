@@ -120,7 +120,7 @@ longer course on linear algebra!
 - *Addition*: **C** = **A** + **B** is defined if **A** and **B** have the same size. 
 
 \begin{align}
-Then, C_{ij} = A_{ij} + B_{ij}
+C_{ij} = A_{ij} + B_{ij}
 \end{align}
 
 
@@ -168,21 +168,25 @@ compute 2**A** - **B**
 
 \begin{equation}
 \vv{2A-B} = 2 \begin{bmatrix} -1 & 2  \\ 0 & 5  \end{bmatrix} - 
-\begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix} \\
+\begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix} 
+\end{equation}
 
+\begin{equation}
 = \begin{bmatrix} -2 & 4  \\ 0 & 10  \end{bmatrix} - 
-\begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix} \\
+\begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix} 
+\end{equation}
 
+\begin{equation}
 = \begin{bmatrix} -3 & 4  \\ 0 & 9  \end{bmatrix} 
 \end{equation}
 
 - *Matrix Multiplication*: **C** = **AB** is defined if **A** has the same number of columns as **B** has rows.
   \begin{align}
-   $(m \times n)(m \times p)(p \times n)$
+   (m \times n)(m \times p)(p \times n)
   \end{align}
   
   \begin{align}
-   $C_{ij}$ = $\displaystyle \sum_{k=1}^{P}A_ikB_kj$ 
+   C_{ij} = \displaystyle \sum_{k=1}^{P}A_ikB_kj 
   \end{align}
 
 \begin{equation} 
@@ -207,7 +211,7 @@ Rules of matrix multiplication
 
    (**A** + **B**)**C** = **AC** + **BC**   (distributive)
 
-   In general, **AB** $\ne$ **BA**   (i.e., $\underline{not}$ commutative)\
+   In general, **AB** $\ne$ **BA**   (i.e., $\underline{not}$ commutative)
 ::: 
 
 
