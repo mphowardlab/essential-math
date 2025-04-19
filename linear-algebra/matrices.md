@@ -116,4 +116,5 @@ longer course on linear algebra!
 #new page 
 
 **2. Matrix Operations**
-- *Equality*: **A**= **B**
+- *Equality*: **A** = **B** if and only if **A** and **B** have the same size and all their corresponding elements are equal.
+- *Addition*: **C** = **A** + **B** is defined if **A** and **B** have the same size.
