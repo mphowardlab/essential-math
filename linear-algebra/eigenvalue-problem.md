@@ -83,10 +83,7 @@ $x_2 +2x_3 = 0$
 $x_3$ free
 
 $$
-\underline{x_1} = 
-$$ 
-
-$$
+\underline{x_1} =
 \begin{bmatrix}
 1 \\
 2  \\
@@ -117,3 +114,14 @@ $$
 $x_1 + 2x_2 - 3x_3 = 0$
 
 $x_2, x_3$ free
+
+$x_2 = 1, x_3 = 0 \to$
+
+$$
+\underline{x_2} =
+\begin{bmatrix}
+-2 \\
+1 \\
+0
+\end{bmatrix}
+$$
