@@ -123,7 +123,6 @@ longer course on linear algebra!
    Then, $C_{ij}$ = $A_{ij}$ + $B_{ij}$
 
 
-  example: 
 \begin{equation}  
 \begin{bmatrix} -4 & 6 & 3 \\ 0 & 1 & 2 \end{bmatrix} =
 
@@ -146,19 +145,21 @@ longer course on linear algebra!
 
 - *Subtraction*: same as addition of negative **C** = **A** - **B** = **A** + (- **B**) 
 
+:::{line-block}
 Rules of addition and scalar multiplication
 
-: **A** + **B** = **B** + **A**  (commutative) 
+ **A** + **B** = **B** + **A**  (commutative) 
    
-: (**A** + **B**) + **C** = **A** + (**B** + **C**)  (associative) 
+ (**A** + **B**) + **C** = **A** + (**B** + **C**)  (associative) 
    
-: c(**A** + **B**) = c**A** + c**B**  (distributive) 
-
+ c(**A** + **B**) = c**A** + c**B**  (distributive) 
+:::
 
 example:
 
 \begin{equation}
-For \vv{A} = \begin{bmatrix} -1 & 2  \\ 0 & 5  \end{bmatrix}  and  \vv{B} = \begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix}
+\vv{A} = \begin{bmatrix} -1 & 2  \\ 0 & 5  \end{bmatrix}
+\vv{B} = \begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix}
 \end{equation} 
 compute 2**A** - **B** 
 
