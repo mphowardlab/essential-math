@@ -55,3 +55,26 @@ $= -[-12+3(1-\lambda)]+2[6(2+\lambda)+6]-\lambda[(\lambda+2)(\lambda-1)-4]$
 $= (3\lambda+9)+(12\lambda+36)-\lambda(\lambda^2+\lambda-6) = -\lambda^3-\lambda^2+21\lambda+45 $
 
 $= -(\lambda-5)(\lambda+3)^2 = 0 \to \lambda_1 = 5, \lambda_2 = \lambda_3 = -3 $
+
+$\lambda_1 = 5:$
+
+$$
+\begin{bmatrix}
+-7 & 2 & -3 \\
+2 & -4 & -6 \\
+-1 & -2 & -3
+\end{bmatrix}
+$$
+
+$\to\to$
+
+$$
+\begin{bmatrix}
+1 & 0 & 1 \\
+0 & 1 & 2 \\
+0 & 0 & 0
+\end{bmatrix}
+$$
+
+
+
