@@ -1,12 +1,12 @@
 # Homogeneous linear first-order ODEs with constant coefficients
 
-y'=A*y
+$y'=A*y
 
 
 As an ansatz, assume a solution: 
 
 \begin{align}
-y=(\exp^\lambdat)x \rightarrow y'=\lambda(\exp^\lambdat)x  \\
+y=(\exp^\(lambda*t))x \rightarrow y'=\lambda(\exp^\lambdat)x  \\
 \lambda(\exp^\lambdat)x=A(\exp^\lambdat)x \rightarrow \lambdax=Ax
 \end{align}
 
