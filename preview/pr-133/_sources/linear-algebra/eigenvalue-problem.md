@@ -3,9 +3,8 @@
    
 An nxn matrix has n eigenvalues, but they may not be distinct!
 
-$\underline{\underline{A}}$ = 
-
 $$
+\underline{\underline{A}} = 
 \begin{bmatrix}
 -2 & 2 & -3 \\
 2 & 1 & -6 \\
@@ -13,9 +12,8 @@ $$
 \end{bmatrix}
 $$
 
-| $\underline{\underline{A}}$ - $\lambda$  $\underline{\underline{I}}$| =
-
 $$
+| \underline{\underline{A}} - \lambda  \underline{\underline{I}}| =
 \left|\begin{matrix}
 -2-\lambda & 2 & -3 \\
 2 & 1-\lambda & -6 \\
@@ -124,4 +122,45 @@ $$
 1 \\
 0
 \end{bmatrix}
+$$
+
+$x_2 = 0, x_3 = 1 \to$
+
+$$
+\underline{x_3} =
+\begin{bmatrix}
+3 \\
+0 \\
+1
+\end{bmatrix}
+$$
+
+3. Complex Eigenvalues
+
+Matrices may have complex eigenvaules. They always come in conjugate pairs!
+
+$$
+\underline{\underline{A}} =
+\begin{bmatrix}
+0 & 1 \\
+-1 & 0
+\end{bmatrix}
+$$
+
+$$
+| \underline{\underline{A}} - \lambda  \underline{\underline{I}}| =
+\left|\begin{matrix}
+-\lambda & 1 \\
+-1 & \lambda
+\end{matrix} \right| =
+\lambda^2 + 1 = 0 \to \lambda_1 =i , \lambda_2 = -i
+$$
+
+$$
+\lambda_1 = i: 
+\begin{bmatrix}
+-i & 1 \\
+-1 & i
+\end{bmatrix}
+\to
 $$
