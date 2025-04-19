@@ -207,3 +207,29 @@ $\lambda_2 = 2$
 $\lambda_3 = 3$
 
 The transpose $\underline{\underline{A}}^T$ has the same eigenvalues as $\underline{\underline{A}}$
+
+$$
+\begin{bmatrix}
+1 & 0 & 0 \\
+4 & 2 & 0 \\
+5 & 6 & 3
+\end{bmatrix}
+$$
+
+=
+
+$$
+\begin{bmatrix}
+1 & 4 & 5 \\
+0 & 2 & 6 \\
+0 & 0 & 3
+\end{bmatrix}^T
+$$
+
+$$
+\to
+\lambda_1=1, 
+\lambda_2=2,
+\lambda_3=3
+$$
+
