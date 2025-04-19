@@ -157,13 +157,13 @@ Rules of addition and scalar multiplication
    
  c(**A** + **B**) = c**A** + c**B**    (distributive) 
 :::
-
-\begin{align} 
+ 
 Example: 
 \begin{equation}
 \vv{A} = \begin{bmatrix} -1 & 2  \\ 0 & 5  \end{bmatrix} \qquad 
 \vv{B} = \begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix}
 \end{equation}
+\begin{align}
 compute 2**A** - **B** 
 \end{align}
 
