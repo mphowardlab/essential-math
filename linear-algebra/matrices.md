@@ -157,9 +157,9 @@ Rules of addition and scalar multiplication
 
 example: 
 \begin{equation}
-\vv{A} = \begin{bmatrix} -1 & 2  \\ 0 & 5  \end{bmatrix}\qquad 
-and \vv{B} = \begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix}
-\end{equation} \qquad
+\vv{A} = \begin{bmatrix} -1 & 2  \\ 0 & 5  \end{bmatrix} \qquad 
+\vv{B} = \begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix}
+\end{equation}
 compute 2**A** - **B** 
 
 
@@ -173,11 +173,11 @@ compute 2**A** - **B**
 = \begin{bmatrix} -3 & 4  \\ 0 & 9  \end{bmatrix} 
 \end{equation}
 
-- *Matrix Multiplication*: **C** = **AB** is defined if **A** has the same number of columns as **B** has rows.
+- *Matrix Multiplication*: **C** = **AB** is defined if **A** has the same number of columns as **B** has rows.\
 
-   $(m \times n)(m \times p)(p \times n)$ \centerline
+   $(m \times n)(m \times p)(p \times n)$ 
   
-   $C_{ij}$ = $\displaystyle \sum_{k=1}^{P}A_ikB_kj$ \centerline
+   $C_{ij}$ = $\displaystyle \sum_{k=1}^{P}A_ikB_kj$ 
 
 
 \begin{equation} 
@@ -195,10 +195,13 @@ Multiply with a vector works the same!
 
 \begin{bmatrix} 8 \\ 4 \\ -9 \end{bmatrix}
 
- :::{line-block}
-Rules of matrix multiplication\
+:::{line-block}
+Rules of matrix multiplication
+
 **A**(**BC**) = (**AB**)**C**   (associative)   
+
 (**A** + **B**)**C** = **AC** + **BC**   (distributive)
+
 In general, **AB** $\ne$ **BA**   (i.e., $\underline{not}$ commutative)
 :::
 
@@ -207,11 +210,17 @@ In general, **AB** $\ne$ **BA**   (i.e., $\underline{not}$ commutative)
 \begin{bmatrix} 1 & 2 \\ 4 & 3 \end{bmatrix} ^T =
 \begin{bmatrix} 1 & 4 \\ 2 & 3 \end{bmatrix} 
 
+:::{line-block}
 Rules for transposition\
-  : (**A**$^T$)$^T$ = **A**\
-  : (**A** + **B**)$^T$ = **A**$^T$ + **B**$^T$\
-  : (**AB**)$^T$ = **B**$^T$ + **A**$^T$\
-  : (c**A**)$^T$ = c**A**$^T$ \
+  (**A**$^T$)$^T$ = **A**
+  
+  (**A** + **B**)$^T$ = **A**$^T$ + **B**$^T$
+  
+  (**AB**)$^T$ = **B**$^T$ + **A**$^T$
+  
+  (c**A**)$^T$ = c**A**$^T$ 
+:::
+
   "Symmetric" matrices have **A**$^T$ = **A**
 
     
