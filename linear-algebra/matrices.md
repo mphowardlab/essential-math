@@ -123,7 +123,7 @@ longer course on linear algebra!
    Then, $C_{ij}$ = $A_{ij}$ + $B_{ij}$
 
 
-example: 
+  example: 
 \begin{equation}  
 \begin{bmatrix} -4 & 6 & 3 \\ 0 & 1 & 2 \end{bmatrix} =
 
@@ -157,8 +157,8 @@ c(**A** + **B**) = c**A** + c**B**  (distributive)
 
 example: For
 \begin{equation}
-\vv{A} = \begin{bmatrix} -1 & 2  \\ 0 & 5  \end{bmatrix} \qquad
-& \vv{B} = \begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix}
+\vv{A} = \begin{bmatrix} -1 & 2  \\ 0 & 5  \end{bmatrix} and 
+\vv{B} = \begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix}
 \end{equation} 
 compute 2**A** - **B** 
 
@@ -206,6 +206,9 @@ Rules of matrix multiplication\
 \begin{bmatrix} 1 & 2 \\ 4 & 3 \end{bmatrix} ^T =
 \begin{bmatrix} 1 & 4 \\ 2 & 3 \end{bmatrix} 
 
+Rules for transposition
+  (**$A^T$**)^T = **A**
+  (**A** + **B**)$^T$ = **A**$^T$ + **B**$^T$
 
     
   
