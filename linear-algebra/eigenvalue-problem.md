@@ -163,4 +163,20 @@ $$
 -1 & i
 \end{bmatrix}
 \to
+\begin{bmatrix}
+-i & 1 \\
+0 & 0
+\end{bmatrix}
 $$
+
+$$
+-ix_1 + x_2 = 0 
+\to
+\underline{x_1} =
+\begin{bmatrix}
+1 \\
+-i
+\end{bmatrix}
+$$
+
+
