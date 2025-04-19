@@ -114,13 +114,14 @@ There are several other types of special matrices, but we will leave those for a
 longer course on linear algebra!
 
 ## Matrix Operations
-- *Equality*: **A** = **B** if and only if **A** and **B** have the same size and all their corresponding elements are equal.\
+- *Equality*: **A** = **B** if and only if **A** and **B** have the same size and all their corresponding elements are equal.
   
   
 - *Addition*: **C** = **A** + **B** is defined if **A** and **B** have the same size. 
 
 \begin{align}
 Then, $C_{ij}$ = $A_{ij}$ + $B_{ij}$
+\end{align}
 
 
 \begin{equation}  
@@ -130,7 +131,6 @@ Then, $C_{ij}$ = $A_{ij}$ + $B_{ij}$
 
 \begin{bmatrix} 1 & 5 & 3 \\ 3 & 2 & 2 \end{bmatrix}
 \end{equation}
-\end{align}
 
 
 - *Scalar Multiplication*: **B** = k**A** multiplies each element of **A** by k. 
@@ -199,11 +199,11 @@ Multiply with a vector works the same!
 :::{line-block}
 Rules of matrix multiplication
 
-**A**(**BC**) = (**AB**)**C**   (associative)   
+   **A**(**BC**) = (**AB**)**C**   (associative)   
 
-(**A** + **B**)**C** = **AC** + **BC**   (distributive)
+   (**A** + **B**)**C** = **AC** + **BC**   (distributive)
 
-In general, **AB** $\ne$ **BA**   (i.e., $\underline{not}$ commutative)
+   In general, **AB** $\ne$ **BA**   (i.e., $\underline{not}$ commutative)
 :::
 
 - *Transpose* **A**$^T$ = [$A_{ij}$] "flip" the rows and columns
@@ -212,7 +212,8 @@ In general, **AB** $\ne$ **BA**   (i.e., $\underline{not}$ commutative)
 \begin{bmatrix} 1 & 4 \\ 2 & 3 \end{bmatrix} 
 
 :::{line-block}
-Rules for transposition\
+Rules for transposition
+
   (**A**$^T$)$^T$ = **A**
   
   (**A** + **B**)$^T$ = **A**$^T$ + **B**$^T$
