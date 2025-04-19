@@ -143,29 +143,25 @@ longer course on linear algebra!
 - *Subtraction*: same as addition of negative **C** = **A** - **B** = **A** + (- **B**) 
 
 Rules of addition and scalar multiplication
-> **A** + **B** = **B** + **A**  (commutative) 
+**A** + **B** = **B** + **A**  (commutative) 
    
-> (**A** + **B**) + **C** = **A** + (**B** + **C**)  (associative) 
+(**A** + **B**) + **C** = **A** + (**B** + **C**)  (associative) 
    
-> c(**A** + **B**) = c**A** + c**B**  (distributive) 
+c(**A** + **B**) = c**A** + c**B**  (distributive) 
 
 
 \begin{equation}
-\vv{A} = \begin{bmatrix} -1 & 2  \\ 0 & 5  \end{bmatrix}
-\end{equation}
-
-
-\begin{equation}
+\vv{A} = \begin{bmatrix} -1 & 2  \\ 0 & 5  \end{bmatrix} \qquad
 \vv{B} = \begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix} 
-\end{equation} \qquad
+\end{equation} 
 , compute 2**A** - **B** 
 
 \begin{equation}
 \vv{2A-B} = 2 \begin{bmatrix} -1 & 2  \\ 0 & 5  \end{bmatrix} - 
-\begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix} 
+\begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix} \
 
 = \begin{bmatrix} -2 & 4  \\ 0 & 10  \end{bmatrix} - 
-\begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix} =
+\begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix} \
 
-\begin{bmatrix} -3 & 4  \\ 0 & 9  \end{bmatrix} 
+= \begin{bmatrix} -3 & 4  \\ 0 & 9  \end{bmatrix} 
 \end{equation}
