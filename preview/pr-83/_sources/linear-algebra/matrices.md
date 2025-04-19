@@ -118,7 +118,7 @@ longer course on linear algebra!
   
 - *Addition*: **C** = **A** + **B** is defined if **A** and **B** have the same size. \
   
-(emsp) Then, $C_{ij}$ = $A_{ij}$ + $B_{ij}$
+emsp Then, $C_{ij}$ = $A_{ij}$ + $B_{ij}$
 
 \begin{equation} 
 \begin{bmatrix} -4 & 6 & 3 \\ 0 & 1 & 2 \end{bmatrix} =
@@ -138,22 +138,22 @@ longer course on linear algebra!
 \begin{bmatrix} -2 & 0 \\ 0 & 4 \end{bmatrix}
 \end{equation}
 
-- *Subtraction*: same as addition of negative **C** = **A** - **B** = **A** + (- **B**) \\
+- *Subtraction*: same as addition of negative **C** = **A** - **B** = **A** + (- **B**) \
 
-Rules of addition and scalar multiplication \\
+Rules of addition and scalar multiplication \
 
 **A** + **B** = **B** + **A**  (commutative) \
 ( **A** + **B** ) + **C** = **A** + ( **B** + **C** )  (associative) \
 c( **A** + **B** ) = c**A** + c**B**  (distributive) \
 
 
-\begin{equation} 
-For \vv{A} = \begin{bmatrix} -1 & 2  \\ 0 & 5  \end{bmatrix}
+\begin{equation} For 
+\vv{A} = \begin{bmatrix} -1 & 2  \\ 0 & 5  \end{bmatrix}
 \end{equation}
 
 
-\begin{equation} 
-and \vv{B} = \begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix} 
+\begin{equation} and 
+\vv{B} = \begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix} 
 \end{equation}
 
 ,compute 2**A** - **B** 
