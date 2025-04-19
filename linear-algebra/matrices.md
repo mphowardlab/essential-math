@@ -118,7 +118,7 @@ longer course on linear algebra!
   
 - *Addition*: **C** = **A** + **B** is defined if **A** and **B** have the same size. 
   
-> Then, $C_{ij}$ = $A_{ij}$ + $B_{ij}$
+  Then, $C_{ij}$ = $A_{ij}$ + $B_{ij}$
 
 \begin{equation} 
 \begin{bmatrix} -4 & 6 & 3 \\ 0 & 1 & 2 \end{bmatrix} =
@@ -128,9 +128,9 @@ longer course on linear algebra!
 \begin{bmatrix} 1 & 5 & 3 \\ 3 & 2 & 2 \end{bmatrix}
 \end{equation}
 
-- *Scalar Multiplication*: **B** = k**A** multiplies each element of **A** by k.
+- *Scalar Multiplication*: **B** = k**A** multiplies each element of **A** by k. 
   
-- $B_{ij}$ = k $A_{ij}$
+   $B_{ij}$ = k $A_{ij}$
 
 \begin{equation} 
 -2 \begin{bmatrix} 1 & 0  \\ 0 & -2  \end{bmatrix} =
@@ -140,11 +140,13 @@ longer course on linear algebra!
 
 - *Subtraction*: same as addition of negative **C** = **A** - **B** = **A** + (- **B**) 
 
-Rules of addition and scalar multiplication:
+Rules of addition and scalar multiplication
 
-**A** + **B** = **B** + **A**  (commutative) \
-( **A** + **B** ) + **C** = **A** + ( **B** + **C** )  (associative) \
-c( **A** + **B** ) = c**A** + c**B**  (distributive) 
+   **A** + **B** = **B** + **A**  (commutative) 
+   
+   (**A** + **B**) + **C** = **A** + (**B** + **C**)  (associative) 
+   
+   c(**A** + **B**) = c**A** + c**B**  (distributive) 
 
 
 \begin{equation} For 
@@ -157,7 +159,7 @@ c( **A** + **B** ) = c**A** + c**B**  (distributive)
 \end{equation} 
 , compute 2**A** - **B** 
 
-\begin{equation} and
+\begin{equation}
 \vv{2A-B} = 2 \begin{bmatrix} -1 & 2  \\ 0 & 5  \end{bmatrix} - 
 \begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix} 
 
