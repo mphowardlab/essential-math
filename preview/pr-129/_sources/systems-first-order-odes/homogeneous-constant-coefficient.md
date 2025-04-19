@@ -6,9 +6,8 @@ y'=A*y
 As an ansatz, assume a solution: 
 
 \begin{align}
-y=(\exp^\lambda*t)*x \rightarrow y'=\lambda*(\exp^\lambda*t)*x  \\
-\lambda*(\exp^\lambda*t)*x=A*(\exp^\lambda*t)*x \\
-\rightarrow \lambda*x&=A*x
+y=(\exp^\lambdat)x \rightarrow y'=\lambda(\exp^\lambdat)x  \\
+\lambda(\exp^\lambdat)x=A(\exp^\lambdat)x \rightarrow \lambdax=Ax
 \end{align}
 
 This is an eigenvalus problem! lambda is an eigenvalue, and x is an eigenvector of A.
