@@ -120,7 +120,7 @@ longer course on linear algebra!
   
 - Then, $C_{ij}$ = $A_{ij}$ + $B_{ij}$
 
-example: \begin{equation} 
+\begin{equation} 
 \begin{bmatrix} -4 & 6 & 3 \\ 0 & 1 & 2 \end{bmatrix} =
 
 \begin{bmatrix} 5 & -1 & 0 \\ 3 & 1 & 0 \end{bmatrix} +
@@ -132,7 +132,7 @@ example: \begin{equation}
   
 - $B_{ij}$ = k $A_{ij}$
 
-example: \begin{equation} 
+\begin{equation} 
 -2 \begin{bmatrix} 1 & 0  \\ 0 & -2  \end{bmatrix} =
 
 \begin{bmatrix} -2 & 0 \\ 0 & 4 \end{bmatrix}
