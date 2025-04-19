@@ -191,3 +191,19 @@ $$
 
 4. Some useful tricks
    - The eigenvaules of upper triangular matrices are the values on the diagonal.
+   
+$$
+\begin{bmatrix}
+1 & 4 & 5 \\
+0 & 2 & 6 \\
+0 & 0 & 3
+\end{bmatrix}
+$$
+
+$\lambda_1 = 1$
+
+$\lambda_2 = 2$
+
+$\lambda_3 = 3$
+
+The transpose $\underline{\underline{A}}^T$ has the same eigenvalues as $\underline{\underline{A}}$
