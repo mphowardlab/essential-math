@@ -79,171 +79,160 @@ xe^{2x^2} &= x + 2x^3 + O(x^5)
 
 Expand the following to two terms:
 
-(a) $f(x)=\cos(x)$ at $x=0$
+1. $f(x)=\cos(x)$ at $x=0$
 
-The derivatives are:
+   ```{solution}
+   The function and its derivatives at $x=0$ are:
 
-\begin{align}
-f'(x)&=-\sin(x)\\
-f''(x)&=-\cos(x)
-\end{align}
+   \begin{align}
+   f(x) &= \cos(x) & f(0) &= 1 \\
+   f'(x) &= -\sin(x) & f'(0) &= 0 \\
+   f''(x) &= -\cos(x) & f''(0) &= -1
+   \end{align}
 
-Evaluating everything at $x=0$:
+   So:
 
-\begin{align}
-f(0)=1\\
-f'(0)=0\\
-f''(0)=-1
-\end{align}
+   \begin{equation}
+   f(x) \approx 1-\frac{x^2}{2}
+   \end{equation}
+   ```
 
-So:
+2. $f(x)=\sin(x)$ at $x=0$
 
-\begin{equation}
-f(x) \approx 1-\frac{x^2}{2}
-\end{equation}
+   ```{solution}
+   The function and its derivatives at $x=0$ are:
 
-(b) $f(x)=\sin(x)$ at $x=0$
+   \begin{align}
+   f(x) &= \sin(x) & f(0) &= 0\\
+   f'(x) &= \cos(x) & f'(0) &= 1 \\
+   f''(x) &= -\sin(x) & f''(0) &= 0 \\
+   f^{(3)}(x) &= -\cos(x) & f^{(3)}(0) &= -1
+   \end{align}
 
-The derivatives are:
+   So:
 
-\begin{align}
-f(x)&=\sin(x)\\
-f'(x)&=\cos(x)\\
-f''(x)&=-\sin(x)\\
-f^{(3)}(x)&=-\cos(x)
-\end{align}
+   \begin{equation}
+   f(x) \approx x-\frac{x^3}{6}
+   \end{equation}
+   ```
 
-Evaluating at $x=0$:
-\begin{align}
-f(0)=0\\
-f'(0)=1\\
-f''(0)=0\\
-f^{3}(0)=-1
-\end{align}
+3. $f(x)=e^x$ at $x=0$
 
-So:
+   Derive and evaluate:
 
-\begin{equation}
-f(x) \approx x-\frac{x^3}{6}
-\end{equation}
+   \begin{align}
+   f(x)&=e^x \rightarrow f(0)=1\\
+   f'(x)&=e^x \rightarrow f'(0)=1
+   \end{align}
 
-(c) $f(x)=e^x$ at $x=0$
+   So:
 
-Derive and evaluate:
+   \begin{equation}
+   f(x) \approx 1+x
+   \end{equation}
 
-\begin{align}
-f(x)&=e^x \rightarrow f(0)=1\\
-f'(x)&=e^x \rightarrow f'(0)=1
-\end{align}
+4. $f(x)=\ln(1+x)$ at $x=0$
 
-So:
+   Derive and Evaluate:
 
-\begin{equation}
-f(x) \approx 1+x
-\end{equation}
+   \begin{align}
+   f(x)&=\ln(1+x) \rightarrow f(0)=0\\
+   f'(x)&=\frac{1}{1+x} \rightarrow f'(0)=1\\
+   f''(x)&=-\frac{1}{(1+x)^2} \rightarrow f''(0)=-1
+   \end{align}
 
-(d) $f(x)=\ln(1+x)$ at $x=0$
+   So:
 
-Derive and Evaluate:
+   \begin{equation}
+   f(x) \approx x-\frac{x^2}{2}
+   \end{equation}
 
-\begin{align}
-f(x)&=\ln(1+x) \rightarrow f(0)=0\\
-f'(x)&=\frac{1}{1+x} \rightarrow f'(0)=1\\
-f''(x)&=-\frac{1}{(1+x)^2} \rightarrow f''(0)=-1
-\end{align}
+5. $f(x)=\frac{1}{1+x}$ at $x=0$
 
-So:
+   Derive and Evaluate:
 
-\begin{equation}
-f(x) \approx x-\frac{x^2}{2}
-\end{equation}
+   \begin{align}
+   f(x)&=\frac{1}{1+x} \rightarrow f(0)=1\\
+   f'(x)&=-\frac{1}{(1+x)^2} \rightarrow f'(0)=1
+   \end{align}
 
-(e) $f(x)=\frac{1}{1+x}$ at $x=0$
+   So:
 
-Derive and Evaluate:
+   \begin{equation}
+   f(x) \approx 1-x
+   \end{equation}
 
-\begin{align}
-f(x)&=\frac{1}{1+x} \rightarrow f(0)=1\\
-f'(x)&=-\frac{1}{(1+x)^2} \rightarrow f'(0)=1
-\end{align}
+6. $f(x)=\cos(4x)$ at $x=0$
 
-So:
+   From part (a) we found...
 
-\begin{equation}
-f(x) \approx 1-x
-\end{equation}
+   \begin{equation}
+   f(x)=cos(x) \approx 1-\frac{x^2}{2}
+   \end{equation}
 
-(f) $f(x)=\cos(4x)$ at $x=0$
+   We can find the Taylor series of a function $f(ax)$ by substituting $ax$ for $x$
+   in the Taylor series for $f(x)$.
 
-From part (a) we found...
+   So:
 
-\begin{equation}
-f(x)=cos(x) \approx 1-\frac{x^2}{2}
-\end{equation}
+   \begin{equation}
+   f(x)=\cos(4x) \approx 1-\frac{(4x)^2}{2} \approx 1-8x^2
+   \end{equation}
 
-We can find the Taylor series of a function $f(ax)$ by substituting $ax$ for $x$
-in the Taylor series for $f(x)$.
+7. $f(x)=\cos(x-\pi)$ at $x=\pi$
 
-So:
+   We can use the same method used to solve part (f).
 
-\begin{equation}
-f(x)=\cos(4x) \approx 1-\frac{(4x)^2}{2} \approx 1-8x^2
-\end{equation}
+   \begin{equation}
+   f(x)=cos(x) \approx 1-\frac{x^2}{2}
+   \end{equation}
 
-(g) $f(x)=\cos(x-\pi)$ at $x=\pi$
+   So:
 
-We can use the same method used to solve part (f).
+   \begin{equation}
+   f(x)=\cos(x-\pi) \approx 1-\frac{(x-\pi)^2}{2}
+   \end{equation}
 
-\begin{equation}
-f(x)=cos(x) \approx 1-\frac{x^2}{2}
-\end{equation}
+   Note: There is a constant shift of $x$ and $x_0$
 
-So:
+8. $f(x)=e^x \sin(x)$ at $x=0$
 
-\begin{equation}
-f(x)=\cos(x-\pi) \approx 1-\frac{(x-\pi)^2}{2}
-\end{equation}
+   To find the Taylor expansion of the product of two functions, f(x)·g(x), you may
+   multiply their individual Taylor series expansions.
 
-Note: There is a constant shift of $x$ and $x_0$
+   Recall:
 
-(h) $f(x)=e^x \sin(x)$ at $x=0$
+   The Taylor expansion of $f(x)=e^x$ is $f(x) \approx 1+x$
 
-To find the Taylor expansion of the product of two functions, f(x)·g(x), you may
-multiply their individual Taylor series expansions.
+   The Taylor expansion of $f(x)=\sin(x)$ is $f(x) \approx x-\frac{x^3}{6}$
 
-Recall:
+   So:
 
-The Taylor expansion of $f(x)=e^x$ is $f(x) \approx 1+x$
+   \begin{equation}
+   f(x) \approx (1+x+\dots)(x-\frac{x^3}{6}+\dots) \approx x+x^2
+   \end{equation}
 
-The Taylor expansion of $f(x)=\sin(x)$ is $f(x) \approx x-\frac{x^3}{6}$
+9. $f(x)=\cos(x)$ at $x=\pi$
 
-So:
+   Note: Reuse derivatives from part (a) but evaluate at $\pi$ instead of zero.
 
-\begin{equation}
-f(x) \approx (1+x+\dots)(x-\frac{x^3}{6}+\dots) \approx x+x^2
-\end{equation}
+   \begin{align}
+   f(\pi)=-1\\
+   f'(\pi)=0\\
+   f''(\pi)=1
+   \end{align}
 
-(i) $f(x)=\cos(x)$ at $x=\pi$
+   \begin{equation}
+   f(x) \approx -1+\frac{1}{2}(x-\pi)^2
+   \end{equation}
 
-Note: Reuse derivatives from part (a) but evaluate at $\pi$ instead of zero.
+10. $f(x)=7x^2-6x+1$ at $x=2$
 
-\begin{align}
-f(\pi)=-1\\
-f'(\pi)=0\\
-f''(\pi)=1
-\end{align}
+    \begin{align}
+    f(x)&=7x^2-6x+1 \rightarrow f(2)=17\\
+    f'(x)&=14x-6 \rightarrow f'(2)=22
+    \end{align}
 
-\begin{equation}
-f(x) \approx -1+\frac{1}{2}(x-\pi)^2
-\end{equation}
-
-(j) $f(x)=7x^2-6x+1$ at $x=2$
-
-\begin{align}
-f(x)&=7x^2-6x+1 \rightarrow f(2)=17\\
-f'(x)&=14x-6 \rightarrow f'(2)=22
-\end{align}
-
-\begin{equation}
-f(x) \approx 17+22(x-2)
-\end{equation}
+    \begin{equation}
+    f(x) \approx 17+22(x-2)
+    \end{equation}
