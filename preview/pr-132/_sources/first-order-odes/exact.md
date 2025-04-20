@@ -75,7 +75,10 @@ Obtain general solutions to:
    The two partial derivatives are not equal, so the function is not exact. In order to make it exact, we need to find an integrating factor:
 
    \begin{align}
-   R &= \frac{1}{-xy}(2y-(-y)) = \frac{3y}{-xy} = \frac{-3}{x} \\
+   R &= \frac{1}{-xy}(2y-(-y)) = \frac{3y}{-xy} = \frac{-3}{x}
+   \end{align}
+
+   \begin{align}
    F &= e^{\int \frac{-3}{x} \d{x}} = e^{-3\ln(x)} = x^{-3}
    \end{align}
 
@@ -102,8 +105,8 @@ Obtain general solutions to:
    This ODE has does not have $k = 0$ as a solution, so we will need to integrate *k'* with respect to *x* to find what *k* equals.
    
    \begin{align}
-   \int x \d{x} = \frac{x^2}{2} + c^* \\
-   \frac{x^2}{2} - \frac{y^2}{2x^2} + c^* = c
+   k = \int x \d{x} = \frac{x^2}{2} + c^* \\
+   f = \frac{-y^2}{2x^2} + \frac{x^2}{2} + c^* = c
    \end{align}
 
    Rearrange to find the implicit solution:
