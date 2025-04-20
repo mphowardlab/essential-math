@@ -11,7 +11,11 @@ This work (c) 2025 is licensed under
 - Michael P. Howard
 - Evan M. Hughes
 - Faith Major
+<<<<<<< HEAD
+- Davis McCaleb
+=======
 - Lilli Midgette
+>>>>>>> df8094a0c36c14e2bd1654c5ca67b218bacb4609
 - Michelle Schindler
 - Katie Sorensen
 
