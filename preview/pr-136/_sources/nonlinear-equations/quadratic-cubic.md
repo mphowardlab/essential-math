@@ -1,1 +1,0 @@
-# Quadratic and cubic polynomials
