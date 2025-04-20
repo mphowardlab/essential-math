@@ -14,17 +14,24 @@ First law of thermodynamics
 \end{equation}
 Hence,
 \begin{equation}
-\T(\ubar{S}, \ubar{V}) = (\frac{\d{\ubar{U}}}{\d{\ubar{S}}})_{\ubar{V}}
+\ T(\ubar{S}, \ubar{V}) = (\frac{\td{\ubar{U}}}{\td{\ubar{S}}})_{\ubar{V}}
 \end{equation}
-and
+\and
 \begin{equation}
-\P(\ubar{S}, \ubar{V}) = (\frac{\d{\ubar{U}}}{\d{\ubar{V}}})_{\ubar{S}}
+\ P(\ubar{S}, \ubar{V}) = - (\frac{\td{\ubar{U}}}{\td{\ubar{V}}})_{\ubar{S}}
 \end{equation}
 
 T(S̲, V̲)=$(\frac{\partial \underline{U}}{\partial \underline{S}})_{\underline{V}}$ and P(S̲, V̲)=-$(\frac{\partial \underline{U}}{\partial \underline{V}})_{\underline{S}}$ <br>
 <br>
-T and P are $\underline{functions}$ of S̲ and V̲! <br>
-We can relate $\underline{measurable}$ quantities like T and P to the derivatives of an $\underline{unmeasurable}$ quantity like U̲! <br>
+
+T and P are *functions* of S̲ and V̲! <br>
+We can relate *measurable* quantities like T and P to the derivatives of an *unmeasurable* quantity like U̲!
+
+\begin{equation}
+\ \Delta\ubar{U} = \int_{\ubar{V}_1}^{\ubar{V}_2} - P d\ubar{V} At constant \ubar{S} (adiabatic)
+\end{equation}
+
+
 $\Delta$U̲ =$ \int_{\underline{V}_1}^{\underline{V}_2}$-PdV̲ @ constant S̲ (adiabatic) <br>
 We can also relate quantities as mixed derivatives: <br>
 $-(\frac{\partial \underline{P}}{\partial \underline{S}})_{\underline{V}}$ = $\frac{\partial ^2 \underline{U}}{\partial \underline{S} \partial \underline{V}}$ = $\frac{\partial ^2 \underline{U}}{\partial \underline{V} \partial \underline{S}}$ = $(\frac{\partial \underline{T}}{\partial \underline{V}})_{\underline{S}}$ (change in T with adiabatic compression) <br>
