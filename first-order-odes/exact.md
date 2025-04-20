@@ -56,34 +56,34 @@ Obtain general solutions to:
    This ODE is not in the standard form, so we need to first rearrange:
 
    \begin{align}
-   xydy = (x^4+y^2)dx \\
-   (x^4 + y^2)dx - xydy = 0
+   xy \d{y} = (x^4+y^2) \d{x} \\
+   (x^4 + y^2) \d{x} - xy \d{y} = 0
    \end{align}
 
    \begin{align}
-   P = x^4 + y^2 \\
-   Q = -xy
+   P &= x^4 + y^2 \\
+   Q &= -xy
    \end{align}
 
    Check to see if the function is exact:
 
    \begin{align}
-   \td{}{P}{y}{x} = 2y \\
-   \td{}{Q}{x}{y} = -y
+   \td{}{P}{y}{x} &= 2y \\
+   \td{}{Q}{x}{y} &= -y
    \end{align}
 
    The two partial derivatives are not equal, so the function is not exact. In order to make it exact, we need to find an integrating factor:
 
    \begin{align}
-   R = \frac{1}{-xy}(2y-(-y)) = \frac{3y}{-xy} = \frac{-3}{x} \\
-   F = e^{\int \frac{-3}{x}} = e^{-3ln(x)} = x^{-3}
+   R &= \frac{1}{-xy}(2y-(-y)) = \frac{3y}{-xy} = \frac{-3}{x} \\
+   F &= e^{\int \frac{-3}{x} \d{x}} = e^{-3\ln(x)} = x^{-3}
    \end{align}
 
    Apply the integrating factor to the original ODE:
    
    \begin{align}
-   x^{-3}(x^4+y^2)dx - x^{-3}(xy)dy = 0 \\
-   (x+\frac{y^2}{x^{-3}})dx - \frac{y}{x^2}dy = 0
+   x^{-3}(x^4+y^2) \d{x} - x^{-3}(xy) \d{y} = 0 \\
+   (x+\frac{y^2}{x^{-3}}) \d{x} - \frac{y}{x^2} \d{y} = 0
    \end{align}
 
    Integrate the *Q* of our exact function with respect to *y*:
@@ -96,19 +96,19 @@ Obtain general solutions to:
 
    \begin{align}
    \td{}{f}{x}{y} = \frac{y^2}{x^3} + k'(x) = F \cdot P = x + \frac{y^2}{x^3} \\
-   k'(x) = x \\
+   k'(x) &= x \\
    \end{align}
 
-   This ODE has does not have $k = 0$ as a solution, so we will need to integrate k'(x) with respect to *x* to find what *k* equals.
+   This ODE has does not have $k = 0$ as a solution, so we will need to integrate $k'(x)$ with respect to *x* to find what *k* equals.
    
    \begin{align}
-   \int x \d{x} = \frac{x^2}{2} + C^* \\
-   \frac{x^2}{2} - \frac{y^2}{2x^2} + C^* = C
+   \int x \d{x} = \frac{x^2}{2} + c^* \\
+   \frac{x^2}{2} - \frac{y^2}{2x^2} + c^* = c
    \end{align}
 
    Rearrange to find the implicit solution:
 
    \begin{align}
-   \frac{x^2}{2} - \frac{y^2}{2x^2} = C
+   \frac{x^2}{2} - \frac{y^2}{2x^2} = c
    \end{align}
    ```
