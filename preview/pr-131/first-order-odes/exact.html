@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>5.2. Exact differential equations &#8212; Essential Mathematics for Chemical Engineers</title>
+    <title>5.3. Exact differential equations &#8212; Essential Mathematics for Chemical Engineers</title>
   
   
   
@@ -63,8 +63,8 @@
     <link rel="canonical" href="https://mphowardlab.github.io/essential-math/first-order-odes/exact.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5.3. Linearity" href="linearity.html" />
-    <link rel="prev" title="5.1. Separable differential equations" href="separable.html" />
+    <link rel="next" title="5.4. Linearity" href="linearity.html" />
+    <link rel="prev" title="5.2. Separable differential equations" href="separable.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -204,13 +204,14 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">5. First-order ordinary differential equations</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="separable.html">5.1. Separable differential equations</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">5.2. Exact differential equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="linearity.html">5.3. Linearity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="undetermined-coefficients.html">5.4. Undetermined coefficients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="laplace-transform.html">5.5. Laplace transform</a></li>
-<li class="toctree-l2"><a class="reference internal" href="integrating-factor.html">5.6. Integrating factor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numerical-solution.html">5.7. Numerical solution methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="definition.html">5.1. Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="separable.html">5.2. Separable differential equations</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">5.3. Exact differential equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linearity.html">5.4. Linearity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="undetermined-coefficients.html">5.5. Undetermined coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="laplace-transform.html">5.6. Laplace transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="integrating-factor.html">5.7. Integrating factor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numerical-solution.html">5.8. Numerical solution methods</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../systems-first-order-odes/index.html">6. Systems of first-order ordinary differential equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -427,23 +428,58 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="exact-differential-equations">
-<h1><span class="section-number">5.2. </span>Exact differential equations<a class="headerlink" href="#exact-differential-equations" title="Link to this heading">#</a></h1>
-<p>Remember that a function <span class="math notranslate nohighlight">\(f(x,y)\)</span> has the <strong>total</strong> <strong>differential</strong>: <br />
-<span class="math notranslate nohighlight">\(df=(\frac{\partial f}{\partial x})_{y}dx\)</span> + <span class="math notranslate nohighlight">\((\frac{\partial f}{\partial y})_{x}dy\)</span><br />
-If <span class="math notranslate nohighlight">\(f=c\)</span> (a constant), then <span class="math notranslate nohighlight">\(df=0\)</span>.</p>
-<p>How does this apply to ODEs? <br />
-Suppose we can rewrite our ODE as <br />
-<span class="math notranslate nohighlight">\(P(x,y)dx + Q(x,y)dy = 0\)</span><br />
-If we can show that <span class="math notranslate nohighlight">\(P=(\frac{\partial f}{\partial x})\)</span> and <span class="math notranslate nohighlight">\(Q=(\frac{\partial f}{\partial y})\)</span> for some f, then we know that <span class="math notranslate nohighlight">\(f(x,y)=c\)</span> is an <strong>implicit</strong> <strong>solution</strong> of the ODE.</p>
-<p>How do we figure that out?<br />
-If <span class="math notranslate nohighlight">\(P=(\frac{\partial f}{\partial x})\)</span> and <span class="math notranslate nohighlight">\(Q=(\frac{\partial f}{\partial y})\)</span>, then <span class="math notranslate nohighlight">\(\frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x}\)</span> because <span class="math notranslate nohighlight">\(\frac{\partial^2 f}{\partial y\partial x}=\frac{\partial^2 f}{\partial x\partial y}\)</span>!</p>
-<p>Example:
-<span class="math notranslate nohighlight">\(\cos(x+y)dx + [3y^2 + 2y + \cos(x+y)]dy=0\)</span> <br />
-Where <span class="math notranslate nohighlight">\( \cos(x+y)\to P\)</span>
-and <span class="math notranslate nohighlight">\([3y^2 + 2y + \cos(x+y)]  \to Q\)</span> <br />
-<span class="math notranslate nohighlight">\(\frac{\partial P}{\partial y}\)</span>=-<span class="math notranslate nohighlight">\(\sin(x+y)\)</span><br />
-<span class="math notranslate nohighlight">\(\frac{\partial Q}{\partial x}\)</span>=-<span class="math notranslate nohighlight">\(\sin(x+y)\)</span></p>
-<p>If an ODE is exact, we can integrate P or Q to get f, then solve for the integration constant with Q or P.<br />
+<h1><span class="section-number">5.3. </span>Exact differential equations<a class="headerlink" href="#exact-differential-equations" title="Link to this heading">#</a></h1>
+<p>Remember that a function <span class="math notranslate nohighlight">\(f(x,y)\)</span> has the
+<a class="reference internal" href="../multivariable-calculus/total-differential.html"><span class="std std-doc">total differential</span></a></p>
+<div class="amsmath math notranslate nohighlight" id="equation-267c6a09-16bc-48c8-99e3-af4de6d9852f">
+<span class="eqno">(5.12)<a class="headerlink" href="#equation-267c6a09-16bc-48c8-99e3-af4de6d9852f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\d{f}= \td{}{f}{x}{y} \d{x} + \td{}{f}{y}{x} \d{y}
+\end{equation}\]</div>
+<p>Also note that if <span class="math notranslate nohighlight">\(f = c\)</span> (a constant), then <span class="math notranslate nohighlight">\(\d{f} = 0\)</span>. How does this apply
+to ODEs?</p>
+<p>Suppose we can rewrite our ODE as</p>
+<div class="math notranslate nohighlight" id="equation-exactode">
+<span class="eqno">(5.13)<a class="headerlink" href="#equation-exactode" title="Link to this equation">#</a></span>\[P(x,y) \d{x} + Q(x,y) \d{y} = 0\]</div>
+<p>If we can show that</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9169330e-72a5-4626-8be6-2f5cfa44b247">
+<span class="eqno">(5.14)<a class="headerlink" href="#equation-9169330e-72a5-4626-8be6-2f5cfa44b247" title="Permalink to this equation">#</a></span>\[\begin{equation}
+P = \td{}{f}{x}{y} \qquad Q = \td{}{f}{y}{x}
+\end{equation}\]</div>
+<p>for some <span class="math notranslate nohighlight">\(f\)</span>, then we know that <span class="math notranslate nohighlight">\(f(x,y) = c\)</span> is an implicit solution of the
+ODE! We call ODEs with this property <em>exact</em>. But, how do we know if such a
+function exists and what it is?</p>
+<aside class="topic">
+<p class="topic-title">Test for exactness</p>
+<p>A differential equation in the form of Eq. <a class="reference internal" href="#equation-exactode">(5.13)</a> is exact if</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d1b4b451-9888-46d7-84d1-4f32f43a8ef6">
+<span class="eqno">(5.15)<a class="headerlink" href="#equation-d1b4b451-9888-46d7-84d1-4f32f43a8ef6" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\td{}{P}{y}{x} = \td{}{Q}{x}{y}
+\end{equation}\]</div>
+</aside>
+<div class="admonition-example-test-for-exactness admonition">
+<p class="admonition-title">Example: Test for exactness</p>
+<p>Is the following differential equation exact?</p>
+<div class="amsmath math notranslate nohighlight" id="equation-acd7b094-e84e-4c43-baa8-fa1c3ef952bd">
+<span class="eqno">(5.16)<a class="headerlink" href="#equation-acd7b094-e84e-4c43-baa8-fa1c3ef952bd" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\cos(x+y) \d{x} + \left[3y^2 + 2y + \cos(x+y) \right]\d{y} = 0
+\end{equation}\]</div>
+<hr class="docutils" />
+<p>For the given ODE,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7e7ca0a8-8e4a-4826-b483-6d43f4c2a486">
+<span class="eqno">(5.17)<a class="headerlink" href="#equation-7e7ca0a8-8e4a-4826-b483-6d43f4c2a486" title="Permalink to this equation">#</a></span>\[\begin{align}
+P &amp;= \cos(x+y) \\
+\td{}{P}{y}{x} &amp;= -\sin(x+y)
+\end{align}\]</div>
+<p>and</p>
+<div class="amsmath math notranslate nohighlight" id="equation-dad5d0d1-6070-4b67-85e1-e7de6040a8d4">
+<span class="eqno">(5.18)<a class="headerlink" href="#equation-dad5d0d1-6070-4b67-85e1-e7de6040a8d4" title="Permalink to this equation">#</a></span>\[\begin{align}
+Q &amp;= 3y^2 + 2y + \cos(x+y) \\
+\td{}{Q}{x}{y} &amp;= -\sin(x+y)
+\end{align}\]</div>
+<p>Since these partial derivatives match, the ODE is exact.</p>
+</div>
+<p>If an ODE is exact, we can integrate P or Q to get f, then solve for the
+integration constant with Q or P.<br />
 <span class="math notranslate nohighlight">\(f=\int Pdx = \int \cos(x+y)dx = \sin(x+y) + k(y)\)</span><br />
 <span class="math notranslate nohighlight">\(\frac{\partial f}{\partial y}=\cos(x+y)+k'=Q=3y^2+2y+\cos(x+y)\)</span><br />
 <span class="math notranslate nohighlight">\(k'=3y^2+2y\)</span><br />
@@ -494,7 +530,7 @@ and arrived at the same answer!</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">5.1. </span>Separable differential equations</p>
+        <p class="prev-next-title"><span class="section-number">5.2. </span>Separable differential equations</p>
       </div>
     </a>
     <a class="right-next"
@@ -502,7 +538,7 @@ and arrived at the same answer!</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">5.3. </span>Linearity</p>
+        <p class="prev-next-title"><span class="section-number">5.4. </span>Linearity</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
