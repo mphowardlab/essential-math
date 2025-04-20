@@ -1,19 +1,86 @@
 # Derivatives
-1. Differential multivariable calculus<br><br>
-    A function f(x,y) has <ins>partial</ins> derivatives.<br>
-        $\hspace{1cm}\left( \frac{\partial f}{\partial x \leftarrow Varied} \right)_{y \leftarrow Constant}  = \lim_{h \to 0}  \frac{f \left(x+h,y \right) - f \left( x,y \right)}{h}$ <br>
-        <br>
-        The second partial derivative may be "repeated" or "mixed"<br>
-        $\hspace{1cm}\left( \frac{\partial^2 f}{\partial x^2} \right)_y  = \frac{\partial}{\partial x}\left[\left( \frac{\partial f}{\partial x} \right)_y \right]_y$ vs. $\left( \frac{\partial^2 f}{\partial x \partial y} \right) =  \frac{\partial}{\partial x} \left[\left( \frac{\partial f}{\partial y} \right)_x \right]_y$ <br><br>
-        Ex: $f(x,y) = x^2 \cos \hspace{.1cm} y$<br>
-        $\hspace{1cm}\left( \frac{\partial f}{\partial x} \right)_y = 2x \cos \hspace{.1cm}y$ <br>
-        $\hspace{1cm}\left( \frac{\partial^2 f}{\partial x^2} \right)_y = 2 \cos \hspace{.1cm} y \hspace{1cm} \frac{\partial^2 f}{\partial x \partial y} = -2x \sin \hspace{.1cm} y$ <br><br>
-        If all of f's second derivatives are continuous, the mixed second derivatives are symmetric. <br>
-            $\hspace{1cm}\boxed{\frac{\partial^2 f}{\partial x \partial y} = \frac{\partial^2 f}{\partial y \partial x}}  \hspace{1cm}  \left(\frac{\partial f}{\partial y}\right) _x =-x^2 \sin \hspace{.1cm} y \hspace{1cm} \frac{\partial^2 f}{\partial x \partial y} = -2x \hspace{.1cm} \sin \hspace{.1cm} y \hspace{.1cm} \checkmark$<br><br>
-            The <ins>total</ins> <ins>differential</ins> of f is the sum of partial derivatives<br><br>
-            $\hspace{1cm}\boxed{df=\left(\frac{\partial f}{\partial x}\right)_y dx + \left(\frac{\partial f}{\partial y}\right)_x dy }$<br><br>
-            $\hspace{1cm}$ Ex: df = 2x cos y dx - $x^2$ sin y dy<br><br>
-            The total differental can be used to form other derivatives, based on the dependencies of x and y.<br>
-            $\hspace{1cm}Ex: x(t) \hspace{.1cm}and \hspace{.1cm}y(t) \rightarrow \frac{df}{dt} = 2x \hspace{.1cm} \cos \hspace{.1cm} y \frac{dx}{dt} - x^2 \hspace{.1cm} sin \hspace{.1cm} y \frac{dy}{dt}$<br>
-            $\hspace{2cm}x(t,s)\hspace{.1cm} and\hspace{.1cm} y(t,s \rightarrow \left(\frac{\partial f}{\partial t}\right)_s = 2x \hspace{.1cm} \cos \hspace{.1cm} \left(\frac{\partial x}{\partial t})_s -x^2 \hspace{.1cm} \sin \hspace{.1cm} y \right(\frac{\partial y}{\partial t})_s$
 
+A function $f(x,y)$ has *partial* derivatives:
+
+\begin{equation}
+\td{}{f}{x}{y} = \lim_{h \to 0} \frac{f(x+h, y) - f(x, y)}{h}
+\end{equation}
+
+where *x* (in the denominator) indicates what is varied and *y* (outside the
+parentheses) indicates what is held constant.
+
+The second partial derivative may be "repeated"
+
+\begin{equation}
+\td{2}{f}{x}{y} = \pp{}{}{x}\left[ \td{}{f}{x}{y} \right]_y
+\end{equation}
+
+or "mixed"
+
+\begin{equation}
+\frac{\partial^2 f}{\partial x \partial y} = \pp{}{}{x}\left[ \td{}{f}{y}{x} \right]_y
+\end{equation}
+
+Mixed partial derivatives are read from right to left by convention.
+
+Partial derivatives can be taken using the normal procedures for single-variable
+calculus if you treat the constant variables as such
+
+```{example} Taking partial derivatives
+For the function $f(x,y) = x^2 \cos y$, evaluate $(\partial f/\partial x)_y$,
+$(\partial^2 f/\partial x^2)_y$, and $\partial^2 f/\partial y \partial x$.
+
+---
+
+The first partial derivative with respect to *x* (treating *y* as a constant) is
+
+\begin{equation}
+\td{}{f}{x}{y} = 2 x \cos y
+\end{equation}
+
+The second (repeated) partial derivative with respect to *x* (again, treating
+*y* as a constant) is
+
+\begin{equation}
+\td{2}{f}{x}{y} = \pp{}{}{x}\left[ \td{}{f}{x}{y} \right]_y
+= \pp{}{}{x}\left( 2 x \cos y \right)_y = 2 \cos y
+\end{equation}
+
+The second (mixed) partial derivative with respect to *x* then *y* is
+
+\begin{equation}
+\frac{\partial^2 f}{\partial y \partial x} = \pp{}{}{y}\left[ \td{}{f}{x}{y} \right]_x
+= \pp{}{}{y} \left( 2 x \cos y \right)_x = -2x \sin y
+\end{equation}
+
+```
+
+```{topic} Mixed second partial derivatives
+If all the second partial derivatives of a multivariable function *f* are
+continuous, the mixed second partial derivatives are symmetric,
+
+\begin{equation}
+\frac{\partial^2 f}{\partial x \partial y}
+= \frac{\partial^2 f}{\partial y \partial x}
+\end{equation}
+```
+
+```{example} Order of mixed second partial derivatives
+Show the order of the mixed derivatives does not matter for the example function
+given above.
+
+---
+
+The first partial derivative with respect to $y$ is
+
+\begin{equation}
+\td{}{f}{x}{y} = -x^2 \sin y
+\end{equation}
+
+So, the second (mixed) partial derivative with respect to *y* then *x* is
+
+\begin{equation}
+\frac{\partial^2 f}{\partial x \partial y} = \pp{}{}{x}\left[ \td{}{f}{y}{x} \right]_y
+= \pp{}{}{x} \left( -x^2 \sin y \right)_y = -2x \sin y
+\end{equation}
+```
