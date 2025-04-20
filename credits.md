@@ -8,6 +8,9 @@ This work (c) 2025 is licensed under
 ## Contributors
 
 - Michael P. Howard
+- Evan M. Hughes
+- Michelle Schindler
+- Katie Sorensen
 
 ## Attributions
 
