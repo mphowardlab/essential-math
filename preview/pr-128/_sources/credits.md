@@ -7,10 +7,14 @@ This work (c) 2025 is licensed under
 
 ## Contributors
 
+- Ella Governale
 - Michael P. Howard
 - Evan M. Hughes
 - Gwyneth A. Lovell
+- Faith Major
+- Lilli Midgette
 - Michelle Schindler
+- Katie Sorensen
 
 ## Attributions
 
