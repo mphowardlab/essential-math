@@ -113,128 +113,138 @@ There are some other types of "special" matrices.
 There are several other types of special matrices, but we will leave those for a
 longer course on linear algebra!
 
-## Matrix Operations
-- *Equality*: **A** = **B** if and only if **A** and **B** have the same size and all their corresponding elements are equal.
-  
-  
-- *Addition*: **C** = **A** + **B** is defined if **A** and **B** have the same size. 
+## Addition and scalar multiplication
 
-\begin{align}
-C_{ij} = A_{ij} + B_{ij}
-\end{align}
+- *Equality*: $\vv{A} = \vv{B}$ if and only if **A** and **B** have the same
+  size and all their corresponding elements are equal.
 
+- *Addition*: $\vv{C} = \vv{A} + \vv{B}$ is defined if **A** and **B** have the
+  samesize. Then, the matrix elements are added element-wise:
 
-\begin{equation}  
-\begin{bmatrix} -4 & 6 & 3 \\ 0 & 1 & 2 \end{bmatrix} =
+  \begin{equation}
+  C_{ij} = A_{ij} + B_{ij}
+  \end{equation}
 
-\begin{bmatrix} 5 & -1 & 0 \\ 3 & 1 & 0 \end{bmatrix} +
+  Example:
 
-\begin{bmatrix} 1 & 5 & 3 \\ 3 & 2 & 2 \end{bmatrix}
-\end{equation}
+  \begin{equation}
+  \begin{bmatrix} 5 & -1 & 0 \\ 3 & 1 & 0 \end{bmatrix} +
+  \begin{bmatrix} 1 & 5 & 3 \\ 3 & 2 & 2 \end{bmatrix} =
+  \begin{bmatrix} -4 & 6 & 3 \\ 0 & 1 & 2 \end{bmatrix}
+  \end{equation}
 
+- *Scalar multiplication*: $\vv{B} = k\vv{A}$ multiplies each element of **A**
+  by *k*:
 
-- *Scalar Multiplication*: **B** = k**A** multiplies each element of **A** by k. 
-
-
-\begin{align}
+  \begin{equation}
   B_{ij} = kA_{ij}
-\end{align}
+  \end{equation}
 
-\begin{equation} 
--2 \begin{bmatrix} 1 & 0  \\ 0 & -2  \end{bmatrix} =
+  Example:
 
-\begin{bmatrix} -2 & 0 \\ 0 & 4 \end{bmatrix}
-\end{equation}
+  \begin{equation}
+  -2 \begin{bmatrix} 1 & 0  \\ 0 & -2  \end{bmatrix} =
+  \begin{bmatrix} -2 & 0 \\ 0 & 4 \end{bmatrix}
+  \end{equation}
 
-- *Subtraction*: same as addition of negative **C** = **A** - **B** = **A** + (- **B**) 
+- *Subtraction*: same as addition of negative
+  $\vv{C} = \vv{A} - \vv{B} = \vv{A} + (-\vv{B})$
 
-:::{line-block}
-Rules of addition and scalar multiplication
+```{topic} Rules of addition and scalar multiplication
+- *Commutative*: $\vv{A} + \vv{B} = \vv{B} + \vv{A}$
 
- **A** + **B** = **B** + **A**    (commutative) 
-   
- (**A** + **B**) + **C** = **A** + (**B** + **C**)    (associative) 
-   
- c(**A** + **B**) = c**A** + c**B**    (distributive) 
-:::
- 
-Example: 
+- *Associative*: $(\vv{A} + \vv{B}) + \vv{C} = \vv{A} + (\vv{B} + \vv{C})$
+
+- *Distributive*: $k(\vv{A} + \vv{B}) = k\vv{A} + k\vv{B}$
+```
+
+```{example} Matrix addition and scalar multiplication
+Given
+
 \begin{equation}
-\vv{A} = \begin{bmatrix} -1 & 2  \\ 0 & 5  \end{bmatrix} \qquad 
+\vv{A} = \begin{bmatrix} -1 & 2  \\ 0 & 5  \end{bmatrix} \qquad
 \vv{B} = \begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix}
 \end{equation}
 
-compute 2**A** - **B**
+Compute $2\vv{A} - \vv{B}$.
 
+---
 
+\begin{align}
+2\vv{A}-\vv{B} &= 2 \begin{bmatrix} -1 & 2  \\ 0 & 5  \end{bmatrix} -
+\begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix} \\
+&= \begin{bmatrix} -2 & 4  \\ 0 & 10  \end{bmatrix} -
+\begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix} \\
+&= \begin{bmatrix} -3 & 4  \\ 0 & 9  \end{bmatrix}
+\end{align}
+```
+
+## Matrix multiplication
+
+**C** = **AB** is defined if **A** has the same number of columns as **B** has
+rows. If **A** is *m* x *p* and **B** is *p* x *n*, **C** is *m* x *n* and its
+elements are
 
 \begin{equation}
-\vv{2A-B} = 2 \begin{bmatrix} -1 & 2  \\ 0 & 5  \end{bmatrix} - 
-\begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix} 
+C_{ij} = \sum_{k=1}^p A_{ik} B_{kj}
 \end{equation}
 
-\begin{equation}
-= \begin{bmatrix} -2 & 4  \\ 0 & 10  \end{bmatrix} - 
-\begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix} 
-\end{equation}
+Example:
 
-\begin{equation}
-= \begin{bmatrix} -3 & 4  \\ 0 & 9  \end{bmatrix} 
-\end{equation}
-
-- *Matrix Multiplication*: **C** = **AB** is defined if **A** has the same number of columns as **B** has rows.
-  \begin{align}
-   (m \times n)(m \times p)(p \times n)
-  \end{align}
-  
-  \begin{align}
-   C_{ij} = \displaystyle \sum_{k=1}^{P}A_ikB_kj 
-  \end{align}
-
-\begin{equation} 
+\begin{align}
 \begin{bmatrix} 3 & 5 \\ 4 & 0 \\ -6 & -3 \end{bmatrix}
+\begin{bmatrix} 2 & -2 \\ 5 & 0 \end{bmatrix}
+&= \begin{bmatrix} 3\times2 + 5\times5 & 3\times-2 + 5\times0 \\
+4\times2 + 0\times5 & 4\times-2 + 0\times0 \\
+-6\times2 + -3\times5 &   -6\times-2 + -3\times0 \end{bmatrix} \\
+&= \begin{bmatrix} 31 & -6 \\ 8 & -8 \\ -27 & 12 \end{bmatrix}
+\end{align}
 
-\begin{bmatrix} 2 & -2 \\ 5 & 0 \end{bmatrix} =
+Multiplying with a vector works the same!
 
-\begin{bmatrix} 3\times2 + 5\times5 & 3\times-2 + 5\times0 \\ 4\times2 + 0\times5 & 4\times-2 + 0\times0 \\ -6\times2 + -3\times5 & -6\times-2 + -3\times0 \end{bmatrix}
+\begin{align}
+\begin{bmatrix} 3 & 5 \\ 4 & 0 \\ -6 & -3 \end{bmatrix}
+\begin{bmatrix} 1 \\ 2 \end{bmatrix}
+&= \begin{bmatrix} 3 \times 1 + 5 \times 2 \\
+4 \times 1 + 0 \times 2 \\
+-6 \times 1 + -3 \times 2
+\end{bmatrix} \\
+&= \begin{bmatrix} 8 \\ 4 \\ -9 \end{bmatrix}
+\end{align}
+
+```{topic} Rules of matrix multiplication
+- *Associative*: $\vv{A}(\vv{B}\vv{C}) = (\vv{A}\vv{B})\vv{C}$
+
+- *Distributive*: $(\vv{A} + \vv{B})\vv{C} = \vv{A}\vv{C} + \vv{B}\vv{C}$
+
+- **Not** generally commutative, i.e., $\vv{A}\vv{B} \ne \vv{B}\vv{A}$ for all
+  matrices.
+```
+
+## Transpose
+
+$\vv{A}^{\rm T}$ is the transpose of **A**, and its elements are obtained by
+"flipping" the rows and columns:
+
+\begin{equation}
+A_{ij}^{\rm T} = A_{ji}
 \end{equation}
 
-Multiply with a vector works the same! 
+Example:
 
-\begin{bmatrix} 3 & 5 \\ 4 & 0 \\ -6 & -3 \end{bmatrix} \qquad
-\begin{bmatrix} 1 \\ 1 \end{bmatrix} =
+\begin{equation}
+\begin{bmatrix} 1 & 2 \\ 4 & 3 \end{bmatrix}^{\rm T} =
+\begin{bmatrix} 1 & 4 \\ 2 & 3 \end{bmatrix}
+\end{equation}
 
-\begin{bmatrix} 8 \\ 4 \\ -9 \end{bmatrix}
+A matrix is called *symmetric* if $\vv{A}^{\rm T} = \vv{A}$.
 
-:::{line-block}
-Rules of matrix multiplication
+```{topic} Rules for transposition
+- $(\vv{A}^{\rm T})^{\rm T} = \vv{A}$
 
-   **A**(**BC**) = (**AB**)**C**   (associative)   
+- $(\vv{A} + \vv{B})^{\rm T} = \vv{A}^{\rm T} + \vv{B}^{\rm T}$
 
-   (**A** + **B**)**C** = **AC** + **BC**   (distributive)
+- $(\vv{A}\vv{B})^{\rm T} = \vv{B}^{\rm T} + \vv{A}^{\rm T}$
 
-   In general, **AB** $\ne$ **BA**   (i.e., $\underline{not}$ commutative)
-::: 
-
-
-- *Transpose* **A**$^T$ = [$A_{ij}$] "flip" the rows and columns
-
-\begin{bmatrix} 1 & 2 \\ 4 & 3 \end{bmatrix} ^T =
-\begin{bmatrix} 1 & 4 \\ 2 & 3 \end{bmatrix} 
-
-:::{line-block}
-Rules for transposition
-
-  (**A**$^T$)$^T$ = **A**
-  
-  (**A** + **B**)$^T$ = **A**$^T$ + **B**$^T$
-  
-  (**AB**)$^T$ = **B**$^T$ + **A**$^T$
-  
-  (c**A**)$^T$ = c**A**$^T$ 
-:::
-
-  "Symmetric" matrices have **A**$^T$ = **A**
-
-    
-  
+- $(k \vv{A})^{\rm T} = c\vv{A}^{\rm T}$
+```
