@@ -24,7 +24,6 @@ A matrix is called *nonsingular* or *invertible* if it has an inverse, but
 **A** is invertible if and only if the determinant of **A** is nonzero.
 
 (There are many more such conditions!)
-
 ```
 
 If the inverse of **A** exists, it is unique and can be used to
@@ -76,7 +75,6 @@ Then, compute its inverse
 \vv{A}^{-1} = \frac{1}{10} \begin{bmatrix} 4 & -1 \\ -2 & 3 \end{bmatrix}
 = \begin{bmatrix} 0.4 & -0.1 \\ -0.2 & 0.3 \end{bmatrix}
 \end{equation}
-
 ```
 
 ## Inverses using Gauss-Jordan elimination
