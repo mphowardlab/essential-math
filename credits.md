@@ -10,6 +10,7 @@ This work (c) 2025 is licensed under
 - Michael P. Howard
 - Evan M. Hughes
 - Michelle Schindler
+- Katie Sorensen
 
 ## Attributions
 
