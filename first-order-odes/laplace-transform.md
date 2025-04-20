@@ -83,15 +83,9 @@ Y&=\frac{2}{s-1}-\frac{1}{s} - \frac{1}{s^2}
 
 Solve for $y$ by applying the Inverse Laplace Tansform
 
-\begin{align}
-y&= L^{-1}\left[Y\right] 
-\end{align}
-
-\begin{equation}
-L^{-1}\left[Y\right] = 2L^{-1}\left[\frac{1}{s-1}\right]-L^{-1}\left[\frac{1}{s}\right]-L^{-1}\left[\frac{1}{s^2}\right]
-\end{equation}
-
-\begin{align}
-y&=2e^{t}-1-t
-\end{align}
+\begin{align}  
+y &=L^{-1}[Y]\\  
+  &=2L^{-1}\left[\frac{1}{(s-1)}\right]-L^{-1}\left[\frac{1}{s}\right]-L^{-1}\left[\frac{1}{s^2}\right]\\  
+  &=2e^t-1-t  
+\end{align} 
 ```
