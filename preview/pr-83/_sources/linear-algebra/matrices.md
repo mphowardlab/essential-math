@@ -143,12 +143,17 @@ longer course on linear algebra!
   Example:
 
   \begin{equation}
-  -2 \begin{bmatrix} 1 & 0  \\ 0 & -2  \end{bmatrix} =
-  \begin{bmatrix} -2 & 0 \\ 0 & 4 \end{bmatrix}
+  -2 \begin{bmatrix} 1 & 0  \\ 0 & -2  \end{bmatrix}
+  = \begin{bmatrix} -2 \times 1 & -2 \times 0 \\ -2 \times 0 & -2 \times 4 \end{bmatrix}
+  = \begin{bmatrix} -2 & 0 \\ 0 & 4 \end{bmatrix}
   \end{equation}
 
 - *Subtraction*: same as addition of negative
-  $\vv{C} = \vv{A} - \vv{B} = \vv{A} + (-\vv{B})$
+  $\vv{C} = \vv{A} - \vv{B} = \vv{A} + (-\vv{B})$ so
+
+  \begin{equation}
+  C_{ij} = A_{ij} - B_{ij}
+  \end{equation}
 
 ```{topic} Rules of addition and scalar multiplication
 - *Commutative*: $\vv{A} + \vv{B} = \vv{B} + \vv{A}$
@@ -209,7 +214,7 @@ Multiplying with a vector works the same!
 4 \times 1 + 0 \times 2 \\
 -6 \times 1 + -3 \times 2
 \end{bmatrix} \\
-&= \begin{bmatrix} 8 \\ 4 \\ -9 \end{bmatrix}
+&= \begin{bmatrix} 8 \\ 4 \\ -12 \end{bmatrix}
 \end{align}
 
 ```{topic} Rules of matrix multiplication
@@ -246,5 +251,5 @@ A matrix is called *symmetric* if $\vv{A}^{\rm T} = \vv{A}$.
 
 - $(\vv{A}\vv{B})^{\rm T} = \vv{B}^{\rm T} + \vv{A}^{\rm T}$
 
-- $(k \vv{A})^{\rm T} = c\vv{A}^{\rm T}$
+- $(k \vv{A})^{\rm T} = k\vv{A}^{\rm T}$
 ```
