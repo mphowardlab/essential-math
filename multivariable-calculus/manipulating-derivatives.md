@@ -14,11 +14,11 @@ First law of thermodynamics
 \end{equation}
 Hence,
 \begin{equation}
-\ T(\ubar{S}, \ubar{V}) = (\frac{\td{\ubar{U}}}{\td{\ubar{S}}})_{\ubar{V}}
+\ T(\ubar{S}, \ubar{V}) = (\frac{\td{}{\ubar{U}}}{\td{}{\ubar{S}}})_{\ubar{V}}
 \end{equation}
 \and
 \begin{equation}
-\ P(\ubar{S}, \ubar{V}) = - (\frac{\td{\ubar{U}}}{\td{\ubar{V}}})_{\ubar{S}}
+\ P(\ubar{S}, \ubar{V}) = - (\frac{\td{}{\ubar{U}}}{\td{}{\ubar{V}}})_{\ubar{S}}
 \end{equation}
 
 T(S̲, V̲)=$(\frac{\partial \underline{U}}{\partial \underline{S}})_{\underline{V}}$ and P(S̲, V̲)=-$(\frac{\partial \underline{U}}{\partial \underline{V}})_{\underline{S}}$ <br>
@@ -35,7 +35,7 @@ We can relate *measurable* quantities like T and P to the derivatives of an *unm
 $\Delta$U̲ =$ \int_{\underline{V}_1}^{\underline{V}_2}$-PdV̲ @ constant S̲ (adiabatic) <br>
 We can also relate quantities as mixed derivatives: <br>
 \begin{equation}
-\ -(\frac{\td \ubar{P}}{\dt \ubar{S}})_{\ubar{V}} = \frac{\td ^2 \ubar{U}}{\td \ubar{S} \td \ubar{V}} = \frac{\dt ^2 \ubar{U}}{\td \ubar{V} \td \ubar{S}} = \frac{\td \ubar{T}}{\td \ubar{V}}_{\ubar{S}} (Change in T with aidiabatic compression)
+\ -(\frac{\td{} \ubar{P}}{\td{} \ubar{S}})_{\ubar{V}} = \frac{\td{} ^2 \ubar{U}}{\td{} \ubar{S} \td{} \ubar{V}} = \frac{\dt ^2 \ubar{U}}{\td{} \ubar{V} \td{} \ubar{S}} = \frac{\td{} \ubar{T}}{\td{} \ubar{V}}_{\ubar{S}} (Change in T with aidiabatic compression)
 \end{equation}
 
 
