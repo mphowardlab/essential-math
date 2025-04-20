@@ -21,7 +21,7 @@ Obtain general solutions to:
    \td{}{Q}{x}{y} &= -2x \sin(x^2)
    \end{align}
 
-   The two partial derivatives are equal so the ODE is exact. You can proceed
+   The two partial derivatives are equal, so the ODE is exact. You can proceed
    directly to integration. First, integrate *Q* with respect *y*
 
    \begin{equation}
@@ -95,11 +95,11 @@ Obtain general solutions to:
    where *k* is an unknown function of *x*. Then, differentiate *f* with respect to *x* and compare to the *P* of the exact function:
 
    \begin{align}
-   \td{}{f}{x}{y} = \frac{y^2}{x^3} + k'(x) = F \cdot P = x + \frac{y^2}{x^3} \\
-   k'(x) &= x \\
+   \td{}{f}{x}{y} = \frac{y^2}{x^3} + k'(x) = P = x + \frac{y^2}{x^3} \\
+   k'(x) &= x
    \end{align}
 
-   This ODE has does not have $k = 0$ as a solution, so we will need to integrate $k'(x)$ with respect to *x* to find what *k* equals.
+   This ODE has does not have $k = 0$ as a solution, so we will need to integrate *k'* with respect to *x* to find what *k* equals.
    
    \begin{align}
    \int x \d{x} = \frac{x^2}{2} + c^* \\
