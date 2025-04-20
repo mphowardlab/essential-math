@@ -1,31 +1,76 @@
 # Exact differential equations
-Remember that a function $f(x,y)$ has the **total** **differential**: \
-$df=(\frac{\partial f}{\partial x})_{y}dx$ + $(\frac{\partial f}{\partial y})_{x}dy$\
-If $f=c$ (a constant), then $df=0$. 
 
-How does this apply to ODEs? \
-Suppose we can rewrite our ODE as \
-$P(x,y)dx + Q(x,y)dy = 0$\
-If we can show that $P=(\frac{\partial f}{\partial x})$ and $Q=(\frac{\partial f}{\partial y})$ for some f, then we know that $f(x,y)=c$ is an **implicit** **solution** of the ODE. 
+Remember that a function $f(x,y)$ has the
+[total differential](../multivariable-calculus/total-differential.md)
 
-How do we figure that out?\
-If $P=(\frac{\partial f}{\partial x})$ and $Q=(\frac{\partial f}{\partial y})$, then $\frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x}$ because $\frac{\partial^2 f}{\partial y\partial x}=\frac{\partial^2 f}{\partial x\partial y}$!
+\begin{equation}
+\d{f}= \td{}{f}{x}{y} \d{x} + \td{}{f}{y}{x} \d{y}
+\end{equation}
 
-Example: 
-$\cos(x+y)dx + [3y^2 + 2y + \cos(x+y)]dy=0$ \
-Where $ \cos(x+y)\to P$ 
-and $[3y^2 + 2y + \cos(x+y)]  \to Q$ \
-$\frac{\partial P}{\partial y}$=-$\sin(x+y)$\
-$\frac{\partial Q}{\partial x}$=-$\sin(x+y)$
+Also note that if $f = c$ (a constant), then $\d{f} = 0$. How does this apply
+to ODEs?
 
-If an ODE is exact, we can integrate P or Q to get f, then solve for the integration constant with Q or P.\
+Suppose we can rewrite our ODE as
+
+```{math}
+:label: exactode
+P(x,y) \d{x} + Q(x,y) \d{y} = 0
+```
+
+If we can show that
+
+\begin{equation}
+P = \td{}{f}{x}{y} \qquad Q = \td{}{f}{y}{x}
+\end{equation}
+
+for some $f$, then we know that $f(x,y) = c$ is an implicit solution of the
+ODE! We call ODEs with this property *exact*. But, how do we know if such a
+function exists and what it is?
+
+```{topic} Test for exactness
+A differential equation in the form of Eq. {eq}`exactode` is exact if
+
+\begin{equation}
+\td{}{P}{y}{x} = \td{}{Q}{x}{y}
+\end{equation}
+```
+
+```{example} Test for exactness
+
+Is the following differential equation exact?
+
+\begin{equation}
+\cos(x+y) \d{x} + \left[3y^2 + 2y + \cos(x+y) \right]\d{y} = 0
+\end{equation}
+
+---
+
+For the given ODE,
+
+\begin{align}
+P &= \cos(x+y) \\
+\td{}{P}{y}{x} &= -\sin(x+y)
+\end{align}
+
+and
+
+\begin{align}
+Q &= 3y^2 + 2y + \cos(x+y) \\
+\td{}{Q}{x}{y} &= -\sin(x+y)
+\end{align}
+
+Since these partial derivatives match, the ODE is exact.
+```
+
+If an ODE is exact, we can integrate P or Q to get f, then solve for the
+integration constant with Q or P.\
 $f=\int Pdx = \int \cos(x+y)dx = \sin(x+y) + k(y)$\
 $\frac{\partial f}{\partial y}=\cos(x+y)+k'=Q=3y^2+2y+\cos(x+y)$\
 $k'=3y^2+2y$\
 $\int dk=\int (3y^2+2y) dy$\
 $k=y^3+y^2+c^*$\
 Therefore, $f=\sin(x+y) + y^3 +y^2 + c^* =c \to \sin(x+y)+y^3 +y^2 =c$ \
-is the general solution of the ODE! 
+is the general solution of the ODE!
 
 Note that order of integration does not matter. We could also have done \
 $f=\int Q dy = \int[3y^2+2y+\cos(x+y)]dy=y^3+y^2+\sin(x+y)+k(x)$\
