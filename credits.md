@@ -8,6 +8,7 @@ This work (c) 2025 is licensed under
 ## Contributors
 
 - Ella Governale
+- Connor Habig
 - Michael P. Howard
 - Evan M. Hughes
 - Faith Major
