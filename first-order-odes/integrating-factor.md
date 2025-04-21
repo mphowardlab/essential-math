@@ -29,5 +29,18 @@ n_A*(0) &= n_A,o &= C_f,A * V + C \to C &= n_A,o -C_f,A*V
 \end{align}
 
 
-## 5. Example:
+### 5. Example:
+Hormone level (again)
+\begin{align}
+We had c' + kc &= A + B*\cos((\pi*t)/12) with c(0) &= C_o
+p &= kc   r &= A + B*\cos((\pi*t)/12)
+F(t) = \exp(\int k*dt) &= \exp(kt)
+\int F(t)*r(t)*dt &= \int \exp(kt)*[A + B*\cos((\pi*t)/12)]*dt
+                 &= A * \int \exp(kt)*dt + B * \int \exp(kt)* \cos((\pi*t)/12)*dt
+                 \to Table of integrals, or by parts 
+                 &= A/k * \exp(kt) + B * (\exp(kt)/(k^2 + (\pi/12)^2))*[K*\cos((\pi*t)/12) + \pi/12 * \sin((\pi*t)/12)]
+\to C(t) &= \exp(-kt)* (A/k * \exp(kt) + B * (\exp(kt)/(k^2 + (\pi/12)^12))* [k * \cos((\pi*t)/12) + \pi/12*\sin((/pi*t)/12)]+c^*)
+\end{align}
+
+
 
