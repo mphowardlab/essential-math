@@ -11,7 +11,7 @@ $$
 -x<sub>1</sub> + 4x<sub>2</sub> = -19.3
 $$
 
-$$
+<!-- $$
 \[
 <ins><ins>A</ins></ins> = \begin{bmatric} 
 5 & -2 \\
@@ -22,7 +22,16 @@ $$
                |   20.9  |
                |_ -19.3 _|
 
-$$               
+$$                -->
+
+\[
+A = \begin{bmatrix}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9
+\end{bmatrix}
+\]
+
 <ins><ins>A</ins></ins> <ins>x</ins>=<ins>b</ins>
 <ins>x</ins>=<sup><ins><ins>A</ins></ins></sup><ins>b</ins> 
 
