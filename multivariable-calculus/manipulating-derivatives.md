@@ -12,17 +12,18 @@ First law of thermodynamics
 \begin{equation}
 \d{\ubar{U}} = \td{}{\ubar{U}}{\ubar{S}}{\ubar{V}} \d{\ubar{S}} + \td{}{\ubar{U}}{\ubar{V}}{\ubar{S}} \d{\ubar{V}}
 \end{equation}
+
 Hence,
+
 \begin{equation}
-\ T(\ubar{S}, \ubar{V}) = (\td{}{\ubar{U}}{\ubar{S}}{\ubar{V}})
-\end{equation}
-and
-\begin{equation}
-\ P(\ubar{S}, \ubar{V}) = - (\td{}{\ubar{U}}{\ubar{V}}{\ubar{S}})
+\ T(\ubar{S}, \ubar{V}) = \td{}{\ubar{U}}{\ubar{S}}{\ubar{V}}
 \end{equation}
 
-T(S̲, V̲)=$(\frac{\partial \underline{U}}{\partial \underline{S}})_{\underline{V}}$ and P(S̲, V̲)=-$(\frac{\partial \underline{U}}{\partial \underline{V}})_{\underline{S}}$ <br>
-<br>
+and
+
+\begin{equation}
+\ P(\ubar{S}, \ubar{V}) = - \td{}{\ubar{U}}{\ubar{V}}{\ubar{S}}
+\end{equation}
 
 T and P are *functions* of $\ubar{S}$ and $\ubar{V}$!
 We can relate *measurable* quantities like T and P to the derivatives of an *unmeasurable* quantity like $\ubar{U}$!
@@ -35,15 +36,13 @@ At constant $\ubar{S}$ (adiabatic)
 We can also relate quantities as mixed derivatives:
 
 \begin{equation}
-\ -\td{}{\ubar{P}}{\ubar{S}}{\ubar{V}} = \frac{\partial ^2 \underline{U}}{\partial \underline{S} \partial \underline{V}} = \frac{\partial ^2 \underline{U}}{\partial \underline{V} \partial \underline{S}} = (\frac{\partial \underline{T}}{\partial \underline{V}})_{\underline{S}}
+\ -\td{}{\ubar{P}}{\ubar{S}}{\ubar{V}} = \frac{\partial ^2 \underline{U}}{\partial \underline{S} \partial \underline{V}} = \frac{\partial ^2 \underline{U}}{\partial \underline{V} \partial \underline{S}} = \td{}{T}{\ubar{V}}{\ubar{S}}
 \end{equation}
 (Change in T with aidiabatic compression)
 
-$-(\frac{\partial \underline{P}}{\partial \underline{S}})_{\underline{V}}$ = $\frac{\partial ^2 \underline{U}}{\partial \underline{S} \partial \underline{V}}$ = $\frac{\partial ^2 \underline{U}}{\partial \underline{V} \partial \underline{S}}$ = $(\frac{\partial \underline{T}}{\partial \underline{V}})_{\underline{S}}$ (change in T with adiabatic compression) <br>
-
 ## Swapping Variables and Derivatives (Legendre Transformation)
 
-We say U̲ has S̲ and V̲ as "natural" variables because they are what appears in the differential first law. But, we do not like S̲ as a variable because we cannot measure it. We would love to use T instead. Can we swap the two?
+We say $\ubar{U}$ has $\ubar{S}$ and $\ubar{V}$ as "natural" variables because they are what appears in the differential first law. But, we do not like $\ubar{S}$ as a variable because we cannot measure it. We would love to use $T$ instead. Can we swap the two?
 
 *Yes*, if we define the Helmholtz free energy
 
@@ -62,15 +61,15 @@ $\ubar{U}(\ubar{S}(T,\ubar{V}),\ubar{V})$ and $\ubar{S}(T,\ubar{V})$
 
 \begin{equation}
 \dt{}{\ubar{A}}{T}{\ubar{V}} = - \ubar{S}
-end{equation}
+\end{equation}
 and
 \begin{equation}
 \dt{}{\ubar{A}}{\ubar{V}}{T} = -P
-end{equation}
+\end{equation}
 and
 \begin{equation}
 \dt{}{\ubar{S}}{\ubar{V}}{T} = \dt{}{P}{T}{\ubar{V}}
-end{equation}
+\end{equation}
 
 
 dA̲ = dU̲ - TdS̲ - S̲dT = TdS̲ - PdV̲ - TdS̲ - S̲dT <br>
