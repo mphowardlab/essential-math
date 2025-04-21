@@ -53,37 +53,30 @@ $\ubar{U}(\ubar{S}(T,\ubar{V}),\ubar{V})$ and $\ubar{S}(T,\ubar{V})$
 
 \begin{equation}
 \ d \ubar{A} = d \ubar{U} - Td \ubar{S} - \ubar{S} dT = Td \ubar{S} - Pd \ubar{V} - Td \ubar{S} - \ubar{S} dT
-\end{equation}
-
-\begin{equation}
 \ d \ubar{A} = - \ubar{S} dT - Pd \ubar{V}
 \end{equation}
 
 \begin{equation}
-\dt{}{\ubar{A}}{T}{\ubar{V}} = - \ubar{S}
-\end{equation}
-and
-\begin{equation}
-\dt{}{\ubar{A}}{\ubar{V}}{T} = -P
-\end{equation}
-and
-\begin{equation}
-\dt{}{\ubar{S}}{\ubar{V}}{T} = \dt{}{P}{T}{\ubar{V}}
+\td{}{\ubar{A}}{T}{\ubar{V}} = - \ubar{S}
+\td{}{\ubar{A}}{\ubar{V}}{T} = -P
+\td{}{\ubar{S}}{\ubar{V}}{T} = \td{}{P}{T}{\ubar{V}}
 \end{equation}
 
 
-dA̲ = dU̲ - TdS̲ - S̲dT = TdS̲ - PdV̲ - TdS̲ - S̲dT <br>
-dA̲ = -S̲dT - PdV̲ <br>
-<br>
-$(\frac{\partial \underline{A}}{\partial T})_{\underline{V}}$=-$\underline{S}$  and  $(\frac{\partial \underline{A}}{\partial \underline{V}})_T$=-$P$  and  $(\frac{\partial \underline{S}}{\partial \underline{V}})_T $=$ (\frac{\partial P}{\partial T})_\underline{V}$ <br>
-<br>
-Additional Ones: Enthalpy   H̲ = U̲ + PV̲ <br>
-                           dH̲ = TdS̲ + V̲dP <br>
-<br>
-        Gibbs Free Energy   G̲ = A̲ + PV̲ = U̲ - TS̲ + PV̲ <br>
-                           dG̲ = -S̲dT + V̲dP <br>
-<br>
-The reasons for these definitions are based on something called a Legendre Transformation and this has important implications in thermodynamics (e.g., why $\Delta$G $<$ 0 for a spontaneous process @ const. T and P). You will learn more about this later!
+Additional Ones: 
+Enthalpy  
+\begin{equation}
+\ubar{H} = \ubar{U} + P \ubar{V}
+\ d \ubar{H} = Td \ubar{S} + \ubar{V} dP
+\end{equation}
+
+Gibbs Free Energy
+\begin{equation}
+\ubar{G} = \ubar{A} + P \ubar{V} = \ubar{U} - T \ubar{S} + P \ubar{S}
+\ d \ubar{G} = - \ubar{S} dT + \ubar{V} dP
+\end{equation}
+
+The reasons for these definitions are based on something called a Legendre Transformation and this has important implications in thermodynamics (e.g., why $\Delta G < 0$ for a spontaneous process at constant $T$ and $P$). You will learn more about this later!
 
 
 ```{example} Change in internal energy
