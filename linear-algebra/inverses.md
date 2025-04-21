@@ -24,13 +24,13 @@ $$
 
 $$                -->
 
-\[
+
 $A = \begin{bmatrix}
 1 & 2 & 3 \\
 4 & 5 & 6 \\
 7 & 8 & 9
 \end{bmatrix}
-\]
+
 
 <ins><ins>A</ins></ins> <ins>x</ins>=<ins>b</ins>
 <ins>x</ins>=<sup><ins><ins>A</ins></ins></sup><ins>b</ins> 
