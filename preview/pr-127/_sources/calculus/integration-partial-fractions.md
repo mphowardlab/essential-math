@@ -6,6 +6,7 @@ $$
 $$
 
 Multiply by a factor and take limit:
+
 $$
 
 \lim_{x\to 3} \left( \frac{3x+11}{x+2} = A_1 + \frac{A_2(x-3)}{x+2} \right) 
