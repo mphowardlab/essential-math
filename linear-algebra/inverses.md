@@ -5,14 +5,19 @@ Solve the following using matrix inversion:
 (a) 
 $$
 5x<sub>1</sub> - 2x<sub>2</sub> = 20.9
-$$
+$$  
+
 $$
 -x<sub>1</sub> + 4x<sub>2</sub> = -19.3
 $$
+
 $$
-<ins><ins>A</ins></ins> =  _      _
-                          |   5-2  | 
-                          |_ -1 4 _|
+\[
+<ins><ins>A</ins></ins> = \begin{bmatric} 
+5 & -2 \\
+-1 & 4 \\
+\end{bmatrix}
+\]
 <ins>b</ins> =  _       _
                |   20.9  |
                |_ -19.3 _|
