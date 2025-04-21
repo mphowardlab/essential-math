@@ -253,3 +253,80 @@ A matrix is called *symmetric* if $\vv{A}^{\rm T} = \vv{A}$.
 
 - $(k \vv{A})^{\rm T} = k\vv{A}^{\rm T}$
 ```
+
+## Skill Builder
+
+$$
+\underline{\underline{A}} = \begin{bmatrix} 0 & 2 \\ 2 & 4 \\ 1 & 3 \\ \end{bmatrix} 
+\quad
+\underline{\underline{B}} = \begin{bmatrix} 0 & 2 &1 \\ 2 & 4 & 3 \end{bmatrix}
+\quad
+\underline{\underline{C}} = \begin{bmatrix} 3 & 0 & 4 \\ -1 & 2 & 2 \\ 6 & 5 & -4 \end{bmatrix}
+\quad
+\underline{\underline{D}} = \begin{bmatrix} 0 & -5 & -3 \\ -5 & 2 & 4 \\ -3 & 4 & 0 \end{bmatrix}
+$$
+
+$$
+\underline{a} = \begin{bmatrix} 1 \\ 3 \end{bmatrix}
+\quad
+\underline{b} = \begin{bmatrix} 0 & 2 \end{bmatrix}
+\quad
+\underline{c} = \begin{bmatrix} 2 \\ 0 \\ -1 \end{bmatrix}
+$$
+
+
+### (a) 
+
+$$
+2A = \begin{bmatrix} 2 \cdot 0 & 2 \cdot 2 \\ 2 \cdot 2 & 2 \cdot 4 \\ 2 \cdot 1 & 2 \cdot 3 \end{bmatrix} = \begin{bmatrix} 0 & 4 \\ 4 & 8 \\ 2 & 6 \end{bmatrix} 
+$$ 
+
+### (b) 
+
+$$
+\underline{\underline{A}} + \underline{\underline{B}}
+$$
+**Undefined** because the shape of $\underline{\underline{A}}$ (3×2) is different from the shape of $\underline{\underline{B}}$ (2×3).
+
+### (c) 
+
+$$
+\underline{\underline{A}}^T + \underline{\underline{B}} = \begin{bmatrix} 0 & 2 & 1 \\ 2 & 4 & 5 \end{bmatrix} + \begin{bmatrix} 0 & 2 & 1\\ 2 & 4 & 5 \end{bmatrix} = \begin{bmatrix} 0+0 & 2+2 & 1+1 \\ 2+2 & 4+4 & 5+3 \end{bmatrix} = \begin{bmatrix} 0 & 4 & 2 \\ 4 & 8 & 6 \end{bmatrix}
+$$
+
+
+
+### (d) 
+
+$$
+\underline{\underline{C}} -\underline{\underline{D}} = \begin{bmatrix} 3-0 & 0-(-5) & 4-(-3) \\ -1-(-5) & 2-2 & 2-4 \\ 6-(-3) & 5-4 & -4-0 \end{bmatrix} = \begin{bmatrix} 3 & 5 & 7 \\ 4 & 0 & -2 \\ 9 & 1 & -4 \end{bmatrix}
+$$
+
+### (e)
+
+$$
+\underline{\underline{A}}  \underline{a} = \begin{bmatrix} 0 \cdot 1 + 2 \cdot 3 \\ 2 \cdot 1 + 4 \cdot 3 \\ 1 \cdot 1 + 3 \cdot 3 \end{bmatrix} = \begin{bmatrix} 6 \\ 14 \\ 10 \end{bmatrix}
+$$
+
+### (f)  
+$$
+\underline{\underline{A}}\underline{b}
+$$
+**Undefined** because $\underline{\underline{A}}$ has 2 columns but $\underline{b}$ has 1 row.
+
+### (g) 
+$$
+\underline{\underline{A}}\underline{c}
+$$
+**Undefined** because $\underline{\underline{A}}$ has 2 columns but $\underline{c}$ has 3 rows. 
+
+### (h)
+$$
+\underline{\underline{B}}\underline{c} = \begin{bmatrix}  0 \cdot 2 + 2 \cdot 0 + 1 \cdot -1 \\ 2 \cdot 2 + 4 \cdot 0 + 3 \cdot -1 \end{bmatrix} = \begin{bmatrix} -1 \\ 1 \end{bmatrix} 
+$$
+
+### (i) 
+
+$$
+\underline{c^T}\underline{\underline{A}} = \begin{bmatrix} 0 & 2 & -1\end{bmatrix} \ \begin{bmatrix} 0 & 2 \\ 2 & 4 \\ 1 &3 \end{bmatrix} = \begin{bmatrix} 2 \cdot 0 + 0 \cdot 2 + -1 \cdot 1 & 2 \cdot 2 + 0 \cdot 4 \cdot -1 \cdot 3 \end{bmatrix} = \begin{bmatrix} -1 & 1 \end{bmatrix} 
+$$
