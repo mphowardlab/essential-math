@@ -1,68 +1,59 @@
 # Quadratic and cubic polynomials
 
-**<h1><ins>Types of Solutions</h1>**
+## Types of Solutions
 
-**<ins>Two Real Solutions</ins>**
+### Two Real Solutions
 
-![Graph of the function x squared minus 1 equals 0. A parabola opening upwards, crossing the x-axis at x = -1 and x = 1, indicating two real roots.](<_images/Two Real Solutions.png>)
+```{image} ./_images/Two_Real_Solutions.png  
+:alt: Two Real Solutions  
+```
 
-$x^2 - 1 = 0$ $\rightarrow$ $x = \pm$ 1
+```math
+\begin{equation}
+x^2 - 1 = 0 \to x = \pm 1
+\end{equation}
+```
 
-**<ins> One (Duplicate) Solution </ins>**
+### One (Duplicate) Solution
 
-![Graph of the function open parenthesis x minus 1 close parenthesis squared equals 0. A parabola touching the x-axis only at x = 1, indicating one repeated real root.](<_images/One (Duplicate) Solution.png>)
+```{image} ./_images/One_Duplicate_Solution.png  
+:alt: One Duplicate Solution
+```
 
-$(x-1)^2 = 0 $ $\rightarrow$ $x = 1$
+```math
+\begin{equation}
+(x-1)^2 = 0 \to x = 1
+\end{equation}
+```
 
-**<ins> Complex Solution </ins>**
+### Complex Solution
 
-![Graph of the function x squared plus 1 equals 0. A parabola opening upwards with its vertex above the x-axis and no intersection with the x-axis, indicating two complex solutions.](<_images/Complex Solution.png>)
+```{image} ./_images/Complex_Solution.png  
+:alt: Complex Solution
+```
 
-$x^2 + 1 = 0 $ $\rightarrow$ $x =\pm i $
+```math
+\begin{equation}
+x^2 + 1 = 0 \to x =\pm i
+\end{equation}
+```
 
-**Complex Roots**: $ i = \sqrt{-1} $ , always come in <ins> conjugate</ins> pairs $ a \pm bi$ for polynomials.
+## Complex Roots
+$ i = \sqrt{-1} $ , always come in <ins> conjugate</ins> pairs $ a \pm bi$ for polynomials.
 
-<ins>Example:</ins>
+Example:
+```math
+\begin{align}
+x^2 - 10x + 34 &= 0 \\
+x^2 - 10x &= -34 \\
+x^2 - 10x + 25 &= -34 + 25 \\
+(x - 5)^2 &= -9 \\
+x - 5 &= \pm \sqrt{9} \\
+x &= 5 \pm 3\sqrt{-1} \\
+x &= \underline{5 \pm 3i}
+\end{align}
+```
 
-$$
-x^2 - 10x + 34 = 0
-$$
-
-**Step 1:**
-
-$$
-x^2 - 10x = -34
-$$
-
-**Step 2:**
-
-$$
-x^2 - 10x + 25 = -34 + 25
-$$
-
-**Step 3:**
-
-$$
-(x - 5)^2 = -9
-$$
-
-**Step 4:**
-
-$$
-x - 5 = \pm \sqrt{9}
-$$
-
-**Step 5:**
-
-$$
-x = 5 \pm 3\sqrt{-1}
-$$
-
-**Solution:**
-
-$$
-x = \underline{5 \pm 3i}
-$$
 
 
 General formulas for roots of cubic and quartic polynomials are known but complicated. No such formula exists for higher-order polynomials. $\rightarrow$ *Numerics*!
