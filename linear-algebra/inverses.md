@@ -15,6 +15,9 @@ $$
 $A = \begin{bmatrix}5 &-2\\ -1 & 4 \end{bmatrix}, \quad
 b= \begin{bmatrix} 20.9 \\ -19.3\end {bmatrix}$
 
+we know that 
+
+$A =b \x = A^{-1}b$
 <ins>A</ins> <ins>x</ins>=<ins>b</ins>
 <ins>x</ins>=<sup><ins>A</ins></sup><ins>b</ins> 
 
