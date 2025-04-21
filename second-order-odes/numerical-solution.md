@@ -18,7 +18,7 @@ y'' = f(t, y, y')
 it can be solved by conversion to a system of first-order ODEs
 
 
-Let \begin{equation}\( y_1 = y \) and \( y_2 = y' \).\end{equation} Then:
+Let \begin{equation} y_1 = y  and  y_2 = y' .\end{equation} Then:
 
 \begin{cases}
 y_1' = y_2 & y_1(0) = y(0)\\
