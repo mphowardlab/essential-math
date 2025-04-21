@@ -288,9 +288,9 @@ $$
 $$
 **Undefined** because the shape of $\underline{\underline{A}}$ (3×2) is different from the shape of $\underline{\underline{B}}$ (2×3).
 
-### (c) 
+### \(c\) 
 
-$$
+$$ 
 \underline{\underline{A}}^T + \underline{\underline{B}} = \begin{bmatrix} 0 & 2 & 1 \\ 2 & 4 & 5 \end{bmatrix} + \begin{bmatrix} 0 & 2 & 1\\ 2 & 4 & 5 \end{bmatrix} = \begin{bmatrix} 0+0 & 2+2 & 1+1 \\ 2+2 & 4+4 & 5+3 \end{bmatrix} = \begin{bmatrix} 0 & 4 & 2 \\ 4 & 8 & 6 \end{bmatrix}
 $$
 
