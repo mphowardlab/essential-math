@@ -43,3 +43,23 @@ Let’s resolve as a system:
 y_1 &=y     y_2 &=y'     y'' &=-y'+2y
 \end{align*}
 
+\begin {cases}
+y_1'=y_2 & y_1(0)=4//
+y_2'=-y_2+2y_1 & y_2(0)=-5
+\end {cases}
+\to
+\begin{align}
+\begin{equation}
+y=\begin{matrix} 0 & 1\\2 & -1
+\end{matrix}y
+\end{equation}
+\begin{equation}
+y(0)=\begin{matrix}4\\-5
+
+The Eigenvalues are 
+\begin{equations}
+\left|A-\lambda I\right|=\left|\begin{matrix}-\lambda & 1\\2&-1-\lambda \end{matrix} \right|=\lambda(\lambda+1)-2=\lambda^2 +\lambda-2=0
+\to
+\begin{align}
+\lambda_1=1
+\lambda_2=-2
