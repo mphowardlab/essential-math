@@ -3,6 +3,7 @@
 Solve the following using matrix inversion:
 
 (a) 
+
 $$
 5x<sub>1</sub> - 2x<sub>2</sub> = 20.9
 $$  
