@@ -16,7 +16,7 @@ Hence,
 \begin{equation}
 \ T(\ubar{S}, \ubar{V}) = (\frac{\td{}{\ubar{U}}}{\td{}{\ubar{S}}})_{\ubar{V}}
 \end{equation}
-\and
+\ and
 \begin{equation}
 \ P(\ubar{S}, \ubar{V}) = - (\frac{\td{}{\ubar{U}}}{\td{}{\ubar{V}}})_{\ubar{S}}
 \end{equation}
@@ -28,16 +28,17 @@ T and P are *functions* of S̲ and V̲! <br>
 We can relate *measurable* quantities like T and P to the derivatives of an *unmeasurable* quantity like U̲!
 
 \begin{equation}
-\ \Delta\ubar{U} = \int_{\ubar{V}_1}^{\ubar{V}_2} - P d\ubar{V} At constant \ubar{S} (adiabatic)
+\ \Delta\ubar{U} = \int_{\ubar{V}_1}^{\ubar{V}_2} - P d\ubar{V}
 \end{equation}
-
+At constant $\ubar{S}$ (adiabatic)
 
 $\Delta$U̲ =$ \int_{\underline{V}_1}^{\underline{V}_2}$-PdV̲ @ constant S̲ (adiabatic) <br>
 We can also relate quantities as mixed derivatives: <br>
-\begin{equation}
-\ -(\frac{\td{} \ubar{P}}{\td{} \ubar{S}})_{\ubar{V}} = \frac{\td{} ^2 \ubar{U}}{\td{} \ubar{S} \td{} \ubar{V}} = \frac{\dt ^2 \ubar{U}}{\td{} \ubar{V} \td{} \ubar{S}} = \frac{\td{} \ubar{T}}{\td{} \ubar{V}}_{\ubar{S}} (Change in T with aidiabatic compression)
-\end{equation}
 
+\begin{equation}
+\ -(\frac{\td{} \ubar{P}}{\td{} \ubar{S}})_{\ubar{V}} = \frac{\td{} ^2 \ubar{U}}{\td{} \ubar{S} \td{} \ubar{V}} = \frac{\dt ^2 \ubar{U}}{\td{} \ubar{V} \td{} \ubar{S}} = \frac{\td{} \ubar{T}}{\td{} \ubar{V}}_{\ubar{S}}
+\end{equation}
+(Change in T with aidiabatic compression)
 
 $-(\frac{\partial \underline{P}}{\partial \underline{S}})_{\underline{V}}$ = $\frac{\partial ^2 \underline{U}}{\partial \underline{S} \partial \underline{V}}$ = $\frac{\partial ^2 \underline{U}}{\partial \underline{V} \partial \underline{S}}$ = $(\frac{\partial \underline{T}}{\partial \underline{V}})_{\underline{S}}$ (change in T with adiabatic compression) <br>
 
