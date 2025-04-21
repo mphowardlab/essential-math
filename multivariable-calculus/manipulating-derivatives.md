@@ -37,6 +37,9 @@ We can also relate quantities as mixed derivatives: <br>
 
 \begin{equation}
 \td{}{\ubar{P}}{\ubar{S}}{\ubar{V}}
+\end{equation}
+
+\begin{equation}
 -(\frac{\td{} \ubar{P}}{\td{} \ubar{S}})_{\ubar{V}} = \frac{\td{} ^2 \ubar{U}}{\td{} \ubar{S} \td{} \ubar{V}} = \frac{\dt ^2 \ubar{U}}{\td{} \ubar{V} \td{} \ubar{S}} = \frac{\td{} \ubar{T}}{\td{} \ubar{V}}_{\ubar{S}}
 \end{equation}
 (Change in T with aidiabatic compression)
