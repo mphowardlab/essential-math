@@ -13,8 +13,15 @@ $$
 $$
 
 
-$A = \begin{bmatrix}5 &-2\\ -1 & 4 \end{bmatrix}, \quad
-b= \begin{bmatrix} 20.9 \\ -19.3\end {bmatrix}$
+
+$$
+\begin{bmatrix}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9
+\end{bmatrix}
+$$
+
 
 we know that 
 
