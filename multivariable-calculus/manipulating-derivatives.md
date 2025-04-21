@@ -14,11 +14,11 @@ First law of thermodynamics
 \end{equation}
 Hence,
 \begin{equation}
-\ T(\ubar{S}, \ubar{V}) = (\frac{\td{}{\ubar{U}}}{\td{}{\ubar{S}}})_{\ubar{V}}
+\ T(\ubar{S}, \ubar{V}) = (\frac{\td{}\ubar{U}}{\td{}\ubar{S}})_{\ubar{V}}
 \end{equation}
-\ and
+and
 \begin{equation}
-\ P(\ubar{S}, \ubar{V}) = - (\frac{\td{}{\ubar{U}}}{\td{}{\ubar{V}}})_{\ubar{S}}
+\ P(\ubar{S}, \ubar{V}) = - (\frac{\td{}\ubar{U}}{\td{}\ubar{V}})_{\ubar{S}}
 \end{equation}
 
 T(S̲, V̲)=$(\frac{\partial \underline{U}}{\partial \underline{S}})_{\underline{V}}$ and P(S̲, V̲)=-$(\frac{\partial \underline{U}}{\partial \underline{V}})_{\underline{S}}$ <br>
@@ -36,7 +36,8 @@ $\Delta$U̲ =$ \int_{\underline{V}_1}^{\underline{V}_2}$-PdV̲ @ constant S̲ (a
 We can also relate quantities as mixed derivatives: <br>
 
 \begin{equation}
-\ -(\frac{\td{} \ubar{P}}{\td{} \ubar{S}})_{\ubar{V}} = \frac{\td{} ^2 \ubar{U}}{\td{} \ubar{S} \td{} \ubar{V}} = \frac{\dt ^2 \ubar{U}}{\td{} \ubar{V} \td{} \ubar{S}} = \frac{\td{} \ubar{T}}{\td{} \ubar{V}}_{\ubar{S}}
+\td{}{\ubar{P}}{\ubar{S}}{\ubar{V}}
+-(\frac{\td{} \ubar{P}}{\td{} \ubar{S}})_{\ubar{V}} = \frac{\td{} ^2 \ubar{U}}{\td{} \ubar{S} \td{} \ubar{V}} = \frac{\dt ^2 \ubar{U}}{\td{} \ubar{V} \td{} \ubar{S}} = \frac{\td{} \ubar{T}}{\td{} \ubar{V}}_{\ubar{S}}
 \end{equation}
 (Change in T with aidiabatic compression)
 
@@ -45,7 +46,7 @@ $-(\frac{\partial \underline{P}}{\partial \underline{S}})_{\underline{V}}$ = $\f
 ## Swapping Variables and Derivatives (Legendre Transformation)
 
 We say U̲ has S̲ and V̲ as "natural" variables because they are what appears in the differential first law. But, we do not like S̲ as a variable because we cannot measure it. We would love to use T instead. Can we swap the two? <br>
-$\underline{Yes}$, if we define the Helmholtz free energy A̲ = U̲ - TS̲ <br>
+*Yes*, if we define the Helmholtz free energy A̲ = U̲ - TS̲ <br>
 U̲(S̲(T,V̲),V̲) and S̲(T,V̲) <br>
 dA̲ = dU̲ - TdS̲ - S̲dT = TdS̲ - PdV̲ - TdS̲ - S̲dT <br>
 dA̲ = -S̲dT - PdV̲ <br>
