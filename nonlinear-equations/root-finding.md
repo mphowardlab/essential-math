@@ -25,7 +25,7 @@ Solving for $\displaystyle x_{n+1}$:
 x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}
 \end{equation}
 
-```{image} ./_images/newtonraphson.svg
+```{image} ../_static/newtonraphson.svg
 :alt: The figure shows how the method iteratively converges to the root by using the tangent line at the current guess to find a better approximation.
 :align: center
 ```
