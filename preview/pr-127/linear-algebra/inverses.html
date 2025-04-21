@@ -57,6 +57,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"d": ["{\\operatorname{d}\\!{#1}}", 1], "dd": ["{\\d{}^{#1} #2 \\over \\d{#3}^{#1}}", 3], "pp": ["{\\partial^{#1} #2 \\over \\partial #3^{#1}}", 3], "td": ["{\\left(\\pp{#1}{#2}{#3} \\right)_{#4}}", 4], "ubar": ["\\underline{#1}", 1], "vv": ["\\mathbf{#1}", 1]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'linear-algebra/inverses';</script>
     <link rel="canonical" href="https://mphowardlab.github.io/essential-math/linear-algebra/inverses.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -202,13 +204,14 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../first-order-odes/index.html">5. First-order ordinary differential equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/separable.html">5.1. Separable differential equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/exact.html">5.2. Exact differential equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/linearity.html">5.3. Linearity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/undetermined-coefficients.html">5.4. Undetermined coefficients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/laplace-transform.html">5.5. Laplace transform</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/integrating-factor.html">5.6. Integrating factor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/numerical-solution.html">5.7. Numerical solution methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/definition.html">5.1. Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/separable.html">5.2. Separable differential equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/exact.html">5.3. Exact differential equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/linearity.html">5.4. Linearity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/undetermined-coefficients.html">5.5. Undetermined coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/laplace-transform.html">5.6. Laplace transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/integrating-factor.html">5.7. Integrating factor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/numerical-solution.html">5.8. Numerical solution methods</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../systems-first-order-odes/index.html">6. Systems of first-order ordinary differential equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -399,7 +402,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -415,6 +420,16 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation-and-definition">3.5.1. Motivation and definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-of-a-2-x-2-matrix">3.5.2. Inverse of a 2 x 2 matrix</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverses-using-gauss-jordan-elimination">3.5.3. Inverses using Gauss-Jordan elimination</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -426,6 +441,83 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="matrix-inversion">
 <h1><span class="section-number">3.5. </span>Matrix inversion<a class="headerlink" href="#matrix-inversion" title="Link to this heading">#</a></h1>
+<section id="motivation-and-definition">
+<h2><span class="section-number">3.5.1. </span>Motivation and definition<a class="headerlink" href="#motivation-and-definition" title="Link to this heading">#</a></h2>
+<p>Gauss-Jordan elimination works well for solving  <strong>Ax</strong> = <strong>b</strong>, but the process
+needs to be repeated for every new <strong>b</strong>. Is there an alternative if we need to
+solve <strong>Ax</strong> = <strong>b</strong> for many different <strong>b</strong>?</p>
+<aside class="topic">
+<p class="topic-title">Matrix inverse</p>
+<p>For a square (<em>n</em> x <em>n</em>) matrix <strong>A</strong>, the inverse <span class="math notranslate nohighlight">\(\vv{A}^{-1}\)</span> satisfies</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c075a1de-36a4-461e-a33b-4b2835b14dd2">
+<span class="eqno">(3.24)<a class="headerlink" href="#equation-c075a1de-36a4-461e-a33b-4b2835b14dd2" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\vv{A} \vv{A}^{-1} = \vv{A}^{-1} \vv{A} = \vv{I}
+\end{equation}\]</div>
+<p>where <strong>I</strong> is the <em>n</em> x <em>n</em> identity matrix.</p>
+</aside>
+<p>A matrix is called <em>nonsingular</em> or <em>invertible</em> if it has an inverse, but
+<em>singular</em> if it does not.</p>
+<aside class="topic">
+<p class="topic-title">Invertible matrix theorem</p>
+<p><strong>A</strong> is invertible if and only if the determinant of <strong>A</strong> is nonzero.</p>
+<p>(There are many more such conditions!)</p>
+</aside>
+<p>If the inverse of <strong>A</strong> exists, it is unique and can be used to
+solve <strong>Ax</strong> = <strong>b</strong>.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-cca15a64-6b22-4f81-abaa-ba890906b5db">
+<span class="eqno">(3.25)<a class="headerlink" href="#equation-cca15a64-6b22-4f81-abaa-ba890906b5db" title="Permalink to this equation">#</a></span>\[\begin{align}
+\vv{A} \vv{x} &amp;= \vv{b} \\
+\vv{A}^{-1} \vv{A} \vv{x} &amp;= \vv{A}^{-1} \vv{b} \\
+\vv{x} &amp;= \vv{A}^{-1} \vv{b}
+\end{align}\]</div>
+<p>Finding the inverse of <strong>A</strong> is usually hard. There is a general definition
+based on cofactors, as well as advanced numerical methods, that we will not
+cover. Instead, we focus on two options: a formula for 2 x 2 matrices, and
+use of Gauss-Jordan elimination for larger matrices.</p>
+</section>
+<section id="inverse-of-a-2-x-2-matrix">
+<h2><span class="section-number">3.5.2. </span>Inverse of a 2 x 2 matrix<a class="headerlink" href="#inverse-of-a-2-x-2-matrix" title="Link to this heading">#</a></h2>
+<p>For a 2 x 2 matrix,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-5e840e4e-3d22-471a-8030-3f9d807f8137">
+<span class="eqno">(3.26)<a class="headerlink" href="#equation-5e840e4e-3d22-471a-8030-3f9d807f8137" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\vv{A} = \begin{bmatrix} a &amp; b \\ c &amp; d \end{bmatrix},
+\end{equation}\]</div>
+<p>the matrix inverse is</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f3f6d665-846d-4a5c-83ce-3f6c0c881978">
+<span class="eqno">(3.27)<a class="headerlink" href="#equation-f3f6d665-846d-4a5c-83ce-3f6c0c881978" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\vv{A}^{-1} = \frac{1}{|\vv{A}|} \begin{bmatrix} d &amp; -b \\ -c &amp; a \end{bmatrix}
+\end{equation}\]</div>
+<p>(Flip <em>a</em> and <em>d</em>, change the signs of <em>b</em> and <em>c</em>.)</p>
+<div class="admonition-example-2-x-2-inverse admonition">
+<p class="admonition-title">Example: 2 x 2 inverse</p>
+<p>To find the inverse of</p>
+<div class="amsmath math notranslate nohighlight" id="equation-aa73ce61-9689-4797-9940-5cda2ecea805">
+<span class="eqno">(3.28)<a class="headerlink" href="#equation-aa73ce61-9689-4797-9940-5cda2ecea805" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\vv{A} = \begin{bmatrix} 3 &amp; 1 \\ 2 &amp; 4 \end{bmatrix}
+\end{equation}\]</div>
+<p>First, compute its determinant:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6910ec15-78a3-4d03-9eb4-be6e9e9b23ef">
+<span class="eqno">(3.29)<a class="headerlink" href="#equation-6910ec15-78a3-4d03-9eb4-be6e9e9b23ef" title="Permalink to this equation">#</a></span>\[\begin{equation}
+|\vv{A}| = 3 \times 4 - 2 \times 1 = 12 - 2 = 10
+\end{equation}\]</div>
+<p>Then, compute its inverse</p>
+<div class="amsmath math notranslate nohighlight" id="equation-843b318b-1081-4823-a55a-63b4f592d727">
+<span class="eqno">(3.30)<a class="headerlink" href="#equation-843b318b-1081-4823-a55a-63b4f592d727" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\vv{A}^{-1} = \frac{1}{10} \begin{bmatrix} 4 &amp; -1 \\ -2 &amp; 3 \end{bmatrix}
+= \begin{bmatrix} 0.4 &amp; -0.1 \\ -0.2 &amp; 0.3 \end{bmatrix}
+\end{equation}\]</div>
+</div>
+</section>
+<section id="inverses-using-gauss-jordan-elimination">
+<h2><span class="section-number">3.5.3. </span>Inverses using Gauss-Jordan elimination<a class="headerlink" href="#inverses-using-gauss-jordan-elimination" title="Link to this heading">#</a></h2>
+<p>For larger matrices, we can use <a class="reference internal" href="gauss-jordan.html"><span class="std std-doc">Gauss–Jordan elimination</span></a> to
+solve <span class="math notranslate nohighlight">\(\vv{A} \vv{A}^{-1} = \vv{I}\)</span> as a generalization of <strong>Ax</strong> = <strong>b</strong>.</p>
+<ul class="simple">
+<li><p>Check that <span class="math notranslate nohighlight">\(|\vv{A}| \ne 0\)</span> (i.e., <strong>A</strong> is invertible).</p></li>
+<li><p>Form the 2<em>n</em> x <em>n</em> augmented matrix <span class="math notranslate nohighlight">\([ \vv{A} \, | \, \vv{I} ]\)</span></p></li>
+<li><p>Perform row operations to bring to <span class="math notranslate nohighlight">\([ \vv{I} \, | \, \vv{A}^{-1} ]\)</span>.</p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -482,6 +574,23 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation-and-definition">3.5.1. Motivation and definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-of-a-2-x-2-matrix">3.5.2. Inverse of a 2 x 2 matrix</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverses-using-gauss-jordan-elimination">3.5.3. Inverses using Gauss-Jordan elimination</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
