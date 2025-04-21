@@ -5,39 +5,24 @@ Solve the following using matrix inversion:
 (a) 
 
 $$
-5x<sub>1</sub> - 2x<sub>2</sub> = 20.9
+5x_1 - 2x_2 = 20.9
 $$  
 
 $$
--x<sub>1</sub> + 4x<sub>2</sub> = -19.3
+-x_1 + 4x_2 = -19.3
 $$
 
-<!-- $$
-\[
-<ins><ins>A</ins></ins> = \begin{bmatric} 
-5 & -2 \\
--1 & 4 \\
-\end{bmatrix}
-\]
-<ins>b</ins> =  _       _
-               |   20.9  |
-               |_ -19.3 _|
+$A = \begin{bmatrix}5 &-2\\ -1 & 4 \end{bmatrix}, \quad
+b= \begin{bmatrix} 20.9 \\ -19.3\end {bmatrix}$
 
-$$                -->
+<ins>A</ins> <ins>x</ins>=<ins>b</ins>
+<ins>x</ins>=<sup><ins>A</ins></sup><ins>b</ins> 
 
+$$
+det <ins>A</ins> = 5*4-(-1)(-2) = 18
+$$
 
-$A = \begin{bmatrix}
-1 & 2 & 3 \\
-4 & 5 & 6 \\
-7 & 8 & 9
-\end{bmatrix}
-
-
-<ins><ins>A</ins></ins> <ins>x</ins>=<ins>b</ins>
-<ins>x</ins>=<sup><ins><ins>A</ins></ins></sup><ins>b</ins> 
-
-det <ins><ins>A</ins></ins> = 5*4-(-1)(-2) = 18
-<sup><ins><ins>A</ins></ins></sup> = 1/18 _     _
+<sup><ins><A</ins></sup> = 1/18 _     _
                                          |  4 2  |
                                          |_ 1 5 _|
 <ins>x</ins> = 1/18  _     _   _     _ = 1/18 _                _ = _    _ --> ___________________
@@ -45,25 +30,44 @@ det <ins><ins>A</ins></ins> = 5*4-(-1)(-2) = 18
                     |_ 1 5 _| |_-19.3_|      |_1*20.9 + 5*-19.3_| |_-4.2_|   |x<sub>2</sub>=-4.2 | 
                                                                              |___________________|
 (b)
-x<sub>1</sub> + 4x<sub>2</sub> = 8
-2x<sub>1</sub> + 8x<sub>2</sub> = 17 
-<ins><ins>A</ins></ins> =  _     _
-                          |  1 4  | 
-                          |_ 2 8 _|
+
+$$
+x_1 + 4x_2 = 8
+$$
+
+$$
+2x_1 + 8x_2 = 17 
+$$
+
+<ins>A</ins> =  _     _
+               |  1 4  | 
+               |_ 2 8 _|
 <ins>b</ins> =  _    _
                |  8   |
                |_ 17 _|
-det <ins><ins>A</ins></ins> = 1*8 - 2*4 = 0      <ins><ins>A</ins></ins> is singular because det <ins><ins>A</ins></ins> = 0, so it <ins>**cannot be inverted.**</ins>
+
+det <ins>A</ins> = 1*8 - 2*4 = 0      <ins>A</ins> is singular because det <ins><ins>A</ins></ins> = 0, so it <ins>**cannot be inverted.**</ins>
 
 (c) 
-x<sub>2</sub> + x<sub>3</sub> = -2
-4x<sub>2</sub> + 6x<sub>3</sub> = -12
-x<sub>1</sub> + x<sub>2</sub> + x<sub>3</sub> = 2
 
-                           _        _
-                          |   0 1 1  | 
-<ins><ins>A</ins></ins> = |   0 4 6  |
-                          |_  1 1 1 _|
+$$
+x_2 + x_3 = -2
+$$
+
+$$
+4x_2 + 6x_3 = -12
+$$
+
+$$
+x_1 + x_2 + x_3 = 2
+$$
+
+
+
+                _        _
+               |   0 1 1  | 
+<ins>A</ins> = |   0 4 6  |
+               |_  1 1 1 _|
                 _   _ 
                | -2  |
 <ins>b</ins> = | -12 |
