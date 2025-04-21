@@ -19,24 +19,67 @@ A= \begin{bmatrix}
 \end{bmatrix}
 $$
 
-
-we know that 
-
-$A =b \x = A^{-1}b$
-<ins>A</ins> <ins>x</ins>=<ins>b</ins>
-<ins>x</ins>=<sup><ins>A</ins></sup><ins>b</ins> 
-
 $$
-det <ins>A</ins> = 5*4-(-1)(-2) = 18
+b= \begin{bmatrix}
+20.9 \\
+-19.3
+\end{bmatrix}
 $$
 
-<sup><ins><A</ins></sup> = 1/18 _     _
-                                         |  4 2  |
-                                         |_ 1 5 _|
-<ins>x</ins> = 1/18  _     _   _     _ = 1/18 _                _ = _    _ --> ___________________
-                    |  4 2  | |  20.9 |      | 4*20.9 + 2*-19.3 | |  2.5 |   |x<sub>1</sub>=2.5  |
-                    |_ 1 5 _| |_-19.3_|      |_1*20.9 + 5*-19.3_| |_-4.2_|   |x<sub>2</sub>=-4.2 | 
-                                                                             |___________________|
+A*x=b 
+x = A^{-1}b
+
+$$
+det A = 5*4-(-1)(-2) = 18
+$$
+
+$$
+A^{-1} = \frac{1}{18} * 
+\begin{bmatrix}
+5 & -2 \\
+-1 & 4 
+\end{bmatrix}
+$$
+
+$$
+x = \frac{1}{18} *
+\begin{bmatrix}
+5 & -2 \\
+-1 & 4 
+\end{bmatrix}
+\begin{bmatrix}
+20.9 \\
+-19.3
+\end{bmatrix}
+$$
+
+=
+
+$$
+x = \frac{1}{18} *
+\begin{bmatrix}
+4*20.9 +  & 2*-19.3 \\
+1*20.9 + & 5*-19.3
+\end{bmatrix}
+$$
+
+=
+
+$$
+\begin{bmatrix}
+2.5 \\
+-4.2
+\end{bmatrix}
+$$
+
+$$ 
+x_1 = 2.5
+$$
+
+$$
+x_2 = -4.2
+$$
+
 (b)
 
 $$
@@ -47,14 +90,25 @@ $$
 2x_1 + 8x_2 = 17 
 $$
 
-<ins>A</ins> =  _     _
-               |  1 4  | 
-               |_ 2 8 _|
-<ins>b</ins> =  _    _
-               |  8   |
-               |_ 17 _|
+$$
+A= \begin{bmatrix}
+1 & 4 \\
+2 & 8
+\end{bmatrix}
+$$
 
-det <ins>A</ins> = 1*8 - 2*4 = 0      <ins>A</ins> is singular because det <ins><ins>A</ins></ins> = 0, so it <ins>**cannot be inverted.**</ins>
+$$
+b= \begin{bmatrix}
+8 \\
+17
+\end{bmatrix}
+$$
+
+$$
+det A = 1*8 - 2*4 = 0 
+$$
+
+A is singular because det A = 0, so it <ins>**cannot be inverted.**</ins>
 
 (c) 
 
@@ -70,42 +124,171 @@ $$
 x_1 + x_2 + x_3 = 2
 $$
 
+$$
+A= \begin{bmatrix}
+0 & 1 & 1 \\
+0 & 4 & 6 \\
+1 & 1 & 1 
+\end{bmatrix}
+$$
 
+$$
+b= \begin{bmatrix}
+-2 \\
+-12 \\
+2
+\end{bmatrix}
+$$
 
-                _        _
-               |   0 1 1  | 
-<ins>A</ins> = |   0 4 6  |
-               |_  1 1 1 _|
-                _   _ 
-               | -2  |
-<ins>b</ins> = | -12 |
-               |_ 2 _|
-det <ins><ins>A</ins></ins> = 0* | 4 6 | - 1* | 0 6 | + 1* | 0 4 | = -1(0-6) + 1(0-4) = 2
-                                 | 1 1 |      | 1 1 |      | 1 1 |
-Since det <ins><ins>A</ins></ins> ~=~ 0, <ins><ins>A</ins></ins> is invertible. Use Guass-Jordan elimination.
- _             _       _             _           _               _                _               _
-| 0 1 1 | 1 0 0 |     | 1 1 1 | 0 0 1 | reorder | 1 1 1 |  0 0 1  |              | 1 1 1 | 0 0   1 |
-| 0 1 1 | 1 0 0 | --> | 0 1 1 | 1 0 0 |   -->   | 0 1 1 |  1 0 0  |          --> | 0 1 1 | 1 0   0 |
-|_0 4 6 | 0 1 0_|     |_0 4 6 | 0 1 0_|         |_0 0 2 | -4 1 0 _| -4 Row 2     |_0 0 1 |-2 0.5 0_| divide by 2
-     _                _              _                 _                                               
-    | 1 1 0 | 2 -0.5 1 | -Row 3     | 1 0 0 | -1    0 1 | -Row2                                       
---> | 0 1 0 | 3 -0.5 0 | -Row 3 --> | 0 1 0 |  3 -0.5 0 |        
-    |_0 0 1 | -2 0.5 0_|            |_0 0 1 | -2  0.5 0_|      
+$$
+det A= 0*\begin{bmatrix}
+4 & 6 \\
+1 & 1
+\end{bmatrix}
+-1*\begin{bmatrix}
+0 & 6 \\
+1 & 1
+\end{bmatrix}
+1*\begin{bmatrix}
+0 & 4 \\
+1 & 1
+\end{bmatrix}
+$$
 
-                                          _         _
-                                         | -1    0 1 |
-    <sup><ins><ins>A</ins></ins></sup> = |  3 -0.5 0 |
-                                         |_-2  0.5 0_|
+$$
+= -1*(0-6) + 1*(0-4) = 2
+$$
 
-                                                                _         _   _   _   
-                                                               | -1    0 1 | | -2  |   
- <ins>x</ins>=<sup><ins><ins>A</ins></ins></sup><ins>b</ins> = |  3 -0.5 0 | | -12 | =                  
-                                                               |_-2  0.5 0_| |_ 2 _|   
- _                 _     _  _     ___________________
-| -1*-2 +     1*  2 |   |  4 |   | x<sub>1</sub> = 4 |
-| 3 *-2  + -0.5*-12 | = |  0 |   | x<sub>2</sub> = 0 |
-|_-2*-2 +   0.5*-12_|   |_-2_|   | x<sub>3</sub> = -2|
-                                 |___________________|
+Since det A does not equal 0, A is invertible. Use Gauss-Jordan elimination.
+
+$$
+\begin{bmatrix}
+0 & 1 & 1 : & 1 & 0 & 0 \\
+0 & 4 & 6 : & 0 & 1 & 0 \\
+1 & 1 & 1 : & 0 & 0 & 1 
+\end{bmatrix}
+$$
+
+$$
+-->
+$$
+
+$$
+\begin{bmatrix}
+1 & 1 & 1 : & 0 & 0 & 1 \\
+0 & 1 & 1 : & 1 & 0 & 0 \\
+0 & 4 & 6 : & 0 & 1 & 0 
+\end{bmatrix}
+$$
+
+reorder
+$$
+-->
+$$
+
+$$
+\begin{bmatrix}
+1 & 1 & 1 : & 0 & 0 & 1 \\
+0 & 1 & 1 : & 1 & 0 & 0 \\
+0 & 0 & 2 : & -4 & 1 & 0 
+\end{bmatrix}
+$$
+
+-4 Row 2
+
+$$
+\begin{bmatrix}
+1 & 1 & 1 : & 0 & 0 & 1 \\
+0 & 1 & 1 : & 1 & 0 & 0 \\
+0 & 0 & 1 : & -2 & 0.5 & 0 
+\end{bmatrix}
+$$
+
+divide by 2
+
+$$
+-->
+$$
+
+$$
+\begin{bmatrix}
+1 & 1 & 0 : & 2 & -0.5 & 1 \\
+0 & 1 & 0 : & 3 & -0.5 & 0 \\
+0 & 0 & 1 : & -2 & 0.5 & 0 
+\end{bmatrix}
+$$
+
+- Row 3
+- Row 3
+
+$$
+-->
+$$
+
+$$
+\begin{bmatrix}
+1 & 0 & 0 : & -1 & 0 & 1 \\
+0 & 1 & 0 : & 3 & -0.5 & 0 \\
+0 & 0 & 1 : & -2 & 0.5 & 0 
+\end{bmatrix}
+$$
+
+- Row 2
+
+$$
+A^{-1}=\begin{bmatrix}
+-1 & 0 & 1 \\
+3 & -0.5 & 0 \\
+-2 & 0.5 & 0 
+\end{bmatrix}
+$$
+
+$$
+x = A^{-1}b =\begin{bmatrix}
+-1 & 0 & 1 \\
+3 & -0.5 & 0 \\
+-2 & 0.5 & 0 
+\end{bmatrix}
+$$
+
+$$
+=\begin{bmatrix}
+-2 \\
+-12 \\
+2
+\end{bmatrix}
+$$
+
+= 
+$$
+x =\begin{bmatrix}
+-1*-2 +  & 1*2 \\
+3*-2 + & -0.5*-12 \\
+-2*-2 + 0.5*-12
+\end{bmatrix}
+$$
+
+=
+
+$$
+\begin{bmatrix}
+4 \\
+0 \\
+-2
+\end{bmatrix}
+$$
+
+$$
+x_1 = 4
+$$
+
+$$
+x_2 = 0
+$$
+
+$$
+x_3 = -2
+$$
 
 (d)
  4x<sub>2</sub> + 4x<sub>3</sub> = 24
