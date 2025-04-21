@@ -56,11 +56,11 @@ $\ubar{U}(\ubar{S}(T,\ubar{V}),\ubar{V})$ and $\ubar{S}(T,\ubar{V})$
 \ d \ubar{A} = - \ubar{S} dT - Pd \ubar{V}
 \end{equation}
 
-\begin{equation}
-\td{}{\ubar{A}}{T}{\ubar{V}} = - \ubar{S}
-\td{}{\ubar{A}}{\ubar{V}}{T} = -P
+\begin{align}
+\td{}{\ubar{A}}{T}{\ubar{V}} = - \ubar{S} \\
+\td{}{\ubar{A}}{\ubar{V}}{T} = -P \\
 \td{}{\ubar{S}}{\ubar{V}}{T} = \td{}{P}{T}{\ubar{V}}
-\end{equation}
+\end{align}
 
 
 Additional Ones: 
