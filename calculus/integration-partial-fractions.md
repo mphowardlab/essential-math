@@ -1,12 +1,15 @@
 # Partial fraction decomposition
 ## Shortcut: Heaviside Cover-up Method
-\[ 
+
+$$ 
 \frac{3x+11}{(x-3)(x+2)} = \frac{A_1}{x-3} + \frac{A_2}{x+2} 
-\]
+$$
+
 Multiply by a factor and take limit:
 \[ 
 \lim_{x\to 3} \left( \frac{3x+11}{x+2} = A_1 + \frac{A_2(x-3)}{x+2} \right) 
 \]
+
 \[ 
 \frac{3(3)+11}{3+2} = A_1 
 \]
