@@ -5,14 +5,15 @@ $y' = Ay$
 
 As an ansatz, assume a solution: 
 
-$y = e^{λt}x$
+\begin{align}
+y &= e^{λt}x
+y' &= λe^{λt}x
+\end{align}
 
-$y' = λe^{λt}x$
-
-$λe^{λt}x = Ae^{λt}x$
-
-$λx = Ax$
-
+\begin{align}
+λe^{λt}x &= Ae^{λt}x
+λx &= Ax
+\end{align}
 
 This is an eigenvalus problem! lambda is an eigenvalue, and x is an eigenvector of A.
 
@@ -29,8 +30,9 @@ y = (c_1 y_1) + (c_2 y_2)
 
 is also a solution.
 
-
-$y = c_1 e^{λ_1 t} x_1 + c_2 e^{λ_2 t} x_2 + \dots + c_n e^{λ_n t} x_n$ 
+\begin{equation}
+y = c_1 e^{λ_1 t} x_1 + c_2 e^{λ_2 t} x_2 + \dots + c_n e^{λ_n t} x_n
+\end{equation}
 
 
 There are some cases this fails, but we will not cover them.
