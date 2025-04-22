@@ -13,6 +13,7 @@ This work (c) 2025 is licensed under
 - Gwyneth A. Lovell
 - Faith Major
 - Lilli Midgette
+- Elijah  C. Mitchell
 - Michelle Schindler
 - Katie Sorensen
 
