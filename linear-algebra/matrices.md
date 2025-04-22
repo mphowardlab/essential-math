@@ -112,3 +112,144 @@ There are some other types of "special" matrices.
 
 There are several other types of special matrices, but we will leave those for a
 longer course on linear algebra!
+
+## Addition and scalar multiplication
+
+- *Equality*: $\vv{A} = \vv{B}$ if and only if **A** and **B** have the same
+  size and all their corresponding elements are equal.
+
+- *Addition*: $\vv{C} = \vv{A} + \vv{B}$ is defined if **A** and **B** have the
+  samesize. Then, the matrix elements are added element-wise:
+
+  \begin{equation}
+  C_{ij} = A_{ij} + B_{ij}
+  \end{equation}
+
+  Example:
+
+  \begin{equation}
+  \begin{bmatrix} 5 & -1 & 0 \\ 3 & 1 & 0 \end{bmatrix} +
+  \begin{bmatrix} 1 & 5 & 3 \\ 3 & 2 & 2 \end{bmatrix} =
+  \begin{bmatrix} -4 & 6 & 3 \\ 0 & 1 & 2 \end{bmatrix}
+  \end{equation}
+
+- *Scalar multiplication*: $\vv{B} = k\vv{A}$ multiplies each element of **A**
+  by *k*:
+
+  \begin{equation}
+  B_{ij} = kA_{ij}
+  \end{equation}
+
+  Example:
+
+  \begin{equation}
+  -2 \begin{bmatrix} 1 & 0  \\ 0 & -2  \end{bmatrix}
+  = \begin{bmatrix} -2 \times 1 & -2 \times 0 \\ -2 \times 0 & -2 \times 4 \end{bmatrix}
+  = \begin{bmatrix} -2 & 0 \\ 0 & 4 \end{bmatrix}
+  \end{equation}
+
+- *Subtraction*: same as addition of negative
+  $\vv{C} = \vv{A} - \vv{B} = \vv{A} + (-\vv{B})$ so
+
+  \begin{equation}
+  C_{ij} = A_{ij} - B_{ij}
+  \end{equation}
+
+```{topic} Rules of addition and scalar multiplication
+- *Commutative*: $\vv{A} + \vv{B} = \vv{B} + \vv{A}$
+
+- *Associative*: $(\vv{A} + \vv{B}) + \vv{C} = \vv{A} + (\vv{B} + \vv{C})$
+
+- *Distributive*: $k(\vv{A} + \vv{B}) = k\vv{A} + k\vv{B}$
+```
+
+```{example} Matrix addition and scalar multiplication
+Given
+
+\begin{equation}
+\vv{A} = \begin{bmatrix} -1 & 2  \\ 0 & 5  \end{bmatrix} \qquad
+\vv{B} = \begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix}
+\end{equation}
+
+Compute $2\vv{A} - \vv{B}$.
+
+---
+
+\begin{align}
+2\vv{A}-\vv{B} &= 2 \begin{bmatrix} -1 & 2  \\ 0 & 5  \end{bmatrix} -
+\begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix} \\
+&= \begin{bmatrix} -2 & 4  \\ 0 & 10  \end{bmatrix} -
+\begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix} \\
+&= \begin{bmatrix} -3 & 4  \\ 0 & 9  \end{bmatrix}
+\end{align}
+```
+
+## Matrix multiplication
+
+**C** = **AB** is defined if **A** has the same number of columns as **B** has
+rows. If **A** is *m* x *p* and **B** is *p* x *n*, **C** is *m* x *n* and its
+elements are
+
+\begin{equation}
+C_{ij} = \sum_{k=1}^p A_{ik} B_{kj}
+\end{equation}
+
+Example:
+
+\begin{align}
+\begin{bmatrix} 3 & 5 \\ 4 & 0 \\ -6 & -3 \end{bmatrix}
+\begin{bmatrix} 2 & -2 \\ 5 & 0 \end{bmatrix}
+&= \begin{bmatrix} 3\times2 + 5\times5 & 3\times-2 + 5\times0 \\
+4\times2 + 0\times5 & 4\times-2 + 0\times0 \\
+-6\times2 + -3\times5 &   -6\times-2 + -3\times0 \end{bmatrix} \\
+&= \begin{bmatrix} 31 & -6 \\ 8 & -8 \\ -27 & 12 \end{bmatrix}
+\end{align}
+
+Multiplying with a vector works the same!
+
+\begin{align}
+\begin{bmatrix} 3 & 5 \\ 4 & 0 \\ -6 & -3 \end{bmatrix}
+\begin{bmatrix} 1 \\ 2 \end{bmatrix}
+&= \begin{bmatrix} 3 \times 1 + 5 \times 2 \\
+4 \times 1 + 0 \times 2 \\
+-6 \times 1 + -3 \times 2
+\end{bmatrix} \\
+&= \begin{bmatrix} 8 \\ 4 \\ -12 \end{bmatrix}
+\end{align}
+
+```{topic} Rules of matrix multiplication
+- *Associative*: $\vv{A}(\vv{B}\vv{C}) = (\vv{A}\vv{B})\vv{C}$
+
+- *Distributive*: $(\vv{A} + \vv{B})\vv{C} = \vv{A}\vv{C} + \vv{B}\vv{C}$
+
+- **Not** generally commutative, i.e., $\vv{A}\vv{B} \ne \vv{B}\vv{A}$ for all
+  matrices.
+```
+
+## Transpose
+
+$\vv{A}^{\rm T}$ is the transpose of **A**, and its elements are obtained by
+"flipping" the rows and columns:
+
+\begin{equation}
+A_{ij}^{\rm T} = A_{ji}
+\end{equation}
+
+Example:
+
+\begin{equation}
+\begin{bmatrix} 1 & 2 \\ 4 & 3 \end{bmatrix}^{\rm T} =
+\begin{bmatrix} 1 & 4 \\ 2 & 3 \end{bmatrix}
+\end{equation}
+
+A matrix is called *symmetric* if $\vv{A}^{\rm T} = \vv{A}$.
+
+```{topic} Rules for transposition
+- $(\vv{A}^{\rm T})^{\rm T} = \vv{A}$
+
+- $(\vv{A} + \vv{B})^{\rm T} = \vv{A}^{\rm T} + \vv{B}^{\rm T}$
+
+- $(\vv{A}\vv{B})^{\rm T} = \vv{B}^{\rm T} + \vv{A}^{\rm T}$
+
+- $(k \vv{A})^{\rm T} = k\vv{A}^{\rm T}$
+```
