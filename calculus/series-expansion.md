@@ -171,7 +171,8 @@ Expand the following to two terms:
 6. $f(x)=\cos(4x)$ at $x=0$
 
    ```{solution}
-   From problem 1 we found...
+   Recall:
+   
    \begin{equation}
    f(x)=cos(x) \approx 1-\frac{x^2}{2}
    \end{equation}
@@ -218,8 +219,7 @@ Expand the following to two terms:
 9. $f(x)=\cos(x)$ at $x=\pi$
 
    ```{solution}
-   
-   Note: Reuse derivatives in problem 1
+   The function and its derivatives at $x=\pi$ are:
 
    \begin{align}
    f(x) &= \cos(x) & f(\pi) &= -1 \\
