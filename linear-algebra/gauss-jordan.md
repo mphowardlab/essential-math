@@ -1,13 +1,15 @@
 # Gauss–Jordan Elimination
+
 ## Example Problem
 
 Incompressible flow can be written analogous to an electrical circuit as
 
-$$
+\begin{equation}
 -\Delta P = RQ \tag{1}
-$$
+\end{equation}
 
-where \( ΔP \) is the pressure change, \( R \) is the resistance, and \( Q \) is the volumetric flow rate.
+where $\Delta P$ is the pressure change, *R* is the resistance, and *Q* is the
+volumetric flow rate.
 
 ```{image} ./_images/FluidCircuitImage.png
 :alt: Fluid System Modeled as Circuit
@@ -45,14 +47,11 @@ Matrix representation:
 \begin{bmatrix}
 Q_1 \\ Q_2 \\ Q_3
 \end{bmatrix}
-=
-\begin{bmatrix}
+= \begin{bmatrix}
 0 \\ 0 \\ 80 \\ 90
 \end{bmatrix}
-\tag{6}
 \end{equation}
 
----
 ## Gauss–Jordan Elimination Steps
 
 We use the augmented matrix form:
