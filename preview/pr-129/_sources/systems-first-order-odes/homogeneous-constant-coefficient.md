@@ -5,35 +5,32 @@ $y' = Ay$
 
 As an ansatz, assume a solution: 
 
-\begin{equation}
-$y=e^(λt) x$
-\end{equation}
+$y = e^(λt)x$
 
-\begin{equation}
-$y'=λe^(λt)x$
-\end{equation}
+$y' = λe^(λt)x$
 
-\begin{align}
-$λe^(λt)x &= Ae^(λt)x$\\
-λx &= Ax
-\end{align}
+$λe^(λt)x = Ae^(λt)x$
+
+$λx = Ax$
+
 
 This is an eigenvalus problem! lambda is an eigenvalue, and x is an eigenvector of A.
 
 
 We know an n*n matrix has n eigenvalues. Let's suppose the corresponding eigenvectors are all independent. What do we do?
 
-     Superposition principle: For a linear ODE, if y1 and y2 are both solutions, then
-     
-     \begin{align}
-     y = (c_1 y_1) + (c_2 y_2) 
-     \end{align}
-     
-     is also a solution.
 
-\begin{equation}
-y = $c_1 e^(λ_1 t) x_1$ + $c_2 e^(λ_2 t) x_2$ + \dots + $c_n e^(λ_n t) x_n$ 
-\end{equation}
+Superposition principle: For a linear ODE, if y1 and y2 are both solutions, then
+ 
+     
+y = (c_1 y_1) + (c_2 y_2) 
+
+
+is also a solution.
+
+
+$y = c_1 e^(λ_1 t) x_1 + c_2 e^(λ_2 t) x_2 + \dots + c_n e^(λ_n t) x_n$ 
+
 
 There are some cases this fails, but we will not cover them.
 
