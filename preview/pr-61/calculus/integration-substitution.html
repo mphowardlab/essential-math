@@ -57,6 +57,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"d": ["{\\operatorname{d}\\!{#1}}", 1], "dd": ["{\\d{}^{#1} #2 \\over \\d{#3}^{#1}}", 3], "pp": ["{\\partial^{#1} #2 \\over \\partial #3^{#1}}", 3], "td": ["{\\left(\\pp{#1}{#2}{#3} \\right)_{#4}}", 4], "ubar": ["\\underline{#1}", 1], "vv": ["\\mathbf{#1}", 1]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'calculus/integration-substitution';</script>
     <link rel="canonical" href="https://mphowardlab.github.io/essential-math/calculus/integration-substitution.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -202,13 +204,14 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../first-order-odes/index.html">5. First-order ordinary differential equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/separable.html">5.1. Separable differential equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/exact.html">5.2. Exact differential equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/linearity.html">5.3. Linearity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/undetermined-coefficients.html">5.4. Undetermined coefficients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/laplace-transform.html">5.5. Laplace transform</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/integrating-factor.html">5.6. Integrating factor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/numerical-solution.html">5.7. Numerical solution methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/definition.html">5.1. Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/separable.html">5.2. Separable differential equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/exact.html">5.3. Exact differential equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/linearity.html">5.4. Linearity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/undetermined-coefficients.html">5.5. Undetermined coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/laplace-transform.html">5.6. Laplace transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/integrating-factor.html">5.7. Integrating factor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/numerical-solution.html">5.8. Numerical solution methods</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../systems-first-order-odes/index.html">6. Systems of first-order ordinary differential equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -426,6 +429,43 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="integration-using-substitution">
 <h1><span class="section-number">1.5. </span>Integration using substitution<a class="headerlink" href="#integration-using-substitution" title="Link to this heading">#</a></h1>
+<p>When we know an integral</p>
+<div class="amsmath math notranslate nohighlight" id="equation-07209d92-3773-4d27-941d-85d96d6b4c7a">
+<span class="eqno">(1.10)<a class="headerlink" href="#equation-07209d92-3773-4d27-941d-85d96d6b4c7a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\int e^x \d{x} = e^x + c 
+\end{equation}\]</div>
+<p>we can evaluate related integrals like:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-18acc68e-a515-45a7-9bfa-ccc86fce5b0d">
+<span class="eqno">(1.11)<a class="headerlink" href="#equation-18acc68e-a515-45a7-9bfa-ccc86fce5b0d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\int e^{-x} \d{x} = -e^{-x} + c
+\end{equation}\]</div>
+<p>by making a <em>substitution</em>. Specifically, we define a new variable <em>u</em>,
+calculate its differential, and then replace both. For example, in this case,
+let <span class="math notranslate nohighlight">\(u = -x\)</span>. Then, <span class="math notranslate nohighlight">\(\d{u} = -\d{x}\)</span>. Equivalently, <span class="math notranslate nohighlight">\(x = -u\)</span> and
+<span class="math notranslate nohighlight">\(\d{x} = -\d{u}\)</span> so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-fefe2340-bc31-4b88-8919-a0b4b5251f75">
+<span class="eqno">(1.12)<a class="headerlink" href="#equation-fefe2340-bc31-4b88-8919-a0b4b5251f75" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\int e^{-x} \d{x} = -\int e^u \d{u} = -e^u + c = -e^{-x} + c
+\end{equation}\]</div>
+<div class="admonition-example-u-substitution admonition">
+<p class="admonition-title">Example: <em>u</em>-substitution</p>
+<p>Evaluate the integral</p>
+<div class="amsmath math notranslate nohighlight" id="equation-04efd998-2c37-4140-9f1a-bae6ff2838c8">
+<span class="eqno">(1.13)<a class="headerlink" href="#equation-04efd998-2c37-4140-9f1a-bae6ff2838c8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\int x e^{x^2} \d{x} = \frac{1}{2} e^{x^2} + c
+\end{equation}\]</div>
+<hr class="docutils" />
+<p>Let <span class="math notranslate nohighlight">\(u=x^2\)</span> so <span class="math notranslate nohighlight">\(\d{u} = 2x \d{x}\)</span>. Then,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f4e08802-cec0-4ba3-b4b8-c9a07fcd417c">
+<span class="eqno">(1.14)<a class="headerlink" href="#equation-f4e08802-cec0-4ba3-b4b8-c9a07fcd417c" title="Permalink to this equation">#</a></span>\[\begin{align}
+\int e^{x^2} x\d{x} =  \int e^u \cdot \frac{1}{2}\d{u} = \frac{1}{2} e^u + c
+\end{align}\]</div>
+<p>Plugging <em>u</em> back in gives the final answer:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-47b1ac14-1bfe-469c-88ec-b2c1cc4e3017">
+<span class="eqno">(1.15)<a class="headerlink" href="#equation-47b1ac14-1bfe-469c-88ec-b2c1cc4e3017" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\int xe^{x^2} \d{x} = \frac{1}{2}e^{x^2} + c
+\end{equation}\]</div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">

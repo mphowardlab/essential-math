@@ -204,13 +204,14 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../first-order-odes/index.html">5. First-order ordinary differential equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/separable.html">5.1. Separable differential equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/exact.html">5.2. Exact differential equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/linearity.html">5.3. Linearity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/undetermined-coefficients.html">5.4. Undetermined coefficients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/laplace-transform.html">5.5. Laplace transform</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/integrating-factor.html">5.6. Integrating factor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/numerical-solution.html">5.7. Numerical solution methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/definition.html">5.1. Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/separable.html">5.2. Separable differential equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/exact.html">5.3. Exact differential equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/linearity.html">5.4. Linearity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/undetermined-coefficients.html">5.5. Undetermined coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/laplace-transform.html">5.6. Laplace transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/integrating-factor.html">5.7. Integrating factor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/numerical-solution.html">5.8. Numerical solution methods</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../systems-first-order-odes/index.html">6. Systems of first-order ordinary differential equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -401,7 +402,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -417,6 +420,15 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-parts">1.6.1. Choosing parts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabular-method">1.6.2. Tabular method</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -428,66 +440,61 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="integration-by-parts">
 <h1><span class="section-number">1.6. </span>Integration by parts<a class="headerlink" href="#integration-by-parts" title="Link to this heading">#</a></h1>
-<p>When solving seperable ODEs, we may need to integrate complicated functions</p>
-<p>ex:</p>
-<div class="math notranslate nohighlight">
-\[y'=xe^{-6x} \to \int1dy=\int(xe^{-6x}dx)\]</div>
-<p>Remember:</p>
-<div class="math notranslate nohighlight" id="equation-2">
-<span class="eqno">(1.1)<a class="headerlink" href="#equation-2" title="Link to this equation">#</a></span>\[ \begin{align}\begin{aligned}\int(e^xdx)=e^x+c \\\int(xe^{x^2}dx) = \frac{1}{2}e^{x^2}+c\end{aligned}\end{align} \]</div>
-<p>We can solve this by u-substitution: <span class="math notranslate nohighlight">\(u=x^2\)</span> , <span class="math notranslate nohighlight">\(du=2xdx\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-7685643d-f717-4522-aa30-a016f8234e12">
-<span class="eqno">(1.2)<a class="headerlink" href="#equation-7685643d-f717-4522-aa30-a016f8234e12" title="Permalink to this equation">#</a></span>\[\begin{align}
-\int(xe^{x^2}dx) =
-
-\int\frac{1}{2}e^udu =
-
-\frac{1}{2}e^u+c
+<p>Integrals like</p>
+<div class="amsmath math notranslate nohighlight" id="equation-72e74cb7-4189-449c-a8a6-afb462eb2883">
+<span class="eqno">(1.16)<a class="headerlink" href="#equation-72e74cb7-4189-449c-a8a6-afb462eb2883" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\int x e^{-6 x} \d{x}
+\end{equation}\]</div>
+<p>are not solvably by <a class="reference internal" href="integration-substitution.html"><span class="std std-doc">substitution</span></a>, but they look
+like they are related closely enough that you may be able to! What to do here?
+Recall the <a class="reference internal" href="derivative-rules.html"><span class="std std-doc">product rule</span></a> for two functions <em>u</em> and <em>v</em>,
+then integrate:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ccdc84eb-4932-4b11-894b-2215a20ee1c1">
+<span class="eqno">(1.17)<a class="headerlink" href="#equation-ccdc84eb-4932-4b11-894b-2215a20ee1c1" title="Permalink to this equation">#</a></span>\[\begin{align}
+(uv)' &amp;= uv' + v u' \\
+uv &amp;= \int u \d{v} + \int v \d{u}
 \end{align}\]</div>
-<p>Then plug u back in and get the final answer:</p>
-<div class="math notranslate nohighlight" id="equation-same-as-above">
-<span class="eqno">(1.3)<a class="headerlink" href="#equation-same-as-above" title="Link to this equation">#</a></span>\[\int(xe^{x^2}dx) = \frac{1}{2}e^{x^2}+c\]</div>
-<p>But what to do here?</p>
-<p>Product rule:</p>
-<div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}(fg)'=fg'+gf'\\\int(d(fg)) = \int(fg'dx) + \int(gf'dx)\end{aligned}\end{align} \]</div>
-<p>Let <span class="math notranslate nohighlight">\(u=f(x)\)</span> , <span class="math notranslate nohighlight">\(du=f'dx\)</span> , <span class="math notranslate nohighlight">\(v=g(x)\)</span> , and <span class="math notranslate nohighlight">\(dv=g'dx\)</span></p>
-<p>This then goes to:</p>
-<div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}uv=\int(udv)+\int(vdu) \\\int(udv)=uv-\int(vdu)\end{aligned}\end{align} \]</div>
-<p>Apply this to the example above:</p>
-<div class="admonition-example-1-6-1 admonition">
-<p class="admonition-title">Example: 1.6.1</p>
-<div class="math notranslate nohighlight">
-\[\int(xe^{-6x}dx)\]</div>
-<p>Let <span class="math notranslate nohighlight">\(u=x\)</span> , which gives <span class="math notranslate nohighlight">\(du=dx\)</span> , and <span class="math notranslate nohighlight">\(dv=e^{-6x}dx\)</span> , which gives <span class="math notranslate nohighlight">\(v=\frac{-1}{6}e^{-6x}\)</span>.</p>
-<p>Then,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c0706f7b-e8a4-4935-957d-22d806b0c9af">
-<span class="eqno">(1.4)<a class="headerlink" href="#equation-c0706f7b-e8a4-4935-957d-22d806b0c9af" title="Permalink to this equation">#</a></span>\[\begin{align}
-$$\int(xe^{-6x}dx) 
-
-= x\frac{-e^{-6x}}{6} - \int\frac{-e^{-6x}}{6}dx 
-
-= x\frac{-e^{-6x}}{6} + \frac{-1}{6}\int(e^{-6x}dx) 
-
-= x\frac{-e^{-6x}}{6} - \frac{-e^{-6x}}{36} + c$$
+<p>Rearranging gives the familiar form:</p>
+<aside class="topic">
+<p class="topic-title">Integration by parts</p>
+<div class="amsmath math notranslate nohighlight" id="equation-fe897cac-1d50-4dcc-a935-69c46578df51">
+<span class="eqno">(1.18)<a class="headerlink" href="#equation-fe897cac-1d50-4dcc-a935-69c46578df51" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\int u \d{v} = uv - \int v \d{u}
+\end{equation}\]</div>
+<p>To apply this technique, identify a <em>u</em> and a <span class="math notranslate nohighlight">\(\d{v}\)</span>. Differentiate <span class="math notranslate nohighlight">\(u\)</span> and
+integrate <span class="math notranslate nohighlight">\(\d{v}\)</span>, then apply the formula.</p>
+</aside>
+<p>Let’s try this for the integral above with</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d80592c8-3164-46ea-83a4-3516d1066c3e">
+<span class="eqno">(1.19)<a class="headerlink" href="#equation-d80592c8-3164-46ea-83a4-3516d1066c3e" title="Permalink to this equation">#</a></span>\[\begin{align}
+u &amp;= x &amp; \d{v} &amp;= e^{-6x} \d{x} \\
+\d{u} &amp;= \d{x} &amp; v &amp;= -\frac{e^{-6x}}{6}
 \end{align}\]</div>
-</div>
-<p>How do we choose u vs. v?</p>
-<p>L.I.A.T.E</p>
-<p>Logarithmic  (best choice of u)</p>
-<p>Inverse</p>
-<p>Algebraic</p>
-<p>Trigonometric</p>
-<p>Exponential  (worst choice of u)</p>
-<div class="admonition-example-1-6-2 admonition">
-<p class="admonition-title">Example: 1.6.2</p>
+<p>so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-748a118c-72d9-4760-af6e-f200d594b75b">
+<span class="eqno">(1.20)<a class="headerlink" href="#equation-748a118c-72d9-4760-af6e-f200d594b75b" title="Permalink to this equation">#</a></span>\[\begin{align}
+\int x e^{-6x} \d{x} 
+&amp;= x\frac{-e^{-6x}}{6} - \int\frac{-1}{6} e^{-6x} \d{x} \\
+&amp;= -\frac{xe^{-6x}}{6} + \frac{1}{6} \int e^{-6x} \d{x} \\
+&amp;= -\frac{xe^{-6x}}{6} - \frac{e^{-6x}}{36} + c
+\end{align}\]</div>
+<section id="choosing-parts">
+<h2><span class="section-number">1.6.1. </span>Choosing parts<a class="headerlink" href="#choosing-parts" title="Link to this heading">#</a></h2>
+<p>The heart of the technique is making a suitable choice for <em>u</em> and <span class="math notranslate nohighlight">\(\d{v}\)</span>.
+The acronym L.I.A.T.E. can help make this choice:</p>
+<ul class="simple">
+<li><p><strong>L</strong>ogarithmic  (best choice of u)</p></li>
+<li><p><strong>I</strong>nverse</p></li>
+<li><p><strong>A</strong>lgebraic</p></li>
+<li><p><strong>T</strong>rigonometric</p></li>
+<li><p><strong>E</strong>xponential  (worst choice of u)</p></li>
+</ul>
 <div class="math notranslate nohighlight">
 \[\int(3x+5)\cos{\frac{x}{4}}dx = ?\]</div>
 <p>Let <span class="math notranslate nohighlight">\(u=3x+5\)</span> , which makes <span class="math notranslate nohighlight">\(du=3dx\)</span> , and <span class="math notranslate nohighlight">\(dv=\cos{\frac{x}{4}}dx\)</span> , which makes <span class="math notranslate nohighlight">\(v=4\sin{\frac{x}{4}}\)</span></p>
 <p>Which allows:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4c5a8fe8-16ac-4c83-b1ff-bd8e4f29badf">
-<span class="eqno">(1.5)<a class="headerlink" href="#equation-4c5a8fe8-16ac-4c83-b1ff-bd8e4f29badf" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-463c5efc-137f-4dc0-a590-5a879a7dbe27">
+<span class="eqno">(1.21)<a class="headerlink" href="#equation-463c5efc-137f-4dc0-a590-5a879a7dbe27" title="Permalink to this equation">#</a></span>\[\begin{align}
 $$\int(3x+5)\cos{\frac{x}{4}}dx 
 
 = (3x+5)[4\sin{\frac{x}{4}}] - \int4\sin{\frac{x}{4}}3dx 
@@ -499,16 +506,52 @@ $$\int(3x+5)\cos{\frac{x}{4}}dx
 <p>So…</p>
 <div class="math notranslate nohighlight">
 \[\int(3x+5)\cos{\frac{x}{4}}dx = (12x+20)[4\sin{\frac{x}{4}}] + 48\cos{\frac{x}{4}} + c\]</div>
-</div>
-<div class="admonition-example-1-6-3 admonition">
-<p class="admonition-title">Example: 1.6.3</p>
+<hr class="docutils" />
+<div class="math notranslate nohighlight">
+\[\int(lnxdx) = ?\]</div>
+<p>Let <span class="math notranslate nohighlight">\(u=lnx\)</span>, which makes <span class="math notranslate nohighlight">\(du=\frac{1}{x}dx\)</span>, and <span class="math notranslate nohighlight">\(dv=dx\)</span>, which makes <span class="math notranslate nohighlight">\(v=x\)</span></p>
+<p>Which allows:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-456f3498-c80e-427b-979a-d67a6a1a3f6c">
+<span class="eqno">(1.22)<a class="headerlink" href="#equation-456f3498-c80e-427b-979a-d67a6a1a3f6c" title="Permalink to this equation">#</a></span>\[\begin{align}
+$$\int(lnx) 
+
+= xlnx - \int(\frac{1}{x}xdx) 
+
+= xlnx - x + c$$
+\end{align}\]</div>
+<p>So…</p>
+<div class="math notranslate nohighlight">
+\[\int(lnx) = xlnx - x + c\]</div>
+<hr class="docutils" />
+<div class="math notranslate nohighlight">
+\[\int(x^5)(\sqrt(x^3+1))dx = ?\]</div>
+<p>Let <span class="math notranslate nohighlight">\(u=x^3\)</span>, which gives <span class="math notranslate nohighlight">\(du=3x^2dx\)</span>, and <span class="math notranslate nohighlight">\(dv=x^2\sqrt(x^3+1)dx\)</span>, which gives <span class="math notranslate nohighlight">\(v=\frac{2}{9}(x^3+1)^{\frac{3}{2}}\)</span></p>
+<p>Which allows:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-115cb820-5c29-49f6-b722-bfe468ed697f">
+<span class="eqno">(1.23)<a class="headerlink" href="#equation-115cb820-5c29-49f6-b722-bfe468ed697f" title="Permalink to this equation">#</a></span>\[\begin{align}
+$$\int(x^5)(\sqrt(x^3+1))dx 
+
+= x^3\frac{2}{9}(x^3+1)^{\frac{3}{2}} - \int(\frac{2}{9}(x^3+1)^{\frac{3}{2}})3x^2dx 
+
+= \frac{2}{9}x^3(x^3+1)^{\frac{3}{2}} - \frac{2}{9}\frac{2}{5}(x^3+1)^{\frac{5}{2}} + c 
+
+= \frac{2}{9}x^3(x^3+1)^{\frac{3}{2}} - \frac{4}{45}(x^3+1)^{\frac{5}{2}} + c$$
+\end{align}\]</div>
+<p>So…</p>
+<div class="math notranslate nohighlight">
+\[\int(x^5)(\sqrt(x^3+1))dx = \frac{2}{9}x^3(x^3+1)^{\frac{3}{2}} - \frac{4}{45}(x^3+1)^{\frac{5}{2}} + c\]</div>
+</section>
+<section id="tabular-method">
+<h2><span class="section-number">1.6.2. </span>Tabular method<a class="headerlink" href="#tabular-method" title="Link to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
 \[\int(x^4e^{\frac{x}{2}}dx) = ?\]</div>
 <p>Let <span class="math notranslate nohighlight">\(u=x^4\)</span> , which makes <span class="math notranslate nohighlight">\(du=4x^3\)</span> , and <span class="math notranslate nohighlight">\(dv=e^{\frac{x}{2}}dx\)</span> , which makes <span class="math notranslate nohighlight">\(v=2e^{\frac{x}{2}}\)</span></p>
-<p>\begin{align}
-$$\int(x^4e^{\frac{x}{2}}dx)</p>
-<p>= x^4(2e^{\frac{x}{2}}) - \int2e^{\frac{x}{2}}(4x^3)dx$$
-/end{align}</p>
+<div class="amsmath math notranslate nohighlight" id="equation-699907fd-1603-47a4-8b85-ec0815aa1543">
+<span class="eqno">(1.24)<a class="headerlink" href="#equation-699907fd-1603-47a4-8b85-ec0815aa1543" title="Permalink to this equation">#</a></span>\[\begin{align}
+$$\int(x^4e^{\frac{x}{2}}dx) 
+
+= x^4(2e^{\frac{x}{2}}) - \int2e^{\frac{x}{2}}(4x^3)dx$$
+\end{align}\]</div>
 <p>We will need to integrate by parts again but there is a shortcut!!</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -545,45 +588,7 @@ $$\int(x^4e^{\frac{x}{2}}dx)</p>
 <p>Simplified this will give the final answer of:</p>
 <div class="math notranslate nohighlight">
 \[\int(x^4e^{\frac{x}{2}}dx) = 2x^4e^{\frac{x}{2}} - 16x^3e^{\frac{x}{2}} + 96x^2e^{\frac{x}{2}} - 384xe^{\frac{x}{2}} + 768e^{\frac{x}{2}}\]</div>
-</div>
-<div class="admonition-example-1-6-4 admonition">
-<p class="admonition-title">Example: 1.6.4</p>
-<div class="math notranslate nohighlight">
-\[\int(lnxdx) = ?\]</div>
-<p>Let <span class="math notranslate nohighlight">\(u=lnx\)</span>, which makes <span class="math notranslate nohighlight">\(du=\frac{1}{x}dx\)</span>, and <span class="math notranslate nohighlight">\(dv=dx\)</span>, which makes <span class="math notranslate nohighlight">\(v=x\)</span></p>
-<p>Which allows:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-36b0cca2-b38f-4b4a-bfe5-381b8f9a5692">
-<span class="eqno">(1.6)<a class="headerlink" href="#equation-36b0cca2-b38f-4b4a-bfe5-381b8f9a5692" title="Permalink to this equation">#</a></span>\[\begin{align}
-$$\int(lnx) 
-
-= xlnx - \int(\frac{1}{x}xdx) 
-
-= xlnx - x + c$$
-\end{align}\]</div>
-<p>So…</p>
-<div class="math notranslate nohighlight">
-\[\int(lnx) = xlnx - x + c\]</div>
-</div>
-<div class="admonition-example-1-6-5 admonition">
-<p class="admonition-title">Example: 1.6.5</p>
-<div class="math notranslate nohighlight">
-\[\int(x^5)(\sqrt(x^3+1))dx = ?\]</div>
-<p>Let <span class="math notranslate nohighlight">\(u=x^3\)</span>, which gives <span class="math notranslate nohighlight">\(du=3x^2dx\)</span>, and <span class="math notranslate nohighlight">\(dv=x^2\sqrt(x^3+1)dx\)</span>, which gives <span class="math notranslate nohighlight">\(v=\frac{2}{9}(x^3+1)^{\frac{3}{2}}\)</span></p>
-<p>Which allows:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-57ed69e4-931f-4011-b68b-9733be276f2e">
-<span class="eqno">(1.7)<a class="headerlink" href="#equation-57ed69e4-931f-4011-b68b-9733be276f2e" title="Permalink to this equation">#</a></span>\[\begin{align}
-$$\int(x^5)(\sqrt(x^3+1))dx 
-
-= x^3\frac{2}{9}(x^3+1)^{\frac{3}{2}} - \int(\frac{2}{9}(x^3+1)^{\frac{3}{2}})3x^2dx 
-
-= \frac{2}{9}x^3(x^3+1)^{\frac{3}{2}} - \frac{2}{9}\frac{2}{5}(x^3+1)^{\frac{5}{2}} + c 
-
-= \frac{2}{9}x^3(x^3+1)^{\frac{3}{2}} - \frac{4}{45}(x^3+1)^{\frac{5}{2}} + c$$
-\end{align}\]</div>
-<p>So…</p>
-<div class="math notranslate nohighlight">
-\[\int(x^5)(\sqrt(x^3+1))dx = \frac{2}{9}x^3(x^3+1)^{\frac{3}{2}} - \frac{4}{45}(x^3+1)^{\frac{5}{2}} + c\]</div>
-</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -640,6 +645,22 @@ $$\int(x^5)(\sqrt(x^3+1))dx
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-parts">1.6.1. Choosing parts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabular-method">1.6.2. Tabular method</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
