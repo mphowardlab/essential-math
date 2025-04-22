@@ -5,3 +5,4 @@
    Some ODE's are hard(or impossible!) to solve analytically... or maybe you just don't want to! Numerical approximation to solution can be very valuable in these cases
 
    Euler's Method: Approximate y(t) by a Taylor Series
+   y(t+\Delta t)~~ y(t)+f(t,y)\Delta t
