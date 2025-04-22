@@ -16,7 +16,11 @@ so, $T_n = C_1 + C_2x$
  
  $y_1 = 1$ &nbsp; $y_2 = x$ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $W = 1*1-0*x = 1$
  
- $y_1' = 0$ &nbsp; $y_2' = 1$ 
+ $y_1' = 0$ &nbsp; $y_2' = 1$ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $r = -\frac{qxsinx}{α}$
+
+ $T_p = -1\int x(\frac{-qxsinx}{α})dx - x\int \frac{-qxsinx}{α}dx$
+
+ $ = \frac{q}{α}\int x^2sinxdx$
 
  From the given equations for our particular solution (yp(x)) and Wronskian value:
  - $yp(x) = -y1*(integral((y2*r)/W)dx) + y2*(integral((y1*r)/W)dx)$
