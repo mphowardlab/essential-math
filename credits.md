@@ -10,6 +10,7 @@ This work (c) 2025 is licensed under
 - Ella Governale
 - Michael P. Howard
 - Evan M. Hughes
+- Abby Lucas
 - Faith Major
 - Lilli Midgette
 - Elijah  C. Mitchell
