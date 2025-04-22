@@ -5,11 +5,11 @@ $y' = Ay$
 
 As an ansatz, assume a solution: 
 
-$y = e^(λt)x$
+$y = e^{λt}x$
 
-$y' = λe^(λt)x$
+$y' = λe^{λt}x$
 
-$λe^(λt)x = Ae^(λt)x$
+$λe^{λt}x = Ae^{λt}x$
 
 $λx = Ax$
 
@@ -21,15 +21,16 @@ We know an n*n matrix has n eigenvalues. Let's suppose the corresponding eigenve
 
 
 Superposition principle: For a linear ODE, if y1 and y2 are both solutions, then
- 
-     
-y = (c_1 y_1) + (c_2 y_2) 
 
+
+\begin{equation}
+y = (c_1 y_1) + (c_2 y_2) 
+\end{equation}
 
 is also a solution.
 
 
-$y = c_1 e^(λ_1 t) x_1 + c_2 e^(λ_2 t) x_2 + \dots + c_n e^(λ_n t) x_n$ 
+$y = c_1 e^{λ_1 t} x_1 + c_2 e^{λ_2 t} x_2 + \dots + c_n e^{λ_n t} x_n$ 
 
 
 There are some cases this fails, but we will not cover them.
