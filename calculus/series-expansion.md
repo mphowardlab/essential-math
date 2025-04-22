@@ -118,11 +118,12 @@ Expand the following to two terms:
 
 3. $f(x)=e^x$ at $x=0$
 
-   Derive and evaluate:
+   ```{solution}
+   The function and its derivatives at $x=0$ are:
 
    \begin{align}
-   f(x)&=e^x \rightarrow f(0)=1\\
-   f'(x)&=e^x \rightarrow f'(0)=1
+   f(x)&=e^x & f(0) &= 1\\
+   f'(x)&=e^x & f'(0) &= 1
    \end{align}
 
    So:
@@ -130,15 +131,17 @@ Expand the following to two terms:
    \begin{equation}
    f(x) \approx 1+x
    \end{equation}
+   ```
 
 4. $f(x)=\ln(1+x)$ at $x=0$
 
-   Derive and Evaluate:
+   ```{solution}
+   The function and its derivatives at $x=0$ are:
 
    \begin{align}
-   f(x)&=\ln(1+x) \rightarrow f(0)=0\\
-   f'(x)&=\frac{1}{1+x} \rightarrow f'(0)=1\\
-   f''(x)&=-\frac{1}{(1+x)^2} \rightarrow f''(0)=-1
+   f(x)&=\ln(1+x) & f(0) &= 0\\
+   f'(x)&=\frac{1}{1+x} & f'(0) &= 1\\
+   f''(x)&=-\frac{1}{(1+x)^2} & f''(0) &= -1
    \end{align}
 
    So:
@@ -146,14 +149,16 @@ Expand the following to two terms:
    \begin{equation}
    f(x) \approx x-\frac{x^2}{2}
    \end{equation}
+   ```
 
 5. $f(x)=\frac{1}{1+x}$ at $x=0$
 
-   Derive and Evaluate:
+   ```{solution}
+   The function and its derivatives at $x=0$ are:
 
    \begin{align}
-   f(x)&=\frac{1}{1+x} \rightarrow f(0)=1\\
-   f'(x)&=-\frac{1}{(1+x)^2} \rightarrow f'(0)=1
+   f(x)&=\frac{1}{1+x} & f(0) &= 1\\
+   f'(x)&=-\frac{1}{(1+x)^2} & f'(0) &= 1
    \end{align}
 
    So:
@@ -161,28 +166,25 @@ Expand the following to two terms:
    \begin{equation}
    f(x) \approx 1-x
    \end{equation}
+   ```
 
 6. $f(x)=\cos(4x)$ at $x=0$
 
-   From part (a) we found...
-
+   ```{solution}
    \begin{equation}
    f(x)=cos(x) \approx 1-\frac{x^2}{2}
    \end{equation}
-
-   We can find the Taylor series of a function $f(ax)$ by substituting $ax$ for $x$
-   in the Taylor series for $f(x)$.
 
    So:
 
    \begin{equation}
    f(x)=\cos(4x) \approx 1-\frac{(4x)^2}{2} \approx 1-8x^2
    \end{equation}
+   ```
 
 7. $f(x)=\cos(x-\pi)$ at $x=\pi$
 
-   We can use the same method used to solve part (f).
-
+   ```{solution}
    \begin{equation}
    f(x)=cos(x) \approx 1-\frac{x^2}{2}
    \end{equation}
@@ -194,45 +196,47 @@ Expand the following to two terms:
    \end{equation}
 
    Note: There is a constant shift of $x$ and $x_0$
+   ```
 
 8. $f(x)=e^x \sin(x)$ at $x=0$
 
-   To find the Taylor expansion of the product of two functions, f(x)·g(x), you may
-   multiply their individual Taylor series expansions.
-
-   Recall:
-
-   The Taylor expansion of $f(x)=e^x$ is $f(x) \approx 1+x$
-
-   The Taylor expansion of $f(x)=\sin(x)$ is $f(x) \approx x-\frac{x^3}{6}$
+   ```{solution}
+   $f(x)=e^x$ \approx 1+x$
+   $f(x)=\sin(x)$ \approx x-\frac{x^3}{6}$
 
    So:
 
    \begin{equation}
    f(x) \approx (1+x+\dots)(x-\frac{x^3}{6}+\dots) \approx x+x^2
    \end{equation}
+   ```
 
 9. $f(x)=\cos(x)$ at $x=\pi$
 
-   Note: Reuse derivatives from part (a) but evaluate at $\pi$ instead of zero.
+   ```{solution}
+   
+   Note: Reuse derivatives in (1)
 
    \begin{align}
-   f(\pi)=-1\\
-   f'(\pi)=0\\
-   f''(\pi)=1
+   f(x) &= \cos(x) & f(\pi) &= -1 \\
+   f'(x) &= -\sin(x) & f'(\pi) &= 0 \\
+   f''(x) &= -\cos(x) & f''(\pi) &= 1
    \end{align}
 
    \begin{equation}
    f(x) \approx -1+\frac{1}{2}(x-\pi)^2
    \end{equation}
+   ```
 
 10. $f(x)=7x^2-6x+1$ at $x=2$
 
+    ```{solution}
     \begin{align}
-    f(x)&=7x^2-6x+1 \rightarrow f(2)=17\\
-    f'(x)&=14x-6 \rightarrow f'(2)=22
+    f(x)&=7x^2-6x+1 & f(2) &= 17\\
+    f'(x)&=14x-6 & f'(2) &= 22
     \end{align}
 
     \begin{equation}
     f(x) \approx 17+22(x-2)
     \end{equation}
+    ```
