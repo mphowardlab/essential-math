@@ -441,24 +441,27 @@ document.write(`
 <h1><span class="section-number">6.2. </span>Homogeneous linear first-order ODEs with constant coefficients<a class="headerlink" href="#homogeneous-linear-first-order-odes-with-constant-coefficients" title="Link to this heading">#</a></h1>
 <p><span class="math notranslate nohighlight">\(y' = Ay\)</span></p>
 <p>As an ansatz, assume a solution:</p>
-<p><span class="math notranslate nohighlight">\(y = e^(λt)x\)</span></p>
-<p><span class="math notranslate nohighlight">\(y' = λe^(λt)x\)</span></p>
-<p><span class="math notranslate nohighlight">\(λe^(λt)x = Ae^(λt)x\)</span></p>
+<p><span class="math notranslate nohighlight">\(y = e^{λt}x\)</span></p>
+<p><span class="math notranslate nohighlight">\(y' = λe^{λt}x\)</span></p>
+<p><span class="math notranslate nohighlight">\(λe^{λt}x = Ae^{λt}x\)</span></p>
 <p><span class="math notranslate nohighlight">\(λx = Ax\)</span></p>
 <p>This is an eigenvalus problem! lambda is an eigenvalue, and x is an eigenvector of A.</p>
 <p>We know an n*n matrix has n eigenvalues. Let’s suppose the corresponding eigenvectors are all independent. What do we do?</p>
 <p>Superposition principle: For a linear ODE, if y1 and y2 are both solutions, then</p>
-<p>y = (c_1 y_1) + (c_2 y_2)</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2ad8db86-eb47-4b5a-b863-43cef2c23ae2">
+<span class="eqno">(6.1)<a class="headerlink" href="#equation-2ad8db86-eb47-4b5a-b863-43cef2c23ae2" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y = (c_1 y_1) + (c_2 y_2) 
+\end{equation}\]</div>
 <p>is also a solution.</p>
-<p><span class="math notranslate nohighlight">\(y = c_1 e^(λ_1 t) x_1 + c_2 e^(λ_2 t) x_2 + \dots + c_n e^(λ_n t) x_n\)</span></p>
+<p><span class="math notranslate nohighlight">\(y = c_1 e^{λ_1 t} x_1 + c_2 e^{λ_2 t} x_2 + \dots + c_n e^{λ_n t} x_n\)</span></p>
 <p>There are some cases this fails, but we will not cover them.</p>
 <section id="example-reaction-network">
 <h2><span class="section-number">6.2.1. </span>Example: Reaction Network<a class="headerlink" href="#example-reaction-network" title="Link to this heading">#</a></h2>
 <p>A = [ -k1, 0, 0; k1, -k2, 0; 0, k2, 0 ];</p>
 <p>c’ = A * c</p>
 <p>Matrix A is lower triangular, so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-35b09aae-e3cf-4886-9062-5a050b3932a0">
-<span class="eqno">(6.1)<a class="headerlink" href="#equation-35b09aae-e3cf-4886-9062-5a050b3932a0" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6a9e00b7-7493-4975-8698-227c1873cdd3">
+<span class="eqno">(6.2)<a class="headerlink" href="#equation-6a9e00b7-7493-4975-8698-227c1873cdd3" title="Permalink to this equation">#</a></span>\[\begin{align}
 λ1 = -k1 \rightarrow  [0, 0, 0; k1, -k2+k1, 0; 0, k2, k1] \\
 \rightarrow (k1*x1)-(k2-k1)*x2=0 \\
 \rightarrow (k2*x2)+(k1*x3)=0 \\
@@ -471,13 +474,13 @@ document.write(`
 \rightarrow x3= [0; 0; 1] \\
 \end{align}\]</div>
 <p>Hence,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-221a0343-11c8-4427-b49e-cd141b4f5899">
-<span class="eqno">(6.2)<a class="headerlink" href="#equation-221a0343-11c8-4427-b49e-cd141b4f5899" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-98928268-a655-411a-b39e-d5ad7680f226">
+<span class="eqno">(6.3)<a class="headerlink" href="#equation-98928268-a655-411a-b39e-d5ad7680f226" title="Permalink to this equation">#</a></span>\[\begin{align}
  c = (a1 * exp(-k1 * t) * x1) + (a2 * exp(-k2 * t) * x2) + (a3 * x3) 
 \end{align}\]</div>
 <p>Initial Condition:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bb97720f-f2ea-430a-8521-c1a156fc630e">
-<span class="eqno">(6.3)<a class="headerlink" href="#equation-bb97720f-f2ea-430a-8521-c1a156fc630e" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-dc0adea6-4ce6-4b1f-8f88-53eda934948f">
+<span class="eqno">(6.4)<a class="headerlink" href="#equation-dc0adea6-4ce6-4b1f-8f88-53eda934948f" title="Permalink to this equation">#</a></span>\[\begin{align}
 C(0) = [CA0; 0; 0];  = [a1(-(k2-k1)/k2); -a1(k1/k2)-a2; a1+a2+a3] \\
 %disp(C(0))
 \rightarrow  a1 = -CA0(k2/(k2-k1))  \\
@@ -485,8 +488,8 @@ C(0) = [CA0; 0; 0];  = [a1(-(k2-k1)/k2); -a1(k1/k2)-a2; a1+a2+a3] \\
 \rightarrow  a3 = -a1 - a2 = Ca0(k2/(k2-k1)) - CA0(k1/(k2-k1)) = CA0 
 \end{align}\]</div>
 <p>So,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-554def34-de96-4a6c-9a99-d48b06ed9719">
-<span class="eqno">(6.4)<a class="headerlink" href="#equation-554def34-de96-4a6c-9a99-d48b06ed9719" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-09058442-ab81-4596-a145-c371d6e26185">
+<span class="eqno">(6.5)<a class="headerlink" href="#equation-09058442-ab81-4596-a145-c371d6e26185" title="Permalink to this equation">#</a></span>\[\begin{align}
 CA(t) = a1(exp(-k1 * t))(-(k2-k1)/k2) = CA0 * exp(-k1 * t)  \\
 CB(t) = a1(exp(-k1 * t))(-k1/k2) + a2(exp(-k2 * t))(-1) = CA0 * (k1 / (k2 - k1)) * (exp(-k1 * t) - exp(-k2 * t)) \\
 CC(t) = a1(exp(-k1 * t)) + a2(exp(-k2 * t)) + a3 = CA0 * (1 - (k2 / (k2 - k1)) * exp(-k1 * t)) + (k1 / (k2 - k1)) * exp(-k2 * t)
