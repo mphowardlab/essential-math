@@ -88,42 +88,76 @@ solve $\vv{A} \vv{A}^{-1} = \vv{I}$ as a generalization of **Ax** = **b**.
 
 - Perform row operations to bring to $[ \vv{I} \, | \, \vv{A}^{-1} ]$.
 
-Example: Use Pump Example
-Q_1-Q_2+Q_3=0   (1)
--Q_1+Q_2-Q_3=0
-20Q_1+10Q_2=80  (2)
-10Q_2+25Q_3=90  (3)
-We need a square matrix. We know one equation is redundant since we got a row of zeros before, so choose three equations. 
-A= 
-\begin{equation}
-\begin{bmatrix} 1&-1&1 \\ 20&10&0 \\ 0&10&25\end{bmatrix}
-\begin{bmatrix} 0 \\ 80 \\ 90\ \end{bmatrix}
+```{example} Pump circuit
+We will resolve the problem we used [Gauss-Jordan elimination](gauss-jordan.md)
+for, but now using the matrix inverse. As a reminder, the equations to solve
+were
 
-|A|= -10* \left|\begin{array}{ccc} 
-1&1 \\ 20 & 0\end{array}\right| + 25*\left|\begin{array}{ccc} 
-1&-1 \\ 20 & 10\end{array}\right|= 10*(0-20)+25*(10+20)=200+750=950
-***
-\[
-\left[ \begin{array}{ccc|c}
+\begin{align}
+Q_1 - Q_2 + Q_3 &= 0 \\
+Q_1 - Q_2 + Q_3 &= 0 \\
+20Q_1 + 10Q_2 + 0Q_3 &= 80 \\
+0Q_1 + 10Q_2 + 25Q_3 &= 90
+\end{align}
+
+We need a square matrix to calculate the inverse, and we know the second
+equation is redundant of the first. We write this in matrix form **Ax** = **b**
+with
+
+\begin{equation}
+\vv{A} = \begin{bmatrix} 1 & -1 & 1 \\ 20 & 10 & 0 \\ 0 & 10 & 25\end{bmatrix}
+\qquad
+\vv{b} = \begin{bmatrix} 0 \\ 80 \\ 90 \end{bmatrix}
+\end{equation}
+
+First, compute the determinant to make sure **A** is invertible
+
+\begin{align}
+|\vv{A}| &= -10 \begin{vmatrix} 1 & 1 \\ 20 & 0 \end{vmatrix} +
+25 \begin{vmatrix} 1 & -1 \\ 20 & 10\end{vmatrix} \\
+&= 10 (0-20) + 25 (10+20) = 950
+\end{align}
+
+The determinant is nonzero, so $\vv{A}^{-1}$ exists. Form the augmented matrix we
+need to compute, then use a similar sequence of row operations as when we used
+Gauss-Jordan elimination to solve directly:
+
+\begin{align}
+&\begin{bmatrix}
 1 & -1 & 1 & 1 & 0 & 0 \\
-0 & 10 & 25 & 0 & 1 & 0 \\
-0 & 10 & 25 & 0 & 0 & 1 \\
-\end{array} \right]
-\]
-\[
-\left[ \begin{array}{ccc|c}
+20 & 10 & 0 & 0 & 1 & 0 \\
+0 & 10 & 25 & 0 & 0 & 1
+\end{bmatrix}
+\begin{matrix}
+\vphantom{R_1} \\ -20 R_1 \\ \vphantom{R_1}
+\end{matrix} \\
+\to &\begin{bmatrix}
 1 & -1 & 1 & 1 & 0 & 0 \\
 0 & 30 & -20 & -20 & 1 & 0 \\
-0 & 10 & 25 & 0 & 0 & 1 \\
-\end{array} \right]
-\]
-\[
-\left[ \begin{array}{ccc|c}
+0 & 10 & 25 & 0 & 0 & 1
+\end{bmatrix}
+\begin{matrix}
+\vphantom{R_1} \\ {\rm swap}\,R_3 \\ \vphantom{R_1}
+\end{matrix} \\
+\to &\begin{bmatrix}
 1 & -1 & 1 & 1 & 0 & 0 \\
 0 & 10 & 25 & 0 & 0 & 1 \\
-0 & 0 & -95 & -20 & 1 & -3 \\
-\end{array} \right]
-\]
+0 & 30 & -20 & -20 & 1 & 0
+\end{bmatrix}
+\begin{matrix}
+\vphantom{R_1} \\ \vphantom{R_1} \\ -3 R_2
+\end{matrix} \\
+\to &\begin{bmatrix}
+1 & -1 & 1 & 1 & 0 & 0 \\
+0 & 10 & 25 & 0 & 0 & 1 \\
+0 & 0 & -95 & -20 & 1 & -3
+\end{bmatrix}
+\begin{matrix}
+\vphantom{R_1} \\ \div 10 \\ \div -95
+\end{matrix} \\
+\end{align}
+
+<!---
 \[
 \left[ \begin{array}{ccc|c}
 1 & -1 & 1 & 1 & 0 & 0 \\
@@ -145,3 +179,5 @@ A=
 0 & 0 & 1 & .211 & -.10 & 0.32 \\
 \end{array} \right]
 \]
+--->
+```
