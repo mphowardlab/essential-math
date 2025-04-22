@@ -204,13 +204,14 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../first-order-odes/index.html">5. First-order ordinary differential equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/separable.html">5.1. Separable differential equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/exact.html">5.2. Exact differential equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/linearity.html">5.3. Linearity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/undetermined-coefficients.html">5.4. Undetermined coefficients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/laplace-transform.html">5.5. Laplace transform</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/integrating-factor.html">5.6. Integrating factor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/numerical-solution.html">5.7. Numerical solution methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/definition.html">5.1. Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/separable.html">5.2. Separable differential equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/exact.html">5.3. Exact differential equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/linearity.html">5.4. Linearity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/undetermined-coefficients.html">5.5. Undetermined coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/laplace-transform.html">5.6. Laplace transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/integrating-factor.html">5.7. Integrating factor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/numerical-solution.html">5.8. Numerical solution methods</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../systems-first-order-odes/index.html">6. Systems of first-order ordinary differential equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -424,8 +425,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fixed-point-iteration">4.2.1. Fixed Point Iteration</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bisection-search">4.2.2. Bisection Search</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fixed-point-iteration">4.2.1. Fixed point iteration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bisection-search">4.2.2. Bisection search</a></li>
 </ul>
             </nav>
         </div>
@@ -440,25 +441,30 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="root-finding-methods">
 <h1><span class="section-number">4.2. </span>Root finding methods<a class="headerlink" href="#root-finding-methods" title="Link to this heading">#</a></h1>
 <section id="fixed-point-iteration">
-<h2><span class="section-number">4.2.1. </span>Fixed Point Iteration<a class="headerlink" href="#fixed-point-iteration" title="Link to this heading">#</a></h2>
-<p>If we want to numerically solve f(x) = 0, rearrange f(x) to get g(x) = x. Then, choose an inital guess <span class="math notranslate nohighlight">\(x_o\)</span> and iterate:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-399e241a-34ff-4cdd-872b-b2bc1a0a951d">
-<span class="eqno">(4.1)<a class="headerlink" href="#equation-399e241a-34ff-4cdd-872b-b2bc1a0a951d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<h2><span class="section-number">4.2.1. </span>Fixed point iteration<a class="headerlink" href="#fixed-point-iteration" title="Link to this heading">#</a></h2>
+<p>If we want to numerically solve <span class="math notranslate nohighlight">\(f(x) = 0\)</span>, rearrange <span class="math notranslate nohighlight">\(f(x)\)</span> to get <span class="math notranslate nohighlight">\(g(x) = x\)</span>.
+Then, choose an inital guess <span class="math notranslate nohighlight">\(x_0\)</span> and iterate:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-217afda3-87d6-4c20-bf7a-110457681bce">
+<span class="eqno">(4.1)<a class="headerlink" href="#equation-217afda3-87d6-4c20-bf7a-110457681bce" title="Permalink to this equation">#</a></span>\[\begin{equation}
 x_{n+1} = g(x_n)
 \end{equation}\]</div>
-<p>until <span class="math notranslate nohighlight">\(x_{n+1} = x_n\)</span> to the desired precision (error tolerance).<br></p>
+<p>until <span class="math notranslate nohighlight">\(x_{n+1} = x_n\)</span> to the desired precision (error tolerance).</p>
 <div class="admonition-example-using-fixed-point-iteration admonition">
-<p class="admonition-title">Example: Using Fixed Point Iteration</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1c560b89-deaa-4cad-a4ad-a3c0e264a927">
-<span class="eqno">(4.2)<a class="headerlink" href="#equation-1c560b89-deaa-4cad-a4ad-a3c0e264a927" title="Permalink to this equation">#</a></span>\[\begin{align}
-f(x) = e^{-x^2} - x = 0 \\
-e^{-x^2} = x 
+<p class="admonition-title">Example: Using fixed point iteration</p>
+<p>To solve</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4940142b-b29f-4e7f-9aee-d52875cfd32d">
+<span class="eqno">(4.2)<a class="headerlink" href="#equation-4940142b-b29f-4e7f-9aee-d52875cfd32d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+e^{-x^2} - x = 0
+\end{equation}\]</div>
+<p>First rearrange</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f00a423f-8d54-4914-92f4-39f19ceb1789">
+<span class="eqno">(4.3)<a class="headerlink" href="#equation-f00a423f-8d54-4914-92f4-39f19ceb1789" title="Permalink to this equation">#</a></span>\[\begin{align}
+x = e^{-x^2} = g(x)
 \end{align}\]</div>
-<p>where <span class="math notranslate nohighlight">\(g(x) = e^{-x^2}\)</span> <br></p>
-<p>Guess <span class="math notranslate nohighlight">\(x_o = 0\)</span>, then set up a table: <br></p>
+<p>Then, guess <span class="math notranslate nohighlight">\(x_0 = 0\)</span> and set up a table:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="head"><p>n</p></th>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(n\)</span></p></th>
 <th class="head"><p><span class="math notranslate nohighlight">\(x_n\)</span></p></th>
 <th class="head"><p><span class="math notranslate nohighlight">\(g(x_n)\)</span></p></th>
 </tr>
@@ -476,61 +482,83 @@ e^{-x^2} = x
 <td><p>0.368</p></td>
 <td><p>0.873</p></td>
 </tr>
-<tr class="row-odd"><td><p>.</p></td>
-<td><p>.</p></td>
-<td><p>.</p></td>
+<tr class="row-odd"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
 </tr>
-<tr class="row-even"><td><p>.</p></td>
-<td><p>.</p></td>
-<td><p>.</p></td>
-</tr>
-<tr class="row-odd"><td><p>5</p></td>
+<tr class="row-even"><td><p>51</p></td>
 <td><p>0.653</p></td>
 <td><p>0.6528</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>for each iteration, <span class="math notranslate nohighlight">\(g(x_n)\)</span> is used as the new <span class="math notranslate nohighlight">\(x_n\)</span> <br>
-at <span class="math notranslate nohighlight">\(n = 5, 0.6530 \approx 0.6528\)</span> <br></p>
+<p>At each iteration, <span class="math notranslate nohighlight">\(g(x_n)\)</span> is used as the new <span class="math notranslate nohighlight">\(x_n\)</span> until at <span class="math notranslate nohighlight">\(n = 5\)</span>, where
+<span class="math notranslate nohighlight">\(x_n = 0.6530 \approx 0.6528 = g(x_n)\)</span>.</p>
 </div>
+<p>The choice of rearranging <span class="math notranslate nohighlight">\(f(x)\)</span> is not unique, and some choices may be better
+than others. For example, convergence is only guaranteed when
+<span class="math notranslate nohighlight">\(|g'(x)| \le k &lt; 1\)</span> for all <span class="math notranslate nohighlight">\(x\)</span> in an interval around the solution. Experience
+will guide your choice of rearrangement.</p>
 <div class="admonition-example-rearranging-functions admonition">
-<p class="admonition-title">Example: Rearranging Functions</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c403b2c6-bb6b-4976-83a8-d0d6907e0d4d">
-<span class="eqno">(4.3)<a class="headerlink" href="#equation-c403b2c6-bb6b-4976-83a8-d0d6907e0d4d" title="Permalink to this equation">#</a></span>\[\begin{align}
-f(x) = e^x - x^3 = 0 \\
-e^x = x^3 \\
-x = ln(x^3) = 3ln(x)
+<p class="admonition-title">Example: Rearranging functions</p>
+<p>To solve</p>
+<div class="amsmath math notranslate nohighlight" id="equation-66b7d53a-4692-429a-8d2c-45205315bc23">
+<span class="eqno">(4.4)<a class="headerlink" href="#equation-66b7d53a-4692-429a-8d2c-45205315bc23" title="Permalink to this equation">#</a></span>\[\begin{equation}
+e^x - x^3 = 0
+\end{equation}\]</div>
+<p>One possible rearrangement is</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1ca7a482-19fa-47d2-a515-a6fcd6f4d0d5">
+<span class="eqno">(4.5)<a class="headerlink" href="#equation-1ca7a482-19fa-47d2-a515-a6fcd6f4d0d5" title="Permalink to this equation">#</a></span>\[\begin{align}
+e^x &amp;= x^3 \\
+x &amp;= \ln(x^3) = 3 \ln x = g(x)
 \end{align}\]</div>
-<p>where <span class="math notranslate nohighlight">\(g(x) = 3ln(x)\)</span> <br></p>
 </div>
-<p>Notes for this method:<br></p>
-<ul class="simple">
-<li><p>This may fail spectacularly! Convergence is only guaranteed when <span class="math notranslate nohighlight">\(|g'(x)| \le k &lt; 1\)</span> for all x in an interval around the solution. <br></p></li>
-<li><p>Can try to help by slowly “mixing” solutions:<br>
-<span class="math notranslate nohighlight">\(x_{n+1}^* = g(x_n)\)</span> <br>
-<span class="math notranslate nohighlight">\(x_{n+1} = \alpha x_{n+1}^* + (1-\alpha)x_n\)</span> <br></p></li>
-</ul>
+<p>Note that this method may fail spectacularly! In that case, choosing a better
+initial guess or rearrangement may help. Additionally, you can try to improve
+the stability of the method by slowly “mixing” solutions:</p>
+<!-- markdownlint-disable MD037 -->
+<div class="amsmath math notranslate nohighlight" id="equation-0993788f-11f4-4609-ba36-2a615597332a">
+<span class="eqno">(4.6)<a class="headerlink" href="#equation-0993788f-11f4-4609-ba36-2a615597332a" title="Permalink to this equation">#</a></span>\[\begin{align}
+x_{n+1}^* &amp;= g(x_n) \\
+x_{n+1} &amp;= \alpha x_{n+1}^* + (1-\alpha) x_n
+\end{align}\]</div>
+<!-- markdownlint-enable MD037 -->
+<p>where <span class="math notranslate nohighlight">\(\alpha\)</span> is a mixing parameter. Smaller values of <span class="math notranslate nohighlight">\(\alpha\)</span> mix more
+slowly, which can be more stable but also requires more iterations.</p>
 </section>
 <section id="bisection-search">
-<h2><span class="section-number">4.2.2. </span>Bisection Search<a class="headerlink" href="#bisection-search" title="Link to this heading">#</a></h2>
-<p>Intermediate Value Theorem: If f(x) is continuous on <span class="math notranslate nohighlight">\(a \le x \le b\)</span>, then it takes on all values from f(a) to f(b). <br>
-If f(a) &gt; 0 and f(b) &lt; 0 (or vice versa), then f(x) = 0 somewhere in between! <br></p>
-<img alt="graphical depicition of the Intermediate Value Theorem" src="../_images/IVT_graph.svg" />
-<p>Procedure for using Bisection Search: <br></p>
+<h2><span class="section-number">4.2.2. </span>Bisection search<a class="headerlink" href="#bisection-search" title="Link to this heading">#</a></h2>
+<aside class="topic">
+<p class="topic-title">Intermediate value theorem</p>
+<p>If <span class="math notranslate nohighlight">\(f(x)\)</span> is continuous on <span class="math notranslate nohighlight">\(a \le x \le b\)</span>, then it takes on all values from
+<span class="math notranslate nohighlight">\(f(a)\)</span> to <span class="math notranslate nohighlight">\(f(b)\)</span> at some point in that interval. As a result, if <span class="math notranslate nohighlight">\(f(a) &gt; 0\)</span> and
+<span class="math notranslate nohighlight">\(f(b) &lt; 0\)</span> (or vice versa), then <span class="math notranslate nohighlight">\(f(x) = 0\)</span> somewhere in that interval!</p>
+<a class="reference internal image-reference" href="../_images/IVT_graph.svg"><img alt="graphical depicition of the Intermediate Value Theorem" class="align-center" src="../_images/IVT_graph.svg" style="width: 300px;" />
+</a>
+</aside>
+<p>We can apply this concept to find roots using the following procedure, called
+bisection search:</p>
 <ol class="arabic simple">
-<li><p>Chose <span class="math notranslate nohighlight">\(a_o\)</span> and <span class="math notranslate nohighlight">\(b_o\)</span> so f(a) and f(b) have opposite signs <br></p></li>
-<li><p>Evaluate <span class="math notranslate nohighlight">\(f(x_n)\)</span> at the midpoint: <span class="math notranslate nohighlight">\(x_n = \frac{a_n + b_n}{2}\)</span><br></p></li>
-<li><p>If <span class="math notranslate nohighlight">\(f(x_n) \approx 0\)</span>, a solution is found (within desired precision) <br>
-Otherwise, if <span class="math notranslate nohighlight">\(f(a_n)\)</span> and <span class="math notranslate nohighlight">\(f(x_n)\)</span> have the same sign: <span class="math notranslate nohighlight">\(a_{n+1} = x_n\)</span>. Else, <span class="math notranslate nohighlight">\(b_{n+1} = x_n\)</span> <br></p></li>
-<li><p>Repeat from step 2 <br></p></li>
+<li><p>Chose <span class="math notranslate nohighlight">\(a_0\)</span> and <span class="math notranslate nohighlight">\(b_0\)</span> so <span class="math notranslate nohighlight">\(f(a)\)</span> and <span class="math notranslate nohighlight">\(f(b)\)</span> have opposite signs.</p></li>
+<li><p>Starting at <span class="math notranslate nohighlight">\(n = 0\)</span>, evaluate <span class="math notranslate nohighlight">\(f(x_n)\)</span> at the midpoint <span class="math notranslate nohighlight">\(x_n = (a_n + b_n)/2\)</span>.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(f(x_n) \approx 0\)</span> a solution is found within desired precision.
+Otherwise, if <span class="math notranslate nohighlight">\(f(a_n)\)</span> and <span class="math notranslate nohighlight">\(f(x_n)\)</span> have the same sign, <span class="math notranslate nohighlight">\(a_{n+1} = x_n\)</span>;
+else, <span class="math notranslate nohighlight">\(b_{n+1} = x_n\)</span></p></li>
+<li><p>Increase <span class="math notranslate nohighlight">\(n\)</span> and repeat from step 2.</p></li>
 </ol>
 <div class="admonition-example-using-bisection-search admonition">
-<p class="admonition-title">Example: Using Bisection Search</p>
-<p><span class="math notranslate nohighlight">\(f(x) = e^{-x^2} - x\)</span>,  use <span class="math notranslate nohighlight">\(a_o = 0\)</span>, <span class="math notranslate nohighlight">\(b_o = 1\)</span> <br></p>
+<p class="admonition-title">Example: Using bisection search</p>
+<p>To solve</p>
+<div class="amsmath math notranslate nohighlight" id="equation-17639858-ce4c-438d-91da-b35102c44cb1">
+<span class="eqno">(4.7)<a class="headerlink" href="#equation-17639858-ce4c-438d-91da-b35102c44cb1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+e^{-x^2} - x = f(x) = 0
+\end{equation}\]</div>
+<p>Start with <span class="math notranslate nohighlight">\(a_0 = 0\)</span> and <span class="math notranslate nohighlight">\(b_0 = 1\)</span>, then make a table to implement the
+procedure:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="head"><p>n</p></th>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(n\)</span></p></th>
 <th class="head"><p><span class="math notranslate nohighlight">\(a_n\)</span></p></th>
 <th class="head"><p><span class="math notranslate nohighlight">\(b_n\)</span></p></th>
 <th class="head"><p><span class="math notranslate nohighlight">\(x_n\)</span></p></th>
@@ -564,23 +592,15 @@ Otherwise, if <span class="math notranslate nohighlight">\(f(a_n)\)</span> and <
 <td><p>-0.1180</p></td>
 <td><p>0.052</p></td>
 </tr>
-<tr class="row-odd"><td><p>.</p></td>
-<td><p>.</p></td>
-<td><p>.</p></td>
-<td><p>.</p></td>
-<td><p>.</p></td>
-<td><p>.</p></td>
-<td><p>.</p></td>
+<tr class="row-odd"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
 </tr>
-<tr class="row-even"><td><p>.</p></td>
-<td><p>.</p></td>
-<td><p>.</p></td>
-<td><p>.</p></td>
-<td><p>.</p></td>
-<td><p>.</p></td>
-<td><p>.</p></td>
-</tr>
-<tr class="row-odd"><td><p>9</p></td>
+<tr class="row-even"><td><p>9</p></td>
 <td><p>0.625</p></td>
 <td><p>0.654</p></td>
 <td><p>0.653</p></td>
@@ -591,9 +611,8 @@ Otherwise, if <span class="math notranslate nohighlight">\(f(a_n)\)</span> and <
 </tbody>
 </table>
 </div>
-<p>For n=0, <span class="math notranslate nohighlight">\(f(x_n)\)</span> &gt; 0, so <span class="math notranslate nohighlight">\(a_n\)</span> = <span class="math notranslate nohighlight">\(x_n\)</span> <br>
-For n=1, <span class="math notranslate nohighlight">\(f(x_n)\)</span> &lt; 0, so <span class="math notranslate nohighlight">\(b_n\)</span> = <span class="math notranslate nohighlight">\(x_n\)</span> <br></p>
-<p>Continue until <span class="math notranslate nohighlight">\(f(x_n) \approx 0\)</span></p>
+<p>When <span class="math notranslate nohighlight">\(n=0\)</span>, <span class="math notranslate nohighlight">\(f(x_0)\)</span> &gt; 0 so <span class="math notranslate nohighlight">\(a_1\)</span> = <span class="math notranslate nohighlight">\(x_0\)</span>. Then, when <span class="math notranslate nohighlight">\(n=1\)</span>, <span class="math notranslate nohighlight">\(f(x_1)\)</span> &lt; 0
+so <span class="math notranslate nohighlight">\(b_2\)</span> = <span class="math notranslate nohighlight">\(x_1\)</span>. We continue this procedure until convergence.</p>
 </div>
 </section>
 </section>
@@ -662,8 +681,8 @@ For n=1, <span class="math notranslate nohighlight">\(f(x_n)\)</span> &lt; 0, so
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fixed-point-iteration">4.2.1. Fixed Point Iteration</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bisection-search">4.2.2. Bisection Search</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fixed-point-iteration">4.2.1. Fixed point iteration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bisection-search">4.2.2. Bisection search</a></li>
 </ul>
   </nav></div>
 
