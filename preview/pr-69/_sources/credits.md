@@ -7,8 +7,15 @@ This work (c) 2025 is licensed under
 
 ## Contributors
 
+- Ella Governale
 - Michael P. Howard
+- Evan M. Hughes
+- Faith Major
 - John R. Marshall, IV
+- Lilli Midgette
+- Elijah  C. Mitchell
+- Michelle Schindler
+- Katie Sorensen
 
 ## Attributions
 
