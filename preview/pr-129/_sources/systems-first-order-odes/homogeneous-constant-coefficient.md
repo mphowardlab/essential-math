@@ -6,12 +6,12 @@ $y' = Ay$
 As an ansatz, assume a solution: 
 
 \begin{align}
-y &= e^{λt}x
+y &= e^{λt}x\\
 y' &= λe^{λt}x
 \end{align}
 
 \begin{align}
-λe^{λt}x &= Ae^{λt}x
+λe^{λt}x &= Ae^{λt}x\\
 λx &= Ax
 \end{align}
 
