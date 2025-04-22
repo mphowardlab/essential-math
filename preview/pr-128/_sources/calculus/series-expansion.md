@@ -202,7 +202,10 @@ Expand the following to two terms:
 8. $f(x)=e^x \sin(x)$ at $x=0$
 
    ```{solution}
+   Recall:
+   
    $f(x)=e^x \approx 1+x$
+   
    $f(x)=\sin(x) \approx x-\frac{x^3}{6}$
 
    So:
@@ -234,6 +237,8 @@ Expand the following to two terms:
 10. $f(x)=7x^2-6x+1$ at $x=2$
 
     ```{solution}
+    The function and its derivatives at $x=2$ are:
+
     \begin{align}
     f(x)&=7x^2-6x+1 & f(2) &= 17\\
     f'(x)&=14x-6 & f'(2) &= 22
