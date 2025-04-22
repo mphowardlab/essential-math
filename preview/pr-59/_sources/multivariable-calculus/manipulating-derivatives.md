@@ -15,15 +15,10 @@ First law of thermodynamics
 
 Hence,
 
-\begin{equation}
-\ T(\ubar{S}, \ubar{V}) = \td{}{\ubar{U}}{\ubar{S}}{\ubar{V}}
-\end{equation}
-
-and
-
-\begin{equation}
+\begin{align}
+\ T(\ubar{S}, \ubar{V}) = \td{}{\ubar{U}}{\ubar{S}}{\ubar{V}} \\
 \ P(\ubar{S}, \ubar{V}) = - \td{}{\ubar{U}}{\ubar{V}}{\ubar{S}}
-\end{equation}
+\end{align}
 
 T and P are *functions* of $\ubar{S}$ and $\ubar{V}$!
 We can relate *measurable* quantities like T and P to the derivatives of an *unmeasurable* quantity like $\ubar{U}$!
@@ -51,10 +46,10 @@ We say $\ubar{U}$ has $\ubar{S}$ and $\ubar{V}$ as "natural" variables because t
 \end{equation}
 $\ubar{U}(\ubar{S}(T,\ubar{V}),\ubar{V})$ and $\ubar{S}(T,\ubar{V})$
 
-\begin{equation}
-\ d \ubar{A} = d \ubar{U} - Td \ubar{S} - \ubar{S} dT = Td \ubar{S} - Pd \ubar{V} - Td \ubar{S} - \ubar{S} dT
+\begin{align}
+\ d \ubar{A} = d \ubar{U} - Td \ubar{S} - \ubar{S} dT = Td \ubar{S} - Pd \ubar{V} - Td \ubar{S} - \ubar{S} dT \\
 \ d \ubar{A} = - \ubar{S} dT - Pd \ubar{V}
-\end{equation}
+\end{align}
 
 \begin{align}
 \td{}{\ubar{A}}{T}{\ubar{V}} = - \ubar{S} \\
@@ -65,16 +60,18 @@ $\ubar{U}(\ubar{S}(T,\ubar{V}),\ubar{V})$ and $\ubar{S}(T,\ubar{V})$
 
 Additional Ones: 
 Enthalpy  
-\begin{equation}
-\ubar{H} = \ubar{U} + P \ubar{V}
+\begin{align}
+\ubar{H} = \ubar{U} + P \ubar{V} \\
 \ d \ubar{H} = Td \ubar{S} + \ubar{V} dP
-\end{equation}
+\end{aligh}
+
+
 
 Gibbs Free Energy
-\begin{equation}
-\ubar{G} = \ubar{A} + P \ubar{V} = \ubar{U} - T \ubar{S} + P \ubar{S}
+\begin{align}
+\ubar{G} = \ubar{A} + P \ubar{V} = \ubar{U} - T \ubar{S} + P \ubar{S} \\
 \ d \ubar{G} = - \ubar{S} dT + \ubar{V} dP
-\end{equation}
+\end{align}
 
 The reasons for these definitions are based on something called a Legendre Transformation and this has important implications in thermodynamics (e.g., why $\Delta G < 0$ for a spontaneous process at constant $T$ and $P$). You will learn more about this later!
 
