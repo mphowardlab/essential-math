@@ -8,7 +8,7 @@ We need a square matrix. We know one equation is redundant since we got a row of
 A= 
 \begin{equation}
 \begin{bmatrix} 1&-1&1 \\ 20&10&0 \\ 0&10&25\end{bmatrix}
-\begin{bmatrix} 0 \\ 80 \\ 90\ end{bmatrix}
+\begin{bmatrix} 0 \\ 80 \\ 90\ \end{bmatrix}
 
 |A|= -10* \left|\begin{array}{ccc} 
 1&1 \\ 20 & 0\end{array}\right| + 25*\left|\begin{array}{ccc} 
