@@ -8,11 +8,11 @@
 :alt: Two Real Solutions
 ```
 
-```math
+
 \begin{equation}
 x^2 - 1 = 0 \to x = \pm 1
 \end{equation}
-```
+
 
 ### One (Duplicate) Solution
 
@@ -20,11 +20,11 @@ x^2 - 1 = 0 \to x = \pm 1
 :alt: One Duplicate Solution
 ```
 
-```math
+
 \begin{equation}
 (x-1)^2 = 0 \to x = 1
 \end{equation}
-```
+
 
 ### Complex Solution
 
@@ -32,11 +32,10 @@ x^2 - 1 = 0 \to x = \pm 1
 :alt: Complex Solution
 ```
 
-```math
 \begin{equation}
 x^2 + 1 = 0 \to x =\pm i
 \end{equation}
-```
+
 
 ## Complex Roots
 

@@ -57,6 +57,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"d": ["{\\operatorname{d}\\!{#1}}", 1], "dd": ["{\\d{}^{#1} #2 \\over \\d{#3}^{#1}}", 3], "pp": ["{\\partial^{#1} #2 \\over \\partial #3^{#1}}", 3], "td": ["{\\left(\\pp{#1}{#2}{#3} \\right)_{#4}}", 4], "ubar": ["\\underline{#1}", 1], "vv": ["\\mathbf{#1}", 1]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'multivariable-calculus/derivatives';</script>
     <link rel="canonical" href="https://mphowardlab.github.io/essential-math/multivariable-calculus/derivatives.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -427,6 +429,77 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="derivatives">
 <h1><span class="section-number">2.1. </span>Derivatives<a class="headerlink" href="#derivatives" title="Link to this heading">#</a></h1>
+<p>A function <span class="math notranslate nohighlight">\(f(x,y)\)</span> has <em>partial</em> derivatives:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9990cd01-f41d-4c2a-a0c7-f175e5023fae">
+<span class="eqno">(2.1)<a class="headerlink" href="#equation-9990cd01-f41d-4c2a-a0c7-f175e5023fae" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\td{}{f}{x}{y} = \lim_{h \to 0} \frac{f(x+h, y) - f(x, y)}{h}
+\end{equation}\]</div>
+<p>where <em>x</em> (in the denominator) indicates what is varied and <em>y</em> (outside the
+parentheses) indicates what is held constant.</p>
+<p>The second partial derivative may be “repeated”</p>
+<div class="amsmath math notranslate nohighlight" id="equation-be5fdf2a-77cb-4e34-bd22-48c6c1b4182b">
+<span class="eqno">(2.2)<a class="headerlink" href="#equation-be5fdf2a-77cb-4e34-bd22-48c6c1b4182b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\td{2}{f}{x}{y} = \pp{}{}{x}\left[ \td{}{f}{x}{y} \right]_y
+\end{equation}\]</div>
+<p>or “mixed”</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9c68dd4a-7711-40d1-8e0a-283f99aca80a">
+<span class="eqno">(2.3)<a class="headerlink" href="#equation-9c68dd4a-7711-40d1-8e0a-283f99aca80a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\frac{\partial^2 f}{\partial x \partial y} = \pp{}{}{x}\left[ \td{}{f}{y}{x} \right]_y
+\end{equation}\]</div>
+<p>Mixed partial derivatives are read from right to left by convention.</p>
+<p>Partial derivatives can be taken using the normal procedures for single-variable
+calculus if you treat the constant variables as such</p>
+<div class="admonition-example-taking-partial-derivatives admonition">
+<p class="admonition-title">Example: Taking partial derivatives</p>
+<p>For the function <span class="math notranslate nohighlight">\(f(x,y) = x^2 \cos y\)</span>, evaluate <span class="math notranslate nohighlight">\((\partial f/\partial x)_y\)</span>,
+<span class="math notranslate nohighlight">\((\partial^2 f/\partial x^2)_y\)</span>, and <span class="math notranslate nohighlight">\(\partial^2 f/\partial y \partial x\)</span>.</p>
+<hr class="docutils" />
+<p>The first partial derivative with respect to <em>x</em> (treating <em>y</em> as a constant) is</p>
+<div class="amsmath math notranslate nohighlight" id="equation-00f38865-e04f-4448-a16a-b701c1931906">
+<span class="eqno">(2.4)<a class="headerlink" href="#equation-00f38865-e04f-4448-a16a-b701c1931906" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\td{}{f}{x}{y} = 2 x \cos y
+\end{equation}\]</div>
+<p>The second (repeated) partial derivative with respect to <em>x</em> (again, treating
+<em>y</em> as a constant) is</p>
+<div class="amsmath math notranslate nohighlight" id="equation-edbd949d-9bca-4204-90ef-fbe71c90ad83">
+<span class="eqno">(2.5)<a class="headerlink" href="#equation-edbd949d-9bca-4204-90ef-fbe71c90ad83" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\td{2}{f}{x}{y} = \pp{}{}{x}\left[ \td{}{f}{x}{y} \right]_y
+= \pp{}{}{x}\left( 2 x \cos y \right)_y = 2 \cos y
+\end{equation}\]</div>
+<p>The second (mixed) partial derivative with respect to <em>x</em> then <em>y</em> is</p>
+<div class="amsmath math notranslate nohighlight" id="equation-506d6026-34de-48a4-9c39-cd1838344ad7">
+<span class="eqno">(2.6)<a class="headerlink" href="#equation-506d6026-34de-48a4-9c39-cd1838344ad7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\frac{\partial^2 f}{\partial y \partial x} = \pp{}{}{y}\left[ \td{}{f}{x}{y} \right]_x
+= \pp{}{}{y} \left( 2 x \cos y \right)_x = -2x \sin y
+\end{equation}\]</div>
+</div>
+<aside class="topic">
+<p class="topic-title">Mixed second partial derivatives</p>
+<p>If all the second partial derivatives of a multivariable function <em>f</em> are
+continuous, the mixed second partial derivatives are symmetric,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9311a9aa-79bd-44fb-a7cc-221cd876f30e">
+<span class="eqno">(2.7)<a class="headerlink" href="#equation-9311a9aa-79bd-44fb-a7cc-221cd876f30e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\frac{\partial^2 f}{\partial x \partial y}
+= \frac{\partial^2 f}{\partial y \partial x}
+\end{equation}\]</div>
+</aside>
+<div class="admonition-example-order-of-mixed-second-partial-derivatives admonition">
+<p class="admonition-title">Example: Order of mixed second partial derivatives</p>
+<p>Show the order of the mixed derivatives does not matter for the example function
+given above.</p>
+<hr class="docutils" />
+<p>The first partial derivative with respect to <span class="math notranslate nohighlight">\(y\)</span> is</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e5c81655-0052-4f0a-ad59-83331df59be1">
+<span class="eqno">(2.8)<a class="headerlink" href="#equation-e5c81655-0052-4f0a-ad59-83331df59be1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\td{}{f}{x}{y} = -x^2 \sin y
+\end{equation}\]</div>
+<p>So, the second (mixed) partial derivative with respect to <em>y</em> then <em>x</em> is</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b581e21d-1d00-4e23-8b25-51ea81e5bac4">
+<span class="eqno">(2.9)<a class="headerlink" href="#equation-b581e21d-1d00-4e23-8b25-51ea81e5bac4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\frac{\partial^2 f}{\partial x \partial y} = \pp{}{}{x}\left[ \td{}{f}{y}{x} \right]_y
+= \pp{}{}{x} \left( -x^2 \sin y \right)_y = -2x \sin y
+\end{equation}\]</div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
