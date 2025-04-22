@@ -16,25 +16,27 @@ First law of thermodynamics:
 Hence,
 
 \begin{align}
-\ T(\ubar{S}, \ubar{V}) = \td{}{\ubar{U}}{\ubar{S}}{\ubar{V}} \\
-\ P(\ubar{S}, \ubar{V}) = - \td{}{\ubar{U}}{\ubar{V}}{\ubar{S}}
+T(\ubar{S}, \ubar{V}) = \td{}{\ubar{U}}{\ubar{S}}{\ubar{V}} \\
+P(\ubar{S}, \ubar{V}) = - \td{}{\ubar{U}}{\ubar{V}}{\ubar{S}}
 \end{align}
 
 T and P are *functions* of $\ubar{S}$ and $\ubar{V}$!
 
-We can relate *measurable* quantities like T and P to the derivatives of an *unmeasurable* quantity like $\ubar{U}$!
+We can relate *measurable* quantities like *T* and *P* to the derivatives of an *unmeasurable* quantity like $\ubar{U}$!
 
 \begin{equation}
-\ \Delta\ubar{U} = \int_{\ubar{V}_1}^{\ubar{V}_2} - P d\ubar{V}
+\Delta\ubar{U} = \int_{\ubar{V}_1}^{\ubar{V}_2} - P \d{\ubar{V}}
 \end{equation}
+
 At constant $\ubar{S}$ (adiabatic)
 
 We can also relate quantities as mixed derivatives:
 
 \begin{equation}
-\ -\td{}{\ubar{P}}{\ubar{S}}{\ubar{V}} = \frac{\partial ^2 \underline{U}}{\partial \underline{S} \partial \underline{V}} = \frac{\partial ^2 \underline{U}}{\partial \underline{V} \partial \underline{S}} = \td{}{T}{\ubar{V}}{\ubar{S}}
+-\td{}{\ubar{P}}{\ubar{S}}{\ubar{V}} = \frac{\partial ^2 \underline{U}}{\partial \underline{S} \partial \underline{V}} = \frac{\partial ^2 \underline{U}}{\partial \underline{V} \partial \underline{S}} = \td{}{T}{\ubar{V}}{\ubar{S}}
 \end{equation}
-(Change in T with aidiabatic compression)
+
+(Change in *T* with aidiabatic compression)
 
 ## Swapping Variables and Derivatives (Legendre Transformation)
 
@@ -45,11 +47,12 @@ We say $\ubar{U}$ has $\ubar{S}$ and $\ubar{V}$ as "natural" variables because t
 \begin{equation}
 \ubar{A} = \ubar{U} - T \ubar{S}
 \end{equation}
+
 $\ubar{U}(\ubar{S}(T,\ubar{V}),\ubar{V})$ and $\ubar{S}(T,\ubar{V})$
 
 \begin{align}
-\ d \ubar{A} = d \ubar{U} - Td \ubar{S} - \ubar{S} dT = Td \ubar{S} - Pd \ubar{V} - Td \ubar{S} - \ubar{S} dT \\
-\ d \ubar{A} = - \ubar{S} dT - Pd \ubar{V}
+\d{\ubar{A}} = \d{\ubar{U}} - T \d{\ubar{S}} - \ubar{S} \d{T} = T \d{\ubar{S}} - P \d{\ubar{V}} - T \d{\ubar{S}} - \ubar{S} \d{T} \\
+\d{\ubar{A}} = - \ubar{S} \d{T} - P \d{\ubar{V}}
 \end{align}
 
 \begin{align}
@@ -61,19 +64,17 @@ $\ubar{U}(\ubar{S}(T,\ubar{V}),\ubar{V})$ and $\ubar{S}(T,\ubar{V})$
 
 Additional Ones: 
 Enthalpy  
+
 \begin{align}
 \ubar{H} = \ubar{U} + P \ubar{V} \\
-\ d \ubar{H} = Td \ubar{S} + \ubar{V} dP
+\d{\ubar{H}} = T \d{\ubar{S}} + \ubar{V} \d{P}
 \end{align}
 
-
-
 Gibbs Free Energy
+
 \begin{align}
 \ubar{G} = \ubar{A} + P \ubar{V} = \ubar{U} - T \ubar{S} + P \ubar{S} \\
-\ d \ubar{G} = - \ubar{S} dT + \ubar{V} dP
+\d{\ubar{G}} = - \ubar{S} \d{T} + \ubar{V} \d{P}
 \end{align}
 
 The reasons for these definitions are based on something called a Legendre Transformation and this has important implications in thermodynamics (e.g., why $\Delta G < 0$ for a spontaneous process at constant $T$ and $P$). You will learn more about this later!
-
-
