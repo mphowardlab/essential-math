@@ -171,6 +171,7 @@ Expand the following to two terms:
 6. $f(x)=\cos(4x)$ at $x=0$
 
    ```{solution}
+   From problem 1 we found...
    \begin{equation}
    f(x)=cos(x) \approx 1-\frac{x^2}{2}
    \end{equation}
@@ -201,8 +202,8 @@ Expand the following to two terms:
 8. $f(x)=e^x \sin(x)$ at $x=0$
 
    ```{solution}
-   $f(x)=e^x$ \approx 1+x$
-   $f(x)=\sin(x)$ \approx x-\frac{x^3}{6}$
+   $f(x)=e^x \approx 1+x$
+   $f(x)=\sin(x) \approx x-\frac{x^3}{6}$
 
    So:
 
@@ -215,13 +216,15 @@ Expand the following to two terms:
 
    ```{solution}
    
-   Note: Reuse derivatives in (1)
+   Note: Reuse derivatives in problem 1
 
    \begin{align}
    f(x) &= \cos(x) & f(\pi) &= -1 \\
    f'(x) &= -\sin(x) & f'(\pi) &= 0 \\
    f''(x) &= -\cos(x) & f''(\pi) &= 1
    \end{align}
+
+   So:
 
    \begin{equation}
    f(x) \approx -1+\frac{1}{2}(x-\pi)^2
@@ -235,6 +238,8 @@ Expand the following to two terms:
     f(x)&=7x^2-6x+1 & f(2) &= 17\\
     f'(x)&=14x-6 & f'(2) &= 22
     \end{align}
+
+    So:
 
     \begin{equation}
     f(x) \approx 17+22(x-2)
