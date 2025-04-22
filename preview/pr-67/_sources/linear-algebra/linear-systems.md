@@ -12,9 +12,15 @@ a_{m1}x_{1} + ... + a_{mn}x_{n} = b_{n}
 \end{equation}
 
 
-Unknowns: x_{1}, ..., x_{n} (n)
+Unknowns: 
+\begin{equation}
+x_{1}, ..., x_{n} (n)
+\end{equation}
 
-Coefficients: a_{mn} (mxn)
+Coefficients:
+\begin{equation}
+ a_{mn} (mxn)
+ \end{equation}
 
 
 \begin{equation}
@@ -30,4 +36,7 @@ Coefficients: a_{mn} (mxn)
 - One Solution
 - Infinitely many solutions (undetermined)
 
+Ex: Graph the following and explain how many solutions exist. Then, solve the equations if possible.
 
+
+A homogeneous solution, Ax=0, **always** has at least the trivial solution x = 0. We will discuss how to systematically solve these
