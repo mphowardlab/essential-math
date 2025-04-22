@@ -57,6 +57,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"d": ["{\\operatorname{d}\\!{#1}}", 1], "dd": ["{\\d{}^{#1} #2 \\over \\d{#3}^{#1}}", 3], "pp": ["{\\partial^{#1} #2 \\over \\partial #3^{#1}}", 3], "td": ["{\\left(\\pp{#1}{#2}{#3} \\right)_{#4}}", 4], "ubar": ["\\underline{#1}", 1], "vv": ["\\mathbf{#1}", 1]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'multivariable-calculus/manipulating-derivatives';</script>
     <link rel="canonical" href="https://mphowardlab.github.io/essential-math/multivariable-calculus/manipulating-derivatives.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -202,13 +204,14 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../first-order-odes/index.html">5. First-order ordinary differential equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/separable.html">5.1. Separable differential equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/exact.html">5.2. Exact differential equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/linearity.html">5.3. Linearity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/undetermined-coefficients.html">5.4. Undetermined coefficients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/laplace-transform.html">5.5. Laplace transform</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/integrating-factor.html">5.6. Integrating factor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/numerical-solution.html">5.7. Numerical solution methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/definition.html">5.1. Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/separable.html">5.2. Separable differential equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/exact.html">5.3. Exact differential equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/linearity.html">5.4. Linearity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/undetermined-coefficients.html">5.5. Undetermined coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/laplace-transform.html">5.6. Laplace transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/integrating-factor.html">5.7. Integrating factor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/numerical-solution.html">5.8. Numerical solution methods</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../systems-first-order-odes/index.html">6. Systems of first-order ordinary differential equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -426,6 +429,77 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="manipulating-partial-derivatives">
 <h1><span class="section-number">2.3. </span>Manipulating partial derivatives<a class="headerlink" href="#manipulating-partial-derivatives" title="Link to this heading">#</a></h1>
+<div class="admonition-example-change-in-internal-energy admonition">
+<p class="admonition-title">Example: Change in internal energy</p>
+<p>We want to compute the change in molar internal energy <span class="math notranslate nohighlight">\(\Delta U\)</span> of a
+substance as we vary the temperature <span class="math notranslate nohighlight">\(T\)</span> and pressure <span class="math notranslate nohighlight">\(P\)</span> in terms of quantities
+we can measure. In addition to <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(P\)</span>, these quantities are the molar
+volume <span class="math notranslate nohighlight">\(V\)</span>, the thermal expansion coefficient <span class="math notranslate nohighlight">\(\alpha_V\)</span>, the isothermal
+compressibility <span class="math notranslate nohighlight">\(\kappa_T\)</span>, and the constant-pressure heat capacity <span class="math notranslate nohighlight">\(c_P\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9a30e802-c9b2-474f-a5e5-0198500e5221">
+<span class="eqno">(2.14)<a class="headerlink" href="#equation-9a30e802-c9b2-474f-a5e5-0198500e5221" title="Permalink to this equation">#</a></span>\[\begin{align}
+\alpha_V &amp;= \frac{1}{V} \td{}{V}{T}{P} \\
+\kappa_T &amp;= -\frac{1}{V} \td{}{V}{P}{T} \\
+c_P &amp;= \td{}{H}{T}{P}
+\end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(H\)</span> is the molar enthalpy. The following total differentials are known
+from thermodynamics:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2db7e138-b175-4258-b4d0-c2ced10dfccd">
+<span class="eqno">(2.15)<a class="headerlink" href="#equation-2db7e138-b175-4258-b4d0-c2ced10dfccd" title="Permalink to this equation">#</a></span>\[\begin{align}
+\d{U} &amp;= T \d{S} - P \d{V} \\
+\d{H} &amp;= T \d{S} + V \d{P} \\
+\d{G} &amp;= -S \d{T} + V \d{P}
+\end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(S\)</span> is the molar entropy and <span class="math notranslate nohighlight">\(G\)</span> is the molar Gibbs free energy.</p>
+<hr class="docutils" />
+<p>First, we express the total differential for <span class="math notranslate nohighlight">\(U\)</span> as a function of <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(P\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-85bd7725-c367-4f44-97b2-719b776f91e4">
+<span class="eqno">(2.16)<a class="headerlink" href="#equation-85bd7725-c367-4f44-97b2-719b776f91e4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\d{U} = \td{}{U}{T}{P} \d{T} + \td{}{U}{P}{T} \d{P}
+\end{equation}\]</div>
+<p>Next, we form the derivatives using the given total differential for <span class="math notranslate nohighlight">\(U\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1907a108-561e-4cd5-8a9d-ac16b09df9ee">
+<span class="eqno">(2.17)<a class="headerlink" href="#equation-1907a108-561e-4cd5-8a9d-ac16b09df9ee" title="Permalink to this equation">#</a></span>\[\begin{align}
+\td{}{U}{T}{P} &amp;= T \td{}{S}{T}{P} - P \td{}{V}{T}{P} \\
+\td{}{U}{P}{T} &amp;= T \td{}{S}{P}{T} - P \td{}{V}{P}{T}
+\end{align}\]</div>
+<p>Then, we go about replacing what we don’t like because we can’t measure it with
+things that we can. For <span class="math notranslate nohighlight">\((\partial S/ \partial T)_P\)</span>, use the chain rule
+followed by the inversion rule:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ca2ab829-ed06-4e1c-84f8-ae9f073ccb3a">
+<span class="eqno">(2.18)<a class="headerlink" href="#equation-ca2ab829-ed06-4e1c-84f8-ae9f073ccb3a" title="Permalink to this equation">#</a></span>\[\begin{align}
+\td{}{S}{T}{P} &amp;= \td{}{S}{H}{P} \td{}{H}{T}{P} \\
+&amp;= \frac{ (\partial H/\partial T)_P }{ (\partial H/\partial S)_P } \\
+&amp;= \frac{c_P}{T}
+\end{align}\]</div>
+<p>where the last step used the total differential for <span class="math notranslate nohighlight">\(H\)</span> to replace the
+derivative in the denominator. Additionally using the definition of <span class="math notranslate nohighlight">\(\alpha_V\)</span>
+gives</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9bd96bcd-16aa-44f6-b595-03d205208d91">
+<span class="eqno">(2.19)<a class="headerlink" href="#equation-9bd96bcd-16aa-44f6-b595-03d205208d91" title="Permalink to this equation">#</a></span>\[\begin{align}
+\td{}{U}{T}{P} &amp;= T \left( \frac{c_P}{T} \right) - P V \alpha_V \\
+&amp;= c_P - P V \alpha_V
+\end{align}\]</div>
+<p>For <span class="math notranslate nohighlight">\((\partial S/\partial P)_T\)</span>, use the total differential for <span class="math notranslate nohighlight">\(G\)</span> and equate
+its mixed second derivatives:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c79511c6-d160-4321-96d8-1453566226a4">
+<span class="eqno">(2.20)<a class="headerlink" href="#equation-c79511c6-d160-4321-96d8-1453566226a4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+-\td{}{S}{P}{T} = \td{}{V}{T}{P} = V\alpha_V
+\end{equation}\]</div>
+<p>Additionally using the definition of <span class="math notranslate nohighlight">\(\kappa_T\)</span> gives</p>
+<div class="amsmath math notranslate nohighlight" id="equation-093ee56d-807e-4be6-97e9-9f5d84843355">
+<span class="eqno">(2.21)<a class="headerlink" href="#equation-093ee56d-807e-4be6-97e9-9f5d84843355" title="Permalink to this equation">#</a></span>\[\begin{align}
+\td{}{U}{P}{T} &amp;= T (-V \alpha_V) - P(-V\kappa_T) \\
+&amp;= P V \kappa_T - T V \alpha_V
+\end{align}\]</div>
+<p>Putting it all together:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ae47795c-91df-4c3a-b9d5-aa33462f0ff3">
+<span class="eqno">(2.22)<a class="headerlink" href="#equation-ae47795c-91df-4c3a-b9d5-aa33462f0ff3" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\d{U} = (c_P - PV\alpha_V)\d{T} + V(P\kappa_T - T\alpha_V)\d{P}
+\end{equation}\]</div>
+<p>This total differential is now suitable for integration with respect to <span class="math notranslate nohighlight">\(T\)</span>
+and <span class="math notranslate nohighlight">\(P\)</span> using only measurable quantities!</p>
+</div>
 </section>
 
     <script type="text/x-thebe-config">

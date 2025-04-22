@@ -5,7 +5,7 @@
 Many dynamic processes can occur simultaneously, giving more than one ODE.
 
 
-Image-issue47
+'''{image} ./Images/Image-issue47.png
 
 
 In the image, tank one has concentration one (C1) and tank two has concentration two (C2). Tank one is flowing to tank two. Tank two is flowing to a pump. The pump exit stream is flowing back to tank one. 
