@@ -204,13 +204,14 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../first-order-odes/index.html">5. First-order ordinary differential equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/separable.html">5.1. Separable differential equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/exact.html">5.2. Exact differential equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/linearity.html">5.3. Linearity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/undetermined-coefficients.html">5.4. Undetermined coefficients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/laplace-transform.html">5.5. Laplace transform</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/integrating-factor.html">5.6. Integrating factor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/numerical-solution.html">5.7. Numerical solution methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/definition.html">5.1. Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/separable.html">5.2. Separable differential equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/exact.html">5.3. Exact differential equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/linearity.html">5.4. Linearity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/undetermined-coefficients.html">5.5. Undetermined coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/laplace-transform.html">5.6. Laplace transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/integrating-factor.html">5.7. Integrating factor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/numerical-solution.html">5.8. Numerical solution methods</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">6. Systems of first-order ordinary differential equations</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
@@ -438,35 +439,44 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="homogeneous-linear-first-order-odes-with-constant-coefficients">
 <h1><span class="section-number">6.2. </span>Homogeneous linear first-order ODEs with constant coefficients<a class="headerlink" href="#homogeneous-linear-first-order-odes-with-constant-coefficients" title="Link to this heading">#</a></h1>
-<p>y’ = A * y</p>
+<p><span class="math notranslate nohighlight">\(y' = Ay\)</span></p>
 <p>As an ansatz, assume a solution:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-044bd3a9-78bb-4784-bf8e-5dd7f4563512">
-<span class="eqno">(6.1)<a class="headerlink" href="#equation-044bd3a9-78bb-4784-bf8e-5dd7f4563512" title="Permalink to this equation">#</a></span>\[\begin{align}
- y = exp(λt) * x \rightarrow y' = λ * exp(λt) * x  \\
- λ * exp(λt) * x = A * exp(λt) * x \rightarrow λ * x = A * x 
+<div class="amsmath math notranslate nohighlight" id="equation-af24b2a7-5832-41c5-a904-2a9629570dd7">
+<span class="eqno">(6.1)<a class="headerlink" href="#equation-af24b2a7-5832-41c5-a904-2a9629570dd7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y=e^(λt) x
+\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-309d8c59-5fa6-44fc-99fa-279369d16170">
+<span class="eqno">(6.2)<a class="headerlink" href="#equation-309d8c59-5fa6-44fc-99fa-279369d16170" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y'=λe^(λt)x
+\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-32d68e5a-9f4d-4625-911e-e876dacce288">
+<span class="eqno">(6.3)<a class="headerlink" href="#equation-32d68e5a-9f4d-4625-911e-e876dacce288" title="Permalink to this equation">#</a></span>\[\begin{align}
+λe^(λt)x &amp;= Ae^(λt)x\\
+λx &amp;= Ax
 \end{align}\]</div>
 <p>This is an eigenvalus problem! lambda is an eigenvalue, and x is an eigenvector of A.</p>
 <p>We know an n*n matrix has n eigenvalues. Let’s suppose the corresponding eigenvectors are all independent. What do we do?</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> Superposition principle: For a linear ODE, if y1 and y2 are both solutions, then 
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> Superposition principle: For a linear ODE, if y1 and y2 are both solutions, then
+ 
+ \begin{align}
+ y = (c1y1) + (c2y2) 
+ \end{align}
+ 
+ is also a solution.
 </pre></div>
 </div>
-<div class="amsmath math notranslate nohighlight" id="equation-82fb6a0e-9931-4066-9d02-115fb778d5f5">
-<span class="eqno">(6.2)<a class="headerlink" href="#equation-82fb6a0e-9931-4066-9d02-115fb778d5f5" title="Permalink to this equation">#</a></span>\[\begin{align}
-y = (c1y1) + (c2y2) 
-\end{align}\]</div>
-<p>is also a solution.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f1183741-aae1-49a3-8c3d-316c6ef01406">
-<span class="eqno">(6.3)<a class="headerlink" href="#equation-f1183741-aae1-49a3-8c3d-316c6ef01406" title="Permalink to this equation">#</a></span>\[\begin{align}
-\rightarrow   y = c1 * exp(λ1*t) * x1 + c2 * exp(λ2*t) * x2 + ... + cn * exp(λn*t) * xn 
-\end{align}\]</div>
-<p>(There are some cases this fails, but we will not cover them.)</p>
+<div class="amsmath math notranslate nohighlight" id="equation-88299958-665f-4437-804e-e6f6493a5f21">
+<span class="eqno">(6.4)<a class="headerlink" href="#equation-88299958-665f-4437-804e-e6f6493a5f21" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y = c_1 e^(λ_1 t) x1 + c_2 e^(λ_2 t) x_2 + \dots + c_n e^(λ_n t) x_n 
+\end{equation}\]</div>
+<p>There are some cases this fails, but we will not cover them.</p>
 <section id="example-reaction-network">
 <h2><span class="section-number">6.2.1. </span>Example: Reaction Network<a class="headerlink" href="#example-reaction-network" title="Link to this heading">#</a></h2>
 <p>A = [ -k1, 0, 0; k1, -k2, 0; 0, k2, 0 ];</p>
 <p>c’ = A * c</p>
 <p>Matrix A is lower triangular, so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f56d4b14-4135-4d50-9622-e8bebc28ec39">
-<span class="eqno">(6.4)<a class="headerlink" href="#equation-f56d4b14-4135-4d50-9622-e8bebc28ec39" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2547b01e-e0c2-47c8-b894-03bf4a03cfbe">
+<span class="eqno">(6.5)<a class="headerlink" href="#equation-2547b01e-e0c2-47c8-b894-03bf4a03cfbe" title="Permalink to this equation">#</a></span>\[\begin{align}
 λ1 = -k1 \rightarrow  [0, 0, 0; k1, -k2+k1, 0; 0, k2, k1] \\
 \rightarrow (k1*x1)-(k2-k1)*x2=0 \\
 \rightarrow (k2*x2)+(k1*x3)=0 \\
@@ -479,13 +489,13 @@ y = (c1y1) + (c2y2)
 \rightarrow x3= [0; 0; 1] \\
 \end{align}\]</div>
 <p>Hence,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2f391b19-8ba3-459c-8c15-a7beed74633a">
-<span class="eqno">(6.5)<a class="headerlink" href="#equation-2f391b19-8ba3-459c-8c15-a7beed74633a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-cd454d39-e666-4fc7-b3af-907a3812d620">
+<span class="eqno">(6.6)<a class="headerlink" href="#equation-cd454d39-e666-4fc7-b3af-907a3812d620" title="Permalink to this equation">#</a></span>\[\begin{align}
  c = (a1 * exp(-k1 * t) * x1) + (a2 * exp(-k2 * t) * x2) + (a3 * x3) 
 \end{align}\]</div>
 <p>Initial Condition:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b1e82b70-996a-4064-be8c-3700d12be4b8">
-<span class="eqno">(6.6)<a class="headerlink" href="#equation-b1e82b70-996a-4064-be8c-3700d12be4b8" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7bb9e173-72bc-4968-93c7-e13e5d6fbde1">
+<span class="eqno">(6.7)<a class="headerlink" href="#equation-7bb9e173-72bc-4968-93c7-e13e5d6fbde1" title="Permalink to this equation">#</a></span>\[\begin{align}
 C(0) = [CA0; 0; 0];  = [a1(-(k2-k1)/k2); -a1(k1/k2)-a2; a1+a2+a3] \\
 %disp(C(0))
 \rightarrow  a1 = -CA0(k2/(k2-k1))  \\

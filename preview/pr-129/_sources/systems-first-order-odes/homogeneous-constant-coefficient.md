@@ -1,13 +1,21 @@
 # Homogeneous linear first-order ODEs with constant coefficients
 
-y' = A * y
+$y' = Ay$
 
 
 As an ansatz, assume a solution: 
 
+\begin{equation}
+y=e^(λt) x
+\end{equation}
+
+\begin{equation}
+y'=λe^(λt)x
+\end{equation}
+
 \begin{align}
- y = exp(λt) * x \rightarrow y' = λ * exp(λt) * x  \\
- λ * exp(λt) * x = A * exp(λt) * x \rightarrow λ * x = A * x 
+λe^(λt)x &= Ae^(λt)x\\
+λx &= Ax
 \end{align}
 
 This is an eigenvalus problem! lambda is an eigenvalue, and x is an eigenvector of A.
@@ -15,17 +23,19 @@ This is an eigenvalus problem! lambda is an eigenvalue, and x is an eigenvector 
 
 We know an n*n matrix has n eigenvalues. Let's suppose the corresponding eigenvectors are all independent. What do we do?
 
-     Superposition principle: For a linear ODE, if y1 and y2 are both solutions, then 
+     Superposition principle: For a linear ODE, if y1 and y2 are both solutions, then
+     
+     \begin{align}
+     y = (c1y1) + (c2y2) 
+     \end{align}
+     
+     is also a solution.
 
-\begin{align}
-y = (c1y1) + (c2y2) 
-\end{align}
-is also a solution. 
+\begin{equation}
+y = c_1 e^(λ_1 t) x1 + c_2 e^(λ_2 t) x_2 + \dots + c_n e^(λ_n t) x_n 
+\end{equation}
 
-\begin{align}
-\rightarrow   y = c1 * exp(λ1*t) * x1 + c2 * exp(λ2*t) * x2 + ... + cn * exp(λn*t) * xn 
-\end{align}
-(There are some cases this fails, but we will not cover them.)
+There are some cases this fails, but we will not cover them.
 
 
 
