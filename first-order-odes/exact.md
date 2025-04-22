@@ -75,11 +75,11 @@ Obtain general solutions to:
    The two partial derivatives are not equal, so the function is not exact. In order to make it exact, we need to find an integrating factor:
 
    \begin{equation}
-   R &= \frac{1}{-xy}(2y-(-y)) = \frac{3y}{-xy} = \frac{-3}{x}
+   R = \frac{1}{-xy}(2y-(-y)) = \frac{3y}{-xy} = \frac{-3}{x}
    \end{equation}
 
    \begin{equation}
-   F &= e^{\int \frac{-3}{x} \d{x}} = e^{-3\ln(x)} = x^{-3}
+   F = e^{\int \frac{-3}{x} \d{x}} = e^{-3\ln(x)} = x^{-3}
    \end{equation}
 
    Apply the integrating factor to the original ODE:
