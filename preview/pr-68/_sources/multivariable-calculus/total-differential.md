@@ -13,7 +13,7 @@ The total differential of f is the sum of partial derivatives:
 ```
 
 ```{example} The total differental can be used to form other derivatives, based on the dependencies of x and y.
----
+
 \begin{equation}
 x(t) and y(t) \rightarrow \pp{}{f}{t} = 2x \cos y \pp{}{x}{t} - x^2 \sin y \pp{}{y}{t}
 \end{equation}
