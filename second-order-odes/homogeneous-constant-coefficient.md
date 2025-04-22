@@ -13,5 +13,5 @@ come up often so it is important to know how to solve them!
 Solution: Try y=e^x as an ansatz
 %For the line above, I am unsure if the last word is correct
 
-
+-
 y=e^{\lambda x}
