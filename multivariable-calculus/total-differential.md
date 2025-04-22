@@ -3,7 +3,7 @@
 The total differential of f is the sum of partial derivatives:
 
 \begin{equation}
-\td{}{f}{x}{y} \partial x + \td{}{f}{y}{x} \partial y
+\partial f = \td{}{f}{x}{y} \partial x + \td{}{f}{y}{x} \partial y
 \end{equation}
 
 ```{example} ,
