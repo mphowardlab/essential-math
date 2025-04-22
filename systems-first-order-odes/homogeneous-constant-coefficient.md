@@ -6,15 +6,15 @@ $y' = Ay$
 As an ansatz, assume a solution: 
 
 \begin{equation}
-y=e^(λt) x
+$y=e^(λt) x$
 \end{equation}
 
 \begin{equation}
-y'=λe^(λt)x
+$y'=λe^(λt)x$
 \end{equation}
 
 \begin{align}
-λe^(λt)x &= Ae^(λt)x\\
+$λe^(λt)x &= Ae^(λt)x$\\
 λx &= Ax
 \end{align}
 
@@ -26,13 +26,13 @@ We know an n*n matrix has n eigenvalues. Let's suppose the corresponding eigenve
      Superposition principle: For a linear ODE, if y1 and y2 are both solutions, then
      
      \begin{align}
-     y = (c1y1) + (c2y2) 
+     y = (c_1 y_1) + (c_2 y_2) 
      \end{align}
      
      is also a solution.
 
 \begin{equation}
-y = c_1 e^(λ_1 t) x1 + c_2 e^(λ_2 t) x_2 + \dots + c_n e^(λ_n t) x_n 
+y = $c_1 e^(λ_1 t) x_1$ + $c_2 e^(λ_2 t) x_2$ + \dots + $c_n e^(λ_n t) x_n$ 
 \end{equation}
 
 There are some cases this fails, but we will not cover them.
@@ -80,10 +80,10 @@ C(0) = [CA0; 0; 0];  = [a1(-(k2-k1)/k2); -a1(k1/k2)-a2; a1+a2+a3] \\
 
 So,
 
-begin{align}
+\begin{align}
 CA(t) = a1(exp(-k1 * t))(-(k2-k1)/k2) = CA0 * exp(-k1 * t)  \\
 CB(t) = a1(exp(-k1 * t))(-k1/k2) + a2(exp(-k2 * t))(-1) = CA0 * (k1 / (k2 - k1)) * (exp(-k1 * t) - exp(-k2 * t)) \\
-CC(t) = a1(exp(-k1 * t)) + a2(exp(-k2 * t)) + a3 = CA0 * (1 - (k2 / (k2 - k1)) * exp(-k1 * t)) + (k1 / (k2 - k1)) * exp(-k2 * t)  \\
-end{align}
+CC(t) = a1(exp(-k1 * t)) + a2(exp(-k2 * t)) + a3 = CA0 * (1 - (k2 / (k2 - k1)) * exp(-k1 * t)) + (k1 / (k2 - k1)) * exp(-k2 * t)
+\end{align}
 rightarrow This matches our old answer!
 
