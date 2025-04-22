@@ -88,87 +88,73 @@ solve $\vv{A} \vv{A}^{-1} = \vv{I}$ as a generalization of **Ax** = **b**.
 
 - Perform row operations to bring to $[ \vv{I} \, | \, \vv{A}^{-1} ]$.
 
-## SkillBuilder
+## Skill builder problems
 
 Solve the following using matrix inversion:
 
-(a) 
+1. 
 
-$$
-5x_1 - 2x_2 = 20.9
-$$  
+   \begin{align}
+   5x_1 - 2x_2 &= 20.9 \\
+   -x_1 + 4x_2 &= -19.3
+   \end{align}
+   
+   ```{solution}
+   First, write in matrix form **Ax** = **b** with:
+   \begin{equation}
+   \vv{A} = \begin{bmatrix}
+   5 & -2 \\
+   -1 & 4 
+   \end{bmatrix}
+   \qquad
+   \vv{b} = \begin{bmatrix}
+   20.9 \\
+   -19.3
+   \end{bmatrix}
+   \end{equation}
 
-$$
--x_1 + 4x_2 = -19.3
-$$
+   Then, evaluate $|\vv{A}|$ to check if an inverse exists:
 
-$$
-A= \begin{bmatrix}
-5 & -2 \\
--1 & 4 
-\end{bmatrix}
-$$
+   \begin{equation}
+   |\vv{A}| = (5 \cdot 4) - (-1 \cdot -2) = 18
+   \end{equation}
 
-$$
-b= \begin{bmatrix}
-20.9 \\
--19.3
-\end{bmatrix}
-$$
+   $|\vv{A}| \ne 0$, so an inverse can be found using the formula for a 2x2
+   matrix:
 
-A*x=b 
-x = A^{-1}b
+   \begin{equation}
+   \vv{A}^{-1} = \frac{1}{18}
+   \begin{bmatrix}
+   5 & -2 \\
+   -1 & 4 
+   \end{bmatrix}
+   \end{equation}
 
-$$
-det A = 5*4-(-1)(-2) = 18
-$$
+   Last, solve for **x**:
 
-$$
-A^{-1} = \frac{1}{18} * 
-\begin{bmatrix}
-5 & -2 \\
--1 & 4 
-\end{bmatrix}
-$$
+   \begin{align}
+   \vv{x} = \vv{A}^{-1}\vv{b} &= \frac{1}{18}
+   \begin{bmatrix}
+   5 & -2 \\
+   -1 & 4 
+   \end{bmatrix}
+   \begin{bmatrix}
+   20.9 \\
+   -19.3
+   \end{bmatrix} \\
+   &= \frac{1}{18}
+   \begin{bmatrix}
+   4 \cdot 20.9 +  2 \cdot -19.3 \\
+   1 \cdot  20.9 + 5 \cdot -19.3
+   \end{bmatrix} \\
+   &= \begin{bmatrix}
+   2.5 \\
+   -4.2
+   \end{bmatrix}
+   \end{align}
 
-$$
-x = \frac{1}{18} *
-\begin{bmatrix}
-5 & -2 \\
--1 & 4 
-\end{bmatrix}
-\begin{bmatrix}
-20.9 \\
--19.3
-\end{bmatrix}
-$$
-
-=
-
-$$
-x = \frac{1}{18} *
-\begin{bmatrix}
-4*20.9 +  & 2*-19.3 \\
-1*20.9 + & 5*-19.3
-\end{bmatrix}
-$$
-
-=
-
-$$
-\begin{bmatrix}
-2.5 \\
--4.2
-\end{bmatrix}
-$$
-
-$$ 
-x_1 = 2.5
-$$
-
-$$
-x_2 = -4.2
-$$
+   Therefore, $x_1 = 2.5$ and $x_2 = -4.2$.
+   ```
 
 (b)
 
