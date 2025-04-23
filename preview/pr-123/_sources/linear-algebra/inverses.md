@@ -17,22 +17,15 @@ where **I** is the *n* x *n* identity matrix.
 ```
 >>>>>>> a3b634ea4739f0e15b13f0f220951b1c16e8c395
 
-<<<<<<< HEAD
 Then, evaluate $|\vv{A}|$ to check if an inverse exists:
-=======
 A matrix is called *nonsingular* or *invertible* if it has an inverse, but
 *singular* if it does not.
->>>>>>> a3b634ea4739f0e15b13f0f220951b1c16e8c395
 
-<<<<<<< HEAD
 \begin{equation}
 |\vv{A}| = (5 \cdot 4) - (-1 \cdot -2) = 18
 \end{equation}
-=======
 ```{topic} Invertible matrix theorem
->>>>>>> a3b634ea4739f0e15b13f0f220951b1c16e8c395
 
-<<<<<<< HEAD
 $|\vv{A}| \ne 0$, so an inverse can be found using the formula for a 2x2
 matrix:
 
@@ -43,11 +36,8 @@ matrix:
 -1 & 4 
 \end{bmatrix}
 \end{equation}
-=======
 **A** is invertible if and only if the determinant of **A** is nonzero.
->>>>>>> a3b634ea4739f0e15b13f0f220951b1c16e8c395
 
-<<<<<<< HEAD
 Last, solve for **x**:
 
 \begin{align}
@@ -70,7 +60,6 @@ Last, solve for **x**:
 -4.2
 \end{bmatrix}
 \end{align}
-=======
 (There are many more such conditions!)
 ```
 
@@ -89,16 +78,10 @@ cover. Instead, we focus on two options: a formula for 2 x 2 matrices, and
 use of Gauss-Jordan elimination for larger matrices.
 
 ## Inverse of a 2 x 2 matrix
->>>>>>> a3b634ea4739f0e15b13f0f220951b1c16e8c395
 
-<<<<<<< HEAD
 Therefore, $x_1 = 2.5$ and $x_2 = -4.2$.
-=======
 For a 2 x 2 matrix,
->>>>>>> a3b634ea4739f0e15b13f0f220951b1c16e8c395
 
-<<<<<<< HEAD
-=======
 \begin{equation}
 \vv{A} = \begin{bmatrix} a & b \\ c & d \end{bmatrix},
 \end{equation}
@@ -211,7 +194,6 @@ Solve the following using matrix inversion:
    Therefore, $x_1 = 2.5$ and $x_2 = -4.2$.
    ```
 
->>>>>>> a3b634ea4739f0e15b13f0f220951b1c16e8c395
 (b)
 
 $$
