@@ -12,7 +12,7 @@
 Ex: y'-y=x
 \to y'=f(x,y)=x+y
 Use step size \Delta x=.2
-|   n  |    x_n   | y_n + | \Delta X f(x_n,y_n) | =y_n+1| Exact | Error (y_n-y)| 
+|   n  |    x_n   | y_n +  | \Delta X f(x_n,y_n)| =y_n+1| Exact  | Error (y_n-y)| 
 | 0    | 0        | 0      | 0                  | 0     | 0      | 0            |
 | 1    | 0.2      | 0      | 0.04               | 0.04  | 0.021  | 0.021        |
 | 2    | 0.4      | 0.04   | 0.088              | 0.128 | 0.092  | 0.052        |
