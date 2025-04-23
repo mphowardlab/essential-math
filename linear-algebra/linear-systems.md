@@ -37,8 +37,8 @@ Coefficients:
 - Infinitely many solutions (undetermined)
 
 Ex: Graph the following and explain how many solutions exist. Then, solve the equations if possible.
-![One Solution Graph(onesolution.jpg)]
-![Infinite Solutions Graph(infinite.jpeg)]
-![No Solution Graph(nosoltuion.jpg)]
+{image} / onesolution.jpg
+{image} / nosolution.jpg
+{image} / infinite.jpeg
 
 A homogeneous solution, Ax=0, **always** has at least the trivial solution x = 0. We will discuss how to systematically solve these
