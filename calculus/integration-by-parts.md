@@ -56,18 +56,23 @@ The acronym L.I.A.T.E. can help make this choice:
 
 $$\int(3x+5)\cos{\frac{x}{4}}dx = ?$$ 
 
-Let $u=3x+5$ , which makes $du=3dx$ , and $dv=\cos{\frac{x}{4}}dx$ , which makes $v=4\sin{\frac{x}{4}}$
+Let
+
+\begin{align}
+u &= 3x+5 & \d{v} &= \cos{\frac{x}{4}} \d{x} \\
+\d{u} &= 3 \d{x} & v &= 4\sin{\frac{x}{4}}
+\end{align}
 
 Which allows:
 
 \begin{align}
-$$\int(3x+5)\cos{\frac{x}{4}}dx 
+\int(3x+5)\cos{\frac{x}{4}}dx 
 
-= (3x+5)[4\sin{\frac{x}{4}}] - \int4\sin{\frac{x}{4}}3dx 
+&= (3x+5)[4\sin{\frac{x}{4}}] - \int4\sin{\frac{x}{4}}3dx \\
 
-= (12x+20)[\sin{\frac{x}{4}}] - 12\int\sin{\frac{x}{4}}dx 
+&= (12x+20)[\sin{\frac{x}{4}}] - 12\int\sin{\frac{x}{4}}dx \\
 
-= (12x+20)[4\sin{\frac{x}{4}}] + 48\cos{\frac{x}{4}} + c$$
+&= (12x+20)[4\sin{\frac{x}{4}}] + 48\cos{\frac{x}{4}} + c$$ \\
 \end{align}
 
 So...
