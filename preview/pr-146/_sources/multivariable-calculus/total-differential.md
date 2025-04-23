@@ -44,7 +44,7 @@ partial derivatives can be formed in the same way:
 1.
 
    \begin{equation}
-   \td{}{f}{x}{y} =
+   \td{}{f}{x}{y} 
    \end{equation}
 
    ```{solution}
@@ -63,18 +63,18 @@ partial derivatives can be formed in the same way:
 ```{solution}
 (based on differential):
 
-\begin{equation} 
+$$
 \left(\frac{\partial f}{\partial y}\right)_x = -q 
-\end {equation} 
+$$
 ```
 
 
 3.  \begin{equation} \left(\frac{\partial^2 f}{\partial x^2}\right)_y =   \end{equation}
 
 ```{solution}
-\begin{equation} 
+$$
 \left(\frac{\partial^2 f}{\partial x^2}\right)_y = \frac{\partial }{\partial x}\left(\left(\frac{\partial f}{\partial x}\right)_y \right)_y = \left(\frac{\partial p}{\partial x}\right)_y  
-\end {equation}
+$$
 ```
 
 4. \begin{equation} \left(\frac{\partial^2 f}{\partial y^2}\right)_x = \end{equation}
