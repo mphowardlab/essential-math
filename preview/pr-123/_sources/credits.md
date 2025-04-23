@@ -7,6 +7,8 @@ This work (c) 2025 is licensed under
 
 ## Contributors
 
+- Payton Baxter
+- Paine Cole
 - Ella Governale
 - Michael P. Howard
 - Evan M. Hughes
@@ -17,6 +19,7 @@ This work (c) 2025 is licensed under
 - Elijah  C. Mitchell
 - Michelle Schindler
 - Katie Sorensen
+- Debora Vasconcelos
 
 ## Attributions
 
