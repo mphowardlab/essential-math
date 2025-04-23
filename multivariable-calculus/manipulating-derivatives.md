@@ -61,10 +61,18 @@ Finally, verify that the inverse derivative gives the original:
 ```
 
 ``` {topic} Chain Rule
+When working with multivariable functions, we often want to compute the derivative of one variable with respect to another, even when the relationship between them is indirect. In such cases, the chain rule allows us to break down the derivative into intermediate steps.
 
+Suppose we have a variable \( x \) that depends on another variable \( w \), and \( w \) itself depends on a variable \( y \). Then, \( x \) depends on \( y \) through \( w \), and we can write:
+\[
+x = x(w), \quad w = w(y)
+\]
+
+In this situation, we apply the chain rule for partial derivatives to compute how \( x \) changes with respect to \( y \), while keeping \( z \) constant:
 ```{math}
 \left( \frac{\partial x}{\partial y} \right)_z = \left( \frac{\partial x}{\partial w} \right)_z \left( \frac{\partial w}{\partial y} \right)_z
 ```
+
 ```{example}
 
 ```{math}
