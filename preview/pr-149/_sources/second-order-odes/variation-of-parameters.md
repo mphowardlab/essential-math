@@ -2,7 +2,7 @@
 Solve the differential equation
 
 \begin{equation}
-y'' - 4y' + 4y = x^{2} e^{x}
+y'' - 4y' + 4y = x^{2} e^{x}  \quad y(0) = 0, \quad y'(0) = 0
 \end{equation}
 
 **Homogeneous:**
@@ -16,7 +16,7 @@ y'' - 4y' + 4y = 0
 \end{equation}
 
 \begin{equation}
-y = (C_1 + C_2 x) e^{2x}
+y= (C_1 + C_2 x) e^{2x}
 \end{equation}
 
 **Particular:**
@@ -46,3 +46,25 @@ x^{3}   & \quad e^{-x}  & \quad x^{2} & \quad e^{-x} \\
 6       & \quad -e^{-x} & \quad 0     & \quad -e^{-x} \\
 0       & \quad e^{-x}  & \quad 0     & \quad e^{-x} \\
 \end{align}
+
+y_p=-e^{2x}(-x^{3}e^{-x}-3x^{2}e^{-x}-6xe^{-x}-6e^{-x})+xe^{2x}(-x^{2}e^{-x}-2xe^{-x}-2e^{-x})
+y_p=(x^{2}+4x+6)e^{x}
+
+**Boundary Conditions:**
+
+\begin{equation}
+y=(C_1 + C_2 x) e^{2x}+(x^{2}+4x+6)e^{x}
+\end{equation}
+
+\begin{equation}
+y'=2(C_1 + C_2 x) e^{2x}+C_2e^{2x}+(x^{2}+4x+6)e^{x}+(2x+4)e^{x}
+\end{equation}
+\begin{equation}
+0=y(0)=C_1+6 \Rightarrow C_1=-6
+\end{equation}
+\begin{equation}
+0=y'(0)=2C_1+C_2+6+4 \Rightarrow C_2=2
+\end{equation}
+\begin{equation}
+y=(-6 + 2 x) e^{2x}+(x^{2}+4x+6)e^{x}
+\end{equation}
