@@ -17,16 +17,15 @@ $
 
 To find the eigenvalues:
 $
-|A - $\lambda$ I| = 
+|A - λI| = 
 \begin{vmatrix}
 -\lambda & 4 \\
 -4 & -\lambda
 \end{vmatrix}
-= \lambda^2 + 16 = 0 \Rightarrow \lambda_{1,2} = \pm 4i
-$
+λ² + 16 = 0 ⟹ λ₁,₂ = ±4i
 
-For \( $\lambda_1$ = 4i \):
-$
+For \( λ = 4i \):
+
 \begin{bmatrix}
 -4i & 4 \\
 -4 & -4i
@@ -35,13 +34,8 @@ $
 x_1 \\
 x_2
 \end{bmatrix}
-= 0
-\Rightarrow 
-x_1 = \begin{bmatrix}
--i \\
-1
-\end{bmatrix}
-$
+= 0 ⟹ x₁ = [ -i, 1 ]ᵀ
+
 
 For \( $\lambda_2$ = -4i \):
 $
@@ -53,13 +47,7 @@ $
 x_1 \\
 x_2
 \end{bmatrix}
-= 0
-\Rightarrow 
-x_2 = \begin{bmatrix}
-i \\
-1
-\end{bmatrix}
-$
+= 0 ⟹ x₂ = [ i, 1 ]ᵀ
 
 **General Solution:**
 $
