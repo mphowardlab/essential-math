@@ -41,3 +41,4 @@ y_2 = 2 - C_1 exp([-\frac{1}{2}(x+\frac{1}{2}e^{-2x})]) \\
 C_1 = 2e^{\frac{1}{4}} \\
 y_2 = 2[1-exp(\frac{1}{4}-\frac{x}{2}-\frac{1}{4}e^{-2x})]
 \end{align}
+````
