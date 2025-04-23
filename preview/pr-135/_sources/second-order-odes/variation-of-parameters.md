@@ -1,4 +1,4 @@
-# 4. Example: Steady heat diffusion with internal source
+# Example: Steady heat diffusion with internal source
 $α\frac{d^2T}{dx^2} + qxsinx = 0$ 
 
 $T(-1) = T(1) = 1$
