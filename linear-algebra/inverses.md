@@ -137,7 +137,6 @@ Solve the following using matrix inversion:
    -x_1 + 4x_2 &= -19.3
    \end{align}
    
-   ```{solution}
    First, write in matrix form **Ax** = **b** with:
    \begin{equation}
    \vv{A} = \begin{bmatrix}
@@ -192,7 +191,6 @@ Solve the following using matrix inversion:
    \end{align}
 
    Therefore, $x_1 = 2.5$ and $x_2 = -4.2$.
-   ```
 
 (b)
 
