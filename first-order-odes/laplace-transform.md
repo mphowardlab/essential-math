@@ -5,10 +5,12 @@ It is also a way to solve **differential** equations using **algebra**.
 
 It is defined as: 
 
-\begin{equation}
+$$ \begin{equation}
 F(s) = L[f(t)] = \int_0^\infty e^-st \f(t)
 \end{equation}
-JHKHKHKCDSKHCSDHKLSHLKCSHLICSAHLCLHCSHLKSHLKSAHLKCSAHLKSACHKLSAC
+$$
+
+
 The inverse Laplace transform of **F(s)** is **f(t)**!
 
 Many Laplace transforms are already known, but can be computed using integration by parts.
