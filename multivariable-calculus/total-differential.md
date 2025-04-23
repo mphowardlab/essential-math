@@ -44,7 +44,7 @@ partial derivatives can be formed in the same way:
 1.
 
    \begin{equation}
-   \td{}{f}{x}{y} 
+   \td{}{f}{x}{y} =
    \end{equation}
 
    ```{solution}
@@ -56,12 +56,11 @@ partial derivatives can be formed in the same way:
    ```   
 
 2.  
-\begin{equation} 
-\left(\frac{\partial f}{\partial y}\right)_x = 
-\end {equation} 
-
+$$
+    \td{}{f}{y}{x} =
+$$
 ```{solution}
-(based on differential):
+    (based on differential):
 
 $$
 \left(\frac{\partial f}{\partial y}\right)_x = -q 
