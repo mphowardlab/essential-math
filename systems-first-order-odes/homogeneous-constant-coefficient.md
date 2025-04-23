@@ -53,7 +53,7 @@ A = [ -k1, 0, 0; k1, -k2, 0; 0, k2, 0 ]
 Matrix A is lower triangular, so
 
 \begin{align}
-λ1 &= -k1 & \rightarrow  [0, 0, 0; k1, -k2+k1, 0; 0, k2, k1] \\
+λ1 &= -k1  \rightarrow  [0, 0, 0; k1, -k2+k1, 0; 0, k2, k1] \\
 & \rightarrow  (k1*x1)-(k2-k1)*x2 = 0 \\
 & \rightarrow  (k2*x2)+(k1*x3) = 0 \\
 & \rightarrow \rightarrow  x1 = [(-(k2-k1)/k2); -k1/k2; 1] 
@@ -78,7 +78,7 @@ Hence,
 Initial Condition:
 
 \begin{align}
-C(0) &= [CA0; 0; 0];  &= [a1(-(k2-k1)/k2); -a1(k1/k2)-a2; a1+a2+a3] \\
+C(0) &= [CA0; 0; 0]; = [a1(-(k2-k1)/k2); -a1(k1/k2)-a2; a1+a2+a3] \\
 %disp(C(0))
 \rightarrow  a1 &= -CA0(k2/(k2-k1))  \\
 \rightarrow  a2 &= -(k1/k2)a1 = CA0(k1/(k2-k1)) \\
