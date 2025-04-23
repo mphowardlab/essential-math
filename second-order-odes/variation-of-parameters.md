@@ -104,9 +104,9 @@ $1 = T(-1) = C_1 - C_2 + \frac{q}{α}[2cos(-1)-sin(-1)] = C_1 - C_2 + \frac{q}{�
 
 $1 = T(1) = C_1 + C_2 + \frac{q}{α}[2cos1 + sin1]$
 
--> $2 = 2C_1 + 2\frac{q}{α}(2cos1 + sin1)$ -> $C_1 = 1 - \frac{q}{α}(2cos1 + sin1)$
+--> $2 = 2C_1 + 2\frac{q}{α}(2cos1 + sin1)$ -> $C_1 = 1 - \frac{q}{α}(2cos1 + sin1)$
 
--> $C_2 = 1 - C_1 - \frac{q}{α}(2cos1 + sin1) = 0$
+--> $C_2 = 1 - C_1 - \frac{q}{α}(2cos1 + sin1) = 0$
 
 **Final Result:** 
 
