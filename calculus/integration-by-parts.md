@@ -53,6 +53,7 @@ The acronym L.I.A.T.E. can help make this choice:
 - **T**rigonometric
 - **E**xponential  (worst choice of u)
 
+Example 1:
 
 $$\int(3x+5)\cos{\frac{x}{4}}dx = ?$$ 
 
@@ -72,7 +73,7 @@ Which allows:
 
 &= (12x+20)[\sin{\frac{x}{4}}] - 12\int\sin{\frac{x}{4}}dx \\
 
-&= (12x+20)[4\sin{\frac{x}{4}}] + 48\cos{\frac{x}{4}} + c$$ \\
+&= (12x+20)[4\sin{\frac{x}{4}}] + 48\cos{\frac{x}{4}} + c \\
 \end{align}
 
 So...
@@ -81,18 +82,25 @@ $$\int(3x+5)\cos{\frac{x}{4}}dx = (12x+20)[4\sin{\frac{x}{4}}] + 48\cos{\frac{x}
 
 ---
 
+Example 2:
+
 $$\int(lnxdx) = ?$$
 
-Let $u=lnx$, which makes $du=\frac{1}{x}dx$, and $dv=dx$, which makes $v=x$
+Let 
+
+\begin{align}
+u &= lnx & \d{v} &= dx \\
+\d{u} &= \frac{1}{x} \d{x} & v &= x
+\end{align}
 
 Which allows:
 
 \begin{align}
-$$\int(lnx) 
+\int(lnx) 
 
-= xlnx - \int(\frac{1}{x}xdx) 
+&= xlnx - \int(\frac{1}{x}xdx) \\
 
-= xlnx - x + c$$
+&= xlnx - x + c \\
 \end{align}
 
 So...
@@ -101,20 +109,27 @@ $$\int(lnx) = xlnx - x + c$$
 
 ---
 
+Example 3:
+
 $$\int(x^5)(\sqrt(x^3+1))dx = ?$$
 
-Let $u=x^3$, which gives $du=3x^2dx$, and $dv=x^2\sqrt(x^3+1)dx$, which gives $v=\frac{2}{9}(x^3+1)^{\frac{3}{2}}$
+Let 
+
+\begin{align}
+u &= x^3 & \d{v} &= x^2\sqrt(x^3+1) \d{x} \\
+\d{u} &= 3x^2 \d{x} & v &= \frac{2}{9}(x^3+1)^{\frac{3}{2}}
+\end{align}
 
 Which allows:
 
 \begin{align}
-$$\int(x^5)(\sqrt(x^3+1))dx 
+\int(x^5)(\sqrt(x^3+1))dx 
 
-= x^3\frac{2}{9}(x^3+1)^{\frac{3}{2}} - \int(\frac{2}{9}(x^3+1)^{\frac{3}{2}})3x^2dx 
+&= x^3\frac{2}{9}(x^3+1)^{\frac{3}{2}} - \int(\frac{2}{9}(x^3+1)^{\frac{3}{2}})3x^2dx \\
 
-= \frac{2}{9}x^3(x^3+1)^{\frac{3}{2}} - \frac{2}{9}\frac{2}{5}(x^3+1)^{\frac{5}{2}} + c 
+&= \frac{2}{9}x^3(x^3+1)^{\frac{3}{2}} - \frac{2}{9}\frac{2}{5}(x^3+1)^{\frac{5}{2}} + c \\
 
-= \frac{2}{9}x^3(x^3+1)^{\frac{3}{2}} - \frac{4}{45}(x^3+1)^{\frac{5}{2}} + c$$
+&= \frac{2}{9}x^3(x^3+1)^{\frac{3}{2}} - \frac{4}{45}(x^3+1)^{\frac{5}{2}} + c \\
 \end{align}
 
 So...
