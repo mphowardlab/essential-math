@@ -147,6 +147,8 @@ u &= x^4 & \d{v} &= e^{\frac{x}{2}} \\
 \d{u} &= 4x63 \d{x} & v &= 2e^{\frac{x}{2}}
 \end{align}
 
+Which allows:
+
 \begin{align}
 \int(x^4e^{\frac{x}{2}}dx) 
 
