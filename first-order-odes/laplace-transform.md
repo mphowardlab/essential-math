@@ -54,7 +54,8 @@ y=\frac{1}{s-1} + \frac{1}{s^2(s-1)}
 The best method to narrow down this equation would be to use fraction decomposition
 
 \begin{equation}
-\frac{1}{(s-1)(s^2)} = \frac{A_1}{s-1} + \frac{A_2}{s} + \frac{A_3}{s^2}=\frac{1}{s-1}+\frac{A_2}{s} - \frac{A_3}{s^2}
+\frac{1}{(s-1)(s^2)} = \frac{A_1}{s-1} + \frac{A_2}{s} + \frac{A_3}{s^2}
+ =\frac{1}{s-1}+\frac{A_2}{s} - \frac{A_3}{s^2}
 \end{equation}
 
 $A_1$ and $A_3$ can be found using the coverup method:
@@ -83,9 +84,9 @@ Y&=\frac{2}{s-1}-\frac{1}{s} - \frac{1}{s^2}
 
 Solve for $y$ by applying the Inverse Laplace Tansform
 
-\begin{align}  
-y &=L^{-1}[Y]\\  
-  &=2L^{-1}\left[\frac{1}{(s-1)}\right]-L^{-1}\left[\frac{1}{s}\right]-L^{-1}\left[\frac{1}{s^2}\right]\\  
-  &=2e^t-1-t  
-\end{align} 
+\begin{align}
+y &=L^{-1}[Y]\\
+  &=2L^{-1}\left[\frac{1}{(s-1)}\right]-L^{-1}\left[\frac{1}{s}\right]-L^{-1}\left[\frac{1}{s^2}\right]\\
+  &=2e^t-1-t
+\end{align}
 ```
