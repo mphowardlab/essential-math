@@ -155,29 +155,27 @@ Gauss-Jordan elimination to solve directly:
 \begin{matrix}
 \vphantom{R_1} \\ \div 10 \\ \div -95
 \end{matrix} \\
-\end{align}
-
-<!---
-\[
-\left[ \begin{array}{ccc|c}
+\to &\begin{bmatrix}
 1 & -1 & 1 & 1 & 0 & 0 \\
 0 & 1 & 2.5 & 0 & 0 & 0.1 \\
-0 & 0 & 1 & .211 & -.10 & 0.32 \\
-\end{array} \right]
-\]
-\[
-\left[ \begin{array}{ccc|c}
+0 & 0 & 1 & .211 & -.010 & 0.032 
+\end{bmatrix}
+\begin{matrix}
+\ \ -R_3 \\ \ -2.5 R_3 \\ \vphantom{R_3}
+\end{matrix} \\
+\to &\begin{bmatrix}
 1 & -1 & 0 & 0.789 & 0.010 & -0.032 \\
 0 & 1 & 0 & -0.528 & 0.025 & 0.020 \\
-0 & 0 & 1 & .211 & -.10 & 0.32 \\
-\end{array} \right]
-\]
-\[
-\left[ \begin{array}{ccc|c}
+0 & 0 & 1 & .211 & -.10 & 0.32 
+\end{bmatrix}
+\begin{matrix}
+\ \ +R_2 \\ \vphantom{R_2} \\ \vphantom{R_3}
+\end{matrix} \\
+\to &\begin{bmatrix}
 1 & 0 & 0 & 0.261 & 0.035 & -0.012 \\
 0 & 1 & 0 & -0.528 & 0.025 & 0.020 \\
-0 & 0 & 1 & .211 & -.10 & 0.32 \\
-\end{array} \right]
-\]
+0 & 0 & 1 & .211 & -.10 & 0.32 
+\end{bmatrix}
+\end{align}
 --->
 ```
