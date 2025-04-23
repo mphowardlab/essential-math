@@ -4,7 +4,7 @@ We sometimes need to find derivatives we don't obtain easily from one of these p
 
 ---
 
-#### Inversion
+``` {topic} Inversion Rule
 
 If  x(y, z)  and  y(x, z), then:
 
