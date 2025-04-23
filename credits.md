@@ -7,6 +7,7 @@ This work (c) 2025 is licensed under
 
 ## Contributors
 
+- Payton Baxter
 - Ella Governale
 - Michael P. Howard
 - Evan M. Hughes
