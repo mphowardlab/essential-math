@@ -158,7 +158,7 @@ Expand the following to two terms:
 
    \begin{align}
    f(x)&=\frac{1}{1+x} & f(0) &= 1\\
-   f'(x)&=-\frac{1}{(1+x)^2} & f'(0) &= 1
+   f'(x)&=-\frac{1}{(1+x)^2} & f'(0) &= -1
    \end{align}
 
    So:
@@ -174,13 +174,13 @@ Expand the following to two terms:
    Recall:
    
    \begin{equation}
-   f(x)=cos(x) \approx 1-\frac{x^2}{2}
+   f(x)=\cos(x) \approx 1-\frac{x^2}{2}
    \end{equation}
 
    So:
 
    \begin{equation}
-   f(x)=\cos(4x) \approx 1-\frac{(4x)^2}{2} \approx 1-8x^2
+   f(x)=\cos(4x) \approx 1-\frac{(4x)^2}{2} = 1-8x^2
    \end{equation}
    ```
 
@@ -188,7 +188,7 @@ Expand the following to two terms:
 
    ```{solution}
    \begin{equation}
-   f(x)=cos(x) \approx 1-\frac{x^2}{2}
+   f(x)=\cos(x) \approx 1-\frac{x^2}{2}
    \end{equation}
 
    So:
@@ -212,7 +212,7 @@ Expand the following to two terms:
    So:
 
    \begin{equation}
-   f(x) \approx (1+x+\dots)(x-\frac{x^3}{6}+\dots) \approx x+x^2
+   f(x) \approx (1+x+\dots)(x-\frac{x^3}{6}+\dots) = x+x^2
    \end{equation}
    ```
 
