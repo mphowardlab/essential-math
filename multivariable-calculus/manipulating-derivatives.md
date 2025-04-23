@@ -13,7 +13,7 @@ If  x(y, z)  and  y(x, z), then:
 \end{equation}
 ```
 
-**Example:**
+```{example}
 
 ```{math}
 Let:
@@ -40,12 +40,12 @@ And confirm the inversion:
 \frac{1}{\left( \frac{\partial y}{\partial x} \right)_z} = \frac{2y}{z}
 ```
 
-#### Chain Rule
+``` {topic} Chain Rule
 
 ```{math}
 \left( \frac{\partial x}{\partial y} \right)_z = \left( \frac{\partial x}{\partial w} \right)_z \left( \frac{\partial w}{\partial y} \right)_z
 ```
-**Example:**
+```{example}
 
 ```{math}
   w = yz  
@@ -72,6 +72,7 @@ And:
 Therefore:
 ```{math}
 \left( \frac{\partial x}{\partial y} \right)_z = \frac{2w}{z^3} \cdot z = \frac{2w}{z^2} = \frac{2yz}{z^2} = \frac{2y}{z}
+```
 
 ```{example} Change in internal energy
 We want to compute the change in molar internal energy $\Delta U$ of a
