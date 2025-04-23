@@ -24,7 +24,6 @@ x = \frac{y^2}{z}.
 \]
 We will compute \(\left( \frac{\partial x}{\partial y} \right)_z\) directly, then find \(\left( \frac{\partial y}{\partial x} \right)_z\) by inverting the expression for \(y\) in terms of \(x\), and confirm that the results are consistent through inversion.
 
-\section*{Direct Approach}
 
 Start with:
 \[
@@ -35,7 +34,6 @@ Take the partial derivative of \(x\) with respect to \(y\) at constant \(z\):
 \left( \frac{\partial x}{\partial y} \right)_z = \frac{2y}{z}
 \]
 
-\section*{Inverse Function Approach}
 
 We first solve for \(y\) in terms of \(x\):
 \[
