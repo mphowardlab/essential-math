@@ -82,7 +82,11 @@ In this situation, we apply the chain rule for partial derivatives to compute ho
  ```{math}
  y = \frac{w}{z}
  ```
-Then:
+Then, given that
+```{math}
+x = \frac{y}{z}
+```
+
 ```{math}
 x = \frac{(w/z)^2}{z} = \frac{w^2}{z^3}
 ```
