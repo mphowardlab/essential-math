@@ -60,7 +60,7 @@ $$
     \td{}{f}{y}{x} =
 $$
 ```{solution}
-    (based on differential):
+Based on differential:
 
 $$
 \left(\frac{\partial f}{\partial y}\right)_x = -q 
@@ -89,16 +89,16 @@ $$
 
 ```{solution}
 
-\begin{equation} 
+$$
 \frac{\partial^2 f}{\partial x \partial y} = \frac{\partial }{\partial y}\left(\left(\frac{\partial f}{\partial y}\right)_x \right)_y = -\left(\frac{\partial q}{\partial x}\right)_y 
-\end {equation}
+$$
 ```
 
 6. \begin{equation} \frac{\partial^2 f}{\partial y \partial x} = \end{equation}
 
 ```{solution}
 
-\begin{equation} 
+$$ 
 \frac{\partial^2 f}{\partial y \partial x} =\frac{\partial }{\partial y}\left(\left(\frac{\partial f}{\partial x}\right)_y \right)_x = \left(\frac{\partial p}{\partial y}\right)_x 
-\end {equation}
+$$
 ```
