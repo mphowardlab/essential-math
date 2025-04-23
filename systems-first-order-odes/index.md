@@ -67,4 +67,7 @@ y_1 = \frac{1}{2} (1-e^{-2x})
 \text{and}
 y_2 = 2[1-exp(\frac{1}{4}-\frac{x}{2}-\frac{1}{4}e^{-2x})]
 \end{align}
+
+git fetch origin
+git checkout 106-system-of-first-order-odes-skill-builder
 ````
