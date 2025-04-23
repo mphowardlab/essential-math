@@ -1,7 +1,7 @@
 # Homogeneous linear first-order ODEs with constant coefficients
 
 \begin{equation}
-y' = Ay$
+y' = Ay
 \end{equation}
 
 As an ansatz, assume a solution: 
@@ -53,16 +53,20 @@ A = [ -k1, 0, 0; k1, -k2, 0; 0, k2, 0 ]
 Matrix A is lower triangular, so
 
 \begin{align}
-λ1 &= -k1 & \rightarrow & [0, 0, 0; k1, -k2+k1, 0; 0, k2, k1] \\
-& \rightarrow  (k1*x1)-(k2-k1)*x2 &=0 \\
-& \rightarrow & (k2*x2)+(k1*x3) &=0 \\
-& \rightarrow \rightarrow & x1 &= [(-(k2-k1)/k2); -k1/k2; 1] \\
+λ1 &= -k1 & \rightarrow  [0, 0, 0; k1, -k2+k1, 0; 0, k2, k1] \\
+& \rightarrow  (k1*x1)-(k2-k1)*x2 = 0 \\
+& \rightarrow  (k2*x2)+(k1*x3) = 0 \\
+& \rightarrow \rightarrow  x1 = [(-(k2-k1)/k2); -k1/k2; 1] 
+\end{align}
 
+\begin{align}
 λ2 &= -k2 \rightarrow  [k1-k2, 0, 0; k1, 0, 0; 0, k2, k2]  \\
-& \rightarrow x2 = [0; -1; 1]  \\
+& \rightarrow x2 = [0; -1; 1]  
+\end{align}
 
-λ3 = 0 \rightarrow  [-k1, 0, 0; k1, -k2, 0; 0, k2, 0] \\
-\rightarrow x3= [0; 0; 1] \\
+\begin{align}
+λ3 &= 0 \rightarrow  [-k1, 0, 0; k1, -k2, 0; 0, k2, 0] \\
+& \rightarrow x3= [0; 0; 1] 
 \end{align}
 
 Hence,
