@@ -7,17 +7,20 @@ This work (c) 2025 is licensed under
 
 ## Contributors
 
+- Payton Baxter
+- Paine Cole
 - Ella Governale
 - Michael P. Howard
 - Evan M. Hughes
+- Abby Lucas
 - Faith Major
-<<<<<<< HEAD
+- John R. Marshall, IV
 - Davis McCaleb
-=======
 - Lilli Midgette
->>>>>>> df8094a0c36c14e2bd1654c5ca67b218bacb4609
+- Elijah  C. Mitchell
 - Michelle Schindler
 - Katie Sorensen
+- Debora Vasconcelos
 
 ## Attributions
 
