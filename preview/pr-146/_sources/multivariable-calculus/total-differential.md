@@ -90,7 +90,7 @@ $$
 ```{solution}
 
 $$
-\frac{\partial^2 f}{\partial x \partial y} = \frac{\partial }{\partial y}\left(\left(\frac{\partial f}{\partial y}\right)_x \right)_y = -\left(\frac{\partial q}{\partial x}\right)_y 
+\frac{\partial^2 f}{\partial x \partial y} = \frac{\partial }{\partial x}\left(\left(\frac{\partial f}{\partial y}\right)_x \right)_y = -\left(\frac{\partial q}{\partial x}\right)_y 
 $$
 ```
 
