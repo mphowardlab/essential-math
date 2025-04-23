@@ -140,12 +140,17 @@ $$\int(x^5)(\sqrt(x^3+1))dx = \frac{2}{9}x^3(x^3+1)^{\frac{3}{2}} - \frac{4}{45}
 
 $$\int(x^4e^{\frac{x}{2}}dx) = ?$$
 
-Let $u=x^4$ , which makes $du=4x^3$ , and $dv=e^{\frac{x}{2}}dx$ , which makes $v=2e^{\frac{x}{2}}$
+Let 
 
 \begin{align}
-$$\int(x^4e^{\frac{x}{2}}dx) 
+u &= x^4 & \d{v} &= e^{\frac{x}{2}} \\
+\d{u} &= 4x63 \d{x} & v &= 2e^{\frac{x}{2}}
+\end{align}
 
-= x^4(2e^{\frac{x}{2}}) - \int2e^{\frac{x}{2}}(4x^3)dx$$
+\begin{align}
+\int(x^4e^{\frac{x}{2}}dx) 
+
+&= x^4(2e^{\frac{x}{2}}) - \int2e^{\frac{x}{2}}(4x^3)dx \\
 \end{align}
 
 We will need to integrate by parts again but there is a shortcut!!
@@ -164,7 +169,8 @@ For this shortcut make a chart like depicted below and then starting from the fi
 
 Your answer will look like this:
 
-$$\int(x^4e^{\frac{x}{2}}dx) = (x^4)(2e^{\frac{x}{2}}) - (4x^3)(4e^{\frac{x}{2}}) + (12x^2)(8e^{\frac{x}{2}}) - (24x)(16e^{\frac{x}{2}}) + (24)(32e^{\frac{x}{2}})$$
+$$\int(x^4e^{\frac{x}{2}}dx) 
+= (x^4)(2e^{\frac{x}{2}}) - (4x^3)(4e^{\frac{x}{2}}) + (12x^2)(8e^{\frac{x}{2}}) - (24x)(16e^{\frac{x}{2}}) + (24)(32e^{\frac{x}{2}})$$
 
 Simplified this will give the final answer of:
 
