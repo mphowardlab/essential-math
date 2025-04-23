@@ -18,6 +18,7 @@ This work (c) 2025 is licensed under
 - Elijah  C. Mitchell
 - Michelle Schindler
 - Katie Sorensen
+- Debora Vasconcelos
 
 ## Attributions
 
