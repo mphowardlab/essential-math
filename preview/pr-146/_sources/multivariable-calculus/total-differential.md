@@ -44,7 +44,7 @@ partial derivatives can be formed in the same way:
 1.
 
    \begin{equation}
-   \td{}{f}{x}{y}
+   \td{}{f}{x}{y} =
    \end{equation}
 
    ```{solution}
@@ -56,30 +56,50 @@ partial derivatives can be formed in the same way:
    ```   
 
 2.  
-\begin{equation} \left(\frac{\partial f}{\partial y}\right)_x = \end {equation} 
+\begin{equation} 
+\left(\frac{\partial f}{\partial y}\right)_x = 
+\end {equation} 
+
 ```{solution}
 (based on differential):
-\begin{equation} \left(\frac{\partial f}{\partial y}\right)_x = -q \end {equation} 
+
+\begin{equation} 
+\left(\frac{\partial f}{\partial y}\right)_x = -q 
+\end {equation} 
 ```
 
 
 3.  \begin{equation} \left(\frac{\partial^2 f}{\partial x^2}\right)_y =   \end{equation}
 
 ```{solution}
-\begin{equation} \left(\frac{\partial^2 f}{\partial x^2}\right)_y = \frac{\partial }{\partial x}\left(\left(\frac{\partial f}{\partial x}\right)_y \right)_y = \left(\frac{\partial p}{\partial x}\right)_y  \end {equation}
+\begin{equation} 
+\left(\frac{\partial^2 f}{\partial x^2}\right)_y = \frac{\partial }{\partial x}\left(\left(\frac{\partial f}{\partial x}\right)_y \right)_y = \left(\frac{\partial p}{\partial x}\right)_y  
+\end {equation}
 ```
 
 4. \begin{equation} \left(\frac{\partial^2 f}{\partial y^2}\right)_x = \end{equation}
+
 ```{solution}
-\begin{equation} \left(\frac{\partial^2 f}{\partial y^2}\right)_x = \frac{\partial }{\partial y}\left(\left(\frac{\partial f}{\partial y}\right)_x \right)_x = \left(\frac{\partial (-q)}{\partial y}\right)_x = -\left(\frac{\partial q}{\partial y}\right)_x \end {equation}
+
+\begin{equation} 
+\left(\frac{\partial^2 f}{\partial y^2}\right)_x = \frac{\partial }{\partial y}\left(\left(\frac{\partial f}{\partial y}\right)_x \right)_x = \left(\frac{\partial (-q)}{\partial y}\right)_x = -\left(\frac{\partial q}{\partial y}\right)_x 
+\end {equation}
 ```
 
 5. \begin{equation} \frac{\partial^2 f}{\partial x \partial y} = \end{equation}
+
 ```{solution}
-\begin{equation} \frac{\partial^2 f}{\partial x \partial y} = \frac{\partial }{\partial y}\left(\left(\frac{\partial f}{\partial y}\right)_x \right)_y = -\left(\frac{\partial q}{\partial x}\right)_y \end {equation}
+
+\begin{equation} 
+\frac{\partial^2 f}{\partial x \partial y} = \frac{\partial }{\partial y}\left(\left(\frac{\partial f}{\partial y}\right)_x \right)_y = -\left(\frac{\partial q}{\partial x}\right)_y 
+\end {equation}
 ```
 
 6. \begin{equation} \frac{\partial^2 f}{\partial y \partial x} = \end{equation}
+
 ```{solution}
-\begin{equation} \frac{\partial^2 f}{\partial y \partial x} =\frac{\partial }{\partial y}\left(\left(\frac{\partial f}{\partial x}\right)_y \right)_x = \left(\frac{\partial p}{\partial y}\right)_x \end {equation}
+
+\begin{equation} 
+\frac{\partial^2 f}{\partial y \partial x} =\frac{\partial }{\partial y}\left(\left(\frac{\partial f}{\partial x}\right)_y \right)_x = \left(\frac{\partial p}{\partial y}\right)_x 
+\end {equation}
 ```
