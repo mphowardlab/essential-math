@@ -10,8 +10,7 @@ y' &= \frac{f(x)}{g(y)} \\
 \end{align}
 ```
 
-```{example} Separation of variables
-Given $y' = xy$, separate the variables and solve:
+For example, to solve $y' = xy$, separate the variables and integrate:
 
 \begin{align}
 \int \frac{\d{y}}{y} &= \int x \d{x} \\
@@ -22,213 +21,157 @@ y &= c e^\frac{x^2}{2}
 
 Note that here, we are being careful to denote the redefinition of the
 integration constant ($c = e^{c_0}$). This detail may be glossed over at times.
+
+```{example} Chemical reaction kinetics
+A substance is disappearing according to a first-order reaction, so its
+concentration follows
+
+\begin{equation}
+\dd{}{c}{t} = -k c
+\end{equation}
+
+where $k$ is the reaction rate constant. If the initial concentration of the
+reactant was 1.0 M and the concentration after 1 hour has passed is 0.70 M,
+what is the reaction rate constant?
+
+---
+
+First, solve the differential equation using separation of variables
+
+\begin{align}
+\int \frac{1}{c} \d{c} &= \int -k \d{t} \\
+\ln c &= -k t + B
+\end{align}
+
+where *B* is an unknown integration constant. Apply the initial condition that
+$c(0) = 1$
+
+\begin{equation}
+\ln 1 = -k \cdot 0 + B \to B = 0
+\end{equation}
+
+Hence,
+
+\begin{equation}
+k = -\frac{\ln c}{t}
+\end{equation}
+
+We know that $c(1) = 0.70$ so
+
+\begin{equation}
+k = -\frac{\ln 0.7}{1\,{\rm h}} = 0.36\,{\rm h}^{-1}
+\end{equation}
 ```
 
-### Example 1
-The iceman Ötzi was found to have 52.5% of the C{sup}`14` of a living organism.  
-If the half-life of the C{sup}`14`is 5715 years, how long ago did Ötzi die if C{sup}`14` disappears by the first-order reaction?
+```{example} Newton's law of cooling
+Estimate the temperature *T* in an office building at 6 a.m. if the heat goes
+off at 10 p.m. when the building is 70°F and the outside temperature $T_\infty$
+is 45°F if the *T* follows
 
-$$
-\frac{dc}{dt} = -kc%
-$$
+\begin{equation}
+\dd{}{T}{t} = -k(T - T_\infty)
+\end{equation}
 
-Solution:
-Assume at death t=0 and c(0) = c{sub}`0` 
+where $k = 0.05\,{\rm h}^{-1}$.
 
-$$
-\int \frac{1}{c}\, dc = \int -k\, dt
-$$
-$$
-\ln(c) = -kt + B
-$$
-$$
-c = A e^{-kt}
-$$
-$$
-c(0) = c_0 = A
-$$
-c(t) = c_0 e^{-kt}
-$$
+---
 
-It is known that c(5715 year) = 0.5 c{sub}`0`  and t is needed where  c(t) = 0.525 c{sub}`0`  
+Separate the differential equation and integrate
 
-Take the ratio of the two equations:
-Equation 1 
+\begin{align}
+\int \frac{1}{T - T_\infty} \d{T} &= \int -k \d{t} \\
+\ln(T - T_\infty) &= -kt + c \\
+T - T_\infty &= C e^{-kt} \\
+T &= T_\infty + C e^{-kt}
+\end{align}
 
-$$ 
-0.5 c_0 = c_0 e^{-k (5715 years)} 
-$$
+Call 10 p.m. the time where $t = 0$. Then,
 
-The initial c cancels out and we are left with:
+\begin{equation}
+70 = T(0) = 45 + C \to C = 25
+\end{equation}
 
-$$
-\ln(0.5) = -k (5715 years) 
-$$
+Last, evaluate the temperature at 6 a.m. when $t = 8$:
 
- Equation 2 : 
+\begin{equation}
+T(8) = 45 + 25 e^{-0.05 \cdot 8} = 62
+\end{equation}
 
-$$
-0.525 c_0 = c_0 e^{-kt} 
-$$
+The temperature is approximately 62°F.
+```
 
-Initial c cancels out again
+````{example} Toricelli's Law
+A 1 cm hole opens at the bottom of a 1 m cylindrical tank. Water exits the
+hole with velocity that follows Toricelli's, $\sqrt{2gh}$ where *g* is the
+acceleration due to gravity and *g* is the height of water above the hole.
 
- $$
-\ln(0.525) = - kt 
-$$
+```{image} ./_images/toricelli.jpg
+:alt: Tank draining through a pinhole
+:width: 200px
+:align: center
+```
 
-Combine Equation 1 and 2
+If there is 2 m of water in the tank initially, when does it drain?
 
-$$
-\frac{t}{5715 year} = \frac{\ln(0.525)}{\ln(0.5)} 
-$$
-$$ 
-t = (5715 year) (\frac{\ln(0.525)}{\ln(0.5)})
-$$
-$$ 
- t = 5310 years 
- $$
- 
- **Final Answer**
- **Ötzi died approximately 5310 years ago**
-### Example 2
- Newtons law of cooling 
-Estimate the temperature in an office building at 6 a.m. if the heat goes off at 10 p.m. when the building is 70 degrees fahrenheit and the outside if 45 degrees fahrenheit.
+---
 
-$$ 
-\frac{dT}{dt} = -k(T - T_{outside}) 
-$$
+Start from the unsteady balance on the mass of water *m* in the tank
 
-If  k = 0.05 and T(10p.m.) = T(0) = 70
+\begin{equation}
+\dd{}{m}{t} = -\dot m_{\rm out}
+\end{equation}
 
-$$
-\int \frac{1}{T - T_{outside}}\, dT = \int -k\, dt
-$$
-$$
-ln(T - T_{outside}) = -kt + C 
-$$
-$$
-T - T_{outside} = C e^{-kt}
-$$
-$$
-T = T_{outside}+ C e^{-kt}
-$$
+The mass of water is
 
-Since T(10p.m.) = T(0) = 70 then 70 = 45 + C so C = 25
+\begin{equation}
+m = \rho V = \rho \frac{\pi D_1^2}{4} h
+\end{equation}
 
-$$ 
-T = 45 + 25 e^{-(0.05t)}
-$$
-$$ 
-T(8) =  45 + 25 e^{-(0.05(8))}
-$$
-$$
-45 + 25 e^{-(0.05(8))} = 62 
-$$
+where $\rho$ is the density of water, *V* is the volume of water in the tank,
+and $D_1$ = 1 m is the diameter of the tank. *V* is replaced using the volume of
+a cylinder.
 
-**Final Answer** 
-**The temperature at 6 a.m. is approximately 62°F**
-### Example 3
-Torcelli's Law 
-A 1cm hole opens at the bottom of a 1m cylindrical tank. If there is 2m of water in the tank, when does it drain?
-![fishy](./images/MAtAppextracreditdrawing3.jpg)
-***
-Solution:
-Known equations:
+The mass flow rate out is
 
-$$
-m = \rho V(t) 
-$$
+\begin{equation}
+\dot m_{\rm out} = \rho \dot V = \rho \frac{\pi D_2^2}{4} \sqrt{2gh}
+\end{equation}
 
-so,
+where $\dot V$ is the volumetric flow rate out of the hole, which we compute
+from the cross-sectional area of the hole (a circle with diameter $D_2$
+= 0.01 m) and the model for the velocity leaving it.
 
-$$
-m = \rho (\frac{\pi (D_1)^2}{4}) h(t)
-$$
+Inserting both into the unsteady balance, applying rules of differentiation, and
+simplifying gives
 
-Mass Balance:
+\begin{align}
+\dd{}{}{t}\left(\rho \frac{\pi D_1^2}{4} h\right)
+ &= -\rho \frac{\pi D_2^2}{4} \sqrt{2gh} \\
+\rho \frac{\pi D_1^2}{4} \dd{}{h}{t} &= -\rho \frac{\pi D_2^2}{4} \sqrt{2gh} \\
+\frac{dh}{dt} &= -\left(\frac{D_2}{D_1}\right)^2 \sqrt{2gh}
+\end{align}
 
-$$
-\frac{dm}{dt} = -m_{out} 
-$$ 
+This is a separable differential equation
 
-also, 
-Equation 1:
+\begin{align}
+\int \frac{1}{\sqrt{h}} \d{h}
+  &= \int -\left(\frac{D_2}{D_1}\right)^2 \sqrt{2g} \d{t} \\
+2\sqrt{h} &= -t \left(\frac{D_2}{D_1}\right)^2 \sqrt{2g} + c
+\end{align}
 
-$$ 
-\frac{dm}{dt} = \rho (\frac{\pi(D_2)^2}{4}) V_2 
-$$
+Find the integration constant *c* using the initial condition
 
-Equation 2
+\begin{equation}
+2 \sqrt{2} = c
+\end{equation}
 
-It is known that:
+The tank drains when $h = 0$, so substitute this, *c*, and numerical values:
 
-$$
-V_2= \sqrt{2gh}
-$$
+\begin{align}
+0 &= -t \left(\frac{0.01}{1}\right)^2 \sqrt{2 \cdot 9.8} + 2 \sqrt{2} \\
+t &= 2 \left(\frac{1}{0.01}\right)^2 \sqrt{\frac{2}{2 \cdot 9.8}} = 6400
+\end{align}
 
-Plug equation 3 into equation 2 and set equal to known equation
-
-$$ 
-\rho (\frac{\pi(D_2)^2}{4})\sqrt{2gh} = \rho (\frac{\pi (D_1)^2}{4})\frac{dh}{dt} 
-$$
-
-Simplify:
-
-$$ 
-\frac{dh}{dt} = -(\frac{D_2}{D_1})^2 \sqrt{2gh} 
-$$
-
-
-$$
-\int \frac{1}{\sqrt{h}}\, dh = \int -(\frac{D_2}{D_1})^2 \sqrt{2gh}\,dt
-$$
-
-General Solution:
-
-$$
-2\sqrt{h} = -(\frac{D_2}{D_1})^2 \sqrt{2\cdot gh}\cdot t + C
-$$
-
-Find Integration Constant C 
-
-$$
-h(0) = h_0
-$$ 
-
-
-$$
-2 \sqrt{h_0} = C 
-$$
-
-Plug back into General Solution
-When the tank drains h=0 so, 
-
-$$
-\sqrt{h} = \sqrt{h_0} - 0.5(\frac{D_2}{D_1})^2\sqrt{2gh}(t) 
-$$
-
-
-$$
-h =  (\sqrt{h_0} - 0.5(\frac{D_2}{D_1})^2 \sqrt{2gh}\cdot t)^2 
-$$
-
-
-When the tank drains h=0  so, 
-
-$$
-0 = \sqrt{h_0}- 0.5(\frac{D_2}{D_1})^2 \sqrt{2gh}\cdot t
-$$
-
-Plug in known values 
-
-$$ 
-t = 2(\frac{D_2}{D_1})^2 \sqrt{\frac{h_0}{2g}} 
-$$
-$$ 
-t = 2(\frac{1}{0.01})^2 \sqrt{\frac{2}{2 \cdot 9.81}} 
-$$
-
-**Final Answer**
-The tank is empty after 1.8 hours
-**The tank is empty after 1.8 hours**
+This time is in seconds because all units are SI, so the tank drains in about
+1.8 hours.
+````
