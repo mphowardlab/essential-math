@@ -1,29 +1,19 @@
-Solve the following:
-(a) x(y'')+2(y')+xy = 0
-given y1 = (cosx)/(x)
-(y'')+(2/x)(y')+y = 0 is linear and homogenous, so use variation of parameters for y2. 
-u = (1/(y1)^2)(e^(-integral(pdx))) = ((x^2)/((cosx)^2))(e^(-integral((2/x)dx))) = ((x^2)/(cosx)^2)(e^-2lnx) = ((x^2)/(cosx)^2)(x^2) = 1/(cosx)^2
-u = (secx)^2
-y2 = (y1)(integral(udx)) = ((cosx)/x)(integral(((secx)^2)dx)) = (1/x)(cosx)(tanx) = sinx/x 
-y2 = sinx/x
-y = C1(1/x)(cosx) + C2(1/x)(sinx)
+Example: Spring and dashpot 
+This is a mechanics example, but models like this we also used for the rheology of viscoelastic materials 
 
+m(x'') + gamma(x') + kx = 0 
+m(x'') = accumulation 
+gamma(x') = drag 
+kx = spring force 
 
+When will the spring oscillate? 
+m(lambda^2) + gamma(lambda) + k = 0 --> lambda12 = (-gamma+sqrt((gamma^2)-4mk))/(2m) or (-gamma-sqrt((gamma^2)-4mk))/(2m)
 
-(b) (1-(x^2))(y'') -2x(y')+2y = 0 
-By inspection, y1 = x is a solution because (y1)' = 1 and (y1)'' = 0. So, find y2. 
-y'' - ((2x)/(1-(x^2)))(y') + (2/(1-(x^2)))(y) = 0 
-u = (1/(y^2))(e^(-integral(pdx))) = (1/(x^2))(e^(integral((2x)/(1-(x^2)))dx)) = (1/(x^2))(e^(-ln(1-(x^2)))) = 1/((x^2)(1-(x^2))). x<1
-u = 1/((x^2)(1-(x^2)))
-y2 = y1(integral(udx)) = (x)(integral(1/((x^2)(1-(x^2)))dx)) = (x)(integral((1/(x^2))+(1/(2(1+x)))+(1/(2(1-x)))dx)) 
-1/((x^2)(1+x)(1-x)) = (A/x) + B/(x^2) + C/(1+x) + D/(1-x) 
-cover up :  
-B = 1 
-C = 1/2
-D = 1/2
-1 = Ax(1+x)(1-x)+.....
-no constant term so A = 0
-(A/x) + B/(x^2) + C/(1+x) + D/(1-x) = 0/x + 1/(x^2) + (1/2)/(1+x)+ (1/2)/(1-x) 
-y2  = x((-1/x) + ((1/2)(ln(1+x))) - ((1/2)(ln(1-x)))) = -1 + (x/2)(ln((1+x)/(1-x))) = -1 -(x/2)(ln((1-x)/(1+x))) 
-y2 = -1 -(x/2)(ln((1-x)/(1+x)))  
-y = (C1)(x) + (C2)(1 + (x/2)(ln((1-x)/(1+x)))).  x <1 
+If 4mk> (gamma^2), lambda12 will be complex and you will get oscillations
+
+lambda12 = (-gamma/(2m)) + (i/(2m))(sqrt(4mk-(gamma^2))) or (-gamma/(2m)) - (i/(2m))(sqrt(4mk-(gamma^2))) 
+y(t) = (exp((-gamma/(2m)(t))))(C1cos(wt)+C2sin(wt))
+
+What does gamma do to the solution? 
+- Damps the oscillations to decay to zero. Without it, oscillations go on forever and are always present
+- Changes frequency of oscillations
