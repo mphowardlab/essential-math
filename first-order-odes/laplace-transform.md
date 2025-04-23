@@ -10,7 +10,7 @@ F(s) = L[f(t)] = \int_0^\infty e^-st \f(t)
 \end{equation}
 $$
 
-
+<!-- 
 The inverse Laplace transform of **F(s)** is **f(t)**!
 
 Many Laplace transforms are already known, but can be computed using integration by parts.
@@ -88,4 +88,4 @@ Apply Laplace transform to both sides of the equation
 \end{align}
 
 If we can invert y(t) = L^-1 [y(s)] usijng tables, we have a solution!
-lll
+lll -->
