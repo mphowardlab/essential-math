@@ -71,7 +71,9 @@ And:
 
 Therefore:
 ```{math}
+\begin{align}
 \left( \frac{\partial x}{\partial y} \right)_z = \frac{2w}{z^3} \cdot z = \frac{2w}{z^2} = \frac{2yz}{z^2} = \frac{2y}{z}
+\end{align}
 ```
 
 ```{example} Change in internal energy
