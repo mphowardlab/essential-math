@@ -14,30 +14,52 @@ If  x(y, z)  and  y(x, z), then:
 ```
 
 ```{example}
+In this example, we aim to demonstrate two ways of calculating the partial derivatives
+\[
+\left( \frac{\partial x}{\partial y} \right)_z \quad \text{and} \quad \left( \frac{\partial y}{\partial x} \right)_z
+\]
+for the function
+\[
+x = \frac{y^2}{z}.
+\]
+We will compute \(\left( \frac{\partial x}{\partial y} \right)_z\) directly, then find \(\left( \frac{\partial y}{\partial x} \right)_z\) by inverting the expression for \(y\) in terms of \(x\), and confirm that the results are consistent through inversion.
 
-```{math}
-Let:
+\section*{Direct Approach}
+
+Start with:
+\[
 x = \frac{y^2}{z}
-```
-
-We can rearrange this to:
-```{math}
-y = \pm \sqrt{xz}
-```
-
-Now compute:
-```{math}
+\]
+Take the partial derivative of \(x\) with respect to \(y\) at constant \(z\):
+\[
 \left( \frac{\partial x}{\partial y} \right)_z = \frac{2y}{z}
-```
+\]
 
-Then:
-```{math}
+\section*{Inverse Function Approach}
+
+We first solve for \(y\) in terms of \(x\):
+\[
+x = \frac{y^2}{z} \Rightarrow y^2 = xz \Rightarrow y = \pm \sqrt{xz}
+\]
+
+Now compute the partial derivative of \(y\) with respect to \(x\) at constant \(z\). We'll first write the derivative explicitly before simplifying:
+\[
+\left( \frac{\partial y}{\partial x} \right)_z = \frac{d}{dx} \left( \sqrt{xz} \right) = \frac{1}{2} \cdot \frac{z}{\sqrt{xz}} = \frac{z}{2\sqrt{xz}}
+\]
+
+But since \(y = \sqrt{xz}\), we substitute back:
+\[
 \left( \frac{\partial y}{\partial x} \right)_z = \frac{z}{2y}
-```
+\]
 
-And confirm the inversion:
-```{math}
-\frac{1}{\left( \frac{\partial y}{\partial x} \right)_z} = \frac{2y}{z}
+\section*{Confirm the Inversion}
+
+Finally, verify that the inverse derivative gives the original:
+\[
+\frac{1}{\left( \frac{\partial y}{\partial x} \right)_z} = \frac{1}{\left( \frac{z}{2y} \right)} = \frac{2y}{z} = \left( \frac{\partial x}{\partial y} \right)_z
+\]
+
+
 ```
 
 ``` {topic} Chain Rule
