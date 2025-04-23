@@ -22,5 +22,19 @@ $c_2 k + c_3 (\frac{\pi}{12})^2$ = 0  \
 $c_3 = \frac{-k}{k^2 + (\frac{\pi}{12})^2}, c_1 = -c_3 = \frac{k}{k^2 + (\frac{\pi}{12})^2}, c_2 = \frac{-(\frac{\pi}{12})^2}{k} c_3 = \frac{(\frac{\pi}{12})^2}{k^2 + (\frac{\pi}{12})^2}$ \
 $\frac{s}{(s^2 + (\frac{\pi}{12})^2)(s+k)} = \frac{ks + (\frac{\pi}{12})^2}{(s^2 + (\frac{\pi}{12})^2)(k^2 + (\frac{\pi}{12})^2)} - \frac{k}{(s+k)(k^2 + (\frac{\pi}{12})^2)}$ \
 Therefore,
-$C(t) = c_0 \mathcal{L}^{-1}\left\{\frac{1}{s+k}\right\} + A\left[\frac{1}{k} \mathcal{L}^{-1}\left\{\frac{1}{s}\right\} - \frac{1}{k} \mathcal{L}^{-1}\left\{\frac{1}{s+k}\right\}\right] + B\left[\frac{k}{k^2 + \left(\frac{\pi}{12}\right)^2} \mathcal{L}^{-1}\left\{\frac{s}{s^2 + \left(\frac{\pi}{12}\right)^2}\right\} + \frac{\left(\frac{\pi}{12}\right)^2}{k^2 + \left(\frac{\pi}{12}\right)^2} \mathcal{L}^{-1}\left\{\frac{1}{s^2 + \left(\frac{\pi}{12}\right)^2}\right\} - \frac{k}{k^2 + \left(\frac{\pi}{12}\right)^2} \mathcal{L}^{-1}\left\{\frac{1}{s+k}\right\} \right]$
-$ = c_0 e^(-kt) + A[\frac{1}{k} - (\frac{1}{k})(e^(-kt))] + B[(\frac{k}{k^2 + (\frac{\pi}{12})^2})(cos([\frac{\pi t}{12}])) + (\frac{(\frac{\pi}{12})^2}{k^2 + (\frac{\pi}{12})^2})(\frac{sin([\frac{\pi t}{12}])}{\frac{\pi}{12}}) - (\frac{k}{k^2 + (\frac{\pi}{12})^2})(e^(-kt))]$  
+$$
+C(t) = c_0\, \mathcal{L}^{-1}\left\{ \frac{1}{s + k} \right\}
++ A \left[
+    \frac{1}{k} \cdot \mathcal{L}^{-1}\left\{ \frac{1}{s} \right\}
+    - \frac{1}{k} \cdot \mathcal{L}^{-1}\left\{ \frac{1}{s + k} \right\}
+\right] \\
++ B \left[
+    \frac{k}{k^2 + \left( \frac{\pi}{12} \right)^2}
+    \cdot \mathcal{L}^{-1} \left\{ \frac{s}{s^2 + \left( \frac{\pi}{12} \right)^2} \right\}
+    + \frac{\left( \frac{\pi}{12} \right)^2}{k^2 + \left( \frac{\pi}{12} \right)^2}
+    \cdot \mathcal{L}^{-1} \left\{ \frac{1}{s^2 + \left( \frac{\pi}{12} \right)^2} \right\}
+    - \frac{k}{k^2 + \left( \frac{\pi}{12} \right)^2}
+    \cdot \mathcal{L}^{-1} \left\{ \frac{1}{s + k} \right\}
+\right]
+$$
+$= c_0 e^{-kt} + A\left[\frac{1}{k} - \frac{1}{k}e^{-kt}\right] + B\left[\frac{k}{k^2 + \left(\frac{\pi}{12}\right)^2} \cos\left(\frac{\pi t}{12}\right) + \frac{\left(\frac{\pi}{12}\right)^2}{k^2 + \left(\frac{\pi}{12}\right)^2} \cdot \frac{\sin\left(\frac{\pi t}{12}\right)}{\frac{\pi}{12}} - \frac{k}{k^2 + \left(\frac{\pi}{12}\right)^2} e^{-kt} \right]$
