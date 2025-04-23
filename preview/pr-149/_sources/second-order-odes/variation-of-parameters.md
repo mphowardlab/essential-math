@@ -22,8 +22,8 @@ y= (C_1 + C_2 x) e^{2x}
 **Particular:**
 
 \begin{align}
-y_1   &= e^{2x}          &\quad & y_2   &= x e^{2x} \\
-y_1'  &= 2 e^{2x}        &      & y_2'  &= (1 + 2x) e^{2x}
+y_1   &= e^{2x}          & y_2&= x e^{2x} \\
+y_1'  &= 2 e^{2x}        &      & y_2'&= (1 + 2x) e^{2x}
 \end{align}
 
 \begin{equation}
@@ -47,9 +47,13 @@ x^{3}   & \quad e^{-x}  & \quad x^{2} & \quad e^{-x} \\
 0       & \quad e^{-x}  & \quad 0     & \quad e^{-x} \\
 \end{align}
 
-y_p=-e^{2x}(-x^{3}e^{-x}-3x^{2}e^{-x}-6xe^{-x}-6e^{-x})+xe^{2x}(-x^{2}e^{-x}-2xe^{-x}-2e^{-x})
-y_p=(x^{2}+4x+6)e^{x}
+\begin{equation}
+y_p = -e^{2x} \left( -x^{3} e^{-x} - 3x^{2} e^{-x} - 6x e^{-x} - 6 e^{-x} \right) + x e^{2x} \left( -x^{2} e^{-x} - 2x e^{-x} - 2 e^{-x} \right)
+\begin{equation}
 
+\begin{equation}
+y_p = (x^2 + 4x + 6) e^x
+\end{equation}
 **Boundary Conditions:**
 
 \begin{equation}
