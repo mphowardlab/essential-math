@@ -3,7 +3,7 @@
 ### Find General Solutions for:
 (a) $y' = (x+2)ln(x)$
 
-  $y = \int \(x+2)\ln(x) \ dx$  
+  $y = \int (x+2)\ln(x) \ dx$  
     
   $u = ln(x)$ $dv = (x+2)dx$  
   $du = \frac{1}{x}dx$  $v = \frac{x^2}{2} + 2x$
