@@ -22,21 +22,13 @@ y = (C_1 + C_2 x) e^{2x}
 **Particular:**
 
 \begin{align}
-y_1   &= e^{2x}          &\quad\quad& y_2   &= x e^{2x} \\
-y_1'  &= 2 e^{2x}        &         & y_2'  &= (1 + 2x) e^{2x}
+y_1   &= e^{2x}          &\quad & y_2   &= x e^{2x} \\
+y_1'  &= 2 e^{2x}        &      & y_2'  &= (1 + 2x) e^{2x}
 \end{align}
 
-\[
-W = \begin{matrix}
-y_1 & y_2 \\
-y_1' & y_2'
-\end{matrix}
-= \begin{matrix}
-e^{2x} & x e^{2x} \\
-2 e^{2x} & (1 + 2x) e^{2x}
-\end{matrix}
-= (1 + 2x) e^{4x} - 2x e^{4x} = e^{4x}
-\]
+\begin{equation}
+W = (1 + 2x) e^{4x} - 2x e^{4x} = e^{4x}
+\end{equation}
 
 \begin{equation}
 y_p = -e^{2x} \int \frac{x e^{2x} (x^{2} e^{2x})}{e^{4x}} \, dx + x e^{2x} \int \frac{e^{2x} (x^{2} e^{2x})}{e^{4x}} \, dx
