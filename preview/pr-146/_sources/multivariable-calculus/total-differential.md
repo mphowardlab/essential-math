@@ -81,9 +81,9 @@ $$
 
 ```{solution}
 
-\begin{equation} 
+$$
 \left(\frac{\partial^2 f}{\partial y^2}\right)_x = \frac{\partial }{\partial y}\left(\left(\frac{\partial f}{\partial y}\right)_x \right)_x = \left(\frac{\partial (-q)}{\partial y}\right)_x = -\left(\frac{\partial q}{\partial y}\right)_x 
-\end {equation}
+$$
 ```
 
 5. \begin{equation} \frac{\partial^2 f}{\partial x \partial y} = \end{equation}
