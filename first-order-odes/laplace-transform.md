@@ -8,6 +8,9 @@ It is defined as:
 \begin{equation}
 F(s) = L[f(t)] = \int_0^\infty e^-st \f(t)
 \end{equation}
+$$
+F(s) = \mathcal{L}[f(t)] = \int_0^\infty e^{-st} f(t)\,dt
+$$
 
 The inverse Laplace transform of **F(s)** is **f(t)**!
 
