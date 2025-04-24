@@ -2,7 +2,9 @@
 
 ## 4. Example:
 Mole balance on a tank with increasing inlet/outlet flow rate.
-
+```{image} ./_images/Integrating_factors_image.jpg
+:alt: Flash distillation process
+```
 
 \begin{align}
 \dot n_A &= \dot n_A,in  -  \dot n_A,out
