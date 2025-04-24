@@ -430,27 +430,27 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="gaussjordan-elimination">
 <h1><span class="section-number">3.3. </span>Gauss–Jordan elimination<a class="headerlink" href="#gaussjordan-elimination" title="Link to this heading">#</a></h1>
 <p>Gauss(-Jordan) Elimination with Back Substitution</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f76820bd-dfa7-4615-b1e2-ff901040b875">
-<span class="eqno">(3.24)<a class="headerlink" href="#equation-f76820bd-dfa7-4615-b1e2-ff901040b875" title="Permalink to this equation">#</a></span>\[\begin{align}
-Solve 2x_1 + 5x_2 = 2 --&gt; x_1 = 1/2(2-5x_2) = 6 \\
-13x_2 = -26 --&gt; x_2 = -2   &lt;ins&gt;Back Substitution&lt;/ins&gt; \\
+<div class="amsmath math notranslate nohighlight" id="equation-7924b67e-7db2-4cc9-863d-d137b3661663">
+<span class="eqno">(3.24)<a class="headerlink" href="#equation-7924b67e-7db2-4cc9-863d-d137b3661663" title="Permalink to this equation">#</a></span>\[\begin{align}
+Solve 2x_1 + 5x_2 = 2 \to x_1 = 1/2(2-5x_2) = 6 \\
+13x_2 = -26 \to x_2 = -2   \underline{Back Substitution} \\
 \end{align}\]</div>
-<p><ins>Idea</ins>: If we can bring systems so that one variable is isolated, we
+<p>\underline{Idea}: If we can bring systems so that one variable is isolated, we
 can work backwards to solve the others! How do we do this?</p>
 <p>Elementary operations: \begin{align}
-*Swap equations order
-*Multiply one equation by a nonzero constant
-*Add one equation to another
+-Swap equations order
+-Multiply one equation by a nonzero constant
+-Add one equation to another
 \end{align}
-Two linear systems are <ins>row-equivalent</ins> if one can be obtained from
+Two linear systems are \underline{row-equivalent} if one can be obtained from
 another by elementary operations.
-*Row-equivalent linear systems have the <ins>same</ins> set of solutions</p>
+*Row-equivalent linear systems have the \underline{same} set of solutions</p>
 <p>Solve</p>
-<div class="amsmath math notranslate nohighlight" id="equation-29806d29-b81a-4919-810b-4e2d677c6004">
-<span class="eqno">(3.25)<a class="headerlink" href="#equation-29806d29-b81a-4919-810b-4e2d677c6004" title="Permalink to this equation">#</a></span>\[\begin{align}
-2x_1 + 5x_2 = 2 --&gt; 2x_1 + 5x_2 = 2 \\
--4x_1 + 3x_2 = -30 --&gt; -4x_1 + 3x_2 = -30 \\
-+2(2x_1 + 5x_2 = 2) --&gt; 13x_2 = -26 \\
+<div class="amsmath math notranslate nohighlight" id="equation-33758692-d84d-4b5d-a8df-d6612c8965c7">
+<span class="eqno">(3.25)<a class="headerlink" href="#equation-33758692-d84d-4b5d-a8df-d6612c8965c7" title="Permalink to this equation">#</a></span>\[\begin{align}
+2x_1 + 5x_2 = 2 \to 2x_1 + 5x_2 = 2 \\
+-4x_1 + 3x_2 = -30 \to -4x_1 + 3x_2 = -30 \\
++2(2x_1 + 5x_2 = 2) \to 13x_2 = -26 ✔️ \\
 \end{align}\]</div>
 <p>How do we do this systematically? Matrices!</p>
 <ol class="arabic simple">
@@ -460,28 +460,28 @@ another by elementary operations.
 \mathbf{b} = \begin{bmatrix} 2 \ -30 \end{bmatrix}
 \end{equation}</p></li>
 <li><p>Perform elementary operations on rows on “pivot” points in each row.
-The goal is to get a number in <span class="math notranslate nohighlight">\(a_(11)\)</span>, <span class="math notranslate nohighlight">\(a_(22)\)</span>, <span class="math notranslate nohighlight">\(a_(33)\)</span>, etc. and zeros <ins>below</ins>
+The goal is to get a number in <span class="math notranslate nohighlight">\(a_11\)</span>, <span class="math notranslate nohighlight">\(a_22\)</span>, <span class="math notranslate nohighlight">\(a_33\)</span>, etc. and zeros \underline{below}
 in each column.
 \begin{equation}
-\begin{bmatrix} 2 &amp; 5 &amp; 2 \ -4 &amp; 3 &amp; -30 \end{bmatrix} \qquad
+\begin{bmatrix} 2 &amp; 5 &amp; 2 \ \box{-4} &amp; 3 &amp; -30 \end{bmatrix} \qquad
 \begin{bmatrix} 2 &amp; 5 &amp; 2 \ 0 &amp; 13 &amp; -26 \end{bmatrix} + 2 Row 1
 \end{equation}</p></li>
 <li><p>Check there are no rows of zeros with a nonzero last column. (False equation)
-If yes, <ins>no solution</ins>.</p></li>
-<li><p>Work back up to turn pivots into 1 and get zeros <ins>above</ins> in each
+If yes, \underline{no solution}.</p></li>
+<li><p>Work back up to turn pivots into 1 and get zeros \underline{above} in each
 column</p></li>
-<li><p>The solution comes from reexpressing as <ins>A</ins> <ins>x</ins> = <ins>b</ins>
+<li><p>The solution comes from reexpressing as \underline{\underline{A}} \underline{x} = \underline{b}
 \begin{equation}
 \begin{bmatrix} 1 &amp; 0 \ 0 &amp; 1 \end{bmatrix} \qquad
 \begin{bmatrix} <span class="math notranslate nohighlight">\(x_1\)</span> \ <span class="math notranslate nohighlight">\(x_2\)</span> \end{bmatrix}
-= \begin{bmatrix}</p></li>
+= \begin{bmatrix} 6 \ -2 \end{bmatrix} \to x_1 = 6 &amp; x_2 = -2</p></li>
 </ol>
 <p>\end{equation}</p>
 <div class="admonition-example-pump-circuit admonition">
 <p class="admonition-title">Example: Pump circuit</p>
 <p>Incompressible flow can be written analogous to an electrical circuit as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a8f85e59-8261-4ec2-ad23-7575976c7159">
-<span class="eqno">(3.26)<a class="headerlink" href="#equation-a8f85e59-8261-4ec2-ad23-7575976c7159" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-94a52b4e-1591-412b-8ff6-182a9514e691">
+<span class="eqno">(3.26)<a class="headerlink" href="#equation-94a52b4e-1591-412b-8ff6-182a9514e691" title="Permalink to this equation">#</a></span>\[\begin{equation}
 -\Delta P = RQ
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\Delta P\)</span> is the pressure change, <em>R</em> is the resistance, and <em>Q</em> is the
@@ -489,8 +489,8 @@ volumetric flow rate. For the following pump “circuit”:</p>
 <a class="reference internal image-reference" href="../_images/FluidCircuitImage.png"><img alt="Fluid System Modeled as Circuit" class="align-center" src="../_images/FluidCircuitImage.png" style="width: 500px;" />
 </a>
 <p>The pressure and mass balances for the nodes and loop give:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8c9554d9-0207-41f8-bba3-8f7f3eccb94b">
-<span class="eqno">(3.27)<a class="headerlink" href="#equation-8c9554d9-0207-41f8-bba3-8f7f3eccb94b" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-941f73f0-57d0-46fe-bbdc-2049435b124d">
+<span class="eqno">(3.27)<a class="headerlink" href="#equation-941f73f0-57d0-46fe-bbdc-2049435b124d" title="Permalink to this equation">#</a></span>\[\begin{align}
 Q_1 &amp;+ Q_3 = Q_2 \\
 Q_2 &amp;= Q_1 + Q_3 \\
 80 &amp;= 10Q_2 + 20Q_1 \\
@@ -499,16 +499,16 @@ Q_2 &amp;= Q_1 + Q_3 \\
 <p>Find <span class="math notranslate nohighlight">\(Q_1\)</span>, <span class="math notranslate nohighlight">\(Q_2\)</span>, and <span class="math notranslate nohighlight">\(Q_3\)</span>.</p>
 <hr class="docutils" />
 <p>First, rearrange the equations into consistent linear form:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0ee2b9cd-98d2-4e6d-b565-fdb66c49073d">
-<span class="eqno">(3.28)<a class="headerlink" href="#equation-0ee2b9cd-98d2-4e6d-b565-fdb66c49073d" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1fda8706-9c93-457a-b38b-8c3a7f421b5b">
+<span class="eqno">(3.28)<a class="headerlink" href="#equation-1fda8706-9c93-457a-b38b-8c3a7f421b5b" title="Permalink to this equation">#</a></span>\[\begin{align}
 Q_1 - Q_2 + Q_3 &amp;= 0 \\
 Q_1 - Q_2 + Q_3 &amp;= 0 \\
 20Q_1 + 10Q_2 + 0Q_3 &amp;= 80 \\
 0Q_1 + 10Q_2 + 25Q_3 &amp;= 90
 \end{align}\]</div>
 <p>Then, rewrite using matrix representation:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-87f08076-8e98-49b5-9c39-fb61acb9ba18">
-<span class="eqno">(3.29)<a class="headerlink" href="#equation-87f08076-8e98-49b5-9c39-fb61acb9ba18" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-5a349695-4aec-4d2e-aaa9-acdc65fb509f">
+<span class="eqno">(3.29)<a class="headerlink" href="#equation-5a349695-4aec-4d2e-aaa9-acdc65fb509f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix}
 1 &amp; -1 &amp; 1 \\
 1 &amp; -1 &amp; 1 \\
@@ -525,8 +525,8 @@ Q_1 \\ Q_2 \\ Q_3
 <p>Now, perform Gauss-Jordan elimination steps to solve for the unknown flow rates.
 We form the augmented matrix, then use Row 1 to eliminate values in Rows 2 and
 3:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5af99ad7-6a6c-4a05-8298-30bbe9eb6b20">
-<span class="eqno">(3.30)<a class="headerlink" href="#equation-5af99ad7-6a6c-4a05-8298-30bbe9eb6b20" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-08600e02-30d0-4e4a-b86a-279a44281ebd">
+<span class="eqno">(3.30)<a class="headerlink" href="#equation-08600e02-30d0-4e4a-b86a-279a44281ebd" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix}
 1 &amp; -1 &amp; 1 &amp; 0 \\
 -1 &amp; 1 &amp; -1 &amp; 0 \\
@@ -546,8 +546,8 @@ We form the augmented matrix, then use Row 1 to eliminate values in Rows 2 and
 \end{equation}\]</div>
 <p>Row 2 is all zeros because it was a redundant equation to Row 1. Swap Rows 2 and
 4, then use the new Row 2 to eliminate value in Row 3:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a71b61f0-6e96-40a7-8a1b-127d9328b4a3">
-<span class="eqno">(3.31)<a class="headerlink" href="#equation-a71b61f0-6e96-40a7-8a1b-127d9328b4a3" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-09fa3a69-b153-43c0-a067-c3c8daf8e4c3">
+<span class="eqno">(3.31)<a class="headerlink" href="#equation-09fa3a69-b153-43c0-a067-c3c8daf8e4c3" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix}
 1 &amp; -1 &amp; 1 &amp; 0 \\
 0 &amp; 10 &amp; 25 &amp; 90 \\
@@ -565,8 +565,8 @@ We form the augmented matrix, then use Row 1 to eliminate values in Rows 2 and
 \end{bmatrix}
 \end{equation}\]</div>
 <p>Normalize Row 3 (divide by -95), then eliminate values above in Column 3:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-10f4620f-a612-4d7d-8ad6-bc92b998204c">
-<span class="eqno">(3.32)<a class="headerlink" href="#equation-10f4620f-a612-4d7d-8ad6-bc92b998204c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e2dcaf16-46f9-4270-8dd5-79a038948eee">
+<span class="eqno">(3.32)<a class="headerlink" href="#equation-e2dcaf16-46f9-4270-8dd5-79a038948eee" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix}
 1 &amp; -1 &amp; 1 &amp; 0 \\
 0 &amp; 10 &amp; 25 &amp; 90 \\
@@ -585,8 +585,8 @@ We form the augmented matrix, then use Row 1 to eliminate values in Rows 2 and
 \end{bmatrix}
 \end{equation}\]</div>
 <p>Normalize Row 2 (divide by 10), then eliminate values above in Column 2:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0c672628-c97f-4dc4-b01b-6ff0d3d40275">
-<span class="eqno">(3.33)<a class="headerlink" href="#equation-0c672628-c97f-4dc4-b01b-6ff0d3d40275" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b3c51ca6-0dde-47cd-8273-79e55a4dc591">
+<span class="eqno">(3.33)<a class="headerlink" href="#equation-b3c51ca6-0dde-47cd-8273-79e55a4dc591" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix}
 1 &amp; -1 &amp; 0 &amp; -2 \\
 0 &amp; 1 &amp; 0 &amp; 4 \\
