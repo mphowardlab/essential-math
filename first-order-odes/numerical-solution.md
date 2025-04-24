@@ -28,7 +28,7 @@ Use Euler's method with a step size \( \Delta x = 0.2 \) to approximate the solu
 Initial condition: \( y(0) = 0 \)
 ```
 
-### Euler's Method Table
+ Euler's Method Table
 
 |   n  |    x_n   | y_n +  | \Delta X f(x_n,y_n)| =y_n+1| Exact  | Error (y_n-y)|
 | ---- | -------- | ------ | ------------------ | ----- | ------ | ------------ |
@@ -38,4 +38,36 @@ Initial condition: \( y(0) = 0 \)
 | 3    | 0.6      | 0.1128 | 0.146              | 0.274 | 0.222  | 0.094        |
 | 4    | 0.8      | 0.274  | 0.215              | 0.489 | 0.426  | 0.152        |
 | 5    | 1.0      | 0.489  |                    |       | 0.718  | 0.229        |
+
+---
+Compare to Exact Solution
+
+```{math}
+F(x) = e^{\int -1 \, dx} = e^{-x}
+```
+
+```{math}
+\int x e^{-x} dx = -x e^{-x} + \int e^{-x} dx = -(x + 1) e^{-x}
+```
+
+```{math}
+y(x) = e^x \left[ - (x + 1) e^{-x} + C \right] = e^x - (x + 1)
+```
+
+```{math}
+0 = y(0) = -1 + C \Rightarrow C = 1
+```
+
+```{math}
+:label: exact-final
+y(x) = e^x - (x + 1)
+```
+### 2. Error in approximation
+
+Because we are using trunkated Taylor series, we accrue an error:
+
+image 
+
+Ther error in a single step is O(\Delta t^2). This is called the \underline{local}) error. To cover a finite time t, t/ \Delta t steps are required so the \underline{global}) (total error is O(\Delta t). To improve accuracy, you should \underline{decrease}) \Delta t, but this takes more work. Some \Delta t will totally fail! This is the field of numerical stability (not covered here).
+
 
