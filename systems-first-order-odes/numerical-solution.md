@@ -30,7 +30,7 @@ Mass Balance
 \dot m_{\rm in} = \dot V_{\rm in} (\delta h) \\
 \frac{d(\delta h)V}{dt} = \dot V_{\rm in} \(\delta h) - \dot V_{\rm in} (\delta h)\ \\
 \dot m_{\rm out} = \dot V_{\rm in} \delta h
-\(\delta h) frac{dV}{dt} = \dot V_{\rm in} (\delta h) \cdot \dot V_{\rm out} (\delta h) = 1 -2 = -1
+$ \(\delta h) frac{dV}{dt} = \dot V_{\rm in} (\delta h) \cdot \dot V_{\rm out} (\delta h) = 1 -2 = -1 $
 \end{aligned}
 ```
 
