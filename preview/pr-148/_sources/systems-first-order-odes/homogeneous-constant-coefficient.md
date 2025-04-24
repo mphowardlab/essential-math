@@ -5,17 +5,18 @@
 
 
 ## Skill Builder
-C)
-
-
-$
+$C)
 A = \begin{bmatrix}
 0 & 4 \\
 -4 & 0
 \end{bmatrix}
+IC = \begin{bmatrix}
+1 \\
+0
+\end{bmatrix}
 $
 
-```{solution}
+```{General Solution}
 To find the eigenvalues:
 $
 |A - \lambda I| = \begin{vmatrix} -\lambda & 4 \\ -4 & -\lambda \end{vmatrix} = \lambda^2 + 16 = 0 \Rightarrow \lambda_{1,2} = \pm 4i
