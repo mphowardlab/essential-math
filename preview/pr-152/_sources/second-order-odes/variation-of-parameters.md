@@ -6,7 +6,6 @@
 $y'' + y = \csc(y)$, with initial conditions $y\left(\frac{\pi}{2}\right) = y'\left(\frac{\pi}{2}\right) = 0$
 
 ````{dropdown} Solution
-:open: false
 
 #### Homogeneous:
 
@@ -45,3 +44,20 @@ y_p &= -y_1 \int \frac{y_2 r}{W} \, dx + y_2 \int \frac{y_1 r}{W} \, dx \\
     &= -x \cos(x) + \sin(x) \ln\left| x \right|
 \end{aligned}
 ```
+
+#### Boundary Conditions:
+
+```{math}
+\begin{aligned}
+y = c_1 \cos(x) + c_2 \sin(x) + \sin(x) \ln\left| \sin(x) \right| - x \cos(x)
+y' = -c_1 \sin(x) + c_2 \cos(x) + \cos(x) (1 + \ln\left| \sin(x) \right|) + x \sin(x) - \cos(x)
+\end{aligned}
+```
+```{math}
+\begin{aligned}
+0 = y \frac{\pi}{2} = c_2
+0 = y' \frac{\pi}{2} = -c_1 + \frac{\pi}{2} \to c_1 = \frac{\pi}{2}
+\end{aligned}
+```
+
+\boxed{y = \left( \frac{\pi}{2} \right) \cos x + \sin x \ln |\sin x| - x \cos x}
