@@ -1,6 +1,7 @@
 # Homogeneous linear second-order ODEs with constant coefficients
 {Example} Spring and dashpot
-{image} ./_images/Spring and Dashpot.jpg
+```{image} ./_images/Spring_and_Dashpot.jpg
+```
 This is a mechanics example, but models like this are also used for the rheology of viscoelastic materials
 
 $$ m x'' + \gamma x' + k x = 0 $$
