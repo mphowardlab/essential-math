@@ -28,9 +28,7 @@ We can assume a solution of the form $\displaystyle y=C_1e^{a_1x}+C_2e^{a_2x}$
 \begin{align}
 c=a_1e^{x\sqrt{k/D}}+a_2e^{-x\sqrt{k/D}} 
 \end{align}
-\begin{align}
-\frac{dc]{dt}}=a_1\sqrt{k/D}e^{x\sqrt{k/D}-a_2\sqrt{k/D}e^{-x\sqrt{k/D}}
-\end{align}
+
 
 Solving for the initial conditions yields 
 
