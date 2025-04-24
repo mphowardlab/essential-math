@@ -30,4 +30,22 @@ We can assume a solution of the form $\displaystyle y=C_1\exp{a_1x}+C_2\exp{a_2x
 c&= a_1\exp{x\sqrt{\frac{k}{D}}}+a_2\exp{-x\sqrt{\frac{k}{D}}}//
 c'&=a_1\sqrt{\frac{k}{D}}\exp{x\sqrt{\frac{k}{D}}}-a_2\sqrt{\frac{k}{D}}\exp{-x\sqrt{\frac{k}{D}}}
 \end{align}
+
 Solving for the initial conditions yields 
+
+\begin{align}
+a_1&= \frac{C_0}{1+\exp{2L\sqrt{\frac{k}{D}}}}
+a_2&= \frac{C_0}{1+\exp{-2L\sqrt{\frac{k}{D}}}}
+\end{align}
+
+Thus, 
+
+\begin{align}
+C=C_0(\frac{\exp{x\sqrt{\frac{k}{D}}}}{1+\exp{2L\sqrt{\frac{k}{D}}}}+\frac{\exp{x\sqrt{\frac{k}{D}}}}{1+\exp{-2L\sqrt{\frac{k}{D}}}})
+\end{align}
+
+This can be simplified using a common denominator and the identities $\displaystyle cosh(x)= \frac{exp{x}+exp{-x}}{2}$ and $\displaystyle sinh(x)= \frac{exp{x}-exp{-x}}{2}$, which yields 
+
+\begin{align}
+C=C_0(\frac{cosh((L-x)\sqrt{\frac{k}{D}})}{cosh(L\sqrt{\frac{k}{D}})})
+\end{align}
