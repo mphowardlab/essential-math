@@ -14,6 +14,8 @@ $$
 
 
 ````{example} Example
+Placeholder text
+
 \begin{equation}
 (x^2 - x)y'' - xy' + y = 0 
 \end{equation}
