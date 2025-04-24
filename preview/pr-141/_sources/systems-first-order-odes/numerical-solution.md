@@ -12,8 +12,8 @@ n\.\in = V\.\_in c_in,A
 n\.\_out = V\._out c_A 
 $V\dfrac{c_A}{dt} + c_A\dfrac{dV}{dt} = 1 - 2c_A + kVc_A $ 
 ** Mass Balance **
-$\dfrac{dm}{dt} = m\._in - m\._out
+\dfrac{dm}{dt} = m\._in - m\._out
 m_in\. = V_in\. \(\daleth) 
-$dfrac{d\(\deltah)V}{dt} = V\.\_in \(\deltah) - V\.\_out \(\deltah)\
+dfrac{d\(\deltah)V}{dt} = V\.\_in \(\deltah) - V\.\_out \(\deltah)\
 m\.\_out = V\.\_out \(\deltah)
-$\(\deltah) dfrac{dV}{dt} = V\.\_in \(\deltah) \cdot V \.\_out \(\deltah)\ = 1 -2 = -1
+\(\deltah) dfrac{dV}{dt} = V\.\_in \(\deltah) \cdot V \.\_out \(\deltah)\ = 1 -2 = -1
