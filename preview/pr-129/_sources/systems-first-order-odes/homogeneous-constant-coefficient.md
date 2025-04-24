@@ -54,13 +54,13 @@ A =  \begin{bmatrix}  -k_1 & 0 & 0 \
 Matrix A is lower triangular, so
 
 \begin{align}
-λ_1 &= -k_1  \rightarrow  \begin{bmatrix} 0 & 0 & 0\ 
-k_1 & -k_2+k_1 & 0 \
+λ_1 &= -k_1  \rightarrow  \begin{bmatrix} 0 & 0 & 0 \\ 
+k_1 & -k_2+k_1 & 0 \\
  0 & k_2 & k_1 \end{bmatrix} \\
 & \rightarrow  (k_1*x_1)-(k_2-k_1)*x_2 = 0 \\
 & \rightarrow  (k_2*x_2)+(k_1*x_3) = 0 \\
-& \rightarrow \rightarrow  x_1 = \begin{bmatrix} \frac{-k_2-k_1}{k_2} \ 
-\frac{-k1}{k2} \ 
+& \rightarrow \rightarrow  x_1 = \begin{bmatrix} \frac{-k_2-k_1}{k_2} \\ 
+\frac{-k1}{k2} \\ 
 1 \end{bmatrix}
 \end{align}
 
