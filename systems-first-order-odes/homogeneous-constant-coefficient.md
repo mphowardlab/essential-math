@@ -1,8 +1,8 @@
 # Homogeneous linear first-order ODEs with constant coefficients
 
-
+```{solution}
 \begin{equation}
-\bar{A} =
+ A =
 \begin{bmatrix}
 2 & -2\\
 2 & 2
@@ -10,7 +10,7 @@
 \end{equation}
 
 \begin{equation}
-| \bar{A} - \lambda \bar{I} |
+| A - \lambda I |
 \begin{vmatrix}
 2- \lambda & -2\\
 2 & 2- \lambda
@@ -166,3 +166,4 @@ y_{2} = e^{2t} \sin 2t
 \underline{y} = \underline{0} is an unstable spiral because the eigenvalues are complex, and the real part is positive.
 
 \end{equation}
+```
