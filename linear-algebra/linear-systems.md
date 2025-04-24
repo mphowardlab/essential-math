@@ -40,8 +40,13 @@ Ex: Graph the following and explain how many solutions exist. Then, solve the eq
 
 ```{image} ./_images/onesolution.jpg
 :alt: One Solution
-:width: 200px
-:align: left
+```
+
+```{image} ./_images/infinite.jpeg
+:alt: One Solution
+```
+```{image} ./_images/nosolution.jpg
+:alt: One Solution
 ```
 
 A homogeneous solution, Ax=0, **always** has at least the trivial solution x = 0. We will discuss how to systematically solve these
