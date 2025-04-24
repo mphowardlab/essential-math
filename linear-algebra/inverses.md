@@ -128,9 +128,11 @@ Gauss-Jordan elimination to solve directly:
 20 & 10 & 0 & 0 & 1 & 0 \\
 0 & 10 & 25 & 0 & 0 & 1
 \end{bmatrix}
+
 \begin{matrix}
 \vphantom{R_1} \\ -20 R_1 \\ \vphantom{R_1}
 \end{matrix} \\
+
 \to &\begin{bmatrix}
 1 & -1 & 1 & 1 & 0 & 0 \\
 0 & 30 & -20 & -20 & 1 & 0 \\
@@ -139,6 +141,7 @@ Gauss-Jordan elimination to solve directly:
 \begin{matrix}
 \vphantom{R_1} \\ {\rm swap}\,R_3 \\ \vphantom{R_1}
 \end{matrix} \\
+
 \to &\begin{bmatrix}
 1 & -1 & 1 & 1 & 0 & 0 \\
 0 & 10 & 25 & 0 & 0 & 1 \\
@@ -147,6 +150,7 @@ Gauss-Jordan elimination to solve directly:
 \begin{matrix}
 \vphantom{R_1} \\ \vphantom{R_1} \\ -3 R_2
 \end{matrix} \\
+
 \to &\begin{bmatrix}
 1 & -1 & 1 & 1 & 0 & 0 \\
 0 & 10 & 25 & 0 & 0 & 1 \\
@@ -155,6 +159,7 @@ Gauss-Jordan elimination to solve directly:
 \begin{matrix}
 \vphantom{R_1} \\ \div 10 \\ \div -95
 \end{matrix} \\
+
 \to &\begin{bmatrix}
 1 & -1 & 1 & 1 & 0 & 0 \\
 0 & 1 & 2.5 & 0 & 0 & 0.1 \\
@@ -163,6 +168,7 @@ Gauss-Jordan elimination to solve directly:
 \begin{matrix}
 \ \ -R_3 \\ \ -2.5 R_3 \\ \vphantom{R_3}
 \end{matrix} \\
+
 \to &\begin{bmatrix}
 1 & -1 & 0 & 0.789 & 0.010 & -0.032 \\
 0 & 1 & 0 & -0.528 & 0.025 & 0.020 \\
@@ -171,6 +177,7 @@ Gauss-Jordan elimination to solve directly:
 \begin{matrix}
 \ \ +R_2 \\ \vphantom{R_2} \\ \vphantom{R_3}
 \end{matrix} \\
+
 \to &\begin{bmatrix}
 1 & 0 & 0 & 0.261 & 0.035 & -0.012 \\
 0 & 1 & 0 & -0.528 & 0.025 & 0.020 \\
@@ -178,4 +185,24 @@ Gauss-Jordan elimination to solve directly:
 \end{bmatrix}
 \end{align}
 --->
-```
+Solve: 
+\begin{equation}
+\vv {Q}= $\vv{A}^{-1}${b} = \begin{bmatrix} 
+0.261 & 0.035 & -0.012 \\
+-0.528 & 0.025 & 0.020 \\
+0.211 & -0.010 & 0.032 
+\end{bmatrix}
+\begin{bmatrix}
+0 \\
+80 \\
+90 
+\end{bmatrix}
+=
+\begin{bmatrix}
+1.72 \\
+3.80 \\
+2.08 
+\end{bmatrix}
+\end{equation}
+
+
