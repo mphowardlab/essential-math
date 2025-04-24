@@ -26,7 +26,7 @@ Which, when factored yields $\displaystyle\lambda_{1,2} = \pm \sqrt{\frac{k}{D}}
 
 We can assume a solution of the form $\displaystyle y=C_1e^{a_1x}+C_2e^{a_2x}$ 
 
-c= a_1e^{x\sqrt{k/D}}+a_2e^{-x\sqrt{k/D}}\\
+c= a_1e^{x\sqrt{k/D}}+a_2e^{-x\sqrt{k/D}}\\\
 c'=a_1\sqrt{k/D}e^{x\sqrt{k/D}-a_2\sqrt{k/D}e^{-x\sqrt{k/D}}
 
 Solving for the initial conditions yields 
@@ -45,5 +45,5 @@ C=C_0\left(\frac{e^{x\sqrt{k/D}}}{1+e^{2L\sqrt{k/D}}}+\frac{e^{x\sqrt{k/D}}}{1+e
 This can be simplified using a common denominator and the identities $\displaystyle cosh(x)= \frac{e^{x}+e^{-x}}{2}$ and $\displaystyle sinh(x)= \frac{e^{x}-e^{-x}}{2}$, which yields 
 
 \begin{align}
-C=C_0\frac{cosh\left[(L-x)sqrt{k/D}\right]}{cosh(L\sqrt{k/D})}
+C=C_0\frac{cosh\left[(L-x)\sqrt{k/D}\right]}{cosh(L\sqrt{k/D})}
 \end{align}
