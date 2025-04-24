@@ -13,8 +13,8 @@ D\frac{d^2c}{dx^2}-kc &= 0
 
 The concentration is described by this equation with boundary conditions of:
 \begin{align}
-C(0)&=C_0 \\
--D\frac{dc/dx}&=0
+C(0)=C_0 \\
+-D\frac{dc/dx}=0
 \end{align}
 
 Replacing c' with \lambda yields 
