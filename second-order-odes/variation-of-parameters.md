@@ -1,5 +1,5 @@
 # Variation of parameters
-````{example} Variation of Parameters Example
+```{example} Variation of Parameters Example
 Solve the differential equation
 
 \begin{equation}
@@ -73,4 +73,4 @@ y'=2(C_1 + C_2 x) e^{2x}+C_2e^{2x}+(x^{2}+4x+6)e^{x}+(2x+4)e^{x}
 \begin{equation}
 y=(-6 + 2 x) e^{2x}+(x^{2}+4x+6)e^{x}
 \end{equation}
-````
+```
