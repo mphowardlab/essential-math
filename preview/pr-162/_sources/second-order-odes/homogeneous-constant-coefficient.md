@@ -11,7 +11,11 @@ come up often so it is important to know how to solve them!
   * Solving partial differential equations for unsteady processes
 
 Solution: Try y=e^x as an ansatz
-%For the line above, I am unsure if the last word is correct
+    y = e^\lambdax
+    y' = \lambda e^
 
--
+
+
 y=e^{\lambda x}
+
+
