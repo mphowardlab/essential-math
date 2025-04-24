@@ -1,8 +1,8 @@
-# Integrating factor.  
+# Integrating factor. 
 
-## 4. Example: 
-Mole balance on a tank with increasing inlet/outlet flow rate. 
-````{example} 
+## 4. Example:
+Mole balance on a tank with increasing inlet/outlet flow rate.
+````{example}
 
 ```{image}
 
@@ -12,7 +12,7 @@ Mole balance on a tank with increasing inlet/outlet flow rate.
 \dot n_A &= C_f,A * \dot q * t. - (n_A \ v) * \dot q * t
 \end{align}
 
-Rewrite: 
+Rewrite:
 \begin{align}
 \dot n_A + ((\dot q * t)\v)_n_A &= C_f,A * \dot q * t
 P(t) &= ((\dot q * t) / v).  r(t) &= C_f,A * \dot q * t
@@ -41,6 +41,7 @@ F(t) = \exp(\int k*dt) &= \exp(kt)
                  &= A/k * \exp(kt) + B * (\exp(kt)/(k^2 + (\pi/12)^2))*[K*\cos((\pi*t)/12) + \pi/12 * \sin((\pi*t)/12)]
 \to C(t) &= \exp(-kt)* (A/k * \exp(kt) + B * (\exp(kt)/(k^2 + (\pi/12)^12))* [k * \cos((\pi*t)/12) + \pi/12*\sin((/pi*t)/12)]+c^*)
 \end{align}
+
 
 
 
