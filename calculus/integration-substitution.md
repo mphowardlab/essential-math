@@ -15,13 +15,13 @@ we can evaluate related integrals like:
 by making a *substitution*. Specifically, we define a new variable *u*,
 calculate its differential, and then replace both. For example, in this case,
 let 
-&u = -x \\ 
+$$u = -x$$ 
 Then, 
-&\d{u} = -\d{x} \\ 
+$$\d{u} = -\d{x}$$
 Equivalently, 
-&x = -u \\
+$$x = -u$$
  and
-&\d{x} = -\d{u}$ \\
+$$\d{x} = -\d{u}$$
 
 so
 
