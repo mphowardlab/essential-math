@@ -42,6 +42,3 @@ F(t) = \exp(\int k*dt) &= \exp(kt)
 \to C(t) &= \exp(-kt)* (A/k * \exp(kt) + B * (\exp(kt)/(k^2 + (\pi/12)^12))* [k * \cos((\pi*t)/12) + \pi/12*\sin((/pi*t)/12)]+c^*)
 \end{align}$
 
-
-
-
