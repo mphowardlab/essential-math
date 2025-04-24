@@ -13,9 +13,11 @@ u = \frac{1}{y_1^2}\ e^{-\int P\,dx}
 $$
 
 ### Example:
+
 $$
 (x^2 - x)y'' - xy' + y = 0
 $$
+
 Looking at this, $y_1 = x$ is a solution because $y_1' = 1$ and $y_1'' = 0$. Use reduction of order to find $y_2$:
 
 $$
