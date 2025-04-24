@@ -29,8 +29,8 @@ Solve
 How do we do this systematically? Matrices!
 1. Form the "augmented" matrix 
 \begin{equation}
-\vv{A} = \begin{bmatrix} 2 & 5 \\ -4 & 3 \end{bmatrix} \qquad
-\vv{b} = \begin{bmatrix} 2 \\ -30 \end{bmatrix}
+\mathbf{A} = \begin{bmatrix} 2 & 5 \\ -4 & 3 \end{bmatrix} \qquad
+\mathbf{b} = \begin{bmatrix} 2 \\ -30 \end{bmatrix}
 \end{equation}
 2. Perform elementary operations on rows on "pivot" points in each row.
 The goal is to get a number in $a_(11)$, $a_(22)$, $a_(33)$, etc. and zeros <ins>below</ins>
