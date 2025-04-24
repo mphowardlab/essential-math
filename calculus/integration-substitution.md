@@ -14,11 +14,21 @@ we can evaluate related integrals like:
 
 by making a *substitution*. Specifically, we define a new variable *u*,
 calculate its differential, and then replace both. For example, in this case,
-let $u = -x$. Then, $\d{u} = -\d{x}$. Equivalently, $x = -u$ and
-$\d{x} = -\d{u}$ so
+let 
+&u = -x \\ 
+Then, 
+&\d{u} = -\d{x} \\ 
+Equivalently, 
+&x = -u \\
+ and
+&\d{x} = -\d{u}$ \\
+
+so
 
 \begin{equation}
-\int e^{-x} \d{x} = -\int e^u \d{u} = -e^u + c = -e^{-x} + c
+\int e^{-x} \d{x} 
+&= -\int e^u \d{u} \\
+&= -e^u + c = -e^{-x} + c \\
 \end{equation}
 
 ```{example} *u*-substitution
