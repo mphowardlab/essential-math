@@ -88,7 +88,7 @@ y &=L^{-1}[Y]\\
 \end{align}
 ```
 
-```{example}: Hormone Level  
+Example: Hormone Level  
 The concentration of a hormone in the blood varies due to sinusoidal production by the thyroid and continuous removal according to:
 
 $$
