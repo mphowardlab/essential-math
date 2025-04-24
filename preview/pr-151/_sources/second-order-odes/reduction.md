@@ -13,32 +13,44 @@ u = \frac{1}{y_1^2}\ e^{-\int P\,dx}
 $$
 
 
-```{Example}
-$$
-(x^2 - x)y'' - xy' + y = 0
-$$
+```{example}
+
+\begin{equation}
+(x^2 - x)y'' - xy' + y = 0 
+\end{equation}
+
+---
 
 Looking at this, $y_1 = x$ is a solution because $y_1' = 1$ and $y_1'' = 0$. Use reduction of order to find $y_2$:
 
-$$
+\begin{equation}
 y_2 - \frac{x}{x^2 - x}\ y_1 + \frac{1}{x^2-x}y = 0
-$$
+\end{equation}
 
-$$
+\begin{equation}
 y'' + \frac{1}{1-x}y'\ + \frac{1}{x^2-x}y=0
-$$
+\end{equation}
 
-$$
-u = \frac{1}{x^2}\ e^{-\int \frac{1}{1-x} dx} = \frac{1}{x^2}\ e^{\ln(1-x)} = \frac{1-x}{x^2}\ = \frac{1}{x^2}\ - \frac{1}{x}\
-$$
+---
 
-$$
+\begin{align}
+u &= \frac{1}{x^2}\ e^{-\int \frac{1}{1-x} dx} \\
+  &= \frac{1}{x^2}\ e^{\ln(1-x)} = \frac{1-x}{x^2} \\ 
+  &= \frac{1}{x^2}\ - \frac{1}{x}\ 
+  \end{align}
+
+
+\begin{equation}
 \int u\,dx = -\frac{1}{x}\ - \ln{x}
-$$
+\end{equation}
 
-$$
+\begin{equation}
 y_2 = x(-\frac{1}{x}-\ln{x}) = -(1 + x\ln{x})
-$$
+\end{equation}
 
-General Solution: $y = C_1x + C_2(1+\ln{x})$
+The General Solution becomes:
+
+\begin{equation}
+y = C_1 x + C_2 (1 + \ln x)
+\end{equation}
 ```
