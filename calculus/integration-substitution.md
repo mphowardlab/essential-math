@@ -42,11 +42,11 @@ Evaluate the integral
 
 Let 
 
-&u=x^2 \\
+$$u=x^2$$
 
 so 
 
-&\d{u} = 2x \d{x} \\ 
+$$\d{u} = 2x \d{x}$$
 
 Then,
 
