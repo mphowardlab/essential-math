@@ -33,7 +33,7 @@ Solving for the initial conditions yields
 
 \begin{align}
 a_1&= \frac{C_0}{1+e^{2L\sqrt{k/D}}} \qquad
-a_2&= \frac{C_0}{1+e^{-2L\sqrt{k/D}}}
+a_2= \frac{C_0}{1+e^{-2L\sqrt{k/D}}}
 \end{align}
 
 Thus, 
