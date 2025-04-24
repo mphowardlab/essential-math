@@ -13,8 +13,7 @@ u = \frac{1}{y_1^2}\ e^{-\int P\,dx}
 $$
 
 
-```{example}
-
+````{example}
 \begin{equation}
 (x^2 - x)y'' - xy' + y = 0 
 \end{equation}
@@ -53,4 +52,4 @@ The General Solution becomes:
 \begin{equation}
 y = C_1 x + C_2 (1 + \ln x)
 \end{equation}
-```
+````
