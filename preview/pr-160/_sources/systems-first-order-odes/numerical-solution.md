@@ -14,11 +14,11 @@ Mole Balance
 
 ```{math}
 \begin{aligned}
-\frac{dn_A}{dt} = \dot n_{\rm in} - \dot n_{\rm out} + \r_A\V\ \\
+\frac{dn_A}{dt} = \dot n_{\rm in} - \dot n_{\rm out} + \r_A V \\
 \dot n_{\rm in} = \dot V_{\rm in} c_in,A  \\
 \frac{Vc_A}{dt} = \dot V_{\rm in} c_in,A - \dot V c_A - kc_AV \\
 \dot n_{\rm out} = \dot V_{\rm out} c_A \\
-V\frac{dc_A}{dt} + c_A\frac{dV}{dt} = 1 - 2c_A + kVc_A 
+V\frac{dc_A}{dt} + c_A\frac{dV}{dt} = 1 - 2c_A + kVc_A \\
 \end{aligned}
 ```
 
