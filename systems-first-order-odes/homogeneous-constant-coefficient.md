@@ -93,9 +93,9 @@ C(0) &= [CA0; 0; 0]; = [a_1(-(k_2-k_1)/k_2); -a_1(k_1/k_2)-a_2; a_1+a_2+a_3] \\
 So,
 
 \begin{align}
-CA(t) &= a_1(e^{-k_1*t})(-(k_2-k_1)/k_2) = CA0 * e^{-k_1*t}  \\
-CB(t) &= a_1(e^{-k_1*t})(-k_1/k_2) + a_2(e^{-k_2*t})(-1) = CA0 * (k_1 / (k_2 - k_1)) * (e^{-k_1*t} - e^{-k_2*t}) \\
-CC(t) &= a_1(e^{-k_1*t}) + a_2(e^{-k_2*t}) + a_3 = CA0 * (1 - (k_2 / (k_2 - k_1)) * e^{-k_1*t}) + (k_1 / (k_2 - k_1)) * e^{-k_2*t}
+CA(t) &= a_1(e^{-k_1*t})\frac{-k_2-k_1}{k_2} = CA0 * e^{-k_1*t}  \\
+CB(t) &= a_1(e^{-k_1*t})\frac{-k_1}{k_2} + a_2(e^{-k_2*t})(-1) = CA0 * \frac{k_1}{k_2 - k_1} * (e^{-k_1*t} - e^{-k_2*t}) \\
+CC(t) &= a_1(e^{-k_1*t}) + a_2(e^{-k_2*t}) + a_3 = CA0 * (1 - \frac{k_2}{k_2 - k_1} * e^{-k_1*t}) + \frac{k_1}{k_2 - k_1} * e^{-k_2*t}
 \end{align}
 $\rightarrow$ This matches our old answer!
 
