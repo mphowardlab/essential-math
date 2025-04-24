@@ -17,7 +17,13 @@ $
 
 To find the eigenvalues:
 $
-$|A - \lambda I| = \left| \begin{array}{cc} -\lambda & 4 \\ -4 & -\lambda \end{array} \right| = \lambda^2 + 16 = 0 \Rightarrow \lambda_{1,2} = \pm 4i$
+|A - \lambda I| =
+\begin{vmatrix}
+-\lambda & 4 \\
+-4 & -\lambda
+\end{vmatrix}
+= \lambda^2 + 16 = 0 \Rightarrow \lambda_{1,2} = \pm 4i
+
 
 For \( λ = 4i \):
 
