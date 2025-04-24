@@ -5,7 +5,7 @@ Second order differential equations can be useful for diffusion-style problems.
 ````{example} Steady-state Reaction Diffusion
 You are analyzing how the concentration changes over the length of a pipe.
 
-```{image} ./_images/flash.svg
+```{image} ./_images/Reaction_diffuse.svg
 ```
 \begin{align}
 D\frac{d^2c}{dx^2}-kc &= 0
