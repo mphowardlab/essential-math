@@ -1,7 +1,7 @@
 # Integrating factor. 
 
 ## 4. Example:
-Mole balance on a tank with increasing inlet/outlet flow rate.
+$Mole balance on a tank with increasing inlet/outlet flow rate.
 ````{example}
 
 ```{image}
@@ -26,11 +26,11 @@ du &= \dotq/v * t* dt \to \dotq*t*dt &= V*du
 n_A * (t) &= \exp(-1/2 * \dotq/v * t^2) * [C_f,A*V*\exp(1/2 * \dotq/v *t^2) + C]
 n_A*(0) &= n_A,o &= C_f,A * V + C \to C &= n_A,o -C_f,A*V
 \to (\underline{n_A*(t) &= C_f,A*V + (n_A,o - C_f,A*V)*\exp(-1/2*\dotq/v*t^2)})
-\end{align}
+\end{align}$
 
 
 ### 5. Example:
-Hormone level (again)
+$Hormone level (again)
 \begin{align}
 We had c' + kc &= A + B*\cos((\pi*t)/12) with c(0) &= C_o
 p &= kc   r &= A + B*\cos((\pi*t)/12)
@@ -40,7 +40,7 @@ F(t) = \exp(\int k*dt) &= \exp(kt)
                  \to Table of integrals, or by parts 
                  &= A/k * \exp(kt) + B * (\exp(kt)/(k^2 + (\pi/12)^2))*[K*\cos((\pi*t)/12) + \pi/12 * \sin((\pi*t)/12)]
 \to C(t) &= \exp(-kt)* (A/k * \exp(kt) + B * (\exp(kt)/(k^2 + (\pi/12)^12))* [k * \cos((\pi*t)/12) + \pi/12*\sin((/pi*t)/12)]+c^*)
-\end{align}
+\end{align}$
 
 
 
