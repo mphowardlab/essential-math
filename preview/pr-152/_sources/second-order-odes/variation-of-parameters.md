@@ -20,11 +20,10 @@ y_n &= c_1 \underbrace{\cos x}_{\substack{\uparrow \\ y_1}} + c_2 \underbrace{\s
 #### Particular:
 
 ```{math}
-y_1 = \cos(x), \quad y_2 = \sin(x)
-```
-
-```{math}
-y_1' &= -\sin(x), \quad y_2' &= \cos(x)
+\begin{aligned}
+y_1 &= \cos(x), \quad y_2 = \sin(x) \\
+y_1' &= -\sin(x), \quad y_2'= \cos(x)
+\end{aligned}
 ```
 
 ```{math}
