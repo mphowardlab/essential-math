@@ -1,7 +1,7 @@
 # Variation of parameters
-## Skill Builder
-
-````{ (d) } $y''+ y = \csc(y)$ , $ y\frac{\pi}{2}= y'\frac{\pi}{2}= 0$
+## Skill Builders
+(d) $y''+ y = \csc(y)$ , $ y\frac{\pi}{2}= y'\frac{\pi}{2}= 0$
+````{Solution}
 Homogeneous:
 
 \begin{align}
