@@ -46,10 +46,12 @@ There are some cases this fails, but we will not cover them.
 c' = A * c
 \end{equation}
 
+\begin{equation}
 A =  \begin{bmatrix}  -k_1 & 0 & 0 \
  k_1 & -k_2 & 0 \
 0 & k_2 & 0 
 \end{bmatrix}
+\end{equation}
 
 Matrix A is lower triangular, so
 
