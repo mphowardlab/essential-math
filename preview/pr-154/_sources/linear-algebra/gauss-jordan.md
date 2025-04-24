@@ -45,14 +45,16 @@ If yes, \underline{no solution}.
 
 4. Work back up to turn pivots into 1 and get zeros \underline{above} in each
 column
-
+\begin{equation}
+\begin{bmatrix} 2 & \box{5} & 2 \\ 0 & 1 & -2 \end{bmatrix} Divide by 13 \to
+\begin{bmatrix} 2 & 0 & 12 \\ 0 & 1 & -2 \end{bmatrix} -5 Row 2 \to 
+\begin{bmatrix} 1 & 0 & 6 \\ 0 & 1 & -2 \end{bmatrix} Divide by 2
 
 5. The solution comes from reexpressing as \underline{\underline{A}} \underline{x} = \underline{b}
 \begin{equation}
 \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} \qquad
  \begin{bmatrix} $x_1$ \\ $x_2$ \end{bmatrix}
 = \begin{bmatrix} 6 \\ -2 \end{bmatrix} \to x_1 = 6 & x_2 = -2
-
 \end{equation}
 
 ````{example} Pump circuit
