@@ -184,7 +184,7 @@ Gauss-Jordan elimination to solve directly:
 0 & 0 & 1 & .211 & -.10 & 0.32 
 \end{bmatrix}
 \end{align}
---->
+
 Solve: 
 \begin{equation}
 \vv {Q}= \vv{A}^{-1}{b} = \begin{bmatrix} 
@@ -205,4 +205,4 @@ Solve:
 \end{bmatrix}
 \end{equation}
 
-
+This is close to the real solution, with errors only due to rounding
