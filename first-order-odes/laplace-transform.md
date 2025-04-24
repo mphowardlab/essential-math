@@ -88,59 +88,91 @@ y &=L^{-1}[Y]\\
 \end{align}
 ```
 
- ```{example}: Hormone Level 
- The concentration of a hormone in the blood varies due to sinusoidal production by the thyroid and continuous removal according to: 
+```{example}: Hormone Level  
+The concentration of a hormone in the blood varies due to sinusoidal production by the thyroid and continuous removal according to:
 
-\begin{equation}
-c' = A + Bcos([\frac{\pi t}{12}]) - kc 
-\end{equation}
+$$
+c' = A + B\cos\left(\frac{\pi t}{12}\right) - kc
+$$
 
-The concentration is $c_0$ at 6 AM (t = 0). What is the average concentration between 6 PM and 6 AM the same day? 
+The concentration is $c_0$ at 6 AM ($t = 0$). What is the average concentration between 6 PM and 6 AM the same day?
 
-To solve, rearrange and use the Laplace transform: 
+To solve, rearrange and use the Laplace transform:
 
-\begin{equation}
-c' + kc = A + Bcos(\frac{\pi t}{12})
-\end{equation}
+$$
+c' + kc = A + B\cos\left(\frac{\pi t}{12}\right)
+$$
 
-\begin{align}
-[sC(s) - c_0] + kC(s) &= L^{-1}\left[A + B\cos(\frac{\pi t}{12})\right] \\
-&= \frac{A}{s} + \frac{Bs}{s^2 + (\frac{\pi}{12})^2} \\
-C(s) &= (\frac{1}{s+k})[c_0 + \frac{A}{s} + \frac{Bs}{s^2 + (\frac{\pi}{12})^2}] \\
-C(s) &= \frac{c_0}{s + k} + \frac{A}{s(s+k)} + \frac{Bs}{(s^2 + (\frac{\pi}{12})^2)(s+k)}
-\end{align}
+$$
+[sC(s) - c_0] + kC(s) = \mathcal{L}\left\{A + B\cos\left(\frac{\pi t}{12}\right)\right\}
+$$
 
-Using partial fraction decomposition to simplify: 
+$$
+= \frac{A}{s} + \frac{Bs}{s^2 + \left(\frac{\pi}{12}\right)^2}
+$$
 
-\begin{aligh}
-\frac{A}{s(s+k)} = \frac{1}{s(s+k)} = \frac{c_1}{s} + \frac{c_2}{s+k} \\
-c_1 = \frac{1}{k}    \\
-c_2 = \frac{-1}{k}   
-\end{align}
+$$
+C(s) = \left(\frac{1}{s + k}\right)\left[c_0 + \frac{A}{s} + \frac{Bs}{s^2 + \left(\frac{\pi}{12}\right)^2}\right]
+$$
 
-Same process for the next term:   
+$$
+C(s) = \frac{c_0}{s + k} + \frac{A}{s(s + k)} + \frac{Bs}{(s^2 + \left(\frac{\pi}{12}\right)^2)(s + k)}
+$$
 
-\begin{align}
-\frac{Bs}{(s^2 + (\frac{\pi}{12})^2)(s+k)} &= \frac{s}{(s^2 + (\frac{\pi}{12})^2)(s+k)} \\
-&= \frac{c_1 s + c_2}{(s^2 + (\frac{\pi}{12})^2)} + \frac{c_3}{s+k} \\
-s &= (c_1 s + c_2)(s + k) + c_3[s_2 + (\frac{\pi}{12})^2]  \\
-&= c_1 s^2 + (c_1 k + c_2)s + c_2 k + c_3 s^2 + c_3 (\frac{\pi}{12})^2 \\
-&= (c_1 + c_3)s^2 + (c_1 k + c_2)s + c_2 k + c_3 (\frac{\pi}{12})^2 \\   
-c_1 + c_3 &= 0 \\
-c_1 k + c_2 &= 1 \\
-c_2 k + c_3 (\frac{\pi}{12})^2 &= 0  \\
-c_3 &= \frac{-k}{k^2 + (\frac{\pi}{12})^2} \\
-c_1 = -c_3 &= \frac{k}{k^2 + (\frac{\pi}{12})^2} \\
-c_2 &= \frac{-(\frac{\pi}{12})^2}{k}c_3 = \frac{(\frac{\pi}{12})^2}{k^2 + (\frac{\pi}{12})^2} \\
-\frac{s}{(s^2 + (\frac{\pi}{12})^2)(s+k)} &= \frac{ks + (\frac{\pi}{12})^2}{(s^2 + (\frac{\pi}{12})^2)(k^2 + (\frac{\pi}{12})^2)} - \frac{k}{(s+k)(k^2 + (\frac{\pi}{12})^2)} 
-\end{align}
+Using partial fraction decomposition:
 
-Therefore,
+$$
+\frac{A}{s(s + k)} = \frac{1}{s(s + k)} = \frac{c_1}{s} + \frac{c_2}{s + k}
+$$
 
-*put the reverse laplace in 
-$\frac
+$$
+c_1 = \frac{1}{k}, \quad c_2 = \frac{-1}{k}
+$$
 
-The average is:   \
-$<c> = \frac{\int_{t^0}^{t^1}c(t)\di t}{\int_{t^0}^{t^1}\di t} = $
+For the next term:
+
+$$
+\frac{Bs}{(s^2 + \left(\frac{\pi}{12}\right)^2)(s + k)} = \frac{s}{(s^2 + \left(\frac{\pi}{12}\right)^2)(s + k)}
+$$
+
+$$
+= \frac{c_1 s + c_2}{s^2 + \left(\frac{\pi}{12}\right)^2} + \frac{c_3}{s + k}
+$$
+
+Expanding:
+
+$$
+s = (c_1 s + c_2)(s + k) + c_3\left[s^2 + \left(\frac{\pi}{12}\right)^2\right]
+$$
+
+Matching coefficients:
+
+$$
+(c_1 + c_3)s^2 + (c_1 k + c_2)s + c_2 k + c_3\left(\frac{\pi}{12}\right)^2 = s
+$$
+
+Solving:
+
+$$
+c_1 + c_3 = 0 \\
+c_1 k + c_2 = 1 \\
+c_2 k + c_3 \left(\frac{\pi}{12}\right)^2 = 0
+$$
+
+From this:
+
+$$
+c_3 = \frac{-k}{k^2 + \left(\frac{\pi}{12}\right)^2}, \quad
+c_1 = \frac{k}{k^2 + \left(\frac{\pi}{12}\right)^2}, \quad
+c_2 = \frac{\left(\frac{\pi}{12}\right)^2}{k^2 + \left(\frac{\pi}{12}\right)^2}
+$$
+
+So:
+
+$$
+\frac{s}{(s^2 + \left(\frac{\pi}{12}\right)^2)(s + k)} = \frac{ks + \left(\frac{\pi}{12}\right)^2}{(s^2 + \left(\frac{\pi}{12}\right)^2)(k^2 + \left(\frac{\pi}{12}\right)^2)} - \frac{k}{(s + k)(k^2 + \left(\frac{\pi}{12}\right)^2)}
+$$
+
+Therefore, 
 
 
