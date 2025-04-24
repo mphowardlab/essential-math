@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>5.1. Separable differential equations &#8212; Essential Mathematics for Chemical Engineers</title>
+    <title>5.2. Separable differential equations &#8212; Essential Mathematics for Chemical Engineers</title>
   
   
   
@@ -57,12 +57,14 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"d": ["{\\operatorname{d}\\!{#1}}", 1], "dd": ["{\\d{}^{#1} #2 \\over \\d{#3}^{#1}}", 3], "pp": ["{\\partial^{#1} #2 \\over \\partial #3^{#1}}", 3], "td": ["{\\left(\\pp{#1}{#2}{#3} \\right)_{#4}}", 4], "ubar": ["\\underline{#1}", 1], "vv": ["\\mathbf{#1}", 1]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'first-order-odes/separable';</script>
     <link rel="canonical" href="https://mphowardlab.github.io/essential-math/first-order-odes/separable.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5.2. Exact differential equations" href="exact.html" />
-    <link rel="prev" title="5. First-order ordinary differential equations" href="index.html" />
+    <link rel="next" title="5.3. Exact differential equations" href="exact.html" />
+    <link rel="prev" title="5.1. Definition" href="definition.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -202,13 +204,14 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">5. First-order ordinary differential equations</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">5.1. Separable differential equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="exact.html">5.2. Exact differential equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="linearity.html">5.3. Linearity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="undetermined-coefficients.html">5.4. Undetermined coefficients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="laplace-transform.html">5.5. Laplace transform</a></li>
-<li class="toctree-l2"><a class="reference internal" href="integrating-factor.html">5.6. Integrating factor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numerical-solution.html">5.7. Numerical solution methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="definition.html">5.1. Definition</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">5.2. Separable differential equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exact.html">5.3. Exact differential equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linearity.html">5.4. Linearity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="undetermined-coefficients.html">5.5. Undetermined coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="laplace-transform.html">5.6. Laplace transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="integrating-factor.html">5.7. Integrating factor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numerical-solution.html">5.8. Numerical solution methods</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../systems-first-order-odes/index.html">6. Systems of first-order ordinary differential equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -425,7 +428,153 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="separable-differential-equations">
-<h1><span class="section-number">5.1. </span>Separable differential equations<a class="headerlink" href="#separable-differential-equations" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">5.2. </span>Separable differential equations<a class="headerlink" href="#separable-differential-equations" title="Link to this heading">#</a></h1>
+<aside class="topic">
+<p class="topic-title">Separable first-order ODEs</p>
+<p>If a first-order ODE can be separated so that <em>y</em> and <em>x</em> are on each side, it
+can be solved by integration:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-0d83412b-556a-4de0-8717-0ffbc8a0462b">
+<span class="eqno">(5.10)<a class="headerlink" href="#equation-0d83412b-556a-4de0-8717-0ffbc8a0462b" title="Permalink to this equation">#</a></span>\[\begin{align}
+y' &amp;= \frac{f(x)}{g(y)} \\
+\int g(y)\d{y} &amp;= \int f(x) \d{x} + c
+\end{align}\]</div>
+</aside>
+<p>For example, to solve <span class="math notranslate nohighlight">\(y' = xy\)</span>, separate the variables and integrate:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-41226293-35a4-4e5d-9c1e-40e8dbdd89e7">
+<span class="eqno">(5.11)<a class="headerlink" href="#equation-41226293-35a4-4e5d-9c1e-40e8dbdd89e7" title="Permalink to this equation">#</a></span>\[\begin{align}
+\int \frac{\d{y}}{y} &amp;= \int x \d{x} \\
+\ln y &amp;= \frac{x^2}{2} + c_0 \\
+y &amp;= e^{x^2/2 + c_0} \\
+y &amp;= c e^\frac{x^2}{2}
+\end{align}\]</div>
+<p>Note that here, we are being careful to denote the redefinition of the
+integration constant (<span class="math notranslate nohighlight">\(c = e^{c_0}\)</span>). This detail may be glossed over at times.</p>
+<div class="admonition-example-chemical-reaction-kinetics admonition">
+<p class="admonition-title">Example: Chemical reaction kinetics</p>
+<p>A substance is disappearing according to a first-order reaction, so its
+concentration follows</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b6e67013-cc6f-457f-b1c8-d46ebfad9dce">
+<span class="eqno">(5.12)<a class="headerlink" href="#equation-b6e67013-cc6f-457f-b1c8-d46ebfad9dce" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\dd{}{c}{t} = -k c
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(k\)</span> is the reaction rate constant. If the initial concentration of the
+reactant was 1.0 M and the concentration after 1 hour has passed is 0.70 M,
+what is the reaction rate constant?</p>
+<hr class="docutils" />
+<p>First, solve the differential equation using separation of variables</p>
+<div class="amsmath math notranslate nohighlight" id="equation-195fa163-5cc2-4c44-a4ec-8e328f98a051">
+<span class="eqno">(5.13)<a class="headerlink" href="#equation-195fa163-5cc2-4c44-a4ec-8e328f98a051" title="Permalink to this equation">#</a></span>\[\begin{align}
+\int \frac{1}{c} \d{c} &amp;= \int -k \d{t} \\
+\ln c &amp;= -k t + B
+\end{align}\]</div>
+<p>where <em>B</em> is an unknown integration constant. Apply the initial condition that
+<span class="math notranslate nohighlight">\(c(0) = 1\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-0f1f7adb-1124-4a30-95c4-3b6e0297a1c8">
+<span class="eqno">(5.14)<a class="headerlink" href="#equation-0f1f7adb-1124-4a30-95c4-3b6e0297a1c8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\ln 1 = -k \cdot 0 + B \to B = 0
+\end{equation}\]</div>
+<p>Hence,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-5589d646-77ec-4cb9-90d4-677323517d5c">
+<span class="eqno">(5.15)<a class="headerlink" href="#equation-5589d646-77ec-4cb9-90d4-677323517d5c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+k = -\frac{\ln c}{t}
+\end{equation}\]</div>
+<p>We know that <span class="math notranslate nohighlight">\(c(1) = 0.70\)</span> so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1f96ead3-9fbc-4a77-9ea2-9def753956da">
+<span class="eqno">(5.16)<a class="headerlink" href="#equation-1f96ead3-9fbc-4a77-9ea2-9def753956da" title="Permalink to this equation">#</a></span>\[\begin{equation}
+k = -\frac{\ln 0.7}{1\,{\rm h}} = 0.36\,{\rm h}^{-1}
+\end{equation}\]</div>
+</div>
+<div class="admonition-example-newton-s-law-of-cooling admonition">
+<p class="admonition-title">Example: Newton’s law of cooling</p>
+<p>Estimate the temperature <em>T</em> in an office building at 6 a.m. if the heat goes
+off at 10 p.m. when the building is 70°F and the outside temperature <span class="math notranslate nohighlight">\(T_\infty\)</span>
+is 45°F if the <em>T</em> follows</p>
+<div class="amsmath math notranslate nohighlight" id="equation-80828036-5366-4fe2-a7c4-b4850468185d">
+<span class="eqno">(5.17)<a class="headerlink" href="#equation-80828036-5366-4fe2-a7c4-b4850468185d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\dd{}{T}{t} = -k(T - T_\infty)
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(k = 0.05\,{\rm h}^{-1}\)</span>.</p>
+<hr class="docutils" />
+<p>Separate the differential equation and integrate</p>
+<div class="amsmath math notranslate nohighlight" id="equation-44d98b25-eb81-48ef-8abf-6acd84dcff0f">
+<span class="eqno">(5.18)<a class="headerlink" href="#equation-44d98b25-eb81-48ef-8abf-6acd84dcff0f" title="Permalink to this equation">#</a></span>\[\begin{align}
+\int \frac{1}{T - T_\infty} \d{T} &amp;= \int -k \d{t} \\
+\ln(T - T_\infty) &amp;= -kt + c \\
+T - T_\infty &amp;= C e^{-kt} \\
+T &amp;= T_\infty + C e^{-kt}
+\end{align}\]</div>
+<p>Call 10 p.m. the time where <span class="math notranslate nohighlight">\(t = 0\)</span>. Then,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c6ff14c1-7583-4e2d-ab3e-20d66f21c5b1">
+<span class="eqno">(5.19)<a class="headerlink" href="#equation-c6ff14c1-7583-4e2d-ab3e-20d66f21c5b1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+70 = T(0) = 45 + C \to C = 25
+\end{equation}\]</div>
+<p>Last, evaluate the temperature at 6 a.m. when <span class="math notranslate nohighlight">\(t = 8\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-dedb91e7-e076-4a57-baed-7a26b1d38a39">
+<span class="eqno">(5.20)<a class="headerlink" href="#equation-dedb91e7-e076-4a57-baed-7a26b1d38a39" title="Permalink to this equation">#</a></span>\[\begin{equation}
+T(8) = 45 + 25 e^{-0.05 \cdot 8} = 62
+\end{equation}\]</div>
+<p>The temperature is approximately 62°F.</p>
+</div>
+<div class="admonition-example-toricelli-s-law admonition">
+<p class="admonition-title">Example: Toricelli’s Law</p>
+<p>A 1 cm hole opens at the bottom of a 1 m cylindrical tank. Water exits the
+hole with velocity that follows Toricelli’s, <span class="math notranslate nohighlight">\(\sqrt{2gh}\)</span> where <em>g</em> is the
+acceleration due to gravity and <em>g</em> is the height of water above the hole.</p>
+<a class="reference internal image-reference" href="../_images/toricelli.jpg"><img alt="Tank draining through a pinhole" class="align-center" src="../_images/toricelli.jpg" style="width: 200px;" />
+</a>
+<p>If there is 2 m of water in the tank initially, when does it drain?</p>
+<hr class="docutils" />
+<p>Start from the unsteady balance on the mass of water <em>m</em> in the tank</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d5ce2731-3829-4363-a542-02acf3c55032">
+<span class="eqno">(5.21)<a class="headerlink" href="#equation-d5ce2731-3829-4363-a542-02acf3c55032" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\dd{}{m}{t} = -\dot m_{\rm out}
+\end{equation}\]</div>
+<p>The mass of water is</p>
+<div class="amsmath math notranslate nohighlight" id="equation-be0cd90c-e628-44bb-b8af-dec378526788">
+<span class="eqno">(5.22)<a class="headerlink" href="#equation-be0cd90c-e628-44bb-b8af-dec378526788" title="Permalink to this equation">#</a></span>\[\begin{equation}
+m = \rho V = \rho \frac{\pi D_1^2}{4} h
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\rho\)</span> is the density of water, <em>V</em> is the volume of water in the tank,
+and <span class="math notranslate nohighlight">\(D_1\)</span> = 1 m is the diameter of the tank. <em>V</em> is replaced using the volume of
+a cylinder.</p>
+<p>The mass flow rate out is</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f27906fc-e042-46d5-b6b0-5aec5fd20f49">
+<span class="eqno">(5.23)<a class="headerlink" href="#equation-f27906fc-e042-46d5-b6b0-5aec5fd20f49" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\dot m_{\rm out} = \rho \dot V = \rho \frac{\pi D_2^2}{4} \sqrt{2gh}
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\dot V\)</span> is the volumetric flow rate out of the hole, which we compute
+from the cross-sectional area of the hole (a circle with diameter <span class="math notranslate nohighlight">\(D_2\)</span>
+= 0.01 m) and the model for the velocity leaving it.</p>
+<p>Inserting both into the unsteady balance, applying rules of differentiation, and
+simplifying gives</p>
+<div class="amsmath math notranslate nohighlight" id="equation-13a04c4f-81ec-4eb8-a4a9-41cddd3735c0">
+<span class="eqno">(5.24)<a class="headerlink" href="#equation-13a04c4f-81ec-4eb8-a4a9-41cddd3735c0" title="Permalink to this equation">#</a></span>\[\begin{align}
+\dd{}{}{t}\left(\rho \frac{\pi D_1^2}{4} h\right)
+ &amp;= -\rho \frac{\pi D_2^2}{4} \sqrt{2gh} \\
+\rho \frac{\pi D_1^2}{4} \dd{}{h}{t} &amp;= -\rho \frac{\pi D_2^2}{4} \sqrt{2gh} \\
+\frac{dh}{dt} &amp;= -\left(\frac{D_2}{D_1}\right)^2 \sqrt{2gh}
+\end{align}\]</div>
+<p>This is a separable differential equation</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9d265963-3107-4b89-897a-f4c1c954e9de">
+<span class="eqno">(5.25)<a class="headerlink" href="#equation-9d265963-3107-4b89-897a-f4c1c954e9de" title="Permalink to this equation">#</a></span>\[\begin{align}
+\int \frac{1}{\sqrt{h}} \d{h}
+  &amp;= \int -\left(\frac{D_2}{D_1}\right)^2 \sqrt{2g} \d{t} \\
+2\sqrt{h} &amp;= -t \left(\frac{D_2}{D_1}\right)^2 \sqrt{2g} + c
+\end{align}\]</div>
+<p>Find the integration constant <em>c</em> using the initial condition</p>
+<div class="amsmath math notranslate nohighlight" id="equation-fb644336-d583-4868-b098-5907d34995df">
+<span class="eqno">(5.26)<a class="headerlink" href="#equation-fb644336-d583-4868-b098-5907d34995df" title="Permalink to this equation">#</a></span>\[\begin{equation}
+2 \sqrt{2} = c
+\end{equation}\]</div>
+<p>The tank drains when <span class="math notranslate nohighlight">\(h = 0\)</span>, so substitute this, <em>c</em>, and numerical values:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4b47f0d0-dc22-43de-852e-2409c48352d0">
+<span class="eqno">(5.27)<a class="headerlink" href="#equation-4b47f0d0-dc22-43de-852e-2409c48352d0" title="Permalink to this equation">#</a></span>\[\begin{align}
+0 &amp;= -t \left(\frac{0.01}{1}\right)^2 \sqrt{2 \cdot 9.8} + 2 \sqrt{2} \\
+t &amp;= 2 \left(\frac{1}{0.01}\right)^2 \sqrt{\frac{2}{2 \cdot 9.8}} = 6400
+\end{align}\]</div>
+<p>This time is in seconds because all units are SI, so the tank drains in about
+1.8 hours.</p>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -459,12 +608,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="index.html"
+       href="definition.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">5. </span>First-order ordinary differential equations</p>
+        <p class="prev-next-title"><span class="section-number">5.1. </span>Definition</p>
       </div>
     </a>
     <a class="right-next"
@@ -472,7 +621,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">5.2. </span>Exact differential equations</p>
+        <p class="prev-next-title"><span class="section-number">5.3. </span>Exact differential equations</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
