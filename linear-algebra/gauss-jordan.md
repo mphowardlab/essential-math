@@ -14,7 +14,7 @@ Elementary operations: \begin{align}
 *Swap equations order
 *Multiply one equation by a nonzero constant
 *Add one equation to another
-end{align}
+\end{align}
 Two linear systems are <ins>row-equivalent</ins> if one can be obtained from 
 another by elementary operations.
  *Row-equivalent linear systems have the <ins>same</ins> set of solutions
@@ -23,7 +23,7 @@ Solve
 \begin{align}
 2x_1 + 5x_2 = 2 --> 2x_1 + 5x_2 = 2 \\
 -4x_1 + 3x_2 = -30 --> -4x_1 + 3x_2 = -30 \\
-+2(2x_1 + 5x_2 = 2) --> 13x_2 = -26 &#10003; \\
++2(2x_1 + 5x_2 = 2) --> 13x_2 = -26 \\
 \end{align}
 
 How do we do this systematically? Matrices!
@@ -33,7 +33,7 @@ How do we do this systematically? Matrices!
 \vv{b} = \begin{bmatrix} 2 \\ -30 \end{bmatrix}
 \end{equation}
 2. Perform elementary operations on rows on "pivot" points in each row.
-The goal is to get a number in $a_11$, $a_22$, $a_33$, etc. and zeros <ins>below</ins>
+The goal is to get a number in $a_(11)$, $a_(22)$, $a_(33)$, etc. and zeros <ins>below</ins>
 in each column.
 \begin{equation}
 \begin{bmatrix} 2 & 5 & 2 \\ -4 & 3 & -30 \end{bmatrix} \qquad
