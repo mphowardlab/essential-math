@@ -127,3 +127,7 @@ C(t) = c_0\, \mathcal{L}^{-1}\left\{ \frac{1}{s + k} \right\}
 \right]
 $$
 $= c_0 e^{-kt} + A\left[\frac{1}{k} - \frac{1}{k}e^{-kt}\right] + B\left[\frac{k}{k^2 + \left(\frac{\pi}{12}\right)^2} \cos\left(\frac{\pi t}{12}\right) + \frac{\left(\frac{\pi}{12}\right)^2}{k^2 + \left(\frac{\pi}{12}\right)^2} \cdot \frac{\sin\left(\frac{\pi t}{12}\right)}{\frac{\pi}{12}} - \frac{k}{k^2 + \left(\frac{\pi}{12}\right)^2} e^{-kt} \right]$
+$ c(t) = \frac{A}{k} + \frac{B}{k^2 + (\frac{\pi}{12})^2}[kcos(\frac{\pi t}{12}) + \frac{\pi}{12}sin(\frac{\pi t}{12})] + [c_0 - \frac{A}{k} - \frac{Bk}{k^2 + (\frac{\pi}{12})^2}]\exp(-kt)$  \
+The average is:   \
+$ <c> = \frac{\int_{t^0}^{t^1}c(t)\di t}{\int_{t^0}^{t^1}\di t} $
+
