@@ -11,12 +11,13 @@ Mole balance on a tank with increasing inlet/outlet flow rate.
 \dot n_A,in &= C_f,A * \dot q * t
 \dot n_A &= C_f,A * \dot q * t. - (n_A \ v) * \dot q * t
 \end{align}
-
+````{dropdown} 4.0 Example
 Rewrite:
-\begin{align}
+```{math}
+\begin{aligned}
 \dot n_A + ((\dot q * t)\v)_n_A &= C_f,A * \dot q * t
 P(t) &= ((\dot q * t) / v).  r(t) &= C_f,A * \dot q * t
-\end{align}
+\end{aligned}
 
 \begin{aligh}
 F(t) &=  \exp(\int p(t) * dt) &= \exp(\int ((\dotq * t)/v)) * dt &= \exp(1/2 * \dotq * t^2)
