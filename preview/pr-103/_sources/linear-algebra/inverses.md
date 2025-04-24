@@ -187,7 +187,7 @@ Gauss-Jordan elimination to solve directly:
 --->
 Solve: 
 \begin{equation}
-\vv {Q}= $\vv{A}^{-1}${b} = \begin{bmatrix} 
+\vv {Q}= \vv{A}^{-1}{b} = \begin{bmatrix} 
 0.261 & 0.035 & -0.012 \\
 -0.528 & 0.025 & 0.020 \\
 0.211 & -0.010 & 0.032 
