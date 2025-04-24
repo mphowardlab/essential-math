@@ -17,50 +17,27 @@ $
 
 To find the eigenvalues:
 $
-|A - λI| = 
-\(
-\left| \begin{array}{cc}
--\lambda & 4 \\
--4 & -\lambda
-\end{array} \right|
-= \lambda^2 + 16 = 0 \Rightarrow \lambda_{1,2} = \pm 4i
-\)
+|A - \lambda I| = 
+\begin{vmatrix} 
+-\lambda & 4 \\ 
+-4 & -\lambda 
+\end{vmatrix} 
+= \lambda^2 + 16 = 0 
+\Rightarrow \lambda_{1,2} = \pm 4i
 
 For \( λ = 4i \):
 
-\(
-\begin{bmatrix}
--4i & 4 \\
--4 & -4i
-\end{bmatrix}
-\begin{bmatrix}
-x_1 \\
-x_2
-\end{bmatrix}
-= \mathbf{0} \Rightarrow \mathbf{x}_1 = \begin{bmatrix} -i \\ 1 \end{bmatrix}
-\)
+\begin{bmatrix} -4i & 4 \\ -4 & -4i \end{bmatrix} x_1 = 0 
+\Rightarrow x_1 = \begin{bmatrix} -i \\ 1 \end{bmatrix}
 
 
 For \( $\lambda_2$ = -4i \):
 $
-\begin{bmatrix}
-4i & 4 \\
--4 & 4i
-\end{bmatrix}
-\begin{bmatrix}
-x_1 \\
-x_2
-\end{bmatrix}
-= 0 ⟹ x₂ = [ i, 1 ]ᵀ
+\begin{bmatrix} 4i & 4 \\ -4 & 4i \end{bmatrix} x_2 = 0 
+\Rightarrow x_2 = \begin{bmatrix} i \\ 1 \end{bmatrix}
+$
 
 **General Solution:**
 $
-\mathbf{y} = c_1 e^{4it} \begin{bmatrix}
--i \\
-1
-\end{bmatrix}
-+ c_2 e^{-4it} \begin{bmatrix}
-i \\
-1
-\end{bmatrix}
+y = c_1 e^{4it} \begin{bmatrix} -i \\ 1 \end{bmatrix} + c_2 e^{-4it} \begin{bmatrix} i \\ 1 \end{bmatrix}
 $
