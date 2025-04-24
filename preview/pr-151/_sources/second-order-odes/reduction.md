@@ -1,7 +1,7 @@
 # Reduction of order
-### 4. Finding a basis: Reduction of order
-It can be hard to find $y_1$ and $y_2$ in general, but some techniques can help. Today, we will learn how to get $y_2$ if a $y_1$ is found (e.g, by guessing).
-
+```{topic} Finding a basis: Reduction of order
+It can be hard to find $y_1$ and $y_2$ in general, but some techniques can help. We will learn how to get $y_2$ if a $y_1$ is found (e.g, by guessing).
+```
 If a solution $y_1$ of $y'' + P(x)y' + Q(x)y = 0$ is known, then 
 
 $$
@@ -12,7 +12,8 @@ $$
 u = \frac{1}{y_1^2}\ e^{-\int P\,dx}
 $$
 
-### Example:
+
+```{Example}
 
 $$
 (x^2 - x)y'' - xy' + y = 0
@@ -41,6 +42,4 @@ y_2 = x(-\frac{1}{x}-\ln{x}) = -(1 + x\ln{x})
 $$
 
 General Solution: $y = C_1x + C_2(1+\ln{x})$
-
-
-
+```
