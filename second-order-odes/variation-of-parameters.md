@@ -8,7 +8,7 @@ $y'' + y = \csc(y)$, with initial conditions $y\left(\frac{\pi}{2}\right) = y'\l
 ````{dropdown} Solution
 :open: false
 
-### Homogeneous:
+#### Homogeneous:
 
 ```{math}
 \begin{aligned}
@@ -18,17 +18,15 @@ y_n &= c_1 \underbrace{\cos x}_{\substack{\uparrow \\ y_1}} + c_2 \underbrace{\s
 \end{aligned}
 ```
 
-### Particular:
+#### Particular:
 
 ```{math}
 y_1 = \cos(x), \quad y_2 = \sin(x)
 ```
 
 ```{math}
-\begin{aligned}
 y_1' &= -\sin(x) \\
 y_2' &= \cos(x)
-\end{aligned}
 ```
 
 ```{math}
