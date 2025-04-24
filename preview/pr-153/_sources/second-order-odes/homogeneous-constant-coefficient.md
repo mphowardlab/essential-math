@@ -26,7 +26,8 @@ Which, when factored yields $\displaystyle\lambda_{1,2} = \pm \sqrt{\frac{k}{D}}
 
 We can assume a solution of the form $\displaystyle y=C_1e^{a_1x}+C_2e^{a_2x}$
 
-C=a1 \\ 
+C=a1
+
 C'=a2
 
 
