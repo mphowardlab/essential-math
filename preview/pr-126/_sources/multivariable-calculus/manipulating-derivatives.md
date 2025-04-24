@@ -1,10 +1,100 @@
 # Manipulating partial derivatives
 
+## Derivatives as functions
+
+The first law of thermodynamics for a pure substance is:
+
+\begin{equation}
+\d{U} = T\d{S} - P \d{V}
+\end{equation}
+
+where *U* is the molar internal energy, *T* is the temperature, *S* is the molar
+entropy, *P* is the pressure, and *V* is the molar volume. This is an *exact*
+differential for $U(S,V)$. Mathematically, we also have the total differential:
+
+\begin{equation}
+\d{U} = \td{}{U}{S}{V} \d{S} + \td{}{U}{V}{S} \d{V}
+\end{equation}
+
+By comparing the two, we see that
+
+\begin{equation}
+T = \td{}{U}{S}{V} \qquad P = -\td{}{U}{V}{S}
+\end{equation}
+
+This shows that *T* and *P* are *functions* of *S* and *V*! Their derivatives
+can be computed and manipulated using rules of multivariable calculus in order
+to relate *measurable* quantities like *T* and *P* to the derivatives of
+an *unmeasurable* quantities like *U*! For example, the change in internal
+energy for an adiabatic process (constant *S*) is:
+
+\begin{equation}
+\Delta U = \int_{V_1}^{V_2} \td{}{U}{V}{S} \d{V} = \int_{V_1}^{V_2} -P \d{V}
+\end{equation}
+
+We can also relate quantities as mixed derivatives. For example, the entropy
+derivative of the pressure cannot be measured easily, but it is related to the
+temperature change during adiabatic compression:
+
+\begin{equation}
+-\td{}{P}{S}{V} = \frac{\partial ^2 U}{\partial S \partial V}
+= \frac{\partial^2 U}{\partial V \partial S} = \td{}{T}{V}{S}
+\end{equation}
+
+## Swapping variables and derivatives
+
+We say *U* has *S* and *V* as "natural" variables because they are what appears
+in the differential first law. But, we do not like *S* as a variable because we
+cannot measure it. We would love to use *T* instead. Can we swap the two?
+
+*Yes*, if we define the Helmholtz free energy:
+
+\begin{equation}
+A = U - T S
+\end{equation}
+
+where *S* is now a function of *T* and *V* and so is *U* as a result. The total
+differential for *A* confirms this:
+
+\begin{align}
+\d{A} &= \d{U} - (T \d{S} + S \d{T}) \\
+&= (T \d{S} -P \d{V}) - T \d{S} - S \d{T} \\
+&= -S \d{T} -P \d{V}
+\end{align}
+
+As a result,
+
+\begin{align}
+S &= -\td{}{A}{T}{V} \\
+P &= - \td{}{A}{V}{T} \\
+\td{}{S}{V}{T} &= \td{}{P}{T}{V}
+\end{align}
+
+Other quantities can be defined to use different sets of natural variables.
+
+- Enthalpy *H*
+
+  \begin{align}
+  H &= U + P V \\
+  \d{H} &= T \d{S} + V \d{P}
+  \end{align}
+
+- Gibbs free energy *G*
+
+  \begin{align}
+  G &= A + P V = U - T S + P V \\
+  \d{G} &= - S \d{T} + V \d{P}
+  \end{align}
+
+The reasons for making these definitions are based on a concept called a
+Legendre transformation and this has important implications in thermodynamics
+(e.g., why $\Delta G < 0$ for a spontaneous process at constant *T* and *P*).
+
 ```{example} Change in internal energy
 We want to compute the change in molar internal energy $\Delta U$ of a
-substance as we vary the temperature $T$ and pressure $P$ in terms of quantities
-we can measure. In addition to $T$ and $P$, these quantities are the molar
-volume $V$, the thermal expansion coefficient $\alpha_V$, the isothermal
+substance as we vary the temperature *T* and pressure *P* in terms of quantities
+we can measure. In addition to *T* and *P*, these quantities are the molar
+volume *V*, the thermal expansion coefficient $\alpha_V$, the isothermal
 compressibility $\kappa_T$, and the constant-pressure heat capacity $c_P$:
 
 \begin{align}
@@ -22,17 +112,17 @@ from thermodynamics:
 \d{G} &= -S \d{T} + V \d{P}
 \end{align}
 
-where $S$ is the molar entropy and $G$ is the molar Gibbs free energy.
+where *S* is the molar entropy and $G$ is the molar Gibbs free energy.
 
 ---
 
-First, we express the total differential for $U$ as a function of $T$ and $P$:
+First, we express the total differential for *U* as a function of *T* and *P*:
 
 \begin{equation}
 \d{U} = \td{}{U}{T}{P} \d{T} + \td{}{U}{P}{T} \d{P}
 \end{equation}
 
-Next, we form the derivatives using the given total differential for $U$:
+Next, we form the derivatives using the given total differential for *U*:
 
 \begin{align}
 \td{}{U}{T}{P} &= T \td{}{S}{T}{P} - P \td{}{V}{T}{P} \\
@@ -78,6 +168,6 @@ Putting it all together:
 \d{U} = (c_P - PV\alpha_V)\d{T} + V(P\kappa_T - T\alpha_V)\d{P}
 \end{equation}
 
-This total differential is now suitable for integration with respect to $T$
-and $P$ using only measurable quantities!
+This total differential is now suitable for integration with respect to *T*
+and *P* using only measurable quantities!
 ```

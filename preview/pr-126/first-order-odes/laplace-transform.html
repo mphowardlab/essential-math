@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>5.5. Laplace transform &#8212; Essential Mathematics for Chemical Engineers</title>
+    <title>5.6. Laplace transform &#8212; Essential Mathematics for Chemical Engineers</title>
   
   
   
@@ -63,8 +63,8 @@
     <link rel="canonical" href="https://mphowardlab.github.io/essential-math/first-order-odes/laplace-transform.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5.6. Integrating factor" href="integrating-factor.html" />
-    <link rel="prev" title="5.4. Undetermined coefficients" href="undetermined-coefficients.html" />
+    <link rel="next" title="5.7. Integrating factor" href="integrating-factor.html" />
+    <link rel="prev" title="5.5. Undetermined coefficients" href="undetermined-coefficients.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -204,13 +204,14 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">5. First-order ordinary differential equations</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="separable.html">5.1. Separable differential equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="exact.html">5.2. Exact differential equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="linearity.html">5.3. Linearity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="undetermined-coefficients.html">5.4. Undetermined coefficients</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">5.5. Laplace transform</a></li>
-<li class="toctree-l2"><a class="reference internal" href="integrating-factor.html">5.6. Integrating factor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numerical-solution.html">5.7. Numerical solution methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="definition.html">5.1. Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="separable.html">5.2. Separable differential equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exact.html">5.3. Exact differential equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linearity.html">5.4. Linearity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="undetermined-coefficients.html">5.5. Undetermined coefficients</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">5.6. Laplace transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="integrating-factor.html">5.7. Integrating factor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numerical-solution.html">5.8. Numerical solution methods</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../systems-first-order-odes/index.html">6. Systems of first-order ordinary differential equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -427,7 +428,84 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="laplace-transform">
-<h1><span class="section-number">5.5. </span>Laplace transform<a class="headerlink" href="#laplace-transform" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">5.6. </span>Laplace transform<a class="headerlink" href="#laplace-transform" title="Link to this heading">#</a></h1>
+<div class="admonition-example-laplace-transform admonition">
+<p class="admonition-title">Example: Laplace transform</p>
+<p>Solve the initial value problem</p>
+<div class="amsmath math notranslate nohighlight" id="equation-61bc1e71-7f4b-4c50-bf69-51040ca224d2">
+<span class="eqno">(5.44)<a class="headerlink" href="#equation-61bc1e71-7f4b-4c50-bf69-51040ca224d2" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y' =-ky, \quad y(0) =2
+\end{equation}\]</div>
+<hr class="docutils" />
+<p>Rearrange, apply Laplace transform <span class="math notranslate nohighlight">\(Y = L[y]\)</span>, and solve for <span class="math notranslate nohighlight">\(Y\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c7aeac2f-527c-41fa-a72c-db7aad171ac5">
+<span class="eqno">(5.45)<a class="headerlink" href="#equation-c7aeac2f-527c-41fa-a72c-db7aad171ac5" title="Permalink to this equation">#</a></span>\[\begin{align}
+y'+ ky &amp;= 0 \\
+L[y'+ky] &amp;= L[0] \\
+L[y']+kL[y] &amp;= L[0] \\
+sY - y(0) + k Y &amp;= 0 \\
+(s+k) Y - 2 &amp;= 0 \\
+Y &amp;= \frac{2}{s+k}
+\end{align}\]</div>
+<p>Invert Laplace transform:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7f30d072-2271-48c0-945a-1a7cc995ac11">
+<span class="eqno">(5.46)<a class="headerlink" href="#equation-7f30d072-2271-48c0-945a-1a7cc995ac11" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y = L^{-1}\left[\frac{2}{s+k}\right] = 2L^{-1}\left[\frac{1}{s+k}\right] = 2 e^{-kt}
+\end{equation}\]</div>
+</div>
+<div class="admonition-example-laplace-transform-with-partial-fractions admonition">
+<p class="admonition-title">Example: Laplace transform with partial fractions</p>
+<p>Solve the initial value problem:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1a279105-be2f-4a5f-8a50-2ac670c3fb6b">
+<span class="eqno">(5.47)<a class="headerlink" href="#equation-1a279105-be2f-4a5f-8a50-2ac670c3fb6b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y'-y = t, \quad y(0) = 1
+\end{equation}\]</div>
+<hr class="docutils" />
+<p>Rearrange, apply Laplace transform <span class="math notranslate nohighlight">\(Y = L[y]\)</span>, and solve for <span class="math notranslate nohighlight">\(Y\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1760e4ce-6f5e-4a11-9e77-4902b8cd3fcf">
+<span class="eqno">(5.48)<a class="headerlink" href="#equation-1760e4ce-6f5e-4a11-9e77-4902b8cd3fcf" title="Permalink to this equation">#</a></span>\[\begin{align}
+L[y'-y] &amp;= L[t]\\
+L[y']-L[y] &amp;= L[t]\\
+sY - y(0) - Y &amp;= \frac{1}{s^2}\\
+(s-1) Y - 1 &amp;= \frac{1}{s^2}\\
+Y &amp;= \frac{1}{s-1} + \frac{1}{s^2(s-1)}
+\end{align}\]</div>
+<p>These terms do not immediately correspond to the Laplace transform table, but
+we can separate them using
+<a class="reference internal" href="../calculus/integration-partial-fractions.html"><span class="std std-doc">partial fraction decomposition</span></a>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2379774c-9e9a-4a44-b145-dff0dc9aa674">
+<span class="eqno">(5.49)<a class="headerlink" href="#equation-2379774c-9e9a-4a44-b145-dff0dc9aa674" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\frac{1}{(s-1) s^2} = \frac{A_1}{s-1} + \frac{A_2}{s} + \frac{A_3}{s^2}
+\end{equation}\]</div>
+<p><span class="math notranslate nohighlight">\(A_1\)</span> and <span class="math notranslate nohighlight">\(A_3\)</span> can be found using the coverup method:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f35d2ce7-fe5f-4215-b6a7-321ba54af65c">
+<span class="eqno">(5.50)<a class="headerlink" href="#equation-f35d2ce7-fe5f-4215-b6a7-321ba54af65c" title="Permalink to this equation">#</a></span>\[\begin{align}
+A_1 &amp;= \frac{1}{1^2} = 1 \\
+A_3 &amp;= \frac{1}{0-1} = -1
+\end{align}\]</div>
+<p>To find <span class="math notranslate nohighlight">\(A_2\)</span>, substitute and cross multiply:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8ab8632e-b9a1-4711-b5a6-eb03f0c81872">
+<span class="eqno">(5.51)<a class="headerlink" href="#equation-8ab8632e-b9a1-4711-b5a6-eb03f0c81872" title="Permalink to this equation">#</a></span>\[\begin{equation}
+1 = s^2 + A_2(s-1)s - (s-1)
+\end{equation}\]</div>
+<p>then compare the coefficient of the <span class="math notranslate nohighlight">\(s^2\)</span> terms on either side:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7b0dec65-044c-4311-83ac-d15194499ec6">
+<span class="eqno">(5.52)<a class="headerlink" href="#equation-7b0dec65-044c-4311-83ac-d15194499ec6" title="Permalink to this equation">#</a></span>\[\begin{equation}
+1 + A_2 = 0 \to A_2 = -1
+\end{equation}\]</div>
+<p>So, all together:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-00147e16-2f2c-46bc-86f2-d8d8ad638341">
+<span class="eqno">(5.53)<a class="headerlink" href="#equation-00147e16-2f2c-46bc-86f2-d8d8ad638341" title="Permalink to this equation">#</a></span>\[\begin{equation}
+Y = \frac{2}{s-1} - \frac{1}{s} - \frac{1}{s^2}
+\end{equation}\]</div>
+<p>Solve for <span class="math notranslate nohighlight">\(y\)</span> by applying the inverse Laplace transform</p>
+<div class="amsmath math notranslate nohighlight" id="equation-996332cd-cf3e-4477-9a82-e8e11ed1fa0d">
+<span class="eqno">(5.54)<a class="headerlink" href="#equation-996332cd-cf3e-4477-9a82-e8e11ed1fa0d" title="Permalink to this equation">#</a></span>\[\begin{align}
+y &amp;=L^{-1}[Y]\\
+  &amp;=2L^{-1}\left[\frac{1}{s-1}\right]-L^{-1}\left[\frac{1}{s}\right]-L^{-1}\left[\frac{1}{s^2}\right]\\
+  &amp;=2e^t-1-t
+\end{align}\]</div>
+</div>
 <ol class="arabic simple" start="3">
 <li><p>Example: Hormone Level <br />
 The concentration of a hormone in the blood varies due to sinusoidal production by the thyroid and continuous removal according to: <br />
@@ -452,9 +530,33 @@ Same process for the next term:   <br />
 <span class="math notranslate nohighlight">\(c_3 = \frac{-k}{k^2 + (\frac{\pi}{12})^2}, c_1 = -c_3 = \frac{k}{k^2 + (\frac{\pi}{12})^2}, c_2 = \frac{-(\frac{\pi}{12})^2}{k} c_3 = \frac{(\frac{\pi}{12})^2}{k^2 + (\frac{\pi}{12})^2}\)</span> <br />
 <span class="math notranslate nohighlight">\(\frac{s}{(s^2 + (\frac{\pi}{12})^2)(s+k)} = \frac{ks + (\frac{\pi}{12})^2}{(s^2 + (\frac{\pi}{12})^2)(k^2 + (\frac{\pi}{12})^2)} - \frac{k}{(s+k)(k^2 + (\frac{\pi}{12})^2)}\)</span> <br />
 Therefore,
-<span class="math notranslate nohighlight">\(C(t) = c_0 \mathcal{L}^{-1}\left\{\frac{1}{s+k}\right\} + A [(\frac{1}{k})(\mathcal{L}^{-1}\left\{\frac{1}{s}\right\}) - (\frac{1}{k})(\mathcal{L}^{-1}\left\{\frac{1}{s+k}\right\})] + B[(\frac{k}{k^2 + (\frac{\pi}{12})^2})(\mathcal{L}^{-1}\left\{\frac{s}{s^2 + (\frac{\pi}{12})^2}}) + (\frac{(\frac{\pi}{12})^2}{})(\mathcal{L}^{-1}\left\{\frac{1}{(s^2 + (\frac{\pi}{12})^2)}\right\}) - (\frac{k}{k^2 + (\frac{\pi}{12})^2})(\mathcal{L}^{-1}\left\{\frac{1}{s+k}})]\)</span>  <br />
-<span class="math notranslate nohighlight">\( = c_0 e^(-kt) + A[\frac{1}{k} - (\frac{1}{k})(e^(-kt))] + B[(\frac{k}{k^2 + (\frac{\pi}{12})^2})(cos([\frac{\pi t}{12}])) + (\frac{(\frac{\pi}{12})^2}{k^2 + (\frac{\pi}{12})^2})(\frac{sin([\frac{\pi t}{12}])}{\frac{\pi}{12}}) - (\frac{k}{k^2 + (\frac{\pi}{12})^2})(e^(-kt))]\)</span></p></li>
+$$
+C(t) = c_0, \mathcal{L}^{-1}\left{ \frac{1}{s + k} \right}</p></li>
 </ol>
+<ul>
+<li><p>A \left[
+\frac{1}{k} \cdot \mathcal{L}^{-1}\left{ \frac{1}{s} \right}</p>
+<ul class="simple">
+<li><p>\frac{1}{k} \cdot \mathcal{L}^{-1}\left{ \frac{1}{s + k} \right}
+\right] \</p></li>
+</ul>
+</li>
+<li><p>B \left[
+\frac{k}{k^2 + \left( \frac{\pi}{12} \right)^2}
+\cdot \mathcal{L}^{-1} \left{ \frac{s}{s^2 + \left( \frac{\pi}{12} \right)^2} \right}</p>
+<ul class="simple">
+<li><p>\frac{\left( \frac{\pi}{12} \right)^2}{k^2 + \left( \frac{\pi}{12} \right)^2}
+\cdot \mathcal{L}^{-1} \left{ \frac{1}{s^2 + \left( \frac{\pi}{12} \right)^2} \right}</p></li>
+</ul>
+<ul class="simple">
+<li><p>\frac{k}{k^2 + \left( \frac{\pi}{12} \right)^2}
+\cdot \mathcal{L}^{-1} \left{ \frac{1}{s + k} \right}
+\right]
+$<span class="math notranslate nohighlight">\(
+\)</span>= c_0 e^{-kt} + A\left[\frac{1}{k} - \frac{1}{k}e^{-kt}\right] + B\left[\frac{k}{k^2 + \left(\frac{\pi}{12}\right)^2} \cos\left(\frac{\pi t}{12}\right) + \frac{\left(\frac{\pi}{12}\right)^2}{k^2 + \left(\frac{\pi}{12}\right)^2} \cdot \frac{\sin\left(\frac{\pi t}{12}\right)}{\frac{\pi}{12}} - \frac{k}{k^2 + \left(\frac{\pi}{12}\right)^2} e^{-kt} \right]$</p></li>
+</ul>
+</li>
+</ul>
 </section>
 
     <script type="text/x-thebe-config">
@@ -493,7 +595,7 @@ Therefore,
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">5.4. </span>Undetermined coefficients</p>
+        <p class="prev-next-title"><span class="section-number">5.5. </span>Undetermined coefficients</p>
       </div>
     </a>
     <a class="right-next"
@@ -501,7 +603,7 @@ Therefore,
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">5.6. </span>Integrating factor</p>
+        <p class="prev-next-title"><span class="section-number">5.7. </span>Integrating factor</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
