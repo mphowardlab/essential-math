@@ -24,7 +24,7 @@ D\lambda^2 - k &= 0
 \end{align}
 Which, when factored yields $\displaystyle\lambda_{1,2} = \pm \sqrt{\frac{k}{D}}$ (note that the units of $\lambda$ are $\frac{1}{m}$, so it is a length scale)
 
-We can assume a solution of the form $\displaystyle y=C_1e^{a_1x}+C_2e^{a_2x}$ //
+We can assume a solution of the form $\displaystyle y=C_1e^{a_1x}+C_2e^{a_2x}$ 
 
 \begin{align}
 c= a_1e^{x\sqrt{k/D}}+a_2e^{-x\sqrt{k/D}}
