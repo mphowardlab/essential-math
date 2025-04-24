@@ -49,7 +49,7 @@ x^{3}   & \quad e^{-x}  & \quad x^{2} & \quad e^{-x} \\
 \end{align}
 
 \begin{equation}
-y_p = -e^{2x} \left( -x^{3} e^{-x} - 3x^{2} e^{-x} - 6x e^{-x} - 6 e^{-x} \right) + x e^{2x} \left( -x^{2} e^{-x} - 2x e^{-x} - 2 e^{-x} \right)
+y_p = -e^{2x}( -x^{3} e^{-x} - 3x^{2} e^{-x} - 6x e^{-x} - 6 e^{-x}) + x e^{2x}( -x^{2} e^{-x} - 2x e^{-x} - 2 e^{-x})
 \end{equation}
 
 \begin{equation}
