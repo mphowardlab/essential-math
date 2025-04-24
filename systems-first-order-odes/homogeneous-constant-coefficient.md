@@ -46,18 +46,22 @@ There are some cases this fails, but we will not cover them.
 c' = A * c
 \end{equation}
 
-A =  \begin{bmatrix}  -k1 & 0 & 0 \
- k1 & -k2 & 0 \
-0 & k2 & 0 
+A =  \begin{bmatrix}  -k_1 & 0 & 0 \
+ k_1 & -k_2 & 0 \
+0 & k_2 & 0 
 \end{bmatrix}
 
 Matrix A is lower triangular, so
 
 \begin{align}
-λ1 &= -k1  \rightarrow  [0, 0, 0; k1, -k2+k1, 0; 0, k2, k1] \\
-& \rightarrow  (k1*x1)-(k2-k1)*x2 = 0 \\
-& \rightarrow  (k2*x2)+(k1*x3) = 0 \\
-& \rightarrow \rightarrow  x1 = [(-(k2-k1)/k2); -k1/k2; 1] 
+λ1 &= -k_1  \rightarrow  \begin{bmatrix} 0 & 0 & 0\ 
+k_1 & -k_2+k_1 & 0 \
+ 0 & k_2 & k_1 \end{bmatrix} \\
+& \rightarrow  (k_1*x_1)-(k_2-k_1)*x_2 = 0 \\
+& \rightarrow  (k_2*x_2)+(k_1*x_3) = 0 \\
+& \rightarrow \rightarrow  x_1 = \begin{bmatrix} \frac{-k_2-k_1}{k_2} \ 
+\frac{-k1}{k2} \ 
+1 \end{bmatrix}
 \end{align}
 
 \begin{align}
