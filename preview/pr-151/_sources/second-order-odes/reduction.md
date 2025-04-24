@@ -13,7 +13,7 @@ u = \frac{1}{y_1^2}\ e^{-\int P\,dx}
 $$
 
 
-````{example}
+````{example} Example
 \begin{equation}
 (x^2 - x)y'' - xy' + y = 0 
 \end{equation}
