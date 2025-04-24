@@ -15,10 +15,11 @@ A = \begin{bmatrix}
 \end{bmatrix}
 $
 
+```{solution}
 To find the eigenvalues:
-$$
+$
 |A - \lambda I| = \begin{vmatrix} -\lambda & 4 \\ -4 & -\lambda \end{vmatrix} = \lambda^2 + 16 = 0 \Rightarrow \lambda_{1,2} = \pm 4i
-$$
+$
 
 
 For \( λ = 4i \):
@@ -37,3 +38,4 @@ For \( $\lambda_2$ = -4i \):
 $
 y = c_1 e^{4it} \begin{bmatrix} -i \\ 1 \end{bmatrix} + c_2 e^{-4it} \begin{bmatrix} i \\ 1 \end{bmatrix}
 $
+```
