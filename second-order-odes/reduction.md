@@ -1,5 +1,5 @@
 # Reduction of order
-```{topic} Finding a basis: Reduction of order
+```{topic} Finding a basis
 It can be hard to find $y_1$ and $y_2$ in general, but some techniques can help. We will learn how to get $y_2$ if a $y_1$ is found (e.g, by guessing).
 ```
 If a solution $y_1$ of $y'' + P(x)y' + Q(x)y = 0$ is known, then 
@@ -14,7 +14,6 @@ $$
 
 
 ```{Example}
-
 $$
 (x^2 - x)y'' - xy' + y = 0
 $$
