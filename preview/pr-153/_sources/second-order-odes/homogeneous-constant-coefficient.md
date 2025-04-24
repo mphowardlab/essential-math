@@ -30,7 +30,7 @@ C=a_1e^{x\sqrt{k/D}}+a_2e^{-x\sqrt{k/D}}
 \end{align}
 
 
-Solving for the initial conditions yields 
+Taking the derivative and solving for the initial conditions yields 
 
 \begin{align}
 a_1&= \frac{C_0}{1+e^{2L\sqrt{k/D}}} \qquad
