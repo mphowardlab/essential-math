@@ -34,7 +34,7 @@ c'=a_1\sqrt{k/D}e^{x\sqrt{k/D}-a_2\sqrt{k/D}e^{-x\sqrt{k/D}}
 Solving for the initial conditions yields 
 
 \begin{align}
-a_1&= \frac{C_0}{1+e^{2L\sqrt{k/D}}}
+a_1&= \frac{C_0}{1+e^{2L\sqrt{k/D}}} \qquad
 a_2&= \frac{C_0}{1+e^{-2L\sqrt{k/D}}}
 \end{align}
 
