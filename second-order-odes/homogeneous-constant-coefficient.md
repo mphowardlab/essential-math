@@ -14,7 +14,7 @@ D\frac{d^2c}{dx^2}-kc &= 0
 The concentration is described by this equation with boundary conditions of:
 \begin{align}
 C(0)=C_0 \\
--D\frac{dc/dx}=0
+-D\frac{dc}{dx}=0
 \end{align}
 
 Replacing c' with \lambda yields 
@@ -27,25 +27,25 @@ Which, when factored yields $\displaystyle\lambda_{1,2} = \pm \sqrt{\frac{k}{D}}
 We can assume a solution of the form $\displaystyle y=C_1\e^{a_1x}+C_2\e^{a_2x}$
 
 \begin{align}
-c&= a_1\e^{x\sqrt{\frac{k}{D}}}+a_2\e^{-x\sqrt{\frac{k}{D}}}//
-c'&=a_1\sqrt{\frac{k}{D}}\e^{x\sqrt{\frac{k}{D}}}-a_2\sqrt{\frac{k}{D}}\e^{-x\sqrt{\frac{k}{D}}}
+c&= a_1\e^{x\sqrt{k/D}}+a_2\e^{-x\sqrt{k/D}}
+c'=a_1\sqrt{k/D}\e^{x\sqrt{k/D}-a_2\sqrt{k/D}\e^{-x\sqrt{k/D}}
 \end{align}
 
 Solving for the initial conditions yields 
 
 \begin{align}
-a_1&= \frac{C_0}{1+\e^{2L\sqrt{\frac{k}{D}}}}
-a_2&= \frac{C_0}{1+\e^{-2L\sqrt{\frac{k}{D}}}}
+a_1&= \frac{C_0}{1+\e^{2L\sqrt{k/D}}}
+a_2&= \frac{C_0}{1+\e^{-2L\sqrt{k/D}}}
 \end{align}
 
 Thus, 
 
 \begin{align}
-C=C_0(\frac{\e^{x\sqrt{\frac{k}{D}}}}{1+\e^{2L\sqrt{\frac{k}{D}}}}+\frac{\e^{x\sqrt{\frac{k}{D}}}}{1+\e^{-2L\sqrt{\frac{k}{D}}}})
+C=C_0(\frac{\e^{x\sqrt{k/D}}}{1+\e^{2L\sqrt{k/D}}}+\frac{\e^{x\sqrt{k/D}}}{1+\e^{-2L\sqrt{k/D}}})
 \end{align}
 
 This can be simplified using a common denominator and the identities $\displaystyle cosh(x)= \frac{e^{x}+e^{-x}}{2}$ and $\displaystyle sinh(x)= \frac{e^{x}-e^{-x}}{2}$, which yields 
 
 \begin{align}
-C=C_0(\frac{cosh((L-x)\sqrt{\frac{k}{D}})}{cosh(L\sqrt{\frac{k}{D}})})
+C=C_0\frac{cosh[(L-x)\sqrt{\frac{k}{D}}]}{cosh(L\sqrt{\frac{k}{D}})}
 \end{align}
