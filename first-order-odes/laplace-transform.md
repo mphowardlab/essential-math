@@ -22,15 +22,15 @@ L[t] &= \int_0^\infty e^{-st} t \d{t} \\
 Importantly, the Laplace transform of the first derivative of an unknown
 function $f(t) = y'(t)$ is:
 
-\begin{equation}
-\f(t) = y'(t) \to L[y'] = \int_0^\infty \e^-st \y' \d{t}
+\begin{align}
+L[y'] = \int_0^\infty \e^-st \y' \d{t}
 \= -\frac{te^-st}{s}|_{0}{\infty} - \int_0^\infty \ y \(\frac{e^-st}{s})dt \
 \u = e^-st  dv = y' dt \
 \ du = -se^-st   v = y \
 = [ 0 - y ( 0 )] + s \int_0^\infty \e^-st y \dt\
 = s L [ f ] - y( 0 )
 = s Y( s ) - y( 0 )
-\end{equation}
+\end{align}
 
 Reminder from integration by parts
 
