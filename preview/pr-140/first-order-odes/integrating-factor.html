@@ -57,6 +57,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"d": ["{\\operatorname{d}\\!{#1}}", 1], "dd": ["{\\d{}^{#1} #2 \\over \\d{#3}^{#1}}", 3], "pp": ["{\\partial^{#1} #2 \\over \\partial #3^{#1}}", 3], "td": ["{\\left(\\pp{#1}{#2}{#3} \\right)_{#4}}", 4], "ubar": ["\\underline{#1}", 1], "vv": ["\\mathbf{#1}", 1]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'first-order-odes/integrating-factor';</script>
     <link rel="canonical" href="https://mphowardlab.github.io/essential-math/first-order-odes/integrating-factor.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -423,7 +425,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">5.7.1. 4. Example:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">5.7.1. 4. Example:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">5.7.1.1. 5. Example:</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -439,7 +444,42 @@ document.write(`
 <h1><span class="section-number">5.7. </span>Integrating factor.<a class="headerlink" href="#integrating-factor" title="Link to this heading">#</a></h1>
 <section id="example">
 <h2><span class="section-number">5.7.1. </span>4. Example:<a class="headerlink" href="#example" title="Link to this heading">#</a></h2>
-<p>$Mole balance on a tank with increasing inlet/outlet flow rate.</p>
+<p>Mole balance on a tank with increasing inlet/outlet flow rate.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-80cb003e-7b1e-4d09-9c95-0765f791dee5">
+<span class="eqno">(5.55)<a class="headerlink" href="#equation-80cb003e-7b1e-4d09-9c95-0765f791dee5" title="Permalink to this equation">#</a></span>\[\begin{align}
+\dot n_A &amp;= \dot n_A,in  -  \dot n_A,out
+\dot n_A,in &amp;= C_f,A * \dot q * t
+\dot n_A &amp;= C_f,A * \dot q * t. - (n_A \ v) * \dot q * t
+\end{align}\]</div>
+<p>Rewrite:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f94a927d-8983-4fe5-b408-0cd04266722f">
+<span class="eqno">(5.56)<a class="headerlink" href="#equation-f94a927d-8983-4fe5-b408-0cd04266722f" title="Permalink to this equation">#</a></span>\[\begin{align}
+\dot n_A + ((\dot q * t)\v)_n_A &amp;= C_f,A * \dot q * t
+P(t) &amp;= ((\dot q * t) / v).  r(t) &amp;= C_f,A * \dot q * t
+\end{align}\]</div>
+<p>\begin{aligh}
+F(t) &amp;=  \exp(\int p(t) * dt) &amp;= \exp(\int ((\dotq * t)/v)) * dt &amp;= \exp(1/2 * \dotq * t^2)
+\int F(t)* r(t) dt &amp;= \int \exp(1/2 * \dotq / v * t^2) * C_f,A * \dotq * t* dt &amp;= \int \exp(u) * C_f,A<em>V</em>du &amp;= C_f,A<em>V</em>\exp(1/2)<em>\dotq/v</em>t^2
+u &amp;= 1/2 * \dotq/v * t^2
+du &amp;= \dotq/v * t* dt \to \dotq<em>t</em>dt &amp;= V<em>du
+n_A * (t) &amp;= \exp(-1/2 * \dotq/v * t^2) * [C_f,A</em>V*\exp(1/2 * \dotq/v <em>t^2) + C]
+n_A</em>(0) &amp;= n_A,o &amp;= C_f,A * V + C \to C &amp;= n_A,o -C_f,A<em>V
+\to (\underline{n_A</em>(t) &amp;= C_f,A<em>V + (n_A,o - C_f,A</em>V)<em>\exp(-1/2</em>\dotq/v*t^2)})
+\end{align}$</p>
+<section id="id1">
+<h3><span class="section-number">5.7.1.1. </span>5. Example:<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(Hormone level (again)
+\begin{align}
+We had c' + kc &amp;= A + B*\cos((\pi*t)/12) with c(0) &amp;= C_o
+p &amp;= kc   r &amp;= A + B*\cos((\pi*t)/12)
+F(t) = \exp(\int k*dt) &amp;= \exp(kt)
+\int F(t)*r(t)*dt &amp;= \int \exp(kt)*[A + B*\cos((\pi*t)/12)]*dt
+                 &amp;= A * \int \exp(kt)*dt + B * \int \exp(kt)* \cos((\pi*t)/12)*dt
+                 \to Table of integrals, or by parts 
+                 &amp;= A/k * \exp(kt) + B * (\exp(kt)/(k^2 + (\pi/12)^2))*[K*\cos((\pi*t)/12) + \pi/12 * \sin((\pi*t)/12)]
+\to C(t) &amp;= \exp(-kt)* (A/k * \exp(kt) + B * (\exp(kt)/(k^2 + (\pi/12)^12))* [k * \cos((\pi*t)/12) + \pi/12*\sin((/pi*t)/12)]+c^*)
+\end{align}\)</span></p>
+</section>
 </section>
 </section>
 
@@ -507,7 +547,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">5.7.1. 4. Example:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">5.7.1. 4. Example:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">5.7.1.1. 5. Example:</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
