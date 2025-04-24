@@ -7,14 +7,14 @@ y' = f(t, y) \to y(t + \(\Delta \)T) = y(t) + f(t,y)\(\Delta \)T \
 ** "Just" Add Columns ** \\
 IMAGE (ask!!) \\
 ** Mole Balance ** \\
-$\dfrac{dn_A}{dt} = n\.\_in - n\.\_out + \r_A\V\$
-n\.\in = V\.\_in c_in,A \\
-\dfrac{Vc_A}{dt} = V\._in c_in,A - V\. c_A - kc_AV
-n\.\_out = V\._out c_A \\
+$\dfrac{dn_A}{dt} = \dot n_{\rm in} - \dot n_{\rm out} + \r_A\V\$
+\dot n_{\rm in} = \dot V_{\rm in} c_in,A \\
+\dfrac{Vc_A}{dt} = \dot V_{\rm in} c_in,A - V\. c_A - kc_AV
+\dot n_{\rm out} = \dot V_{\rm out} c_A \\
 $V\dfrac{c_A}{dt} + c_A\dfrac{dV}{dt} = 1 - 2c_A + kVc_A $ \\
 ** Mass Balance **
 $\dfrac{dm}{dt} = m\._in - m\._out
-m\.\_in = V\.\_in \(\daleth) \\
-$dfrac{d\(\deltah)V}{dt} = V\.\_in \(\deltah) - V\.\_out \(\deltah)\ \\
-m\.\_out = V\.\_out \(\deltah)
-$\(\deltah) dfrac{dV}{dt} = V\.\_in \(\deltah) \cdot V \.\_out \(\deltah)\ = 1 -2 = -1
+\dot m_{\rm in} = \dot V_{\rm in} \(\daleth) \\
+$dfrac{d\(\deltah)V}{dt} = \dot V_{\rm in} \(\deltah) - \dot V_{\rm in} \(\deltah)\ \\
+\dot m_{\rm out} = \dot V_{\rm in} \(\deltah)
+$\(\deltah) dfrac{dV}{dt} = \dot V_{\rm in} \(\deltah) \cdot \dot V_{\rm out} \(\deltah)\ = 1 -2 = -1
