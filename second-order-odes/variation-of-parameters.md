@@ -37,3 +37,4 @@ y_p = -y_1 \int \frac{y_2r}{W}dx + y_2 \int (\frac{y_2r}{W}dx \\
 = -\cos(x)\intdx + \sin(x) \int \frac{\cos(x)}{\sin(x)}dx \\
 = -x\cos(x) + \sin(x) \ln(\left| x \right|)
 \end{align}
+````
