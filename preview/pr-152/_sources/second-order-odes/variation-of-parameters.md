@@ -24,8 +24,7 @@ y_1 = \cos(x), \quad y_2 = \sin(x)
 ```
 
 ```{math}
-y_1' &= -\sin(x) \\
-y_2' &= \cos(x)
+y_1' &= -\sin(x), \quad y_2' &= \cos(x)
 ```
 
 ```{math}
