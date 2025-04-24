@@ -17,7 +17,7 @@ C(0)=C_0 \\
 -D\frac{dc}{dx}=0
 \end{align}
 
-Replacing c' with \lambda yields 
+Replacing c' with $\lambda$ yields 
 
 \begin{align} 
 D\lambda^2 - k &= 0
