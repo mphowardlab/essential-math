@@ -39,11 +39,11 @@ a_2= \frac{C_0}{1+e^{-2L\sqrt{k/D}}}
 Thus, 
 
 \begin{align}
-C=C_0\left\(\frac{e^{x\sqrt{k/D}}}{1+e^{2L\sqrt{k/D}}}+\frac{e^{x\sqrt{k/D}}}{1+e^{-2L\sqrt{k/D}}}\right\)
+C=C_0\left(\frac{e^{x\sqrt{k/D}}}{1+e^{2L\sqrt{k/D}}}+\frac{e^{x\sqrt{k/D}}}{1+e^{-2L\sqrt{k/D}}}\right)
 \end{align}
 
 This can be simplified using a common denominator and the identities $\displaystyle cosh(x)= \frac{e^{x}+e^{-x}}{2}$ and $\displaystyle sinh(x)= \frac{e^{x}-e^{-x}}{2}$, which yields 
 
 \begin{align}
-C=C_0\frac{cosh\left\[sqrt{k/D}\right\]}{cosh(L\sqrt{k/D})}
+C=C_0\frac{cosh\left[sqrt{k/D}\right]}{cosh(L\sqrt{k/D})}
 \end{align}
