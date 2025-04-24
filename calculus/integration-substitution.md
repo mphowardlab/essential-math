@@ -30,7 +30,15 @@ Evaluate the integral
 
 ---
 
-Let $u=x^2$ so $\d{u} = 2x \d{x}$. Then,
+Let 
+
+&u=x^2 \\
+
+so 
+
+&\d{u} = 2x \d{x} \\ 
+
+Then,
 
 \begin{align}
 \int e^{x^2} x\d{x} =  \int e^u \cdot \frac{1}{2}\d{u} = \frac{1}{2} e^u + c
