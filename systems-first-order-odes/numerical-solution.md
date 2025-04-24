@@ -20,7 +20,7 @@ IMAGE (ask!!)
 
 \dot n_{\rm out} = \dot V_{\rm out} c_A 
 
-V\dfrac{c_A}{dt} + c_A\dfrac{dV}{dt} = 1 - 2c_A + kVc_A 
+V\dfrac{dc_A}{dt} + c_A\dfrac{dV}{dt} = 1 - 2c_A + kVc_A 
 
 ** Mass Balance **
 
@@ -28,9 +28,9 @@ V\dfrac{c_A}{dt} + c_A\dfrac{dV}{dt} = 1 - 2c_A + kVc_A
 
 \dot m_{\rm in} = \dot V_{\rm in} \(\daleth) 
 
-$dfrac{d\(\deltah)V}{dt} = \dot V_{\rm in} \(\deltah) - \dot V_{\rm in} \(\deltah)\$
+$dfrac{d\(\delta h)V}{dt} = \dot V_{\rm in} \(\delta h) - \dot V_{\rm in} \(\delta h)\$
 
-$\dot m_{\rm out} = \dot V_{\rm in} \deltah$
+$\dot m_{\rm out} = \dot V_{\rm in} \delta h$
 
-$\(\deltah) dfrac{dV}{dt} = \dot V_{\rm in} \(\deltah) \cdot \dot V_{\rm out} \(\deltah)\ = 1 -2 = -1$
+$\(\delta h) dfrac{dV}{dt} = \dot V_{\rm in} \(\delta h) \cdot \dot V_{\rm out} \(\delta h)\ = 1 -2 = -1$
 
