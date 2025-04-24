@@ -89,6 +89,7 @@ y &=L^{-1}[Y]\\
 ```
 
 Example: Hormone Level  
+
 The concentration of a hormone in the blood varies due to sinusoidal production by the thyroid and continuous removal according to:
 
 $$
@@ -139,19 +140,13 @@ $$
 = \frac{c_1 s + c_2}{s^2 + \left(\frac{\pi}{12}\right)^2} + \frac{c_3}{s + k}
 $$
 
-Expanding:
-
 $$
 s = (c_1 s + c_2)(s + k) + c_3\left[s^2 + \left(\frac{\pi}{12}\right)^2\right]
 $$
 
-Matching coefficients:
-
 $$
 (c_1 + c_3)s^2 + (c_1 k + c_2)s + c_2 k + c_3\left(\frac{\pi}{12}\right)^2 = s
 $$
-
-Solving:
 
 $$
 c_1 + c_3 = 0 \\
@@ -159,7 +154,7 @@ c_1 k + c_2 = 1 \\
 c_2 k + c_3 \left(\frac{\pi}{12}\right)^2 = 0
 $$
 
-From this:
+Constants:
 
 $$
 c_3 = \frac{-k}{k^2 + \left(\frac{\pi}{12}\right)^2}, \quad
@@ -167,7 +162,7 @@ c_1 = \frac{k}{k^2 + \left(\frac{\pi}{12}\right)^2}, \quad
 c_2 = \frac{\left(\frac{\pi}{12}\right)^2}{k^2 + \left(\frac{\pi}{12}\right)^2}
 $$
 
-So:
+So: 
 
 $$
 \frac{s}{(s^2 + \left(\frac{\pi}{12}\right)^2)(s + k)} = \frac{ks + \left(\frac{\pi}{12}\right)^2}{(s^2 + \left(\frac{\pi}{12}\right)^2)(k^2 + \left(\frac{\pi}{12}\right)^2)} - \frac{k}{(s + k)(k^2 + \left(\frac{\pi}{12}\right)^2)}
