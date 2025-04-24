@@ -1,5 +1,5 @@
 # Variation of parameters
-````{example}
+````{example} Variation of Parameters Example
 Solve the differential equation
 
 \begin{equation}
