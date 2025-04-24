@@ -46,9 +46,10 @@ There are some cases this fails, but we will not cover them.
 c' = A * c
 \end{equation}
 
-\begin{equation}
-A = [ -k1, 0, 0; k1, -k2, 0; 0, k2, 0 ]
-\end{equation}
+A =  \begin{bmatrix}  -k1 & 0 & 0 \
+ k1 & -k2 & 0 \
+0 & k2 & 0 
+\end{bmatrix}
 
 Matrix A is lower triangular, so
 
