@@ -65,13 +65,21 @@ k_1 & -k_2+k_1 & 0 \\
 \end{align}
 
 \begin{align}
-λ_2 &= -k_2 \rightarrow  [k_1-k_2, 0, 0; k1, 0, 0; 0, k_2, k_2]  \\
-& \rightarrow x_2 = [0; -1; 1]  
+λ_2 &= -k_2 \rightarrow  \begin{bmatrix} k_1-k_2 & 0 & 0 \\
+k1 & 0 & 0 \\
+0 & k_2 & k_2  \end{bmatrix} \\
+& \rightarrow x_2 = \begin{bmatrix} 0 \\
+-1 \\
+1 \end{bmatrix}  
 \end{align}
 
 \begin{align}
-λ_3 &= 0 \rightarrow  [-k_1, 0, 0; k_1, -k_2, 0; 0, k_2, 0] \\
-& \rightarrow x_3= [0; 0; 1] 
+λ_3 &= 0 \rightarrow  \begin{bmatrix} -k_1 & 0 & 0 \\
+k_1 & -k_2 & 0 \\
+0 & k_2 & 0 \end{bmatrix} \\
+& \rightarrow x_3= \begin{bmatrix} 0\\
+0 \\
+1 \end{bmatrix} 
 \end{align}
 
 Hence,
@@ -83,11 +91,14 @@ Hence,
 Initial Condition:
 
 \begin{align}
-C(0) &= [CA0; 0; 0]; = [a_1(-(k_2-k_1)/k_2); -a_1(k_1/k_2)-a_2; a_1+a_2+a_3] \\
-%disp(C(0))
-\rightarrow  a_1 &= -CA0(k_2/(k_2-k_1))  \\
-\rightarrow  a_2 &= -(k_1/k_2)a_1 = CA0(k_1/(k_2-k_1)) \\
-\rightarrow  a_3 &= -a_1 - a_2 = CA0(k_2/(k_2-k_1)) - CA0(k_1/(k_2-k_1)) = CA0 
+C(0) &= \begin{bmatrix} CA0\\
+0 \\
+0 \end{bmatrix} = \begin{bmatrix} a_1\frac{-k_2-k_1}{k_2} \\
+ -a_1\frac{k_1}{k_2}-a_2 \\
+a_1+a_2+a_3 \end{bmatrix} \\
+\rightarrow  a_1 &= -CA0\frac{k_2}{k_2-k_1}  \\
+\rightarrow  a_2 &= -\frac{k_1}{k_2}a_1 = CA0\frac{k_1}{k_2-k_1} \\
+\rightarrow  a_3 &= -a_1 - a_2 = CA0\frac{k_2}{k_2-k_1} - CA0\frac{k_1}{k_2-k_1} = CA0 
 \end{align}
 
 So,
