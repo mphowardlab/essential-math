@@ -12,11 +12,11 @@ come up often so it is important to know how to solve them!
   * Solving partial differential equations for unsteady processes
 
 Solution: Try y=e^x as an ansatz
-    y = e^{\lambda x}
-    y' = \lambda{e^\lambda x}
-    y'' = \lambda^2 e^{\lambda x} 
+    $y = e^{\lambda x}$
+    $y' = \lambda{e^\lambda x}$
+    $y'' = \lambda^2 e^{\lambda x} $
 
-We can solve this characteristic polynomial for \lambda_1 and \lambda_2 and use superposition. There are 3 cases:
+We can solve this characteristic polynomial for $\lambda_1& and $\lambda_2$ and use superposition. There are 3 cases:
 
 (1) $\lambda_1 $ and $ \lambda_2 $ are real and distinct: $y = c_1 e^{\lambda_1 x} + c_2 e^{\lambda_2 x}$
 
