@@ -24,24 +24,24 @@ D\lambda^2 - k &= 0
 \end{align}
 Which, when factored yields $\displaystyle\lambda_{1,2} = \pm \sqrt{\frac{k}{D}}$ (note that the units of $\lambda$ are $\frac{1}{m}$, so it is a length scale)
 
-We can assume a solution of the form $\displaystyle y=C_1\e^{a_1x}+C_2\e^{a_2x}$
+We can assume a solution of the form $\displaystyle y=C_1e^{a_1x}+C_2e^{a_2x}$
 
 \begin{align}
-c&= a_1\e^{x\sqrt{k/D}}+a_2\e^{-x\sqrt{k/D}}
-c'=a_1\sqrt{k/D}\e^{x\sqrt{k/D}-a_2\sqrt{k/D}\e^{-x\sqrt{k/D}}
+c&= a_1e^{x\sqrt{k/D}}+a_2e^{-x\sqrt{k/D}}
+c'=a_1\sqrt{k/D}e^{x\sqrt{k/D}-a_2\sqrt{k/D}e^{-x\sqrt{k/D}}
 \end{align}
 
 Solving for the initial conditions yields 
 
 \begin{align}
-a_1&= \frac{C_0}{1+\e^{2L\sqrt{k/D}}}
-a_2&= \frac{C_0}{1+\e^{-2L\sqrt{k/D}}}
+a_1&= \frac{C_0}{1+e^{2L\sqrt{k/D}}}
+a_2&= \frac{C_0}{1+e^{-2L\sqrt{k/D}}}
 \end{align}
 
 Thus, 
 
 \begin{align}
-C=C_0(\frac{\e^{x\sqrt{k/D}}}{1+\e^{2L\sqrt{k/D}}}+\frac{\e^{x\sqrt{k/D}}}{1+\e^{-2L\sqrt{k/D}}})
+C=C_0(\frac{e^{x\sqrt{k/D}}}{1+e^{2L\sqrt{k/D}}}+\frac{e^{x\sqrt{k/D}}}{1+e^{-2L\sqrt{k/D}}})
 \end{align}
 
 This can be simplified using a common denominator and the identities $\displaystyle cosh(x)= \frac{e^{x}+e^{-x}}{2}$ and $\displaystyle sinh(x)= \frac{e^{x}-e^{-x}}{2}$, which yields 
