@@ -8,8 +8,8 @@ $ y' = f(t, y) \hspace{1cm} \to \hspace{1cm} y(t + (\Delta t)) = y(t) + f(t,y) (
 
 "Just" Add Columns 
 
-```{image} ./Images/Euler_Diagram_png
-:alt: Euler_Diagram
+```{image} ./_images/Euler_Diagram_png
+:alt: Euler Diagram
 ```
 
 Mole Balance
