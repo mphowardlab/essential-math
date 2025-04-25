@@ -8,8 +8,7 @@ Mole balance on a tank with increasing inlet/outlet flow rate.
 ```
 
 \begin{align}
-\dot{n}_{A, \text{in}} &= \dot{n}_{A,\text{in}} - \dot{n}_{A,\text{out}} \\
-\dot{n}_{A,\text{in}} &= C_{f,A} \cdot \dot{q}t \\
+\dot{n}_{A} &= \dot{n}_{A,\text{in}} - \dot{n}_{A,\text{out}}, \quad \dot{n}_{A,\text{in}} &= C_{f,A} \cdot \dot{q}t \\
 \dot{n}_{A,\text{out}} &= \frac{n_A}{V} \cdot \dot{q}t
 \end{align}
 
