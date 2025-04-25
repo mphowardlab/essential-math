@@ -21,7 +21,9 @@ Mole Balance
 \end{aligned}
 ```
 
+```{math}
 V\frac{dc_A}{dt} + c_A\frac{dV}{dt} = 1 - 2c_A + kVc_A
+```
 
 Mass Balance
 
@@ -44,6 +46,7 @@ Mass Balance
 ```
 
 What is c_A and V after 1 minute?
+
 \begin{aligned}
 \begin{tabular}{ c c c c c}
  n & t & c_A = y_1 & V = y_2 & f_1 $ f_2
