@@ -77,7 +77,7 @@ $$
 \left[
 \begin{array}{cc|c}
 1 & 1 & 0 \\
-0 & 2i & 1
+0 & 1 & \frac{1}{2i}
 \end{array}
 \right]
 \rightarrow
@@ -92,7 +92,7 @@ $$
 So:
 
 $$
-C_1 = -\frac{1}{2i} = \frac{1}{2i}, \quad C_2 = \frac{1}{2}i = -\frac{i}{2}
+C_1 = -\frac{1}{2i} = \frac{1}{2i}, \quad C_2 = \frac{1}{2}i = -\frac{1}{2i}
 $$
 
 ---
