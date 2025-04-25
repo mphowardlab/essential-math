@@ -1,22 +1,26 @@
 # Partial fraction decomposition
-1. Partial fraction decomposition
+
 
 Some ODEs give rise to integrals like:
 
 
-$y' = \frac{3x+11}{x^2 - x - 6}$ $\to$ $y$=$\int\frac{3x+11}{x^2 - x - 6} dx$
+\begin{equation}  
+y' = \frac{3x+11}{x^2 - x - 6}$ $\to$ $y$=$\int\frac{3x+11}{x^2 - x - 6} dx  
+\end{equation} 
 
 
 
 
-This can be done with u-substitution... how to take it?
+This cannot be done with u-substitution... how to take it?
 
 $\frac{3x+11}{x^2-x-6}$ =$\frac{3x+11}{(x-3)(x+2)}$ = $\frac{A_1}{x-3} + \frac{A_2}{x+2}$
 
  
 
-$3x+11 = A_1(x+2) + A_2(x-3)$
-      = $(A_1 + A_2)x + (2A_1 - 3A_2)$
+\begin{align}  
+3x+11 &= A_1(x+2) + A_2(x-3) \\  
+&= (A_1 + A_2)x + (2A_1 - 3A_2) \\  
+\end{align}  
 
 $ A_1  + A_2 = 3$
 
@@ -26,9 +30,12 @@ $2A_1 - 3A_2 = 11$
 
 $A_1=4$  $A_2=-1$
 
-$y=\int(\frac{4}{x-3}-\frac{1}{x+2})dx = 4ln|x-3| - ln|x+2| + C$
+\begin{align}  
+y&=\int\left( \frac{4}{x-3}-\frac{1}{x+2} \right)dx \\ 
+&= 4\ln| x-3 | - \ln|x+2| + C  
+\end{align}  
 
-This technique is also called partial fraction decomposition.
+```{topic}Partial Fraction Decomposition
 
 Procedure: For a rational polynomial  $\frac{P(x)}{Q(x)}$ where Q is expressed using either linear $(ax+b)$ or irreducible quadratic $(ax^2 + bx + c)$ factors and the degree of P is less than Q 
 
