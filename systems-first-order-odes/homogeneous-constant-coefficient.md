@@ -1,38 +1,38 @@
 # Homogeneous linear first-order ODEs with constant coefficients
 
 \begin{equation}
-y' = Ay
+\vv{y'} = \vv{Ay}
 \end{equation}
 
 As an ansatz, assume a solution: 
 
 \begin{align}
-y &= e^{λt}x\\
-y' &= λe^{λt}x
+y &= e^{λt}\vv{x}\\
+y' &= λe^{λt}\vv{x}
 \end{align}
 
 \begin{align}
-λe^{λt}x &= Ae^{λt}x\\
-λx &= Ax
+λe^{λt}x &= Ae^{λt}\vv{x}\\
+λ\vv{x} &= \vv{Ax}
 \end{align}
 
-This is an eigenvalus problem! lambda is an eigenvalue, and x is an eigenvector of A.
+This is an eigenvalus problem! lambda is an eigenvalue, and $\vv{x}$ is an eigenvector of $\vv{A}$.
 
 
 We know an n*n matrix has n eigenvalues. Let's suppose the corresponding eigenvectors are all independent. What do we do?
 
 
-Superposition principle: For a linear ODE, if $y_1$ and $y_2$ are both solutions, then
+Superposition principle: For a linear ODE, if $y_1$ and $y_2$ are both solutions, then:
 
 
 \begin{equation}
-y = (c_1 y_1) + (c_2 y_2) 
+\vv{y} = (c_1\vv{y_1}) + (c_2\vv{y_2}) 
 \end{equation}
 
 is also a solution.
 
 \begin{equation}
-y = c_1 e^{λ_1 t} \vv{x_1} + c_2 e^{λ_2 t} \vv{x_2} + \dots + c_n e^{λ_n t} \vv{x_n}
+\vv{y} = c_1 e^{λ_1t}\vv{x_1} + c_2 e^{λ_2t}\vv{x_2} + \dots + c_n e^{λ_nt}\vv{x_n}
 \end{equation}
 
 
@@ -43,7 +43,7 @@ There are some cases this fails, but we will not cover them.
 ## Example: Reaction Network
 
 \begin{equation}
-c' = \vv{A}c
+\vv{c'} = \vv{Ac}
 \end{equation}
 
 \begin{equation}
@@ -87,7 +87,7 @@ k_1 & -k_2 & 0 \\
 Hence,
 
 \begin{equation}
- c = (a_1e^{-k_1t}\vv{x_1}) + ({a_2}e^{-k_2t}\vv{x_2}) + (a_3\vv{x_3}) 
+\vv{c} = (a_1e^{-k_1t}\vv{x_1}) + ({a_2}e^{-k_2t}\vv{x_2}) + (a_3\vv{x_3}) 
 \end{equation}
 
 Initial Condition:
