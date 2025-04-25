@@ -40,8 +40,8 @@ Mass Balance
 
 ```{math}
 \begin{aligned}
-\frac{dc_A}{dt} = 1/V [1 - c_A - 0.5Vc_A]   c_A(0) = 1  y_1 = c_A \\
-\frac{dV}{dt} = -1                          V(0) = 10   y_2 = V \\
+\frac{dc_A}{dt} = 1/V [1 - c_A - 0.5Vc_A]  \hspace{1cm} c_A(0) = 1 \hspace{1cm}  y_1 = c_A \\
+\frac{dV}{dt} = -1             \hspace{1cm}             V(0) = 10 \hspace{1cm}  y_2 = V \\
 \end{aligned}
 ```
 
