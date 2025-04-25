@@ -13,11 +13,13 @@ $ y' = f(t, y) \hspace{1cm} \to \hspace{1cm} y(t + (\Delta t)) = y(t) + f(t,y) (
 ```
 
 ```{math}
-\dot V_{\rm in} = 1 L/min
-c_M = 1 M
-\dot V_{\rm in} = 2 L/min
-1 M, 10 L
-r_A = -kc_A
+\dot V_{\rm in} = 1 L/min \\
+c_M = 1 M \\
+\dot V_{\rm in} = 2 L/min \\
+\begin{align}
+In tank: 1 M, 10 L \\
+\hspace{2cm} r_A = -kc_A \\
+\end{align}
 ```
 
 Mole Balance
