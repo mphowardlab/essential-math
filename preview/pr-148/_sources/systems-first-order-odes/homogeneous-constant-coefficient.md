@@ -16,7 +16,7 @@ A = \begin{bmatrix}
 \end{bmatrix}
 $
 
-```{Solution}
+```{dropdown} **General Solution**
 To find the eigenvalues:
 $
 |A - \lambda I| = \begin{vmatrix} -\lambda & 4 \\ -4 & -\lambda \end{vmatrix} = \lambda^2 + 16 = 0 \Rightarrow \lambda_{1,2} = \pm 4i
@@ -41,16 +41,16 @@ y = c_1 e^{4it} \begin{bmatrix} -i \\ 1 \end{bmatrix} + c_2 e^{-4it} \begin{bmat
 $
 ```
 
-```{dropdown} **Solution**
+```{dropdown} **Particular Solution**
 **Initial Conditions:**
 
 $$
-\begin{bmatrix} 1 \\ 0 \end{bmatrix} = \psi(0) = 
+\begin{bmatrix} 1 \\ 0 \end{bmatrix} = y(0) = 
 \begin{bmatrix} -i & i \\ 1 & 1 \end{bmatrix}
 \begin{bmatrix} c_1 \\ c_2 \end{bmatrix}
 $$
 
-Solving for \( c_1 \) and \( c_2 \):
+Solving for \c_1 \ and \c_2 \:
 
 $$
 \left[
@@ -93,7 +93,7 @@ $$
 **Hence:**
 
 $$
-\psi = \frac{1}{2} e^{4it} \begin{bmatrix} -i \\ 1 \end{bmatrix} 
+y = \frac{1}{2} e^{4it} \begin{bmatrix} -i \\ 1 \end{bmatrix} 
 - \frac{1}{2} e^{-4it} \begin{bmatrix} i \\ 1 \end{bmatrix}
 $$
 
@@ -108,7 +108,7 @@ $$
 Then:
 
 $$
-\psi = \frac{1}{2} e^{4it} \begin{bmatrix} -i \\ 1 \end{bmatrix} 
+y = \frac{1}{2} e^{4it} \begin{bmatrix} -i \\ 1 \end{bmatrix} 
 - \frac{1}{2} e^{-4it} \begin{bmatrix} i \\ 1 \end{bmatrix}
 $$
 
@@ -120,11 +120,11 @@ $$
 $$
 = \begin{bmatrix} \cos 4t \\ -\sin 4t \end{bmatrix}
 \Rightarrow
-\psi_1 = \cos 4t, \quad \psi_2 = -\sin 4t
+y_1 = \cos 4t, \quad y_2 = -\sin 4t
 $$
 
 ---
 
-\[
-\boxed{\psi = 0 \text{ is a \textbf{center}} \quad \text{because the eigenvalues are purely imaginary.}}
-\]
+$$
+\boxed{\psi = 0 \text{ is a center because the eigenvalues are purely imaginary.}}
+$$
