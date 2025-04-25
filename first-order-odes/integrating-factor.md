@@ -19,3 +19,9 @@ Rewrite:
 \dot{n}_{A} + \frac{\dot{q}t}{V} \cdot n_{A} &= C_{f,A} \cdot \dot{q}t \\
 p(t) &= \frac{\dot{q}t}{V}, r(t) &= C_{f,A} \cdot \dot{q}t \\
 \end{align}
+
+```{math}
+\begin{align}
+F(t) &= \exp{[\int{p(t)dt}]} &= 
+\end{align}
+```
