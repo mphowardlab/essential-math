@@ -4,7 +4,7 @@ Description: Many ordinary differential equations you will encounter are not sol
 
 ### Euler's Method
 
-y' = f(t, y) \to y(t + (\Delta t)) = y(t) + f(t,y) (\Delta t)
+$ y' = f(t, y) \to y(t + (\Delta t)) = y(t) + f(t,y) (\Delta t)$
 
 "Just" Add Columns 
 
