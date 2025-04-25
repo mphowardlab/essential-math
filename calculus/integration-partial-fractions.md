@@ -4,9 +4,10 @@
 Some ODEs give rise to integrals like:
 
 
-\begin{equation}  
-$y' = \frac{3x+11}{x^2 - x - 6}$ $\to$ $y=\int\frac{3x+11}{x^2 - x - 6} dx  $
-\end{equation} 
+\begin{equation}
+y' = \frac{3x+11}{x^2-x-6} \to y = \int \frac{3x+11}{x^2-x-6} \, dx
+\end{equation}
+
 
 
 
@@ -35,7 +36,7 @@ y&=\int\left( \frac{4}{x-3}-\frac{1}{x+2} \right)dx \\
 &= 4\ln| x-3 | - \ln|x+2| + C  
 \end{align}  $
 
-$```{topic}Partial Fraction Decomposition$
+```{topic}$Partial Fraction Decomposition$
 
 $Procedure: For a rational polynomial  $\frac{P(x)}{Q(x)}$ where Q is expressed using either linear $(ax+b)$ or irreducible quadratic $(ax^2 + bx + c)$ factors and the degree of P is less than Q $
 
