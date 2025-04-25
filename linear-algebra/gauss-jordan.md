@@ -1,7 +1,7 @@
 ## Types of systems you may encounter for a $mxn$ matrix $ \underline{\underline{A}} $
- - #### Overdetermined: More equations (rows) than unknowns (columns); $ m>n  \leftarrow $ May not be solvable
-- #### Determined: $m = n \leftarrow $ May not be solvable
-- #### Undetermined: $ m<n \leftarrow $ No unique solution
+- #### Overdetermined: More equations (rows) than unknowns (columns); $ m > n  \leftarrow $ May not be solvable
+- #### Determined: $ m = n \leftarrow $ May not be solvable
+- #### Undetermined: $ m < n \leftarrow $ No unique solution
 
 ## So, how many solutions do we have?
 - #### No solution if there's a row of zeroes with a nonzero last column.
@@ -48,33 +48,51 @@ $$ \begin{aligned}
 &\left[\begin{array}{ccc|c}
 3 & 2 & 1 & 3 \\
 2 & 1 & 1 & 0 \\
-6 & 2 & 4 & 6           
+6 & 2 & 5 & 6           
 \end{array}\right]
 \xrightarrow{ R_2 - \frac{2}{3} \cdot R_1}
 \left[\begin{array}{ccc|c}
 3 & 2 & 1 & 3 \\
 0 & -\frac{1}{3} & \frac{1}{3} & -2 \\
-6 & 2 & 4 & 6
+6 & 2 & 5 & 6
 \end{array}\right]
 \xrightarrow{ 3 \cdot R_2} \\
 &\left[\begin{array}{ccc|c}
 3 & 2 & 1 & 3 \\
 0 & -1 & 1 & -6 \\
-6 & 2 & 4 & 6
+6 & 2 & 5 & 6
 \end{array}\right]
-\xrightarrow{ R_3 - 2R_1}
+\xrightarrow{ R_3 - 2 \cdot R_1}
 \left[\begin{array}{ccc|c}
 3 & 2 & 1 & 3 \\
 0 & -1 & 1 & -6 \\
-0 & -2 & 2 & 0
+0 & -2 & 3 & 0
 \end{array}\right] 
-\xrightarrow{ R_3 - 2R_2} \\
-
+\xrightarrow{ R_3 - 2 \cdot R_2} \\
 &\left[\begin{array}{ccc|c}
 3 & 2 & 1 & 3 \\
 0 & -1 & 1 & -6 \\
-0 & 0 & 0 & 12
+0 & 0 & 1 & 12
 \end{array}\right]
+\xrightarrow{ -1 \cdot R_2}
+\left[\begin{array}{ccc|c}
+3 & 2 & 1 & 3 \\
+0 & 1 & -1 & 6 \\
+0 & 0 & 1 & 12
+\end{array}\right]
+\xrightarrow{ R_2 + R_3} \\
+&\left[\begin{array}{ccc|c}
+3 & 2 & 1 & 3 \\
+0 & 1 & 0 & 18 \\
+0 & 0 & 1 & 12
+\end{array}\right]
+\xrightarrow{ R_1 - R_3}
+\left[\begin{array}{ccc|c}
+3 & 2 & 0 & -9 \\
+0 & 1 & 0 & 18 \\
+0 & 0 & 1 & 12
+\end{array}\right]
+
 \rightarrow \boxed{False \ Row: 0 \ne 12}
 \end{aligned}
 $$
