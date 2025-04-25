@@ -5,7 +5,7 @@ Some ODEs give rise to integrals like:
 
 
 \begin{equation}  
-y' = \frac{3x+11}{x^2 - x - 6}$ $\to$ $y$=$\int\frac{3x+11}{x^2 - x - 6} dx  
+$y' = \frac{3x+11}{x^2 - x - 6}$ $\to$ $y=\int\frac{3x+11}{x^2 - x - 6} dx  $
 \end{equation} 
 
 
