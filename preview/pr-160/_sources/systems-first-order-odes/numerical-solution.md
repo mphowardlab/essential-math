@@ -16,10 +16,8 @@ Mole Balance
 
 ```{math}
 \begin{align}
-\frac{dn_A}{dt} = \dot n_{\rm in} - \dot n_{\rm out} + r_A V \\
-\dot n_{\rm in} = \dot V_{\rm in} c_in,A  \\
-\frac{Vc_A}{dt} = \dot V_{\rm in} c_in,A - \dot V c_A - kc_AV \\
-\dot n_{\rm out} = \dot V_{\rm out} c_A \\
+\frac{dn_A}{dt} = \dot n_{\rm in} - \dot n_{\rm out} + r_A V \hspace{1cm} \dot n_{\rm in} = \dot V_{\rm in} c_in,A  \\
+\frac{Vc_A}{dt} = \dot V_{\rm in} c_in,A - \dot V c_A - kc_AV \hspace{1cm} \dot n_{\rm out} = \dot V_{\rm out} c_A \\
 \end{align}
 ```
 
@@ -31,12 +29,9 @@ Mass Balance
 
 ```{math}
 \begin{align}
-\frac{dm}{dt} = \dot m_{\rm in} - \dot m_{\rm out} \\
-\dot m_{\rm in} = \dot V_{\rm in} (\rho) \\
-\frac{d\rhoV}{dt} = \dot V_{\rm in} (\rho) - \dot V_{\rm in} (\rho)\ \\
-\dot m_{\rm out} = \dot V_{\rm in} (\rho) \\
-\rho\frac{dV}{dt} = \dot V_{\rm in} (\rho) \cdot \dot V_{\rm out} (\rho) = 1 -2 = -1 \\
-\dot m = V \rho
+\frac{dm}{dt} = \dot m_{\rm in} - \dot m_{\rm out} \hspace{1cm} \dot m_{\rm in} = \dot V_{\rm in} (\rho) \\
+\frac{d\rhoV}{dt} = \dot V_{\rm in} (\rho) - \dot V_{\rm in} (\rho) \hspace{1cm} \dot m_{\rm out} = \dot V_{\rm in} (\rho) \\
+\rho\frac{dV}{dt} = \dot V_{\rm in} (\rho) \cdot \dot V_{\rm out} (\rho) = 1 -2 = -1 \hspace{1cm} \dot m = V \rho
 \end{align}
 ```
 
