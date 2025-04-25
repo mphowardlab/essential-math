@@ -22,6 +22,6 @@ p(t) &= \frac{\dot{q}t}{V}, \quad r(t) = C_{f,A} \cdot \dot{q}t \\
 
 ```{math}
 \begin{align}
-F(t) &= \exp{[\int{p(t)dt}]} = \exp{(\int{\frac{\dot{q}t}{V} \cdot t^{2})}}
+F(t) &= \exp{[\int{p(t)dt}]} = \exp{(\int{\frac{\dot{q}t}{V} \cdot dt)}}
 \end{align}
 ```
