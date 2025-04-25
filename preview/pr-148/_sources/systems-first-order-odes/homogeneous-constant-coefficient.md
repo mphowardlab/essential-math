@@ -50,7 +50,7 @@ $$
 \begin{bmatrix} c_1 \\ c_2 \end{bmatrix}
 $$
 
-Solving for \c_1 \ and \c_2 \:
+Solving for \( c_1 \) and \( c_2 \):
 
 $$
 \left[
