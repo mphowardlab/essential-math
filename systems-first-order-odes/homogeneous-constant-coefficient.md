@@ -92,7 +92,7 @@ $$
 So:
 
 $$
-C_1 = -\frac{1}{2i} = \frac{i}{2}, \quad C_2 = \frac{1}{2}i = -\frac{i}{2}
+C_1 = -\frac{1}{2i} = \frac{1}{2i}, \quad C_2 = \frac{1}{2}i = -\frac{i}{2}
 $$
 
 ---
@@ -107,6 +107,7 @@ y = \frac{i}{2} e^{4it} \begin{bmatrix} -i \\ 1 \end{bmatrix}
 $$
 
 
+$$
 \text{This is acceptable.}
 $$
 
@@ -125,7 +126,7 @@ $$
 
 $$
 = \frac{1}{2} \left( \cos 4t + i \sin 4t \right) \begin{bmatrix} 1 \\ i \end{bmatrix} 
-- \frac{1}{2} \left( \cos 4t - i \sin 4t \right) \begin{bmatrix} -1 \\ -i \end{bmatrix}
+- \frac{1}{2} \left( \cos 4t - i \sin 4t \right) \begin{bmatrix} -1 \\ i \end{bmatrix}
 $$
 
 $$
