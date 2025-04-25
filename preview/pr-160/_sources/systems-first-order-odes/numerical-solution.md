@@ -9,7 +9,7 @@ $ y' = f(t, y) \to y(t + (\Delta t)) = y(t) + f(t,y) (\Delta t)$
 "Just" Add Columns 
 
 ```{image} ./Images/Untitled design.jpg
-:alt: Flash distillation process
+:alt: Euler's Method Image
 ```
 
 ```{math}
