@@ -6,7 +6,7 @@ Many dynamic processes can occur simultaneously, giving more than one ODE.
 
 ````{example} Concentration Change Over Time
 
-```{image} ./Images/Image-issue47.png
+```{image} ./Images/Image2.JPG
 :alt: Concentrations in Tanks Flow
 ```
 
@@ -17,10 +17,10 @@ In the image, tank one has concentration one (C1) and tank two has concentration
 How do the concentrations C1 and C2 in these tanks evovle?
 
 
+\begin{align}
 C2H4 + 0.5 O2 => C2H4O
-
-
 C2H4 + 3 O2 => 2 CO2 + 2 H2O
+\end{align}
 
 
 How do the amounts of each species change over time?
@@ -29,22 +29,20 @@ How do the amounts of each species change over time?
 General form: 
 
 
+\begin{align}
 y(1)' = f(1) * (t, y(1), ....., y(n))
 
 .
 
 .
 
-.                                                  
-
-.
-
-.
+.       
 
 y(n)' = f(n) * (t, y(1), ....., y(n))
- 
+
  =====>  y' = f(t,y)
 
+\end{align}
 
 
 A system of first-oder ODEs is linear if y' = A(t)y + g(t).
