@@ -12,6 +12,14 @@ $ y' = f(t, y) \to y(t + (\Delta t)) = y(t) + f(t,y) (\Delta t)$
 :alt: Flash distillation process
 ```
 
+```{math}
+\dot V_{\rm in} = 1 L/min
+\c_M = 1 M
+\dot V_{\rm in} = 2 L/min
+\1 M, 10 L
+\r_A = -kc_A
+```
+
 Mole Balance
 
 ```{math}
