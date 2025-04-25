@@ -18,29 +18,29 @@ How do the concentrations C1 and C2 in these tanks evovle?
 
 
 \begin{align}
-C2H4 + 0.5 O2 => C2H4O
+C2H4 + 0.5 O2 => C2H4O \\
 C2H4 + 3 O2 => 2 CO2 + 2 H2O
 \end{align}
 
 
 How do the amounts of each species change over time?
-
+````
 
 General form: 
 
 
 \begin{align}
-y(1)' = f(1) * (t, y(1), ....., y(n))
+y(1)' = f(1) * (t, y(1), ....., y(n))\\
 
-.
+.\\
 
-.
+.\\
 
-.       
+.      \\ 
 
-y(n)' = f(n) * (t, y(1), ....., y(n))
+y(n)' = f(n) * (t, y(1), ....., y(n))\\
 
- =====>  y' = f(t,y)
+ =====>  y' = f(t,y)\\
 
 \end{align}
 
