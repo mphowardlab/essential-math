@@ -22,7 +22,7 @@ This is an eigenvalus problem! lambda is an eigenvalue, and x is an eigenvector 
 We know an n*n matrix has n eigenvalues. Let's suppose the corresponding eigenvectors are all independent. What do we do?
 
 
-Superposition principle: For a linear ODE, if y1 and y2 are both solutions, then
+Superposition principle: For a linear ODE, if $y_1$ and $y_2$ are both solutions, then
 
 
 \begin{equation}
