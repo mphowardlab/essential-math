@@ -37,7 +37,7 @@ Mass Balance
 
 ```{math}
 \begin{align}
-\frac{dc_A}{dt} = frac{1}{V} [1 - c_A - 0.5Vc_A]  \hspace{1cm} c_A(0) = 1 \hspace{1cm}  y_1 = c_A \\
+\frac{dc_A}{dt} = \frac{1}{V} [1 - c_A - 0.5Vc_A]  \hspace{1cm} c_A(0) = 1 \hspace{1cm}  y_1 = c_A \\
 \frac{dV}{dt} = -1             \hspace{1cm}             V(0) = 10 \hspace{1cm}  y_2 = V \\
 \end{align}
 ```
