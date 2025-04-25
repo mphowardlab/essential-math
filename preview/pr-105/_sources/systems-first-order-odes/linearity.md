@@ -4,12 +4,11 @@
 
 Many dynamic processes can occur simultaneously, giving more than one ODE.
 
-## Example
-''''{example} Concentration Change Over Time
+````{example} Concentration Change Over Time
 
-'''{image} ./Images/Image-issue47.png
+```{image} ./Images/Image-issue47.png
 :alt: Concentrations in Tanks Flow
-'''
+```
 
 
 In the image, tank one has concentration one (C1) and tank two has concentration two (C2). Tank one is flowing to tank two. Tank two is flowing to a pump. The pump exit stream is flowing back to tank one. 
@@ -46,7 +45,7 @@ y(n)' = f(n) * (t, y(1), ....., y(n))
  
  =====>  y' = f(t,y)
 
- ## Definition 
+
 
 A system of first-oder ODEs is linear if y' = A(t)y + g(t).
 
