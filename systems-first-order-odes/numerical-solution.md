@@ -30,7 +30,7 @@ Mass Balance
 ```{math}
 \begin{align}
 \frac{dm}{dt} = \dot m_{\rm in} - \dot m_{\rm out} \hspace{1cm} \dot m_{\rm in} = \dot V_{\rm in} (\rho) \\
-\frac{d\rhoV}{dt} = \dot V_{\rm in} (\rho) - \dot V_{\rm in} (\rho) \hspace{1cm} \dot m_{\rm out} = \dot V_{\rm in} (\rho) \\
+\frac{d(\rho)V}{dt} = \dot V_{\rm in} (\rho) - \dot V_{\rm in} (\rho) \hspace{1cm} \dot m_{\rm out} = \dot V_{\rm in} (\rho) \\
 \rho\frac{dV}{dt} = \dot V_{\rm in} (\rho) \cdot \dot V_{\rm out} (\rho) = 1 -2 = -1 \hspace{1cm} \dot m = V \rho
 \end{align}
 ```
