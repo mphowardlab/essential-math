@@ -8,7 +8,9 @@ $ y' = f(t, y) \to y(t + (\Delta t)) = y(t) + f(t,y) (\Delta t)$
 
 "Just" Add Columns 
 
-IMAGE (ask!!)
+```{image} ./Images/Untitled design.jpg
+:alt: Flash distillation process
+```
 
 Mole Balance
 
