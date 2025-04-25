@@ -4,7 +4,7 @@ Description: Many ordinary differential equations you will encounter are not sol
 
 # Euler's Method
 
-y' = f(t, y) \to y(t) + (\Delta T) = y(t) + f(t,y) (\Delta T )
+y' = f(t, y) \to y(t + (\Delta t)) = y(t) + f(t,y) (\Delta t)
 
 "Just" Add Columns 
 
@@ -13,24 +13,44 @@ IMAGE (ask!!)
 Mole Balance
 
 ```{math}
-\begin{aligned}
+\begin{center}
 \frac{dn_A}{dt} = \dot n_{\rm in} - \dot n_{\rm out} + r_A V \\
 \dot n_{\rm in} = \dot V_{\rm in} c_in,A  \\
 \frac{Vc_A}{dt} = \dot V_{\rm in} c_in,A - \dot V c_A - kc_AV \\
 \dot n_{\rm out} = \dot V_{\rm out} c_A \\
-V\frac{dc_A}{dt} + c_A\frac{dV}{dt} = 1 - 2c_A + kVc_A \\
-\end{aligned}
+\end{center}
 ```
+
+V\frac{dc_A}{dt} + c_A\frac{dV}{dt} = 1 - 2c_A + kVc_A
 
 Mass Balance
 
 ```{math}
-\begin{aligned}
+\begin{center}
 \frac{dm}{dt} = \dot m_{\rm in} - \dot m_{\rm out} \\
 \dot m_{\rm in} = \dot V_{\rm in} (\delta h) \\
 \frac{d(\delta h)V}{dt} = \dot V_{\rm in} (\delta h) - \dot V_{\rm in} (\delta h)\ \\
 \dot m_{\rm out} = \dot V_{\rm in} (\delta h) \\
-\(\delta h) frac{dV}{dt} = \dot V_{\rm in} (\delta h) \cdot \dot V_{\rm out} (\delta h) = 1 -2 = -1 
-\end{aligned}
+\(\delta h) frac{dV}{dt} = \dot V_{\rm in} (\delta h) \cdot \dot V_{\rm out} (\delta h) = 1 -2 = -1 \\
+\m = V \delta h
+\end{center}
 ```
+
+```{math}
+\begin{center}
+\frac{dc_A}{dt} = 1/V [1 - c_A - 0.5Vc_A]   c_A(0) = 1  y_1 = c_A \\
+\frac{dV}{dt} = -1                          V(0) = 10   y_2 = V \\
+\end{center}
+```
+
+What is c_A and V after 1 minute?
+\begin{center}
+\begin{tabular}{ c c c }
+ n & t & c_A = y_1 & V = y_2 & f_1 $ f_2
+ 0 & 0 & 1 & 10 & -0.5 & -1
+ 1 & 1 & 0.5 & 9    
+\end{tabular}
+\end{center}
+
+
 
