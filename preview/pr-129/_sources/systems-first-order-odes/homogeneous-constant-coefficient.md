@@ -59,8 +59,8 @@ Matrix $\vv{A}$ is lower triangular, so
 λ_1 &= -k_1  \rightarrow  \begin{bmatrix} 0 & 0 & 0 \\ 
 k_1 & -k_2+k_1 & 0 \\
  0 & k_2 & k_1 \end{bmatrix} \\
-& \rightarrow  (k_1\vv{x_1})-(k_2-k_1)\vv{x_2} = 0 \\
-& \rightarrow  (k_2\vv{x_2})+(k_1\vv{x_3}) = 0 \\
+& \rightarrow  k_1\vv{x_1}-(k_2-k_1)\vv{x_2} = 0 \\
+& \rightarrow  k_2\vv{x_2}+k_1\vv{x_3} = 0 \\
 & \rightarrow \rightarrow  \vv{x_1} = \begin{bmatrix} \frac{-k_2-k_1}{k_2} \\ 
 \frac{-k1}{k2} \\ 
 1 \end{bmatrix}
@@ -87,7 +87,7 @@ k_1 & -k_2 & 0 \\
 Hence,
 
 \begin{equation}
-\vv{c} = (a_1e^{-k_1t}\vv{x_1}) + ({a_2}e^{-k_2t}\vv{x_2}) + (a_3\vv{x_3}) 
+\vv{c} = a_1e^{-k_1t}\vv{x_1} + {a_2}e^{-k_2t}\vv{x_2} + a_3\vv{x_3}
 \end{equation}
 
 Initial Condition:
@@ -106,9 +106,9 @@ a_1+a_2+a_3 \end{bmatrix} \\
 So,
 
 \begin{align}
-C_A(t) &= a_1(e^{-k_1t})\frac{-k_2-k_1}{k_2} = C_{A0}e^{-k_1t}  \\
-C_B(t) &= a_1(e^{-k_1t})\frac{-k_1}{k_2} + a_2(e^{-k_2t})(-1) = CA0\frac{k_1}{k_2 - k_1}(e^{-k_1t} - e^{-k_2t}) \\
-C_C(t) &= a_1(e^{-k_1t}) + a_2(e^{-k_2t}) + a_3 = CA0(1 - \frac{k_2}{k_2 - k_1} e^{-k_1t}) + \frac{k_1}{k_2 - k_1} e^{-k_2t}
+C_A(t) &= a_1e^{-k_1t}\frac{-k_2-k_1}{k_2} = C_{A0}e^{-k_1t}  \\
+C_B(t) &= a_1e^{-k_1t}\frac{-k_1}{k_2} + a_2e^{-k_2t}(-1) = CA0\frac{k_1}{k_2 - k_1}(e^{-k_1t} - e^{-k_2t}) \\
+C_C(t) &= a_1e^{-k_1t} + a_2e^{-k_2t} + a_3 = CA0(1 - \frac{k_2}{k_2 - k_1} e^{-k_1t} + \frac{k_1}{k_2 - k_1} e^{-k_2t})
 \end{align}
 $\rightarrow$ This matches our old answer!
 
