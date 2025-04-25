@@ -70,9 +70,9 @@ $$ \begin{aligned}
 \end{array}\right] 
 \xrightarrow{ R_3 - 2 \cdot R_2} \\
 &\left[\begin{array}{ccc|c}
-3 & 2 & 1 & 3 \\
-0 & -1 & 1 & -6 \\
-0 & 0 & 1 & 12
+\color{green}{3} & 2 & 1 & 3 \\
+0 & \color{green}{-1} & 1 & -6 \\
+0 & 0 & \color{green}{1} & 12
 \end{array}\right]
 \xrightarrow{ -1 \cdot R_2}
 \left[\begin{array}{ccc|c}
@@ -92,7 +92,18 @@ $$ \begin{aligned}
 0 & 1 & 0 & 18 \\
 0 & 0 & 1 & 12
 \end{array}\right]
-
-\rightarrow \boxed{False \ Row: 0 \ne 12}
+\xrightarrow{ R_1- 2 \cdot R_2} \\
+&\left[\begin{array}{ccc|c}
+3 & 0 & 0 & -45 \\
+0 & 1 & 0 & 18 \\
+0 & 0 & 1 & 12
+\end{array}\right]
+\xrightarrow{ R_1 \div 3} 
+\left[\begin{array}{ccc|c}
+\color{green}{1} & 0 & 0 & -15 \\
+0 & \color{green}{1} & 0 & 18 \\
+0 & 0 & \color{green}{1} & 12
+\end{array}\right] \\\
+&\rightarrow \boxed{3 \ columns \ and \ 3 \ pivots: Solution \ at \ x_1 =-15; x_2 = 18; x_3 = 12}
 \end{aligned}
 $$
