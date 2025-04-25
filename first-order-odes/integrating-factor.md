@@ -3,7 +3,7 @@
 ## 4. Example:
 Mole balance on a tank with increasing inlet/outlet flow rate.
 
-```{image} ./Integrating_factors_image.jpg
+```{image} ./_Integrating_factors_image.jpg
 :alt: Flash distillation process
 ```
 
