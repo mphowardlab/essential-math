@@ -8,7 +8,7 @@ $ y' = f(t, y) \hspace{1cm} \to \hspace{1cm} y(t + (\Delta t)) = y(t) + f(t,y) (
 
 "Just" Add Columns 
 
-```{image} ./Images/Euler's Method Diagram (1).png
+```{image} ./Images/Euler_Diagram_png
 :alt: Euler's Method Image
 ```
 
