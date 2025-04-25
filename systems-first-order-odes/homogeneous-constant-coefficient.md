@@ -50,7 +50,7 @@ $$
 \begin{bmatrix} c_1 \\ c_2 \end{bmatrix}
 $$
 
-Solving for \( c_1 \) and \( c_2 \):
+Solving for $c_1$ and $c_2$:
 
 $$
 \left[
@@ -99,7 +99,9 @@ y = \frac{1}{2} e^{4it} \begin{bmatrix} -i \\ 1 \end{bmatrix}
 }
 $$
 
-This is acceptable.
+$$
+\text{This is acceptable.}
+$$
 
 Using Euler's formula:
 
