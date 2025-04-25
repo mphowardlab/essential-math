@@ -8,6 +8,7 @@ This work (c) 2025 is licensed under
 ## Contributors
 
 - Payton Baxter
+- Zachary Bradford
 - Paine Cole
 - Ella Governale
 - Michael P. Howard
@@ -20,7 +21,6 @@ This work (c) 2025 is licensed under
 - Michelle Schindler
 - Katie Sorensen
 - Debora Vasconcelos
-- Zachary Bradford
 
 ## Attributions
 
