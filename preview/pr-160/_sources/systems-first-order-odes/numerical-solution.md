@@ -34,7 +34,7 @@ Mass Balance
 \frac{d(\delta h)V}{dt} = \dot V_{\rm in} (\delta h) - \dot V_{\rm in} (\delta h)\ \\
 \dot m_{\rm out} = \dot V_{\rm in} (\delta h) \\
 \(\delta h) frac{dV}{dt} = \dot V_{\rm in} (\delta h) \cdot \dot V_{\rm out} (\delta h) = 1 -2 = -1 \\
-\m = V \delta h
+\dot m = V \delta h
 \end{aligned}
 ```
 
@@ -47,7 +47,7 @@ Mass Balance
 
 What is c_A and V after 1 minute?
 
-```
+$$
 \begin{array}{|c|c|c|c|c|c|}
 \hline
 n & t & c_A = y_1 & V = y_2 & f_1 & f_2 \\
@@ -57,7 +57,7 @@ n & t & c_A = y_1 & V = y_2 & f_1 & f_2 \\
 1 & 1 & 0.5 & 9 &  &  \\
 \hline
 \end{array}
-```
+$$
 
 
 
