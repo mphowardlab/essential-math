@@ -49,6 +49,6 @@ y_2 = x(-\frac{1}{x}-\ln{x}) = -(1 + x\ln{x})
 The General Solution becomes
 
 \begin{equation}
-y = C_1 x + C_2 (1 + \ln x)
+\boxed {y = C_1 x + C_2 (1 + \ln x)}
 \end{equation}
 ````
