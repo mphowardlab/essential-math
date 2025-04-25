@@ -2,7 +2,7 @@
 
 Description: Many ordinary differential equations you will encounter are not solvable by any of the methods discussed thusfar. In such cases, a numerical solution method will result in a fairly accurate solution to the ODE. One such method is Euler's method. Through a series of iterations, Euler's method uses small steps to linearly approximate the solution based on the slope at each point. 
 
-# Euler's Method
+### Euler's Method
 
 y' = f(t, y) \to y(t + (\Delta t)) = y(t) + f(t,y) (\Delta t)
 
@@ -47,13 +47,17 @@ Mass Balance
 
 What is c_A and V after 1 minute?
 
-\begin{aligned}
-\begin{tabular}{ c c c c c}
- n & t & c_A = y_1 & V = y_2 & f_1 $ f_2
- 0 & 0 & 1 & 10 & -0.5 & -1
- 1 & 1 & 0.5 & 9    
-\end{tabular}
-\end{aligned}
+```
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+n & t & c_A = y_1 & V = y_2 & f_1 & f_2 \\
+\hline
+0 & 0 & 1 & 10 & -0.5 & -1 \\
+\hline
+1 & 1 & 0.5 & 9 &  &  \\
+\hline
+\end{array}
+```
 
 
 
