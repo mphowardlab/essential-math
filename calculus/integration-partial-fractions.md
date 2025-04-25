@@ -50,7 +50,6 @@ $ax^2 + bx + c \to \frac{Ax+B}{ax^2+bx+c}$
 
 $(ax^2 + bx+c)^k $: repeat like for linear factor 
 ```
-
 \end{align}
 
 $y'= \frac{x^2-29x+5}{(x-4)^2(x^2+3)}$
@@ -79,9 +78,9 @@ $\begin{bmatrix} 1 & 0 & 1 & 0\\ -4 & 1 & -8 & 1\\ 3 & 0 & 16 & -8\\ -12 & 3 & 0
 
 $ y= \int(\frac{1}{x-3}-\frac{5}{(x-4)^2}-\frac{x}{x^2+3}+\frac{2}{x^2+3}) dx$
                             
-$y= \int (\frac{1}{+x^2}) dx$ = $arctanx$
+$y= \int (\frac{1}{+x^2}) dx$ = $\arctanx$
 
-= $ln|x-4|+\frac{5}{x-4} -\frac{1}{2}ln (x^2 + 3)+\frac{2}{\sqrt{3}} arctan(\frac{x}{\sqrt{3}}) + C$
+= $\ln|x-4|+\frac{5}{x-4} -\frac{1}{2}ln (x^2 + 3)+\frac{2}{\sqrt{3}} \arctan(\frac{x}{\sqrt{3}}) + C$
 
 
 
