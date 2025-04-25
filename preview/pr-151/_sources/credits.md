@@ -10,6 +10,7 @@ This work (c) 2025 is licensed under
 - Payton Baxter
 - Paine Cole
 - Ella Governale
+- Joshua R. Hegar
 - Michael P. Howard
 - Evan M. Hughes
 - Abby Lucas
