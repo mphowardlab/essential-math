@@ -14,14 +14,16 @@ y' = \frac{3x+11}{x^2-x-6} \to y = \int \frac{3x+11}{x^2-x-6} \, dx
 
 This cannot be done with u-substitution... how to take it?
 
+\begin{equation}
 $\frac{3x+11}{x^2-x-6}$ =$\frac{3x+11}{(x-3)(x+2)}$ = $\frac{A_1}{x-3} + \frac{A_2}{x+2}$
+\end{equation}
 
  
 
-\begin{align}  
-3x+11 &= A_1(x+2) + A_2(x-3) \\  
-&= (A_1 + A_2)x + (2A_1 - 3A_2) \\  
-\end{align}  
+\begin{align}
+3x+11 &= A_1(x+2) + A_2(x-3) \\
+&= (A_1 + A_2)x + (2A_1 - 3A_2) \\
+\end{align}
 
 $ A_1  + A_2 = 3$
 
@@ -36,9 +38,9 @@ y&=\int\left( \frac{4}{x-3}-\frac{1}{x+2} \right)dx \\
 &= 4\ln| x-3 | - \ln|x+2| + C  
 \end{align}  $
 
-```{topic}$Partial Fraction Decomposition$
-
-$Procedure: For a rational polynomial  $\frac{P(x)}{Q(x)}$ where Q is expressed using either linear $(ax+b)$ or irreducible quadratic $(ax^2 + bx + c)$ factors and the degree of P is less than Q $
+```{topic}Partial Fraction Decomposition
+\begin{align}
+Procedure: For a rational polynomial  $\frac{P(x)}{Q(x)}$ where Q is expressed using either linear $(ax+b)$ or irreducible quadratic $(ax^2 + bx + c)$ factors and the degree of P is less than Q $
 
 $ax+b$ $\to$ $\frac{A}{ax+b}$
 
@@ -46,9 +48,10 @@ $(ax+b)^k \to \frac{A_1}{ax+b} + \frac{A_2}{(ax+b)^2}+ ...+ \frac{A_k}{(ax+b)^k}
 
 $ax^2 + bx + c \to \frac{Ax+B}{ax^2+bx+c}$
 
-$(ax^2 + bx+c)^k $: repeat like for linear factor ```
+$(ax^2 + bx+c)^k $: repeat like for linear factor 
+```
 
-
+\end{align}
 
 $y'= \frac{x^2-29x+5}{(x-4)^2(x^2+3)}$
 
