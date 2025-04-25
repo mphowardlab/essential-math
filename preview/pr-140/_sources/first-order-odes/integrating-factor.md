@@ -15,3 +15,7 @@ Mole balance on a tank with increasing inlet/outlet flow rate.
 
 ````{dropdown} 4. Solution
 Rewrite: 
+\begin{align}
+\dot{n}_{A} + \frac{\dot{q}t}{V} \cdot n_{A} &= C_{f,A} \cdot \dot{q}t \\
+p(t) &= 
+\end{align}
