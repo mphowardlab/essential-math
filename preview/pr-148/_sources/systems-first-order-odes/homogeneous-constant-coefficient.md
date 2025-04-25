@@ -92,7 +92,7 @@ $$
 So:
 
 $$
-C_1 = -\frac{1}{2i} = \frac{1}{2i}, \quad C_2 = \frac{1}{2}i = -\frac{1}{2i}
+C_1 = -\frac{1}{2i} = \frac{i}{2}, \quad C_2 = \frac{1}{2i} = -\frac{i}{2}
 $$
 
 ---
