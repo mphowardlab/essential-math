@@ -40,3 +40,91 @@ $
 y = c_1 e^{4it} \begin{bmatrix} -i \\ 1 \end{bmatrix} + c_2 e^{-4it} \begin{bmatrix} i \\ 1 \end{bmatrix}
 $
 ```
+
+```{dropdown} **Solution**
+**Initial Conditions:**
+
+$$
+\begin{bmatrix} 1 \\ 0 \end{bmatrix} = \psi(0) = 
+\begin{bmatrix} -i & i \\ 1 & 1 \end{bmatrix}
+\begin{bmatrix} c_1 \\ c_2 \end{bmatrix}
+$$
+
+Solving for \( c_1 \) and \( c_2 \):
+
+$$
+\left[
+\begin{array}{cc|c}
+-i & i & 1 \\
+1 & 1 & 0
+\end{array}
+\right]
+\rightarrow
+\left[
+\begin{array}{cc|c}
+1 & -1 & -i \\
+1 & 1 & 0
+\end{array}
+\right]
+\rightarrow
+\left[
+\begin{array}{cc|c}
+0 & 2 & -i \\
+1 & 1 & 0
+\end{array}
+\right]
+\rightarrow
+\left[
+\begin{array}{cc|c}
+1 & 0 & -\frac{i}{2} \\
+0 & 1 & \frac{i}{2}
+\end{array}
+\right]
+$$
+
+So:
+
+$$
+c_1 = -\frac{i}{2}, \quad c_2 = \frac{i}{2}
+$$
+
+---
+
+**Hence:**
+
+$$
+\psi = \frac{1}{2} e^{4it} \begin{bmatrix} -i \\ 1 \end{bmatrix} 
+- \frac{1}{2} e^{-4it} \begin{bmatrix} i \\ 1 \end{bmatrix}
+$$
+
+This is acceptable.
+
+Using Euler's formula:
+
+$$
+e^{ix} = \cos x + i \sin x, \quad e^{-ix} = \cos x - i \sin x
+$$
+
+Then:
+
+$$
+\psi = \frac{1}{2} e^{4it} \begin{bmatrix} -i \\ 1 \end{bmatrix} 
+- \frac{1}{2} e^{-4it} \begin{bmatrix} i \\ 1 \end{bmatrix}
+$$
+
+$$
+= -\frac{1}{2} \left( \cos 4t + i \sin 4t \right) \begin{bmatrix} i \\ -1 \end{bmatrix} 
+- \frac{1}{2} \left( \cos 4t - i \sin 4t \right) \begin{bmatrix} -i \\ -1 \end{bmatrix}
+$$
+
+$$
+= \begin{bmatrix} \cos 4t \\ -\sin 4t \end{bmatrix}
+\Rightarrow
+\psi_1 = \cos 4t, \quad \psi_2 = -\sin 4t
+$$
+
+---
+
+\[
+\boxed{\psi = 0 \text{ is a \textbf{center}} \quad \text{because the eigenvalues are purely imaginary.}}
+\]
