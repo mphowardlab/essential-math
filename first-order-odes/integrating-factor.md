@@ -22,5 +22,7 @@ p(t) &= \frac{\dot{q}t}{V}, \quad r(t) = C_{f,A} \cdot \dot{q}t \\
 
 \begin{align}
 F(t) &= \exp{[\int{p(t)dt}]} = \exp{(\int{\frac{\dot{q}t}{V} \cdot dt)}} = \exp{(\frac{1}{2}\frac{\dot{q}}{v^{2}})}\\
-\int{F(t)r(t)dt} &= 
+\int{F(t)r(t)dt} &= \int{\exp{(\frac{1}{2}\frac{\dot{q}{v}}t^{2})}C_{f,A}\dot{q}tdt} = \int{e^{u}C_{f,A}vdu} = C_{f,A}V\exp{(\frac{1}{2}\frac{\dot{q}}{v}t^{2})}\\
+u &= \frac{1}{2}\frac{\dot{q}}{v}t^{t}\\
+du &= \frac{\dot{q}}{v}tdt \to \dot{q}tdt = Vdu
 \end{align}
