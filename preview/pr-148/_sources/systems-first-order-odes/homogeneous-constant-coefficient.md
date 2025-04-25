@@ -93,8 +93,10 @@ $$
 **Hence:**
 
 $$
+\boxed{
 y = \frac{1}{2} e^{4it} \begin{bmatrix} -i \\ 1 \end{bmatrix} 
 - \frac{1}{2} e^{-4it} \begin{bmatrix} i \\ 1 \end{bmatrix}
+}
 $$
 
 This is acceptable.
@@ -120,11 +122,9 @@ $$
 $$
 = \begin{bmatrix} \cos 4t \\ -\sin 4t \end{bmatrix}
 \Rightarrow
-y_1 = \cos 4t, \quad y_2 = -\sin 4t
+\boxed{y_1 = \cos 4t, \quad y_2 = -\sin 4t}
 $$
 
 ---
 
-$$
-\boxed{\psi = 0 \text{ is a center because the eigenvalues are purely imaginary.}}
-$$
+\(y = 0\) is a **center** because the eigenvalues are purely imaginary.
