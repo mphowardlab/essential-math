@@ -23,7 +23,7 @@ $
 $
 
 
-For \( λ = 4i \):
+For \( $\lambda_1$ = 4i \):
 
 \begin{bmatrix} -4i & 4 \\ -4 & -4i \end{bmatrix} x_1 = 0 
 \Rightarrow x_1 = \begin{bmatrix} -i \\ 1 \end{bmatrix}
@@ -37,7 +37,7 @@ For \( $\lambda_2$ = -4i \):
 
 **General Solution:**
 $
-y = c_1 e^{4it} \begin{bmatrix} -i \\ 1 \end{bmatrix} + c_2 e^{-4it} \begin{bmatrix} i \\ 1 \end{bmatrix}
+y = C_1 e^{4it} \begin{bmatrix} -i \\ 1 \end{bmatrix} + C_2 e^{-4it} \begin{bmatrix} i \\ 1 \end{bmatrix}
 $
 ```
 
@@ -47,10 +47,10 @@ $
 $$
 \begin{bmatrix} 1 \\ 0 \end{bmatrix} = y(0) = 
 \begin{bmatrix} -i & i \\ 1 & 1 \end{bmatrix}
-\begin{bmatrix} c_1 \\ c_2 \end{bmatrix}
+\begin{bmatrix} C_1 \\ C_2 \end{bmatrix}
 $$
 
-Solving for $c_1$ and $c_2$:
+Solving for $C_1$ and $C_2$:
 
 $$
 \left[
@@ -62,22 +62,29 @@ $$
 \rightarrow
 \left[
 \begin{array}{cc|c}
-1 & -1 & -i \\
-1 & 1 & 0
+1 & 1 & 0 \\
+-i & i & 1
 \end{array}
 \right]
 \rightarrow
 \left[
 \begin{array}{cc|c}
-0 & 2 & -i \\
-1 & 1 & 0
+1 & 1 & 0 \\
+0 & 2i & 1
 \end{array}
 \right]
 \rightarrow
 \left[
 \begin{array}{cc|c}
-1 & 0 & -\frac{i}{2} \\
-0 & 1 & \frac{i}{2}
+1 & 1 & 0 \\
+0 & 2i & 1
+\end{array}
+\right]
+\rightarrow
+\left[
+\begin{array}{cc|c}
+1 & 0 & -\frac{1}{2i} \\
+0 & 1 & \frac{1}{2i}
 \end{array}
 \right]
 $$
@@ -85,7 +92,7 @@ $$
 So:
 
 $$
-c_1 = -\frac{i}{2}, \quad c_2 = \frac{i}{2}
+C_1 = -\frac{1}{2i} = \frac{i}{2}, \quad C_2 = \frac{1}{2}i = -\frac{i}{2}
 $$
 
 ---
@@ -94,12 +101,12 @@ $$
 
 $$
 \boxed{
-y = \frac{1}{2} e^{4it} \begin{bmatrix} -i \\ 1 \end{bmatrix} 
-- \frac{1}{2} e^{-4it} \begin{bmatrix} i \\ 1 \end{bmatrix}
+y = \frac{i}{2} e^{4it} \begin{bmatrix} -i \\ 1 \end{bmatrix} 
+- \frac{i}{2} e^{-4it} \begin{bmatrix} i \\ 1 \end{bmatrix}
 }
 $$
 
-$$
+
 \text{This is acceptable.}
 $$
 
@@ -112,13 +119,13 @@ $$
 Then:
 
 $$
-y = \frac{1}{2} e^{4it} \begin{bmatrix} -i \\ 1 \end{bmatrix} 
-- \frac{1}{2} e^{-4it} \begin{bmatrix} i \\ 1 \end{bmatrix}
+y = \frac{1}{2} e^{4it} \begin{bmatrix} 1 \\ i \end{bmatrix} 
+- \frac{1}{2} e^{-4it} \begin{bmatrix} -1 \\ i \end{bmatrix}
 $$
 
 $$
-= -\frac{1}{2} \left( \cos 4t + i \sin 4t \right) \begin{bmatrix} i \\ -1 \end{bmatrix} 
-- \frac{1}{2} \left( \cos 4t - i \sin 4t \right) \begin{bmatrix} -i \\ -1 \end{bmatrix}
+= \frac{1}{2} \left( \cos 4t + i \sin 4t \right) \begin{bmatrix} 1 \\ i \end{bmatrix} 
+- \frac{1}{2} \left( \cos 4t - i \sin 4t \right) \begin{bmatrix} -1 \\ -i \end{bmatrix}
 $$
 
 $$
@@ -129,4 +136,6 @@ $$
 
 ---
 
-\(y = 0\) is a **center** because the eigenvalues are purely imaginary.
+$$
+y = 0 \quad \text{is a center because the eigenvalues are purely imaginary.}
+$$
