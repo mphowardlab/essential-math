@@ -20,8 +20,7 @@ Rewrite:
 p(t) &= \frac{\dot{q}t}{V}, \quad r(t) = C_{f,A} \cdot \dot{q}t \\
 \end{align}
 
-```{math}
 \begin{align}
-F(t) &= \exp{[\int{p(t)dt}]} = \exp{(\int{\frac{\dot{q}t}{V} \cdot dt)}}
+F(t) &= \exp{[\int{p(t)dt}]} = \exp{(\int{\frac{\dot{q}t}{V} \cdot dt)}} = \exp{(\frac{1}{2}\frac{\dot{q}}{v^{2}})}\\
+\int{F(t)r(t)dt} &= 
 \end{align}
-```
