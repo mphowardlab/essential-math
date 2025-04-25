@@ -47,6 +47,8 @@ $ax^2 + bx + c \to \frac{Ax+B}{ax^2+bx+c}$
 
 $(ax^2 + bx+c)^k $: repeat like for linear factor ```
 
+
+
 $y'= \frac{x^2-29x+5}{(x-4)^2(x^2+3)}$
 
 
