@@ -47,8 +47,8 @@ There are some cases this fails, but we will not cover them.
 \end{equation}
 
 \begin{equation}
-\vv{A} =  \begin{bmatrix}  -k_1 & 0 & 0 \
- k_1 & -k_2 & 0 \
+\vv{A} =  \begin{bmatrix}  -k_1 & 0 & 0 \\
+ k_1 & -k_2 & 0 \\
 0 & k_2 & 0 
 \end{bmatrix}
 \end{equation}
