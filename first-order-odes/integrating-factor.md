@@ -25,4 +25,5 @@ F(t) &= \exp{[\int{p(t)dt}]} = \exp{(\int{\frac{\dot{q}t}{V} \cdot dt)}} = \exp{
 \int{F(t)r(t)dt} &= \int{\exp{(\frac{1}{2}\frac{\dot{q}{v}}t^{2})}C_{f,A}\dot{q}tdt} = \int{e^{u}C_{f,A}vdu} = C_{f,A}V\exp{(\frac{1}{2}\frac{\dot{q}}{v}t^{2})}\\
 u &= \frac{1}{2}\frac{\dot{q}}{v}t^{t}\\
 du &= \frac{\dot{q}}{v}tdt \to \dot{q}tdt = Vdu
+n_{A}(t) &= \exp{(-\frac{1}{2}\frac{\dot{q}}{v}t^{2})}[C_{f,A}V\exp{(\frac{1}{2}\frac{\dot{q}}{V}t^{t})}+C]\\
 \end{align}
