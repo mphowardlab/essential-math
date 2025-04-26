@@ -28,7 +28,7 @@ If the ODE has constant coefficients so that $y''+ay'+by=r(x)$, we can "guess" a
 |$k e^{\alpha x} \sin{\omega x}$ | $e^{\alpha x}(k_1 \cos{\omega x} + k_2 \sin{\omega x})$ |
 
 - If *r* has multiple terms, add guesses for each together.
-* If the guess for $y_p$ is a homogenous solution $y_n$, multiply by x unless this solution is a repeated root- then mutliply by $x^2$!
+- If the guess for $y_{p}$ is a homogeneous solution $y_{n}$, multiply by *x* unless this solution is a repeated root - then multiply by $x^2$!
 ***
 Ex. $y''+y=0.001x^2$ $y(0)=0$ $y'(0)=1.5$
 1) Find $y_n$: $y_n''+y_n = 0$ -> $y_n = c_1cosx+c_2sinx$
