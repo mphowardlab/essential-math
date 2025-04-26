@@ -14,7 +14,7 @@ Let $f(x)$ be defined on an open interval around $x_0$, except possibly at $x_0$
 
 ---
 
-```{example}
+```{example} Some functions have limits:
 
 Given: 
 \begin{equation}
@@ -44,9 +44,7 @@ Thus,
 
 ```
 
-### Some functions do **not** have limits:
-
-```{example}
+```{example} Some functions do **not** have limits:
 \begin{equation}
 f(x) = \frac{1}{x}, \quad x \neq 0
 \end{equation}
