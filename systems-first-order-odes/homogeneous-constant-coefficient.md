@@ -176,6 +176,6 @@ y_{2} = e^{2t} \sin 2t
 
 \end{equation}
 
-$\vv{y} = \underline{0}  $ is an unstable spiral because the eigenvalues are complex, and the real part is positive.
+$\vv{y} = \vv{0}  $ is an unstable spiral because the eigenvalues are complex, and the real part is positive.
 
 '''
