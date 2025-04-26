@@ -29,6 +29,7 @@ We can solve this characteristic polynomial for $\lambda_1$ and $\lambda_2$ and 
     $y = c_1 e^{-2x} + c_2 e^{x} \qquad 4=y(0)=c_1 + c_2$ \
     $y' = -2c_1 e^{-2x} + c_2 e^{x} \qquad -5=y'(0)=-2c_1 + c_2$
 
+$
 \begin{equation}
 \begin{bmatrix}
 1 & 1 & 4 \\
@@ -40,22 +41,31 @@ We can solve this characteristic polynomial for $\lambda_1$ and $\lambda_2$ and 
 0 & 3 & 3 
 \end{bmatrix}
 \to
-\being{bmatrix}
+\begin{bmatrix}
 1 & 1 & 4 \\
 0 & 1 & 1
 \end{bmatrix}
 \to 
-\being{bmatrix}
+\begin{bmatrix}
 1 & 0 & 3 \\
 0 & 1 & 1
 \end{bmatrix}
 \end{equation}
+$
 
 c_1 = 3 \ \qquad c_2 = 1 \
 
 y = 3 e^{-2x} + e^{x}\
 
-(2) 
+(2) y'' + 0.4y' + 9.04y = 0 \quad y(0)=0 \quad y'(0)=3 \
+\lambda^{2} + 0.4\lambda + 9.04 =0 \to \lambda_{1,2} = \frac{-0.4\pm\sqrt{0.4^2-4\times9.04}}{2} = -0.2\pm 3i \
+
+y = e^{-0.2x}(c_1\cos3x + c_2\sin3x) \qaud 0=y(0)=c_1 \
+y' = e^{-0.2x}(3c_2\cos3x) - 0.2e^{-0.2x}c_2\sin3x \quad 3=y'(0) = 3c_2 \to c_2 =1 \
+y = e^{-0.2x}\sin3x \
+
+(3) 
+
 
 
 
