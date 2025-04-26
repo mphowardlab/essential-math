@@ -2,14 +2,17 @@
 Solve $\underline{y}$'= **A** $\underline{y}$ with 
 
 \begin{equation}
-\vv{A$\underline{y}$(0)}= 
+\vv{A\underline{y}(0)}= 
 \begin{bmatrix} 1 & 0 \end{bmatrix}^{\rm T} 
 \end{equation}
 
-**A** = \begin{bmatrix} -2 & 0 \\ 0 & -2 \end{bmatrix}
+\begin{equation}
+\vv{A} = \begin{bmatrix} -2 & 0  \\ 0 & -2  \end{bmatrix} 
+\end{equation}
+
 
 **A** is upper triangular, so its eigen values are on its diagonal \
-       $\lambda_{1}$ = $\lambda_{2}$ = -2 \
+      \begin{equation} $\lambda_{1}$ = $\lambda_{2}$ = -2 \end{equation} \
 Its eigen vectors are 
 
 \begin{equation}
