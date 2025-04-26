@@ -447,22 +447,22 @@ document.write(`
 <li><p>Understanding physics in “extreme” cases (e.g., the size of a body gets very small).</p></li>
 </ul>
 <p>Let <span class="math notranslate nohighlight">\(f(x)\)</span> be defined on an open interval around <span class="math notranslate nohighlight">\(x_0\)</span>, except possibly at <span class="math notranslate nohighlight">\(x_0\)</span> itself. If <span class="math notranslate nohighlight">\(f(x)\)</span> is arbitrarily close to <span class="math notranslate nohighlight">\(L\)</span> for all <span class="math notranslate nohighlight">\(x\)</span> sufficiently close to <span class="math notranslate nohighlight">\(x_0\)</span>, we say <span class="math notranslate nohighlight">\(f\)</span> approaches the limit <span class="math notranslate nohighlight">\(L\)</span> as <span class="math notranslate nohighlight">\(x\)</span> approaches <span class="math notranslate nohighlight">\(x_0\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-be0a4836-e5b8-4427-a02f-fc48ac46d5b4">
-<span class="eqno">()<a class="headerlink" href="#equation-be0a4836-e5b8-4427-a02f-fc48ac46d5b4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7d75b238-a036-4f84-b7c8-f9d5c9431cf0">
+<span class="eqno">()<a class="headerlink" href="#equation-7d75b238-a036-4f84-b7c8-f9d5c9431cf0" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lim_{x \to x_0} f(x) = L
 \end{equation}\]</div>
 <hr class="docutils" />
 <div class="admonition-example-some-functions-have-limits admonition">
 <p class="admonition-title">Example: Some functions have limits:</p>
 <p>Given:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-03733d7b-0f99-47e0-899c-36d76b5beef1">
-<span class="eqno">()<a class="headerlink" href="#equation-03733d7b-0f99-47e0-899c-36d76b5beef1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-045cd257-3568-4201-a0e6-45846aa44994">
+<span class="eqno">()<a class="headerlink" href="#equation-045cd257-3568-4201-a0e6-45846aa44994" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f(x) = \frac{x^2 - 1}{x - 1}
 \end{equation}\]</div>
 <p>Domain: <span class="math notranslate nohighlight">\(x \neq 1\)</span></p>
 <p>Factor:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-096c3c90-210d-4bf6-b0d7-b3fb3d3d4608">
-<span class="eqno">()<a class="headerlink" href="#equation-096c3c90-210d-4bf6-b0d7-b3fb3d3d4608" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-bc2d904a-ab42-4bb1-a6ac-f74539706de0">
+<span class="eqno">()<a class="headerlink" href="#equation-bc2d904a-ab42-4bb1-a6ac-f74539706de0" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f(x) = \frac{(x+1)(x-1)}{x-1} = x+1 \quad (x \neq 1)
 \end{equation}\]</div>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -494,15 +494,49 @@ f(x) = \frac{(x+1)(x-1)}{x-1} = x+1 \quad (x \neq 1)
 </table>
 </div>
 <p>Thus,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b0e5574d-d2a1-473a-b639-691a4042cdcf">
-<span class="eqno">()<a class="headerlink" href="#equation-b0e5574d-d2a1-473a-b639-691a4042cdcf" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-64048f01-cf6d-4832-a140-cd3223e1d496">
+<span class="eqno">()<a class="headerlink" href="#equation-64048f01-cf6d-4832-a140-cd3223e1d496" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lim_{x \to 1} f(x) = 2
 \end{equation}\]</div>
+<p>\begin{tikzpicture}
+\begin{axis}[
+width=10cm,
+height=8cm,
+axis lines=middle,
+xlabel={<span class="math notranslate nohighlight">\(x\)</span>},
+ylabel={<span class="math notranslate nohighlight">\(f(x)\)</span>},
+xmin=0, xmax=2,
+ymin=-2, ymax=6,
+samples=200,
+domain=0:2,
+grid=both,
+legend style={at={(0.5,-0.15)},anchor=north},
+]
+\addplot[
+blue,
+thick,
+domain=0:0.99,
+] {(x^2-1)/(x-1)};
+\addplot[
+blue,
+thick,
+domain=1.01:2,
+] {(x^2-1)/(x-1)};
+\addplot[dashed, red] coordinates {(1,-2) (1,6)};
+\addplot[
+mark=*,
+mark options={fill=white},
+only marks,
+mark size=2.5pt
+] coordinates {(1,2)};
+\legend{<span class="math notranslate nohighlight">\(f(x) = \frac{x^2-1}{x-1}\)</span>, Hole at <span class="math notranslate nohighlight">\(x=1\)</span>}
+\end{axis}
+\end{tikzpicture}</p>
 </div>
 <div class="admonition-example-some-functions-do-not-have-limits admonition">
 <p class="admonition-title">Example: Some functions do <strong>not</strong> have limits:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cf951923-0d9a-4d61-bc2e-b55808e85058">
-<span class="eqno">()<a class="headerlink" href="#equation-cf951923-0d9a-4d61-bc2e-b55808e85058" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-09f1d1d8-7a68-45a9-aae4-a612dd1117f2">
+<span class="eqno">()<a class="headerlink" href="#equation-09f1d1d8-7a68-45a9-aae4-a612dd1117f2" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f(x) = \frac{1}{x}, \quad x \neq 0
 \end{equation}\]</div>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -527,11 +561,40 @@ f(x) = \frac{1}{x}, \quad x \neq 0
 </tbody>
 </table>
 </div>
-<div class="amsmath math notranslate nohighlight" id="equation-a702f504-d30a-4f44-8362-3f18d1d8a82e">
-<span class="eqno">()<a class="headerlink" href="#equation-a702f504-d30a-4f44-8362-3f18d1d8a82e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1326ebb6-d7a9-45d9-9863-850037ac424f">
+<span class="eqno">()<a class="headerlink" href="#equation-1326ebb6-d7a9-45d9-9863-850037ac424f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \text{No limit as } x \to 0
 \end{equation}\]</div>
 <p>The function blows up to <span class="math notranslate nohighlight">\(+\infty\)</span> from the right and <span class="math notranslate nohighlight">\(-\infty\)</span> from the left, so no single limit exists at <span class="math notranslate nohighlight">\(x=0\)</span>.</p>
+<p>\begin{tikzpicture}
+\begin{axis}[
+width=10cm,
+height=8cm,
+axis lines=middle,
+xlabel={<span class="math notranslate nohighlight">\(x\)</span>},
+ylabel={<span class="math notranslate nohighlight">\(f(x)\)</span>},
+xmin=-2, xmax=2,
+ymin=-6, ymax=6,
+samples=200,
+domain=-2:-0.05,
+domain y=-6:6,
+grid=both,
+legend style={at={(0.5,-0.15)},anchor=north},
+]
+\addplot[
+blue,
+thick,
+domain=-2:-0.05,
+] {1/x};
+\addplot[
+blue,
+thick,
+domain=0.05:2,
+] {1/x};
+\addplot[dashed, red] coordinates {(0,-6) (0,6)};
+\legend{<span class="math notranslate nohighlight">\(f(x) = \frac{1}{x}\)</span>, Asymptote at <span class="math notranslate nohighlight">\(x=0\)</span>}
+\end{axis}
+\end{tikzpicture}</p>
 </div>
 </section>
 </section>
