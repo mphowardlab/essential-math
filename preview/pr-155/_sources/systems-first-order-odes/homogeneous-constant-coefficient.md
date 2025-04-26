@@ -1,8 +1,9 @@
 # Homogeneous linear first-order ODEs with constant coefficients
 
 ## Skill builder problems
-
-$ Solve the inital value problem \vv{y`} = \vv{Ay} with \vv{y}(0) = begin{bmatrix} 1 & 0 \end{bmatrix}^T for the following matrices. Also classify the type of critical point (\vv{y} = \vv{0}) using the eigenvalues. $
+\begin{equation}
+Solve the inital value problem \vv{y`} = \vv{Ay} with \vv{y}(0) = begin{bmatrix} 1 & 0 \end{bmatrix}^T for the following matrices. Also classify the type of critical point (\vv{y} = \vv{0}) using the eigenvalues. 
+\end{equation}
 
 \begin{equation}
 d) \vv{A} =
@@ -172,7 +173,9 @@ y_{1} = e^{2t} \cos 2t\\
 y_{2} = e^{2t} \sin 2t
 \end{matrix}
 
-\vv{y} = \underline{0} is an unstable spiral because the eigenvalues are complex, and the real part is positive.
 
+\end{equation}
+\begin{equation}
+\vv{y} = \underline{0} is an unstable spiral because the eigenvalues are complex, and the real part is positive.
 \end{equation}
 ```
