@@ -32,9 +32,12 @@ n_{A}(o) &= n_{A,o} = C_{f,A}V+c \to c = n_{A,o}-C_{f,A}V\\
 ````
 5. Example: Hormone level (again)
 `````{dropdown} 5. Solution
-${\begin{align}
+```{math}
+\begin{align}
 We had \quad C^{'} + Kc &= A + B\cos{\frac{\pit}{12}} \quad with c(o) = c_{o}\\
 p &= Kc, r = A+B\cos{\frac{\pit}{12}}\\
 F(t) &= \exp{(\int{Kdt})} = e^{kt}\\
-\int{F(t)r(t)dt} &= }
+\int{F(t)r(t)dt} &= \int{e^{kt}[A + B\cos{\frac{\pit}{12}}]dt}\\
+&= 
 \end{align}
+```
