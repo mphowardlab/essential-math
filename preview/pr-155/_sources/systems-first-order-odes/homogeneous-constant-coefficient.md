@@ -1,9 +1,9 @@
 # Homogeneous linear first-order ODEs with constant coefficients
 
 ## Skill builder problems
-\begin{equation}
-Solve the inital value problem \vv{y`} = \vv{Ay} with \vv{y}(0) = [1 0]^T for the following matrices. Also classify the type of critical point (\vv{y} = \vv{0}) using the eigenvalues. 
-\end{equation}
+
+Solve the inital value problem $ \vv{y`} = \vv{Ay} $ with $ \vv{y}(0) = $ [1 0]$^T$ for the following matrices. Also classify the type of critical point $(\vv{y} = \vv{0})$ using the eigenvalues. 
+
 
 \begin{equation}
 d) \vv{A} =
