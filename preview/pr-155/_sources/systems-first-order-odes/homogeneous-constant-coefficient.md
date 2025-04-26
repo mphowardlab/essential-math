@@ -2,7 +2,7 @@
 
 ## Skill builder problems
 
-Solve the inital value problem $ \vv{y`} = \vv{Ay} $ with $ \vv{y}(0) = $ [1 0]$^T$ for the following matrices. Also classify the type of critical point $(\vv{y} = \vv{0})$ using the eigenvalues. 
+Solve the inital value problem $ \vv{y'} = \vv{Ay} $ with $ \vv{y}(0) = $ [1 0]$^T$ for the following matrices. Also classify the type of critical point $(\vv{y} = \vv{0})$ using the eigenvalues. 
 
 
 \begin{equation}
@@ -13,7 +13,7 @@ d) \vv{A} =
 \end{bmatrix}
 \end{equation}
 
-```{solution}
+'''{solution}
 
 \begin{equation}
 | \vv{A} - \lambda I |
@@ -175,7 +175,7 @@ y_{2} = e^{2t} \sin 2t
 
 
 \end{equation}
-\begin{equation}
-\vv{y} = \underline{0} is an unstable spiral because the eigenvalues are complex, and the real part is positive.
-\end{equation}
-```
+
+$\vv{y} = \underline{0}  $ is an unstable spiral because the eigenvalues are complex, and the real part is positive.
+
+'''
