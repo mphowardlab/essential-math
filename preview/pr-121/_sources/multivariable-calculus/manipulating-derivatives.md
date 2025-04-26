@@ -9,53 +9,54 @@ We sometimes need to find derivatives we don't obtain easily from one of these p
 If  x(y, z)  and  y(x, z), then:
 
 \begin{equation}
-\left( \frac{\partial x}{\partial y} \right)_z = \frac{1}{\left( \frac{\partial y}{\partial x} \right)_z}
+(\frac{\partial x}{\partial y})_z = \frac{1}({frac{\partial y}{\partial x}})_z
 \end{equation}
 ```
 
 ```{example}
-In this example, we aim to demonstrate two ways of calculating the partial derivatives
-\[
-\left( \frac{\partial x}{\partial y} \right)_z \quad \text{and} \quad \left( \frac{\partial y}{\partial x} \right)_z
-\]
+In this example, we aim to demonstrate two ways of calculating the partial derivative
+\begin{equation}
+(\frac{\partial x}{\partial y})_z  
+\end{equation}
 for the function
-\[
-x = \frac{y^2}{z}.
-\]
-We will compute \(\left( \frac{\partial x}{\partial y} \right)_z\) directly, then find \(\left( \frac{\partial y}{\partial x} \right)_z\) by inverting the expression for \(y\) in terms of \(x\), and confirm that the results are consistent through inversion.
+\begin{equation}
+x = \frac{y^2}{z}
+\end{equation}
+We will compute (\frac{\partial x}{\partial y})_z directly, then find \frac{1}({frac{partial y}{partial x}})_z by inverting the expression for y in terms of x, and confirm that the results are consistent through inversion.
 
 
 Start with:
-\[
+\begin{equation}
 x = \frac{y^2}{z}
-\]
-Take the partial derivative of \(x\) with respect to \(y\) at constant \(z\):
-\[
-\left( \frac{\partial x}{\partial y} \right)_z = \frac{2y}{z}
-\]
+\end{equation}
+Take the partial derivative of x with respect to y at constant z:
+\begin{equation}
+(\frac{\partial x}{\partial y})_z = \frac{2y}{z}
+\end{equation}
 
 
-We first solve for \(y\) in terms of \(x\):
-\[
-x = \frac{y^2}{z} \Rightarrow y^2 = xz \Rightarrow y = \pm \sqrt{xz}
-\]
+Now we will solve $(\frac{\partial x}{\partial y})_z$ using the inversion rule.
+We first solve for y in terms of x:
+\begin{align}
+x = \frac{y^2}{z} \\
+y = \pm \sqrt{xz}
+\end{align}
 
-Now compute the partial derivative of \(y\) with respect to \(x\) at constant \(z\). We'll first write the derivative explicitly before simplifying:
-\[
-\left( \frac{\partial y}{\partial x} \right)_z = \frac{d}{dx} \left( \sqrt{xz} \right) = \frac{1}{2} \cdot \frac{z}{\sqrt{xz}} = \frac{z}{2\sqrt{xz}}
-\]
+Now compute the partial derivative of y with respect to x at constant z. We'll first write the derivative explicitly before simplifying:
+\begin{equation}
+(\frac{\partial y}{\partial x})_z = (\frac{1}{2})(sqrt{\frac{z}{x}})
+\end{equation}
 
-But since \(y = \sqrt{xz}\), we substitute back:
-\[
-\left( \frac{\partial y}{\partial x} \right)_z = \frac{z}{2y}
-\]
+Since $x = \frac{y^2}{z}$, we substitute back:
+\begin{equation}
+(\frac{1}{2})(sqrt{\frac{z}{\frac{y^2}{z}}}) = \frac{z}{2y}
+\end{equation}
 
-\section*{Confirm the Inversion}
 
 Finally, verify that the inverse derivative gives the original:
-\[
-\frac{1}{\left( \frac{\partial y}{\partial x} \right)_z} = \frac{1}{\left( \frac{z}{2y} \right)} = \frac{2y}{z} = \left( \frac{\partial x}{\partial y} \right)_z
-\]
+\begin{equation}
+\frac{1}{\frac{\partial y}{\partial x}_z} = \frac{1}{ \frac{z}{2y}} = \frac{2y}{z} = ( \frac{\partial x}{\partial y})_z
+\end{equation}
 
 
 ```
@@ -63,48 +64,44 @@ Finally, verify that the inverse derivative gives the original:
 ``` {topic} Chain Rule
 When working with multivariable functions, we often want to compute the derivative of one variable with respect to another, even when the relationship between them is indirect. In such cases, the chain rule allows us to break down the derivative into intermediate steps.
 
-Suppose we have a variable \( x \) that depends on another variable \( w \), and \( w \) itself depends on a variable \( y \). Then, \( x \) depends on \( y \) through \( w \), and we can write:
-\[
+Suppose we have a variable x that depends on another variable w, and w itself depends on a variable y. Then, x depends on y through w, and we can write:
+\begin{equation}
 x = x(w), \quad w = w(y)
-\]
+\end{equation}
 
-In this situation, we apply the chain rule for partial derivatives to compute how \( x \) changes with respect to \( y \), while keeping \( z \) constant:
-```{math}
-\left( \frac{\partial x}{\partial y} \right)_z = \left( \frac{\partial x}{\partial w} \right)_z \left( \frac{\partial w}{\partial y} \right)_z
-```
+In this situation, we apply the chain rule for partial derivatives to compute how x changes with respect to y, while keeping z constant:
+\begin{equation}
+( \frac{\partial x}{\partial y})_z = (( \frac{\partial x}{\partial w})_z) (( \frac{\partial w}{\partial y})_z)
+\end{equation}
 
 ```{example}
 
-```{math}
-  w = yz  
-```
- So,   
- ```{math}
- y = \frac{w}{z}
- ```
-Then, given that
-```{math}
-x = \frac{y}{z}
-```
+Define $w = yz$ 
+so, $y = \frac{w}{z}$
 
-```{math}
+Then, given that
+\begin{equation}
+x = \frac{y^2}{z}
+\end{equation}
+
+We can plug $y = \frac{w}{z}$ in for y
+\begin{equation}
 x = \frac{(w/z)^2}{z} = \frac{w^2}{z^3}
-```
+\end{equation}
 
 Now compute:
-```{math}
-\left( \frac{\partial x}{\partial w} \right)_z = \frac{2w}{z^3}
-```
+\begin{equation}
+( \frac{\partial x}{\partial w})_z = \frac{2w}{z^3}
+|end{equation}
 
 And:
-```{math}
-\left( \frac{\partial w}{\partial y} \right)_z = z
-```
+\begin{equation}
+( \frac{\partial w}{\partial y})_z = z
+|end{equation}
 
 Therefore:
-```{math}
 \begin{align}
-\left( \frac{\partial x}{\partial y} \right)_z = \frac{2w}{z^3} \cdot z = \frac{2w}{z^2} = \frac{2yz}{z^2} = \frac{2y}{z}
+(( \frac{\partial x}{\partial w})_z)(( \frac{\partial w}{\partial y})_z) = (\frac{2w}{z^3})z = \frac{2w}{z^2} = \frac{2yz}{z^2} = \frac{2y}{z}
 \end{align}
 ```
 
