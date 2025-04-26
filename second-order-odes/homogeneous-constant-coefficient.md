@@ -25,7 +25,7 @@ We can solve this characteristic polynomial for $\lambda_1$ and $\lambda_2$ and 
 
 (3) $\lambda_1 = \lambda_2 = \lambda $ is real and repeated: $ y=(c_1 + c_2 x) e^{\lambda x} $
 
-***2. Examples*** \
+## 2. Examples
 ```{example} 
 (1) $y'' + y' - 2y = 0 \quad y(0)=4 \quad y'(0)=-5 $\
     $\lambda^2 + \lambda -2 = 0 \to (\lambda+2)(\lambda+1)=0 \to \lambda_1 =-2$ and $\lambda_2 =1$ \
@@ -54,13 +54,12 @@ We can solve this characteristic polynomial for $\lambda_1$ and $\lambda_2$ and 
 \end{bmatrix}
 \end{equation}
 
-
 c_1 = 3 \ \qquad c_2 = 1 \
 
 y = 3 e^{-2x} + e^{x}\
 ```
 
-```{example} Using fixed point iteration
+```{example} 
 (2) y'' + 0.4y' + 9.04y = 0 \quad y(0)=0 \quad y'(0)=3 \
 \lambda^{2} + 0.4\lambda + 9.04 =0 \to \lambda_{1,2} = \frac{-0.4\pm\sqrt{0.4^2-4\times9.04}}{2} = -0.2\pm 3i \
 
@@ -69,7 +68,7 @@ y' = e^{-0.2x}(3c_2\cos3x) - 0.2e^{-0.2x}c_2\sin3x \quad 3=y'(0) = 3c_2 \to c_2 
 y = e^{-0.2x}\sin3x \
 ```
 
-```{example} Using fixed point iteration
+```{example}
 (3) y'' + y' + \frac{1}{4}y=0 \quad y(0)=3 \quad y'(0)= -\frac{7}{2} \
 \lambda^2 + \lambda + \frac{1}{4} = 0 \to (\lambda + \frac{1}{2})^2 = 0 \to \lambda=-\frac{1}{2} \
 y=(c_1 + c_2x)e^{-\frac{x}{2}} \quad 3=y(0)=c_1 \
