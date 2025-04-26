@@ -6,7 +6,11 @@
 y'' + p(x)y'+q(x)y = r(x)
 \end{equation}
 
-The general solution is $y=y_n + y_p$
+The general solution is:
+
+\begin{equation}
+y = y_{n} + y_{p}
+\end{equation}
 
 $y_n$: general solution of _homogenous_ ODE $y''+p(x)y'+q(x)y=0$
 
