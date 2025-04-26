@@ -1,6 +1,6 @@
 # Undetermined coefficients
 
-### Nonhomogenous linear second-order ODEs
+## Nonhomogeneous linear second-order ODEs
 
 $$y''+p(x)y'+q(x)y=r(x)$$
 
