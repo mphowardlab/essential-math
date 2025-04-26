@@ -34,13 +34,13 @@ n_{A}(o) &= n_{A,o} = C_{f,A}V+c \to c = n_{A,o}-C_{f,A}V\\
 `````{dropdown} 5. Solution
 ```{math}
 \begin{align}
-We \quad had \quad C^{'} + Kc &= A + B\cos{\frac{\pit}{12}} \quad with \quad c(o) = c_{o}\\
-p &= Kc, \quad r = A+B\cos{\frac{\pit}{12}}\\
+We \quad had \quad C^{'} + Kc &= A + B\cos{\frac{\pi t}{12}} \quad with \quad c(o) = c_{o}\\
+p &= Kc, \quad r = A+B\cos{\frac{\pi t}{12}}\\
 F(t) &= \exp{(\int{Kdt})} = e^{kt}\\
-\int{F(t)r(t)dt} &= \int{e^{kt}[A + B\cos{(\frac{\pit}{12})}]dt}\\
-&= A\int{e^{kt}dt} + B\int{e^{kt}\cos{(\frac{\pit}{12})}dt}\\
+\int{F(t)r(t)dt} &= \int{e^{kt}[A + B\cos{(\frac{\pi t}{12})}]dt}\\
+&= A\int{e^{kt}dt} + B\int{e^{kt}\cos{(\frac{\pi t}{12})}dt}\\
 \to Table of integrals, or by parts
-&= \frac{A}{k} + B\frac{e^{kt}{K^{2}+(\frac{\pi}{12})^{2}}[K\cos(\frac{\pit}{12})+\frac{\pi}{12}\sin{\frac{\pit}{12}}]}\\
-\to c(t) &= e^{-kt}(\frac{A}{k}e^{kt}+B\frac{e^{kt}{K^{2}+(\frac{\pi}{12})^{2}}}+[k\cos{(\frac{\pit}{12})}\frac{\pi}{12}\sin{(\frac{\pit}{12})}]+C^{*})\\
+&= \frac{A}{k} + B\frac{e^{kt}{K^{2}+(\frac{\pi}{12})^{2}}[K\cos(\frac{\pi t}{12})+\frac{\pi}{12}\sin{\frac{\pi t}{12}}]}\\
+\to c(t) &= e^{-kt}(\frac{A}{k}e^{kt}+B\frac{e^{kt}{K^{2}+(\frac{\pi}{12})^{2}}}+[k\cos{(\frac{\pi t}{12})}\frac{\pi}{12}\sin{(\frac{\pi t}{12})}]+C^{*})\\
 \end{align}
 ```
