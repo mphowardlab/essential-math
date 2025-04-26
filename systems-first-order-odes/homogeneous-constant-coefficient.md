@@ -1,54 +1,59 @@
 # Homogeneous linear first-order ODEs with constant coefficients
 
-```{solution}
+## Skill builder problems
+
+Solve the inital inital value problem \vv{y`} = \vv{Ay} with \vv{y}(0) = begin{bmatrix} 1 & 0 \end{bmatrix}^T for the following matrices. Also classify the type of critical point (\vv{y} = \vv{0}) using the eigenvalues.
+
 \begin{equation}
- A =
+d) \vv{A} =
 \begin{bmatrix}
 2 & -2\\
 2 & 2
 \end{bmatrix}
 \end{equation}
 
+```{solution}
+
 \begin{equation}
-| A - \lambda I |
+| \vv{A} - \lambda I |
 \begin{vmatrix}
 2- \lambda & -2\\
 2 & 2- \lambda
 \end{vmatrix}
-= (\lambda - 2)^2 + 4 = 0 \rightarrow \lambda _{1,2} = 2 \underscore{+} 2i
+= (\lambda - 2)^2 + 4 = 0 \rightarrow \lambda _{1,2} = 2 \pm 2i
 \end{equation}
 
 $\lambda _{1} = 2+2i$ :
-\begin{equation}
+\begin{align}
 
 \begin{bmatrix}
 -2 i & -2\\
 2 & -2i
 \end{bmatrix}
-\underline{x} _1 = \underline{0} \rightarrow \underline{x} _1 = 
+\vv{x} _1 = \underline{0} \rightarrow \underline{x} _1 &= 
 \begin{bmatrix}
 i\\
 1
-\end{bmatrix}
-\end{equation}
+\end{bmatrix} \\
 
-$\lambda _{1} = 2-2i$ :
-\begin{equation}
+
+$\lambda _{2} = 2-2i$ :
+
 
 \begin{bmatrix}
 2 i & -2\\
 2 & 2i
 \end{bmatrix}
-\underline{x} _{2} = 0 \rightarrow \underline{x} _{2} = 
+\vv{x} _{2} = 0 \rightarrow \underline{x} _{2} &= 
 \begin{bmatrix}
 -i\\
 1
 \end{bmatrix}
-\end{equation}
+\end{align}
 
 General Solutuion:
 \begin{equation}
-\underline{y} = c_{1} e^{(2+2i)t}
+\vv{y} = c_{1} e^{(2+2i)t}
 \begin{bmatrix}
 i\\
 1
@@ -127,7 +132,7 @@ c_{2} = - \frac{1}{2i} = \frac{i}{2}
 
 Hence
 \begin{equation}
-\underline{y} = e^{2t} \left( - \frac{i}{2} e^{2it}
+\vv{y} = e^{2t} \left( - \frac{i}{2} e^{2it}
 begin{bmatrix}
 i\\
 1
@@ -143,7 +148,7 @@ end{bmatrix}
 simplifying
 
 \begin{equation}
-\underline{y}= e{2t} \left( - \frac{1}{2} e^{2it}
+\vv{y}= e{2t} \left( - \frac{1}{2} e^{2it}
 begin{bmatrix}
 -1\\
 i
@@ -163,7 +168,8 @@ end{bmatrix}
 y_{1} = e^{2t} \cos 2t\\
 y_{2} = e^{2t} \sin 2t
 \end{matrix}
-\underline{y} = \underline{0} is an unstable spiral because the eigenvalues are complex, and the real part is positive.
+
+\vv{y} = \underline{0} is an unstable spiral because the eigenvalues are complex, and the real part is positive.
 
 \end{equation}
 ```
