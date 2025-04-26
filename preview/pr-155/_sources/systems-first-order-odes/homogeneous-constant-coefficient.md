@@ -23,8 +23,10 @@ d) \vv{A} =
 = (\lambda - 2)^2 + 4 = 0 \rightarrow \lambda _{1,2} = 2 \pm 2i
 \end{equation}
 
-$\lambda _{1} = 2+2i$ :
+
 \begin{align}
+
+$\lambda _{1} = 2+2i$ :
 
 \begin{bmatrix}
 -2 i & -2\\
