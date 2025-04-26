@@ -34,10 +34,10 @@ n_{A}(o) &= n_{A,o} = C_{f,A}V+c \to c = n_{A,o}-C_{f,A}V\\
 `````{dropdown} 5. Solution
 ```{math}
 \begin{align}
-We had \quad C^{'} + Kc &= A + B\cos{\frac{\pit}{12}} \quad with c(o) = c_{o}\\
-p &= Kc, r = A+B\cos{\frac{\pit}{12}}\\
+We \quad had \quad C^{'} + Kc &= A + B\cos{\frac{\pit}{12}} \quad with \quad c(o) = c_{o}\\
+p &= Kc, \quad r = A+B\cos{\frac{\pit}{12}}\\
 F(t) &= \exp{(\int{Kdt})} = e^{kt}\\
-\int{F(t)r(t)dt} &= \int{e^{kt}[A + B\cos{\frac{\pit}{12}}]dt}\\
-&= 
+\int{F(t)r(t)dt} &= \int{e^{kt}[A + B\cos{(\frac{\pit}{12})}]dt}\\
+&= A\int{e^{kt}dt} + B\int{e^{kt}}
 \end{align}
 ```
