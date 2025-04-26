@@ -2,7 +2,7 @@
 
 ## Skill builder problems
 
-Solve the inital inital value problem \vv{y`} = \vv{Ay} with \vv{y}(0) = begin{bmatrix} 1 & 0 \end{bmatrix}^T for the following matrices. Also classify the type of critical point (\vv{y} = \vv{0}) using the eigenvalues.
+Solve the inital value problem \vv{y`} = \vv{Ay} with \vv{y}(0) = begin{bmatrix} 1 & 0 \end{bmatrix}^T for the following matrices. Also classify the type of critical point (\vv{y} = \vv{0}) using the eigenvalues.
 
 \begin{equation}
 d) \vv{A} =
@@ -118,9 +118,11 @@ i & -i & 1\\
 \begin{bmatrix}
 1 & 1 & \frac{1}{2i}\\
 0 & 1 & - \frac{1}{2i}
-\end{matrix}
+\end{bmatrix}
 
 \end{equation}
+
+Initial Condition
 
 \begin{equation}
 c_{1} = \frac{1}{2i} = - \frac{i}{2}
@@ -133,36 +135,36 @@ c_{2} = - \frac{1}{2i} = \frac{i}{2}
 Hence
 \begin{equation}
 \vv{y} = e^{2t} \left( - \frac{i}{2} e^{2it}
-begin{bmatrix}
+\begin{bmatrix}
 i\\
 1
-end{bmatrix}
+\end{bmatrix}
 + \frac{i}{2} e{-2it}
-begin{bmatrix}
+\begin{bmatrix}
 -i\\
 1
-end{bmatrix}
+\end{bmatrix}
 \right)
 \end{equation}
 
-simplifying
+Simplifying
 
 \begin{equation}
 \vv{y}= e{2t} \left( - \frac{1}{2} e^{2it}
-begin{bmatrix}
+\begin{bmatrix}
 -1\\
 i
-end{bmatrix}
+\end{bmatrix}
 + \frac{1}{2}e{-2it}
-begin{bmatrix}
+\begin{bmatrix}
 1\\
 i
-end{bmatrix}
+\end{bmatrix}
 \right) = e^{2t}
-begin{bmatrix}
+\begin{bmatrix}
 \cos 2t\\
 \sin 2t
-end{bmatrix}
+\end{bmatrix}
 \rightarrow
 \begin{matrix}
 y_{1} = e^{2t} \cos 2t\\
