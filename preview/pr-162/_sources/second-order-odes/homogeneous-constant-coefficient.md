@@ -64,7 +64,13 @@ y = e^{-0.2x}(c_1\cos3x + c_2\sin3x) \qaud 0=y(0)=c_1 \
 y' = e^{-0.2x}(3c_2\cos3x) - 0.2e^{-0.2x}c_2\sin3x \quad 3=y'(0) = 3c_2 \to c_2 =1 \
 y = e^{-0.2x}\sin3x \
 
-(3) 
+(3) y'' + y' + \frac{1}{4}y=0 \quad y(0)=3 \quad y'(0)= -\frac{7}{2} \
+\lambda^2 + \lambda + \frac{1}{4} = 0 \to (\lambda + \frac{1}{2})^2 = 0 \to \lambda=-\frac{1}{2} \
+y=(c_1 + c_2x)e^{-\frac{x}{2}} \quad 3=y(0)=c_1 \
+y'=(c_1 + c_2x)(-\frac{1}{2}e^{-\frac{x}{2}}) + c_2 e^{-\frac{x}{2}} \quad -\frac{7}{2}=y'(0)= -\frac{c_1}{2} + c_2 \to c_2 = -2 \
+
+y = (3-2x)e^{\frac{-x}{2}}
+
 
 
 
