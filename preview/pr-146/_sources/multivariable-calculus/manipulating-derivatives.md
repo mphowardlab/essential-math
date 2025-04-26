@@ -171,3 +171,18 @@ Putting it all together:
 This total differential is now suitable for integration with respect to *T*
 and *P* using only measurable quantities!
 ```
+
+
+# Skill Builder:
+
+### Given: 
+\begin{equation}
+\d{f} = p \d{x} - q \d{y}
+\end{equation}
+
+$
+f=cos(4x+y^2)+x^2y
+$
+
+
+
