@@ -2,7 +2,9 @@
 
 ## Nonhomogeneous linear second-order ODEs
 
-$$y''+p(x)y'+q(x)y=r(x)$$
+\begin{equation}
+y'' + p(x)y'+q(x)y = r(x)
+\end{equation}
 
 The general solution is $y=y_n + y_p$
 
