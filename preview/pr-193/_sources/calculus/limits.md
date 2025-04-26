@@ -14,7 +14,7 @@ Let $f(x)$ be defined on an open interval around $x_0$, except possibly at $x_0$
 
 ---
 
-### Example:
+```{example} Some functions have limits:
 
 Given: 
 \begin{equation}
@@ -42,11 +42,9 @@ Thus,
 \lim_{x \to 1} f(x) = 2
 \end{equation}
 
----
+```
 
-### Some functions do **not** have limits:
-
-Example:
+```{example} Some functions do **not** have limits:
 \begin{equation}
 f(x) = \frac{1}{x}, \quad x \neq 0
 \end{equation}
@@ -63,3 +61,4 @@ f(x) = \frac{1}{x}, \quad x \neq 0
 \end{equation}
 
 The function blows up to $+\infty$ from the right and $-\infty$ from the left, so no single limit exists at $x=0$.
+```
