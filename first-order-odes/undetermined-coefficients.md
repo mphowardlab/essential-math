@@ -22,7 +22,7 @@ The coefficients in $y_n$ are used to "correct" the initial/boundary values of $
 If the ODE has constant coefficients so that $y''+ay'+by=r(x)$, we can "guess" a solution as follows: 
 | $r(x)$ | $y_p(x)$ |
 | :---: | :---:  |
-| $k e^{\gamma(x)}$| $k e^{\gamma(x)}$ |
+| $k e^{\gamma x}$| $k e^{\gamma x}$ |
 | $k x^n (n=0,1,\ldots)$ | $k_n x^n + k_{n-1} x^{n-1} + \cdots + k_1 x + k_0$|
 |$k e^{\alpha x} \cos{\omega x}$ | $e^{\alpha x}(k_1 \cos{\omega x} + k_2 \sin{\omega x})$ |
 |$k e^{\alpha x} \sin{\omega x}$ | $e^{\alpha x}(k_1 \cos{\omega x} + k_2 \sin{\omega x})$ |
