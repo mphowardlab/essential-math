@@ -5,7 +5,7 @@ We sometimes need to find derivatives we don't obtain easily from one of these p
 ---
 
 ``` {topic} Inversion Rule
-
+The inversion rule states that the partial derivative of each variable with respect to each other are recipricols, if the two variables are related trough a function.
 If  x(y, z)  and  y(x, z), then:
 
 \begin{equation}
