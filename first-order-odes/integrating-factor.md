@@ -15,9 +15,13 @@ Mole balance on a tank with increasing inlet/outlet flow rate.
 
 ````{dropdown} 4. Solution
 Rewrite: 
+```{math}
 \begin{align}
-
+\dot{n}_{A} + \frac{\dot{q}t}{V} n_{A} &= C_{f,A} \dot{q}t \\
+p(t) &= \frac{\dot{q}t}{V}, \quad r(t) = C_{f,A}  \dot{q}t \\
 \end{align}
+```
+````
 
 5. Example: Hormone level (again)
 `````{dropdown} 5. Solution
