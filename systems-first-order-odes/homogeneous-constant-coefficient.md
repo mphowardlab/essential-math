@@ -1,7 +1,8 @@
 # Homogeneous linear first-order ODEs with constant coefficients
-Solve \underline{y}'= **A** $\underline{y} with $\underline{y}(0)= 
+Solve $\underline{y}$'= **A** $\underline{y}$ with 
+\begin{equation} $\underline{y}$(0)= 
 
-\begin{bmatrix} 1 & 0 \end{bmatrix}^{\rm T} for: 
+\begin{bmatrix} 1 & 0 \end{bmatrix}^{\rm T} \end{equation} for: 
 
 a) **A** = \begin{bmatrix} -2 & 0 \ 0 & -2 \end{bmatrix}
 
