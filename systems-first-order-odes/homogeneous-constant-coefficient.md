@@ -128,7 +128,7 @@ i & -i & 1\\
 
 
 \begin{align}
-c_{1} = \frac{1}{2i} = - \frac{i}{2} &
+c_{1} = \frac{1}{2i} = - \frac{i}{2} \\
 
 
 c_{2} = - \frac{1}{2i} = \frac{i}{2}
