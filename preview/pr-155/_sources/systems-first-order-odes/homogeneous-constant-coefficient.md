@@ -2,7 +2,7 @@
 
 ## Skill builder problems
 
-Solve the inital value problem \vv{y`} = \vv{Ay} with \vv{y}(0) = begin{bmatrix} 1 & 0 \end{bmatrix}^T for the following matrices. Also classify the type of critical point (\vv{y} = \vv{0}) using the eigenvalues.
+$ Solve the inital value problem \vv{y`} = \vv{Ay} with \vv{y}(0) = begin{bmatrix} 1 & 0 \end{bmatrix}^T for the following matrices. Also classify the type of critical point (\vv{y} = \vv{0}) using the eigenvalues. $
 
 \begin{equation}
 d) \vv{A} =
@@ -124,13 +124,12 @@ i & -i & 1\\
 
 Initial Condition
 
-\begin{equation}
+\begin{align}
 c_{1} = \frac{1}{2i} = - \frac{i}{2}
-\end{equation}
 
-\begin{equation}
+
 c_{2} = - \frac{1}{2i} = \frac{i}{2}
-\end{equation}
+\end{align}
 
 Hence
 \begin{equation}
