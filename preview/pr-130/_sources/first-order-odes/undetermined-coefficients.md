@@ -18,7 +18,7 @@ $y_p$: particular solution of _nonhomogeous_ ODE $y''+p(x)y'+q(x)y=r(x)$
 
 The coefficients in $y_n$ are used to "correct" the initial/boundary values of $y_p$ to satisfy the IVP/BVP. But how do we find $y_p$?
 * * *
-### Method of undetermined coefficients
+## Method of undetermined coefficients
 If the ODE has constant coefficients so that $y''+ay'+by=r(x)$, we can "guess" a solution as follows: 
 | $r(x)$ | $y_p(x)$ |
 | :---: | :---:  |
