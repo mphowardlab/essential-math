@@ -1,6 +1,6 @@
 # Functions
 ### Evaluating and Manipulating Trigonometric Functions
-![fishy](./images/Matappunitcirle.jpg)
+![fishy](./images/MAtappunitcircle.jpg)
 \begin{align}
 \sin(\theta)& = \frac{y}{r}& 
 \cos(\theta)& = \frac{x}{r}& 
@@ -12,12 +12,55 @@
 \end{align}
 
 Angles can be measured in degrees of radians
+
 $$
-\theta(rad.) = \theta(deg.)(\frac{\pi}{180\circ})
+\theta(rad.) = \theta(deg.)(\frac{\pi}{180^{\circ})
 $$
 
 Special Angles
 \begin{align}
-\theta& = 30\circ \frac{\pi}{6}& \theta& = 60\circ \frac{\pi}{3}
+\theta& = 30^{\circ} \frac{\pi}{6}& \theta& = 60^{\circ} \frac{\pi}{3}
 \end{align}
 
+![fishy](./images/306090triangle.png)
+At \theta = 30^{\circ}:
+\begin{align}
+\sin(\theta)& = \frac{1}{2}& 
+\cos(\theta)& = \frac{\sqrt{3}}{2}
+\end{align}
+
+At \theta = 60^{\circ}
+\begin{align}
+\sin(\theta)& = \frac{\sqrt{3}}{2}&
+\cos(\theta)& = \frac{1}{2}& 
+\end{align}
+
+![fishy](./images/45%2045%2090%20triangle.gif)
+At \theta = 45^{\circ}
+\begin{align}
+\sin(\theta)& = \frac{1}{\sqrt{2}}&
+\cos(\theta)& = \frac{1}{\sqrt{2}}
+\end{align}
+
+What about \theta' \ge 90^{\circ}(\frac{\pi}{2})?
+Take the angle of \theta relative to the x-axis, then apply the sign based on which quadrant the angle falls in.
+
+Example: 
+![fishy](./images/Untitled-4.jpg)
+\begin{align}
+\theta& = 185^{\circ}\frac{3\pi}{4}\\
+\theta' & = \frac{\pi}{4}& \therefore 
+\sin(\theta')& = \frac{1}{\sqrt{2}}&
+\cos(\theta')& = \frac{1}{\sqrt{2}}
+\end{align}
+"s" is positive so:
+\begin{align}
+\sin(\theta)& = \frac{1}{\sqrt{2}}&
+\cos(\theta)& = -\frac{1}{\sqrt{2}}
+
+Trigonometric functions represent waves. The properties of the wave can be encoded by manipulutong the function.
+![fishy](./images/1c668276-2784-41eb-b578-39232daf8748.png)
+\begin{align}
+y& = A\sin((\frac{2\pi}{L})(x + x_{o})) + y_{o}
+\end{align}
+A = amplitude, \frac{2\pi}{L} = period, x + x_{0} = horizontal shift, and y_{o} = vertical shift
