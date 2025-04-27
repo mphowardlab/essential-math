@@ -119,6 +119,7 @@ so $b_2$ = $x_1$. We continue this procedure until convergence.
 ```
 
 ## Newton-Raphson Method
+
 The idea is to *linearize* the nonlinear system, then solve the linear problem.
 This will converge quickly for many functions.
 
@@ -138,26 +139,28 @@ We want to find the root, so we set $f(x_{n+1}) = 0$:
 0 = f(x_n) + f'(x_n)(x_{n+1} - x_n)
 \end{equation}
 
-Solving for $\displaystyle x_{n+1}$: 
+Solving for $\displaystyle x_{n+1}$:
 
 \begin{equation}
 x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}
 \end{equation}
 
-
 ```{image} ./_images/newtonraphson.svg
-:alt: The figure shows how the method iteratively converges to the root by using the tangent line at the current guess to find a better approximation.
+:alt: The figure shows how the method iteratively converges to the root by using
+the tangent line at the current guess to find a better approximation.
 :width: 500px
 :align: center
 ```
 
-
 The algorithm for the Newton-Raphson method is:
+
 1. Guess $x_0$ and set $n = 0$.
 2. Compute $f(x_n)$ and $f'(x_n)$. If $f(x_n)$ is ``close'' to zero, stop.
-3. item Update $x_{n+1}$ using $x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$ then return to step 2.
+3. Update $x_{n+1}$ using $x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$ then
+   return to step 2.
 
-Note that this method can converge much more rapidly than the fixed-point or bisection methods.
+Note that this method can converge much more rapidly than the fixed-point or
+bisection methods.
 
 It will fail when $f'(x_n) = 0$.
 
