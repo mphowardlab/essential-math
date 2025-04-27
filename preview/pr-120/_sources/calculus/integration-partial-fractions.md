@@ -42,8 +42,10 @@ y&=\int\left( \frac{4}{x-3}-\frac{1}{x+2} \right)dx \\
 ###Partial Fraction Decomposition
 ```
 \begin{align}
-Procedure: For a rational polynomial  $\frac{P(x)}{Q(x)}$ where Q is expressed using either linear $(ax+b)$ or irreducible quadratic $(ax^2 + bx + c)$ factors and the degree of P is less than Q 
+Procedure: For a rational polynomial  \frac{P(x)}{Q(x)} where Q is expressed using either linear \left(ax+b)\right or irreducible quadratic \left(ax^2 + bx + c)\right factors and the degree of P is less than Q 
+\end{align}
 
+\begin{align}
 $ax+b$ $\to$ $\frac{A}{ax+b}$
 
 $(ax+b)^k \to \frac{A_1}{ax+b} + \frac{A_2}{(ax+b)^2}+ ...+ \frac{A_k}{(ax+b)^k}$
