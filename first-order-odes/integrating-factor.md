@@ -51,5 +51,11 @@ F(t) &= exp{(\int{kdt})} = e^{kt}\\
 \end{align}
 ```
 
-\to table of integrals, or by parts
+table of integrals, or by parts
+
+```{math}
+\begin{align}
+&= \frac{A}{k}e^{kt} + B\frac{e^{kt}}{k^{2}+(\frac{\pi}{12})^{2}}
+\end{align}
+```
 `````
