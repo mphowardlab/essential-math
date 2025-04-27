@@ -74,3 +74,183 @@ e^x &= \sum_{n=0}^{\infty} \frac{x^n}{n!} = 1 + x +  \frac{x^2}{2} + O(x^3) \\
 e^{2x^2} &= 1 + 2x^2 + 2x^4 + O(x^6) \\
 xe^{2x^2} &= x + 2x^3 + O(x^5)
 \end{align}
+
+## Skill builder problems
+
+Expand the following to two terms:
+
+1. $f(x)=\cos x$ at $x=0$
+
+   ```{solution}
+   The function and its derivatives at $x=0$ are:
+
+   \begin{align}
+   f(x) &= \cos(x) & f(0) &= 1 \\
+   f'(x) &= -\sin(x) & f'(0) &= 0 \\
+   f''(x) &= -\cos(x) & f''(0) &= -1
+   \end{align}
+
+   So:
+
+   \begin{equation}
+   \cos x \approx 1-\frac{x^2}{2}
+   \end{equation}
+   ```
+
+2. $f(x)=\sin x$ at $x=0$
+
+   ```{solution}
+   The function and its derivatives at $x=0$ are:
+
+   \begin{align}
+   f(x) &= \sin(x) & f(0) &= 0\\
+   f'(x) &= \cos(x) & f'(0) &= 1 \\
+   f''(x) &= -\sin(x) & f''(0) &= 0 \\
+   f^{(3)}(x) &= -\cos(x) & f^{(3)}(0) &= -1
+   \end{align}
+
+   So:
+
+   \begin{equation}
+   \sin x \approx x-\frac{x^3}{6}
+   \end{equation}
+   ```
+
+3. $f(x)=e^x$ at $x=0$
+
+   ```{solution}
+   The function and its derivatives at $x=0$ are:
+
+   \begin{align}
+   f(x)&=e^x & f(0) &= 1\\
+   f'(x)&=e^x & f'(0) &= 1
+   \end{align}
+
+   So:
+
+   \begin{equation}
+   e^x \approx 1+x
+   \end{equation}
+   ```
+
+4. $f(x)=\ln(1+x)$ at $x=0$
+
+   ```{solution}
+   The function and its derivatives at $x=0$ are:
+
+   \begin{align}
+   f(x)&=\ln(1+x) & f(0) &= 0\\
+   f'(x)&=\frac{1}{1+x} & f'(0) &= 1\\
+   f''(x)&=-\frac{1}{(1+x)^2} & f''(0) &= -1
+   \end{align}
+
+   So:
+
+   \begin{equation}
+   \ln(1+x) \approx x-\frac{x^2}{2}
+   \end{equation}
+   ```
+
+5. $f(x)=\dfrac{1}{1+x}$ at $x=0$
+
+   ```{solution}
+   The function and its derivatives at $x=0$ are:
+
+   \begin{align}
+   f(x)&=\frac{1}{1+x} & f(0) &= 1\\
+   f'(x)&=-\frac{1}{(1+x)^2} & f'(0) &= -1
+   \end{align}
+
+   So:
+
+   \begin{equation}
+   \frac{1}{1+x} \approx 1-x
+   \end{equation}
+   ```
+
+6. $f(x)=\cos(4x)$ at $x=0$
+
+   ```{solution}
+   Recall:
+
+   \begin{equation}
+   \cos x \approx 1-\frac{x^2}{2}
+   \end{equation}
+
+   So:
+
+   \begin{equation}
+   \cos(4x) \approx 1-\frac{(4x)^2}{2} = 1-8x^2
+   \end{equation}
+   ```
+
+7. $f(x)=\cos(x-\pi)$ at $x=\pi$
+
+   ```{solution}
+   Recall:
+
+   \begin{equation}
+   \cos(x) \approx 1-\frac{x^2}{2}
+   \end{equation}
+
+   So:
+
+   \begin{equation}
+   \cos(x-\pi) \approx 1-\frac{(x-\pi)^2}{2}
+   \end{equation}
+
+   about $x_0 = \pi$.
+   ```
+
+8. $f(x)=e^x \sin x$ at $x=0$
+
+   ```{solution}
+   Recall:
+
+   \begin{align}
+   e^x &\approx 1+x \\
+   \sin(x) &\approx x-\frac{x^3}{6}
+   \end{align}
+
+   So:
+
+   \begin{equation}
+   e^x \sin x \approx (1+x+\cdots)(x-\frac{x^3}{6}+\cdots) = x+x^2
+   \end{equation}
+   ```
+
+9. $f(x)=\cos x$ at $x=\pi$
+
+   ```{solution}
+   The function and its derivatives at $x=\pi$ are:
+
+   \begin{align}
+   f(x) &= \cos(x) & f(\pi) &= -1 \\
+   f'(x) &= -\sin(x) & f'(\pi) &= 0 \\
+   f''(x) &= -\cos(x) & f''(\pi) &= 1
+   \end{align}
+
+   So:
+
+   \begin{equation}
+   \cos x \approx -1+\frac{1}{2}(x-\pi)^2
+   \end{equation}
+   at $x = \pi$.
+   ```
+
+10. $f(x)=7x^2-6x+1$ at $x=2$
+
+    ```{solution}
+    The function and its derivatives at $x=2$ are:
+
+    \begin{align}
+    f(x)&=7x^2-6x+1 & f(2) &= 17\\
+    f'(x)&=14x-6 & f'(2) &= 22
+    \end{align}
+
+    So:
+
+    \begin{equation}
+    f(x) \approx 17+22(x-2)
+    \end{equation}
+    ```
