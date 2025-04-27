@@ -43,19 +43,6 @@ First, find the eigenvalues:
 \lambda_2 &= -4
 \end{equation}
 
-
-
-
-\[
-\det(A - \lambda I) = 
-\begin{vmatrix} 5 - \lambda & -2 \\ 9 & -6 - \lambda \end{vmatrix}
-= \lambda^2 + \lambda - 12 = (\lambda - 3)(\lambda + 4)
-\]
-
-\[
-\Rightarrow \lambda_1 = 3, \quad \lambda_2 = -4
-\]
-
 **Eigenvectors:**
 
 For \( \lambda_1 = 3 \):
