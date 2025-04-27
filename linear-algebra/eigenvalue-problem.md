@@ -16,16 +16,15 @@ Since A is **upper triangular**, the eigenvalues are the diagonal entries:
 
 \begin{equation}
 \lambda_1: \begin{bmatrix} 0 & 2 \\ 0 & -8 \end{bmatrix} x_1 = 0 
-\rightarrow
+\longrightarrow
 x_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
 \end{equation}
 
-For \( \lambda_2 = -4 \):
-
-\[
-A - \lambda_2 I = \begin{bmatrix} 8 & 2 \\ 0 & 0 \end{bmatrix}
-\quad \Rightarrow \quad \vec{x}_2 = \begin{bmatrix} 1 \\ -4 \end{bmatrix}
-\]
+\begin{equation}
+\lambda_2: \begin{bmatrix} 8 & 2 \\ 0 & 0 \end{bmatrix} x_2 = 0 
+\longrightarrow
+x_2 = \begin{bmatrix} 1 \\ -4 \end{bmatrix}
+\end{equation}
 ````
 
 ### (b) 2x2 General Matrix
