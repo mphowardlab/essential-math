@@ -42,16 +42,22 @@ y&=\int\left( \frac{4}{x-3}-\frac{1}{x+2} \right)dx \\
 Partial Fraction Decomposition
 ```
 \begin{align}
-Procedure: For a rational polynomial  \frac{P(x)}{Q(x)} where Q is expressed using either linear \left(ax+b \right) or irreducible quadratic \left(ax^2 + bx + c\right) factors and the degree of P is less than Q 
+Procedure: For a rational polynomial  \frac{P\left(x\right)}{Q\left(x\right)} where Q is expressed using either linear \left(ax+b \right) or irreducible quadratic \left(ax^2 + bx + c\right) factors and the degree of P is less than Q 
 \end{align}
 
 \begin{align}
 ax+b \to \frac{A}{ax+b}
+\end{align}
 
+\begin{align}
 \left(ax+b \right)^k \to \frac{A_1}{ax+b} + \frac{A_2}{\left(ax+b \right)^2}+ ...+ \frac{A_k}{\left(ax+b \right)^k}
+\end{align}
 
+\begin{align}
 ax^2 + bx + c \to \frac{Ax+B}{ax^2+bx+c}
+\end{align}
 
+\begin{align}
 \left(ax^2 + bx+c \right)^k : repeat like for linear factor 
 \end{align}
 
@@ -84,12 +90,12 @@ A_1+A_3 = 0
 
 \begin{equation}
 -4A_1 + A_2-8A_3 + B _3 =1
-\end{equaiton}
+\end{equation}
 
 
 \begin{equation}
 3A_1 + 16A_3 - 8B_3 = -29
-\end{equaiton}
+\end{equation}
 
 
 \begin{equation}
