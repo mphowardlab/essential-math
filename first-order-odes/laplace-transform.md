@@ -87,4 +87,6 @@ y &=L^{-1}[Y]\\
   &=2e^t-1-t
 \end{align}
 ```
+''' example
 Solve the following IVPs using Laplace transforms
+\begin{equation}
