@@ -20,7 +20,6 @@ A matrix is called *nonsingular* or *invertible* if it has an inverse, but
 *singular* if it does not.
 
 ```{topic} Invertible matrix theorem
-
 **A** is invertible if and only if the determinant of **A** is nonzero.
 
 (There are many more such conditions!)
@@ -87,3 +86,312 @@ solve $\vv{A} \vv{A}^{-1} = \vv{I}$ as a generalization of **Ax** = **b**.
 - Form the 2*n* x *n* augmented matrix $[ \vv{A} \, | \, \vv{I} ]$
 
 - Perform row operations to bring to $[ \vv{I} \, | \, \vv{A}^{-1} ]$.
+
+## Skill builder problems
+
+1. Solve using matrix inversion or explain why this is not possible:
+
+   \begin{align}
+   5x_1 - 2x_2 &= 20.9 \\
+   -x_1 + 4x_2 &= -19.3
+   \end{align}
+
+   ```{solution}
+   First, write in matrix form **Ax** = **b** with:
+   \begin{equation}
+   \vv{A} = \begin{bmatrix}
+   5 & -2 \\
+   -1 & 4
+   \end{bmatrix}
+   \qquad
+   \vv{b} = \begin{bmatrix}
+   20.9 \\
+   -19.3
+   \end{bmatrix}
+   \end{equation}
+
+   Then, evaluate $|\vv{A}|$ to check if an inverse exists:
+
+   \begin{equation}
+   |\vv{A}| = (5 \cdot 4) - (-1 \cdot -2) = 18
+   \end{equation}
+
+   $|\vv{A}| \ne 0$, so an inverse can be found using the formula for a 2x2
+   matrix:
+
+   \begin{equation}
+   \vv{A}^{-1} = \frac{1}{18}
+   \begin{bmatrix}
+   5 & -2 \\
+   -1 & 4
+   \end{bmatrix}
+   \end{equation}
+
+   Last, solve for **x**:
+
+   \begin{align}
+   \vv{x} = \vv{A}^{-1}\vv{b} &= \frac{1}{18}
+   \begin{bmatrix}
+   5 & -2 \\
+   -1 & 4
+   \end{bmatrix}
+   \begin{bmatrix}
+   20.9 \\
+   -19.3
+   \end{bmatrix} \\
+   &= \frac{1}{18}
+   \begin{bmatrix}
+   4 \cdot 20.9 +  2 \cdot -19.3 \\
+   1 \cdot  20.9 + 5 \cdot -19.3
+   \end{bmatrix} \\
+   &= \begin{bmatrix}
+   2.5 \\
+   -4.2
+   \end{bmatrix}
+   \end{align}
+
+   Therefore, $x_1 = 2.5$ and $x_2 = -4.2$.
+   ```
+
+2. Solve using matrix inversion or explain why this is not possible:
+
+   \begin{align}
+   x_1 + 4x_2 = 8 \\
+   2x_1 + 8x_2 = 17
+   \end{align}
+
+   ```{solution}
+   First, write in matrix form **Ax** = **b** with:
+   \begin{equation}
+   \vv{A} = \begin{bmatrix}
+   1 & 4 \\
+   2 & 8
+   \end{bmatrix}
+   \qquad
+   \vv{b} = \begin{bmatrix}
+   8 \\
+   17
+   \end{bmatrix}
+   \end{equation}
+
+   Then, evalaute $|\vv{A}|$ to check if an inverse exists:
+
+   \begin{equation}
+   |\vv{A}| = (1 \cdot 8) - (2 \cdot 4) = 0
+   \end{equation}
+
+   **A** is singular because $|\vv{A}| = 0$, so these equations cannot be solved
+   using an inverse.
+   ```
+
+3. Solve using matrix inversion or explain why this is not possible:
+
+   \begin{align}
+   x_2 + x_3 = -2 \\
+   4x_2 + 6x_3 = -12 \\
+   x_1 + x_2 + x_3 = 2
+   \end{align}
+
+   ```{solution}
+   First, write in matrix form **Ax** = **b** with:
+   \begin{equation}
+   \vv{A} = \begin{bmatrix}
+   0 & 1 & 1 \\
+   0 & 4 & 6 \\
+   1 & 1 & 1
+   \end{bmatrix}
+   \qquad
+   \vv{b} = \begin{bmatrix}
+   -2 \\
+   -12 \\
+   2
+   \end{bmatrix}
+   \end{equation}
+
+   Then, evaluate $|\vv{A}|$ to check if an inverse exists:
+
+   \begin{align}
+   |\vv{A}| =
+   0 \cdot \begin{vmatrix}
+   4 & 6 \\
+   1 & 1
+   \end{vmatrix}
+   -1 \cdot
+   \begin{vmatrix}
+   0 & 6 \\
+   1 & 1
+   \end{vmatrix}
+   + 1 \cdot
+   \begin{vmatrix}
+   0 & 4 \\
+   1 & 1
+   \end{vmatrix}
+   \end{align}
+
+   \begin{equation}
+   |\vv{A}| = -1 \cdot (0-6) + 1 \cdot (0-4) = 2
+   \end{equation}
+
+   Since $|\vv{A}| \ne 0$, **A** is invertible. Use Gauss-Jordan elimination
+   to find the inverse. Start with the augmented matrix $[\vv{A} | \vv{I}]$,
+   then rearrange the rows
+
+   \begin{align}
+   \begin{bmatrix}
+   0 & 1 & 1 & 1 & 0 & 0 \\
+   0 & 4 & 6 & 0 & 1 & 0 \\
+   1 & 1 & 1 & 0 & 0 & 1
+   \end{bmatrix}
+   &\to \begin{bmatrix}
+   1 & 1 & 1 & 0 & 0 & 1 \\
+   0 & 1 & 1 & 1 & 0 & 0 \\
+   0 & 4 & 6 & 0 & 1 & 0
+   \end{bmatrix}
+   \begin{matrix}
+   \vphantom{R_1} \\ \vphantom{R_1} \\ -4 R_1
+   \end{matrix} \\
+   &\to \begin{bmatrix}
+   1 & 1 & 1 & 0 & 0 & 1 \\
+   0 & 1 & 1 & 1 & 0 & 0 \\
+   0 & 0 & 2 & -4 & 1 & 0
+   \end{bmatrix}
+   \begin{matrix}
+   \vphantom{R_1} \\ \vphantom{R_1} \\ \div 2
+   \end{matrix} \\
+   &\to \begin{bmatrix}
+   1 & 1 & 1 & 0 & 0 & 1 \\
+   0 & 1 & 1 & 1 & 0 & 0 \\
+   0 & 0 & 1 & -2 & 0.5 & 0
+   \end{bmatrix}
+   \begin{matrix}
+   -R_3 \\ -R_3 \\ \vphantom{R_1}
+   \end{matrix} \\
+   &\to \begin{bmatrix}
+   1 & 1 & 0 & 2 & -0.5 & 1 \\
+   0 & 1 & 0 & 3 & -0.5 & 0 \\
+   0 & 0 & 1 & -2 & 0.5 & 0
+   \end{bmatrix}
+   \begin{matrix}
+   -R_2 \\ \vphantom{R_1} \\ \vphantom{R_1}
+   \end{matrix} \\
+   &\to \begin{bmatrix}
+   1 & 0 & 0 & -1 & 0 & 1 \\
+   0 & 1 & 0 & 3 & -0.5 & 0 \\
+   0 & 0 & 1 & -2 & 0.5 & 0
+   \end{bmatrix}
+   \end{align}
+
+   Hence,
+
+   \begin{align}
+   \vv{A}^{-1} = \begin{bmatrix}
+   -1 & 0 & 1 \\
+   3 & -0.5 & 0 \\
+   -2 & 0.5 & 0
+   \end{bmatrix}
+   \end{align}
+
+   and
+
+   \begin{align}
+   \vv{x} = \vv{A}^{-1} \vv{b} &=
+   \begin{bmatrix}
+   -1 & 0 & 1 \\
+   3 & -0.5 & 0 \\
+   -2 & 0.5 & 0
+   \end{bmatrix}
+   \begin{bmatrix}
+   -2 \\
+   -12 \\
+   2
+   \end{bmatrix} \\
+   & = \begin{bmatrix}
+   -1 \cdot -2 + 1 \cdot 2 \\
+   3 \cdot -2 + -0.5 \cdot -12 \\
+   -2 \cdot -2 + 0.5 \cdot -12
+   \end{bmatrix} \\
+   &= \begin{bmatrix}
+   4 \\
+   0 \\
+   -2
+   \end{bmatrix}
+   \end{align}
+
+   So, $x_1 = 4$, $x_2 = 0$, and $x_3 = -2$.
+   ```
+
+4. Solve using matrix inversion or explain why this is not possible:
+
+   \begin{align}
+   4x_2 + 4x_3 = 24 \\
+   3x_1 - 11x_2 - 2x_3 = -6 \\
+   6x_1 - 17x_2 + x_3 = 18
+   \end{align}
+
+   ```{solution}
+   First, write in matrix form **Ax** = **b** with:
+   \begin{equation}
+   \vv{A} = \begin{bmatrix}
+   0 & 4 & 4 \\
+   3 & -11 & -2 \\
+   6 & -17 & 1
+   \end{bmatrix}
+   \qquad
+   \vv{b} = \begin{bmatrix}
+   24 \\
+   -6 \\
+   18
+   \end{bmatrix}
+   \end{equation}
+
+   Then, evaluate $|\vv{A}|$ to check if an inverse exists:
+
+   \begin{align}
+   |\vv{A}| =
+   0 \cdot \begin{vmatrix}
+   -11 & -2 \\
+   -17 & 1
+   \end{vmatrix}
+   -4 \cdot
+   \begin{vmatrix}
+   3 & -2 \\
+   6 & 1
+   \end{vmatrix}
+   + 4 \cdot
+   \begin{vmatrix}
+   3 & -11 \\
+   6 & -17
+   \end{vmatrix}
+   \end{align}
+
+   \begin{align}
+   |\vv{A}| &= -4 (3 \cdot 1 - 6 \cdot -2) + 4 (3 \cdot -17 - 6 \cdot -11) \\
+   &= -4 \cdot 15 + 4 \cdot 15 \\
+   &= 0
+   \end{align}
+
+   Since $|\vv{A}| = 0$, **A** is not invertible.
+
+5. Solve using matrix inversion or explain why this is not possible:
+
+   \begin{align}
+   2x_1 - x_2 + 3x_3 = -1 \\
+   -4x_1 + 2x_2 - 6x_3 = 2
+   \end{align}
+
+   ```{solution}
+   First, write in matrix form **Ax** = **b** with:
+   \begin{equation}
+   \vv{A} = \begin{bmatrix}
+   2 & -1 & 3 \\
+   -4 & 2 & -6
+   \end{bmatrix}
+   \qquad
+   \vv{b} = \begin{bmatrix}
+   -1 \\
+   2
+   \end{bmatrix}
+   \end{equation}
+
+   Since **A** is not square, **A** is not invertible.
+   ```
