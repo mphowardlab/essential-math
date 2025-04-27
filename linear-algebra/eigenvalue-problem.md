@@ -17,13 +17,13 @@ Since A is **upper triangular**, the eigenvalues are the diagonal entries:
 Then, use these eigenvalues to find the eigenvectors:
 
 \begin{equation}
-\lambda_1: \begin{bmatrix} 0 & 2 \\ 0 & -8 \end{bmatrix} x_1 = 0 
+\lambda_1 = 4: \begin{bmatrix} 0 & 2 \\ 0 & -8 \end{bmatrix} x_1 = 0 
 \longrightarrow
 x_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
 \end{equation}
 
 \begin{equation}
-\lambda_2: \begin{bmatrix} 8 & 2 \\ 0 & 0 \end{bmatrix} x_2 = 0 
+\lambda_2 = -4: \begin{bmatrix} 8 & 2 \\ 0 & 0 \end{bmatrix} x_2 = 0 
 \longrightarrow
 x_2 = \begin{bmatrix} 1 \\ -4 \end{bmatrix}
 \end{equation}
