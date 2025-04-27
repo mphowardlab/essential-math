@@ -1,11 +1,11 @@
 # Functions
 ### Evaluating and Manipulating Trigonometric Functions
-<img src="./images/MAtappunitcircle.png" alt="fishy" width="300">
+![fishy](./images/MAtappunitcircle.png)
+
 \begin{align}
 \sin(\theta)& = \frac{y}{r}& 
 \cos(\theta)& = \frac{x}{r}& 
 \tan(\theta)& = \frac{y}{x}\\
-
 \csc(\theta)& = \frac{r}{y}&
 \sec(\theta)& = \frac{r}{x}&
 \cot(\theta)& = \frac{x}{y}\\
@@ -22,6 +22,7 @@ Special Angles
 \end{align}
 
 ![fishy](./images/306090triangle.png)
+
 At $ \theta = 30^{\circ} $:
 \begin{align}
 \sin(\theta)& = \frac{1}{2}& 
@@ -46,7 +47,7 @@ What about $ \theta' \ge 90^{\circ}(\frac{\pi}{2}) $?
 Take the angle of $\theta$ relative to the x-axis, then apply the sign based on which quadrant the angle falls in.
 
 Example: $\theta = 185^{\circ}$
-<img src="./images/Untitled-4.jpg" alt="fishy" width="300">
+![fishy](./images/Untitled-4.jpg)
 
 The graph shows $\theta = frac{3\pi}{4}$ and $\theta' & = \frac{\pi}{4}$ 
 \therefore
@@ -62,7 +63,7 @@ The graph shows $\theta = frac{3\pi}{4}$ and $\theta' & = \frac{\pi}{4}$
 \end{align}
 
 Trigonometric functions represent waves. The properties of the wave can be encoded by manipulating the function.
-<img src="./images/1c668276-2784-41eb-b578-39232daf8748.png" alt="fishy" width="300">
+![fishy](./images/1c668276-2784-41eb-b578-39232daf8748.png)
 
 \begin{align}
 y& = A\sin((\frac{2\pi}{L})(x + x_{o})) + y_{o}
