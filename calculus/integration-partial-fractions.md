@@ -25,13 +25,19 @@ This cannot be done with u-substitution... how to take it?
 &= (A_1 + A_2)x + (2A_1 - 3A_2) \\
 \end{align}
 
-$ A_1  + A_2 = 3$
+\begin{align}
+ A_1  + A_2 = 3
+\end{align}
 
-$2A_1 - 3A_2 = 11$
+\begin{align}
+2A_1 - 3A_2 = 11
+\end{align}
 
 \begin{bmatrix} 1 & 1 & 3\\ 2 & -3 & 11 \end{bmatrix} \to \begin{bmatrix} 1 & 1 & 3\\ 0 & -5 & 5 \end{bmatrix} \to \begin{bmatrix} 1 & 1 & 3\\ 0 & 1 & -1 \end{bmatrix} \to \begin{bmatrix} 1 & 0 & 4\\ 0 & 1 & -1 \end{bmatrix}
 
-$A_1=4$  $A_2=-1$
+\begin{align}
+A_1=4  A_2=-1
+\end{align}
 
 \begin{align}  
 y&=\int\left( \frac{4}{x-3}-\frac{1}{x+2} \right)dx \\ 
@@ -40,9 +46,11 @@ y&=\int\left( \frac{4}{x-3}-\frac{1}{x+2} \right)dx \\
 
 ```{topic} 
 Partial Fraction Decomposition
-
-Procedure: For a rational polynomial  \frac{P\left(x\right)}{Q\left(x\right)} where Q is expressed using either linear \left(ax+b \right) or irreducible quadratic \left(ax^2 + bx + c\right) factors and the degree of P is less than Q 
 ```
+\begin{align}
+Procedure: For a rational polynomial  \frac{P\left(x\right)}{Q\left(x\right)} where Q is expressed using either linear \left(ax+b \right) or irreducible quadratic \left(ax^2 + bx + c\right) factors and the degree of P is less than Q 
+\end{align}
+
 
 \begin{align}
 ax+b \to \frac{A}{ax+b}
@@ -57,7 +65,8 @@ ax^2 + bx + c \to \frac{Ax+B}{ax^2+bx+c}
 \end{align}
 
 \begin{align}
-\left(ax^2 + bx+c \right)^k \end{align} : repeat like for linear factor 
+\left(ax^2 + bx+c \right)^k \end{align} : repeat like for linear factor
+\end{align} 
 
 
 \begin{equation}
