@@ -47,7 +47,7 @@ Hence,
 \begin{bmatrix} 1 \\ 0 \end{bmatrix} 
 \end{equation}
 \begin{align} 
-or \qquad y_{1}(t) = $e^{-2t}$ \qquad y_{2}(t) = 0
+or \qquad y_{1}(t)=e^{-2t} \qquad y_{2}(t) = 0
 \end{align}
 
 $\underline{y}$ = 0 is a *stable proper node* because $\lambda_{1}$ = $\lambda_{2}$ $\lt$ 0 and **A** is a multiple of **I**. 
@@ -57,14 +57,16 @@ $\underline{y}$ = 0 is a *stable proper node* because $\lambda_{1}$ = $\lambda_{
 \end{equation} 
 
 \begin{equation}
-\vv{|**A**-$\lambda$ **I**|}= 
+\vv{|A-$\lambda$ I|}= 
 \begin{bmatrix} 
 -$\lambda$ & 3  \\ 12 & -$\lambda$ \end{bmatrix} = $\lambda$^{2}-36=0. 
+
 \begin{align} 
 \lambda_{1} = 6 \qquad \lambda_{2} = -6
 \end{align} 
 
 General Solution: 
+
 \begin{equation}
 \vv{\underline{y}} = C_{1} e^{-6t} \begin{bmatrix} 1 \\ 2 \end{bmatrix} + C_{2} e^{-6t} \begin{bmatrix} 1 \\ -2 \end{bmatrix}
 \end{equation}
