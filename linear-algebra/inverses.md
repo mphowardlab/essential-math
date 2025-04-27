@@ -347,7 +347,7 @@ solve $\vv{A} \vv{A}^{-1} = \vv{I}$ as a generalization of **Ax** = **b**.
    Then, evaluate $|\vv{A}|$ to check if an inverse exists:
 
    \begin{align}
-   |\vv{A}| = 
+   |\vv{A}| =
    0 \cdot \begin{vmatrix}
    -11 & -2 \\
    -17 & 1
@@ -357,26 +357,20 @@ solve $\vv{A} \vv{A}^{-1} = \vv{I}$ as a generalization of **Ax** = **b**.
    3 & -2 \\
    6 & 1
    \end{vmatrix}
-   + 4 \cdot 
+   + 4 \cdot
    \begin{vmatrix}
    3 & -11 \\
    6 & -17
    \end{vmatrix}
    \end{align}
 
-   \begin{equation}
-   |\vv{A}| = -4 (3 \cdot 1 - 6 \cdot -2) + 4 (3 \cdot -17 - 6 \cdot -11)
-   \end{equation}
+   \begin{align}
+   |\vv{A}| &= -4 (3 \cdot 1 - 6 \cdot -2) + 4 (3 \cdot -17 - 6 \cdot -11) \\
+   &= -4 \cdot 15 + 4 \cdot 15 \\
+   &= 0
+   \end{align}
 
-   \begin{equation}
-   = -4 \cdot 15 + 4 \cdot 15
-   \end{equation}
-
-   \begin{equation}
-   = 0
-   \end{equation}
-
-   Since det A = 0, A is not invertible.
+   Since $|\vv{A}| = 0$, **A** is not invertible.
 
 5. Solve using matrix inversion or explain why this is not possible:
 
