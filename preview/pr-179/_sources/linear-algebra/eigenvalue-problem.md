@@ -29,15 +29,17 @@ x_2 = \begin{bmatrix} 1 \\ -4 \end{bmatrix}
 \end{equation}
 ````
 
- 2x2 General Matrix
+````{example} (B) 2x2 General Matrix
 
-Let
+Find the eigenvalues and eigenvectors of the following matrix:
+\begin{equation}
+\vv{A} = \begin{bmatrix} 5 & -2 \\ 9 & -6 \end{bmatrix}
+\end{equation}
 
-\[
-A = \begin{bmatrix} 5 & -2 \\ 9 & -6 \end{bmatrix}
-\]
+First, find the eigenvalues:
+\begin{equation}
+|A-\lambda I| = \begin{bmatrix} 5 - \lambda & -2 \\ 9 & -6 - \lambda \end{bmatrix} = (\lambda - 5)(\lambda + 6) + 18 = \lambda^2 + \lambda - 12 = (\lambda + 4)(\lambda - 3) = 0
 
-Compute the characteristic polynomial:
 
 \[
 \det(A - \lambda I) = 
@@ -64,8 +66,7 @@ For \( \lambda_2 = -4 \):
 A + 4I = \begin{bmatrix} 9 & -2 \\ 9 & -2 \end{bmatrix}
 \quad \Rightarrow \quad \vec{x}_2 = \begin{bmatrix} 2 \\ 9 \end{bmatrix}
 \]
-
----
+````
 
 ### (c) 3x3 Symmetric Matrix
 
