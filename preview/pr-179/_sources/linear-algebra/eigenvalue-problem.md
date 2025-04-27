@@ -66,27 +66,17 @@ x_2 = \begin{bmatrix} 2 \\ 9 \end{bmatrix}
 \end{equation}
 ````
 
-### (c) 3x3 Symmetric Matrix
+````{example} (C) 3x3 Matrix
 
-Let
+Find the eigenvalues and eigenvectors of the following matrix:
 
-\[
-A = \begin{bmatrix}
-6 & 2 & -2 \\
-2 & 5 & 0 \\
--2 & 0 & 7
-\end{bmatrix}
-\]
+\begin{equation}
+\vv{A} = \begin{bmatrix} 6 & 2 & -2 \\ 2 & 5 & 0 \\ -2 & 0 & 7 \end{bmatrix}
+\end{equation}
 
-The characteristic polynomial is:
-
-\[
-\det(A - \lambda I) = -\lambda^3 + 18\lambda^2 - 99\lambda + 162
-\]
-
-\[
-\Rightarrow \lambda_1 = 9, \quad \lambda_2 = 6, \quad \lambda_3 = 3
-\]
+\begin{equation}
+|A-\lambda I| = \begin{bmatrix} 6 - \lambda & 2 & -2 \\ 2 & 5 - \lambda & 0 \\ -2 & 0 & 7 - \lambda \end{bmatrix} = -2 \begin{bmatrix} 2 & -2 \\ 0 & 7 - \lambda \end{bmatrix} + (5 - \lambda) \begin{bmatrix} 6 - \lambda & -2 \\ -2 & 7 - \lambda \end{bmatrix}
+\end{equation}
 
 **Eigenvectors:**
 
@@ -110,3 +100,4 @@ For \( \lambda_3 = 3 \):
 A - 3I = \begin{bmatrix} 3 & 2 & -2 \\ 2 & 2 & 0 \\ -2 & 0 & 4 \end{bmatrix}
 \quad \Rightarrow \quad \vec{x}_3 = \begin{bmatrix} 2 \\ -2 \\ 1 \end{bmatrix}
 \]
+````
