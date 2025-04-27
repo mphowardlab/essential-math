@@ -4,7 +4,7 @@
    An nxn matrix has n eigenvalues, but they may not be distinct!
 
 $$
-\underline{\underline{A}} = 
+\underline{\underline{A}}= 
 \begin{bmatrix}
 -2 & 2 & -3 \\
 2 & 1 & -6 \\
@@ -14,37 +14,37 @@ $$
 
 $$
 | \underline{\underline{A}} - \lambda  \underline{\underline{I}}| =
-\left|\begin{matrix}
+\begin{vmatrix}
 -2-\lambda & 2 & -3 \\
 2 & 1-\lambda & -6 \\
 -1 & -2 & -\lambda
-\end{matrix} \right|
+\end{vmatrix}
 $$ 
 
 =
  
 $$
 -1
-\left|\begin{matrix}
+\begin{vmatrix}
 2 & -3 \\
 1-\lambda & -6
-\end{matrix} \right|
+\end{vmatrix}
 $$ 
 
 $$
 -(-2)
-\left|\begin{matrix}
+\begin{vmatrix}
 -2-\lambda & -3 \\
 2 & -6
-\end{matrix} \right|
+\end{vmatrix}
 $$
 
 $$
 -\lambda
-\left|\begin{matrix}
+\begin{vmatrix}
 -2-\lambda & 2 \\
 2 & 1-\lambda 
-\end{matrix} \right|
+\end{vmatrix}
 $$
 
 
@@ -149,10 +149,10 @@ $$
 
 $$
 | \underline{\underline{A}} - \lambda  \underline{\underline{I}}| =
-\left|\begin{matrix}
+\begin{vmatrix}
 -\lambda & 1 \\
 -1 & \lambda
-\end{matrix} \right| =
+\end{vmatrix} =
 \lambda^2 + 1 = 0 \to \lambda_1 =i , \lambda_2 = -i
 $$
 
