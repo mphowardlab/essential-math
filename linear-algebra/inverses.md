@@ -381,7 +381,7 @@ solve $\vv{A} \vv{A}^{-1} = \vv{I}$ as a generalization of **Ax** = **b**.
 5. Solve using matrix inversion or explain why this is not possible:
 
    \begin{align}
-   2x_1 - x_2 - 3x_3 = -1 \\
+   2x_1 - x_2 + 3x_3 = -1 \\
    -4x_1 + 2x_2 - 6x_3 = 2
    \end{align}
 
