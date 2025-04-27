@@ -87,6 +87,38 @@ y &=L^{-1}[Y]\\
   &=2e^t-1-t
 \end{align}
 ```
-''' example
-Solve the following IVPs using Laplace transforms
+
+```{Skill Builder} Laplace transform
+Solve the initial value problem using Laplace transforms
 \begin{equation}
+y' + 4y = e^4x \quad y(0) = 0
+\end{eqation}
+
+---
+
+\begin{align}
+L[y'+4y] &= L[e^{4x}] \\
+sY - y(0) + 4Y &= \frac{1}{s-4} \\
+(s+4) Y &= \frac{1}{s-4} \\
+\end{align}
+
+Use partial fractions:
+\begin{align}
+Y &= \frac{1}{(s-4)(s+4)} &= \frac{A_1}{s-4} + \frac{A_2}{s+4} \\
+\end{align}
+
+Cover up to find $A_1$ and $A_2$:
+
+\begin{align}
+A_1 &= \frac{-1}{8} \\
+A_2 &= \frac{1}{8} \\
+\end{align}
+
+Solve using Laplace transforms:
+\begin{align}
+Y = \frac{-1}{8} \frac{1}{s+4} + \frac{1}{8} \frac{1}{s-4} \\
+y = L^{-1}[1] &= \frac{-1}{8}L^{-1}\left[\frac{1}{s+4}\right] + \frac{1}{8}L^{-1}L^{-1}\left{\frac{1}{s-4}\right] \\
+&= \frac{-1}{8}e^(-4x) + \frac{1}{8}e^{4x} \\
+y &= \frac{1}{8}(e^{4x} - e^{-4x}) \\
+\end{align}
+```
