@@ -29,7 +29,7 @@ n_{A}(o) &= n_A,o = C_{f,A}V+C \to{C = n_{A,o} - C_{f,A}V}
 ```
 
 ```{math}
-\to{\boxed{n_{A}(t) &= C_{f,A}V + (n_{A,o} - C_{f,A}V)exp{(-\frac{1}{2}\frac{\dot{q}}{v}t^{2})}}}\\
+\to{\boxed{n_{A}(t) = C_{f,A}V + (n_{A,o} - C_{f,A}V)exp{(-\frac{1}{2}\frac{\dot{q}}{v}t^{2})}}}\\
 ````
 
 5. Example: Hormone level (again)
