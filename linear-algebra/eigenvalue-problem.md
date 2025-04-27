@@ -74,18 +74,21 @@ Find the eigenvalues and eigenvectors of the following matrix:
 \vv{A} = \begin{bmatrix} 6 & 2 & -2 \\ 2 & 5 & 0 \\ -2 & 0 & 7 \end{bmatrix}
 \end{equation}
 
+First, find the eigenvalues:
+
 \begin{equation}
 |A-\lambda I| = \begin{bmatrix} 6 - \lambda & 2 & -2 \\ 2 & 5 - \lambda & 0 \\ -2 & 0 & 7 - \lambda \end{bmatrix} = -2 \begin{bmatrix} 2 & -2 \\ 0 & 7 - \lambda \end{bmatrix} + (5 - \lambda) \begin{bmatrix} 6 - \lambda & -2 \\ -2 & 7 - \lambda \end{bmatrix}
 \end{equation}
 
-**Eigenvectors:**
+\begin{equation}
+-2 * 2 * (7 - \lambda) + (5 - \lambda)[(\lambda - 6)(\lambda - 7) - 4] = -\lambda^3 + 18\lambda^2 - 99\lambda + 162 = 0
+\end{equation}
 
-For \( \lambda_1 = 9 \):
-
-\[
-A - 9I = \begin{bmatrix} -3 & 2 & -2 \\ 2 & -4 & 0 \\ -2 & 0 & -2 \end{bmatrix}
-\quad \Rightarrow \quad \vec{x}_1 = \begin{bmatrix} -2 \\ -1 \\ 2 \end{bmatrix}
-\]
+\begin{align}
+\lambda_1 &= 9 \\
+\lambda_2 &= 6 \\
+\lambda_3 &= 3
+\end{align}
 
 For \( \lambda_2 = 6 \):
 
