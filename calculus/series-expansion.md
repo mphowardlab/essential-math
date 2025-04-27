@@ -172,7 +172,7 @@ Expand the following to two terms:
 
    ```{solution}
    Recall:
-   
+
    \begin{equation}
    f(x)=\cos(x) \approx 1-\frac{x^2}{2}
    \end{equation}
@@ -204,9 +204,9 @@ Expand the following to two terms:
 
    ```{solution}
    Recall:
-   
+
    $f(x)=e^x \approx 1+x$
-   
+
    $f(x)=\sin(x) \approx x-\frac{x^3}{6}$
 
    So:
