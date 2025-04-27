@@ -49,8 +49,10 @@ Take the angle of $\theta$ relative to the x-axis, then apply the sign based on 
 Example: $\theta = 185^{\circ}$
 ![fishy](./images/Untitled-4.jpg)
 
-The graph shows $\theta = frac{3\pi}{4}$ and $\theta' & = \frac{\pi}{4}$ 
-\therefore
+The graph shows $\theta = frac{3\pi}{4}$ 
+and 
+$\theta' & = \frac{\pi}{4}$ 
+$\therefore$
 \begin{align}
 \sin(\theta')& = \frac{1}{\sqrt{2}}&
 \cos(\theta')& = \frac{1}{\sqrt{2}}
@@ -66,6 +68,6 @@ Trigonometric functions represent waves. The properties of the wave can be encod
 ![fishy](./images/1c668276-2784-41eb-b578-39232daf8748.png)
 
 \begin{align}
-y& = A\sin((\frac{2\pi}{L})(x + x_{o})) + y_{o}
+y& = A\sin[(\frac{2\pi}{L})(x + x_{o})] + y_{o}
 \end{align}
 Where: A = amplitude, $\frac{2\pi}{L}$ = period, $x + x_{0}$ = horizontal shift, and $y_{o}$ = vertical shift
