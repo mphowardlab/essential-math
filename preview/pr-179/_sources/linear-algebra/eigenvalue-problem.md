@@ -1,6 +1,6 @@
 # Eigenvalue Problems
 
-````{example} Upper Triangular Matrix
+````{example} (A) Upper Triangular Matrix
 
 Find the eigenvalues and eigenvectors of the following matrix:
 \begin{equation}
@@ -29,7 +29,7 @@ x_2 = \begin{bmatrix} 1 \\ -4 \end{bmatrix}
 \end{equation}
 ````
 
-### (b) 2x2 General Matrix
+ 2x2 General Matrix
 
 Let
 
