@@ -103,7 +103,7 @@ $\begin{bmatrix} 1 & 0 & 1 & 0\\ -4 & 1 & -8 & 1\\ 3 & 0 & 16 & -8\\ -12 & 3 & 0
  \end{equation}
 
   \begin{equation}                          
-y= \int (\frac{1}{+x^2}) dx$ = \arctanx
+y= \int (\frac{1}{+x^2}) dx = \arctanx
 \end{equation}
 
 \begin{equation}
