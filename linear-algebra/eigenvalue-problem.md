@@ -1,10 +1,6 @@
 # Eigenvalue Problems
-Skill Builders
-Find the eigenvalues and eigenvectors of:
 
----
-
-### (a) Upper Triangular Matrix
+''''{example} Upper Triangular Matrix
 
 Let
 
@@ -33,8 +29,7 @@ For \( \lambda_2 = -4 \):
 A - \lambda_2 I = \begin{bmatrix} 8 & 2 \\ 0 & 0 \end{bmatrix}
 \quad \Rightarrow \quad \vec{x}_2 = \begin{bmatrix} 1 \\ -4 \end{bmatrix}
 \]
-
----
+''''
 
 ### (b) 2x2 General Matrix
 
