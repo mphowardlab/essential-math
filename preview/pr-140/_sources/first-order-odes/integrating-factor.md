@@ -47,6 +47,9 @@ p &= Kc \quad r = A + B\cos{(\frac{pi t}{12})}\\
 \begin{align}
 F(t) &= exp{(\int{kdt})} = e^{kt}\\
 \int{F(t)r(t)dt} &= \int{e^{kt}[A+B\cos{\frac{pi t}{12}}]dt}\\
+&= A\int{e^{kt}dt} + B\int{e^{kt}\cos{(\frac{pi t}{12})}dt}
 \end{align}
 ```
+
+\to{table of integrals, or by parts}
 `````
