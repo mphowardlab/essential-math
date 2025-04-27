@@ -130,7 +130,4 @@ x_3 &= 1
 \longrightarrow
 x_3 = \begin{bmatrix} 2 \\ -2 \\ 1 \end{bmatrix}
 \end{equation}
-
-
-
 ````
