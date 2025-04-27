@@ -40,10 +40,9 @@ y&=\int\left( \frac{4}{x-3}-\frac{1}{x+2} \right)dx \\
 
 ```{topic} 
 Partial Fraction Decomposition
-```
-\begin{align}
+
 Procedure: For a rational polynomial  \frac{P\left(x\right)}{Q\left(x\right)} where Q is expressed using either linear \left(ax+b \right) or irreducible quadratic \left(ax^2 + bx + c\right) factors and the degree of P is less than Q 
-\end{align}
+```
 
 \begin{align}
 ax+b \to \frac{A}{ax+b}
@@ -58,8 +57,8 @@ ax^2 + bx + c \to \frac{Ax+B}{ax^2+bx+c}
 \end{align}
 
 \begin{align}
-\left(ax^2 + bx+c \right)^k : repeat like for linear factor 
-\end{align}
+\left(ax^2 + bx+c \right)^k \end{align} : repeat like for linear factor 
+
 
 \begin{equation}
 y'= \frac{x^2-29x+5}{\left(x-4 \right)^2 \left(x^2+3 \right)}
@@ -110,8 +109,12 @@ $\begin{bmatrix} 1 & 0 & 1 & 0\\ -4 & 1 & -8 & 1\\ 3 & 0 & 16 & -8\\ -12 & 3 & 0
  \end{equation}
 
   \begin{equation}                          
-y= \int \left(\frac{1}{1+x^2}\right)dx=\arctanx
+y= \int \left(\frac{1}{1+x^2}\right)dx 
 \end{equation}
+\begin{equation}
+=\arctanx
+\end{equation}
+
 
 \begin{equation}
 = \ln|x-4|+\frac{5}{x-4} -\frac{1}{2}ln (x^2 + 3)+\frac{2}{\sqrt{3}} \arctan(\frac{x}{\sqrt{3}}) + C
