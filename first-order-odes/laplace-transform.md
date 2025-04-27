@@ -118,7 +118,7 @@ A_2 &= \frac{1}{8} \\
 Solve using Laplace transforms:
 \begin{align}
 Y = \frac{-1}{8} \frac{1}{s+4} + \frac{1}{8} \frac{1}{s-4} \\
-y = L^{-1}[y] &= \frac{-1}{8}L^{-1}\left[\frac{1}{s+4}\right] + \frac{1}{8}L^{-1}\left[\frac{1}{s-4}\right] \\
+y = L^{-1}[Y] &= \frac{-1}{8}L^{-1}\left[\frac{1}{s+4}\right] + \frac{1}{8}L^{-1}\left[\frac{1}{s-4}\right] \\
 &= \frac{-1}{8}e^{-4x} + \frac{1}{8}e^{4x} \\
 y &= \frac{1}{8}(e^{4x} - e^{-4x}) \\
 \end{align}
