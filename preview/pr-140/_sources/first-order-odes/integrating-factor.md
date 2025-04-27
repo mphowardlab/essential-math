@@ -9,8 +9,7 @@ Mole balance on a tank with increasing inlet/outlet flow rate.
 
 \begin{align}
 \dot{n}_{A} &= \dot{n}_{A,\text{in}} - \dot{n}_{A,\text{out}}, \quad \dot{n}_{A,\text{in}} = C_{f,A} \dot{q}t \\
-\dot{n}_{A} &= C_{f,A}\dot{q}t - \frac{n_A}{V} \dot{q}t \\
-\dot{n}_{A,\text{out}} &= \frac{n_A}{V}\dot{q}t \\
+\dot{n}_{A} &= C_{f,A}\dot{q}t - \frac{n_A}{V} \dot{q}t \quad \dot{n}_{A,\text{out}} &= \frac{n_A}{V}\dot{q}t \\
 \end{align}
 
 ````{dropdown} 4. Solution
@@ -61,7 +60,7 @@ table of integrals, or by parts
 
 ```{math}
 \begin{align}
-\to{c(t) &= e^{-kt}(\frac{A}{k}e^{kt} + B\frac{e^{kt}}{k^{2} + (\frac{\pi}{12})^{2}})[k\cos{(\frac{\pi t}{12})} + \frac{\pi}{12}\sin{(\frac{\pi t}{12})}] + C^{*}}\\
+\to{c(t) = e^{-kt}(\frac{A}{k}e^{kt} + B\frac{e^{kt}}{k^{2} + (\frac{\pi}{12})^{2}})[k\cos{(\frac{\pi t}{12})} + \frac{\pi}{12}\sin{(\frac{\pi t}{12})}] + C^{*}}\\
 \end{align}
 ```
 `````
