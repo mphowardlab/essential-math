@@ -65,7 +65,7 @@ ax^2 + bx + c \to \frac{Ax+B}{ax^2+bx+c}
 \end{align}
 
 \begin{align}
-\left(ax^2 + bx+c \right)^k \end{align} : repeat like for linear factor
+\left(ax^2 + bx+c \right)^k: repeat like for linear factor
 \end{align} 
 
 
@@ -117,12 +117,10 @@ $\begin{bmatrix} 1 & 0 & 1 & 0\\ -4 & 1 & -8 & 1\\ 3 & 0 & 16 & -8\\ -12 & 3 & 0
  y= \int\left(\frac{1}{x-3}-\frac{5}{\left(x-4\right)^2}-\frac{x}{x^2+3}+\frac{2}{x^2+3}\right) dx
  \end{equation}
 
-  \begin{equation}                          
-y= \int \left(\frac{1}{1+x^2}\right)dx 
-\end{equation}
-\begin{equation}
-=\arctanx
-\end{equation}
+\begin{align}                          
+y= \int \left(\frac{1}{1+x^2}\right)dx  \to \arctanx
+\end{align}
+
 
 
 \begin{equation}
