@@ -20,7 +20,7 @@ This work (c) 2025 is licensed under
 - Michelle Schindler
 - Katie Sorensen
 - Debora Vasconcelos
-
+- Oscar Earhart
 ## Attributions
 
 Many of these notes were based on my own studies using the excellent textbook:
