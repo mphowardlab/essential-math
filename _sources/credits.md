@@ -9,6 +9,7 @@ This work (c) 2025 is licensed under
 
 - Payton Baxter
 - Paine Cole
+- Alexis Florit
 - Ella Governale
 - Michael P. Howard
 - Evan M. Hughes
