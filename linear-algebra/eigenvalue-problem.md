@@ -2,11 +2,10 @@
 
 ````{example} Upper Triangular Matrix
 
-Given
+Find the eigenvalues and eigenvectors of the following matrix:
 \begin{equation}
 \vv{A} = \begin{bmatrix} 4 & 2 \\ 0 & -4 /end{bmatrix}
 \end{equation}
-find the eigenvalues and eigenvectors.
 
 Since A is **upper triangular**, the eigenvalues are the diagonal entries:
 
