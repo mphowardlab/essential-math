@@ -21,6 +21,7 @@ This work (c) 2025 is licensed under
 - Michelle Schindler
 - Katie Sorensen
 - Debora Vasconcelos
+- Madelyn Torrance
 
 ## Attributions
 
