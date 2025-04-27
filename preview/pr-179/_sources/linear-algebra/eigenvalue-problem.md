@@ -15,7 +15,7 @@ Since A is **upper triangular**, the eigenvalues are the diagonal entries:
 \end{align}
 
 \begin{equation}
-\lambda_1: \begin{bmatrix} 0 & 2 \\ 0 & -8 \end{bmatrix} x_1 = 0 /RightArrow
+\lambda_1: \begin{bmatrix} 0 & 2 \\ 0 & -8 \end{bmatrix} x_1 = 0 /rightarrow
 x_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
 \end{equation}
 
