@@ -51,21 +51,19 @@ First, find the eigenvalues:
 \lambda_2 &= -4
 \end{align}
 
-**Eigenvectors:**
+Then, use these eigenvalues to find the eigenvectors:
 
-For \( \lambda_1 = 3 \):
+\begin{equation}
+\lambda_1 = 3: \begin{bmatrix} 2 & -2 \\ 9 & -9 \end{bmatrix} x_1 = 0 
+\longrightarrow
+x_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+\end{equation}
 
-\[
-A - 3I = \begin{bmatrix} 2 & -2 \\ 9 & -9 \end{bmatrix}
-\quad \Rightarrow \quad \vec{x}_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}
-\]
-
-For \( \lambda_2 = -4 \):
-
-\[
-A + 4I = \begin{bmatrix} 9 & -2 \\ 9 & -2 \end{bmatrix}
-\quad \Rightarrow \quad \vec{x}_2 = \begin{bmatrix} 2 \\ 9 \end{bmatrix}
-\]
+\begin{equation}
+\lambda_2 = -4: \begin{bmatrix} 9 & -2 \\ 9 & -2 \end{bmatrix} x_2 = 0 
+\longrightarrow
+x_2 = \begin{bmatrix} 2 \\ 9 \end{bmatrix}
+\end{equation}
 ````
 
 ### (c) 3x3 Symmetric Matrix
