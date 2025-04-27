@@ -39,7 +39,7 @@ y&=\int\left( \frac{4}{x-3}-\frac{1}{x+2} \right)dx \\
 \end{align}
 
 ```{topic} 
-###Partial Fraction Decomposition
+Partial Fraction Decomposition
 ```
 \begin{align}
 Procedure: For a rational polynomial  \frac{P(x)}{Q(x)} where Q is expressed using either linear \left(ax+b \right) or irreducible quadratic \left(ax^2 + bx + c\right) factors and the degree of P is less than Q 
@@ -79,7 +79,7 @@ x^2-29x+5 = A_1 \left(x-4 \right) \left(x^2+3 \right) + A_2 \left(x^2+3 \right)+
 
 \begin{equation}
 A_1+A_3 = 0
-\end{equaiton}
+\end{equation}
 
 \begin{equation}
 -4A_1 + A_2-8A_3 + B _3 =1
@@ -99,11 +99,11 @@ $-12A_1+3A_2+16B_3 =5
 $\begin{bmatrix} 1 & 0 & 1 & 0\\ -4 & 1 & -8 & 1\\ 3 & 0 & 16 & -8\\ -12 & 3 & 0 & 16 \end{bmatrix} \begin{bmatrix} A_1 \\ A_2\\ A_3\\ B_3 \end{bmatrix} = \begin{bmatrix} 0\\ 1\\ -29 \\ 5 \end{bmatrix}$ $\to$ $A_1 = 1, A_2 = -5, A_3 = -1, B_3 =2$
 
 \begin{equation}
- y= \int(\frac{1}{x-3}-\frac{5}{(x-4)^2}-\frac{x}{x^2+3}+\frac{2}{x^2+3}) dx
+ y= \int\left(\frac{1}{x-3}-\frac{5}{\left(x-4\right)^2}-\frac{x}{x^2+3}+\frac{2}{x^2+3}\right) dx
  \end{equation}
 
   \begin{equation}                          
-y= \int (\frac{1}{+x^2}) dx = \arctanx
+y= \int \left(\frac{1}{1+x^2}\right)dx=\arctanx
 \end{equation}
 
 \begin{equation}
