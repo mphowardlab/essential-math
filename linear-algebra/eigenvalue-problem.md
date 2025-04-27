@@ -81,7 +81,7 @@ First, find the eigenvalues:
 \end{equation}
 
 \begin{equation}
--2 * 2 * (7 - \lambda) + (5 - \lambda)[(\lambda - 6)(\lambda - 7) - 4] = -\lambda^3 + 18\lambda^2 - 99\lambda + 162 = 0
+(-2)(2)(7 - \lambda) + (5 - \lambda)[(\lambda - 6)(\lambda - 7) - 4] = -\lambda^3 + 18\lambda^2 - 99\lambda + 162 = 0
 \end{equation}
 
 \begin{align}
