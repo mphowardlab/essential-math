@@ -42,38 +42,38 @@ y&=\int\left( \frac{4}{x-3}-\frac{1}{x+2} \right)dx \\
 ###Partial Fraction Decomposition
 ```
 \begin{align}
-Procedure: For a rational polynomial  \frac{P(x)}{Q(x)} where Q is expressed using either linear \left(ax+b)\right or irreducible quadratic \left(ax^2 + bx + c)\right factors and the degree of P is less than Q 
+Procedure: For a rational polynomial  \frac{P(x)}{Q(x)} where Q is expressed using either linear \left(ax+b \right) or irreducible quadratic \left(ax^2 + bx + c\right) factors and the degree of P is less than Q 
 \end{align}
 
 \begin{align}
-$ax+b$ $\to$ $\frac{A}{ax+b}$
+ax+b \to \frac{A}{ax+b}
 
-$(ax+b)^k \to \frac{A_1}{ax+b} + \frac{A_2}{(ax+b)^2}+ ...+ \frac{A_k}{(ax+b)^k}$
+\left(ax+b \right)^k \to \frac{A_1}{ax+b} + \frac{A_2}{\left(ax+b \right)^2}+ ...+ \frac{A_k}{\left(ax+b \right)^k}
 
-$ax^2 + bx + c \to \frac{Ax+B}{ax^2+bx+c}$
+ax^2 + bx + c \to \frac{Ax+B}{ax^2+bx+c}
 
-$(ax^2 + bx+c)^k $: repeat like for linear factor 
+\left(ax^2 + bx+c \right)^k : repeat like for linear factor 
 \end{align}
 
 \begin{equation}
-y'= \frac{x^2-29x+5}{(x-4)^2(x^2+3)}
+y'= \frac{x^2-29x+5}{\left(x-4 \right)^2 \left(x^2+3 \right)}
 \end{equation}
 
 
 \begin{equation}
-\frac{x^2-29x+5}{(x-4)^2(x^2+3)} = \frac{A_1}{x-4} + \frac{A_2}{(x-4)^2} + \frac{A_3x+ B_3}{x^2+3}
+\frac{x^2-29x+5}{\left(x-4 \right)^2 \left(x^2+3 \right)} = \frac{A_1}{x-4} + \frac{A_2}{(x-4)^2} + \frac{A_3x+ B_3}{x^2+3}
 \end{equation}
 
 \begin{equation}
-x^2-29x+5 = A_1(x-4)(x^2+3) + A_2(x^2+3)+(A_3x+B_3)(x-4)^2
+x^2-29x+5 = A_1 \left(x-4 \right) \left(x^2+3 \right) + A_2 \left(x^2+3 \right)+ \left(A_3x+B_3 \right) \left(x-4 \right)^2
 \end{equation}
 
 \begin{equation}
-=A_1(x^3-4x^2+3x-12)+A_2(x^2+3)+A_3x+B_3)(x^2-8x+16)
+=A_1 \left(x^3-4x^2+3x-12 \right)+A_2 \left(x^2+3 \right)+\left(A_3x+B_3 \right)\left(x^2-8x+16 \right)
 \end{equation}
 
 \begin{equation}
-=(A_1+A_3)x^3+(-4A_1+A_2-8A_3+B_3)x^2 + (3A_1+16A_3-8B_3)x+(-12A_1+3A_2+16B_3)
+=\left(A_1+A_3\right)x^3+\left(-4A_1+A_2-8A_3+B_3\right)x^2 + \left(3A_1+16A_3-8B_3\right)x+\left(-12A_1+3A_2+16B_3\right)
 \end{equation}
 
 
