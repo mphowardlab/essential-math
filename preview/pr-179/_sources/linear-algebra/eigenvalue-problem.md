@@ -37,8 +37,13 @@ Find the eigenvalues and eigenvectors of the following matrix:
 \end{equation}
 
 First, find the eigenvalues:
+
 \begin{equation}
-|A-\lambda I| = \begin{bmatrix} 5 - \lambda & -2 \\ 9 & -6 - \lambda \end{bmatrix} = (\lambda - 5)(\lambda + 6) + 18 = \lambda^2 + \lambda - 12 = (\lambda + 4)(\lambda - 3) = 0
+|A-\lambda I| = \begin{bmatrix} 5 - \lambda & -2 \\ 9 & -6 - \lambda \end{bmatrix} = (\lambda - 5)(\lambda + 6) + 18 = \lambda^2 + \lambda - 12 = (\lambda + 4)(\lambda - 3) = 0 \longrightarrow \begin{align} \lambda_1 &=3
+\lambda_2 &= -4
+\end{equation}
+
+
 
 
 \[
