@@ -171,9 +171,14 @@ $$
 Therefore, 
 
 $$
-c(t) = c_0 \mathcal{L}^{-1}\left\{\frac{1}{s+k} \right\} + A[\frac{1}{k}\mathcal{L}^{-1}\left\{\frac{1}{s} \right\} - \frac{1}{k}\mathcal{L}^{-1}\left\{\frac{1}{s+k} \right\}] + B[\frac{k}{k^2 + \left(\frac{\pi}{12}\right)^2}\mathcal{L}^{-1}\left\{\frac{s}{s^2 + \left(\frac{\pi}{12}\right)^2} \right\} + \frac{\left(\frac{\pi}{12}\right)^2}{k^2 + \left(\frac{\pi}{12}\right)^2}\mathcal{L}^{-1}\left\{\frac{1}{s^2 + \left(\frac{\pi}{12}\right)^2\}} - \frac{k}{k^2 + \left(\frac{\pi}{12}\right)^2}\mathcal{L}^{-1}\left\{\frac{1}{s+k}}] \\
-= c_0 exp(-kt) + A[\frac{1}{k} -\frac{1}{k} exp(-kt)] + B[\frac{k}{k^2 + \left(\frac{\pi}{12}\right)^2}\cos\left(\frac{\pi t}{12}\right) + \frac{(\frac{\pi}{12}\right)^2}{k^2 + \left(\frac{\pi}{12}\right)^2}\frac{sin(\frac{\pi}{12})}{\frac{\pi}{12}} - \frac{k}{k^2 + \left(\frac{\pi}{12}\right)^2}exp(-kt)] \\
-c(t) = \frac{A}{k} + \frac{B}{k^2 + \left(\frac{\pi}{12}\right)^2}[kcos(\frac{\pi t}{12}) + \frac{\pi}{12}sin(\frac{\pi t}{12})] + [c_0 -\frac{A}{k} - \frac{Bk}{k^2 + \left(\frac{\pi}{12}\right)^2}]exp(-kt)
+\begin{aligned}
+c(t) &= c_0 \mathcal{L}^{-1}\left\{ \frac{1}{s+k} \right\} + A\left[\frac{1}{k}\mathcal{L}^{-1}\left\{ \frac{1}{s} \right\} - \frac{1}{k}\mathcal{L}^{-1}\left\{ \frac{1}{s+k} \right\}\right] \\
+&\quad + B\left[\frac{k}{k^2 + \left(\frac{\pi}{12}\right)^2} \mathcal{L}^{-1}\left\{ \frac{s}{s^2 + \left(\frac{\pi}{12}\right)^2} \right\} + \frac{\left(\frac{\pi}{12}\right)^2}{k^2 + \left(\frac{\pi}{12}\right)^2} \mathcal{L}^{-1}\left\{ \frac{1}{s^2 + \left(\frac{\pi}{12}\right)^2} \right\} - \frac{k}{k^2 + \left(\frac{\pi}{12}\right)^2} \mathcal{L}^{-1}\left\{ \frac{1}{s+k} \right\}\right] \\
+\\
+&= c_0 e^{-kt} + A\left[\frac{1}{k} - \frac{1}{k} e^{-kt}\right] + B\left[\frac{k}{k^2 + \left(\frac{\pi}{12}\right)^2} \cos\left(\frac{\pi t}{12}\right) + \frac{\left(\frac{\pi}{12}\right)^2}{k^2 + \left(\frac{\pi}{12}\right)^2} \frac{\sin\left(\frac{\pi t}{12}\right)}{\frac{\pi}{12}} - \frac{k}{k^2 + \left(\frac{\pi}{12}\right)^2} e^{-kt}\right] \\
+\\
+c(t) &= \frac{A}{k} + \frac{B}{k^2 + \left(\frac{\pi}{12}\right)^2}\left[k \cos\left(\frac{\pi t}{12}\right) + \frac{\pi}{12} \sin\left(\frac{\pi t}{12}\right)\right] + \left[c_0 - \frac{A}{k} - \frac{Bk}{k^2 + \left(\frac{\pi}{12}\right)^2}\right] e^{-kt}
+\end{aligned}
 $$
 
 The average is:
