@@ -6,7 +6,7 @@ Integrals like
 \int x e^{-6 x} \d{x}
 \end{equation}
 
-are not solvably by [substitution](integration-substitution.md), but they look
+are not solvable by [substitution](integration-substitution.md), but they look
 like they are related closely enough that you may be able to! What to do here?
 Recall the [product rule](derivative-rules.md) for two functions *u* and *v*,
 then integrate:
@@ -36,7 +36,7 @@ u &= x & \d{v} &= e^{-6x} \d{x} \\
 so
 
 \begin{align}
-\int x e^{-6x} \d{x} 
+\int x e^{-6x} \d{x}
 &= x\frac{-e^{-6x}}{6} - \int\frac{-1}{6} e^{-6x} \d{x} \\
 &= -\frac{xe^{-6x}}{6} + \frac{1}{6} \int e^{-6x} \d{x} \\
 &= -\frac{xe^{-6x}}{6} - \frac{e^{-6x}}{36} + c
@@ -53,67 +53,72 @@ The acronym L.I.A.T.E. can help make this choice:
 - **T**rigonometric
 - **E**xponential  (worst choice of u)
 
-Example 1:
+```{example} Integration by parts 1
 
-$$\int(3x+5)\cos{\frac{x}{4}}dx = ?$$ 
+Evaluate
+
+\begin{equation}
+\int(3x+5)\cos\left(\frac{x}{4}\right) \d{x}
+\end{equation}
+
+---
 
 Let
 
 \begin{align}
-u &= 3x+5 & \d{v} &= \cos{\frac{x}{4}} \d{x} \\
-\d{u} &= 3 \d{x} & v &= 4\sin{\frac{x}{4}}
+u &= 3x+5 & \d{v} &= \cos\left(\frac{x}{4}\right) \d{x} \\
+\d{u} &= 3 \d{x} & v &= 4\sin\left(\frac{x}{4}\right)
 \end{align}
 
-Which allows:
+so:
 
 \begin{align}
-\int(3x+5)\cos{\frac{x}{4}}dx 
-
-&= (3x+5)[4\sin{\frac{x}{4}}] - \int4\sin{\frac{x}{4}}3dx \\
-
-&= (12x+20)[\sin{\frac{x}{4}}] - 12\int\sin{\frac{x}{4}}dx \\
-
-&= (12x+20)[4\sin{\frac{x}{4}}] + 48\cos{\frac{x}{4}} + c \\
+\int(3x+5)\cos\left(\frac{x}{4}\right) \d{x}
+&= (3x+5)\left[4\sin\left(\frac{x}{4}\right)\right]
+ - \int 4 \sin \left(\frac{x}{4}\right) 3 \d{x} \\
+&= (12x+20) \sin\left(\frac{x}{4}\right)
+ - 12\int\sin\left(\frac{x}{4}\right) \d{x} \\
+&= (12x+20) \sin\left(\frac{x}{4}\right) + 48\cos\left(\frac{x}{4}\right) + c
 \end{align}
+```
 
-So...
+```{example} Integration by parts 2
 
-$$\int(3x+5)\cos{\frac{x}{4}}dx = (12x+20)[4\sin{\frac{x}{4}}] + 48\cos{\frac{x}{4}} + c$$
+Evaluate
+
+\begin{equation}
+\int \ln x \d{x}
+\end{equation}
 
 ---
 
-Example 2:
-
-$$\int(lnxdx) = ?$$
-
-Let 
+Let
 
 \begin{align}
-u &= lnx & \d{v} &= dx \\
+u &= \ln x & \d{v} &= \d{x} \\
 \d{u} &= \frac{1}{x} \d{x} & v &= x
 \end{align}
 
-Which allows:
+so:
 
 \begin{align}
-\int(lnx) 
-
-&= xlnx - \int(\frac{1}{x}xdx) \\
-
-&= xlnx - x + c \\
+\int \ln x \d{x} &= x \ln x - \int\frac{1}{x} x \d{x} \\
+&= x \ln x - \int \d{x} \\
+&= x \ln x - x + c \\
 \end{align}
+```
 
-So...
+```{example} Integration by parts 3
 
-$$\int(lnx) = xlnx - x + c$$
+Evaluate
+
+\begin{equation}
+\int x^5 \sqrt{x^3+1} \d{x}
+\end{equation}
 
 ---
 
-Example 3:
-
-$$\int(x^5)(\sqrt(x^3+1))dx = ?$$
-
-Let 
+Let
 
 \begin{align}
 u &= x^3 & \d{v} &= x^2\sqrt(x^3+1) \d{x} \\
@@ -123,24 +128,23 @@ u &= x^3 & \d{v} &= x^2\sqrt(x^3+1) \d{x} \\
 Which allows:
 
 \begin{align}
-\int(x^5)(\sqrt(x^3+1))dx 
+\int(x^5)(\sqrt(x^3+1))dx
 
-&= x^3\frac{2}{9}(x^3+1)^{\frac{3}{2}} - \int(\frac{2}{9}(x^3+1)^{\frac{3}{2}})3x^2dx \\
+&= x^3\frac{2}{9}(x^3+1)^{\frac{3}{2}}
+ - \int(\frac{2}{9}(x^3+1)^{\frac{3}{2}})3x^2dx \\
 
-&= \frac{2}{9}x^3(x^3+1)^{\frac{3}{2}} - \frac{2}{9}\frac{2}{5}(x^3+1)^{\frac{5}{2}} + c \\
+&= \frac{2}{9}x^3(x^3+1)^{\frac{3}{2}}
+ - \frac{2}{9}\frac{2}{5}(x^3+1)^{\frac{5}{2}} + c \\
 
-&= \frac{2}{9}x^3(x^3+1)^{\frac{3}{2}} - \frac{4}{45}(x^3+1)^{\frac{5}{2}} + c \\
+&= \frac{2}{9}x^3(x^3+1)^{\frac{3}{2}} - \frac{4}{45}(x^3+1)^{\frac{5}{2}} + c
 \end{align}
-
-So...
-
-$$\int(x^5)(\sqrt(x^3+1))dx = \frac{2}{9}x^3(x^3+1)^{\frac{3}{2}} - \frac{4}{45}(x^3+1)^{\frac{5}{2}} + c$$
+```
 
 ## Tabular method
 
 $$\int(x^4e^{\frac{x}{2}}dx) = ?$$
 
-Let 
+Let
 
 \begin{align}
 u &= x^4 & \d{v} &= e^{\frac{x}{2}} \\
@@ -150,30 +154,33 @@ u &= x^4 & \d{v} &= e^{\frac{x}{2}} \\
 Which allows:
 
 \begin{align}
-\int(x^4e^{\frac{x}{2}}dx) 
+\int(x^4e^{\frac{x}{2}}dx)
 
 &= x^4(2e^{\frac{x}{2}}) - \int2e^{\frac{x}{2}}(4x^3)dx \\
 \end{align}
 
 We will need to integrate by parts again but there is a shortcut!!
 
-| u     | dv                |
+| $u$    | $\d{v}$                |
 |-------|-------------------|
-| x^4   | e^{\frac{x}{2}}   |
+| $x^4$   | $e^{x/2}$   |
 | 4x^3  | 2e^{\frac{x}{2}}  |
 | 12x^2 | 4e^{\frac{x}{2}}  |
 | 24x   | 8e^{\frac{x}{2}}  |
 | 24    | 16e^{\frac{x}{2}} |
 | 0     | 32e^{\frac{x}{2}} |
 
-
-For this shortcut make a chart like depicted below and then starting from the first u, go down one row diagonally and multiply the u and the dv together and then continue this all the way to 0.
+For this shortcut make a chart like depicted below and then starting from the
+first u, go down one row diagonally and multiply the u and the dv together and
+then continue this all the way to 0.
 
 Your answer will look like this:
 
-$$\int(x^4e^{\frac{x}{2}}dx) 
-= (x^4)(2e^{\frac{x}{2}}) - (4x^3)(4e^{\frac{x}{2}}) + (12x^2)(8e^{\frac{x}{2}}) - (24x)(16e^{\frac{x}{2}}) + (24)(32e^{\frac{x}{2}})$$
+$$\int(x^4e^{\frac{x}{2}}dx)
+= (x^4)(2e^{\frac{x}{2}}) - (4x^3)(4e^{\frac{x}{2}})
++ (12x^2)(8e^{\frac{x}{2}}) - (24x)(16e^{\frac{x}{2}}) + (24)(32e^{\frac{x}{2}})$$
 
 Simplified this will give the final answer of:
 
-$$\int(x^4e^{\frac{x}{2}}dx) = 2x^4e^{\frac{x}{2}} - 16x^3e^{\frac{x}{2}} + 96x^2e^{\frac{x}{2}} - 384xe^{\frac{x}{2}} + 768e^{\frac{x}{2}}$$
+$$\int(x^4e^{\frac{x}{2}}dx) = 2x^4e^{\frac{x}{2}} - 16x^3e^{\frac{x}{2}}
++ 96x^2e^{\frac{x}{2}} - 384xe^{\frac{x}{2}} + 768e^{\frac{x}{2}}$$

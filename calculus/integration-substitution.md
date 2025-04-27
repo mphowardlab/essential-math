@@ -3,7 +3,7 @@
 When we know an integral
 
 \begin{equation}
-\int e^x \d{x} = e^x + c 
+\int e^x \d{x} = e^x + c
 \end{equation}
 
 we can evaluate related integrals like:
@@ -24,9 +24,11 @@ $\d{x} = -\d{u}$ so
 ```{example} *u*-substitution
 Evaluate the integral
 \begin{equation}
-\int x e^{x^2} \d{x} = \frac{1}{2} e^{x^2} + c
+\int x e^{x^2} \d{x}
 \end{equation}
+
 ---
+
 Let $u=x^2$ so $\d{u} = 2x \d{x}$. Then,
 \begin{align}
 \int e^{x^2} x\d{x} =  \int e^u \cdot \frac{1}{2}\d{u} = \frac{1}{2} e^u + c
