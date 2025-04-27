@@ -51,5 +51,5 @@ F(t) &= exp{(\int{kdt})} = e^{kt}\\
 \end{align}
 ```
 
-\to{table of integrals, or by parts}
+\to table of integrals, or by parts
 `````
