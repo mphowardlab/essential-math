@@ -187,7 +187,7 @@ $$
 \begin{aligned}
 \langle c \rangle &= \frac{\int_{t_0}^{t_1} c(t)\, dt}{t_1 - t_0} = \frac{1}{24 - 12} \int_{12}^{24} c(t)\, dt \\
 &= \frac{1}{12} \left[ \frac{A}{k} t + \frac{B}{k^2 + \left(\frac{\pi}{12}\right)^2} \left( k \left( \frac{12}{\pi} \right) \sin\left( \frac{\pi t}{12} \right) - \cos\left( \frac{\pi t}{12} \right) \right) + \frac{1}{k} \left( \frac{A}{k} + \frac{Bk}{k^2 + \left(\frac{\pi}{12}\right)^2} \right) e^{-kt} \right]_{12}^{24} \\
-&=\frac{1}{12} \left[ \frac{12A}{k} + \frac{B}{k^2 + \left( \frac{\pi}{12} \right)^2} \left( \frac{12k}{\pi} \left( \sin(2\pi) - \sin\left( \frac{\pi}{2} \right) \right) - \left( \cos(2\pi) - \cos\left( \frac{\pi}{2} \right) \right) \right) \right.
+&=\frac{1}{12} \left[ \frac{12A}{k} + \frac{B}{k^2 + \left( \frac{\pi}{12} \right)^2} \left( \frac{12k}{\pi} \left( \sin(2\pi) - \sin\left( \pi \right) \right) - \left( \cos(2\pi) - \cos\left( \pi \right) \right) \right) \right.
 \left. + \frac{1}{k} \left( \frac{A}{k} + \frac{Bk}{k^2 + \left( \frac{\pi}{12} \right)^2} \right) \left( e^{-24k} - e^{-12k} \right) \right]
 \end{aligned}
 $$
