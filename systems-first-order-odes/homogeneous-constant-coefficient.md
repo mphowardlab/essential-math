@@ -43,13 +43,21 @@ C_{1} = 1 \qquad C_{2} =0
 
 Hence, 
 \begin{equation}
-\vv{\underline{y}} =e^{2t}
+\vv{\underline{y}} =e^{-2t}
 \begin{bmatrix} 1 \\ 0 \end{bmatrix} 
 \end{equation}
-or $y_{1}$(t) = $e^{-2t}$ $ y_{2}$(t) = 0
+\begin{align} 
+or $y_{1}$(t) = $e^{-2t}$ \qquad $y_{2}$(t) = 0
+\end{align}
 
-$\underline{y}$ = 0 is a *stable proper node* because $\lambda_{1}$ = $\lambda_{2}$ $\l$ 0 and **A** is a multiple of **I**. \
+$\underline{y}$ = 0 is a *stable proper node* because $\lambda_{1}$ = $\lambda_{2}$ $\lt$ 0 and **A** is a multiple of **I**. 
+ 
+\begin{equation} 
+\vv{A} = \begin{bmatrix} 0 & 3 \\ 12 & 0 \end{bmatrix} 
+\end{equation} 
+\begin{equation}
+\vv{| **A** - \lambda **I** |}= \begin{bmatrix} -\lambda & 3  \\ 12 & -\lambda  \end{bmatrix} = \lambda^{2}-36=0. 
+\begin{align} 
+\lambda_{1} = 6 \qquad \lambda_{2} = -6
+\end{align} 
 
-(b) 
-\begin{equation} \vv{A} = \begin{bmatrix} 0 & 3 \\ 12 & 0 \end{bmatrix} \end{equation} \
-| **A** - $\lambda$ **I** | = 
