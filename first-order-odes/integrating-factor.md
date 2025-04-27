@@ -19,6 +19,11 @@ Rewrite:
 \dot{n}_{A} + \frac{\dot{q}t}{V} n_{A} &= C_{f,A} \dot{q}t \\
 p(t) &= \frac{\dot{q}t}{V}, \quad r(t) = C_{f,A}  \dot{q}t \\
 F(t) &= exp[\int{p(t)dt}] = exp(\int{\frac{\dot{q}t}{v}dt}) = exp(\frac{1}{2}\frac{\dot{q}{V^{2}}})\\
+\end{align}
+```
+
+```{math}
+\begin{align}
 \int{F(t)r(t)dt} &= \int{exp(\frac{1}{2}\frac{\dot{q}}{V}t^{2})C_{f,A}\dot{q}tdt} = \int{e^{u}C_{f,A}Vdu} = C_{f,A}Vexp(\frac{1}{2}\frac{\dot{q}}{v}t^{2}) \\
 u &= \frac{1}{2}\frac{\dot{q}}{v}t^{2}\\
 du &= \frac{\dot{q}}{V}tdt \to \dot{q}tdt = Vdu\\
