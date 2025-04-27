@@ -79,7 +79,7 @@ xe^{2x^2} &= x + 2x^3 + O(x^5)
 
 Expand the following to two terms:
 
-1. $f(x)=\cos(x)$ at $x=0$
+1. $f(x)=\cos x$ at $x=0$
 
    ```{solution}
    The function and its derivatives at $x=0$ are:
@@ -93,11 +93,11 @@ Expand the following to two terms:
    So:
 
    \begin{equation}
-   f(x) \approx 1-\frac{x^2}{2}
+   \cos x \approx 1-\frac{x^2}{2}
    \end{equation}
    ```
 
-2. $f(x)=\sin(x)$ at $x=0$
+2. $f(x)=\sin x$ at $x=0$
 
    ```{solution}
    The function and its derivatives at $x=0$ are:
@@ -112,7 +112,7 @@ Expand the following to two terms:
    So:
 
    \begin{equation}
-   f(x) \approx x-\frac{x^3}{6}
+   \sin x \approx x-\frac{x^3}{6}
    \end{equation}
    ```
 
@@ -129,7 +129,7 @@ Expand the following to two terms:
    So:
 
    \begin{equation}
-   f(x) \approx 1+x
+   e^x \approx 1+x
    \end{equation}
    ```
 
@@ -147,11 +147,11 @@ Expand the following to two terms:
    So:
 
    \begin{equation}
-   f(x) \approx x-\frac{x^2}{2}
+   \ln(1+x) \approx x-\frac{x^2}{2}
    \end{equation}
    ```
 
-5. $f(x)=\frac{1}{1+x}$ at $x=0$
+5. $f(x)=\dfrac{1}{1+x}$ at $x=0$
 
    ```{solution}
    The function and its derivatives at $x=0$ are:
@@ -164,7 +164,7 @@ Expand the following to two terms:
    So:
 
    \begin{equation}
-   f(x) \approx 1-x
+   \frac{1}{1+x} \approx 1-x
    \end{equation}
    ```
 
@@ -172,51 +172,54 @@ Expand the following to two terms:
 
    ```{solution}
    Recall:
-   
+
    \begin{equation}
-   f(x)=\cos(x) \approx 1-\frac{x^2}{2}
+   \cos x \approx 1-\frac{x^2}{2}
    \end{equation}
 
    So:
 
    \begin{equation}
-   f(x)=\cos(4x) \approx 1-\frac{(4x)^2}{2} = 1-8x^2
+   \cos(4x) \approx 1-\frac{(4x)^2}{2} = 1-8x^2
    \end{equation}
    ```
 
 7. $f(x)=\cos(x-\pi)$ at $x=\pi$
 
    ```{solution}
+   Recall:
+
    \begin{equation}
-   f(x)=\cos(x) \approx 1-\frac{x^2}{2}
+   \cos(x) \approx 1-\frac{x^2}{2}
    \end{equation}
 
    So:
 
    \begin{equation}
-   f(x)=\cos(x-\pi) \approx 1-\frac{(x-\pi)^2}{2}
+   \cos(x-\pi) \approx 1-\frac{(x-\pi)^2}{2}
    \end{equation}
 
-   Note: There is a constant shift of $x$ and $x_0$
+   about $x_0 = \pi$.
    ```
 
-8. $f(x)=e^x \sin(x)$ at $x=0$
+8. $f(x)=e^x \sin x$ at $x=0$
 
    ```{solution}
    Recall:
-   
-   $f(x)=e^x \approx 1+x$
-   
-   $f(x)=\sin(x) \approx x-\frac{x^3}{6}$
+
+   \begin{align}
+   e^x &\approx 1+x \\
+   \sin(x) &\approx x-\frac{x^3}{6}
+   \end{align}
 
    So:
 
    \begin{equation}
-   f(x) \approx (1+x+\dots)(x-\frac{x^3}{6}+\dots) = x+x^2
+   e^x \sin x \approx (1+x+\cdots)(x-\frac{x^3}{6}+\cdots) = x+x^2
    \end{equation}
    ```
 
-9. $f(x)=\cos(x)$ at $x=\pi$
+9. $f(x)=\cos x$ at $x=\pi$
 
    ```{solution}
    The function and its derivatives at $x=\pi$ are:
@@ -230,8 +233,9 @@ Expand the following to two terms:
    So:
 
    \begin{equation}
-   f(x) \approx -1+\frac{1}{2}(x-\pi)^2
+   \cos x \approx -1+\frac{1}{2}(x-\pi)^2
    \end{equation}
+   at $x = \pi$.
    ```
 
 10. $f(x)=7x^2-6x+1$ at $x=2$
