@@ -183,7 +183,7 @@ and *P* using only measurable quantities!
 $
 f=cos(4x+y^2)+x^2y
 $
-
+1. 
 $$
 \td{}{x}{f}{y} =
 $$
@@ -193,6 +193,14 @@ $$
 \td{}{x}{f}{y} = 1/\td{}{f}{x}{y} = 1/p = \left(-4sin(4x+y^2)+ 2xy\right)^{-1}
 $$
 ```
+2. 
+$$
+\td{}{f}{p}{y}=
+$$
+```{solution}
+\td{}{f}{p}{y}=\td{}{f}{x}{y}\td{}{x}{p}{y}=\td{}{f}{x}{y}/\td{}{p}{x}{y}=p/\td{}{p}{x}{y}
+```
+
 
 
 
