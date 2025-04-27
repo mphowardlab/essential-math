@@ -215,9 +215,9 @@ $$
 $$
 \td{}{x}{y}{f}= (\td{}{x}{y}{f})(\td{}{y}{f}{x})(\td{}{f}{x}{y})=-1
 
-\td{}{x}{y}{f}=-1/((\td{}{f}{x}{y})(\td{}{y}{f}{x})) = -(\td{}{f}{y}{x})/(\td{}{f}{x}{y}) = q/p
+\td{}{x}{y}{f}=\frac{-1}{(\td{}{f}{x}{y})(\td{}{y}{f}{x})} = -\frac{\td{}{f}{y}{x}}{\td{}{f}{x}{y}} = \frac{q}{p}
 
-=(2ysin(4x+y^2)+x^2)/(-4sin(4x+y^2)+2xy)
+=\frac{2ysin(4x+y^2)+x^2}{-4sin(4x+y^2)+2xy}
 $$
 ```
 
