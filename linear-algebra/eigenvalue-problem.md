@@ -1,12 +1,8 @@
 # Eigenvalue Problems
 
-''''{example} Upper Triangular Matrix
+````{example} Upper Triangular Matrix
 
-Let
-
-\[
-A = \begin{bmatrix} 4 & 2 \\ 0 & -4 \end{bmatrix}
-\]
+Given  A = \begin{bmatrix} 4 & 2 \\ 0 & -4 /end{bmatrix}, find the eigenvalues and eigenvectors.
 
 Since \( A \) is upper triangular, the eigenvalues are the diagonal entries:
 
@@ -29,7 +25,7 @@ For \( \lambda_2 = -4 \):
 A - \lambda_2 I = \begin{bmatrix} 8 & 2 \\ 0 & 0 \end{bmatrix}
 \quad \Rightarrow \quad \vec{x}_2 = \begin{bmatrix} 1 \\ -4 \end{bmatrix}
 \]
-''''
+````
 
 ### (b) 2x2 General Matrix
 
