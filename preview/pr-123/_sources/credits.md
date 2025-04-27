@@ -9,9 +9,11 @@ This work (c) 2025 is licensed under
 
 - Payton Baxter
 - Paine Cole
+- Alexis Florit
 - Ella Governale
 - Michael P. Howard
 - Evan M. Hughes
+- Esther Laiming
 - Gwyneth A. Lovell
 - Abby Lucas
 - Faith Major
@@ -20,8 +22,8 @@ This work (c) 2025 is licensed under
 - Elijah  C. Mitchell
 - Michelle Schindler
 - Katie Sorensen
-- Debora Vasconcelos
 - Madelyn Torrance
+- Debora Vasconcelos
 
 ## Attributions
 
