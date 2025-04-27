@@ -91,7 +91,7 @@ y &=L^{-1}[Y]\\
 ```{Skill Builder} Laplace transform
 Solve the initial value problem using Laplace transforms
 \begin{equation}
-y' + 4y = e^4x \quad y(0) = 0
+y' + 4y = e^{4x} \quad y(0) = 0
 \end{equation}
 
 ---
@@ -104,7 +104,8 @@ sY - y(0) + 4Y &= \frac{1}{s-4} \\
 
 Use partial fractions:
 \begin{align}
-Y &= \frac{1}{(s-4)(s+4)} &= \frac{A_1}{s-4} + \frac{A_2}{s+4} \\
+Y &= \frac{1}{(s-4)(s+4)} \\
+&= \frac{A_1}{s-4} + \frac{A_2}{s+4} \\
 \end{align}
 
 Cover up to find $A_1$ and $A_2$:
@@ -117,8 +118,8 @@ A_2 &= \frac{1}{8} \\
 Solve using Laplace transforms:
 \begin{align}
 Y = \frac{-1}{8} \frac{1}{s+4} + \frac{1}{8} \frac{1}{s-4} \\
-y = L^{-1}[1] &= \frac{-1}{8}L^{-1}\left[\frac{1}{s+4}\right] + \frac{1}{8}L^{-1}\left(\frac{1}{s-4}\right] \\
-&= \frac{-1}{8}e^(-4x) + \frac{1}{8}e^{4x} \\
+y = L^{-1}[y] &= \frac{-1}{8}L^{-1}\left[\frac{1}{s+4}\right] + \frac{1}{8}L^{-1}\left[\frac{1}{s-4}\right] \\
+&= \frac{-1}{8}e^{-4x} + \frac{1}{8}e^{4x} \\
 y &= \frac{1}{8}(e^{4x} - e^{-4x}) \\
 \end{align}
 ```
