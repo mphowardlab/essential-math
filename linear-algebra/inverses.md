@@ -15,14 +15,51 @@ For a square (*n* x *n*) matrix **A**, the inverse $\vv{A}^{-1}$ satisfies
 
 where **I** is the *n* x *n* identity matrix.
 ```
+>>>>>>> a3b634ea4739f0e15b13f0f220951b1c16e8c395
 
+Then, evaluate $|\vv{A}|$ to check if an inverse exists:
 A matrix is called *nonsingular* or *invertible* if it has an inverse, but
 *singular* if it does not.
 
+\begin{equation}
+|\vv{A}| = (5 \cdot 4) - (-1 \cdot -2) = 18
+\end{equation}
 ```{topic} Invertible matrix theorem
 
+$|\vv{A}| \ne 0$, so an inverse can be found using the formula for a 2x2
+matrix:
+
+\begin{equation}
+\vv{A}^{-1} = \frac{1}{18}
+\begin{bmatrix}
+5 & -2 \\
+-1 & 4 
+\end{bmatrix}
+\end{equation}
 **A** is invertible if and only if the determinant of **A** is nonzero.
 
+Last, solve for **x**:
+
+\begin{align}
+\vv{x} = \vv{A}^{-1}\vv{b} &= \frac{1}{18}
+\begin{bmatrix}
+5 & -2 \\
+-1 & 4 
+\end{bmatrix}
+\begin{bmatrix}
+20.9 \\
+-19.3
+\end{bmatrix} \\
+&= \frac{1}{18}
+\begin{bmatrix}
+4 \cdot 20.9 +  2 \cdot -19.3 \\
+1 \cdot  20.9 + 5 \cdot -19.3
+\end{bmatrix} \\
+&= \begin{bmatrix}
+2.5 \\
+-4.2
+\end{bmatrix}
+\end{align}
 (There are many more such conditions!)
 ```
 
@@ -42,6 +79,7 @@ use of Gauss-Jordan elimination for larger matrices.
 
 ## Inverse of a 2 x 2 matrix
 
+Therefore, $x_1 = 2.5$ and $x_2 = -4.2$.
 For a 2 x 2 matrix,
 
 \begin{equation}
@@ -99,7 +137,6 @@ Solve the following using matrix inversion:
    -x_1 + 4x_2 &= -19.3
    \end{align}
    
-   ```{solution}
    First, write in matrix form **Ax** = **b** with:
    \begin{equation}
    \vv{A} = \begin{bmatrix}
@@ -154,248 +191,280 @@ Solve the following using matrix inversion:
    \end{align}
 
    Therefore, $x_1 = 2.5$ and $x_2 = -4.2$.
-   ```
 
-(b)
+2. 
+   
+   \begin{align}
+   x_1 + 4x_2 = 8 \\
+   2x_1 + 8x_2 = 17 
+   \end{align}
 
-$$
-x_1 + 4x_2 = 8
-$$
+   First, write in matrix form **Ax** = **b** with:
+   \begin{equation}
+   \vv{A} = \begin{bmatrix}
+   1 & 4 \\
+   2 & 8
+   \end{bmatrix}
+   \qquad
+   \vv{b} = \begin{bmatrix}
+   8 \\
+   17
+   \end{bmatrix}
+   \end{equation}
 
-$$
-2x_1 + 8x_2 = 17 
-$$
+   Then, evalaute $|\vv{A}|$ to check if an inverse exists:
 
-$$
-A= \begin{bmatrix}
-1 & 4 \\
-2 & 8
-\end{bmatrix}
-$$
+   \begin{equation}
+   |\vv{A}| = (1 \cdot 8) - (2 \cdot 4) = 0
+   \end{equation}
 
-$$
-b= \begin{bmatrix}
-8 \\
-17
-\end{bmatrix}
-$$
+   A is singular because det A = 0, so it <ins>**cannot be inverted.**</ins>
 
-$$
-det A = 1*8 - 2*4 = 0 
-$$
+3. 
 
-A is singular because det A = 0, so it <ins>**cannot be inverted.**</ins>
+   \begin{align}
+   x_2 + x_3 = -2 \\
+   4x_2 + 6x_3 = -12 \\
+   x_1 + x_2 + x_3 = 2
+   \end{align}
 
-(c) 
+   First, write in matrix form **Ax** = **b** with:
+   \begin{equation}
+   \vv{A} = \begin{bmatrix}
+   0 & 1 & 1 \\
+   0 & 4 & 6 \\
+   1 & 1 & 1 
+   \end{bmatrix}
+   \qquad
+   \vv{b} = \begin{bmatrix}
+   -2 \\
+   -12 \\
+   2
+   \end{bmatrix}
+   \end{equation}
 
-$$
-x_2 + x_3 = -2
-$$
+   Then, evaluate $|\vv{A}|$ to check if an inverse exists:
 
-$$
-4x_2 + 6x_3 = -12
-$$
+   \begin{align}
+   |\vv{A}| = (0 \cdot )
+   \begin{bmatrix}
+   4 & 6 \\
+   1 & 1
+   \end{bmatrix}
+   (-1 \codt )
+   \begin{bmatrix}
+   0 & 6 \\
+   1 & 1
+   \end{bmatrix}
+   (1 \cdot )
+   \begin{bmatrix}
+   0 & 4 \\
+   1 & 1
+   \end{bmatrix}
+   \end{align}
 
-$$
-x_1 + x_2 + x_3 = 2
-$$
+   \begin{equation}
+   |\vv{A}| = (-1 \cdot (0-6)) - (1 \cdot (0-4)) = 2
+   \end{equation}
 
-$$
-A= \begin{bmatrix}
-0 & 1 & 1 \\
-0 & 4 & 6 \\
-1 & 1 & 1 
-\end{bmatrix}
-$$
+   Since det A does not equal 0, A is invertible. Use Gauss-Jordan elimination.
 
-$$
-b= \begin{bmatrix}
--2 \\
--12 \\
-2
-\end{bmatrix}
-$$
+   \being{align}
+   \begin{bmatrix}
+   0 & 1 & 1 : & 1 & 0 & 0 \\
+   0 & 4 & 6 : & 0 & 1 & 0 \\
+   1 & 1 & 1 : & 0 & 0 & 1 
+   \end{bmatrix}
+   \end{align}
 
-$$
-det A= 0*\begin{bmatrix}
-4 & 6 \\
-1 & 1
-\end{bmatrix}
--1*\begin{bmatrix}
-0 & 6 \\
-1 & 1
-\end{bmatrix}
-1*\begin{bmatrix}
-0 & 4 \\
-1 & 1
-\end{bmatrix}
-$$
+   -->
 
-$$
-= -1*(0-6) + 1*(0-4) = 2
-$$
+   \being{align}
+   \begin{bmatrix}
+   1 & 1 & 1 : & 0 & 0 & 1 \\
+   0 & 1 & 1 : & 1 & 0 & 0 \\
+   0 & 4 & 6 : & 0 & 1 & 0 
+   \end{bmatrix}
+   \end{align}
 
-Since det A does not equal 0, A is invertible. Use Gauss-Jordan elimination.
+   Reorder -->
 
-$$
-\begin{bmatrix}
-0 & 1 & 1 : & 1 & 0 & 0 \\
-0 & 4 & 6 : & 0 & 1 & 0 \\
-1 & 1 & 1 : & 0 & 0 & 1 
-\end{bmatrix}
-$$
+   \being{align}
+   \begin{bmatrix}
+   1 & 1 & 1 : & 0 & 0 & 1 \\
+   0 & 1 & 1 : & 1 & 0 & 0 \\
+   0 & 0 & 2 : & -4 & 1 & 0 
+   \end{bmatrix}
+   \being{align}
 
-$$
--->
-$$
+   -4 Row 2
 
-$$
-\begin{bmatrix}
-1 & 1 & 1 : & 0 & 0 & 1 \\
-0 & 1 & 1 : & 1 & 0 & 0 \\
-0 & 4 & 6 : & 0 & 1 & 0 
-\end{bmatrix}
-$$
+   \being{align}
+   \begin{bmatrix}
+   1 & 1 & 1 : & 0 & 0 & 1 \\
+   0 & 1 & 1 : & 1 & 0 & 0 \\
+   0 & 0 & 1 : & -2 & 0.5 & 0 
+   \end{bmatrix}
+   \being{align}
 
-reorder
-$$
--->
-$$
+   divide by 2 -->
 
-$$
-\begin{bmatrix}
-1 & 1 & 1 : & 0 & 0 & 1 \\
-0 & 1 & 1 : & 1 & 0 & 0 \\
-0 & 0 & 2 : & -4 & 1 & 0 
-\end{bmatrix}
-$$
+   \being{align}
+   \begin{bmatrix}
+   1 & 1 & 0 : & 2 & -0.5 & 1 \\
+   0 & 1 & 0 : & 3 & -0.5 & 0 \\
+   0 & 0 & 1 : & -2 & 0.5 & 0 
+   \end{bmatrix}
+   \being{align}
 
--4 Row 2
+   - Row 3
+   - Row 3 -->
 
-$$
-\begin{bmatrix}
-1 & 1 & 1 : & 0 & 0 & 1 \\
-0 & 1 & 1 : & 1 & 0 & 0 \\
-0 & 0 & 1 : & -2 & 0.5 & 0 
-\end{bmatrix}
-$$
+   \being{align}
+   \begin{bmatrix}
+   1 & 0 & 0 : & -1 & 0 & 1 \\
+   0 & 1 & 0 : & 3 & -0.5 & 0 \\
+   0 & 0 & 1 : & -2 & 0.5 & 0 
+   \end{bmatrix}
+   \being{align}
 
-divide by 2
+   - Row 2
 
-$$
--->
-$$
+   \being{align}
+   A^{-1}=\begin{bmatrix}
+   -1 & 0 & 1 \\
+   3 & -0.5 & 0 \\
+   -2 & 0.5 & 0 
+   \end{bmatrix}
+   \being{align}
 
-$$
-\begin{bmatrix}
-1 & 1 & 0 : & 2 & -0.5 & 1 \\
-0 & 1 & 0 : & 3 & -0.5 & 0 \\
-0 & 0 & 1 : & -2 & 0.5 & 0 
-\end{bmatrix}
-$$
+   \being{align}
+   x = A^{-1}b =\begin{bmatrix}
+   -1 & 0 & 1 \\
+   3 & -0.5 & 0 \\
+   -2 & 0.5 & 0 
+   \end{bmatrix}
+   \being{align}
 
-- Row 3
-- Row 3
+   \being{align}
+   =\begin{bmatrix}
+   -2 \\
+   -12 \\
+   2
+   \end{bmatrix}
+   \being{align}
 
-$$
--->
-$$
+   = 
 
-$$
-\begin{bmatrix}
-1 & 0 & 0 : & -1 & 0 & 1 \\
-0 & 1 & 0 : & 3 & -0.5 & 0 \\
-0 & 0 & 1 : & -2 & 0.5 & 0 
-\end{bmatrix}
-$$
+   \being{align}
+   x =\begin{bmatrix}
+   -1*-2 +  & 1*2 \\
+   3*-2 + & -0.5*-12 \\
+   -2*-2 + 0.5*-12
+   \end{bmatrix}
+   \end{align}
 
-- Row 2
+   =
 
-$$
-A^{-1}=\begin{bmatrix}
--1 & 0 & 1 \\
-3 & -0.5 & 0 \\
--2 & 0.5 & 0 
-\end{bmatrix}
-$$
+   \being{align}
+   \begin{bmatrix}
+   4 \\
+   0 \\
+   -2
+   \end{bmatrix}
+   \being{align}
 
-$$
-x = A^{-1}b =\begin{bmatrix}
--1 & 0 & 1 \\
-3 & -0.5 & 0 \\
--2 & 0.5 & 0 
-\end{bmatrix}
-$$
+   \begin{equation}
+   x_1 = 4
+   \end{equation}
 
-$$
-=\begin{bmatrix}
--2 \\
--12 \\
-2
-\end{bmatrix}
-$$
+   \being{equation}
+   x_2 = 0
+   \end{equation}
 
-= 
-$$
-x =\begin{bmatrix}
--1*-2 +  & 1*2 \\
-3*-2 + & -0.5*-12 \\
--2*-2 + 0.5*-12
-\end{bmatrix}
-$$
+   \being{equation}
+   x_3 = -2
+   \end{equation}
 
-=
+4. 
+   \being{align}
+   4x_2 + 4x_3 = 24 \\
+   3x_1 - 11x_2 - 2x_3 = -6 \\
+   6x_1 - 17x_2 + x_3 = 18
+   \end{align}
 
-$$
-\begin{bmatrix}
-4 \\
-0 \\
--2
-\end{bmatrix}
-$$
+   First, write in matrix form **Ax** = **b** with:
+   \begin{equation}
+   \vv{A} = \begin{bmatrix}
+   0 & 4 & 4 \\
+   3 & -11 & -2 \\
+   6 & -17 & 1
+   \end{bmatrix}
+   \qquad
+   \vv{b} = \begin{bmatrix}
+   24 \\
+   -6 \\
+   18
+   \end{bmatrix}
+   \end{equation}
 
-$$
-x_1 = 4
-$$
+   \begin{equation}
+   |\vv{A}| = (5 \cdot 4) - (-1 \cdot -2) = 18
+   \end{equation}
 
-$$
-x_2 = 0
-$$
+   $|\vv{A}| \ne 0$, so an inverse can be found using the formula for a 3x3 matrix: 
 
-$$
-x_3 = -2
-$$
+   \begin{equation}
+   \begin{align}
+   |\vv{A}| = (0 \cdot )
+   \begin{bmatrix}
+   -11 & -2 \\
+   -17 & 1
+   \end{bmatrix}
+   (-4 \codt )
+   \begin{bmatrix}
+   3 & -2 \\
+   6 & 1
+   \end{bmatrix}
+   (4 \cdot )
+   \begin{bmatrix}
+   3 & -11 \\
+   6 & -17
+   \end{bmatrix}
+   \end{align}
 
-(d)
- 4x<sub>2</sub> + 4x<sub>3</sub> = 24
-3x<sub>1</sub> - 11x<sub>2</sub> - 2x<sub>3</sub> = -6
-6x<sub>1</sub> - 17x<sub>2</sub> + x<sub>3</sub> = 18
-                           _          _
-                          |   0   4  4 | 
-<ins><ins>A</ins></ins> = |   3 -11 -2 |
-                          |_  6 -17  1_|
-                _   _ 
-               | 24  |
-<ins>b</ins> = | -6  |
-               |_18 _|
+   \begin{equation}
+   = (-4 ((3 \cdot 1)) - (6 \cdot -2)) + (4 ((3 \cdot -17)) - ((6 \cdot -11))
+   \end{equation}
 
-det <ins><ins>A</ins></ins> = 0* | -11 -2 | - 4* | 3 -2 | + 4* | 3 -11 | = 
-                                 | -17 1  |      | 6  1 |      | 6 -17 |
-= -4(3*1 - 6*-2) + 4(3*-17 - 6*-11)  = -4*15 + 4*15  = 0
-                                                                   ________________
-Since det <ins><ins>A</ins></ins> = 0, <ins><ins>A</ins></ins> is | not invertible.|
-                                                                  |________________|
+   \begin{equation}
+   = (-4 \cdot 15) + (4 \cdot 15)
+   \end{equation}
+
+   \begin{equation}
+   = 0
+   \end{equation}
+
+   Since det A = 0, A is not invertible.
 
 (e)
-2x<sub>1</sub> - x<sub>2</sub> - 3x<sub>3</sub> = -1
--4x<sub>1</sub> + 2x<sub>2</sub> - 6x<sub>3</sub> = 2
 
-<ins><ins>A</ins></ins> =  _         _
-                          |   2 -1 3  | 
-                          |_ -4  2 -6_|
-<ins>b</ins> =  _   _
-               |  -1 |
-               |_  2_|
-                                                                         ________________
-Since <ins><ins>A</ins></ins> is not square, <ins><ins>A</ins></ins> is | not invertible.|
-                                                                        |________________|
+   \begin{align}
+   2x_1 - x_2 - 3x_3 = -1 \\
+   -4x_1 + 2x_2 - 6x_3 = 2
+   \end{align}
+
+   First, write in matrix form **Ax** = **b** with:
+   \begin{equation}
+   \vv{A} = \begin{bmatrix}
+   2 & -1 & 3 \\
+   -4 & 2 & -6 
+   \end{bmatrix}
+   \qquad
+   \vv{b} = \begin{bmatrix}
+   -1 \\
+   2
+   \end{bmatrix}
+   \end{equation}
+
+   Since A is not square, A is not invertible.
