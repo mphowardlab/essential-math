@@ -90,17 +90,17 @@ First, find the eigenvalues:
 \lambda_3 &= 3
 \end{align}
 
-For \( \lambda_2 = 6 \):
+Then, use these eigenvalues to find the eigenvectors:
 
-\[
-A - 6I = \begin{bmatrix} 0 & 2 & -2 \\ 2 & -1 & 0 \\ -2 & 0 & 1 \end{bmatrix}
-\quad \Rightarrow \quad \vec{x}_2 = \begin{bmatrix} 1 \\ 2 \\ 2 \end{bmatrix}
-\]
+\begin{equation}
+\lambda_1 = 9: \begin{bmatrix} -3 & 2 & -2 \\ 2 & -4 & 0 \\ -2 & 0 & -2 \end{bmatrix} x_1 = 0
+\longrightarrow (row reduce, choose x_3 = 2)
+\begin{bmatrix} 1 & -2 & 0 \\ 0 & 2 & 1 \\ 0 & 0 & 0 \end{bmatrix}
+\longrightarrow
+x_1 = \begin{bmatrix} -2 \\ -1 \\ 2 \end{bmatrix}
+\end{equation}
 
-For \( \lambda_3 = 3 \):
 
-\[
-A - 3I = \begin{bmatrix} 3 & 2 & -2 \\ 2 & 2 & 0 \\ -2 & 0 & 4 \end{bmatrix}
-\quad \Rightarrow \quad \vec{x}_3 = \begin{bmatrix} 2 \\ -2 \\ 1 \end{bmatrix}
-\]
+
+
 ````
