@@ -25,9 +25,9 @@ Its eigen vectors are
 
 since **A** - $\lambda$ **I** = 0. 
 
-General Solution: \
+General Solution: 
 \begin{equation}
-\vv{x_{\underline{y}} = C_1 e^{-2t} \begin{bmatrix} 1 \\ 0 \end{bmatrix} + C_2 e^{-2t} \begin{bmatrix} 0 \\ 1 \end{bmatrix}
+\vv{\underline{y}} = C_{1} e^{-2t} \begin{bmatrix} 1 \\ 0 \end{bmatrix} + C_{2} e^{-2t} \begin{bmatrix} 0 \\ 1 \end{bmatrix}
 \end{equation}
 
 
@@ -41,9 +41,12 @@ Initial Condition:
 C_{1} = 1 \qquad C_{2} =0 
 \end{align}
 
-Hence, \vv{\underline{y}} =e^2t
+Hence, 
+\begin{equation}
+\vv{\underline{y}} =e^{2t}
 \begin{bmatrix} 1 \\ 0 \end{bmatrix} 
-or y_{1}(t) = e^-2t y_{2}(t) = 0
+\end{equation}
+or $y_{1}$(t) = $e^{-2t}$ $ y_{2}$(t) = 0
 
 $\underline{y}$ = 0 is a *stable proper node* because $\lambda_{1}$ = $\lambda_{2}$ $\l$ 0 and **A** is a multiple of **I**. \
 
