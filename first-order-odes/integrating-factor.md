@@ -39,15 +39,15 @@ We had
 ```{math}
 \begin{align}
 C^{'} + Kc &= A + B\cos{(\frac{\pi t}{12})} \quad with \quad c(o) = c_{o}\\
-p &= Kc \quad r = A + B\cos{(\frac{pi t}{12})}\\
+p &= Kc \quad r = A + B\cos{(\frac{\pi t}{12})}\\
 \end{align}
 ```
 
 ```{math}
 \begin{align}
 F(t) &= exp{(\int{kdt})} = e^{kt}\\
-\int{F(t)r(t)dt} &= \int{e^{kt}[A+B\cos{\frac{pi t}{12}}]dt}\\
-&= A\int{e^{kt}dt} + B\int{e^{kt}\cos{(\frac{pi t}{12})}dt}
+\int{F(t)r(t)dt} &= \int{e^{kt}[A+B\cos{\frac{\pi t}{12}}]dt}\\
+&= A\int{e^{kt}dt} + B\int{e^{kt}\cos{(\frac{\pi t}{12})}dt}
 \end{align}
 ```
 
