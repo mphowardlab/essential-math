@@ -83,7 +83,8 @@ f=\sin(x+y) + y^3 +y^2 + c^* =c \to \sin(x+y)+y^3 +y^2 =c
 \end{align}
 
 is the general solution of the ODE!
-```
+
+---
 
 Note that order of integration does not matter. We could also have done 
 
@@ -94,3 +95,4 @@ k'&=0 \to k=c^*
 \end{align}
 
 and arrived at the same answer!
+```
