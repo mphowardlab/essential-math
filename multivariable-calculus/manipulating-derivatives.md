@@ -199,7 +199,7 @@ $$
 $$
 ```{solution}
 $$
-\td{}{f}{p}{y}=\td{}{f}{x}{y}\td{}{x}{p}{y}=\td{}{f}{x}{y}/\td{}{p}{x}{y}=p/\td{}{p}{x}{y}
+\td{}{f}{p}{y}=(\td{}{f}{x}{y}) (\td{}{x}{p}{y})=(\td{}{f}{x}{y})/(\td{}{p}{x}{y})=p/(\td{}{p}{x}{y})
 $$
 ```
 
