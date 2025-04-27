@@ -15,51 +15,14 @@ For a square (*n* x *n*) matrix **A**, the inverse $\vv{A}^{-1}$ satisfies
 
 where **I** is the *n* x *n* identity matrix.
 ```
->>>>>>> a3b634ea4739f0e15b13f0f220951b1c16e8c395
 
 Then, evaluate $|\vv{A}|$ to check if an inverse exists:
 A matrix is called *nonsingular* or *invertible* if it has an inverse, but
 *singular* if it does not.
 
-\begin{equation}
-|\vv{A}| = (5 \cdot 4) - (-1 \cdot -2) = 18
-\end{equation}
 ```{topic} Invertible matrix theorem
-
-$|\vv{A}| \ne 0$, so an inverse can be found using the formula for a 2x2
-matrix:
-
-\begin{equation}
-\vv{A}^{-1} = \frac{1}{18}
-\begin{bmatrix}
-5 & -2 \\
--1 & 4 
-\end{bmatrix}
-\end{equation}
 **A** is invertible if and only if the determinant of **A** is nonzero.
 
-Last, solve for **x**:
-
-\begin{align}
-\vv{x} = \vv{A}^{-1}\vv{b} &= \frac{1}{18}
-\begin{bmatrix}
-5 & -2 \\
--1 & 4 
-\end{bmatrix}
-\begin{bmatrix}
-20.9 \\
--19.3
-\end{bmatrix} \\
-&= \frac{1}{18}
-\begin{bmatrix}
-4 \cdot 20.9 +  2 \cdot -19.3 \\
-1 \cdot  20.9 + 5 \cdot -19.3
-\end{bmatrix} \\
-&= \begin{bmatrix}
-2.5 \\
--4.2
-\end{bmatrix}
-\end{align}
 (There are many more such conditions!)
 ```
 
@@ -79,7 +42,6 @@ use of Gauss-Jordan elimination for larger matrices.
 
 ## Inverse of a 2 x 2 matrix
 
-Therefore, $x_1 = 2.5$ and $x_2 = -4.2$.
 For a 2 x 2 matrix,
 
 \begin{equation}
