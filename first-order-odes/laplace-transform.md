@@ -88,7 +88,7 @@ y &=L^{-1}[Y]\\
 \end{align}
 ```
 
-```{Skill Builder} Laplace transform
+```{example} Laplace transform
 Solve the initial value problem using Laplace transforms
 \begin{equation}
 y' + 4y = e^{4x} \quad y(0) = 0
