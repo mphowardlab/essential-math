@@ -12,6 +12,7 @@ Since A is **upper triangular**, the eigenvalues are the diagonal entries:
 \begin{align}
 \lambda_1 &= 4 \\ 
 \lambda_2 &= -4
+\end{align}
 
 
 **Eigenvectors:**
