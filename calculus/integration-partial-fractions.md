@@ -74,7 +74,7 @@ x^2-29x+5 = A_1(x-4)(x^2+3) + A_2(x^2+3)+(A_3x+B_3)(x-4)^2
 
 \begin{equation}
 =(A_1+A_3)x^3+(-4A_1+A_2-8A_3+B_3)x^2 + (3A_1+16A_3-8B_3)x+(-12A_1+3A_2+16B_3)
-\end{equaiton}
+\end{equation}
 
 
 \begin{equation}
