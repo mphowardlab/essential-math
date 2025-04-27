@@ -14,15 +14,10 @@ Since A is **upper triangular**, the eigenvalues are the diagonal entries:
 \lambda_2 &= -4
 \end{align}
 
-
-**Eigenvectors:**
-
-For \( \lambda_1 = 4 \):
-
-\[
-A - \lambda_1 I = \begin{bmatrix} 0 & 2 \\ 0 & -8 \end{bmatrix}
-\quad \Rightarrow \quad \vec{x}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
-\]
+\begin{equation}
+\lambda_1: \begin{bmatrix} 0 & 2 \\ 0 & -8 \end{bmatrix} x_1 = 0 /RightArrow
+x_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
+\end{equation}
 
 For \( \lambda_2 = -4 \):
 
