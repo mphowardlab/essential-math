@@ -4,7 +4,7 @@
 
 Find the eigenvalues and eigenvectors of the following matrix:
 \begin{equation}
-\vv{A} = \begin{bmatrix} 4 & 2 \\ 0 & -4 /end{bmatrix}
+\vv{A} = \begin{bmatrix} 4 & 2 \\ 0 & -4 \end{bmatrix}
 \end{equation}
 
 Since A is **upper triangular**, the eigenvalues are the diagonal entries:
