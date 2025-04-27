@@ -4,11 +4,10 @@
 
 Given  A = \begin{bmatrix} 4 & 2 \\ 0 & -4 /end{bmatrix}, find the eigenvalues and eigenvectors.
 
-Since \( A \) is upper triangular, the eigenvalues are the diagonal entries:
+Since A is **upper triangular**, the eigenvalues are the diagonal entries:
 
-\[
-\lambda_1 = 4, \quad \lambda_2 = -4
-\]
+\lambda_1 = 4, \lambda_2 = -4
+
 
 **Eigenvectors:**
 
