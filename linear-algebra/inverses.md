@@ -16,7 +16,6 @@ For a square (*n* x *n*) matrix **A**, the inverse $\vv{A}^{-1}$ satisfies
 where **I** is the *n* x *n* identity matrix.
 ```
 
-Then, evaluate $|\vv{A}|$ to check if an inverse exists:
 A matrix is called *nonsingular* or *invertible* if it has an inverse, but
 *singular* if it does not.
 
@@ -90,20 +89,19 @@ solve $\vv{A} \vv{A}^{-1} = \vv{I}$ as a generalization of **Ax** = **b**.
 
 ## Skill builder problems
 
-Solve the following using matrix inversion:
-
-1. 
+1. Solve using matrix inversion or explain why this is not possible:
 
    \begin{align}
    5x_1 - 2x_2 &= 20.9 \\
    -x_1 + 4x_2 &= -19.3
    \end{align}
-   
+
+   ```{solution}
    First, write in matrix form **Ax** = **b** with:
    \begin{equation}
    \vv{A} = \begin{bmatrix}
    5 & -2 \\
-   -1 & 4 
+   -1 & 4
    \end{bmatrix}
    \qquad
    \vv{b} = \begin{bmatrix}
@@ -125,7 +123,7 @@ Solve the following using matrix inversion:
    \vv{A}^{-1} = \frac{1}{18}
    \begin{bmatrix}
    5 & -2 \\
-   -1 & 4 
+   -1 & 4
    \end{bmatrix}
    \end{equation}
 
@@ -135,7 +133,7 @@ Solve the following using matrix inversion:
    \vv{x} = \vv{A}^{-1}\vv{b} &= \frac{1}{18}
    \begin{bmatrix}
    5 & -2 \\
-   -1 & 4 
+   -1 & 4
    \end{bmatrix}
    \begin{bmatrix}
    20.9 \\
@@ -153,14 +151,16 @@ Solve the following using matrix inversion:
    \end{align}
 
    Therefore, $x_1 = 2.5$ and $x_2 = -4.2$.
+   ```
 
-2. 
-   
+2. Solve using matrix inversion or explain why this is not possible:
+
    \begin{align}
    x_1 + 4x_2 = 8 \\
-   2x_1 + 8x_2 = 17 
+   2x_1 + 8x_2 = 17
    \end{align}
 
+   ```{solution}
    First, write in matrix form **Ax** = **b** with:
    \begin{equation}
    \vv{A} = \begin{bmatrix}
@@ -180,9 +180,11 @@ Solve the following using matrix inversion:
    |\vv{A}| = (1 \cdot 8) - (2 \cdot 4) = 0
    \end{equation}
 
-   A is singular because det A = 0, so it <ins>**cannot be inverted.**</ins>
+   **A** is singular because $|\vv{A}| = 0$, so these equations cannot be solved
+   using an inverse.
+   ```
 
-3. 
+3. Solve using matrix inversion or explain why this is not possible:
 
    \begin{align}
    x_2 + x_3 = -2 \\
@@ -190,12 +192,13 @@ Solve the following using matrix inversion:
    x_1 + x_2 + x_3 = 2
    \end{align}
 
+   ```{solution}
    First, write in matrix form **Ax** = **b** with:
    \begin{equation}
    \vv{A} = \begin{bmatrix}
    0 & 1 & 1 \\
    0 & 4 & 6 \\
-   1 & 1 & 1 
+   1 & 1 & 1
    \end{bmatrix}
    \qquad
    \vv{b} = \begin{bmatrix}
@@ -208,153 +211,124 @@ Solve the following using matrix inversion:
    Then, evaluate $|\vv{A}|$ to check if an inverse exists:
 
    \begin{align}
-   |\vv{A}| = (0 \cdot )
-   \begin{bmatrix}
+   |\vv{A}| =
+   0 \cdot \begin{vmatrix}
    4 & 6 \\
    1 & 1
-   \end{bmatrix}
-   (-1 \codt )
-   \begin{bmatrix}
+   \end{vmatrix}
+   -1 \cdot
+   \begin{vmatrix}
    0 & 6 \\
    1 & 1
-   \end{bmatrix}
-   (1 \cdot )
-   \begin{bmatrix}
+   \end{vmatrix}
+   + 1 \cdot
+   \begin{vmatrix}
    0 & 4 \\
    1 & 1
-   \end{bmatrix}
+   \end{vmatrix}
    \end{align}
 
    \begin{equation}
-   |\vv{A}| = (-1 \cdot (0-6)) - (1 \cdot (0-4)) = 2
+   |\vv{A}| = -1 \cdot (0-6) + 1 \cdot (0-4) = 2
    \end{equation}
 
-   Since det A does not equal 0, A is invertible. Use Gauss-Jordan elimination.
+   Since $|\vv{A}| \ne 0$, **A** is invertible. Use Gauss-Jordan elimination
+   to find the inverse. Start with the augmented matrix $[\vv{A} | \vv{I}]$,
+   then rearrange the rows
 
-   \being{align}
+   \begin{align}
    \begin{bmatrix}
-   0 & 1 & 1 : & 1 & 0 & 0 \\
-   0 & 4 & 6 : & 0 & 1 & 0 \\
-   1 & 1 & 1 : & 0 & 0 & 1 
+   0 & 1 & 1 & 1 & 0 & 0 \\
+   0 & 4 & 6 & 0 & 1 & 0 \\
+   1 & 1 & 1 & 0 & 0 & 1
+   \end{bmatrix}
+   &\to \begin{bmatrix}
+   1 & 1 & 1 & 0 & 0 & 1 \\
+   0 & 1 & 1 & 1 & 0 & 0 \\
+   0 & 4 & 6 & 0 & 1 & 0
+   \end{bmatrix}
+   \begin{matrix}
+   \vphantom{R_1} \\ \vphantom{R_1} \\ -4 R_1
+   \end{matrix} \\
+   &\to \begin{bmatrix}
+   1 & 1 & 1 & 0 & 0 & 1 \\
+   0 & 1 & 1 & 1 & 0 & 0 \\
+   0 & 0 & 2 & -4 & 1 & 0
+   \end{bmatrix}
+   \begin{matrix}
+   \vphantom{R_1} \\ \vphantom{R_1} \\ \div 2
+   \end{matrix} \\
+   &\to \begin{bmatrix}
+   1 & 1 & 1 & 0 & 0 & 1 \\
+   0 & 1 & 1 & 1 & 0 & 0 \\
+   0 & 0 & 1 & -2 & 0.5 & 0
+   \end{bmatrix}
+   \begin{matrix}
+   -R_3 \\ -R_3 \\ \vphantom{R_1}
+   \end{matrix} \\
+   &\to \begin{bmatrix}
+   1 & 1 & 0 & 2 & -0.5 & 1 \\
+   0 & 1 & 0 & 3 & -0.5 & 0 \\
+   0 & 0 & 1 & -2 & 0.5 & 0
+   \end{bmatrix}
+   \begin{matrix}
+   -R_2 \\ \vphantom{R_1} \\ \vphantom{R_1}
+   \end{matrix} \\
+   &\to \begin{bmatrix}
+   1 & 0 & 0 & -1 & 0 & 1 \\
+   0 & 1 & 0 & 3 & -0.5 & 0 \\
+   0 & 0 & 1 & -2 & 0.5 & 0
    \end{bmatrix}
    \end{align}
 
-   -->
+   Hence,
 
-   \being{align}
-   \begin{bmatrix}
-   1 & 1 & 1 : & 0 & 0 & 1 \\
-   0 & 1 & 1 : & 1 & 0 & 0 \\
-   0 & 4 & 6 : & 0 & 1 & 0 
+   \begin{align}
+   \vv{A}^{-1} = \begin{bmatrix}
+   -1 & 0 & 1 \\
+   3 & -0.5 & 0 \\
+   -2 & 0.5 & 0
    \end{bmatrix}
    \end{align}
 
-   Reorder -->
+   and
 
-   \being{align}
+   \begin{align}
+   \vv{x} = \vv{A}^{-1} \vv{b} &=
    \begin{bmatrix}
-   1 & 1 & 1 : & 0 & 0 & 1 \\
-   0 & 1 & 1 : & 1 & 0 & 0 \\
-   0 & 0 & 2 : & -4 & 1 & 0 
-   \end{bmatrix}
-   \being{align}
-
-   -4 Row 2
-
-   \being{align}
-   \begin{bmatrix}
-   1 & 1 & 1 : & 0 & 0 & 1 \\
-   0 & 1 & 1 : & 1 & 0 & 0 \\
-   0 & 0 & 1 : & -2 & 0.5 & 0 
-   \end{bmatrix}
-   \being{align}
-
-   divide by 2 -->
-
-   \being{align}
-   \begin{bmatrix}
-   1 & 1 & 0 : & 2 & -0.5 & 1 \\
-   0 & 1 & 0 : & 3 & -0.5 & 0 \\
-   0 & 0 & 1 : & -2 & 0.5 & 0 
-   \end{bmatrix}
-   \being{align}
-
-   - Row 3
-   - Row 3 -->
-
-   \being{align}
-   \begin{bmatrix}
-   1 & 0 & 0 : & -1 & 0 & 1 \\
-   0 & 1 & 0 : & 3 & -0.5 & 0 \\
-   0 & 0 & 1 : & -2 & 0.5 & 0 
-   \end{bmatrix}
-   \being{align}
-
-   - Row 2
-
-   \being{align}
-   A^{-1}=\begin{bmatrix}
    -1 & 0 & 1 \\
    3 & -0.5 & 0 \\
-   -2 & 0.5 & 0 
+   -2 & 0.5 & 0
    \end{bmatrix}
-   \being{align}
-
-   \being{align}
-   x = A^{-1}b =\begin{bmatrix}
-   -1 & 0 & 1 \\
-   3 & -0.5 & 0 \\
-   -2 & 0.5 & 0 
-   \end{bmatrix}
-   \being{align}
-
-   \being{align}
-   =\begin{bmatrix}
+   \begin{bmatrix}
    -2 \\
    -12 \\
    2
-   \end{bmatrix}
-   \being{align}
-
-   = 
-
-   \being{align}
-   x =\begin{bmatrix}
-   -1*-2 +  & 1*2 \\
-   3*-2 + & -0.5*-12 \\
-   -2*-2 + 0.5*-12
-   \end{bmatrix}
-   \end{align}
-
-   =
-
-   \being{align}
-   \begin{bmatrix}
+   \end{bmatrix} \\
+   & = \begin{bmatrix}
+   -1 \cdot -2 + 1 \cdot 2 \\
+   3 \cdot -2 + -0.5 \cdot -12 \\
+   -2 \cdot -2 + 0.5 \cdot -12
+   \end{bmatrix} \\
+   &= \begin{bmatrix}
    4 \\
    0 \\
    -2
    \end{bmatrix}
-   \being{align}
+   \end{align}
 
-   \begin{equation}
-   x_1 = 4
-   \end{equation}
+   So, $x_1 = 4$, $x_2 = 0$, and $x_3 = -2$.
+   ```
 
-   \being{equation}
-   x_2 = 0
-   \end{equation}
+4. Solve using matrix inversion or explain why this is not possible:
 
-   \being{equation}
-   x_3 = -2
-   \end{equation}
-
-4. 
-   \being{align}
+   \begin{align}
    4x_2 + 4x_3 = 24 \\
    3x_1 - 11x_2 - 2x_3 = -6 \\
    6x_1 - 17x_2 + x_3 = 18
    \end{align}
 
+   ```{solution}
    First, write in matrix form **Ax** = **b** with:
    \begin{equation}
    \vv{A} = \begin{bmatrix}
@@ -374,7 +348,7 @@ Solve the following using matrix inversion:
    |\vv{A}| = (5 \cdot 4) - (-1 \cdot -2) = 18
    \end{equation}
 
-   $|\vv{A}| \ne 0$, so an inverse can be found using the formula for a 3x3 matrix: 
+   $|\vv{A}| \ne 0$, so an inverse can be found using the formula for a 3x3 matrix:
 
    \begin{equation}
    \begin{align}
@@ -409,18 +383,19 @@ Solve the following using matrix inversion:
 
    Since det A = 0, A is not invertible.
 
-(e)
+5. Solve using matrix inversion or explain why this is not possible:
 
    \begin{align}
    2x_1 - x_2 - 3x_3 = -1 \\
    -4x_1 + 2x_2 - 6x_3 = 2
    \end{align}
 
+   ```{solution}
    First, write in matrix form **Ax** = **b** with:
    \begin{equation}
    \vv{A} = \begin{bmatrix}
    2 & -1 & 3 \\
-   -4 & 2 & -6 
+   -4 & 2 & -6
    \end{bmatrix}
    \qquad
    \vv{b} = \begin{bmatrix}
@@ -429,4 +404,5 @@ Solve the following using matrix inversion:
    \end{bmatrix}
    \end{equation}
 
-   Since A is not square, A is not invertible.
+   Since **A** is not square, **A** is not invertible.
+   ```
