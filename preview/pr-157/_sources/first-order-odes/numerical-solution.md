@@ -11,7 +11,6 @@ y(t + \Delta t) \approx y(t) + f(t, y) \Delta t
 
 This update can be applied repeatedly, starting from the initial condition $y(0)$, to approximate the solution at later times.
 
----
 
 **Example:**  
 Given the differential equation:
@@ -22,7 +21,6 @@ y' - y = x \quad \Rightarrow \quad y' = f(x, y) = x + y
 
 Use Euler's method with a step size $\Delta x = 0.2$ to approximate the solution.
 
----
 
 ```{note}
 Initial condition: \( y(0) = 0 \)
@@ -39,7 +37,6 @@ Initial condition: \( y(0) = 0 \)
 | 4    | 0.8      | 0.274  | 0.215                 | 0.489     | 0.426  | 0.152            |
 | 5    | 1.0      | 0.489  |                       |           | 0.718  | 0.229            |
 
----
 Compare to Exact Solution
 
 ```{math}
@@ -68,6 +65,6 @@ Because we are using trunkated Taylor series, we accrue an error:
 
 image 
 
-Ther error in a single step is O(\Delta t^2). This is called the \underline{local}) error. To cover a finite time t, t/ \Delta t steps are required so the \underline{global}) (total error is O(\Delta t). To improve accuracy, you should \underline{decrease}) \Delta t, but this takes more work. Some \Delta t will totally fail! This is the field of numerical stability (not covered here).
+Ther error in a single step is O($\Delta t^2$). This is called the \underline{local}) error. To cover a finite time t, t/$\Delta t$ steps are required so the \underline{global}) (total error is O($\Delta t$). To improve accuracy, you should \underline{decrease}) $\Delta t$, but this takes more work. Some \Delta t will totally fail! This is the field of numerical stability (not covered here).
 
 
