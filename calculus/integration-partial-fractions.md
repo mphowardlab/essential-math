@@ -81,6 +81,7 @@ x^2-29x+5 = A_1 \left(x-4 \right) \left(x^2+3 \right) + A_2 \left(x^2+3 \right)+
 A_1+A_3 = 0
 \end{equation}
 
+
 \begin{equation}
 -4A_1 + A_2-8A_3 + B _3 =1
 \end{equaiton}
