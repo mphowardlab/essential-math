@@ -352,7 +352,7 @@ solve $\vv{A} \vv{A}^{-1} = \vv{I}$ as a generalization of **Ax** = **b**.
    -11 & -2 \\
    -17 & 1
    \end{vmatrix}
-   -4 \codt
+   -4 \cdot
    \begin{vmatrix}
    3 & -2 \\
    6 & 1
@@ -365,7 +365,7 @@ solve $\vv{A} \vv{A}^{-1} = \vv{I}$ as a generalization of **Ax** = **b**.
    \end{align}
 
    \begin{equation}
-   |\vv{A}| = -4 ((3 \cdot 1)) - (6 \cdot -2)) + (4 ((3 \cdot -17)) - ((6 \cdot -11))
+   |\vv{A}| = -4 (3 \cdot 1 - 6 \cdot -2) + (4 (3 \cdot -17 - 6 \cdot -11)
    \end{equation}
 
    \begin{equation}
