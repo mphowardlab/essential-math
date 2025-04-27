@@ -105,6 +105,31 @@ x_3 &= 2
 x_1 = \begin{bmatrix} -2 \\ -1 \\ 2 \end{bmatrix}
 \end{equation}
 
+\begin{equation}
+\lambda_2 = 6: \begin{bmatrix} 0 & 2 & -2 \\ 2 & -1 & 0 \\ -2 & 0 & 1 \end{bmatrix} x_2 = 0
+\end{equation}
+Reduce the row and choose: 
+\begin{align} 
+x_3 &= 2 
+\end{align}
+\begin{equation}
+\begin{bmatrix} -2 & 0 & 1 \\ 0 & 1 & -1 \\ 0 & 0 & 0 \end{bmatrix} x_2 = 0
+\longrightarrow
+x_2 = \begin{bmatrix} 1 \\ 2 \\ 2 \end{bmatrix}
+\end{equation}
+
+\begin{equation}
+\lambda_3 = 3: \begin{bmatrix} 3 & 2 & -2 \\ 2 & 2 & 0 \\ -2 & 0 & 4 \end{bmatrix} x_3 = 0
+\end{equation}
+Reduce the row and choose: 
+\begin{align} 
+x_3 &= 1 
+\end{align}
+\begin{equation}
+\begin{bmatrix} 1 & 1 & 0 \\ 0 & 1 & 2 \\ 0 & 0 & 0 \end{bmatrix} x_3 = 0
+\longrightarrow
+x_3 = \begin{bmatrix} 2 \\ -2 \\ 1 \end{bmatrix}
+\end{equation}
 
 
 
