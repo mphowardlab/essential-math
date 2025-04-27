@@ -5,15 +5,15 @@
 We consider a diffusion cell consisting of two compartment with solute concentrations (c_1) and (c_2).
 The consentrations change according to:
 
-\begin{aligned}
-\frac{dc_1}dt &= -0.1c_1 + 0.1c_2, 
-\frac{dc_2}dt &= 0.1c_1 - 0.1c_2. 
-\end{aligned}
+\begin{align}
+frac{dc_1}dt &= -0.1c_1 + 0.1c_2, \\
+frac{dc_2}dt &= 0.1c_1 - 0.1c_2. 
+\end{align}
 \
 
 \frac{dmathdf{c}}{dt} = A \mathbf{c}, \quad \text{where} \quad A = \begin{bmatrix} -0.1 & 0.1 \\ 0.1 & -0.1 \end{bmatrix}
  
-Since \(A\) is symmetric is has real eijeuvalues 
-\det(A - \lambda I) = 0
-\begin{vmatrix} -0.1 \lambda & 0.1 \\ o.1 & -0.1 - \lamda \end{vmatrix} = (\lambda +0.1)^2 - (0.1)^2 = \lambda^2 = \lambda^2 + 0.2\lamdda = 0
+Since (A) is symmetric it has real eijeuvalues 
+det(A - \lambda I) = 0
+begin{vmatrix} -0.1 \lambda & 0.1 \\ o.1 & -0.1 - \lamda \end{vmatrix} = (\lambda +0.1)^2 - (0.1)^2 = \lambda^2 = \lambda^2 + 0.2\lamdda = 0
 
