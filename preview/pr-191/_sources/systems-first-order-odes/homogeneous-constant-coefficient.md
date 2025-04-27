@@ -33,4 +33,4 @@ Initial Condition:
 \begin{bmatrix} 1 \ 0 \end{bmatrix} =  \begin{bmatrix} 1 & 0 \ 0 & 1 \end{bmatrix} \begin{bmatrix} C_1 \ C_2 \end{bmatrix}
 \end{equation}
 
-$C_{1]$ = 1  $C_{2}$ =0
+$C_{1}$ = 1  $C_{2}$ =0
