@@ -47,3 +47,4 @@ F(t) &= \exp{(\int{Kdt})} = e^{kt}\\
 \to c(t) &= e^{-kt}(\frac{A}{k}e^{kt}+B\frac{e^{kt}{K^{2}+(\frac{\pi}{12})^{2}}}+[k\cos{(\frac{\pi t}{12})}\frac{\pi}{12}\sin{(\frac{\pi t}{12})}]+C^{*})\\
 \end{align}
 ```
+`````
