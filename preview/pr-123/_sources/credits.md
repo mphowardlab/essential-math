@@ -12,6 +12,7 @@ This work (c) 2025 is licensed under
 - Ella Governale
 - Michael P. Howard
 - Evan M. Hughes
+- Gwyneth A. Lovell
 - Abby Lucas
 - Faith Major
 - John R. Marshall, IV
