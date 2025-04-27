@@ -344,37 +344,32 @@ solve $\vv{A} \vv{A}^{-1} = \vv{I}$ as a generalization of **Ax** = **b**.
    \end{bmatrix}
    \end{equation}
 
-   \begin{equation}
-   |\vv{A}| = (5 \cdot 4) - (-1 \cdot -2) = 18
-   \end{equation}
+   Then, evaluate $|\vv{A}|$ to check if an inverse exists:
 
-   $|\vv{A}| \ne 0$, so an inverse can be found using the formula for a 3x3 matrix:
-
-   \begin{equation}
    \begin{align}
-   |\vv{A}| = (0 \cdot )
-   \begin{bmatrix}
+   |\vv{A}| = 
+   0 \cdot \begin{vmatrix}
    -11 & -2 \\
    -17 & 1
-   \end{bmatrix}
-   (-4 \codt )
-   \begin{bmatrix}
+   \end{vmatrix}
+   -4 \codt
+   \begin{vmatrix}
    3 & -2 \\
    6 & 1
-   \end{bmatrix}
-   (4 \cdot )
-   \begin{bmatrix}
+   \end{vmatrix}
+   + 4 \cdot 
+   \begin{vmatrix}
    3 & -11 \\
    6 & -17
-   \end{bmatrix}
+   \end{vmatrix}
    \end{align}
 
    \begin{equation}
-   = (-4 ((3 \cdot 1)) - (6 \cdot -2)) + (4 ((3 \cdot -17)) - ((6 \cdot -11))
+   |\vv{A}| = -4 ((3 \cdot 1)) - (6 \cdot -2)) + (4 ((3 \cdot -17)) - ((6 \cdot -11))
    \end{equation}
 
    \begin{equation}
-   = (-4 \cdot 15) + (4 \cdot 15)
+   = -4 \cdot 15 + 4 \cdot 15
    \end{equation}
 
    \begin{equation}
