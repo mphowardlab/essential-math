@@ -95,7 +95,10 @@ Then, use these eigenvalues to find the eigenvectors:
 \begin{equation}
 \lambda_1 = 9: \begin{bmatrix} -3 & 2 & -2 \\ 2 & -4 & 0 \\ -2 & 0 & -2 \end{bmatrix} x_1 = 0
 \end{equation}
-The row will reduce, choose: \begin{align} x_3 &= 2 \end{align}
+The row will reduce, choose: 
+\begin{align} 
+x_3 &= 2 
+\end{align}
 \begin{equation}
 \begin{bmatrix} 1 & -2 & 0 \\ 0 & 2 & 1 \\ 0 & 0 & 0 \end{bmatrix} x_1 = 0
 \longrightarrow
