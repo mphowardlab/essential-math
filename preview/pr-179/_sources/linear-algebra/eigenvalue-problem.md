@@ -9,7 +9,9 @@ Find the eigenvalues and eigenvectors of the following matrix:
 
 Since A is **upper triangular**, the eigenvalues are the diagonal entries:
 
-\lambda_1 = 4, \lambda_2 = -4
+\begin{align}
+\lambda_1 &= 4 \\ 
+\lambda_2 &= -4
 
 
 **Eigenvectors:**
