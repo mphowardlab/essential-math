@@ -16,9 +16,9 @@ Mole balance on a tank with increasing inlet/outlet flow rate.
 Rewrite: 
 ```{math}
 \begin{align}
-\dot{n}_{A} + \frac{\dot{q}t}{V} n_{A} &= C_{f,A} \dot{q}t \\
-p(t) &= \frac{\dot{q}t}{V}, \quad r(t) = C_{f,A}  \dot{q}t \\
-F(t) &= exp[\int{p(t)dt}] = exp(\int{\frac{\dot{q}t}{v}dt}) = exp(\frac{1}{2}\frac{\dot{q}{V^{2}}})\\
+\dot{n}_{A} + (\frac{\dot{q}t}{V}) n_{A} &= C_{f,A} \dot{q}t \\
+p(t) &= \frac{\dot{q}t}{V} \quad r(t) = C_{f,A}  \dot{q}t \\
+F(t) &= exp[\int{p(t)dt}] = exp(\int{\frac{\dot{q}t}{v}dt}) = exp(\frac{1}{2}\frac{\dot{q}}{v^{2}})\\
 \end{align}
 ```
 
