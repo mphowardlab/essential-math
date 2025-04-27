@@ -201,7 +201,7 @@ $$
 $$
 ```{solution}
 $$
-\td{}{f}{p}{y}=(\td{}{f}{x}{y}) (\td{}{x}{p}{y})=\frac{\td{}{f}{x}{y}}{\td{}{p}{x}{y}=\frac{p}{\td{}{p}{x}{y}}
+\td{}{f}{p}{y}=(\td{}{f}{x}{y}) (\td{}{x}{p}{y})=\frac{\td{}{f}{x}{y}}{\td{}{p}{x}{y}}=\frac{p}{\td{}{p}{x}{y}}
 
 =\frac{-4sin(4x+y^2)+2xy}{-16cos(4x+y^2)+2y}
 $$
