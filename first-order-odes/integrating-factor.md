@@ -24,8 +24,12 @@ F(t) &= exp[\int{p(t)dt}] = exp(\int{\frac{\dot{q}t}{v}dt}) = exp(\frac{1}{2}\fr
 u &= \frac{1}{2}\frac{\dot{q}}{v}t^{2}\\
 du &= \frac{\dot{q}}{V}tdt \to \dot{q}tdt = Vdu\\
 n_{A}(t) &= exp(-\frac{1}{2}\frac{\dot{q}}{V}t^{2})[C_{f,A}Vexp(\frac{1}{2}\frac{\dot{q}}{v}t^{2})+C]\\
+n_{A}(o) &= n_A,o = C_{f,A}V+C \to{C = n_{A,o} - C_{f,A}V}
 \end{align}
 ```
+
+```{math}
+\to{\boxed{n_{A}(t) &= C_{f,A}V + (n_{A,o} - C_{f,A}V)exp{(-\frac{1}{2}\frac{\dot{q}}{v}t^{2})}}}\\
 ````
 
 5. Example: Hormone level (again)
