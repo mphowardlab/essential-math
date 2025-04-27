@@ -5,7 +5,8 @@ What do we do when an ODE is not exact?
     P = -y
     Q = x
 
-In this equation, we can consider our P = -y and our Q = x. Remember, when solving ODEs, we take the partial derivative of P and Q... If partial derivatives are not equal, the equation is not exact. 
+In this equation, we can consider our P = -y and our Q = x. Remember, when solving ODEs, we take the partial derivative of P and Q... 
+If partial derivatives are not equal, the equation is not exact. 
 
     ∂P/∂y = -1       ∂Q/∂x = 1       ----> not exact!!
 
