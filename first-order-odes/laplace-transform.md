@@ -88,7 +88,7 @@ y &=L^{-1}[Y]\\
 \end{align}
 ```
 
-```{example} Laplace transform
+```{example} Skill Builder 1
 Solve the initial value problem using Laplace transforms
 \begin{equation}
 y' + 4y = e^{4x} \quad y(0) = 0
@@ -97,7 +97,7 @@ y' + 4y = e^{4x} \quad y(0) = 0
 ---
 
 \begin{align}
-L[y'+4y] &= L[e^{4x}] \\
+L[y' + 4y] &= L[e^{4x}] \\
 sY - y(0) + 4Y &= \frac{1}{s-4} \\
 (s+4) Y &= \frac{1}{s-4} \\
 \end{align}
@@ -109,7 +109,6 @@ Y &= \frac{1}{(s-4)(s+4)} \\
 \end{align}
 
 Cover up to find $A_1$ and $A_2$:
-
 \begin{align}
 A_1 &= \frac{-1}{8} \\
 A_2 &= \frac{1}{8} \\
@@ -117,9 +116,43 @@ A_2 &= \frac{1}{8} \\
 
 Solve using Laplace transforms:
 \begin{align}
-Y = \frac{-1}{8} \frac{1}{s+4} + \frac{1}{8} \frac{1}{s-4} \\
-y = L^{-1}[Y] &= \frac{-1}{8}L^{-1}\left[\frac{1}{s+4}\right] + \frac{1}{8}L^{-1}\left[\frac{1}{s-4}\right] \\
-&= \frac{-1}{8}e^{-4x} + \frac{1}{8}e^{4x} \\
+Y &= \frac{-1}{8} \frac{1}{s+4} + \frac{1}{8} \frac{1}{s-4} \\
+y &= L^{-1}[Y] \\
+  &= \frac{-1}{8}L^{-1}\left[\frac{1}{s+4}\right] + \frac{1}{8}L^{-1}\left[\frac{1}{s-4}\right] \\
+  &= \frac{-1}{8}e^{-4x} + \frac{1}{8}e^{4x} \\
 y &= \frac{1}{8}(e^{4x} - e^{-4x}) \\
+\end{align}
+```
+
+```{example} Skill Builder 2
+Solve the initial value problem using Laplace transforms
+\begin{equation}
+y' + 2y = 8 \quad y(0) = 1
+\end{equation}
+
+---
+
+\begin{align}
+L[y' + 2y] &= L[8] \\
+sY(s) - y(0) + 2Y &= \frac{8}{s} \\
+(s+2) Y - 1 &= \frac{8}{s} \\
+\end{align}
+
+Use partial fractions and the "cover-up" method:
+\begin{align}
+Y &= \frac{1}{s+2} + \frac{8}{(s)(s+2)} \\
+  &= \frac{1}{s+2} + \frac{A_1}{s} - \frac{A_2}{s+2} \\
+A_1 = 4 \\
+A_2 = -4 \\
+\end{align}
+
+Solve using Laplace transforms:
+\begin{align}
+Y &= \frac{1}{s+2} - \frac{4}{s+2} \\
+  &= \frac{4}{s} - \frac{3}{s+2} \\
+y &= L^{-1}[Y] \\
+  &= 4L^{-1}[\frac{1}{s}] - 3L^{-1}[\frac{1}{s+2}] \\
+  &= 4 - 3e^{-2x} \\
+y = 4 - 3e^{-2x} \\
 \end{align}
 ```
