@@ -62,18 +62,35 @@ Q &= 3y^2 + 2y + \cos(x+y) \\
 Since these partial derivatives match, the ODE is exact.
 ```
 
-If an ODE is exact, we can integrate P or Q to get f, then solve for the
-integration constant with Q or P.\
-$f=\int Pdx = \int \cos(x+y)dx = \sin(x+y) + k(y)$\
-$\frac{\partial f}{\partial y}=\cos(x+y)+k'=Q=3y^2+2y+\cos(x+y)$\
-$k'=3y^2+2y$\
-$\int dk=\int (3y^2+2y) dy$\
-$k=y^3+y^2+c^*$\
-Therefore, $f=\sin(x+y) + y^3 +y^2 + c^* =c \to \sin(x+y)+y^3 +y^2 =c$ \
-is the general solution of the ODE!
+If an ODE is exact, we can integrate $P$ or $Q$ to get $f$, then solve for the
+integration constant with $Q$ or $P$.
 
-Note that order of integration does not matter. We could also have done \
-$f=\int Q dy = \int[3y^2+2y+\cos(x+y)]dy=y^3+y^2+\sin(x+y)+k(x)$\
-$\frac{\partial f}{\partial x}=\cos(x+y)+k'=P=\cos(x+y) $\
-$k'=0 \to k=c^*$\
+```{example} Solve for integration constant
+
+\begin{align}
+f &=\int P \d{x} = \int \cos(x+y) \d{x} = \sin(x+y) + k(y)
+\td{f}{y}&=\cos(x+y)+k'=Q=3y^2+2y+\cos(x+y)
+k'&=3y^2+2y
+\int dk$=\int (3y^2+2y) \d{y}
+k&=y^3+y^2+c^*
+\end{align}
+
+---
+
+\therefore 
+\begin{align}
+f=\sin(x+y) + y^3 +y^2 + c^* =c \to \sin(x+y)+y^3 +y^2 =c 
+\end{align}
+
+is the general solution of the ODE!
+```
+
+Note that order of integration does not matter. We could also have done 
+
+\begin{align}
+f=\int Q d{y} &= \int \left[3y^2+2y+\cos(x+y) \right]dy=y^3+y^2+\sin(x+y)+k(x)
+\td{f}{x} &=\cos(x+y)+k'=P=\cos(x+y) 
+k'&=0 \to k=c^*
+\end{align}
+
 and arrived at the same answer!
