@@ -44,9 +44,9 @@ y&=\int\left( \frac{4}{x-3}-\frac{1}{x+2} \right)dx \\
 &= 4\ln| x-3 | - \ln|x+2| + C  
 \end{align}
 
-```{topic} 
-Partial Fraction Decomposition
-```
+
+## Partial Fraction Decomposition
+
 \begin{align}
 Procedure: For a rational polynomial  \frac{P\left(x\right)}{Q\left(x\right)} where Q is expressed using either linear \left(ax+b \right) or irreducible quadratic \left(ax^2 + bx + c\right) factors and the degree of P is less than Q 
 \end{align}
@@ -114,12 +114,12 @@ $-12A_1+3A_2+16B_3 =5
 $\begin{bmatrix} 1 & 0 & 1 & 0\\ -4 & 1 & -8 & 1\\ 3 & 0 & 16 & -8\\ -12 & 3 & 0 & 16 \end{bmatrix} \begin{bmatrix} A_1 \\ A_2\\ A_3\\ B_3 \end{bmatrix} = \begin{bmatrix} 0\\ 1\\ -29 \\ 5 \end{bmatrix}$ $\to$ $A_1 = 1, A_2 = -5, A_3 = -1, B_3 =2$
 
 \begin{equation}
- y= \int\left(\frac{1}{x-3}-\frac{5}{\left(x-4\right)^2}-\frac{x}{x^2+3}+\frac{2}{x^2+3}\right) dx
+ y= \int\left(\frac{1}{x-4}-\frac{5}{\left(x-4\right)^2}-\frac{x}{x^2+3}+\frac{2}{x^2+3}\right) dx
  \end{equation}
 
-\begin{align}                          
-y= \int \left(\frac{1}{1+x^2}\right)dx  \to \arctanx
-\end{align}
+\begin{equation}                          
+\arctan(x)= \int \left(\frac{1}{1+x^2}\right)dx  
+\end{equation}
 
 
 
