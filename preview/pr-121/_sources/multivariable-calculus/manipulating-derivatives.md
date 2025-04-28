@@ -1,109 +1,93 @@
 # Manipulating partial derivatives
 
-We sometimes need to find derivatives we don't obtain easily from one of these potentials. For this, we use some calculus rules.
+We sometimes need to find derivatives we don't obtain easily from one of these
+potentials. For this, we use some calculus rules.
 
 ---
 
-``` {topic} Inversion Rule
-The inversion rule states that the partial derivative of each variable with respect to each other are recipricols, if the two variables are related trough a function.
-If  x(y, z)  and  y(x, z), then:
+The inversion rule states that the partial derivative of each variable with
+respect to each other are reciprocals if the two variables are related through
+an inverse function.
+
+```{topic} Inversion rule
+If $x(y, z)$ has an inverse function $y(x, z)$, then:
 
 \begin{equation}
-(\frac{\partial x}{\partial y})_z = \frac{1}({frac{\partial y}{\partial x}})_z
+\td{}{x}{y}{z} = \frac{1}{(\partial y/\partial x)_z}
 \end{equation}
 ```
 
-```{example}
-In this example, we aim to demonstrate two ways of calculating the partial derivative
-\begin{equation}
-(\frac{\partial x}{\partial y})_z  
-\end{equation}
-for the function
-\begin{equation}
-x = \frac{y^2}{z}
-\end{equation}
-We will compute (\frac{\partial x}{\partial y})_z directly, then find \frac{1}({frac{partial y}{partial x}})_z by inverting the expression for y in terms of x, and confirm that the results are consistent through inversion.
+To demonstrate use of this rule, consider two ways of calculating the partial
+derivative $(\partial x/\partial y)_z$ for the function
 
-
-Start with:
-\begin{equation}
-x = \frac{y^2}{z}
-\end{equation}
-Take the partial derivative of x with respect to y at constant z:
-\begin{equation}
-(\frac{\partial x}{\partial y})_z = \frac{2y}{z}
-\end{equation}
-
-
-Now we will solve $(\frac{\partial x}{\partial y})_z$ using the inversion rule.
-We first solve for y in terms of x:
-\begin{align}
-x = \frac{y^2}{z} \\
-y = \pm \sqrt{xz}
-\end{align}
-
-Now compute the partial derivative of y with respect to x at constant z. We'll first write the derivative explicitly before simplifying:
-\begin{equation}
-(\frac{\partial y}{\partial x})_z = (\frac{1}{2})(sqrt{\frac{z}{x}})
-\end{equation}
-
-Since $x = \frac{y^2}{z}$, we substitute back:
-\begin{equation}
-(\frac{1}{2})(sqrt{\frac{z}{\frac{y^2}{z}}}) = \frac{z}{2y}
-\end{equation}
-
-
-Finally, verify that the inverse derivative gives the original:
-\begin{equation}
-\frac{1}{\frac{\partial y}{\partial x}_z} = \frac{1}{ \frac{z}{2y}} = \frac{2y}{z} = ( \frac{\partial x}{\partial y})_z
-\end{equation}
-
-
-```
-
-``` {topic} Chain Rule
-When working with multivariable functions, we often want to compute the derivative of one variable with respect to another, even when the relationship between them is indirect. In such cases, the chain rule allows us to break down the derivative into intermediate steps.
-
-Suppose we have a variable x that depends on another variable w, and w itself depends on a variable y. Then, x depends on y through w, and we can write:
-\begin{equation}
-x = x(w), \quad w = w(y)
-\end{equation}
-
-In this situation, we apply the chain rule for partial derivatives to compute how x changes with respect to y, while keeping z constant:
-\begin{equation}
-( \frac{\partial x}{\partial y})_z = (( \frac{\partial x}{\partial w})_z) (( \frac{\partial w}{\partial y})_z)
-\end{equation}
-
-```{example}
-
-Define $w = yz$ 
-so, $y = \frac{w}{z}$
-
-Then, given that
 \begin{equation}
 x = \frac{y^2}{z}
 \end{equation}
 
-We can plug $y = \frac{w}{z}$ in for y
+and the inverse function
+
 \begin{equation}
-x = \frac{(w/z)^2}{z} = \frac{w^2}{z^3}
+y = \sqrt{xz}
 \end{equation}
 
-Now compute:
-\begin{equation}
-( \frac{\partial x}{\partial w})_z = \frac{2w}{z^3}
-|end{equation}
+Evaluating the partial derivative of *x* with respect to *y* directly gives
 
-And:
 \begin{equation}
-( \frac{\partial w}{\partial y})_z = z
-|end{equation}
+\td{}{x}{y}{z} = \frac{2y}{z}
+\end{equation}
 
-Therefore:
-\begin{align}
-(( \frac{\partial x}{\partial w})_z)(( \frac{\partial w}{\partial y})_z) = (\frac{2w}{z^3})z = \frac{2w}{z^2} = \frac{2yz}{z^2} = \frac{2y}{z}
-\end{align}
+while the partial derivative of *y* with respect to *x* is:
+
+\begin{equation}
+\td{}{y}{x}{z} = \frac{1}{2} \sqrt{\frac{z}{x}}
+\end{equation}
+
+Now, use the inversion rule and substitute $x(y,z)$ back in:
+
+\begin{equation}
+\frac{1}{(\partial y/\partial x)_z} = 2 \sqrt{\frac{x}{z}}
+ = 2 \sqrt{\frac{y^2/z}{z}} = \frac{2y}{z}
+\end{equation}
+
+The results are the same!
+
+---
+
+When working with multivariable functions, we often want to compute the
+derivative of one variable with respect to another, even when the relationship
+between them is indirect. In such cases, the chain rule allows us to break down
+the derivative into intermediate steps.
+
+```{topic} Chain rule
+If $x(w,z)$ depends on a variable $w(y,z)$ that depends on a variable *y*, then
+
+\begin{equation}
+\td{}{x}{y}{z} = \td{}{x}{w}{z} \td{}{w}{y}{z}
+\end{equation}
 ```
+
+To demonstrate use of this rule, let $w = yz$, which means that
+
+\begin{equation}
+x = \frac{y^2}{z} = \frac{w^2}{z^3}
+\end{equation}
+
+We will calculate the partial derivative of *x* with respect to *y* using the
+chain rule, then show it gives the same as if we differentiated directly. First,
+we need partial derivatives of *x* with respect to *w* and *w* with respect to
+*y*:
+
+\begin{equation}
+\td{}{x}{w}{z} = \frac{2w}{z^3}, \qquad \td{}{w}{y}{z} = z
+\end{equation}
+
+Therefore, by the chain rule:
+
+\begin{equation}
+\td{}{x}{y}{z} = \left(\frac{2w}{z^3} \right)z = \frac{2yz}{z^2} = \frac{2y}{z}
+\end{equation}
+
+This matches our previous result for the derivative!
 
 ## Derivatives as functions
 

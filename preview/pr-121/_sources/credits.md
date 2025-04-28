@@ -9,16 +9,21 @@ This work (c) 2025 is licensed under
 
 - Payton Baxter
 - Paine Cole
+- Alexis Florit
 - Ella Governale
 - Michael P. Howard
 - Evan M. Hughes
+- Esther Laiming
+- Gwyneth A. Lovell
 - Abby Lucas
 - Faith Major
 - John R. Marshall, IV
 - Lilli Midgette
 - Elijah  C. Mitchell
+- Kendall Reeves
 - Michelle Schindler
 - Katie Sorensen
+- Madelyn Torrance
 - Debora Vasconcelos
 
 ## Attributions
