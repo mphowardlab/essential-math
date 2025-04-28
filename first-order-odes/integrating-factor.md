@@ -1,27 +1,38 @@
 # Integrating factor
-What do we do when an ODE is not exact?
-
+## What do we do when an ODE is not exact?
+**Example 1:**
+$$  
+  -y \, dx + x \, dy = 0
 $$
-  \int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}
+where: 
 $$
-
-
-    Example 1:  -y dx + x dy = 0
-    P = -y
-    Q = x
-
-In this equation, we can consider our P = -y and our Q = x. Remember, when solving ODEs, we take the partial derivative of P and Q... 
-If partial derivatives are not equal, the equation is not exact. 
-
-$$
-    ∂P/∂y = -1       ∂Q/∂x = 1       ----> not exact!!
+    P = -y, \quad Q = x
 $$
 
-Let's multiply by a factor, F, to make this ODE exact. This is the integrating factor. The integrating factor transforms the ODE into an exact differential equation.
+When solving ODEs, we take the partial derivatives of \(P\) and \(Q\).
+If the partial derivatives are not equal, the equation is **not exact**: 
 
-    F = 1/(x^2)  --> -y * (1/(x^2)) + x * (1/(x^2)) = 0 --> -y/x^2 + 1/x = 0
+$$
+\frac{\partial P}{\partial y} = -1, \quad \frac{\partial Q}{\partial x} = 1 \quad \longrightarrow \quad \text{Not exact!}
+$$
 
-    ∂(FP)/∂y = -1/x^2     ∂(FQ)/∂x = -1/x^2  ----> exact!! 
+---
+
+## Finding the Integrating Factor
+
+Multiply by a factor \(F\) to make the ODE exact. This is called the **integrating factor**.
+
+Choosing: 
+$$ 
+F = \frac{1}{x^2}
+$$
+
+Now multiply through:
+$$
+\left( -y \right) \left( \frac{1}{x^2} \right) + \left( x \right) \left( \frac{1}{x^2} \right) = 0
+\quad \Rightarrow \quad
+-\frac{y}{x^2} + \frac{1}{x} = 0
+$$
 
 How did we know the integrating factor would work? How did we find it?
 
