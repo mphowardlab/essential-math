@@ -167,9 +167,9 @@ We will need to integrate by parts again but there is a shortcut!!
 | $24$    | $16e^{\frac{x}{2}}$ |
 | $0$     | $32e^{\frac{x}{2}}$ |
 
-For this shortcut make a chart like depicted below and then starting from the
+For this shortcut make a chart like depicted above and then starting from the
 first u, go down one row diagonally and multiply the u and the dv together and
-then continue this all the way to 0.
+then continue this all the way to 0 starting positive and switching signs each one.
 
 Your answer will look like this:
 
