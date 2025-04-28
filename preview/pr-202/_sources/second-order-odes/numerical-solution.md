@@ -59,7 +59,7 @@ $$
 How do we do this when we have only numbers? <u>Shooting method.</u>
 
 
-Sketch
+![](./images/graph%20pic.jpg)
 
 
 - Formuate system of ODEs with () <u>initial</u> condtion is know
