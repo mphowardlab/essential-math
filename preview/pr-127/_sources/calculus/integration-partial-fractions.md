@@ -10,7 +10,6 @@ Given:
 \end{equation}
 
 Multiply by a factor and take the limit to find $A_1$ and $A_2$:
-
 \begin{equation}
 \lim_{x\to 3} \left( \frac{3x+11}{x+2} = A_1 + \frac{A_2(x-3)}{x+2} \right) \\
 \end{equation}
@@ -44,7 +43,6 @@ Given:
 \end{equation}
 
 $A_2$ can be solved for using the heaviside cover-up method because it corresponds to $(x-4)^2$. 
-
 \begin{equation}
 \frac{(4)^2 - 29(4) + 5}{(4)^2 + 3} = A_2 \\
 \end{equation}
@@ -52,6 +50,8 @@ $A_2$ can be solved for using the heaviside cover-up method because it correspon
 $$
 A_2 = -5 
 $$
+
+Alternative partial fraction decomposition methods must be used to solve for $A_1$, $A_3$, and $B_3$.
 
 ---
 ## Polynomial Division
@@ -78,18 +78,17 @@ x^3-3x^2{\overline{\smash{\big)}\, x^4-5x^3+6x^2-18}}
 \end{array} 
 $$
 
+The result:
 \begin{equation}
 y'= x-2- \frac{18}{x^3-3x^2} 
 \end{equation}
 
 Use partial fraction decomposition for the term $\frac{-18}{x^3-3x^2}$:
-
 \begin{align}
 \frac{-18}{x^3-3x^2} = \frac{-18}{(x^2)(x-3)} = \frac{A_1}{x} + \frac{A_2}{x^2} + \frac{A_3}{x-3} 
 \end{align}
 
-Find $A_2$ by heaviside cover-up method:
-
+Find $A_2$ using the heaviside cover-up method:
 \begin{align}
 \frac{-18}{0-3}= A_2 \\
 \end{align}
@@ -98,8 +97,7 @@ $$
 A_2 = 6 
 $$
 
-Find $A_3$ by heaviside cover-up method:
-
+Find $A_3$ using the heaviside cover-up method:
 \begin{align}
 \frac{-18}{3^2} = A_3 \\
 \end{align}
@@ -109,13 +107,11 @@ A_3 = -2
 $$
 
 Find $A_1$ by substituting $A_2$ and $A_3$:
-
 \begin{equation}
 -18 = A_1x(x-3) + 6(x-3) - 2x^2 
 \end{equation}
 
 Plug in $x=1$:
-
 \begin{align}
 -18 = A_1(-2) + 6(-2) - 2 = -2A_1 - 14 \\
 -4 = -2A_1 \\
@@ -126,7 +122,6 @@ A_1 = 2
 $$
 
 Integrate:
-
 \begin{align}
 y = \int (x - 2 + \frac{2}{x} + \frac{6}{x^2} - \frac{2}{x-3}) \, dx \\
 = \frac{x^2}{2} -2x + 2\ln|x| - \frac{6}{x} - 2\ln|x-3| + C 
