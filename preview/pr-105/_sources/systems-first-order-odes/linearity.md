@@ -1,6 +1,6 @@
 # Linearity
 
-A system of first-oder ODEs is linear if 
+A system of first-oder ODEs is linear if; 
 
 \begin{equation} 
 \vv{y}' = A(t) \vv{y} + g(t) 
@@ -10,7 +10,7 @@ Linear systems have unique solutions and special properties we will discuss
 later.
 
 An important special case is the homogeneous linear system with constant
-coefficients 
+coefficients:
 
 \begin{equation} \vv{y}' = A \vv{y} 
 \end{equation}
