@@ -4,7 +4,8 @@
 
 
 
-## Skill Builder
+## Skill Builder Problems
+---
 $C)
 A = \begin{bmatrix}
 0 & 4 \\
@@ -15,8 +16,9 @@ A = \begin{bmatrix}
 0
 \end{bmatrix}
 $
+---
 
-```{dropdown} **General Solution**
+{Solution}
 To find the eigenvalues:
 $
 |A - \lambda I| = \begin{vmatrix} -\lambda & 4 \\ -4 & -\lambda \end{vmatrix} = \lambda^2 + 16 = 0 \Rightarrow \lambda_{1,2} = \pm 4i
@@ -39,9 +41,8 @@ For \( $\lambda_2$ = -4i \):
 $
 y = C_1 e^{4it} \begin{bmatrix} -i \\ 1 \end{bmatrix} + C_2 e^{-4it} \begin{bmatrix} i \\ 1 \end{bmatrix}
 $
-```
 
-```{dropdown} **Particular Solution**
+---
 **Initial Conditions:**
 
 $$
