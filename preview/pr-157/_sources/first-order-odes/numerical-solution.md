@@ -63,7 +63,11 @@ y(x) = e^x - (x + 1)
 
 Because we are using trunkated Taylor series, we accrue an error:
 
-image 
+```{image} ./_images/euler.png
+:alt: Euler's method error
+:width: 300px
+:align: center
+```
 
 Ther error in a single step is O($\Delta t^2$). This is called the \underline{local}) error. To cover a finite time t, t/$\Delta t$ steps are required so the \underline{global}) (total error is O($\Delta t$). To improve accuracy, you should \underline{decrease}) $\Delta t$, but this takes more work. Some \Delta t will totally fail! This is the field of numerical stability (not covered here).
 
