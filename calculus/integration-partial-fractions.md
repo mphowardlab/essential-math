@@ -23,11 +23,11 @@ $$
 A_1 = 4  
 $$
 
-\begin{equaqtion}
+\begin{equation}
 \lim_{x\to -2} \left( \frac{3x+11}{x-3} = \frac{A_1(x+2)}{x-3} + A_2 \right) \\
 \end{equation} 
 
-\begin{equaqtion}
+\begin{equation}
 \frac{3(-2)+11}{-2-3} = A_2 \\
 \end{equation} 
 
