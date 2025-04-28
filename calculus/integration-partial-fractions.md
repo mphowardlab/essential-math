@@ -92,9 +92,13 @@ A_3 = -2
 
 Find $A_1$ by substituting $A_2$ and $A_3$:
 
-\begin{align}
+\begin{equation}
 -18 = A_1x(x-3) + 6(x-3) - 2x^2 
-\text{Plug in $x=1$:} \\
+\end{equation}
+
+Plug in $x=1$:
+
+\begin{align}
 -18 = A_1(-2) + 6(-2) - 2 = -2A_1 - 14 \\
 -4 = -2A_1 \\
 A_1=2 
