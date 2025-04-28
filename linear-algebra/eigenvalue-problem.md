@@ -4,7 +4,7 @@
    An nxn matrix has n eigenvalues, but they may not be distinct!
 
 $$
-\underline{\underline{A}}= 
+\vv{A}= 
 \begin{bmatrix}
 -2 & 2 & -3 \\
 2 & 1 & -6 \\
@@ -13,7 +13,7 @@ $$
 $$
 
 $$
-| \underline{\underline{A}} - \lambda  \underline{\underline{I}}| =
+| \vv{A} - \lambda  \vv{I}| =
 \begin{vmatrix}
 -2-\lambda & 2 & -3 \\
 2 & 1-\lambda & -6 \\
@@ -140,7 +140,7 @@ $$
    Matrices may have complex eigenvaules. They always come in conjugate pairs!
 
 $$
-\underline{\underline{A}} =
+\\vv{A} =
 \begin{bmatrix}
 0 & 1 \\
 -1 & 0
@@ -237,5 +237,5 @@ $$
 \lambda_3=3
 $$
 
-- If $\underline{\underline{A}}$ is symmetric ( $\underline{\underline{A}}^T = \underline{\underline{A}}$ ), its eigenvalues are real.
-- If $\underline{\underline{A}}$ is skew-symmetric ( $\underline{\underline{A}}^T = \underline{\underline{-A}}$ ), its eigenvalues are pure imaginary.
+- If $\vv{A}$ is symmetric ( $\vv{A}^T = \vv{A}$ ), its eigenvalues are real.
+- If $\vv{A}$ is skew-symmetric ( $\vv{A}^T = \vv{-A}$ ), its eigenvalues are pure imaginary.
