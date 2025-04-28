@@ -14,14 +14,20 @@ Multiply by a factor and take the limit to find $A_1$ and $A_2$:
 \begin{align}
 \lim_{x\to 3} \left( \frac{3x+11}{x+2} = A_1 + \frac{A_2(x-3)}{x+2} \right) \\
 \frac{3(3)+11}{3+2} = A_1 \\
-A_1 = 4 
 \end{align}
+
+$$
+A_1 = 4 
+$$
 
 \begin{align}
 \lim_{x\to -2} \left( \frac{3x+11}{x-3} = \frac{A_1(x+2)}{x-3} + A_2 \right) \\
 \frac{3(-2)+11}{-2-3} = A_2 \\
-A_2 = -1 
 \end{align} 
+
+$$
+A_2 = -1 
+$$
 
 The Heaviside cover-up method only works for the highest powers of linear factors.
 
@@ -80,15 +86,21 @@ Find $A_2$ by heaviside cover-up method:
 
 \begin{align}
 \frac{-18}{0-3}= A_2 \\
-A_2 = 6 
 \end{align}
+
+$$
+A_2 = 6 
+$$
 
 Find $A_3$ by heaviside cover-up method:
 
 \begin{align}
 \frac{-18}{3^2} = A_3 \\
-A_3 = -2
 \end{align}
+
+$$
+A_3 = -2
+$$
 
 Find $A_1$ by substituting $A_2$ and $A_3$:
 
@@ -101,8 +113,11 @@ Plug in $x=1$:
 \begin{align}
 -18 = A_1(-2) + 6(-2) - 2 = -2A_1 - 14 \\
 -4 = -2A_1 \\
-A_1=2 
 \end{align}
+
+$$
+A_1 = 2 
+$$
 
 Integrate:
 
