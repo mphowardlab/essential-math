@@ -65,9 +65,9 @@ ax^2 + bx + c \to \frac{Ax+B}{ax^2+bx+c}
 \end{align}
 
 \begin{align}
-\left(ax^2 + bx+c \right)^k:
+\left(ax^2 + bx+c \right)^k:repeat like for linear factor
 \end{align} 
- repeat like for linear factor
+ 
 
 
 
