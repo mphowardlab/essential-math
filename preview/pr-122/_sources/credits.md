@@ -8,6 +8,7 @@ This work (c) 2025 is licensed under
 ## Contributors
 
 - Payton Baxter
+- Andrew Castel
 - Paine Cole
 - Alexis Florit
 - Ella Governale
