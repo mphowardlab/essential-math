@@ -1,13 +1,13 @@
 # Integrating factor
 ## What do we do when an ODE is not exact?
 **Example 1:**
-$$  
+$  
   -y \, dx + x \, dy = 0
-$$
+$
 where: 
-$$
-    P = -y, \quad Q = x
-$$
+$
+    P = -y$, \quad $Q = x
+$
 
 When solving ODEs, we take the partial derivatives of \(P\) and \(Q\).
 If the partial derivatives are not equal, the equation is **not exact**: 
@@ -23,9 +23,9 @@ $$
 Multiply by a factor \(F\) to make the ODE exact. This is called the **integrating factor**.
 
 Choosing: 
-$$ 
+$ 
 F = \frac{1}{x^2}
-$$
+$
 
 Now multiply through:
 $$
