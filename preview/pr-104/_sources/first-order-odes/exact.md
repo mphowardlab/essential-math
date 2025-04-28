@@ -1,1 +1,0 @@
-# Exact differential equations
