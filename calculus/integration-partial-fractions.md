@@ -25,13 +25,10 @@ This cannot be done with u-substitution... how to take it?
 &= (A_1 + A_2)x + (2A_1 - 3A_2) \\
 \end{align}
 
-\begin{align}
- A_1  + A_2 = 3
-\end{align}
-
-\begin{align}
-2A_1 - 3A_2 = 11
-\end{align}
+\begin{align}  
+ A_1  + A_2 &= 3 \\  
+ 2A_1 - 3A_2 &= 11  
+\end{align} 
 
 \begin{bmatrix} 1 & 1 & 3\\ 2 & -3 & 11 \end{bmatrix} \to \begin{bmatrix} 1 & 1 & 3\\ 0 & -5 & 5 \end{bmatrix} \to \begin{bmatrix} 1 & 1 & 3\\ 0 & 1 & -1 \end{bmatrix} \to \begin{bmatrix} 1 & 0 & 4\\ 0 & 1 & -1 \end{bmatrix}
 
@@ -65,7 +62,7 @@ ax^2 + bx + c \to \frac{Ax+B}{ax^2+bx+c}
 \end{align}
 
 \begin{align}
-\left(ax^2 + bx+c \right)^k:repeat like for linear factor
+\left(ax^2 + bx+c \right)^k \text{: repeat like for linear factors}  
 \end{align} 
  
 
@@ -93,24 +90,12 @@ x^2-29x+5 = A_1 \left(x-4 \right) \left(x^2+3 \right) + A_2 \left(x^2+3 \right)+
 \end{equation}
 
 
-\begin{equation}
-A_1+A_3 = 0
-\end{equation}
-
-
-\begin{equation}
--4A_1 + A_2-8A_3 + B _3 =1
-\end{equation}
-
-
-\begin{equation}
-3A_1 + 16A_3 - 8B_3 = -29
-\end{equation}
-
-
-\begin{equation}
--12A_1+3A_2+16B_3 =5
-\end{equation}
+\begin{align}  
+A_1+A_3 &= 0 \\  
+-4A_1 + A_2-8A_3 + B_3 &=1 \\  
+3A_1 + 16A_3 - 8B_3 &= -29 \\  
+-12A_1+3A_2+16B_3 &=5 \\  
+\end{align}  
 
 
 $\begin{bmatrix} 1 & 0 & 1 & 0\\ -4 & 1 & -8 & 1\\ 3 & 0 & 16 & -8\\ -12 & 3 & 0 & 16 \end{bmatrix} \begin{bmatrix} A_1 \\ A_2\\ A_3\\ B_3 \end{bmatrix} = \begin{bmatrix} 0\\ 1\\ -29 \\ 5 \end{bmatrix}$ $\to$ $A_1 = 1, A_2 = -5, A_3 = -1, B_3 =2$
@@ -126,7 +111,7 @@ $\begin{bmatrix} 1 & 0 & 1 & 0\\ -4 & 1 & -8 & 1\\ 3 & 0 & 16 & -8\\ -12 & 3 & 0
 
 
 \begin{equation}
-= \ln|x-4|+\frac{5}{x-4} -\frac{1}{2}ln (x^2 + 3)+\frac{2}{\sqrt{3}} \arctan(\frac{x}{\sqrt{3}}) + C
+= \ln|x-4|+\frac{5}{x-4} -\frac{1}{2}ln (x^2 + 3)+\frac{2}{\sqrt{3}} \arctan\left( \frac{x}{\sqrt{3}} \right) + C  
 \end{equation}
 
 
