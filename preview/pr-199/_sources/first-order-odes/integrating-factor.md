@@ -53,7 +53,7 @@ $$
 
 - If \( R(x) \) depends only on \( x \), the integrating factor is:
 $$
-F(x) = \exp\left( \int R(x) \, dx\ right)
+F(x) = \exp\left( \int R(x) \, dx \right)
 $$
 
 If not, check: 
@@ -62,7 +62,7 @@ $$
 S = \frac{1}{P} \ left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) = -\frac{Q}{P} R
 $$
 
--If \( S(y) \) depends only on \( y \), the integrating factor is: 
+- If \( S(y) \) depends only on \( y \), the integrating factor is: 
 $$ 
 F(y) = \exp\left( \int S(y) \, dy \right)
 $$
@@ -75,12 +75,12 @@ If neither \( R \) nor \( S \) are simple functions of only \( x \) or \( y \):
 
 Calculate \( R \):
 $$
-R = \frac{1}{x} (-1 - 1) = \frac{-2}{x}
+R = \frac{1}{x} \left(-1 - 1 \right) = \frac{-2}{x}
 $$
 
 Thus: 
 $$
-F(x) = \exp\left( \int \ frac{-2}{x} \, dx \right)
+F(x) = \exp\left( \int \frac{-2}{x} \, dx \right)
 = \exp\left( -2 \ln(x) \right)
 = \left( e^{\ln(x)} \right)^{-2}
 = \frac{1}{x^2}
@@ -88,7 +88,7 @@ $$
 
 Alternatively, calculate \( S \):
 $$
-S = -\frac{Q}{P} \, R = -\frac{x}{-y} \ times \left( \frac{-2}{x} \ right) = \frac{-2}{y}
+S = -\frac{Q}{P} \, R = -\frac{x}{-y} \times \left( \frac{-2}{x} \right) = \frac{-2}{y}
 $$
 
 Thus:
@@ -104,6 +104,15 @@ A **linear first-order ODE** has the form:
 $$ 
 y' + p(x) \, y = r(x)
 $$
+
+Using an **integrating factor**, we can show that:
+
+$$
+\boxed{ y(x) = \frac{1}{F(x)} \left( \int F(x) \, r(x) \, dx + C \right) 
+\quad \text{and} \quad
+F(x) = e^{\int p(x) \, dx}}
+$$
+
 
         
 
