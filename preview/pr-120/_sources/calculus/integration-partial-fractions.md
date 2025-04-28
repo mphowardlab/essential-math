@@ -109,7 +109,7 @@ A_1+A_3 = 0
 
 
 \begin{equation}
-$-12A_1+3A_2+16B_3 =5
+-12A_1+3A_2+16B_3 =5
 \end{equation}
 
 
