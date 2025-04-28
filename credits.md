@@ -24,6 +24,7 @@ This work (c) 2025 is licensed under
 - Kendall Reeves
 - Michelle Schindler
 - Katie Sorensen
+- Lauren Thompson
 - Madelyn Torrance
 - Debora Vasconcelos
 
