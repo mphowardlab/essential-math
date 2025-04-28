@@ -37,6 +37,7 @@ $$
 Check the partial derivatives:
 $$ 
 \frac{\partial (F P)} {\partial y} = - \frac{1}{x^2}, \quad
+$$
 \frac{\partial (F Q)}{\partial x} = -\frac{1}{x^2}$
 \quad \longrightarrow \quad \text{Exact!}
 $$
@@ -52,15 +53,15 @@ $$
   $$
 
 - If \( R(x) \) depends only on \( x \), the integrating factor is:
-$$
+$
 F(x) = \exp\left( \int R(x) \, dx \right)
-$$
+$
 
 If not, check: 
 
-$$
-S = \frac{1}{P} \ left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) = -\frac{Q}{P} R
-$$
+$
+S = \frac{1}{P} \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) = -\frac{Q}{P} R
+$
 
 - If \( S(y) \) depends only on \( y \), the integrating factor is: 
 $$ 
