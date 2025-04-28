@@ -176,12 +176,13 @@ $Q_1 = 2$, $Q_2 = 4$, and $Q_3 = 2$.
 
 2. Solve using Gauss-Jordan elimination
 
-   $$
-   x₁ + 4x₂ = 8 \\
-   2x₁ + 8x₂ = 17
-   $$
+   \begin{align}
+   x_1 + 4 x_2 = 8 \\
+   2 x_1 + 8 x_2 = 17
+   \end{align}
 
    ```{solution}
+   \begin{align}
    $$
    \begin{bmatrix} 1 & 4 &| + 8 \\ 2 & 8 &| +17
    \end{bmatrix}
@@ -189,17 +190,17 @@ $Q_1 = 2$, $Q_2 = 4$, and $Q_3 = 2$.
    \begin{bmatrix} 1 & 4 &| + 8 \\ 10 & 0 &| +1
    \end{bmatrix} \quad \text{-2 Row 1}
    $$
-
+   \end{align}
    The equations do not have a solution because the system is false.
    ```
 
 3. Solve using Gauss-Jordan elimination
 
-   $$
-   x₁ + x₂ + x₃ = 2 \\
-   4x₂ + 6x₃ = -12 \\
-   x₁ + x₂ + x₃ = 2
-   $$
+   \begin{align}
+   x_1 + x_2 + x_2 = 2 \\
+   4x_2 + 6 x_3 = -12 \\
+   x_1 + x_2 + x_3 = 2
+   \end{align}
 
    ```{solution}
    $$
@@ -226,9 +227,9 @@ $Q_1 = 2$, $Q_2 = 4$, and $Q_3 = 2$.
    \begin{bmatrix} 1 & 0 & 0&| +4 \\ 0 & 1 & 0  &| 0  \\ 0 & 0 & 1 &| -2
    \end{bmatrix}
    $$
-   $$
-    x₁ = 4 \\
-    x₂ = 0 \\
-   x₃ = -2
-   $$
+   
+   $ x_1 = 4$ \\
+   $ x_2 = 0 $\\
+   $ x_3 = -2 $
+   
    ```
