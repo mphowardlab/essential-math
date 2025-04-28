@@ -1,50 +1,59 @@
 # Series expansion
-- Nonlinear functions can be nasty, but polynomials are the "nicest" version.
-    - *How can we turn a general, nonlinear equation into a polynomial?*
 
-## Taylor Series
-Suppose we have some function $f(x)$ that we want to approximate as a **power series**:
+Nonlinear functions can be nasty, but polynomials are the "nicest" version. A
+*series expansion* is a systematic approach to turn a general nonlinear
+equation into a polynomial. Suppose we have some function $f(x)$ that we want
+to approximate as:
 
-$$
-  f(x) = \sum_{n=0}^{\infty} c_n(x-x_0)^n = c_0 + c_1(x-x_0) + c_2(x-x_0)^2 + c_3(x-x_0)^3 + ...
-$$
+\begin{equation}
+f(x) = \sum_{n=0}^{\infty} c_n(x-x_0)^n
+\end{equation}
 
-  - What is $f(x_0)$?
-      - $f(x_0) = c_0$
-  - What is $f'(x_0)$?
-     - $f'(x) = c_1 + 2c_2(x-x_0) + 3c_3(x-x_0)^2 + ...$
-     - $f'(x_0) = c_1$
-  - What is $f''(x_0)$?
-      - $f''(x) = 2c_2 + 3\cdot2c_3(x-x_0) + ...$
-      - $f''(x_0) = 2c_2$
-  - What is $f'''(x_0)$?
-      - $f'''(x_0) = 3\cdot2c_3$
+To determine the coefficients $c_n$, consider the values of *f* and its
+derivatives at $x_0$
+
+\begin{align}
+f(x) &= c_0 + c_1(x-x_0) + c_2(x-x_0)^2 + c_3(x-x_0)^3 + \cdots & f(x_0) &= c_0 \\
+f'(x) &= c_1 + 2 c_2(x-x_0) + 3 c_3(x-x_0)^2 + \cdots & f'(x_0) &= c_1 \\
+f''(x) &= 2 c_2 + 6 c_3(x-x_0) + \cdots & f''(x_0) &= 2 c_2 \\
+f'''(x) &= 6 c_3(x-x_0) + \cdots & f''(x_0) &= 6 c_3
+\end{align}
+
+The pattern of matching derivatives gives rise to the *Taylor series*.
+
+```{topic} Taylor series
+
+The Taylor series for $f(x)$ about $x_0$ is given by
+
+\begin{equation}
+f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(x_0)}{n!}\cdot(x-x_0)^n
+\end{equation}
+
+where $f^{(n)}$ is the *n*th derivative of *f*. A Taylor series about $x=0$ is
+sometimes called a Maclaurin series.
+```
+
+```{example} Taylor series
+Compute the Taylor series for $f(x) = \ln x$ about $x_0 = 2$.
+
+---
+
+\begin{align}
+f(x) &= \ln x & f(2) &= \ln 2 \\
+f'(x) &= \frac{1}{x} & f'(2) &= \frac{1}{2} \\
+f''(x) &= -\frac{1}{x^2} & f''(2) &= -\frac{1}{4}
+\end{align}
+
 Hence,
 
-$$
-  f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}\cdot(x_0)}{n!}\cdot(x-x_0)^n
-$$
-  - This is the **Taylor Series** for $f$ about $x=x_0$
-    - There are some limitations on when this works, but that is for a math class.
-- A Taylor Series about $x=0$ is sometimes called a Maclaurin Series.
+\begin{equation}
+f(x) \approx \ln(2) + \frac{1}{2}(x-2) - \frac{1}{2}\cdot\frac{1}{4} (x-2)^2 + \cdots
+\end{equation}
+```
 
-Example:
-- Taylor Series for $f(x) = ln(x)$ about $x_0 = 2$
-
-$$
-\begin{alignat*}{3}
-f(x) = \ln(x)\quad & \to & \quad f(x) \approx \ln(2) + \frac{1}{2}(x-2)-\frac{1}{2}\cdot\frac{1}{4}(x-2)^2 + ... \\
-f'(x) = \frac{1}{x} \quad \to \quad f'(2) = \frac{1}{2} \\
-f''(x) = -\frac{1}{x^2} \quad \to \quad f''(2) = -\frac{1}{4} \\
-& \to & \quad f(x) = \ln(2) + \frac{1}{2}(x-2) - \frac{1}{8}(x-2)^2
-\end{alignat*}
-$$
-
-In general, we could determine--
-
-$$f^{(n)}(x) = \frac{(-1)^{n+1}\cdot(n-1)!}{x^n}$$
-
---to get the infinite series. However, for practical purposes, we will usually stop at either first or second order polynomials since that is easier to work with!
+In general, we could determine the infinite series and general expressions for
+coefficients, but for practical purposes, we will usually stop at either first
+or second order polynomials since that is easier to work with.
 
 ```{example} Taylor series
 Find the two-term Taylor series for
@@ -86,8 +95,7 @@ Putting it all together,
 f(x) \approx 0 + 1 \cdot x + \frac{1}{2} \cdot 0 \cdot x^2
 + \frac{1}{6} \cdot 12 \cdot x^3 + \cdots = x + 2x^3 + \cdots
 \end{equation}
-
-````
+```
 
 ## Combining series
 
