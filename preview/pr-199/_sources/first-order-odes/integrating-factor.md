@@ -6,7 +6,7 @@ $
 $
 where: 
 $
-    P = -y$, \quad $Q = x
+    P = -y$, $Q = x
 $
 
 When solving ODEs, we take the partial derivatives of \(P\) and \(Q\).
@@ -28,19 +28,19 @@ F = \frac{1}{x^2}
 $
 
 Now multiply through:
-$$
-\left( -y \right) \left( \frac{1}{x^2} \right) + \left( x \right) \left( \frac{1}{x^2} \right) = 0
-\quad \Rightarrow \quad
+$
+\left( -y \right) \left( \frac{1}{x^2} \right) + \left( x \right) \left( \frac{1}{x^2} \right) = 0$
+$\quad \Rightarrow \quad
 -\frac{y}{x^2} + \frac{1}{x} = 0
-$$
+$
 
 Check the partial derivatives:
-$$ 
-\frac{\partial (F P)} {\partial y} = - \frac{1}{x^2},
-\quad
-\frac{\partial (F Q)}{\partial x} = -\frac{1}{x^2}
-\quad \longrightarrow \quad \text{Exact!}
-$$
+$ 
+\frac{\partial (F P)} {\partial y} = - \frac{1}{x^2}$,
+$\quad
+\frac{\partial (F Q)}{\partial x} = -\frac{1}{x^2}$
+$\quad \longrightarrow \quad$ **Exact!**
+
 
 ## How did we find \(F\)?
 
