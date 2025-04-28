@@ -162,49 +162,50 @@ Gauss-Jordan elimination to solve directly:
 \to &\begin{bmatrix}
 1 & -1 & 1 & 1 & 0 & 0 \\
 0 & 1 & 2.5 & 0 & 0 & 0.1 \\
-0 & 0 & 1 & .211 & -.010 & 0.032 
+0 & 0 & 1 & .211 & -.010 & 0.032
 \end{bmatrix}
 \begin{matrix}
-\ \ -R_3 \\ \ -2.5 R_3 \\ \vphantom{R_3}
+-R_3 \\ -2.5 R_3 \\ \vphantom{R_3}
 \end{matrix} \\
 
 \to &\begin{bmatrix}
 1 & -1 & 0 & 0.789 & 0.010 & -0.032 \\
 0 & 1 & 0 & -0.528 & 0.025 & 0.020 \\
-0 & 0 & 1 & .211 & -.10 & 0.32 
+0 & 0 & 1 & 0.211 & -0.010 & 0.032
 \end{bmatrix}
 \begin{matrix}
-\ \ +R_2 \\ \vphantom{R_2} \\ \vphantom{R_3}
++R_2 \\ \vphantom{R_2} \\ \vphantom{R_3}
 \end{matrix} \\
 
 \to &\begin{bmatrix}
 1 & 0 & 0 & 0.261 & 0.035 & -0.012 \\
 0 & 1 & 0 & -0.528 & 0.025 & 0.020 \\
-0 & 0 & 1 & .211 & -.10 & 0.32 
+0 & 0 & 1 & 0.211 & -0.010 & 0.032
 \end{bmatrix}
 \end{align}
 
-Solve: 
+Solve:
 \begin{equation}
-\vv {Q}= \vv{A}^{-1}{b} = \begin{bmatrix} 
+\vv {Q}= \vv{A}^{-1}{b} = \begin{bmatrix}
 0.261 & 0.035 & -0.012 \\
 -0.528 & 0.025 & 0.020 \\
-0.211 & -0.010 & 0.032 
+0.211 & -0.010 & 0.032
 \end{bmatrix}
 \begin{bmatrix}
 0 \\
 80 \\
-90 
+90
 \end{bmatrix}
 =
 \begin{bmatrix}
 1.72 \\
 3.80 \\
-2.08 
+2.08
 \end{bmatrix}
 \end{equation}
 
-This is close to the real solution, with errors only due to rounding
+This is close to the solution we found before, with some errors due to rounding.
+```
 
 ## Skill builder problems
 
