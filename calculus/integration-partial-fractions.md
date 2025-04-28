@@ -54,6 +54,7 @@ y' = \frac{x^4 - 5x^3 + 6x^2 -18}{x^3 -3x^2}
 
 P is a higher degree than Q, so polynomial division can be performed.
 
+$$
 \begin{array}{r}
 x-2\\
 x^3-3x^2{\overline{\smash{\big)}\, x^4-5x^3+6x^2-18}}
@@ -63,6 +64,7 @@ x^3-3x^2{\overline{\smash{\big)}\, x^4-5x^3+6x^2-18}}
 \underline{-~(-2x^3+6x^2)}\phantom{-18} \\
 -18 \\
 \end{array} 
+$$
 
 \begin{equation}
 y'= x-2- \frac{18}{x^3-3x^2} 
