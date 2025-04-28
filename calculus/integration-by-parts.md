@@ -125,17 +125,14 @@ u &= x^3 & \d{v} &= x^2\sqrt(x^3+1) \d{x} \\
 \d{u} &= 3x^2 \d{x} & v &= \frac{2}{9}(x^3+1)^{\frac{3}{2}}
 \end{align}
 
-Which allows:
+so:
 
 \begin{align}
 \int(x^5)(\sqrt(x^3+1))dx
-
 &= x^3\frac{2}{9}(x^3+1)^{\frac{3}{2}}
  - \int(\frac{2}{9}(x^3+1)^{\frac{3}{2}})3x^2dx \\
-
 &= \frac{2}{9}x^3(x^3+1)^{\frac{3}{2}}
  - \frac{2}{9}\frac{2}{5}(x^3+1)^{\frac{5}{2}} + c \\
-
 &= \frac{2}{9}x^3(x^3+1)^{\frac{3}{2}} - \frac{4}{45}(x^3+1)^{\frac{5}{2}} + c
 \end{align}
 ```
@@ -164,11 +161,11 @@ We will need to integrate by parts again but there is a shortcut!!
 | $u$    | $\d{v}$                |
 |-------|-------------------|
 | $x^4$   | $e^{x/2}$   |
-| 4x^3  | 2e^{\frac{x}{2}}  |
-| 12x^2 | 4e^{\frac{x}{2}}  |
-| 24x   | 8e^{\frac{x}{2}}  |
-| 24    | 16e^{\frac{x}{2}} |
-| 0     | 32e^{\frac{x}{2}} |
+| $4x^3$  | $2e^{\frac{x}{2}}$  |
+| $12x^2$ | $4e^{\frac{x}{2}}$  |
+| $24x$   | $8e^{\frac{x}{2}}$  |
+| $24$    | $16e^{\frac{x}{2}}$ |
+| $0$     | $32e^{\frac{x}{2}}$ |
 
 For this shortcut make a chart like depicted below and then starting from the
 first u, go down one row diagonally and multiply the u and the dv together and
