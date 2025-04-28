@@ -35,7 +35,7 @@ $$
 A_2 = -1 
 $$
 
-The Heaviside cover-up method only works for the highest powers of linear factors.
+**Note**: The Heaviside cover-up method only works for the highest powers of linear factors.
 
 ### Example: Incomplete Decomposition
 Given:
