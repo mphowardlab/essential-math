@@ -43,7 +43,7 @@ Given:
 \frac{x^2-29x+5}{(x-4)^2 (x^2 +3)} = \frac{A_1}{x-4} + \frac{A_2}{(x-4)^2} + \frac{A_3x + B_3}{x^2 +3} 
 \end{equation}
 
-$A_2$ can be solved using the Heaviside cover-up method because it corresponds to $(x-4)^2$. 
+$A_2$ can be solved for using the Heaviside cover-up method because it corresponds to $(x-4)^2$. 
 
 \begin{equation}
 \frac{(4)^2 - 29(4) + 5}{(4)^2 + 3} = A_2 \\
