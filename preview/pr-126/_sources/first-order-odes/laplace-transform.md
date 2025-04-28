@@ -88,111 +88,97 @@ y &=L^{-1}[Y]\\
 \end{align}
 ```
 
-Example: Hormone Level  
+```{example} Hormone level
+The concentration of a hormone in the blood *c* varies due to sinusoidal
+production by the thyroid and continuous removal according to:
 
-The concentration of a hormone in the blood varies due to sinusoidal production by the thyroid and continuous removal according to:
-
-$$
+\begin{equation}
 c' = A + B\cos\left(\frac{\pi t}{12}\right) - kc
-$$
+\end{equation}
 
-The concentration is $c_0$ at 6 AM ($t = 0$). What is the average concentration between 6 PM and 6 AM the same day?
+The concentration is $c_0$ at 6 AM ($t = 0$). What is the average concentration
+between 6 PM and 6 AM the same day?
+
+---
 
 To solve, rearrange and use the Laplace transform:
 
-$$
-c' + kc = A + B\cos\left(\frac{\pi t}{12}\right)
-$$
+\begin{align}
+c' + kc &= A + B\cos\left(\frac{\pi t}{12}\right) \\
+[sC(s) - c_0] + kC(s) &= L\left[A + B\cos\left(\frac{\pi t}{12}\right)\right] \\
+(s+k) C - c_0 &= \frac{A}{s} + \frac{Bs}{s^2 + (\pi/12)^2} \\
+C(s) &= \left(\frac{1}{s + k}\right)\left[c_0 + \frac{A}{s} + \frac{Bs}{s^2 + (\pi/12)^2}\right] \\
+ &= \frac{c_0}{s + k} + \frac{A}{s(s + k)}
+ + \frac{Bs}{[s^2 + (\pi/12)^2](s + k)}
+\end{align}
 
-$$
-[sC(s) - c_0] + kC(s) = \mathcal{L}\left\{A + B\cos\left(\frac{\pi t}{12}\right)\right\}
-$$
+Use partial fraction decomposition on both fractions. The first one is:
 
-$$
-= \frac{A}{s} + \frac{Bs}{s^2 + \left(\frac{\pi}{12}\right)^2}
-$$
+\begin{equation}
+\frac{1}{s(s + k)} = \frac{c_1}{s} + \frac{c_2}{s + k}
+\end{equation}
 
-$$
-C(s) = \left(\frac{1}{s + k}\right)\left[c_0 + \frac{A}{s} + \frac{Bs}{s^2 + \left(\frac{\pi}{12}\right)^2}\right]
-$$
+and the cover-up method gives $c_1 = 1/k$ and $c_2 = -1/k$. For the next one:
 
-$$
-C(s) = \frac{c_0}{s + k} + \frac{A}{s(s + k)} + \frac{Bs}{(s^2 + \left(\frac{\pi}{12}\right)^2)(s + k)}
-$$
+\begin{equation}
+\frac{s}{[s^2 + (\pi/12)^2](s + k)}
+  = \frac{c_1 s + c_2}{s^2 + (\pi/12)^2} + \frac{c_3}{s + k}
+\end{equation}
 
-Using partial fraction decomposition:
+The cover-up method gives
 
-$$
-\frac{A}{s(s + k)} = \frac{1}{s(s + k)} = \frac{c_1}{s} + \frac{c_2}{s + k}
-$$
+\begin{equation}
+c_3 = \frac{-k}{k^2 + (\pi/12)^2}
+\end{equation}
 
-$$
-c_1 = \frac{1}{k}, \quad c_2 = \frac{-1}{k}
-$$
+while cross-multiplying and matching coefficients gives
 
-For the next term:
+\begin{align}
+s &= (c_1 s + c_2)(s + k) + c_3\left[s^2 + (\pi/12)^2\right] \\
+s &= (c_1 + c_3)s^2 + (c_1 k + c_2)s + c_2 k + c_3(\pi/12)^2
+\end{align}
 
-$$
-\frac{Bs}{(s^2 + \left(\frac{\pi}{12}\right)^2)(s + k)} = \frac{s}{(s^2 + \left(\frac{\pi}{12}\right)^2)(s + k)}
-$$
+so
 
-$$
-= \frac{c_1 s + c_2}{s^2 + \left(\frac{\pi}{12}\right)^2} + \frac{c_3}{s + k}
-$$
+\begin{align}
+c_1 + c_3 &= 0 \\
+c_1 k + c_2 &= 1 \\
+c_2 k + c_3 (\pi/12)^2 &= 0
+\end{align}
 
-$$
-s = (c_1 s + c_2)(s + k) + c_3\left[s^2 + \left(\frac{\pi}{12}\right)^2\right]
-$$
+Using our solution for $c_3$ in the first equation gives $c_1$ and in the third
+equation gives $c_2$:
 
-$$
-(c_1 + c_3)s^2 + (c_1 k + c_2)s + c_2 k + c_3\left(\frac{\pi}{12}\right)^2 = s
-$$
-
-$$
-c_1 + c_3 = 0 \\
-c_1 k + c_2 = 1 \\
-c_2 k + c_3 \left(\frac{\pi}{12}\right)^2 = 0
-$$
-
-Constants:
-
-$$
-c_3 = \frac{-k}{k^2 + \left(\frac{\pi}{12}\right)^2}, \quad
+\begin{equation}
 c_1 = \frac{k}{k^2 + \left(\frac{\pi}{12}\right)^2}, \quad
-c_2 = \frac{\left(\frac{\pi}{12}\right)^2}{k^2 + \left(\frac{\pi}{12}\right)^2}
-$$
+c_2 = \frac{(\pi/12)^2}{k^2 + (\pi/12)^2}
+\end{equation}
 
-So: 
+All together,
 
-$$
-\frac{s}{(s^2 + \left(\frac{\pi}{12}\right)^2)(s + k)} = \frac{ks + \left(\frac{\pi}{12}\right)^2}{(s^2 + \left(\frac{\pi}{12}\right)^2)(k^2 + \left(\frac{\pi}{12}\right)^2)} - \frac{k}{(s + k)(k^2 + \left(\frac{\pi}{12}\right)^2)}
-$$
+\begin{align}
+C(s) &= \frac{c_0}{s + k} + \frac{A}{k} \left[\frac{1}{s} - \frac{1}{s+k} \right] \\
+ &+ \frac{B}{k^2 + (\pi/12)^2}
+ \left[\frac{ks}{s^2 + (\pi/12)^2} + \frac{(\pi/12)^2}{s^2 + (\pi/12)^2} - \frac{k}{s+k} \right]
+\end{align}
 
-Therefore, 
+Invert the Laplace transforms term by term:
 
-$$
-\begin{aligned}
-c(t) &= c_0 \mathcal{L}^{-1}\left\{ \frac{1}{s+k} \right\} + A\left[\frac{1}{k}\mathcal{L}^{-1}\left\{ \frac{1}{s} \right\} - \frac{1}{k}\mathcal{L}^{-1}\left\{ \frac{1}{s+k} \right\}\right] \\
-&\quad + B\left[\frac{k}{k^2 + \left(\frac{\pi}{12}\right)^2} \mathcal{L}^{-1}\left\{ \frac{s}{s^2 + \left(\frac{\pi}{12}\right)^2} \right\} + \frac{\left(\frac{\pi}{12}\right)^2}{k^2 + \left(\frac{\pi}{12}\right)^2} \mathcal{L}^{-1}\left\{ \frac{1}{s^2 + \left(\frac{\pi}{12}\right)^2} \right\} - \frac{k}{k^2 + \left(\frac{\pi}{12}\right)^2} \mathcal{L}^{-1}\left\{ \frac{1}{s+k} \right\}\right] \\
-\\
-&= c_0 e^{-kt} + A\left[\frac{1}{k} - \frac{1}{k} e^{-kt}\right] + B\left[\frac{k}{k^2 + \left(\frac{\pi}{12}\right)^2} \cos\left(\frac{\pi t}{12}\right) + \frac{\left(\frac{\pi}{12}\right)^2}{k^2 + \left(\frac{\pi}{12}\right)^2} \frac{\sin\left(\frac{\pi t}{12}\right)}{\frac{\pi}{12}} - \frac{k}{k^2 + \left(\frac{\pi}{12}\right)^2} e^{-kt}\right] \\
-\\
-c(t) &= \frac{A}{k} + \frac{B}{k^2 + \left(\frac{\pi}{12}\right)^2}\left[k \cos\left(\frac{\pi t}{12}\right) + \frac{\pi}{12} \sin\left(\frac{\pi t}{12}\right)\right] + \left[c_0 - \frac{A}{k} - \frac{Bk}{k^2 + \left(\frac{\pi}{12}\right)^2}\right] e^{-kt}
-\end{aligned}
-$$
+\begin{align}
+c(t) &= c_0 e^{-kt} + \frac{A}{k} \left(1 - e^{-kt}\right) \\
+ &+ \frac{B}{k^2 + (\pi/12)^2} \left[k \cos\left(\frac{\pi t}{12}\right) + \frac{\pi}{12} \sin\left(\frac{\pi t}{12}\right) - k e^{-kt}\right] \\
+  &= \frac{A}{k} + \frac{B}{k^2 + (\pi/12)^2} \left[k \cos\left(\frac{\pi t}{12}\right) + \frac{\pi}{12} \sin\left(\frac{\pi t}{12}\right)\right] \\
+  &+ \left[c_0 - \frac{A}{k} - \frac{Bk}{k^2 + \left(\frac{\pi}{12}\right)^2}\right] e^{-kt}
+\end{align}
 
-The average is:
+The average concentration is:
 
-$$
-\begin{aligned}
-\langle c \rangle &= \frac{\int_{t_0}^{t_1} c(t)\, dt}{t_1 - t_0} = \frac{1}{24 - 12} \int_{12}^{24} c(t)\, dt \\
-&= \frac{1}{12} \left[ \frac{A}{k} t + \frac{B}{k^2 + \left(\frac{\pi}{12}\right)^2} \left( k \left( \frac{12}{\pi} \right) \sin\left( \frac{\pi t}{12} \right) - \cos\left( \frac{\pi t}{12} \right) \right) + \frac{1}{k} \left( \frac{A}{k} + \frac{Bk}{k^2 + \left(\frac{\pi}{12}\right)^2} \right) e^{-kt} \right]_{12}^{24} \\
-&=\frac{1}{12} \left[ \frac{12A}{k} + \frac{B}{k^2 + \left( \frac{\pi}{12} \right)^2} \left( \frac{12k}{\pi} \left( \sin(2\pi) - \sin\left( \pi \right) \right) - \left( \cos(2\pi) - \cos\left( \pi \right) \right) \right) \right.
-\left. + \frac{1}{k} \left( \frac{A}{k} + \frac{Bk}{k^2 + \left( \frac{\pi}{12} \right)^2} \right) \left( e^{-24k} - e^{-12k} \right) \right]
-\end{aligned}
-$$
-$$
-<c> = \frac{A}{k} - \frac{1}{6} \frac{B}{k^2 + \left(\frac{\pi}{12}\right)^2} - \frac{1}{12}[\frac{A}{k^2} + \frac{B}{k^2 + \left(\frac{\pi}{12}\right)^2}] (e^{-12k} - e^{-24k})
-$$
-
-
+\begin{align}
+\langle c \rangle &= \frac{1}{t_1-t_0} \int_{t_0}^{t_1} c(t) \d{t} \\
+&= \frac{1}{24 - 12} \int_{12}^{24} \Biggl( \frac{A}{k} + \frac{B}{k^2 + (\pi/12)^2} \left[k \cos\left(\frac{\pi t}{12}\right) + \frac{\pi}{12} \sin\left(\frac{\pi t}{12}\right)\right] \\
+  &+ \left[c_0 - \frac{A}{k} - \frac{Bk}{k^2 + (\pi/12)^2}\right] e^{-kt} \Biggr) \d{t} \\
+&= \frac{1}{12} \Biggl[ \frac{A}{k} t + \frac{B}{k^2 + (\pi/12)^2} \left( \frac{12k}{\pi} \sin\left( \frac{\pi t}{12} \right) - \cos\left( \frac{\pi t}{12} \right) \right) \\
+&+ \frac{1}{k} \left( \frac{A}{k} + \frac{Bk}{k^2 + (\pi/12)^2} \right) e^{-kt} \Biggr]_{12}^{24} \\
+&= \frac{A}{k} - \frac{1}{6} \frac{B}{k^2 + (\pi/12)^2} - \frac{1}{12}\left[\frac{A}{k^2} + \frac{B}{k^2 + (\pi/12)^2}\right] (e^{-12k} - e^{-24k})
+\end{align}
+```
