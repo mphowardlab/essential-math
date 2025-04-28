@@ -183,16 +183,13 @@ $Q_1 = 2$, $Q_2 = 4$, and $Q_3 = 2$.
 
    ```{solution}
    \begin{align}
-   
-   \begin{bmatrix} 1 & 4 &  8 \\ 2 & 8 & 17
-   \end{bmatrix}
-   →
-   \begin{bmatrix} 1 & 4 & + 8 \\ 10 & 0 & +1
-   \end{bmatrix} \quad \text{-2 Row 1}
-   \begin{bmatrix} {\rm -2 R_1} \\ \vphantom{R_2}\end{bmatrix}
-   
+   \begin{bmatrix} 1 & 4 & 8 \\ 2 & 8 & 17 \end{bmatrix}
+   \begin{matrix} \vphantom{R_1} \\ -2 R_1\end{matrix}
+   &\to \begin{bmatrix} 1 & 4 & 8 \\ 10 & 0 & 1\end{bmatrix}
    \end{align}
-   The equations do not have a solution because the system is false.
+   
+   
+   The equations do not have a solution because the last row is false.
    ```
 
 3. Solve using Gauss-Jordan elimination
