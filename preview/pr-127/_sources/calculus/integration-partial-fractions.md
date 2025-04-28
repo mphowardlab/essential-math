@@ -37,9 +37,9 @@ $A_2$ can be solved using the Heaviside cover-up method because it corresponds t
 \frac{(4)^2 - 29(4) + 5}{(4)^2 + 3} = A_2 \\
 \end{equation}
 
-\begin{equation}
+$$
 A_2 = -5 
-\end{equation}
+$$
 
 ---
 ## Polynomial Division
