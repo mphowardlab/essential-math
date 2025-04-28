@@ -1,6 +1,6 @@
 # Linearity
 
-A system of first-oder ODEs is linear if; 
+A system of first-oder ODEs is linear if:
 
 \begin{equation} 
 \vv{y}' = A(t) \vv{y} + g(t) 
