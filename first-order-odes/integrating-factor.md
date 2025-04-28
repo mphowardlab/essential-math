@@ -34,12 +34,22 @@ $$
 -\frac{y}{x^2} + \frac{1}{x} = 0
 $$
 
-How did we know the integrating factor would work? How did we find it?
+Check the partial derivatives:
+$$ 
+\frac{\partial (F P)} {\partial y} = - \frac{1}{x^2},
+\quad
+\frac{\partial (F Q)}{\partial x} = -\frac{1}{x^2}
+\quad \longrightarrow \quad \text{Exact!}
+$$
 
-    Let's try this:
-      R = 1/Q * ((∂P/∂y) - (∂Q/∂x)) 
-      If R(x) is only a function of x, use this to find the integrating factor. 
-      F(x) = exp[∫R(x) dx]
+## How did we find \(F\)?
+
+  Using this formula:
+  
+
+  $$
+  R = \frac{1}{Q} \left( \frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x} \right)
+  $$
 
     What if R(x) is not only a function of x, but also includes a y in the product?
       S = 1/P * ((∂Q/∂x) - (∂P/∂y)) = -(Q/P) * R
