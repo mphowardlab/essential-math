@@ -189,7 +189,7 @@ $Q_1 = 2$, $Q_2 = 4$, and $Q_3 = 2$.
    →
    \begin{bmatrix} 1 & 4 & + 8 \\ 10 & 0 & +1
    \end{bmatrix} \quad \text{-2 Row 1}
-   \begin{bmatrix} {\rm -2 R_1} \\ \vphantom{R_2}\end{matrix}
+   \begin{bmatrix} {\rm -2 R_1} \\ \vphantom{R_2}\end{bmatrix}
    
    \end{align}
    The equations do not have a solution because the system is false.
