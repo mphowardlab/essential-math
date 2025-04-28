@@ -442,11 +442,58 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="series-expansion">
 <h1><span class="section-number">1.5. </span>Series expansion<a class="headerlink" href="#series-expansion" title="Link to this heading">#</a></h1>
+<p>Nonlinear functions can be nasty, but polynomials are the “nicest” version. A
+<em>series expansion</em> is a systematic approach to turn a general nonlinear
+equation into a polynomial. Suppose we have some function <span class="math notranslate nohighlight">\(f(x)\)</span> that we want
+to approximate as:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-89433963-b69e-4bdb-9a89-720a738974a1">
+<span class="eqno">(1.1)<a class="headerlink" href="#equation-89433963-b69e-4bdb-9a89-720a738974a1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+f(x) = \sum_{n=0}^{\infty} c_n(x-x_0)^n
+\end{equation}\]</div>
+<p>To determine the coefficients <span class="math notranslate nohighlight">\(c_n\)</span>, consider the values of <em>f</em> and its
+derivatives at <span class="math notranslate nohighlight">\(x_0\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-e5e2549a-00f2-43c9-84ce-9676facd9737">
+<span class="eqno">(1.2)<a class="headerlink" href="#equation-e5e2549a-00f2-43c9-84ce-9676facd9737" title="Permalink to this equation">#</a></span>\[\begin{align}
+f(x) &amp;= c_0 + c_1(x-x_0) + c_2(x-x_0)^2 + c_3(x-x_0)^3 + \cdots &amp; f(x_0) &amp;= c_0 \\
+f'(x) &amp;= c_1 + 2 c_2(x-x_0) + 3 c_3(x-x_0)^2 + \cdots &amp; f'(x_0) &amp;= c_1 \\
+f''(x) &amp;= 2 c_2 + 6 c_3(x-x_0) + \cdots &amp; f''(x_0) &amp;= 2 c_2 \\
+f'''(x) &amp;= 6 c_3(x-x_0) + \cdots &amp; f''(x_0) &amp;= 6 c_3
+\end{align}\]</div>
+<p>The pattern of matching derivatives gives rise to the <em>Taylor series</em>.</p>
+<aside class="topic">
+<p class="topic-title">Taylor series</p>
+<p>The Taylor series for <span class="math notranslate nohighlight">\(f(x)\)</span> about <span class="math notranslate nohighlight">\(x_0\)</span> is given by</p>
+<div class="amsmath math notranslate nohighlight" id="equation-24ac8d2d-e7db-47fa-ba79-b1a1a4f9d813">
+<span class="eqno">(1.3)<a class="headerlink" href="#equation-24ac8d2d-e7db-47fa-ba79-b1a1a4f9d813" title="Permalink to this equation">#</a></span>\[\begin{equation}
+f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(x_0)}{n!}\cdot(x-x_0)^n
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(f^{(n)}\)</span> is the <em>n</em>th derivative of <em>f</em>. A Taylor series about <span class="math notranslate nohighlight">\(x=0\)</span> is
+sometimes called a Maclaurin series.</p>
+</aside>
+<div class="admonition-example-taylor-series admonition">
+<p class="admonition-title">Example: Taylor series</p>
+<p>Compute the Taylor series for <span class="math notranslate nohighlight">\(f(x) = \ln x\)</span> about <span class="math notranslate nohighlight">\(x_0 = 2\)</span>.</p>
+<hr class="docutils" />
+<div class="amsmath math notranslate nohighlight" id="equation-a2a50874-18b5-42f0-993f-fafc28629d6e">
+<span class="eqno">(1.4)<a class="headerlink" href="#equation-a2a50874-18b5-42f0-993f-fafc28629d6e" title="Permalink to this equation">#</a></span>\[\begin{align}
+f(x) &amp;= \ln x &amp; f(2) &amp;= \ln 2 \\
+f'(x) &amp;= \frac{1}{x} &amp; f'(2) &amp;= \frac{1}{2} \\
+f''(x) &amp;= -\frac{1}{x^2} &amp; f''(2) &amp;= -\frac{1}{4}
+\end{align}\]</div>
+<p>Hence,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1e0d0706-2283-43a9-b17b-4b4fa14f6d5e">
+<span class="eqno">(1.5)<a class="headerlink" href="#equation-1e0d0706-2283-43a9-b17b-4b4fa14f6d5e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+f(x) \approx \ln(2) + \frac{1}{2}(x-2) - \frac{1}{2}\cdot\frac{1}{4} (x-2)^2 + \cdots
+\end{equation}\]</div>
+</div>
+<p>In general, we could determine the infinite series and general expressions for
+coefficients, but for practical purposes, we will usually stop at either first
+or second order polynomials since that is easier to work with.</p>
 <div class="admonition-example-taylor-series admonition">
 <p class="admonition-title">Example: Taylor series</p>
 <p>Find the two-term Taylor series for</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5ecd6049-9c2e-4316-a292-d5c0fc8f60f7">
-<span class="eqno">(1.1)<a class="headerlink" href="#equation-5ecd6049-9c2e-4316-a292-d5c0fc8f60f7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6bd98000-85ff-4f47-a599-30cbc0ceff72">
+<span class="eqno">(1.6)<a class="headerlink" href="#equation-6bd98000-85ff-4f47-a599-30cbc0ceff72" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f(x) = xe^{2 x^2}
 \end{equation}\]</div>
 <p>about <span class="math notranslate nohighlight">\(x = 0\)</span>.</p>
@@ -454,27 +501,27 @@ f(x) = xe^{2 x^2}
 <p>We will evaluate the required derivatives. This will be a series of
 <a class="reference internal" href="derivative-rules.html"><span class="std std-doc">product rule</span></a> calculations.</p>
 <p>The value of the function is <span class="math notranslate nohighlight">\(f(0) = 0\)</span>. The first derivative is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-94da9ccb-b7a6-4018-877e-2f53e93a3050">
-<span class="eqno">(1.2)<a class="headerlink" href="#equation-94da9ccb-b7a6-4018-877e-2f53e93a3050" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-73ef6527-8f37-4df3-abb0-ff6ee5fb1b18">
+<span class="eqno">(1.7)<a class="headerlink" href="#equation-73ef6527-8f37-4df3-abb0-ff6ee5fb1b18" title="Permalink to this equation">#</a></span>\[\begin{align}
 f'(x) &amp;= x(e^{2x^2}4x) + e^{2x^2} \\
 &amp;= (4x^2 + 1)e^{2x^2}
 \end{align}\]</div>
 <p>so <span class="math notranslate nohighlight">\(f'(0) = 1\)</span>. The second derivative is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f0c9e06c-4f9d-4c54-8ee2-fa8b57838896">
-<span class="eqno">(1.3)<a class="headerlink" href="#equation-f0c9e06c-4f9d-4c54-8ee2-fa8b57838896" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b9767d9b-635e-4541-826e-ef3a45203f6c">
+<span class="eqno">(1.8)<a class="headerlink" href="#equation-b9767d9b-635e-4541-826e-ef3a45203f6c" title="Permalink to this equation">#</a></span>\[\begin{align}
 f''(x) &amp;= (4x^2+1)(e^{2x^2}4x)+8xe^{2x^2} \\
 &amp;= (16x^3+12x)e^{2x^2}
 \end{align}\]</div>
 <p>so <span class="math notranslate nohighlight">\(f''(0) = 0\)</span>. This means we need to keep going! The third derivative is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4933ff46-54ce-4c85-b1df-ee3ebe39ccf6">
-<span class="eqno">(1.4)<a class="headerlink" href="#equation-4933ff46-54ce-4c85-b1df-ee3ebe39ccf6" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c5494e16-45de-4563-81ca-ae74efb04f56">
+<span class="eqno">(1.9)<a class="headerlink" href="#equation-c5494e16-45de-4563-81ca-ae74efb04f56" title="Permalink to this equation">#</a></span>\[\begin{align}
 f'''(x) &amp;= (16x^3+12x)(e^{2x^2}4x)+(48x^2+12)e^{2x^2} \\
 &amp;= (64x^4+96x^2+12)e^{2x^2}
 \end{align}\]</div>
 <p>so <span class="math notranslate nohighlight">\(f'''(0) = 12\)</span>.</p>
 <p>Putting it all together,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b456fd4e-046b-4df1-bd93-7e93866456c2">
-<span class="eqno">(1.5)<a class="headerlink" href="#equation-b456fd4e-046b-4df1-bd93-7e93866456c2" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-474f661a-d9a5-4d07-85e0-fbf7ef5aa0e9">
+<span class="eqno">(1.10)<a class="headerlink" href="#equation-474f661a-d9a5-4d07-85e0-fbf7ef5aa0e9" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f(x) \approx 0 + 1 \cdot x + \frac{1}{2} \cdot 0 \cdot x^2
 + \frac{1}{6} \cdot 12 \cdot x^3 + \cdots = x + 2x^3 + \cdots
 \end{equation}\]</div>
@@ -483,26 +530,26 @@ f(x) \approx 0 + 1 \cdot x + \frac{1}{2} \cdot 0 \cdot x^2
 <h2><span class="section-number">1.5.1. </span>Combining series<a class="headerlink" href="#combining-series" title="Link to this heading">#</a></h2>
 <p>Some of these calculations can sometimes be avoided by combining series
 together. For example, the Taylor series for <span class="math notranslate nohighlight">\(e^x\)</span> is well known</p>
-<div class="amsmath math notranslate nohighlight" id="equation-34a53870-ae0a-4135-8ac5-546c10c37042">
-<span class="eqno">(1.6)<a class="headerlink" href="#equation-34a53870-ae0a-4135-8ac5-546c10c37042" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1a31b774-ce33-4254-ab57-64c57b36f380">
+<span class="eqno">(1.11)<a class="headerlink" href="#equation-1a31b774-ce33-4254-ab57-64c57b36f380" title="Permalink to this equation">#</a></span>\[\begin{equation}
 e^x = \sum_{n=0}^{\infty} \frac{x^n}{n!} = 1 + x + \frac{x^2}{2} + \cdots
 \end{equation}\]</div>
 <p>The argument of <em>e</em> in <em>f</em> is <span class="math notranslate nohighlight">\(2x^2\)</span>, which is also zero when <em>x</em> is zero, so we
 can substitute it in the known series to obtain</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e15897b0-2ff5-436d-9a84-d51c8888fec5">
-<span class="eqno">(1.7)<a class="headerlink" href="#equation-e15897b0-2ff5-436d-9a84-d51c8888fec5" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8656b534-7969-4117-abaf-7ecf40b8652a">
+<span class="eqno">(1.12)<a class="headerlink" href="#equation-8656b534-7969-4117-abaf-7ecf40b8652a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 e^{2x^2} \approx 1 + 2x^2 + \frac{(2x^2)^2}{2} + \cdots
 \end{equation}\]</div>
 <p>Finally, inserting this series into <em>f</em> and expanding</p>
-<div class="amsmath math notranslate nohighlight" id="equation-11845ec1-783c-477d-a188-631fcd5f3a90">
-<span class="eqno">(1.8)<a class="headerlink" href="#equation-11845ec1-783c-477d-a188-631fcd5f3a90" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f502cf70-07aa-459d-8684-e0df15853b6f">
+<span class="eqno">(1.13)<a class="headerlink" href="#equation-f502cf70-07aa-459d-8684-e0df15853b6f" title="Permalink to this equation">#</a></span>\[\begin{align}
 f(x) &amp;= x e^{2x^2} \approx x (1 + 2x^2 + 2x^4 + \cdots) \\
 &amp;= x + 2x^3 + \cdots
 \end{align}\]</div>
 <p>When doing this process, it can be helpful to keep track of dropped terms using
 <span class="math notranslate nohighlight">\(O\)</span>-notation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b5363502-363c-46de-ab3b-f9647959235a">
-<span class="eqno">(1.9)<a class="headerlink" href="#equation-b5363502-363c-46de-ab3b-f9647959235a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-3d8c7955-57a7-47b9-a042-3faf351847ab">
+<span class="eqno">(1.14)<a class="headerlink" href="#equation-3d8c7955-57a7-47b9-a042-3faf351847ab" title="Permalink to this equation">#</a></span>\[\begin{align}
 e^x &amp;= \sum_{n=0}^{\infty} \frac{x^n}{n!} = 1 + x +  \frac{x^2}{2} + O(x^3) \\
 e^{2x^2} &amp;= 1 + 2x^2 + 2x^4 + O(x^6) \\
 xe^{2x^2} &amp;= x + 2x^3 + O(x^5)
@@ -517,15 +564,15 @@ xe^{2x^2} &amp;= x + 2x^3 + O(x^5)
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">The function and its derivatives at <span class="math notranslate nohighlight">\(x=0\)</span> are:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1d8f6fd2-05dd-4ebf-af18-b04192999515">
-<span class="eqno">(1.10)<a class="headerlink" href="#equation-1d8f6fd2-05dd-4ebf-af18-b04192999515" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0b44ee77-99d6-4d11-8c51-14faa30fc554">
+<span class="eqno">(1.15)<a class="headerlink" href="#equation-0b44ee77-99d6-4d11-8c51-14faa30fc554" title="Permalink to this equation">#</a></span>\[\begin{align}
 f(x) &amp;= \cos(x) &amp; f(0) &amp;= 1 \\
 f'(x) &amp;= -\sin(x) &amp; f'(0) &amp;= 0 \\
 f''(x) &amp;= -\cos(x) &amp; f''(0) &amp;= -1
 \end{align}\]</div>
 <p class="sd-card-text">So:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-641b2882-4849-4a0a-b7e4-a50141349f1e">
-<span class="eqno">(1.11)<a class="headerlink" href="#equation-641b2882-4849-4a0a-b7e4-a50141349f1e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-03589689-e80e-47ff-ae2e-622d6cce39ce">
+<span class="eqno">(1.16)<a class="headerlink" href="#equation-03589689-e80e-47ff-ae2e-622d6cce39ce" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \cos x \approx 1-\frac{x^2}{2}
 \end{equation}\]</div>
 </div>
@@ -535,16 +582,16 @@ f''(x) &amp;= -\cos(x) &amp; f''(0) &amp;= -1
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">The function and its derivatives at <span class="math notranslate nohighlight">\(x=0\)</span> are:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c5e03da3-5d53-4255-8555-3dcbf10beab6">
-<span class="eqno">(1.12)<a class="headerlink" href="#equation-c5e03da3-5d53-4255-8555-3dcbf10beab6" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-9d59d45e-f7e8-496e-9b4a-f273617c2d2f">
+<span class="eqno">(1.17)<a class="headerlink" href="#equation-9d59d45e-f7e8-496e-9b4a-f273617c2d2f" title="Permalink to this equation">#</a></span>\[\begin{align}
 f(x) &amp;= \sin(x) &amp; f(0) &amp;= 0\\
 f'(x) &amp;= \cos(x) &amp; f'(0) &amp;= 1 \\
 f''(x) &amp;= -\sin(x) &amp; f''(0) &amp;= 0 \\
 f^{(3)}(x) &amp;= -\cos(x) &amp; f^{(3)}(0) &amp;= -1
 \end{align}\]</div>
 <p class="sd-card-text">So:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f720fe38-79f3-4733-976b-607447d59bac">
-<span class="eqno">(1.13)<a class="headerlink" href="#equation-f720fe38-79f3-4733-976b-607447d59bac" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-62947622-6ac2-4634-993c-4ae2c9f0af22">
+<span class="eqno">(1.18)<a class="headerlink" href="#equation-62947622-6ac2-4634-993c-4ae2c9f0af22" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \sin x \approx x-\frac{x^3}{6}
 \end{equation}\]</div>
 </div>
@@ -554,14 +601,14 @@ f^{(3)}(x) &amp;= -\cos(x) &amp; f^{(3)}(0) &amp;= -1
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">The function and its derivatives at <span class="math notranslate nohighlight">\(x=0\)</span> are:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f5abea3b-3d1e-4c81-8c68-18f3440ef503">
-<span class="eqno">(1.14)<a class="headerlink" href="#equation-f5abea3b-3d1e-4c81-8c68-18f3440ef503" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-669c8d42-dccf-40b0-8d3e-65836f6a4923">
+<span class="eqno">(1.19)<a class="headerlink" href="#equation-669c8d42-dccf-40b0-8d3e-65836f6a4923" title="Permalink to this equation">#</a></span>\[\begin{align}
 f(x)&amp;=e^x &amp; f(0) &amp;= 1\\
 f'(x)&amp;=e^x &amp; f'(0) &amp;= 1
 \end{align}\]</div>
 <p class="sd-card-text">So:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-12f375b9-8cdb-42c4-a60a-c19776335892">
-<span class="eqno">(1.15)<a class="headerlink" href="#equation-12f375b9-8cdb-42c4-a60a-c19776335892" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-9493a532-9302-4cf2-b6cf-720c8db0710f">
+<span class="eqno">(1.20)<a class="headerlink" href="#equation-9493a532-9302-4cf2-b6cf-720c8db0710f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 e^x \approx 1+x
 \end{equation}\]</div>
 </div>
@@ -571,15 +618,15 @@ e^x \approx 1+x
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">The function and its derivatives at <span class="math notranslate nohighlight">\(x=0\)</span> are:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0c795a2a-7068-4109-a52b-185bc9e6a254">
-<span class="eqno">(1.16)<a class="headerlink" href="#equation-0c795a2a-7068-4109-a52b-185bc9e6a254" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-16c503e1-68e2-4ffa-a103-44436877ebcf">
+<span class="eqno">(1.21)<a class="headerlink" href="#equation-16c503e1-68e2-4ffa-a103-44436877ebcf" title="Permalink to this equation">#</a></span>\[\begin{align}
 f(x)&amp;=\ln(1+x) &amp; f(0) &amp;= 0\\
 f'(x)&amp;=\frac{1}{1+x} &amp; f'(0) &amp;= 1\\
 f''(x)&amp;=-\frac{1}{(1+x)^2} &amp; f''(0) &amp;= -1
 \end{align}\]</div>
 <p class="sd-card-text">So:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-77a2611b-2eb7-4c72-8939-c6ee3eebf2b7">
-<span class="eqno">(1.17)<a class="headerlink" href="#equation-77a2611b-2eb7-4c72-8939-c6ee3eebf2b7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b756c5eb-2c7c-440d-b1a7-c482107b7c3d">
+<span class="eqno">(1.22)<a class="headerlink" href="#equation-b756c5eb-2c7c-440d-b1a7-c482107b7c3d" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \ln(1+x) \approx x-\frac{x^2}{2}
 \end{equation}\]</div>
 </div>
@@ -589,14 +636,14 @@ f''(x)&amp;=-\frac{1}{(1+x)^2} &amp; f''(0) &amp;= -1
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">The function and its derivatives at <span class="math notranslate nohighlight">\(x=0\)</span> are:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2faf8512-0482-4fec-a888-0116fa6f1be3">
-<span class="eqno">(1.18)<a class="headerlink" href="#equation-2faf8512-0482-4fec-a888-0116fa6f1be3" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4ab84c57-f4dd-49c4-b67a-5eb6726d1c5c">
+<span class="eqno">(1.23)<a class="headerlink" href="#equation-4ab84c57-f4dd-49c4-b67a-5eb6726d1c5c" title="Permalink to this equation">#</a></span>\[\begin{align}
 f(x)&amp;=\frac{1}{1+x} &amp; f(0) &amp;= 1\\
 f'(x)&amp;=-\frac{1}{(1+x)^2} &amp; f'(0) &amp;= -1
 \end{align}\]</div>
 <p class="sd-card-text">So:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-71409568-7772-4327-8144-3b3d03608cd1">
-<span class="eqno">(1.19)<a class="headerlink" href="#equation-71409568-7772-4327-8144-3b3d03608cd1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2babb0b6-11b7-4f89-9e98-31dafcf34044">
+<span class="eqno">(1.24)<a class="headerlink" href="#equation-2babb0b6-11b7-4f89-9e98-31dafcf34044" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{1}{1+x} \approx 1-x
 \end{equation}\]</div>
 </div>
@@ -606,13 +653,13 @@ f'(x)&amp;=-\frac{1}{(1+x)^2} &amp; f'(0) &amp;= -1
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Recall:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5c27ef0c-20e5-4ed4-8df3-05eeb6a7fb8e">
-<span class="eqno">(1.20)<a class="headerlink" href="#equation-5c27ef0c-20e5-4ed4-8df3-05eeb6a7fb8e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a2126d94-0ed6-4dd1-86d3-aee722c034e1">
+<span class="eqno">(1.25)<a class="headerlink" href="#equation-a2126d94-0ed6-4dd1-86d3-aee722c034e1" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \cos x \approx 1-\frac{x^2}{2}
 \end{equation}\]</div>
 <p class="sd-card-text">So:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9cd0bd20-c6cd-4d02-85c6-da48a40c6b52">
-<span class="eqno">(1.21)<a class="headerlink" href="#equation-9cd0bd20-c6cd-4d02-85c6-da48a40c6b52" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0ea92767-6e79-457f-b3f6-26da379e462a">
+<span class="eqno">(1.26)<a class="headerlink" href="#equation-0ea92767-6e79-457f-b3f6-26da379e462a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \cos(4x) \approx 1-\frac{(4x)^2}{2} = 1-8x^2
 \end{equation}\]</div>
 </div>
@@ -622,13 +669,13 @@ f'(x)&amp;=-\frac{1}{(1+x)^2} &amp; f'(0) &amp;= -1
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Recall:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a1345633-8f3c-45b6-9f97-edbb90e1bded">
-<span class="eqno">(1.22)<a class="headerlink" href="#equation-a1345633-8f3c-45b6-9f97-edbb90e1bded" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d2c932f4-1e33-44df-baaa-2aaec4f22959">
+<span class="eqno">(1.27)<a class="headerlink" href="#equation-d2c932f4-1e33-44df-baaa-2aaec4f22959" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \cos(x) \approx 1-\frac{x^2}{2}
 \end{equation}\]</div>
 <p class="sd-card-text">So:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b430f86b-9022-4fcf-8670-4168f4a3f18d">
-<span class="eqno">(1.23)<a class="headerlink" href="#equation-b430f86b-9022-4fcf-8670-4168f4a3f18d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2ce7ff46-8b6f-4b44-bf3a-a0f3f1badd56">
+<span class="eqno">(1.28)<a class="headerlink" href="#equation-2ce7ff46-8b6f-4b44-bf3a-a0f3f1badd56" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \cos(x-\pi) \approx 1-\frac{(x-\pi)^2}{2}
 \end{equation}\]</div>
 <p class="sd-card-text">about <span class="math notranslate nohighlight">\(x_0 = \pi\)</span>.</p>
@@ -639,14 +686,14 @@ f'(x)&amp;=-\frac{1}{(1+x)^2} &amp; f'(0) &amp;= -1
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Recall:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9e6cae90-2a05-4bbd-b21e-12a8750c4a57">
-<span class="eqno">(1.24)<a class="headerlink" href="#equation-9e6cae90-2a05-4bbd-b21e-12a8750c4a57" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b77cd5c0-0801-40ee-a47b-03d644f5bb68">
+<span class="eqno">(1.29)<a class="headerlink" href="#equation-b77cd5c0-0801-40ee-a47b-03d644f5bb68" title="Permalink to this equation">#</a></span>\[\begin{align}
 e^x &amp;\approx 1+x \\
 \sin(x) &amp;\approx x-\frac{x^3}{6}
 \end{align}\]</div>
 <p class="sd-card-text">So:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f721137c-e5fd-47c7-b8cc-6664f1878f52">
-<span class="eqno">(1.25)<a class="headerlink" href="#equation-f721137c-e5fd-47c7-b8cc-6664f1878f52" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-591d32ee-200a-42a3-a5b3-1e8315cf3ce4">
+<span class="eqno">(1.30)<a class="headerlink" href="#equation-591d32ee-200a-42a3-a5b3-1e8315cf3ce4" title="Permalink to this equation">#</a></span>\[\begin{equation}
 e^x \sin x \approx (1+x+\cdots)(x-\frac{x^3}{6}+\cdots) = x+x^2
 \end{equation}\]</div>
 </div>
@@ -656,15 +703,15 @@ e^x \sin x \approx (1+x+\cdots)(x-\frac{x^3}{6}+\cdots) = x+x^2
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">The function and its derivatives at <span class="math notranslate nohighlight">\(x=\pi\)</span> are:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cd33e376-272d-4c99-8bdb-82d66d7971f9">
-<span class="eqno">(1.26)<a class="headerlink" href="#equation-cd33e376-272d-4c99-8bdb-82d66d7971f9" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e43236ee-17b8-440d-8ce7-723b6e43c90a">
+<span class="eqno">(1.31)<a class="headerlink" href="#equation-e43236ee-17b8-440d-8ce7-723b6e43c90a" title="Permalink to this equation">#</a></span>\[\begin{align}
 f(x) &amp;= \cos(x) &amp; f(\pi) &amp;= -1 \\
 f'(x) &amp;= -\sin(x) &amp; f'(\pi) &amp;= 0 \\
 f''(x) &amp;= -\cos(x) &amp; f''(\pi) &amp;= 1
 \end{align}\]</div>
 <p class="sd-card-text">So:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-23cf561b-a155-4239-b179-afd6a3b84282">
-<span class="eqno">(1.27)<a class="headerlink" href="#equation-23cf561b-a155-4239-b179-afd6a3b84282" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-9f21d704-eaf4-40b0-90b4-3a381263e642">
+<span class="eqno">(1.32)<a class="headerlink" href="#equation-9f21d704-eaf4-40b0-90b4-3a381263e642" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \cos x \approx -1+\frac{1}{2}(x-\pi)^2
 \end{equation}\]</div>
 <p class="sd-card-text">at <span class="math notranslate nohighlight">\(x = \pi\)</span>.</p>
@@ -675,14 +722,14 @@ f''(x) &amp;= -\cos(x) &amp; f''(\pi) &amp;= 1
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">The function and its derivatives at <span class="math notranslate nohighlight">\(x=2\)</span> are:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f720c1cb-7126-48af-8d46-5a3cf12ee580">
-<span class="eqno">(1.28)<a class="headerlink" href="#equation-f720c1cb-7126-48af-8d46-5a3cf12ee580" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f67f8546-3350-46b8-9c4c-41585921721f">
+<span class="eqno">(1.33)<a class="headerlink" href="#equation-f67f8546-3350-46b8-9c4c-41585921721f" title="Permalink to this equation">#</a></span>\[\begin{align}
 f(x)&amp;=7x^2-6x+1 &amp; f(2) &amp;= 17\\
 f'(x)&amp;=14x-6 &amp; f'(2) &amp;= 22
 \end{align}\]</div>
 <p class="sd-card-text">So:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ec421f71-c877-4565-8dd4-31abc002f26d">
-<span class="eqno">(1.29)<a class="headerlink" href="#equation-ec421f71-c877-4565-8dd4-31abc002f26d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-00a15d51-3f14-4a24-8300-0235cd070663">
+<span class="eqno">(1.34)<a class="headerlink" href="#equation-00a15d51-3f14-4a24-8300-0235cd070663" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f(x) \approx 17+22(x-2)
 \end{equation}\]</div>
 </div>

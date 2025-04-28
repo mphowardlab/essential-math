@@ -23,6 +23,7 @@ $\d{x} = -\d{u}$ so
 
 ```{example} *u*-substitution
 Evaluate the integral
+
 \begin{equation}
 \int x e^{x^2} \d{x}
 \end{equation}
@@ -30,9 +31,11 @@ Evaluate the integral
 ---
 
 Let $u=x^2$ so $\d{u} = 2x \d{x}$. Then,
+
 \begin{align}
 \int e^{x^2} x\d{x} =  \int e^u \cdot \frac{1}{2}\d{u} = \frac{1}{2} e^u + c
 \end{align}
+
 Plugging *u* back in gives the final answer:
 \begin{equation}
 \int xe^{x^2} \d{x} = \frac{1}{2}e^{x^2} + c
