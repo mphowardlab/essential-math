@@ -3,7 +3,7 @@
 A system of first-oder ODEs is linear if 
 
 \begin{equation} 
-\vv{y}' = \vv{A}(t) \vv{y} + \vv{g}(t) 
+\vv{y}' = A(t) \vv{y} + g(t) 
 \end{equation}
 
 Linear systems have unique solutions and special properties we will discuss
