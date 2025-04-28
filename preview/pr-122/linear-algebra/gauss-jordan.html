@@ -170,13 +170,15 @@
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../calculus/index.html">1. Calculus</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../calculus/derivatives.html">1.1. Derivatives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../calculus/derivative-rules.html">1.2. Product, quotient, and chain rule</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../calculus/series-expansion.html">1.3. Series expansion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../calculus/integration.html">1.4. Integration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../calculus/integration-substitution.html">1.5. Integration using substitution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../calculus/integration-by-parts.html">1.6. Integration by parts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../calculus/integration-partial-fractions.html">1.7. Partial fraction decomposition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/functions.html">1.1. Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/limits.html">1.2. Limits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/derivatives.html">1.3. Derivatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/derivative-rules.html">1.4. Product, quotient, and chain rule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/series-expansion.html">1.5. Series expansion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/integration.html">1.6. Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/integration-substitution.html">1.7. Integration using substitution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/integration-by-parts.html">1.8. Integration by parts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/integration-partial-fractions.html">1.9. Partial fraction decomposition</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../multivariable-calculus/index.html">2. Multivariable calculus</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -429,6 +431,136 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="gaussjordan-elimination">
 <h1><span class="section-number">3.3. </span>Gauss–Jordan elimination<a class="headerlink" href="#gaussjordan-elimination" title="Link to this heading">#</a></h1>
+<div class="admonition-example-pump-circuit admonition">
+<p class="admonition-title">Example: Pump circuit</p>
+<p>Incompressible flow can be written analogous to an electrical circuit as</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b688a7b2-9fad-4016-a7ae-c22277f6d599">
+<span class="eqno">(3.27)<a class="headerlink" href="#equation-b688a7b2-9fad-4016-a7ae-c22277f6d599" title="Permalink to this equation">#</a></span>\[\begin{equation}
+-\Delta P = RQ
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\Delta P\)</span> is the pressure change, <em>R</em> is the resistance, and <em>Q</em> is the
+volumetric flow rate. For the following pump “circuit”:</p>
+<a class="reference internal image-reference" href="../_images/FluidCircuitImage.png"><img alt="Fluid System Modeled as Circuit" class="align-center" src="../_images/FluidCircuitImage.png" style="width: 500px;" />
+</a>
+<p>The pressure and mass balances for the nodes and loop give:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-29e88980-7e3c-4d28-8f26-fa538084ca59">
+<span class="eqno">(3.28)<a class="headerlink" href="#equation-29e88980-7e3c-4d28-8f26-fa538084ca59" title="Permalink to this equation">#</a></span>\[\begin{align}
+Q_1 &amp;+ Q_3 = Q_2 \\
+Q_2 &amp;= Q_1 + Q_3 \\
+80 &amp;= 10Q_2 + 20Q_1 \\
+90 &amp;= 25Q_3 + 10Q_2
+\end{align}\]</div>
+<p>Find <span class="math notranslate nohighlight">\(Q_1\)</span>, <span class="math notranslate nohighlight">\(Q_2\)</span>, and <span class="math notranslate nohighlight">\(Q_3\)</span>.</p>
+<hr class="docutils" />
+<p>First, rearrange the equations into consistent linear form:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7b9aaa32-7514-4c0a-96f1-a3fe346a6800">
+<span class="eqno">(3.29)<a class="headerlink" href="#equation-7b9aaa32-7514-4c0a-96f1-a3fe346a6800" title="Permalink to this equation">#</a></span>\[\begin{align}
+Q_1 - Q_2 + Q_3 &amp;= 0 \\
+Q_1 - Q_2 + Q_3 &amp;= 0 \\
+20Q_1 + 10Q_2 + 0Q_3 &amp;= 80 \\
+0Q_1 + 10Q_2 + 25Q_3 &amp;= 90
+\end{align}\]</div>
+<p>Then, rewrite using matrix representation:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-dace48fc-6b91-4514-866f-f38ff88bea90">
+<span class="eqno">(3.30)<a class="headerlink" href="#equation-dace48fc-6b91-4514-866f-f38ff88bea90" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\begin{bmatrix}
+1 &amp; -1 &amp; 1 \\
+1 &amp; -1 &amp; 1 \\
+20 &amp; 10 &amp; 0 \\
+0 &amp; 10 &amp; 25
+\end{bmatrix}
+\begin{bmatrix}
+Q_1 \\ Q_2 \\ Q_3
+\end{bmatrix}
+= \begin{bmatrix}
+0 \\ 0 \\ 80 \\ 90
+\end{bmatrix}
+\end{equation}\]</div>
+<p>Now, perform Gauss-Jordan elimination steps to solve for the unknown flow rates.
+We form the augmented matrix, then use Row 1 to eliminate values in Rows 2 and
+3:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6c877863-2f06-4c89-bc13-9b5fce0c4030">
+<span class="eqno">(3.31)<a class="headerlink" href="#equation-6c877863-2f06-4c89-bc13-9b5fce0c4030" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\begin{bmatrix}
+1 &amp; -1 &amp; 1 &amp; 0 \\
+-1 &amp; 1 &amp; -1 &amp; 0 \\
+20 &amp; 10 &amp; 0 &amp; 80 \\
+0 &amp; 10 &amp; 25 &amp; 90
+\end{bmatrix}
+\begin{matrix}
+\vphantom{R_1} \\ + R_1 \\ -20 R_1 \\ \vphantom{R_1}
+\end{matrix}
+\to
+\begin{bmatrix}
+1 &amp; -1 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 30 &amp; -20 &amp; 80 \\
+0 &amp; 10 &amp; 25 &amp; 90
+\end{bmatrix}
+\end{equation}\]</div>
+<p>Row 2 is all zeros because it was a redundant equation to Row 1. Swap Rows 2 and
+4, then use the new Row 2 to eliminate value in Row 3:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-3d9c1b35-5aaf-46f9-83f7-aa30ee5310c4">
+<span class="eqno">(3.32)<a class="headerlink" href="#equation-3d9c1b35-5aaf-46f9-83f7-aa30ee5310c4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\begin{bmatrix}
+1 &amp; -1 &amp; 1 &amp; 0 \\
+0 &amp; 10 &amp; 25 &amp; 90 \\
+0 &amp; 30 &amp; -20 &amp; 80 \\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{bmatrix}
+\begin{matrix}
+\vphantom{R_1} \\ \vphantom{R_1} \\ -3 R_2 \\ \vphantom{R_1}
+\end{matrix}
+\to \begin{bmatrix}
+1 &amp; -1 &amp; 1 &amp; 0 \\
+0 &amp; 10 &amp; 25 &amp; 90 \\
+0 &amp; 0 &amp; -95 &amp; -190 \\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{bmatrix}
+\end{equation}\]</div>
+<p>Normalize Row 3 (divide by -95), then eliminate values above in Column 3:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-66568f42-c07c-4f86-bab5-936d3a77df21">
+<span class="eqno">(3.33)<a class="headerlink" href="#equation-66568f42-c07c-4f86-bab5-936d3a77df21" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\begin{bmatrix}
+1 &amp; -1 &amp; 1 &amp; 0 \\
+0 &amp; 10 &amp; 25 &amp; 90 \\
+0 &amp; 0 &amp; 1 &amp; 2 \\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{bmatrix}
+\begin{matrix}
+- R_3 \\ -25 R_3 \\ \vphantom{R_1} \\ \vphantom{R_1}
+\end{matrix}
+\to
+\begin{bmatrix}
+1 &amp; -1 &amp; 0 &amp; -2 \\
+0 &amp; 10 &amp; 0 &amp; 40 \\
+0 &amp; 0 &amp; 1 &amp; 2 \\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{bmatrix}
+\end{equation}\]</div>
+<p>Normalize Row 2 (divide by 10), then eliminate values above in Column 2:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-05e04c25-e0dc-42d6-b7df-cc9cc9f7f969">
+<span class="eqno">(3.34)<a class="headerlink" href="#equation-05e04c25-e0dc-42d6-b7df-cc9cc9f7f969" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\begin{bmatrix}
+1 &amp; -1 &amp; 0 &amp; -2 \\
+0 &amp; 1 &amp; 0 &amp; 4 \\
+0 &amp; 0 &amp; 1 &amp; 2 \\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{bmatrix}
+\begin{matrix}
++ R_2 \\ \vphantom{R_1} \\ \vphantom{R_1} \\ \vphantom{R_1}
+\end{matrix}
+\to
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; 2 \\
+0 &amp; 1 &amp; 0 &amp; 4 \\
+0 &amp; 0 &amp; 1 &amp; 2 \\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{bmatrix}
+\end{equation}\]</div>
+<p>Turning back into an equivalent system of equations gives the final solution,
+<span class="math notranslate nohighlight">\(Q_1 = 2\)</span>, <span class="math notranslate nohighlight">\(Q_2 = 4\)</span>, and <span class="math notranslate nohighlight">\(Q_3 = 2\)</span>.</p>
+</div>
 <p>Solve the following using Gauss-Jordan Elimination
 (a)</p>
 <div class="math notranslate nohighlight">
