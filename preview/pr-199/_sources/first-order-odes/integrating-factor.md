@@ -1,6 +1,11 @@
 # Integrating factor
 What do we do when an ODE is not exact?
 
+$$
+  \int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}
+$$
+
+
     Example 1:  -y dx + x dy = 0
     P = -y
     Q = x
