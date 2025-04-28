@@ -3,7 +3,7 @@
 
 The Heaviside cover-up method is a simplified approach to finding the coefficients in partial fraction decomposition for linear factors. Its main advantage is avoiding cross-multiplication, which can be time-consuming, by covering up a factor and substituting the appropriate value into the expression.
 
-###{example}
+### Example:
 Given:
 \begin{equation}
 \frac{3x+11}{(x-3)(x+2)} = \frac{A_1}{x-3} + \frac{A_2}{x+2} 
@@ -25,7 +25,7 @@ A_2 = -1
 
 The Heaviside cover-up method only works for the highest powers of linear factors.
 
-###{example} Incomplete Decomposition
+### Example: Incomplete Decomposition
 Given:
 \begin{equation}
 \frac{x^2-29x+5}{(x-4)^2 (x^2 +3)} = \frac{A_1}{x-4} + \frac{A_2}{(x-4)^2} + \frac{A_3x + B_3}{x^2 +3} 
@@ -46,7 +46,7 @@ A_2 = -5
 
 Polynomial division is a method used to simplify rational functions when the degree of the numerator (P) is higher than the degree of the denominator (Q).
 
-###{example}
+### Example:
 Given:
 \begin{equation}
 y' = \frac{x^4 - 5x^3 + 6x^2 -18}{x^3 -3x^2} 
