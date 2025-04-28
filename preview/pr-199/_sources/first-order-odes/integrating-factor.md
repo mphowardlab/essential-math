@@ -13,7 +13,9 @@ $$
 In this equation, we can consider our P = -y and our Q = x. Remember, when solving ODEs, we take the partial derivative of P and Q... 
 If partial derivatives are not equal, the equation is not exact. 
 
+$$
     ∂P/∂y = -1       ∂Q/∂x = 1       ----> not exact!!
+$$
 
 Let's multiply by a factor, F, to make this ODE exact. This is the integrating factor. The integrating factor transforms the ODE into an exact differential equation.
 
