@@ -33,6 +33,7 @@ $$
 $$
 A_2 = -1 
 $$
+```
 
 **Note**: The Heaviside cover-up method only works for the highest powers of linear factors.
 
@@ -52,6 +53,7 @@ A_2 = -5
 $$
 
 Alternative partial fraction decomposition methods must be used to solve for $A_1$, $A_3$, and $B_3$.
+```
 
 ---
 ## Polynomial Division
@@ -129,3 +131,4 @@ y = \int (x - 2 + \frac{2}{x} + \frac{6}{x^2} - \frac{2}{x-3}) \, dx \\
 \begin{equation}
 = \frac{x^2}{2} -2x + 2\ln|x| - \frac{6}{x} - 2\ln|x-3| + C 
 \end{equation}
+```
