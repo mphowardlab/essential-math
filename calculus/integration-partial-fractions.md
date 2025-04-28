@@ -11,10 +11,17 @@ Given:
 
 Multiply by a factor and take the limit to find $A_1$ and $A_2$:
 
-\begin{align}
+\begin{equation}
 \lim_{x\to 3} \left( \frac{3x+11}{x+2} = A_1 + \frac{A_2(x-3)}{x+2} \right) \\
-\frac{3(3)+11}{3+2} = A_1 --> A_1 = 4  \\
-\end{align}
+\end{equation}
+
+\begin{equation}
+\frac{3(3)+11}{3+2} = A_1 \\
+\end{equation}
+
+$$
+A_1 = 4  
+$$
 
 \begin{align}
 \lim_{x\to -2} \left( \frac{3x+11}{x-3} = \frac{A_1(x+2)}{x-3} + A_2 \right) \\
