@@ -87,6 +87,126 @@ solve $\vv{A} \vv{A}^{-1} = \vv{I}$ as a generalization of **Ax** = **b**.
 
 - Perform row operations to bring to $[ \vv{I} \, | \, \vv{A}^{-1} ]$.
 
+```{example} Pump circuit
+We will resolve the problem we used [Gauss-Jordan elimination](gauss-jordan.md)
+for, but now using the matrix inverse. As a reminder, the equations to solve
+were
+
+\begin{align}
+Q_1 - Q_2 + Q_3 &= 0 \\
+Q_1 - Q_2 + Q_3 &= 0 \\
+20Q_1 + 10Q_2 + 0Q_3 &= 80 \\
+0Q_1 + 10Q_2 + 25Q_3 &= 90
+\end{align}
+
+We need a square matrix to calculate the inverse, and we know the second
+equation is redundant of the first. We write this in matrix form **Ax** = **b**
+with
+
+\begin{equation}
+\vv{A} = \begin{bmatrix} 1 & -1 & 1 \\ 20 & 10 & 0 \\ 0 & 10 & 25\end{bmatrix}
+\qquad
+\vv{b} = \begin{bmatrix} 0 \\ 80 \\ 90 \end{bmatrix}
+\end{equation}
+
+First, compute the determinant to make sure **A** is invertible
+
+\begin{align}
+|\vv{A}| &= -10 \begin{vmatrix} 1 & 1 \\ 20 & 0 \end{vmatrix} +
+25 \begin{vmatrix} 1 & -1 \\ 20 & 10\end{vmatrix} \\
+&= 10 (0-20) + 25 (10+20) = 950
+\end{align}
+
+The determinant is nonzero, so $\vv{A}^{-1}$ exists. Form the augmented matrix we
+need to compute, then use a similar sequence of row operations as when we used
+Gauss-Jordan elimination to solve directly:
+
+\begin{align}
+&\begin{bmatrix}
+1 & -1 & 1 & 1 & 0 & 0 \\
+20 & 10 & 0 & 0 & 1 & 0 \\
+0 & 10 & 25 & 0 & 0 & 1
+\end{bmatrix}
+
+\begin{matrix}
+\vphantom{R_1} \\ -20 R_1 \\ \vphantom{R_1}
+\end{matrix} \\
+
+\to &\begin{bmatrix}
+1 & -1 & 1 & 1 & 0 & 0 \\
+0 & 30 & -20 & -20 & 1 & 0 \\
+0 & 10 & 25 & 0 & 0 & 1
+\end{bmatrix}
+\begin{matrix}
+\vphantom{R_1} \\ {\rm swap}\,R_3 \\ \vphantom{R_1}
+\end{matrix} \\
+
+\to &\begin{bmatrix}
+1 & -1 & 1 & 1 & 0 & 0 \\
+0 & 10 & 25 & 0 & 0 & 1 \\
+0 & 30 & -20 & -20 & 1 & 0
+\end{bmatrix}
+\begin{matrix}
+\vphantom{R_1} \\ \vphantom{R_1} \\ -3 R_2
+\end{matrix} \\
+
+\to &\begin{bmatrix}
+1 & -1 & 1 & 1 & 0 & 0 \\
+0 & 10 & 25 & 0 & 0 & 1 \\
+0 & 0 & -95 & -20 & 1 & -3
+\end{bmatrix}
+\begin{matrix}
+\vphantom{R_1} \\ \div 10 \\ \div -95
+\end{matrix} \\
+
+\to &\begin{bmatrix}
+1 & -1 & 1 & 1 & 0 & 0 \\
+0 & 1 & 2.5 & 0 & 0 & 0.1 \\
+0 & 0 & 1 & .211 & -.010 & 0.032
+\end{bmatrix}
+\begin{matrix}
+-R_3 \\ -2.5 R_3 \\ \vphantom{R_3}
+\end{matrix} \\
+
+\to &\begin{bmatrix}
+1 & -1 & 0 & 0.789 & 0.010 & -0.032 \\
+0 & 1 & 0 & -0.528 & 0.025 & 0.020 \\
+0 & 0 & 1 & 0.211 & -0.010 & 0.032
+\end{bmatrix}
+\begin{matrix}
++R_2 \\ \vphantom{R_2} \\ \vphantom{R_3}
+\end{matrix} \\
+
+\to &\begin{bmatrix}
+1 & 0 & 0 & 0.261 & 0.035 & -0.012 \\
+0 & 1 & 0 & -0.528 & 0.025 & 0.020 \\
+0 & 0 & 1 & 0.211 & -0.010 & 0.032
+\end{bmatrix}
+\end{align}
+
+Solve:
+\begin{equation}
+\vv {Q}= \vv{A}^{-1}{b} = \begin{bmatrix}
+0.261 & 0.035 & -0.012 \\
+-0.528 & 0.025 & 0.020 \\
+0.211 & -0.010 & 0.032
+\end{bmatrix}
+\begin{bmatrix}
+0 \\
+80 \\
+90
+\end{bmatrix}
+=
+\begin{bmatrix}
+1.72 \\
+3.80 \\
+2.08
+\end{bmatrix}
+\end{equation}
+
+This is close to the solution we found before, with some errors due to rounding.
+```
+
 ## Skill builder problems
 
 1. Solve using matrix inversion or explain why this is not possible:
