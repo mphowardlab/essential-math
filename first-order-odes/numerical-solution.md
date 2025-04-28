@@ -63,7 +63,7 @@ y(x) = e^x - (x + 1)
 
 Because we are using trunkated Taylor series, we accrue an error:
 
-```{image} ./_images/euler.png
+```{image} ./_images/Euler.png.png
 :alt: Euler's method error
 :width: 300px
 :align: center
