@@ -122,7 +122,10 @@ A_1 = 2
 $$
 
 Integrate:
-\begin{align}
+\begin{equation}
 y = \int (x - 2 + \frac{2}{x} + \frac{6}{x^2} - \frac{2}{x-3}) \, dx \\
+\end{equation}
+
+\begin{equation}
 = \frac{x^2}{2} -2x + 2\ln|x| - \frac{6}{x} - 2\ln|x-3| + C 
-\end{align}
+\end{equation}
