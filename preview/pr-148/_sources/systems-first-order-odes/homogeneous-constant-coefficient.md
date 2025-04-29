@@ -6,6 +6,8 @@
 
 ## Skill Builder Problems
 ---
+
+
 $C)
 A = \begin{bmatrix}
 0 & 4 \\
@@ -37,10 +39,10 @@ $
 \Rightarrow x_2 = \begin{bmatrix} i \\ 1 \end{bmatrix}
 
 
-**General Solution:**
-$
+$$
+\textbf{General Solution:} \quad 
 y = C_1 e^{4it} \begin{bmatrix} -i \\ 1 \end{bmatrix} + C_2 e^{-4it} \begin{bmatrix} i \\ 1 \end{bmatrix}
-$
+$$
 
 ---
 
