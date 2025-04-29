@@ -2,7 +2,6 @@
 
 ## 4. Example:
 
-````{example}
 Mole balance on a tank with increasing inlet/outlet flow rate.
 
 ```{image} ./_images/Integrating_factors_image.jpg
@@ -41,7 +40,6 @@ n_{A}(o) &= n_A,o = C_{f,A}V+C \to{C = n_{A,o} - C_{f,A}V}
 ```{math}
 \to{\boxed{n_{A}(t) = C_{f,A}V + (n_{A,o} - C_{f,A}V)exp{(-\frac{1}{2}\frac{\dot{q}}{v}t^{2})}}}\\
 ````
-`````
 
 
 
