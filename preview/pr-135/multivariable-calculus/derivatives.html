@@ -227,8 +227,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../second-order-odes/linearity.html">7.2. Linearity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../second-order-odes/homogeneous-constant-coefficient.html">7.3. Homogeneous linear second-order ODEs with constant coefficients</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../second-order-odes/undetermined-coefficients.html">7.4. Undetermined coefficients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/variation-of-parameters.html">7.5. Example: Steady heat diffusion with internal source</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/numerical-solution.html">7.6. Numerical solution methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/variation-of-parameters.html">7.5. Variation of parameters</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/numerical-solution.html">7.7. Numerical solution methods</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../credits.html">8. Credits</a></li>
@@ -432,20 +433,20 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="derivatives">
 <h1><span class="section-number">2.1. </span>Derivatives<a class="headerlink" href="#derivatives" title="Link to this heading">#</a></h1>
 <p>A function <span class="math notranslate nohighlight">\(f(x,y)\)</span> has <em>partial</em> derivatives:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-22ec5fa7-02b8-41c9-bb07-e6b22a76cef8">
-<span class="eqno">(2.1)<a class="headerlink" href="#equation-22ec5fa7-02b8-41c9-bb07-e6b22a76cef8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b3cddaff-40e5-4e51-908d-b930c12506ee">
+<span class="eqno">(2.1)<a class="headerlink" href="#equation-b3cddaff-40e5-4e51-908d-b930c12506ee" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \td{}{f}{x}{y} = \lim_{h \to 0} \frac{f(x+h, y) - f(x, y)}{h}
 \end{equation}\]</div>
 <p>where <em>x</em> (in the denominator) indicates what is varied and <em>y</em> (outside the
 parentheses) indicates what is held constant.</p>
 <p>The second partial derivative may be “repeated”</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7241c5bd-b0a8-4b2a-83d5-076cb79b1467">
-<span class="eqno">(2.2)<a class="headerlink" href="#equation-7241c5bd-b0a8-4b2a-83d5-076cb79b1467" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-da4faddf-47f5-49b2-94ac-505300f75820">
+<span class="eqno">(2.2)<a class="headerlink" href="#equation-da4faddf-47f5-49b2-94ac-505300f75820" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \td{2}{f}{x}{y} = \pp{}{}{x}\left[ \td{}{f}{x}{y} \right]_y
 \end{equation}\]</div>
 <p>or “mixed”</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fdfac2f4-7d7a-42e6-b5f7-a2371d5178c5">
-<span class="eqno">(2.3)<a class="headerlink" href="#equation-fdfac2f4-7d7a-42e6-b5f7-a2371d5178c5" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-9555cbe7-9988-4898-adc8-7326a8f3c6d6">
+<span class="eqno">(2.3)<a class="headerlink" href="#equation-9555cbe7-9988-4898-adc8-7326a8f3c6d6" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{\partial^2 f}{\partial x \partial y} = \pp{}{}{x}\left[ \td{}{f}{y}{x} \right]_y
 \end{equation}\]</div>
 <p>Mixed partial derivatives are read from right to left by convention.</p>
@@ -457,20 +458,20 @@ calculus if you treat the constant variables as such</p>
 <span class="math notranslate nohighlight">\((\partial^2 f/\partial x^2)_y\)</span>, and <span class="math notranslate nohighlight">\(\partial^2 f/\partial y \partial x\)</span>.</p>
 <hr class="docutils" />
 <p>The first partial derivative with respect to <em>x</em> (treating <em>y</em> as a constant) is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bee70318-ec72-4d8c-82d7-ec59ef0cba0c">
-<span class="eqno">(2.4)<a class="headerlink" href="#equation-bee70318-ec72-4d8c-82d7-ec59ef0cba0c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-52bf6414-b6e2-4a32-a447-1582c1099926">
+<span class="eqno">(2.4)<a class="headerlink" href="#equation-52bf6414-b6e2-4a32-a447-1582c1099926" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \td{}{f}{x}{y} = 2 x \cos y
 \end{equation}\]</div>
 <p>The second (repeated) partial derivative with respect to <em>x</em> (again, treating
 <em>y</em> as a constant) is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1e7acb96-66cf-4372-af70-a51a0526f21d">
-<span class="eqno">(2.5)<a class="headerlink" href="#equation-1e7acb96-66cf-4372-af70-a51a0526f21d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b0a1a55d-af2c-406e-82d9-af0586cbd2ad">
+<span class="eqno">(2.5)<a class="headerlink" href="#equation-b0a1a55d-af2c-406e-82d9-af0586cbd2ad" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \td{2}{f}{x}{y} = \pp{}{}{x}\left[ \td{}{f}{x}{y} \right]_y
 = \pp{}{}{x}\left( 2 x \cos y \right)_y = 2 \cos y
 \end{equation}\]</div>
 <p>The second (mixed) partial derivative with respect to <em>x</em> then <em>y</em> is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9ccba83b-bd3f-4e89-94b0-8508af80d253">
-<span class="eqno">(2.6)<a class="headerlink" href="#equation-9ccba83b-bd3f-4e89-94b0-8508af80d253" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-237341fd-25ad-4023-abcd-5bf3cd64410b">
+<span class="eqno">(2.6)<a class="headerlink" href="#equation-237341fd-25ad-4023-abcd-5bf3cd64410b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{\partial^2 f}{\partial y \partial x} = \pp{}{}{y}\left[ \td{}{f}{x}{y} \right]_x
 = \pp{}{}{y} \left( 2 x \cos y \right)_x = -2x \sin y
 \end{equation}\]</div>
@@ -479,8 +480,8 @@ calculus if you treat the constant variables as such</p>
 <p class="topic-title">Mixed second partial derivatives</p>
 <p>If all the second partial derivatives of a multivariable function <em>f</em> are
 continuous, the mixed second partial derivatives are symmetric,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-39810709-52f3-4154-8b14-255fb6e47b36">
-<span class="eqno">(2.7)<a class="headerlink" href="#equation-39810709-52f3-4154-8b14-255fb6e47b36" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d99f01d4-cb0a-4426-9ea4-b064ab243b4e">
+<span class="eqno">(2.7)<a class="headerlink" href="#equation-d99f01d4-cb0a-4426-9ea4-b064ab243b4e" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{\partial^2 f}{\partial x \partial y}
 = \frac{\partial^2 f}{\partial y \partial x}
 \end{equation}\]</div>
@@ -491,13 +492,13 @@ continuous, the mixed second partial derivatives are symmetric,</p>
 given above.</p>
 <hr class="docutils" />
 <p>The first partial derivative with respect to <span class="math notranslate nohighlight">\(y\)</span> is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8153381c-2bd9-4003-bd87-2c799ce2f7af">
-<span class="eqno">(2.8)<a class="headerlink" href="#equation-8153381c-2bd9-4003-bd87-2c799ce2f7af" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c2c93eff-07b9-49bd-80d6-6cc35cc0b07a">
+<span class="eqno">(2.8)<a class="headerlink" href="#equation-c2c93eff-07b9-49bd-80d6-6cc35cc0b07a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \td{}{f}{x}{y} = -x^2 \sin y
 \end{equation}\]</div>
 <p>So, the second (mixed) partial derivative with respect to <em>y</em> then <em>x</em> is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4ce85666-801f-4657-af09-580513b37fc1">
-<span class="eqno">(2.9)<a class="headerlink" href="#equation-4ce85666-801f-4657-af09-580513b37fc1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7b9b5eec-25f2-441a-a58f-431b686770bb">
+<span class="eqno">(2.9)<a class="headerlink" href="#equation-7b9b5eec-25f2-441a-a58f-431b686770bb" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{\partial^2 f}{\partial x \partial y} = \pp{}{}{x}\left[ \td{}{f}{y}{x} \right]_y
 = \pp{}{}{x} \left( -x^2 \sin y \right)_y = -2x \sin y
 \end{equation}\]</div>

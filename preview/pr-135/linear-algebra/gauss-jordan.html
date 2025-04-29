@@ -227,8 +227,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../second-order-odes/linearity.html">7.2. Linearity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../second-order-odes/homogeneous-constant-coefficient.html">7.3. Homogeneous linear second-order ODEs with constant coefficients</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../second-order-odes/undetermined-coefficients.html">7.4. Undetermined coefficients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/variation-of-parameters.html">7.5. Example: Steady heat diffusion with internal source</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/numerical-solution.html">7.6. Numerical solution methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/variation-of-parameters.html">7.5. Variation of parameters</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/numerical-solution.html">7.7. Numerical solution methods</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../credits.html">8. Credits</a></li>
@@ -434,8 +435,8 @@ document.write(`
 <div class="admonition-example-pump-circuit admonition">
 <p class="admonition-title">Example: Pump circuit</p>
 <p>Incompressible flow can be written analogous to an electrical circuit as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d3ba9e07-44e9-417c-9679-a68731fad361">
-<span class="eqno">(3.27)<a class="headerlink" href="#equation-d3ba9e07-44e9-417c-9679-a68731fad361" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2298315b-023e-4c98-a0d8-c825f390c9fc">
+<span class="eqno">(3.27)<a class="headerlink" href="#equation-2298315b-023e-4c98-a0d8-c825f390c9fc" title="Permalink to this equation">#</a></span>\[\begin{equation}
 -\Delta P = RQ
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\Delta P\)</span> is the pressure change, <em>R</em> is the resistance, and <em>Q</em> is the
@@ -443,8 +444,8 @@ volumetric flow rate. For the following pump “circuit”:</p>
 <a class="reference internal image-reference" href="../_images/FluidCircuitImage.png"><img alt="Fluid System Modeled as Circuit" class="align-center" src="../_images/FluidCircuitImage.png" style="width: 500px;" />
 </a>
 <p>The pressure and mass balances for the nodes and loop give:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b619d90e-79f2-40c7-a6b4-5f584bcf4f82">
-<span class="eqno">(3.28)<a class="headerlink" href="#equation-b619d90e-79f2-40c7-a6b4-5f584bcf4f82" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-38ad016f-cbb2-427c-b03e-510c4ed70a43">
+<span class="eqno">(3.28)<a class="headerlink" href="#equation-38ad016f-cbb2-427c-b03e-510c4ed70a43" title="Permalink to this equation">#</a></span>\[\begin{align}
 Q_1 &amp;+ Q_3 = Q_2 \\
 Q_2 &amp;= Q_1 + Q_3 \\
 80 &amp;= 10Q_2 + 20Q_1 \\
@@ -453,16 +454,16 @@ Q_2 &amp;= Q_1 + Q_3 \\
 <p>Find <span class="math notranslate nohighlight">\(Q_1\)</span>, <span class="math notranslate nohighlight">\(Q_2\)</span>, and <span class="math notranslate nohighlight">\(Q_3\)</span>.</p>
 <hr class="docutils" />
 <p>First, rearrange the equations into consistent linear form:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a084debf-a728-4925-9a64-8013b7c80908">
-<span class="eqno">(3.29)<a class="headerlink" href="#equation-a084debf-a728-4925-9a64-8013b7c80908" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-bdecaf9c-a626-40b1-9fa7-899c432c7034">
+<span class="eqno">(3.29)<a class="headerlink" href="#equation-bdecaf9c-a626-40b1-9fa7-899c432c7034" title="Permalink to this equation">#</a></span>\[\begin{align}
 Q_1 - Q_2 + Q_3 &amp;= 0 \\
 Q_1 - Q_2 + Q_3 &amp;= 0 \\
 20Q_1 + 10Q_2 + 0Q_3 &amp;= 80 \\
 0Q_1 + 10Q_2 + 25Q_3 &amp;= 90
 \end{align}\]</div>
 <p>Then, rewrite using matrix representation:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3652e6dd-35aa-494e-9121-1ebca1d50606">
-<span class="eqno">(3.30)<a class="headerlink" href="#equation-3652e6dd-35aa-494e-9121-1ebca1d50606" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-230b87b6-44a6-4881-b327-cc1805e5cf40">
+<span class="eqno">(3.30)<a class="headerlink" href="#equation-230b87b6-44a6-4881-b327-cc1805e5cf40" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix}
 1 &amp; -1 &amp; 1 \\
 1 &amp; -1 &amp; 1 \\
@@ -479,8 +480,8 @@ Q_1 \\ Q_2 \\ Q_3
 <p>Now, perform Gauss-Jordan elimination steps to solve for the unknown flow rates.
 We form the augmented matrix, then use Row 1 to eliminate values in Rows 2 and
 3:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0bf35b1a-c493-452a-ad87-bb65f0f0f0b8">
-<span class="eqno">(3.31)<a class="headerlink" href="#equation-0bf35b1a-c493-452a-ad87-bb65f0f0f0b8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0525650d-0e02-44b5-a5c6-6ce51dc6fb11">
+<span class="eqno">(3.31)<a class="headerlink" href="#equation-0525650d-0e02-44b5-a5c6-6ce51dc6fb11" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix}
 1 &amp; -1 &amp; 1 &amp; 0 \\
 -1 &amp; 1 &amp; -1 &amp; 0 \\
@@ -500,8 +501,8 @@ We form the augmented matrix, then use Row 1 to eliminate values in Rows 2 and
 \end{equation}\]</div>
 <p>Row 2 is all zeros because it was a redundant equation to Row 1. Swap Rows 2 and
 4, then use the new Row 2 to eliminate value in Row 3:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-97779dbf-d0af-4d1a-9906-9922b20c5efe">
-<span class="eqno">(3.32)<a class="headerlink" href="#equation-97779dbf-d0af-4d1a-9906-9922b20c5efe" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4d1f9ff4-8f9d-4b7b-8c97-ba23f3d322c3">
+<span class="eqno">(3.32)<a class="headerlink" href="#equation-4d1f9ff4-8f9d-4b7b-8c97-ba23f3d322c3" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix}
 1 &amp; -1 &amp; 1 &amp; 0 \\
 0 &amp; 10 &amp; 25 &amp; 90 \\
@@ -519,8 +520,8 @@ We form the augmented matrix, then use Row 1 to eliminate values in Rows 2 and
 \end{bmatrix}
 \end{equation}\]</div>
 <p>Normalize Row 3 (divide by -95), then eliminate values above in Column 3:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-edfced62-ad2c-4a36-ba68-ecb306ea101d">
-<span class="eqno">(3.33)<a class="headerlink" href="#equation-edfced62-ad2c-4a36-ba68-ecb306ea101d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-781c817d-d311-4d17-bb8d-23f87a3d12b1">
+<span class="eqno">(3.33)<a class="headerlink" href="#equation-781c817d-d311-4d17-bb8d-23f87a3d12b1" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix}
 1 &amp; -1 &amp; 1 &amp; 0 \\
 0 &amp; 10 &amp; 25 &amp; 90 \\
@@ -539,8 +540,8 @@ We form the augmented matrix, then use Row 1 to eliminate values in Rows 2 and
 \end{bmatrix}
 \end{equation}\]</div>
 <p>Normalize Row 2 (divide by 10), then eliminate values above in Column 2:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e230bc1a-1ef8-4422-95c0-18dbe4829037">
-<span class="eqno">(3.34)<a class="headerlink" href="#equation-e230bc1a-1ef8-4422-95c0-18dbe4829037" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d6832fb0-7445-4be4-bcde-fd9526a0da74">
+<span class="eqno">(3.34)<a class="headerlink" href="#equation-d6832fb0-7445-4be4-bcde-fd9526a0da74" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix}
 1 &amp; -1 &amp; 0 &amp; -2 \\
 0 &amp; 1 &amp; 0 &amp; 4 \\
