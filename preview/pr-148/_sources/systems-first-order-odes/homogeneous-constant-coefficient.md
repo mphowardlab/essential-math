@@ -32,8 +32,9 @@ $
 \Rightarrow x_2 = \begin{bmatrix} i \\ 1 \end{bmatrix}
 
 
+
+General Solution:
 $$
-/text{General Solution:} \quad 
 y = C_1 e^{4it} \begin{bmatrix} -i \\ 1 \end{bmatrix} + C_2 e^{-4it} \begin{bmatrix} i \\ 1 \end{bmatrix}
 $$
 
