@@ -173,6 +173,7 @@ $Q_1 = 2$, $Q_2 = 4$, and $Q_3 = 2$.
    \end{align}
 
    so $x_1 = 2.5$ and $x_2 = -4.2$.
+   ```
 
 2. Solve using Gauss-Jordan elimination
 
@@ -185,9 +186,8 @@ $Q_1 = 2$, $Q_2 = 4$, and $Q_3 = 2$.
    \begin{align}
    \begin{bmatrix} 1 & 4 & 8 \\ 2 & 8 & 17 \end{bmatrix}
    \begin{matrix} \vphantom{R_1} \\ -2 R_1\end{matrix}
-   &\to \begin{bmatrix} 1 & 4 & 8 \\ 10 & 0 & 1\end{bmatrix}
+   &\to \begin{bmatrix} 1 & 4 & 8 \\ 0 & 0 & 1\end{bmatrix}
    \end{align}
-
 
    The equations do not have a solution because the last row is false.
    ```
@@ -201,7 +201,6 @@ $Q_1 = 2$, $Q_2 = 4$, and $Q_3 = 2$.
    \end{align}
 
    ```{solution}
-
    \begin{align}
    \begin{bmatrix}
    0 & 1 & 1 & -2 \\
@@ -225,7 +224,7 @@ $Q_1 = 2$, $Q_2 = 4$, and $Q_3 = 2$.
    0 & 0 & 2 & -4
    \end{bmatrix}
    \begin{matrix}
-   \vphantom{R_1} \\ \vphantom{R_2} \\ \div -2
+   \vphantom{R_1} \\ \vphantom{R_2} \\ \div 2
    \end{matrix} \\
    &\to \begin{bmatrix}
    1 & 1 & 1 & 2 \\
@@ -239,7 +238,7 @@ $Q_1 = 2$, $Q_2 = 4$, and $Q_3 = 2$.
    0 & 0 & 1 & -2
    \end{bmatrix}
    \begin{matrix}
-   \vphantom{R_1} \\ \vphantom{R_2} \\ \vphantom{R_3}
+   -R_2 \\ \vphantom{R_2} \\ \vphantom{R_3}
    \end{matrix} \\
    &\to \begin{bmatrix}
    1 & 0 & 0 & 4 \\
@@ -248,11 +247,5 @@ $Q_1 = 2$, $Q_2 = 4$, and $Q_3 = 2$.
    \end{bmatrix}
    \end{align}
 
-
-
-
-   $ x_1 = 4$
-   $ x_2 = 0 $
-   $ x_3 = -2 $
-
+   so $x_1 = 4$, $x_2 = 0$, and $x_3 = -2$.
    ```
