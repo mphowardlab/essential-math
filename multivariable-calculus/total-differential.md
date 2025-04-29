@@ -36,10 +36,7 @@ partial derivatives can be formed in the same way:
 
 # Skill Builder:
 
-### Given: 
-\begin{equation}
-\d{f} = p \d{x} - q \d{y}
-\end{equation}
+Given: $\d{f} = p \d{x} - q \d{y}$ 
 
 1.
 

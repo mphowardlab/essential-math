@@ -173,52 +173,36 @@ and *P* using only measurable quantities!
 ```
 
 
-# Skill Builder:
+## Skill Builder:
 
-### Given: 
-\begin{equation}
-\d{f} = p \d{x} - q \d{y}
-\end{equation}
+Given: $\d{f} = p \d{x} - q \d{y}$ 
 
-$
-f=cos(4x+y^2)+x^2y
-$
+Evaluate the following for $f=\cos(4x+y^2)+x^2y$ 
 
 
-1. 
-$
-\td{}{x}{f}{y} =
-$
-
+1. $\td{}{x}{f}{y} =$
 ```{solution}
-$$
-\td{}{x}{f}{y} = \frac{1}{\td{}{f}{x}{y}} = 1/p = \left(-4sin(4x+y^2)+ 2xy\right)^{-1}
-$$
+\begin{align}
+\td{}{x}{f}{y} = \frac{1}{\td{}{f}{x}{y}} = \\
+ 1/p = \left(-4\sin(4x+y^2)+ 2xy\right)^{-1}
+\end{align}
 ```
-2. 
-$$
-\td{}{f}{p}{y}=
-$$
+2. $\td{}{f}{p}{y}=$
 ```{solution}
-$$
-\td{}{f}{p}{y}=(\td{}{f}{x}{y}) (\td{}{x}{p}{y})=\frac{\td{}{f}{x}{y}}{\td{}{p}{x}{y}}=\frac{p}{\td{}{p}{x}{y}}
-
+\begin{align}
+\td{}{f}{p}{y}=\td{}{f}{x}{y} \td{}{x}{p}{y}=\frac{\td{}{f}{x}{y}}{\td{}{p}{x}{y}}
+=\frac{p}{\td{}{p}{x}{y}} \\ 
 =\frac{-4sin(4x+y^2)+2xy}{-16cos(4x+y^2)+2y}
-
-$$
+\end{align}
 ```
-3. 
-$$
-\td{}{x}{y}{f}=
-$$
+3. $\td{}{x}{y}{f}=$
 ```{solution}
-$$
-\td{}{x}{y}{f}= (\td{}{x}{y}{f})(\td{}{y}{f}{x})(\td{}{f}{x}{y})=-1
-
-\td{}{x}{y}{f}=\frac{-1}{(\td{}{f}{x}{y})(\td{}{y}{f}{x})} = -\frac{\td{}{f}{y}{x}}{\td{}{f}{x}{y}} = \frac{q}{p}
-
-=\frac{2ysin(4x+y^2)+x^2}{-4sin(4x+y^2)+2xy}
-$$
+\begin{align}
+\td{}{x}{y}{f}= (\td{}{x}{y}{f})(\td{}{y}{f}{x})(\td{}{f}{x}{y})=-1 \\
+\td{}{x}{y}{f}=\frac{-1}{(\td{}{f}{x}{y})(\td{}{y}{f}{x})} 
+= -\frac{\td{}{f}{y}{x}}{\td{}{f}{x}{y}} = \frac{q}{p} \\
+=\frac{2y\sin(4x+y^2)+x^2}{-4\sin(4x+y^2)+2xy}
+\end{align}
 ```
 
 
