@@ -1,10 +1,12 @@
-# Integrating factor. 
+# Integrating factor 
 
 ## 4. Example:
 Mole balance on a tank with increasing inlet/outlet flow rate.
 
 ```{image} ./_images/Integrating_factors_image.jpg
 :alt: Tank with inlet and outlet flows and varying concentrations
+:width: 300px
+:align: center
 ```
 
 \begin{align}
