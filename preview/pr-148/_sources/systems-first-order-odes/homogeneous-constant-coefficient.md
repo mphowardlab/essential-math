@@ -7,7 +7,7 @@
 ## Skill Builder Problems
 ---
 
-$C = \textstyle \begin{bmatrix} 0 & 4 \\ -4 & 0 \end{bmatrix}; IC = \textstyle \begin{bmatrix} 1 \\ 0 \end{bmatrix}$
+$C. \textstyle \begin{bmatrix} 0 & 4 \\ -4 & 0 \end{bmatrix}; IC = \textstyle \begin{bmatrix} 1 \\ 0 \end{bmatrix}$
 
 
 
@@ -40,7 +40,7 @@ $$
 
 ---
 
-Initial Conditions:
+Apply Initial Conditions:
 
 $$
 \begin{bmatrix} 1 \\ 0 \end{bmatrix} = y(0) = 
@@ -93,7 +93,7 @@ $$
 C_1 = -\frac{1}{2i} = \frac{i}{2}, \quad C_2 = \frac{1}{2i} = -\frac{i}{2}
 $$
 
-Hence:
+Plugging into OG equation:
 
 $$
 \boxed{
