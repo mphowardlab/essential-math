@@ -80,13 +80,13 @@ First, expand the denominator and put placeholder coefficient terms in the numer
 \frac{x^2-29x+5}{\left(x-4 \right)^2 \left(x^2+3 \right)} = \frac{A_1}{x-4} + \frac{A_2}{(x-4)^2} + \frac{A_3x+ B_3}{x^2+3}
 \end{equation}
 
-Next, make a common denominator.
+Next, cross multiply to eliminate the common denominator.
 
 \begin{equation}
 x^2-29x+5 = A_1 \left(x-4 \right) \left(x^2+3 \right) + A_2 \left(x^2+3 \right)+ \left(A_3x+B_3 \right) \left(x-4 \right)^2
 \end{equation}
 
-Then, group like terms. 
+Then, group like powers of x. 
 
 \begin{equation}
 =A_1 \left(x^3-4x^2+3x-12 \right)+A_2 \left(x^2+3 \right)+\left(A_3x+B_3 \right)\left(x^2-8x+16 \right)
@@ -106,7 +106,7 @@ A_1+A_3 &= 0 \\
 -12A_1+3A_2+16B_3 &=5 \\  
 \end{align}  
 
-Form the augmented matrix  then perform elementary operations on rows of this matrix to form pivot points in each row.Then, work back up to turn pivots into 1s and get zeros in each column. The solution comes from reexpressing the augmented matrix as 
+Form the augmented matrix  then perform elementary operations on rows of this matrix to form pivot points in each row.Then, work back up to turn pivots into 1s and get zeros in each column. The solution comes from reexpressing the augmented matrix as: 
 
 \begin{equation} 
 \underline(A)\vec(x)=\vec(b)
