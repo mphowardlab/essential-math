@@ -8,10 +8,14 @@ This work (c) 2025 is licensed under
 ## Contributors
 
 - Payton Baxter
+- Andrew Castel
 - Paine Cole
+- Alexis Florit
 - Ella Governale
+- Molly Grace Hicks
 - Michael P. Howard
 - Evan M. Hughes
+- Esther Laiming
 - Gwyneth A. Lovell
 - Abby Lucas
 - Faith Major
@@ -19,8 +23,10 @@ This work (c) 2025 is licensed under
 - Lilli Midgette
 - Elijah  C. Mitchell
 - Meg Nettles
+- Kendall Reeves
 - Michelle Schindler
 - Katie Sorensen
+- Madelyn Torrance
 - Debora Vasconcelos
 
 ## Attributions
