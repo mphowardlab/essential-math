@@ -21,3 +21,4 @@ Evaluate:
 (e)\ \left(\frac{\partial^2 f}{\partial x \partial y}\right) &= -8y\cos(4x+y^2) + 2x \quad \text{(differentiate (b))}\\
 \\
 \end{align}
+$$
