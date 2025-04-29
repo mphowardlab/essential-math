@@ -58,10 +58,7 @@ $$
 ------
 How do we do this when we have only numbers? <u>Shooting method.</u>
 
-
-![](./images/graph%20pic.jpg)
-
-
+![](./images/grapofline3.jpg)
 - Formuate system of ODEs with () <u>initial</u> condtion is know
 
 
