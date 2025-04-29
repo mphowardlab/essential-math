@@ -30,7 +30,6 @@ General Solution:
 \vv{\underline{y}} = C_{1} e^{-2t} \begin{bmatrix} 1 \\ 0 \end{bmatrix} + C_{2} e^{-2t} \begin{bmatrix} 0 \\ 1 \end{bmatrix}
 \end{equation}
 
-
 Initial Condition: 
 
 \begin{equation}
@@ -66,7 +65,7 @@ $\underline{y}$ = 0 is a *stable proper node* because $\lambda_{1}$ = $\lambda_{
 \lambda_{1} = 6 \qquad \lambda_{2} = -6
 \end{align} 
  
-$\lambda_{1}$= 6:
+$\lambda_{1}$ = 6:
 \begin{equation} 
 \begin{bmatrix} -6 & 3 \\ 12 & -6 \end{bmatrix} \underline{x_{1}} = 0 
 \end{equation}
@@ -75,7 +74,7 @@ $\lambda_{1}$= 6:
 \underline{x_{1}} = \begin{bmatrix} 1 \\ 2 \end{bmatrix}
 \end{equation} 
 
-$\lambda_{2}$= -6:
+$\lambda_{2}$ = -6:
 \begin{equation} 
 \begin{bmatrix} 6 & 3 \\ 12 & 6 \end{bmatrix} \underline{x_{2}} = 0 
 \end{equation}
@@ -87,7 +86,7 @@ $\lambda_{2}$= -6:
 General Solution: 
 
 \begin{equation}
-\vv{\underline{y}} = C_{1} e^{-6t} \begin{bmatrix} 1 \\ 2 \end{bmatrix} + C_{2} e^{-6t} \begin{bmatrix} 1 \\ -2 \end{bmatrix}
+\vv{\underline{y}} = C_{1} e^{6t} \begin{bmatrix} 1 \\ 2 \end{bmatrix} + C_{2} e^{-6t} \begin{bmatrix} 1 \\ -2 \end{bmatrix}
 \end{equation}
 
 Initial Condition: 
@@ -95,6 +94,14 @@ Initial Condition:
 \begin{equation}
 \begin{bmatrix} 1 \\ 0\end{bmatrix} = \vv{\underline{y}(0)} = \begin{bmatrix} 1 & 1 \\ 2 & -2 \end{bmatrix} \begin{bmatrix} C_1 \\ C_2 \end{bmatrix}
 \end{equation}
+
+\begin{equation}
+\begin{bmatrix} 1 & 2 & 1 \\ 2 & -2 & 0 \end{bmatrix}  \to \begin{bmatrix} 1 & 1 & 1 \\ 0 & -4 & -2 \end{bmatrix} \to \begin{bmatrix} 1 & 1 & 1 \\ 0 & 1 & \frac{1}{2} \end{bmatrix} \to \begin{bmatrix} 1 & 0 & \frac{1}{2} \\ 0 & 1 & \frac{1}{2}  \end{bmatrix} 
+\end{equation} 
+
+\begin{align} 
+\C_{1} = \frac{1}{2} \qquad \C_{2} = \frac{1}{2} 
+\end{align} 
 
 Hence, 
 \begin{equation}
