@@ -80,6 +80,8 @@ Based on differential:
 6. $ \frac{\partial^2 f}{\partial y \partial x} = $
 ```{solution}
 begin{align}
-\frac{\partial^2 f}{\partial y \partial x} =\frac{\partial }{\partial y}\left(\left(\frac{\partial f}{\partial x}\right)_y \right)_x = \left(\frac{\partial p}{\partial y}\right)_x 
+\frac{\partial^2 f}{\partial y \partial x} =
+\frac{\partial }{\partial y}\left(\left(\frac{\partial f}{\partial x}\right)_y \right)_x = 
+\left(\frac{\partial p}{\partial y}\right)_x 
 end{align}
 ```
