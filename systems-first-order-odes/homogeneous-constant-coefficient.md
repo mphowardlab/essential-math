@@ -33,13 +33,13 @@ $
 
 
 $$
-General Solution: = C_1 e^{4it} \begin{bmatrix} -i \\ 1 \end{bmatrix} + C_2 e^{-4it} \begin{bmatrix} i \\ 1 \end{bmatrix}
+\test{General Solution} = C_1 e^{4it} \begin{bmatrix} -i \\ 1 \end{bmatrix} + C_2 e^{-4it} \begin{bmatrix} i \\ 1 \end{bmatrix}
 $$
 
 ---
-
-Apply Initial Conditions:
-
+$$
+\text{Apply Initial Conditions:}
+$$
 $$
 \begin{bmatrix} 1 \\ 0 \end{bmatrix} = y(0) = 
 \begin{bmatrix} -i & i \\ 1 & 1 \end{bmatrix}
@@ -85,14 +85,12 @@ $$
 \right]
 $$
 
-   So:
-
 $$
 C_1 = -\frac{1}{2i} = \frac{i}{2}, \quad C_2 = \frac{1}{2i} = -\frac{i}{2}
 $$
-
-Plugging into OG equation:
-
+$$
+\text{Plugging into OG equation:}
+$$
 $$
 \boxed{
 y = \frac{i}{2} e^{4it} \begin{bmatrix} -i \\ 1 \end{bmatrix} 
@@ -109,8 +107,6 @@ $$
 $$
 e^{ix} = \cos x + i \sin x, \quad e^{-ix} = \cos x - i \sin x
 $$
-
-Then:
 
 $$
 y = \frac{1}{2} e^{4it} \begin{bmatrix} 1 \\ i \end{bmatrix} 
