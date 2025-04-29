@@ -201,30 +201,23 @@ $Q_1 = 2$, $Q_2 = 4$, and $Q_3 = 2$.
    \end{align}
 
    ```{solution}
-   $$
-   \begin{bmatrix} 0 & 1 & 1&| - 2 \\ 0 & 4 & 6  &| -12  \\ 1 & 1 & 1 &| +2
-   \end{bmatrix}
-   →
-   \begin{bmatrix} 1 & 1 & 1&| +2 \\ 0 & 1 & 1  &| -2  \\ 0 & 4 & 6 &| -12
-   \end{bmatrix} \quad \text{Shuffle Rows}
-   $$
-   $$
-   →
-   \begin{bmatrix} 1 & 1 & 1&| +2 \\ 0 & 1 & 1  &| -2  \\ 0 & 0 & 2 &| -4
-   \end{bmatrix} \quad \text{-4 Row 2}
-   →
-   \begin{bmatrix} 1 & 1 & 1&| +2 \\ 0 & 1 & 1  &| -2  \\ 0 & 0 & 1 &| -2
-   \end{bmatrix} \quad \text{Divide by 2}
-   →
-   \begin{bmatrix} 1 & 1 & 0&| +4 \\ 0 & 1 & 0  &| 0  \\ 0 & 0 & 1 &| -2
-   \end{bmatrix} \quad \text{-Row 3}
-   $$
+   
+   
+   \begin{bmatrix} 0 & 1 & 1 & -2 \\ 0 & 4 & 6 & -12 \\ 1 & 1 & 1 & 2 \end{bmatrix}
+   \begin{matrix} \vphantom{R_1} \\ \rm shuffle \\ \vphantom{R_3}\end{matrix}
+   &\to \begin{bmatrix} 1 & 1 & 1 & 2 \\ 0 & 1 & 1 & -2 \\ 0 & 4 & 6 & -12 \end{bmatrix}
+   \begin{matrix} \vphantom{R_1} \\ \vphantom{R_2} \\ \ -4 R_2 \end{matrix} \\
+   &\to \begin{bmatrix} 1 & 1 & 1 & 2 \\ 0 & 1 & 1 & -2 \\ 0 & 0 & 2 & -4 \end{bmatrix}
+   \begin{matrix} \vphantom{R_1} \\ \vphantom{R_2} \\ \ div -2 \end{matrix} \\
+   &\to \begin{bmatrix} 1 & 1 & 1 & 2 \\ 0 & 1 & 1 & -2 \\ 0 & 0 & 1 & -2 \end{bmatrix}
+   \begin{matrix} \-R_3 \\ \-R_3 \\ \vphantom{R_3} \end{matrix} \\
+   &\to \begin{bmatrix} 1 & 1 & 0 & 4 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & -2 \end{bmatrix}
+   \begin{matrix} \vphantom{R_1} \\ \vphantom{R_2} \\ \vphantom{R_3} \end{matrix} \\
+   &\to \begin{bmatrix} 1 & 0 & 0 & 4 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & -2 \end{bmatrix}
+   \end{align}
+   
+   
 
-   $$
-   →
-   \begin{bmatrix} 1 & 0 & 0&| +4 \\ 0 & 1 & 0  &| 0  \\ 0 & 0 & 1 &| -2
-   \end{bmatrix}
-   $$
    
    $ x_1 = 4$ \\
    $ x_2 = 0 $\\
