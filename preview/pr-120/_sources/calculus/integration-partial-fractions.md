@@ -66,29 +66,38 @@ ax^2 + bx + c \to \frac{Ax+B}{ax^2+bx+c}
 \end{align} 
  
 
+```{example} Using Partial Fraction Decomposition
 
+To solve
 
 \begin{equation}
 y'= \frac{x^2-29x+5}{\left(x-4 \right)^2 \left(x^2+3 \right)}
 \end{equation}
 
+First, expand the denominator and put placeholder coefficient terms in the numerator.
 
 \begin{equation}
 \frac{x^2-29x+5}{\left(x-4 \right)^2 \left(x^2+3 \right)} = \frac{A_1}{x-4} + \frac{A_2}{(x-4)^2} + \frac{A_3x+ B_3}{x^2+3}
 \end{equation}
 
+Next, make a common denominator.
+
 \begin{equation}
 x^2-29x+5 = A_1 \left(x-4 \right) \left(x^2+3 \right) + A_2 \left(x^2+3 \right)+ \left(A_3x+B_3 \right) \left(x-4 \right)^2
 \end{equation}
+
+Then, group like terms. 
 
 \begin{equation}
 =A_1 \left(x^3-4x^2+3x-12 \right)+A_2 \left(x^2+3 \right)+\left(A_3x+B_3 \right)\left(x^2-8x+16 \right)
 \end{equation}
 
+
 \begin{equation}
 =\left(A_1+A_3\right)x^3+\left(-4A_1+A_2-8A_3+B_3\right)x^2 + \left(3A_1+16A_3-8B_3\right)x+\left(-12A_1+3A_2+16B_3\right)
 \end{equation}
 
+Finally, solve system of equations.
 
 \begin{align}  
 A_1+A_3 &= 0 \\  
