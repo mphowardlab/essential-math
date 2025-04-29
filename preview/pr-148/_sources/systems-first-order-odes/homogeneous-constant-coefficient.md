@@ -32,11 +32,9 @@ $
 \Rightarrow x_2 = \begin{bmatrix} i \\ 1 \end{bmatrix}
 
 
-
-\General Solution:
-$
- = C_1 e^{4it} \begin{bmatrix} -i \\ 1 \end{bmatrix} + C_2 e^{-4it} \begin{bmatrix} i \\ 1 \end{bmatrix}
-$
+$$
+General Solution: = C_1 e^{4it} \begin{bmatrix} -i \\ 1 \end{bmatrix} + C_2 e^{-4it} \begin{bmatrix} i \\ 1 \end{bmatrix}
+$$
 
 ---
 
@@ -87,7 +85,7 @@ $$
 \right]
 $$
 
-So:
+   So:
 
 $$
 C_1 = -\frac{1}{2i} = \frac{i}{2}, \quad C_2 = \frac{1}{2i} = -\frac{i}{2}
