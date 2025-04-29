@@ -1,7 +1,13 @@
+<<<<<<< HEAD
+# Variation of parameters
+=======
 # Example: Steady heat diffusion with internal source
 ```{example} Steady heat diffusion with internal source
 We are solving the steady-state heat diffusion equation with an internal source:
+>>>>>>> 40e986e73454867953b013f02b0344bd068d1ae2
 
+<<<<<<< HEAD
+=======
 \begin{equation}
 \alpha \dd{2}{T}{x} + qx \sin x = 0
 \end{equation}
@@ -157,3 +163,5 @@ $1 = T(1) = C_1 + C_2 + \frac{q}{α}[2cos1 + sin1]$
 **Final Result:** 
 
 $T = 1 + \frac{q}{α}[2(cosx-cos1)+xsinx-sin1]$
+'''
+>>>>>>> 40e986e73454867953b013f02b0344bd068d1ae2
