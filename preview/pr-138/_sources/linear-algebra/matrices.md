@@ -275,54 +275,53 @@ $$
 $$
 
 
-(a) $2\mathbf{A}$
+(a) $2\vv{A}$
 ```{solution}
 $$
-2\mathbf{A}= \begin{bmatrix} 2 \cdot 0 & 2 \cdot 2 \\ 2 \cdot 2 & 2 \cdot 4 \\ 2 \cdot 1 & 2 \cdot 3 \end{bmatrix} = \begin{bmatrix} 0 & 4 \\ 4 & 8 \\ 2 & 6 \end{bmatrix} 
+2\vv{A}= \begin{bmatrix} 2 \cdot 0 & 2 \cdot 2 \\ 2 \cdot 2 & 2 \cdot 4 \\ 2 \cdot 1 & 2 \cdot 3 \end{bmatrix} = \begin{bmatrix} 0 & 4 \\ 4 & 8 \\ 2 & 6 \end{bmatrix} 
 $$ 
 ```
-(b) $\mathbf{A + B}$ 
+(b) $\vv{A + B}$ 
 ```{solution}
-**Undefined** because the shape of $\mathbf{A}$ (3×2) is different from the shape of $\mathbf{B}$ (2×3).
+**Undefined** because the shape of $\vv{A}$ (3×2) is different from the shape of $\vv{B}$ (2×3).
 ```
-\(c\) $\mathbf{A}^{\rm T} + \mathbf{B}$ 
+\(c\) $\vv{A}^{\rm T} + \vv{B}$ 
 ```{solution}
 $$ 
-\mathbf{A}^{\rm T} + \mathbf{B} = \mathbf{A}^{\rm T} + \mathbf{B} = \begin{bmatrix} 0 & 2 & 1 \\ 2 & 4 & 3 \end{bmatrix} + \begin{bmatrix} 0 & 2 & 1\\ 2 & 4 & 3 \end{bmatrix} = \begin{bmatrix} 0+0 & 2+2 & 1+1 \\ 2+2 & 4+4 & 3+3 \end{bmatrix} = \begin{bmatrix} 0 & 4 & 2 \\ 4 & 8 & 6 \end{bmatrix}
+\vv{A}^{\rm T} + \vv{B} = \begin{bmatrix} 0 & 2 & 1 \\ 2 & 4 & 3 \end{bmatrix} + \begin{bmatrix} 0 & 2 & 1\\ 2 & 4 & 3 \end{bmatrix} = \begin{bmatrix} 0+0 & 2+2 & 1+1 \\ 2+2 & 4+4 & 3+3 \end{bmatrix} = \begin{bmatrix} 0 & 4 & 2 \\ 4 & 8 & 6 \end{bmatrix}
+(or, \vv{A}^{\rm T} = \vv{B} so \vv{A}^{\rm T} + \vv{B} = 2\vv{B}.)
 $$
 ```
 
-(d) $\mathbf{C - D}$ 
+(d) $\vv{C - D}$ 
 ```{solution}
 $$
-\mathbf{C} -\mathbf{D} = \begin{bmatrix} 3-0 & 0-(-5) & 4-(-3) \\ -1-(-5) & 2-2 & 2-4 \\ 6-(-3) & 5-4 & -4-0 \end{bmatrix} = \begin{bmatrix} 3 & 5 & 7 \\ 4 & 0 & -2 \\ 9 & 1 & -4 \end{bmatrix}
+\vv{C} -\vv{D} = \begin{bmatrix} 3-0 & 0-(-5) & 4-(-3) \\ -1-(-5) & 2-2 & 2-4 \\ 6-(-3) & 5-4 & -4-0 \end{bmatrix} = \begin{bmatrix} 3 & 5 & 7 \\ 4 & 0 & -2 \\ 9 & 1 & -4 \end{bmatrix}
 $$
 ```
-(e) $\mathbf{Aa}$
+(e) $\vv{Aa}$
 ```{solution}
 $$
-\mathbf{A}\mathbf{a} = \begin{bmatrix} 0 \cdot 1 + 2 \cdot 3 \\ 2 \cdot 1 + 4 \cdot 3 \\ 1 \cdot 1 + 3 \cdot 3 \end{bmatrix} = \begin{bmatrix} 6 \\ 14 \\ 10 \end{bmatrix}
-$$
-```
-(f) $\mathbf{Ab}$
-```{solution}
-**Undefined** because $\mathbf{A}$ has 2 columns but $\mathbf{b}$ has 1 rows. 
-```
-(g) $\mathbf{Ac}$
-```{solution}
-
- **Undefined** because $\mathbf{A}$ has 2 columns but $\mathbf{c}$ has 3 rows.
-
-```
-(h) $\mathbf{Bc}$
-```{solution}
-$$
-\mathbf{Bc} = \begin{bmatrix}  0 \cdot 2 + 2 \cdot 0 + 1 \cdot -1 \\ 2 \cdot 2 + 4 \cdot 0 + 3 \cdot -1 \end{bmatrix} = \begin{bmatrix} -1 \\ 1 \end{bmatrix} 
+\vv{Aa} = \begin{bmatrix} 0 \cdot 1 + 2 \cdot 3 \\ 2 \cdot 1 + 4 \cdot 3 \\ 1 \cdot 1 + 3 \cdot 3 \end{bmatrix} = \begin{bmatrix} 6 \\ 14 \\ 10 \end{bmatrix}
 $$
 ```
-(i) $\mathbf{c}^{\rm T}\mathbf{A}$ 
+(f) $\vv{Ab}$
+```{solution}
+**Undefined** because $\vv{A}$ has 2 columns but $\vv{b}$ has 1 row. 
+```
+(g) $\vv{Ac}$
+```{solution}
+ **Undefined** because $\vv{A}$ has 2 columns but $\vv{c}$ has 3 rows.
+```
+(h) $\vv{Bc}$
 ```{solution}
 $$
-\mathbf{c}^{\rm T} + \mathbf{A} = \begin{bmatrix} 0 & 2 & -1\end{bmatrix} \ \begin{bmatrix} 0 & 2 \\ 2 & 4 \\ 1 &3 \end{bmatrix} = \begin{bmatrix} 2 \cdot 0 + 0 \cdot 2 + -1 \cdot 1 & 2 \cdot 2 + 0 \cdot 4 \cdot -1 \cdot 3 \end{bmatrix} = \begin{bmatrix} -1 & 1 \end{bmatrix} 
+\vv{Bc} = \begin{bmatrix}  0 \cdot 2 + 2 \cdot 0 + 1 \cdot -1 \\ 2 \cdot 2 + 4 \cdot 0 + 3 \cdot -1 \end{bmatrix} = \begin{bmatrix} -1 \\ 1 \end{bmatrix} 
+$$
+```
+(i) $\vv{c}^{\rm T}\vv{A}$ 
+```{solution}
+$$
+\vv{c}^{\rm T} + \vv{A} = \begin{bmatrix} 0 & 2 & -1\end{bmatrix} \ \begin{bmatrix} 0 & 2 \\ 2 & 4 \\ 1 &3 \end{bmatrix} = \begin{bmatrix} 2 \cdot 0 + 0 \cdot 2 + -1 \cdot 1 & 2 \cdot 2 + 0 \cdot 4 \cdot -1 \cdot 3 \end{bmatrix} = \begin{bmatrix} -1 & 1 \end{bmatrix} 
 $$
 ```
