@@ -66,23 +66,19 @@ $\underline{y}$ = 0 is a *stable proper node* because $\lambda_{1}$ = $\lambda_{
 \lambda_{1} = 6 \qquad \lambda_{2} = -6
 \end{align} 
  
-\begin{align} 
-\lambda_{1}= 6:
+$\lambda_{1}$= 6:
 \begin{equation} 
 \begin{bmatrix} -6 & 3 \\ 12 & -6 \end{bmatrix} \underline{x_{1}} = 0 
 \end{equation}
-\end{align} 
 
 \begin{equation}
 \underline{x_{1}} = \begin{bmatrix} 1 \\ 2 \end{bmatrix}
 \end{equation} 
 
-\begin{align} 
-\lambda_{2}= -6:
+$\lambda_{2}$= -6:
 \begin{equation} 
 \begin{bmatrix} 6 & 3 \\ 12 & 6 \end{bmatrix} \underline{x_{2}} = 0 
 \end{equation}
-\end{align} 
 
 \begin{equation}
 \underline{x_{2}} = \begin{bmatrix} 1 \\ -2 \end{bmatrix}
