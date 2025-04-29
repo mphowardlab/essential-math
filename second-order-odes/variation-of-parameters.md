@@ -143,7 +143,7 @@ $$
 \right]
 $$
 
-**3. Combine**
+3. Combine and apply boundary conditions.
 
 $T = C_1 +C_2x + \frac{q}{α}(2cosx + xsinx)$
 
