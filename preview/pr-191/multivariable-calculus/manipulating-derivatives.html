@@ -442,23 +442,97 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="manipulating-partial-derivatives">
 <h1><span class="section-number">2.3. </span>Manipulating partial derivatives<a class="headerlink" href="#manipulating-partial-derivatives" title="Link to this heading">#</a></h1>
+<p>We sometimes need to find derivatives we don’t obtain easily from one of these
+potentials. For this, we use some calculus rules.</p>
+<hr class="docutils" />
+<p>The inversion rule states that the partial derivative of each variable with
+respect to each other are reciprocals if the two variables are related through
+an inverse function.</p>
+<aside class="topic">
+<p class="topic-title">Inversion rule</p>
+<p>If <span class="math notranslate nohighlight">\(x(y, z)\)</span> has an inverse function <span class="math notranslate nohighlight">\(y(x, z)\)</span>, then:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-67c764b4-7570-414f-a910-6b86bfc81feb">
+<span class="eqno">(2.14)<a class="headerlink" href="#equation-67c764b4-7570-414f-a910-6b86bfc81feb" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\td{}{x}{y}{z} = \frac{1}{(\partial y/\partial x)_z}
+\end{equation}\]</div>
+</aside>
+<p>To demonstrate use of this rule, consider two ways of calculating the partial
+derivative <span class="math notranslate nohighlight">\((\partial x/\partial y)_z\)</span> for the function</p>
+<div class="amsmath math notranslate nohighlight" id="equation-cc92025b-7ce6-4144-ab61-330a937e2d5d">
+<span class="eqno">(2.15)<a class="headerlink" href="#equation-cc92025b-7ce6-4144-ab61-330a937e2d5d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+x = \frac{y^2}{z}
+\end{equation}\]</div>
+<p>and the inverse function</p>
+<div class="amsmath math notranslate nohighlight" id="equation-cba60d07-1551-4550-b6ee-a5542d049615">
+<span class="eqno">(2.16)<a class="headerlink" href="#equation-cba60d07-1551-4550-b6ee-a5542d049615" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y = \sqrt{xz}
+\end{equation}\]</div>
+<p>Evaluating the partial derivative of <em>x</em> with respect to <em>y</em> directly gives</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2990ada4-d677-46b9-92fc-f3494547d1b1">
+<span class="eqno">(2.17)<a class="headerlink" href="#equation-2990ada4-d677-46b9-92fc-f3494547d1b1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\td{}{x}{y}{z} = \frac{2y}{z}
+\end{equation}\]</div>
+<p>while the partial derivative of <em>y</em> with respect to <em>x</em> is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9a091f07-7fd8-498d-af0a-1fbd35117456">
+<span class="eqno">(2.18)<a class="headerlink" href="#equation-9a091f07-7fd8-498d-af0a-1fbd35117456" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\td{}{y}{x}{z} = \frac{1}{2} \sqrt{\frac{z}{x}}
+\end{equation}\]</div>
+<p>Now, use the inversion rule and substitute <span class="math notranslate nohighlight">\(x(y,z)\)</span> back in:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-19be8872-ee45-4b49-a56e-6e0c9df0951c">
+<span class="eqno">(2.19)<a class="headerlink" href="#equation-19be8872-ee45-4b49-a56e-6e0c9df0951c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\frac{1}{(\partial y/\partial x)_z} = 2 \sqrt{\frac{x}{z}}
+ = 2 \sqrt{\frac{y^2/z}{z}} = \frac{2y}{z}
+\end{equation}\]</div>
+<p>The results are the same!</p>
+<hr class="docutils" />
+<p>When working with multivariable functions, we often want to compute the
+derivative of one variable with respect to another, even when the relationship
+between them is indirect. In such cases, the chain rule allows us to break down
+the derivative into intermediate steps.</p>
+<aside class="topic">
+<p class="topic-title">Chain rule</p>
+<p>If <span class="math notranslate nohighlight">\(x(w,z)\)</span> depends on a variable <span class="math notranslate nohighlight">\(w(y,z)\)</span> that depends on a variable <em>y</em>, then</p>
+<div class="amsmath math notranslate nohighlight" id="equation-beecfab0-cd53-4074-80a0-405630aa6bb3">
+<span class="eqno">(2.20)<a class="headerlink" href="#equation-beecfab0-cd53-4074-80a0-405630aa6bb3" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\td{}{x}{y}{z} = \td{}{x}{w}{z} \td{}{w}{y}{z}
+\end{equation}\]</div>
+</aside>
+<p>To demonstrate use of this rule, let <span class="math notranslate nohighlight">\(w = yz\)</span>, which means that</p>
+<div class="amsmath math notranslate nohighlight" id="equation-45456bf4-c518-4060-a61e-a1c3201a3bf8">
+<span class="eqno">(2.21)<a class="headerlink" href="#equation-45456bf4-c518-4060-a61e-a1c3201a3bf8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+x = \frac{y^2}{z} = \frac{w^2}{z^3}
+\end{equation}\]</div>
+<p>We will calculate the partial derivative of <em>x</em> with respect to <em>y</em> using the
+chain rule, then show it gives the same as if we differentiated directly. First,
+we need partial derivatives of <em>x</em> with respect to <em>w</em> and <em>w</em> with respect to
+<em>y</em>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ac0bb4fd-9a97-438b-8fbd-5858072b9d07">
+<span class="eqno">(2.22)<a class="headerlink" href="#equation-ac0bb4fd-9a97-438b-8fbd-5858072b9d07" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\td{}{x}{w}{z} = \frac{2w}{z^3}, \qquad \td{}{w}{y}{z} = z
+\end{equation}\]</div>
+<p>Therefore, by the chain rule:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9fc0c7fd-5f5f-4875-8a38-efb46803c78e">
+<span class="eqno">(2.23)<a class="headerlink" href="#equation-9fc0c7fd-5f5f-4875-8a38-efb46803c78e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\td{}{x}{y}{z} = \left(\frac{2w}{z^3} \right)z = \frac{2yz}{z^2} = \frac{2y}{z}
+\end{equation}\]</div>
+<p>This matches our previous result for the derivative!</p>
 <section id="derivatives-as-functions">
 <h2><span class="section-number">2.3.1. </span>Derivatives as functions<a class="headerlink" href="#derivatives-as-functions" title="Link to this heading">#</a></h2>
 <p>The first law of thermodynamics for a pure substance is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-50b2e9cf-3e22-4b83-9d9f-1034119019cd">
-<span class="eqno">(2.14)<a class="headerlink" href="#equation-50b2e9cf-3e22-4b83-9d9f-1034119019cd" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d7a124cf-7345-4977-b8e5-2f78a7150a11">
+<span class="eqno">(2.24)<a class="headerlink" href="#equation-d7a124cf-7345-4977-b8e5-2f78a7150a11" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \d{U} = T\d{S} - P \d{V}
 \end{equation}\]</div>
 <p>where <em>U</em> is the molar internal energy, <em>T</em> is the temperature, <em>S</em> is the molar
 entropy, <em>P</em> is the pressure, and <em>V</em> is the molar volume. This is an <em>exact</em>
 differential for <span class="math notranslate nohighlight">\(U(S,V)\)</span>. Mathematically, we also have the total differential:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4e4a7024-60c7-486d-9053-945921f972aa">
-<span class="eqno">(2.15)<a class="headerlink" href="#equation-4e4a7024-60c7-486d-9053-945921f972aa" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-48e78ed9-a1b1-4515-8cdd-bef4c159a6ba">
+<span class="eqno">(2.25)<a class="headerlink" href="#equation-48e78ed9-a1b1-4515-8cdd-bef4c159a6ba" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \d{U} = \td{}{U}{S}{V} \d{S} + \td{}{U}{V}{S} \d{V}
 \end{equation}\]</div>
 <p>By comparing the two, we see that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-329e4349-373f-40bd-9ff5-b2910fe44d79">
-<span class="eqno">(2.16)<a class="headerlink" href="#equation-329e4349-373f-40bd-9ff5-b2910fe44d79" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7d00f830-d6b5-4714-bf92-a1ac8acc8aa2">
+<span class="eqno">(2.26)<a class="headerlink" href="#equation-7d00f830-d6b5-4714-bf92-a1ac8acc8aa2" title="Permalink to this equation">#</a></span>\[\begin{equation}
 T = \td{}{U}{S}{V} \qquad P = -\td{}{U}{V}{S}
 \end{equation}\]</div>
 <p>This shows that <em>T</em> and <em>P</em> are <em>functions</em> of <em>S</em> and <em>V</em>! Their derivatives
@@ -466,15 +540,15 @@ can be computed and manipulated using rules of multivariable calculus in order
 to relate <em>measurable</em> quantities like <em>T</em> and <em>P</em> to the derivatives of
 an <em>unmeasurable</em> quantities like <em>U</em>! For example, the change in internal
 energy for an adiabatic process (constant <em>S</em>) is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-267d2587-e437-48b9-8101-b274da43b758">
-<span class="eqno">(2.17)<a class="headerlink" href="#equation-267d2587-e437-48b9-8101-b274da43b758" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1d6fbf97-2425-4bec-b897-720bc37726b7">
+<span class="eqno">(2.27)<a class="headerlink" href="#equation-1d6fbf97-2425-4bec-b897-720bc37726b7" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \Delta U = \int_{V_1}^{V_2} \td{}{U}{V}{S} \d{V} = \int_{V_1}^{V_2} -P \d{V}
 \end{equation}\]</div>
 <p>We can also relate quantities as mixed derivatives. For example, the entropy
 derivative of the pressure cannot be measured easily, but it is related to the
 temperature change during adiabatic compression:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ed1ec0d9-c21a-496b-ba92-b029b57cab2b">
-<span class="eqno">(2.18)<a class="headerlink" href="#equation-ed1ec0d9-c21a-496b-ba92-b029b57cab2b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-09bdd612-d4f2-4522-bedb-5d74c62262d3">
+<span class="eqno">(2.28)<a class="headerlink" href="#equation-09bdd612-d4f2-4522-bedb-5d74c62262d3" title="Permalink to this equation">#</a></span>\[\begin{equation}
 -\td{}{P}{S}{V} = \frac{\partial ^2 U}{\partial S \partial V}
 = \frac{\partial^2 U}{\partial V \partial S} = \td{}{T}{V}{S}
 \end{equation}\]</div>
@@ -485,21 +559,21 @@ temperature change during adiabatic compression:</p>
 in the differential first law. But, we do not like <em>S</em> as a variable because we
 cannot measure it. We would love to use <em>T</em> instead. Can we swap the two?</p>
 <p><em>Yes</em>, if we define the Helmholtz free energy:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3440da84-b94b-402e-81a2-2249710d8d8d">
-<span class="eqno">(2.19)<a class="headerlink" href="#equation-3440da84-b94b-402e-81a2-2249710d8d8d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a594fffb-fdde-4b6f-814e-9d8063866838">
+<span class="eqno">(2.29)<a class="headerlink" href="#equation-a594fffb-fdde-4b6f-814e-9d8063866838" title="Permalink to this equation">#</a></span>\[\begin{equation}
 A = U - T S
 \end{equation}\]</div>
 <p>where <em>S</em> is now a function of <em>T</em> and <em>V</em> and so is <em>U</em> as a result. The total
 differential for <em>A</em> confirms this:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-236bc6e8-d7ba-4e0e-81a1-5ef1b922c760">
-<span class="eqno">(2.20)<a class="headerlink" href="#equation-236bc6e8-d7ba-4e0e-81a1-5ef1b922c760" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-60d39d00-144d-49ff-b33c-96ce2233bb23">
+<span class="eqno">(2.30)<a class="headerlink" href="#equation-60d39d00-144d-49ff-b33c-96ce2233bb23" title="Permalink to this equation">#</a></span>\[\begin{align}
 \d{A} &amp;= \d{U} - (T \d{S} + S \d{T}) \\
 &amp;= (T \d{S} -P \d{V}) - T \d{S} - S \d{T} \\
 &amp;= -S \d{T} -P \d{V}
 \end{align}\]</div>
 <p>As a result,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6f643701-2304-4694-9819-2b2dd643e280">
-<span class="eqno">(2.21)<a class="headerlink" href="#equation-6f643701-2304-4694-9819-2b2dd643e280" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0556b072-45af-4341-a932-bfd4549a33cd">
+<span class="eqno">(2.31)<a class="headerlink" href="#equation-0556b072-45af-4341-a932-bfd4549a33cd" title="Permalink to this equation">#</a></span>\[\begin{align}
 S &amp;= -\td{}{A}{T}{V} \\
 P &amp;= - \td{}{A}{V}{T} \\
 \td{}{S}{V}{T} &amp;= \td{}{P}{T}{V}
@@ -507,15 +581,15 @@ P &amp;= - \td{}{A}{V}{T} \\
 <p>Other quantities can be defined to use different sets of natural variables.</p>
 <ul>
 <li><p>Enthalpy <em>H</em></p>
-<div class="amsmath math notranslate nohighlight" id="equation-7a9f7213-0d2d-4863-97ce-87a5165744a8">
-<span class="eqno">(2.22)<a class="headerlink" href="#equation-7a9f7213-0d2d-4863-97ce-87a5165744a8" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-24bffabd-060e-42d8-bcad-6671e1a97ecd">
+<span class="eqno">(2.32)<a class="headerlink" href="#equation-24bffabd-060e-42d8-bcad-6671e1a97ecd" title="Permalink to this equation">#</a></span>\[\begin{align}
 H &amp;= U + P V \\
 \d{H} &amp;= T \d{S} + V \d{P}
 \end{align}\]</div>
 </li>
 <li><p>Gibbs free energy <em>G</em></p>
-<div class="amsmath math notranslate nohighlight" id="equation-af6b8ee9-d02e-43ea-a410-6232aed67389">
-<span class="eqno">(2.23)<a class="headerlink" href="#equation-af6b8ee9-d02e-43ea-a410-6232aed67389" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-cb201aa3-7a6b-4085-b73c-70f27c6ffbf0">
+<span class="eqno">(2.33)<a class="headerlink" href="#equation-cb201aa3-7a6b-4085-b73c-70f27c6ffbf0" title="Permalink to this equation">#</a></span>\[\begin{align}
 G &amp;= A + P V = U - T S + P V \\
 \d{G} &amp;= - S \d{T} + V \d{P}
 \end{align}\]</div>
@@ -531,16 +605,16 @@ substance as we vary the temperature <em>T</em> and pressure <em>P</em> in terms
 we can measure. In addition to <em>T</em> and <em>P</em>, these quantities are the molar
 volume <em>V</em>, the thermal expansion coefficient <span class="math notranslate nohighlight">\(\alpha_V\)</span>, the isothermal
 compressibility <span class="math notranslate nohighlight">\(\kappa_T\)</span>, and the constant-pressure heat capacity <span class="math notranslate nohighlight">\(c_P\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2b5372c8-4054-434d-b1f0-8099cc933e2f">
-<span class="eqno">(2.24)<a class="headerlink" href="#equation-2b5372c8-4054-434d-b1f0-8099cc933e2f" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-093b43f1-8151-4e88-b29b-f8dd04794060">
+<span class="eqno">(2.34)<a class="headerlink" href="#equation-093b43f1-8151-4e88-b29b-f8dd04794060" title="Permalink to this equation">#</a></span>\[\begin{align}
 \alpha_V &amp;= \frac{1}{V} \td{}{V}{T}{P} \\
 \kappa_T &amp;= -\frac{1}{V} \td{}{V}{P}{T} \\
 c_P &amp;= \td{}{H}{T}{P}
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(H\)</span> is the molar enthalpy. The following total differentials are known
 from thermodynamics:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1c4b50bc-7d03-40ed-9c57-8303312b69eb">
-<span class="eqno">(2.25)<a class="headerlink" href="#equation-1c4b50bc-7d03-40ed-9c57-8303312b69eb" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7b7d1f08-5922-4272-80e6-807e0a2f146a">
+<span class="eqno">(2.35)<a class="headerlink" href="#equation-7b7d1f08-5922-4272-80e6-807e0a2f146a" title="Permalink to this equation">#</a></span>\[\begin{align}
 \d{U} &amp;= T \d{S} - P \d{V} \\
 \d{H} &amp;= T \d{S} + V \d{P} \\
 \d{G} &amp;= -S \d{T} + V \d{P}
@@ -548,21 +622,21 @@ from thermodynamics:</p>
 <p>where <em>S</em> is the molar entropy and <span class="math notranslate nohighlight">\(G\)</span> is the molar Gibbs free energy.</p>
 <hr class="docutils" />
 <p>First, we express the total differential for <em>U</em> as a function of <em>T</em> and <em>P</em>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8fff0c99-1658-43d2-9056-1fb8147d6979">
-<span class="eqno">(2.26)<a class="headerlink" href="#equation-8fff0c99-1658-43d2-9056-1fb8147d6979" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8516f342-9e43-4fd2-983e-246f401aa926">
+<span class="eqno">(2.36)<a class="headerlink" href="#equation-8516f342-9e43-4fd2-983e-246f401aa926" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \d{U} = \td{}{U}{T}{P} \d{T} + \td{}{U}{P}{T} \d{P}
 \end{equation}\]</div>
 <p>Next, we form the derivatives using the given total differential for <em>U</em>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f760a319-300d-463a-88e2-027f8c03e845">
-<span class="eqno">(2.27)<a class="headerlink" href="#equation-f760a319-300d-463a-88e2-027f8c03e845" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-21f1c5ef-fd9e-46c8-a2ce-46375c02b315">
+<span class="eqno">(2.37)<a class="headerlink" href="#equation-21f1c5ef-fd9e-46c8-a2ce-46375c02b315" title="Permalink to this equation">#</a></span>\[\begin{align}
 \td{}{U}{T}{P} &amp;= T \td{}{S}{T}{P} - P \td{}{V}{T}{P} \\
 \td{}{U}{P}{T} &amp;= T \td{}{S}{P}{T} - P \td{}{V}{P}{T}
 \end{align}\]</div>
 <p>Then, we go about replacing what we don’t like because we can’t measure it with
 things that we can. For <span class="math notranslate nohighlight">\((\partial S/ \partial T)_P\)</span>, use the chain rule
 followed by the inversion rule:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-23afbc69-458d-4151-bc0d-0f8f03f17b19">
-<span class="eqno">(2.28)<a class="headerlink" href="#equation-23afbc69-458d-4151-bc0d-0f8f03f17b19" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b54ea28f-870a-4ed7-81ff-c8482740a778">
+<span class="eqno">(2.38)<a class="headerlink" href="#equation-b54ea28f-870a-4ed7-81ff-c8482740a778" title="Permalink to this equation">#</a></span>\[\begin{align}
 \td{}{S}{T}{P} &amp;= \td{}{S}{H}{P} \td{}{H}{T}{P} \\
 &amp;= \frac{ (\partial H/\partial T)_P }{ (\partial H/\partial S)_P } \\
 &amp;= \frac{c_P}{T}
@@ -570,26 +644,26 @@ followed by the inversion rule:</p>
 <p>where the last step used the total differential for <span class="math notranslate nohighlight">\(H\)</span> to replace the
 derivative in the denominator. Additionally using the definition of <span class="math notranslate nohighlight">\(\alpha_V\)</span>
 gives</p>
-<div class="amsmath math notranslate nohighlight" id="equation-99affaa5-45d9-4cea-b78a-d79a3614ad96">
-<span class="eqno">(2.29)<a class="headerlink" href="#equation-99affaa5-45d9-4cea-b78a-d79a3614ad96" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-edd31fdc-f735-46f1-b52b-38f9314763cd">
+<span class="eqno">(2.39)<a class="headerlink" href="#equation-edd31fdc-f735-46f1-b52b-38f9314763cd" title="Permalink to this equation">#</a></span>\[\begin{align}
 \td{}{U}{T}{P} &amp;= T \left( \frac{c_P}{T} \right) - P V \alpha_V \\
 &amp;= c_P - P V \alpha_V
 \end{align}\]</div>
 <p>For <span class="math notranslate nohighlight">\((\partial S/\partial P)_T\)</span>, use the total differential for <span class="math notranslate nohighlight">\(G\)</span> and equate
 its mixed second derivatives:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7305f4fb-bccb-4342-949a-cf266a8a8786">
-<span class="eqno">(2.30)<a class="headerlink" href="#equation-7305f4fb-bccb-4342-949a-cf266a8a8786" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-890daf57-9ca6-4d31-b542-63a74dee461b">
+<span class="eqno">(2.40)<a class="headerlink" href="#equation-890daf57-9ca6-4d31-b542-63a74dee461b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 -\td{}{S}{P}{T} = \td{}{V}{T}{P} = V\alpha_V
 \end{equation}\]</div>
 <p>Additionally using the definition of <span class="math notranslate nohighlight">\(\kappa_T\)</span> gives</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4dfba3da-0dcf-4c47-8980-c454f0e469f3">
-<span class="eqno">(2.31)<a class="headerlink" href="#equation-4dfba3da-0dcf-4c47-8980-c454f0e469f3" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-3bf6dcc1-b009-4b3a-b54b-d53db39f7e03">
+<span class="eqno">(2.41)<a class="headerlink" href="#equation-3bf6dcc1-b009-4b3a-b54b-d53db39f7e03" title="Permalink to this equation">#</a></span>\[\begin{align}
 \td{}{U}{P}{T} &amp;= T (-V \alpha_V) - P(-V\kappa_T) \\
 &amp;= P V \kappa_T - T V \alpha_V
 \end{align}\]</div>
 <p>Putting it all together:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f24e91bd-03b1-4ace-b3c2-6039f6b02608">
-<span class="eqno">(2.32)<a class="headerlink" href="#equation-f24e91bd-03b1-4ace-b3c2-6039f6b02608" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b2cbab60-325f-4778-808a-701e3bddad77">
+<span class="eqno">(2.42)<a class="headerlink" href="#equation-b2cbab60-325f-4778-808a-701e3bddad77" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \d{U} = (c_P - PV\alpha_V)\d{T} + V(P\kappa_T - T\alpha_V)\d{P}
 \end{equation}\]</div>
 <p>This total differential is now suitable for integration with respect to <em>T</em>
