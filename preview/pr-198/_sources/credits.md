@@ -22,6 +22,7 @@ This work (c) 2025 is licensed under
 - John R. Marshall, IV
 - Lilli Midgette
 - Elijah  C. Mitchell
+- Meg Nettles
 - Kendall Reeves
 - Michelle Schindler
 - Katie Sorensen
