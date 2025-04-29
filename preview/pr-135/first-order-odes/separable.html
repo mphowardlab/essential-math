@@ -227,8 +227,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../second-order-odes/linearity.html">7.2. Linearity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../second-order-odes/homogeneous-constant-coefficient.html">7.3. Homogeneous linear second-order ODEs with constant coefficients</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../second-order-odes/undetermined-coefficients.html">7.4. Undetermined coefficients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/variation-of-parameters.html">7.5. Example: Steady heat diffusion with internal source</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/numerical-solution.html">7.6. Numerical solution methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/variation-of-parameters.html">7.5. Variation of parameters</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/numerical-solution.html">7.7. Numerical solution methods</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../credits.html">8. Credits</a></li>
@@ -435,15 +436,15 @@ document.write(`
 <p class="topic-title">Separable first-order ODEs</p>
 <p>If a first-order ODE can be separated so that <em>y</em> and <em>x</em> are on each side, it
 can be solved by integration:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e427233a-8c78-43d7-b829-062ce9773132">
-<span class="eqno">(5.10)<a class="headerlink" href="#equation-e427233a-8c78-43d7-b829-062ce9773132" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-458ee4be-6cc4-4133-8b23-bc978cc9014e">
+<span class="eqno">(5.10)<a class="headerlink" href="#equation-458ee4be-6cc4-4133-8b23-bc978cc9014e" title="Permalink to this equation">#</a></span>\[\begin{align}
 y' &amp;= \frac{f(x)}{g(y)} \\
 \int g(y)\d{y} &amp;= \int f(x) \d{x} + c
 \end{align}\]</div>
 </aside>
 <p>For example, to solve <span class="math notranslate nohighlight">\(y' = xy\)</span>, separate the variables and integrate:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-865dfeda-f341-461b-a7c0-3f96c8b7b925">
-<span class="eqno">(5.11)<a class="headerlink" href="#equation-865dfeda-f341-461b-a7c0-3f96c8b7b925" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b34cb4f3-599b-4ac1-b835-1e5d7be9114a">
+<span class="eqno">(5.11)<a class="headerlink" href="#equation-b34cb4f3-599b-4ac1-b835-1e5d7be9114a" title="Permalink to this equation">#</a></span>\[\begin{align}
 \int \frac{\d{y}}{y} &amp;= \int x \d{x} \\
 \ln y &amp;= \frac{x^2}{2} + c_0 \\
 y &amp;= e^{x^2/2 + c_0} \\
@@ -455,8 +456,8 @@ integration constant (<span class="math notranslate nohighlight">\(c = e^{c_0}\)
 <p class="admonition-title">Example: Chemical reaction kinetics</p>
 <p>A substance is disappearing according to a first-order reaction, so its
 concentration follows</p>
-<div class="amsmath math notranslate nohighlight" id="equation-79edf839-425b-46ed-9a8b-f4c73887d240">
-<span class="eqno">(5.12)<a class="headerlink" href="#equation-79edf839-425b-46ed-9a8b-f4c73887d240" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e035d5ab-a1b2-4a62-8a45-a353225394dc">
+<span class="eqno">(5.12)<a class="headerlink" href="#equation-e035d5ab-a1b2-4a62-8a45-a353225394dc" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \dd{}{c}{t} = -k c
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(k\)</span> is the reaction rate constant. If the initial concentration of the
@@ -464,25 +465,25 @@ reactant was 1.0 M and the concentration after 1 hour has passed is 0.70 M,
 what is the reaction rate constant?</p>
 <hr class="docutils" />
 <p>First, solve the differential equation using separation of variables</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a23afbac-13e7-4ff2-a2f3-c61d59031df6">
-<span class="eqno">(5.13)<a class="headerlink" href="#equation-a23afbac-13e7-4ff2-a2f3-c61d59031df6" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0da32bc2-2bec-4767-9d6c-aa2cc9f30a12">
+<span class="eqno">(5.13)<a class="headerlink" href="#equation-0da32bc2-2bec-4767-9d6c-aa2cc9f30a12" title="Permalink to this equation">#</a></span>\[\begin{align}
 \int \frac{1}{c} \d{c} &amp;= \int -k \d{t} \\
 \ln c &amp;= -k t + B
 \end{align}\]</div>
 <p>where <em>B</em> is an unknown integration constant. Apply the initial condition that
 <span class="math notranslate nohighlight">\(c(0) = 1\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-449c1d79-81e1-4b47-9cf7-e598d1b0aa72">
-<span class="eqno">(5.14)<a class="headerlink" href="#equation-449c1d79-81e1-4b47-9cf7-e598d1b0aa72" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6a45b14b-2060-4fcf-b262-325949e6148a">
+<span class="eqno">(5.14)<a class="headerlink" href="#equation-6a45b14b-2060-4fcf-b262-325949e6148a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \ln 1 = -k \cdot 0 + B \to B = 0
 \end{equation}\]</div>
 <p>Hence,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-07eb0c35-1c1c-4fb9-a0c3-459c4431452b">
-<span class="eqno">(5.15)<a class="headerlink" href="#equation-07eb0c35-1c1c-4fb9-a0c3-459c4431452b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-aea8b3cc-0ca1-4f92-ab2e-82acc6636bb2">
+<span class="eqno">(5.15)<a class="headerlink" href="#equation-aea8b3cc-0ca1-4f92-ab2e-82acc6636bb2" title="Permalink to this equation">#</a></span>\[\begin{equation}
 k = -\frac{\ln c}{t}
 \end{equation}\]</div>
 <p>We know that <span class="math notranslate nohighlight">\(c(1) = 0.70\)</span> so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-56f9664b-121f-4132-a6f7-4f7b7248e116">
-<span class="eqno">(5.16)<a class="headerlink" href="#equation-56f9664b-121f-4132-a6f7-4f7b7248e116" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f99ab051-e26e-4146-b5f5-b6b9eef99a17">
+<span class="eqno">(5.16)<a class="headerlink" href="#equation-f99ab051-e26e-4146-b5f5-b6b9eef99a17" title="Permalink to this equation">#</a></span>\[\begin{equation}
 k = -\frac{\ln 0.7}{1\,{\rm h}} = 0.36\,{\rm h}^{-1}
 \end{equation}\]</div>
 </div>
@@ -491,28 +492,28 @@ k = -\frac{\ln 0.7}{1\,{\rm h}} = 0.36\,{\rm h}^{-1}
 <p>Estimate the temperature <em>T</em> in an office building at 6 a.m. if the heat goes
 off at 10 p.m. when the building is 70°F and the outside temperature <span class="math notranslate nohighlight">\(T_\infty\)</span>
 is 45°F if the <em>T</em> follows</p>
-<div class="amsmath math notranslate nohighlight" id="equation-53ea3b71-8c07-4291-8d12-5aecc1473e12">
-<span class="eqno">(5.17)<a class="headerlink" href="#equation-53ea3b71-8c07-4291-8d12-5aecc1473e12" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-5f2bffbd-1d6c-46b5-9a21-80fd70a928e4">
+<span class="eqno">(5.17)<a class="headerlink" href="#equation-5f2bffbd-1d6c-46b5-9a21-80fd70a928e4" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \dd{}{T}{t} = -k(T - T_\infty)
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(k = 0.05\,{\rm h}^{-1}\)</span>.</p>
 <hr class="docutils" />
 <p>Separate the differential equation and integrate</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b98d6af1-41e6-49a8-a1a4-4c7cf0fa8efc">
-<span class="eqno">(5.18)<a class="headerlink" href="#equation-b98d6af1-41e6-49a8-a1a4-4c7cf0fa8efc" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-3283cc37-d37a-45b2-b248-f46883872ee9">
+<span class="eqno">(5.18)<a class="headerlink" href="#equation-3283cc37-d37a-45b2-b248-f46883872ee9" title="Permalink to this equation">#</a></span>\[\begin{align}
 \int \frac{1}{T - T_\infty} \d{T} &amp;= \int -k \d{t} \\
 \ln(T - T_\infty) &amp;= -kt + c \\
 T - T_\infty &amp;= C e^{-kt} \\
 T &amp;= T_\infty + C e^{-kt}
 \end{align}\]</div>
 <p>Call 10 p.m. the time where <span class="math notranslate nohighlight">\(t = 0\)</span>. Then,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-95de959c-8cf6-42ad-877d-b537098d7f0d">
-<span class="eqno">(5.19)<a class="headerlink" href="#equation-95de959c-8cf6-42ad-877d-b537098d7f0d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-442fd0c3-ac6d-49e4-aba5-c517df189975">
+<span class="eqno">(5.19)<a class="headerlink" href="#equation-442fd0c3-ac6d-49e4-aba5-c517df189975" title="Permalink to this equation">#</a></span>\[\begin{equation}
 70 = T(0) = 45 + C \to C = 25
 \end{equation}\]</div>
 <p>Last, evaluate the temperature at 6 a.m. when <span class="math notranslate nohighlight">\(t = 8\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9ccb65de-4d06-459f-bd51-c595b5395346">
-<span class="eqno">(5.20)<a class="headerlink" href="#equation-9ccb65de-4d06-459f-bd51-c595b5395346" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e3598d80-4db9-4b96-abae-d1708d7c42dd">
+<span class="eqno">(5.20)<a class="headerlink" href="#equation-e3598d80-4db9-4b96-abae-d1708d7c42dd" title="Permalink to this equation">#</a></span>\[\begin{equation}
 T(8) = 45 + 25 e^{-0.05 \cdot 8} = 62
 \end{equation}\]</div>
 <p>The temperature is approximately 62°F.</p>
@@ -527,21 +528,21 @@ acceleration due to gravity and <em>g</em> is the height of water above the hole
 <p>If there is 2 m of water in the tank initially, when does it drain?</p>
 <hr class="docutils" />
 <p>Start from the unsteady balance on the mass of water <em>m</em> in the tank</p>
-<div class="amsmath math notranslate nohighlight" id="equation-dfacb9d2-72bf-47c3-8900-7dedfa8c0b68">
-<span class="eqno">(5.21)<a class="headerlink" href="#equation-dfacb9d2-72bf-47c3-8900-7dedfa8c0b68" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-58603eb4-4758-4b4b-a6f7-ac9021fcceb6">
+<span class="eqno">(5.21)<a class="headerlink" href="#equation-58603eb4-4758-4b4b-a6f7-ac9021fcceb6" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \dd{}{m}{t} = -\dot m_{\rm out}
 \end{equation}\]</div>
 <p>The mass of water is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ce662be9-3de4-4b39-b9cd-e8a788c8ede2">
-<span class="eqno">(5.22)<a class="headerlink" href="#equation-ce662be9-3de4-4b39-b9cd-e8a788c8ede2" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-5c1813f2-ce21-4821-991f-0f6daee9b401">
+<span class="eqno">(5.22)<a class="headerlink" href="#equation-5c1813f2-ce21-4821-991f-0f6daee9b401" title="Permalink to this equation">#</a></span>\[\begin{equation}
 m = \rho V = \rho \frac{\pi D_1^2}{4} h
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\rho\)</span> is the density of water, <em>V</em> is the volume of water in the tank,
 and <span class="math notranslate nohighlight">\(D_1\)</span> = 1 m is the diameter of the tank. <em>V</em> is replaced using the volume of
 a cylinder.</p>
 <p>The mass flow rate out is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-eeae6402-040a-4a29-b4e7-31e7b48a1f25">
-<span class="eqno">(5.23)<a class="headerlink" href="#equation-eeae6402-040a-4a29-b4e7-31e7b48a1f25" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-517664e1-0bfa-4742-a957-a862b7beda32">
+<span class="eqno">(5.23)<a class="headerlink" href="#equation-517664e1-0bfa-4742-a957-a862b7beda32" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \dot m_{\rm out} = \rho \dot V = \rho \frac{\pi D_2^2}{4} \sqrt{2gh}
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\dot V\)</span> is the volumetric flow rate out of the hole, which we compute
@@ -549,28 +550,28 @@ from the cross-sectional area of the hole (a circle with diameter <span class="m
 = 0.01 m) and the model for the velocity leaving it.</p>
 <p>Inserting both into the unsteady balance, applying rules of differentiation, and
 simplifying gives</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2ef18a9b-26ad-4b72-b3c0-8e9f47e74757">
-<span class="eqno">(5.24)<a class="headerlink" href="#equation-2ef18a9b-26ad-4b72-b3c0-8e9f47e74757" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-39de2dbf-86f9-4a0c-bcbb-44e3ae1bbd60">
+<span class="eqno">(5.24)<a class="headerlink" href="#equation-39de2dbf-86f9-4a0c-bcbb-44e3ae1bbd60" title="Permalink to this equation">#</a></span>\[\begin{align}
 \dd{}{}{t}\left(\rho \frac{\pi D_1^2}{4} h\right)
  &amp;= -\rho \frac{\pi D_2^2}{4} \sqrt{2gh} \\
 \rho \frac{\pi D_1^2}{4} \dd{}{h}{t} &amp;= -\rho \frac{\pi D_2^2}{4} \sqrt{2gh} \\
 \frac{dh}{dt} &amp;= -\left(\frac{D_2}{D_1}\right)^2 \sqrt{2gh}
 \end{align}\]</div>
 <p>This is a separable differential equation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-40d07b7f-ba10-416a-a52f-204dbf73a24a">
-<span class="eqno">(5.25)<a class="headerlink" href="#equation-40d07b7f-ba10-416a-a52f-204dbf73a24a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6c82cde7-555c-427f-b96a-ae390bde8d70">
+<span class="eqno">(5.25)<a class="headerlink" href="#equation-6c82cde7-555c-427f-b96a-ae390bde8d70" title="Permalink to this equation">#</a></span>\[\begin{align}
 \int \frac{1}{\sqrt{h}} \d{h}
   &amp;= \int -\left(\frac{D_2}{D_1}\right)^2 \sqrt{2g} \d{t} \\
 2\sqrt{h} &amp;= -t \left(\frac{D_2}{D_1}\right)^2 \sqrt{2g} + c
 \end{align}\]</div>
 <p>Find the integration constant <em>c</em> using the initial condition</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5ce159e3-7dfb-40a7-834e-21692d79e5f9">
-<span class="eqno">(5.26)<a class="headerlink" href="#equation-5ce159e3-7dfb-40a7-834e-21692d79e5f9" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7f86338c-294c-45d4-a2ee-432705a774a9">
+<span class="eqno">(5.26)<a class="headerlink" href="#equation-7f86338c-294c-45d4-a2ee-432705a774a9" title="Permalink to this equation">#</a></span>\[\begin{equation}
 2 \sqrt{2} = c
 \end{equation}\]</div>
 <p>The tank drains when <span class="math notranslate nohighlight">\(h = 0\)</span>, so substitute this, <em>c</em>, and numerical values:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6422cc5a-83c8-482a-a63d-9a844677ed0b">
-<span class="eqno">(5.27)<a class="headerlink" href="#equation-6422cc5a-83c8-482a-a63d-9a844677ed0b" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-33251c1b-89cb-4e85-85fb-cf8f379811fe">
+<span class="eqno">(5.27)<a class="headerlink" href="#equation-33251c1b-89cb-4e85-85fb-cf8f379811fe" title="Permalink to this equation">#</a></span>\[\begin{align}
 0 &amp;= -t \left(\frac{0.01}{1}\right)^2 \sqrt{2 \cdot 9.8} + 2 \sqrt{2} \\
 t &amp;= 2 \left(\frac{1}{0.01}\right)^2 \sqrt{\frac{2}{2 \cdot 9.8}} = 6400
 \end{align}\]</div>
