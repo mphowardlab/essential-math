@@ -38,13 +38,8 @@ partial derivatives can be formed in the same way:
 
 Given: $\d{f} = p \d{x} - q \d{y}$ 
 
-1.
-
-   \begin{equation}
-   \td{}{f}{x}{y} =
-   \end{equation}
-
-   ```{solution}
+1.\begin{equation}   \td{}{f}{x}{y} =   \end{equation}
+  ```{solution}
    Based on differential:
 
    \begin{equation}
@@ -52,31 +47,26 @@ Given: $\d{f} = p \d{x} - q \d{y}$
    \end{equation}
    ```   
 
-2.  
-$$
-    \td{}{f}{y}{x} =
-$$
+2.  \begin{equation}\td{}{f}{y}{x} = \end{equation)
 ```{solution}
 Based on differential:
 
-$$
+\begin{equation}
 \left(\frac{\partial f}{\partial y}\right)_x = -q 
-$$
+\end{equation}
 ```
 
 
 3.  \begin{equation} \left(\frac{\partial^2 f}{\partial x^2}\right)_y =   \end{equation}
 
 ```{solution}
-$$
+\begin{equation}
 \left(\frac{\partial^2 f}{\partial x^2}\right)_y = \frac{\partial }{\partial x}\left(\left(\frac{\partial f}{\partial x}\right)_y \right)_y = \left(\frac{\partial p}{\partial x}\right)_y  
-$$
+\end{equation}
 ```
 
 4. \begin{equation} \left(\frac{\partial^2 f}{\partial y^2}\right)_x = \end{equation}
-
 ```{solution}
-
 $$
 \left(\frac{\partial^2 f}{\partial y^2}\right)_x = \frac{\partial }{\partial y}\left(\left(\frac{\partial f}{\partial y}\right)_x \right)_x = \left(\frac{\partial (-q)}{\partial y}\right)_x = -\left(\frac{\partial q}{\partial y}\right)_x 
 $$
