@@ -7,24 +7,16 @@
 ## Skill Builder Problems
 ---
 
-C)
-$
-A = \begin{bmatrix}
-0 & 4 \\
--4 & 0
-\end{bmatrix}
-; IC = \begin{bmatrix}
-1 \\
-0
-\end{bmatrix}
-$
----
+\( C) \quad A = \begin{bmatrix} 0 & 4 \\ -4 & 0 \end{bmatrix}; \quad IC = \begin{bmatrix} 1 \\ 0 \end{bmatrix} \)
+
+
 
 ``` {Solution}
 1. Find the eigenvalues:
 $
 |A - \lambda I| = \begin{vmatrix} -\lambda & 4 \\ -4 & -\lambda \end{vmatrix} = \lambda^2 + 16 = 0 \Rightarrow \lambda_{1,2} = \pm 4i
 $
+
 
 
 2. Solve for \( $\lambda_1$ = 4i \):
@@ -40,13 +32,13 @@ $
 
 
 $$
-\textbf{General Solution:} \quad 
+{General Solution:} \quad 
 y = C_1 e^{4it} \begin{bmatrix} -i \\ 1 \end{bmatrix} + C_2 e^{-4it} \begin{bmatrix} i \\ 1 \end{bmatrix}
 $$
 
 ---
 
-**Initial Conditions:**
+Initial Conditions:
 
 $$
 \begin{bmatrix} 1 \\ 0 \end{bmatrix} = y(0) = 
@@ -99,7 +91,7 @@ $$
 C_1 = -\frac{1}{2i} = \frac{i}{2}, \quad C_2 = \frac{1}{2i} = -\frac{i}{2}
 $$
 
-**Hence:**
+Hence:
 
 $$
 \boxed{
