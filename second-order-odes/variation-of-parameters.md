@@ -1,5 +1,6 @@
 # Variation of parameters
-```{example} Variation of Parameters
+```{example} Variation of Parameters Skill Builder
+
 Solve the differential equation
 
 \begin{equation}
@@ -71,6 +72,6 @@ y'=2(C_1 + C_2 x) e^{2x}+C_2e^{2x}+(x^{2}+4x+6)e^{x}+(2x+4)e^{x}
 0=y'(0)=2C_1+C_2+6+4 \Rightarrow C_2=2
 \end{equation}
 \begin{equation}
-y=(-6 + 2 x) e^{2x}+(x^{2}+4x+6)e^{x}
+y=(2 x - 6) e^{2x}+(x^{2}+4x+6)e^{x}
 \end{equation}
 ```
