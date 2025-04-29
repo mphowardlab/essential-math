@@ -18,20 +18,20 @@ A = \begin{bmatrix}
 $
 ---
 
-{Solution}
-To find the eigenvalues:
+``` {Solution}
+1. Find the eigenvalues:
 $
 |A - \lambda I| = \begin{vmatrix} -\lambda & 4 \\ -4 & -\lambda \end{vmatrix} = \lambda^2 + 16 = 0 \Rightarrow \lambda_{1,2} = \pm 4i
 $
 
 
-For \( $\lambda_1$ = 4i \):
+2. Solve for \( $\lambda_1$ = 4i \):
 
 \begin{bmatrix} -4i & 4 \\ -4 & -4i \end{bmatrix} x_1 = 0 
 \Rightarrow x_1 = \begin{bmatrix} -i \\ 1 \end{bmatrix}
 
 
-For \( $\lambda_2$ = -4i \):
+3. Solve for \( $\lambda_2$ = -4i \):
 
 \begin{bmatrix} 4i & 4 \\ -4 & 4i \end{bmatrix} x_2 = 0 
 \Rightarrow x_2 = \begin{bmatrix} i \\ 1 \end{bmatrix}
@@ -43,6 +43,7 @@ y = C_1 e^{4it} \begin{bmatrix} -i \\ 1 \end{bmatrix} + C_2 e^{-4it} \begin{bmat
 $
 
 ---
+
 **Initial Conditions:**
 
 $$
@@ -51,7 +52,7 @@ $$
 \begin{bmatrix} C_1 \\ C_2 \end{bmatrix}
 $$
 
-Solving for $C_1$ and $C_2$:
+4. Solve for $C_1$ and $C_2$:
 
 $$
 \left[
@@ -96,8 +97,6 @@ $$
 C_1 = -\frac{1}{2i} = \frac{i}{2}, \quad C_2 = \frac{1}{2i} = -\frac{i}{2}
 $$
 
----
-
 **Hence:**
 
 $$
@@ -107,12 +106,11 @@ y = \frac{i}{2} e^{4it} \begin{bmatrix} -i \\ 1 \end{bmatrix}
 }
 $$
 
-
 $$
 \text{This is acceptable.}
 $$
 
-Using Euler's formula:
+5. Using Euler's formula:
 
 $$
 e^{ix} = \cos x + i \sin x, \quad e^{-ix} = \cos x - i \sin x
@@ -136,8 +134,7 @@ $$
 \boxed{y_1 = \cos 4t, \quad y_2 = -\sin 4t}
 $$
 
----
-
 $$
 y = 0 \quad \text{is a center because the eigenvalues are purely imaginary.}
 $$
+```
