@@ -217,9 +217,10 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../systems-first-order-odes/index.html">6. Systems of first-order ordinary differential equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/linearity.html">6.1. Linearity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/homogeneous-constant-coefficient.html">6.2. Homogeneous linear first-order ODEs with constant coefficients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/numerical-solution.html">6.3. Numerical solution methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/definition.html">6.1. Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/linearity.html">6.2. Linearity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/homogeneous-constant-coefficient.html">6.3. Homogeneous linear first-order ODEs with constant coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/numerical-solution.html">6.4. Numerical solution methods</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../second-order-odes/index.html">7. Second-order ordinary differential equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -441,6 +442,109 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="exact-differential-equations">
 <h1><span class="section-number">5.3. </span>Exact differential equations<a class="headerlink" href="#exact-differential-equations" title="Link to this heading">#</a></h1>
+<p>Remember that a function <span class="math notranslate nohighlight">\(f(x,y)\)</span> has the
+<a class="reference internal" href="../multivariable-calculus/total-differential.html"><span class="std std-doc">total differential</span></a></p>
+<div class="amsmath math notranslate nohighlight" id="equation-dac22e8c-5135-4cfc-aafb-604af108466b">
+<span class="eqno">(5.28)<a class="headerlink" href="#equation-dac22e8c-5135-4cfc-aafb-604af108466b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\d{f}= \td{}{f}{x}{y} \d{x} + \td{}{f}{y}{x} \d{y}
+\end{equation}\]</div>
+<p>Also note that if <span class="math notranslate nohighlight">\(f = c\)</span> (a constant), then <span class="math notranslate nohighlight">\(\d{f} = 0\)</span>. How does this apply
+to ODEs?</p>
+<p>Suppose we can rewrite our ODE as</p>
+<div class="math notranslate nohighlight" id="equation-exactode">
+<span class="eqno">(5.29)<a class="headerlink" href="#equation-exactode" title="Link to this equation">#</a></span>\[P(x,y) \d{x} + Q(x,y) \d{y} = 0\]</div>
+<p>If we can show that</p>
+<div class="amsmath math notranslate nohighlight" id="equation-dd4324cd-1a83-4aab-b1e4-29aced0337e5">
+<span class="eqno">(5.30)<a class="headerlink" href="#equation-dd4324cd-1a83-4aab-b1e4-29aced0337e5" title="Permalink to this equation">#</a></span>\[\begin{equation}
+P = \td{}{f}{x}{y} \qquad Q = \td{}{f}{y}{x}
+\end{equation}\]</div>
+<p>for some <span class="math notranslate nohighlight">\(f\)</span>, then we know that <span class="math notranslate nohighlight">\(f(x,y) = c\)</span> is an implicit solution of the
+ODE! We call ODEs with this property <em>exact</em>. But, how do we know if such a
+function exists and what it is?</p>
+<aside class="topic">
+<p class="topic-title">Test for exactness</p>
+<p>A differential equation in the form of Eq. <a class="reference internal" href="#equation-exactode">(5.29)</a> is exact if</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6637f8ef-fff6-4e6b-902e-191309724fb8">
+<span class="eqno">(5.31)<a class="headerlink" href="#equation-6637f8ef-fff6-4e6b-902e-191309724fb8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\td{}{P}{y}{x} = \td{}{Q}{x}{y}
+\end{equation}\]</div>
+</aside>
+<div class="admonition-example-test-for-exactness admonition">
+<p class="admonition-title">Example: Test for exactness</p>
+<p>Is the following differential equation exact?</p>
+<div class="math notranslate nohighlight" id="equation-exactode-example">
+<span class="eqno">(5.32)<a class="headerlink" href="#equation-exactode-example" title="Link to this equation">#</a></span>\[\begin{equation}
+\cos(x+y) \d{x} + \left[3y^2 + 2y + \cos(x+y) \right]\d{y} = 0
+\end{equation}\]</div>
+<hr class="docutils" />
+<p>For the given ODE,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-bef77dbd-e57d-4a24-91c7-40cad0cbc77c">
+<span class="eqno">(5.33)<a class="headerlink" href="#equation-bef77dbd-e57d-4a24-91c7-40cad0cbc77c" title="Permalink to this equation">#</a></span>\[\begin{align}
+P &amp;= \cos(x+y) \\
+\td{}{P}{y}{x} &amp;= -\sin(x+y)
+\end{align}\]</div>
+<p>and</p>
+<div class="amsmath math notranslate nohighlight" id="equation-20fff554-05eb-4fe4-98b9-d7114d0c9a23">
+<span class="eqno">(5.34)<a class="headerlink" href="#equation-20fff554-05eb-4fe4-98b9-d7114d0c9a23" title="Permalink to this equation">#</a></span>\[\begin{align}
+Q &amp;= 3y^2 + 2y + \cos(x+y) \\
+\td{}{Q}{x}{y} &amp;= -\sin(x+y)
+\end{align}\]</div>
+<p>Since these partial derivatives match, the ODE is exact.</p>
+</div>
+<p>If an ODE is exact, we can integrate <em>P</em> or <em>Q</em> to get <em>f</em>, then solve for the
+integration constant with <em>Q</em> or <em>P</em>. For the ODE given by
+Eq. <a class="reference internal" href="#equation-exactode-example">(5.32)</a>, first integrate <em>P</em> with respect to <em>x</em>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b142790d-8569-46ba-a470-a177b5babfdd">
+<span class="eqno">(5.35)<a class="headerlink" href="#equation-b142790d-8569-46ba-a470-a177b5babfdd" title="Permalink to this equation">#</a></span>\[\begin{align}
+f &amp;= \int P \d{x} \\
+&amp;= \int \cos(x+y) \d{x} \\
+&amp;= \sin(x+y) + k(y)
+\end{align}\]</div>
+<p>Note that this integration adds an unknown function <em>k</em> of the variable that was
+held constant (in this case, <em>y</em>). To determine this function, differentiate and
+equate with <em>Q</em>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8a7ec640-f5c4-45f8-a9e5-06ee38f0c9dd">
+<span class="eqno">(5.36)<a class="headerlink" href="#equation-8a7ec640-f5c4-45f8-a9e5-06ee38f0c9dd" title="Permalink to this equation">#</a></span>\[\begin{align}
+\td{}{f}{y}{x} &amp;= Q \\
+\cos(x+y) + k' &amp;= 3y^2+2y+\cos(x+y) \\
+k' &amp;= 3y^2+2y
+\end{align}\]</div>
+<p>This is a first-order ODE for <em>k</em> that can be solved using separation of
+variables:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-5dbc2776-21b4-47d2-89d6-816191d181c7">
+<span class="eqno">(5.37)<a class="headerlink" href="#equation-5dbc2776-21b4-47d2-89d6-816191d181c7" title="Permalink to this equation">#</a></span>\[\begin{align}
+\int \d{k} &amp;= \int (3y^2+2y) \d{y} \\
+k &amp;= y^3 + y^2 + k_0
+\end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(k_0\)</span> is another unknown integration constant. Since we know that the ODE
+was exact, the solution <em>f</em> must be equal to a constant <em>c</em>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f915e2e9-e235-4668-8932-aa83469f2919">
+<span class="eqno">(5.38)<a class="headerlink" href="#equation-f915e2e9-e235-4668-8932-aa83469f2919" title="Permalink to this equation">#</a></span>\[\begin{align}
+f = \sin(x+y) + y^3 +y^2 + k_0 = c
+\end{align}\]</div>
+<p>Note that the coefficient <span class="math notranslate nohighlight">\(k_0\)</span> can be absorbed into <em>c</em>. This will be a common
+pattern for these problems, so moving forward, we will neglect writing the
+integration constant for <em>k</em>. The general, implicit solution to the ODE is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d3cfd0ee-a3b9-4b2f-a7e8-e764880d180d">
+<span class="eqno">(5.39)<a class="headerlink" href="#equation-d3cfd0ee-a3b9-4b2f-a7e8-e764880d180d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\sin(x+y) + y^3 + y^2 = c
+\end{equation}\]</div>
+<p>Note that order of integration does not matter. We could also have integrated
+with respect to <em>y</em> first</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6e98a903-51ff-4054-98b6-c6b69d797b44">
+<span class="eqno">(5.40)<a class="headerlink" href="#equation-6e98a903-51ff-4054-98b6-c6b69d797b44" title="Permalink to this equation">#</a></span>\[\begin{align}
+f &amp;=\int Q \d{y} \\
+&amp;= \int \left[3y^2+2y+\cos(x+y) \right] \d{y} \\
+&amp;=y^3+y^2+\sin(x+y)+k(x)
+\end{align}\]</div>
+<p>Then differentiated with respect to <em>x</em> and equated with <em>P</em>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-01b43709-30df-4a69-b2f2-2a9baebc1ed5">
+<span class="eqno">(5.41)<a class="headerlink" href="#equation-01b43709-30df-4a69-b2f2-2a9baebc1ed5" title="Permalink to this equation">#</a></span>\[\begin{align}
+\td{}{f}{x}{y} &amp;= P \\
+\cos(x+y) + k' &amp;= \cos(x+y) \\
+k'&amp;=0
+\end{align}\]</div>
+<p>giving <span class="math notranslate nohighlight">\(k = k_0\)</span>. Substituting, we arrive at the same answer!</p>
 <section id="skill-builder-problems">
 <h2><span class="section-number">5.3.1. </span>Skill builder problems<a class="headerlink" href="#skill-builder-problems" title="Link to this heading">#</a></h2>
 <p>Obtain general solutions to:</p>
@@ -450,40 +554,40 @@ document.write(`
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">The ODE is already in the standard form so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-30db3791-3b0c-404f-ab77-5fee9900c5cd">
-<span class="eqno">(5.28)<a class="headerlink" href="#equation-30db3791-3b0c-404f-ab77-5fee9900c5cd" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-15ff34d0-cc41-44c6-81db-531b64033470">
+<span class="eqno">(5.42)<a class="headerlink" href="#equation-15ff34d0-cc41-44c6-81db-531b64033470" title="Permalink to this equation">#</a></span>\[\begin{align}
 P &amp;= -2xy \sin(x^2) \\
 Q &amp;= \cos(x^2) \\
 \end{align}\]</div>
 <p class="sd-card-text">Check to see if the ODE is exact:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a6f68f2c-0338-4040-a2e8-2122670d7923">
-<span class="eqno">(5.29)<a class="headerlink" href="#equation-a6f68f2c-0338-4040-a2e8-2122670d7923" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c921120e-6656-45cc-bb67-2e888ce9b697">
+<span class="eqno">(5.43)<a class="headerlink" href="#equation-c921120e-6656-45cc-bb67-2e888ce9b697" title="Permalink to this equation">#</a></span>\[\begin{align}
 \td{}{P}{y}{x} &amp;= -2x \sin(x^2) \\
 \td{}{Q}{x}{y} &amp;= -2x \sin(x^2)
 \end{align}\]</div>
 <p class="sd-card-text">The two partial derivatives are equal, so the ODE is exact. You can proceed
 directly to integration. First, integrate <em>Q</em> with respect <em>y</em></p>
-<div class="amsmath math notranslate nohighlight" id="equation-9804ee6b-16b7-44c3-b387-272e042f0cb0">
-<span class="eqno">(5.30)<a class="headerlink" href="#equation-9804ee6b-16b7-44c3-b387-272e042f0cb0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ea041068-7166-4f09-b23f-81a7392360d8">
+<span class="eqno">(5.44)<a class="headerlink" href="#equation-ea041068-7166-4f09-b23f-81a7392360d8" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f(x,y) = \int \cos(x^2) \d{y} = y \cos(x^2) + k(x)
 \end{equation}\]</div>
 <p class="sd-card-text">where <em>k</em> is an unknown function of <em>x</em>. Then, differentiate <em>f</em> with respect
 to <em>x</em> and compare to <em>P</em>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-facbbab6-b68d-459a-8f9f-70a5a37c74c7">
-<span class="eqno">(5.31)<a class="headerlink" href="#equation-facbbab6-b68d-459a-8f9f-70a5a37c74c7" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7b38ecc0-85cb-4b38-99b5-544e167e1383">
+<span class="eqno">(5.45)<a class="headerlink" href="#equation-7b38ecc0-85cb-4b38-99b5-544e167e1383" title="Permalink to this equation">#</a></span>\[\begin{align}
 \td{}{f}{x}{y} = -2xy \sin(x^2) + k'(x) &amp;= P = -2xy \sin(x^2) \\
 k'(x) &amp;= 0
 \end{align}\]</div>
 <p class="sd-card-text">This simple ODE has <span class="math notranslate nohighlight">\(k = 0\)</span> as a solution (neglecting the integration
 constant). Putting it all together,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ed96cfa1-79d2-41b6-8d9d-059de718cbd3">
-<span class="eqno">(5.32)<a class="headerlink" href="#equation-ed96cfa1-79d2-41b6-8d9d-059de718cbd3" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4a70c007-4e56-42f4-a9b7-f5a61d897ff6">
+<span class="eqno">(5.46)<a class="headerlink" href="#equation-4a70c007-4e56-42f4-a9b7-f5a61d897ff6" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f = y \cos(x^2) = c
 \end{equation}\]</div>
 <p class="sd-card-text">is an implicit solution of the ODE, which we can manipulate to an explicit
 solution:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-21c75d22-3e79-491b-a7cf-f8a90cf059eb">
-<span class="eqno">(5.33)<a class="headerlink" href="#equation-21c75d22-3e79-491b-a7cf-f8a90cf059eb" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8d63880a-b924-4da7-bf19-b99866e0c3b1">
+<span class="eqno">(5.47)<a class="headerlink" href="#equation-8d63880a-b924-4da7-bf19-b99866e0c3b1" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y = \frac{c}{\cos(x^2)}
 \end{equation}\]</div>
 </div>
@@ -493,64 +597,64 @@ y = \frac{c}{\cos(x^2)}
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">This ODE is not in the standard form, so we need to first rearrange:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-70d9e81d-b2f9-4670-8abb-5cfbc4befa80">
-<span class="eqno">(5.34)<a class="headerlink" href="#equation-70d9e81d-b2f9-4670-8abb-5cfbc4befa80" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-df7350f8-8aa4-41b3-bee4-f2f34aa2b9bb">
+<span class="eqno">(5.48)<a class="headerlink" href="#equation-df7350f8-8aa4-41b3-bee4-f2f34aa2b9bb" title="Permalink to this equation">#</a></span>\[\begin{align}
 xy \d{y} = (x^4+y^2) \d{x} \\
 (x^4 + y^2) \d{x} - xy \d{y} = 0
 \end{align}\]</div>
 <p class="sd-card-text">so:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-dd064af0-3392-4c5c-91e1-233cc3ca64e2">
-<span class="eqno">(5.35)<a class="headerlink" href="#equation-dd064af0-3392-4c5c-91e1-233cc3ca64e2" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a06732f9-4b82-4b5a-8467-f38efce6a5fd">
+<span class="eqno">(5.49)<a class="headerlink" href="#equation-a06732f9-4b82-4b5a-8467-f38efce6a5fd" title="Permalink to this equation">#</a></span>\[\begin{align}
 P &amp;= x^4 + y^2 \\
 Q &amp;= -xy
 \end{align}\]</div>
 <p class="sd-card-text">Check to see if the ODE is exact:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-30132c2c-592a-4d5d-bb50-bd97ec3230e1">
-<span class="eqno">(5.36)<a class="headerlink" href="#equation-30132c2c-592a-4d5d-bb50-bd97ec3230e1" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-17e461b9-7e02-4bc1-971a-b34041cdb150">
+<span class="eqno">(5.50)<a class="headerlink" href="#equation-17e461b9-7e02-4bc1-971a-b34041cdb150" title="Permalink to this equation">#</a></span>\[\begin{align}
 \td{}{P}{y}{x} &amp;= 2y \\
 \td{}{Q}{x}{y} &amp;= -y
 \end{align}\]</div>
 <p class="sd-card-text">The two partial derivatives are not equal, so the ODE is not exact. In
 order to make it exact, we need to find an integrating factor <em>F</em>. First,
 compute:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-513e9d46-e156-494d-b927-ccc7c93b947f">
-<span class="eqno">(5.37)<a class="headerlink" href="#equation-513e9d46-e156-494d-b927-ccc7c93b947f" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6bbecdb0-6bd4-4110-97b6-9c7b30a2c064">
+<span class="eqno">(5.51)<a class="headerlink" href="#equation-6bbecdb0-6bd4-4110-97b6-9c7b30a2c064" title="Permalink to this equation">#</a></span>\[\begin{align}
 R &amp;= \frac{1}{Q}\left[\td{}{P}{y}{x} - \td{}{Q}{x}{y} \right] \\
   &amp;=\frac{1}{-xy}(2y-(-y)) \\
   &amp;= -\frac{3}{x}
 \end{align}\]</div>
 <p class="sd-card-text"><em>R</em> is a function of only <em>x</em>, so use it to compute <em>F</em></p>
-<div class="amsmath math notranslate nohighlight" id="equation-6012ec6e-2e02-43ac-ab96-66fa8611523d">
-<span class="eqno">(5.38)<a class="headerlink" href="#equation-6012ec6e-2e02-43ac-ab96-66fa8611523d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-629f066d-73e4-4d75-a23c-abdd58613e79">
+<span class="eqno">(5.52)<a class="headerlink" href="#equation-629f066d-73e4-4d75-a23c-abdd58613e79" title="Permalink to this equation">#</a></span>\[\begin{equation}
 F = \exp\left(\int \frac{-3}{x} \d{x}\right) = e^{-3\ln(x)} = x^{-3}
 \end{equation}\]</div>
 <p class="sd-card-text">Apply the integrating factor to the original ODE:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c7939c7f-a265-475b-95cc-f0f8c48802df">
-<span class="eqno">(5.39)<a class="headerlink" href="#equation-c7939c7f-a265-475b-95cc-f0f8c48802df" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5691603d-86e4-490c-8891-56635044bed6">
+<span class="eqno">(5.53)<a class="headerlink" href="#equation-5691603d-86e4-490c-8891-56635044bed6" title="Permalink to this equation">#</a></span>\[\begin{align}
 x^{-3}(x^4+y^2) \d{x} - x^{-3}(xy) \d{y} &amp;= 0 \\
 \left(x+\frac{y^2}{x^{-3}}\right) \d{x} - \frac{y}{x^2} \d{y} &amp;= 0
 \end{align}\]</div>
 <p class="sd-card-text">Integrate the <em>Q</em> of our exact ODE with respect to <em>y</em>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b51eeeca-8327-45a8-a647-12b80a750223">
-<span class="eqno">(5.40)<a class="headerlink" href="#equation-b51eeeca-8327-45a8-a647-12b80a750223" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1c5d8a85-7a93-4d07-9ccc-52fe0871f4db">
+<span class="eqno">(5.54)<a class="headerlink" href="#equation-1c5d8a85-7a93-4d07-9ccc-52fe0871f4db" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f(x,y) = \int -\frac{y}{x^2} \d{y} = \frac{-y^2}{2x^2}+k(x)
 \end{equation}\]</div>
 <p class="sd-card-text">where <em>k</em> is an unknown function of <em>x</em>. Then, differentiate <em>f</em> with respect
 to <em>x</em> and compare to <em>P</em> of the exact ODE:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6719668c-3706-4dd7-9666-f478052cee90">
-<span class="eqno">(5.41)<a class="headerlink" href="#equation-6719668c-3706-4dd7-9666-f478052cee90" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-8e678e3d-8ac4-49c8-8ace-8b2560afef5d">
+<span class="eqno">(5.55)<a class="headerlink" href="#equation-8e678e3d-8ac4-49c8-8ace-8b2560afef5d" title="Permalink to this equation">#</a></span>\[\begin{align}
 \td{}{f}{x}{y} = \frac{y^2}{x^3} + k'(x) &amp;= P = x + \frac{y^2}{x^3} \\
 k'(x) &amp;= x \\
 \end{align}\]</div>
 <p class="sd-card-text">This ODE for <em>k</em> can be integrated directly (neglecting the integration
 constant)</p>
-<div class="amsmath math notranslate nohighlight" id="equation-842e911c-b284-4824-b856-8d8973b54198">
-<span class="eqno">(5.42)<a class="headerlink" href="#equation-842e911c-b284-4824-b856-8d8973b54198" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d52db7d0-59cd-4484-9a85-70cacdd32242">
+<span class="eqno">(5.56)<a class="headerlink" href="#equation-d52db7d0-59cd-4484-9a85-70cacdd32242" title="Permalink to this equation">#</a></span>\[\begin{equation}
 k = \int x \d{x} = \frac{x^2}{2}
 \end{equation}\]</div>
 <p class="sd-card-text">Putting it all together,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-34d7d50a-bb1d-4e5a-9f78-4dc4a0b63fd4">
-<span class="eqno">(5.43)<a class="headerlink" href="#equation-34d7d50a-bb1d-4e5a-9f78-4dc4a0b63fd4" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6b307a37-f75c-47f1-b396-e09ede1c0606">
+<span class="eqno">(5.57)<a class="headerlink" href="#equation-6b307a37-f75c-47f1-b396-e09ede1c0606" title="Permalink to this equation">#</a></span>\[\begin{align}
 f = \frac{-y^2}{2x^2} + \frac{x^2}{2} = c
 \end{align}\]</div>
 <p class="sd-card-text">is an implicit solution of the ODE.</p>
