@@ -227,9 +227,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../second-order-odes/linearity.html">7.2. Linearity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../second-order-odes/homogeneous-constant-coefficient.html">7.3. Homogeneous linear second-order ODEs with constant coefficients</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../second-order-odes/undetermined-coefficients.html">7.4. Undetermined coefficients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/variation-of-parameters.html">7.5. Variation of parameters</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/numerical-solution.html">7.7. Numerical solution methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/variation-of-parameters.html">7.5. Example: Steady heat diffusion with internal source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/numerical-solution.html">7.6. Numerical solution methods</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../credits.html">8. Credits</a></li>
@@ -448,21 +447,21 @@ document.write(`
 <h2><span class="section-number">4.2.1. </span>Fixed point iteration<a class="headerlink" href="#fixed-point-iteration" title="Link to this heading">#</a></h2>
 <p>If we want to numerically solve <span class="math notranslate nohighlight">\(f(x) = 0\)</span>, rearrange <span class="math notranslate nohighlight">\(f(x)\)</span> to get <span class="math notranslate nohighlight">\(g(x) = x\)</span>.
 Then, choose an inital guess <span class="math notranslate nohighlight">\(x_0\)</span> and iterate:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-30285e49-41f2-4aca-aa18-58a9062dfbff">
-<span class="eqno">(4.4)<a class="headerlink" href="#equation-30285e49-41f2-4aca-aa18-58a9062dfbff" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-aa39666b-b28c-4abd-a604-ec7809b810db">
+<span class="eqno">(4.4)<a class="headerlink" href="#equation-aa39666b-b28c-4abd-a604-ec7809b810db" title="Permalink to this equation">#</a></span>\[\begin{equation}
 x_{n+1} = g(x_n)
 \end{equation}\]</div>
 <p>until <span class="math notranslate nohighlight">\(x_{n+1} = x_n\)</span> to the desired precision (error tolerance).</p>
 <div class="admonition-example-using-fixed-point-iteration admonition">
 <p class="admonition-title">Example: Using fixed point iteration</p>
 <p>To solve</p>
-<div class="amsmath math notranslate nohighlight" id="equation-24f77980-05e9-40c6-8097-ce06489a1b77">
-<span class="eqno">(4.5)<a class="headerlink" href="#equation-24f77980-05e9-40c6-8097-ce06489a1b77" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-280dcd64-c4db-43a3-9e8e-921158b9fa14">
+<span class="eqno">(4.5)<a class="headerlink" href="#equation-280dcd64-c4db-43a3-9e8e-921158b9fa14" title="Permalink to this equation">#</a></span>\[\begin{equation}
 e^{-x^2} - x = 0
 \end{equation}\]</div>
 <p>First rearrange</p>
-<div class="amsmath math notranslate nohighlight" id="equation-16b0feaa-1463-4d10-9746-cc33053e50da">
-<span class="eqno">(4.6)<a class="headerlink" href="#equation-16b0feaa-1463-4d10-9746-cc33053e50da" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-daae9a49-fca3-4351-b492-4206abece46d">
+<span class="eqno">(4.6)<a class="headerlink" href="#equation-daae9a49-fca3-4351-b492-4206abece46d" title="Permalink to this equation">#</a></span>\[\begin{align}
 x = e^{-x^2} = g(x)
 \end{align}\]</div>
 <p>Then, guess <span class="math notranslate nohighlight">\(x_0 = 0\)</span> and set up a table:</p>
@@ -507,13 +506,13 @@ will guide your choice of rearrangement.</p>
 <div class="admonition-example-rearranging-functions admonition">
 <p class="admonition-title">Example: Rearranging functions</p>
 <p>To solve</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e5459d22-7c1d-453a-9c41-0dd324d5cb7f">
-<span class="eqno">(4.7)<a class="headerlink" href="#equation-e5459d22-7c1d-453a-9c41-0dd324d5cb7f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2f67df66-4223-40b1-a042-a57ab99320c5">
+<span class="eqno">(4.7)<a class="headerlink" href="#equation-2f67df66-4223-40b1-a042-a57ab99320c5" title="Permalink to this equation">#</a></span>\[\begin{equation}
 e^x - x^3 = 0
 \end{equation}\]</div>
 <p>One possible rearrangement is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-884df8a2-45ff-4881-9558-f8d61fbbc8bf">
-<span class="eqno">(4.8)<a class="headerlink" href="#equation-884df8a2-45ff-4881-9558-f8d61fbbc8bf" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-804576fc-419f-461f-84c4-06c8116323c0">
+<span class="eqno">(4.8)<a class="headerlink" href="#equation-804576fc-419f-461f-84c4-06c8116323c0" title="Permalink to this equation">#</a></span>\[\begin{align}
 e^x &amp;= x^3 \\
 x &amp;= \ln(x^3) = 3 \ln x = g(x)
 \end{align}\]</div>
@@ -522,8 +521,8 @@ x &amp;= \ln(x^3) = 3 \ln x = g(x)
 initial guess or rearrangement may help. Additionally, you can try to improve
 the stability of the method by slowly “mixing” solutions:</p>
 <!-- markdownlint-disable MD037 -->
-<div class="amsmath math notranslate nohighlight" id="equation-0a636653-4a7d-4ee0-a4d8-fc7802b88d51">
-<span class="eqno">(4.9)<a class="headerlink" href="#equation-0a636653-4a7d-4ee0-a4d8-fc7802b88d51" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e3ade25d-eb16-4bea-86ed-962138242a77">
+<span class="eqno">(4.9)<a class="headerlink" href="#equation-e3ade25d-eb16-4bea-86ed-962138242a77" title="Permalink to this equation">#</a></span>\[\begin{align}
 x_{n+1}^* &amp;= g(x_n) \\
 x_{n+1} &amp;= \alpha x_{n+1}^* + (1-\alpha) x_n
 \end{align}\]</div>
@@ -554,8 +553,8 @@ else, <span class="math notranslate nohighlight">\(b_{n+1} = x_n\)</span></p></l
 <div class="admonition-example-using-bisection-search admonition">
 <p class="admonition-title">Example: Using bisection search</p>
 <p>To solve</p>
-<div class="amsmath math notranslate nohighlight" id="equation-777d9706-49fe-4898-876a-41eb274f4f2d">
-<span class="eqno">(4.10)<a class="headerlink" href="#equation-777d9706-49fe-4898-876a-41eb274f4f2d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-579fd248-b599-40e9-bf20-5d6fae7fd02f">
+<span class="eqno">(4.10)<a class="headerlink" href="#equation-579fd248-b599-40e9-bf20-5d6fae7fd02f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 e^{-x^2} - x = f(x) = 0
 \end{equation}\]</div>
 <p>Start with <span class="math notranslate nohighlight">\(a_0 = 0\)</span> and <span class="math notranslate nohighlight">\(b_0 = 1\)</span>, then make a table to implement the
@@ -623,8 +622,8 @@ so <span class="math notranslate nohighlight">\(b_2\)</span> = <span class="math
 <h2><span class="section-number">4.2.3. </span>Newton-Raphson method<a class="headerlink" href="#newton-raphson-method" title="Link to this heading">#</a></h2>
 <p>Although we cannot immediately solve the nonlinear equation <span class="math notranslate nohighlight">\(f(x) = 0\)</span>, we can
 first <em>linearize</em> it, then solve the linear problem.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3447b453-0f46-407d-85c0-4e05ab352661">
-<span class="eqno">(4.11)<a class="headerlink" href="#equation-3447b453-0f46-407d-85c0-4e05ab352661" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-138715a7-2100-4aac-a1f7-513066beddfe">
+<span class="eqno">(4.11)<a class="headerlink" href="#equation-138715a7-2100-4aac-a1f7-513066beddfe" title="Permalink to this equation">#</a></span>\[\begin{align}
 f(x) &amp;\approx f(x_0) + f'(x_0)(x - x_0) = 0 \\
 x &amp;\approx x_0 - \frac{f(x_0)}{f'(x_0)}
 \end{align}\]</div>

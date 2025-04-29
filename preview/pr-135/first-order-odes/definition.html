@@ -227,9 +227,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../second-order-odes/linearity.html">7.2. Linearity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../second-order-odes/homogeneous-constant-coefficient.html">7.3. Homogeneous linear second-order ODEs with constant coefficients</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../second-order-odes/undetermined-coefficients.html">7.4. Undetermined coefficients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/variation-of-parameters.html">7.5. Variation of parameters</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/numerical-solution.html">7.7. Numerical solution methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/variation-of-parameters.html">7.5. Example: Steady heat diffusion with internal source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/numerical-solution.html">7.6. Numerical solution methods</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../credits.html">8. Credits</a></li>
@@ -444,21 +443,21 @@ document.write(`
 <h1><span class="section-number">5.1. </span>Definition<a class="headerlink" href="#definition" title="Link to this heading">#</a></h1>
 <p>An <em>ordinary differential equation</em> (ODE) contains one or more derivatives of
 an unknown function of one variable.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-de206d96-b5c5-487a-8c17-5871b0f46775">
-<span class="eqno">(5.1)<a class="headerlink" href="#equation-de206d96-b5c5-487a-8c17-5871b0f46775" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-19a6d886-960f-4f9a-9459-6b7ab679b977">
+<span class="eqno">(5.1)<a class="headerlink" href="#equation-19a6d886-960f-4f9a-9459-6b7ab679b977" title="Permalink to this equation">#</a></span>\[\begin{align}
 &amp;y' = \cos x \\
 &amp;y'' + 9y = 0 \\
 &amp;x^2 y''' y' + 2e^x y^4 = (x^2 + 2)y^2
 \end{align}\]</div>
 <p>The <em>order</em> of an ODE is its highest derivative. First-order ODEs in <em>explicit</em>
 form look like:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c0c39ebb-d23d-404c-ae82-4b5a1d1e652d">
-<span class="eqno">(5.2)<a class="headerlink" href="#equation-c0c39ebb-d23d-404c-ae82-4b5a1d1e652d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-de128cb5-c023-4176-b2a4-e40ce3c053cc">
+<span class="eqno">(5.2)<a class="headerlink" href="#equation-de128cb5-c023-4176-b2a4-e40ce3c053cc" title="Permalink to this equation">#</a></span>\[\begin{equation}
 F(x, y, y') = 0
 \end{equation}\]</div>
 <p>and in <em>implicit</em> form look like:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4eabd3f5-f800-4f59-b92b-69f7901ceafe">
-<span class="eqno">(5.3)<a class="headerlink" href="#equation-4eabd3f5-f800-4f59-b92b-69f7901ceafe" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-140d4a55-cdca-4663-ac69-e1cf8d751dac">
+<span class="eqno">(5.3)<a class="headerlink" href="#equation-140d4a55-cdca-4663-ac69-e1cf8d751dac" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y' = f(x, y)
 \end{equation}\]</div>
 <p>When do we see first-order ODEs in chemical engineering?</p>
@@ -474,13 +473,13 @@ field (or slope field) is obtained by plotting the slope at (<em>x</em>, <em>y</
 <div class="admonition-example-direction-field admonition">
 <p class="admonition-title">Example: Direction field</p>
 <p>Given the first-order ODE</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7c511f7f-b33d-4648-93b4-05043c5a1a69">
-<span class="eqno">(5.4)<a class="headerlink" href="#equation-7c511f7f-b33d-4648-93b4-05043c5a1a69" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d14030aa-a430-474b-af97-394fa9e51c79">
+<span class="eqno">(5.4)<a class="headerlink" href="#equation-d14030aa-a430-474b-af97-394fa9e51c79" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y' = xy \quad y(0) = 1
 \end{equation}\]</div>
 <p>Draw the slope field, then verify that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0443d404-5cd9-40fe-9847-8be0c8d06aff">
-<span class="eqno">(5.5)<a class="headerlink" href="#equation-0443d404-5cd9-40fe-9847-8be0c8d06aff" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a449f7d5-dfe9-4d41-b6f1-b5c41738abc3">
+<span class="eqno">(5.5)<a class="headerlink" href="#equation-a449f7d5-dfe9-4d41-b6f1-b5c41738abc3" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y = c e^{x^2 / 2}
 \end{equation}\]</div>
 <p>is a general solution.</p>
@@ -489,13 +488,13 @@ y = c e^{x^2 / 2}
 <a class="reference internal image-reference" href="../_images/directionfield.png"><img alt="Directional field diagram" class="align-center" src="../_images/directionfield.png" style="width: 300px;" />
 </a>
 <p>Now, let’s verify the proposed solution. The first derivative of <em>y</em> is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-90e5a5be-ff98-4ca2-a908-684dc7e7a8e8">
-<span class="eqno">(5.6)<a class="headerlink" href="#equation-90e5a5be-ff98-4ca2-a908-684dc7e7a8e8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-755f00c6-3a66-4702-b3b5-1ef8ba250eaf">
+<span class="eqno">(5.6)<a class="headerlink" href="#equation-755f00c6-3a66-4702-b3b5-1ef8ba250eaf" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y' = c x e^{x^2/2}
 \end{equation}\]</div>
 <p>Substituting <em>y</em> and <span class="math notranslate nohighlight">\(y'\)</span> in the differential equation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ce76bf7d-7cf3-478a-928e-8a07eaec3ca2">
-<span class="eqno">(5.7)<a class="headerlink" href="#equation-ce76bf7d-7cf3-478a-928e-8a07eaec3ca2" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-bd638e00-e3ce-45c6-bd02-6798800efbe5">
+<span class="eqno">(5.7)<a class="headerlink" href="#equation-bd638e00-e3ce-45c6-bd02-6798800efbe5" title="Permalink to this equation">#</a></span>\[\begin{align}
 y' &amp;= x y \\
 c x e^{x^2 / 2} &amp;= x (c e^{x^2 / 2})
 \end{align}\]</div>
@@ -510,13 +509,13 @@ an <em>initial value problem</em>.</p>
 <hr class="docutils" />
 <p>Substitute <span class="math notranslate nohighlight">\(x = 0\)</span> and <span class="math notranslate nohighlight">\(y = 1\)</span> into the general solution <span class="math notranslate nohighlight">\(y = c e^{-x^2/2}\)</span>
 to determine <span class="math notranslate nohighlight">\(c\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-dcaaad55-afc0-47ba-bb8a-67d6e68d1b45">
-<span class="eqno">(5.8)<a class="headerlink" href="#equation-dcaaad55-afc0-47ba-bb8a-67d6e68d1b45" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-47e8a250-2dd7-4e62-98b2-1314e6db8fdf">
+<span class="eqno">(5.8)<a class="headerlink" href="#equation-47e8a250-2dd7-4e62-98b2-1314e6db8fdf" title="Permalink to this equation">#</a></span>\[\begin{equation}
 1 = y(0) = c e^0 = c
 \end{equation}\]</div>
 <p>This gives the solution</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e5c7f987-1a51-4587-9ea7-284604e083eb">
-<span class="eqno">(5.9)<a class="headerlink" href="#equation-e5c7f987-1a51-4587-9ea7-284604e083eb" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c89f8d2b-98d1-439f-816b-04e32ca2c093">
+<span class="eqno">(5.9)<a class="headerlink" href="#equation-c89f8d2b-98d1-439f-816b-04e32ca2c093" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y = e^{x^2/2}
 \end{equation}\]</div>
 </div>
