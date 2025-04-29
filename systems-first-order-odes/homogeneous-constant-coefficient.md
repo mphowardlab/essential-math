@@ -100,7 +100,7 @@ Initial Condition:
 \end{equation} 
 
 \begin{align} 
-\C_{1} = \frac{1}{2} \qquad \C_{2} = \frac{1}{2} 
+C_{1} = \frac{1}{2} \qquad C_{2} = \frac{1}{2} 
 \end{align} 
 
 Hence, 
