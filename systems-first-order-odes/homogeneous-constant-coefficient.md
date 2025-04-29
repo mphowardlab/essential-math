@@ -33,7 +33,7 @@ $
 
 
 $$
-\test{General Solution} = C_1 e^{4it} \begin{bmatrix} -i \\ 1 \end{bmatrix} + C_2 e^{-4it} \begin{bmatrix} i \\ 1 \end{bmatrix}
+\text{General Solution} = C_1 e^{4it} \begin{bmatrix} -i \\ 1 \end{bmatrix} + C_2 e^{-4it} \begin{bmatrix} i \\ 1 \end{bmatrix}
 $$
 
 ---
