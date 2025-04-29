@@ -1,5 +1,5 @@
 # Variation of parameters
-```{example} Variation of Parameters Skill Builder
+## Skill Builder 
 
 Solve the differential equation
 
