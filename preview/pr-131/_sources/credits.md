@@ -18,10 +18,14 @@ This work (c) 2025 is licensed under
 - Esther Laiming
 - Gwyneth A. Lovell
 - Abby Lucas
+- Dylan Lunsford
 - Faith Major
 - John R. Marshall, IV
 - Lilli Midgette
+- Clara Mitchell
 - Elijah  C. Mitchell
+- Meg Nettles
+- Jeffe Old
 - Kendall Reeves
 - Michelle Schindler
 - Katie Sorensen
