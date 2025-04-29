@@ -7,7 +7,8 @@
 ## Skill Builder Problems
 ---
 
-\( C) \quad A = \begin{bmatrix} 0 & 4 \\ -4 & 0 \end{bmatrix}; \quad IC = \begin{bmatrix} 1 \\ 0 \end{bmatrix} \)
+$C = \textstyle \begin{bmatrix} 0 & 4 \\ -4 & 0 \end{bmatrix}; IC = \textstyle \begin{bmatrix} 1 \\ 0 \end{bmatrix}$
+
 
 
 
@@ -32,7 +33,7 @@ $
 
 
 $$
-{General Solution:} \quad 
+/text{General Solution:} \quad 
 y = C_1 e^{4it} \begin{bmatrix} -i \\ 1 \end{bmatrix} + C_2 e^{-4it} \begin{bmatrix} i \\ 1 \end{bmatrix}
 $$
 
