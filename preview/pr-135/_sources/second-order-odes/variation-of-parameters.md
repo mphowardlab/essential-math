@@ -158,3 +158,4 @@ $1 = T(1) = C_1 + C_2 + \frac{q}{α}[2cos1 + sin1]$
 **Final Result:**
 
 $T = 1 + \frac{q}{α}[2(cosx-cos1)+xsinx-sin1]$
+```
