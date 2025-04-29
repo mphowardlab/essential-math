@@ -97,7 +97,7 @@ Then, group like terms.
 =\left(A_1+A_3\right)x^3+\left(-4A_1+A_2-8A_3+B_3\right)x^2 + \left(3A_1+16A_3-8B_3\right)x+\left(-12A_1+3A_2+16B_3\right)
 \end{equation}
 
-Finally, solve system of equations.
+Finally, solve the linear system of equations using Gauss-Jordan Elimination. 
 
 \begin{align}  
 A_1+A_3 &= 0 \\  
@@ -106,6 +106,7 @@ A_1+A_3 &= 0 \\
 -12A_1+3A_2+16B_3 &=5 \\  
 \end{align}  
 
+Form the augmented matrix  then perform elementary operations on rows of this matrix to form pivot points in each row.Then, work back up to turn pivots into 1s and get zeros in each column. The solution comes from reexpressing the augmented matrix as \begin{equation} (\underline(A))\mathbf(x)=\mathbf(b) \end{eqution}. 
 
 $\begin{bmatrix} 1 & 0 & 1 & 0\\ -4 & 1 & -8 & 1\\ 3 & 0 & 16 & -8\\ -12 & 3 & 0 & 16 \end{bmatrix} \begin{bmatrix} A_1 \\ A_2\\ A_3\\ B_3 \end{bmatrix} = \begin{bmatrix} 0\\ 1\\ -29 \\ 5 \end{bmatrix}$ $\to$ $A_1 = 1, A_2 = -5, A_3 = -1, B_3 =2$
 
