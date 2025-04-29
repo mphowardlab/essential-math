@@ -75,7 +75,7 @@ For example, to integrate:
 \end{equation}
 
 Partial fraction decomposition seems useful, but the degree of the numerator
-$P$ is 4 but the degree of denominator $Q$ is 3, so we must carry out polynomial
+*P* is 4 but the degree of denominator *Q* is 3, so we must carry out polynomial
 division first.
 
 $$
