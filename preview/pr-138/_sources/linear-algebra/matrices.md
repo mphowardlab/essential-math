@@ -288,9 +288,9 @@ $$
 \(c\) $\vv{A}^{\rm T} + \vv{B}$ 
 ```{solution}
 $$ 
-\vv{A}^{\rm T} + \vv{B} = \begin{bmatrix} 0 & 2 & 1 \\ 2 & 4 & 3 \end{bmatrix} + \begin{bmatrix} 0 & 2 & 1\\ 2 & 4 & 3 \end{bmatrix} = \begin{bmatrix} 0+0 & 2+2 & 1+1 \\ 2+2 & 4+4 & 3+3 \end{bmatrix} = \begin{bmatrix} 0 & 4 & 2 \\ 4 & 8 & 6 \end{bmatrix}
-(or, \vv{A}^{\rm T} = \vv{B} so \vv{A}^{\rm T} + \vv{B} = 2\vv{B}.)
+\vv{A}^{\rm T} + \vv{B} = \begin{bmatrix} 0 & 2 & 1 \\ 2 & 4 & 3 \end{bmatrix} + \begin{bmatrix} 0 & 2 & 1\\ 2 & 4 & 3 \end{bmatrix} = \begin{bmatrix} 0+0 & 2+2 & 1+1 \\ 2+2 & 4+4 & 3+3 \end{bmatrix} = \begin{bmatrix} 0 & 4 & 2 \\ 4 & 8 & 6 \end{bmatrix} \\
 $$
+(or, $\vv{A}^{\rm T} = \vv{B}$ so $\vv{A}^{\rm T} + \vv{B} = 2\vv{B}$.)
 ```
 
 (d) $\vv{C - D}$ 
