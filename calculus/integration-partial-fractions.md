@@ -18,23 +18,29 @@ This cannot be done with u-substitution... how to take it?
 \frac{3x+11}{x^2-x-6} =\frac{3x+11}{(x-3)(x+2)} = \frac{A_1}{x-3} + \frac{A_2}{x+2}
 \end{equation}
 
- 
+ First, cross multiply to eliminate the common denominator.
 
 \begin{align}
 3x+11 &= A_1(x+2) + A_2(x-3) \\
 &= (A_1 + A_2)x + (2A_1 - 3A_2) \\
 \end{align}
 
+Next, group like powers of $x$ together. 
+
 \begin{align}  
  A_1  + A_2 &= 3 \\  
  2A_1 - 3A_2 &= 11  
 \end{align} 
+
+Solve using matrix technique. Form the augemented matrix then perform Gauss-Jordan Elimination.
 
 \begin{bmatrix} 1 & 1 & 3\\ 2 & -3 & 11 \end{bmatrix} \to \begin{bmatrix} 1 & 1 & 3\\ 0 & -5 & 5 \end{bmatrix} \to \begin{bmatrix} 1 & 1 & 3\\ 0 & 1 & -1 \end{bmatrix} \to \begin{bmatrix} 1 & 0 & 4\\ 0 & 1 & -1 \end{bmatrix}
 
 \begin{align}
 A_1=4  A_2=-1
 \end{align}
+
+Once you have coefficients, you can integrate. 
 
 \begin{align}  
 y&=\int\left( \frac{4}{x-3}-\frac{1}{x+2} \right)dx \\ 
@@ -106,7 +112,7 @@ A_1+A_3 &= 0 \\
 -12A_1+3A_2+16B_3 &=5 \\  
 \end{align}  
 
-Form the augmented matrix  then perform elementary operations on rows of this matrix to form pivot points in each row.Then, work back up to turn pivots into 1s and get zeros in each column. The solution comes from reexpressing the augmented matrix as: 
+Form the augmented matrix  then perform elementary operations on rows of this matrix to form pivot points in each row. Then, work back up to turn pivots into 1s and get zeros in each column. The solution comes from reexpressing the augmented matrix as: 
 
 \begin{equation}
 \underline(A)\vec(x)=\vec(b)
