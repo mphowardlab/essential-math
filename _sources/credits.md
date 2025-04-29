@@ -23,6 +23,7 @@ This work (c) 2025 is licensed under
 - Lilli Midgette
 - Elijah  C. Mitchell
 - Meg Nettles
+- Jeffe Old
 - Kendall Reeves
 - Michelle Schindler
 - Katie Sorensen
