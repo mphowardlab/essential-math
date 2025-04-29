@@ -82,8 +82,6 @@ $$
 \begin{array}{l}
 y_1'=y_2\quad\quad\quad\quad y_1(0)=C_0\\
 y_2'=\frac{K}{D}y_1'\quad\quad\quad y_2(0)=a
-
-
 \end{array}
 \right.
 $$
