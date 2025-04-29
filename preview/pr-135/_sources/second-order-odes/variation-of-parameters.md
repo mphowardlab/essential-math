@@ -160,7 +160,7 @@ $1 = T(1) = C_1 + C_2 + \frac{q}{α}[2cos1 + sin1]$
 
 --> $C_2 = 1 - C_1 - \frac{q}{α}(2cos1 + sin1) = 0$
 
-**Final Result:** 
+**Final Result:** -
 
 $T = 1 + \frac{q}{α}[2(cosx-cos1)+xsinx-sin1]$
 >>>>>>> 40e986e73454867953b013f02b0344bd068d1ae2
