@@ -66,14 +66,11 @@ $\underline{y}$ = 0 is a *stable proper node* because $\lambda_{1}$ = $\lambda_{
 \lambda_{1} = 6 \qquad \lambda_{2} = -6
 \end{align} 
  
-begin{align}
-\lambda_{1} = 6:
+$\lambda_{1}$ = 6:
 \begin{equation} 
 \begin{bmatrix} -6 & 3 \\ 12 & -6 \end{bmatrix} \underline{x_{1}} = 0 
 \end{equation} \qquad
 \underline{x_{1}} = \begin{bmatrix} = 1 \\ 2 \end{bmatrix} 
-end{align}
-
 
 
 General Solution: 
@@ -87,3 +84,11 @@ Initial Condition:
 \begin{equation}
 \begin{bmatrix} 1 \\ 0\end{bmatrix} = \vv{\underline{y}(0)} = \begin{bmatrix} 1 & 1 \\ 2 & -2 \end{bmatrix} \begin{bmatrix} C_1 \\ C_2 \end{bmatrix}
 \end{equation}
+
+Hence, 
+\begin{equation}
+\vv{\underline{y}} = \frac{1}{2}e^{-6t} \begin{bmatrix} 1 \\ 2 \end{bmatrix} + \frac{1}{2}e^{-6t} \begin{bmatrix} 1 \\ -2 \end{bmatrix}
+\end{equation}
+\begin{align} 
+or \qquad y_{1}=\frac{1}{2}(e^{6t}+e^{-6t}) \qquad y_{2} = e^{6t}+e^{-6t}
+\end{align}
