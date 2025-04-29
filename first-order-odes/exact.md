@@ -35,13 +35,15 @@ A differential equation in the form of Eq. {eq}`exactode` is exact if
 \end{equation}
 ```
 
-```{example} Test for exactness
-
+````{example} Test for exactness
 Is the following differential equation exact?
 
+```{math}
+:label: exactode-example
 \begin{equation}
 \cos(x+y) \d{x} + \left[3y^2 + 2y + \cos(x+y) \right]\d{y} = 0
 \end{equation}
+```
 
 ---
 
@@ -60,42 +62,69 @@ Q &= 3y^2 + 2y + \cos(x+y) \\
 \end{align}
 
 Since these partial derivatives match, the ODE is exact.
-```
+````
 
-If an ODE is exact, we can integrate $P$ or $Q$ to get $f$, then solve for the
-integration constant with $Q$ or $P$.
-
-```{example} Solve for integration constant
-
-\begin{align}
-f =\int P \d{x} = \int \cos(x+y) \d{x} &= \sin(x+y) + k(y) \\
-\td{}{f}{y}{x} =\cos(x+y)+k' &=Q=3y^2+2y+\cos(x+y) \\
-k' &=3y^2+2y \\
-\int dk &=\int (3y^2+2y) \d{y} \\
-k &=y^3+y^2+c^*
-\end{align}
-
----
-\begin{align}
-\therefore
-f=\sin(x+y) + y^3 +y^2 + c^* =c \to \sin(x+y)+y^3 +y^2 =c
-\end{align}
-
-is the general solution of the ODE!
-
----
-
-Note that order of integration does not matter. We could also have done
+If an ODE is exact, we can integrate *P* or *Q* to get *f*, then solve for the
+integration constant with *Q* or *P*. For the ODE given by
+Eq. {eq}`exactode-example`, first integrate *P* with respect to *x*:
 
 \begin{align}
-f =\int Q d{y} = \int \left[3y^2+2y+\cos(x+y) \right]dy
-&=y^3+y^2+\sin(x+y)+k(x) \\
-\td{}{f}{x}{y} =\cos(x+y)+k' &=P=\cos(x+y) \\
-k'&=0 \to k=c^*
+f &= \int P \d{x} \\
+&= \int \cos(x+y) \d{x} \\
+&= \sin(x+y) + k(y)
 \end{align}
 
-and arrived at the same answer!
-```
+Note that this integration adds an unknown function *k* of the variable that was
+held constant (in this case, *y*). To determine this function, differentiate and
+equate with *Q*:
+
+\begin{align}
+\td{}{f}{y}{x} &= Q \\
+\cos(x+y) + k' &= 3y^2+2y+\cos(x+y) \\
+k' &= 3y^2+2y
+\end{align}
+
+This is a first-order ODE for *k* that can be solved using separation of
+variables:
+
+\begin{align}
+\int \d{k} &= \int (3y^2+2y) \d{y} \\
+k &= y^3 + y^2 + k_0
+\end{align}
+
+where $k_0$ is another unknown integration constant. Since we know that the ODE
+was exact, the solution *f* must be equal to a constant *c*:
+
+\begin{align}
+f = \sin(x+y) + y^3 +y^2 + k_0 = c
+\end{align}
+
+Note that the coefficient $k_0$ can be absorbed into *c*. This will be a common
+pattern for these problems, so moving forward, we will neglect writing the
+integration constant for *k*. The general, implicit solution to the ODE is:
+
+\begin{equation}
+\sin(x+y) + y^3 + y^2 = c
+\end{equation}
+
+Note that order of integration does not matter. We could also have integrated
+with respect to *y* first
+
+\begin{align}
+f &=\int Q \d{y} \\
+&= \int \left[3y^2+2y+\cos(x+y) \right] \d{y} \\
+&=y^3+y^2+\sin(x+y)+k(x)
+\end{align}
+
+Then differentiated with respect to *x* and equated with *P*:
+
+\begin{align}
+\td{}{f}{x}{y} &= P \\
+\cos(x+y) + k' &= \cos(x+y) \\
+k'&=0
+\end{align}
+
+giving $k = k_0$. Substituting, we arrive at the same answer!
 
 ## Skill builder problems
 
