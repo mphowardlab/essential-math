@@ -12,6 +12,7 @@ This work (c) 2025 is licensed under
 - Paine Cole
 - Alexis Florit
 - Ella Governale
+- Kennedi Hawkins
 - Molly Grace Hicks
 - Michael P. Howard
 - Evan M. Hughes
@@ -22,6 +23,7 @@ This work (c) 2025 is licensed under
 - Faith Major
 - John R. Marshall, IV
 - Lilli Midgette
+- Clara Mitchell
 - Elijah  C. Mitchell
 - Meg Nettles
 - Jeffe Old
