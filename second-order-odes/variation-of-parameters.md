@@ -1,4 +1,5 @@
-# Example: Steady heat diffusion with internal source
+# Variation of parameters
+
 ```{example} Steady heat diffusion with internal source
 We are solving the steady-state heat diffusion equation with an internal source:
 
