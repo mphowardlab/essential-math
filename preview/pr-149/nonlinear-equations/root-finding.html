@@ -170,13 +170,15 @@
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../calculus/index.html">1. Calculus</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../calculus/derivatives.html">1.1. Derivatives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../calculus/derivative-rules.html">1.2. Product, quotient, and chain rule</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../calculus/series-expansion.html">1.3. Series expansion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../calculus/integration.html">1.4. Integration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../calculus/integration-substitution.html">1.5. Integration using substitution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../calculus/integration-by-parts.html">1.6. Integration by parts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../calculus/integration-partial-fractions.html">1.7. Partial fraction decomposition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/functions.html">1.1. Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/limits.html">1.2. Limits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/derivatives.html">1.3. Derivatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/derivative-rules.html">1.4. Product, quotient, and chain rule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/series-expansion.html">1.5. Series expansion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/integration.html">1.6. Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/integration-substitution.html">1.7. Integration using substitution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/integration-by-parts.html">1.8. Integration by parts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/integration-partial-fractions.html">1.9. Partial fraction decomposition</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../multivariable-calculus/index.html">2. Multivariable calculus</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -427,6 +429,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fixed-point-iteration">4.2.1. Fixed point iteration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bisection-search">4.2.2. Bisection search</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#newton-raphson-method">4.2.3. Newton-Raphson method</a></li>
 </ul>
             </nav>
         </div>
@@ -444,21 +447,21 @@ document.write(`
 <h2><span class="section-number">4.2.1. </span>Fixed point iteration<a class="headerlink" href="#fixed-point-iteration" title="Link to this heading">#</a></h2>
 <p>If we want to numerically solve <span class="math notranslate nohighlight">\(f(x) = 0\)</span>, rearrange <span class="math notranslate nohighlight">\(f(x)\)</span> to get <span class="math notranslate nohighlight">\(g(x) = x\)</span>.
 Then, choose an inital guess <span class="math notranslate nohighlight">\(x_0\)</span> and iterate:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0aedf74b-dc4c-4688-b9f6-2425353759a8">
-<span class="eqno">(4.4)<a class="headerlink" href="#equation-0aedf74b-dc4c-4688-b9f6-2425353759a8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6073ab0a-5079-4daa-88b1-1ded76896514">
+<span class="eqno">(4.4)<a class="headerlink" href="#equation-6073ab0a-5079-4daa-88b1-1ded76896514" title="Permalink to this equation">#</a></span>\[\begin{equation}
 x_{n+1} = g(x_n)
 \end{equation}\]</div>
 <p>until <span class="math notranslate nohighlight">\(x_{n+1} = x_n\)</span> to the desired precision (error tolerance).</p>
 <div class="admonition-example-using-fixed-point-iteration admonition">
 <p class="admonition-title">Example: Using fixed point iteration</p>
 <p>To solve</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7ad5fcb2-0412-4ca9-989f-a4dffd8fc2d2">
-<span class="eqno">(4.5)<a class="headerlink" href="#equation-7ad5fcb2-0412-4ca9-989f-a4dffd8fc2d2" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-fecd8945-f2d5-452b-8ea7-4170dc4e33f6">
+<span class="eqno">(4.5)<a class="headerlink" href="#equation-fecd8945-f2d5-452b-8ea7-4170dc4e33f6" title="Permalink to this equation">#</a></span>\[\begin{equation}
 e^{-x^2} - x = 0
 \end{equation}\]</div>
 <p>First rearrange</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d4b271b3-46e3-4050-91a8-937d20f17ea3">
-<span class="eqno">(4.6)<a class="headerlink" href="#equation-d4b271b3-46e3-4050-91a8-937d20f17ea3" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-46ac38b3-d289-4595-8958-2563ad492ab0">
+<span class="eqno">(4.6)<a class="headerlink" href="#equation-46ac38b3-d289-4595-8958-2563ad492ab0" title="Permalink to this equation">#</a></span>\[\begin{align}
 x = e^{-x^2} = g(x)
 \end{align}\]</div>
 <p>Then, guess <span class="math notranslate nohighlight">\(x_0 = 0\)</span> and set up a table:</p>
@@ -503,13 +506,13 @@ will guide your choice of rearrangement.</p>
 <div class="admonition-example-rearranging-functions admonition">
 <p class="admonition-title">Example: Rearranging functions</p>
 <p>To solve</p>
-<div class="amsmath math notranslate nohighlight" id="equation-faaa1ce7-af3d-4832-98a4-ad9ed82fcba9">
-<span class="eqno">(4.7)<a class="headerlink" href="#equation-faaa1ce7-af3d-4832-98a4-ad9ed82fcba9" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-bac538a4-ce65-41db-975a-33ec345fe29e">
+<span class="eqno">(4.7)<a class="headerlink" href="#equation-bac538a4-ce65-41db-975a-33ec345fe29e" title="Permalink to this equation">#</a></span>\[\begin{equation}
 e^x - x^3 = 0
 \end{equation}\]</div>
 <p>One possible rearrangement is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9b39eda1-6a29-422d-b656-bed8b5e8d8af">
-<span class="eqno">(4.8)<a class="headerlink" href="#equation-9b39eda1-6a29-422d-b656-bed8b5e8d8af" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4dc76897-6556-4f58-bfc7-794eaa76498a">
+<span class="eqno">(4.8)<a class="headerlink" href="#equation-4dc76897-6556-4f58-bfc7-794eaa76498a" title="Permalink to this equation">#</a></span>\[\begin{align}
 e^x &amp;= x^3 \\
 x &amp;= \ln(x^3) = 3 \ln x = g(x)
 \end{align}\]</div>
@@ -518,8 +521,8 @@ x &amp;= \ln(x^3) = 3 \ln x = g(x)
 initial guess or rearrangement may help. Additionally, you can try to improve
 the stability of the method by slowly “mixing” solutions:</p>
 <!-- markdownlint-disable MD037 -->
-<div class="amsmath math notranslate nohighlight" id="equation-dafbe946-0562-46e2-99a7-705551912955">
-<span class="eqno">(4.9)<a class="headerlink" href="#equation-dafbe946-0562-46e2-99a7-705551912955" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0c4356eb-00ff-4086-b806-a84bbd63c27a">
+<span class="eqno">(4.9)<a class="headerlink" href="#equation-0c4356eb-00ff-4086-b806-a84bbd63c27a" title="Permalink to this equation">#</a></span>\[\begin{align}
 x_{n+1}^* &amp;= g(x_n) \\
 x_{n+1} &amp;= \alpha x_{n+1}^* + (1-\alpha) x_n
 \end{align}\]</div>
@@ -550,8 +553,8 @@ else, <span class="math notranslate nohighlight">\(b_{n+1} = x_n\)</span></p></l
 <div class="admonition-example-using-bisection-search admonition">
 <p class="admonition-title">Example: Using bisection search</p>
 <p>To solve</p>
-<div class="amsmath math notranslate nohighlight" id="equation-58bada0b-43b9-4b9a-8ad0-f71a1cd071ae">
-<span class="eqno">(4.10)<a class="headerlink" href="#equation-58bada0b-43b9-4b9a-8ad0-f71a1cd071ae" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7dc28b26-df64-453c-95d7-5bdb15b7596d">
+<span class="eqno">(4.10)<a class="headerlink" href="#equation-7dc28b26-df64-453c-95d7-5bdb15b7596d" title="Permalink to this equation">#</a></span>\[\begin{equation}
 e^{-x^2} - x = f(x) = 0
 \end{equation}\]</div>
 <p>Start with <span class="math notranslate nohighlight">\(a_0 = 0\)</span> and <span class="math notranslate nohighlight">\(b_0 = 1\)</span>, then make a table to implement the
@@ -613,6 +616,107 @@ procedure:</p>
 </div>
 <p>When <span class="math notranslate nohighlight">\(n=0\)</span>, <span class="math notranslate nohighlight">\(f(x_0)\)</span> &gt; 0 so <span class="math notranslate nohighlight">\(a_1\)</span> = <span class="math notranslate nohighlight">\(x_0\)</span>. Then, when <span class="math notranslate nohighlight">\(n=1\)</span>, <span class="math notranslate nohighlight">\(f(x_1)\)</span> &lt; 0
 so <span class="math notranslate nohighlight">\(b_2\)</span> = <span class="math notranslate nohighlight">\(x_1\)</span>. We continue this procedure until convergence.</p>
+</div>
+</section>
+<section id="newton-raphson-method">
+<h2><span class="section-number">4.2.3. </span>Newton-Raphson method<a class="headerlink" href="#newton-raphson-method" title="Link to this heading">#</a></h2>
+<p>Although we cannot immediately solve the nonlinear equation <span class="math notranslate nohighlight">\(f(x) = 0\)</span>, we can
+first <em>linearize</em> it, then solve the linear problem.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-96dffa6a-e862-4492-b1c3-3c734a7779e7">
+<span class="eqno">(4.11)<a class="headerlink" href="#equation-96dffa6a-e862-4492-b1c3-3c734a7779e7" title="Permalink to this equation">#</a></span>\[\begin{align}
+f(x) &amp;\approx f(x_0) + f'(x_0)(x - x_0) = 0 \\
+x &amp;\approx x_0 - \frac{f(x_0)}{f'(x_0)}
+\end{align}\]</div>
+<p>Iterating this process gives the Newton-Raphson method of root finding</p>
+<div class="math notranslate nohighlight" id="equation-newtonraphson">
+<span class="eqno">(4.12)<a class="headerlink" href="#equation-newtonraphson" title="Link to this equation">#</a></span>\[x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}\]</div>
+<p>The algorithm for the Newton-Raphson method is:</p>
+<ol class="arabic simple">
+<li><p>Guess <span class="math notranslate nohighlight">\(x_0\)</span> and set <span class="math notranslate nohighlight">\(n = 0\)</span>.</p></li>
+<li><p>Compute <span class="math notranslate nohighlight">\(f(x_n)\)</span> and <span class="math notranslate nohighlight">\(f'(x_n)\)</span>. If <span class="math notranslate nohighlight">\(f(x_n)\)</span> is “close” to zero, stop.</p></li>
+<li><p>Update <span class="math notranslate nohighlight">\(x_{n+1}\)</span> using eq. <a class="reference internal" href="#equation-newtonraphson">(4.12)</a> then return to step 2.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/newtonraphson.svg"><img alt="Newton-Raphson method" class="align-center" src="../_images/newtonraphson.svg" style="width: 500px;" />
+</a>
+<p>Note that this method can converge much more rapidly than the fixed-point or
+bisection methods. However, it will fail if <span class="math notranslate nohighlight">\(f'(x_n) = 0\)</span>.</p>
+<div class="admonition-example-newton-raphson-method admonition">
+<p class="admonition-title">Example: Newton-Raphson method</p>
+<p>Solve <span class="math notranslate nohighlight">\(x^2 = 2\)</span>.</p>
+<hr class="docutils" />
+<p>We can rewrite this as <span class="math notranslate nohighlight">\(f(x) = x^2-2 = 0\)</span>. We will also evaluate the derivative
+<span class="math notranslate nohighlight">\(f'(x) = 2x\)</span>. Let the initial guess be <span class="math notranslate nohighlight">\(x_0 = 1\)</span>.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(n\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(x_n\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(f(x_n)\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(f'(x_n)\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(x_{n+1}\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(1.0\)</span></p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(-1.0\)</span></p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(2.0\)</span></p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(1.5\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(1.5\)</span></p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(0.25\)</span></p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(3.0\)</span></p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(1.417\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(2\)</span></p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(1.417\)</span></p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(6.94 \times 10^{-3}\)</span></p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(2.833\)</span></p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(1.414\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>This is close to the known value of <span class="math notranslate nohighlight">\(\sqrt{2}\)</span>!</p>
+</div>
+<div class="admonition-example-newton-raphson-method-2 admonition">
+<p class="admonition-title">Example: Newton-Raphson method 2</p>
+<p>Solve <span class="math notranslate nohighlight">\(e^{-x^2} - x = 0\)</span>.</p>
+<hr class="docutils" />
+<p>We define <span class="math notranslate nohighlight">\(f(x) = e^{-x^2} - x\)</span> and calculate <span class="math notranslate nohighlight">\(f'(x) = -2x e^{-x^2} - 1\)</span>.
+We choose an initial guess <span class="math notranslate nohighlight">\(x_0 = 0\)</span>.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-right"><p><span class="math notranslate nohighlight">\(n\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(x_n\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(f(x_n)\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(f'(x_n)\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(x_{n+1}\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-right"><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(1.0\)</span></p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(-1.0\)</span></p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(1.0\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(1.0\)</span></p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(-0.6321\)</span></p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(-1.736\)</span></p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(0.6358\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p><span class="math notranslate nohighlight">\(2\)</span></p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(0.6358\)</span></p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(0.03164\)</span></p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(-1.849\)</span></p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(0.6529\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Note the rapid convergence compared to the methods above!</p>
 </div>
 </section>
 </section>
@@ -683,6 +787,7 @@ so <span class="math notranslate nohighlight">\(b_2\)</span> = <span class="math
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fixed-point-iteration">4.2.1. Fixed point iteration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bisection-search">4.2.2. Bisection search</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#newton-raphson-method">4.2.3. Newton-Raphson method</a></li>
 </ul>
   </nav></div>
 
