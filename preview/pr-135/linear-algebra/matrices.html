@@ -227,9 +227,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../second-order-odes/linearity.html">7.2. Linearity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../second-order-odes/homogeneous-constant-coefficient.html">7.3. Homogeneous linear second-order ODEs with constant coefficients</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../second-order-odes/undetermined-coefficients.html">7.4. Undetermined coefficients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/variation-of-parameters.html">7.5. Variation of parameters</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/numerical-solution.html">7.7. Numerical solution methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/variation-of-parameters.html">7.5. Example: Steady heat diffusion with internal source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/numerical-solution.html">7.6. Numerical solution methods</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../credits.html">8. Credits</a></li>
@@ -453,14 +452,14 @@ compact notation that can be processed by a computer.</p>
 process.</p>
 <img alt="Flash distillation process" src="../_images/flash.svg" />
 <p>The steady-state mole balances for the total process and component A are</p>
-<div class="amsmath math notranslate nohighlight" id="equation-28a702c4-5788-4667-a6ab-794c19162f1c">
-<span class="eqno">(3.1)<a class="headerlink" href="#equation-28a702c4-5788-4667-a6ab-794c19162f1c" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-172e3fc4-93f1-42a8-8c76-197dcb237ddb">
+<span class="eqno">(3.1)<a class="headerlink" href="#equation-172e3fc4-93f1-42a8-8c76-197dcb237ddb" title="Permalink to this equation">#</a></span>\[\begin{align}
 10 &amp;= \dot L + \dot V \\
 5 &amp;= 0.3 \dot L + 0.8 \dot V
 \end{align}\]</div>
 <p>These equations can equivalently be represented using matrices and vectors as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3ec9a4f1-fdc5-4367-beb1-f65bf6b637cf">
-<span class="eqno">(3.2)<a class="headerlink" href="#equation-3ec9a4f1-fdc5-4367-beb1-f65bf6b637cf" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d0ad4207-1988-46d2-834d-02ff5fedd9c1">
+<span class="eqno">(3.2)<a class="headerlink" href="#equation-d0ad4207-1988-46d2-834d-02ff5fedd9c1" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix} 10 \\ 5 \end{bmatrix} =
 \begin{bmatrix} 1 &amp; 1 \\ 0.3 &amp; 0.8 \end{bmatrix}
 \begin{bmatrix} \dot L \\ \dot V \end{bmatrix}
@@ -474,14 +473,14 @@ linear equations</em> that can be solved using techniques of linear algebra.</p>
 <p>A <em>matrix</em> is a rectangular array of quantities, which we call its <em>elements</em>,
 that are laid out in horizontal <em>rows</em> and vertical <em>columns</em>. We will typically
 denote a matrix by a bold, capital letter such as <strong>A</strong>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-80b21f33-425a-463c-9501-501ef7f6d743">
-<span class="eqno">(3.3)<a class="headerlink" href="#equation-80b21f33-425a-463c-9501-501ef7f6d743" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a734187c-a582-4255-96e5-dfb965e7ead8">
+<span class="eqno">(3.3)<a class="headerlink" href="#equation-a734187c-a582-4255-96e5-dfb965e7ead8" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A} = \begin{bmatrix} 0.3 &amp; 1 &amp; -5 \\ 0 &amp; -0.2 &amp; 16 \end{bmatrix}
 \end{equation}\]</div>
 <p>An <em>m</em> x <em>n</em> matrix has <em>m</em> rows and <em>n</em> columns. <strong>A</strong> is a 2 x 3 matrix. We
 will sometimes refer to elements of a matrix by their row and column</p>
-<div class="amsmath math notranslate nohighlight" id="equation-12e84bff-67a3-4f8b-a1f1-a0917b570620">
-<span class="eqno">(3.4)<a class="headerlink" href="#equation-12e84bff-67a3-4f8b-a1f1-a0917b570620" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-20ac87cb-74d3-4948-b493-590d5ef59e2f">
+<span class="eqno">(3.4)<a class="headerlink" href="#equation-20ac87cb-74d3-4948-b493-590d5ef59e2f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A} = \begin{bmatrix} A_{11} &amp; A_{12} &amp;
 A_{13} \\ A_{21} &amp; A_{22} &amp; A_{23} \end{bmatrix}
 \end{equation}\]</div>
@@ -489,16 +488,16 @@ A_{13} \\ A_{21} &amp; A_{22} &amp; A_{23} \end{bmatrix}
 <p>A <em>vector</em> is a matrix with either one column (a <em>column vector</em>) or one row (a
 <em>row vector</em>). We will typically denote a vector by a bold, lowercase letter
 such as <strong>b</strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-56160221-6df6-4fb6-abef-38c9bb26eee0">
-<span class="eqno">(3.5)<a class="headerlink" href="#equation-56160221-6df6-4fb6-abef-38c9bb26eee0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e85b835b-4b2a-4210-96aa-ff728823377a">
+<span class="eqno">(3.5)<a class="headerlink" href="#equation-e85b835b-4b2a-4210-96aa-ff728823377a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{b} = \begin{bmatrix} 1 \\ 2 \end{bmatrix} \qquad
 \vv{c} = \begin{bmatrix} -1 &amp; 0 &amp; 1 \end{bmatrix}
 \end{equation}\]</div>
 <p><strong>b</strong> is a 2-element column vector that is also a 2 x 1 matrix, while <strong>c</strong> is a
 3-element row vector that is also a 1 x 3 matrix. When referring to elements of
 a vector, it typical to only use one index</p>
-<div class="amsmath math notranslate nohighlight" id="equation-25c64fd2-f4b1-4186-9bd9-2f9063480772">
-<span class="eqno">(3.6)<a class="headerlink" href="#equation-25c64fd2-f4b1-4186-9bd9-2f9063480772" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-396bf4ea-c553-4795-b497-e6ec136ffe6c">
+<span class="eqno">(3.6)<a class="headerlink" href="#equation-396bf4ea-c553-4795-b497-e6ec136ffe6c" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{b} = \begin{bmatrix} b_1 \\ b_2 \end{bmatrix} \qquad
 \vv{c} = \begin{bmatrix} c_1 &amp; c_2 &amp; c_3 \end{bmatrix}
 \end{equation}\]</div>
@@ -509,36 +508,36 @@ to elements in this way.</p>
 <ul>
 <li><p><em>Square matrix</em>: a matrix with equal numbers of rows and columns (an <em>n</em> x <em>n</em>
 matrix).</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bf4393a3-703b-4a61-b8b2-fe966ada6433">
-<span class="eqno">(3.7)<a class="headerlink" href="#equation-bf4393a3-703b-4a61-b8b2-fe966ada6433" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-242b6a11-87b9-4853-8302-9d72cc47e319">
+<span class="eqno">(3.7)<a class="headerlink" href="#equation-242b6a11-87b9-4853-8302-9d72cc47e319" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix} 1 &amp; 2 \\ 4 &amp; 3 \end{bmatrix}
 \end{equation}\]</div>
 </li>
 <li><p><em>Diagonal matrix</em>: a square matrix with nonzero entries only for the elements
 on the diagonal, <span class="math notranslate nohighlight">\(A_{ii}\)</span> for <span class="math notranslate nohighlight">\(i = 1, ..., n\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7e72413c-0208-4684-a4ae-64448f7726dc">
-<span class="eqno">(3.8)<a class="headerlink" href="#equation-7e72413c-0208-4684-a4ae-64448f7726dc" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3e4a25cb-2fc7-4d22-a9e3-f0ab1ce530c9">
+<span class="eqno">(3.8)<a class="headerlink" href="#equation-3e4a25cb-2fc7-4d22-a9e3-f0ab1ce530c9" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 3 \end{bmatrix}
 \end{equation}\]</div>
 </li>
 <li><p><em>Upper triangular matrix</em>: a square matrix with nonzero entries only on the
 diagonal or above, <span class="math notranslate nohighlight">\(A_{ij}\)</span> for <span class="math notranslate nohighlight">\(i = 1, ..., n\)</span> and <span class="math notranslate nohighlight">\(j \ge i\)</span>. on the
 diagonal, <span class="math notranslate nohighlight">\(A_{ii}\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-052aca2a-340a-4864-9d49-43dac53a1609">
-<span class="eqno">(3.9)<a class="headerlink" href="#equation-052aca2a-340a-4864-9d49-43dac53a1609" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-11c6bbd8-7b52-4cbc-9f63-eddee6fac9a8">
+<span class="eqno">(3.9)<a class="headerlink" href="#equation-11c6bbd8-7b52-4cbc-9f63-eddee6fac9a8" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix} 1 &amp; 2 \\ 0 &amp; 3 \end{bmatrix}
 \end{equation}\]</div>
 </li>
 <li><p><em>Lower triangular matrix</em>: a square matrix with nonzero entries only on the
 diagonal or below, <span class="math notranslate nohighlight">\(A_{ij}\)</span> for <span class="math notranslate nohighlight">\(i = 1, ..., n\)</span> and <span class="math notranslate nohighlight">\(j \le i\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f398c9d6-fe36-4f69-aeb1-1ca4ee02311c">
-<span class="eqno">(3.10)<a class="headerlink" href="#equation-f398c9d6-fe36-4f69-aeb1-1ca4ee02311c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d43dfcdd-aeef-4f65-96c8-e41ada2e8e20">
+<span class="eqno">(3.10)<a class="headerlink" href="#equation-d43dfcdd-aeef-4f65-96c8-e41ada2e8e20" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix} 1 &amp; 0 \\ 4 &amp; 3 \end{bmatrix}
 \end{equation}\]</div>
 </li>
 <li><p><em>Identity matrix</em>: a diagonal matrix of ones, typically denoted <strong>I</strong>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f1666216-9fc2-4ea7-b67d-50887b53e57f">
-<span class="eqno">(3.11)<a class="headerlink" href="#equation-f1666216-9fc2-4ea7-b67d-50887b53e57f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4428c6da-aeeb-4a86-8d1a-861242ccd4d6">
+<span class="eqno">(3.11)<a class="headerlink" href="#equation-4428c6da-aeeb-4a86-8d1a-861242ccd4d6" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{bmatrix}
 \end{equation}\]</div>
 </li>
@@ -553,13 +552,13 @@ longer course on linear algebra!</p>
 size and all their corresponding elements are equal.</p></li>
 <li><p><em>Addition</em>: <span class="math notranslate nohighlight">\(\vv{C} = \vv{A} + \vv{B}\)</span> is defined if <strong>A</strong> and <strong>B</strong> have the
 samesize. Then, the matrix elements are added element-wise:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-95ba5677-4aa6-40b3-8395-227882601d72">
-<span class="eqno">(3.12)<a class="headerlink" href="#equation-95ba5677-4aa6-40b3-8395-227882601d72" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b37f09db-23ae-4862-ba0d-99a991fb7f80">
+<span class="eqno">(3.12)<a class="headerlink" href="#equation-b37f09db-23ae-4862-ba0d-99a991fb7f80" title="Permalink to this equation">#</a></span>\[\begin{equation}
 C_{ij} = A_{ij} + B_{ij}
 \end{equation}\]</div>
 <p>Example:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a0aad66f-912b-4eb3-8e34-8dc17c607c93">
-<span class="eqno">(3.13)<a class="headerlink" href="#equation-a0aad66f-912b-4eb3-8e34-8dc17c607c93" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d63f7c21-6d8b-428a-a0a0-b3af93a659a7">
+<span class="eqno">(3.13)<a class="headerlink" href="#equation-d63f7c21-6d8b-428a-a0a0-b3af93a659a7" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix} 5 &amp; -1 &amp; 0 \\ 3 &amp; 1 &amp; 0 \end{bmatrix} +
 \begin{bmatrix} 1 &amp; 5 &amp; 3 \\ 3 &amp; 2 &amp; 2 \end{bmatrix} =
 \begin{bmatrix} -4 &amp; 6 &amp; 3 \\ 0 &amp; 1 &amp; 2 \end{bmatrix}
@@ -567,13 +566,13 @@ C_{ij} = A_{ij} + B_{ij}
 </li>
 <li><p><em>Scalar multiplication</em>: <span class="math notranslate nohighlight">\(\vv{B} = k\vv{A}\)</span> multiplies each element of <strong>A</strong>
 by <em>k</em>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ebbddb0a-b8f3-44ee-bc4b-cdbccf4bbecb">
-<span class="eqno">(3.14)<a class="headerlink" href="#equation-ebbddb0a-b8f3-44ee-bc4b-cdbccf4bbecb" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0ee11de7-daf2-4d76-871f-7dd7a49e0c45">
+<span class="eqno">(3.14)<a class="headerlink" href="#equation-0ee11de7-daf2-4d76-871f-7dd7a49e0c45" title="Permalink to this equation">#</a></span>\[\begin{equation}
 B_{ij} = kA_{ij}
 \end{equation}\]</div>
 <p>Example:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6de03af5-e321-4868-b4c6-33f9b2ec518b">
-<span class="eqno">(3.15)<a class="headerlink" href="#equation-6de03af5-e321-4868-b4c6-33f9b2ec518b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f5dfc703-57a6-4fc1-b5ef-49ac7c389c26">
+<span class="eqno">(3.15)<a class="headerlink" href="#equation-f5dfc703-57a6-4fc1-b5ef-49ac7c389c26" title="Permalink to this equation">#</a></span>\[\begin{equation}
 -2 \begin{bmatrix} 1 &amp; 0  \\ 0 &amp; -2  \end{bmatrix}
 = \begin{bmatrix} -2 \times 1 &amp; -2 \times 0 \\ -2 \times 0 &amp; -2 \times 4 \end{bmatrix}
 = \begin{bmatrix} -2 &amp; 0 \\ 0 &amp; 4 \end{bmatrix}
@@ -581,8 +580,8 @@ B_{ij} = kA_{ij}
 </li>
 <li><p><em>Subtraction</em>: same as addition of negative
 <span class="math notranslate nohighlight">\(\vv{C} = \vv{A} - \vv{B} = \vv{A} + (-\vv{B})\)</span> so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5fc17654-82f4-4190-aac6-24ba96fd9f8a">
-<span class="eqno">(3.16)<a class="headerlink" href="#equation-5fc17654-82f4-4190-aac6-24ba96fd9f8a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-54832e68-69ac-4ab3-bd45-7617eb6caaa9">
+<span class="eqno">(3.16)<a class="headerlink" href="#equation-54832e68-69ac-4ab3-bd45-7617eb6caaa9" title="Permalink to this equation">#</a></span>\[\begin{equation}
 C_{ij} = A_{ij} - B_{ij}
 \end{equation}\]</div>
 </li>
@@ -598,15 +597,15 @@ C_{ij} = A_{ij} - B_{ij}
 <div class="admonition-example-matrix-addition-and-scalar-multiplication admonition">
 <p class="admonition-title">Example: Matrix addition and scalar multiplication</p>
 <p>Given</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5fba76d9-3f4d-4d23-9841-8efaad6ef471">
-<span class="eqno">(3.17)<a class="headerlink" href="#equation-5fba76d9-3f4d-4d23-9841-8efaad6ef471" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4a688a83-867f-4ce4-9844-db4cf6097daf">
+<span class="eqno">(3.17)<a class="headerlink" href="#equation-4a688a83-867f-4ce4-9844-db4cf6097daf" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A} = \begin{bmatrix} -1 &amp; 2  \\ 0 &amp; 5  \end{bmatrix} \qquad
 \vv{B} = \begin{bmatrix} 1 &amp; 0  \\ 0 &amp; 1  \end{bmatrix}
 \end{equation}\]</div>
 <p>Compute <span class="math notranslate nohighlight">\(2\vv{A} - \vv{B}\)</span>.</p>
 <hr class="docutils" />
-<div class="amsmath math notranslate nohighlight" id="equation-117b9b3f-4fe4-4980-b176-fd8fbeb2d74d">
-<span class="eqno">(3.18)<a class="headerlink" href="#equation-117b9b3f-4fe4-4980-b176-fd8fbeb2d74d" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-9d7e77d5-44f7-4d1f-8043-29ac88ef17b3">
+<span class="eqno">(3.18)<a class="headerlink" href="#equation-9d7e77d5-44f7-4d1f-8043-29ac88ef17b3" title="Permalink to this equation">#</a></span>\[\begin{align}
 2\vv{A}-\vv{B} &amp;= 2 \begin{bmatrix} -1 &amp; 2  \\ 0 &amp; 5  \end{bmatrix} -
 \begin{bmatrix} 1 &amp; 0  \\ 0 &amp; 1  \end{bmatrix} \\
 &amp;= \begin{bmatrix} -2 &amp; 4  \\ 0 &amp; 10  \end{bmatrix} -
@@ -620,13 +619,13 @@ C_{ij} = A_{ij} - B_{ij}
 <p><strong>C</strong> = <strong>AB</strong> is defined if <strong>A</strong> has the same number of columns as <strong>B</strong> has
 rows. If <strong>A</strong> is <em>m</em> x <em>p</em> and <strong>B</strong> is <em>p</em> x <em>n</em>, <strong>C</strong> is <em>m</em> x <em>n</em> and its
 elements are</p>
-<div class="amsmath math notranslate nohighlight" id="equation-22a11a8a-0957-4b82-84b3-d1a403ede57f">
-<span class="eqno">(3.19)<a class="headerlink" href="#equation-22a11a8a-0957-4b82-84b3-d1a403ede57f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c61e07c1-86e0-45f7-bca8-fc54fda19d92">
+<span class="eqno">(3.19)<a class="headerlink" href="#equation-c61e07c1-86e0-45f7-bca8-fc54fda19d92" title="Permalink to this equation">#</a></span>\[\begin{equation}
 C_{ij} = \sum_{k=1}^p A_{ik} B_{kj}
 \end{equation}\]</div>
 <p>Example:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4fbaaa6d-33ea-40c8-a850-4254f69a97cd">
-<span class="eqno">(3.20)<a class="headerlink" href="#equation-4fbaaa6d-33ea-40c8-a850-4254f69a97cd" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-3b66c6b8-bddd-4d9d-8bd2-049ef8bcda23">
+<span class="eqno">(3.20)<a class="headerlink" href="#equation-3b66c6b8-bddd-4d9d-8bd2-049ef8bcda23" title="Permalink to this equation">#</a></span>\[\begin{align}
 \begin{bmatrix} 3 &amp; 5 \\ 4 &amp; 0 \\ -6 &amp; -3 \end{bmatrix}
 \begin{bmatrix} 2 &amp; -2 \\ 5 &amp; 0 \end{bmatrix}
 &amp;= \begin{bmatrix} 3\times2 + 5\times5 &amp; 3\times-2 + 5\times0 \\
@@ -635,8 +634,8 @@ C_{ij} = \sum_{k=1}^p A_{ik} B_{kj}
 &amp;= \begin{bmatrix} 31 &amp; -6 \\ 8 &amp; -8 \\ -27 &amp; 12 \end{bmatrix}
 \end{align}\]</div>
 <p>Multiplying with a vector works the same!</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4feabecc-759f-44eb-827a-6b5619c351b2">
-<span class="eqno">(3.21)<a class="headerlink" href="#equation-4feabecc-759f-44eb-827a-6b5619c351b2" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-05c5e421-5134-4f45-85dd-d5e28159be87">
+<span class="eqno">(3.21)<a class="headerlink" href="#equation-05c5e421-5134-4f45-85dd-d5e28159be87" title="Permalink to this equation">#</a></span>\[\begin{align}
 \begin{bmatrix} 3 &amp; 5 \\ 4 &amp; 0 \\ -6 &amp; -3 \end{bmatrix}
 \begin{bmatrix} 1 \\ 2 \end{bmatrix}
 &amp;= \begin{bmatrix} 3 \times 1 + 5 \times 2 \\
@@ -659,13 +658,13 @@ matrices.</p></li>
 <h2><span class="section-number">3.1.4. </span>Transpose<a class="headerlink" href="#transpose" title="Link to this heading">#</a></h2>
 <p><span class="math notranslate nohighlight">\(\vv{A}^{\rm T}\)</span> is the transpose of <strong>A</strong>, and its elements are obtained by
 “flipping” the rows and columns:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-23fbee59-cb18-4702-bf12-ec542f26bfc9">
-<span class="eqno">(3.22)<a class="headerlink" href="#equation-23fbee59-cb18-4702-bf12-ec542f26bfc9" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-336c1c9d-d84e-451c-8c0a-8204b52850b6">
+<span class="eqno">(3.22)<a class="headerlink" href="#equation-336c1c9d-d84e-451c-8c0a-8204b52850b6" title="Permalink to this equation">#</a></span>\[\begin{equation}
 A_{ij}^{\rm T} = A_{ji}
 \end{equation}\]</div>
 <p>Example:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b400d58d-30c7-41ee-b7d1-ecdcc2f7719a">
-<span class="eqno">(3.23)<a class="headerlink" href="#equation-b400d58d-30c7-41ee-b7d1-ecdcc2f7719a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3274678a-7210-4410-9451-8799f31c27a0">
+<span class="eqno">(3.23)<a class="headerlink" href="#equation-3274678a-7210-4410-9451-8799f31c27a0" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix} 1 &amp; 2 \\ 4 &amp; 3 \end{bmatrix}^{\rm T} =
 \begin{bmatrix} 1 &amp; 4 \\ 2 &amp; 3 \end{bmatrix}
 \end{equation}\]</div>
