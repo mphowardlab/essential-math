@@ -60,6 +60,7 @@ $\underline{y}$ = 0 is a *stable proper node* because $\lambda_{1}$ = $\lambda_{
 \vv{|A-$\lambda$ I|}= 
 \begin{bmatrix} 
 -$\lambda$ & 3  \\ 12 & -$\lambda$ \end{bmatrix} = $\lambda$^{2}-36=0. 
+\end{equation}
 
 \begin{align} 
 \lambda_{1} = 6 \qquad \lambda_{2} = -6
