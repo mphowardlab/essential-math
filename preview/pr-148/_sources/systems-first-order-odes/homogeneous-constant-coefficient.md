@@ -7,8 +7,8 @@
 ## Skill Builder Problems
 ---
 
-
-$C)
+C)
+$
 A = \begin{bmatrix}
 0 & 4 \\
 -4 & 0
