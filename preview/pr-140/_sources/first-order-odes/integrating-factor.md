@@ -1,7 +1,8 @@
 # Integrating factor 
 
 ## 4. Example:
-`````{example}
+
+````{example}
 Mole balance on a tank with increasing inlet/outlet flow rate.
 
 ```{image} ./_images/Integrating_factors_image.jpg
@@ -14,9 +15,9 @@ Mole balance on a tank with increasing inlet/outlet flow rate.
 \dot{n}_{A} &= \dot{n}_{A,\text{in}} - \dot{n}_{A,\text{out}}, \quad \dot{n}_{A,\text{in}} = C_{f,A} \dot{q}t \\
 \dot{n}_{A} &= C_{f,A}\dot{q}t - \frac{n_A}{V} \dot{q}t \quad \dot{n}_{A,\text{out}} = \frac{n_A}{V}\dot{q}t \\
 \end{align}
-`````
 
-`````{example}
+
+
 ````{dropdown} 4. Solution
 Rewrite: 
 ```{math}
