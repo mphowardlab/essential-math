@@ -68,11 +68,11 @@ integration constant with $Q$ or $P$.
 ```{example} Solve for integration constant
 
 \begin{align}
-f =\int P \d{x} = \int \cos(x+y) \d{x} = \sin(x+y) + k(y) \\
-\td{}{f}{y}{x} =\cos(x+y)+k'=Q=3y^2+2y+\cos(x+y) \\
-k' =3y^2+2y \\
-\int dk=\int (3y^2+2y) \d{y} \\
-k =y^3+y^2+c^*
+f &=\int P \d{x} = \int \cos(x+y) \d{x} = \sin(x+y) + k(y) \\
+\td{}{f}{y}{x} &=\cos(x+y)+k'=Q=3y^2+2y+\cos(x+y) \\
+k' &=3y^2+2y \\
+\int dk &=\int (3y^2+2y) \d{y} \\
+k &=y^3+y^2+c^*
 \end{align}
 
 ---
@@ -88,9 +88,9 @@ is the general solution of the ODE!
 Note that order of integration does not matter. We could also have done 
 
 \begin{align}
-f =\int Q d{y} = \int \left[3y^2+2y+\cos(x+y) \right]dy=y^3+y^2+\sin(x+y)+k(x) \\
-\td{}{f}{x}{y} =\cos(x+y)+k'=P=\cos(x+y) \\
-k'=0 \to k=c^*
+f =\int Q d{y} &= \int \left[3y^2+2y+\cos(x+y) \right]dy=y^3+y^2+\sin(x+y)+k(x) \\
+\td{}{f}{x}{y} &=\cos(x+y)+k'=P=\cos(x+y) \\
+k'&=0 \to k=c^*
 \end{align}
 
 and arrived at the same answer!
