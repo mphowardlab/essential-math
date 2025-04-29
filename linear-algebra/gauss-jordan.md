@@ -202,7 +202,7 @@ $Q_1 = 2$, $Q_2 = 4$, and $Q_3 = 2$.
 
    ```{solution}
    
-   
+   \begin{align}
    \begin{bmatrix} 0 & 1 & 1 & -2 \\ 0 & 4 & 6 & -12 \\ 1 & 1 & 1 & 2 \end{bmatrix}
    \begin{matrix} \vphantom{R_1} \\ \rm shuffle \\ \vphantom{R_3}\end{matrix}
    &\to \begin{bmatrix} 1 & 1 & 1 & 2 \\ 0 & 1 & 1 & -2 \\ 0 & 4 & 6 & -12 \end{bmatrix}
@@ -219,8 +219,8 @@ $Q_1 = 2$, $Q_2 = 4$, and $Q_3 = 2$.
    
 
    
-   $ x_1 = 4$ \\
-   $ x_2 = 0 $\\
+   $ x_1 = 4$ 
+   $ x_2 = 0 $
    $ x_3 = -2 $
    
    ```
