@@ -66,13 +66,27 @@ $\underline{y}$ = 0 is a *stable proper node* because $\lambda_{1}$ = $\lambda_{
 \lambda_{1} = 6 \qquad \lambda_{2} = -6
 \end{align} 
  
-$\lambda_{1}$ = 6:
+\begin{align} 
+\lambda_{1}= 6:
 \begin{equation} 
 \begin{bmatrix} -6 & 3 \\ 12 & -6 \end{bmatrix} \underline{x_{1}} = 0 
 \end{equation}
+\end{align} 
 
-\underline{x_{1}} = \begin{bmatrix} 1 \\ 2 \end{bmatrix} \ 
+\begin{equation}
+\underline{x_{1}} = \begin{bmatrix} 1 \\ 2 \end{bmatrix}
+\end{equation} 
 
+\begin{align} 
+\lambda_{2}= -6:
+\begin{equation} 
+\begin{bmatrix} 6 & 3 \\ 12 & 6 \end{bmatrix} \underline{x_{2}} = 0 
+\end{equation}
+\end{align} 
+
+\begin{equation}
+\underline{x_{2}} = \begin{bmatrix} 1 \\ -2 \end{bmatrix}
+\end{equation} 
 
 General Solution: 
 
@@ -95,5 +109,6 @@ or \qquad y_{1}=\frac{1}{2}(e^{6t}+e^{-6t}) \qquad y_{2} = e^{6t}+e^{-6t}
 \end{align}
 
 $\underline{y}$ = 0 is a *saddle* because the eigen values are real and $\lambda_{1}$ $\gt$ 0, $\lambda_{2}$ $\lt$ 0.
+
 
 
