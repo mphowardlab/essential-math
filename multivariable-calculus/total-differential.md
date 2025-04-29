@@ -34,7 +34,7 @@ partial derivatives can be formed in the same way:
 \end{equation}
 
 
-# Skill Builder:
+## Skill Builder:
 
 Given: $\d{f} = p \d{x} - q \d{y}$ 
 
