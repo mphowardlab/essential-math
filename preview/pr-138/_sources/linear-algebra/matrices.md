@@ -257,21 +257,21 @@ A matrix is called *symmetric* if $\vv{A}^{\rm T} = \vv{A}$.
 ## Skill Builder
 
 $$
-\mathbf{A} = \begin{bmatrix} 0 & 2 \\ 2 & 4 \\ 1 & 3 \\ \end{bmatrix} 
+\vv{A} = \begin{bmatrix} 0 & 2 \\ 2 & 4 \\ 1 & 3 \\ \end{bmatrix} 
 \quad
-\mathbf{B} = \begin{bmatrix} 0 & 2 &1 \\ 2 & 4 & 3 \end{bmatrix}
+\vv{B} = \begin{bmatrix} 0 & 2 &1 \\ 2 & 4 & 3 \end{bmatrix}
 \quad
-\mathbf{C} = \begin{bmatrix} 3 & 0 & 4 \\ -1 & 2 & 2 \\ 6 & 5 & -4 \end{bmatrix}
+\vv{C} = \begin{bmatrix} 3 & 0 & 4 \\ -1 & 2 & 2 \\ 6 & 5 & -4 \end{bmatrix}
 \quad
-\mathbf{C} = \begin{bmatrix} 0 & -5 & -3 \\ -5 & 2 & 4 \\ -3 & 4 & 0 \end{bmatrix}
+\vv{D} = \begin{bmatrix} 0 & -5 & -3 \\ -5 & 2 & 4 \\ -3 & 4 & 0 \end{bmatrix}
 $$
 
 $$
-\mathbf{a} = \begin{bmatrix} 1 \\ 3 \end{bmatrix}
+\vv{a} = \begin{bmatrix} 1 \\ 3 \end{bmatrix}
 \quad
-\mathbf{b} = \begin{bmatrix} 0 & 2 \end{bmatrix}
+\vv{b} = \begin{bmatrix} 0 & 2 \end{bmatrix}
 \quad
-\mathbf{c} = \begin{bmatrix} 2 \\ 0 \\ -1 \end{bmatrix}
+\vv{c} = \begin{bmatrix} 2 \\ 0 \\ -1 \end{bmatrix}
 $$
 
 
