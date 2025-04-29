@@ -60,7 +60,7 @@ Based on differential:
 \left(\frac{\partial p}{\partial x}\right)_y  
 \end{align}
 ```
-4. \begin{equation} \left(\frac{\partial^2 f}{\partial y^2}\right)_x = \end{equation}
+4. $ \left(\frac{\partial^2 f}{\partial y^2}\right)_x = $
 ```{solution}
 \begin{align}
 \left(\frac{\partial^2 f}{\partial y^2}\right)_x = 
@@ -69,7 +69,7 @@ Based on differential:
  -\left(\frac{\partial q}{\partial y}\right)_x 
 \end{align}
 ```
-5. \begin{equation} \frac{\partial^2 f}{\partial x \partial y} = \end{equation}
+5. $ \frac{\partial^2 f}{\partial x \partial y} = $
 ```{solution}
 \begin{align}
 \frac{\partial^2 f}{\partial x \partial y} = 
@@ -77,7 +77,7 @@ Based on differential:
  -\left(\frac{\partial q}{\partial x}\right)_y 
 \end{align}
 ```
-6. \begin{equation} \frac{\partial^2 f}{\partial y \partial x} = \end{equation}
+6. $ \frac{\partial^2 f}{\partial y \partial x} = $
 ```{solution}
 begin{align}
 \frac{\partial^2 f}{\partial y \partial x} =\frac{\partial }{\partial y}\left(\left(\frac{\partial f}{\partial x}\right)_y \right)_x = \left(\frac{\partial p}{\partial y}\right)_x 
