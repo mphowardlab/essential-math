@@ -257,76 +257,72 @@ A matrix is called *symmetric* if $\vv{A}^{\rm T} = \vv{A}$.
 ## Skill Builder
 
 $$
-\underline{\underline{A}} = \begin{bmatrix} 0 & 2 \\ 2 & 4 \\ 1 & 3 \\ \end{bmatrix} 
+\mathbf{A} = \begin{bmatrix} 0 & 2 \\ 2 & 4 \\ 1 & 3 \\ \end{bmatrix} 
 \quad
-\underline{\underline{B}} = \begin{bmatrix} 0 & 2 &1 \\ 2 & 4 & 3 \end{bmatrix}
+\mathbf{B} = \begin{bmatrix} 0 & 2 &1 \\ 2 & 4 & 3 \end{bmatrix}
 \quad
-\underline{\underline{C}} = \begin{bmatrix} 3 & 0 & 4 \\ -1 & 2 & 2 \\ 6 & 5 & -4 \end{bmatrix}
+\mathbf{C} = \begin{bmatrix} 3 & 0 & 4 \\ -1 & 2 & 2 \\ 6 & 5 & -4 \end{bmatrix}
 \quad
-\underline{\underline{D}} = \begin{bmatrix} 0 & -5 & -3 \\ -5 & 2 & 4 \\ -3 & 4 & 0 \end{bmatrix}
+\mathbf{C} = \begin{bmatrix} 0 & -5 & -3 \\ -5 & 2 & 4 \\ -3 & 4 & 0 \end{bmatrix}
 $$
 
 $$
-\underline{a} = \begin{bmatrix} 1 \\ 3 \end{bmatrix}
+\mathbf{a} = \begin{bmatrix} 1 \\ 3 \end{bmatrix}
 \quad
-\underline{b} = \begin{bmatrix} 0 & 2 \end{bmatrix}
+\mathbf{b} = \begin{bmatrix} 0 & 2 \end{bmatrix}
 \quad
-\underline{c} = \begin{bmatrix} 2 \\ 0 \\ -1 \end{bmatrix}
+\mathbf{c} = \begin{bmatrix} 2 \\ 0 \\ -1 \end{bmatrix}
 $$
 
 
-### (a) 
-
+(a) $2\mathbf{A}$
+```{solution}
 $$
-2A = \begin{bmatrix} 2 \cdot 0 & 2 \cdot 2 \\ 2 \cdot 2 & 2 \cdot 4 \\ 2 \cdot 1 & 2 \cdot 3 \end{bmatrix} = \begin{bmatrix} 0 & 4 \\ 4 & 8 \\ 2 & 6 \end{bmatrix} 
+2\mathbf{A}= \begin{bmatrix} 2 \cdot 0 & 2 \cdot 2 \\ 2 \cdot 2 & 2 \cdot 4 \\ 2 \cdot 1 & 2 \cdot 3 \end{bmatrix} = \begin{bmatrix} 0 & 4 \\ 4 & 8 \\ 2 & 6 \end{bmatrix} 
 $$ 
-
-### (b) 
-
-$$
-\underline{\underline{A}} + \underline{\underline{B}}
-$$
-**Undefined** because the shape of $\underline{\underline{A}}$ (3×2) is different from the shape of $\underline{\underline{B}}$ (2×3).
-
-### \(c\) 
-
+```
+(b) $\mathbf{A + B}$ 
+```{solution}
+**Undefined** because the shape of $\mathbf{A}$ (3×2) is different from the shape of $\mathbf{B}$ (2×3).
+```
+(c) $\mathbf{A}^{\rm T} + \mathbf{B}$ 
+```{solution}
 $$ 
-\underline{\underline{A}}^T + \underline{\underline{B}} = \begin{bmatrix} 0 & 2 & 1 \\ 2 & 4 & 5 \end{bmatrix} + \begin{bmatrix} 0 & 2 & 1\\ 2 & 4 & 5 \end{bmatrix} = \begin{bmatrix} 0+0 & 2+2 & 1+1 \\ 2+2 & 4+4 & 5+3 \end{bmatrix} = \begin{bmatrix} 0 & 4 & 2 \\ 4 & 8 & 6 \end{bmatrix}
+$\mathbf{A}^{\rm T} + \mathbf{B}$ = \mathbf{A}^{\rm T} + \mathbf{B} = \begin{bmatrix} 0 & 2 & 1 \ 2 & 4 & 3 \end{bmatrix} + \begin{bmatrix} 0 & 2 & 1\ 2 & 4 & 3 \end{bmatrix} = \begin{bmatrix} 0+0 & 2+2 & 1+1 \ 2+2 & 4+4 & 3+3 \end{bmatrix} = \begin{bmatrix} 0 & 4 & 2 \ 4 & 8 & 6 \end{bmatrix}
 $$
+```
 
-
-
-### (d) 
-
+(d) $\mathbf{C - D}$ 
+```{solution}
 $$
-\underline{\underline{C}} -\underline{\underline{D}} = \begin{bmatrix} 3-0 & 0-(-5) & 4-(-3) \\ -1-(-5) & 2-2 & 2-4 \\ 6-(-3) & 5-4 & -4-0 \end{bmatrix} = \begin{bmatrix} 3 & 5 & 7 \\ 4 & 0 & -2 \\ 9 & 1 & -4 \end{bmatrix}
+\mathbf{C} -\mathbf{D} = \begin{bmatrix} 3-0 & 0-(-5) & 4-(-3) \\ -1-(-5) & 2-2 & 2-4 \\ 6-(-3) & 5-4 & -4-0 \end{bmatrix} = \begin{bmatrix} 3 & 5 & 7 \\ 4 & 0 & -2 \\ 9 & 1 & -4 \end{bmatrix}
 $$
-
-### (e)
-
+```
+(e) $\mathbf{Aa}$
+```{solution}
 $$
-\underline{\underline{A}}  \underline{a} = \begin{bmatrix} 0 \cdot 1 + 2 \cdot 3 \\ 2 \cdot 1 + 4 \cdot 3 \\ 1 \cdot 1 + 3 \cdot 3 \end{bmatrix} = \begin{bmatrix} 6 \\ 14 \\ 10 \end{bmatrix}
+\mathbf{A}\mathbf{a} = \begin{bmatrix} 0 \cdot 1 + 2 \cdot 3 \\ 2 \cdot 1 + 4 \cdot 3 \\ 1 \cdot 1 + 3 \cdot 3 \end{bmatrix} = \begin{bmatrix} 6 \\ 14 \\ 10 \end{bmatrix}
 $$
-
-### (f)  
+```
+(f) $\mathbf{Ab}$
+```{solution}
+**Undefined** because $\mathbf{A}$ has 2 columns but $\mathbf{b}$ has 1 rows. 
+```
+(g) $\mathbf{Ac}$
+```{solution}
 $$
-\underline{\underline{A}}\underline{b}
+ **Undefined** because $\mathbf{A}$ has 2 columns but $\mathbf{c}$ has 3 rows.
 $$
-**Undefined** because $\underline{\underline{A}}$ has 2 columns but $\underline{b}$ has 1 row.
-
-### (g) 
+```
+(h) $\mathbf{Bc}$
+```{solution}
 $$
-\underline{\underline{A}}\underline{c}
+\mathbf{Bc} = \begin{bmatrix}  0 \cdot 2 + 2 \cdot 0 + 1 \cdot -1 \\ 2 \cdot 2 + 4 \cdot 0 + 3 \cdot -1 \end{bmatrix} = \begin{bmatrix} -1 \\ 1 \end{bmatrix} 
 $$
-**Undefined** because $\underline{\underline{A}}$ has 2 columns but $\underline{c}$ has 3 rows. 
-
-### (h)
+```
+(i) $\mathbf{c}^{\rm T}\mathbf{A}$ 
+```{solution}
 $$
-\underline{\underline{B}}\underline{c} = \begin{bmatrix}  0 \cdot 2 + 2 \cdot 0 + 1 \cdot -1 \\ 2 \cdot 2 + 4 \cdot 0 + 3 \cdot -1 \end{bmatrix} = \begin{bmatrix} -1 \\ 1 \end{bmatrix} 
+\mathbf{c}^{\rm T} + \mathbf{A} = \begin{bmatrix} 0 & 2 & -1\end{bmatrix} \ \begin{bmatrix} 0 & 2 \\ 2 & 4 \\ 1 &3 \end{bmatrix} = \begin{bmatrix} 2 \cdot 0 + 0 \cdot 2 + -1 \cdot 1 & 2 \cdot 2 + 0 \cdot 4 \cdot -1 \cdot 3 \end{bmatrix} = \begin{bmatrix} -1 & 1 \end{bmatrix} 
 $$
-
-### (i) 
-
-$$
-\underline{c^T}\underline{\underline{A}} = \begin{bmatrix} 0 & 2 & -1\end{bmatrix} \ \begin{bmatrix} 0 & 2 \\ 2 & 4 \\ 1 &3 \end{bmatrix} = \begin{bmatrix} 2 \cdot 0 + 0 \cdot 2 + -1 \cdot 1 & 2 \cdot 2 + 0 \cdot 4 \cdot -1 \cdot 3 \end{bmatrix} = \begin{bmatrix} -1 & 1 \end{bmatrix} 
-$$
+```
