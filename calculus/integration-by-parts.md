@@ -47,11 +47,11 @@ so
 The heart of the technique is making a suitable choice for *u* and $\d{v}$.
 The acronym L.I.A.T.E. can help make this choice:
 
-- **L**ogarithmic  (best choice of u)
+- **L**ogarithmic  (best choice of *u*)
 - **I**nverse
 - **A**lgebraic
 - **T**rigonometric
-- **E**xponential  (worst choice of u)
+- **E**xponential  (worst choice of *u*)
 
 ```{example} Integration by parts 1
 
@@ -121,63 +121,62 @@ Evaluate
 Let
 
 \begin{align}
-u &= x^3 & \d{v} &= x^2\sqrt(x^3+1) \d{x} \\
-\d{u} &= 3x^2 \d{x} & v &= \frac{2}{9}(x^3+1)^{\frac{3}{2}}
+u &= x^3 & \d{v} &= x^2\sqrt{x^3+1} \d{x} \\
+\d{u} &= 3x^2 \d{x} & v &= \frac{2}{9}(x^3+1)^{3/2}
 \end{align}
 
 so:
 
 \begin{align}
 \int(x^5)(\sqrt(x^3+1))dx
-&= x^3\frac{2}{9}(x^3+1)^{\frac{3}{2}}
- - \int(\frac{2}{9}(x^3+1)^{\frac{3}{2}})3x^2dx \\
-&= \frac{2}{9}x^3(x^3+1)^{\frac{3}{2}}
- - \frac{2}{9}\frac{2}{5}(x^3+1)^{\frac{5}{2}} + c \\
-&= \frac{2}{9}x^3(x^3+1)^{\frac{3}{2}} - \frac{4}{45}(x^3+1)^{\frac{5}{2}} + c
+&= x^3\frac{2}{9}(x^3+1)^{3/2}
+ - \int\left[\frac{2}{9}(x^3+1)^{3/2}\right]3x^2dx \\
+&= \frac{2}{9}x^3(x^3+1)^{3/2}
+ - \frac{2}{9}\cdot\frac{2}{5}(x^3+1)^{5/2} + c \\
+&= \frac{2}{9}x^3(x^3+1)^{3/2} - \frac{4}{45}(x^3+1)^{5/2} + c
 \end{align}
 ```
 
 ## Tabular method
 
-$$\int(x^4e^{\frac{x}{2}}dx) = ?$$
+To integrate
 
-Let
+\begin{equation}
+\int x^4 e^{x/2} \d{x}
+\end{equation}
 
-\begin{align}
-u &= x^4 & \d{v} &= e^{\frac{x}{2}} \\
-\d{u} &= 4x63 \d{x} & v &= 2e^{\frac{x}{2}}
-\end{align}
-
-Which allows:
+by parts, let
 
 \begin{align}
-\int(x^4e^{\frac{x}{2}}dx)
-
-&= x^4(2e^{\frac{x}{2}}) - \int2e^{\frac{x}{2}}(4x^3)dx \\
+u &= x^4 & \d{v} &= e^{x/2} \\
+\d{u} &= 4x^3 \d{x} & v &= 2e^{x/2}
 \end{align}
 
-We will need to integrate by parts again but there is a shortcut!!
+which allows:
 
-| $u$    | $\d{v}$                |
-|-------|-------------------|
-| $x^4$   | $e^{x/2}$   |
-| $4x^3$  | $2e^{\frac{x}{2}}$  |
-| $12x^2$ | $4e^{\frac{x}{2}}$  |
-| $24x$   | $8e^{\frac{x}{2}}$  |
-| $24$    | $16e^{\frac{x}{2}}$ |
-| $0$     | $32e^{\frac{x}{2}}$ |
+\begin{equation}
+\int x^4e^{x/2} \d{x} = 2 x^4 e^{x/2} - \int 8 x^3 e^{x/2} \d{x}
+\end{equation}
 
-For this shortcut make a chart like depicted above and then starting from the
-first u, go down one row diagonally and multiply the u and the dv together and
-then continue this all the way to 0 starting positive and switching signs each one.
+We will need to integrate by parts again, and again, and again... but there is
+a shortcut! Make a staggered table. Differentiate *u* repeatedly until you get
+a 0 in the last row. Then, integrate $\d{v}$ repeatedly until you reach the
+last nonzero row for *u*. Multiply across rows using opposite signs.
 
-Your answer will look like this:
+| sign | $u$     | $\d{v}$     |
+|------|---------|-------------|
+|      |         | $e^{x/2}$   |
+|  $+$ | $x^4$   | $2e^{x/2}$  |
+|  $-$ | $4x^3$  | $4e^{x/2}$  |
+|  $+$ | $12x^2$ | $8e^{x/2}$  |
+|  $-$ | $24x$   | $16e^{x/2}$ |
+|  $+$ | $24$    | $32e^{x/2}$ |
+|      | $0$     |             |
 
-$$\int(x^4e^{\frac{x}{2}}dx)
-= (x^4)(2e^{\frac{x}{2}}) - (4x^3)(4e^{\frac{x}{2}})
-+ (12x^2)(8e^{\frac{x}{2}}) - (24x)(16e^{\frac{x}{2}}) + (24)(32e^{\frac{x}{2}})$$
+The result is:
 
-Simplified this will give the final answer of:
-
-$$\int(x^4e^{\frac{x}{2}}dx) = 2x^4e^{\frac{x}{2}} - 16x^3e^{\frac{x}{2}}
-+ 96x^2e^{\frac{x}{2}} - 384xe^{\frac{x}{2}} + 768e^{\frac{x}{2}}$$
+\begin{align}
+\int x^4 e^{x/2} \d{x} &= x^4 (2e^{x/2}) - 4x^3 (4e^{x/2}) \\
+&+ 12x^2 (8e^{x/2}) - 24x (16e^{x/2}) + 24 (32e^{x/2}) \\
+&= (2x^4 - 16x^3 + 96x^2 - 384x + 768) e^{x/2}
+\end{align}
