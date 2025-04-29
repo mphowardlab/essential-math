@@ -70,7 +70,7 @@ $\lambda_{1}$ = 6:
 \begin{equation} 
 \begin{bmatrix} -6 & 3 \\ 12 & -6 \end{bmatrix} \underline{x_{1}} = 0 
 \end{equation} \qquad
-\underline{x_{1}} = \begin{bmatrix} = 1 \\ 2 \end{bmatrix} 
+\underline{x_{1}} = \begin{bmatrix} 1 \\ 2 \end{bmatrix} 
 
 
 General Solution: 
@@ -92,3 +92,7 @@ Hence,
 \begin{align} 
 or \qquad y_{1}=\frac{1}{2}(e^{6t}+e^{-6t}) \qquad y_{2} = e^{6t}+e^{-6t}
 \end{align}
+
+$\underline{y}$ = 0 is a *saddle* because the eigen values are real and $\lambda_{1}$ $\gt$ 0, $\lambda_{2}$ $\lt$ 0.
+
+
