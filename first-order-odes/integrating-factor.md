@@ -1,6 +1,7 @@
 # Integrating factor 
 
 ## 4. Example:
+`````{example}
 Mole balance on a tank with increasing inlet/outlet flow rate.
 
 ```{image} ./_images/Integrating_factors_image.jpg
@@ -13,7 +14,9 @@ Mole balance on a tank with increasing inlet/outlet flow rate.
 \dot{n}_{A} &= \dot{n}_{A,\text{in}} - \dot{n}_{A,\text{out}}, \quad \dot{n}_{A,\text{in}} = C_{f,A} \dot{q}t \\
 \dot{n}_{A} &= C_{f,A}\dot{q}t - \frac{n_A}{V} \dot{q}t \quad \dot{n}_{A,\text{out}} = \frac{n_A}{V}\dot{q}t \\
 \end{align}
+`````
 
+`````{example}
 ````{dropdown} 4. Solution
 Rewrite: 
 ```{math}
@@ -37,6 +40,9 @@ n_{A}(o) &= n_A,o = C_{f,A}V+C \to{C = n_{A,o} - C_{f,A}V}
 ```{math}
 \to{\boxed{n_{A}(t) = C_{f,A}V + (n_{A,o} - C_{f,A}V)exp{(-\frac{1}{2}\frac{\dot{q}}{v}t^{2})}}}\\
 ````
+`````
+
+
 
 5. Example: Hormone level (again)
 `````{dropdown} 5. Solution
