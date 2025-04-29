@@ -5,13 +5,10 @@ It can be hard to find $y_1$ and $y_2$ in general, but some techniques can help.
 ```{topic} Reduction of Order
 If a solution $y_1$ of $y'' + P(x)y' + Q(x)y = 0$ is known, then 
 
-$$
-y_2 = y_1\int u\,dx 
-$$
-
-$$
-u = \frac{1}{y_1^2}\ e^{-\int P\,dx}
-$$
+\begin{align}  
+y_2 &= y_1\int u\,dx \\  
+u &= \frac{1}{y_1^2}\ e^{-\int P\,dx}  
+\end{align}  
 ```
 
 
@@ -27,7 +24,7 @@ Given the following Equation:
 Looking at this, $y_1 = x$ is a solution because $y_1' = 1$ and $y_1'' = 0$. Use reduction of order to find $y_2$:
 
 \begin{align}
-y_2 - \frac{x}{x^2 - x}\ y_1 + \frac{1}{x^2-x}y = 0 \\
+y'' - \frac{x}{x^2 - x} y' + \frac{1}{x^2-x}y = 0 \\  
 y'' + \frac{1}{1-x}y'\ + \frac{1}{x^2-x}y=0 \\
 \end{align}
 
@@ -48,7 +45,7 @@ u &= \frac{1}{x^2}\ e^{-\int \frac{1}{1-x} dx} \\
 y_2 = x(-\frac{1}{x}-\ln{x}) = -(1 + x\ln{x})
 \end{equation}
 
-The General Solution becomes
+The general solution becomes
 
 \begin{equation}
 \boxed {y = C_1 x + C_2 (1 + \ln x)}
