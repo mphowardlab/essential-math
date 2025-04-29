@@ -285,10 +285,10 @@ $$
 ```{solution}
 **Undefined** because the shape of $\mathbf{A}$ (3×2) is different from the shape of $\mathbf{B}$ (2×3).
 ```
-(c) $\mathbf{A}^{\rm T} + \mathbf{B}$ 
+\(c\) $\mathbf{A}^{\rm T} + \mathbf{B}$ 
 ```{solution}
 $$ 
-$\mathbf{A}^{\rm T} + \mathbf{B}$ = \mathbf{A}^{\rm T} + \mathbf{B} = \begin{bmatrix} 0 & 2 & 1 \ 2 & 4 & 3 \end{bmatrix} + \begin{bmatrix} 0 & 2 & 1\ 2 & 4 & 3 \end{bmatrix} = \begin{bmatrix} 0+0 & 2+2 & 1+1 \ 2+2 & 4+4 & 3+3 \end{bmatrix} = \begin{bmatrix} 0 & 4 & 2 \ 4 & 8 & 6 \end{bmatrix}
+\mathbf{A}^{\rm T} + \mathbf{B} = \mathbf{A}^{\rm T} + \mathbf{B} = \begin{bmatrix} 0 & 2 & 1 \\ 2 & 4 & 3 \end{bmatrix} + \begin{bmatrix} 0 & 2 & 1\\ 2 & 4 & 3 \end{bmatrix} = \begin{bmatrix} 0+0 & 2+2 & 1+1 \\ 2+2 & 4+4 & 3+3 \end{bmatrix} = \begin{bmatrix} 0 & 4 & 2 \\ 4 & 8 & 6 \end{bmatrix}
 $$
 ```
 
@@ -310,9 +310,9 @@ $$
 ```
 (g) $\mathbf{Ac}$
 ```{solution}
-$$
+
  **Undefined** because $\mathbf{A}$ has 2 columns but $\mathbf{c}$ has 3 rows.
-$$
+
 ```
 (h) $\mathbf{Bc}$
 ```{solution}
