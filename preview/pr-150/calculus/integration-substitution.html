@@ -57,6 +57,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"d": ["{\\operatorname{d}\\!{#1}}", 1], "dd": ["{\\d{}^{#1} #2 \\over \\d{#3}^{#1}}", 3], "pp": ["{\\partial^{#1} #2 \\over \\partial #3^{#1}}", 3], "td": ["{\\left(\\pp{#1}{#2}{#3} \\right)_{#4}}", 4], "ubar": ["\\underline{#1}", 1], "vv": ["\\mathbf{#1}", 1]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'calculus/integration-substitution';</script>
     <link rel="canonical" href="https://mphowardlab.github.io/essential-math/calculus/integration-substitution.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -227,6 +229,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../second-order-odes/undetermined-coefficients.html">7.4. Undetermined coefficients</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../second-order-odes/variation-of-parameters.html">7.5. Variation of parameters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../second-order-odes/numerical-solution.html">7.6. Numerical solution methods</a></li>
+
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../credits.html">8. Credits</a></li>
@@ -429,6 +432,43 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="integration-using-substitution">
 <h1><span class="section-number">1.7. </span>Integration using substitution<a class="headerlink" href="#integration-using-substitution" title="Link to this heading">#</a></h1>
+<p>When we know an integral</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a7153860-7d4d-446d-8e32-7e5030be458e">
+<span class="eqno">(1.35)<a class="headerlink" href="#equation-a7153860-7d4d-446d-8e32-7e5030be458e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\int e^x \d{x} = e^x + c
+\end{equation}\]</div>
+<p>we can evaluate related integrals like:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9d24cfa3-c990-4157-9d8b-85e5b90b8fc1">
+<span class="eqno">(1.36)<a class="headerlink" href="#equation-9d24cfa3-c990-4157-9d8b-85e5b90b8fc1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\int e^{-x} \d{x} = -e^{-x} + c
+\end{equation}\]</div>
+<p>by making a <em>substitution</em>. Specifically, we define a new variable <em>u</em>,
+calculate its differential, and then replace both. For example, in this case,
+let <span class="math notranslate nohighlight">\(u = -x\)</span>. Then, <span class="math notranslate nohighlight">\(\d{u} = -\d{x}\)</span>. Equivalently, <span class="math notranslate nohighlight">\(x = -u\)</span> and
+<span class="math notranslate nohighlight">\(\d{x} = -\d{u}\)</span> so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-02a64d3e-4366-4d6b-a349-6550029479ee">
+<span class="eqno">(1.37)<a class="headerlink" href="#equation-02a64d3e-4366-4d6b-a349-6550029479ee" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\int e^{-x} \d{x} = -\int e^u \d{u} = -e^u + c = -e^{-x} + c
+\end{equation}\]</div>
+<div class="admonition-example-u-substitution admonition">
+<p class="admonition-title">Example: <em>u</em>-substitution</p>
+<p>Evaluate the integral</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6e51e06d-13c6-4c2b-920f-41f3b5728066">
+<span class="eqno">(1.38)<a class="headerlink" href="#equation-6e51e06d-13c6-4c2b-920f-41f3b5728066" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\int x e^{x^2} \d{x}
+\end{equation}\]</div>
+<hr class="docutils" />
+<p>Let <span class="math notranslate nohighlight">\(u=x^2\)</span> so <span class="math notranslate nohighlight">\(\d{u} = 2x \d{x}\)</span>. Then,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ddbcf84b-8a6a-4fec-9f6f-06752f578ae3">
+<span class="eqno">(1.39)<a class="headerlink" href="#equation-ddbcf84b-8a6a-4fec-9f6f-06752f578ae3" title="Permalink to this equation">#</a></span>\[\begin{align}
+\int e^{x^2} x\d{x} =  \int e^u \cdot \frac{1}{2}\d{u} = \frac{1}{2} e^u + c
+\end{align}\]</div>
+<p>Plugging <em>u</em> back in gives the final answer:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-658843f5-898a-4c97-871c-f6c3109d3a82">
+<span class="eqno">(1.40)<a class="headerlink" href="#equation-658843f5-898a-4c97-871c-f6c3109d3a82" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\int xe^{x^2} \d{x} = \frac{1}{2}e^{x^2} + c
+\end{equation}\]</div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
