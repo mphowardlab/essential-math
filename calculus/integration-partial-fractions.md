@@ -110,9 +110,9 @@ Form the augmented matrix  then perform elementary operations on rows of this ma
 
 \begin{equation} 
 \underline(A)\vec(x)=\vec(b)
- \end{eqution}
+ \end{equation}
 
-$\begin{bmatrix} 1 & 0 & 1 & 0\\ -4 & 1 & -8 & 1\\ 3 & 0 & 16 & -8\\ -12 & 3 & 0 & 16 \end{bmatrix} \begin{bmatrix} A_1 \\ A_2\\ A_3\\ B_3 \end{bmatrix} = \begin{bmatrix} 0\\ 1\\ -29 \\ 5 \end{bmatrix}$ $\to$ $A_1 = 1, A_2 = -5, A_3 = -1, B_3 =2$
+\begin{bmatrix} 1 & 0 & 1 & 0\\ -4 & 1 & -8 & 1\\ 3 & 0 & 16 & -8\\ -12 & 3 & 0 & 16 \end{bmatrix} \begin{bmatrix} A_1 \\ A_2\\ A_3\\ B_3 \end{bmatrix} = \begin{bmatrix} 0\\ 1\\ -29 \\ 5 \end{bmatrix} \to $A_1 = 1, A_2 = -5, A_3 = -1, B_3 =2$
 
 \begin{equation}
  y= \int\left(\frac{1}{x-4}-\frac{5}{\left(x-4\right)^2}-\frac{x}{x^2+3}+\frac{2}{x^2+3}\right) dx
