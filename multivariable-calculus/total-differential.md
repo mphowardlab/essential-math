@@ -2,7 +2,7 @@
 Given:
 \begin{align}
 f &= \cos(4x+y^2) + x^2y\\
-x &= 2u+t\\
+x &= 2ut\\
 y &= t^2
 \end{align}
 
