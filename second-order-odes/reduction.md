@@ -24,8 +24,8 @@ Given the following Equation:
 Looking at this, $y_1 = x$ is a solution because $y_1' = 1$ and $y_1'' = 0$. Use reduction of order to find $y_2$:
 
 \begin{align}
-y'' - \frac{x}{x^2 - x} y' + \frac{1}{x^2-x}y = 0 \\
-y'' + \frac{1}{1-x} y' + \frac{1}{x^2-x}y = 0 \\
+y'' - \frac{x}{x^2 - x} y' + \frac{1}{x^2 - x}y = 0 \\
+y'' + \frac{1}{1 - x} y' + \frac{1}{x^2 - x}y = 0 \\
 \end{align}
 
 ---
