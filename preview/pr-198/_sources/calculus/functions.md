@@ -4,8 +4,8 @@ Manipulating Functions
 
 ````{example}
 
-f(x+a) \underline{shifts left} by a
-f(x-a) \underline{shifts left} by a
+$f(x+a)$ \underline{shifts left} by $a$
+$f(x-a)$ \underline{shifts left} by $a$
 
 
 ````{example}
@@ -17,8 +17,8 @@ f(x-a) \underline{shifts left} by a
 
 ````{example}
 
-f(x)+b \underline{shifts up} by b
-f(x)-b \underline{shifts down} by b
+$f(x)+b$ \underline{shifts up} by $b$
+$f(x)-b$ \underline{shifts down} by $b$
 
 
 ```{image} (IMG_D58C1C9A309A-1.jpeg)
@@ -30,7 +30,7 @@ f(x)-b \underline{shifts down} by b
 
 ````{example}
 
-Scaling cF(x) \underline{streches vertically} by c
+Scaling $cF(x)$ \underline{streches vertically} by $c$
 
 
 ```{image} (IMG_EE8631387721-1.jpeg)
@@ -41,7 +41,7 @@ Scaling cF(x) \underline{streches vertically} by c
 
 ````{example}
 \begin{align}
-Scaling F(cx) \underline{compresses horrizontally} by c
+Scaling $F(cx)$ \underline{compresses horrizontally} by $c$
 \end{align}
 
 ```{image} (IMG_64DEA35E94EE-1.jpeg)
