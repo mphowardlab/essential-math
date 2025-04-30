@@ -10,8 +10,11 @@ This work (c) 2025 is licensed under
 - Payton Baxter
 - Andrew Castel
 - Paine Cole
+- Oscar Earhart
+- Sarah Eldridge
 - Alexis Florit
 - Ella Governale
+- Connor Habig
 - Kennedi Hawkins
 - Molly Grace Hicks
 - Michael P. Howard
@@ -22,6 +25,7 @@ This work (c) 2025 is licensed under
 - Dylan Lunsford
 - Faith Major
 - John R. Marshall, IV
+- Davis McCaleb
 - Lilli Midgette
 - Clara Mitchell
 - Elijah  C. Mitchell
@@ -29,6 +33,7 @@ This work (c) 2025 is licensed under
 - Jeffe Old
 - Kendall Reeves
 - Olivia Robinson
+- Brent Russell
 - Michelle Schindler
 - Katie Sorensen
 - Madelyn Torrance
