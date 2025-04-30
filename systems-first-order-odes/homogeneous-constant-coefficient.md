@@ -2,13 +2,12 @@
 
 4. Example: diffusion Cell
 
-We consider a diffusion cell consisting of two compartment with solute concentrations (c_1) and (c_2).
-The consentrations change according to
+Consider a diffusion cell consisting of two compartments with solute concentrations (c_1) and (c_2).
+The concentrations change according to
 \begin{align}
 \frac{dc_1}{dt} &= -0.1c_1 + 0.1c_2 \\
 \frac{dc_2}{dt} &= 0.1c_1 - 0.1c_2
 \end{align}
-
 
 \begin{align}
 \frac{d\mathbf{c}}{dt} = A \mathbf{c}, \quad \text{where} \quad A = \begin{bmatrix} -0.1 & 0.1 \\ 0.1 & -0.1 \end{bmatrix}
