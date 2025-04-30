@@ -122,6 +122,8 @@ B\frac{e^{kt}}{k^{2}+(\frac{\pi}{12})^{2}}[Kcos{(\frac{\pi t}{12})} +
 \frac{\pi}{12}\sin{(\frac{\pi t}{12})}]\\
 \end{align}
 
+The final result is: 
+
 \begin{align}
 \to{c(t) = e^{-kt}(\frac{A}{k}e^{kt} + B\frac{e^{kt}}{k^{2} +
 (\frac{\pi}{12})^{2}}[k\cos{(\frac{\pi t}{12})} +
