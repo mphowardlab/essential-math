@@ -12,7 +12,7 @@ The consentrations change according to:
 
 \ [frac{d\mathbf{c}}{dt} = A \mathbf{c}, \quad \text{where} \quad A = \begin{bmatrix} -0.1 & 0.1 \ 0.1 & -0.1 \end{bmatrix}]
 Since Ais symmetric, it has real eigenvalues.  
-\ [det(A - \lambda I) = 0]
-\ [begin{vmatrix} -0.1 - \lambda & 0.1 \ 0.1 & -0.1 - \lambda \end{vmatrix} = (\lambda + 0.1)^2 - (0.1)^2 = \lambda^2 + 0.2\lambda = 0]
-\ [lambda_1 = 0, \quad \lambda_2 = -0.2]
-
+\det(A - \lambda I) = begin{vmatrix} -0.1 - \lamda & 0.1 \ 0.1 & -0.1 - \lambda \end{vmatrix} = (\lambda + 0.1)^2 - (0.1)^2 = \lambda^2 + 0.2\lambda = 0\
+The eigenvalues are: 
+\ lambda_1 = 0 \quad \lambda_2 = -0.2 
+Eigenvectors: 
