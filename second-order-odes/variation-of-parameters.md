@@ -16,6 +16,12 @@ T(-1) = T(1) = 1
 
 ---
 
+In standard form,
+
+\begin{equation}
+T'' = -q x \sin x
+\end{equation}
+
 1. Find homogeneous solution:
 
    \begin{align}
@@ -37,14 +43,14 @@ T(-1) = T(1) = 1
    y_1' &= 0, \quad y_2' = 1
    \end{align}
 
-   so,
+   so the Wronskian is $W = 1 \cdot 1 - 0 \cdot x = 1$. The right-hand side
+   function is 
 
-   \begin{align}
-   W &= 1(1) - 0(x) = 1 \\
-   r &= -\frac{qx \sin x}{\alpha}
-   \end{align}
+   \begin{equation}
+   r = -\frac{qx \sin x}{\alpha}
+   \end{equation}
 
-   Then, the particular solution is:
+   so the particular solution is:
 
    \begin{align}
    T_{\rm p} &= -1 \int x \left( \frac{-q x \sin x}{\alpha} \right) \, \d{x}
@@ -53,100 +59,43 @@ T(-1) = T(1) = 1
      - \frac{q}{\alpha} x \int x \sin x \, \d{x}
    \end{align}
 
-   To evaluate $\int x^2 \sin x \, \d{x}$ first, let:
+   These integrals can both be evaluated by parts. For the first integral,
+   use the tabular method:
+   
+   | sign | $u$     | $\d{v}$     |
+   |------|---------|-------------|
+   |      |         | $\sin x$    |
+   |  $+$ | $x^2$   | $-\cos x$   |
+   |  $-$ | $2x$    | $-\sin x$   |
+   |  $+$ | $2$     | $\cos x$    |
+   |      | $0$     |             |
 
-   \begin{align}
-   u &= x^2, \quad dv = \sin x \, \d{x} \\
-   du &= 2x \, \d{x}, \quad v = -\cos x
-   \end{align}
-
-   Then, using integration by parts:
-
-   \begin{equation}
-   \int x^2 \sin x \, \d{x} = -x^2 \cos x + \int 2x \cos x \, \d{x}
-   \end{equation}
-
-   Now, apply integration by parts again to $\int 2x \cos x \, \d{x}$:
-
-   \begin{align}
-   u &= 2x, \quad dv = \cos x \, \d{x} \\
-   \du &= 2 \, \d{x}, \quad v = \sin x
-   \end{align}
-
-   Thus,
-
-   \begin{equation}
-   \int 2x \cos x \, \d{x} = 2x \sin x - \int 2 \sin x \, \d{x}
-     = 2x \sin x + 2 \cos x
-   \end{equation}
-
-   So, the first integral becomes:
+   so
 
    \begin{equation}
    \int x^2 \sin x \, \d{x} = -x^2 \cos x + 2x \sin x + 2 \cos x
    \end{equation}
 
+   For the second integral, use
 
-   Now evaluate $\int 2x \cos x \, dx$:
+   \begin{align}
+   u &= x & \d{v} &= \sin x \d{x} \\
+   \d{u} &= 1 \d{x} & v &= -\cos{x}
+   \end{align}
 
-   Let
-   $u = 2x$, $\quad dv = \cos x \, dx$
-   Then
-   $du = 2\,dx$, $\quad v = \sin x$
-
-   $$
-   \int 2x \cos x \, dx = 2x \sin x - \int 2 \sin x \, dx = 2x \sin x + 2 \cos x
-   $$
-
-   So the first integral becomes:
-
-   $$
-   \int x^2 \sin x \, dx = -x^2 \cos x + 2x \sin x + 2 \cos x
-   $$
-
-   Substitute into the original expression:
-
-   $$
-   \frac{q}{\alpha} \left[ -x^2 \cos x + 2x \sin x + 2 \cos x \right]
-     - \frac{q}{\alpha} x \int x \sin x \, dx
-   $$
-
-   Integration of $\int x \sin x \, dx$:
-
-   Let
-   $u = x$, $\quad dv = \sin x \, dx$
-   Then
-   $du = dx$, $\quad v = -\cos x$
-
-   Then:
-
-   $$
-   \int x \sin x \, dx = -x \cos x + \int \cos x \, dx = -x \cos x + \sin x
-   $$
+   so
+   
+   \begin{equation}
+   \int x \sin x \d{x} = -x \cos x + \int \cos x \d{x} = -x \cos x + \sin x
+   \end{equation}
 
    Substitute everything back:
 
-   $$
-   \frac{q}{\alpha} \left[ -x^2 \cos x + 2x \sin x + 2 \cos x \right]
-   - \frac{q}{\alpha} x \left[ -x \cos x + \sin x \right]
-   $$
-
-   Simplify:
-
-   $$
-   \frac{q}{\alpha} \left[
-    -x^2 \cos x + 2x \sin x + 2 \cos x
-    + x^2 \cos x - x \sin x
-   \right]
-   $$
-
-   Result:
-
-   $$
-   \frac{q}{\alpha} \left[
-    2 \cos x + x \sin x
-   \right]
-   $$
+   \begin{align}
+   T_{\rm p} &= \frac{q}{\alpha} \left[ -x^2 \cos x + 2x \sin x + 2 \cos x \right]
+     - \frac{q}{\alpha} x \left[ -x \cos x + \sin x \right] \\
+   &= \frac{q}{\alpha} [2 \cos x + x \sin x]
+   \end{align}
 
 3. Combine and apply boundary conditions.
 
@@ -160,7 +109,9 @@ T(-1) = T(1) = 1
 
    --> $C_2 = 1 - C_1 - \frac{q}{α}(2cos1 + sin1) = 0$
 
-**Final Result:**
+The final result is
 
-$T = 1 + \frac{q}{α}[2(cosx-cos1)+xsinx-sin1]$
+\begin{equation}
+T = 1 + \frac{q}{\alpha}\left[2(\cos x - \cos 1) + x\sin x-\sin 1\right]
+\end{equation}
 ```
