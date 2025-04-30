@@ -1,6 +1,6 @@
 # Homogeneous linear first-order ODEs with constant coefficients
 
-Example 4: Diffusion Cell
+4. Example: diffusion Cell
 
 We consider a diffusion cell consisting of two compartment with solute concentrations (c_1) and (c_2).
 The consentrations change according to
