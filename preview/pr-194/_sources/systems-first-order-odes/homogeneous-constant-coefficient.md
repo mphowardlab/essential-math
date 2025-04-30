@@ -60,3 +60,16 @@ For C(0)
 \begin{align}
 a_1 = a_2 = 1/2
 \end{align}
+\begin{align}
+\mathbf{c}(t) = \frac{1}{2} \begin{bmatrix} 1 \\ 1 \end{bmatrix} + \frac{1}{2} e^{-0.2t} \begin{bmatrix} 1 \\ -1 \end{bmatrix}
+\end{align}
+
+\begin{align}
+c_1(t) &= 0.5(1 + e^{-0.2t}) \\ 
+c_2(t) &= 0.5(1 - e^{-0.2t})
+\end{align}
+
+Notice 
+\begin{align}
+c_2(t) = 1 - c_1(t)
+\end{align}
