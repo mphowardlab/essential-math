@@ -1,7 +1,7 @@
 # Numerical solution methods
 Determine y(1) for 
 
-$$
+<!-- $$
 /y^i +5sin(2*pi*t)/   y(0) =1  
 
 $$
@@ -12,7 +12,7 @@ $$
 $$
 \varepsilon * t = 0.1
 $$
-|n|t_n|y_n| f(t_n, y_n)|   
+|n|t_n|y_n| f(t_n, y_n)|    -->
 
 
 # Solving y' = y + 5 sin(2πt) using Euler's Method
