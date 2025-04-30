@@ -38,6 +38,7 @@ This work (c) 2025 is licensed under
 - Katie Sorensen
 - Madelyn Torrance
 - Debora Vasconcelos
+- Morgan Wootton
 
 ## Attributions
 
