@@ -45,9 +45,9 @@ Next, we solve for $y_2$ knowing $y_1$ and recognizing that $y_2$ can also be so
 \begin{align}
 y_2' &= y_1\left(2-y_2\right) \\
 \int \frac{dy_2}{2-y_2} &= \int y_1dx = \int \frac{1}{2}\left(1-e^{-2x}\right)dx \\
--\ln{(2-y_2)} &= \frac{1}{2}\left(x + \frac{1}{2}e^{-2x}\right) +C_0\\
+-\ln{\left(2-y_2\right)} &= \frac{1}{2}\left(x + \frac{1}{2}e^{-2x}\right) +C_0\\
 2 - y_2 &= C_1 \exp\left(-\frac{1}{2}\left(x+ \frac{1}{2}e^{-2x}\right)\right) \\
-y_2 &= 2 - C_1 \exp(-\frac{1}{2}\left(x+\frac{1}{2}e^{-2x}\right)) \\
+y_2 &= 2 - C_1 \exp\left(-\frac{1}{2}\left(x+\frac{1}{2}e^{-2x}\right)\right) \\
 \end{align}
 
 And again, knowing $y_2(0)= 0$, we can solve for C
@@ -58,7 +58,7 @@ C_1 &= 2e^{\frac{1}{4}} \\
 
 Therefore, 
 \begin{align}
-y_2 = 2[1-\exp(\frac{1}{4}-\frac{x}{2}-\frac{1}{4}e^{-2x})]
+y_2 = 2\left[1-\exp\left(\frac{1}{4}-\frac{x}{2}-\frac{1}{4}e^{-2x}\right)\right]
 \end{align}
 
 Making our final answer for the IVP: 
@@ -66,7 +66,7 @@ Making our final answer for the IVP:
 \begin{align}
 y_1 &= \frac{1}{2} \left(1-e^{-2x}\right) \\
 \text{and} \\
-y_2 &= 2[1-\exp(\frac{1}{4}-\frac{x}{2}-\frac{1}{4}e^{-2x})] \\
+y_2 &= 2\left[1-\exp\left(\frac{1}{4}-\frac{x}{2}-\frac{1}{4}e^{-2x}\right)\right] \\
 \end{align}
 
 ````
