@@ -99,15 +99,15 @@ T'' = -q x \sin x
 
 3. Combine and apply boundary conditions.
 
-   $T = C_1 +C_2x + \frac{q}{α}(2cosx + xsinx)$
+   $T = C_1 +C_2x + \frac{q}{\alpha}(2cosx + xsinx)$
 
-   $1 = T(-1) = C_1 - C_2 + \frac{q}{α}[2cos(-1)-sin(-1)] = C_1 - C_2 + \frac{q}{α}[2cos1 + sin1]$
+   $1 = T(-1) = C_1 - C_2 + \frac{q}{\alpha}[2cos(-1)-sin(-1)] = C_1 - C_2 + \frac{q}{\alpha}[2cos1 + sin1]$
 
-   $1 = T(1) = C_1 + C_2 + \frac{q}{α}[2cos1 + sin1]$
+   $1 = T(1) = C_1 + C_2 + \frac{q}{\alpha}[2cos1 + sin1]$
 
-   --> $2 = 2C_1 + 2\frac{q}{α}(2cos1 + sin1)$ -> $C_1 = 1 - \frac{q}{α}(2cos1 + sin1)$
+   --> $2 = 2C_1 + 2\frac{q}{\alpha}(2cos1 + sin1)$ -> $C_1 = 1 - \frac{q}{\alpha}(2cos1 + sin1)$
 
-   --> $C_2 = 1 - C_1 - \frac{q}{α}(2cos1 + sin1) = 0$
+   --> $C_2 = 1 - C_1 - \frac{q}{\alpha}(2cos1 + sin1) = 0$
 
 The final result is
 
