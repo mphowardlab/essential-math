@@ -5,10 +5,10 @@
     If x is time, this represents waiting a long time to reach a "steady state".
 
     Ex: Population dynamics
-    [insert image] 
+    [See "Carrying capacity (Resource limitation) where $\lim_{t \to \infty} P(t)"$]
 
     Proportional-integral control (e.g., of servo, value, etc.)
-    [insert image]
+    [See "Set point (Target) where $\lim_{t \to \infty} f(t)$]
 
 2. Formal definition
 
