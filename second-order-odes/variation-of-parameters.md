@@ -144,122 +144,106 @@ T = 1 + \frac{q}{\alpha}\left[2(\cos x - \cos 1) + x \sin x - \sin 1\right]
 
    ```{solution}
    1. Find homogeneous solution $y_{\rm h}$:
-   
+
       \begin{align}
       y_{\rm h}'' - 4y_{\rm h}' + 4y_{\rm h} &= 0 \\
       \lambda^2 - 4\lambda + 4 &= 0 \\
       (\lambda -2)^2 &= 0
       \end{align}
-   
+
       so $\lambda = 2$ is a repeated eigenvalue and
-   
+
       \begin{equation}
       y_{\rm h} = (c_1 + c_2 x) e^{2x}
       \end{equation}
-   
+
    2. Find particular solution $y_{\rm p}$:
-   
+
       \begin{align}
       y_1   &= e^{2x}          &\quad y_2&= x e^{2x} \\
       y_1'  &= 2 e^{2x}        &\quad y_2'&= (1 + 2x) e^{2x}
       \end{align}
-   
-      so the Wronskian is $W =(1 + 2x) \cdot e^{4x} - 2x \cdot e^{4x} = e^{4x}$. The right-hand side
-      function is
+
+      so the Wronskian is $W =(1 + 2x) \cdot e^{4x} - 2x \cdot e^{4x} = e^{4x}$.
+      The right-hand side function is
 
       \begin{equation}
       r = x^{2} e^{x}
       \end{equation}
 
       so the particular solution is:
-      \begin{equation}
-      y_{\rm p} = -e^{2x} \int \frac{x e^{2x} (x^{2} e^{x})}{e^{4x}} \, dx + x e^{2x} \int \frac{e^{2x} (x^{2} e^{x})}{e^{4x}} \, dx
-      \end{equation}
-   
-      Simplifying both integrals gives
-      \begin{equation}
-      y_{\rm p} = -e^{2x} \int x^{3} e^{-x} \, dx + x e^{2x} \int x^{2} e^{-x} \, dx
-      \end{equation}
-   
+
+      \begin{align}
+      y_{\rm p} &= -e^{2x} \int \frac{x e^{2x} (x^{2} e^{x})}{e^{4x}} \d{x} +
+       x e^{2x} \int \frac{e^{2x} (x^{2} e^{x})}{e^{4x}} \d{x} \\
+       &= -e^{2x} \int x^{3} e^{-x} \d{x} + x e^{2x} \int x^{2} e^{-x} \d{x}
+      \end{align}
+
       These integrals can both be evaluated by parts using the tabular method:
-   
+
       For the first
 
-    | sign | $u$     | $\d{v}$     |
-    |------|---------|-------------|
-    |      |         | $e^{-x}$    |
-    |  $+$ | $x^3$   | $-e^{-x}$   |
-    |  $-$ | $3x^2$  | $e^{-x}$    |
-    |  $+$ | $6x$    | $-e^{-x}$   |
-    |  $-$ | $6$     | $e^{-x}$    |
-    |      | $0$     | $-e^{-x}$   |
+      | sign | $u$     | $\d{v}$     |
+      |------|---------|-------------|
+      |      |         | $e^{-x}$    |
+      |  $+$ | $x^3$   | $-e^{-x}$   |
+      |  $-$ | $3x^2$  | $e^{-x}$    |
+      |  $+$ | $6x$    | $-e^{-x}$   |
+      |  $-$ | $6$     | $e^{-x}$    |
+      |      | $0$     |             |
 
       so
- 
+
       \begin{equation}
-      \int x^3 e^{-x} \, \d{x} = -x^3 e^{-x} - 3x^2 e^{-x} - 6x e^{-x}- 6 e^{-x}
+      \int x^3 e^{-x} \d{x} = -x^3 e^{-x} - 3x^2 e^{-x} - 6x e^{-x}- 6 e^{-x}
       \end{equation}
 
       For the second
- 
-    | sign | $u$     | $\d{v}$     |
-    |------|---------|-------------|
-    |      |         | $e^{-x}$    |
-    |  $+$ | $x^2$   | $-e^{-x}$   |
-    |  $-$ | $2x$    | $e^{-x}$    |
-    |  $+$ | $2$     | $-e^{-x}$   |
-    |      | $0$     | $e^{-x}$    |
+
+      | sign | $u$     | $\d{v}$     |
+      |------|---------|-------------|
+      |      |         | $e^{-x}$    |
+      |  $+$ | $x^2$   | $-e^{-x}$   |
+      |  $-$ | $2x$    | $e^{-x}$    |
+      |  $+$ | $2$     | $-e^{-x}$   |
+      |      | $0$     |             |
 
       so
-    
+
       \begin{equation}
-      \int x^2 e^{-x} \, \d{x} = -x^2 e^{-x} - 2x e^{-x} - 2 e^{-x}
+      \int x^2 e^{-x} \d{x} = -x^2 e^{-x} - 2x e^{-x} - 2 e^{-x}
       \end{equation}
-    
+
       Substitute everything back:
+
       \begin{align}
-      y_{\rm p} &= -e^{2x} \left( -x^3 e^{-x} - 3x^2 e^{-x} - 6x e^{-x} - 6 e^{-x} \right) \\
-      &\quad + x e^{2x} \left( -x^2 e^{-x} - 2x e^{-x} - 2 e^{-x} \right)
+      y_{\rm p} &= -e^{2x}
+        \left( -x^3 e^{-x} - 3x^2 e^{-x} - 6x e^{-x} - 6 e^{-x} \right) \\
+        &\quad + x e^{2x} \left( -x^2 e^{-x} - 2x e^{-x} - 2 e^{-x} \right) \\
+        &= (x^2 + 4x + 6) e^x
       \end{align}
 
-      Simplifying:
-
-      \begin{equation}
-      y_{\rm p} = (x^2 + 4x + 6) e^x
-      \end{equation}
-
    3. Combine and apply initial conditions
-  
-       The general solution is
 
-       \begin{equation}
-       y=(C_1 + C_2 x) e^{2x}+(x^{2}+4x+6)e^{x}
-       \end{equation}
+      The general solution and its first derivative are
 
-       Taking the first derivative gives
-       \begin{equation}
-       y'=2(C_1 + C_2 x) e^{2x}+C_2e^{2x}+(x^{2}+4x+6)e^{x}+(2x+4)e^{x}
-       \end{equation}
+      \begin{align}
+      y &= (C_1 + C_2 x) e^{2x}+(x^{2}+4x+6)e^{x} \\
+      y' &= 2(C_1 + C_2 x) e^{2x} + C_2e^{2x} + (x^{2}+4x+6) e^{x} + (2x+4)e^{x}
+      \end{align}
 
+      Plugging in intial conditions
 
-       Plugging in intial conditions
+      \begin{align}
+      y(0) &= C_1 + 6 = 0
+      y'(0) &= 2 C_1 + C_2 + 10 = 0
+      \end{align}
 
-       \begin{equation}
-       0=y(0)=(C_1+C_2(0))e^{2(0)}+(0^{2}+4(0)+6)e^{0}
-       \end{equation}
-       \begin{equation}
-       0=y'(0)=2(C_1 + C_2(0)) e^{2(0)}+C_2e^{2(0)}+(0^{2}+4(0)+6)e^{0}+(2(0)+4)e^{0}
-       \end{equation}
-    
-       Solving for $C_1$ and $C_2$ gives
+      gives $C_1 = -6$ and $C_2 = 2$.
 
-       $$
-       C_1 = -6 \quad C_2 = 2
-       $$
+    The final solution is:
 
-    The final solution is
     \begin{equation}
-     y=(2 x - 6) e^{2x}+(x^{2}+4x+6)e^{x}
+    y = (2 x - 6) e^{2x} + (x^{2}+4x+6)e^{x}
     \end{equation}
-
    ```
