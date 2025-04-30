@@ -1,26 +1,43 @@
 # Homogeneous linear second-order ODEs with constant coefficients
-{Example} Spring and dashpot
+````{example} Spring and dashpot
 ```{image} ./_images/Spring_and_Dashpot.jpg
 ```
-This is a mechanics example, but models like this are also used for the rheology of viscoelastic materials
+We are analyzing how the drag force affects the spring oscilations. This is a mechanics example, but models like this are also used for the rheology of viscoelastic materials
 
-$$ m x'' + \gamma x' + k x = 0 $$
+The governing equation for the system is:
 
-$m x''$ = accumulation
-$\gamma x'$ = drag
-$k x$ = spring force
+\begin{equation}
+m x'' + \gamma x' + k x = 0
+\end{equation}
 
-When will the spring oscillate?
-$$m \lambda^2 + \gamma \lambda + k = 0$$
-$$ \lambda_{1,2} = \frac{ -\gamma \pm \sqrt{\gamma^2 - 4mk}}{2m}$$
+where:
+- $m x''$ = mass $\times$ acceleration
+- $\gamma x'$ = drag force
+- $k x$ = spring force
 
-If $4mk > \gamma^2$, $\lambda_{1,2}$ will be complex and you will get oscillations
+1. When will the spring oscillate?
 
-$$\lambda_{1,2} = -\frac{\gamma}{2m} \pm \frac{i}{2m}\sqrt{4mk - \gamma^2}$$
+  To answer this, solve this equation:
 
-$$\omega = \sqrt{4mk - \gamma^2}$$
-$$ y(t) = \exp(-\frac{\gamma}{2m}t)(C_1 \cos(\omega t) + C_2 \sin(\omega t))$$
+  \begin{align}
+  &m \lambda^2 + \gamma \lambda + k = 0 \\
+  \lambda_{1,2} &= \frac{ -\gamma \pm \sqrt{\gamma^2 - 4mk}}{2m}
+  \end{align}
 
-What does $\gamma$ do to the solution?
-- Damps the oscillations to decay to zero. Without it, oscillations go on forever and are always present
-- Changes frequency of oscillations
+  If $4mk > \gamma^2$, $\lambda_{1,2}$ will be complex, and you will get oscillations:
+
+  \begin{equation}
+  \lambda_{1,2} = -\frac{\gamma}{2m} \pm \frac{i}{2m}\sqrt{4mk - \gamma^2}
+  \end{equation}
+
+  Then, the solution is:
+  \begin{equation}
+  y(t) = \exp\left(-\frac{\gamma}{2m} t \right) \left [ C_1 \cos(\omega t ) + C_2 \sin(\omega t) \right]
+  \end{equation}
+
+  where $\omega = \sqrt{4mk - \gamma^2}$.
+
+ What does $\gamma$ do to the solution?
+- $\gamma$ dampens the oscillations to decay to zero. Without it, oscillations go on forever and are always present
+- $\gamma$ also changes frequency of oscillations
+````

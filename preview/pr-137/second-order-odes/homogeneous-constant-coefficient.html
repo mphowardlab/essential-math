@@ -217,9 +217,10 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../systems-first-order-odes/index.html">6. Systems of first-order ordinary differential equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/linearity.html">6.1. Linearity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/homogeneous-constant-coefficient.html">6.2. Homogeneous linear first-order ODEs with constant coefficients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/numerical-solution.html">6.3. Numerical solution methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/definition.html">6.1. Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/linearity.html">6.2. Linearity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/homogeneous-constant-coefficient.html">6.3. Homogeneous linear first-order ODEs with constant coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/numerical-solution.html">6.4. Numerical solution methods</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">7. Second-order ordinary differential equations</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
@@ -431,29 +432,47 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="homogeneous-linear-second-order-odes-with-constant-coefficients">
 <h1><span class="section-number">7.3. </span>Homogeneous linear second-order ODEs with constant coefficients<a class="headerlink" href="#homogeneous-linear-second-order-odes-with-constant-coefficients" title="Link to this heading">#</a></h1>
-<p>{Example} Spring and dashpot</p>
+<div class="admonition-example-spring-and-dashpot admonition">
+<p class="admonition-title">Example: Spring and dashpot</p>
 <img alt="../_images/Spring_and_Dashpot.jpg" src="../_images/Spring_and_Dashpot.jpg" />
-<p>This is a mechanics example, but models like this are also used for the rheology of viscoelastic materials</p>
-<div class="math notranslate nohighlight">
-\[ m x'' + \gamma x' + k x = 0 \]</div>
-<p><span class="math notranslate nohighlight">\(m x''\)</span> = accumulation
-<span class="math notranslate nohighlight">\(\gamma x'\)</span> = drag
-<span class="math notranslate nohighlight">\(k x\)</span> = spring force</p>
-<p>When will the spring oscillate?
-$<span class="math notranslate nohighlight">\(m \lambda^2 + \gamma \lambda + k = 0\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\( \lambda_{1,2} = \frac{ -\gamma \pm \sqrt{\gamma^2 - 4mk}}{2m}\)</span>$</p>
-<p>If <span class="math notranslate nohighlight">\(4mk &gt; \gamma^2\)</span>, <span class="math notranslate nohighlight">\(\lambda_{1,2}\)</span> will be complex and you will get oscillations</p>
-<div class="math notranslate nohighlight">
-\[\lambda_{1,2} = -\frac{\gamma}{2m} \pm \frac{i}{2m}\sqrt{4mk - \gamma^2}\]</div>
-<div class="math notranslate nohighlight">
-\[\omega = \sqrt{4mk - \gamma^2}\]</div>
-<div class="math notranslate nohighlight">
-\[ y(t) = \exp(-\frac{\gamma}{2m}t)(C_1 \cos(\omega t) + C_2 \sin(\omega t))\]</div>
+<p>We are analyzing how the drag force affects the spring oscilations. This is a mechanics example, but models like this are also used for the rheology of viscoelastic materials</p>
+<p>The governing equation for the system is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b1192eed-369f-4c30-8eae-295d72a893da">
+<span class="eqno">(7.1)<a class="headerlink" href="#equation-b1192eed-369f-4c30-8eae-295d72a893da" title="Permalink to this equation">#</a></span>\[\begin{equation}
+m x'' + \gamma x' + k x = 0
+\end{equation}\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(m x''\)</span> = mass <span class="math notranslate nohighlight">\(\times\)</span> acceleration</p></li>
+<li><p><span class="math notranslate nohighlight">\(\gamma x'\)</span> = drag force</p></li>
+<li><p><span class="math notranslate nohighlight">\(k x\)</span> = spring force</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>When will the spring oscillate?</p></li>
+</ol>
+<p>To answer this, solve this equation:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a21de8b4-c821-4632-b48b-a596608ed88e">
+<span class="eqno">(7.2)<a class="headerlink" href="#equation-a21de8b4-c821-4632-b48b-a596608ed88e" title="Permalink to this equation">#</a></span>\[\begin{align}
+&amp;m \lambda^2 + \gamma \lambda + k = 0 \\
+\lambda_{1,2} &amp;= \frac{ -\gamma \pm \sqrt{\gamma^2 - 4mk}}{2m}
+\end{align}\]</div>
+<p>If <span class="math notranslate nohighlight">\(4mk &gt; \gamma^2\)</span>, <span class="math notranslate nohighlight">\(\lambda_{1,2}\)</span> will be complex, and you will get oscillations:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-aacdcb16-ce00-455a-bb8b-1ace5d49342a">
+<span class="eqno">(7.3)<a class="headerlink" href="#equation-aacdcb16-ce00-455a-bb8b-1ace5d49342a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\lambda_{1,2} = -\frac{\gamma}{2m} \pm \frac{i}{2m}\sqrt{4mk - \gamma^2}
+\end{equation}\]</div>
+<p>Then, the solution is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e143276b-97b9-42ec-82d4-3a8511d95303">
+<span class="eqno">(7.4)<a class="headerlink" href="#equation-e143276b-97b9-42ec-82d4-3a8511d95303" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y(t) = \exp\left(-\frac{\gamma}{2m} t \right) \left [ C_1 \cos(\omega t ) + C_2 \sin(\omega t) \right]
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\omega = \sqrt{4mk - \gamma^2}\)</span>.</p>
 <p>What does <span class="math notranslate nohighlight">\(\gamma\)</span> do to the solution?</p>
 <ul class="simple">
-<li><p>Damps the oscillations to decay to zero. Without it, oscillations go on forever and are always present</p></li>
-<li><p>Changes frequency of oscillations</p></li>
+<li><p><span class="math notranslate nohighlight">\(\gamma\)</span> dampens the oscillations to decay to zero. Without it, oscillations go on forever and are always present</p></li>
+<li><p><span class="math notranslate nohighlight">\(\gamma\)</span> also changes frequency of oscillations</p></li>
 </ul>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
