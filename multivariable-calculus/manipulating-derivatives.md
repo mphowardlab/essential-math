@@ -1,5 +1,94 @@
 # Manipulating partial derivatives
 
+We sometimes need to find derivatives we don't obtain easily from one of these
+potentials. For this, we use some calculus rules.
+
+---
+
+The inversion rule states that the partial derivative of each variable with
+respect to each other are reciprocals if the two variables are related through
+an inverse function.
+
+```{topic} Inversion rule
+If $x(y, z)$ has an inverse function $y(x, z)$, then:
+
+\begin{equation}
+\td{}{x}{y}{z} = \frac{1}{(\partial y/\partial x)_z}
+\end{equation}
+```
+
+To demonstrate use of this rule, consider two ways of calculating the partial
+derivative $(\partial x/\partial y)_z$ for the function
+
+\begin{equation}
+x = \frac{y^2}{z}
+\end{equation}
+
+and the inverse function
+
+\begin{equation}
+y = \sqrt{xz}
+\end{equation}
+
+Evaluating the partial derivative of *x* with respect to *y* directly gives
+
+\begin{equation}
+\td{}{x}{y}{z} = \frac{2y}{z}
+\end{equation}
+
+while the partial derivative of *y* with respect to *x* is:
+
+\begin{equation}
+\td{}{y}{x}{z} = \frac{1}{2} \sqrt{\frac{z}{x}}
+\end{equation}
+
+Now, use the inversion rule and substitute $x(y,z)$ back in:
+
+\begin{equation}
+\frac{1}{(\partial y/\partial x)_z} = 2 \sqrt{\frac{x}{z}}
+ = 2 \sqrt{\frac{y^2/z}{z}} = \frac{2y}{z}
+\end{equation}
+
+The results are the same!
+
+---
+
+When working with multivariable functions, we often want to compute the
+derivative of one variable with respect to another, even when the relationship
+between them is indirect. In such cases, the chain rule allows us to break down
+the derivative into intermediate steps.
+
+```{topic} Chain rule
+If $x(w,z)$ depends on a variable $w(y,z)$ that depends on a variable *y*, then
+
+\begin{equation}
+\td{}{x}{y}{z} = \td{}{x}{w}{z} \td{}{w}{y}{z}
+\end{equation}
+```
+
+To demonstrate use of this rule, let $w = yz$, which means that
+
+\begin{equation}
+x = \frac{y^2}{z} = \frac{w^2}{z^3}
+\end{equation}
+
+We will calculate the partial derivative of *x* with respect to *y* using the
+chain rule, then show it gives the same as if we differentiated directly. First,
+we need partial derivatives of *x* with respect to *w* and *w* with respect to
+*y*:
+
+\begin{equation}
+\td{}{x}{w}{z} = \frac{2w}{z^3}, \qquad \td{}{w}{y}{z} = z
+\end{equation}
+
+Therefore, by the chain rule:
+
+\begin{equation}
+\td{}{x}{y}{z} = \left(\frac{2w}{z^3} \right)z = \frac{2yz}{z^2} = \frac{2y}{z}
+\end{equation}
+
+This matches our previous result for the derivative!
+
 ## Derivatives as functions
 
 The first law of thermodynamics for a pure substance is:
@@ -171,3 +260,47 @@ Putting it all together:
 This total differential is now suitable for integration with respect to *T*
 and *P* using only measurable quantities!
 ```
+
+## Skill builder problems
+
+Given
+
+\begin{equation}
+$\d{f} = p \d{x} - q \d{y}$
+\end{equation}
+
+Evaluate the following for $f=\cos(4x+y^2)+x^2y$
+
+1. $\displaystyle\td{}{x}{f}{y}$
+
+   ```{solution}
+   \begin{align}
+   \td{}{x}{f}{y} &= \frac{1}{(\partial f/\partial x)_y} \\
+   &= \frac{1}{p} \\
+   &= \left(-4\sin(4x+y^2)+ 2xy\right)^{-1}
+   \end{align}
+   ```
+
+2. $\displaystyle\td{}{f}{p}{y}$
+
+   ```{solution}
+   \begin{align}
+   \td{}{f}{p}{y} &= \td{}{f}{x}{y} \td{}{x}{p}{y} \\
+   &=\frac{(\partial f/\partial x)_y}{(\partial p/\partial x)_y} \\
+   &=\frac{p}{(\partial p/\partial x)_y} \\
+   &=\frac{-4 \sin(4x+y^2)+2xy}{-16 \cos(4x+y^2)+2y}
+   \end{align}
+   ```
+
+3. $\displaystyle\td{}{x}{y}{f}$
+
+   ```{solution}
+   \begin{align}
+   \td{}{x}{y}{f} & \td{}{y}{f}{x} \td{}{f}{x}{y} = -1 \\
+   \td{}{x}{y}{f} &=
+   -\frac{1}{(\partial y/\partial f)_x(\partial f/\partial x)_y} \\
+   &= -\frac{(\partial f/\partial y)_x}{(\partial f/\partial x)_y} \\
+   &= \frac{q}{p} \\
+   &=\frac{2y\sin(4x+y^2)+x^2}{-4\sin(4x+y^2)+2xy}
+   \end{align}
+   ```
