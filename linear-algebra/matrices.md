@@ -254,10 +254,12 @@ A matrix is called *symmetric* if $\vv{A}^{\rm T} = \vv{A}$.
 - $(k \vv{A})^{\rm T} = k\vv{A}^{\rm T}$
 ```
 
-## Skill Builder
+## Skill builder problems
+
+Given the matrices:
 
 $$
-\vv{A} = \begin{bmatrix} 0 & 2 \\ 2 & 4 \\ 1 & 3 \\ \end{bmatrix} 
+\vv{A} = \begin{bmatrix} 0 & 2 \\ 2 & 4 \\ 1 & 3 \\ \end{bmatrix}
 \quad
 \vv{B} = \begin{bmatrix} 0 & 2 &1 \\ 2 & 4 & 3 \end{bmatrix}
 \quad
@@ -265,6 +267,8 @@ $$
 \quad
 \vv{D} = \begin{bmatrix} 0 & -5 & -3 \\ -5 & 2 & 4 \\ -3 & 4 & 0 \end{bmatrix}
 $$
+
+and vectors:
 
 $$
 \vv{a} = \begin{bmatrix} 1 \\ 3 \end{bmatrix}
@@ -274,54 +278,101 @@ $$
 \vv{c} = \begin{bmatrix} 2 \\ 0 \\ -1 \end{bmatrix}
 $$
 
+Compute the following or explain why it is undefined.
 
-(a) $2\vv{A}$
-```{solution}
-$$
-2\vv{A}= \begin{bmatrix} 2 \cdot 0 & 2 \cdot 2 \\ 2 \cdot 2 & 2 \cdot 4 \\ 2 \cdot 1 & 2 \cdot 3 \end{bmatrix} = \begin{bmatrix} 0 & 4 \\ 4 & 8 \\ 2 & 6 \end{bmatrix} 
-$$ 
-```
-(b) $\vv{A + B}$ 
-```{solution}
-**Undefined** because the shape of $\vv{A}$ (3×2) is different from the shape of $\vv{B}$ (2×3).
-```
-\(c\) $\vv{A}^{\rm T} + \vv{B}$ 
-```{solution}
-$$ 
-\vv{A}^{\rm T} + \vv{B} = \begin{bmatrix} 0 & 2 & 1 \\ 2 & 4 & 3 \end{bmatrix} + \begin{bmatrix} 0 & 2 & 1\\ 2 & 4 & 3 \end{bmatrix} = \begin{bmatrix} 0+0 & 2+2 & 1+1 \\ 2+2 & 4+4 & 3+3 \end{bmatrix} = \begin{bmatrix} 0 & 4 & 2 \\ 4 & 8 & 6 \end{bmatrix} \\
-$$
-(or, $\vv{A}^{\rm T} = \vv{B}$ so $\vv{A}^{\rm T} + \vv{B} = 2\vv{B}$.)
-```
+1. $2\vv{A}$
 
-(d) $\vv{C - D}$ 
-```{solution}
-$$
-\vv{C} -\vv{D} = \begin{bmatrix} 3-0 & 0-(-5) & 4-(-3) \\ -1-(-5) & 2-2 & 2-4 \\ 6-(-3) & 5-4 & -4-0 \end{bmatrix} = \begin{bmatrix} 3 & 5 & 7 \\ 4 & 0 & -2 \\ 9 & 1 & -4 \end{bmatrix}
-$$
-```
-(e) $\vv{Aa}$
-```{solution}
-$$
-\vv{Aa} = \begin{bmatrix} 0 \cdot 1 + 2 \cdot 3 \\ 2 \cdot 1 + 4 \cdot 3 \\ 1 \cdot 1 + 3 \cdot 3 \end{bmatrix} = \begin{bmatrix} 6 \\ 14 \\ 10 \end{bmatrix}
-$$
-```
-(f) $\vv{Ab}$
-```{solution}
-**Undefined** because $\vv{A}$ has 2 columns but $\vv{b}$ has 1 row. 
-```
-(g) $\vv{Ac}$
-```{solution}
- **Undefined** because $\vv{A}$ has 2 columns but $\vv{c}$ has 3 rows.
-```
-(h) $\vv{Bc}$
-```{solution}
-$$
-\vv{Bc} = \begin{bmatrix}  0 \cdot 2 + 2 \cdot 0 + 1 \cdot -1 \\ 2 \cdot 2 + 4 \cdot 0 + 3 \cdot -1 \end{bmatrix} = \begin{bmatrix} -1 \\ 1 \end{bmatrix} 
-$$
-```
-(i) $\vv{c}^{\rm T}\vv{A}$ 
-```{solution}
-$$
-\vv{c}^{\rm T} + \vv{A} = \begin{bmatrix} 0 & 2 & -1\end{bmatrix} \ \begin{bmatrix} 0 & 2 \\ 2 & 4 \\ 1 &3 \end{bmatrix} = \begin{bmatrix} 2 \cdot 0 + 0 \cdot 2 + -1 \cdot 1 & 2 \cdot 2 + 0 \cdot 4 \cdot -1 \cdot 3 \end{bmatrix} = \begin{bmatrix} -1 & 1 \end{bmatrix} 
-$$
-```
+   ```{solution}
+   $$
+   2\vv{A}
+   = \begin{bmatrix}
+   2 \cdot 0 & 2 \cdot 2 \\
+   2 \cdot 2 & 2 \cdot 4 \\
+   2 \cdot 1 & 2 \cdot 3 \end{bmatrix}
+   = \begin{bmatrix} 0 & 4 \\ 4 & 8 \\ 2 & 6 \end{bmatrix}
+   $$
+   ```
+
+2. $\vv{A + B}$
+
+   ```{solution}
+   Undefined because the shape of **A** (3×2) is different from the shape of
+   **B** (2×3).
+   ```
+
+3. $\vv{A}^{\rm T} + \vv{B}$
+
+   ```{solution}
+   $$
+   \vv{A}^{\rm T} + \vv{B}
+   &= \begin{bmatrix} 0 & 2 & 1 \\ 2 & 4 & 3 \end{bmatrix}
+   + \begin{bmatrix} 0 & 2 & 1\\ 2 & 4 & 3 \end{bmatrix} \\
+   &= \begin{bmatrix} 0+0 & 2+2 & 1+1 \\ 2+2 & 4+4 & 3+3 \end{bmatrix} \\
+   &= \begin{bmatrix} 0 & 4 & 2 \\ 4 & 8 & 6 \end{bmatrix}
+   $$
+   (or, $\vv{A}^{\rm T} = \vv{B}$ so $\vv{A}^{\rm T} + \vv{B} = 2\vv{B}$.)
+   ```
+
+4. $\vv{C - D}$
+
+   ```{solution}
+   $$
+   \vv{C} -\vv{D}
+   &= \begin{bmatrix}
+   3-0 & 0-(-5) & 4-(-3) \\
+   -1-(-5) & 2-2 & 2-4 \\
+   6-(-3) & 5-4 & -4-0 \end{bmatrix} \\
+   &= \begin{bmatrix} 3 & 5 & 7 \\ 4 & 0 & -2 \\ 9 & 1 & -4 \end{bmatrix}
+   $$
+   ```
+
+5. $\vv{Aa}$
+
+   ```{solution}
+   $$
+   \vv{Aa}
+   &= \begin{bmatrix}
+   0 \cdot 1 + 2 \cdot 3 \\
+   2 \cdot 1 + 4 \cdot 3 \\
+   1 \cdot 1 + 3 \cdot 3 \end{bmatrix} \\
+   &= \begin{bmatrix} 6 \\ 14 \\ 10 \end{bmatrix}
+   $$
+   ```
+
+6. $\vv{Ab}$
+
+   ```{solution}
+   Undefined because **A** has 2 columns but **b** has 1 row.
+   ```
+
+7. $\vv{Ac}$
+
+   ```{solution}
+   Undefined because **A** has 2 columns but **c** has 3 rows.
+   ```
+
+8. $\vv{Bc}$
+
+   ```{solution}
+   $$
+   \vv{Bc}
+   &= \begin{bmatrix}
+   0 \cdot 2 + 2 \cdot 0 + 1 \cdot -1 \\
+   2 \cdot 2 + 4 \cdot 0 + 3 \cdot -1 \end{bmatrix} \\
+   &= \begin{bmatrix} -1 \\ 1 \end{bmatrix}
+   $$
+   ```
+
+9. $\vv{c}^{\rm T}\vv{A}$
+
+   ```{solution}
+   $$
+   \vv{c}^{\rm T} \vv{A}
+   &= \begin{bmatrix} 0 & 2 & -1\end{bmatrix}
+     \begin{bmatrix} 0 & 2 \\ 2 & 4 \\ 1 &3 \end{bmatrix} \\
+   &= \begin{bmatrix}
+   2 \cdot 0 + 0 \cdot 2 + -1 \cdot 1 &
+   2 \cdot 2 + 0 \cdot 4 \cdot -1 \cdot 3 \end{bmatrix} \\
+   &= \begin{bmatrix} -1 & 1 \end{bmatrix}
+   $$
+   ```
