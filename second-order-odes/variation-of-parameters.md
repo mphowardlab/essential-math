@@ -110,7 +110,7 @@ From (2) and (3), subtracting gives:
 0 &= 2C_2 \Rightarrow C_2 = 0
 \end{align}
 
-Now plug back in to solve for $C_1$:
+Now plug back in to solve for \begin{equation}C_1\end{equation}:
 \begin{align}
 1 &= C_1 + \frac{q}{\alpha}(2\cos 1 + \sin 1) \\
 \Rightarrow C_1 &= 1 - \frac{q}{\alpha}(2\cos 1 + \sin 1)
