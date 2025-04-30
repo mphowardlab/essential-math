@@ -173,7 +173,7 @@ T = 1 + \frac{q}{\alpha}\left[2(\cos x - \cos 1) + x \sin x - \sin 1\right]
 
     so the particular solution is:
     \begin{equation}
-    y_{\rm p} = -e^{2x} \int \frac{x e^{2x} (x^{2} e^{2x})}{e^{4x}} \, dx + x e^{2x} \int \frac{e^{2x} (x^{2} e^{2x})}{e^{4x}} \, dx
+    y_{\rm p} = -e^{2x} \int \frac{x e^{2x} (x^{2} e^{x})}{e^{4x}} \, dx + x e^{2x} \int \frac{e^{2x} (x^{2} e^{x})}{e^{4x}} \, dx
     \end{equation}
    
     Simplifying both integrals gives
