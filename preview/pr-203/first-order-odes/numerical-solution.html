@@ -214,6 +214,7 @@
 <li class="toctree-l2"><a class="reference internal" href="laplace-transform.html">5.6. Laplace transform</a></li>
 <li class="toctree-l2"><a class="reference internal" href="integrating-factor.html">5.7. Integrating factor</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">5.8. Numerical solution methods</a></li>
+
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../systems-first-order-odes/index.html">6. Systems of first-order ordinary differential equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -428,11 +429,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-size-delta-t-0-2">5.8.1. Step size ( \Delta t = 0.2 )</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">5.8.1.1. Conclusion</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">5.8. Numerical solution methods</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-y-y-5-sin-2-pi-t-using-eulers-method">5.9. Solving <span class="math notranslate nohighlight">\(y' = y + 5 \sin(2\pi t)\)</span> using Euler’s Method</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-size-delta-t-0-1">5.9.1. Step size <span class="math notranslate nohighlight">\(\Delta t = 0.1\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-size-delta-t-0-2">5.9.2. Step size <span class="math notranslate nohighlight">\(\Delta t = 0.2\)</span></a></li>
 </ul>
 </li>
 </ul>
+
             </nav>
         </div>
     </div>
@@ -445,21 +449,80 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="numerical-solution-methods">
 <h1><span class="section-number">5.8. </span>Numerical solution methods<a class="headerlink" href="#numerical-solution-methods" title="Link to this heading">#</a></h1>
-<p>Determine y(1) for  Solving y’ = y + 5 sin(2πt) using Euler’s Method</p>
-<p>We are given the initial value problem:
-$<span class="math notranslate nohighlight">\(
+<!-- Determine y(1) for  Solving y' = y + 5 sin(2πt) using Euler's Method
+
+We are given the initial value problem:
+$$
 y' = y + 5\sin(2\pi t), \quad y(0) = 1
-\)</span>$</p>
-<p>Using the <strong>Euler method</strong>, we compute approximations for ( y(1)) using two step sizes:</p>
+$$
+
+Using the **Euler method**, we compute approximations for ( y(1)) using two step sizes:
+
+---
+
+Step size $$ ( \Delta t = 0.1 \)$$
+
+Let \( f(t, y) = y + 5\sin(2\pi t) \)
+
+| \( n \) | \( t_n \) | \( y_n \) | \( f(t_n, y_n) \) |
+|--------:|----------:|----------:|------------------:|
+| 0       | 0.0       | 1.000     | 1.000             |
+| 1       | 0.1       | 1.100     | 4.039             |
+| 2       | 0.2       | 1.504     | 6.257             |
+| 3       | 0.3       | 2.130     | 6.895             |
+| 4       | 0.4       | 2.818     | 5.757             |
+| 5       | 0.5       | 3.394     | 3.394             |
+| 6       | 0.6       | 3.733     | 0.795             |
+| 7       | 0.7       | 3.813     | -0.942            |
+| 8       | 0.8       | 3.719     | -1.037            |
+| 9       | 0.9       | 3.615     | 0.676             |
+| 10      | 1.0       | **3.683** | —                 |
+
+Hence, for \( \Delta t = 0.1 \), the Euler approximation gives:
+\[
+y(1) \approx 3.683
+\]
+
+---
+
+## Step size \( \Delta t = 0.2 \)
+
+| \( n \) | \( t_n \) | \( y_n \) | \( f(t_n, y_n) \) |
+|--------:|----------:|----------:|------------------:|
+| 0       | 0.0       | 1.000     | 1.000             |
+| 1       | 0.2       | 1.200     | 6.955             |
+| 2       | 0.4       | 2.591     | 5.330             |
+| 3       | 0.6       | 3.657     | 0.576             |
+| 4       | 0.8       | 3.772     | -1.155            |
+| 5       | 1.0       | **3.322** | —                 |
+
+Therefore, for \( \Delta t = 0.2 \):
+\[
+y(1) \approx 3.322
+\]
+
+---
+
+ -->
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="solving-y-y-5-sin-2-pi-t-using-eulers-method">
+<h1><span class="section-number">5.9. </span>Solving <span class="math notranslate nohighlight">\(y' = y + 5 \sin(2\pi t)\)</span> using Euler’s Method<a class="headerlink" href="#solving-y-y-5-sin-2-pi-t-using-eulers-method" title="Link to this heading">#</a></h1>
+<p>We are given the initial value problem:</p>
+<div class="math notranslate nohighlight">
+\[
+y' = y + 5\sin(2\pi t), \quad y(0) = 1
+\]</div>
+<p>Using the <strong>Euler method</strong>, we compute approximations for <span class="math notranslate nohighlight">\(y(1)\)</span> using two step sizes:</p>
 <hr class="docutils" />
-<p>Step size $<span class="math notranslate nohighlight">\( ( \Delta t = 0.1 \)\)</span>$</p>
-<p>Let ( f(t, y) = y + 5\sin(2\pi t) )</p>
+<section id="step-size-delta-t-0-1">
+<h2><span class="section-number">5.9.1. </span>Step size <span class="math notranslate nohighlight">\(\Delta t = 0.1\)</span><a class="headerlink" href="#step-size-delta-t-0-1" title="Link to this heading">#</a></h2>
+<p>Let <span class="math notranslate nohighlight">\(f(t, y) = y + 5\sin(2\pi t)\)</span></p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="head text-right"><p>( n )</p></th>
-<th class="head text-right"><p>( t_n )</p></th>
-<th class="head text-right"><p>( y_n )</p></th>
-<th class="head text-right"><p>( f(t_n, y_n) )</p></th>
+<tr class="row-odd"><th class="head text-right"><p><span class="math notranslate nohighlight">\(n\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(t_n\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(y_n\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(f(t_n, y_n)\)</span></p></th>
 </tr>
 </thead>
 <tbody>
@@ -521,19 +584,21 @@ y' = y + 5\sin(2\pi t), \quad y(0) = 1
 </tbody>
 </table>
 </div>
-<p>Hence, for ( \Delta t = 0.1 ), the Euler approximation gives:
-[
+<p>So, for <span class="math notranslate nohighlight">\(\Delta t = 0.1\)</span>, the Euler approximation gives:</p>
+<div class="math notranslate nohighlight">
+\[
 y(1) \approx 3.683
-]</p>
+\]</div>
+</section>
 <hr class="docutils" />
 <section id="step-size-delta-t-0-2">
-<h2><span class="section-number">5.8.1. </span>Step size ( \Delta t = 0.2 )<a class="headerlink" href="#step-size-delta-t-0-2" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">5.9.2. </span>Step size <span class="math notranslate nohighlight">\(\Delta t = 0.2\)</span><a class="headerlink" href="#step-size-delta-t-0-2" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="head text-right"><p>( n )</p></th>
-<th class="head text-right"><p>( t_n )</p></th>
-<th class="head text-right"><p>( y_n )</p></th>
-<th class="head text-right"><p>( f(t_n, y_n) )</p></th>
+<tr class="row-odd"><th class="head text-right"><p><span class="math notranslate nohighlight">\(n\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(t_n\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(y_n\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(f(t_n, y_n)\)</span></p></th>
 </tr>
 </thead>
 <tbody>
@@ -570,19 +635,12 @@ y(1) \approx 3.683
 </tbody>
 </table>
 </div>
-<p>Therefore, for ( \Delta t = 0.2 ):
-[
+<p>Therefore, for <span class="math notranslate nohighlight">\(\Delta t = 0.2\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
 y(1) \approx 3.322
-]</p>
+\]</div>
 <hr class="docutils" />
-<section id="conclusion">
-<h3><span class="section-number">5.8.1.1. </span>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h3>
-<p>Comparing the results:</p>
-<ul class="simple">
-<li><p>Smaller step size ( \Delta t = 0.1 ) yields a more accurate result: ( y(1) \approx 3.683 )</p></li>
-<li><p>Larger step size ( \Delta t = 0.2 ) underestimates the value: ( y(1) \approx 3.322 )</p></li>
-</ul>
-</section>
 </section>
 </section>
 
@@ -650,11 +708,14 @@ y(1) \approx 3.322
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-size-delta-t-0-2">5.8.1. Step size ( \Delta t = 0.2 )</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">5.8.1.1. Conclusion</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">5.8. Numerical solution methods</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-y-y-5-sin-2-pi-t-using-eulers-method">5.9. Solving <span class="math notranslate nohighlight">\(y' = y + 5 \sin(2\pi t)\)</span> using Euler’s Method</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-size-delta-t-0-1">5.9.1. Step size <span class="math notranslate nohighlight">\(\Delta t = 0.1\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-size-delta-t-0-2">5.9.2. Step size <span class="math notranslate nohighlight">\(\Delta t = 0.2\)</span></a></li>
 </ul>
 </li>
 </ul>
+
   </nav></div>
 
 </div></div>
