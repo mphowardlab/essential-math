@@ -193,10 +193,11 @@ T = 1 + \frac{q}{\alpha}\left[2(\cos x - \cos 1) + x \sin x - \sin 1\right]
     |  $+$ | $6x$    | $-e^{-x}$   |
     |  $-$ | $6$     | $e^{-x}$    |
     |      | $0$     | $-e^{-x}$   |
+
     so
  
     \begin{equation}
-    \int x^3 \e^{-x} \, \d{x} = -x^3 \e^{-x} - 3x^2 \e^{-x} - 6x \e^{-x}- 6 \e^{-x}
+    \int x^3 e^{-x} \, \d{x} = -x^3 e^{-x} - 3x^2 e^{-x} - 6x e^{-x}- 6 e^{-x}
     \end{equation}
 
     For the second
@@ -208,6 +209,7 @@ T = 1 + \frac{q}{\alpha}\left[2(\cos x - \cos 1) + x \sin x - \sin 1\right]
     |  $-$ | $2x$    | $e^{-x}$    |
     |  $+$ | $2$     | $-e^{-x}$   |
     |      | $0$     | $e^{-x}$    |
+
     so
     
     \begin{equation}
@@ -235,9 +237,14 @@ T = 1 + \frac{q}{\alpha}\left[2(\cos x - \cos 1) + x \sin x - \sin 1\right]
       \begin{equation}
       y=(C_1 + C_2 x) e^{2x}+(x^{2}+4x+6)e^{x}
       \end{equation}
+
+     Taking the first derivative gives
       \begin{equation}
       y'=2(C_1 + C_2 x) e^{2x}+C_2e^{2x}+(x^{2}+4x+6)e^{x}+(2x+4)e^{x}
       \end{equation}
+
+
+     Plugging in intial conditions gives
 
       \begin{equation}
       0=y(0)=(C_1+C_2(0))e^{2(0)}
@@ -246,11 +253,13 @@ T = 1 + \frac{q}{\alpha}\left[2(\cos x - \cos 1) + x \sin x - \sin 1\right]
       0=y'(0)=2(C_1 + C_2(0)) e^{2(0)}+C_2e^{2(0)}+(0^{2}+4(0)+6)e^{0}+(2(0)+4)e^{0}
       \end{equation}
 
-      $C_1=-6 \quad C_2=2$
+    $$
+    C_1 = -6 \quad C_2 = 2
+    $$
 
-   This gives the final solution:
- 
-       \begin{equation}
-       y=(2 x - 6) e^{2x}+(x^{2}+4x+6)e^{x}
-       \end{equation}
+    This final solution is
+    \begin{equation}
+     y=(2 x - 6) e^{2x}+(x^{2}+4x+6)e^{x}
+    \end{equation}
+
    ```
