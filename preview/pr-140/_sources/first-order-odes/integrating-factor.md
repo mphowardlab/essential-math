@@ -29,6 +29,7 @@ F(t) &= exp[\int{p(t)dt}] = exp(\int{\frac{\dot{q}t}{v}dt}) = exp(\frac{1}{2}\fr
 ```
 Formulate  an integral based upon the integration factor formula. Use U-Substution when necessary. 
 Use the inital conditions to evaluate the integration constant.
+
 ```{math}
 \begin{align}
 \int{F(t)r(t)dt} &= \int{exp(\frac{1}{2}\frac{\dot{q}}{V}t^{2})C_{f,A}\dot{q}tdt} = \int{e^{u}C_{f,A}Vdu} = C_{f,A}Vexp(\frac{1}{2}\frac{\dot{q}}{v}t^{2}) \\
@@ -55,6 +56,7 @@ C^{'} + Kc &= A + B\cos{(\frac{\pi t}{12})} \quad with \quad c(o) = c_{o}\\
 p &= Kc \quad r = A + B\cos{(\frac{\pi t}{12})}\\
 \end{align}
 ```
+Set up the integral based upon the integration factor formula. 
 
 ```{math}
 \begin{align}
