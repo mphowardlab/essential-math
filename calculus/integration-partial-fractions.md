@@ -30,7 +30,7 @@ A_1  + A_2 &= 3 \\
 \end{align}
 
 This is a system of linear equations that can be solved, e.g., using a matrix
-technique. Form the augemented matrix then perform Gauss-Jordan elimination:
+technique. Form the augmented matrix then perform Gauss-Jordan elimination:  
 
 \begin{align}
 \begin{bmatrix} 1 & 1 & 3\\ 2 & -3 & 11 \end{bmatrix}
@@ -130,7 +130,7 @@ These linear equations can be written using a matrix and vectors
 = \begin{bmatrix} 0\\ 1\\ -29 \\ 5 \end{bmatrix}
 \end{equation}
 
-solving numerically gives $A_1 = 1$, $A_2 = -5$, $A_3 = -1$, and $B_3 =2$.
+Solving numerically gives $A_1 = 1$, $A_2 = -5$, $A_3 = -1$, and $B_3 =2$.
 Finally,
 
 \begin{align}
