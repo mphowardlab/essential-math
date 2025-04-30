@@ -13,6 +13,7 @@ This work (c) 2025 is licensed under
 - Sarah Eldridge
 - Alexis Florit
 - Ella Governale
+- Connor Habig
 - Kennedi Hawkins
 - Molly Grace Hicks
 - Michael P. Howard
@@ -30,6 +31,7 @@ This work (c) 2025 is licensed under
 - Meg Nettles
 - Jeffe Old
 - Kendall Reeves
+- Brent Russell
 - Michelle Schindler
 - Katie Sorensen
 - Madelyn Torrance
