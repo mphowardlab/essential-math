@@ -33,7 +33,7 @@ T'' = -q x \sin x
    so,
 
    \begin{equation}
-   T_{\rm h} = C_1 + C_2 x
+   T_{\rm h} = c_1 + c_2 x
    \end{equation}
 
 2. Find particular solution using variation of parameters:
@@ -44,7 +44,7 @@ T'' = -q x \sin x
    \end{align}
 
    so the Wronskian is $W = 1 \cdot 1 - 0 \cdot x = 1$. The right-hand side
-   function is 
+   function is
 
    \begin{equation}
    r = -\frac{qx \sin x}{\alpha}
@@ -61,7 +61,7 @@ T'' = -q x \sin x
 
    These integrals can both be evaluated by parts. For the first integral,
    use the tabular method:
-   
+
    | sign | $u$     | $\d{v}$     |
    |------|---------|-------------|
    |      |         | $\sin x$    |
@@ -84,7 +84,7 @@ T'' = -q x \sin x
    \end{align}
 
    so
-   
+
    \begin{equation}
    \int x \sin x \d{x} = -x \cos x + \int \cos x \d{x} = -x \cos x + \sin x
    \end{equation}
@@ -99,25 +99,37 @@ T'' = -q x \sin x
 
 3. Combine and apply boundary conditions.
 
-\begin{align}
-T &= C_1 + C_2 x + \frac{q}{\alpha}(2\cos x + x \sin x) \\
-1 &= T(-1) = C_1 - C_2 + \frac{q}{\alpha}[2\cos(-1) - \sin(-1)] = C_1 - C_2 + \frac{q}{\alpha}[2\cos 1 + \sin 1] \\
-1 &= T(1) = C_1 + C_2 + \frac{q}{\alpha}[2\cos 1 + \sin 1]
-\end{align}
+   The general solution is
 
-From (2) and (3), subtracting gives:
-\begin{align}
-0 &= 2C_2 \Rightarrow C_2 = 0
-\end{align}
+   \begin{equation}
+   T = c_1 + c_2 x + \frac{q}{\alpha}(2\cos x + x \sin x)
+   \end{equation}
 
-Now plug back in to solve for $C_1$:
-\begin{align}
-1 &= C_1 + \frac{q}{\alpha}(2\cos 1 + \sin 1) \\
-\Rightarrow C_1 &= 1 - \frac{q}{\alpha}(2\cos 1 + \sin 1)
-\end{align}
+   The boundary conditions are:
+
+   \begin{align}
+
+   T(-1) &= c_1 - c_2 + \frac{q}{\alpha}[2\cos(-1) - \sin(-1)] = 1\\
+     &= c_1 - c_2 + \frac{q}{\alpha}[2\cos 1 + \sin 1] \\
+   T(1) &= c_1 + c_2 + \frac{q}{\alpha}[2\cos 1 + \sin 1] = 1
+   \end{align}
+
+   This is a system of linear equations that can be solved for $c_1$ and $c_2$.
+   Subtracting the two equations gives:
+
+   \begin{equation}
+   0 = 2 c_2
+   \end{equation}
+
+   so $c_2 = 0$. Plugging back in and solving for $c_1$:
+
+   \begin{align}
+   1 &= c_1 + \frac{q}{\alpha}(2\cos 1 + \sin 1) \\
+   c_1 &= 1 - \frac{q}{\alpha}(2\cos 1 + \sin 1)
+   \end{align}
 
 The final result is:
 \begin{equation}
 T = 1 + \frac{q}{\alpha}\left[2(\cos x - \cos 1) + x \sin x - \sin 1\right]
 \end{equation}
-'''
+```
