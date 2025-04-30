@@ -37,6 +37,10 @@ A = \begin{bmatrix} -0.1 & 0.1 \\ 0.1 & -0.1 \end{bmatrix}
 $\lambda_1 = 0$
 
 \begin{align}
+\begin{bmatrix} -0.1 & 0.1 \\ 0.1 & -0.1 \end{bmatrix} \quad \Rightarrow \quad \begin{bmatrix} -0.1 & 0.1 \\ 0.1 & -0.1 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
+\end{align}
+
+\begin{align}
 \left( A - 0I \right) \mathbf{x}_1 = 0 \quad \Rightarrow \quad \mathbf{x}_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}
 \end{align}
 
