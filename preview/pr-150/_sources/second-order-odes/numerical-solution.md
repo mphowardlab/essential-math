@@ -58,10 +58,7 @@ $$
 ------
 How do we do this when we have only numbers? <u>Shooting method.</u>
 
-
-![](./images/graph%20pic.jpg)
-
-
+![](./images/grapofline3.jpg)
 - Formuate system of ODEs with () <u>initial</u> condtion is know
 
 
@@ -85,8 +82,6 @@ $$
 \begin{array}{l}
 y_1'=y_2\quad\quad\quad\quad y_1(0)=C_0\\
 y_2'=\frac{K}{D}y_1'\quad\quad\quad y_2(0)=a
-
-
 \end{array}
 \right.
 $$
