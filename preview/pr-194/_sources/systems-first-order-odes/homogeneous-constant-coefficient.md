@@ -41,7 +41,3 @@ For ( \lambda_2 = -0.2)
 \left( A - -0.2I \right)  \mathbf{x}_1 = 0 \quad \Rightarrow \quad \mathbf{x}_1 = \begain{bmatrix} 1 \\ -1 \end{bmatrix} \end{align} = \mathbf{x}(t) = a_1 exp^{0t} \begin{bmatrix} 1 \\ 1 \end{bmatrix} + a_2 exp^{-0.2t} \begin{bmatrix} 1 \\ -1 \end{bmatrix}
  \end{align}
 
-Simplifying 
-
-\begin{align}
-\mathbf{x}(t) = a_1 \begin{bmatrix} 1 \\ 1 \end{bmatrix} + a_2 exp^{-0.2t} \begin{bmatrix} 1 \\ -1 \end{bmatrix} \end{align}
