@@ -3,7 +3,7 @@
 
 (d)
 
-$y'' + y = \csc(y)$, with initial conditions $y\left(\frac{\pi}{2}\right) = y'\left(\frac{\pi}{2}\right) = 0$
+$y'' + y = \csc(x)$, with initial conditions $y\left(\frac{\pi}{2}\right) = y'\left(\frac{\pi}{2}\right) = 0$
 
 ```{solution}
 
@@ -59,5 +59,7 @@ y' &= -c_1 \sin(x) + c_2 \cos(x) + \cos(x) (1 + \ln\left| \sin(x) \right|) + x \
 
 
 
-\boxed{y = \left( \frac{\pi}{2} \right) \cos x + \sin x \ln |\sin x| - x \cos x}
+\[
+\boxed{\displaystyle y = \left( \frac{\pi}{2} \right) \cos x + \sin x \ln \left| \sin x \right| - x \cos x}
+\]
 ```
