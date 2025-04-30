@@ -30,8 +30,8 @@ $$
 \begin{aligned}
 (2) f(x) &= \frac{1}{x} \\
 f'(x) &= \lim_{h \to 0} \frac{\frac{1}{x+h} - \frac{1}{x}}{h} \\
-    &= \lim_{h \to 0} \frac{\frac{x - (x + h)}{x(x+h)} \frac{1}}{h}  \\
-    &= \lim_{h \to 0} \frac{\frac{- h}{x(x+h)} \frac{1}}{h}  \\
+    &= \lim_{h \to 0} \frac{\frac{x - (x + h)}{x(x+h)}}{h}  \\
+    &= \lim_{h \to 0} \frac{\frac{- h}{x(x+h)}}{h}  \\
     &= \lim_{h \to 0} \frac{-1}{(x+h)x} = \frac{-1}{x^2}
 \end{aligned}
 $$
