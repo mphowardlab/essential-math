@@ -30,6 +30,10 @@ The eigenvalues are
 
 To find the eigenvectors 
 
+\begin{align}
+A = \begin{bmatrix} -0.1 & 0.1 \\ 0.1 & -0.1 \end{bmatrix}
+\end{align}
+
 $\lambda_1 = 0$
 
 \begin{align}
