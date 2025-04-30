@@ -30,6 +30,7 @@ This work (c) 2025 is licensed under
 - Meg Nettles
 - Jeffe Old
 - Kendall Reeves
+- Brent Russell
 - Michelle Schindler
 - Katie Sorensen
 - Madelyn Torrance
