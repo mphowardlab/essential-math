@@ -52,8 +52,8 @@ The general solution is
 For C(0)
 
 \begin{align}
-\mathbf{c}(0) = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
-= a_1 \begin{bmatrix} 1 \\ 0 \end{bmatrix} + a_2 \begin{bmatrix} 1 \\ -1 \end{bmatrix}
+\mathbf{c}(0) = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
+= a_1 \begin{bmatrix} 1 \\ 1 \end{bmatrix} + a_2 \begin{bmatrix} 1 \\ -1 \end{bmatrix}
 = \begin{bmatrix} a_1 + a_2 \\ a_1 - a_2 \end{bmatrix}
 \end{align}
 
