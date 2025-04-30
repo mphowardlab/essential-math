@@ -57,6 +57,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"d": ["{\\operatorname{d}\\!{#1}}", 1], "dd": ["{\\d{}^{#1} #2 \\over \\d{#3}^{#1}}", 3], "pp": ["{\\partial^{#1} #2 \\over \\partial #3^{#1}}", 3], "td": ["{\\left(\\pp{#1}{#2}{#3} \\right)_{#4}}", 4], "ubar": ["\\underline{#1}", 1], "vv": ["\\mathbf{#1}", 1]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'second-order-odes/variation-of-parameters';</script>
     <link rel="canonical" href="https://mphowardlab.github.io/essential-math/second-order-odes/variation-of-parameters.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -216,9 +218,10 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../systems-first-order-odes/index.html">6. Systems of first-order ordinary differential equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/linearity.html">6.1. Linearity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/homogeneous-constant-coefficient.html">6.2. Homogeneous linear first-order ODEs with constant coefficients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/numerical-solution.html">6.3. Numerical solution methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/definition.html">6.1. Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/linearity.html">6.2. Linearity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/homogeneous-constant-coefficient.html">6.3. Homogeneous linear first-order ODEs with constant coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/numerical-solution.html">6.4. Numerical solution methods</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">7. Second-order ordinary differential equations</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
@@ -430,6 +433,150 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="variation-of-parameters">
 <h1><span class="section-number">7.5. </span>Variation of parameters<a class="headerlink" href="#variation-of-parameters" title="Link to this heading">#</a></h1>
+<div class="admonition-example-steady-heat-diffusion-with-internal-source admonition">
+<p class="admonition-title">Example: Steady heat diffusion with internal source</p>
+<p>We are solving the steady-state heat diffusion equation with an internal source:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7376041c-78ce-4fcd-89af-e17d5da8bd82">
+<span class="eqno">(7.5)<a class="headerlink" href="#equation-7376041c-78ce-4fcd-89af-e17d5da8bd82" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\alpha \dd{2}{T}{x} + qx \sin x = 0
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\alpha\)</span> is thermal diffusivity, and <span class="math notranslate nohighlight">\(qx \sin x\)</span> is the heat source. The
+boundary conditions are:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9501edd6-00b6-4ae1-8a35-bc48541988fb">
+<span class="eqno">(7.6)<a class="headerlink" href="#equation-9501edd6-00b6-4ae1-8a35-bc48541988fb" title="Permalink to this equation">#</a></span>\[\begin{equation}
+T(-1) = T(1) = 1
+\end{equation}\]</div>
+<hr class="docutils" />
+<p>In standard form,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-619696da-c37c-40cc-82be-32fe8622f72d">
+<span class="eqno">(7.7)<a class="headerlink" href="#equation-619696da-c37c-40cc-82be-32fe8622f72d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+T'' = -q x \sin x
+\end{equation}\]</div>
+<ol class="arabic">
+<li><p>Find homogeneous solution:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ad5c4b36-cd65-4536-97e1-cbef754e4c35">
+<span class="eqno">(7.8)<a class="headerlink" href="#equation-ad5c4b36-cd65-4536-97e1-cbef754e4c35" title="Permalink to this equation">#</a></span>\[\begin{align}
+\alpha T_{\rm h}'' &amp;= 0 \\
+\alpha \lambda^2 &amp;= 0 \\
+\lambda &amp;= 0
+\end{align}\]</div>
+<p>so,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-72c5d6ca-8ed7-4743-811d-0cdb0bd21753">
+<span class="eqno">(7.9)<a class="headerlink" href="#equation-72c5d6ca-8ed7-4743-811d-0cdb0bd21753" title="Permalink to this equation">#</a></span>\[\begin{equation}
+T_{\rm h} = c_1 + c_2 x
+\end{equation}\]</div>
+</li>
+<li><p>Find particular solution using variation of parameters:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ef21d3ab-069a-4e4c-82ef-10d8eddf97e8">
+<span class="eqno">(7.10)<a class="headerlink" href="#equation-ef21d3ab-069a-4e4c-82ef-10d8eddf97e8" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_1 &amp;= 1, \quad y_2 = x \\
+y_1' &amp;= 0, \quad y_2' = 1
+\end{align}\]</div>
+<p>so the Wronskian is <span class="math notranslate nohighlight">\(W = 1 \cdot 1 - 0 \cdot x = 1\)</span>. The right-hand side
+function is</p>
+<div class="amsmath math notranslate nohighlight" id="equation-0598d844-bc6c-4087-a7d8-a58f78d96c04">
+<span class="eqno">(7.11)<a class="headerlink" href="#equation-0598d844-bc6c-4087-a7d8-a58f78d96c04" title="Permalink to this equation">#</a></span>\[\begin{equation}
+r = -\frac{qx \sin x}{\alpha}
+\end{equation}\]</div>
+<p>so the particular solution is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8faece43-0dfb-4e94-ab53-7291412542b6">
+<span class="eqno">(7.12)<a class="headerlink" href="#equation-8faece43-0dfb-4e94-ab53-7291412542b6" title="Permalink to this equation">#</a></span>\[\begin{align}
+T_{\rm p} &amp;= -1 \int x \left( \frac{-q x \sin x}{\alpha} \right) \, \d{x}
+  + x \int \left( \frac{-q x \sin x}{\alpha} \right) \, \d{x} \\
+&amp;= \frac{q}{\alpha} \int x^2 \sin x \, \d{x}
+  - \frac{q}{\alpha} x \int x \sin x \, \d{x}
+\end{align}\]</div>
+<p>These integrals can both be evaluated by parts. For the first integral,
+use the tabular method:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>sign</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(u\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\d{v}\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p></p></td>
+<td><p></p></td>
+<td><p><span class="math notranslate nohighlight">\(\sin x\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(+\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(x^2\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(-\cos x\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(-\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(2x\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(-\sin x\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(+\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(2\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\cos x\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a012dee6-0ac3-47f6-8ff3-6d74840cda89">
+<span class="eqno">(7.13)<a class="headerlink" href="#equation-a012dee6-0ac3-47f6-8ff3-6d74840cda89" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\int x^2 \sin x \, \d{x} = -x^2 \cos x + 2x \sin x + 2 \cos x
+\end{equation}\]</div>
+<p>For the second integral, use</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2a3ed094-7020-4bb1-9157-2f6759796b4a">
+<span class="eqno">(7.14)<a class="headerlink" href="#equation-2a3ed094-7020-4bb1-9157-2f6759796b4a" title="Permalink to this equation">#</a></span>\[\begin{align}
+u &amp;= x &amp; \d{v} &amp;= \sin x \d{x} \\
+\d{u} &amp;= 1 \d{x} &amp; v &amp;= -\cos{x}
+\end{align}\]</div>
+<p>so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-17602031-0530-4853-83fa-0b56c104f849">
+<span class="eqno">(7.15)<a class="headerlink" href="#equation-17602031-0530-4853-83fa-0b56c104f849" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\int x \sin x \d{x} = -x \cos x + \int \cos x \d{x} = -x \cos x + \sin x
+\end{equation}\]</div>
+<p>Substitute everything back:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9be374ce-1f48-4a7c-b5c2-c66ed36abebc">
+<span class="eqno">(7.16)<a class="headerlink" href="#equation-9be374ce-1f48-4a7c-b5c2-c66ed36abebc" title="Permalink to this equation">#</a></span>\[\begin{align}
+T_{\rm p} &amp;= \frac{q}{\alpha} \left[ -x^2 \cos x + 2x \sin x + 2 \cos x \right]
+  - \frac{q}{\alpha} x \left[ -x \cos x + \sin x \right] \\
+&amp;= \frac{q}{\alpha} [2 \cos x + x \sin x]
+\end{align}\]</div>
+</li>
+<li><p>Combine and apply boundary conditions.</p>
+<p>The general solution is</p>
+<div class="amsmath math notranslate nohighlight" id="equation-076a8d0d-edce-4b08-a779-e978f0adee89">
+<span class="eqno">(7.17)<a class="headerlink" href="#equation-076a8d0d-edce-4b08-a779-e978f0adee89" title="Permalink to this equation">#</a></span>\[\begin{equation}
+T = c_1 + c_2 x + \frac{q}{\alpha}(2\cos x + x \sin x)
+\end{equation}\]</div>
+<p>The boundary conditions are:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-551094f3-03a2-400b-a5a4-e26e6c7ab910">
+<span class="eqno">(7.18)<a class="headerlink" href="#equation-551094f3-03a2-400b-a5a4-e26e6c7ab910" title="Permalink to this equation">#</a></span>\[\begin{align}
+
+T(-1) &amp;= c_1 - c_2 + \frac{q}{\alpha}[2\cos(-1) - \sin(-1)] = 1\\
+  &amp;= c_1 - c_2 + \frac{q}{\alpha}[2\cos 1 + \sin 1] \\
+T(1) &amp;= c_1 + c_2 + \frac{q}{\alpha}[2\cos 1 + \sin 1] = 1
+\end{align}\]</div>
+<p>This is a system of linear equations that can be solved for <span class="math notranslate nohighlight">\(c_1\)</span> and <span class="math notranslate nohighlight">\(c_2\)</span>.
+Subtracting the two equations gives:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c0d52b38-974c-4b70-99fb-7dae9381ad67">
+<span class="eqno">(7.19)<a class="headerlink" href="#equation-c0d52b38-974c-4b70-99fb-7dae9381ad67" title="Permalink to this equation">#</a></span>\[\begin{equation}
+0 = 2 c_2
+\end{equation}\]</div>
+<p>so <span class="math notranslate nohighlight">\(c_2 = 0\)</span>. Plugging back in and solving for <span class="math notranslate nohighlight">\(c_1\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-51ede2a2-289e-4b91-b704-5d1370595736">
+<span class="eqno">(7.20)<a class="headerlink" href="#equation-51ede2a2-289e-4b91-b704-5d1370595736" title="Permalink to this equation">#</a></span>\[\begin{align}
+1 &amp;= c_1 + \frac{q}{\alpha}(2\cos 1 + \sin 1) \\
+c_1 &amp;= 1 - \frac{q}{\alpha}(2\cos 1 + \sin 1)
+\end{align}\]</div>
+</li>
+</ol>
+<p>The final result is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-143f6300-f996-4ff8-b280-d1a69aa53721">
+<span class="eqno">(7.21)<a class="headerlink" href="#equation-143f6300-f996-4ff8-b280-d1a69aa53721" title="Permalink to this equation">#</a></span>\[\begin{equation}
+T = 1 + \frac{q}{\alpha}\left[2(\cos x - \cos 1) + x \sin x - \sin 1\right]
+\end{equation}\]</div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">

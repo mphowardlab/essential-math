@@ -1,20 +1,19 @@
 # Integrating factor
 ## What do we do when an ODE is not exact?
 **Example 1:**
-$$  
-  -y \, dx + x \, dy = 0
-$$
-where: 
-$$
-    P = -y, \quad Q = x
+$$ 
+\begin{align*} 
+  -y \, dx + x \, dy &= 0 \\
+  P &= -y \\
+  Q &= x \\
+  \frac{\partial P}{\partial y} &= -1 \\
+  \frac{\partial Q}{\partial x} &= 1 \\
+  &\Rightarrow \text{Not exact!}
+  \end{align*}
 $$
 
 When solving ODEs, we take the partial derivatives of \(P\) and \(Q\).
 If the partial derivatives are not equal, the equation is **not exact**: 
-
-$$
-\frac{\partial P}{\partial y} = -1, \quad \frac{\partial Q}{\partial x} = 1 \quad \longrightarrow \quad \text{Not exact!}
-$$
 
 ---
 
@@ -22,24 +21,14 @@ $$
 
 Multiply by a factor \(F\) to make the ODE exact. This is called the **integrating factor**.
 
-Choosing: 
-$$ 
-F = \frac{1}{x^2}
 $$
-
-Now multiply through:
-$$
-\left( -y \right) \left( \frac{1}{x^2} \right) + \left( x \right) \left( \frac{1}{x^2} \right) = 0
-\quad \Rightarrow \quad
--\frac{y}{x^2} + \frac{1}{x} = 0
-$$
-
-Check the partial derivatives:
-$$ 
-\frac{\partial (F P)} {\partial y} = - \frac{1}{x^2}, \quad
-$$
-\frac{\partial (F Q)}{\partial x} = -\frac{1}{x^2}$
-\quad \longrightarrow \quad \text{Exact!}
+\begin{align*}
+F &= \frac{1}{x^2} \\
+(-y)\left( \frac{1}{x^2} \right) + x\left( \frac{1}{x^2} \right) &= -\frac{y}{x^2} + \frac{1}{x} = 0 \\
+\frac{\partial ( F P)}{\partial y} &= -\frac{1}{x^2} \\
+\frac{\partial (F Q)}{\partial x} &= -\frac{1}{x^2} \\
+&\Rightarrow \text{Exact!}
+\end{align*}
 $$
 
 
@@ -47,25 +36,32 @@ $$
 
   Using this formula:
   
-
-  $$
-  R = \frac{1}{Q} \left( \frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x} \right)
-  $$
+$$
+\begin{align*}
+R &= \frac{1}{Q} \left( \frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x} \right)
+\end{align*}
+$$
 
 - If \( R(x) \) depends only on \( x \), the integrating factor is:
-$
-F(x) = \exp\left( \int R(x) \, dx \right)
-$
+$$
+\begin{align*}
+F(x) &= \exp\left( \int R(x) \, dx \right) 
+\end{align*}
+$$
 
 If not, check: 
 
-$
-S = \frac{1}{P} \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) = -\frac{Q}{P} R
-$
+$$
+\begin{align*}
+S &= \frac{1}{P} \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) = -\frac{Q}{P} R 
+\end{align*}
+$$
 
 - If \( S(y) \) depends only on \( y \), the integrating factor is: 
 $$ 
-F(y) = \exp\left( \int S(y) \, dy \right)
+\begin{align*}
+F(y) &= \exp\left( \int S(y) \, dy \right) 
+\end{align*}
 $$
 
 If neither \( R \) nor \( S \) are simple functions of only \( x \) or \( y \):
@@ -74,44 +70,68 @@ If neither \( R \) nor \( S \) are simple functions of only \( x \) or \( y \):
 ---
 ## Example 1 (continued)
 
-Calculate \( R \):
+**R Calculation:**
 $$
-R = \frac{1}{x} \left(-1 - 1 \right) = \frac{-2}{x}
+\begin{align*}
+R &= \frac{1}{x}(-1 - 1) = \frac{-2}{x}
+\end{align*}
 $$
 
 Thus: 
 $$
-F(x) = \exp\left( \int \frac{-2}{x} \, dx \right)
-= \exp\left( -2 \ln(x) \right)
+\begin{align*}
+F(x) &= \exp\left( \int \frac{-2}{x} \, dx \right)
+= \exp( -2 \ln(x))
 = \left( e^{\ln(x)} \right)^{-2}
 = \frac{1}{x^2}
+\end{align*}
 $$
 
-Alternatively, calculate \( S \):
+**S Calculation:**
 $$
-S = -\frac{Q}{P} \, R = -\frac{x}{-y} \times \left( \frac{-2}{x} \right) = \frac{-2}{y}
+\begin{align*}
+S &= -\frac{Q}{P} \cdot R 
+= -\frac{x}{-y} \cdot \left( \frac{-2}{x} \right)
+ = \frac{-2}{y} \\
+ \end{align*}
 $$
 
 Thus:
 $$
-F(y) = \exp\left( \int \frac{-2}{y} \, dy \right) = \frac{1}{y^2}
+\begin{align*}
+F(y) &= \exp\left( \int \frac{-2}{y} \, dy \right) 
+= \frac{1}{y^2}
+\end{align*}
 $$
 
-**Both** \( F(x) = \frac{1}{x^2} \) **and** \( F(y) = \frac{1}{y^2} \) **are valid integrating factors.**
+$$
+\boxed{
+  \begin{aligned}
+  F(x) &= \frac{1}{x^2} \\
+  \quad \text{or} \quad
+  F(y) = \frac{1}{y^2}
+  \quad \text{are valid integrating factors.}
+  \end{aligned}
+}
+$$
 
 
 # Application to Linear First-Order ODEs:
 A **linear first-order ODE** has the form: 
 $$ 
+\begin{align*}
 y' + p(x) \, y = r(x)
+\end{align*}
 $$
 
 Using an **integrating factor**, we can show that:
 
 $$
-\boxed{ y(x) = \frac{1}{F(x)} \left( \int F(x) \, r(x) \, dx + C \right) 
-\quad \text{and} \quad
-F(x) = e^{\int p(x) \, dx}}
+\boxed{
+  \begin{aligned}
+   y(x) &= \frac{1}{F(x)} \left( \int F(x) \, r(x) \, dx + C \right) \\
+F(x) &= e^{\int p(x) \, dx}
+\end{aligned}}
 $$
 
 
