@@ -64,6 +64,8 @@ a_1 = a_2 = 1/2
 \mathbf{c}(t) = \frac{1}{2} \begin{bmatrix} 1 \\ 1 \end{bmatrix} + \frac{1}{2} e^{-0.2t} \begin{bmatrix} 1 \\ -1 \end{bmatrix}
 \end{align}
 
+Therefore, the solution is 
+
 \begin{align}
 c_1(t) &= 0.5(1 + e^{-0.2t}) \\ 
 c_2(t) &= 0.5(1 - e^{-0.2t})
