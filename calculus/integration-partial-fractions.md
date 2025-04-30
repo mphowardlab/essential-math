@@ -34,7 +34,9 @@ Next, group like powers of $x$ together.
 
 Solve using matrix technique. Form the augemented matrix then perform Gauss-Jordan Elimination.
 
+\begin{equation}
 \begin{bmatrix} 1 & 1 & 3\\ 2 & -3 & 11 \end{bmatrix} \to \begin{bmatrix} 1 & 1 & 3\\ 0 & -5 & 5 \end{bmatrix} \to \begin{bmatrix} 1 & 1 & 3\\ 0 & 1 & -1 \end{bmatrix} \to \begin{bmatrix} 1 & 0 & 4\\ 0 & 1 & -1 \end{bmatrix}
+\end{equation}
 
 \begin{align}
 A_1=4  A_2=-1
@@ -118,8 +120,9 @@ Form the augmented matrix  then perform elementary operations on rows of this ma
 \underline(A)\vec(x)=\vec(b)
 \end{equation}
 
-
-\begin{bmatrix} 1 & 0 & 1 & 0\\ -4 & 1 & -8 & 1\\ 3 & 0 & 16 & -8\\ -12 & 3 & 0 & 16 \end{bmatrix} \begin{bmatrix} A_1 \\ A_2\\ A_3\\ B_3 \end{bmatrix} = \begin{bmatrix} 0\\ 1\\ -29 \\ 5 \end{bmatrix} \to $A_1 = 1, A_2 = -5, A_3 = -1, B_3 =2$
+\begin{equation}
+\begin{bmatrix} 1 & 0 & 1 & 0\\ -4 & 1 & -8 & 1\\ 3 & 0 & 16 & -8\\ -12 & 3 & 0 & 16 \end{bmatrix} \begin{bmatrix} A_1 \\ A_2\\ A_3\\ B_3 \end{bmatrix} = \begin{bmatrix} 0\\ 1\\ -29 \\ 5 \end{bmatrix} \to A_1 = 1, A_2 = -5, A_3 = -1, B_3 =2
+\end{equation}
 
 \begin{equation}
  y= \int\left(\frac{1}{x-4}-\frac{5}{\left(x-4\right)^2}-\frac{x}{x^2+3}+\frac{2}{x^2+3}\right) dx
@@ -134,7 +137,7 @@ Form the augmented matrix  then perform elementary operations on rows of this ma
 \begin{equation}
 = \ln|x-4|+\frac{5}{x-4} -\frac{1}{2}ln (x^2 + 3)+\frac{2}{\sqrt{3}} \arctan\left( \frac{x}{\sqrt{3}} \right) + C  
 \end{equation}
-
+```
 
 
 
