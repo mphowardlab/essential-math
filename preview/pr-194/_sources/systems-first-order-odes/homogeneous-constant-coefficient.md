@@ -10,7 +10,6 @@ The consentrations change according to:
 \end{align}
 
 
-
 \begin{align}
 \frac{d\mathbf{c}}{dt} = A \mathbf{c}, \quad \text{where} \quad A = \begin{bmatrix} -0.1 & 0.1 \\ 0.1 & -0.1 \end{bmatrix}
 \end{align}
@@ -59,5 +58,5 @@ For C(0)
 \end{align}
 
 \begin{align}
-a_1 + a_2 = 0 \quad a_1 - a_2 = 0 \Rightarrow a_1 = a_2 = 0
+a_1 = a_2 = 1/2
 \end{align}
