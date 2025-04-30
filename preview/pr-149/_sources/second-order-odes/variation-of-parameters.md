@@ -164,50 +164,88 @@ T = 1 + \frac{q}{\alpha}\left[2(\cos x - \cos 1) + x \sin x - \sin 1\right]
    y_1'  &= 2 e^{2x}        &\quad y_2'&= (1 + 2x) e^{2x}
    \end{align}
    
+   so the Wronskian is $W =(1 + 2x) \cdot e^{4x} - 2x \cdot e^{4x} = e^{4x}$. The right-hand side
+   function is
+
    \begin{equation}
-   W = (1 + 2x) e^{4x} - 2x e^{4x} = e^{4x}
+   r = x^{2} e^{x}
+   \end{equation}
+
+   so the particular solution is:
+   \begin{equation}
+   y_{\rm p} = -e^{2x} \int \frac{x e^{2x} (x^{2} e^{2x})}{e^{4x}} \, dx + x e^{2x} \int \frac{e^{2x} (x^{2} e^{2x})}{e^{4x}} \, dx
    \end{equation}
    
+   Simplifying both integrals gives
    \begin{equation}
-   y_p = -e^{2x} \int \frac{x e^{2x} (x^{2} e^{2x})}{e^{4x}} \, dx + x e^{2x} \int \frac{e^{2x} (x^{2} e^{2x})}{e^{4x}} \, dx
+   y_{\rm p} = -e^{2x} \int x^{3} e^{-x} \, dx + x e^{2x} \int x^{2} e^{-x} \, dx
    \end{equation}
    
+   These integrals can both be evaluated by parts using the tabular method:
+   
+   For the first
+
+   | sign | $u$     | $\d{v}$     |
+   |------|---------|-------------|
+   |      |         | $e^{-x}$    |
+   |  $+$ | $x^3$   | $-e^{-x}$   |
+   |  $-$ | $3x^2$  | $e^{-x}$    |
+   |  $+$ | $6x$    | $-e^{-x}$   |
+   |  $-$ | $6$     | $e^{-x}$    |
+   |      | $0$     | $-e^{-x}$   |
+   so
+
    \begin{equation}
-   y_p = -e^{2x} \int x^{3} e^{-x} \, dx + x e^{2x} \int x^{2} e^{-x} \, dx
+   \int x^3 \e^{-x} \, \d{x} = -x^3 \e^{-x} - 3x^2 \e^{-x} - 6x \e^{-x}- 6 \e^{-x}
+   \end{equation}
+
+    For the second
+
+   | sign | $u$     | $\d{v}$     |
+   |------|---------|-------------|
+   |      |         | $e^{-x}$    |
+   |  $+$ | $x^2$   | $-e^{-x}$   |
+   |  $-$ | $2x$    | $e^{-x}$    |
+   |  $+$ | $2$     | $-e^{-x}$   |
+   |      | $0$     | $e^{-x}$    |
+   so
+   
+   \begin{equation}
+   \int x^2 \e^{-x} \, \d{x} = -x^2 \e^{-x} - 2x \e^{-x} - 2 \e^{-x}
    \end{equation}
    
-   \begin{align}
-   \text{u} & \quad \text{dv} \quad & \quad \quad \text{u} & \quad \text{dv} \\
-   x^{3}   & \quad e^{-x}  & \quad x^{2} & \quad e^{-x} \\
-   3x^{2}  & \quad -e^{-x} & \quad 2x    & \quad -e^{-x} \\
-   6x      & \quad e^{-x}  & \quad 2     & \quad e^{-x} \\
-   6       & \quad -e^{-x} & \quad 0     & \quad -e^{-x} \\
-   0       & \quad e^{-x}  & \quad 0     & \quad e^{-x} \\
-   \end{align}
+   Substitute everything back:
+
+\begin{align}
+y_{\rm p} &= -e^{2x} \left( -x^3 e^{-x} - 3x^2 e^{-x} - 6x e^{-x} - 6 e^{-x} \right) \\
+&\quad + x e^{2x} \left( -x^2 e^{-x} - 2x e^{-x} - 2 e^{-x} \right)
+\end{align}
+
+Simplifying:
+
+\begin{equation}
+y_{\rm p} = (x^2 + 4x + 6) e^x
+\end{equation}
    
+   3. Combine and apply initial conditions
+  
+   The general solution is
+
    \begin{equation}
-   y_p = -e^{2x}( -x^{3} e^{-x} - 3x^{2} e^{-x} - 6x e^{-x} - 6 e^{-x}) + x e^{2x}( -x^{2} e^{-x} - 2x e^{-x} - 2 e^{-x})
+   y=(C_1 + C_2 x) e^{2x}+(x^{2}+4x+6)e^{x}
    \end{equation}
-   
-   \begin{equation}
-   y_p = (x^2 + 4x + 6) e^x
-   \end{equation}
-   
-   3. Combine and apply boundary conditions
-   
-      \begin{equation}
-      y=(C_1 + C_2 x) e^{2x}+(x^{2}+4x+6)e^{x}
-      \end{equation}
-      
       \begin{equation}
       y'=2(C_1 + C_2 x) e^{2x}+C_2e^{2x}+(x^{2}+4x+6)e^{x}+(2x+4)e^{x}
       \end{equation}
+
       \begin{equation}
-      0=y(0)=C_1+6 \Rightarrow C_1=-6
+      0=y(0)=(C_1+C_2(0))e^{2(0)}
       \end{equation}
       \begin{equation}
-      0=y'(0)=2C_1+C_2+6+4 \Rightarrow C_2=2
+      0=y'(0)=2(C_1 + C_2(0)) e^{2(0)}+C_2e^{2(0)}+(0^{2}+4(0)+6)e^{0}+(2(0)+4)e^{0}
       \end{equation}
+
+      $C_1=-6 \quad C_2=2$
 
    This gives the final solution:
 
