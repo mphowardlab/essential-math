@@ -1,11 +1,10 @@
 # Derivatives
 
-$$
-\begin{aligned}
-The Derivative is also a function!
-\end{aligned}
-$$
 
+The Derivative is also a function!
+
+
+$$
 \begin{aligned}
 f(x) &= x^2 \\
 f'(x) &= \lim_{h \to 0} \frac{(x+h)^2 - x^2}{h} \\
@@ -13,10 +12,11 @@ f'(x) &= \lim_{h \to 0} \frac{(x+h)^2 - x^2}{h} \\
     &= \lim_{h \to 0} \frac{2xh + h^2}{h} \\
     &= \lim_{h \to 0} (2x + h) = 2x
 \end{aligned}
+$$
 
 Example: Differentiate
 
-
+$$
 \begin{aligned}
 (1) f(x) &= (x - 1)^2 + 1 \\
 f'(x) &= \lim_{h \to 0} \frac{[(x + h - 1)^2 + 1] - [(x - 1)^2 + 1]}{h} \\
@@ -24,7 +24,7 @@ f'(x) &= \lim_{h \to 0} \frac{[(x + h - 1)^2 + 1] - [(x - 1)^2 + 1]}{h} \\
     &= \lim_{h \to 0} \frac{2(x - 1)h + h^2}{h} \\
     &= \lim_{h \to 0} \(2(x - 1) + h\) = 2(x - 1)
 \end{aligned}
-
+$$
 
 \begin{aligned}
 (2) f(x) &= \frac{1}{x} \\
