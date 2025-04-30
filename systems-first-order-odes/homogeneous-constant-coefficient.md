@@ -47,3 +47,15 @@ The general solution is
 \mathbf{c}(t) = a_1 exp^{0t} \begin{bmatrix} 1 \\ 1 \end{bmatrix} + a_2 exp^{-0.2t} \begin{bmatrix} 1 \\ -1 \end{bmatrix}
 = a_1 \begin{bmatrix} 1 \\ 1 \end{bmatrix} + a_2 exp^{-0.2t} \begin{bmatrix} 1 \\ -1 \end{bmatrix}
 \end{align}
+
+For C(0)
+
+\begin{align}
+\mathbf{c}(0) = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
+= a_1 \begin{bmatrix} 1 \\ 1 \end{bmatrix} + a_2 \begin{bmatrix} 1 \\ -1 \end{bmatrix} end{bmatrix}
+= \begin{bmatrix} a_1 + a_2 \\ a_1 \\ - a_2 \end{bmatrix}
+\end{align}
+
+\begin{align}
+a_1 + a_2 = 0 \quad a_1 - a_2 = 0 \Rightarrow a_1 = a_2 = 0
+\end{align}
