@@ -1,14 +1,12 @@
 # Integrating factor
 ## What do we do when an ODE is not exact?
 **Example 1:**
-\begin{align} 
- -y dx + x dy &= 0 & \quad &\text{(given)} \notag \
-  \P &= -y & \quad
-  &\Q = x \notag \
-  \frac{\partial P}{\partial y} &= -1 \quad 
-  &\frac{\partial Q}{\partial x} &= 1 \notag \
-  & & \quad \Rightarrow \text{Not exact!} \notag
-  \end{align}
+\begin{align}
+-y \, dx + x \, dy &= 0 && \text{(given)} \\
+P &= -y         && Q = x \\
+\frac{\partial P}{\partial y} &= -1 \quad \text{and} \quad \frac{\partial Q}{\partial x} = 1 \\
+&\Rightarrow \text{Not exact!}
+\end{align}
 
 When solving ODEs, we take the partial derivatives of P and Q.
 If the partial derivatives are not equal, the equation is **not exact**: 
