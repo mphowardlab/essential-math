@@ -1,4 +1,4 @@
-# Integrating factor 
+# Integrating factor
 
 ## 4. Example:
 
@@ -9,6 +9,7 @@ Mole balance on a tank with increasing inlet/outlet flow rate.
 :width: 300px
 :align: center
 ```
+Formulate overall mole balances based on entering and exit streams. Replace the molar flowrates with the equivalent concentrations, volumetric flowrates and, times.
 
 \begin{align}
 \dot{n}_{A} &= \dot{n}_{A,\text{in}} - \dot{n}_{A,\text{out}}, \quad \dot{n}_{A,\text{in}} = C_{f,A} \dot{q}t \\
@@ -26,7 +27,8 @@ p(t) &= \frac{\dot{q}t}{V} \quad r(t) = C_{f,A}  \dot{q}t \\
 F(t) &= exp[\int{p(t)dt}] = exp(\int{\frac{\dot{q}t}{v}dt}) = exp(\frac{1}{2}\frac{\dot{q}}{v^{2}})\\
 \end{align}
 ```
-
+Formulate  an integral based upon the integration factor formula. Use U-Substution when necessary. 
+Use the inital conditions to evaluate the integration constant.
 ```{math}
 \begin{align}
 \int{F(t)r(t)dt} &= \int{exp(\frac{1}{2}\frac{\dot{q}}{V}t^{2})C_{f,A}\dot{q}tdt} = \int{e^{u}C_{f,A}Vdu} = C_{f,A}Vexp(\frac{1}{2}\frac{\dot{q}}{v}t^{2}) \\
