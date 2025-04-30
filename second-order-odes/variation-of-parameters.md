@@ -7,7 +7,8 @@ We are solving the steady-state heat diffusion equation with an internal source:
 \alpha \dd{2}{T}{x} + qx \sin x = 0
 \end{equation}
 
-where $\alpha$ is thermal diffusivity, and $qx \sin x$ is the heat source. The boundary conditions are:
+where $\alpha$ is thermal diffusivity, and $qx \sin x$ is the heat source. The
+boundary conditions are:
 
 \begin{equation}
 T(-1) = T(1) = 1
@@ -46,8 +47,10 @@ T(-1) = T(1) = 1
    Then, the particular solution is:
 
    \begin{align}
-   T_{\rm p} &= -1 \int x \left( \frac{-q x \sin x}{\alpha} \right) \, \d{x}  + x \int \left( \frac{-q x \sin x}{\alpha} \right) \, \d{x} \\
-   &= \frac{q}{\alpha} \int x^2 \sin x \, \d{x} - \frac{q}{\alpha} x \int x \sin x \, \d{x}
+   T_{\rm p} &= -1 \int x \left( \frac{-q x \sin x}{\alpha} \right) \, \d{x}
+     + x \int \left( \frac{-q x \sin x}{\alpha} \right) \, \d{x} \\
+   &= \frac{q}{\alpha} \int x^2 \sin x \, \d{x}
+     - \frac{q}{\alpha} x \int x \sin x \, \d{x}
    \end{align}
 
    To evaluate $\int x^2 \sin x \, \d{x}$ first, let:
@@ -70,10 +73,11 @@ T(-1) = T(1) = 1
    \du &= 2 \, \d{x}, \quad v = \sin x
    \end{align}
 
-   Thus, 
+   Thus,
 
    \begin{equation}
-   \int 2x \cos x \, \d{x} = 2x \sin x - \int 2 \sin x \, \d{x} = 2x \sin x + 2 \cos x
+   \int 2x \cos x \, \d{x} = 2x \sin x - \int 2 \sin x \, \d{x}
+     = 2x \sin x + 2 \cos x
    \end{equation}
 
    So, the first integral becomes:
@@ -85,9 +89,9 @@ T(-1) = T(1) = 1
 
    Now evaluate $\int 2x \cos x \, dx$:
 
-   Let  
-   $u = 2x$, $\quad dv = \cos x \, dx$  
-   Then  
+   Let
+   $u = 2x$, $\quad dv = \cos x \, dx$
+   Then
    $du = 2\,dx$, $\quad v = \sin x$
 
    $$
@@ -103,14 +107,15 @@ T(-1) = T(1) = 1
    Substitute into the original expression:
 
    $$
-   \frac{q}{\alpha} \left[ -x^2 \cos x + 2x \sin x + 2 \cos x \right] - \frac{q}{\alpha} x \int x \sin x \, dx
+   \frac{q}{\alpha} \left[ -x^2 \cos x + 2x \sin x + 2 \cos x \right]
+     - \frac{q}{\alpha} x \int x \sin x \, dx
    $$
 
    Integration of $\int x \sin x \, dx$:
 
-   Let  
-   $u = x$, $\quad dv = \sin x \, dx$  
-   Then  
+   Let
+   $u = x$, $\quad dv = \sin x \, dx$
+   Then
    $du = dx$, $\quad v = -\cos x$
 
    Then:
