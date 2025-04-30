@@ -30,7 +30,7 @@ A_1  + A_2 &= 3 \\
 \end{align}
 
 This is a system of linear equations that can be solved, e.g., using a matrix
-technique. Form the augmented matrix then perform Gauss-Jordan elimination:  
+technique. Form the augmented matrix then perform Gauss-Jordan elimination:
 
 \begin{align}
 \begin{bmatrix} 1 & 1 & 3\\ 2 & -3 & 11 \end{bmatrix}
