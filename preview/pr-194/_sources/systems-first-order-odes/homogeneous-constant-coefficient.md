@@ -22,7 +22,7 @@ Since A is symmetric, it has real eigenvalues.
 \begin{vmatrix} -0.1 - \lambda & 0.1 \\ 0.1 & -0.1 - \lambda \end{vmatrix} = (\lambda + 0.1)^2 - (0.1)^2 = \lambda^2 + 0.2\lambda = 0
 \end{align}
 
-The eigenvalues are
+So, the eigenvalues are
 
 \begin{align}
 \lambda_1 = 0, \quad \lambda_2 = -0.2
@@ -53,7 +53,7 @@ For C(0)
 
 \begin{align}
 \mathbf{c}(0) = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
-= a_1 \begin{bmatrix} 1 \\ 1 \end{bmatrix} + a_2 \begin{bmatrix} 1 \\ -1 \end{bmatrix}
+= a_1 \begin{bmatrix} 1 \\ 0 \end{bmatrix} + a_2 \begin{bmatrix} 1 \\ -1 \end{bmatrix}
 = \begin{bmatrix} a_1 + a_2 \\ a_1 - a_2 \end{bmatrix}
 \end{align}
 
