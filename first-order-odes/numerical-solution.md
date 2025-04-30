@@ -12,7 +12,7 @@ Using the **Euler method**, we compute approximations for $y(1)$ using two step 
 
 ---
 
-## Step size $\Delta t = 0.1$
+Step size $\Delta t = 0.1$
 
 Let $f(t, y) = y + 5\sin(2\pi t)$
 
@@ -38,7 +38,7 @@ $$
 
 ---
 
-## Step size $\Delta t = 0.2$
+Step size $\Delta t = 0.2$
 
 | $n$ | $t_n$ | $y_n$ | $f(t_n, y_n)$ |
 |----:|------:|------:|---------------:|
