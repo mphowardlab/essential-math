@@ -10,6 +10,7 @@ This work (c) 2025 is licensed under
 - Payton Baxter
 - Andrew Castel
 - Paine Cole
+- Oscar Earhart
 - Sarah Eldridge
 - Alexis Florit
 - Ella Governale
