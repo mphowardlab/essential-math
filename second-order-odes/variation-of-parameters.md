@@ -228,8 +228,6 @@ T = 1 + \frac{q}{\alpha}\left[2(\cos x - \cos 1) + x \sin x - \sin 1\right]
      y_{\rm p} = (x^2 + 4x + 6) e^x
      \end{equation}
 
-
-   
    3. Combine and apply initial conditions
   
       The general solution is
