@@ -124,7 +124,7 @@ Then, evaluate the integral:
 &= A\int{e^{kt}dt} + B\int{e^{kt}\cos{(\frac{\pi t}{12})}dt}
 \end{align}
 
-Use table of integrals or integration by parts to evaluate the second integral in the equation.
+Use the table of integrals or integration by parts to evaluate the second integral in the equation
 
 \begin{align}
 &= \frac{A}{k}e^{kt} +
