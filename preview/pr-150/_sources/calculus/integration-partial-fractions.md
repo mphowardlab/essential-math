@@ -1,5 +1,154 @@
 # Partial fraction decomposition
 
+Integrals like
+
+\begin{equation}
+\int \frac{3x+11}{x^2-x-6} \d{x}
+\end{equation}
+
+can be evaluated by breaking them apart into simpler integrals. Let's try to
+break the integrand up into the factors of its denominator:
+
+\begin{equation}
+\frac{3x+11}{x^2-x-6} = \frac{3x+11}{(x-3)(x+2)} = \frac{A_1}{x-3} + \frac{A_2}{x+2}
+\end{equation}
+
+To find $A_1$ and $A_2$, first cross multiply to eliminate the denominator, then
+combine like powers of *x*:
+
+\begin{align}
+3x + 11 &= A_1(x+2) + A_2(x-3) \\
+3x + 11 &= (A_1 + A_2)x + (2A_1 - 3A_2) \\
+\end{align}
+
+If our proposed form will work, all the coefficients of *x* must match on both
+sides, so
+
+\begin{align}
+A_1  + A_2 &= 3 \\
+2A_1 - 3A_2 &= 11
+\end{align}
+
+This is a system of linear equations that can be solved, e.g., using a matrix
+technique. Form the augmented matrix then perform Gauss-Jordan elimination:
+
+\begin{align}
+\begin{bmatrix} 1 & 1 & 3\\ 2 & -3 & 11 \end{bmatrix}
+\begin{matrix}\vphantom{R_1} \\ -2 R_1 \end{matrix}
+&\to \begin{bmatrix} 1 & 1 & 3\\ 0 & -5 & 5 \end{bmatrix}
+\begin{matrix}\vphantom{R_1} \\ \div -5 \end{matrix} \\
+&\to \begin{bmatrix} 1 & 1 & 3\\ 0 & 1 & -1 \end{bmatrix}
+\begin{matrix} -R_2 \\ \vphantom{R_2} \end{matrix} \\
+&\to \begin{bmatrix} 1 & 0 & 4\\ 0 & 1 & -1 \end{bmatrix}
+\end{align}
+
+so $A_1 = 4$ and $A_2 = -1$. Once you have coefficients, you can integrate:
+
+\begin{align}
+\int \frac{3x+11}{x^2-x-6} \d{x}
+&= \int\left(\frac{4}{x-3}-\frac{1}{x+2} \right) \d{x} \\
+&= 4\ln| x-3 | - \ln|x+2| + c
+\end{align}
+
+We can formalize this technique, called *partial fraction decomposition*.
+
+```{topic} Partial fraction decomposition
+For a rational polynomial $P(x)/Q(x)$ where *Q* is expressed using either
+linear or irreducible quadratic factors and the degree of *P* is less than *Q*,
+propose the following decomposition:
+
+- Linear factor $ax+b$
+
+  \begin{equation}
+  \frac{A}{ax+b}
+  \end{equation}
+
+- Repeated linear factor $(ax+b)^k$
+
+  \begin{equation}
+  \frac{A_1}{ax+b} + \cdots + \frac{A_k}{(ax+b)^k}
+  \end{equation}
+
+- Irreducible quadratic factor $ax^2 + bx + c$
+
+  \begin{equation}
+  \frac{Ax+B}{ax^2+bx+c}
+  \end{equation}
+
+- Repeated irreducible quadratic factor $(ax^2 + bx+c)^k$
+
+  \begin{equation}
+  \frac{A_1 x + B_1}{ax^2+bx+c} + \cdots + \frac{A_k x + B_k}{(ax^2+bx+c)^k}
+  \end{equation}
+
+```
+
+To demonstrate this technique, let's try to take the integral
+
+\begin{equation}
+\int \frac{x^2-29x+5}{(x-4)^2 (x^2+3)} \d{x}
+\end{equation}
+
+First, expand the denominator and put placeholder coefficient terms in the numerator.
+
+\begin{equation}
+\frac{x^2-29x+5}{\left(x-4 \right)^2 \left(x^2+3 \right)}
+= \frac{A_1}{x-4} + \frac{A_2}{(x-4)^2} + \frac{A_3x+ B_3}{x^2+3}
+\end{equation}
+
+Next, cross multiply, expand, and collect like powers of *x*:
+
+\begin{align}
+x^2-29x+5 &= A_1 \left(x-4 \right) \left(x^2+3 \right) +
+ A_2 \left(x^2+3 \right) \\
+ &\quad + \left(A_3x+B_3 \right) \left(x-4 \right)^2 \\
+&= A_1 \left(x^3-4x^2+3x-12 \right) + A_2 \left(x^2+3 \right) \\
+ &\quad +\left(A_3x+B_3 \right)\left(x^2-8x+16 \right) \\
+&=\left(A_1+A_3\right)x^3+\left(-4A_1+A_2-8A_3+B_3\right)x^2 \\
+ &\quad + \left(3A_1+16A_3-8B_3\right)x+\left(-12A_1+3A_2+16B_3\right)
+\end{align}
+
+Finally, form the linear system of equations for the coefficients of *x*:
+
+\begin{align}
+A_1+A_3 &= 0 \\
+-4A_1 + A_2-8A_3 + B_3 &=1 \\
+3A_1 + 16A_3 - 8B_3 &= -29 \\
+-12A_1+3A_2+16B_3 &=5 \\
+\end{align}
+
+These linear equations can be written using a matrix and vectors
+
+\begin{equation}
+\begin{bmatrix}
+1 & 0 & 1 & 0\\
+-4 & 1 & -8 & 1\\
+3 & 0 & 16 & -8\\
+-12 & 3 & 0 & 16
+\end{bmatrix}
+\begin{bmatrix} A_1 \\ A_2\\ A_3\\ B_3 \end{bmatrix}
+= \begin{bmatrix} 0\\ 1\\ -29 \\ 5 \end{bmatrix}
+\end{equation}
+
+Solving numerically gives $A_1 = 1$, $A_2 = -5$, $A_3 = -1$, and $B_3 =2$.
+Finally,
+
+\begin{align}
+\int &\frac{x^2-29x+5}{(x-4)^2 (x^2+3)} \d{x} \\
+&= \int\Biggl(\frac{1}{x-4}-\frac{5}{(x-4)^2}
+  -\frac{x}{x^2+3}+\frac{2}{x^2+3}\Biggr) \d{x} \\
+&= \ln|x-4|+\frac{5}{x-4} -\frac{1}{2} \ln|x^2 + 3| +
+  \frac{2}{\sqrt{3}} \arctan\left( \frac{x}{\sqrt{3}} \right) + c
+\end{align}
+
+using *u* substitution in
+
+\begin{equation}
+\int \frac{\d{x}}{1+x^2} = \arctan x
+\end{equation}
+
+to evaluate the last integral.
+
 ## Heaviside cover-up method
 
 The Heaviside cover-up method is a simplified approach to finding the
