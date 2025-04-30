@@ -56,7 +56,10 @@
 
     Not all functions have limits at infinity. Some "blow up"!
 
-    $\lim_{x \to \infty} \frac{2x^2-3}{7x+4} = \lim_{x \to \infty} \frac{ 2x - \frac{3}{x} }{ 7 + \frac{4}{x} }$ = does not exist
+    $$
+    \lim_{x \to \infty} \frac{2x^2-3}{7x+4} = \lim_{x \to \infty} \frac{ 2x - \frac{3}{x} }{ 7 + \frac{4}{x} }
+    $$
+    = does not exist
 
     Shortcut: check coefficients of highest powers in numerator and denominator!
     
