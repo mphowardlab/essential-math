@@ -22,7 +22,7 @@ Since A is symmetric, it has real eigenvalues. We solve:
 
 \begin{vmatrix} -0.1 - \lambda & 0.1 \\ 0.1 & -0.1 - \lambda \end{vmatrix} = (\lambda + 0.1)^2 - (0.1)^2 = \lambda^2 + 0.2\lambda = 0
 
-Thus, the eigenvalues are:
+The eigenvalues are:
 
 \begin{align}
 \lambda_1 = 0, \quad \lambda_2 = -0.2
@@ -38,12 +38,8 @@ For ( \lambda_1 = 0)
 For ( \lambda_2 = -0.2)
 
 \begin{align}
-\left( A - -0.2I \right)  \mathbf{x}_1 = 0 \quad \Rightarrow \quad \mathbf{x}_1 = \begain{bmatrix} 1 \\ -1 \end{bmatrix} \end{align}
-
-The General solution
-
-\begin{align}
-\mathbf{x}(t) = a_1 exp^{0t} \begin{bmatrix} 1 \\ 1 \end{bmatrix} + a_2 exp^{-0.2t} \begin{bmatrix} 1 \\ -1 \end{bmatrix} \end{align}
+\left( A - -0.2I \right)  \mathbf{x}_1 = 0 \quad \Rightarrow \quad \mathbf{x}_1 = \begain{bmatrix} 1 \\ -1 \end{bmatrix} \end{align} = \mathbf{x}(t) = a_1 exp^{0t} \begin{bmatrix} 1 \\ 1 \end{bmatrix} + a_2 exp^{-0.2t} \begin{bmatrix} 1 \\ -1 \end{bmatrix}
+ \end{align}
 
 Simplifying 
 
