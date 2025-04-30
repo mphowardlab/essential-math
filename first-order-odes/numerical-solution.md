@@ -10,7 +10,7 @@ $$
 
 Using the **Euler method**, we compute approximations for $y(1)$ using two step sizes:
 
----
+Using the Euler method, we compute approximations for $y(1)$ using two step sizes:
 
 Step size $\Delta t = 0.1$
 
@@ -36,7 +36,7 @@ $$
 y(1) \approx 3.683
 $$
 
----
+Step size $\Delta t = 0.2$
 
 Step size $\Delta t = 0.2$
 
@@ -56,4 +56,5 @@ y(1) \approx 3.322
 $$
 
 ---
+
 
