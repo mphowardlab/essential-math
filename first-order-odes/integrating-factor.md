@@ -124,7 +124,8 @@ Then, evaluate the integral:
 &= A\int{e^{kt}dt} + B\int{e^{kt}\cos{(\frac{\pi t}{12})}dt}
 \end{align}
 
-Use the table of integrals or integration by parts to evaluate the second integral in the equation
+Use the table of integrals or integration by parts to evaluate the second
+integral in the equation
 
 \begin{align}
 &= \frac{A}{k}e^{kt} +
@@ -132,7 +133,7 @@ B\frac{e^{kt}}{k^{2}+(\frac{\pi}{12})^{2}}[Kcos{(\frac{\pi t}{12})} +
 \frac{\pi}{12}\sin{(\frac{\pi t}{12})}]\\
 \end{align}
 
-The final result is: 
+The final result is:
 
 \begin{align}
 \to{c(t) = e^{-kt}(\frac{A}{k}e^{kt} + B\frac{e^{kt}}{k^{2} +
