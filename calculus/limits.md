@@ -5,10 +5,10 @@
     If x is time, this represents waiting a long time to reach a "steady state".
 
     Ex: Population dynamics
-    [See "Carrying capacity (Resource limitation) where $\lim_{t \to \infty} P(t)"$]
+    [See "Carrying capacity (Resource limitation) where $\lim_{t \to \infty} P(t)$"]
 
     Proportional-integral control (e.g., of servo, value, etc.)
-    [See "Set point (Target) where $\lim_{t \to \infty} f(t)$]
+    [See "Set point (Target) where $\lim_{t \to \infty} f(t)$"]
 
 2. Formal definition
 
@@ -16,7 +16,7 @@
     \lim_{x \to \infty} f(x) = L
     $$
     
-    if for every $\sum_$ > 0, there exists a value M such that for all x, if x > M, $\left| f(x) - L \right| < \sum_$.
+    if for every $\sum_ > 0$, there exists a value M such that for all x, if x > M, $\left| f(x) - L \right|$ $< \sum_$.
 
     i.e., f gets close to L when x is "big" :)
 
