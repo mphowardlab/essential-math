@@ -1,33 +1,18 @@
 # Numerical solution methods
-Determine y(1) for 
-
-<!-- $$
-/y^i +5sin(2*pi*t)/   y(0) =1  
-
-$$
-using the Euler method with / \varepsilon t = 0.1/ and 0.2. Compare to ode45 solution for y(1). 
-$$
-/f(t,y) = y + 5*sin(2* pi* t)/
-$$
-$$
-\varepsilon * t = 0.1
-$$
-|n|t_n|y_n| f(t_n, y_n)|    -->
-
-
-# Solving y' = y + 5 sin(2πt) using Euler's Method
+Determine y(1) for  Solving y' = y + 5 sin(2πt) using Euler's Method
 
 We are given the initial value problem:
-
+$$
 \[
 y' = y + 5\sin(2\pi t), \quad y(0) = 1
 \]
+$$
 
 Using the **Euler method**, we compute approximations for \( y(1) \) using two step sizes:
 
 ---
 
-## Step size \( \Delta t = 0.1 \)
+Step size $$\( \Delta t = 0.1 \)$$
 
 Let \( f(t, y) = y + 5\sin(2\pi t) \)
 
