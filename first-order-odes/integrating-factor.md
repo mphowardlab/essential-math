@@ -84,7 +84,7 @@ n_{\rm A}(t) &= \frac{1}{F} \left(\int F r \d{t} + c \right) \\
 &= c_{{\rm f},{\rm A}} V + c \exp\left(-\frac{1}{2}\frac{\dot{q}t^2}{V}\right)
 \end{align}
 
-Use the inital conditions to evaluate the integration constant.:
+Use the inital conditions to evaluate the integration constant:
 
 \begin{align}
 n_{\rm A}(0) &= c_{{\rm f},{\rm A}}V + c = n_{{\rm A},0} \\
@@ -99,46 +99,59 @@ n_{\rm A}(t) = c_{{\rm f},{\rm A}}V + (n_{{\rm A},0} - c_{{\rm f},{\rm A}}V) \ex
 ````
 
 ````{example} Hormone level (again)
-
 We had
 
-\begin{align}
-C^{'} + Kc &= A + B\cos{(\frac{\pi t}{12})} \quad with \quad c(o) = c_{o}\\
-\end{align}
+\begin{equation}
+c' + kc = A + B\cos\left(\frac{\pi t}{12}\right), \quad c(0) = c_0
+\end{equation}
 
 This is a linear first-order ODE with:
+\begin{equation}
+p = kc \qquad r = A + B\cos\left(\frac{\pi t}{12}\right)
+\end{equation}
+
+that can be solved using an integrating factor:
+
+\begin{equation}
+F = e^{\int k \d{t}} = e^{kt}
+\end{equation}
+
+Then, evaluate the integral using the table of integrals or integration by parts
+to evaluate the second integral in the equation
+
 \begin{align}
-p &= Kc \quad r = A + B\cos{(\frac{\pi t}{12})}\\
+\int F r \d{t} &= \int e^{kt}
+  \left[A+B\cos\left(\frac{\pi t}{12}\right)\right]\d{t} \\
+&= A\int e^{kt} \d{t} + B \int e^{kt} \cos\left(\frac{\pi t}{12}\right)\d{t} \\
+&= \frac{A}{k} e^{kt} + B \frac{e^{kt}}{k^{2}+(\pi/12)^2}
+  \Biggl[k \cos{(\frac{\pi t}{12})} +
+  \frac{\pi}{12}\sin{\left(\frac{\pi t}{12}\right)}\Biggr]
 \end{align}
 
-That can be solved using an integrating factor:
+The general solution is:
 
 \begin{align}
-F(t) &= exp{(\int{kdt})} = e^{kt}\\
+c(t) &= \frac{1}{F} \left(\int F r \d{t} + c^* \right) \\
+     &= \frac{A}{k} + \frac{B}{k^{2}+(\pi/12)^2}
+  \Biggl[k \cos\left(\frac{\pi t}{12}\right)
+         + \frac{\pi}{12}\sin{\left(\frac{\pi t}{12}\right)}\Biggr]
+  + c^* e^{-kt}
 \end{align}
 
-Then, evaluate the integral:
+Use the inital condition to evaluate the integration constant:
 
 \begin{align}
-\int{F(t)r(t)dt} &= \int{e^{kt}[A+B\cos{\frac{\pi t}{12}}]dt}\\
-&= A\int{e^{kt}dt} + B\int{e^{kt}\cos{(\frac{\pi t}{12})}dt}
+c(0) &= \frac{A}{k} + \frac{B}{k^{2}+(\pi/12)^2} k + c^* = c_0 \\
+c^* &= c_0 - \frac{A}{k} - \frac{B}{k^{2}+(\pi/12)^2} k
 \end{align}
 
-Use the table of integrals or integration by parts to evaluate the second
-integral in the equation
+The final solution is:
 
 \begin{align}
-&= \frac{A}{k}e^{kt} +
-B\frac{e^{kt}}{k^{2}+(\frac{\pi}{12})^{2}}[Kcos{(\frac{\pi t}{12})} +
-\frac{\pi}{12}\sin{(\frac{\pi t}{12})}]\\
-\end{align}
-
-The final result is:
-
-\begin{align}
-\to{c(t) = e^{-kt}(\frac{A}{k}e^{kt} + B\frac{e^{kt}}{k^{2} +
-(\frac{\pi}{12})^{2}}[k\cos{(\frac{\pi t}{12})} +
- \frac{\pi}{t}\sin{(\frac{\pi t}{12})}] + C^{*})}
+c(t) &= \frac{A}{k}
+  + \frac{B}{k^{2}+(\pi/12)^2} \Biggl[k \cos\left(\frac{\pi t}{12}\right) +
+  \frac{\pi}{12}\sin{\left(\frac{\pi t}{12}\right)}\Biggr] \\
+  &+ \Biggl[c_0 - \frac{A}{k} - \frac{Bk}{k^{2}+(\pi/12)^2} \Biggr] e^{-kt}
 \end{align}
 
 ````
