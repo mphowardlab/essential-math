@@ -88,6 +88,8 @@ y &=L^{-1}[Y]\\
 \end{align}
 ```
 
+<!-- markdownlint-disable MD013 -->
+
 ```{example} Hormone level
 The concentration of a hormone in the blood *c* varies due to sinusoidal
 production by the thyroid and continuous removal according to:
@@ -182,3 +184,4 @@ The average concentration is:
 &= \frac{A}{k} - \frac{1}{6} \frac{B}{k^2 + (\pi/12)^2} - \frac{1}{12}\left[\frac{A}{k^2} + \frac{B}{k^2 + (\pi/12)^2}\right] (e^{-12k} - e^{-24k})
 \end{align}
 ```
+<!-- markdownlint-enable MD013 -->
