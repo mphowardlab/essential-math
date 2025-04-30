@@ -13,6 +13,7 @@ This work (c) 2025 is licensed under
 - Sarah Eldridge
 - Alexis Florit
 - Ella Governale
+- Connor Habig
 - Kennedi Hawkins
 - Molly Grace Hicks
 - Michael P. Howard
