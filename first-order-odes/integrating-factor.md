@@ -1,7 +1,7 @@
 # Integrating factor
 
 ## 4. Example:
-
+````{Example}
 Mole balance on a tank with increasing inlet/outlet flow rate.
 
 ```{image} ./_images/Integrating_factors_image.jpg
@@ -17,7 +17,7 @@ Formulate overall mole balances based on entering and exit streams. Replace the 
 \end{align}
 
 
-
+````{Example}
 ````{dropdown} 4. Solution
 Rewrite: 
 ```{math}
@@ -42,6 +42,7 @@ n_{A}(o) &= n_A,o = C_{f,A}V+C \to{C = n_{A,o} - C_{f,A}V}
 
 ```{math}
 \to{\boxed{n_{A}(t) = C_{f,A}V + (n_{A,o} - C_{f,A}V)exp{(-\frac{1}{2}\frac{\dot{q}}{v}t^{2})}}}\\
+````
 ````
 
 
@@ -80,3 +81,4 @@ table of integrals, or by parts
 \end{align}
 ```
 `````
+````
