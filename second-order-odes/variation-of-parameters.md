@@ -213,7 +213,7 @@ T = 1 + \frac{q}{\alpha}\left[2(\cos x - \cos 1) + x \sin x - \sin 1\right]
     so
     
     \begin{equation}
-    \int x^2 \e^{-x} \, \d{x} = -x^2 \e^{-x} - 2x \e^{-x} - 2 \e^{-x}
+    \int x^2 e^{-x} \, \d{x} = -x^2 e^{-x} - 2x e^{-x} - 2 e^{-x}
     \end{equation}
     
     Substitute everything back:
@@ -230,7 +230,7 @@ T = 1 + \frac{q}{\alpha}\left[2(\cos x - \cos 1) + x \sin x - \sin 1\right]
 
    3. Combine and apply initial conditions
   
-      The general solution is
+    The general solution is
 
       \begin{equation}
       y=(C_1 + C_2 x) e^{2x}+(x^{2}+4x+6)e^{x}
@@ -242,7 +242,7 @@ T = 1 + \frac{q}{\alpha}\left[2(\cos x - \cos 1) + x \sin x - \sin 1\right]
       \end{equation}
 
 
-     Plugging in intial conditions gives
+     Plugging in intial conditions
 
       \begin{equation}
       0=y(0)=(C_1+C_2(0))e^{2(0)}+(0^{2}+4(0)+6)e^{0}
@@ -250,6 +250,8 @@ T = 1 + \frac{q}{\alpha}\left[2(\cos x - \cos 1) + x \sin x - \sin 1\right]
       \begin{equation}
       0=y'(0)=2(C_1 + C_2(0)) e^{2(0)}+C_2e^{2(0)}+(0^{2}+4(0)+6)e^{0}+(2(0)+4)e^{0}
       \end{equation}
+    
+    Solving for C_1 and C_2 gives
 
     $$
     C_1 = -6 \quad C_2 = 2
