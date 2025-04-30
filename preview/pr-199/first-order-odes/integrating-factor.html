@@ -431,6 +431,9 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">5.7. Integrating factor</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-do-we-do-when-an-ode-is-not-exact">5.7.1. What do we do when an ODE is not exact?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-integrating-factor">5.7.2. Finding the Integrating Factor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-did-we-find-f">5.7.3. How did we find F?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-continued">5.7.4. Example 1 (continued)</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#application-to-linear-first-order-odes">5.8. Application to Linear First-Order ODEs:</a></li>
@@ -450,60 +453,75 @@ document.write(`
 <h1><span class="section-number">5.7. </span>Integrating factor<a class="headerlink" href="#integrating-factor" title="Link to this heading">#</a></h1>
 <section id="what-do-we-do-when-an-ode-is-not-exact">
 <h2><span class="section-number">5.7.1. </span>What do we do when an ODE is not exact?<a class="headerlink" href="#what-do-we-do-when-an-ode-is-not-exact" title="Link to this heading">#</a></h2>
-<p><strong>Example 1:</strong>
-$$</p>
+<p><strong>Example 1:</strong></p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*} 
-  -y \, dx + x \, dy &amp;= 0 \\
-  P &amp;= -y \\
-  Q &amp;= x \\
-  \frac{\partial P}{\partial y} &amp;= -1 \\
-  \frac{\partial Q}{\partial x} &amp;= 1 \\
+  -y , dx + x , dy &amp;= 0 \
+  P &amp;= -y \
+  \Q &amp;= x \
+  \frac{\partial P}{\partial y} &amp;= -1 \
+  \frac{\partial Q}{\partial x} &amp;= 1 \
+  &amp;\Rightarrow\text{not exact!}
   \end{align*}\]</div>
+<p>When solving ODEs, we take the partial derivatives of P and Q.
+If the partial derivatives are not equal, the equation is <strong>not exact</strong>:</p>
+</section>
+<hr class="docutils" />
+<section id="finding-the-integrating-factor">
+<h2><span class="section-number">5.7.2. </span>Finding the Integrating Factor<a class="headerlink" href="#finding-the-integrating-factor" title="Link to this heading">#</a></h2>
+<p>Multiply by a factor F to make the ODE exact. This is called the <strong>integrating factor</strong>.</p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}When solving ODEs, we take the partial derivatives of P and Q.
-If the partial derivatives are not equal, the equation is **not exact**: \\---\\## Finding the Integrating Factor\\Multiply by a factor F to make the ODE exact. This is called the **integrating factor**.\end{aligned}\end{align} \]</div>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
+\[\begin{split}
+\begin{align*}
 F &amp;= \frac{1}{x^2} \\
 (-y)\left( \frac{1}{x^2} \right) + x\left( \frac{1}{x^2} \right) &amp;= -\frac{y}{x^2} + \frac{1}{x} = 0 \\
 \frac{\partial ( F P)}{\partial y} &amp;= -\frac{1}{x^2} \\
 \frac{\partial (F Q)}{\partial x} &amp;= -\frac{1}{x^2} \\
-\end{align*}\]</div>
+\end{align*}
+\end{split}\]</div>
+</section>
+<section id="how-did-we-find-f">
+<h2><span class="section-number">5.7.3. </span>How did we find F?<a class="headerlink" href="#how-did-we-find-f" title="Link to this heading">#</a></h2>
+<p>Using this formula:</p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}
-## How did we find F?\\  Using this formula:
-  
-\end{aligned}\end{align} \]</div>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
+\[
+\begin{align*}
 R &amp;= \frac{1}{Q} \left( \frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x} \right)
-\end{align*}\]</div>
-<div class="math notranslate nohighlight">
-\[- If R depends only on x, the integrating factor is:
+\end{align*}
 \]</div>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
+<ul class="simple">
+<li><p>If R depends only on x, the integrating factor is:
+$<span class="math notranslate nohighlight">\(
+\begin{align*}
 F(x) &amp;= \exp\left( \int R(x) \, dx \right) 
-\end{align*}\]</div>
+\end{align*}
+\)</span>$</p></li>
+</ul>
+<p>If not, check:</p>
 <div class="math notranslate nohighlight">
-\[If not, check: \]</div>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
+\[
+\begin{align*}
 S &amp;= \frac{1}{P} \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) = -\frac{Q}{P} R 
-\end{align*}\]</div>
-<div class="math notranslate nohighlight">
-\[- If S depends only on y, the integrating factor is: 
+\end{align*}
 \]</div>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
+<ul class="simple">
+<li><p>If S depends only on y, the integrating factor is:
+$<span class="math notranslate nohighlight">\( 
+\begin{align*}
 F(y) &amp;= \exp\left( \int S(y) \, dy \right) 
-\end{align*}\]</div>
-<div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}If neither R nor S are simple functions of only x or y:
-&gt; **You must guess an integrating factor.**\\---
-## Example 1 (continued)\\**R Calculation:**
-\end{aligned}\end{align} \]</div>
+\end{align*}
+\)</span>$</p></li>
+</ul>
+<p>If neither R nor S are simple functions of only x or y:</p>
+<blockquote>
+<div><p><strong>You must guess an integrating factor.</strong></p>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="example-1-continued">
+<h2><span class="section-number">5.7.4. </span>Example 1 (continued)<a class="headerlink" href="#example-1-continued" title="Link to this heading">#</a></h2>
+<p><strong>R Calculation:</strong>
+$$</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 R &amp;= \frac{1}{x}(-1 - 1) = \frac{-2}{x}
@@ -631,6 +649,9 @@ $$</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">5.7. Integrating factor</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-do-we-do-when-an-ode-is-not-exact">5.7.1. What do we do when an ODE is not exact?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-integrating-factor">5.7.2. Finding the Integrating Factor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-did-we-find-f">5.7.3. How did we find F?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-continued">5.7.4. Example 1 (continued)</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#application-to-linear-first-order-odes">5.8. Application to Linear First-Order ODEs:</a></li>
