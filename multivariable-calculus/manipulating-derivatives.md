@@ -261,38 +261,46 @@ This total differential is now suitable for integration with respect to *T*
 and *P* using only measurable quantities!
 ```
 
+## Skill builder problems
 
-## Skill Builder:
+Given
 
-Given: $\d{f} = p \d{x} - q \d{y}$ 
+\begin{equation}
+$\d{f} = p \d{x} - q \d{y}$
+\end{equation}
 
-Evaluate the following for $f=\cos(4x+y^2)+x^2y$ 
+Evaluate the following for $f=\cos(4x+y^2)+x^2y$
 
+1. $\displaystyle\td{}{x}{f}{y}$
 
-1. $\td{}{x}{f}{y} =$
-```{solution}
-\begin{align}
-\td{}{x}{f}{y} = \frac{1}{\td{}{f}{x}{y}} = \\
- 1/p = \left(-4\sin(4x+y^2)+ 2xy\right)^{-1}
-\end{align}
-```
-2. $\td{}{f}{p}{y}=$
-```{solution}
-\begin{align}
-\td{}{f}{p}{y}=\td{}{f}{x}{y} \td{}{x}{p}{y}=\frac{\td{}{f}{x}{y}}{\td{}{p}{x}{y}}
-=\frac{p}{\td{}{p}{x}{y}} \\ 
-=\frac{-4sin(4x+y^2)+2xy}{-16cos(4x+y^2)+2y}
-\end{align}
-```
-3. $\td{}{x}{y}{f}=$
-```{solution}
-\begin{align}
-\td{}{x}{y}{f}= (\td{}{x}{y}{f})(\td{}{y}{f}{x})(\td{}{f}{x}{y})=-1 \\
-\td{}{x}{y}{f}=\frac{-1}{(\td{}{f}{x}{y})(\td{}{y}{f}{x})} 
-= -\frac{\td{}{f}{y}{x}}{\td{}{f}{x}{y}} = \frac{q}{p} \\
-=\frac{2y\sin(4x+y^2)+x^2}{-4\sin(4x+y^2)+2xy}
-\end{align}
-```
+   ```{solution}
+   \begin{align}
+   \td{}{x}{f}{y} &= \frac{1}{(\partial f/\partial x)_y} \\
+   &= \frac{1}{p} \\
+   &= \left(-4\sin(4x+y^2)+ 2xy\right)^{-1}
+   \end{align}
+   ```
 
+2. $\displaystyle\td{}{f}{p}{y}$
 
+   ```{solution}
+   \begin{align}
+   \td{}{f}{p}{y} &= \td{}{f}{x}{y} \td{}{x}{p}{y} \\
+   &=\frac{(\partial f/\partial x)_y}{(\partial p/\partial x)_y} \\
+   &=\frac{p}{(\partial p/\partial x)_y} \\
+   &=\frac{-4 \sin(4x+y^2)+2xy}{-16 \cos(4x+y^2)+2y}
+   \end{align}
+   ```
 
+3. $\displaystyle\td{}{x}{y}{f}$
+
+   ```{solution}
+   \begin{align}
+   \td{}{x}{y}{f} & \td{}{y}{f}{x} \td{}{f}{x}{y} = -1 \\
+   \td{}{x}{y}{f} &=
+   -\frac{1}{(\partial y/\partial f)_x(\partial f/\partial x)_y} \\
+   &= -\frac{(\partial f/\partial y)_x}{(\partial f/\partial x)_y} \\
+   &= \frac{q}{p} \\
+   &=\frac{2y\sin(4x+y^2)+x^2}{-4\sin(4x+y^2)+2xy}
+   \end{align}
+   ```
