@@ -104,9 +104,14 @@ We had
 
 \begin{align}
 C^{'} + Kc &= A + B\cos{(\frac{\pi t}{12})} \quad with \quad c(o) = c_{o}\\
+\end{align}
+
+This is a linear first-order ODE with:
+\begin{align}
 p &= Kc \quad r = A + B\cos{(\frac{\pi t}{12})}\\
 \end{align}
-Set up the integral based upon the integration factor formula.
+
+That can be solved using an integrating factor:
 
 \begin{align}
 F(t) &= exp{(\int{kdt})} = e^{kt}\\
@@ -114,7 +119,7 @@ F(t) &= exp{(\int{kdt})} = e^{kt}\\
 &= A\int{e^{kt}dt} + B\int{e^{kt}\cos{(\frac{\pi t}{12})}dt}
 \end{align}
 
-table of integrals, or by parts
+Use table of integrals or integration by parts to evaluate the second integral in the equation.
 
 \begin{align}
 &= \frac{A}{k}e^{kt} +
