@@ -99,19 +99,25 @@ T'' = -q x \sin x
 
 3. Combine and apply boundary conditions.
 
-   $T = C_1 +C_2x + \frac{q}{\alpha}(2cosx + xsinx)$
+\begin{align}
+T &= C_1 + C_2 x + \frac{q}{\alpha}(2\cos x + x \sin x) \\
+1 &= T(-1) = C_1 - C_2 + \frac{q}{\alpha}[2\cos(-1) - \sin(-1)] = C_1 - C_2 + \frac{q}{\alpha}[2\cos 1 + \sin 1] \\
+1 &= T(1) = C_1 + C_2 + \frac{q}{\alpha}[2\cos 1 + \sin 1]
+\end{align}
 
-   $1 = T(-1) = C_1 - C_2 + \frac{q}{\alpha}[2cos(-1)-sin(-1)] = C_1 - C_2 + \frac{q}{\alpha}[2cos1 + sin1]$
+From (2) and (3), subtracting gives:
+\begin{align}
+0 &= 2C_2 \Rightarrow C_2 = 0
+\end{align}
 
-   $1 = T(1) = C_1 + C_2 + \frac{q}{\alpha}[2cos1 + sin1]$
+Now plug back in to solve for \( C_1 \):
+\begin{align}
+1 &= C_1 + \frac{q}{\alpha}(2\cos 1 + \sin 1) \\
+\Rightarrow C_1 &= 1 - \frac{q}{\alpha}(2\cos 1 + \sin 1)
+\end{align}
 
-   --> $2 = 2C_1 + 2\frac{q}{\alpha}(2cos1 + sin1)$ -> $C_1 = 1 - \frac{q}{\alpha}(2cos1 + sin1)$
-
-   --> $C_2 = 1 - C_1 - \frac{q}{\alpha}(2cos1 + sin1) = 0$
-
-The final result is
-
+The final result is:
 \begin{equation}
-T = 1 + \frac{q}{\alpha}\left[2(\cos x - \cos 1) + x\sin x-\sin 1\right]
+T = 1 + \frac{q}{\alpha}\left[2(\cos x - \cos 1) + x \sin x - \sin 1\right]
 \end{equation}
-```
+'''
