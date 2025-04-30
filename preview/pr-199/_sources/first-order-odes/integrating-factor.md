@@ -8,18 +8,17 @@ $$
   Q &= x \\
   \frac{\partial P}{\partial y} &= -1 \\
   \frac{\partial Q}{\partial x} &= 1 \\
-  &\Rightarrow \text{Not exact!}
   \end{align*}
 $$
 
-When solving ODEs, we take the partial derivatives of \(P\) and \(Q\).
+When solving ODEs, we take the partial derivatives of P and Q.
 If the partial derivatives are not equal, the equation is **not exact**: 
 
 ---
 
 ## Finding the Integrating Factor
 
-Multiply by a factor \(F\) to make the ODE exact. This is called the **integrating factor**.
+Multiply by a factor F to make the ODE exact. This is called the **integrating factor**.
 
 $$
 \begin{align*}
@@ -27,12 +26,11 @@ F &= \frac{1}{x^2} \\
 (-y)\left( \frac{1}{x^2} \right) + x\left( \frac{1}{x^2} \right) &= -\frac{y}{x^2} + \frac{1}{x} = 0 \\
 \frac{\partial ( F P)}{\partial y} &= -\frac{1}{x^2} \\
 \frac{\partial (F Q)}{\partial x} &= -\frac{1}{x^2} \\
-&\Rightarrow \text{Exact!}
 \end{align*}
 $$
 
 
-## How did we find \(F\)?
+## How did we find F?
 
   Using this formula:
   
@@ -42,7 +40,7 @@ R &= \frac{1}{Q} \left( \frac{\partial P}{\partial y} - \frac{\partial Q}{\parti
 \end{align*}
 $$
 
-- If \( R(x) \) depends only on \( x \), the integrating factor is:
+- If R depends only on x, the integrating factor is:
 $$
 \begin{align*}
 F(x) &= \exp\left( \int R(x) \, dx \right) 
@@ -57,14 +55,14 @@ S &= \frac{1}{P} \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\parti
 \end{align*}
 $$
 
-- If \( S(y) \) depends only on \( y \), the integrating factor is: 
+- If S depends only on y, the integrating factor is: 
 $$ 
 \begin{align*}
 F(y) &= \exp\left( \int S(y) \, dy \right) 
 \end{align*}
 $$
 
-If neither \( R \) nor \( S \) are simple functions of only \( x \) or \( y \):
+If neither R nor S are simple functions of only x or y:
 > **You must guess an integrating factor.**
 
 ---
@@ -108,12 +106,11 @@ $$
 \boxed{
   \begin{aligned}
   F(x) &= \frac{1}{x^2} \\
-  \quad \text{or} \quad
   F(y) = \frac{1}{y^2}
-  \quad \text{are valid integrating factors.}
   \end{aligned}
 }
 $$
+**These are valid integrating factors.**
 
 
 # Application to Linear First-Order ODEs:
