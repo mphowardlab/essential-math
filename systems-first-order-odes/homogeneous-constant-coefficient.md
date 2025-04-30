@@ -37,7 +37,7 @@ A = \begin{bmatrix} -0.1 & 0.1 \\ 0.1 & -0.1 \end{bmatrix}
 $\lambda_1 = 0$
 
 \begin{align}
-\begin{bmatrix} -0.1 & 0.1 \\ 0.1 & -0.1 \end{bmatrix} \quad \Rightarrow \quad \begin{bmatrix} -0.1 & 0.1 \\ 0.1 & -0.1 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
+\quad \begin{bmatrix} -0.1 & 0.1 \\ 0.1 & -0.1 \end{bmatrix} \begin{bmatrix} x_1  \end{bmatrix} = \begin{bmatrix} 0 \end{bmatrix} \Rightarrow \quad \mathbf{x}_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}
 \end{align}
 
 \begin{align}
