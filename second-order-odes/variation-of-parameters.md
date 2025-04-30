@@ -228,18 +228,18 @@ T = 1 + \frac{q}{\alpha}\left[2(\cos x - \cos 1) + x \sin x - \sin 1\right]
       The general solution and its first derivative are
 
       \begin{align}
-      y &= (C_1 + C_2 x) e^{2x}+(x^{2}+4x+6)e^{x} \\
-      y' &= 2(C_1 + C_2 x) e^{2x} + C_2e^{2x} + (x^{2}+4x+6) e^{x} + (2x+4)e^{x}
+      y &= (c_1 + c_2 x) e^{2x}+(x^{2}+4x+6)e^{x} \\
+      y' &= 2(c_1 + c_2 x) e^{2x} + c_2e^{2x} + (x^{2}+4x+6) e^{x} + (2x+4)e^{x}
       \end{align}
 
       Plugging in intial conditions
 
       \begin{align}
-      y(0) &= C_1 + 6 = 0
-      y'(0) &= 2 C_1 + C_2 + 10 = 0
+      y(0) &= c_1 + 6 = 0
+      y'(0) &= 2 c_1 + c_2 + 10 = 0
       \end{align}
 
-      gives $C_1 = -6$ and $C_2 = 2$.
+      gives $c_1 = -6$ and $c_2 = 2$.
 
     The final solution is:
 
