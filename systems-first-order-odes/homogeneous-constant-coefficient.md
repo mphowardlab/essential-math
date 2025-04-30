@@ -36,13 +36,10 @@ $\lambda_1 = 0$
 \quad \begin{bmatrix} -0.1 & 0.1 \\ 0.1 & -0.1 \end{bmatrix} \begin{bmatrix} x_1  \end{bmatrix} = \begin{bmatrix} 0 \end{bmatrix} \Rightarrow \quad \mathbf{x}_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}
 \end{align}
 
-\begin{align}
-\quad \begin{bmatrix} 0.1 & 0.1 \\ 0.1 & 0.1 \end{bmatrix} \begin{bmatrix} x_2  \end{bmatrix} = \begin{bmatrix} 0 \end{bmatrix} \Rightarrow \quad \mathbf{x}_1 = \begin{bmatrix} 1 \\ -1 \end{bmatrix}
-\end{align}
-
 $\lambda_2 = -0.2$
 \begin{align}
-\left( A + 0.2I \right) \mathbf{x}_2 = 0 \quad \Rightarrow \quad \mathbf{x}_2 = \begin{bmatrix} 1 \\ -1 \end{bmatrix}
+
+\quad \begin{bmatrix} 0.1 & 0.1 \\ 0.1 & 0.1 \end{bmatrix} \begin{bmatrix} x_2  \end{bmatrix} = \begin{bmatrix} 0 \end{bmatrix} \Rightarrow \quad \mathbf{x}_1 = \begin{bmatrix} 1 \\ -1 \end{bmatrix}
 \end{align}
 
 The general solution is
