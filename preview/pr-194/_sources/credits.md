@@ -24,6 +24,7 @@ This work (c) 2025 is licensed under
 - Dylan Lunsford
 - Faith Major
 - John R. Marshall, IV
+- Davis McCaleb
 - Lilli Midgette
 - Clara Mitchell
 - Elijah  C. Mitchell

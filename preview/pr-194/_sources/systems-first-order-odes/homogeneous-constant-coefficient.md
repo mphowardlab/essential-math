@@ -20,7 +20,9 @@ Since A is symmetric, it has real eigenvalues. We solve:
 \det(A - \lambda I) = 0
 \end{align}
 
+\begin{align}
 \begin{vmatrix} -0.1 - \lambda & 0.1 \\ 0.1 & -0.1 - \lambda \end{vmatrix} = (\lambda + 0.1)^2 - (0.1)^2 = \lambda^2 + 0.2\lambda = 0
+\end{align}
 
 The eigenvalues are:
 
@@ -30,13 +32,13 @@ The eigenvalues are:
 
 To find the eigenvectors: 
 
-For (\lambda_1 = 0):
+\lambda_1 = 0
 
 \begin{align}
 \left( A - 0I \right) \mathbf{x}_1 = 0 \quad \Rightarrow \quad \mathbf{x}_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}
 \end{align}
 
-For (\lambda_2 = -0.2):
+\lambda_2 = -0.2
 \begin{align}
 \left( A + 0.2I \right) \mathbf{x}_2 = 0 \quad \Rightarrow \quad \mathbf{x}_2 = \begin{bmatrix} 1 \\ -1 \end{bmatrix}
 \end{align}
