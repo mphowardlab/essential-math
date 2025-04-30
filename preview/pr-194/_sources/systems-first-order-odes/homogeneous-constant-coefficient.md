@@ -15,13 +15,15 @@ The consentrations change according to:
 \frac{d\mathbf{c}}{dt} = A \mathbf{c}, \quad \text{where} \quad A = \begin{bmatrix} -0.1 & 0.1 \\ 0.1 & -0.1 \end{bmatrix}
 \end{align}
 Since \( A \) is symmetric, it has real eigenvalues. We solve:
+
 \begin{align}
 \det(A - \lambda I) = 0
 \end{align}
-\begin{align}
+
 \begin{vmatrix} -0.1 - \lambda & 0.1 \\ 0.1 & -0.1 - \lambda \end{vmatrix} = (\lambda + 0.1)^2 - (0.1)^2 = \lambda^2 + 0.2\lambda = 0
-\end{align}
+
 Thus, the eigenvalues are:
+
 \begin{align}
 \lambda_1 = 0, \quad \lambda_2 = -0.2
 \end{align}
