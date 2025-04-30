@@ -115,6 +115,11 @@ That can be solved using an integrating factor:
 
 \begin{align}
 F(t) &= exp{(\int{kdt})} = e^{kt}\\
+\end{align}
+
+Then, evaluate the integral:
+
+\begin{align}
 \int{F(t)r(t)dt} &= \int{e^{kt}[A+B\cos{\frac{\pi t}{12}}]dt}\\
 &= A\int{e^{kt}dt} + B\int{e^{kt}\cos{(\frac{\pi t}{12})}dt}
 \end{align}
