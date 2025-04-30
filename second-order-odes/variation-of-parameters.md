@@ -245,7 +245,7 @@ T = 1 + \frac{q}{\alpha}\left[2(\cos x - \cos 1) + x \sin x - \sin 1\right]
      Plugging in intial conditions gives
 
       \begin{equation}
-      0=y(0)=(C_1+C_2(0))e^{2(0)}
+      0=y(0)=(C_1+C_2(0))e^{2(0)}+(0^{2}+4(0)+6)e^{0}
       \end{equation}
       \begin{equation}
       0=y'(0)=2(C_1 + C_2(0)) e^{2(0)}+C_2e^{2(0)}+(0^{2}+4(0)+6)e^{0}+(2(0)+4)e^{0}
