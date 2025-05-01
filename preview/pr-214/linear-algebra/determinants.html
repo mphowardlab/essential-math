@@ -57,6 +57,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"d": ["{\\operatorname{d}\\!{#1}}", 1], "dd": ["{\\d{}^{#1} #2 \\over \\d{#3}^{#1}}", 3], "pp": ["{\\partial^{#1} #2 \\over \\partial #3^{#1}}", 3], "td": ["{\\left(\\pp{#1}{#2}{#3} \\right)_{#4}}", 4], "ubar": ["\\underline{#1}", 1], "vv": ["\\mathbf{#1}", 1]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'linear-algebra/determinants';</script>
     <link rel="canonical" href="https://mphowardlab.github.io/essential-math/linear-algebra/determinants.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -430,26 +432,42 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="determinants">
 <h1><span class="section-number">3.4. </span>Determinants<a class="headerlink" href="#determinants" title="Link to this heading">#</a></h1>
-<p>For a square nxn matrix A, the determinant is divided.</p>
-<p>det A=|A|= [A_11 A_1n, A_n1 A_nn]</p>
-<p>For n=1, |A|= A_11 (the element)</p>
-<p>For n goes to 2, |A| is definded in a sort of recursive way</p>
-<p>|A|= sum n j=1 A_ij C_ij (cofactor)= sum n j=1 (-1)^(i+j) A_ij M_ij (i=1, …, or n: any row)</p>
-<p>C_ij=(-1) M_ij (“minor”: determinant of the matrix obtained by removing row i and column j)</p>
-<p>-or- |A|= sum n i=1 A_ij C_ij = sum n i=1 A_ij C_ij = sum n i=1 (-1)^(i+j) A_ij M_ij (j=1,…, or n: any column)</p>
+<p>For a square <em>nxn</em> matrix <strong>A</strong>, the <em>determinant</em> is divided.</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}det |A| =|A|= \\\begin{split}\begin{equation}
+ \vv{A} = \begin{bmatrix} A_{11} &amp;  A_{1n} \\{n1} &amp; A_{nn} \end{bmatrix} 
+ \end{equation} \end{split}\end{aligned}\end{align} \]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-3f70b4be-158d-42e1-92cf-fa02991e771f">
+<span class="eqno">(3.41)<a class="headerlink" href="#equation-3f70b4be-158d-42e1-92cf-fa02991e771f" title="Permalink to this equation">#</a></span>\[\begin{equation} \vv{A} = \begin{bmatrix} A_{11} &amp; A_{12} &amp; A_{13} \ A_{21} &amp; A_{22} &amp; A_{23} \end{bmatrix} \end{equation}\]</div>
+<p>For  <span class="math notranslate nohighlight">\(n=1\)</span>, <span class="math notranslate nohighlight">\(|A|= A_{11}\)</span> (the element)</p>
+<p>For n \to 2, |A| is defined in a sort of recursive way</p>
+<p>|A|= $<span class="math notranslate nohighlight">\(\left( \sum_{j=1}^n \)</span>A_{ij}<span class="math notranslate nohighlight">\( C_{ij} \right)
+ (\)</span>C_{ij}<span class="math notranslate nohighlight">\( is cofactor) = sum n j=1 (-1)^(i+j) \)</span>A_{ij}<span class="math notranslate nohighlight">\( \)</span>M_{ij}$ (i=1, …, or n: any row)</p>
+<div class="math notranslate nohighlight">
+\[ |A|=\left( \sum_{j=1}^n A_{ij} C_{ij} \right) =  \left( \sum_{j=1}^n (-1)^{i+j} \right) A_{ij} M_{ij} \]</div>
+<div class="math notranslate nohighlight">
+\[\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)\]</div>
+<p><span class="math notranslate nohighlight">\(C_{ij}\)</span>=(-1) <span class="math notranslate nohighlight">\(M_{ij}\)</span> (“minor”: determinant of the matrix obtained by removing row i and column j)</p>
+<p>-or- |A|= sum n i=1 <span class="math notranslate nohighlight">\(A_{ij}\)</span> <span class="math notranslate nohighlight">\(C_{ij}\)</span> = sum n i=1</p>
+<p><span class="math notranslate nohighlight">\(A_{ij}\)</span> <span class="math notranslate nohighlight">\(C_{ij}\)</span> = sum n i=1 (-1)^i+j <span class="math notranslate nohighlight">\(A_{ij} \)</span>M_{ij} (j=1,…, or n: any column)</p>
 <p>Ex: Determinant of a 2X2 matrix A= [a b, c d]</p>
-<p>|A|=[a b, c d] choose i=1 = (-1)^(1+1)1 a M_11+(-1)^(1+2)-1 b M_12=ad-bc</p>
-<p>M_11:[a b, c d] goes to |d|=d M_12: [a b, c d] goes to |c|=c
-This is a useful formula to know! Mneumonic</p>
+<p>|A|=[a b, c d] choose i=1 = (-1)^(1+1)1 a <span class="math notranslate nohighlight">\(M_{11}\)</span>+(-1)^(1+2)-1 b <span class="math notranslate nohighlight">\(M_{12}\)</span> =ad-bc</p>
+<p><span class="math notranslate nohighlight">\(M_{11}\)</span>:[a b, c d] goes to |d|=d <span class="math notranslate nohighlight">\(M_{12}\)</span>: [a b, c d] goes to |c|=c
+This is a useful formula to know! <em>Mneumonic</em></p>
 <p>[a b, c d] - + =ad-bc</p>
 <p>Ex: 3x3 matrix A= [ 1 3 0, 2 6 4, -1 0 2] i=3 j=3 [+ - +, - + -, + - +] (signs make a checker board)</p>
 <p>|A|=+(-1)<em>[2 6, -1 0]-(0)</em>[1 0, 2 4]+ 2*[1 3, 2 6]=-((3<em>4)-(0</em>6))+2*((1<em>6)-(2</em>3))=-12</p>
 <p>|A|=+(0)<em>[2 6, -1 0]-(4)</em>[1 3, -1 0] + 2[1 3, 2 6]= -4*(0+3)+2*(6-6)= -12</p>
 <p>Its usually a good idea to expand along the row or column with the most zeros!</p>
 <p>[1 -2 0 0, 4 3 5 0, 0 2 7 5, 0 0 2 0]i=4 [- + - +]=-2[1 -2 0, 4 3 0, 0 2 5]j=3 [+ - +]= (-2)<em>(5)</em>[1 -2, 4 3]= -10*(3+8)=-110</p>
-<p>How does this help us ?</p>
-<p>A= is invertible (nonsingular) if and only if |A| not equal 0.</p>
-<p>(This is one of many conditions known as the invertible theorem )</p>
+<p>How does this help us?</p>
+<p><strong>A</strong> = is invertible (<em>nonsingular</em>) if and only if |<strong>A</strong>| not equal 0.</p>
+<p>(<em>This is one of many conditions known as the invertible theorem</em>)</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+y=c^2\\
+u=i_4
+\end{split}\]</div>
 </section>
 
     <script type="text/x-thebe-config">

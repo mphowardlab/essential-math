@@ -1,29 +1,46 @@
 # Determinants
-For a square nxn matrix A, the determinant is divided.
+For a square *nxn* matrix **A**, the *determinant* is divided.
+
+$$
+
+det |A| =|A|= 
+
+\begin{equation}
+ \vv{A} = \begin{bmatrix} A_{11} &  A_{1n} \\{n1} & A_{nn} \end{bmatrix} 
+ \end{equation} 
 
 
-det A=|A|= [A_11 A_1n, A_n1 A_nn]
+$$
+
+\begin{equation} \vv{A} = \begin{bmatrix} A_{11} & A_{12} & A_{13} \ A_{21} & A_{22} & A_{23} \end{bmatrix} \end{equation}
+
+For  $n=1$, $|A|= A_{11}$ (the element)
 
 
-For n=1, |A|= A_11 (the element)
-
-For n goes to 2, |A| is definded in a sort of recursive way
+For n \to 2, |A| is defined in a sort of recursive way
 
 
-|A|= sum n j=1 A_ij C_ij (cofactor)= sum n j=1 (-1)^(i+j) A_ij M_ij (i=1, ..., or n: any row)
+|A|= $$\left( \sum_{j=1}^n $A_{ij}$ C_{ij} \right)
+ ($C_{ij}$ is cofactor) = sum n j=1 (-1)^(i+j) $A_{ij}$ $M_{ij}$ (i=1, ..., or n: any row)
 
-C_ij=(-1) M_ij ("minor": determinant of the matrix obtained by removing row i and column j)
+$$ |A|=\left( \sum_{j=1}^n A_{ij} C_{ij} \right) =  \left( \sum_{j=1}^n (-1)^{i+j} \right) A_{ij} M_{ij} $$
 
--or- |A|= sum n i=1 A_ij C_ij = sum n i=1 A_ij C_ij = sum n i=1 (-1)^(i+j) A_ij M_ij (j=1,..., or n: any column)
+$$\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)$$
+
+$C_{ij}$=(-1) $M_{ij}$ ("minor": determinant of the matrix obtained by removing row i and column j)
+
+-or- |A|= sum n i=1 $A_{ij}$ $C_{ij}$ = sum n i=1
+
+ $A_{ij}$ $C_{ij}$ = sum n i=1 (-1)^i+j $A_{ij} $M_{ij} (j=1,..., or n: any column)
 
 
 Ex: Determinant of a 2X2 matrix A= [a b, c d]
 
-|A|=[a b, c d] choose i=1 = (-1)^(1+1)1 a M_11+(-1)^(1+2)-1 b M_12=ad-bc
+|A|=[a b, c d] choose i=1 = (-1)^(1+1)1 a $M_{11}$+(-1)^(1+2)-1 b $M_{12}$ =ad-bc
 
 
-M_11:[a b, c d] goes to |d|=d M_12: [a b, c d] goes to |c|=c
-This is a useful formula to know! Mneumonic
+$M_{11}$:[a b, c d] goes to |d|=d $M_{12}$: [a b, c d] goes to |c|=c
+This is a useful formula to know! *Mneumonic*
 
 [a b, c d] - + =ad-bc
 
@@ -43,8 +60,14 @@ Its usually a good idea to expand along the row or column with the most zeros!
 [1 -2 0 0, 4 3 5 0, 0 2 7 5, 0 0 2 0]i=4 [- + - +]=-2[1 -2 0, 4 3 0, 0 2 5]j=3 [+ - +]= (-2)*(5)*[1 -2, 4 3]= -10*(3+8)=-110
 
 
-How does this help us ?
+How does this help us?
 
-A= is invertible (nonsingular) if and only if |A| not equal 0.
+**A** = is invertible (*nonsingular*) if and only if |**A**| not equal 0.
 
-(This is one of many conditions known as the invertible theorem )
+(*This is one of many conditions known as the invertible theorem*)
+
+
+$$
+y=c^2\\
+u=i_4
+$$
