@@ -67,7 +67,7 @@ Normal limit laws still apply. However, be careful about which piece of the func
 
 Note:  
 frac{|x + 2|}{x + 2} = \begin{cases}
-1 & x > -2\\
+1 & x > -2
 -1 & x < -2
 \end{cases}
 
