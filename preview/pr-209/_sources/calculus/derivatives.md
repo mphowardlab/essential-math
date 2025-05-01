@@ -3,6 +3,11 @@
 
 The Derivative is also a function!
 
+{image} ./_images/MathAppsECPic.png
+:alt: Two Real Solutions
+:align: center
+:width: 200px
+
 $$
 \begin{aligned}
 f(x) &= x^2 \\
