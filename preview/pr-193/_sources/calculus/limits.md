@@ -14,7 +14,7 @@ Let $f(x)$ be defined on an open interval around $x_0$, except possibly at $x_0$
 
 ---
 
-```{example} Some functions have limits:
+```{example} Some functions have limits
 
 Given: 
 \begin{equation}
@@ -37,48 +37,15 @@ f(x) = \frac{(x+1)(x-1)}{x-1} = x+1 \quad (x \neq 1)
 | 1.01   | 2.01   |
 | 1.1    | 2.1    |
 
-Thus,
-\begin{equation}
-\lim_{x \to 1} f(x) = 2
-\end{equation}
-\begin{tikzpicture}
-\begin{axis}[
-    width=10cm,
-    height=8cm,
-    axis lines=middle,
-    xlabel={$x$},
-    ylabel={$f(x)$},
-    xmin=0, xmax=2,
-    ymin=-2, ymax=6,
-    samples=200,
-    domain=0:2,
-    grid=both,
-    legend style={at={(0.5,-0.15)},anchor=north},
-]
-\addplot[
-    blue,
-    thick,
-    domain=0:0.99,
-] {(x^2-1)/(x-1)};
-\addplot[
-    blue,
-    thick,
-    domain=1.01:2,
-] {(x^2-1)/(x-1)};
-\addplot[dashed, red] coordinates {(1,-2) (1,6)};
-\addplot[
-    mark=*, 
-    mark options={fill=white}, 
-    only marks, 
-    mark size=2.5pt
-] coordinates {(1,2)};
-\legend{$f(x) = \frac{x^2-1}{x-1}$, Hole at $x=1$}
-\end{axis}
-\end{tikzpicture}
+```{image} 
+  :alt: Limit Exists
+  :width: 300px
+  :align: center
+  ```
 
 ```
 
-```{example} Some functions do **not** have limits:
+```{example} Some functions do **not** have limits
 \begin{equation}
 f(x) = \frac{1}{x}, \quad x \neq 0
 \end{equation}
@@ -96,34 +63,10 @@ f(x) = \frac{1}{x}, \quad x \neq 0
 
 The function blows up to $+\infty$ from the right and $-\infty$ from the left, so no single limit exists at $x=0$.
 
-\begin{tikzpicture}
-\begin{axis}[
-    width=10cm,
-    height=8cm,
-    axis lines=middle,
-    xlabel={$x$},
-    ylabel={$f(x)$},
-    xmin=-2, xmax=2,
-    ymin=-6, ymax=6,
-    samples=200,
-    domain=-2:-0.05,
-    domain y=-6:6,
-    grid=both,
-    legend style={at={(0.5,-0.15)},anchor=north},
-]
-\addplot[
-    blue,
-    thick,
-    domain=-2:-0.05,
-] {1/x};
-\addplot[
-    blue,
-    thick,
-    domain=0.05:2,
-] {1/x};
-\addplot[dashed, red] coordinates {(0,-6) (0,6)};
-\legend{$f(x) = \frac{1}{x}$, Asymptote at $x=0$}
-\end{axis}
-\end{tikzpicture}
+```{image} 
+  :alt: No Limit Exists
+  :width: 300px
+  :align: center
+  ```
 
 ```
