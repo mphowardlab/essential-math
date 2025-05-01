@@ -25,7 +25,7 @@ If $f$ is defined on the interval $x_0 < x < b$ and $f(x)$ approaches arbitraril
 lim_{x \to x_0^+} f(x) = L
 \end{align}
 
-This limit can also be written in $\delta-\(\varepsilon\)$ form.
+This limit can also be written in $\delta-\varepsilon\$ form.
 
 The same can be done for the **left-hand limit** if $a < x < x_0$
 
