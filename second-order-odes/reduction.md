@@ -1,27 +1,28 @@
 # Reduction of order
-### Finding a basis
-It can be hard to find $y_1$ and $y_2$ in general, but some techniques can help. We will learn how to get $y_2$ if a $y_1$ is found (e.g, by guessing).
+
+It can be hard to find $y_1$ and $y_2$ in general, but some techniques can help.
+We will learn how to get $y_2$ if a $y_1$ is found (e.g, by guessing).
 
 ```{topic} Reduction of Order
-If a solution $y_1$ of $y'' + P(x)y' + Q(x)y = 0$ is known, then 
+If a solution $y_1$ of $y'' + P(x)y' + Q(x)y = 0$ is known, then
 
-\begin{align}  
-y_2 &= y_1\int u\,dx \\  
-u &= \frac{1}{y_1^2}\ e^{-\int P\,dx}  
-\end{align}  
+\begin{align}
+y_2 &= y_1\int u\,dx \\
+u &= \frac{1}{y_1^2}\ e^{-\int P\,dx}
+\end{align}
 ```
-
 
 ````{example} Reduction of Order
 Given the following Equation:
 
 \begin{equation}
-(x^2 - x)y'' - xy' + y = 0 
+(x^2 - x)y'' - xy' + y = 0
 \end{equation}
 
 ---
 
-Looking at this, $y_1 = x$ is a solution because $y_1' = 1$ and $y_1'' = 0$. Use reduction of order to find $y_2$:
+Looking at this, $y_1 = x$ is a solution because $y_1' = 1$ and $y_1'' = 0$.
+Use reduction of order to find $y_2$:
 
 \begin{align}
 y'' - \frac{x}{x^2 - x} y' + \frac{1}{x^2 - x}y = 0 \\
@@ -32,8 +33,8 @@ y'' + \frac{1}{1 - x} y' + \frac{1}{x^2 - x}y = 0 \\
 
 \begin{align}
 u &= \frac{1}{x^2}\ e^{-\int \frac{1}{1-x} dx} \\
-  &= \frac{1}{x^2}\ e^{\ln(1-x)} = \frac{1-x}{x^2} \\ 
-  &= \frac{1}{x^2}\ - \frac{1}{x}\ 
+  &= \frac{1}{x^2}\ e^{\ln(1-x)} = \frac{1-x}{x^2} \\
+  &= \frac{1}{x^2}\ - \frac{1}{x}\
   \end{align}
 
 
