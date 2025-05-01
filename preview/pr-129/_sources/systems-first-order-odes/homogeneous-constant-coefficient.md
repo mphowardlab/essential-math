@@ -96,7 +96,9 @@ Hence,
 
 Which simplifies to:
 
-$\vv{c} = a_1e^{-k_1t}\begin{bmatrix} \frac{-k_2 - k_1}{k_2} \\ \frac{-k_1}{k_2} \\ 1 \end{bmatrix}  + {a_2}e^{-k_2t}\begin{bmatrix} 0 \\ -1 \\ 1 \end{bmatrix} + a_3{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}$
+\begin{equation}
+\vv{c} = a_1e^{-k_1t}\begin{bmatrix} \frac{-k_2 - k_1}{k_2} \\ \frac{-k_1}{k_2} \\ 1 \end{bmatrix}  + {a_2}e^{-k_2t}\begin{bmatrix} 0 \\ -1 \\ 1 \end{bmatrix} + a_3\begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}
+\end{equation}
 
 Initial Condition:
 
