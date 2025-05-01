@@ -1,16 +1,16 @@
 # Numerical solution methods
-/begin{align}
+\begin{align}
 Euler's Method to Solve a System of First Order ODEs
-/end{align}
-/begin{align}
+\end{align}
+\begin{align}
 Determine y1(5) and y2(5) for 
-/end{align}
-y1' = (2/3)y1 - (4/3)y1*y2      y1(0) = 1.5
-y2' = y1*y2 - y2                y2(0) = 1.0
-/end{align}
-/begin{align}
-timestep dt = 0.5   compare to ode45.
-/end{align}
+\end{align}
+y1' = (2/3)y1 - (4/3)y1*y2 \qquad y1(0) = 1.5
+y2' = y1*y2 - y2 \qquad y2(0) = 1.0
+\end{align}
+\begin{align}
+timestep dt = 0.5 compare to ode45.
+\end{align}
 f1 = (2/3)y1 - (4/3)y1*y2
 f2 = y1*y2 - y2
 y(t+dt) = y(t) + f(t,y)*dt
