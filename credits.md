@@ -16,6 +16,7 @@ This work (c) 2025 is licensed under
 - Ella Governale
 - Connor Habig
 - Kennedi Hawkins
+- Joshua R. Hegar
 - Molly Grace Hicks
 - Michael P. Howard
 - Evan M. Hughes
