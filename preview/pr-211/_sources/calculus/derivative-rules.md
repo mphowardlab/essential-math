@@ -58,9 +58,9 @@ $f'(x) = \frac{1}{x}e^x + e^x(-\frac{1}{x^2}) = e^x(\frac{1}{x} - \frac{1}{x^2})
 ### Example 3:
 $f(x) = (x^2+3)\ln(x)$
 
-$u = x^2+3$ so $v = \ln(x)$ 
+$u = x^2+3$ and $v = \ln(x)$ 
 <br>
-$u' = 2x$ so $v' = \frac{1}{x}$
+$u' = 2x$ and $v' = \frac{1}{x}$
 
 $f'(x) = (x^2+3)(\frac{1}{x}) + \ln(x)(2x) = \frac{x^2+3}{x} + 2x\ln(x)$
 
