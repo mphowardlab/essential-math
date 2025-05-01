@@ -228,7 +228,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../second-order-odes/linearity.html">7.2. Linearity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../second-order-odes/homogeneous-constant-coefficient.html">7.3. Homogeneous linear second-order ODEs with constant coefficients</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../second-order-odes/undetermined-coefficients.html">7.4. Undetermined coefficients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/variation-of-parameters.html">7.5. Variation of Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/variation-of-parameters.html">7.5. Variation of parameters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../second-order-odes/numerical-solution.html">7.6. Numerical solution methods</a></li>
 </ul>
 </details></li>
@@ -405,7 +405,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -421,6 +423,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill-builder-problems">6.1.1. Skill builder problems</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -436,14 +446,14 @@ document.write(`
 For example, consider two tanks. Tank 1 has concentration <span class="math notranslate nohighlight">\(c_1\)</span> of a solute and
 Tank 2 has concentration <span class="math notranslate nohighlight">\(c_2\)</span>. Tank 1 flows into Tank 2, which is then passed
 through a pump and recycled back to Tank 1.</p>
-<a class="reference internal image-reference" href="systems-first-order-odes/_images/tank-system.JPG"><img alt="Concentrations in two tanks" class="align-center" src="systems-first-order-odes/_images/tank-system.JPG" style="width: 300px;" />
+<a class="reference internal image-reference" href="../_images/tank-system.jpg"><img alt="Concentrations in two tanks" class="align-center" src="../_images/tank-system.jpg" style="width: 300px;" />
 </a>
 <p>Eventually, the two concentrations should equalize, but how do they evolve to
 over time? <span class="math notranslate nohighlight">\(c_1\)</span> and <span class="math notranslate nohighlight">\(c_2\)</span> can be modeled using unsteady mass balances. This
 is a <em>system</em> of first-order ODEs that can be solved simultaneously.</p>
 <p>The general, explicit form of a system of first-order ODEs is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-dcaaee80-22fb-4f9d-a66a-b9d9a38af9dc">
-<span class="eqno">(6.1)<a class="headerlink" href="#equation-dcaaee80-22fb-4f9d-a66a-b9d9a38af9dc" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-35bdf25a-325a-48ff-8c6e-6d1b828b8dcc">
+<span class="eqno">(6.1)<a class="headerlink" href="#equation-35bdf25a-325a-48ff-8c6e-6d1b828b8dcc" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_1' &amp;= f_1(t, y_1, \cdots, y_n)\\
 \vdots \\
 y_n' &amp;= f_n(t, y_1, \cdots, y_n)
@@ -452,13 +462,72 @@ y_n' &amp;= f_n(t, y_1, \cdots, y_n)
 dependent variables, and <span class="math notranslate nohighlight">\((f_1, \cdots, f_n)\)</span> are the <em>n</em> right-hand side
 functions of the <em>n</em> ODEs. We will notate this system more compactly using
 vectors</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d9fd4be7-0028-4344-a206-d27564ac6b36">
-<span class="eqno">(6.2)<a class="headerlink" href="#equation-d9fd4be7-0028-4344-a206-d27564ac6b36" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-909de362-7a60-4e34-ae7b-bcc4d61ad1a1">
+<span class="eqno">(6.2)<a class="headerlink" href="#equation-909de362-7a60-4e34-ae7b-bcc4d61ad1a1" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{y}' = \vv{f}(t, \vv{y})
 \end{equation}\]</div>
 <p>where <strong>y</strong> is the column vector of dependent variables, <strong>f</strong> is the column
 vector of right-hand side functions, and <span class="math notranslate nohighlight">\(\vv{y}'\)</span> is a shorthand for the
 column vector of first derivatives of all dependent variables.</p>
+<section id="skill-builder-problems">
+<h2><span class="section-number">6.1.1. </span>Skill builder problems<a class="headerlink" href="#skill-builder-problems" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p>Solve the IVP</p>
+<div class="amsmath math notranslate nohighlight" id="equation-167af7ef-c85d-4438-b3a0-fc98eebab4b2">
+<span class="eqno">(6.3)<a class="headerlink" href="#equation-167af7ef-c85d-4438-b3a0-fc98eebab4b2" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_1' &amp;= 1-2y_1, &amp; y_1(0) &amp;= 0\\
+y_2' &amp;= 2y_1 - y_1y_2, &amp; y_2(0) &amp;= 0
+\end{align}\]</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">We begin by solving for <span class="math notranslate nohighlight">\(y_1\)</span> in terms of <em>x</em>. The ODE is separable and
+therefore can be solved using separation of variables.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-3bcd8919-c341-4459-871a-8b8a9963cce1">
+<span class="eqno">(6.4)<a class="headerlink" href="#equation-3bcd8919-c341-4459-871a-8b8a9963cce1" title="Permalink to this equation">#</a></span>\[\begin{align}
+\int \frac{dy_1}{1-2y_1} &amp;= \int dx \\
+-\frac{1}{2} \ln{\left(1-2y_1\right)} &amp;= x + c_0 \\
+\ln{\left(1-2y_1\right)} &amp;= -2x + c_1 \\
+1 - 2y_1 &amp;= c_2 e^{-2x} \\
+y_1 &amp;= \frac{1}{2} \left(1- c_2 e^{-2x}\right) \\
+\end{align}\]</div>
+<p class="sd-card-text">Now, use the initial condition <span class="math notranslate nohighlight">\(y_1(0)= 0\)</span> to solve for <span class="math notranslate nohighlight">\(c_2\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-79fb0a6e-0858-4031-b673-991d30b18588">
+<span class="eqno">(6.5)<a class="headerlink" href="#equation-79fb0a6e-0858-4031-b673-991d30b18588" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y_1(0) = \frac{1}{2}\left(1-c_2\right) = 0
+\end{equation}\]</div>
+<p class="sd-card-text">so <span class="math notranslate nohighlight">\(c_2 = 1\)</span> and</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f165b6ad-f784-4d9a-a2f5-4d3f348e77d6">
+<span class="eqno">(6.6)<a class="headerlink" href="#equation-f165b6ad-f784-4d9a-a2f5-4d3f348e77d6" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y_1 = \frac{1}{2} \left(1-e^{-2x}\right)
+\end{equation}\]</div>
+<p class="sd-card-text">Now, we can solve for <span class="math notranslate nohighlight">\(y_2\)</span> knowing <span class="math notranslate nohighlight">\(y_1\)</span> and recognizing that <span class="math notranslate nohighlight">\(y_2\)</span> can also
+be solved via separation of variables</p>
+<div class="amsmath math notranslate nohighlight" id="equation-42a750ab-cd39-4eb1-9436-132f457a5aba">
+<span class="eqno">(6.7)<a class="headerlink" href="#equation-42a750ab-cd39-4eb1-9436-132f457a5aba" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_2' &amp;= y_1\left(2-y_2\right) \\
+\int \frac{dy_2}{2-y_2} &amp;= \int \frac{1}{2}\left(1-e^{-2x}\right) \d{x} \\
+-\ln{\left(2-y_2\right)} &amp;= \frac{1}{2}\left(x + \frac{1}{2}e^{-2x}\right) + c_0\\
+2 - y_2
+  &amp;= c_1 \exp\left[-\frac{1}{2}\left(x+ \frac{1}{2}e^{-2x}\right)\right] \\
+y_2
+  &amp;= 2 - c_1 \exp\left[-\frac{1}{2}\left(x+\frac{1}{2}e^{-2x}\right)\right] \\
+\end{align}\]</div>
+<p class="sd-card-text">Again, use the initial condition <span class="math notranslate nohighlight">\(y_2(0)= 0\)</span> to solve for <span class="math notranslate nohighlight">\(c_1\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-30013a3e-8c77-4cd6-a84f-59728ff35edd">
+<span class="eqno">(6.8)<a class="headerlink" href="#equation-30013a3e-8c77-4cd6-a84f-59728ff35edd" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_2(0) &amp;= 2 - c_1 e^{-1/4} = 0 \\
+c_1 &amp;= 2e^{1/4}
+\end{align}\]</div>
+<p class="sd-card-text">Therefore,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-fd9d65b9-1e1b-4eb9-a78a-95489b0d6743">
+<span class="eqno">(6.9)<a class="headerlink" href="#equation-fd9d65b9-1e1b-4eb9-a78a-95489b0d6743" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y_2 = 2\left[1-\exp\left(\frac{1}{4}-\frac{x}{2}-\frac{1}{4}e^{-2x}\right)\right]
+\end{equation}\]</div>
+</div>
+</details></li>
+</ol>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -515,6 +584,21 @@ column vector of first derivatives of all dependent variables.</p>
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill-builder-problems">6.1.1. Skill builder problems</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
