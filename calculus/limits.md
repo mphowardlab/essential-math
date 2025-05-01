@@ -39,7 +39,7 @@ f(x) = \frac{(x+1)(x-1)}{x-1} = x+1 \quad (x \neq 1)
 
 ```{image} ./_images/fx_x+1.png
 :alt: Limit Exists
-:width: 300px
+:width: 450px
 :align: center
 ```
 
@@ -63,6 +63,6 @@ The function blows up to $+\infty$ from the right and $-\infty$ from the left, s
 
 ```{image} ./_images/fx_1_x.png
 :alt: No Limit Exists
-:width: 300px
+:width: 450px
 :align: center
 ```
