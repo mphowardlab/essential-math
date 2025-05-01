@@ -119,7 +119,7 @@ a_3 &= -a_1 - a_2 = C_{A0}\frac{k_2}{k_2-k_1} - C_{A0}\frac{k_1}{k_2-k_1} \\
 So,
 
 \begin{align}
-C_A(t) &= a_1e^{-k_1t}\frac{-k_2-k_1}{k_2} 
+C_A(t) &= a_1e^{-k_1t}\frac{-k_2-k_1}{k_2} \\
 &= C_{A0}e^{-k_1t}  \\
 C_B(t) &= a_1e^{-k_1t}\frac{-k_1}{k_2} + a_2e^{-k_2t}(-1) \\
 &= C_{A0}\frac{k_1}{k_2 - k_1}(e^{-k_1t} - e^{-k_2t}) \\
