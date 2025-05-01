@@ -23,8 +23,7 @@ Importantly, the Laplace transform of the first derivative of an unknown
 function $f(t) = y'(t)$ is:
 
 \begin{align}
-L[y'] = \int_0^\infty \e^-st \y' \d{t}
-\= -\frac{te^-st}{s}|_{0}{\infty} - \int_0^\infty \ y \(\frac{e^-st}{s})dt \
+L[y'] = \int_0^\infty e^-st y' \d{t} = -\frac{te^-st}{s}|_{0}{\infty} - \int_0^\infty \ y (\frac{e^-st}{s})dt \
 \u = e^-st  dv = y' dt \
 \ du = -se^-st   v = y \
 = [ 0 - y ( 0 )] + s \int_0^\infty \e^-st y \dt\
@@ -35,7 +34,7 @@ L[y'] = \int_0^\infty \e^-st \y' \d{t}
 Reminder from integration by parts
 
 \begin{equation}
-\F( s ) = L [ f( t )] = \int_0^\infty \e^-st \f( t ) dt\
+F( s ) = L [ f( t )] = \int_0^\infty e^-st f( t ) dt\
 \end{equation}
 
 :::{table} Laplace Transforms
@@ -56,8 +55,8 @@ Reminder from integration by parts
 The Laplace transform is a linear operator, so
 
 \begin{equation}
-\L = [kf] = kL[f] = kf\\
-\L = [f + g] = L[f] + L[g] = F + G
+L = [kf] = kL[f] = kf\\
+L = [f + g] = L[f] + L[g] = F + G
 \end{equation}
 
 ## Solving first-order ODEs
@@ -66,7 +65,7 @@ The nonhomogeneous, first-order ODE with constant coefficients is nice to solve
 with Laplace transoforms
 
 \begin{equation}
-\y' + by = r(t)\\
+y' + by = r(t)\\
 \end{equation}
 
 y' and b must be constant coefficients
@@ -75,11 +74,11 @@ r(t) must be nonhomogeneous (if r \ne 0)
 Apply Laplace transform to both sides of the equation
 
 \begin{align}
-\L[y' + by] = L[r(t)]
-\L[y'] + bL[y] = L[r(t)]\\
-\sY(s) - y(0) + bY(s)= R(s)\\
-\(s + b)Y(s) = y(o) + R(s)\\
-\y(s) = \frac{y(o) + R(s)}{s+b}\\
+L[y' + by] = L[r(t)]
+L[y'] + bL[y] = L[r(t)]\\
+sY(s) - y(0) + bY(s)= R(s)\\
+(s + b)Y(s) = y(o) + R(s)\\
+y(s) = \frac{y(o) + R(s)}{s+b}\\
 \end{align}
 
 If we can invert y(t) = L^-1 [y(s)] usijng tables, we have a solution!
@@ -171,3 +170,101 @@ y &=L^{-1}[Y]\\
   &=2e^t-1-t
 \end{align}
 ```
+
+<!-- markdownlint-disable MD013 -->
+
+```{example} Hormone level
+The concentration of a hormone in the blood *c* varies due to sinusoidal
+production by the thyroid and continuous removal according to:
+
+\begin{equation}
+c' = A + B\cos\left(\frac{\pi t}{12}\right) - kc
+\end{equation}
+
+The concentration is $c_0$ at 6 AM ($t = 0$). What is the average concentration
+between 6 PM and 6 AM the same day?
+
+---
+
+To solve, rearrange and use the Laplace transform:
+
+\begin{align}
+c' + kc &= A + B\cos\left(\frac{\pi t}{12}\right) \\
+[sC(s) - c_0] + kC(s) &= L\left[A + B\cos\left(\frac{\pi t}{12}\right)\right] \\
+(s+k) C - c_0 &= \frac{A}{s} + \frac{Bs}{s^2 + (\pi/12)^2} \\
+C(s) &= \left(\frac{1}{s + k}\right)\left[c_0 + \frac{A}{s} + \frac{Bs}{s^2 + (\pi/12)^2}\right] \\
+ &= \frac{c_0}{s + k} + \frac{A}{s(s + k)}
+ + \frac{Bs}{[s^2 + (\pi/12)^2](s + k)}
+\end{align}
+
+Use partial fraction decomposition on both fractions. The first one is:
+
+\begin{equation}
+\frac{1}{s(s + k)} = \frac{c_1}{s} + \frac{c_2}{s + k}
+\end{equation}
+
+and the cover-up method gives $c_1 = 1/k$ and $c_2 = -1/k$. For the next one:
+
+\begin{equation}
+\frac{s}{[s^2 + (\pi/12)^2](s + k)}
+  = \frac{c_1 s + c_2}{s^2 + (\pi/12)^2} + \frac{c_3}{s + k}
+\end{equation}
+
+The cover-up method gives
+
+\begin{equation}
+c_3 = \frac{-k}{k^2 + (\pi/12)^2}
+\end{equation}
+
+while cross-multiplying and matching coefficients gives
+
+\begin{align}
+s &= (c_1 s + c_2)(s + k) + c_3\left[s^2 + (\pi/12)^2\right] \\
+s &= (c_1 + c_3)s^2 + (c_1 k + c_2)s + c_2 k + c_3(\pi/12)^2
+\end{align}
+
+so
+
+\begin{align}
+c_1 + c_3 &= 0 \\
+c_1 k + c_2 &= 1 \\
+c_2 k + c_3 (\pi/12)^2 &= 0
+\end{align}
+
+Using our solution for $c_3$ in the first equation gives $c_1$ and in the third
+equation gives $c_2$:
+
+\begin{equation}
+c_1 = \frac{k}{k^2 + \left(\frac{\pi}{12}\right)^2}, \quad
+c_2 = \frac{(\pi/12)^2}{k^2 + (\pi/12)^2}
+\end{equation}
+
+All together,
+
+\begin{align}
+C(s) &= \frac{c_0}{s + k} + \frac{A}{k} \left[\frac{1}{s} - \frac{1}{s+k} \right] \\
+ &+ \frac{B}{k^2 + (\pi/12)^2}
+ \left[\frac{ks}{s^2 + (\pi/12)^2} + \frac{(\pi/12)^2}{s^2 + (\pi/12)^2} - \frac{k}{s+k} \right]
+\end{align}
+
+Invert the Laplace transforms term by term:
+
+\begin{align}
+c(t) &= c_0 e^{-kt} + \frac{A}{k} \left(1 - e^{-kt}\right) \\
+ &+ \frac{B}{k^2 + (\pi/12)^2} \left[k \cos\left(\frac{\pi t}{12}\right) + \frac{\pi}{12} \sin\left(\frac{\pi t}{12}\right) - k e^{-kt}\right] \\
+  &= \frac{A}{k} + \frac{B}{k^2 + (\pi/12)^2} \left[k \cos\left(\frac{\pi t}{12}\right) + \frac{\pi}{12} \sin\left(\frac{\pi t}{12}\right)\right] \\
+  &+ \left[c_0 - \frac{A}{k} - \frac{Bk}{k^2 + \left(\frac{\pi}{12}\right)^2}\right] e^{-kt}
+\end{align}
+
+The average concentration is:
+
+\begin{align}
+\langle c \rangle &= \frac{1}{t_1-t_0} \int_{t_0}^{t_1} c(t) \d{t} \\
+&= \frac{1}{24 - 12} \int_{12}^{24} \Biggl( \frac{A}{k} + \frac{B}{k^2 + (\pi/12)^2} \left[k \cos\left(\frac{\pi t}{12}\right) + \frac{\pi}{12} \sin\left(\frac{\pi t}{12}\right)\right] \\
+  &+ \left[c_0 - \frac{A}{k} - \frac{Bk}{k^2 + (\pi/12)^2}\right] e^{-kt} \Biggr) \d{t} \\
+&= \frac{1}{12} \Biggl[ \frac{A}{k} t + \frac{B}{k^2 + (\pi/12)^2} \left( \frac{12k}{\pi} \sin\left( \frac{\pi t}{12} \right) - \cos\left( \frac{\pi t}{12} \right) \right) \\
+&+ \frac{1}{k} \left( \frac{A}{k} + \frac{Bk}{k^2 + (\pi/12)^2} \right) e^{-kt} \Biggr]_{12}^{24} \\
+&= \frac{A}{k} - \frac{1}{6} \frac{B}{k^2 + (\pi/12)^2} - \frac{1}{12}\left[\frac{A}{k^2} + \frac{B}{k^2 + (\pi/12)^2}\right] (e^{-12k} - e^{-24k})
+\end{align}
+```
+<!-- markdownlint-enable MD013 -->
