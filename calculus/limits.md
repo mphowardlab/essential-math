@@ -1,4 +1,4 @@
-# Limits
+
 **Formal Defitinition**
 /begin{equation}
 lim_{x->x_{0}} = f(x) = l
