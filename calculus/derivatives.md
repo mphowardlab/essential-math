@@ -3,7 +3,10 @@
 
 The Derivative is also a function!
 
-![Graph](../images/MathAppsECPic.png)
+{image} ./_images/MathAppsECPic.png
+:alt: Two Real Solutions
+:align: center
+:width: 200px
 
 $$
 \begin{aligned}
