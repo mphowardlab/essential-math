@@ -51,9 +51,11 @@ Then, form a table and update
 
 Compare to Exact Solution
 
+Using the Integrating Factor Method:
 ```{math}
 F(x) = e^{\int -1 \, dx} = e^{-x}
 ```
+Integrate by parts
 
 ```{math}
 \int x e^{-x} dx = -x e^{-x} + \int e^{-x} dx = -(x + 1) e^{-x}
@@ -62,6 +64,7 @@ F(x) = e^{\int -1 \, dx} = e^{-x}
 ```{math}
 y(x) = e^x \left[ - (x + 1) e^{-x} + C \right] = e^x - (x + 1)
 ```
+Solve for C using our initial boundary conditon y(0)=0
 
 ```{math}
 0 = y(0) = -1 + C \Rightarrow C = 1
@@ -81,6 +84,7 @@ y(x) = e^x - (x + 1)
  | 0.274     | 0.426  | 0.152 |
  | 0.489     | 0.718  | 0.229 |
 
+Here, we compare the numerical solution(Euler's Method) with the exact solution. The error column shows that the numerical solution departs from the exact solution as the t value increases. 
 ## Error in approximation
 
 Because we are using truncated Taylor series, we accrue an error:
