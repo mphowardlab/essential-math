@@ -6,7 +6,7 @@ If $f(x) = u(x)  v(x)$ then:
 $$f' = uv' + vu'$$
 
 "u-dv plus v-du"
-"first-derivative-of-second plus second-derivative of-first"
+"first-derivative-of-second plus second-derivative-of-first"
 
 ### Example 1:
 $f(x) = (x-3)(x-1)$
@@ -17,6 +17,7 @@ $f(x) = x^2 - 4x + 3$
 $f'(x) = 2x - 4$
 
 **New way:** 
+<br>
 $u = x-3$ and  $v = x-1$
 <br>
 $u' = 1$ and $v' = 1$
