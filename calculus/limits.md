@@ -71,8 +71,11 @@ frac{|x + 2|}{x + 2} = \begin{cases}
 -1 & x < -2
 \end{cases}
 
-```{example} Challenge problem
-```{image} ./_images/piecewiseplot.png
+````{example} Challenge problem
+
+```{image} ./_images/limit_image.png
+:width: 500px
+```
 
 From the graph:
 
@@ -81,4 +84,5 @@ Since the $lim_{x \to 1^-} f(x) = 0$, and the $lim_{x \to 1^+} f(x) = 1$, the $l
 The $lim_{x \to 2^-} f(x) = 1$ and the $lim_{x \to 2^+} f(x) = 1$, so the $lim_{x \to 2} f(x) = 1$.
 
 (even though $f(2) = 2$)
+````
 
