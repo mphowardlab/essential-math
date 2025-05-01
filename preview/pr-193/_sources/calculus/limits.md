@@ -37,7 +37,7 @@ f(x) = \frac{(x+1)(x-1)}{x-1} = x+1 \quad (x \neq 1)
 | 1.01   | 2.01   |
 | 1.1    | 2.1    |
 
-```{image} 
+```{image} ./_images/fx_x+1.png
   :alt: Limit Exists
   :width: 300px
   :align: center
@@ -63,7 +63,7 @@ f(x) = \frac{1}{x}, \quad x \neq 0
 
 The function blows up to $+\infty$ from the right and $-\infty$ from the left, so no single limit exists at $x=0$.
 
-```{image} 
+```{image} ./_images/fx_1_x.png
   :alt: No Limit Exists
   :width: 300px
   :align: center
