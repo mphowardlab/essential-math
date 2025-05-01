@@ -2,8 +2,8 @@
 
 ## Manipulating functions
 
-$f(x+a)$ \underline{shifts left} by $a$
-$f(x-a)$ \underline{shifts left} by $a$
+$f(x+a)$ **shifts left** by $a$
+$f(x-a)$ **shifts left** by $a$
 
 
 ```{image} ./_images/Shifting_X_direction.jpg
@@ -12,8 +12,8 @@ $f(x-a)$ \underline{shifts left} by $a$
 :align: center
 ```
 
-$f(x)+b$ \underline{shifts up} by $b$
-$f(x)-b$ \underline{shifts down} by $b$
+$f(x)+b$ **shifts up** by $b$
+$f(x)-b$ **shifts down** by $b$
 
 
 ```{image} ./_images/Shifting_Y_direction.jpg
@@ -22,9 +22,9 @@ $f(x)-b$ \underline{shifts down} by $b$
 :align: center
 ```
 
-
-Scaling $cF(x)$ \underline{streches vertically} by $c$
-
+\begin{align}
+Scaling $cF(x)$ **streches vertically** by $c$
+\end{align}
 
 ```{image} ./_images/Vertical_Stretch.jpg
 :alt: Vertical Stretch
@@ -33,7 +33,7 @@ Scaling $cF(x)$ \underline{streches vertically} by $c$
 ```
 
 \begin{align}
-Scaling $F(cx)$ \underline{compresses horrizontally} by $c$
+Scaling $F(cx)$ **compresses horrizontally** by $c$
 \end{align}
 
 ```{image} ./_images/Horizontal_Compression.jpg
