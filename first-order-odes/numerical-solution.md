@@ -57,4 +57,10 @@ $$
 
 ---
 
+Analytical solution:
+$$
+y^' - y = 5 * sin(2*pi*t)
+$$
 
+$$
+F = e^(\int(p{dt})) = e^(-1 * ())
