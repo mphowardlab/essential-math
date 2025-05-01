@@ -2,7 +2,9 @@
 For a square *nxn* matrix *A*, the *determinant* is divided.
 
 $$
-\det |A| =|A|= [ A_{11}  A_{1n}  {n1} A_{nn} ]
+
+\det |A| =|A|=\begin{bmatrix}A_{11}... & B_{1n} \\ A_{n1}... & A_{nn}\end{bmatrix}
+
 $$
 For  $n=1$, $|A|= A_{11}$ (the element)
 
@@ -14,19 +16,16 @@ For $n \to 2$, |A| is defined in a sort of recursive way
 $$ |A|=\left( \sum_{j=1}^n A_{ij} C_{ij} \right) =  \left( \sum_{j=1}^n (-1)^{i+j} \right) A_{ij} M_{ij} $$
 ($C_{ij}$ is the *cofactor*) (i=1, ..., or n: any row)
 
-$$\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)$$
+$$ \left( C_{ij} = (-1)^{i+j} \right) M_{ij} $$
+($M_{ij}$- "*minor*": is the determinant of the matrix obtained by removing row *i* and column *j*)
 
-$C_{ij}$= (-1) $M_{ij}$ ("*minor*": determinant of the matrix obtained by removing row *i* and column *j*)
 
 $$ -or- =\left( \sum_{i=1}^n A_{ij} C_{ij} \right)= \left( \sum_{i=1}^n \right) (-1)^{i+j} A_{ij} M_{ij} $$
- 
-
--or- |A|= sum n *i*=1 $A_{ij}$ $C_{ij}$ = sum n *i*=1
-
- $A_{ij}$ $C_{ij}$ = $$\left(\sum_{i=1}^n \right)  n i=1 (-1)^i+j $A_{ij} $M_{ij} (j=1,..., or n: any column)
+ (j=1,..., or n: any column)
 
 
-**Ex:** Determinant of a *2 x 2* matrix A= [a b, c d]
+**Ex:** Determinant of a *2 x 2* matrix A
+$$ A=\begin{bmatrix}a & b \\ c & d \end{bmatrix}$$
 
 |A|=[a b, c d] choose i=1 = (-1)^(1+1)1 a $M_{11}$+(-1)^(1+2)-1 b $M_{12}$ =ad-bc
 
