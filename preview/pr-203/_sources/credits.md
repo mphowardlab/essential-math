@@ -16,6 +16,7 @@ This work (c) 2025 is licensed under
 - Ella Governale
 - Connor Habig
 - Kennedi Hawkins
+- Joshua R. Hegar
 - Molly Grace Hicks
 - Michael P. Howard
 - Evan M. Hughes
@@ -32,11 +33,13 @@ This work (c) 2025 is licensed under
 - Meg Nettles
 - Jeffe Old
 - Kendall Reeves
+- Olivia Robinson
 - Brent Russell
 - Michelle Schindler
 - Katie Sorensen
 - Madelyn Torrance
 - Debora Vasconcelos
+- Morgan Wootton
 
 ## Attributions
 
