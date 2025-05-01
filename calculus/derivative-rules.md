@@ -8,7 +8,7 @@ $$f' = uv' + vu'$$
 "u-dv plus v-du"
 "first-derivative-of-second plus second-derivative of-first"
 
-#### Example 1:
+### Example 1:
 $f(x) = (x-3)(x-1)$
 
 **Old way:** Expand The Polynomial 
@@ -40,7 +40,7 @@ $f'(x) = (x+1)[(2x^2+3)(15x^2) + (5x^3-4)(4x)] + (2x^2+5)(5x^3-4)$
 
 
 
-#### Example 2:
+### Example 2:
 $f(x) = \frac{1}{x} e^x$
 
 $u = \frac{1}{x}$ so $u' = -\frac{1}{x^2}$
@@ -48,7 +48,7 @@ $v = e^x$ so $v' = e^x$
 
 $f'(x) = \frac{1}{x}e^x + e^x(-\frac{1}{x^2}) = e^x(\frac{1}{x} - \frac{1}{x^2})$
 
-#### Example 3:
+### Example 3:
 $f(x) = (x^2+3)\ln(x)$
 
 $u = x^2+3$ so $v = \ln(x)$ 
