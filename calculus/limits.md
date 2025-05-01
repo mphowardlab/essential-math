@@ -72,12 +72,7 @@ frac{|x + 2|}{x + 2} = \begin{cases}
 \end{cases}
 
 ```{example} Challenge problem
-
-Below is a piecewise function with a graph (hand-drawn):
-
-- A filled circle at \( (0, 1) \), line down to \( (1, 0) \), open circle at \( (1, 1) \)
-- A jump to a dot at \( (1, 2) \)
-- Then a line segment from \( (2, 1) \) to \( (3, 2) \)
+```{image} ./_images/piecewiseplot.png
 
 From the graph:
 
