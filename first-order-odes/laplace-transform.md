@@ -23,8 +23,7 @@ Importantly, the Laplace transform of the first derivative of an unknown
 function $f(t) = y'(t)$ is:
 
 \begin{align}
-L[y'] = \int_0^\infty \e^-st \y' \d{t}
-\= -\frac{te^-st}{s}|_{0}{\infty} - \int_0^\infty \ y \(\frac{e^-st}{s})dt \
+L[y'] = \int_0^\infty e^-st y' \d{t} = -\frac{te^-st}{s}|_{0}{\infty} - \int_0^\infty \ y (\frac{e^-st}{s})dt \
 \u = e^-st  dv = y' dt \
 \ du = -se^-st   v = y \
 = [ 0 - y ( 0 )] + s \int_0^\infty \e^-st y \dt\
@@ -35,7 +34,7 @@ L[y'] = \int_0^\infty \e^-st \y' \d{t}
 Reminder from integration by parts
 
 \begin{equation}
-\F( s ) = L [ f( t )] = \int_0^\infty \e^-st \f( t ) dt\
+F( s ) = L [ f( t )] = \int_0^\infty e^-st f( t ) dt\
 \end{equation}
 
 :::{table} Laplace Transforms
@@ -56,8 +55,8 @@ Reminder from integration by parts
 The Laplace transform is a linear operator, so
 
 \begin{equation}
-\L = [kf] = kL[f] = kf\\
-\L = [f + g] = L[f] + L[g] = F + G
+L = [kf] = kL[f] = kf\\
+L = [f + g] = L[f] + L[g] = F + G
 \end{equation}
 
 ## Solving first-order ODEs
@@ -66,7 +65,7 @@ The nonhomogeneous, first-order ODE with constant coefficients is nice to solve
 with Laplace transoforms
 
 \begin{equation}
-\y' + by = r(t)\\
+y' + by = r(t)\\
 \end{equation}
 
 y' and b must be constant coefficients
@@ -75,11 +74,11 @@ r(t) must be nonhomogeneous (if r \ne 0)
 Apply Laplace transform to both sides of the equation
 
 \begin{align}
-\L[y' + by] = L[r(t)]
-\L[y'] + bL[y] = L[r(t)]\\
-\sY(s) - y(0) + bY(s)= R(s)\\
-\(s + b)Y(s) = y(o) + R(s)\\
-\y(s) = \frac{y(o) + R(s)}{s+b}\\
+L[y' + by] = L[r(t)]
+L[y'] + bL[y] = L[r(t)]\\
+sY(s) - y(0) + bY(s)= R(s)\\
+(s + b)Y(s) = y(o) + R(s)\\
+y(s) = \frac{y(o) + R(s)}{s+b}\\
 \end{align}
 
 If we can invert y(t) = L^-1 [y(s)] usijng tables, we have a solution!
