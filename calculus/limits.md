@@ -16,7 +16,7 @@
     \lim_{x \to \infty} f(x) = L
     $$
     
-    if for every $\sum_ > 0$, there exists a value M such that for all x, if x > M, $\left| f(x) - L \right|$ $< \sum_$.
+    if for every $\epsilon > 0$, there exists a value M such that for all x, if x > M, $\left| f(x) - L \right|$ $< \epsilon$.
 
     i.e., f gets close to L when x is "big" :)
 
