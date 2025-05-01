@@ -57,6 +57,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"d": ["{\\operatorname{d}\\!{#1}}", 1], "dd": ["{\\d{}^{#1} #2 \\over \\d{#3}^{#1}}", 3], "pp": ["{\\partial^{#1} #2 \\over \\partial #3^{#1}}", 3], "td": ["{\\left(\\pp{#1}{#2}{#3} \\right)_{#4}}", 4], "ubar": ["\\underline{#1}", 1], "vv": ["\\mathbf{#1}", 1]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'second-order-odes/homogeneous-constant-coefficient';</script>
     <link rel="canonical" href="https://mphowardlab.github.io/essential-math/second-order-odes/homogeneous-constant-coefficient.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -215,9 +217,10 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../systems-first-order-odes/index.html">6. Systems of first-order ordinary differential equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/linearity.html">6.1. Linearity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/homogeneous-constant-coefficient.html">6.2. Homogeneous linear first-order ODEs with constant coefficients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/numerical-solution.html">6.3. Numerical solution methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/definition.html">6.1. Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/linearity.html">6.2. Linearity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/homogeneous-constant-coefficient.html">6.3. Homogeneous linear first-order ODEs with constant coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/numerical-solution.html">6.4. Numerical solution methods</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">7. Second-order ordinary differential equations</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
@@ -429,6 +432,51 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="homogeneous-linear-second-order-odes-with-constant-coefficients">
 <h1><span class="section-number">7.3. </span>Homogeneous linear second-order ODEs with constant coefficients<a class="headerlink" href="#homogeneous-linear-second-order-odes-with-constant-coefficients" title="Link to this heading">#</a></h1>
+<div class="admonition-example-spring-and-dashpot admonition">
+<p class="admonition-title">Example: Spring and dashpot</p>
+<p>We are analyzing how the drag force affects the spring oscilations. This is a
+mechanics example, but models like this are also used for the rheology of
+viscoelastic materials.</p>
+<p>A mass <em>m</em> is attached to a Hookean spring with spring constant <em>k</em> and
+experiences a drag force as it moves with drag coefficient <span class="math notranslate nohighlight">\(\gamma\)</span>.</p>
+<a class="reference internal image-reference" href="../_images/Spring_and_Dashpot.jpg"><img alt="../_images/Spring_and_Dashpot.jpg" src="../_images/Spring_and_Dashpot.jpg" style="width: 300px;" />
+</a>
+<p>If <em>x</em> is the displacement of the spring, the governing equation for <em>x</em> is
+given by Newton’s equations:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ae412ca8-fc8f-4e4b-84b9-3facc2897955">
+<span class="eqno">(7.7)<a class="headerlink" href="#equation-ae412ca8-fc8f-4e4b-84b9-3facc2897955" title="Permalink to this equation">#</a></span>\[\begin{equation}
+m x'' + \gamma x' + k x = 0
+\end{equation}\]</div>
+<p>The first term represents the acceleration of the mass, the second term is the
+drag force, and the third term is the spring force.</p>
+<p>For what values of <span class="math notranslate nohighlight">\(\gamma\)</span> will the mass oscillate after it is stretched?</p>
+<hr class="docutils" />
+<p>To answer this, first solve the roots of the characteristic polynomial for this
+second-order ODE:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c2710b2d-a491-4f91-afed-d4c8407c7dbc">
+<span class="eqno">(7.8)<a class="headerlink" href="#equation-c2710b2d-a491-4f91-afed-d4c8407c7dbc" title="Permalink to this equation">#</a></span>\[\begin{align}
+&amp;m \lambda^2 + \gamma \lambda + k = 0 \\
+\lambda_{1,2} &amp;= \frac{ -\gamma \pm \sqrt{\gamma^2 - 4mk}}{2m}
+\end{align}\]</div>
+<p>You will only get oscillations if <span class="math notranslate nohighlight">\(\lambda_{1,2}\)</span> is complex, which only occurs
+when <span class="math notranslate nohighlight">\(\gamma^2 &lt; 4mk\)</span>. In this case:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-15f37e65-424e-44ac-b31d-cf65810dde89">
+<span class="eqno">(7.9)<a class="headerlink" href="#equation-15f37e65-424e-44ac-b31d-cf65810dde89" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\lambda_{1,2} = -\frac{\gamma}{2m} \pm \frac{i}{2m}\sqrt{4mk - \gamma^2}
+\end{equation}\]</div>
+<p>so the general solution for <em>x</em> is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b23830e4-c619-4c01-b260-d665cfe3217a">
+<span class="eqno">(7.10)<a class="headerlink" href="#equation-b23830e4-c619-4c01-b260-d665cfe3217a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+x(t) = \exp\left(-\frac{\gamma}{2m} t \right)
+\left [ c_1 \cos(\omega t)+ c_2 \sin(\omega t) \right]
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\omega = \sqrt{4mk - \gamma^2}\)</span>. What does <span class="math notranslate nohighlight">\(\gamma\)</span> do to the solution?</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\gamma\)</span> dampens the oscillations to decay to zero. The decay time <span class="math notranslate nohighlight">\(2m/\gamma\)</span>
+increases as <span class="math notranslate nohighlight">\(\gamma\)</span> decreases, and without it, oscillations go on forever.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\gamma\)</span> also changes the frequency of the oscillations through <span class="math notranslate nohighlight">\(\omega\)</span>.</p></li>
+</ul>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
