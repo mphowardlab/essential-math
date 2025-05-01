@@ -6,6 +6,7 @@ Description: Many ordinary differential equations you will encounter are not sol
 
 $ y' = f(t, y) \hspace{1cm} \to \hspace{1cm} y(t + (\Delta t)) = y(t) + f(t,y) (\Delta t)$
 
+
 "Just" Add Columns 
 
 ```{image} ./_images/euler_diagram.png
@@ -44,7 +45,7 @@ Mass Balance
 \end{align}
 ```
 
-What is c_A and V after 1 minute?
+What is $c_A$ and $\dot V$ after 1 minute?
 
 $$
 \begin{array}{|c|c|c|c|c|c|}
