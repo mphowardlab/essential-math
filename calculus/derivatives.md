@@ -3,6 +3,8 @@
 
 The Derivative is also a function!
 
+![Graph](../images/MathAppsECPic.png)
+
 $$
 \begin{aligned}
 f(x) &= x^2 \\
