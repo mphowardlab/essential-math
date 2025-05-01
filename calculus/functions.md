@@ -3,7 +3,7 @@
 ## Manipulating functions
 
 $f(x+a)$ **shifts left** by $a$
-$f(x-a)$ **shifts left** by $a$
+$f(x-a)$ **shifts right** by $a$
 
 
 ```{image} ./_images/Shifting_X_direction.jpg
@@ -22,9 +22,9 @@ $f(x)-b$ **shifts down** by $b$
 :align: center
 ```
 
-\begin{align}
+
 Scaling $cF(x)$ **streches vertically** by $c$
-\end{align}
+
 
 ```{image} ./_images/Vertical_Stretch.jpg
 :alt: Vertical Stretch
@@ -32,9 +32,9 @@ Scaling $cF(x)$ **streches vertically** by $c$
 :align: center
 ```
 
-\begin{align}
+
 Scaling $F(cx)$ **compresses horrizontally** by $c$
-\end{align}
+
 
 ```{image} ./_images/Horizontal_Compression.jpg
 :alt: Horizontal Compression
