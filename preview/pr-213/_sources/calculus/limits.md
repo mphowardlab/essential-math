@@ -6,7 +6,7 @@
 When you have boiling water touching its vapor, is there a step change in density?
 
 ```{image} ./_images/liquid_vapor_graph.png
-:width: 200px
+:width: 400px
 :align: center
 ```
 
@@ -25,7 +25,7 @@ If $f$ is defined on the interval $x_0 < x < b$ and $f(x)$ approaches arbitraril
 lim_{x \to x_0^+} f(x) = L
 \end{align}
 
-This limit can also be written in $\(\delta\)-\(\varepsilon\)$ form.
+This limit can also be written in $\delta-varepsilon\$ form.
 
 The same can be done for the **left-hand limit** if $a < x < x_0$
 
@@ -39,10 +39,10 @@ lim_{x \to x_0} f(x) = L \text{ if } lim_{x \to x_0^+} f(x) = L \text{ and } lim
 \end{align}
 
 ```{example} One-sided limit method
-Solve $f(x) = \frac{x}{|x|}$ = \begin{cases}
+Solve $f(x) = \frac{x}{|x|} = \begin{cases}
 -1 & x<0\\
 1 & x>0
-\end{cases}
+\end{cases}$
 
 ---
 
@@ -71,7 +71,7 @@ Normal limit laws still apply. However, be careful about which piece of the func
 \end{align}
 
 Note:  
-$frac{|x + 2|}{x + 2} =
+$\frac{|x + 2|}{x + 2} =
 \begin{cases}
 1, & x > -2 \\
 -1, & x < -2
