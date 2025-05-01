@@ -108,9 +108,11 @@ Initial Condition:
 0 \end{bmatrix} = \begin{bmatrix} a_1\frac{-k_2-k_1}{k_2} \\
  -a_1\frac{k_1}{k_2}-a_2 \\
 a_1+a_2+a_3 \end{bmatrix} \\
+\end{align}
 
 Thus, 
 
+\begin{align}
 a_1 &= -C_{A0}\frac{k_2}{k_2-k_1}  \\
 a_2 &= -\frac{k_1}{k_2}a_1 \\
 &= C_{A0}\frac{k_1}{k_2-k_1} \\
