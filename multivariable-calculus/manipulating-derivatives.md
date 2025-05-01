@@ -266,7 +266,7 @@ and *P* using only measurable quantities!
 Given
 
 \begin{equation}
-$\d{f} = p \d{x} - q \d{y}$
+\d{f} = p \d{x} - q \d{y}
 \end{equation}
 
 Evaluate the following for $f=\cos(4x+y^2)+x^2y$

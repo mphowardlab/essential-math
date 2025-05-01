@@ -5,7 +5,7 @@ For example, consider two tanks. Tank 1 has concentration $c_1$ of a solute and
 Tank 2 has concentration $c_2$. Tank 1 flows into Tank 2, which is then passed
 through a pump and recycled back to Tank 1.
 
-```{image} ./_images/tank-system.JPG
+```{image} ./_images/tank-system.jpg
 :alt: Concentrations in two tanks
 :width: 300px
 :align: center
