@@ -2,15 +2,20 @@
 ## One-sided limits
 **1. How do functions behave as you approach $x_0$ from a direction?**
 
-```{example} Old question
+````{example} Old question
 When you have boiling water touching its vapor, is there a step change in density?
+
+```{image} ./_images/liquid_vapor_graph.png
+:width: 200px
+:align: center
+```
 
 What is the liquid density at the interface?  $lim_{z \to 0^-} \rho(z)$
 
 What is the vapor density at the interface?  $lim_{z \to 0^+} \rho(z)$
 
 Are these the same or not?
-```
+````
 
 **2. "Formal" definition of one-sided limits**
 
@@ -20,7 +25,7 @@ If $f$ is defined on the interval $x_0 < x < b$ and $f(x)$ approaches arbitraril
 lim_{x \to x_0^+} f(x) = L
 \end{align}
 
-This limit can also be written in \(\delta\)-\(\varepsilon\) form.
+This limit can also be written in $\(\delta\)-\(\varepsilon\)$ form.
 
 The same can be done for the **left-hand limit** if $a < x < x_0$
 
@@ -30,7 +35,7 @@ lim_{x \to x_0^-} f(x) = L
 
 The **two-sided limit** exists if and only if both one-sided limits exist and have the same value:
 \begin{align}
-lim_{x \to x_0} f(x) = L \text{if} lim_{x \to x_0^+} f(x) = L \text{and} lim_{x \to x_0^-} f(x) = L
+lim_{x \to x_0} f(x) = L \text{ if } lim_{x \to x_0^+} f(x) = L \text{ and } lim_{x \to x_0^-} f(x) = L
 \end{align}
 
 ```{example} One-sided limit method
@@ -66,13 +71,12 @@ Normal limit laws still apply. However, be careful about which piece of the func
 \end{align}
 
 Note:  
-\[
-\frac{|x + 2|}{x + 2} =
+$frac{|x + 2|}{x + 2} =
 \begin{cases}
 1, & x > -2 \\
 -1, & x < -2
 \end{cases}
-\]
+$
 
 ````{example} Challenge problem
 
