@@ -3,7 +3,6 @@
 
 The Derivative is also a function!
 
-
 $$
 \begin{aligned}
 f(x) &= x^2 \\
