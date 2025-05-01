@@ -20,7 +20,7 @@ If $f$ is defined on the interval $x_0 < x < b$ and $f(x)$ approaches arbitraril
 lim_{x \to x_0^+} f(x) = L
 \end{align}
 
-This limit can also be written in \Sigma form.
+This limit can also be written in \(\delta\)-\(\varepsilon\) form.
 
 The same can be done for the **left-hand limit** if $a < x < x_0$
 
@@ -30,7 +30,7 @@ lim_{x \to x_0^-} f(x) = L
 
 The **two-sided limit** exists if and only if both one-sided limits exist and have the same value:
 \begin{align}
-lim_{x \to x_0} f(x) = L \text{_if_} lim_{x \to x_0^+} f(x) = L \text{_and_} lim_{x \to x_0^-} f(x) = L
+lim_{x \to x_0} f(x) = L \text{if} lim_{x \to x_0^+} f(x) = L \text{and} lim_{x \to x_0^-} f(x) = L
 \end{align}
 
 ```{example} One-sided limit method
@@ -66,20 +66,24 @@ Normal limit laws still apply. However, be careful about which piece of the func
 \end{align}
 
 Note:  
-frac{|x + 2|}{x + 2} = \begin{cases}
-1 & x > -2
--1 & x < -2
+\[
+\frac{|x + 2|}{x + 2} =
+\begin{cases}
+1, & x > -2 \\
+-1, & x < -2
 \end{cases}
+\]
 
 ````{example} Challenge problem
 
 ```{image} ./_images/limit_image.png
-:width: 500px
+:width: 300px
+:align: center
 ```
 
 From the graph:
 
-Since the $lim_{x \to 1^-} f(x) = 0$, and the $lim_{x \to 1^+} f(x) = 1$, the $lim_{x \to 1} f(x)$ does not exist.
+Since the $lim_{x \to 1^-} f(x) = 0$ and the $lim_{x \to 1^+} f(x) = 1$, the $lim_{x \to 1} f(x)$ does not exist.
 
 The $lim_{x \to 2^-} f(x) = 1$ and the $lim_{x \to 2^+} f(x) = 1$, so the $lim_{x \to 2} f(x) = 1$.
 
