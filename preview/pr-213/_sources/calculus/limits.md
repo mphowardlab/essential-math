@@ -67,17 +67,15 @@ Normal limit laws still apply. However, be careful about which piece of the func
 
 Note:  
 frac{|x + 2|}{x + 2} = \begin{cases}
-1 & x > -2\\
+1 & x > -2
 -1 & x < -2
 \end{cases}
 
-```{example} Challenge problem
+````{example} Challenge problem
 
-Below is a piecewise function with a graph (hand-drawn):
-
-- A filled circle at \( (0, 1) \), line down to \( (1, 0) \), open circle at \( (1, 1) \)
-- A jump to a dot at \( (1, 2) \)
-- Then a line segment from \( (2, 1) \) to \( (3, 2) \)
+```{image} ./_images/limit_image.png
+:width: 500px
+```
 
 From the graph:
 
@@ -86,4 +84,5 @@ Since the $lim_{x \to 1^-} f(x) = 0$, and the $lim_{x \to 1^+} f(x) = 1$, the $l
 The $lim_{x \to 2^-} f(x) = 1$ and the $lim_{x \to 2^+} f(x) = 1$, so the $lim_{x \to 2} f(x) = 1$.
 
 (even though $f(2) = 2$)
+````
 
