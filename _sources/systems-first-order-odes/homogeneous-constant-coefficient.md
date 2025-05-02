@@ -174,3 +174,115 @@ c_{\rm B}(t) &= a_1e^{-k_1t}\frac{-k_1}{k_2} - a_2e^{-k_2t} \\
 
 This matches our old answer!
 ```
+
+## Skill builder problems
+
+Solve the inital value problem $ \vv{y}' = \vv{A}\vv{y}$ with
+$\vv{y}(0) = [1 \quad 0]^{\rm T}$ for the following matrices. Also classify the
+type of critical point using the eigenvalues.
+
+1. Solve:
+
+   \begin{equation} \vv{A} =
+   \begin{bmatrix}
+   2 & -2\\
+   2 & 2
+   \end{bmatrix}
+   \end{equation}
+
+   ```{solution}
+   First, find the eigenvalues of **A**
+
+   \begin{align}
+   \vv{A} - \lambda\vv{I} &= \begin{vmatrix}
+   2- \lambda & -2\\
+   2 & 2-\lambda
+   \end{vmatrix} \\
+   &= (\lambda - 2)^2 + 4 = 0 \\
+   \lambda_{1,2} &= 2 \pm 2i
+   \end{align}
+
+   For $\lambda_1 = 2+2i$,
+
+   \begin{equation}
+   \vv{A}-\lambda_1\vv{I} =
+   \begin{bmatrix}
+   -2 i & -2\\
+   2 & -2i
+   \end{bmatrix}
+   \to \vv{x}_1 = \begin{bmatrix} i \\ 1 \end{bmatrix}
+   \end{equation}
+
+   For $\lambda_2 = 2-2i$,
+
+   \begin{equation}
+   \vv{A}-\lambda_2\vv{I} =
+   \begin{bmatrix}
+   2 i & -2\\
+   2 & 2i
+   \end{bmatrix}
+   \to \vv{x}_2 = \begin{bmatrix} -i \\ 1\end{bmatrix}
+   \end{equation}
+
+   The general solution is:
+
+   \begin{align}
+   \vv{y} &= c_1 e^{(2+2i)t} \begin{bmatrix} i\\ 1 \end{bmatrix} +
+     c_2 e^{(2-2i)t} \begin{bmatrix} -i\\ 1 \end{bmatrix} \\
+   &= e^{2t} \Biggl( c_1 e^{2it} \begin{bmatrix} i\\ 1 \end{bmatrix} +
+   + c_2 e^{-2it} \begin{bmatrix} -i\\ 1 \end{bmatrix}\Biggr)
+   \end{align}
+
+   To solve for the initial condition, for the augmented matrix for
+   $\vv{X}\vv{c} = \vv{y}(0)$,
+
+   \begin{align}
+   \begin{bmatrix}
+   i & -i & 1\\
+   1 & 1 & 0
+   \end{bmatrix}
+   \begin{matrix}{\rm swap} \\ \vphantom{R_2}\end{matrix}
+   &\to
+   \begin{bmatrix}
+   1 & 1 & 0\\
+   i & -i & 1
+   \end{bmatrix}
+   \begin{matrix}\vphantom{R_1} \\ -i R_1 \end{matrix} \\
+   &\to
+   \begin{bmatrix}
+   1 & 1 & 0\\
+   0 & -2i & 1
+   \end{bmatrix}
+   \begin{matrix}\vphantom{R_1} \\ \div -2i \end{matrix} \\
+   &\to
+   \begin{bmatrix}
+   1 & 1 & 0\\
+   0 & 1 & \frac{-1}{2i}
+   \end{bmatrix}
+   \begin{matrix} -R_2 \\ \vphantom{R_2}\end{matrix} \\
+   &\to
+   \begin{bmatrix}
+   1 & 0 & \frac{1}{2i}\\
+   0 & 1 & - \frac{1}{2i}
+   \end{bmatrix}
+   \end{align}
+
+   so $c_1 = 1/(2i) = -i/2$ and $c_2 = -1/(2i) = i/2$. Hence,
+
+   \begin{equation}
+   \vv{y} = e^{2t} \Biggl(
+     - \frac{i}{2} e^{2it} \begin{bmatrix} i \\ 1 \end{bmatrix}
+     + \frac{i}{2} e{-2it} \begin{bmatrix} -i\\ 1 \end{bmatrix} \Biggr)
+   \end{equation}
+
+   Simplifying using Euler's identity $e^{ix} = \cos x + i \sin x$ and adding
+   across the rows gives
+
+   \begin{align}
+   y_2 &= e^{2t} \cos 2t\\
+   y_2 &= e^{2t} \sin 2t
+   \end{align}
+
+   The critical point is an unstable spiral because the eigenvalues are complex,
+   and the real part is positive.
+   ```
