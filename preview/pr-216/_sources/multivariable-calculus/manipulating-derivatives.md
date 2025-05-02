@@ -334,9 +334,8 @@ Compute the relevant partial derivatives:
 
 \begin{equation}
 \left( \frac{\partial y}{\partial z} \right)_x 
-= \frac{1}{2} \cdot \frac{x}{\sqrt{xz}} 
-= \frac{1}{2} \cdot \frac{\sqrt{x}}{\sqrt{z}} 
-= \frac{1}{2z}
+= \frac{1}{2} \cdot \frac{\sqrt{y^2/z}}{\sqrt{z}} 
+= \frac{1}{2} \cdot \frac{y}{z} 
 \end{equation}
 
 \begin{equation}
@@ -349,7 +348,7 @@ Now plug into the triple product rule:
 
 \begin{equation}
 \left( \frac{2y}{z} \right) 
-\left( \frac{1}{2z} \right) 
+\left( \frac{y}{2z} \right) 
 \left( -\frac{z^2}{y^2} \right) = -1
 \end{equation}
 This is your answer!
@@ -361,7 +360,7 @@ This is your answer!
 We can use these rules to manipulate **thermodynamic derivatives**.
 
 ```{example} Thermodynamics Example
-Expressing \( \left( \frac{\partial S}{\partial T} \right)_V \)
+Expressing \begin{equation} \left( \frac{\partial S}{\partial T} \right)_V \end{equation}
 
 Given:
 
