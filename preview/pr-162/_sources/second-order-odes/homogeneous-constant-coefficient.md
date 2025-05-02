@@ -117,24 +117,65 @@ y = 3 e^{-2x} + e^x
 \end{equation}
 
 ---
+The following example depicts complex roots.
 
 \begin{align}
-y'' + 0.4y' + 9.04y = 0 \quad y(0)=0 \quad y'(0)=3 \
-\lambda^{2} + 0.4\lambda + 9.04 =0 \to \lambda_{1,2} = \frac{-0.4\pm\sqrt{0.4^2-4\times9.04}}{2} = -0.2\pm 3i \
+y'' + 0.4y' + 9.04y = 0 \quad y(0)=0 \quad y'(0)=3
+\end{align}
 
+Write and solve the characteristic polynomial,
+
+\begin{align}
+\lambda^{2} + 0.4\lambda + 9.04 =0 \to \lambda_{1,2} = \frac{-0.4\pm\sqrt{0.4^2-4\times9.04}}{2} = -0.2\pm 3i
+\end{align}
+
+Once values of $\lambda$ are known, write out the general solution and its first derivative.
+
+\begin{align}
 y = e^{-0.2x}(c_1\cos3x + c_2\sin3x) \qaud 0=y(0)=c_1 \
-y' = e^{-0.2x}(3c_2\cos3x) - 0.2e^{-0.2x}c_2\sin3x \quad 3=y'(0) = 3c_2 \to c_2 =1 \
+y' = e^{-0.2x}(3c_2\cos3x) - 0.2e^{-0.2x}c_2\sin3x \quad 
+\end{align}
+
+Apply the initial conditions:
+
+\begin{align}
+3=y'(0) = 3c_2 \to c_2 =1 \
 y = e^{-0.2x}\sin3x \
 \end{align}
 
 ---
+To solve for real and repeated roots, start by writing the characterisitc polynomial,
 
 \begin{align}
-y'' + y' + \frac{1}{4}y=0 \quad y(0)=3 \quad y'(0)= -\frac{7}{2} \
-\lambda^2 + \lambda + \frac{1}{4} = 0 \to (\lambda + \frac{1}{2})^2 = 0 \to \lambda=-\frac{1}{2} \
-y=(c_1 + c_2x)e^{-\frac{x}{2}} \quad 3=y(0)=c_1 \
-y'=(c_1 + c_2x)(-\frac{1}{2}e^{-\frac{x}{2}}) + c_2 e^{-\frac{x}{2}} \quad -\frac{7}{2}=y'(0)= -\frac{c_1}{2} + c_2 \to c_2 = -2 \
+y'' + y' + \frac{1}{4}y=0 \quad y(0)=3 \quad y'(0)= -\frac{7}{2}
+\end{align}
 
+\begin{align}
+\lambda^2 + \lambda + \frac{1}{4} = 0 
+\end{align}
+
+Solve for \lambda by factoring:
+
+\begin{align}
+ (\lambda + \frac{1}{2})^2 = 0 \to \lambda=-\frac{1}{2} \
+\end{align}
+
+Since \lambda is a real, repeated root, write out the general equation,
+
+\begin{align}
+y=(c_1 + c_2x)e^{-\frac{x}{2}} \quad 3=y(0)=c_1 \
+y'=(c_1 + c_2x)(-\frac{1}{2}e^{-\frac{x}{2}}) + c_2 e^{-\frac{x}{2}}
+\end{align}
+
+Use the equation and its derivative to solve for the coefficents:
+
+\begin{align}
+-\frac{7}{2}=y'(0)= -\frac{c_1}{2} + c_2 \to c_2 = -2 \
+\end{align}
+
+The final solution is:
+
+\begin{align}
 y = (3-2x)e^{\frac{-x}{2}}
 \end{align}
 
@@ -262,3 +303,152 @@ c = c_0\Biggl(\frac{e^{x\sqrt{k/D}}}{1+e^{2L\sqrt{k/D}}}
   +\frac{e^{x\sqrt{k/D}}}{1+e^{-2L\sqrt{k/D}}}\Biggr)
 \end{align}
 ````
+
+## Skill builder problems
+
+Solve the following:
+
+1. $y'' - 2y' - 3y = 0$, $y(0) = 2$, $y'(0) = 14$
+
+   ```{solution}
+   Write and solve the characteristic polynomial:
+
+   \begin{align}
+   \lambda^2 - 2\lambda - 3 &= 0 \\
+   (\lambda - 3)(\lambda + 1) &= 0
+   \end{align}
+
+   so $\lambda_1 = 3$ and $\lambda_2 = -1$. The general solution and its first
+   derivative are:
+
+   \begin{align}
+   y &= c_1 e^{3t} + c_2 e^{-t} \\
+   y' &= 3c_1 e^{3t} - c_2 e^{-t}
+   \end{align}
+
+   Apply the initial conditions:
+
+   \begin{align}
+   y(0) &= c_1 + c_2 = 2\\
+   y'(0) &= 3c_1 - c_2 = 14
+   \end{align}
+
+   and solve the system for $c_1$ and $c_2$ using Gauss-Jordan elimination:
+
+   \begin{align}
+   \begin{bmatrix} 1 & 1 & 2 \\ 3 & -1 & 14 \end{bmatrix}
+   \begin{matrix}\vphantom{R_1} \\ -3 R_1 \end{matrix}
+   &\to \begin{bmatrix} 1 & 1 & 2 \\ 0 & -4 & 8 \end{bmatrix}
+   \begin{matrix}\vphantom{R_1} \\ \div -4 \end{matrix} \\
+   &\to \begin{bmatrix} 1 & 1 & 2 \\ 0 & 1 & -2 \end{bmatrix}
+   \begin{matrix} -R_2 \\ \vphantom{R_2} \end{matrix} \\
+   &\to \begin{bmatrix} 1 & 0 & 4 \\ 0 & 1 & -2 \end{bmatrix}
+   \end{align}
+
+   Therefore:
+
+   \begin{equation}
+   y = 4e^{3t} - 2e^{-t}
+   \end{equation}
+   ```
+
+2. $y'' + 2y' + y = 0$, $y(0) = 4$, $y'(0) = -6$
+
+   ```{solution}
+   Write and solve the characteristic polynomial:
+
+   \begin{align}
+   \lambda^2 + 2\lambda + 1 &= 0 \\
+   (\lambda + 1)^2 &= 0
+   \end{align}
+
+   so $\lambda = -1$ (repeated root). The general solution and its first
+   derivative are:
+
+   \begin{align}
+   y &= (c_1 + c_2 t) e^{-t} \\
+   y' &= (c_1 + c_2 t)(-e^{-t}) + c_2 e^{-t}
+   \end{align}
+
+   Apply the initial conditions:
+
+   \begin{align}
+   y(0) &= c_1 = 4\\
+   y'(0) &= -c_1 + c_2 = -6 \to c_2 = -2
+   \end{align}
+
+   Therefore:
+
+   \begin{align}
+   y = (4 - 2t)e^{-t}
+   \end{align}
+   ```
+
+3. $10y'' - 50y' + 65y = 0$, $y(0) = \frac{3}{2}$, $y'(0) = \frac{3}{2}$
+
+   ```{solution}
+   Write and solve the characteristic polynomial:
+
+   \begin{align}
+   10\lambda^2 - 50\lambda + 65 &= 0 \\
+   \lambda_{1,2} &= \frac{50 \pm \sqrt{50^2 - 4 \cdot 10 \cdot 65}}{20} \\
+   &= \frac{5 \pm i}{2}
+   \end{align}
+
+   Since we have complex roots, the general solution and its first derivative
+   are:
+
+   \begin{align}
+   y &= e^{\frac{5t}{2}}
+     \left(c_1 \cos\frac{t}{2} + c_2 \sin\frac{t}{2} \right) \\
+   y' &= e^{\frac{5t}{2}} \Biggl( -\frac{c_1}{2} \sin\frac{t}{2} +
+     \frac{c_2}{2} \cos\frac{t}{2} \Biggr) + \frac{5}{2}e^{\frac{5t}{2}}
+     \Biggl( c_1 \cos\frac{t}{2} + c_2 \sin\frac{t}{2} \Biggr)
+   \end{align}
+
+   Apply the initial conditions:
+
+   \begin{align}
+   y(0) &= c_1 = \frac{3}{2} \\
+   y'(0) &= \frac{c_2}{2} + \frac{5}{2}c_1 = \frac{3}{2} \to c_2 = -\frac{9}{2}
+   \end{align}
+
+   Therefore:
+
+   \begin{align}
+   y = e^{\frac{5t}{2}}
+     \left( \frac{3}{2} \cos\frac{t}{2} - \frac{9}{2} \sin\frac{t}{2} \right)
+   \end{align}
+   ```
+
+4. $y'' + \pi y' = 0$, $y(0) = 3$, $y'(0) = -\pi$
+
+   ```{solution}
+   Write and solve the characteristic polynomial:
+
+   \begin{align}
+   \lambda^2 + \pi\lambda &= 0 \\
+   \lambda(\lambda + \pi) &= 0
+   \end{align}
+
+   so $\lambda_1 = 0$ and $\lambda_2 = -\pi$. The general solution and its first
+   derivative are:
+
+   \begin{align}
+   y &= c_1 + c_2 e^{-\pi t} \\
+   y' &= -c_2 \pi e^{-\pi t}
+   \end{align}
+
+   Apply the initial conditions:
+
+   \begin{align}
+   y(0) &= c_1 + c_2 = 3 \\
+   y'(0) &= -c_2 \pi = -\pi
+   \end{align}
+
+   so $c_1 = 2$ and $c_2 = 1$. Therefore:
+
+   \begin{equation}
+   y = 2 + e^{-\pi t}
+   \end{equation}
+   ```

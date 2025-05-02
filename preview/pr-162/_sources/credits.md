@@ -22,6 +22,7 @@ This work (c) 2025 is licensed under
 - Molly Grace Hicks
 - Michael P. Howard
 - Evan M. Hughes
+- Tony Jasso
 - Esther Laiming
 - Gwyneth A. Lovell
 - Abby Lucas
