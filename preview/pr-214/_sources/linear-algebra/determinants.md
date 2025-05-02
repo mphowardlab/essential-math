@@ -51,7 +51,7 @@ $$ A=\begin{bmatrix}a &  & b  (-) & \\  & X &  \\ c  &  & d (+) \end{bmatrix}= a
 
 *Ex:* *3x3* matrix , note that *i*=3 & *j*=3 
 $$ A=\begin{bmatrix}1 & 3 & 0 \\ 2 & 6 & 4 \\ -1 & 0 & 2 \end{bmatrix}$$
-$ A=\begin{bmatrix}+ & - & + \\ - & + & - \\ + & - & + \end{bmatrix}$
+$$ A=\begin{bmatrix}+ & - & + \\ - & + & - \\ + & - & + \end{bmatrix}$$
 
 
 (positive and negative signs form a checker board)
