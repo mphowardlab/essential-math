@@ -306,43 +306,58 @@ Evaluate the following for $f=\cos(4x+y^2)+x^2y$
    ```
 
 
+# Triple Product Rule and Thermodynamic Derivatives
+
 ## Triple Product Rule
 
-If \( x = x(y, z) \), \( y = y(x, z) \), and \( z = z(x, y) \), then the **triple product rule** states:
+If \begin{equation} x = x(y, z) \end{equation}, \begin{equation} y = y(x, z) \end{equation}, and \begin{equation} z = z(x, y) \end{equation}, then the **triple product rule** states:
 
-\[
+\begin{equation}
 \left( \frac{\partial x}{\partial y} \right)_z 
 \left( \frac{\partial y}{\partial z} \right)_x 
 \left( \frac{\partial z}{\partial x} \right)_y = -1
-\]
+\end{equation}
 
-### Example
+---
+
+## Worked Example
 
 Let:
 
-\[
-x = \frac{y^2}{z}, \quad y = \sqrt{xz}, \quad z = \frac{y^2}{x}
-\]
+-  \begin{equation} 
+x = \frac{y^2}{z}
+\end {equation}
+- \begin{equation} 
+y = \sqrt{xz} 
+\end{equation}
+- \begin{equation} z = \frac{y^2}{x} \end{equation}
 
-We compute the partial derivatives:
+Compute the relevant partial derivatives:
 
-\[
+\begin{equation}
 \left( \frac{\partial x}{\partial y} \right)_z = \frac{2y}{z}
-\]
+\end{equation}
 
-\[
-\left( \frac{\partial y}{\partial z} \right)_x = \frac{1}{2} \cdot \frac{x}{\sqrt{xz}} = \frac{1}{2} \cdot \frac{\sqrt{x}}{\sqrt{z}} = \frac{1}{2} \cdot \frac{\sqrt{y^2/z}}{\sqrt{z}} = \frac{1}{2z}
-\]
+\begin{equation}
+\left( \frac{\partial y}{\partial z} \right)_x 
+= \frac{1}{2} \cdot \frac{x}{\sqrt{xz}} 
+= \frac{1}{2} \cdot \frac{\sqrt{x}}{\sqrt{z}} 
+= \frac{1}{2z}
+\end{equation}
 
-\[
-\left( \frac{\partial z}{\partial x} \right)_y = \frac{-y^2}{x^2} = -\frac{z^2}{y^2}
-\]
+\begin{equation}
+\left( \frac{\partial z}{\partial x} \right)_y 
+= -\frac{y^2}{x^2} 
+= -\frac{z^2}{y^2}
+\end{equation}
 
-Substituting into the triple product:
+Now plug into the triple product rule:
 
-\[
-\left( \frac{2y}{z} \right) \left( \frac{1}{2z} \right) \left( -\frac{z^2}{y^2} \right) = -1 \quad \checkmark
-\]
+\begin{equation}
+\left( \frac{2y}{z} \right) 
+\left( \frac{1}{2z} \right) 
+\left( -\frac{z^2}{y^2} \right) = -1 \quad \checkmark
+\end{equation}
 
 ---
 
@@ -350,30 +365,36 @@ Substituting into the triple product:
 
 We can use these rules to manipulate **thermodynamic derivatives**.
 
-### Example
+### Example: Expressing \begin{equation} \left( \frac{\partial S}{\partial T} \right)_V \end{equation}
 
-Express \( \left( \frac{\partial S}{\partial T} \right)_V \) using \( c_V \) and \( \left( \frac{\partial U}{\partial T} \right)_V \), given:
+Given:
 
-\[
+\begin{equation}
 dU = TdS - PdV
-\]
+\end{equation}
 
-From the differential:
+We can write:
 
-\[
-\left( \frac{\partial S}{\partial T} \right)_V = 
-\left( \frac{\partial S}{\partial U} \right)_V 
-\left( \frac{\partial U}{\partial T} \right)_V =
-\frac{1}{T} \left( \frac{\partial U}{\partial T} \right)_V = \frac{c_V}{T}
-\]
+\begin{equation}
+\left( \frac{\partial S}{\partial T} \right)_V 
+= \left( \frac{\partial S}{\partial U} \right)_V 
+\left( \frac{\partial U}{\partial T} \right)_V 
+= \frac{1}{T} \left( \frac{\partial U}{\partial T} \right)_V 
+= \frac{c_V}{T}
+\end{equation}
 
-### Alternative Approach
+---
 
-From the differential form:
+### Alternative Form
 
-\[
-\left( \frac{\partial U}{\partial T} \right)_V = T \left( \frac{\partial S}{\partial T} \right)_V
-\]
+From the differential relationship:
+
+\begin{equation}
+\left( \frac{\partial U}{\partial T} \right)_V 
+= T \left( \frac{\partial S}{\partial T} \right)_V
+\end{equation}
+
+
 
 
 
