@@ -1,45 +1,106 @@
 # Integration using substitution
+
+When we know an integral
+
+\begin{equation}
+\int e^x \d{x} = e^x + c
+\end{equation}
+
+we can evaluate related integrals like:
+
+\begin{equation}
+\int e^{-x} \d{x} = -e^{-x} + c
+\end{equation}
+
+by making a *substitution*. Specifically, we define a new variable *u*,
+calculate its differential, and then replace both. For example, in this case,
+let $u = -x$. Then, $\d{u} = -\d{x}$. Equivalently, $x = -u$ and
+$\d{x} = -\d{u}$ so
+
+\begin{equation}
+\int e^{-x} \d{x} = -\int e^u \d{u} = -e^u + c = -e^{-x} + c
+\end{equation}
+
+```{example} *u*-substitution
+Evaluate the integral
+
+\begin{equation}
+\int x e^{x^2} \d{x}
+\end{equation}
+
+---
+
+Let $u=x^2$ so $\d{u} = 2x \d{x}$. Then,
+
+\begin{align}
+\int e^{x^2} x\d{x} =  \int e^u \cdot \frac{1}{2}\d{u} = \frac{1}{2} e^u + c
+\end{align}
+
+Plugging *u* back in gives the final answer:
+\begin{equation}
+\int xe^{x^2} \d{x} = \frac{1}{2}e^{x^2} + c
+\end{equation}
+```
+
 ## Skill Builder
 ### Find General Solutions for:
-(a) $y' = (x+2)ln(x)$
+(1) $y' = (x+2)\ln(x)$
 
-  $y = \int (x+2)\ln(x) \ dx$  
+```{solution}
+\begin{equation}
+y = \int (x+2)\ln(x) dx
+\end{equation}
     
-  $u = ln(x)$ $dv = (x+2)dx$  
-  $du = \frac{1}{x}dx$  $v = \frac{x^2}{2} + 2x$
-    
- $=(\frac{x^2}{2} + 2x)ln(x)- \int (\frac{x^2}{2} + 2x) \frac{1}{x}\ dx$    
- <br> $\to (\frac{x^2}{2} + 2x)ln(x)-\frac{x^2}{4}-2x+C$  
-<br>
-<br>
+\begin{align}
+u = \ln(x)&, \ dv = (x+2)dx \\
+du = \frac{1}{x}dx&, \ v = \frac{x^2}{2} + 2x
+\end{align}
+   
+\begin{align}
+y =\left( \frac{x^2}{2} + 2x \right)\ln(x) \ -& \int \left( \frac{x^2}{2} + 2x \right) \frac{1}{x}\ dx \\
+\to \left( \frac{x^2}{2} + 2x \right)\ln(x) \ -&\frac{x^2}{4}-2x+C
+\end{align}
 
-(b) $y' = x^5sin(x)$<br>
+```
 
-  $y = \int x^5sin(x) \ dx$
+(2) $y' = x^5\sin(x)$
 
-  $u: \ x^5 \ 5x^4 \ 20x^3 \ 60x^2 \ 120x \ 120 \ 0$ <br>
-  $dv: \ sin(x) \\ -cos(x) \\ -sin(x) \\ cos(x) \\ sin(x) \\ -cos(x) \\ -sin(x)$  
-  <br>
-  $=-x^5cos(x)+5x^4sin(x)+20x^3cos(x)-60x^2sin(x)-120xcos(x)+120sin(x)+C$
+```{solution}
+\begin{equation}
+y = \int x^5\sin(x) \ dx 
+\end{equation}
+
+\begin{align}
+u: \ x^5 \ 5x^4 \ 20x^3 \ 60x^2 \ 120x \ 120 \ 0 <br>
+dv: \ sin(x) \\ -cos(x) \\ -sin(x) \\ cos(x) \\ sin(x) \\ -cos(x) \\ -sin(x)  
+\end{align}
+
+=-x^5cos(x)+5x^4sin(x)+20x^3cos(x)-60x^2sin(x)-120xcos(x)+120sin(x)+C
   
-  $\to (-x^5+20x^3-120x)cos(x)+(5x^4-60x^2+120)sin(x)+C$  
-<br>
-<br>
+(-x^5+20x^3-120x)cos(x)+(5x^4-60x^2+120)sin(x)+C  
 
-(c) $y' = e^xcos(x)$ 
+```
+
+(3) $y' = e^x\cos(x)$ 
+
+```{solution}  
+\begin{equation}
+y = \int e^xcos(x)dx 
+\end{equation}
   
-  $y = \int e^xcos(x)dx$ <br>  
+\begin{align}
+u = cos(x) dv = e^x dx  
+du = -sin(x)dx  v = e^x   
+\end{align}
   
-  $u = cos(x)$ $dv = e^x dx$  
-  $du = -sin(x)dx$  $v = e^x$   
-  
-  $= e^xcos(x) + \int e^x(sin(x))dx$
+= e^xcos(x) + \int e^x(sin(x))dx
 
-  $u = sin(x)$ $dv = e^x dx$  
-  $du = cos(x)$ $v = e^x$  
+u = sin(x) dv = e^x dx  
+du = cos(x) v = e^x  
 
-$= e^xcos(x)+[e^xsin(x)-\int e^xcos(x)dx]$
+= e^xcos(x)+[e^xsin(x)-\int e^xcos(x)dx]
 
-$= 2\int e^xcos(x)dx = e^xcos(x)+e^xsin(x)$  
+= 2\int e^xcos(x)dx = e^xcos(x)+e^xsin(x)  
 
-$\to \int e^x \cos(x)dx = \frac{e^x}{2}(\cos(x) + \sin(x)) + C$
+\int e^x \cos(x)dx = \frac{e^x}{2}(\cos(x) + \sin(x)) + C
+```
