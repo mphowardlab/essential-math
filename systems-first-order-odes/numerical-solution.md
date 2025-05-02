@@ -20,15 +20,8 @@ initially 1 M concentration in the reactant A and has 10 L of solution. A feed
 stream that has a reactant concentration of 1 M enters at 1 L / min, while
 well-mixed solution exits at 2 L / min.
 
-<<<<<<< HEAD
-"Just" Add Columns 
-
 ```{image} ./_images/euler_diagram_new.png
-:alt: Euler Diagram
-=======
-```{image} ./_images/euler_diagram.png
 :alt: Reactions in draining tank.
->>>>>>> 6ca2ce5b888e5be455a5d84fcf097db818701364
 :align: center
 :width: 300px
 ```
