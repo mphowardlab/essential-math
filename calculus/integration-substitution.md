@@ -1,7 +1,7 @@
 # Integration using substitution
 ## Skill Builder
 ### Find General Solutions for:
-(a) $y' = (x+2)ln(x)$
+(a) $y' = (x+2)\ln(x)$
 
   $y = \int (x+2)\ln(x) \ dx$  
     
