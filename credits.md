@@ -13,6 +13,7 @@ This work (c) 2025 is licensed under
 - Faith Major
 - Lilli Midgette
 - Michelle Schindler
+- Andrea Smith
 - Katie Sorensen
 
 ## Attributions
