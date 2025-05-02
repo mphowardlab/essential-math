@@ -42,7 +42,7 @@
 \cos(\theta + 2 \pi) = \cos(\theta) \\
 \end{align}
 
-\being{align}
+\begin{align}
 \sin(- \theta) = - \sin(\theta) \\
 \cos(- \theta) = cos(\theta) \\
 \end{align}
