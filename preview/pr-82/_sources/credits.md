@@ -15,6 +15,7 @@ This work (c) 2025 is licensed under
 - Alexis Florit
 - Ella Governale
 - Connor Habig
+- Anna Grace Hawkins
 - Kennedi Hawkins
 - Joshua R. Hegar
 - Molly Grace Hicks
