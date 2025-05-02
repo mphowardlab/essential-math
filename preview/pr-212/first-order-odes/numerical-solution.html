@@ -450,14 +450,15 @@ these cases.</p>
 <p>To solve the the first-order ODE <span class="math notranslate nohighlight">\(y' = f(t, y)\)</span>, approximate <span class="math notranslate nohighlight">\(y(t)\)</span> using a
 Taylor series:</p>
 <div class="math notranslate nohighlight" id="equation-euler-method">
-<span class="eqno">(5.97)<a class="headerlink" href="#equation-euler-method" title="Link to this equation">#</a></span>\[y(t + \Delta t) \approx y(t) + f(t, y) \Delta t\]</div>
+<span class="eqno">(5.103)<a class="headerlink" href="#equation-euler-method" title="Link to this equation">#</a></span>\[y(t + \Delta t) \approx y(t) + f(t, y) \Delta t\]</div>
 <p>This update can be applied repeatedly to approximate <em>y</em> as a function of <em>t</em>.
 To start, <em>t</em> is initialized to <span class="math notranslate nohighlight">\(t_0\)</span> and <em>y</em> is started from the initial
-condition <span class="math notranslate nohighlight">\(y_0 = y(t_0)\)</span>. Then, going from <span class="math notranslate nohighlight">\(n = 0\)</span>, advance <span class="math notranslate nohighlight">\(t_n\)</span> and <span class="math notranslate nohighlight">\(y_n\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-9c426b79-7e78-47aa-8832-28a7c34fdcb5">
-<span class="eqno">(5.98)<a class="headerlink" href="#equation-9c426b79-7e78-47aa-8832-28a7c34fdcb5" title="Permalink to this equation">#</a></span>\[\begin{align}
-t_{n+1} &amp;= t_n + \Delta t \\
-y_{n+1} &amp;= y_n + f(t_n, y_n)
+condition <span class="math notranslate nohighlight">\(y_0 = y(t_0)\)</span>. Then, going from <span class="math notranslate nohighlight">\(n = 0\)</span>, advance <span class="math notranslate nohighlight">\(t_n\)</span> and <span class="math notranslate nohighlight">\(y_n\)</span>
+for a step size <span class="math notranslate nohighlight">\(\Delta t\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-7b8ac657-b44e-4795-a3b5-4dc67ac88e01">
+<span class="eqno">(5.104)<a class="headerlink" href="#equation-7b8ac657-b44e-4795-a3b5-4dc67ac88e01" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_{n+1} &amp;= y_n + f(t_n, y_n) \\
+t_{n+1} &amp;= t_n + \Delta t
 \end{align}\]</div>
 <p>until the desired value of <em>t</em> is reached.</p>
 </aside>
@@ -474,7 +475,7 @@ explicit form:</p>
 <tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(n\)</span></p></th>
 <th class="head"><p><span class="math notranslate nohighlight">\(t\)</span></p></th>
 <th class="head"><p><span class="math notranslate nohighlight">\(y\)</span></p></th>
-<th class="head"><p><span class="math notranslate nohighlight">\(f(t,y)\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(f\)</span></p></th>
 </tr>
 </thead>
 <tbody>
@@ -511,24 +512,31 @@ explicit form:</p>
 </tbody>
 </table>
 </div>
-<p>Compare to Exact Solution</p>
-<p>Using the Integrating Factor Method:</p>
+<p>Let’s compare our numerical result to the analytical solution to the same ODE.
+This solution can be obtained using an integrating factor:</p>
 <div class="math notranslate nohighlight">
-\[F(x) = e^{\int -1 \, dx} = e^{-x}\]</div>
-<p>Integrate by parts</p>
+\[F = e^{\int -1 \d{t}} = e^{-t}\]</div>
+<p>Integrate by parts:</p>
 <div class="math notranslate nohighlight">
-\[\int x e^{-x} dx = -x e^{-x} + \int e^{-x} dx = -(x + 1) e^{-x}\]</div>
+\[\begin{split}\int F r \d{t} &amp;= \int t e^{-t} \d{t} \\
+&amp;= -t e^{-t} + \int e^{-t} \d{t} \\
+&amp;= -(t + 1) e^{-t}\end{split}\]</div>
+<p>So the general solution is:</p>
 <div class="math notranslate nohighlight">
-\[y(x) = e^x \left[ - (x + 1) e^{-x} + C \right] = e^x - (x + 1)\]</div>
-<p>Solve for C using our initial boundary conditon y(0)=0</p>
+\[y(t) = e^t \left[-(t + 1) e^{-t} + c \right] = c e^x - t - 1\]</div>
+<p>Solve for <em>c</em> using the initial condition:</p>
 <div class="math notranslate nohighlight">
-\[0 = y(0) = -1 + C \Rightarrow C = 1\]</div>
-<div class="math notranslate nohighlight" id="equation-exact-final">
-<span class="eqno">(5.99)<a class="headerlink" href="#equation-exact-final" title="Link to this equation">#</a></span>\[y(x) = e^x - (x + 1)\]</div>
+\[y(0) = c - 1 = 0 \to c = 1\]</div>
+<p>so</p>
+<div class="math notranslate nohighlight">
+\[y(t) = e^t - t - 1\]</div>
+<p>Comparing the numerical and analytical solutions at the same time points by
+computing the absolute error between them gives:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="head"><p>Numerical</p></th>
-<th class="head"><p>Exact</p></th>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(t\)</span></p></th>
+<th class="head"><p>Numerical</p></th>
+<th class="head"><p>Analytical</p></th>
 <th class="head"><p>Error</p></th>
 </tr>
 </thead>
@@ -536,31 +544,40 @@ explicit form:</p>
 <tr class="row-even"><td><p>0</p></td>
 <td><p>0</p></td>
 <td><p>0</p></td>
+<td><p>0</p></td>
 </tr>
-<tr class="row-odd"><td><p>0</p></td>
+<tr class="row-odd"><td><p>0.2</p></td>
+<td><p>0</p></td>
 <td><p>0.021</p></td>
 <td><p>0.021</p></td>
 </tr>
-<tr class="row-even"><td><p>0.04</p></td>
+<tr class="row-even"><td><p>0.4</p></td>
+<td><p>0.04</p></td>
 <td><p>0.092</p></td>
 <td><p>0.052</p></td>
 </tr>
-<tr class="row-odd"><td><p>0.128</p></td>
+<tr class="row-odd"><td><p>0.6</p></td>
+<td><p>0.128</p></td>
 <td><p>0.222</p></td>
 <td><p>0.094</p></td>
 </tr>
-<tr class="row-even"><td><p>0.274</p></td>
+<tr class="row-even"><td><p>0.8</p></td>
+<td><p>0.274</p></td>
 <td><p>0.426</p></td>
 <td><p>0.152</p></td>
 </tr>
-<tr class="row-odd"><td><p>0.489</p></td>
+<tr class="row-odd"><td><p>1.0</p></td>
+<td><p>0.489</p></td>
 <td><p>0.718</p></td>
 <td><p>0.229</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>Here, we compare the numerical solution(Euler’s Method) with the exact solution. The error column shows that the numerical solution departs from the exact solution as the t value increases.</p>
+<p>The error increases as more timesteps are run due to accumulation of error. A
+smaller timestep typically produces a better solution, but at the cost of doing
+additional calculations. We will discuss next how the error depends on the step
+size.</p>
 <section id="error-in-approximation">
 <h2><span class="section-number">5.8.1. </span>Error in approximation<a class="headerlink" href="#error-in-approximation" title="Link to this heading">#</a></h2>
 <p>Because we are using truncated Taylor series, we accrue an error:</p>
