@@ -177,180 +177,112 @@ This matches our old answer!
 
 ## Skill builder problems
 
-Solve the inital value problem $ \vv{y'} = \vv{Ay} $ with $ \vv{y}(0) = $ [1 0]$^T$ for the following matrices. Also classify the type of critical point $(\vv{y} = \vv{0})$ using the eigenvalues. 
+Solve the inital value problem $ \vv{y}' = \vv{A}\vv{y}$ with
+$\vv{y}(0) = [1 \quad 0]^{\rm T}$ for the following matrices. Also classify the
+type of critical point using the eigenvalues.
 
+1. Solve:
 
-\begin{equation}
-d) \vv{A} =
-\begin{bmatrix}
-2 & -2\\
-2 & 2
-\end{bmatrix}
-\end{equation}
+   \begin{equation} \vv{A} =
+   \begin{bmatrix}
+   2 & -2\\
+   2 & 2
+   \end{bmatrix}
+   \end{equation}
 
-'''{solution}
+   ```{solution}
+   First, find the eigenvalues of **A**
 
-\begin{equation}
-| \vv{A} - \lambda I |
-\begin{vmatrix}
-2- \lambda & -2\\
-2 & 2- \lambda
-\end{vmatrix}
-= (\lambda - 2)^2 + 4 = 0 \rightarrow \lambda _{1,2} = 2 \pm 2i
-\end{equation}
+   \begin{align}
+   \vv{A} - \lambda\vv{I} &= \begin{vmatrix}
+   2- \lambda & -2\\
+   2 & 2-\lambda
+   \end{vmatrix} \\
+   &= (\lambda - 2)^2 + 4 = 0 \\
+   \lambda_{1,2} &= 2 \pm 2i
+   \end{align}
 
+   For $\lambda_1 = 2+2i$,
 
-\begin{align}
+   \begin{equation}
+   \vv{A}-\lambda_1\vv{I} =
+   \begin{bmatrix}
+   -2 i & -2\\
+   2 & -2i
+   \end{bmatrix}
+   \to \vv{x}_1 = \begin{bmatrix} i \\ 1 \end{bmatrix}
+   \end{equation}
 
-$\lambda _{1} = 2+2i$ :
+   For $\lambda_2 = 2-2i$,
 
-\begin{bmatrix}
--2 i & -2\\
-2 & -2i
-\end{bmatrix}
-\vv{x} _1 = \underline{0} \rightarrow \underline{x} _1 &= 
-\begin{bmatrix}
-i\\
-1
-\end{bmatrix} \\
+   \begin{equation}
+   \vv{A}-\lambda_2\vv{I} =
+   \begin{bmatrix}
+   2 i & -2\\
+   2 & 2i
+   \end{bmatrix}
+   \to \vv{x}_2 = \begin{bmatrix} -i \\ 1\end{bmatrix}
+   \end{equation}
 
+   The general solution is:
 
-$\lambda _{2} = 2-2i$ :
+   \begin{align}
+   \vv{y} &= c_1 e^{(2+2i)t} \begin{bmatrix} i\\ 1 \end{bmatrix} +
+     c_2 e^{(2-2i)t} \begin{bmatrix} -i\\ 1 \end{bmatrix} \\
+   &= e^{2t} \Biggl( c_1 e^{2it} \begin{bmatrix} i\\ 1 \end{bmatrix} +
+   + c_2 e^{-2it} \begin{bmatrix} -i\\ 1 \end{bmatrix}\Biggr)
+   \end{align}
 
+   To solve for the initial condition, for the augmented matrix for
+   $\vv{X}\vv{c} = \vv{y}(0)$,
 
-\begin{bmatrix}
-2 i & -2\\
-2 & 2i
-\end{bmatrix}
-\vv{x} _{2} = 0 \rightarrow \underline{x} _{2} &= 
-\begin{bmatrix}
--i\\
-1
-\end{bmatrix}
-\end{align}
+   \begin{align}
+   \begin{bmatrix}
+   i & -i & 1\\
+   1 & 1 & 0
+   \end{bmatrix}
+   \begin{matrix}{\rm swap} \\ \vphantom{R_2}\end{matrix}
+   &\to
+   \begin{bmatrix}
+   1 & 1 & 0\\
+   i & -i & 1
+   \end{bmatrix}
+   \begin{matrix}\vphantom{R_1} \\ -i R_1 \end{matrix} \\
+   &\to
+   \begin{bmatrix}
+   1 & 1 & 0\\
+   0 & -2i & 1
+   \end{bmatrix}
+   \begin{matrix}\vphantom{R_1} \\ \div -2i \end{matrix} \\
+   &\to
+   \begin{bmatrix}
+   1 & 1 & 0\\
+   0 & 1 & \frac{-1}{2i}
+   \end{bmatrix}
+   \begin{matrix} -R_2 \\ \vphantom{R_2}\end{matrix} \\
+   &\to
+   \begin{bmatrix}
+   1 & 0 & \frac{1}{2i}\\
+   0 & 1 & - \frac{1}{2i}
+   \end{bmatrix}
+   \end{align}
 
-General Solutuion:
-\begin{equation}
-\vv{y} = c_{1} e^{(2+2i)t}
-\begin{bmatrix}
-i\\
-1
-\end{bmatrix}
-+ c _{2} e^{(2-2i)t}
-\begin{bmatrix}
--i\\
-1
-\end{bmatrix}
-=e^{2t}
-\left( c _{1} e^{2it}
-\begin{bmatrix}
-i\\
-1
-\end{bmatrix}
-+ c _{2} e^{-2it} 
-\begin{bmatrix}
--i\\
-1
-\end{bmatrix}
-\right)
-\end{equation}
+   so $c_1 = 1/(2i) = -i/2$ and $c_2 = -1/(2i) = i/2$. Hence,
 
-Initial Condition
-\begin{equation}
-\begin{bmatrix}
-1\\
-0
-\end{bmatrix}
-=
-\begin{bmatrix}
-i & -i\\
-1 & 1
-\end{bmatrix}
-\begin{bmatrix}
-c_{1}\\
-c_{2}
-\end{bmatrix}
-\end{equation}
+   \begin{equation}
+   \vv{y} = e^{2t} \Biggl(
+     - \frac{i}{2} e^{2it} \begin{bmatrix} i \\ 1 \end{bmatrix}
+     + \frac{i}{2} e{-2it} \begin{bmatrix} -i\\ 1 \end{bmatrix} \Biggr)
+   \end{equation}
 
-\begin{equation}
-\begin{bmatrix}
-i & -i & 1\\
-1 & 1 & 0
-\end{bmatrix}
-\rightarrow
-\begin{bmatrix}
-1 & 1 & 0\\
-1 & -i 0
-\end{bmatrix}
-\rightarrow
-\begin{bmatrix}
-1 & 1 & 0\\
-0 & -2i & 1
-\end{bmatrix}
-\rightarrow
-\begin{bmatrix}
-1 & 1 & 0\\
-0 & 1 & \frac{-1}{2i}
-\end{bmatrix}
-\rightarrow
-\begin{bmatrix}
-1 & 1 & \frac{1}{2i}\\
-0 & 1 & - \frac{1}{2i}
-\end{bmatrix}
+   Simplifying using Euler's identity $e^{ix} = \cos x + i \sin x$ and adding
+   across the rows gives
 
-\end{equation}
+   \begin{align}
+   y_2 &= e^{2t} \cos 2t\\
+   y_2 &= e^{2t} \sin 2t
+   \end{align}
 
-
-
-\begin{align}
-c_{1} = \frac{1}{2i} = - \frac{i}{2} \\
-
-
-c_{2} = - \frac{1}{2i} = \frac{i}{2}
-\end{align}
-
-Hence
-\begin{equation}
-\vv{y} = e^{2t} \left( - \frac{i}{2} e^{2it}
-\begin{bmatrix}
-i\\
-1
-\end{bmatrix}
-+ \frac{i}{2} e{-2it}
-\begin{bmatrix}
--i\\
-1
-\end{bmatrix}
-\right)
-\end{equation}
-
-Simplifying
-
-\begin{equation}
-\vv{y}= e{2t} \left( - \frac{1}{2} e^{2it}
-\begin{bmatrix}
--1\\
-i
-\end{bmatrix}
-+ \frac{1}{2}e{-2it}
-\begin{bmatrix}
-1\\
-i
-\end{bmatrix}
-\right) = e^{2t}
-\begin{bmatrix}
-\cos 2t\\
-\sin 2t
-\end{bmatrix}
-\rightarrow
-\begin{matrix}
-y_{1} = e^{2t} \cos 2t\\
-y_{2} = e^{2t} \sin 2t
-\end{matrix}
-
-
-\end{equation}
-
-$\vv{y} = \vv{0}  $ is an unstable spiral because the eigenvalues are complex, and the real part is positive.
-
-'''
+   The critical point is an unstable spiral because the eigenvalues are complex,
+   and the real part is positive.
+   ```
