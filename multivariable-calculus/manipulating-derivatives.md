@@ -375,7 +375,7 @@ From the differential form:
 \left( \frac{\partial U}{\partial T} \right)_V = T \left( \frac{\partial S}{\partial T} \right)_V
 \]
 
----
+
 
 
 
