@@ -1,5 +1,5 @@
 # Determinants
-For a square *nxn* matrix *A*, the *determinant* is divided.
+For a square *nxn* matrix *A*, the *determinant* is denoted.
 
 $$
 
