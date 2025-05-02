@@ -8,6 +8,7 @@ This work (c) 2025 is licensed under
 ## Contributors
 
 - Payton Baxter
+- Jacob Bowling
 - Andrew Castel
 - Paine Cole
 - Oscar Earhart
