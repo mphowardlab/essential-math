@@ -5,18 +5,18 @@ A $\xrightarrow{k_1}$ B $\xrightarrow{k_2}$ C , only A at t=0 with concentration
 $\frac{dC_A}{dt}= -k_{1} C_{A}$
 
 $\frac{dC_B}{dt}= k_{1} C_{A} -k_{2} C_{B}$   $\qquad$  $\qquad$       $\xrightarrow{}$ $\qquad$ $\underline{C'}$=
-\begin{bmatrix}
+$\begin{bmatrix}
 -k_{1} & 0 & 0 \\
 k_{1} & -k_{2} & 0 \\
 0 &  k_{2} & 0
-\end{bmatrix} $\underline{C}$
+\end{bmatrix}$ $\underline{C}$
 
 $\frac{dC_C}{dt}= k_{2} C_{B}$ $\qquad$ $\qquad$ $\underline{C}(0)=C_{0}$=
-\begin{bmatrix}
+$\begin{bmatrix}
 C_{A,0} \\
 0  \\
 0 
-\end{bmatrix}
+\end{bmatrix}$
 
 ### How do we solve this? Hard in general, but in this case we can work in order!
 (1) $\frac{dC_A}{dt}= -k_{1} C_{A}$   $\xrightarrow{}$   $\int \frac{1}{C_A}\ dC_{A}$ = $\int -k_{1}\ dt$ $\xrightarrow{}$ $C_{A} =C_{A,0}e^{-k_{1}t}$\
