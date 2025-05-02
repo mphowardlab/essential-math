@@ -352,6 +352,7 @@ Now plug into the triple product rule:
 \left( \frac{1}{2z} \right) 
 \left( -\frac{z^2}{y^2} \right) = -1 \quad \checkmark
 \end{equation}
+This is your answer!
 ```
 ---
 
