@@ -3,12 +3,20 @@ For a square *nxn* matrix *A*, the *determinant* is denoted:
 
 $$
 
-\det |A| =|A|=\begin{bmatrix}A_{11}.\ .\ . & A_{1n} \\ .\\.\\A_{n1}.\ .\ . & A_{nn}\end{bmatrix}
-
+\begin{equation}
+\det A =|A|=\begin{bmatrix}
+A_{11} & \cdots & A_{1n} \\
+\vdots &     & \vdots \\
+A_{n1} & \cdots & A_{nn}
+\end{bmatrix}
+\end{equation}
 $$
+
+
+
 For  $n=1$, $|A|= A_{11}$ (the element)
 
-For $n \to 2$, |A| is defined in a sort of recursive way
+For $n \to 2, |A|$ is defined in a sort of recursive way
 
 
 
@@ -30,15 +38,17 @@ $$ A=\begin{bmatrix}a & b \\ c & d \end{bmatrix}$$
 
 
 $$ A=\begin{bmatrix}a & b \\ c & d \end{bmatrix}$$
-choose i=1 = (-1)^(1+1)1 a* $M_{11}$+ (-1)^(1+2) -1 b * $M_{12}$ = **ad-bc**
 
+(-1)^(1+1)*(1)* a* M_{11}+ (-1)^(1+2)* (-1) b * M_{12}= **ad-bc**
 
-$M_{11}$:[a b, c d] goes to |d|=d $M_{12}$: [a b, c d] goes to |c|=c
+$$M_{11}:\begin{bmatrix} 0 & 0 \\ 0 & d \end{bmatrix} \to |d|=d$$
+$$M_{12}:\begin{bmatrix} 0 & 0 \\ c & 0 \end{bmatrix} \to |c|=c $$ 
+
 This is a useful formula to know! *Mneumonic*
 
 [a b, c d] - + =ad-bc
 
-
+*~~Ab~~*
 *Ex:* *3x3* matrix , note that *i*=3 & *j*=3 
 $$ A=\begin{bmatrix}1 & 3 & 0 \\ 2 & 6 & 4 \\ -1 & 0 & 2 \end{bmatrix}$$
 $$ A=\begin{bmatrix}+ & - & + \\ - & + & - \\ + & - & + \end{bmatrix}$$
@@ -53,12 +63,12 @@ $$ |A|= +(0)*\begin{bmatrix}2 & 6 \\ -1 & 0 \end{bmatrix} -(4)*\begin{bmatrix}1 
 
 
 Its usually a good idea to expand along the row or column with the most zeros!
-$$ A=\begin{bmatrix}1 & -2 & 0 & 0 \\ 4 & 3 & 5 & 0 \\ 0 &2 & 7 & 5 \\ 0 & 0 & 2 & 0 \end{bmatrix}= (-2)\begin{bmatrix}1 & -2 & 0 \\ 4 & 3 & 0 \\ 0 &2 & 5 \end{bmatrix}=  (-2)(5)\begin{bmatrix}1 & -2 \\ 4 & 3 \end{bmatrix}=-10*(3+8)=-110$$
+$ A=\begin{bmatrix}1 & -2 & 0 & 0 \\ 4 & 3 & 5 & 0 \\ 0 &2 & 7 & 5 \\ 0 & 0 & 2 & 0 \end{bmatrix}= (-2)\begin{bmatrix}1 & -2 & 0 \\ 4 & 3 & 0 \\ 0 &2 & 5 \end{bmatrix}=  (-2)(5)\begin{bmatrix}1 & -2 \\ 4 & 3 \end{bmatrix}=-10*(3+8)=-110$
 
 
 
 How does this help us?
 
-$A$ = is invertible (*nonsingular*) if and only if |$A$| not equal 0.
+$A$  is invertible (*nonsingular*) if and only if $|A| \neq 0$.
 
 (*This is one of many conditions known as the invertible theorem*)
