@@ -50,10 +50,9 @@ This is a useful formula to know! *Mneumonic*
 
 
 Below we cross multiple using positive and negative signs to find the determinant   *ad-bc*
+
 $$ 
-
 A=\begin{bmatrix}a &  & b  (-) & \\  & X &  \\ c  &  & d (+) \end{bmatrix}= ad-bc
-
 $$
 
 *Ex:* *3x3* matrix , note that *i*=3 & *j*=3 
