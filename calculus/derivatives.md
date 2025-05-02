@@ -1,6 +1,9 @@
 # Derivatives
 A *tangent line* touches a curve exactly once
-[insert graph]
+
+```{image} ./_images/Ball moving example.png
+:alt: Ball with constant velocity example
+```
 
 How to estimate slope of line at $x_0$? 
 \begin{itemize}
@@ -33,12 +36,14 @@ Ex: Ball moving with constant velocity $v$
 \x(t) = x_0 + v\cdot t 
 \end{equation}
 
-position $\to x(t)$
+Where position $\to x(t)$
 start $\to x_0$
-velocity $\to v$
+velocity $\to v$ and 
 time $\to t$
 
-[insert image]
+```{image} ./_images/Ball moving example.png
+:alt: Ball with constant velocity example
+```
 
 \begin{align}
 x'(t) &= \lim_{h\to \infty} \frac{x(t+h)-x(t)}{h} \\
