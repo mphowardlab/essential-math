@@ -63,18 +63,8 @@ $$ A=\begin{bmatrix}+ & - & + \\ - & + & - \\ + & - & + \end{bmatrix}$$
 (positive and negative signs form a checker board)
 
 
-\begin{equation} 
-|A|= +(-1)*\begin{bmatrix} 3 & 0 \\ 6 & 4 \end{bmatrix} 
-\end{equation}
-
-\begin{equation}
--(0)*\begin{bmatrix}1 & 0 \\ 2 & 4 \end{bmatrix} 
-\end{equation}
-
-+(2)*\begin{bmatrix}1 & 3 \\ 2 & 6 \end{bmatrix} \\ 
-
-
-=-((3*4)-(0*6))+2*((1*6)-(2*3))=-12$$
+$$
+|A|= +(-1)*\begin{bmatrix} 3 & 0 \\ 6 & 4 \end{bmatrix} -(0)*\begin{bmatrix}1 & 0 \\ 2 & 4 \end{bmatrix} +(2)*\begin{bmatrix}1 & 3 \\ 2 & 6 \end{bmatrix} \\ =-((3*4)-(0*6))+2*((1*6)-(2*3))=-12$$
 
 
 
