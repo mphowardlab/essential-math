@@ -9,9 +9,9 @@ $\begin{bmatrix}
 -k_{1} & 0 & 0 \\
 k_{1} & -k_{2} & 0 \\
 0 &  k_{2} & 0
-\end{bmatrix}$ $\underline{C}$
+\end{bmatrix}$ \underline{C}
 
-$\frac{dC_C}{dt}= k_{2} C_{B}$ $\qquad$ $\qquad$ $\underline{C}(0)=C_{0}$=
+$\frac{dC_C}{dt}= k_{2} C_{B}$ $\qquad$ $\qquad$ \underline{C}(0)=C_{0}=
 $\begin{bmatrix}
 C_{A,0} \\
 0  \\
