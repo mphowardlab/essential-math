@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>6.3. Numerical solution methods &#8212; Essential Mathematics for Chemical Engineers</title>
+    <title>6.4. Numerical solution methods &#8212; Essential Mathematics for Chemical Engineers</title>
   
   
   
@@ -64,7 +64,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="7. Second-order ordinary differential equations" href="../second-order-odes/index.html" />
-    <link rel="prev" title="6.2. Homogeneous linear first-order ODEs with constant coefficients" href="homogeneous-constant-coefficient.html" />
+    <link rel="prev" title="6.3. Homogeneous linear first-order ODEs with constant coefficients" href="homogeneous-constant-coefficient.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -217,9 +217,10 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">6. Systems of first-order ordinary differential equations</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="linearity.html">6.1. Linearity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="homogeneous-constant-coefficient.html">6.2. Homogeneous linear first-order ODEs with constant coefficients</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">6.3. Numerical solution methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="definition.html">6.1. Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linearity.html">6.2. Linearity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="homogeneous-constant-coefficient.html">6.3. Homogeneous linear first-order ODEs with constant coefficients</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">6.4. Numerical solution methods</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../second-order-odes/index.html">7. Second-order ordinary differential equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -404,9 +405,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -422,14 +421,6 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eulers-method">6.3.1. Euler’s Method</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -440,48 +431,135 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="numerical-solution-methods">
-<h1><span class="section-number">6.3. </span>Numerical solution methods<a class="headerlink" href="#numerical-solution-methods" title="Link to this heading">#</a></h1>
-<p>Description: Many ordinary differential equations you will encounter are not solvable by any of the methods discussed thusfar. In such cases, a numerical solution method will result in a fairly accurate solution to the ODE. One such method is Euler’s method. Through a series of iterations, Euler’s method uses small steps to linearly approximate the solution based on the slope at each point.</p>
-<section id="eulers-method">
-<h2><span class="section-number">6.3.1. </span>Euler’s Method<a class="headerlink" href="#eulers-method" title="Link to this heading">#</a></h2>
-<p><span class="math notranslate nohighlight">\( y' = f(t, y) \hspace{1cm} \to \hspace{1cm} y(t + (\Delta t)) = y(t) + f(t,y) (\Delta t)\)</span></p>
-<p>“Just” Add Columns</p>
-<a class="reference internal image-reference" href="../_images/euler_diagram.png"><img alt="Euler Diagram" class="align-center" src="../_images/euler_diagram.png" style="width: 300px;" />
+<h1><span class="section-number">6.4. </span>Numerical solution methods<a class="headerlink" href="#numerical-solution-methods" title="Link to this heading">#</a></h1>
+<p>Systems of first-order ODEs can also be solved numerically using similar
+approaches as for
+<a class="reference internal" href="../first-order-odes/numerical-solution.html"><span class="std std-doc">single first-order ODEs</span></a>, but now
+all dependent variables must be advanced simultaneously. The methods we use
+for single first-order ODES can be straightforwardly extended to systems using
+the explicit-form vector notation <span class="math notranslate nohighlight">\(\vv{y}' = \vv{f}(t, \vv{y})\)</span>. For example,
+Euler’s method becomes:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2a92895f-6223-485e-b731-988810f9a3f4">
+<span class="eqno">(6.39)<a class="headerlink" href="#equation-2a92895f-6223-485e-b731-988810f9a3f4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\vv{y}(t+\Delta t) \approx \vv{y}(t) + \vv{f}(t, \vv{y}) \Delta t
+\end{equation}\]</div>
+<p>We are “just” adding columns to our calculations!</p>
+<div class="admonition-example-first-order-reaction-in-a-draining-tank admonition">
+<p class="admonition-title">Example: First-order reaction in a draining tank</p>
+<p>A first-order reaction (rate constant <em>k</em>) is taking place in a tank that is
+initially 1 M concentration in the reactant A and has 10 L of solution. A feed
+stream that has a reactant concentration of 1 M enters at 1 L / min, while
+well-mixed solution exits at 2 L / min.</p>
+<a class="reference internal image-reference" href="../_images/euler_diagram.png"><img alt="Reactions in draining tank." class="align-center" src="../_images/euler_diagram.png" style="width: 300px;" />
 </a>
-<p>Mole Balance</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{align}
-\frac{dn_A}{dt} = \dot n_{\rm in} - \dot n_{\rm out} + r_A V \hspace{1cm} \dot n_{\rm in} = \dot V_{\rm in} c_in,A  \\
-\frac{Vc_A}{dt} = \dot V_{\rm in} c_in,A - \dot V c_A - kc_AV \hspace{1cm} \dot n_{\rm out} = \dot V_{\rm out} c_A \\
-\end{align}\end{split}\]</div>
-<div class="math notranslate nohighlight">
-\[V\frac{dc_A}{dt} + c_A\frac{dV}{dt} = 1 - 2c_A + kVc_A\]</div>
-<p>Mass Balance</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{align}
-\frac{dm}{dt} = \dot m_{\rm in} - \dot m_{\rm out} \hspace{1cm} \dot m_{\rm in} = \dot V_{\rm in} (\rho) \\
-\frac{d(\rho)V}{dt} = \dot V_{\rm in} (\rho) - \dot V_{\rm in} (\rho) \hspace{1cm} \dot m_{\rm out} = \dot V_{\rm in} (\rho) \\
-\rho\frac{dV}{dt} = \dot V_{\rm in} (\rho) \cdot \dot V_{\rm out} (\rho) = 1 -2 = -1 \hspace{1cm} \dot m = V \rho
-\end{align}\end{split}\]</div>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{align}
-\frac{dc_A}{dt} = \frac{1}{V} [1 - c_A - 0.5Vc_A]  \hspace{1cm} c_A(0) = 1 \hspace{1cm}  y_1 = c_A \\
-\frac{dV}{dt} = -1             \hspace{1cm}             V(0) = 10 \hspace{1cm}  y_2 = V \\
-\end{align}\end{split}\]</div>
-<p>What is c_A and V after 1 minute?</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{array}{|c|c|c|c|c|c|}
-\hline
-n &amp; t &amp; c_A = y_1 &amp; V = y_2 &amp; f_1 &amp; f_2 \\
-\hline
-0 &amp; 0 &amp; 1 &amp; 10 &amp; -0.5 &amp; -1 \\
-\hline
-1 &amp; 1 &amp; 0.5 &amp; 9 &amp;  &amp;  \\
-\hline
-\end{array}
-\end{split}\]</div>
-</section>
+<p>Estimate the concentration of A after 1 minute if <span class="math notranslate nohighlight">\(k = 0.5/{\rm min}\)</span>.</p>
+<hr class="docutils" />
+<p>Start from an unsteady mole balance on A:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-33806789-27a1-4ce4-832a-148f2812e35e">
+<span class="eqno">(6.40)<a class="headerlink" href="#equation-33806789-27a1-4ce4-832a-148f2812e35e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\dd{}{n_{\rm A}}{t} = \dot n_{{\rm A},{\rm in}} - \dot n_{{\rm A},{\rm out}} +
+  r_A V
+\end{equation}\]</div>
+<p>The number of moles in the tank, the molar flow rate in, and the molar flow
+rate out are:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6851ebd6-e7c3-4299-a246-dc6de5aecea0">
+<span class="eqno">(6.41)<a class="headerlink" href="#equation-6851ebd6-e7c3-4299-a246-dc6de5aecea0" title="Permalink to this equation">#</a></span>\[\begin{align}
+n_{\rm A} &amp;= c_{\rm A} V \\
+\dot n_{{\rm A},{\rm in}} &amp;= c_{{\rm A},{\rm in}} \dot V_{\rm in} = 1 \\
+\dot n_{{\rm A},{\rm out}} &amp;= c_{\rm A} \dot V_{\rm out}  = 2c_A
+\end{align}\]</div>
+<p>so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7e7f06d7-ac3e-43f8-8dac-b4c38292503a">
+<span class="eqno">(6.42)<a class="headerlink" href="#equation-7e7f06d7-ac3e-43f8-8dac-b4c38292503a" title="Permalink to this equation">#</a></span>\[\begin{align}
+\dd{}{(Vc_{\rm A})}{t} &amp;= 1 - 2 c_A - k c_A V \\
+V \dd{}{c_{\rm A}}{t} + c_{\rm A} \dd{}{V}{t} &amp;= 1 - 2 c_A - k c_A V
+\end{align}\]</div>
+<p>Since the volume <em>V</em> is changing, write a mass balance on the tank assuming
+that the solution density <span class="math notranslate nohighlight">\(\rho\)</span> does not depend on concentration:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1c313361-165e-4c96-83cb-4daa030af354">
+<span class="eqno">(6.43)<a class="headerlink" href="#equation-1c313361-165e-4c96-83cb-4daa030af354" title="Permalink to this equation">#</a></span>\[\begin{align}
+\dd{}{m}{t} = \dot m_{\rm in} - \dot m_{\rm out}
+\end{align}\]</div>
+<p>with the mass in the tank, mass flow rate in, and mass flow rate out:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-275eea67-1a37-423e-a2d7-7365c052f677">
+<span class="eqno">(6.44)<a class="headerlink" href="#equation-275eea67-1a37-423e-a2d7-7365c052f677" title="Permalink to this equation">#</a></span>\[\begin{align}
+m &amp;= \rho V \\
+\dot m_{\rm in} &amp;= \rho \dot V_{\rm in} = \rho \\
+\dot m_{\rm out} &amp;= \rho \dot V_{\rm out} = 2 \rho
+\end{align}\]</div>
+<p>so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-553300eb-cc25-445d-b7d6-6a1d38724e13">
+<span class="eqno">(6.45)<a class="headerlink" href="#equation-553300eb-cc25-445d-b7d6-6a1d38724e13" title="Permalink to this equation">#</a></span>\[\begin{align}
+\dd{}{(V\rho)}{t} = \rho \dd{}{V}{t} &amp;= -\rho \\
+\dd{}{V}{t} &amp;= - 1
+\end{align}\]</div>
+<p>Substituting for <span class="math notranslate nohighlight">\(\dd{}{V}{t}\)</span> in the unsteady mole balance and rearranging
+gives the system of first-order ODES:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-bc0f4d56-fca8-45ea-a6d5-ff746b9017bb">
+<span class="eqno">(6.46)<a class="headerlink" href="#equation-bc0f4d56-fca8-45ea-a6d5-ff746b9017bb" title="Permalink to this equation">#</a></span>\[\begin{align}
+\dd{}{c_{\rm A}}{t} &amp;= \frac{1}{V}
+  \left(1 - c_A - 0.5Vc_A\right),&amp; c_{\rm A}(0) &amp;= 1 \\
+\dd{}{V}{t} &amp;= -1, &amp; V(0) &amp;= 10
+\end{align}\]</div>
+<p>Calling <span class="math notranslate nohighlight">\(y_1 = c_{\rm A}\)</span> and <span class="math notranslate nohighlight">\(y_2 = V\)</span>:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(n\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(t\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(y_1\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(y_2\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(f_1\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(f_2\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>10</p></td>
+<td><p>-0.5</p></td>
+<td><p>-1</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>0.2</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>0.4</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>0.6</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>0.8</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>1.0</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The concentration after 1 minute is approximately X M.</p>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -520,7 +598,7 @@ n &amp; t &amp; c_A = y_1 &amp; V = y_2 &amp; f_1 &amp; f_2 \\
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">6.2. </span>Homogeneous linear first-order ODEs with constant coefficients</p>
+        <p class="prev-next-title"><span class="section-number">6.3. </span>Homogeneous linear first-order ODEs with constant coefficients</p>
       </div>
     </a>
     <a class="right-next"
@@ -538,21 +616,6 @@ n &amp; t &amp; c_A = y_1 &amp; V = y_2 &amp; f_1 &amp; f_2 \\
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eulers-method">6.3.1. Euler’s Method</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

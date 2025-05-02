@@ -1,62 +1,99 @@
 # Numerical solution methods
 
-Description: Many ordinary differential equations you will encounter are not solvable by any of the methods discussed thusfar. In such cases, a numerical solution method will result in a fairly accurate solution to the ODE. One such method is Euler's method. Through a series of iterations, Euler's method uses small steps to linearly approximate the solution based on the slope at each point. 
+Systems of first-order ODEs can also be solved numerically using similar
+approaches as for
+[single first-order ODEs](../first-order-odes/numerical-solution.md), but now
+all dependent variables must be advanced simultaneously. The methods we use
+for single first-order ODES can be straightforwardly extended to systems using
+the explicit-form vector notation $\vv{y}' = \vv{f}(t, \vv{y})$. For example,
+Euler's method becomes:
 
-### Euler's Method
+\begin{equation}
+\vv{y}(t+\Delta t) \approx \vv{y}(t) + \vv{f}(t, \vv{y}) \Delta t
+\end{equation}
 
-$ y' = f(t, y) \hspace{1cm} \to \hspace{1cm} y(t + (\Delta t)) = y(t) + f(t,y) (\Delta t)$
+We are "just" adding columns to our calculations!
 
-"Just" Add Columns 
+````{example} First-order reaction in a draining tank
+A first-order reaction (rate constant *k*) is taking place in a tank that is
+initially 1 M concentration in the reactant A and has 10 L of solution. A feed
+stream that has a reactant concentration of 1 M enters at 1 L / min, while
+well-mixed solution exits at 2 L / min.
 
 ```{image} ./_images/euler_diagram.png
-:alt: Euler Diagram
+:alt: Reactions in draining tank.
 :align: center
 :width: 300px
 ```
 
-Mole Balance
+Estimate the concentration of A after 1 minute if $k = 0.5/{\rm min}$.
 
-```{math}
+---
+
+Start from an unsteady mole balance on A:
+
+\begin{equation}
+\dd{}{n_{\rm A}}{t} = \dot n_{{\rm A},{\rm in}} - \dot n_{{\rm A},{\rm out}} +
+  r_A V
+\end{equation}
+
+The number of moles in the tank, the molar flow rate in, and the molar flow
+rate out are:
+
 \begin{align}
-\frac{dn_A}{dt} = \dot n_{\rm in} - \dot n_{\rm out} + r_A V \hspace{1cm} \dot n_{\rm in} = \dot V_{\rm in} c_in,A  \\
-\frac{Vc_A}{dt} = \dot V_{\rm in} c_in,A - \dot V c_A - kc_AV \hspace{1cm} \dot n_{\rm out} = \dot V_{\rm out} c_A \\
+n_{\rm A} &= c_{\rm A} V \\
+\dot n_{{\rm A},{\rm in}} &= c_{{\rm A},{\rm in}} \dot V_{\rm in} = 1 \\
+\dot n_{{\rm A},{\rm out}} &= c_{\rm A} \dot V_{\rm out}  = 2c_A
 \end{align}
-```
 
-```{math}
-V\frac{dc_A}{dt} + c_A\frac{dV}{dt} = 1 - 2c_A + kVc_A
-```
+so
 
-Mass Balance
-
-```{math}
 \begin{align}
-\frac{dm}{dt} = \dot m_{\rm in} - \dot m_{\rm out} \hspace{1cm} \dot m_{\rm in} = \dot V_{\rm in} (\rho) \\
-\frac{d(\rho)V}{dt} = \dot V_{\rm in} (\rho) - \dot V_{\rm in} (\rho) \hspace{1cm} \dot m_{\rm out} = \dot V_{\rm in} (\rho) \\
-\rho\frac{dV}{dt} = \dot V_{\rm in} (\rho) \cdot \dot V_{\rm out} (\rho) = 1 -2 = -1 \hspace{1cm} \dot m = V \rho
+\dd{}{(Vc_{\rm A})}{t} &= 1 - 2 c_A - k c_A V \\
+V \dd{}{c_{\rm A}}{t} + c_{\rm A} \dd{}{V}{t} &= 1 - 2 c_A - k c_A V
 \end{align}
-```
 
-```{math}
+Since the volume *V* is changing, write a mass balance on the tank assuming
+that the solution density $\rho$ does not depend on concentration:
+
 \begin{align}
-\frac{dc_A}{dt} = \frac{1}{V} [1 - c_A - 0.5Vc_A]  \hspace{1cm} c_A(0) = 1 \hspace{1cm}  y_1 = c_A \\
-\frac{dV}{dt} = -1             \hspace{1cm}             V(0) = 10 \hspace{1cm}  y_2 = V \\
+\dd{}{m}{t} = \dot m_{\rm in} - \dot m_{\rm out}
 \end{align}
-```
 
-What is c_A and V after 1 minute?
+with the mass in the tank, mass flow rate in, and mass flow rate out:
 
-$$
-\begin{array}{|c|c|c|c|c|c|}
-\hline
-n & t & c_A = y_1 & V = y_2 & f_1 & f_2 \\
-\hline
-0 & 0 & 1 & 10 & -0.5 & -1 \\
-\hline
-1 & 1 & 0.5 & 9 &  &  \\
-\hline
-\end{array}
-$$
+\begin{align}
+m &= \rho V \\
+\dot m_{\rm in} &= \rho \dot V_{\rm in} = \rho \\
+\dot m_{\rm out} &= \rho \dot V_{\rm out} = 2 \rho
+\end{align}
 
+so
 
+\begin{align}
+\dd{}{(V\rho)}{t} = \rho \dd{}{V}{t} &= -\rho \\
+\dd{}{V}{t} &= - 1
+\end{align}
 
+Substituting for $\dd{}{V}{t}$ in the unsteady mole balance and rearranging
+gives the system of first-order ODES:
+
+\begin{align}
+\dd{}{c_{\rm A}}{t} &= \frac{1}{V}
+  \left(1 - c_A - 0.5Vc_A\right),& c_{\rm A}(0) &= 1 \\
+\dd{}{V}{t} &= -1, & V(0) &= 10
+\end{align}
+
+Calling $y_1 = c_{\rm A}$ and $y_2 = V$:
+
+|  $n$ |  $t$   | $y_1$  | $y_2$   | $f_1$    |  $f_2$   |
+|------|--------|--------|---------|----------|----------|
+| 0    | 0      | 1      | 10      | -0.5     | -1       |
+| 1    | 0.2    |        |         |          |          |
+| 2    | 0.4    |        |         |          |          |
+| 3    | 0.6    |        |         |          |          |
+| 4    | 0.8    |        |         |          |          |
+| 5    | 1.0    |        |         |          |          |
+
+The concentration after 1 minute is approximately X M.
+````
