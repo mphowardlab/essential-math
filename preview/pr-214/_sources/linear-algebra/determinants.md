@@ -1,9 +1,9 @@
 # Determinants
-For a square *nxn* matrix *A*, the *determinant* is denoted.
+For a square *nxn* matrix *A*, the *determinant* is denoted:
 
 $$
 
-\det |A| =|A|=\begin{bmatrix}A_{11}.\ .\ . & B_{1n} \\ .\\.\\A_{n1}.\ .\ . & A_{nn}\end{bmatrix}
+\det |A| =|A|=\begin{bmatrix}A_{11}.\ .\ . & A_{1n} \\ .\\.\\A_{n1}.\ .\ . & A_{nn}\end{bmatrix}
 
 $$
 For  $n=1$, $|A|= A_{11}$ (the element)
@@ -14,17 +14,17 @@ For $n \to 2$, |A| is defined in a sort of recursive way
 
 
 $$ |A|=\left( \sum_{j=1}^n A_{ij} C_{ij} \right) =  \left( \sum_{j=1}^n (-1)^{i+j} \right) A_{ij} M_{ij} $$
-($C_{ij}$ is the *cofactor*) (i=1, ..., or n: any row)
+($C_{ij}$ is the *cofactor*) (*i*=1, ..., or *n*: any row)
 
 $$ \left( C_{ij} = (-1)^{i+j} M_{ij} \right) $$
 ($M_{ij}$- "*minor*": is the determinant of the matrix obtained by removing row *i* and column *j*)
 
 
 $$ -or- =\left( \sum_{i=1}^n A_{ij} C_{ij} \right)= \left( \sum_{i=1}^n \right) (-1)^{i+j} A_{ij} M_{ij} $$
- (j=1,..., or n: any column)
+ (*j*=1,..., or *n*: any column)
 
 
-**Ex:** Determinant of a *2 x 2* matrix A
+*Ex:* Determinant of a *2 x 2* matrix *A*
 $$ A=\begin{bmatrix}a & b \\ c & d \end{bmatrix}$$
 
 
@@ -39,18 +39,17 @@ This is a useful formula to know! *Mneumonic*
 [a b, c d] - + =ad-bc
 
 
-**Ex:** *3x3* matrix , note that i=3 & j=3 
+*Ex:* *3x3* matrix , note that *i*=3 & *j*=3 
 $$ A=\begin{bmatrix}1 & 3 & 0 \\ 2 & 6 & 4 \\ -1 & 0 & 2 \end{bmatrix}$$
 $$ A=\begin{bmatrix}+ & - & + \\ - & + & - \\ + & - & + \end{bmatrix}$$
 (positive and negative signs form a checker board)
 
-$$ |A|= +(-1)*\begin{bmatrix}2 & 6 \\ -1 & 0 \end{bmatrix} -(0)*\begin{bmatrix}1 & 0 \\ 2 & 4 \end{bmatrix}+(2)*\begin{bmatrix}1 & 3 \\ -2 & 6 \end{bmatrix}$$
-|$A$|=$-((3*4)-(0*6))+2*((1*6)-(2*3))=-12$
+$$ |A|= +(-1)*\begin{bmatrix} 3& 0 \\ 6 & 4 \end{bmatrix} -(0)*\begin{bmatrix}1 & 0 \\ 2 & 4 \end{bmatrix}+(2)*\begin{bmatrix}1 & 3 \\ 2 & 6 \end{bmatrix}=-((3*4)-(0*6))+2*((1*6)-(2*3))=-12$$
 
 
 
-$$ |A|= +(0)*\begin{bmatrix}2 & 6 \\ -1 & 0 \end{bmatrix} -(4)*\begin{bmatrix}1 & 3 \\ -1 & 0 \end{bmatrix}+(2)*\begin{bmatrix}1 & 3 \\ 2 & 6 \end{bmatrix}$$
-|$A$|=$-4*(0+3)+2*(6-6)= -12$
+
+$$ |A|= +(0)*\begin{bmatrix}2 & 6 \\ -1 & 0 \end{bmatrix} -(4)*\begin{bmatrix}1 & 3 \\ -1 & 0 \end{bmatrix}+(2)*\begin{bmatrix}1 & 3 \\ 2 & 6 \end{bmatrix}=-4*(0+3)+2*(6-6)= -12$$
 
 
 Its usually a good idea to expand along the row or column with the most zeros!
