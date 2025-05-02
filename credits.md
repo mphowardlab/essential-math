@@ -36,6 +36,7 @@ This work (c) 2025 is licensed under
 - Elijah  C. Mitchell
 - Meg Nettles
 - Jeffe Old
+- Ella Ortbals
 - Kendall Reeves
 - Olivia Robinson
 - Brent Russell
