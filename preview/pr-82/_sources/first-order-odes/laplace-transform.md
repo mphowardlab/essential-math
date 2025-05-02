@@ -1,5 +1,7 @@
 # Laplace transform
 
+## Definition and properties
+
 The Laplace transform is used in signals/controls. It is also a way to solve
 *differential* equations using *algebra*. It is defined as:
 
@@ -23,65 +25,53 @@ Importantly, the Laplace transform of the first derivative of an unknown
 function $f(t) = y'(t)$ is:
 
 \begin{align}
-L[y'] = \int_0^\infty e^-st y' \d{t} = -\frac{te^-st}{s}|_{0}{\infty} - \int_0^\infty \ y (\frac{e^-st}{s})dt \
-\u = e^-st  dv = y' dt \
-\ du = -se^-st   v = y \
-= [ 0 - y ( 0 )] + s \int_0^\infty \e^-st y \dt\
-= s L [ f ] - y( 0 )
-= s Y( s ) - y( 0 )
+L[y'(t)] &= \int_0^\infty e^{-st} y'(t) \d{t} \\
+  &= \left.e^{-st} y(t)\right|_0^\infty -
+    \int_0^\infty y(t) \left(-s e^{-st}\right) \d{t} \\
+  &= [0 - y (0)] + s \int_0^\infty e^{-st} y \d{t} \\
+  &= -y(0) + s L[y(t)] \\
+  &= s Y(s) - y(0)
 \end{align}
 
-Reminder from integration by parts
+using $u = e^{-st}$ and $\d{v} = y'(t) \d{t}$. Some common Laplace transforms
+are:
 
-\begin{equation}
-F( s ) = L [ f( t )] = \int_0^\infty e^-st f( t ) dt\
-\end{equation}
-
-:::{table} Laplace Transforms
-
-| **Function**                | **Laplace Transform**                 |
-|-----------------------------|---------------------------------------|
-| \( f(t) = 1 \)              | \( F(s) = \frac{1}{s} \)              |
-| \( f(t) = t \)              | \( F(s) = \frac{1}{s^2} \)           |
-| \( f(t) = e^{at} \)         | \( F(s) = \frac{1}{s - a} \)         |
-| \( f(t) = \sin(at) \)       | \( F(s) = \frac{a}{s^2 + a^2} \)     |
-| \( f(t) = \cos(at) \)       | \( F(s) = \frac{s}{s^2 + a^2} \)     |
-| \( f(t) = t^n \)            | \( F(s) = \frac{n!}{s^{n+1}} \)      |
-| \( f(t) = e^{at} \sin(bt) \) | \( F(s) = \frac{b}{(s - a)^2 + b^2} \) |
-| \( f(t) = e^{at} \cos(bt) \) | \( F(s) = \frac{s - a}{(s - a)^2 + b^2} \)|
-
-:::
+| $f(t)$             | $F(s) = L[f(t)]$                |
+|--------------------|---------------------------------|
+| $t^n$, $n=0, 1, 2, \cdots$ | $\dfrac{n!}{s^{n+1}}$   |
+| $e^{at}$           | $\dfrac{1}{s - a}$              |
+| $\sin(at)$         | $\dfrac{a}{s^2 + a^2}$          |
+| $\cos(at)$         | $\dfrac{s}{s^2 + a^2}$          |
+| $e^{at} \sin(bt)$  | $\dfrac{b}{(s - a)^2 + b^2}$    |
+| $e^{at} \cos(bt)$  | $\dfrac{s - a}{(s - a)^2 + b^2}$|
 
 The Laplace transform is a linear operator, so
 
-\begin{equation}
-L = [kf] = kL[f] = kf\\
-L = [f + g] = L[f] + L[g] = F + G
-\end{equation}
+\begin{align}
+L[kf] &= kL[f] \\
+L[f + g] &= L[f] + L[g]
+\end{align}
 
 ## Solving first-order ODEs
 
-The nonhomogeneous, first-order ODE with constant coefficients is nice to solve
-with Laplace transoforms
+Nonhomogeneous, first-order ODEs with constant coefficients are nice to solve
+with Laplace transforms:
 
 \begin{equation}
-y' + by = r(t)\\
+y' + by = r(t), \quad y(0) = y_0
 \end{equation}
 
-y' and b must be constant coefficients
-r(t) must be nonhomogeneous (if r \ne 0)
-
-Apply Laplace transform to both sides of the equation
+Apply the Laplace transform to both sides of the equation:
 
 \begin{align}
-L[y' + by] = L[r(t)]
-L[y'] + bL[y] = L[r(t)]\\
-sY(s) - y(0) + bY(s)= R(s)\\
-(s + b)Y(s) = y(o) + R(s)\\
-y(s) = \frac{y(o) + R(s)}{s+b}\\
+L[y' + by] &= L[r] \\
+L[y'] + bL[y] &= L[r]\\
+\left(sY - y_0\right) + bY &= R\\
+Y &= \frac{y_0 + R}{s+b}
 \end{align}
 
-If we can invert y(t) = L^-1 [y(s)] usijng tables, we have a solution!
+where $Y = L[y(t)]$ and $R = L[r(t)]$. If we can invert $y = L^{-1}[Y]$ using
+tables, we have a solution!
 
 ```{example} Laplace transform
 Solve the initial value problem
