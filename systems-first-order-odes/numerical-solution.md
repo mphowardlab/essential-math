@@ -20,8 +20,15 @@ initially 1 M concentration in the reactant A and has 10 L of solution. A feed
 stream that has a reactant concentration of 1 M enters at 1 L / min, while
 well-mixed solution exits at 2 L / min.
 
+<<<<<<< HEAD
+"Just" Add Columns 
+
+```{image} ./_images/euler_diagram_new.png
+:alt: Euler Diagram
+=======
 ```{image} ./_images/euler_diagram.png
 :alt: Reactions in draining tank.
+>>>>>>> 6ca2ce5b888e5be455a5d84fcf097db818701364
 :align: center
 :width: 300px
 ```
@@ -70,10 +77,21 @@ m &= \rho V \\
 
 so
 
+<<<<<<< HEAD
+|  $n$ |  $t$   | $y_1$  | $y_2$   | $f_1$    |  $f_2$   |
+|------|--------|--------|---------|----------|----------|
+| 0    | 0      | 1      | 10      | -0.5     | -1       |
+| 1    | 0.2    |        |         |          |          |
+| 2    | 0.4    |        |         |          |          |
+| 3    | 0.6    |        |         |          |          |
+| 4    | 0.8    |        |         |          |          |
+| 5    | 1.0    |        |         |          |          |
+=======
 \begin{align}
 \dd{}{(V\rho)}{t} = \rho \dd{}{V}{t} &= -\rho \\
 \dd{}{V}{t} &= - 1
 \end{align}
+>>>>>>> 6ca2ce5b888e5be455a5d84fcf097db818701364
 
 Substituting for $\dd{}{V}{t}$ in the unsteady mole balance and rearranging
 gives the system of first-order ODES:
