@@ -8,45 +8,56 @@
     - $a=x''$
 - Hence, solving kinematic equations according to Newtonian mechanisms requires a second-order ODE in time. 
 
-$$
-m\frac{d^2x}{dt^2}=-mg
-$$
-$$ 
-v=\frac{dx}{dt}
-$$
+<div align="left">
 
 $$
-\frac{d}{dt}(\frac{dx}{dt})=\frac{dv}{dt}=-g \to \int\,dv = \int-gdt  \to v = \frac{dx}{dt} = -gt + C_1
+\begin{aligned}
+&m\frac{d^2x}{dt^2}=-mg \\
+&v=\frac{dx}{dt} \\
+&\frac{dv}{dt}=-g \Rightarrow \int\ dv = \int -g\ dt \Rightarrow v = \frac{dx}{dt} = -gt + C_1 \\
+&\int dx = \int (-gt + C_1)\ dt \Rightarrow x(t) = -\frac{1}{2}gt^2 + C_1t + C_2
+\end{aligned}
 $$
 
-$$\int\ dx = \int\ (-gt+C_1) dt \to x(t) = -\frac{1}{2}gt^2 +c_1t +c_2
-$$
+</div>
 
 If the initial position is $x(0) = x_0$ and initial velocity is $v(0)=x(0)=v_0$,
-    $$x_0= -\frac{1}{2}g\cdot0^2 +c_1\cdot0 +c_2$$
-    $$x'(t) = -gt + c_1\to v_0 = x'(0) = -g\cdot0 +c_1$$
-$$x(t) = -\frac{1}{2}gt^2 +v_0t +x_0$$
+
+$$
+\begin{aligned}
+&m\frac{d^2x}{dt^2} = -mg \\
+&v = \frac{dx}{dt} \\
+&\frac{d}{dt} \left( \frac{dx}{dt} \right) = \frac{dv}{dt} = -g 
+\Rightarrow \int dv = \int -g\ dt 
+\Rightarrow v = \frac{dx}{dt} = -gt + C_1 \\
+&\int dx = \int (-gt + C_1)\ dt 
+\Rightarrow x(t) = -\frac{1}{2}gt^2 + C_1t + C_2
+\end{aligned}
+$$
 
 
 Ex: Incompressible flow in a cylinder (momentum transport)
-    - Navier-Stokes equation reduces to
-![IMG_0719](https://github.com/user-attachments/assets/cc9937aa-c09f-46ed-a159-edaad1f20dc6)
+- Navier-Stokes equation reduces to
+<img src="https://github.com/user-attachments/assets/cc9937aa-c09f-46ed-a159-edaad1f20dc6" alt="Your Image" width="500"/>
+
 
 $$
-μ\frac{1}{r}\frac{d}{dr}(r\frac{du_z}{dr})=-\frac{△P}{L}
+\begin{aligned}
+&\mu \frac{1}{r} \frac{d}{dr} \left( r \frac{du_z}{dr} \right) = -\frac{\Delta P}{L} \\
+&v = r \frac{du_z}{dr} \\
+&\int dv = \int \frac{-1}{\mu} \frac{\Delta P}{L} r\,dr 
+\Rightarrow v = r \frac{du_z}{dr} = -\frac{1}{2\mu} \frac{\Delta P}{L} r^2 + C_1 \ln(r) + C_2 \\
+&\int du_z = \int \left( -\frac{1}{2\mu} \frac{\Delta P}{L} r + \frac{C_1}{r} \right) dr 
+\Rightarrow u_z = -\frac{1}{4\mu} \frac{\Delta P}{L} r^2 + C_1 \ln(r) + C_2
+\end{aligned}
 $$
-$$
-v=r\frac{du_z}{dr}
-$$
-$$
-\int\ dv=\int\\frac{-1}{μ}\frac{△P}{L}rdr \to v=r\frac\{du_z}{dr}=-\frac{1}{2μ}\frac{△P}{L}r^2+C_1(ln(r))+C_2
-$$
-$$
-\int\ du_z=\int\(-\frac{1}{2μ}\frac{△P}{L}r+\frac{C_1}{r})dr \to u_z = -\frac{1}{4μ}\frac{△P}{L}r^2+C_1(ln(r))+C_2
-$$
+
 We want no slip $u_z(R)= 0$, so $$0=u_z(R) = -\frac{1}{4μ}\frac{△P}{L}r^2+C_1(ln(r))+C_2 \to C_2 = -\frac{1}{4μ}\frac{△P}{L}R^2-C_1(ln(r))$$
+
 We also know 
 $$u_z(0)$$ 
-is finite -or- that u has radial symmetry, so $$\frac{du_z}{dr}=0  \to @r=0$$
-    Either way, $$C_1 = 0$$ So,
+is finite -or- that u has radial symmetry, so $$\frac{du_z}{dr}=0  \to @r=0$$.
+
+Either way, 
+    $$C_1 = 0$$. So,
     $$u_z(r)=\frac{1}{4μ}\frac{△P}{L}(R^2-r^2)$$
