@@ -322,7 +322,7 @@ If \( x = x(y, z) \), \( y = y(x, z) \), and \( z = z(x, y) \), then the **tripl
 
 ```{example} Triple Product Ex.
 Let:
--  \begin{equation} x = \frac{y^2}{z} \end {equation}
+- \begin{equation} x = \frac{y^2}{z} \end{equation}
 - \begin{equation} y = \sqrt{xz} \end{equation}
 - \begin{equation} z = \frac{y^2}{x} \end{equation}
 
