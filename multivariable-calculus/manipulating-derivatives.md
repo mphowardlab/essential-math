@@ -350,7 +350,7 @@ Now plug into the triple product rule:
 \begin{equation}
 \left( \frac{2y}{z} \right) 
 \left( \frac{1}{2z} \right) 
-\left( -\frac{z^2}{y^2} \right) = -1 \quad \checkmark
+\left( -\frac{z^2}{y^2} \right) = -1
 \end{equation}
 This is your answer!
 ```
