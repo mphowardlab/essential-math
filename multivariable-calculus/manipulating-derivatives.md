@@ -318,10 +318,10 @@ If \( x = x(y, z) \), \( y = y(x, z) \), and \( z = z(x, y) \), then the **tripl
 \left( \frac{\partial z}{\partial x} \right)_y = -1
 \end{equation}
 
----
 
-```{example} Let:
 
+```{example} Triple Product Ex.
+Let:
 -  \begin{equation} x = \frac{y^2}{z} \end {equation}
 - \begin{equation} y = \sqrt{xz} \end{equation}
 - \begin{equation} z = \frac{y^2}{x} \end{equation}
@@ -351,14 +351,16 @@ Now plug into the triple product rule:
 \left( \frac{2y}{z} \right) 
 \left( \frac{1}{2z} \right) 
 \left( -\frac{z^2}{y^2} \right) = -1 \quad \checkmark
-\end{equation}```
+\end{equation}
+```
 ---
 
 ## Application to Thermodynamics
 
 We can use these rules to manipulate **thermodynamic derivatives**.
 
-### Example: Expressing \( \left( \frac{\partial S}{\partial T} \right)_V \)
+```{example} Thermodynamics Example
+Expressing \( \left( \frac{\partial S}{\partial T} \right)_V \)
 
 Given:
 
@@ -375,7 +377,7 @@ We can write:
 = \frac{1}{T} \left( \frac{\partial U}{\partial T} \right)_V 
 = \frac{c_V}{T}
 \end{equation}
-
+```
 ---
 
 ### Alternative Form
