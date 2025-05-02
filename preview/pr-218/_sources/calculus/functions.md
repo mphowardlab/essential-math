@@ -49,7 +49,7 @@
 
 ## Exponential Functions
 
-\being{align}
+\begin{align}
 a^x a^y = a^{(x+y)} \\
 \frac{a^x}{a^y} = a^{(x-y)} \\
 (a^x)^y = (a^y)^x = a^{xy} \\
@@ -65,11 +65,13 @@ x = a^y \\
 \end{align}
 
 Natural Log:
+
 \begin{equation}
 \log_{e} = \ln
 \end{equation}
 
 Common log:
+
 \begin{equation}
 \log_{10} = \log
 \end{equation}
