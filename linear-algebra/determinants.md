@@ -25,7 +25,7 @@ $$ |A|=\left( \sum_{j=1}^n A_{ij} C_{ij} \right) =  \left( \sum_{j=1}^n (-1)^{i+
 ($C_{ij}$ is the *cofactor*) (*i*=1, ..., or *n*: any row)
 
 $$ \left( C_{ij} = (-1)^{i+j} M_{ij} \right) $$
-($M_{ij}$- "*minor*": is the determinant of the matrix obtained by removing row *i* and column *j*)
+$M_{ij}$- "*minor*": is the determinant of the matrix obtained by removing row *i* and column *j*
 
 
 $$ -or- =\left( \sum_{i=1}^n A_{ij} C_{ij} \right)= \left( \sum_{i=1}^n \right) (-1)^{i+j} A_{ij} M_{ij} $$
@@ -38,9 +38,9 @@ $$
 A=\begin{bmatrix}a & b \\ c & d \end{bmatrix} 
 $$
 
+``` a b ```
 
-
-$$ A=\begin{bmatrix}a & b \\ c & d \end{bmatrix}= (-1)^{1+1}*(1)* a* M_{11}+ (-1)^{1+2}* (-1) * b * M_{12}= ad-bc $$
+ choose *i* =1 $$  A=\begin{bmatrix} a & b  \\ c & d \end{bmatrix}= (-1)^{1+1}*(1)* a* M_{11}+ (-1)^{1+2}* (-1) * b * M_{12}= ad-bc $$
 
 
 $$M_{11}:\begin{bmatrix} 0 & 0 \\ 0 & d \end{bmatrix} \to |d|=d$$
