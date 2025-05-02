@@ -117,24 +117,65 @@ y = 3 e^{-2x} + e^x
 \end{equation}
 
 ---
+The following example depicts complex roots.
 
 \begin{align}
-y'' + 0.4y' + 9.04y = 0 \quad y(0)=0 \quad y'(0)=3 \
-\lambda^{2} + 0.4\lambda + 9.04 =0 \to \lambda_{1,2} = \frac{-0.4\pm\sqrt{0.4^2-4\times9.04}}{2} = -0.2\pm 3i \
+y'' + 0.4y' + 9.04y = 0 \quad y(0)=0 \quad y'(0)=3
+\end{align}
 
+Write and solve the characteristic polynomial,
+
+\begin{align}
+\lambda^{2} + 0.4\lambda + 9.04 =0 \to \lambda_{1,2} = \frac{-0.4\pm\sqrt{0.4^2-4\times9.04}}{2} = -0.2\pm 3i
+\end{align}
+
+Once values of $\lambda$ are known, write out the general solution and its first derivative.
+
+\begin{align}
 y = e^{-0.2x}(c_1\cos3x + c_2\sin3x) \qaud 0=y(0)=c_1 \
-y' = e^{-0.2x}(3c_2\cos3x) - 0.2e^{-0.2x}c_2\sin3x \quad 3=y'(0) = 3c_2 \to c_2 =1 \
+y' = e^{-0.2x}(3c_2\cos3x) - 0.2e^{-0.2x}c_2\sin3x \quad 
+\end{align}
+
+Apply the initial conditions:
+
+\begin{align}
+3=y'(0) = 3c_2 \to c_2 =1 \
 y = e^{-0.2x}\sin3x \
 \end{align}
 
 ---
+To solve for real and repeated roots, start by writing the characterisitc polynomial,
 
 \begin{align}
-y'' + y' + \frac{1}{4}y=0 \quad y(0)=3 \quad y'(0)= -\frac{7}{2} \
-\lambda^2 + \lambda + \frac{1}{4} = 0 \to (\lambda + \frac{1}{2})^2 = 0 \to \lambda=-\frac{1}{2} \
-y=(c_1 + c_2x)e^{-\frac{x}{2}} \quad 3=y(0)=c_1 \
-y'=(c_1 + c_2x)(-\frac{1}{2}e^{-\frac{x}{2}}) + c_2 e^{-\frac{x}{2}} \quad -\frac{7}{2}=y'(0)= -\frac{c_1}{2} + c_2 \to c_2 = -2 \
+y'' + y' + \frac{1}{4}y=0 \quad y(0)=3 \quad y'(0)= -\frac{7}{2}
+\end{align}
 
+\begin{align}
+\lambda^2 + \lambda + \frac{1}{4} = 0 
+\end{align}
+
+Solve for \lambda by factoring:
+
+\begin{align}
+ (\lambda + \frac{1}{2})^2 = 0 \to \lambda=-\frac{1}{2} \
+\end{align}
+
+Since \lambda is a real, repeated root, write out the general equation,
+
+\begin{align}
+y=(c_1 + c_2x)e^{-\frac{x}{2}} \quad 3=y(0)=c_1 \
+y'=(c_1 + c_2x)(-\frac{1}{2}e^{-\frac{x}{2}}) + c_2 e^{-\frac{x}{2}}
+\end{align}
+
+Use the equation and its derivative to solve for the coefficents:
+
+\begin{align}
+-\frac{7}{2}=y'(0)= -\frac{c_1}{2} + c_2 \to c_2 = -2 \
+\end{align}
+
+The final solution is:
+
+\begin{align}
 y = (3-2x)e^{\frac{-x}{2}}
 \end{align}
 
