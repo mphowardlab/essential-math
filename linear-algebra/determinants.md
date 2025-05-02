@@ -32,12 +32,11 @@ $$ -or- =\left( \sum_{i=1}^n A_{ij} C_{ij} \right)= \left( \sum_{i=1}^n \right) 
  (*j*=1,..., or *n*: any column)
 
 
-*Ex:* Determinant of a *2 x 2* matrix *A*
-$$ A=\begin{bmatrix}a & b \\ c & d \end{bmatrix}$$
+*Ex:* Determinant of a *2 x 2* matrix *A* $$  A=\begin{bmatrix}a & b \\ c & d \end{bmatrix}$$
 
 
 
-$$ A=\begin{bmatrix}a & b \\ c & d \end{bmatrix}= (-1)^{1+1)}*(1)* a* M_{11}+ (-1)^{1+2)}* (-1) b * M_{12}= ad-bc $$
+$$ A=\begin{bmatrix}a & b \\ c & d \end{bmatrix}= (-1)^{1+1)}*(1)* a* M_{11}+ (-1)^{1+2)}* (-1) * b * M_{12}= ad-bc $$
 
 
 $$M_{11}:\begin{bmatrix} 0 & 0 \\ 0 & d \end{bmatrix} \to |d|=d$$
@@ -45,9 +44,11 @@ $$M_{12}:\begin{bmatrix} 0 & 0 \\ c & 0 \end{bmatrix} \to |c|=c $$
 
 This is a useful formula to know! *Mneumonic*
 
-$$ A=\begin{bmatrix}a & b  \ (-) \\ c  & d \ (+) \end{bmatrix}= ad-bc$$
 
-*~~Ab~~*
+Below we cross multiple using positive and negative signs to find the determinant   *ad-bc*
+$$ A=\begin{bmatrix}a &  & b  (-) & \\  & X &  \\ c  &  & d (+) \end{bmatrix}= ad-bc$$
+
+
 *Ex:* *3x3* matrix , note that *i*=3 & *j*=3 
 $$ A=\begin{bmatrix}1 & 3 & 0 \\ 2 & 6 & 4 \\ -1 & 0 & 2 \end{bmatrix}$$
 $ A=\begin{bmatrix}+ & - & + \\ - & + & - \\ + & - & + \end{bmatrix}$
