@@ -41,6 +41,7 @@ This work (c) 2025 is licensed under
 - Brent Russell
 - Michelle Schindler
 - Katie Sorensen
+- Mary Frances Springfield
 - Madelyn Torrance
 - Debora Vasconcelos
 - Morgan Wootton
