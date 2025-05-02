@@ -31,6 +31,7 @@ This work (c) 2025 is licensed under
 - Davis McCaleb
 - Amber N. McMillan
 - Lilli Midgette
+- Mason Miller
 - Clara Mitchell
 - Elijah  C. Mitchell
 - Meg Nettles
