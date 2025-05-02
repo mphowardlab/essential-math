@@ -81,7 +81,7 @@ $x_2 +2x_3 = 0$
 $x_3$ free
 
 $$
-\underline{x_1} =
+\vv{x_1} =
 \begin{bmatrix}
 1 \\
 2  \\
@@ -116,7 +116,7 @@ $x_2, x_3$ free
 $x_2 = 1, x_3 = 0 \to$
 
 $$
-\underline{x_2} =
+\vv{x_2} =
 \begin{bmatrix}
 -2 \\
 1 \\
@@ -127,7 +127,7 @@ $$
 $x_2 = 0, x_3 = 1 \to$
 
 $$
-\underline{x_3} =
+\vv{x_3} =
 \begin{bmatrix}
 3 \\
 0 \\
@@ -148,7 +148,7 @@ $$
 $$
 
 $$
-| \underline{\underline{A}} - \lambda  \underline{\underline{I}}| =
+| \vv{A} - \lambda  \vv{I}| =
 \begin{vmatrix}
 -\lambda & 1 \\
 -1 & \lambda
@@ -172,7 +172,7 @@ $$
 $$
 -ix_1 + x_2 = 0 
 \to
-\underline{x_1} =
+\vv{x_1} =
 \begin{bmatrix}
 1 \\
 i
@@ -186,7 +186,7 @@ i & 1 \\
 -1 & i
 \end{bmatrix}
 \to
-\underline{x_2} =
+\vv{x_2} =
 \begin{bmatrix}
 1 \\
 -i
@@ -210,7 +210,7 @@ $$
 \lambda_3 = 3
 $$
 
-The transpose $\underline{\underline{A}}^T$ has the same eigenvalues as $\underline{\underline{A}}$
+The transpose $\vv{A}^T$ has the same eigenvalues as $\vv{A}$
 
 $$
 \begin{bmatrix}
