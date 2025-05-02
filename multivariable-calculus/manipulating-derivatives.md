@@ -304,3 +304,81 @@ Evaluate the following for $f=\cos(4x+y^2)+x^2y$
    &=\frac{2y\sin(4x+y^2)+x^2}{-4\sin(4x+y^2)+2xy}
    \end{align}
    ```
+
+
+## Triple Product Rule
+
+If \( x = x(y, z) \), \( y = y(x, z) \), and \( z = z(x, y) \), then the **triple product rule** states:
+
+\[
+\left( \frac{\partial x}{\partial y} \right)_z 
+\left( \frac{\partial y}{\partial z} \right)_x 
+\left( \frac{\partial z}{\partial x} \right)_y = -1
+\]
+
+### Example
+
+Let:
+
+\[
+x = \frac{y^2}{z}, \quad y = \sqrt{xz}, \quad z = \frac{y^2}{x}
+\]
+
+We compute the partial derivatives:
+
+\[
+\left( \frac{\partial x}{\partial y} \right)_z = \frac{2y}{z}
+\]
+
+\[
+\left( \frac{\partial y}{\partial z} \right)_x = \frac{1}{2} \cdot \frac{x}{\sqrt{xz}} = \frac{1}{2} \cdot \frac{\sqrt{x}}{\sqrt{z}} = \frac{1}{2} \cdot \frac{\sqrt{y^2/z}}{\sqrt{z}} = \frac{1}{2z}
+\]
+
+\[
+\left( \frac{\partial z}{\partial x} \right)_y = \frac{-y^2}{x^2} = -\frac{z^2}{y^2}
+\]
+
+Substituting into the triple product:
+
+\[
+\left( \frac{2y}{z} \right) \left( \frac{1}{2z} \right) \left( -\frac{z^2}{y^2} \right) = -1 \quad \checkmark
+\]
+
+---
+
+## Application to Thermodynamics
+
+We can use these rules to manipulate **thermodynamic derivatives**.
+
+### Example
+
+Express \( \left( \frac{\partial S}{\partial T} \right)_V \) using \( c_V \) and \( \left( \frac{\partial U}{\partial T} \right)_V \), given:
+
+\[
+dU = TdS - PdV
+\]
+
+From the differential:
+
+\[
+\left( \frac{\partial S}{\partial T} \right)_V = 
+\left( \frac{\partial S}{\partial U} \right)_V 
+\left( \frac{\partial U}{\partial T} \right)_V =
+\frac{1}{T} \left( \frac{\partial U}{\partial T} \right)_V = \frac{c_V}{T}
+\]
+
+### Alternative Approach
+
+From the differential form:
+
+\[
+\left( \frac{\partial U}{\partial T} \right)_V = T \left( \frac{\partial S}{\partial T} \right)_V
+\]
+
+---
+
+
+
+
+
+
