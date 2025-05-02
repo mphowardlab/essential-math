@@ -117,7 +117,7 @@ gives
 a_1 = \frac{c_0}{1+e^{2L\sqrt{k/D}}} \qquad a_2 = \frac{c_0}{1+e^{-2L\sqrt{k/D}}}
 \end{equation}
 
-Thus, 
+Thus,
 
 \begin{align}
 c = c_0\Biggl(\frac{e^{x\sqrt{k/D}}}{1+e^{2L\sqrt{k/D}}}
