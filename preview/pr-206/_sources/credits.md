@@ -41,6 +41,7 @@ This work (c) 2025 is licensed under
 - Olivia Robinson
 - Brent Russell
 - Michelle Schindler
+- Andrea Smith
 - Katie Sorensen
 - Lauren Thompson
 - Madelyn Torrance
