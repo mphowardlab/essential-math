@@ -36,7 +36,7 @@ $$ -or- =\left( \sum_{i=1}^n A_{ij} C_{ij} \right)= \left( \sum_{i=1}^n \right) 
 
 
 
-$$ A=\begin{bmatrix}a & b \\ c & d \end{bmatrix}= (-1)^{1+1)}*(1)* a* M_{11}+ (-1)^{1+2)}* (-1) * b * M_{12}= ad-bc $$
+$$ A=\begin{bmatrix}a & b \\ c & d \end{bmatrix}= (-1)^{1+1}*(1)* a* M_{11}+ (-1)^{1+2}* (-1) * b * M_{12}= ad-bc $$
 
 
 $$M_{11}:\begin{bmatrix} 0 & 0 \\ 0 & d \end{bmatrix} \to |d|=d$$
