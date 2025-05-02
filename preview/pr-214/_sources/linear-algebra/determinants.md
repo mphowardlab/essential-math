@@ -39,28 +39,27 @@ This is a useful formula to know! *Mneumonic*
 [a b, c d] - + =ad-bc
 
 
-**Ex:** *3x3* matrix choose i=3 & j=3 
+**Ex:** *3x3* matrix , note that i=3 & j=3 
 $$ A=\begin{bmatrix}1 & 3 & 0 \\ 2 & 6 & 4 \\ -1 & 0 & 2 \end{bmatrix}$$
 $$ A=\begin{bmatrix}+ & - & + \\ - & + & - \\ + & - & + \end{bmatrix}$$
 (positive and negative signs form a checker board)
 
 $$ |A|= +(-1)*\begin{bmatrix}2 & 6 \\ -1 & 0 \end{bmatrix} -(0)*\begin{bmatrix}1 & 0 \\ 2 & 4 \end{bmatrix}+(2)*\begin{bmatrix}1 & 3 \\ -2 & 6 \end{bmatrix}$$
-|A|=$-((3*4)-(0*6))+2*((1*6)-(2*3))=-12$
+|$A$|=$-((3*4)-(0*6))+2*((1*6)-(2*3))=-12$
 
 
-|A|=+(0)*[2 6, -1 0]-(4)*[1 3, -1 0] + 2[1 3, 2 6]= -4*(0+3)+2*(6-6)= -12
+|$A$|=+(0)*[2 6, -1 0]-(4)*[1 3, -1 0] + 2[1 3, 2 6]= -4*(0+3)+2*(6-6)= -12
 $$ |A|= +(0)*\begin{bmatrix}2 & 6 \\ -1 & 0 \end{bmatrix} -(0)*\begin{bmatrix}1 & 3 \\ -1 & 0 \end{bmatrix}+(2)*\begin{bmatrix}1 & 3 \\ 2 & 6 \end{bmatrix}$$
-|A|=$-4*(0+3)+2*(6-6)= -12$
+|$A$|=$-4*(0+3)+2*(6-6)= -12$
 
 
-Its usually a good idea to expand along the row or column with the most zeros!
+Its usually a good idea to expand along the row or column with the most zeros! note that i=4
+$$ A=\begin{bmatrix}1 & -2 & 0 & 0 \\ 4 & 3 & 5 & 0 \\ 0 &2 & 7 & 5 \\ 0 & 0 & 2 & 0 \end{bmatrix}= (-2)\begin{bmatrix}1 & -2 & 0 \\ 4 & 3 & 0 \\ 0 &2 & 5 \end{bmatrix}=  (-2)(5)\begin{bmatrix}1 & -2 \\ 4 & 3 \end{bmatrix}=-10*(3+8)=-110$$
 
-
-[1 -2 0 0, 4 3 5 0, 0 2 7 5, 0 0 2 0]i=4 [- + - +]=-2[1 -2 0, 4 3 0, 0 2 5]j=3 [+ - +]= (-2)*(5)*[1 -2, 4 3]= -10*(3+8)=-110
 
 
 How does this help us?
 
-**A** = is invertible (*nonsingular*) if and only if |**A**| not equal 0.
+$A$ = is invertible (*nonsingular*) if and only if |$A$| not equal 0.
 
 (*This is one of many conditions known as the invertible theorem*)
