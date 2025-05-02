@@ -374,7 +374,7 @@ We can write:
 \left( \frac{\partial S}{\partial T} \right)_V 
 = \left( \frac{\partial S}{\partial U} \right)_V 
 \left( \frac{\partial U}{\partial T} \right)_V 
-= \frac{1}{T} \left( \frac{\partial U}{\partial T} \right)_V 
+= \left( \frac{\partial U/partial T}{\partial U /partial S} \right)_V 
 = \frac{c_V}{T}
 \end{equation}
 ```
