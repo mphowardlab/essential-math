@@ -3,15 +3,21 @@
 ### Find General Solutions for:
 (a) $y' = (x+2)\ln(x)$
 
-  $y = \int (x+2)\ln(x) \ dx$  
+```{solution}
+\begin{equation}
+y = \int (x+2)\ln(x) dx
+\end{equation}
     
-  $u = ln(x)$ $dv = (x+2)dx$  
-  $du = \frac{1}{x}dx$  $v = \frac{x^2}{2} + 2x$
+\begin{align}
+u = \ln(x)&, \ dv = (x+2)dx \\
+du = \frac{1}{x}dx&, \ v = \frac{x^2}{2} + 2x
+\end{align}
     
- $=(\frac{x^2}{2} + 2x)ln(x)- \int (\frac{x^2}{2} + 2x) \frac{1}{x}\ dx$    
- <br> $\to (\frac{x^2}{2} + 2x)ln(x)-\frac{x^2}{4}-2x+C$  
-<br>
-<br>
+\begin{align}
+y =\left( \frac{x^2}{2} + 2x \right)\ln(x) \ -& \int \left( \frac{x^2}{2} + 2x \right) \frac{1}{x}\ dx \\
+\to \left( \frac{x^2}{2} + 2x \right)\ln(x) \ -&\frac{x^2}{4}-2x+C
+\end{align}
+```
 
 (b) $y' = x^5sin(x)$<br>
 
