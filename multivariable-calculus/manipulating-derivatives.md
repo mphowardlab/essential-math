@@ -310,7 +310,7 @@ Evaluate the following for $f=\cos(4x+y^2)+x^2y$
 
 ## Triple Product Rule
 
-If \begin{equation} x = x(y, z) \end{equation}, \begin{equation} y = y(x, z) \end{equation}, and \begin{equation} z = z(x, y) \end{equation}, then the **triple product rule** states:
+If \( x = x(y, z) \), \( y = y(x, z) \), and \( z = z(x, y) \), then the **triple product rule** states:
 
 \begin{equation}
 \left( \frac{\partial x}{\partial y} \right)_z 
@@ -320,16 +320,12 @@ If \begin{equation} x = x(y, z) \end{equation}, \begin{equation} y = y(x, z) \en
 
 ---
 
-## Worked Example
+```{example}
 
 Let:
 
--  \begin{equation} 
-x = \frac{y^2}{z}
-\end {equation}
-- \begin{equation} 
-y = \sqrt{xz} 
-\end{equation}
+-  \begin{equation} x = \frac{y^2}{z} \end {equation}
+- \begin{equation} y = \sqrt{xz} \end{equation}
 - \begin{equation} z = \frac{y^2}{x} \end{equation}
 
 Compute the relevant partial derivatives:
@@ -358,14 +354,14 @@ Now plug into the triple product rule:
 \left( \frac{1}{2z} \right) 
 \left( -\frac{z^2}{y^2} \right) = -1 \quad \checkmark
 \end{equation}
-
+```
 ---
 
 ## Application to Thermodynamics
 
 We can use these rules to manipulate **thermodynamic derivatives**.
 
-### Example: Expressing \begin{equation} \left( \frac{\partial S}{\partial T} \right)_V \end{equation}
+### Example: Expressing \( \left( \frac{\partial S}{\partial T} \right)_V \)
 
 Given:
 
