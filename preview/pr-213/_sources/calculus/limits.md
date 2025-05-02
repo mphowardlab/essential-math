@@ -13,8 +13,6 @@ When you have boiling water touching its vapor, is there a step change in densit
 What is the liquid density at the interface?  $lim_{z \to 0^-} \rho(z)$
 
 What is the vapor density at the interface?  $lim_{z \to 0^+} \rho(z)$
-
-Are these the same or not?
 ````
 
 **2. "Formal" definition of one-sided limits**
