@@ -1,61 +1,102 @@
 # Gauss–Jordan elimination
 
-Gauss(-Jordan) Elimination with Back Substitution
+To solve a system of linear equations like
 
 \begin{align}
-Solve 2x_1 + 5x_2 = 2 \to x_1 = 1/2(2-5x_2) = 6 \\
-13x_2 = -26 \to x_2 = -2   \underline{Back Substitution} \\
+2x_1 + 5x_2 &= 2\\
+13x_2 &= -26
 \end{align}
 
-\underline{Idea}: If we can bring systems so that one variable is isolated, we 
-can work backwards to solve the others! How do we do this?
+Note that the second equation is easily solved for $x_2 = -2$, which can be
+substituted in the first equation to give $x_1 = (2-5x_2)/2 = 6$. If we can
+bring systems so that one variable is isolated, we can work backwards to solve
+the others! How do we do this systematically for equations?
 
-Elementary operations: \begin{align} 
--Swap equations order
--Multiply one equation by a nonzero constant
--Add one equation to another
-\end{align}
-Two linear systems are \underline{row-equivalent} if one can be obtained from 
-another by elementary operations.
- *Row-equivalent linear systems have the \underline{same} set of solutions
+```{topic} Elementary operations
 
-Solve 
+1. Swap the order of equations
+2. Multiply one equation by a nonzero constant
+3. Add one equation to another
+```
+
+Because of 2 and 3, we can also add a multiple of one equation to another.
+
+```{topic} Row equivalency
+Two systems of linear equations are row equivalent if one can be obtained from
+another by elementary operations. Row-equivalent systems of linear equations
+have the same set of solutions.
+```
+
+For example, suppose we instead started with the equations
+
 \begin{align}
-2x_1 + 5x_2 = 2 \to 2x_1 + 5x_2 = 2 \\
--4x_1 + 3x_2 = -30 \to -4x_1 + 3x_2 = -30 \\
-+2(2x_1 + 5x_2 = 2) \to 13x_2 = -26 ✔️ \\
+2x_1 + 5x_2 &= 2 \\
+-4x_1 + 3x_2 &= -30
 \end{align}
 
-How do we do this systematically? Matrices!
-1. Form the "augmented" matrix 
-\begin{equation}
-\mathbf{A} = \begin{bmatrix} 2 & 5 \\ -4 & 3 \end{bmatrix} \qquad
-\mathbf{b} = \begin{bmatrix} 2 \\ -30 \end{bmatrix}
-\end{equation}
-2. Perform elementary operations on rows on "pivot" points in each row.
-The goal is to get a number in $a_11$, $a_22$, $a_33$, etc. and zeros \underline{below}
-in each column.
-\begin{equation}
-\begin{bmatrix} 2 & 5 & 2 \\ \box{-4} & 3 & -30 \end{bmatrix} \qquad
-\begin{bmatrix} 2 & 5 & 2 \\ 0 & 13 & -26 \end{bmatrix} + 2 Row 1
-\end{equation}
+Adding twice the first equation to the second equation gives $13 x_2 = -26$,
+from which we were able solve before!
 
-3. Check there are no rows of zeros with a nonzero last column. (False equation)
-If yes, \underline{no solution}.
+This process can be tedious, particularly when there are more variables and
+equations. Matrices provide a systematic approach to both performing elementary
+operations to isolate variables, as well as to carry out subsequent
+substitution. This entire procedure is called Gauss-Jordan elimination with
+backsubstitution.
 
-4. Work back up to turn pivots into 1 and get zeros \underline{above} in each
-column
-\begin{equation}
-\begin{bmatrix} 2 & \box{5} & 2 \\ 0 & 1 & -2 \end{bmatrix} Divide by 13 \to
-\begin{bmatrix} 2 & 0 & 12 \\ 0 & 1 & -2 \end{bmatrix} -5 Row 2 \to 
-\begin{bmatrix} 1 & 0 & 6 \\ 0 & 1 & -2 \end{bmatrix} Divide by 2
+1. Rewrite the equations as $\vv{A}\vv{x} = \vv{b}$ using a matrix and vectors
 
-5. The solution comes from reexpressing as \underline{\underline{A}} \underline{x} = \underline{b}
-\begin{equation}
-\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} \qquad
- \begin{bmatrix} $x_1$ \\ $x_2$ \end{bmatrix}
-= \begin{bmatrix} 6 \\ -2 \end{bmatrix} \to x_1 = 6 & x_2 = -2
-\end{equation}
+   \begin{equation}
+   \begin{bmatrix}2 5 \\ -4 3\end{bmatrix}
+   \begin{bmatrix}x_1 \\ x_2\end{bmatrix} =
+   \begin{bmatrix}2 \\ -30\end{bmatrix}
+   \end{equation}
+
+2. Form the "augmented" matrix $[\vv{A} \vv{b}]$
+
+   \begin{equation}
+   \mathbf{A} = \begin{bmatrix} 2 & 5 & 2\\ -4 & 3 & -30\end{bmatrix}
+   \end{equation}
+
+3. Perform elementary operations on rows to create "pivot" points in each row.
+   The goal is to get a number on the *diagonals* and zeros below. It is OK to
+   have a zero on the diagonal if there are no nonzero values underneath it.
+
+   \begin{equation}
+   \begin{bmatrix} 2 & 5 & 2 \\ -4 & 3 & -30 \end{bmatrix}
+   \begin{matrix}\vphantom{R_1} \\ +2 R_1 \end{matrix}
+   \to \begin{bmatrix} 2 & 5 & 2 \\ 0 & 13 & -26 \end{bmatrix}
+   \end{equation}
+
+   Here, we noted that we added twice Row 1 to Row 2 to eliminate the 4 under
+   the first pivot point 2.
+
+4. When you reach the bottom row, check there are no rows of zeros with a
+   nonzero last column. This would be equivalent to a false equation
+   (like $0=1$), meaning there is no solution and no further work is needed.
+
+5. Work back up to turn pivot points into ones and get zeros above in each
+   column
+
+   \begin{align}
+   \begin{bmatrix} 2 & 5 & 2 \\ 0 & 13 & -26 \end{bmatrix}
+   \begin{matrix}\vphantom{R_1} \\ \div 13 \end{matrix}
+   &\to \begin{bmatrix} 2 & 5 & 2 \\ 0 & 1 & -2 \end{bmatrix}
+   \begin{matrix}-5 R_2 \\ \vphantom{R_2}\end{matrix} \\
+   &\to \begin{bmatrix} 2 & 0 & 12 \\ 0 & 1 & -2 \end{bmatrix}
+   \begin{matrix}\div 2 \\ \vphantom{R_2}\end{matrix} \\
+   &\to \begin{bmatrix} 1 & 0 & 6 \\ 0 & 1 & -2 \end{bmatrix}
+   \end{align}
+
+6. The solution comes from reexpressing the augmented matrix as
+   $\vv{A} \vv{x} = \vv{b}$.
+
+   \begin{equation}
+   \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}
+   \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} =
+   \begin{bmatrix} 6 \\ -2 \end{bmatrix}
+   \end{equation}
+
+   Or, $x_1 = 6$ and $x_2 = -2$.
 
 ````{example} Pump circuit
 
