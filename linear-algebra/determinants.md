@@ -37,33 +37,38 @@ $$ A=\begin{bmatrix}a & b \\ c & d \end{bmatrix}$$
 
 
 
-$$ A=\begin{bmatrix}a & b \\ c & d \end{bmatrix}$$
+$$ A=\begin{bmatrix}a & b \\ c & d \end{bmatrix}= (-1)^{1+1)}*(1)* a* M_{11}+ (-1)^{1+2)}* (-1) b * M_{12}= ad-bc $$
 
-(-1)^(1+1)*(1)* a* M_{11}+ (-1)^(1+2)* (-1) b * M_{12}= **ad-bc**
 
 $$M_{11}:\begin{bmatrix} 0 & 0 \\ 0 & d \end{bmatrix} \to |d|=d$$
 $$M_{12}:\begin{bmatrix} 0 & 0 \\ c & 0 \end{bmatrix} \to |c|=c $$ 
 
 This is a useful formula to know! *Mneumonic*
 
-[a b, c d] - + =ad-bc
+$$ A=\begin{bmatrix}a & b  \ (-) \\ c  & d \ (+) \end{bmatrix}= ad-bc$$
 
 *~~Ab~~*
 *Ex:* *3x3* matrix , note that *i*=3 & *j*=3 
 $$ A=\begin{bmatrix}1 & 3 & 0 \\ 2 & 6 & 4 \\ -1 & 0 & 2 \end{bmatrix}$$
-$$ A=\begin{bmatrix}+ & - & + \\ - & + & - \\ + & - & + \end{bmatrix}$$
+$ A=\begin{bmatrix}+ & - & + \\ - & + & - \\ + & - & + \end{bmatrix}$
+
+
 (positive and negative signs form a checker board)
 
-$$ |A|= +(-1)*\begin{bmatrix} 3& 0 \\ 6 & 4 \end{bmatrix} -(0)*\begin{bmatrix}1 & 0 \\ 2 & 4 \end{bmatrix}+(2)*\begin{bmatrix}1 & 3 \\ 2 & 6 \end{bmatrix}=-((3*4)-(0*6))+2*((1*6)-(2*3))=-12$$
+
+$$ |A|= +(-1)*\begin{bmatrix} 3& 0 \\ 6 & 4 \end{bmatrix} -(0)*\begin{bmatrix}1 & 0 \\ 2 & 4 \end{bmatrix}+(2)*\begin{bmatrix}1 & 3 \\ 2 & 6 \end{bmatrix} \\ =-((3*4)-(0*6))+2*((1*6)-(2*3))=-12$$
 
 
 
 
-$$ |A|= +(0)*\begin{bmatrix}2 & 6 \\ -1 & 0 \end{bmatrix} -(4)*\begin{bmatrix}1 & 3 \\ -1 & 0 \end{bmatrix}+(2)*\begin{bmatrix}1 & 3 \\ 2 & 6 \end{bmatrix}=-4*(0+3)+2*(6-6)= -12$$
+$$ |A|= +(0)*\begin{bmatrix}2 & 6 \\ -1 & 0 \end{bmatrix} -(4)*\begin{bmatrix}1 & 3 \\ -1 & 0 \end{bmatrix}+(2)*\begin{bmatrix}1 & 3 \\ 2 & 6 \end{bmatrix} \\  =-4*(0+3)+2*(6-6)= -12$$
 
 
 Its usually a good idea to expand along the row or column with the most zeros!
-$ A=\begin{bmatrix}1 & -2 & 0 & 0 \\ 4 & 3 & 5 & 0 \\ 0 &2 & 7 & 5 \\ 0 & 0 & 2 & 0 \end{bmatrix}= (-2)\begin{bmatrix}1 & -2 & 0 \\ 4 & 3 & 0 \\ 0 &2 & 5 \end{bmatrix}=  (-2)(5)\begin{bmatrix}1 & -2 \\ 4 & 3 \end{bmatrix}=-10*(3+8)=-110$
+
+
+$ A=\begin{bmatrix}1 & -2 & 0 & 0 \\ 4 & 3 & 5 & 0 \\ 0 &2 & 7 & 5 \\ 0 & 0 & 2 & 0 \end{bmatrix}= (-2)\begin{bmatrix}1 & -2 & 0 \\ 4 & 3 & 0 \\ 0 &2 & 5 \end{bmatrix}=  (-2)(5)\begin{bmatrix}1 & -2 \\ 4 & 3 \end{bmatrix} \\
+=-10*(3+8)=-110$
 
 
 
