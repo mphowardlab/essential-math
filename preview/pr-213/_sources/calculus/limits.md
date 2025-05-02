@@ -19,7 +19,7 @@ Are these the same or not?
 
 **2. "Formal" definition of one-sided limits**
 
-If $f$ is defined on the interval $x_0 < x < b$ and $f(x)$ approaches arbitrarily close to $L$ as $x$ approaches $x_0$, then $f$ has a **right-hand limit** $L$ at $x_0$:
+If $f$ is defined on the interval $x_0 < x < b$ and $f(x)$ approaches arbitrarily close to $L$ as $x$ approaches $x_0$, then $f$ has a right-hand limit $L$ at $x_0$:
 
 \begin{align}
 lim_{x \to x_0^+} f(x) = L
@@ -27,13 +27,13 @@ lim_{x \to x_0^+} f(x) = L
 
 This limit can also be written in $\delta- \varepsilon$ form.
 
-The same can be done for the **left-hand limit** if $a < x < x_0$
+The same can be done for the left-hand limit if $a < x < x_0$
 
 \begin{align}
 lim_{x \to x_0^-} f(x) = L
 \end{align}
 
-The **two-sided limit** exists if and only if both one-sided limits exist and have the same value:
+The two-sided limit exists if and only if both one-sided limits exist and have the same value:
 \begin{align}
 lim_{x \to x_0} f(x) = L \textbf{ if } lim_{x \to x_0^+} f(x) = L \textbf{ and } lim_{x \to x_0^-} f(x) = L
 \end{align}
@@ -50,7 +50,7 @@ We find that the $lim_{x \to 0^+} f(x) = 1$
 
 We also find that the $lim_{x \to 0^-} f(x) = -1$
 
-Thus, the $lim_{x \to 0} f(x)$ **does not exist**.
+Thus, the $lim_{x \to 0} f(x)$ does not exist.
 ```
 
 **3. Taking One-Sided Limits**
@@ -91,6 +91,6 @@ Since the $lim_{x \to 1^-} f(x) = 0$ and the $lim_{x \to 1^+} f(x) = 1$, the $li
 
 The $lim_{x \to 2^-} f(x) = 1$ and the $lim_{x \to 2^+} f(x) = 1$, so the $lim_{x \to 2} f(x) = 1$.
 
-(even though $f(2) = 2$)
+                                                                           (even though $f(2) = 2$)
 ````
 
