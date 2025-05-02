@@ -202,3 +202,107 @@ Normalize Row 2 (divide by 10), then eliminate values above in Column 2:
 Turning back into an equivalent system of equations gives the final solution,
 $Q_1 = 2$, $Q_2 = 4$, and $Q_3 = 2$.
 ````
+
+## Skill builder problems
+
+1. Solve using Gauss-Jordan elimination
+
+   \begin{align}
+   5 x_1 - 2 x_2 &= 20.9 \\
+   -x_1 + 4x_2 &= -19.3
+   \end{align}
+
+   ```{solution}
+   Form the augmented matrix and perform row reduction:
+
+   \begin{align}
+   \begin{bmatrix} 5 & -2 & 20.9 \\ -1 & 4 & -19.3 \end{bmatrix}
+   \begin{matrix} {\rm swap} \\ \vphantom{R_2}\end{matrix}
+   &\to \begin{bmatrix} -1 & 4 & -19.3 \\ 5 & -2 & 20.9\end{bmatrix}
+   \begin{matrix} \times -1 \\ \vphantom{R_2}\end{matrix} \\
+   &\to \begin{bmatrix} 1 & -4 & 19.3 \\ 5 & -2 & 20.9\end{bmatrix}
+   \begin{matrix} \vphantom{R_1} \\ -5 R_1 \end{matrix} \\
+   &\to \begin{bmatrix} 1 & -4 & 19.3 \\ 0 & 18 & -75.6\end{bmatrix}
+   \begin{matrix} \vphantom{R_1} \\ \div 18 \end{matrix} \\
+   &\to \begin{bmatrix} 1 & -4 & 19.3 \\ 0 & 1 & -4.2\end{bmatrix}
+   \begin{matrix} +4 R_2 \\ \vphantom{R_2} \end{matrix} \\
+   &\to \begin{bmatrix} 1 & 0 & 2.5 \\ 0 & 1 & -4.2\end{bmatrix}
+   \end{align}
+
+   so $x_1 = 2.5$ and $x_2 = -4.2$.
+   ```
+
+2. Solve using Gauss-Jordan elimination
+
+   \begin{align}
+   x_1 + 4 x_2 = 8 \\
+   2 x_1 + 8 x_2 = 17
+   \end{align}
+
+   ```{solution}
+   \begin{align}
+   \begin{bmatrix} 1 & 4 & 8 \\ 2 & 8 & 17 \end{bmatrix}
+   \begin{matrix} \vphantom{R_1} \\ -2 R_1\end{matrix}
+   &\to \begin{bmatrix} 1 & 4 & 8 \\ 0 & 0 & 1\end{bmatrix}
+   \end{align}
+
+   The equations do not have a solution because the last row is false.
+   ```
+
+3. Solve using Gauss-Jordan elimination
+
+   \begin{align}
+   x_1 + x_2 + x_2 = 2 \\
+   4x_2 + 6 x_3 = -12 \\
+   x_1 + x_2 + x_3 = 2
+   \end{align}
+
+   ```{solution}
+   \begin{align}
+   \begin{bmatrix}
+   0 & 1 & 1 & -2 \\
+   0 & 4 & 6 & -12 \\
+   1 & 1 & 1 & 2
+   \end{bmatrix}
+   \begin{matrix}
+   \vphantom{R_1} \\ \rm shuffle \\ \vphantom{R_3}
+   \end{matrix}
+   &\to \begin{bmatrix}
+   1 & 1 & 1 & 2 \\
+   0 & 1 & 1 & -2 \\
+   0 & 4 & 6 & -12
+   \end{bmatrix}
+   \begin{matrix}
+   \vphantom{R_1} \\ \vphantom{R_2} \\ \ -4 R_2
+   \end{matrix} \\
+   &\to \begin{bmatrix}
+   1 & 1 & 1 & 2 \\
+   0 & 1 & 1 & -2 \\
+   0 & 0 & 2 & -4
+   \end{bmatrix}
+   \begin{matrix}
+   \vphantom{R_1} \\ \vphantom{R_2} \\ \div 2
+   \end{matrix} \\
+   &\to \begin{bmatrix}
+   1 & 1 & 1 & 2 \\
+   0 & 1 & 1 & -2 \\
+   0 & 0 & 1 & -2
+   \end{bmatrix}
+   \begin{matrix} -R_3 \\ -R_3 \\ \vphantom{R_3} \end{matrix} \\
+   &\to \begin{bmatrix}
+   1 & 1 & 0 & 4 \\
+   0 & 1 & 0 & 0 \\
+   0 & 0 & 1 & -2
+   \end{bmatrix}
+   \begin{matrix}
+   -R_2 \\ \vphantom{R_2} \\ \vphantom{R_3}
+   \end{matrix} \\
+   &\to \begin{bmatrix}
+   1 & 0 & 0 & 4 \\
+   0 & 1 & 0 & 0 \\
+   0 & 0 & 1 & -2
+   \end{bmatrix}
+   \end{align}
+
+   so $x_1 = 4$, $x_2 = 0$, and $x_3 = -2$.
+   ```
