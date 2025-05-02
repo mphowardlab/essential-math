@@ -5,8 +5,5 @@
 
 ## Table of contents
 
-
-
 ```{tableofcontents}
-- 51 - Homogenous Linear First-Order ODEs with Constant Coefficients
 ```
