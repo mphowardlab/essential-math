@@ -78,7 +78,7 @@ $$ |A|= +(0)*\begin{bmatrix}2 & 6 \\ -1 & 0 \end{bmatrix} -(4)*\begin{bmatrix}1 
 =-4*(0+3)+2*(6-6)= -12$$
 
 
-Its usually a good idea to expand along the row or column with the most zeros! For the 4*4 matrix *i*=4 and for the 3*3 matrix j=3.
+Its usually a good idea to expand along the row or column with the most zeros! For the 4 by 4 matrix *i*=4 and for the 3 by 3 matrix j=3.
 
 
 $ A=\begin{bmatrix}1 & -2 & 0 & 0 \\ 4 & 3 & 5 & 0 \\ 0 &2 & 7 & 5 \\ 0 & 0 & 2 & 0 \end{bmatrix}= (-2)\begin{bmatrix}1 & -2 & 0 \\ 4 & 3 & 0 \\ 0 &2 & 5 \end{bmatrix}=  (-2)(5)\begin{bmatrix}1 & -2 \\ 4 & 3 \end{bmatrix} \\
