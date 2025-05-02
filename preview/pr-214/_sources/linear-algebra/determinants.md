@@ -33,10 +33,9 @@ $$ -or- =\left( \sum_{i=1}^n A_{ij} C_{ij} \right)= \left( \sum_{i=1}^n \right) 
 
 
 *Ex:* Determinant of a *2 x 2* matrix *A* 
+
 $$  
-
-A=\begin{bmatrix}a & b \\ c & d \end{bmatrix}
-
+A=\begin{bmatrix}a & b \\ c & d \end{bmatrix} 
 $$
 
 
