@@ -32,6 +32,7 @@ u'(x) &= 1 \\
 f'(u) &= 2u \\
 f'(x) &= f'(u) \cdot u'(x) = 2(x - 1) \cdot 1 = 2x - 2
 \end{align}
+'''
 
 '''{example} Differentiate the Function
 Given: $f(x) = e^{x^2}$
@@ -43,6 +44,7 @@ u'(x) &= 2x \\
 f'(u) &= e^u \\
 f'(x) &= f'(u) \cdot u'(x) = e^{x^2} \cdot 2x
 \end{align}
+'''
 
 '''{example} Differentiate the Function
 Given: $f(x) = \ln(1 + 2x)$
@@ -54,6 +56,7 @@ u'(x) &= 2 \\
 f'(u) &= \frac{1}{u} \\
 f'(x) &= \frac{1}{1 + 2x} \cdot 2 = \frac{2}{1 + 2x}
 \end{align}
+'''
 
 '''{example} Differentiate the Function
 Given: $f(x) = \frac{2}{1 + 2x} = 2(1 + 2x)^{-1}$
@@ -65,3 +68,4 @@ u'(x) &= 2 \\
 f'(u) &= -2u^{-2} \\
 f'(x) &= -2(1 + 2x)^{-2} \cdot 2 = \frac{-4}{(1 + 2x)^2}
 \end{align}
+'''
