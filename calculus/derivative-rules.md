@@ -26,8 +26,8 @@ f'(x) = 2x - 2
 
 **Using the Chain Rule**:
 \begin{align}
-u(x) = x - 1  \quad  f(u) = u^2 \\
-u'(x) = 1  \quad  f'(u) = 2u \\
+u(x) = x - 1  \qquad  f(u) = u^2 \\
+u'(x) = 1  \qquad  f'(u) = 2u \\
 \end{align}
 
 \begin{align}
