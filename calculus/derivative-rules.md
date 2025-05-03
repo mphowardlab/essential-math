@@ -31,7 +31,7 @@ u'(x) = 1  \qquad  f'(u) = 2u \\
 \end{align}
 
 \begin{equation}
-f'(x) = f'(u) \cdot u'(x) = 2(x - 1) \cdot 1 = 2x - 2
+f'(x) = f'(u) \cdot u'(x) = 2u \cdot u'(x) = 2(x - 1) \cdot 1 = 2x - 2
 \end{equation}
 ```
 
@@ -44,7 +44,7 @@ u'(x) = 2x  \qquad  f'(u) = e^u \\
 \end{align}
 
 \begin{equation}
-f'(x) = f'(u) \cdot u'(x) = e^{x^2} \cdot 2x
+f'(x) = f'(u) \cdot u'(x) = e^{u} \cdot u'(x) = e^{x^2} \cdot 2x
 \end{equation}
 ```
 
@@ -57,7 +57,7 @@ u'(x) = 2  \qquad  f'(u) = \frac{1}{u} \\
 \end{align}
 
 \begin{equation}
-f'(x) = \frac{1}{1 + 2x} \cdot 2 = \frac{2}{1 + 2x}
+f'(x) = \frac{1}{u} \cdot u'(x) = \frac{1}{1 + 2x} \cdot 2 = \frac{2}{1 + 2x}
 \end{equation}
 ```
 
@@ -70,6 +70,6 @@ u'(x) = 2  \qquad  f'(u) = -2u^{-2} \\
 \end{align}
 
 \begin{equation}
-f'(x) = -2(1 + 2x)^{-2} \cdot 2 = \frac{-4}{(1 + 2x)^2}
+f'(x) = -2u^{-2} \cdot u'(x) = -2(1 + 2x)^{-2} \cdot 2 = \frac{-4}{(1 + 2x)^2}
 \end{equation}
 ```
