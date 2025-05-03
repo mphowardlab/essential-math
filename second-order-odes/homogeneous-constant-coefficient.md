@@ -117,7 +117,7 @@ y = 3 e^{-2x} + e^x
 \end{equation}
 
 ---
-The following example uses complex roots. Follow the similar procedure as the example above.
+The following example uses complex roots. Follow a similar procedure as the example above.
 
 \begin{align}
 y'' + 0.4y' + 9.04y = 0 \quad y(0)=0 \quad y'(0)=3
@@ -132,19 +132,25 @@ Write and solve the characteristic polynomial,
 Once values of $\lambda$ are known, write out the general solution and its first derivative.
 
 \begin{align}
-y = e^{-0.2x}(c_1\cos3x + c_2\sin3x) \qaud 0=y(0)=c_1 \\
+y = e^{-0.2x}(c_1\cos3x + c_2\sin3x) \\
+0=y(0)=c_1 \\
 y' = e^{-0.2x}(3c_2\cos3x) - 0.2e^{-0.2x}c_2\sin3x 
 \end{align}
 
 Apply the initial conditions:
 
 \begin{align}
-3=y'(0) = 3c_2 \to c_2 =1 \\
+3=y'(0) = 3c_2 
+\end{align}
+
+Since is $c_2=1$, the final solution is:
+
+\begin{align}
 y = e^{-0.2x}\sin3x 
 \end{align}
 
 ---
-The next example contains real and repeated roots. To solve the system of equations, start by writing the characterisitc polynomial,
+The next example contains real and repeated roots. To solve, start by writing the characterisitc polynomial,
 
 \begin{align}
 y'' + y' + \frac{1}{4}y=0 \quad y(0)=3 \quad y'(0)= -\frac{7}{2}
@@ -160,7 +166,7 @@ Solve for $\lambda$ by factoring:
  (\lambda + \frac{1}{2})^2 = 0 \to \lambda=-\frac{1}{2} 
 \end{align}
 
-Since $\lambda$ is a real, repeated root, write out the general equation,
+Since $\lambda$ is real and a repeated root, write out the general equation and its derivative,
 
 \begin{align}
 y=(c_1 + c_2x)e^{-\frac{x}{2}} \quad 3=y(0)=c_1 \\
