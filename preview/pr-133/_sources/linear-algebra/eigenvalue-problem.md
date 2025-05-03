@@ -1,5 +1,7 @@
 # Eigenvalue problem
 2. Multiple Eigenvalues
+
+\begin{align}
    
    An nxn matrix has n eigenvalues, but they may not be distinct!
 
@@ -236,3 +238,5 @@ $$
 
 - If $\vv{A}$ is symmetric ( $\vv{A}^T = \vv{A}$ ), its eigenvalues are real.
 - If $\vv{A}$ is skew-symmetric ( $\vv{A}^T = \vv{-A}$ ), its eigenvalues are pure imaginary.
+
+\end{align}
