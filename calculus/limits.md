@@ -17,9 +17,10 @@ Continuous Function:
 \lim_{x \to c} f(x) = f(c)
 \end{equation}
 
-This is applicable if f is "continuous" at x (no jumps or holes).
+    This is applicable if f is "continuous" at x (no jumps or holes).
+```
 
-If $\lim_{x \to c} f(x) = L$ and $\lim_{x \to c} g(x) = M$ , then
+```{topic} If $\lim_{x \to c} f(x) = L$ and $\lim_{x \to c} g(x) = M$ , then
 
 Sum:
 \begin{equation}
@@ -41,14 +42,14 @@ Quotient:
 \lim_{x \to c} \frac{f(x)}{g(x)} = \frac{L}{M}
 \end{equation}
 
-If $M \neq 0$
+    This is applicable if $M \neq 0$.
 
 Power:
 \begin{equation}
 \lim_{x \to c} f(x)^{\frac{r}{s}} = L^{\frac{r}{s}}
 \end{equation}
 
-'r' and 's' are integers, $s \neq 0$, and L>0 if s is even
+    'r' and 's' are integers, $s \neq 0$, and $L > 0$ if s is even
 ```
 
 **Taking Limits**
@@ -69,7 +70,7 @@ This works even if they are complicated
 &= \sqrt{5}
 \end{align}
 
-Limits are most useful when functions have "holes" (not definited at $$x_{\text{0}}$$)
+Limits are most useful when functions have "holes" (not definited at $x_{\text{0}}$)
 
 \begin{align}
 \lim_{x \to 1} \frac{x^2 + x -2}{x^2 - x} &= \lim_{x \to 1} \frac{(x+2)(x+1)}{x(x+1)} \\
@@ -77,7 +78,7 @@ Limits are most useful when functions have "holes" (not definited at $$x_{\text{
 &= 3
 \end{align}
 
-If we evaluate $\lim_{x \to 1} \frac{x^2 + x -2}{x^2 - x}$ we get $\frac{0}{0}$. To remove this hole, we can simplify the equation by <u>factoring</u>.
+*Evaluating $\lim_{x \to 1} \frac{x^2 + x -2}{x^2 - x}$ gives $\frac{0}{0}$. To remove this hole, we can simplify the equation by <u>factoring</u>.*
 
 This works even if the factors are "ugly"
 
@@ -89,7 +90,9 @@ This works even if the factors are "ugly"
 &= 16
 \end{align}
 
-$\lim_{x \to 4} \frac{4x - x^2}{2 - \sqrt{x}} = \frac{0}{0}$ so we factor and use difference of squares to remove the hole.
+*$\lim_{x \to 4} \frac{4x - x^2}{2 - \sqrt{x}} = \frac{0}{0}$ so we <u>factor</u> and use <u>difference of squares</u> to remove the hole.*
+
+Recall: difference of squares \rightarrow $a^2 - b^2 = (a + b)(a - b)$
 
 Another useful trick is to multiply by a factor of "1" that makes a difference of squares (multiple by $\frac{reciprocal}{reciprocal}$)
 
