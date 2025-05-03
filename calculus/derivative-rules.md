@@ -39,7 +39,7 @@ f'(x) = f'(u) \cdot u'(x) = 2(x - 1) \cdot 1 = 2x - 2
 Given: $f(x) = e^{x^2}$
 
 \begin{align}
-u = x^2  \qquad  f(u) = e^u \\
+u(x) = x^2  \qquad  f(u) = e^u \\
 u'(x) = 2x  \qquad  f'(u) = e^u \\
 \end{align}
 
@@ -52,7 +52,7 @@ f'(x) = f'(u) \cdot u'(x) = e^{x^2} \cdot 2x
 Given: $f(x) = \ln(1 + 2x)$
 
 \begin{align}
-u = 1 + 2x  \qquad  f(u) = \ln u \\
+u(x) = 1 + 2x  \qquad  f(u) = \ln u \\
 u'(x) = 2  \qquad  f'(u) = \frac{1}{u} \\
 \end{align}
 
@@ -65,7 +65,7 @@ f'(x) = \frac{1}{1 + 2x} \cdot 2 = \frac{2}{1 + 2x}
 Given: $f(x) = \frac{2}{1 + 2x} = 2(1 + 2x)^{-1}$
 
 \begin{align}
-u = 1 + 2x  \qquad  f(u) = 2u^{-1} \\
+u(x) = 1 + 2x  \qquad  f(u) = 2u^{-1} \\
 u'(x) = 2  \qquad  f'(u) = -2u^{-2} \\
 \end{align}
 
