@@ -1,54 +1,55 @@
 # Limits
-    **Limit Laws**
 
-    Constant:
-    \begin{equation}
-    \lim_{x \to c} k = k
-    \end{equation}
+```{topic} Limit Laws
 
-    Identity:
-    \begin{equation}
-    \lim_{x \to c} x = c
-    \end{equation}
+Constant:
+\begin{equation}
+\lim_{x \to c} k = k
+\end{equation}
 
-    Continuous Function:
-    \begin{equation}
-    \lim_{x \to c} f(x) = f(c)
-    \end{equation}
+Identity:
+\begin{equation}
+\lim_{x \to c} x = c
+\end{equation}
 
-        This is applicable if f is "continuous" at x (no jumps or holes).
+Continuous Function:
+\begin{equation}
+\lim_{x \to c} f(x) = f(c)
+\end{equation}
 
-    If $\lim_{x \to c} f(x) = L$ and $\lim_{x \to c} g(x) = M$ , then
+This is applicable if f is "continuous" at x (no jumps or holes).
 
-    Sum:
-    \begin{equation}
-    \lim_{x \to c} f(x) + g(x) = L + M
-    \end{equation}
+If $\lim_{x \to c} f(x) = L$ and $\lim_{x \to c} g(x) = M$ , then
 
-    Difference:
-    \begin{equation}
-    \lim_{x \to c} f(x) - g(x) = L - M
-    \end{equation}
+Sum:
+\begin{equation}
+\lim_{x \to c} f(x) + g(x) = L + M
+\end{equation}
 
-    Product:
-    \begin{equation}
-    \lim_{x \to c} f(x)g(x) = LM
-    \end{equation}
+Difference:
+\begin{equation}
+\lim_{x \to c} f(x) - g(x) = L - M
+\end{equation}
 
-    Quotient:
-    \begin{equation}
-    \lim_{x \to c} \frac{f(x)}{g(x)} = \frac{L}{M}
-    \end{equation}
+Product:
+\begin{equation}
+\lim_{x \to c} f(x)g(x) = LM
+\end{equation}
 
-    If $M \neq 0$
+Quotient:
+\begin{equation}
+\lim_{x \to c} \frac{f(x)}{g(x)} = \frac{L}{M}
+\end{equation}
 
-    Power:
-    \begin{equation}
-    \lim_{x \to c} f(x)^{\frac{r}{s}} = L^{\frac{r}{s}}
-    \end{equation}
+If $M \neq 0$
 
-    'r' and 's' are integers, $s \neq 0$, and L>0 if s is even
+Power:
+\begin{equation}
+\lim_{x \to c} f(x)^{\frac{r}{s}} = L^{\frac{r}{s}}
+\end{equation}
 
+'r' and 's' are integers, $s \neq 0$, and L>0 if s is even
+```
 
 **Taking Limits**
 
@@ -93,7 +94,7 @@ $\lim_{x \to 4} \frac{4x - x^2}{2 - \sqrt{x}} = \frac{0}{0}$ so we factor and us
 Another useful trick is to multiply by a factor of "1" that makes a difference of squares (multiple by $\frac{reciprocal}{reciprocal}$)
 
 \begin{align}
-\lim_{x \to 0} \frac{\sqrt{3x + 1} - 1}{x} $= \lim_{x \to 0} \frac{(\sqrt{3x + 1} - 1)(\sqrt{3x + 1} + 1)}{x(\sqrt{3x + 1} + 1)} \\
+\lim_{x \to 0} \frac{\sqrt{3x + 1} - 1}{x} &= \lim_{x \to 0} \frac{(\sqrt{3x + 1} - 1)(\sqrt{3x + 1} + 1)}{x(\sqrt{3x + 1} + 1)} \\
 &= \lim_{x \to 0} \frac{(\sqrt{3x + 1})^2 - (1)^2}{x(\sqrt{3x + 1} + 1)} \\
 &= \lim_{x \to 0} \frac{3x + 1 - 1}{x(\sqrt{3x + 1} + 1)} \\
 &= \lim_{x \to 0} \frac{3}{\sqrt{3x + 1} + 1} \\
