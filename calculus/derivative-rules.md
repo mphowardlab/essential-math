@@ -20,23 +20,23 @@ Given: $f(x) = (x - 1)^2$
 
 **Old method**: Expand the function before differentiating.
 \begin{align}
-f(x) &= x^2 - 2x + 1 \\
-f'(x) &= 2x - 2
+f(x) = x^2 - 2x + 1 \\
+f'(x) = 2x - 2
 \end{align}
 
 **Using the Chain Rule**:
 \begin{align}
-u &= x - 1 \\
-u'(x) &= 1 \\
+u = x - 1 \\
+u'(x) = 1 \\
 \end{align}
 
 \begin{align}
-f(u) &= u^2 \\
-f'(u) &= 2u \\
+f(u) = u^2 \\
+f'(u) = 2u \\
 \end{align}
 
 \begin{equation}
-f'(x) &= f'(u) \cdot u'(x) = 2(x - 1) \cdot 1 = 2x - 2
+f'(x) = f'(u) \cdot u'(x) = 2(x - 1) \cdot 1 = 2x - 2
 \end{equation}
 ```
 
@@ -44,11 +44,11 @@ f'(x) &= f'(u) \cdot u'(x) = 2(x - 1) \cdot 1 = 2x - 2
 Given: $f(x) = e^{x^2}$
 
 \begin{align}
-u &= x^2 \\
-f(u) &= e^u \\
-u'(x) &= 2x \\
-f'(u) &= e^u \\
-f'(x) &= f'(u) \cdot u'(x) = e^{x^2} \cdot 2x
+u = x^2 \\
+f(u) = e^u \\
+u'(x) = 2x \\
+f'(u) = e^u \\
+f'(x) = f'(u) \cdot u'(x) = e^{x^2} \cdot 2x
 \end{align}
 ```
 
@@ -56,11 +56,11 @@ f'(x) &= f'(u) \cdot u'(x) = e^{x^2} \cdot 2x
 Given: $f(x) = \ln(1 + 2x)$
 
 \begin{align}
-u &= 1 + 2x \\
-f(u) &= \ln u \\
-u'(x) &= 2 \\
-f'(u) &= \frac{1}{u} \\
-f'(x) &= \frac{1}{1 + 2x} \cdot 2 = \frac{2}{1 + 2x}
+u = 1 + 2x \\
+f(u) = \ln u \\
+u'(x) = 2 \\
+f'(u) = \frac{1}{u} \\
+f'(x) = \frac{1}{1 + 2x} \cdot 2 = \frac{2}{1 + 2x}
 \end{align}
 ```
 
@@ -68,10 +68,10 @@ f'(x) &= \frac{1}{1 + 2x} \cdot 2 = \frac{2}{1 + 2x}
 Given: $f(x) = \frac{2}{1 + 2x} = 2(1 + 2x)^{-1}$
 
 \begin{align}
-u &= 1 + 2x \\
-f(u) &= 2u^{-1} \\
-u'(x) &= 2 \\
-f'(u) &= -2u^{-2} \\
-f'(x) &= -2(1 + 2x)^{-2} \cdot 2 = \frac{-4}{(1 + 2x)^2}
+u = 1 + 2x \\
+f(u) = 2u^{-1} \\
+u'(x) = 2 \\
+f'(u) = -2u^{-2} \\
+f'(x) = -2(1 + 2x)^{-2} \cdot 2 = \frac{-4}{(1 + 2x)^2}
 \end{align}
 ```
