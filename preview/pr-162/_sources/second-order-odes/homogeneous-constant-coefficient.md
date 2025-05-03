@@ -1,6 +1,6 @@
 # Homogeneous linear second-order ODEs with constant coefficients
 
-Equations of the form
+Equations of the form:
 
 \begin{equation}
 y'' + ay' + by = 0
