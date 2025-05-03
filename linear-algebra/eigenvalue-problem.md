@@ -13,15 +13,13 @@ $$
 $$
 
 $$
-| \vv{A} - \lambda  \vv{I}| =
+|\vv{A} - \lambda  \vv{I}| =
 \begin{vmatrix}
 -2-\lambda & 2 & -3 \\
 2 & 1-\lambda & -6 \\
 -1 & -2 & -\lambda
-\end{vmatrix}
+\end{vmatrix} =
 $$ 
-
-=
  
 $$
 -1
@@ -46,7 +44,6 @@ $$
 2 & 1-\lambda 
 \end{vmatrix}
 $$
-
 
 $= -[-12+3(1-\lambda)]+2[6(2+\lambda)+6]-\lambda[(\lambda+2)(\lambda-1)-4]$
 
