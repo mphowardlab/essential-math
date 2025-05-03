@@ -118,9 +118,9 @@ y = 3 e^{-2x} + e^x
 ---
 The following example uses complex roots. Follow a similar procedure as the example shown above.
 
-\begin{align}
-y'' + 0.4y' + 9.04y = 0 \quad y(0)=0 \quad y'(0)=3
-\end{align}
+\begin{equation}
+y'' + 0.4y' + 9.04y = 0, \quad y(0)=0, \quad y'(0)=3
+\end{equation}
 
 Write and solve the characteristic polynomial,
 
@@ -131,17 +131,17 @@ Write and solve the characteristic polynomial,
 Once values of $\lambda$ are known, write out the general solution and plug in the first initial condition to solve for $c_1$.
 
 \begin{align}
-y = e^{-0.2x}(c_1\cos3x + c_2\sin3x) \\
-y(0) = 1(c_1 + 0) \\
-c_1 = 0
+y &= e^{-0.2x}(c_1\cos3x + c_2\sin3x) \\
+y(0) &= 1(c_1 + 0) \\
+c_1 &= 0
 \end{align}
 
 In order to solve for $c_2$, write out the derivative and plug in the second condition:
 
 \begin{align}
-y' = e^{-0.2x}(3c_2\cos3x) - 0.2e^{-0.2x}c_2\sin3x \\
-y'(0) = 3 = 3c_2 \\
-c_2 = 1
+y' &= e^{-0.2x}(3c_2\cos3x) - 0.2e^{-0.2x}c_2\sin3x \\
+y'(0) &= 3 = 3c_2 \\
+c_2 &= 1
 \end{align}
 
 Since is $c_2=1$, the final solution is:
@@ -154,7 +154,7 @@ y = e^{-0.2x}\sin3x
 The next example contains real and repeated roots. To solve, start by writing the characterisitc polynomial,
 
 \begin{align}
-y'' + y' + \frac{1}{4}y=0 \quad y(0)=3 \quad y'(0)= -\frac{7}{2}
+y'' + y' + \frac{1}{4}y=0, \quad y(0)=3, \quad y'(0)= -\frac{7}{2}
 \end{align}
 
 \begin{align}
@@ -164,22 +164,22 @@ y'' + y' + \frac{1}{4}y=0 \quad y(0)=3 \quad y'(0)= -\frac{7}{2}
 Solve for $\lambda$ by factoring:
 
 \begin{align}
- (\lambda + \frac{1}{2})^2 = 0 \to \lambda=-\frac{1}{2} 
+(\lambda + \frac{1}{2})^2 = 0 \to \lambda=-\frac{1}{2} 
 \end{align}
 
 Since $\lambda$ is a real and repeated root, write out the general equation and its derivative,
 
 \begin{align}
-y=(c_1 + c_2x)e^{-\frac{x}{2}} \\
-y'=(c_1 + c_2x)(-\frac{1}{2}e^{-\frac{x}{2}}) + c_2 e^{-\frac{x}{2}}
+y &=(c_1 + c_2x)e^{-\frac{x}{2}} \\
+y' &=(c_1 + c_2x)(-\frac{1}{2}e^{-\frac{x}{2}}) + c_2 e^{-\frac{x}{2}}
 \end{align}
 
 Use the given conditions to solve for $c_1$ and $c_2$:
 
 \begin{align}
-y(0) = c_1 = 3 \\
--\frac{7}{2}=y'(0)= -\frac{c_1}{2} + c_2 \\
-c_2 = -2 
+y(0) &= c_1 = 3 \\
+y'(0) &= -\frac{c_1}{2} + c_2 = -\frac{7}{2} \\
+c_2 &= -2 
 \end{align}
 
 The final solution is:
