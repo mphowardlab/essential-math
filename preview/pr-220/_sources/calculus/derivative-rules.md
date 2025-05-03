@@ -1,5 +1,5 @@
 # Product, quotient, and chain rule
-# Chain Rule
+## Chain Rule
 
 The chain rule is used to differentiate composite functions, when the "inside" of the function is more complicated than what we know. 
 
