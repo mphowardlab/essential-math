@@ -360,7 +360,8 @@ This is your answer!
 We can use these rules to manipulate **thermodynamic derivatives**.
 
 ```{example} Thermodynamics Example
-Expressing \( \left( \frac{\partial S}{\partial T} \right)_V \)
+Expressing
+\begin{equation} \left( \frac{\partial S}{\partial T} \right)_V \end{equation}
 
 Given:
 
