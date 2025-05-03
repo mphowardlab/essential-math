@@ -27,11 +27,17 @@ f'(x) &= 2x - 2
 **Using the Chain Rule**:
 \begin{align}
 u &= x - 1 \\
-f(u) &= u^2 \\
 u'(x) &= 1 \\
-f'(u) &= 2u \\
-f'(x) &= f'(u) \cdot u'(x) = 2(x - 1) \cdot 1 = 2x - 2
 \end{align}
+
+\begin{align}
+f(u) &= u^2 \\
+f'(u) &= 2u \\
+\end{align}
+
+\begin{equation}
+f'(x) &= f'(u) \cdot u'(x) = 2(x - 1) \cdot 1 = 2x - 2
+\end{equation}
 '''
 
 '''{example} Differentiate the Function
