@@ -362,10 +362,10 @@ We can use these rules to manipulate **thermodynamic derivatives**.
 ```{example} Thermodynamics Example
 Expressing   
 \begin{equation} \left( \frac{\partial S}{\partial T} \right)_V \end{equation} 
-using 
+Using 
 \begin{equation} Cv = \left( \frac{\partial U}{\partial T} \right)_V \end{equation} 
 
-Given that:
+Given that
 
 \begin{equation}
 dU = TdS - PdV
