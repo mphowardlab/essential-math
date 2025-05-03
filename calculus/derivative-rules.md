@@ -15,7 +15,7 @@ If $y = f(u)$ and $u = g(x)$, then:
 f'(x)= \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} = f'(u) \cdot u'(x)
 \end{equation}
 
-'''{example} Differentiate the Function
+```{example} Differentiate the Function
 Given: $f(x) = (x - 1)^2$
 
 **Old method**: Expand the function before differentiating.
@@ -38,9 +38,9 @@ f'(u) &= 2u \\
 \begin{equation}
 f'(x) &= f'(u) \cdot u'(x) = 2(x - 1) \cdot 1 = 2x - 2
 \end{equation}
-'''
+```
 
-'''{example} Differentiate the Function
+```{example} Differentiate the Function
 Given: $f(x) = e^{x^2}$
 
 \begin{align}
@@ -50,9 +50,9 @@ u'(x) &= 2x \\
 f'(u) &= e^u \\
 f'(x) &= f'(u) \cdot u'(x) = e^{x^2} \cdot 2x
 \end{align}
-'''
+```
 
-'''{example} Differentiate the Function
+```{example} Differentiate the Function
 Given: $f(x) = \ln(1 + 2x)$
 
 \begin{align}
@@ -62,9 +62,9 @@ u'(x) &= 2 \\
 f'(u) &= \frac{1}{u} \\
 f'(x) &= \frac{1}{1 + 2x} \cdot 2 = \frac{2}{1 + 2x}
 \end{align}
-'''
+```
 
-'''{example} Differentiate the Function
+```{example} Differentiate the Function
 Given: $f(x) = \frac{2}{1 + 2x} = 2(1 + 2x)^{-1}$
 
 \begin{align}
@@ -74,4 +74,4 @@ u'(x) &= 2 \\
 f'(u) &= -2u^{-2} \\
 f'(x) &= -2(1 + 2x)^{-2} \cdot 2 = \frac{-4}{(1 + 2x)^2}
 \end{align}
-'''
+```
