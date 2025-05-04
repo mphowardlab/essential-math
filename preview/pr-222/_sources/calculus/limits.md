@@ -20,4 +20,4 @@ Hence,
 lim_{x \rightlongarrow 4} = 4
 \end{equation}
 
-Such a 8 cannot always be found for all ε for certain functions! There, the limit does not exis
+Such a 8 cannot always be found for all ε for certain functions! There, the limit does not exist. 
