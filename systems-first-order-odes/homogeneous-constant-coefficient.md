@@ -287,7 +287,9 @@ type of critical point using the eigenvalues.
    and the real part is positive.
    ```
 
-$C. \textstyle \begin{bmatrix} 0 & 4 \\ -4 & 0 \end{bmatrix}; IC = \textstyle \begin{bmatrix} 1 \\ 0 \end{bmatrix}$
+3. Solve:
+
+$$\textstyle \begin{bmatrix} 0 & 4 \\ -4 & 0 \end{bmatrix}$$
 
 
 
