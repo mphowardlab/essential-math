@@ -79,7 +79,7 @@ y = c_{1}x^{-1}\cos(x) + c_{2}x^{-1}\sin(x)
 (b) $(1-x^2)y'' - 2xy' + 2y = 0$
 
 By inspection $y_{1} = x$ is a solution because $y_{1}' = 1$ and $y_{1}'' = 0$.
- So, find $y_{2}$.
+So, find $y_{2}$.
 
 ```{solution}
 \begin{align}
