@@ -289,7 +289,7 @@ type of critical point using the eigenvalues.
 
 3. Solve:
 
-$$ A = \textstyle \begin{bmatrix} 0 & 4 \\ -4 & 0 \end{bmatrix}$$
+$$ \textbf{A} = \textstyle \begin{bmatrix} 0 & 4 \\ -4 & 0 \end{bmatrix}$$
 
 
 
