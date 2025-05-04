@@ -19,5 +19,3 @@ Hence,
 \begin{equation}
 lim_{x \RightArrow {4}} = 4
 \end{equation}
-
-hello
