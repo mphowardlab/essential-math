@@ -46,6 +46,7 @@ This work (c) 2025 is licensed under
 - Madelyn Torrance
 - Debora Vasconcelos
 - Morgan Wootton
+- Jack Raynor
 
 ## Attributions
 
