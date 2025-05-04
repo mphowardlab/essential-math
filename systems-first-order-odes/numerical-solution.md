@@ -1,5 +1,5 @@
 # Numerical solution methods
-Determine y_1(5) and y_2(5) for 
+Determine $y_1(5)$ and $y_2(5)$ for 
 
 \begin{equation}
 y'_1 = \frac{2}{3} y_1 - \frac{4}{3} y_1 y_2 \hspace{1cm} y(0) = 1.5
