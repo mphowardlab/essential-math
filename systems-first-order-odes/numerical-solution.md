@@ -34,5 +34,4 @@ y_1(5) = 0.464 \hspace{1cm} y_2(5) = 0.032
 \end{equation}
 
 MATLAB(see attached) gives $y_1(5) = 0.888$ and $y_2(5) = 0.165$.
-
-Hence, the absolute errors are 0.424 and 0.133 for y_1 and y_2 respectively.
+Hence, the absolute errors are 0.424 and 0.133 for $y_1$ and $y_2$ respectively.
