@@ -80,5 +80,5 @@ Common log:
 \ln(bx) = \ln(b) + ln(x) \\
 \ln(\frac{b}{x}) = ln(b) - ln(x) \\
 \ln(x) = r \ln(x) \\
-\log_{a}x = frac{ln(x)}{ln(a)} \\
+\log_{a}x = \frac{ln(x)}{ln(a)} \\
 \end{align}
