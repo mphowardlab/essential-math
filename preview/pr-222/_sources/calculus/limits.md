@@ -2,7 +2,7 @@
 **Formal Defitinition**
 
 \begin{equation}
-lim_{x \RightArrow x_{0}} = f(x) = l
+lim_{x \rightlongarrow x_{0}} = f(x) = l
 \end{equation}
 if for every ε > 0 there exists δ > 0 such that for all x, if 0 < |x-x₀| < δ the |f(x)-L| < ε.
 ~ ε is a "tolerance" -> how close does f need to be to L?
@@ -17,5 +17,7 @@ put image here
 
 Hence, 
 \begin{equation}
-lim_{x \RightArrow {4}} = 4
+lim_{x \rightlongarrow {4}} = 4
 \end{equation}
+
+Such a 8 cannot always be found for all ε for certain functions! There, the limit does not exis
