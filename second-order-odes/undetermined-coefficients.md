@@ -1,4 +1,4 @@
-# Undetermined Coefficients
+# Undetermined coefficients
 
 ### Skill Builder - Method of Undetermined Coefficients 
 
