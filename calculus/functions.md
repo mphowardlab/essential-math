@@ -49,10 +49,7 @@ Take the angle of $\theta$ relative to the x-axis, then apply the sign based on 
 Example: $\theta = 185^{\circ}$
 ![fishy](./images/Untitled-4.jpg)
 
-The graph shows $\theta = \frac{3\pi}{4}$ 
-and 
-$\theta' = \frac{\pi}{4}$ I
-$\therefore$
+The graph shows $\theta = \frac{3\pi}{4}$ and $\theta' = \frac{\pi}{4}$ so:
 \begin{align}
 \sin(\theta')& = \frac{1}{\sqrt{2}}&
 \cos(\theta')& = \frac{1}{\sqrt{2}}
