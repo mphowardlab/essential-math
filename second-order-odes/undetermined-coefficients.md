@@ -83,9 +83,9 @@ $$
 2k_2 - k_3 - 12k_4 = \frac{25}{2} \quad \Rightarrow \quad 12k_4 = 2(-3) - ('\frac{13}{2}) - \frac{25}{2} = 0 \quad \Rightarrow \quad k_4 = 0
   $$
 
-  $$
-**y_p = -12x_3 + 3x^2 - \frac{13}{2}x**
-  $$
+\begin{equation}
+y_p = -12x_3 + 3x^2 - \frac{13}{2}x
+\end{equation}
   
 ---
 
