@@ -1,0 +1,786 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>5.3. Exact differential equations &#8212; Essential Mathematics for Chemical Engineers</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"d": ["{\\operatorname{d}\\!{#1}}", 1], "dd": ["{\\d{}^{#1} #2 \\over \\d{#3}^{#1}}", 3], "pp": ["{\\partial^{#1} #2 \\over \\partial #3^{#1}}", 3], "td": ["{\\left(\\pp{#1}{#2}{#3} \\right)_{#4}}", 4], "ubar": ["\\underline{#1}", 1], "vv": ["\\mathbf{#1}", 1]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'first-order-odes/exact';</script>
+    <link rel="canonical" href="https://mphowardlab.github.io/essential-math/first-order-odes/exact.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5.4. Linearity" href="linearity.html" />
+    <link rel="prev" title="5.2. Separable differential equations" href="separable.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Essential Mathematics for Chemical Engineers</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../calculus/index.html">1. Calculus</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/functions.html">1.1. Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/limits.html">1.2. Limits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/derivatives.html">1.3. Derivatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/derivative-rules.html">1.4. Product, quotient, and chain rule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/series-expansion.html">1.5. Series expansion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/integration.html">1.6. Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/integration-substitution.html">1.7. Integration using substitution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/integration-by-parts.html">1.8. Integration by parts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/integration-partial-fractions.html">1.9. Partial fraction decomposition</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../multivariable-calculus/index.html">2. Multivariable calculus</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../multivariable-calculus/derivatives.html">2.1. Derivatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multivariable-calculus/total-differential.html">2.2. Total differential</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multivariable-calculus/manipulating-derivatives.html">2.3. Manipulating partial derivatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multivariable-calculus/series-expansion.html">2.4. Series expansion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multivariable-calculus/integration.html">2.5. Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multivariable-calculus/line-integral.html">2.6. Line integral</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../linear-algebra/index.html">3. Linear algebra</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../linear-algebra/matrices.html">3.1. Matrices and vectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linear-algebra/linear-systems.html">3.2. Systems of linear equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linear-algebra/gauss-jordan.html">3.3. Gauss–Jordan elimination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linear-algebra/determinants.html">3.4. Determinants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linear-algebra/inverses.html">3.5. Matrix inversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linear-algebra/eigenvalue-problem.html">3.6. Eigenvalue problem</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../nonlinear-equations/index.html">4. Nonlinear equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../nonlinear-equations/quadratic-cubic.html">4.1. Quadratic and cubic polynomials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nonlinear-equations/root-finding.html">4.2. Root finding methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nonlinear-equations/linearization.html">4.3. Linearization</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">5. First-order ordinary differential equations</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="definition.html">5.1. Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="separable.html">5.2. Separable differential equations</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">5.3. Exact differential equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linearity.html">5.4. Linearity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="undetermined-coefficients.html">5.5. Undetermined coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="laplace-transform.html">5.6. Laplace transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="integrating-factor.html">5.7. Integrating factor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numerical-solution.html">5.8. Numerical solution methods</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../systems-first-order-odes/index.html">6. Systems of first-order ordinary differential equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/definition.html">6.1. Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/linearity.html">6.2. Linearity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/homogeneous-constant-coefficient.html">6.3. Homogeneous linear first-order ODEs with constant coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/numerical-solution.html">6.4. Numerical solution methods</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../second-order-odes/index.html">7. Second-order ordinary differential equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/reduction.html">7.1. Reduction of order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/linearity.html">7.2. Linearity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/homogeneous-constant-coefficient.html">7.3. Homogeneous linear second-order ODEs with constant coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/undetermined-coefficients.html">7.4. Undetermined coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/variation-of-parameters.html">7.5. Variation of parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/numerical-solution.html">7.6. Numerical solution methods</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../credits.html">8. Credits</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/mphowardlab/essential-math" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/mphowardlab/essential-math/issues/new?title=Issue%20on%20page%20%2Ffirst-order-odes/exact.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/first-order-odes/exact.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Exact differential equations</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill-builder-problems">5.3.1. Skill builder problems</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="exact-differential-equations">
+<h1><span class="section-number">5.3. </span>Exact differential equations<a class="headerlink" href="#exact-differential-equations" title="Link to this heading">#</a></h1>
+<p>Remember that a function <span class="math notranslate nohighlight">\(f(x,y)\)</span> has the
+<a class="reference internal" href="../multivariable-calculus/total-differential.html"><span class="std std-doc">total differential</span></a></p>
+<div class="amsmath math notranslate nohighlight" id="equation-3bb4ba3c-00c7-453a-ab5a-e9d561ef1883">
+<span class="eqno">(5.28)<a class="headerlink" href="#equation-3bb4ba3c-00c7-453a-ab5a-e9d561ef1883" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\d{f}= \td{}{f}{x}{y} \d{x} + \td{}{f}{y}{x} \d{y}
+\end{equation}\]</div>
+<p>Also note that if <span class="math notranslate nohighlight">\(f = c\)</span> (a constant), then <span class="math notranslate nohighlight">\(\d{f} = 0\)</span>. How does this apply
+to ODEs?</p>
+<p>Suppose we can rewrite our ODE as</p>
+<div class="math notranslate nohighlight" id="equation-exactode">
+<span class="eqno">(5.29)<a class="headerlink" href="#equation-exactode" title="Link to this equation">#</a></span>\[P(x,y) \d{x} + Q(x,y) \d{y} = 0\]</div>
+<p>If we can show that</p>
+<div class="amsmath math notranslate nohighlight" id="equation-0436947b-c786-4ca6-8452-8ccd17faf625">
+<span class="eqno">(5.30)<a class="headerlink" href="#equation-0436947b-c786-4ca6-8452-8ccd17faf625" title="Permalink to this equation">#</a></span>\[\begin{equation}
+P = \td{}{f}{x}{y} \qquad Q = \td{}{f}{y}{x}
+\end{equation}\]</div>
+<p>for some <span class="math notranslate nohighlight">\(f\)</span>, then we know that <span class="math notranslate nohighlight">\(f(x,y) = c\)</span> is an implicit solution of the
+ODE! We call ODEs with this property <em>exact</em>. But, how do we know if such a
+function exists and what it is?</p>
+<aside class="topic">
+<p class="topic-title">Test for exactness</p>
+<p>A differential equation in the form of Eq. <a class="reference internal" href="#equation-exactode">(5.29)</a> is exact if</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ee19e87f-f944-4de7-a918-2e941883e6b8">
+<span class="eqno">(5.31)<a class="headerlink" href="#equation-ee19e87f-f944-4de7-a918-2e941883e6b8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\td{}{P}{y}{x} = \td{}{Q}{x}{y}
+\end{equation}\]</div>
+</aside>
+<div class="admonition-example-test-for-exactness admonition">
+<p class="admonition-title">Example: Test for exactness</p>
+<p>Is the following differential equation exact?</p>
+<div class="math notranslate nohighlight" id="equation-exactode-example">
+<span class="eqno">(5.32)<a class="headerlink" href="#equation-exactode-example" title="Link to this equation">#</a></span>\[\begin{equation}
+\cos(x+y) \d{x} + \left[3y^2 + 2y + \cos(x+y) \right]\d{y} = 0
+\end{equation}\]</div>
+<hr class="docutils" />
+<p>For the given ODE,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4ca86d9d-3fe6-42e3-a9c7-00e5cabd094b">
+<span class="eqno">(5.33)<a class="headerlink" href="#equation-4ca86d9d-3fe6-42e3-a9c7-00e5cabd094b" title="Permalink to this equation">#</a></span>\[\begin{align}
+P &amp;= \cos(x+y) \\
+\td{}{P}{y}{x} &amp;= -\sin(x+y)
+\end{align}\]</div>
+<p>and</p>
+<div class="amsmath math notranslate nohighlight" id="equation-fc8e5544-0e61-4f4d-83fc-39044fd2279a">
+<span class="eqno">(5.34)<a class="headerlink" href="#equation-fc8e5544-0e61-4f4d-83fc-39044fd2279a" title="Permalink to this equation">#</a></span>\[\begin{align}
+Q &amp;= 3y^2 + 2y + \cos(x+y) \\
+\td{}{Q}{x}{y} &amp;= -\sin(x+y)
+\end{align}\]</div>
+<p>Since these partial derivatives match, the ODE is exact.</p>
+</div>
+<p>If an ODE is exact, we can integrate <em>P</em> or <em>Q</em> to get <em>f</em>, then solve for the
+integration constant with <em>Q</em> or <em>P</em>. For the ODE given by
+Eq. <a class="reference internal" href="#equation-exactode-example">(5.32)</a>, first integrate <em>P</em> with respect to <em>x</em>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b994c1c2-42ee-46b2-820d-3ebbbcc20ecf">
+<span class="eqno">(5.35)<a class="headerlink" href="#equation-b994c1c2-42ee-46b2-820d-3ebbbcc20ecf" title="Permalink to this equation">#</a></span>\[\begin{align}
+f &amp;= \int P \d{x} \\
+&amp;= \int \cos(x+y) \d{x} \\
+&amp;= \sin(x+y) + k(y)
+\end{align}\]</div>
+<p>Note that this integration adds an unknown function <em>k</em> of the variable that was
+held constant (in this case, <em>y</em>). To determine this function, differentiate and
+equate with <em>Q</em>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-bac3b06c-7dc1-4457-8997-836104e450b3">
+<span class="eqno">(5.36)<a class="headerlink" href="#equation-bac3b06c-7dc1-4457-8997-836104e450b3" title="Permalink to this equation">#</a></span>\[\begin{align}
+\td{}{f}{y}{x} &amp;= Q \\
+\cos(x+y) + k' &amp;= 3y^2+2y+\cos(x+y) \\
+k' &amp;= 3y^2+2y
+\end{align}\]</div>
+<p>This is a first-order ODE for <em>k</em> that can be solved using separation of
+variables:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f9eb308f-30c4-48a0-9718-b83a0b576909">
+<span class="eqno">(5.37)<a class="headerlink" href="#equation-f9eb308f-30c4-48a0-9718-b83a0b576909" title="Permalink to this equation">#</a></span>\[\begin{align}
+\int \d{k} &amp;= \int (3y^2+2y) \d{y} \\
+k &amp;= y^3 + y^2 + k_0
+\end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(k_0\)</span> is another unknown integration constant. Since we know that the ODE
+was exact, the solution <em>f</em> must be equal to a constant <em>c</em>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-0905c324-0d9a-4c02-9103-a4ee633f69d3">
+<span class="eqno">(5.38)<a class="headerlink" href="#equation-0905c324-0d9a-4c02-9103-a4ee633f69d3" title="Permalink to this equation">#</a></span>\[\begin{align}
+f = \sin(x+y) + y^3 +y^2 + k_0 = c
+\end{align}\]</div>
+<p>Note that the coefficient <span class="math notranslate nohighlight">\(k_0\)</span> can be absorbed into <em>c</em>. This will be a common
+pattern for these problems, so moving forward, we will neglect writing the
+integration constant for <em>k</em>. The general, implicit solution to the ODE is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2815fd53-6a53-414e-8f65-da3f7733c87e">
+<span class="eqno">(5.39)<a class="headerlink" href="#equation-2815fd53-6a53-414e-8f65-da3f7733c87e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\sin(x+y) + y^3 + y^2 = c
+\end{equation}\]</div>
+<p>Note that order of integration does not matter. We could also have integrated
+with respect to <em>y</em> first</p>
+<div class="amsmath math notranslate nohighlight" id="equation-5fd2c5c6-eb84-4375-8305-fc4d71539e31">
+<span class="eqno">(5.40)<a class="headerlink" href="#equation-5fd2c5c6-eb84-4375-8305-fc4d71539e31" title="Permalink to this equation">#</a></span>\[\begin{align}
+f &amp;=\int Q \d{y} \\
+&amp;= \int \left[3y^2+2y+\cos(x+y) \right] \d{y} \\
+&amp;=y^3+y^2+\sin(x+y)+k(x)
+\end{align}\]</div>
+<p>Then differentiated with respect to <em>x</em> and equated with <em>P</em>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f2808e20-078b-44ba-970f-e25b21daeaf4">
+<span class="eqno">(5.41)<a class="headerlink" href="#equation-f2808e20-078b-44ba-970f-e25b21daeaf4" title="Permalink to this equation">#</a></span>\[\begin{align}
+\td{}{f}{x}{y} &amp;= P \\
+\cos(x+y) + k' &amp;= \cos(x+y) \\
+k'&amp;=0
+\end{align}\]</div>
+<p>giving <span class="math notranslate nohighlight">\(k = k_0\)</span>. Substituting, we arrive at the same answer!</p>
+<section id="skill-builder-problems">
+<h2><span class="section-number">5.3.1. </span>Skill builder problems<a class="headerlink" href="#skill-builder-problems" title="Link to this heading">#</a></h2>
+<p>Obtain general solutions to:</p>
+<ol class="arabic">
+<li><p><span class="math notranslate nohighlight">\(-2xy \sin( x^2) \d{x} + \cos(x^2) \d{y} = 0\)</span></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The ODE is already in the standard form so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2ec0f2a9-22c5-46ce-aa18-b7cd4b0f3251">
+<span class="eqno">(5.42)<a class="headerlink" href="#equation-2ec0f2a9-22c5-46ce-aa18-b7cd4b0f3251" title="Permalink to this equation">#</a></span>\[\begin{align}
+P &amp;= -2xy \sin(x^2) \\
+Q &amp;= \cos(x^2) \\
+\end{align}\]</div>
+<p class="sd-card-text">Check to see if the ODE is exact:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-91025315-97b2-4f50-83e8-286f2c9c5c37">
+<span class="eqno">(5.43)<a class="headerlink" href="#equation-91025315-97b2-4f50-83e8-286f2c9c5c37" title="Permalink to this equation">#</a></span>\[\begin{align}
+\td{}{P}{y}{x} &amp;= -2x \sin(x^2) \\
+\td{}{Q}{x}{y} &amp;= -2x \sin(x^2)
+\end{align}\]</div>
+<p class="sd-card-text">The two partial derivatives are equal, so the ODE is exact. You can proceed
+directly to integration. First, integrate <em>Q</em> with respect <em>y</em></p>
+<div class="amsmath math notranslate nohighlight" id="equation-14928ade-f7e3-4d76-a00b-add464782f95">
+<span class="eqno">(5.44)<a class="headerlink" href="#equation-14928ade-f7e3-4d76-a00b-add464782f95" title="Permalink to this equation">#</a></span>\[\begin{equation}
+f(x,y) = \int \cos(x^2) \d{y} = y \cos(x^2) + k(x)
+\end{equation}\]</div>
+<p class="sd-card-text">where <em>k</em> is an unknown function of <em>x</em>. Then, differentiate <em>f</em> with respect
+to <em>x</em> and compare to <em>P</em>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8ab55e07-096b-4f1c-b048-6bceef814716">
+<span class="eqno">(5.45)<a class="headerlink" href="#equation-8ab55e07-096b-4f1c-b048-6bceef814716" title="Permalink to this equation">#</a></span>\[\begin{align}
+\td{}{f}{x}{y} = -2xy \sin(x^2) + k'(x) &amp;= P = -2xy \sin(x^2) \\
+k'(x) &amp;= 0
+\end{align}\]</div>
+<p class="sd-card-text">This simple ODE has <span class="math notranslate nohighlight">\(k = 0\)</span> as a solution (neglecting the integration
+constant). Putting it all together,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c7a44907-f7ce-448b-ab7e-ca2957eac72b">
+<span class="eqno">(5.46)<a class="headerlink" href="#equation-c7a44907-f7ce-448b-ab7e-ca2957eac72b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+f = y \cos(x^2) = c
+\end{equation}\]</div>
+<p class="sd-card-text">is an implicit solution of the ODE, which we can manipulate to an explicit
+solution:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-3b358c44-ea44-4bf2-8ca2-6cae0be95783">
+<span class="eqno">(5.47)<a class="headerlink" href="#equation-3b358c44-ea44-4bf2-8ca2-6cae0be95783" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y = \frac{c}{\cos(x^2)}
+\end{equation}\]</div>
+</div>
+</details></li>
+<li><p><span class="math notranslate nohighlight">\(y' = \dfrac{x^4 + y^2}{xy}\)</span></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">This ODE is not in the standard form, so we need to first rearrange:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-03da2522-a5e6-4038-8188-7d2937e0ea31">
+<span class="eqno">(5.48)<a class="headerlink" href="#equation-03da2522-a5e6-4038-8188-7d2937e0ea31" title="Permalink to this equation">#</a></span>\[\begin{align}
+xy \d{y} = (x^4+y^2) \d{x} \\
+(x^4 + y^2) \d{x} - xy \d{y} = 0
+\end{align}\]</div>
+<p class="sd-card-text">so:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-93c7cffe-88e6-47dd-a1fb-bd4dc7943403">
+<span class="eqno">(5.49)<a class="headerlink" href="#equation-93c7cffe-88e6-47dd-a1fb-bd4dc7943403" title="Permalink to this equation">#</a></span>\[\begin{align}
+P &amp;= x^4 + y^2 \\
+Q &amp;= -xy
+\end{align}\]</div>
+<p class="sd-card-text">Check to see if the ODE is exact:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c958b577-3fad-4353-a055-7b8f4887f5ac">
+<span class="eqno">(5.50)<a class="headerlink" href="#equation-c958b577-3fad-4353-a055-7b8f4887f5ac" title="Permalink to this equation">#</a></span>\[\begin{align}
+\td{}{P}{y}{x} &amp;= 2y \\
+\td{}{Q}{x}{y} &amp;= -y
+\end{align}\]</div>
+<p class="sd-card-text">The two partial derivatives are not equal, so the ODE is not exact. In
+order to make it exact, we need to find an integrating factor <em>F</em>. First,
+compute:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d94fe399-22af-4987-b1fe-aa0e722af2b4">
+<span class="eqno">(5.51)<a class="headerlink" href="#equation-d94fe399-22af-4987-b1fe-aa0e722af2b4" title="Permalink to this equation">#</a></span>\[\begin{align}
+R &amp;= \frac{1}{Q}\left[\td{}{P}{y}{x} - \td{}{Q}{x}{y} \right] \\
+  &amp;=\frac{1}{-xy}(2y-(-y)) \\
+  &amp;= -\frac{3}{x}
+\end{align}\]</div>
+<p class="sd-card-text"><em>R</em> is a function of only <em>x</em>, so use it to compute <em>F</em></p>
+<div class="amsmath math notranslate nohighlight" id="equation-653a56c1-d7c0-42af-b7a4-a43f14f5e85a">
+<span class="eqno">(5.52)<a class="headerlink" href="#equation-653a56c1-d7c0-42af-b7a4-a43f14f5e85a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+F = \exp\left(\int \frac{-3}{x} \d{x}\right) = e^{-3\ln(x)} = x^{-3}
+\end{equation}\]</div>
+<p class="sd-card-text">Apply the integrating factor to the original ODE:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-15631fed-4e27-4a52-81a8-98b96e59fdf1">
+<span class="eqno">(5.53)<a class="headerlink" href="#equation-15631fed-4e27-4a52-81a8-98b96e59fdf1" title="Permalink to this equation">#</a></span>\[\begin{align}
+x^{-3}(x^4+y^2) \d{x} - x^{-3}(xy) \d{y} &amp;= 0 \\
+\left(x+\frac{y^2}{x^{-3}}\right) \d{x} - \frac{y}{x^2} \d{y} &amp;= 0
+\end{align}\]</div>
+<p class="sd-card-text">Integrate the <em>Q</em> of our exact ODE with respect to <em>y</em>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-0af9f67e-62a8-4cab-9a14-97eb2d10242c">
+<span class="eqno">(5.54)<a class="headerlink" href="#equation-0af9f67e-62a8-4cab-9a14-97eb2d10242c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+f(x,y) = \int -\frac{y}{x^2} \d{y} = \frac{-y^2}{2x^2}+k(x)
+\end{equation}\]</div>
+<p class="sd-card-text">where <em>k</em> is an unknown function of <em>x</em>. Then, differentiate <em>f</em> with respect
+to <em>x</em> and compare to <em>P</em> of the exact ODE:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-73fd0ceb-c29f-4f65-8636-b6fb42b18ea6">
+<span class="eqno">(5.55)<a class="headerlink" href="#equation-73fd0ceb-c29f-4f65-8636-b6fb42b18ea6" title="Permalink to this equation">#</a></span>\[\begin{align}
+\td{}{f}{x}{y} = \frac{y^2}{x^3} + k'(x) &amp;= P = x + \frac{y^2}{x^3} \\
+k'(x) &amp;= x \\
+\end{align}\]</div>
+<p class="sd-card-text">This ODE for <em>k</em> can be integrated directly (neglecting the integration
+constant)</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ac765d46-0566-4951-90e0-91971b8f500c">
+<span class="eqno">(5.56)<a class="headerlink" href="#equation-ac765d46-0566-4951-90e0-91971b8f500c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+k = \int x \d{x} = \frac{x^2}{2}
+\end{equation}\]</div>
+<p class="sd-card-text">Putting it all together,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-0cdccef0-219f-49a2-aeea-31f976e3fa39">
+<span class="eqno">(5.57)<a class="headerlink" href="#equation-0cdccef0-219f-49a2-aeea-31f976e3fa39" title="Permalink to this equation">#</a></span>\[\begin{align}
+f = \frac{-y^2}{2x^2} + \frac{x^2}{2} = c
+\end{align}\]</div>
+<p class="sd-card-text">is an implicit solution of the ODE.</p>
+</div>
+</details></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./first-order-odes"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="separable.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">5.2. </span>Separable differential equations</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="linearity.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">5.4. </span>Linearity</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill-builder-problems">5.3.1. Skill builder problems</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Michael P. Howard
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
