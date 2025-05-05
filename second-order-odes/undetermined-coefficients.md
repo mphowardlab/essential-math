@@ -2,7 +2,6 @@
 
 ### Skill Builder - Method of Undetermined Coefficients 
 
-**(b)**  
 **Solve the differential equation:**
 
 $$
