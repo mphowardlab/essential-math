@@ -1,5 +1,5 @@
 # Functions
-### Evaluating and Manipulating Trigonometric Functions
+## Evaluating and Manipulating Trigonometric Functions
 ![fishy](./images/MAtappunitcircle.png)
 
 \begin{align}
