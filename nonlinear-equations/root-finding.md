@@ -156,3 +156,70 @@ x_(n+1) = g(x_n)
 |   9    | 0.738   |         |         | 0.745   |         |         |
 |   10   |m 0.738   |         |         |         | 0.735   | $\boxed{0.739}$ |
 
+=======
+## Newton-Raphson method
+
+Although we cannot immediately solve the nonlinear equation $f(x) = 0$, we can
+first *linearize* it, then solve the linear problem.
+
+\begin{align}
+f(x) &\approx f(x_0) + f'(x_0)(x - x_0) = 0 \\
+x &\approx x_0 - \frac{f(x_0)}{f'(x_0)}
+\end{align}
+
+Iterating this process gives the Newton-Raphson method of root finding
+
+```{math}
+:label: newtonraphson
+x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}
+```
+
+The algorithm for the Newton-Raphson method is:
+
+1. Guess $x_0$ and set $n = 0$.
+2. Compute $f(x_n)$ and $f'(x_n)$. If $f(x_n)$ is "close" to zero, stop.
+3. Update $x_{n+1}$ using eq. {eq}`newtonraphson` then return to step 2.
+
+```{image} ./_images/newtonraphson.svg
+:alt: Newton-Raphson method
+:width: 500px
+:align: center
+```
+
+Note that this method can converge much more rapidly than the fixed-point or
+bisection methods. However, it will fail if $f'(x_n) = 0$.
+
+```{example} Newton-Raphson method
+Solve $x^2 = 2$.
+
+---
+
+We can rewrite this as $f(x) = x^2-2 = 0$. We will also evaluate the derivative
+$f'(x) = 2x$. Let the initial guess be $x_0 = 1$.
+
+| $n$ | $x_n$ | $f(x_n)$ | $f'(x_n)$ | $x_{n+1}$ |
+|------|--------:|-----------:|------------:|------------:|
+| $0$    | $1.0$   | $-1.0$     | $2.0$       | $1.5$       |
+| $1$    | $1.5$   | $0.25$      | $3.0$       | $1.417$       |
+| $2$    | $1.417$   | $6.94 \times 10^{-3}$ | $2.833$ | $1.414$|
+
+This is close to the known value of $\sqrt{2}$!
+```
+
+```{example} Newton-Raphson method 2
+Solve $e^{-x^2} - x = 0$.
+
+---
+
+We define $f(x) = e^{-x^2} - x$ and calculate $f'(x) = -2x e^{-x^2} - 1$.
+We choose an initial guess $x_0 = 0$.
+
+| $n$ | $x_n$  | $f(x_n)$  | $f'(x_n)$  | $x_{n+1}$ |
+|------:|---------:|-------------:|-------------:|------------:|
+| $0$     | $0$    | $1.0$        | $-1.0$       | $1.0$       |
+| $1$     | $1.0$    | $-0.6321$      | $-1.736$       | $0.6358$      |
+| $2$     | $0.6358$   | $0.03164$      | $-1.849$       | $0.6529$    |
+
+Note the rapid convergence compared to the methods above!
+
+```
