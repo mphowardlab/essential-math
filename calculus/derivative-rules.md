@@ -25,5 +25,5 @@ f^{'}(x) &= \cos{u}u^{'}\\
 
 \begin{align}
 (4) \quad f(x) &= \tan{(x^{2}+2x+3)}\\
-u &= x^{2}+2x+3
+u &= x^{2}+2x+3 \quad f(u) = \tan{u}\\
 \end{align}
