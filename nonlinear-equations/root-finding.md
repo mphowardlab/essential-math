@@ -154,7 +154,14 @@ x_(n+1) = g(x_n)
 |   7    | 0.734   | 0.752   |         |         |         |         |
 |   8    | 0.738   |         | 0.730   |         |         |         |
 |   9    | 0.738   |         |         | 0.745   |         |         |
-|   10   |m 0.738   |         |         |         | 0.735   | $\boxed{0.739}$ |
+|   10   | 0.738   |         |         |         | 0.735   | $\boxed{0.739}$ |
+```
+For f(x) = cosx - x
+
+Use Newton-Raphson to find its roots, starting from x_0 = \frac{pi}{2}
+f(x) = cosx - x
+f'(x) = -sinx - 1
+x_(n+1) = x_n - \frac{f(x_n)}{f'(x_n)}
 
 =======
 ## Newton-Raphson method
