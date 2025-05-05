@@ -14,3 +14,16 @@ u &= \sin{x} \quad v = \cos{x}\\
 u^{'} &= \cos{x} \quad v^{'} = -\sin{x}\\
 &= 2[\sin{x}(-\sin{x})+\cos{x}(\cos{x})]\\
 \end{align}
+
+\begin{align}
+(3) \quad f(x) &= \sin{2x}\\
+u &= 2x \quad f(u) = \sin{u}\\
+u^{'}(x) &= 2 \quad f^{'}(u) = \cos{u}\\
+f^{'}(x) &= \cos{u}u^{'}\\
+\quad &= 2\cos{2x}\\
+\end{align}
+
+\begin{align}
+(4) \quad f(x) &= \tan{(x^{2}+2x+3)}\\
+u &= x^{2}+2x+3
+\end{align}
