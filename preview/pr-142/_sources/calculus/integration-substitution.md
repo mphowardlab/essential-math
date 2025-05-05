@@ -47,7 +47,7 @@ Plugging *u* back in gives the final answer:
 (1) $y' = (x+2)\ln(x)$
 
 ```{solution}
-$$
+
 \begin{equation}
 y = \int (x+2)\ln(x) \, dx
 \end{equation}
@@ -61,7 +61,7 @@ du &= \frac{1}{x}\,dx, & v &= \frac{x^2}{2} + 2x
 y &=\left( \frac{x^2}{2} + 2x \right)\ln(x) - \int \left( \frac{x^2}{2} + 2x \right) \frac{1}{x} \, dx \\
 &= \left( \frac{x^2}{2} + 2x \right)\ln(x) - \frac{x^2}{4} - 2x + C
 \end{align}
-$$
+
 ```
 
 (2) $y' = x^5\sin(x)$
