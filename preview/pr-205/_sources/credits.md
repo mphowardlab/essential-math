@@ -38,6 +38,7 @@ This work (c) 2025 is licensed under
 - Meg Nettles
 - Jeffe Old
 - Ella Ortbals
+- Jack Raynor
 - Kendall Reeves
 - Olivia Robinson
 - Brent Russell
@@ -48,7 +49,6 @@ This work (c) 2025 is licensed under
 - Madelyn Torrance
 - Debora Vasconcelos
 - Morgan Wootton
-- Jack Raynor
 
 ## Attributions
 
