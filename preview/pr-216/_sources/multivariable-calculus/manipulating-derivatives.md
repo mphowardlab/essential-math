@@ -89,6 +89,83 @@ Therefore, by the chain rule:
 
 This matches our previous result for the derivative!
 
+---
+
+Sometimes, the variables that are held constant in a derivative are
+inconvenient. The "triple product rule" (sometimes called the cyclic or *xyz*-1
+rule) lets us replace such a derivative by two other derivatives of involving
+that variable.
+
+```{topic} Triple product rule
+
+If $x(y, z)$, $y(x, z)$, and $z(x, y)$, then:
+
+\begin{equation}
+\td{}{x}{y}{z} \td{}{y}{z}{x} \td{}{z}{x}{y} = -1
+\end{equation}
+
+or equivalently:
+
+\begin{equation}
+\td{}{x}{y}{z} = -\frac{(\partial z/\partial y)_x}{(\partial z/\partial x)_y}
+\end{equation}
+
+using the inversion rule.
+```
+
+To demonstrate use of this rule, use $x = y^2/z$, which has the inverse functions
+$y = \sqrt{xz}$ and $z = y^2/x$. Compute the relevant partial derivatives:
+
+\begin{align}
+\td{}{x}{y}{z} &= \frac{2y}{z} \\
+\td{}{y}{z}{x} &= \frac{1}{2} \sqrt{\frac{x}{z}} \\
+\td{}{z}{x}{y} &= -\frac{y^2}{x^2}
+\end{align}
+
+Now plug into the triple product rule, substituting the definition of *x*:
+
+\begin{equation}
+\left( \frac{2y}{z} \right)
+\left( \frac{y}{2z} \right)
+\left( -\frac{z^2}{y^2} \right) = -1
+\end{equation}
+
+This confirms the rule!
+
+---
+
+We can use these rules to manipulate thermodynamic derivatives. Choosing the
+right rules to use is like solving a puzzle, and you'll get better at it with
+practice.
+
+```{example} Constant-volume heat capacity
+Express $(\partial S/\partial T)_V$ for a pure substance using the
+constant-volume heat capacity
+
+\begin{equation}
+c_v = \td{}{U}{T}{V}
+\end{equation}
+
+where *S* is the molar entropy, *T* is the temperature, *V* is the molar volume,
+and *U* is the molar internal energy, given that
+
+\begin{equation}
+\d{U} = T\d{S} - P\d{V}
+\end{equation}
+
+---
+
+Using the chain rule, we can introduce *U*, then invert the *S* derivative:
+
+\begin{align}
+\td{}{S}{T}{V} &= \td{}{S}{U}{V} \td{}{U}{T}{V} \\
+  &= \frac{(\partial U/\partial T)_V}{(\partial U /\partial S)_V} \\
+  &= \frac{c_V}{T}
+\end{align}
+
+The last line follows from the definition of the heat capacity.
+```
+
 ## Derivatives as functions
 
 The first law of thermodynamics for a pure substance is:
@@ -304,100 +381,3 @@ Evaluate the following for $f=\cos(4x+y^2)+x^2y$
    &=\frac{2y\sin(4x+y^2)+x^2}{-4\sin(4x+y^2)+2xy}
    \end{align}
    ```
-
-
-# Triple Product Rule and Thermodynamic Derivatives
-
-## Triple Product Rule
-
-If \( x = x(y, z) \), \( y = y(x, z) \), and \( z = z(x, y) \), then the **triple product rule** states:
-
-\begin{equation}
-\left( \frac{\partial x}{\partial y} \right)_z 
-\left( \frac{\partial y}{\partial z} \right)_x 
-\left( \frac{\partial z}{\partial x} \right)_y = -1
-\end{equation}
-
-
-
-```{example} Triple Product Ex.
-Let:
-- \begin{equation} x = \frac{y^2}{z} \end{equation}
-- \begin{equation} y = \sqrt{xz} \end{equation}
-- \begin{equation} z = \frac{y^2}{x} \end{equation}
-
-Compute the relevant partial derivatives:
-
-\begin{equation}
-\left( \frac{\partial x}{\partial y} \right)_z = \frac{2y}{z}
-\end{equation}
-
-\begin{equation}
-\left( \frac{\partial y}{\partial z} \right)_x 
-= \frac{1}{2} \cdot \frac{\sqrt{y^2/z}}{\sqrt{z}} 
-= \frac{1}{2} \cdot \frac{y}{z} 
-\end{equation}
-
-\begin{equation}
-\left( \frac{\partial z}{\partial x} \right)_y 
-= -\frac{y^2}{x^2} 
-= -\frac{z^2}{y^2}
-\end{equation}
-
-Now plug into the triple product rule:
-
-\begin{equation}
-\left( \frac{2y}{z} \right) 
-\left( \frac{y}{2z} \right) 
-\left( -\frac{z^2}{y^2} \right) = -1
-\end{equation}
-This is your answer!
-```
----
-
-## Application to Thermodynamics
-
-We can use these rules to manipulate **thermodynamic derivatives**.
-
-```{example} Thermodynamics Example
-Expressing   
-\begin{equation} \left( \frac{\partial S}{\partial T} \right)_V \end{equation} 
-Using 
-\begin{equation} Cv = \left( \frac{\partial U}{\partial T} \right)_V \end{equation} 
-
-Given that
-
-\begin{equation}
-dU = TdS - PdV
-\end{equation}
-
-We can write:
-
-\begin{equation}
-\left( \frac{\partial S}{\partial T} \right)_V 
-= \left( \frac{\partial S}{\partial U} \right)_V 
-\left( \frac{\partial U}{\partial T} \right)_V 
-= \left( \frac{\partial U/\partial T}{\partial U /\partial S} \right)_V 
-= \frac{c_V}{T}
-\end{equation}
-```
----
-
-### Alternative Form
-
-From the differential relationship:
-
-\begin{equation}
-\left( \frac{\partial U}{\partial T} \right)_V 
-= T \left( \frac{\partial S}{\partial T} \right)_V
-\end{equation}
-
-
-
-
-
-
-
-
-
-
