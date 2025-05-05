@@ -16,7 +16,7 @@ Angles can be measured in degrees of radians
 \theta(rad.)& = \theta(deg.)(\frac{\pi}{180^{\circ}})
 \end{align}
 
-Special Angles
+### Special Angles
 \begin{align}
 \theta& = 30^{\circ} \frac{\pi}{6}& \theta& = 60^{\circ} \frac{\pi}{3}
 \end{align}
