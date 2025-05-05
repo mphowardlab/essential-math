@@ -16,6 +16,8 @@ $$
 
 ---
 
+
+```{solution}
 Homogeneous solution:
 $$
 y'' - y' - 12y = 0 
@@ -117,7 +119,6 @@ $$\begin{equation}
 $$
 \boxed{y = 3e^{4x} + 2e^{-3x} - 12x^3 + 3x^2 - \frac{13}{2}x}
 $$
-
-
+```
 
 
