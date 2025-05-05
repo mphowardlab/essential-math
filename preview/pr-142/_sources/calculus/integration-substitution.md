@@ -51,7 +51,7 @@ Plugging *u* back in gives the final answer:
 y = \int (x+2)\ln(x) \, dx
 \end{equation}
 
-Select u and dv to find du and v:
+Select $u$ and $dv$ to find $du$ and $v$:
 
 \begin{align}
 u &= \ln(x), & dv &= (x+2)\,dx \\
@@ -107,11 +107,11 @@ y &= -x^5 \cos(x) + 5x^4 \sin(x) + 20x^3 \cos(x) - 60x^2 \sin(x) - 120x \cos(x) 
 y = \int e^xcos(x)dx 
 \end{equation}
 
-Assign values for u and dv to find values for du and v. 
+Assign values for $u$ and $dv$ to find values for $du$ and $v$. 
 
 \begin{align}
-u &= cos(x), & dv &= e^x,dx \
-du &= -sin(x),dx, & v &= e^x 
+u &= \cos(x), & dv &= e^x\,dx \\
+du &= -\sin(x)\,dx, & v &= e^x
 \end{align}
 
 Apply integration by parts: $uv - \int vdu$
