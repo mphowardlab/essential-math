@@ -1,8 +1,7 @@
-# Undetermined Coefficients
+# Undetermined coefficients
 
-### Skill Builder - Method of Undetermined Coefficients 
+## Skill builder problems
 
-**(b)**  
 **Solve the differential equation:**
 
 $$
