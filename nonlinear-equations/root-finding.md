@@ -117,3 +117,12 @@ procedure:
 When $n=0$, $f(x_0)$ > 0 so $a_1$ = $x_0$. Then, when $n=1$, $f(x_1)$ < 0
 so $b_2$ = $x_1$. We continue this procedure until convergence.
 ```
+
+## Skill builder problems
+
+1. Solve all roots to 3 sig. figs. Verify graphically (see next pages)
+
+(e) cos(x) - x = 0
+by using fixed-point iteration with x_0 = 0.5
+x = cos(x) = g(x) 
+x_(n+1) = g(x_n)

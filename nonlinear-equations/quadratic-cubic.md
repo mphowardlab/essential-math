@@ -8,7 +8,7 @@
 (a) Solve the following equation:
 
 x^2 + 2x + 1 = 0
-By factoring:
+by factoring:
 
 ```{solution}
 \begin{align}
@@ -20,7 +20,7 @@ x &= -1
 
 (b) Solve the following equation
 x^2 - 8x + 5 = 0
-By completing the square
+by completing the square
 
 ```{solution}
 \begin{align}
@@ -34,7 +34,7 @@ x &\approx 0.683,\; 7.32
 
 (c) Solve the following equation
 x^2 - 7x + 12 = 0
-By quadratic formula
+by quadratic formula
 
 ```{solution}
 \begin{align}
