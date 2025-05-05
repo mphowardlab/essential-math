@@ -13,7 +13,7 @@ Example:
 
 $$f(x)=x^2, f'(x)=2x$$
 
-$$f''(x)=lim(h->0)(f'(x+h)-f'(x))/h = lim(h->0)(2(x+h)-2x)/h = lim(h->0)2h/2 = 2$$
+$$f''(x)=lim(h->0)\frac{f'(x+h)-f'(x)}{h} = lim(h->0)\frac{(2(x+h)-2x)}{h} = lim(h->0)\frac{2h}{2} = 2$$
 
 The second derivative tells us how to find the first derivative changes.
 
