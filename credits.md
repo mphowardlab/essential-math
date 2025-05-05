@@ -45,6 +45,7 @@ This work (c) 2025 is licensed under
 - Lauren Thompson
 - Madelyn Torrance
 - Debora Vasconcelos
+- Annabelle Walker
 - Morgan Wootton
 
 ## Attributions
