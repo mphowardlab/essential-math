@@ -55,7 +55,11 @@ give the solution type:
    \end{equation}
 ```
 
-For example, to solve
+We will consider an example of each case next.
+
+## Real distinct roots
+
+To solve
 
 \begin{equation}
 y'' + y' - 2y = 0, \quad y(0)=4, \quad y'(0)=-5
@@ -68,7 +72,8 @@ First write and solve the characteristic polynomial,
 (\lambda + 2)(\lambda + 1) &= 0
 \end{align}
 
-so $\lambda_1 = -2$ and $\lambda_2 =1$. The general solution and its first derivative are:
+so $\lambda_1 = -2$ and $\lambda_2 =1$. The general solution and its first
+derivative are:
 
 \begin{align}
 y &= c_1 e^{-2x} + c_2 e^{x}  \\
@@ -115,8 +120,9 @@ so $c_1 = 3$ and $c_2 = 1$. The final solution is:
 y = 3 e^{-2x} + e^x
 \end{equation}
 
----
-The following example uses complex roots. Follow a similar procedure as the example shown above.
+## Complex roots
+
+To solve:
 
 \begin{equation}
 y'' + 0.4y' + 9.04y = 0, \quad y(0)=0, \quad y'(0)=3
@@ -125,68 +131,69 @@ y'' + 0.4y' + 9.04y = 0, \quad y(0)=0, \quad y'(0)=3
 Write and solve the characteristic polynomial,
 
 \begin{align}
-\lambda^{2} + 0.4\lambda + 9.04 =0 \to \lambda_{1,2} = \frac{-0.4\pm\sqrt{0.4^2-4\times9.04}}{2} = -0.2\pm 3i
+\lambda^{2} &+ 0.4\lambda + 9.04 = 0 \\
+\lambda_{1,2} &= \frac{-0.4\pm\sqrt{0.4^2- 4 \cdot 9.04}}{2} = -0.2\pm 3i
 \end{align}
 
-Once values of $\lambda$ are known, write out the general solution and plug in the first initial condition to solve for $c_1$.
+Once values of $\lambda$ are known, write out the general solution and plug in
+the first initial condition to solve for $c_1$.
 
 \begin{align}
 y &= e^{-0.2x}(c_1\cos3x + c_2\sin3x) \\
-y(0) &= 1(c_1 + 0) \\
-c_1 &= 0
+y(0) &= c_1  = 0
 \end{align}
 
-In order to solve for $c_2$, write out the derivative and plug in the second condition:
+Hence the first term can be dropped from the solution. In order to solve for
+$c_2$, write out the derivative and plug in the second condition:
 
 \begin{align}
-y' &= e^{-0.2x}(3c_2\cos3x) - 0.2e^{-0.2x}c_2\sin3x \\
-y'(0) &= 3 = 3c_2 \\
-c_2 &= 1
+y' &= e^{-0.2x}(3c_2\cos3x) - 0.2e^{-0.2x}c_2\sin 3x \\
+y'(0) &= 3c_2 = 3
 \end{align}
 
-Since is $c_2=1$, the final solution is:
+Since $c_2=1$, the final solution is:
 
 \begin{equation}
-y = e^{-0.2x}\sin3x 
+y = e^{-0.2x}\sin 3x
 \end{equation}
 
----
-The next example contains real and repeated roots. To solve, start by writing the characterisitc polynomial,
+## Real repeated roots
+
+To solve:
 
 \begin{align}
 y'' + y' + \frac{1}{4}y=0, \quad y(0)=3, \quad y'(0)= -\frac{7}{2}
 \end{align}
 
+Write and solve the characteristic polynomial,
+
 \begin{align}
-\lambda^2 + \lambda + \frac{1}{4} = 0 
+\lambda^2 + \lambda + \frac{1}{4} = 0 \\
+\left(\lambda + \frac{1}{2}\right)^2 = 0
 \end{align}
 
-Solve for $\lambda$ by factoring:
+So $\lambda = -1/2$ is a real and repeated root. Write out the general equation
+and its derivative,
 
 \begin{align}
-(\lambda + \frac{1}{2})^2 = 0 \to \lambda=-\frac{1}{2} 
-\end{align}
-
-Since $\lambda$ is a real and repeated root, write out the general equation and its derivative,
-
-\begin{align}
-y &=(c_1 + c_2x)e^{-\frac{x}{2}} \\
-y' &=(c_1 + c_2x)(-\frac{1}{2}e^{-\frac{x}{2}}) + c_2 e^{-\frac{x}{2}}
+y &=(c_1 + c_2x)e^{-x/2} \\
+y' &=(c_1 + c_2x)(-\frac{1}{2}e^{-x/2}) + c_2 e^{-x/2}
 \end{align}
 
 Use the given conditions to solve for $c_1$ and $c_2$:
 
 \begin{align}
 y(0) &= c_1 = 3 \\
-y'(0) &= -\frac{c_1}{2} + c_2 = -\frac{7}{2} \\
-c_2 &= -2 
+y'(0) &= -\frac{c_1}{2} + c_2 = -\frac{7}{2} \to c_2 = -2
 \end{align}
 
 The final solution is:
 
 \begin{equation}
-y = (3-2x)e^{\frac{-x}{2}}
+y = (3-2x)e^{-x/2}
 \end{equation}
+
+## Applications
 
 ````{example} Spring and dashpot
 We are analyzing how the drag force affects the spring oscilations. This is a

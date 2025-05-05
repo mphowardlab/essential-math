@@ -57,6 +57,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"d": ["{\\operatorname{d}\\!{#1}}", 1], "dd": ["{\\d{}^{#1} #2 \\over \\d{#3}^{#1}}", 3], "pp": ["{\\partial^{#1} #2 \\over \\partial #3^{#1}}", 3], "td": ["{\\left(\\pp{#1}{#2}{#3} \\right)_{#4}}", 4], "ubar": ["\\underline{#1}", 1], "vv": ["\\mathbf{#1}", 1]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'systems-first-order-odes/numerical-solution';</script>
     <link rel="canonical" href="https://mphowardlab.github.io/essential-math/systems-first-order-odes/numerical-solution.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -430,6 +432,134 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="numerical-solution-methods">
 <h1><span class="section-number">6.4. </span>Numerical solution methods<a class="headerlink" href="#numerical-solution-methods" title="Link to this heading">#</a></h1>
+<p>Systems of first-order ODEs can also be solved numerically using similar
+approaches as for
+<a class="reference internal" href="../first-order-odes/numerical-solution.html"><span class="std std-doc">single first-order ODEs</span></a>, but now
+all dependent variables must be advanced simultaneously. The methods we use
+for single first-order ODES can be straightforwardly extended to systems using
+the explicit-form vector notation <span class="math notranslate nohighlight">\(\vv{y}' = \vv{f}(t, \vv{y})\)</span>. For example,
+Euler’s method becomes:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-42bba606-81cc-4b8c-b440-2d9e5b86f3d8">
+<span class="eqno">(6.39)<a class="headerlink" href="#equation-42bba606-81cc-4b8c-b440-2d9e5b86f3d8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\vv{y}(t+\Delta t) \approx \vv{y}(t) + \vv{f}(t, \vv{y}) \Delta t
+\end{equation}\]</div>
+<p>We are “just” adding columns to our calculations!</p>
+<div class="admonition-example-first-order-reaction-in-a-draining-tank admonition">
+<p class="admonition-title">Example: First-order reaction in a draining tank</p>
+<p>A first-order reaction (rate constant <em>k</em>) is taking place in a tank that is
+initially 1 M concentration in the reactant A and has 10 L of solution. A feed
+stream that has a reactant concentration of 1 M enters at 1 L / min, while
+well-mixed solution exits at 2 L / min.</p>
+<a class="reference internal image-reference" href="../_images/euler_diagram.png"><img alt="Reactions in draining tank." class="align-center" src="../_images/euler_diagram.png" style="width: 300px;" />
+</a>
+<p>Estimate the concentration of A after 1 minute if <span class="math notranslate nohighlight">\(k = 0.5/{\rm min}\)</span>.</p>
+<hr class="docutils" />
+<p>Start from an unsteady mole balance on A:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-60306c9a-c0e7-462a-8dae-c3242e2149c2">
+<span class="eqno">(6.40)<a class="headerlink" href="#equation-60306c9a-c0e7-462a-8dae-c3242e2149c2" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\dd{}{n_{\rm A}}{t} = \dot n_{{\rm A},{\rm in}} - \dot n_{{\rm A},{\rm out}} +
+  r_A V
+\end{equation}\]</div>
+<p>The number of moles in the tank, the molar flow rate in, and the molar flow
+rate out are:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7ec79ab0-d879-424f-a770-e300e4528949">
+<span class="eqno">(6.41)<a class="headerlink" href="#equation-7ec79ab0-d879-424f-a770-e300e4528949" title="Permalink to this equation">#</a></span>\[\begin{align}
+n_{\rm A} &amp;= c_{\rm A} V \\
+\dot n_{{\rm A},{\rm in}} &amp;= c_{{\rm A},{\rm in}} \dot V_{\rm in} = 1 \\
+\dot n_{{\rm A},{\rm out}} &amp;= c_{\rm A} \dot V_{\rm out}  = 2c_A
+\end{align}\]</div>
+<p>so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-bfa21bbb-d7a1-405e-abb7-b836c71024f6">
+<span class="eqno">(6.42)<a class="headerlink" href="#equation-bfa21bbb-d7a1-405e-abb7-b836c71024f6" title="Permalink to this equation">#</a></span>\[\begin{align}
+\dd{}{(Vc_{\rm A})}{t} &amp;= 1 - 2 c_A - k c_A V \\
+V \dd{}{c_{\rm A}}{t} + c_{\rm A} \dd{}{V}{t} &amp;= 1 - 2 c_A - k c_A V
+\end{align}\]</div>
+<p>Since the volume <em>V</em> is changing, write a mass balance on the tank assuming
+that the solution density <span class="math notranslate nohighlight">\(\rho\)</span> does not depend on concentration:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-0dbde964-0333-40fd-a865-26fa5ef18437">
+<span class="eqno">(6.43)<a class="headerlink" href="#equation-0dbde964-0333-40fd-a865-26fa5ef18437" title="Permalink to this equation">#</a></span>\[\begin{align}
+\dd{}{m}{t} = \dot m_{\rm in} - \dot m_{\rm out}
+\end{align}\]</div>
+<p>with the mass in the tank, mass flow rate in, and mass flow rate out:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-80cbe9a9-9a80-40da-98fc-db0432feadb7">
+<span class="eqno">(6.44)<a class="headerlink" href="#equation-80cbe9a9-9a80-40da-98fc-db0432feadb7" title="Permalink to this equation">#</a></span>\[\begin{align}
+m &amp;= \rho V \\
+\dot m_{\rm in} &amp;= \rho \dot V_{\rm in} = \rho \\
+\dot m_{\rm out} &amp;= \rho \dot V_{\rm out} = 2 \rho
+\end{align}\]</div>
+<p>so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1f2d97be-b0f6-44f0-ac01-51485b584a1c">
+<span class="eqno">(6.45)<a class="headerlink" href="#equation-1f2d97be-b0f6-44f0-ac01-51485b584a1c" title="Permalink to this equation">#</a></span>\[\begin{align}
+\dd{}{(V\rho)}{t} = \rho \dd{}{V}{t} &amp;= -\rho \\
+\dd{}{V}{t} &amp;= - 1
+\end{align}\]</div>
+<p>Substituting for <span class="math notranslate nohighlight">\(\dd{}{V}{t}\)</span> in the unsteady mole balance and rearranging
+gives the system of first-order ODES:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f933eb85-65b7-4550-af32-857270d832b5">
+<span class="eqno">(6.46)<a class="headerlink" href="#equation-f933eb85-65b7-4550-af32-857270d832b5" title="Permalink to this equation">#</a></span>\[\begin{align}
+\dd{}{c_{\rm A}}{t} &amp;= \frac{1}{V}
+  \left(1 - c_A - 0.5Vc_A\right),&amp; c_{\rm A}(0) &amp;= 1 \\
+\dd{}{V}{t} &amp;= -1, &amp; V(0) &amp;= 10
+\end{align}\]</div>
+<p>Calling <span class="math notranslate nohighlight">\(y_1 = c_{\rm A}\)</span> and <span class="math notranslate nohighlight">\(y_2 = V\)</span>:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(n\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(t\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(y_1\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(y_2\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(f_1\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(f_2\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>10</p></td>
+<td><p>-0.5</p></td>
+<td><p>-1</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>0.2</p></td>
+<td><p>0.9</p></td>
+<td><p>9.8</p></td>
+<td><p>-0.4398</p></td>
+<td><p>-1</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>0.4</p></td>
+<td><p>0.8120</p></td>
+<td><p>9.6</p></td>
+<td><p>-0.3864</p></td>
+<td><p>-1</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>0.6</p></td>
+<td><p>0.7347</p></td>
+<td><p>9.4</p></td>
+<td><p>-0.3389</p></td>
+<td><p>-1</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>0.8</p></td>
+<td><p>0.6669</p></td>
+<td><p>9.2</p></td>
+<td><p>-0.2972</p></td>
+<td><p>-1</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>1.0</p></td>
+<td><p>.6075</p></td>
+<td><p>9</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The concentration after 1 minute is approximately 0.6 M.</p>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
