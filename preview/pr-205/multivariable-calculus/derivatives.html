@@ -405,7 +405,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -421,6 +423,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill-builder-problems">2.1.1. Skill builder problems</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -432,16 +442,89 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="derivatives">
 <h1><span class="section-number">2.1. </span>Derivatives<a class="headerlink" href="#derivatives" title="Link to this heading">#</a></h1>
+<p>A function <span class="math notranslate nohighlight">\(f(x,y)\)</span> has <em>partial</em> derivatives:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-40bcc39b-8218-4d27-8ed2-ce907f62355d">
+<span class="eqno">(2.1)<a class="headerlink" href="#equation-40bcc39b-8218-4d27-8ed2-ce907f62355d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\td{}{f}{x}{y} = \lim_{h \to 0} \frac{f(x+h, y) - f(x, y)}{h}
+\end{equation}\]</div>
+<p>where <em>x</em> (in the denominator) indicates what is varied and <em>y</em> (outside the
+parentheses) indicates what is held constant.</p>
+<p>The second partial derivative may be “repeated”</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1e29dbff-95ef-4fee-a7da-4899647ca986">
+<span class="eqno">(2.2)<a class="headerlink" href="#equation-1e29dbff-95ef-4fee-a7da-4899647ca986" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\td{2}{f}{x}{y} = \pp{}{}{x}\left[ \td{}{f}{x}{y} \right]_y
+\end{equation}\]</div>
+<p>or “mixed”</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f0c71a55-5641-43f8-a570-84b0cf9a5a6d">
+<span class="eqno">(2.3)<a class="headerlink" href="#equation-f0c71a55-5641-43f8-a570-84b0cf9a5a6d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\frac{\partial^2 f}{\partial x \partial y} = \pp{}{}{x}\left[ \td{}{f}{y}{x} \right]_y
+\end{equation}\]</div>
+<p>Mixed partial derivatives are read from right to left by convention.</p>
+<p>Partial derivatives can be taken using the normal procedures for single-variable
+calculus if you treat the constant variables as such</p>
+<div class="admonition-example-taking-partial-derivatives admonition">
+<p class="admonition-title">Example: Taking partial derivatives</p>
+<p>For the function <span class="math notranslate nohighlight">\(f(x,y) = x^2 \cos y\)</span>, evaluate <span class="math notranslate nohighlight">\((\partial f/\partial x)_y\)</span>,
+<span class="math notranslate nohighlight">\((\partial^2 f/\partial x^2)_y\)</span>, and <span class="math notranslate nohighlight">\(\partial^2 f/\partial y \partial x\)</span>.</p>
+<hr class="docutils" />
+<p>The first partial derivative with respect to <em>x</em> (treating <em>y</em> as a constant) is</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6a85f092-2cf0-48ca-ace3-a1927cc4683d">
+<span class="eqno">(2.4)<a class="headerlink" href="#equation-6a85f092-2cf0-48ca-ace3-a1927cc4683d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\td{}{f}{x}{y} = 2 x \cos y
+\end{equation}\]</div>
+<p>The second (repeated) partial derivative with respect to <em>x</em> (again, treating
+<em>y</em> as a constant) is</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d4ac0dc1-2286-470d-ae35-3cc9a1acfaff">
+<span class="eqno">(2.5)<a class="headerlink" href="#equation-d4ac0dc1-2286-470d-ae35-3cc9a1acfaff" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\td{2}{f}{x}{y} = \pp{}{}{x}\left[ \td{}{f}{x}{y} \right]_y
+= \pp{}{}{x}\left( 2 x \cos y \right)_y = 2 \cos y
+\end{equation}\]</div>
+<p>The second (mixed) partial derivative with respect to <em>x</em> then <em>y</em> is</p>
+<div class="amsmath math notranslate nohighlight" id="equation-45336fc7-40ee-411d-875d-2c0f059b6e78">
+<span class="eqno">(2.6)<a class="headerlink" href="#equation-45336fc7-40ee-411d-875d-2c0f059b6e78" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\frac{\partial^2 f}{\partial y \partial x} = \pp{}{}{y}\left[ \td{}{f}{x}{y} \right]_x
+= \pp{}{}{y} \left( 2 x \cos y \right)_x = -2x \sin y
+\end{equation}\]</div>
+</div>
+<aside class="topic">
+<p class="topic-title">Mixed second partial derivatives</p>
+<p>If all the second partial derivatives of a multivariable function <em>f</em> are
+continuous, the mixed second partial derivatives are symmetric,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b8afc123-a8f2-49bc-a98e-8150019644c0">
+<span class="eqno">(2.7)<a class="headerlink" href="#equation-b8afc123-a8f2-49bc-a98e-8150019644c0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\frac{\partial^2 f}{\partial x \partial y}
+= \frac{\partial^2 f}{\partial y \partial x}
+\end{equation}\]</div>
+</aside>
+<div class="admonition-example-order-of-mixed-second-partial-derivatives admonition">
+<p class="admonition-title">Example: Order of mixed second partial derivatives</p>
+<p>Show the order of the mixed derivatives does not matter for the example function
+given above.</p>
+<hr class="docutils" />
+<p>The first partial derivative with respect to <span class="math notranslate nohighlight">\(y\)</span> is</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2b622075-8a67-4c0e-bb67-3b2fe518fafe">
+<span class="eqno">(2.8)<a class="headerlink" href="#equation-2b622075-8a67-4c0e-bb67-3b2fe518fafe" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\td{}{f}{x}{y} = -x^2 \sin y
+\end{equation}\]</div>
+<p>So, the second (mixed) partial derivative with respect to <em>y</em> then <em>x</em> is</p>
+<div class="amsmath math notranslate nohighlight" id="equation-37ff6cff-798a-4cf6-aec3-5a0a51a6ab35">
+<span class="eqno">(2.9)<a class="headerlink" href="#equation-37ff6cff-798a-4cf6-aec3-5a0a51a6ab35" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\frac{\partial^2 f}{\partial x \partial y} = \pp{}{}{x}\left[ \td{}{f}{y}{x} \right]_y
+= \pp{}{}{x} \left( -x^2 \sin y \right)_y = -2x \sin y
+\end{equation}\]</div>
+</div>
+<section id="skill-builder-problems">
+<h2><span class="section-number">2.1.1. </span>Skill builder problems<a class="headerlink" href="#skill-builder-problems" title="Link to this heading">#</a></h2>
 <p>Given:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6a8df179-9d6f-4f53-b882-1eca2d9e8005">
-<span class="eqno">(2.1)<a class="headerlink" href="#equation-6a8df179-9d6f-4f53-b882-1eca2d9e8005" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1fa96cbc-6a7e-4ec6-ac05-9d6b3cf1faff">
+<span class="eqno">(2.10)<a class="headerlink" href="#equation-1fa96cbc-6a7e-4ec6-ac05-9d6b3cf1faff" title="Permalink to this equation">#</a></span>\[\begin{align}
 f &amp;= \cos(4x+y^2) + x^2y\\
 x &amp;= 2ut\\
 y &amp;= t^2
 \end{align}\]</div>
 <p>Evaluate:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7a1016ad-24b3-4be7-80e3-e67edd4b471b">
-<span class="eqno">(2.2)<a class="headerlink" href="#equation-7a1016ad-24b3-4be7-80e3-e67edd4b471b" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b4354ecb-606d-4d81-abc1-3239b8da70ae">
+<span class="eqno">(2.11)<a class="headerlink" href="#equation-b4354ecb-606d-4d81-abc1-3239b8da70ae" title="Permalink to this equation">#</a></span>\[\begin{align}
 (a)\ \left(\frac{\partial f}{\partial x}\right)_y &amp;= -4\sin(4x+y^2) + 2xy\\
 \\
 (b)\ \left(\frac{\partial f}{\partial y}\right)_x &amp;= -2y\sin(4x+y^2) + x^2\\
@@ -456,6 +539,7 @@ y &amp;= t^2
 {(same as (e), or differentiate (b))}\\
 \\
 \end{align}\]</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -512,6 +596,21 @@ y &amp;= t^2
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill-builder-problems">2.1.1. Skill builder problems</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
