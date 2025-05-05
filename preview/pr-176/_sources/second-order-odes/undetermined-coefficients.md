@@ -98,13 +98,10 @@ $$
 y' = 4C_1 e^{4x} - 3C_2e^{-3X} - 36x^2 + 6x - \frac{13}{2}
 $$
 
-$$
-5 = y(0) = C_1 + C_2 \quad \Rightarrow \quad C_1 + C_2 = 5
-$$
-
-$$
--\frac{1}{2} = y'(0) = 4C_1 - 3C_2 - \frac{13}{2} \quad \Rightarrow \quad 4C_1 - 3C_2 = 6
-$$
+\begin{alignat*}{4}
+5 &= y(0) &&= C_1 + C_2 &&\Rightarrow  C_1 + C_2 &= 5 \\
+-\frac{1}{2} &= y'(0) &&= 4C_1 - 3C_2 - \frac{13}{2} &&\Rightarrow  4C_1 - 3C_2 &= 6
+\end{alignat*}
 
 $$\begin{equation}
 \begin{bmatrix} 1 & 1 & 5 \\\ 4 & -3 & 6 \end{bmatrix} \quad \Rightarrow
