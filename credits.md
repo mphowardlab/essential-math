@@ -22,6 +22,7 @@ This work (c) 2025 is licensed under
 - Molly Grace Hicks
 - Michael P. Howard
 - Evan M. Hughes
+- Tony Jasso
 - Esther Laiming
 - Gwyneth A. Lovell
 - Abby Lucas
@@ -42,6 +43,7 @@ This work (c) 2025 is licensed under
 - Brent Russell
 - Michelle Schindler
 - Katie Sorensen
+- Mary Frances Springfield
 - Lauren Thompson
 - Madelyn Torrance
 - Debora Vasconcelos
