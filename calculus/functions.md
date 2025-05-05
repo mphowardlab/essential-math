@@ -67,4 +67,4 @@ Trigonometric functions represent waves. The properties of the wave can be encod
 \begin{align}
 y& = A\sin[(\frac{2\pi}{L})(x + x_{o})] + y_{o}
 \end{align}
-Where: A = amplitude, $\frac{2\pi}{L}$ = period, $x + x_{0}$ = horizontal shift, and $y_{o}$ = vertical shift
+Where: A = amplitude, $\frac{2\pi}{L}$ = period, $x_{0}$ = horizontal shift, and $y_{o}$ = vertical shift
