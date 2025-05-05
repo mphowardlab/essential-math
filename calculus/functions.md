@@ -43,7 +43,7 @@ At $ \theta = 45^{\circ} $
 \cos(\theta)& = \frac{1}{\sqrt{2}}
 \end{align}
 
-What about $ \theta' \ge 90^{\circ}(\frac{\pi}{2}) $?
+What about $ \theta \ge 90^{\circ}(\frac{\pi}{2}) $?
 Take the angle of $\theta$ relative to the x-axis, then apply the sign based on which quadrant the angle falls in.
 
 Example: $\theta = 185^{\circ}$
