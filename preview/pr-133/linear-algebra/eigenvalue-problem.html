@@ -405,7 +405,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -421,6 +423,16 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-eigenvalues">3.6.1. Multiple eigenvalues</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-eigenvalues">3.6.2. Complex eigenvalues</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-tricks">3.6.3. Useful tricks</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -432,166 +444,151 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="eigenvalue-problem">
 <h1><span class="section-number">3.6. </span>Eigenvalue problem<a class="headerlink" href="#eigenvalue-problem" title="Link to this heading">#</a></h1>
-<ol class="arabic simple" start="2">
-<li><p>Multiple Eigenvalues</p></li>
-</ol>
-<div class="amsmath math notranslate nohighlight" id="equation-f75d08ec-19a6-4c36-ae47-c0efae9c7dfc">
-<span class="eqno">(3.81)<a class="headerlink" href="#equation-f75d08ec-19a6-4c36-ae47-c0efae9c7dfc" title="Permalink to this equation">#</a></span>\[\begin{align}
-   
-   An nxn matrix has n eigenvalues, but they may not be distinct!
-
-$$
-\vv{A}= 
+<section id="multiple-eigenvalues">
+<h2><span class="section-number">3.6.1. </span>Multiple eigenvalues<a class="headerlink" href="#multiple-eigenvalues" title="Link to this heading">#</a></h2>
+<p>An <em>n</em> x <em>n</em> matrix has <em>n</em> eigenvalues, but they may not be distinct! For
+example, consider the matrix:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9065faf2-2b19-47ff-9c6c-b5eb2fdee88e">
+<span class="eqno">(3.81)<a class="headerlink" href="#equation-9065faf2-2b19-47ff-9c6c-b5eb2fdee88e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\vv{A} =
 \begin{bmatrix}
 -2 &amp; 2 &amp; -3 \\
 2 &amp; 1 &amp; -6 \\
 -1 &amp; -2 &amp; 0
 \end{bmatrix}
-$$
-
-$$
-|\vv{A} - \lambda  \vv{I}| =
+\end{equation}\]</div>
+<p>We need to evaluate the determinant:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1b03b835-ae72-44c2-8c96-c7f4f3eb531f">
+<span class="eqno">(3.82)<a class="headerlink" href="#equation-1b03b835-ae72-44c2-8c96-c7f4f3eb531f" title="Permalink to this equation">#</a></span>\[\begin{align}
+|\vv{A} - \lambda  \vv{I}| &amp;=
 \begin{vmatrix}
 -2-\lambda &amp; 2 &amp; -3 \\
 2 &amp; 1-\lambda &amp; -6 \\
 -1 &amp; -2 &amp; -\lambda
-\end{vmatrix} =
-$$ 
- 
-$$
+\end{vmatrix} \\
+&amp;=
+
 -1
 \begin{vmatrix}
 2 &amp; -3 \\
 1-\lambda &amp; -6
 \end{vmatrix}
-$$ 
 
-$$
 -(-2)
 \begin{vmatrix}
 -2-\lambda &amp; -3 \\
 2 &amp; -6
 \end{vmatrix}
-$$
 
-$$
 -\lambda
 \begin{vmatrix}
 -2-\lambda &amp; 2 \\
-2 &amp; 1-\lambda 
-\end{vmatrix}
-$$
+2 &amp; 1-\lambda
+\end{vmatrix} \\
 
-$= -[-12+3(1-\lambda)]+2[6(2+\lambda)+6]-\lambda[(\lambda+2)(\lambda-1)-4]$
-
-$= (3\lambda+9)+(12\lambda+36)-\lambda(\lambda^2+\lambda-6) = -\lambda^3-\lambda^2+21\lambda+45 $
-
-$= -(\lambda-5)(\lambda+3)^2 = 0 \to \lambda_1 = 5, \lambda_2 = \lambda_3 = -3 $
-
-$\lambda_1 = 5:$
-
-$$
+&amp;= -[-12+3(1-\lambda)]+2[6(2+\lambda)+6]-\lambda[(\lambda+2)(\lambda-1)-4] \\
+&amp;= -\lambda^3-\lambda^2+21\lambda+45 = 0
+\end{align}\]</div>
+<p>The roots of this cubic polynomial are <span class="math notranslate nohighlight">\(\lambda_1 = 5\)</span> and
+<span class="math notranslate nohighlight">\(\lambda_2 = \lambda_3 = -3\)</span>. The eigenvector for <span class="math notranslate nohighlight">\(\lambda_1 = 5\)</span> is obtained
+from</p>
+<div class="amsmath math notranslate nohighlight" id="equation-003647d5-bbc7-41c4-823c-77d9edd4ce98">
+<span class="eqno">(3.83)<a class="headerlink" href="#equation-003647d5-bbc7-41c4-823c-77d9edd4ce98" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\vv{A} - \lambda_1 \vv{I} =
 \begin{bmatrix}
 -7 &amp; 2 &amp; -3 \\
 2 &amp; -4 &amp; -6 \\
 -1 &amp; -2 &amp; -3
 \end{bmatrix}
-$$
-
-$\to\to$
-
-$$
+\to\to
 \begin{bmatrix}
 1 &amp; 0 &amp; 1 \\
 0 &amp; 1 &amp; 2 \\
 0 &amp; 0 &amp; 0
 \end{bmatrix}
-$$
-
-$x_1 + x_3 = 0$
-
-$x_2 +2x_3 = 0$
-
-$x_3$ free
-
-$$
-\vv{x_1} =
+\end{equation}\]</div>
+<p>This matrix is equivalent to the system of equations:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-af6f5853-5d9d-46f9-9380-2122915b6503">
+<span class="eqno">(3.84)<a class="headerlink" href="#equation-af6f5853-5d9d-46f9-9380-2122915b6503" title="Permalink to this equation">#</a></span>\[\begin{align}
+x_1 + x_3 &amp;= 0 \\
+x_2 + 2 x_3 &amp;= 0
+\end{align}\]</div>
+<p>with <span class="math notranslate nohighlight">\(x_3\)</span> free. Choosing <span class="math notranslate nohighlight">\(x_3 = -1\)</span> gives</p>
+<div class="amsmath math notranslate nohighlight" id="equation-888fd166-6304-4733-b8fc-4638ad24a837">
+<span class="eqno">(3.85)<a class="headerlink" href="#equation-888fd166-6304-4733-b8fc-4638ad24a837" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\vv{x}_1 =
 \begin{bmatrix}
 1 \\
 2  \\
 -1
 \end{bmatrix}
-$$
-
-$\lambda_2 = \lambda_3 = -3: $
-
-$$
+\end{equation}\]</div>
+<p>The eigenvectors for <span class="math notranslate nohighlight">\(\lambda_2 = \lambda_3 = -3\)</span> are obtained from</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2f36b5a9-6d29-4143-bb08-b512c3994d45">
+<span class="eqno">(3.86)<a class="headerlink" href="#equation-2f36b5a9-6d29-4143-bb08-b512c3994d45" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\vv{A} - \lambda_2 \vv{I} =
 \begin{bmatrix}
 1 &amp; 2 &amp; -3 \\
 2 &amp; 4 &amp; -6 \\
 -1 &amp; -2 &amp; 3
 \end{bmatrix}
-$$
-
-$\to\to$
-
-$$
+\to\to
 \begin{bmatrix}
 1 &amp; 2 &amp; -3 \\
 0 &amp; 0 &amp; 0 \\
 0 &amp; 0 &amp; 0
 \end{bmatrix}
-$$
-
-$x_1 + 2x_2 - 3x_3 = 0$
-
-$x_2, x_3$ free
-
-$x_2 = 1, x_3 = 0 \to$
-
-$$
-\vv{x_2} =
+\end{equation}\]</div>
+<p>This matrix is equivalent to</p>
+<div class="amsmath math notranslate nohighlight" id="equation-92045fc0-41bb-4bfb-b690-167a6988654f">
+<span class="eqno">(3.87)<a class="headerlink" href="#equation-92045fc0-41bb-4bfb-b690-167a6988654f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+x_1 + 2x_2 - 3x_3 = 0
+\end{equation}\]</div>
+<p>with <span class="math notranslate nohighlight">\(x_2\)</span> and <span class="math notranslate nohighlight">\(x_3\)</span> free. Choosing <span class="math notranslate nohighlight">\(x_2 = 1\)</span> and <span class="math notranslate nohighlight">\(x_3 = 0\)</span> gives one
+eigenvector</p>
+<div class="amsmath math notranslate nohighlight" id="equation-71fd343a-7673-4bf8-aa8f-218bf38e9d81">
+<span class="eqno">(3.88)<a class="headerlink" href="#equation-71fd343a-7673-4bf8-aa8f-218bf38e9d81" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\vv{x}_2 =
 \begin{bmatrix}
 -2 \\
 1 \\
 0
 \end{bmatrix}
-$$
-
-$x_2 = 0, x_3 = 1 \to$
-
-$$
-\vv{x_3} =
+\end{equation}\]</div>
+<p>while choosing an independent combination <span class="math notranslate nohighlight">\(x_2 = 0\)</span> and <span class="math notranslate nohighlight">\(x_3 = 1\)</span> gives</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b7c2fd21-18d2-4255-a439-30522b24f137">
+<span class="eqno">(3.89)<a class="headerlink" href="#equation-b7c2fd21-18d2-4255-a439-30522b24f137" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\vv{x}_3 =
 \begin{bmatrix}
 3 \\
 0 \\
 1
 \end{bmatrix}
-$$
-
-3. Complex Eigenvalues
-
-   Matrices may have complex eigenvaules. They always come in conjugate pairs!
-
-$$
+\end{equation}\]</div>
+</section>
+<section id="complex-eigenvalues">
+<h2><span class="section-number">3.6.2. </span>Complex eigenvalues<a class="headerlink" href="#complex-eigenvalues" title="Link to this heading">#</a></h2>
+<p>Matrices may have complex eigenvaules. They always come in conjugate pairs!</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \\vv{A} =
 \begin{bmatrix}
 0 &amp; 1 \\
 -1 &amp; 0
 \end{bmatrix}
-$$
-
-$$
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 | \vv{A} - \lambda  \vv{I}| =
 \begin{vmatrix}
 -\lambda &amp; 1 \\
 -1 &amp; \lambda
 \end{vmatrix} =
 \lambda^2 + 1 = 0 \to \lambda_1 =i , \lambda_2 = -i
-$$
-
-$$
-\lambda_1 = i: 
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\lambda_1 = i:
 \begin{bmatrix}
 -i &amp; 1 \\
 -1 &amp; i
@@ -601,19 +598,19 @@ $$
 -i &amp; 1 \\
 0 &amp; 0
 \end{bmatrix}
-$$
-
-$$
--ix_1 + x_2 = 0 
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+-ix_1 + x_2 = 0
 \to
 \vv{x_1} =
 \begin{bmatrix}
 1 \\
 i
 \end{bmatrix}
-$$
-
-$$
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \lambda_2 = -i:
 \begin{bmatrix}
 i &amp; 1 \\
@@ -625,56 +622,43 @@ i &amp; 1 \\
 1 \\
 -i
 \end{bmatrix}
-$$
-
-4. Some useful tricks
-   - The eigenvaules of upper triangular matrices are the values on the diagonal.
-   
-$$
+\end{split}\]</div>
+</section>
+<section id="useful-tricks">
+<h2><span class="section-number">3.6.3. </span>Useful tricks<a class="headerlink" href="#useful-tricks" title="Link to this heading">#</a></h2>
+<ul>
+<li><p>The eigenvaules of upper triangular matrices are the values on the diagonal.
+For example, the matrix</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a0ce42b3-3065-4333-a51e-2376e8362729">
+<span class="eqno">(3.90)<a class="headerlink" href="#equation-a0ce42b3-3065-4333-a51e-2376e8362729" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix}
 1 &amp; 4 &amp; 5 \\
 0 &amp; 2 &amp; 6 \\
 0 &amp; 0 &amp; 3
 \end{bmatrix}
-$$
-
-$$
-\lambda_1 = 1,
-\lambda_2 = 2,
-\lambda_3 = 3
-$$
-
-The transpose $\vv{A}^T$ has the same eigenvalues as $\vv{A}$
-
-$$
+\end{equation}\]</div>
+<p>has <span class="math notranslate nohighlight">\(\lambda_1 = 1\)</span>, <span class="math notranslate nohighlight">\(\lambda_2 = 2\)</span>, and <span class="math notranslate nohighlight">\(\lambda_3 = 3\)</span> as eigenvalues.</p>
+</li>
+<li><p>The transpose <span class="math notranslate nohighlight">\(\vv{A}^{\rm T}\)</span> has the same eigenvalues as <span class="math notranslate nohighlight">\(\vv{A}\)</span>. For
+example, the matrix:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-313976c2-ae7e-4ba0-a5d7-5da9116e9e1f">
+<span class="eqno">(3.91)<a class="headerlink" href="#equation-313976c2-ae7e-4ba0-a5d7-5da9116e9e1f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix}
 1 &amp; 0 &amp; 0 \\
 4 &amp; 2 &amp; 0 \\
 5 &amp; 6 &amp; 3
 \end{bmatrix}
-$$
-
-=
-
-$$
-\begin{bmatrix}
-1 &amp; 4 &amp; 5 \\
-0 &amp; 2 &amp; 6 \\
-0 &amp; 0 &amp; 3
-\end{bmatrix}^T
-$$
-
-$$
-\to
-\lambda_1=1, 
-\lambda_2=2,
-\lambda_3=3
-$$
-
-- If $\vv{A}$ is symmetric ( $\vv{A}^T = \vv{A}$ ), its eigenvalues are real.
-- If $\vv{A}$ is skew-symmetric ( $\vv{A}^T = \vv{-A}$ ), its eigenvalues are pure imaginary.
-
-\end{align}\]</div>
+\end{equation}\]</div>
+<p>also has <span class="math notranslate nohighlight">\(\lambda_1 = 1\)</span>, <span class="math notranslate nohighlight">\(\lambda_2 = 2\)</span>, and <span class="math notranslate nohighlight">\(\lambda_3 = 3\)</span> as eigenvalues
+because it is the transpose of the matrix above.</p>
+<p>Note that this means that the eigenvalues of <em>lower</em> triangular matrices are
+also the values on the diagonal!</p>
+</li>
+<li><p>If <strong>A</strong> is symmetric (<span class="math notranslate nohighlight">\(\vv{A}^{\rm T} = \vv{A}\)</span>), its eigenvalues are real.</p></li>
+<li><p>If <strong>A</strong> is skew-symmetric (<span class="math notranslate nohighlight">\(\vv{A}^{\rm T} = -\vv{A}\)</span>), its eigenvalues are
+purely imaginary.</p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -731,6 +715,23 @@ $$
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-eigenvalues">3.6.1. Multiple eigenvalues</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-eigenvalues">3.6.2. Complex eigenvalues</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-tricks">3.6.3. Useful tricks</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
