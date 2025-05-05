@@ -13,6 +13,7 @@ This work (c) 2025 is licensed under
 - Abby Lucas
 - Faith Major
 - Lilli Midgette
+- Mason Miller
 - Elijah  C. Mitchell
 - Michelle Schindler
 - Katie Sorensen
