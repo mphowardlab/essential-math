@@ -88,6 +88,7 @@ So, the second (mixed) partial derivative with respect to *y* then *x* is
 ## Skill builder problems
 
 Given:
+
 \begin{align}
 f &= \cos(4x+y^2) + x^2y\\
 x &= 2ut\\
@@ -95,18 +96,59 @@ y &= t^2
 \end{align}
 
 Evaluate:
-\begin{align}
-(a)\ \left(\frac{\partial f}{\partial x}\right)_y &= -4\sin(4x+y^2) + 2xy\\
-\\
-(b)\ \left(\frac{\partial f}{\partial y}\right)_x &= -2y\sin(4x+y^2) + x^2\\
-\\
-(c)\ \left(\frac{\partial^2 f}{\partial x^2}\right)_y &= -16\cos(4x+y^2) + 2y \quad \text{(differentiate (a))}\\
-\\
-(d)\ \left(\frac{\partial^2 f}{\partial y^2}\right)_x &= -4y^2\cos(4x+y^2) - 2\sin(4x+y^2) \quad \text{(differentiate (b))}\\
-\\
-(e)\ \left(\frac{\partial^2 f}{\partial x \partial y}\right) &= -8y\cos(4x+y^2) + 2x \quad \text{(differentiate (b))}\\
-\\
-(f)\ \left(\frac{\partial^2 f}{\partial y \partial x}\right) &= -8y\cos(4x+y^2) + 2x \quad \text
-{(same as (e), or differentiate (b))}\\
-\\
-\end{align}
+
+1. $\displaystyle\td{}{f}{x}{y}$
+
+   ```{solution}
+   \begin{equation}
+   \td{}{f}{x}{y} = -4\sin(4x+y^2) + 2xy
+   \end{equation}
+   ```
+
+2. $\displaystyle\td{}{f}{y}{x}$
+
+   ```{solution}
+   \begin{equation}
+   \td{}{f}{y}{x} = -2y\sin(4x+y^2) + x^2\\
+   \end{equation}
+   ```
+
+3. $\displaystyle\td{2}{f}{x}{y}$
+
+   ```{solution}
+   \begin{equation}
+   \td{2}{f}{x}{y} = -16\cos(4x+y^2) + 2y
+   \end{equation}
+
+   (Differentiate #1.)
+   ```
+
+4. $\displaystyle\td{2}{f}{y}{x}$
+
+   ```{solution}
+   \begin{equation}
+   \td{2}{f}{y}{x} = -4y^2\cos(4x+y^2) - 2\sin(4x+y^2)
+   \end{equation}
+
+   (Differentiate #1.)
+   ```
+
+5. $\displaystyle\frac{\partial^2 f}{\partial x \partial y}$
+
+   ```{solution}
+   \begin{equation}
+   \frac{\partial^2 f}{\partial x \partial y} = -8y\cos(4x+y^2) + 2x
+   \end{equation}
+
+   (Differentiate #2.)
+   ```
+
+6. $\displaystyle\frac{\partial^2 f}{\partial y \partial x}$
+
+   ```{solution}
+   \begin{equation}
+   \frac{\partial^2 f}{\partial y \partial x} = -8y\cos(4x+y^2) + 2x
+   \end{equation}
+
+   (Same as #5.)
+   ```
