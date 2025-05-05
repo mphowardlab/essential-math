@@ -2,7 +2,6 @@
 ```{example}
 Physics example: harmonic oscillator
 ![oscillating-diagram](https://github.com/user-attachments/assets/60229bb0-22b3-4fbd-8623-379b5c04ec02)
-![oscillating-graph](https://github.com/user-attachments/assets/293a613a-f582-4e92-8775-bd545170b092)
 
 \begin{align}
 F=-kx
