@@ -8,6 +8,7 @@ This work (c) 2025 is licensed under
 ## Contributors
 
 - Payton Baxter
+- Jacob Bowling
 - Andrew Castel
 - Paine Cole
 - Oscar Earhart
@@ -15,10 +16,13 @@ This work (c) 2025 is licensed under
 - Alexis Florit
 - Ella Governale
 - Connor Habig
+- Anna Grace Hawkins
 - Kennedi Hawkins
+- Joshua R. Hegar
 - Molly Grace Hicks
 - Michael P. Howard
 - Evan M. Hughes
+- Tony Jasso
 - Esther Laiming
 - Gwyneth A. Lovell
 - Abby Lucas
@@ -26,16 +30,21 @@ This work (c) 2025 is licensed under
 - Faith Major
 - John R. Marshall, IV
 - Davis McCaleb
+- Amber N. McMillan
 - Lilli Midgette
+- Mason Miller
 - Clara Mitchell
 - Elijah  C. Mitchell
 - Meg Nettles
 - Jeffe Old
+- Ella Ortbals
 - Kendall Reeves
 - Olivia Robinson
 - Brent Russell
 - Michelle Schindler
 - Katie Sorensen
+- Mary Frances Springfield
+- Lauren Thompson
 - Madelyn Torrance
 - Debora Vasconcelos
 - Morgan Wootton
