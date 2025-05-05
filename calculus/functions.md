@@ -1,7 +1,11 @@
 # Functions
 ## Evaluating and Manipulating Trigonometric Functions
 ![fishy](./images/MAtappunitcircle.png)
+ Each quadrant of the unit circle corresponds to a positive trigonometric function as represented by "A(all)+", "T(tangent)+", "S(sine)+", "C(cosine)+".
 
+The given unit circle has a triangle drawn within which represents how trigonometric functions are related to lengths and heights of the sides of right traingles. 
+The circle has a radius and is centered at (0,0). A point on the circle is defined by angle \theta measured counterclockwise from the positive x-axis.
+The trigonometric functions describe how the coordinates of a point on the unit circle relate to the angle \theta.
 \begin{align}
 \sin(\theta)& = \frac{y}{r}& 
 \cos(\theta)& = \frac{x}{r}& 
@@ -46,8 +50,8 @@ At $ \theta = 45^{\circ} $
 What about $ \theta \ge 90^{\circ}(\frac{\pi}{2}) $?
 Take the angle of $\theta$ relative to the x-axis, then apply the sign based on which quadrant the angle falls in.
 
-Example: $\theta = 185^{\circ}$
-![fishy](./images/Untitled-4.jpg)
+```{example} <$\theta = 185^{\circ}$>
+<![fishy](./images/Untitled-4.jpg)
 
 The graph shows $\theta = \frac{3\pi}{4}$ and $\theta' = \frac{\pi}{4}$ so:
 \begin{align}
@@ -55,11 +59,11 @@ The graph shows $\theta = \frac{3\pi}{4}$ and $\theta' = \frac{\pi}{4}$ so:
 \cos(\theta')& = \frac{1}{\sqrt{2}}
 \end{align}
 
-"s" is positive so:
+In quadrant two sine is positive so:
 \begin{align}
 \sin(\theta)& = \frac{1}{\sqrt{2}}&
 \cos(\theta)& = -\frac{1}{\sqrt{2}}
-\end{align}
+\end{align}>
 
 Trigonometric functions represent waves. The properties of the wave can be encoded by manipulating the function.
 ![fishy](./images/1c668276-2784-41eb-b578-39232daf8748.png)
