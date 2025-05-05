@@ -9,6 +9,7 @@ This work (c) 2025 is licensed under
 
 - Payton Baxter
 - Jacob Bowling
+- Zachary Bradford
 - Andrew Castel
 - Paine Cole
 - Oscar Earhart
@@ -48,6 +49,7 @@ This work (c) 2025 is licensed under
 - Lauren Thompson
 - Madelyn Torrance
 - Debora Vasconcelos
+- Luke Walters
 - Morgan Wootton
 
 ## Attributions
