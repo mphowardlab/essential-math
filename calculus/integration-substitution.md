@@ -121,7 +121,7 @@ du &= -\sin(x)\,dx, & v &= e^x
 Apply integration by parts: $uv - \int vdu$
 
 \begin{align}
-y = e^xcos(x) + \int e^x(sin(x))dx
+\int e^xcos(x)dx = e^xcos(x) + \int e^x(sin(x))dx
 \end{align}
 
 Assign new values for u and dv, find du and v again.
@@ -133,15 +133,18 @@ du &= \cos(x)\,dx, & v &= e^x
 Apply integration by parts: $uv - \int vdu$
 
 \begin{align}
-= e^xcos(x)+[e^xsin(x)-\int e^xcos(x)dx]
+\int e^xcos(x)dx = e^xcos(x)+[e^xsin(x)-\int e^xcos(x)dx]
 \end{align}
 
 $ \int e^xcos(x)dx$ appears again, so we can add them together to get:
 
-= 2\int e^xcos(x)dx = e^xcos(x)+e^xsin(x)  
+\begin{align}
+2\int e^xcos(x)dx = e^xcos(x)+e^xsin(x)  
+\end{align}
 
 Divide both sides by 2, and don't forget + C
 
+\begin{align}
 \int e^x \cos(x)dx = \frac{e^x}{2}(\cos(x) + \sin(x)) + C
-
+\end{align}
 ```
