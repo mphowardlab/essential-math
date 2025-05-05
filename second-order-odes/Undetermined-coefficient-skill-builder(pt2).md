@@ -27,7 +27,7 @@
       Combine:
 
       \begin{align}
-      4ke^{2x}\cancel{e^{2x}} + 6ke^{2x}\cancel{e^{2x}} + 2ke^{2x}\cancel{e^{2x}} = 30e^2x\cancel{e^2x} \\
+      4ke^{2x}\cancel{e^{2x}} + 6ke^{2x}\cancel{e^{2x}} + 2ke^{2x}\cancel{e^{2x}} = 30e^2x\cancel{e^{2x}} \\
       12k = 30 \rightarrow k = \frac{5}{2} \\
       y_p = \frac{5}{2} e^{2x}
       \end{align}
@@ -118,6 +118,6 @@ The final solution is:
 \begin{equation}
 \boxed{y = 4x \sin 2x}
 \end{equation}
-
+'''
 
 
