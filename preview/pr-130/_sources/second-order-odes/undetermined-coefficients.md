@@ -15,7 +15,7 @@ we can "guess" a solution as follows:
 | $k x^n (n=0,1,\ldots)$         | $k_n x^n + k_{n-1} x^{n-1} + \cdots + k_1 x + k_0$      |
 |$k e^{\alpha x} \cos{\omega x}$ | $e^{\alpha x}(k_1 \cos{\omega x} + k_2 \sin{\omega x})$ |
 |$k e^{\alpha x} \sin{\omega x}$ | $e^{\alpha x}(k_1 \cos{\omega x} + k_2 \sin{\omega x})$ |
-<!-- markdownlint-disable MD013 -->
+<!-- markdownlint-enable MD013 -->
 
 - If *r* has multiple terms, add guesses for each together.
 - If the guess for $y_{\rm p}$ is a homogeneous solution $y_{\rm h}$, multiply
@@ -90,5 +90,7 @@ Use the following steps:
 
 Ex. $y''+3y'+2.25y=-10e^-1.5x+cosx$
 
-1. Find $y_n$: $y{_n}''+3y{_n}'+2.25y_n =0 -> \lambda^2 +3\lambda+2.25 =(\lambda+1.5)^2 = 0 -> \lambda=-1.5 -> y_n = (c_1 + c{_2}x)e^{-1.5x}$
+1. Find $y_n$: $y{_n}''+3y{_n}'+2.25y_n =0 ->
+   \lambda^2 +3\lambda+2.25 =(\lambda+1.5)^2 = 0 ->
+   \lambda=-1.5 -> y_n = (c_1 + c{_2}x)e^{-1.5x}$
 2. Guess $y_p$: $y_p = k_1 x^2 e^{-1.5 x} + (k_2 \cos(x) +k_3 \sin(x))$
