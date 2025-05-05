@@ -57,6 +57,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"d": ["{\\operatorname{d}\\!{#1}}", 1], "dd": ["{\\d{}^{#1} #2 \\over \\d{#3}^{#1}}", 3], "pp": ["{\\partial^{#1} #2 \\over \\partial #3^{#1}}", 3], "td": ["{\\left(\\pp{#1}{#2}{#3} \\right)_{#4}}", 4], "ubar": ["\\underline{#1}", 1], "vv": ["\\mathbf{#1}", 1]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'second-order-odes/variation-of-parameters';</script>
     <link rel="canonical" href="https://mphowardlab.github.io/essential-math/second-order-odes/variation-of-parameters.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -215,9 +217,10 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../systems-first-order-odes/index.html">6. Systems of first-order ordinary differential equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/linearity.html">6.1. Linearity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/homogeneous-constant-coefficient.html">6.2. Homogeneous linear first-order ODEs with constant coefficients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/numerical-solution.html">6.3. Numerical solution methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/definition.html">6.1. Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/linearity.html">6.2. Linearity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/homogeneous-constant-coefficient.html">6.3. Homogeneous linear first-order ODEs with constant coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/numerical-solution.html">6.4. Numerical solution methods</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">7. Second-order ordinary differential equations</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
@@ -402,7 +405,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -418,6 +423,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill-builder-problems">7.5.1. Skill builder problems</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -429,6 +442,373 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="variation-of-parameters">
 <h1><span class="section-number">7.5. </span>Variation of parameters<a class="headerlink" href="#variation-of-parameters" title="Link to this heading">#</a></h1>
+<div class="admonition-example-steady-heat-diffusion-with-internal-source admonition">
+<p class="admonition-title">Example: Steady heat diffusion with internal source</p>
+<p>We are solving the steady-state heat diffusion equation with an internal source:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-97e23cae-0484-42ac-95db-92e8a088d218">
+<span class="eqno">(7.68)<a class="headerlink" href="#equation-97e23cae-0484-42ac-95db-92e8a088d218" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\alpha \dd{2}{T}{x} + qx \sin x = 0
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\alpha\)</span> is thermal diffusivity, and <span class="math notranslate nohighlight">\(qx \sin x\)</span> is the heat source. The
+boundary conditions are:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f8c44183-2774-4f88-8a9a-a94b002ca787">
+<span class="eqno">(7.69)<a class="headerlink" href="#equation-f8c44183-2774-4f88-8a9a-a94b002ca787" title="Permalink to this equation">#</a></span>\[\begin{equation}
+T(-1) = T(1) = 1
+\end{equation}\]</div>
+<hr class="docutils" />
+<p>In standard form,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ee8bd35b-4722-4111-9f8b-7e53112dfd63">
+<span class="eqno">(7.70)<a class="headerlink" href="#equation-ee8bd35b-4722-4111-9f8b-7e53112dfd63" title="Permalink to this equation">#</a></span>\[\begin{equation}
+T'' = -q x \sin x
+\end{equation}\]</div>
+<ol class="arabic">
+<li><p>Find homogeneous solution:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b66cae68-8342-4ff5-a31d-666c91ea6f49">
+<span class="eqno">(7.71)<a class="headerlink" href="#equation-b66cae68-8342-4ff5-a31d-666c91ea6f49" title="Permalink to this equation">#</a></span>\[\begin{align}
+\alpha T_{\rm h}'' &amp;= 0 \\
+\alpha \lambda^2 &amp;= 0 \\
+\lambda &amp;= 0
+\end{align}\]</div>
+<p>so,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e646646c-1e2f-4541-bc57-11c503df5116">
+<span class="eqno">(7.72)<a class="headerlink" href="#equation-e646646c-1e2f-4541-bc57-11c503df5116" title="Permalink to this equation">#</a></span>\[\begin{equation}
+T_{\rm h} = c_1 + c_2 x
+\end{equation}\]</div>
+</li>
+<li><p>Find particular solution using variation of parameters:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-610d9120-1609-4b1b-8e44-9b743295aa5b">
+<span class="eqno">(7.73)<a class="headerlink" href="#equation-610d9120-1609-4b1b-8e44-9b743295aa5b" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_1 &amp;= 1, \quad y_2 = x \\
+y_1' &amp;= 0, \quad y_2' = 1
+\end{align}\]</div>
+<p>so the Wronskian is <span class="math notranslate nohighlight">\(W = 1 \cdot 1 - 0 \cdot x = 1\)</span>. The right-hand side
+function is</p>
+<div class="amsmath math notranslate nohighlight" id="equation-479c8bbd-d8f7-458e-b7ec-2ac330d8e624">
+<span class="eqno">(7.74)<a class="headerlink" href="#equation-479c8bbd-d8f7-458e-b7ec-2ac330d8e624" title="Permalink to this equation">#</a></span>\[\begin{equation}
+r = -\frac{qx \sin x}{\alpha}
+\end{equation}\]</div>
+<p>so the particular solution is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6ddab47b-c19c-4a93-847f-6f958d3912dc">
+<span class="eqno">(7.75)<a class="headerlink" href="#equation-6ddab47b-c19c-4a93-847f-6f958d3912dc" title="Permalink to this equation">#</a></span>\[\begin{align}
+T_{\rm p} &amp;= -1 \int x \left( \frac{-q x \sin x}{\alpha} \right) \, \d{x}
+  + x \int \left( \frac{-q x \sin x}{\alpha} \right) \, \d{x} \\
+&amp;= \frac{q}{\alpha} \int x^2 \sin x \, \d{x}
+  - \frac{q}{\alpha} x \int x \sin x \, \d{x}
+\end{align}\]</div>
+<p>These integrals can both be evaluated by parts. For the first integral,
+use the tabular method:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>sign</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(u\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\d{v}\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p></p></td>
+<td><p></p></td>
+<td><p><span class="math notranslate nohighlight">\(\sin x\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(+\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(x^2\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(-\cos x\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(-\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(2x\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(-\sin x\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(+\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(2\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\cos x\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-fbefe258-39ba-492e-be71-8ed95c8624ff">
+<span class="eqno">(7.76)<a class="headerlink" href="#equation-fbefe258-39ba-492e-be71-8ed95c8624ff" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\int x^2 \sin x \, \d{x} = -x^2 \cos x + 2x \sin x + 2 \cos x
+\end{equation}\]</div>
+<p>For the second integral, use</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d8788dc1-a6ec-43e4-9bf1-da0606d12706">
+<span class="eqno">(7.77)<a class="headerlink" href="#equation-d8788dc1-a6ec-43e4-9bf1-da0606d12706" title="Permalink to this equation">#</a></span>\[\begin{align}
+u &amp;= x &amp; \d{v} &amp;= \sin x \d{x} \\
+\d{u} &amp;= 1 \d{x} &amp; v &amp;= -\cos{x}
+\end{align}\]</div>
+<p>so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-cc62816a-5163-4d25-ba58-ab8ddcc18612">
+<span class="eqno">(7.78)<a class="headerlink" href="#equation-cc62816a-5163-4d25-ba58-ab8ddcc18612" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\int x \sin x \d{x} = -x \cos x + \int \cos x \d{x} = -x \cos x + \sin x
+\end{equation}\]</div>
+<p>Substitute everything back:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-880310b5-0b56-4c2b-8397-806f6bfdde23">
+<span class="eqno">(7.79)<a class="headerlink" href="#equation-880310b5-0b56-4c2b-8397-806f6bfdde23" title="Permalink to this equation">#</a></span>\[\begin{align}
+T_{\rm p} &amp;= \frac{q}{\alpha} \left[ -x^2 \cos x + 2x \sin x + 2 \cos x \right]
+  - \frac{q}{\alpha} x \left[ -x \cos x + \sin x \right] \\
+&amp;= \frac{q}{\alpha} [2 \cos x + x \sin x]
+\end{align}\]</div>
+</li>
+<li><p>Combine and apply boundary conditions.</p>
+<p>The general solution is</p>
+<div class="amsmath math notranslate nohighlight" id="equation-44be4746-7631-41c5-b9ac-52a870307031">
+<span class="eqno">(7.80)<a class="headerlink" href="#equation-44be4746-7631-41c5-b9ac-52a870307031" title="Permalink to this equation">#</a></span>\[\begin{equation}
+T = c_1 + c_2 x + \frac{q}{\alpha}(2\cos x + x \sin x)
+\end{equation}\]</div>
+<p>The boundary conditions are:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ce96a7f6-ec2c-4c36-b6ac-cbd43a423c09">
+<span class="eqno">(7.81)<a class="headerlink" href="#equation-ce96a7f6-ec2c-4c36-b6ac-cbd43a423c09" title="Permalink to this equation">#</a></span>\[\begin{align}
+
+T(-1) &amp;= c_1 - c_2 + \frac{q}{\alpha}[2\cos(-1) - \sin(-1)] = 1\\
+  &amp;= c_1 - c_2 + \frac{q}{\alpha}[2\cos 1 + \sin 1] \\
+T(1) &amp;= c_1 + c_2 + \frac{q}{\alpha}[2\cos 1 + \sin 1] = 1
+\end{align}\]</div>
+<p>This is a system of linear equations that can be solved for <span class="math notranslate nohighlight">\(c_1\)</span> and <span class="math notranslate nohighlight">\(c_2\)</span>.
+Subtracting the two equations gives:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-711e444e-3f48-4179-8ea3-00a0cee9a882">
+<span class="eqno">(7.82)<a class="headerlink" href="#equation-711e444e-3f48-4179-8ea3-00a0cee9a882" title="Permalink to this equation">#</a></span>\[\begin{equation}
+0 = 2 c_2
+\end{equation}\]</div>
+<p>so <span class="math notranslate nohighlight">\(c_2 = 0\)</span>. Plugging back in and solving for <span class="math notranslate nohighlight">\(c_1\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9334b4e1-b062-4a4c-bc2a-3e8c93380c31">
+<span class="eqno">(7.83)<a class="headerlink" href="#equation-9334b4e1-b062-4a4c-bc2a-3e8c93380c31" title="Permalink to this equation">#</a></span>\[\begin{align}
+1 &amp;= c_1 + \frac{q}{\alpha}(2\cos 1 + \sin 1) \\
+c_1 &amp;= 1 - \frac{q}{\alpha}(2\cos 1 + \sin 1)
+\end{align}\]</div>
+</li>
+</ol>
+<p>The final result is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f3cb5848-ef52-4f61-ae9d-81abf9742e50">
+<span class="eqno">(7.84)<a class="headerlink" href="#equation-f3cb5848-ef52-4f61-ae9d-81abf9742e50" title="Permalink to this equation">#</a></span>\[\begin{equation}
+T = 1 + \frac{q}{\alpha}\left[2(\cos x - \cos 1) + x \sin x - \sin 1\right]
+\end{equation}\]</div>
+</div>
+<section id="skill-builder-problems">
+<h2><span class="section-number">7.5.1. </span>Skill builder problems<a class="headerlink" href="#skill-builder-problems" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p>Solve the differential equation</p>
+<div class="amsmath math notranslate nohighlight" id="equation-806eb211-40ef-4a23-b945-6d2c3b488a46">
+<span class="eqno">(7.85)<a class="headerlink" href="#equation-806eb211-40ef-4a23-b945-6d2c3b488a46" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y'' - 4y' + 4y = x^{2} e^{x},  \quad y(0) = 0, \quad y'(0) = 0
+\end{equation}\]</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic">
+<li><p class="sd-card-text">Find homogeneous solution <span class="math notranslate nohighlight">\(y_{\rm h}\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2f23fd07-023d-49a6-81d7-711979e7b4ab">
+<span class="eqno">(7.86)<a class="headerlink" href="#equation-2f23fd07-023d-49a6-81d7-711979e7b4ab" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_{\rm h}'' - 4y_{\rm h}' + 4y_{\rm h} &amp;= 0 \\
+\lambda^2 - 4\lambda + 4 &amp;= 0 \\
+(\lambda -2)^2 &amp;= 0
+\end{align}\]</div>
+<p class="sd-card-text">so <span class="math notranslate nohighlight">\(\lambda = 2\)</span> is a repeated eigenvalue and</p>
+<div class="amsmath math notranslate nohighlight" id="equation-765675d0-4a63-4572-8e2b-395fa9634dc4">
+<span class="eqno">(7.87)<a class="headerlink" href="#equation-765675d0-4a63-4572-8e2b-395fa9634dc4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y_{\rm h} = (c_1 + c_2 x) e^{2x}
+\end{equation}\]</div>
+</li>
+<li><p class="sd-card-text">Find particular solution <span class="math notranslate nohighlight">\(y_{\rm p}\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ead013f0-1a5e-4b73-9c6e-d0cb195991ff">
+<span class="eqno">(7.88)<a class="headerlink" href="#equation-ead013f0-1a5e-4b73-9c6e-d0cb195991ff" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_1   &amp;= e^{2x}          &amp;\quad y_2&amp;= x e^{2x} \\
+y_1'  &amp;= 2 e^{2x}        &amp;\quad y_2'&amp;= (1 + 2x) e^{2x}
+\end{align}\]</div>
+<p class="sd-card-text">so the Wronskian is <span class="math notranslate nohighlight">\(W =(1 + 2x) \cdot e^{4x} - 2x \cdot e^{4x} = e^{4x}\)</span>.
+The right-hand side function is</p>
+<div class="amsmath math notranslate nohighlight" id="equation-76707b9d-2d57-4ae9-a454-886ea64956ae">
+<span class="eqno">(7.89)<a class="headerlink" href="#equation-76707b9d-2d57-4ae9-a454-886ea64956ae" title="Permalink to this equation">#</a></span>\[\begin{equation}
+r = x^{2} e^{x}
+\end{equation}\]</div>
+<p class="sd-card-text">so the particular solution is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-626186fa-ee76-4f38-a8c8-8ae0a2e2c957">
+<span class="eqno">(7.90)<a class="headerlink" href="#equation-626186fa-ee76-4f38-a8c8-8ae0a2e2c957" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_{\rm p} &amp;= -e^{2x} \int \frac{x e^{2x} (x^{2} e^{x})}{e^{4x}} \d{x} +
+ x e^{2x} \int \frac{e^{2x} (x^{2} e^{x})}{e^{4x}} \d{x} \\
+ &amp;= -e^{2x} \int x^{3} e^{-x} \d{x} + x e^{2x} \int x^{2} e^{-x} \d{x}
+\end{align}\]</div>
+<p class="sd-card-text">These integrals can both be evaluated by parts using the tabular method:</p>
+<p class="sd-card-text">For the first</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p class="sd-card-text">sign</p></th>
+<th class="head"><p class="sd-card-text"><span class="math notranslate nohighlight">\(u\)</span></p></th>
+<th class="head"><p class="sd-card-text"><span class="math notranslate nohighlight">\(\d{v}\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p class="sd-card-text"></p></td>
+<td><p class="sd-card-text"></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(e^{-x}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text"><span class="math notranslate nohighlight">\(+\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(x^3\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(-e^{-x}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text"><span class="math notranslate nohighlight">\(-\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(3x^2\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(e^{-x}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text"><span class="math notranslate nohighlight">\(+\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(6x\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(-e^{-x}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text"><span class="math notranslate nohighlight">\(-\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(6\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(e^{-x}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text"></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td><p class="sd-card-text"></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="sd-card-text">so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-82a8b798-1957-4e0d-9137-26162c89a470">
+<span class="eqno">(7.91)<a class="headerlink" href="#equation-82a8b798-1957-4e0d-9137-26162c89a470" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\int x^3 e^{-x} \d{x} = -x^3 e^{-x} - 3x^2 e^{-x} - 6x e^{-x}- 6 e^{-x}
+\end{equation}\]</div>
+<p class="sd-card-text">For the second</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p class="sd-card-text">sign</p></th>
+<th class="head"><p class="sd-card-text"><span class="math notranslate nohighlight">\(u\)</span></p></th>
+<th class="head"><p class="sd-card-text"><span class="math notranslate nohighlight">\(\d{v}\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p class="sd-card-text"></p></td>
+<td><p class="sd-card-text"></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(e^{-x}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text"><span class="math notranslate nohighlight">\(+\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(x^2\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(-e^{-x}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text"><span class="math notranslate nohighlight">\(-\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(2x\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(e^{-x}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text"><span class="math notranslate nohighlight">\(+\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(2\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(-e^{-x}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text"></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td><p class="sd-card-text"></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="sd-card-text">so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-829a7c6f-f5b1-4fd1-858e-01479f68ad72">
+<span class="eqno">(7.92)<a class="headerlink" href="#equation-829a7c6f-f5b1-4fd1-858e-01479f68ad72" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\int x^2 e^{-x} \d{x} = -x^2 e^{-x} - 2x e^{-x} - 2 e^{-x}
+\end{equation}\]</div>
+<p class="sd-card-text">Substitute everything back:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ddd5bdf6-74a7-402f-bb92-cb071a8eca36">
+<span class="eqno">(7.93)<a class="headerlink" href="#equation-ddd5bdf6-74a7-402f-bb92-cb071a8eca36" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_{\rm p} &amp;= -e^{2x}
+  \left( -x^3 e^{-x} - 3x^2 e^{-x} - 6x e^{-x} - 6 e^{-x} \right) \\
+  &amp;\quad + x e^{2x} \left( -x^2 e^{-x} - 2x e^{-x} - 2 e^{-x} \right) \\
+  &amp;= (x^2 + 4x + 6) e^x
+\end{align}\]</div>
+</li>
+<li><p class="sd-card-text">Combine and apply initial conditions:</p>
+<p class="sd-card-text">The general solution and its first derivative are</p>
+<div class="amsmath math notranslate nohighlight" id="equation-dbbc528e-90af-4573-8f7d-074c352a8ba5">
+<span class="eqno">(7.94)<a class="headerlink" href="#equation-dbbc528e-90af-4573-8f7d-074c352a8ba5" title="Permalink to this equation">#</a></span>\[\begin{align}
+y &amp;= (c_1 + c_2 x) e^{2x}+(x^{2}+4x+6)e^{x} \\
+y' &amp;= 2(c_1 + c_2 x) e^{2x} + c_2e^{2x} + (x^{2}+4x+6) e^{x} + (2x+4)e^{x}
+\end{align}\]</div>
+<p class="sd-card-text">Plugging in intial conditions</p>
+<div class="amsmath math notranslate nohighlight" id="equation-877a7852-cf63-43c3-b6e5-ae05f08138db">
+<span class="eqno">(7.95)<a class="headerlink" href="#equation-877a7852-cf63-43c3-b6e5-ae05f08138db" title="Permalink to this equation">#</a></span>\[\begin{align}
+y(0) &amp;= c_1 + 6 = 0
+y'(0) &amp;= 2 c_1 + c_2 + 10 = 0
+\end{align}\]</div>
+<p class="sd-card-text">gives <span class="math notranslate nohighlight">\(c_1 = -6\)</span> and <span class="math notranslate nohighlight">\(c_2 = 2\)</span>.</p>
+</li>
+</ol>
+<p class="sd-card-text">The final solution is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-28980a86-5598-4356-b8a8-c13764d286dc">
+<span class="eqno">(7.96)<a class="headerlink" href="#equation-28980a86-5598-4356-b8a8-c13764d286dc" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y = (2 x - 6) e^{2x} + (x^{2}+4x+6)e^{x}
+\end{equation}\]</div>
+</div>
+</details></li>
+<li><p>Solve the differential equation</p>
+<div class="amsmath math notranslate nohighlight" id="equation-089aa480-e47a-43f0-8265-cc0e3c130e14">
+<span class="eqno">(7.97)<a class="headerlink" href="#equation-089aa480-e47a-43f0-8265-cc0e3c130e14" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y'' + y = \csc x, \quad y(\pi/2), \quad y'(\pi/2) = 0
+\end{equation}\]</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic">
+<li><p class="sd-card-text">Find homogeneous solution <span class="math notranslate nohighlight">\(y_{\rm h}\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-21f869db-48b6-4954-9797-ee2793740a90">
+<span class="eqno">(7.98)<a class="headerlink" href="#equation-21f869db-48b6-4954-9797-ee2793740a90" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_{\rm h}' + y_{\rm h} &amp;= 0 \\
+\lambda^2 + 1 &amp;= 0
+\end{align}\]</div>
+<p class="sd-card-text">so <span class="math notranslate nohighlight">\(\lambda_{1,2} = \pm i\)</span> and:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-427f4f23-f9e5-4ad0-a350-1d01d4e76979">
+<span class="eqno">(7.99)<a class="headerlink" href="#equation-427f4f23-f9e5-4ad0-a350-1d01d4e76979" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y_{\rm h} = c_1 \cos x + c_2 \sin_x
+\end{equation}\]</div>
+</li>
+<li><p class="sd-card-text">Find particular solution <span class="math notranslate nohighlight">\(y_{\rm p}\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9da34349-526c-45ef-9fe1-2b301aa0b0e9">
+<span class="eqno">(7.100)<a class="headerlink" href="#equation-9da34349-526c-45ef-9fe1-2b301aa0b0e9" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_1 &amp;= \cos x , \quad y_2 = \sin x \\
+y_1' &amp;= -\sin x, \quad y_2'= \cos x
+\end{align}\]</div>
+<p class="sd-card-text">so the Wronskian is <span class="math notranslate nohighlight">\(W = \cos^2 x + \sin^2 x = 1\)</span>. The right-hand side
+function is</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b8462919-000b-42a2-877a-d0406ebd76fb">
+<span class="eqno">(7.101)<a class="headerlink" href="#equation-b8462919-000b-42a2-877a-d0406ebd76fb" title="Permalink to this equation">#</a></span>\[\begin{equation}
+r = \csc x
+\end{equation}\]</div>
+<p class="sd-card-text">so the particular solution is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8fe4ff93-14b1-4ea6-ba88-c8031f73a250">
+<span class="eqno">(7.102)<a class="headerlink" href="#equation-8fe4ff93-14b1-4ea6-ba88-c8031f73a250" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_p &amp;=  -\cos x \int \sin x\csc(x) \d{x} + \sin x\int \cos x\csc(x) \d{x} \\
+    &amp;= -\cos x \int \d{x} + \sin x \int \frac{\cos x}{\sin x} \d{x} \\
+    &amp;= -x \cos x + \sin x \ln|x|
+\end{align}\]</div>
+</li>
+<li><p class="sd-card-text">Combine and apply initial conditions:</p>
+<p class="sd-card-text">The general solution and its first derivative are</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b603858a-7fd0-4837-9d44-3b2f174e28cf">
+<span class="eqno">(7.103)<a class="headerlink" href="#equation-b603858a-7fd0-4837-9d44-3b2f174e28cf" title="Permalink to this equation">#</a></span>\[\begin{align}
+y &amp;= c_1 \cos x + c_2 \sin x \\
+  &amp; \quad + \sin x \ln\left| \sin x \right| - x \cos x \\
+y' &amp;= -c_1 \sin x + c_2 \cos x \\
+   &amp; \quad + \cos x (1 + \ln\left| \sin x \right|) + x \sin x - \cos x
+\end{align}\]</div>
+<p class="sd-card-text">Plugging in intial conditions</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f377d149-39a4-4b8c-84e9-040d4f678d0d">
+<span class="eqno">(7.104)<a class="headerlink" href="#equation-f377d149-39a4-4b8c-84e9-040d4f678d0d" title="Permalink to this equation">#</a></span>\[\begin{align}
+y(\pi/2) &amp;= c_2 = 0\\
+y'(\pi/2) &amp;= -c_1 + \pi/2 = 0
+\end{align}\]</div>
+<p class="sd-card-text">so <span class="math notranslate nohighlight">\(c_1 = \pi/2\)</span> and <span class="math notranslate nohighlight">\(c_2 = 0\)</span>.</p>
+</li>
+</ol>
+<p class="sd-card-text">The final solution is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-348f18f5-8960-4b31-a770-5f2662549931">
+<span class="eqno">(7.105)<a class="headerlink" href="#equation-348f18f5-8960-4b31-a770-5f2662549931" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y = \frac{\pi}{2} \cos x + \sin x \ln \left| \sin x \right| - x \cos x
+\end{equation}\]</div>
+</div>
+</details></li>
+</ol>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -485,6 +865,21 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill-builder-problems">7.5.1. Skill builder problems</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

@@ -1,5 +1,60 @@
 # Series expansion
 
+Nonlinear functions can be nasty, but polynomials are the "nicest" version. A
+*series expansion* is a systematic approach to turn a general nonlinear
+equation into a polynomial. Suppose we have some function $f(x)$ that we want
+to approximate as:
+
+\begin{equation}
+f(x) = \sum_{n=0}^{\infty} c_n(x-x_0)^n
+\end{equation}
+
+To determine the coefficients $c_n$, consider the values of *f* and its
+derivatives at $x_0$
+
+\begin{align}
+f(x) &= c_0 + c_1(x-x_0) + c_2(x-x_0)^2 + c_3(x-x_0)^3 + \cdots & f(x_0) &= c_0 \\
+f'(x) &= c_1 + 2 c_2(x-x_0) + 3 c_3(x-x_0)^2 + \cdots & f'(x_0) &= c_1 \\
+f''(x) &= 2 c_2 + 6 c_3(x-x_0) + \cdots & f''(x_0) &= 2 c_2 \\
+f'''(x) &= 6 c_3(x-x_0) + \cdots & f''(x_0) &= 6 c_3
+\end{align}
+
+The pattern of matching derivatives gives rise to the *Taylor series*.
+
+```{topic} Taylor series
+
+The Taylor series for $f(x)$ about $x_0$ is given by
+
+\begin{equation}
+f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(x_0)}{n!}\cdot(x-x_0)^n
+\end{equation}
+
+where $f^{(n)}$ is the *n*th derivative of *f*. A Taylor series about $x=0$ is
+sometimes called a Maclaurin series.
+```
+
+```{example} Taylor series
+Compute the Taylor series for $f(x) = \ln x$ about $x_0 = 2$.
+
+---
+
+\begin{align}
+f(x) &= \ln x & f(2) &= \ln 2 \\
+f'(x) &= \frac{1}{x} & f'(2) &= \frac{1}{2} \\
+f''(x) &= -\frac{1}{x^2} & f''(2) &= -\frac{1}{4}
+\end{align}
+
+Hence,
+
+\begin{equation}
+f(x) \approx \ln(2) + \frac{1}{2}(x-2) - \frac{1}{2}\cdot\frac{1}{4} (x-2)^2 + \cdots
+\end{equation}
+```
+
+In general, we could determine the infinite series and general expressions for
+coefficients, but for practical purposes, we will usually stop at either first
+or second order polynomials since that is easier to work with.
+
 ```{example} Taylor series
 Find the two-term Taylor series for
 
@@ -40,8 +95,7 @@ Putting it all together,
 f(x) \approx 0 + 1 \cdot x + \frac{1}{2} \cdot 0 \cdot x^2
 + \frac{1}{6} \cdot 12 \cdot x^3 + \cdots = x + 2x^3 + \cdots
 \end{equation}
-
-````
+```
 
 ## Combining series
 
