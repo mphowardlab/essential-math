@@ -1,6 +1,6 @@
 # Limits
 
-## 1. What is a limit?
+## What is a limit?
 
 What is the behavior of a function as its argument approaches a certain value? Useful for:
 
@@ -15,7 +15,7 @@ Let $f(x)$ be defined on an open interval around $x_0$, except possibly at $x_0$
 
 ---
 
-```{example} Some functions have limits
+````{example} Some functions have limits
 Given: 
 \begin{equation}
 f(x) = \frac{x^2 - 1}{x - 1}
@@ -42,8 +42,9 @@ f(x) = \frac{(x+1)(x-1)}{x-1} = x+1 \quad (x \neq 1)
 :width: 450px
 :align: center
 ```
+````
 
-```{example} Some functions do **not** have limits
+````{example} Some functions do **not** have limits
 \begin{equation}
 f(x) = \frac{1}{x}, \quad x \neq 0
 \end{equation}
@@ -66,3 +67,4 @@ The function blows up to $+\infty$ from the right and $-\infty$ from the left, s
 :width: 450px
 :align: center
 ```
+````
