@@ -50,7 +50,7 @@ Plugging *u* back in gives the final answer:
 \begin{equation}
 y = \int (x+2)\ln(x) \, dx
 \end{equation}
-
+Select Values 
 \begin{align}
 u &= \ln(x), & dv &= (x+2)\,dx \\
 du &= \frac{1}{x}\,dx, & v &= \frac{x^2}{2} + 2x
@@ -58,6 +58,7 @@ du &= \frac{1}{x}\,dx, & v &= \frac{x^2}{2} + 2x
 
 \begin{align}
 y &=\left( \frac{x^2}{2} + 2x \right)\ln(x) - \int \left( \frac{x^2}{2} + 2x \right) \frac{1}{x} \, dx \\
+
 &= \left( \frac{x^2}{2} + 2x \right)\ln(x) - \frac{x^2}{4} - 2x + C
 \end{align}
 
@@ -68,17 +69,29 @@ y &=\left( \frac{x^2}{2} + 2x \right)\ln(x) - \int \left( \frac{x^2}{2} + 2x \ri
 ```{solution}
 
 \begin{equation}
-y = \int x^5\sin(x) \ dx 
+y = \int x^5 \sin(x) \, dx
 \end{equation}
 
-\begin{align}
-u: \ x^5 \ 5x^4 \ 20x^3 \ 60x^2 \ 120x \ 120 \ 0 <br>
-dv: \ sin(x) \\ -cos(x) \\ -sin(x) \\ cos(x) \\ sin(x) \\ -cos(x) \\ -sin(x)  
-\end{align}
+\[
+\begin{array}{|c|c|}
+\hline
+u & dv \\
+\hline
+x^5 & \sin(x) \\
+5x^4 & -\cos(x) \\
+20x^3 & -\sin(x) \\
+60x^2 & \cos(x) \\
+120x & \sin(x) \\
+120 & -\cos(x) \\
+0 & -\sin(x) \\
+\hline
+\end{array}
+\]
 
-=-x^5cos(x)+5x^4sin(x)+20x^3cos(x)-60x^2sin(x)-120xcos(x)+120sin(x)+C
-  
-(-x^5+20x^3-120x)cos(x)+(5x^4-60x^2+120)sin(x)+C  
+\begin{align*}
+y &= -x^5 \cos(x) + 5x^4 \sin(x) + 20x^3 \cos(x) - 60x^2 \sin(x) - 120x \cos(x) + 120 \sin(x) + C \\
+  &= (-x^5 + 20x^3 - 120x) \cos(x) + (5x^4 - 60x^2 + 120) \sin(x) + C
+\end{align*}
 
 ```
 
@@ -93,8 +106,8 @@ y = \int e^xcos(x)dx
 Assign values for u and dv to find values for du and v. 
 
 \begin{align}
-u = cos(x) dv = e^x dx  
-du = -sin(x)dx  v = e^x   
+u &= \cos(x), & dv &= e^x,dx\  
+du &= \-sin(x),dx, & v & = e^x   
 \end{align}
 
 Apply integration by parts: uv - $\int vdu$
@@ -103,14 +116,14 @@ Apply integration by parts: uv - $\int vdu$
 
 Assign new values for u and dv, find du and v again.
 
-u = sin(x) dv = e^x dx  
-du = cos(x) v = e^x  
+u &= \sin(x), &dv&= e^x,dx\  
+du &= \cos(x),dx,&v&= e^x  
 
-Apply integration by parts: uv - $\int vdu$
+Apply integration by parts: uv - \int vdu
 
 = e^xcos(x)+[e^xsin(x)-\int e^xcos(x)dx]
 
-$/int e^xcos(x)dx$ appears again, so we can add them together to get:
+/int e^xcos(x)dx appears again, so we can add them together to get:
 
 = 2\int e^xcos(x)dx = e^xcos(x)+e^xsin(x)  
 
