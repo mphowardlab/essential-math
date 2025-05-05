@@ -1,6 +1,6 @@
 # Eigenvalue problem
 
-For all nxn square matrix \underline{\underline{A}}, there is a scalar \lamda 
+For an \(n \times n\) square matrix \underline{\underline{A}}  , there is a scalar \lamda 
 and vector \underline{x} such that :
 
 
