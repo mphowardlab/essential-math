@@ -1,0 +1,818 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1.9. Partial fraction decomposition &#8212; Essential Mathematics for Chemical Engineers</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"d": ["{\\operatorname{d}\\!{#1}}", 1], "dd": ["{\\d{}^{#1} #2 \\over \\d{#3}^{#1}}", 3], "pp": ["{\\partial^{#1} #2 \\over \\partial #3^{#1}}", 3], "td": ["{\\left(\\pp{#1}{#2}{#3} \\right)_{#4}}", 4], "ubar": ["\\underline{#1}", 1], "vv": ["\\mathbf{#1}", 1]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'calculus/integration-partial-fractions';</script>
+    <link rel="canonical" href="https://mphowardlab.github.io/essential-math/calculus/integration-partial-fractions.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2. Multivariable calculus" href="../multivariable-calculus/index.html" />
+    <link rel="prev" title="1.8. Integration by parts" href="integration-by-parts.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Essential Mathematics for Chemical Engineers</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">1. Calculus</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="functions.html">1.1. Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="limits.html">1.2. Limits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="derivatives.html">1.3. Derivatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="derivative-rules.html">1.4. Product, quotient, and chain rule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="series-expansion.html">1.5. Series expansion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="integration.html">1.6. Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="integration-substitution.html">1.7. Integration using substitution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="integration-by-parts.html">1.8. Integration by parts</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.9. Partial fraction decomposition</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../multivariable-calculus/index.html">2. Multivariable calculus</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../multivariable-calculus/derivatives.html">2.1. Derivatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multivariable-calculus/total-differential.html">2.2. Total differential</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multivariable-calculus/manipulating-derivatives.html">2.3. Manipulating partial derivatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multivariable-calculus/series-expansion.html">2.4. Series expansion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multivariable-calculus/integration.html">2.5. Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multivariable-calculus/line-integral.html">2.6. Line integral</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../linear-algebra/index.html">3. Linear algebra</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../linear-algebra/matrices.html">3.1. Matrices and vectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linear-algebra/linear-systems.html">3.2. Systems of linear equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linear-algebra/gauss-jordan.html">3.3. Gauss–Jordan elimination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linear-algebra/determinants.html">3.4. Determinants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linear-algebra/inverses.html">3.5. Matrix inversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linear-algebra/eigenvalue-problem.html">3.6. Eigenvalue problem</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../nonlinear-equations/index.html">4. Nonlinear equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../nonlinear-equations/quadratic-cubic.html">4.1. Quadratic and cubic polynomials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nonlinear-equations/root-finding.html">4.2. Root finding methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nonlinear-equations/linearization.html">4.3. Linearization</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../first-order-odes/index.html">5. First-order ordinary differential equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/definition.html">5.1. Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/separable.html">5.2. Separable differential equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/exact.html">5.3. Exact differential equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/linearity.html">5.4. Linearity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/undetermined-coefficients.html">5.5. Undetermined coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/laplace-transform.html">5.6. Laplace transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/integrating-factor.html">5.7. Integrating factor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/numerical-solution.html">5.8. Numerical solution methods</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../systems-first-order-odes/index.html">6. Systems of first-order ordinary differential equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/definition.html">6.1. Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/linearity.html">6.2. Linearity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/homogeneous-constant-coefficient.html">6.3. Homogeneous linear first-order ODEs with constant coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/numerical-solution.html">6.4. Numerical solution methods</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../second-order-odes/index.html">7. Second-order ordinary differential equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/reduction.html">7.1. Reduction of order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/linearity.html">7.2. Linearity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/homogeneous-constant-coefficient.html">7.3. Homogeneous linear second-order ODEs with constant coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/undetermined-coefficients.html">7.4. Undetermined coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/variation-of-parameters.html">7.5. Variation of parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/numerical-solution.html">7.6. Numerical solution methods</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../credits.html">8. Credits</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/mphowardlab/essential-math" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/mphowardlab/essential-math/issues/new?title=Issue%20on%20page%20%2Fcalculus/integration-partial-fractions.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/calculus/integration-partial-fractions.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Partial fraction decomposition</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heaviside-cover-up-method">1.9.1. Heaviside cover-up method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomial-division">1.9.2. Polynomial division</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="partial-fraction-decomposition">
+<h1><span class="section-number">1.9. </span>Partial fraction decomposition<a class="headerlink" href="#partial-fraction-decomposition" title="Link to this heading">#</a></h1>
+<p>Integrals like</p>
+<div class="amsmath math notranslate nohighlight" id="equation-dd82388f-d8f6-4667-b3cb-49857e72dba9">
+<span class="eqno">(1.69)<a class="headerlink" href="#equation-dd82388f-d8f6-4667-b3cb-49857e72dba9" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\int \frac{3x+11}{x^2-x-6} \d{x}
+\end{equation}\]</div>
+<p>can be evaluated by breaking them apart into simpler integrals. Let’s try to
+break the integrand up into the factors of its denominator:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-0df442e8-53f9-4667-8f45-1a9c218067bf">
+<span class="eqno">(1.70)<a class="headerlink" href="#equation-0df442e8-53f9-4667-8f45-1a9c218067bf" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\frac{3x+11}{x^2-x-6} = \frac{3x+11}{(x-3)(x+2)} = \frac{A_1}{x-3} + \frac{A_2}{x+2}
+\end{equation}\]</div>
+<p>To find <span class="math notranslate nohighlight">\(A_1\)</span> and <span class="math notranslate nohighlight">\(A_2\)</span>, first cross multiply to eliminate the denominator, then
+combine like powers of <em>x</em>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2135f83b-8406-487e-a8ef-70774d5313e6">
+<span class="eqno">(1.71)<a class="headerlink" href="#equation-2135f83b-8406-487e-a8ef-70774d5313e6" title="Permalink to this equation">#</a></span>\[\begin{align}
+3x + 11 &amp;= A_1(x+2) + A_2(x-3) \\
+3x + 11 &amp;= (A_1 + A_2)x + (2A_1 - 3A_2) \\
+\end{align}\]</div>
+<p>If our proposed form will work, all the coefficients of <em>x</em> must match on both
+sides, so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ed9a4137-0082-4ad9-83f4-1278152ec6ae">
+<span class="eqno">(1.72)<a class="headerlink" href="#equation-ed9a4137-0082-4ad9-83f4-1278152ec6ae" title="Permalink to this equation">#</a></span>\[\begin{align}
+A_1  + A_2 &amp;= 3 \\
+2A_1 - 3A_2 &amp;= 11
+\end{align}\]</div>
+<p>This is a system of linear equations that can be solved, e.g., using a matrix
+technique. Form the augmented matrix then perform Gauss-Jordan elimination:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ed038be9-2ec7-42d8-a5e0-16bd6d69920b">
+<span class="eqno">(1.73)<a class="headerlink" href="#equation-ed038be9-2ec7-42d8-a5e0-16bd6d69920b" title="Permalink to this equation">#</a></span>\[\begin{align}
+\begin{bmatrix} 1 &amp; 1 &amp; 3\\ 2 &amp; -3 &amp; 11 \end{bmatrix}
+\begin{matrix}\vphantom{R_1} \\ -2 R_1 \end{matrix}
+&amp;\to \begin{bmatrix} 1 &amp; 1 &amp; 3\\ 0 &amp; -5 &amp; 5 \end{bmatrix}
+\begin{matrix}\vphantom{R_1} \\ \div -5 \end{matrix} \\
+&amp;\to \begin{bmatrix} 1 &amp; 1 &amp; 3\\ 0 &amp; 1 &amp; -1 \end{bmatrix}
+\begin{matrix} -R_2 \\ \vphantom{R_2} \end{matrix} \\
+&amp;\to \begin{bmatrix} 1 &amp; 0 &amp; 4\\ 0 &amp; 1 &amp; -1 \end{bmatrix}
+\end{align}\]</div>
+<p>so <span class="math notranslate nohighlight">\(A_1 = 4\)</span> and <span class="math notranslate nohighlight">\(A_2 = -1\)</span>. Once you have coefficients, you can integrate:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2c70f0b5-f493-4abf-922d-3e36a31e3359">
+<span class="eqno">(1.74)<a class="headerlink" href="#equation-2c70f0b5-f493-4abf-922d-3e36a31e3359" title="Permalink to this equation">#</a></span>\[\begin{align}
+\int \frac{3x+11}{x^2-x-6} \d{x}
+&amp;= \int\left(\frac{4}{x-3}-\frac{1}{x+2} \right) \d{x} \\
+&amp;= 4\ln| x-3 | - \ln|x+2| + c
+\end{align}\]</div>
+<p>We can formalize this technique, called <em>partial fraction decomposition</em>.</p>
+<aside class="topic">
+<p class="topic-title">Partial fraction decomposition</p>
+<p>For a rational polynomial <span class="math notranslate nohighlight">\(P(x)/Q(x)\)</span> where <em>Q</em> is expressed using either
+linear or irreducible quadratic factors and the degree of <em>P</em> is less than <em>Q</em>,
+propose the following decomposition:</p>
+<ul>
+<li><p>Linear factor <span class="math notranslate nohighlight">\(ax+b\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-8beaf7d4-a756-4df9-8f28-b3d334f4d521">
+<span class="eqno">(1.75)<a class="headerlink" href="#equation-8beaf7d4-a756-4df9-8f28-b3d334f4d521" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\frac{A}{ax+b}
+\end{equation}\]</div>
+</li>
+<li><p>Repeated linear factor <span class="math notranslate nohighlight">\((ax+b)^k\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-b498d870-535a-45de-8763-935836a0f35b">
+<span class="eqno">(1.76)<a class="headerlink" href="#equation-b498d870-535a-45de-8763-935836a0f35b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\frac{A_1}{ax+b} + \cdots + \frac{A_k}{(ax+b)^k}
+\end{equation}\]</div>
+</li>
+<li><p>Irreducible quadratic factor <span class="math notranslate nohighlight">\(ax^2 + bx + c\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-bacf68b1-49d3-49ca-b0f2-5e57a1c481ba">
+<span class="eqno">(1.77)<a class="headerlink" href="#equation-bacf68b1-49d3-49ca-b0f2-5e57a1c481ba" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\frac{Ax+B}{ax^2+bx+c}
+\end{equation}\]</div>
+</li>
+<li><p>Repeated irreducible quadratic factor <span class="math notranslate nohighlight">\((ax^2 + bx+c)^k\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-b953d8b1-56ee-4be8-a6fb-f2656bbf5b98">
+<span class="eqno">(1.78)<a class="headerlink" href="#equation-b953d8b1-56ee-4be8-a6fb-f2656bbf5b98" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\frac{A_1 x + B_1}{ax^2+bx+c} + \cdots + \frac{A_k x + B_k}{(ax^2+bx+c)^k}
+\end{equation}\]</div>
+</li>
+</ul>
+</aside>
+<p>To demonstrate this technique, let’s try to take the integral</p>
+<div class="amsmath math notranslate nohighlight" id="equation-99ad2d51-4cb9-45cd-93ea-f1763de972c1">
+<span class="eqno">(1.79)<a class="headerlink" href="#equation-99ad2d51-4cb9-45cd-93ea-f1763de972c1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\int \frac{x^2-29x+5}{(x-4)^2 (x^2+3)} \d{x}
+\end{equation}\]</div>
+<p>First, expand the denominator and put placeholder coefficient terms in the numerator.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6386e157-b7c8-4389-b093-b8efb9a384ad">
+<span class="eqno">(1.80)<a class="headerlink" href="#equation-6386e157-b7c8-4389-b093-b8efb9a384ad" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\frac{x^2-29x+5}{\left(x-4 \right)^2 \left(x^2+3 \right)}
+= \frac{A_1}{x-4} + \frac{A_2}{(x-4)^2} + \frac{A_3x+ B_3}{x^2+3}
+\end{equation}\]</div>
+<p>Next, cross multiply, expand, and collect like powers of <em>x</em>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-22536eae-2577-4afd-aaac-05bf0ef742d6">
+<span class="eqno">(1.81)<a class="headerlink" href="#equation-22536eae-2577-4afd-aaac-05bf0ef742d6" title="Permalink to this equation">#</a></span>\[\begin{align}
+x^2-29x+5 &amp;= A_1 \left(x-4 \right) \left(x^2+3 \right) +
+ A_2 \left(x^2+3 \right) \\
+ &amp;\quad + \left(A_3x+B_3 \right) \left(x-4 \right)^2 \\
+&amp;= A_1 \left(x^3-4x^2+3x-12 \right) + A_2 \left(x^2+3 \right) \\
+ &amp;\quad +\left(A_3x+B_3 \right)\left(x^2-8x+16 \right) \\
+&amp;=\left(A_1+A_3\right)x^3+\left(-4A_1+A_2-8A_3+B_3\right)x^2 \\
+ &amp;\quad + \left(3A_1+16A_3-8B_3\right)x+\left(-12A_1+3A_2+16B_3\right)
+\end{align}\]</div>
+<p>Finally, form the linear system of equations for the coefficients of <em>x</em>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-391469a9-eb3e-461d-8560-ca172c5e2871">
+<span class="eqno">(1.82)<a class="headerlink" href="#equation-391469a9-eb3e-461d-8560-ca172c5e2871" title="Permalink to this equation">#</a></span>\[\begin{align}
+A_1+A_3 &amp;= 0 \\
+-4A_1 + A_2-8A_3 + B_3 &amp;=1 \\
+3A_1 + 16A_3 - 8B_3 &amp;= -29 \\
+-12A_1+3A_2+16B_3 &amp;=5 \\
+\end{align}\]</div>
+<p>These linear equations can be written using a matrix and vectors</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a4d779fe-a714-4ae4-b2aa-ec3654159802">
+<span class="eqno">(1.83)<a class="headerlink" href="#equation-a4d779fe-a714-4ae4-b2aa-ec3654159802" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\begin{bmatrix}
+1 &amp; 0 &amp; 1 &amp; 0\\
+-4 &amp; 1 &amp; -8 &amp; 1\\
+3 &amp; 0 &amp; 16 &amp; -8\\
+-12 &amp; 3 &amp; 0 &amp; 16
+\end{bmatrix}
+\begin{bmatrix} A_1 \\ A_2\\ A_3\\ B_3 \end{bmatrix}
+= \begin{bmatrix} 0\\ 1\\ -29 \\ 5 \end{bmatrix}
+\end{equation}\]</div>
+<p>Solving numerically gives <span class="math notranslate nohighlight">\(A_1 = 1\)</span>, <span class="math notranslate nohighlight">\(A_2 = -5\)</span>, <span class="math notranslate nohighlight">\(A_3 = -1\)</span>, and <span class="math notranslate nohighlight">\(B_3 =2\)</span>.
+Finally,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f27862e5-4262-4090-aa7c-468bc6c16927">
+<span class="eqno">(1.84)<a class="headerlink" href="#equation-f27862e5-4262-4090-aa7c-468bc6c16927" title="Permalink to this equation">#</a></span>\[\begin{align}
+\int &amp;\frac{x^2-29x+5}{(x-4)^2 (x^2+3)} \d{x} \\
+&amp;= \int\Biggl(\frac{1}{x-4}-\frac{5}{(x-4)^2}
+  -\frac{x}{x^2+3}+\frac{2}{x^2+3}\Biggr) \d{x} \\
+&amp;= \ln|x-4|+\frac{5}{x-4} -\frac{1}{2} \ln|x^2 + 3| +
+  \frac{2}{\sqrt{3}} \arctan\left( \frac{x}{\sqrt{3}} \right) + c
+\end{align}\]</div>
+<p>using <em>u</em> substitution in</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7af4b19b-283d-4eac-94fc-20b81a7d9395">
+<span class="eqno">(1.85)<a class="headerlink" href="#equation-7af4b19b-283d-4eac-94fc-20b81a7d9395" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\int \frac{\d{x}}{1+x^2} = \arctan x
+\end{equation}\]</div>
+<p>to evaluate the last integral.</p>
+<section id="heaviside-cover-up-method">
+<h2><span class="section-number">1.9.1. </span>Heaviside cover-up method<a class="headerlink" href="#heaviside-cover-up-method" title="Link to this heading">#</a></h2>
+<p>The Heaviside cover-up method is a simplified approach to finding the
+coefficients in partial fraction decomposition for linear factors. Its main
+advantage is avoiding cross-multiplication, which can be time-consuming, by
+covering up a factor and substituting the appropriate value into the expression.</p>
+<p>We will demonstrate the approach by example. Given the decomposition:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d9b1e899-2fa7-49d4-98af-c011205bc051">
+<span class="eqno">(1.86)<a class="headerlink" href="#equation-d9b1e899-2fa7-49d4-98af-c011205bc051" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\frac{3x+11}{(x-3)(x+2)} = \frac{A_1}{x-3} + \frac{A_2}{x+2}
+\end{equation}\]</div>
+<p>Multiply by both sides by the first factor and take the limit to find <span class="math notranslate nohighlight">\(A_1\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8e273083-2110-4675-a469-612854e511b4">
+<span class="eqno">(1.87)<a class="headerlink" href="#equation-8e273083-2110-4675-a469-612854e511b4" title="Permalink to this equation">#</a></span>\[\begin{align}
+\lim_{x\to 3} \left( \frac{3x+11}{x+2} \right)
+&amp;= \lim_{x \to 3} \left( A_1 + \frac{A_2(x-3)}{x+2} \right) \\
+\frac{3(3)+11}{3+2} &amp;= A_1 \\
+A_1 &amp;= 4
+\end{align}\]</div>
+<p>You can do the same for the second factor to get <span class="math notranslate nohighlight">\(A_2\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8913b9d9-cf4f-4d4b-b7fa-e36dc86a70a9">
+<span class="eqno">(1.88)<a class="headerlink" href="#equation-8913b9d9-cf4f-4d4b-b7fa-e36dc86a70a9" title="Permalink to this equation">#</a></span>\[\begin{align}
+\lim_{x\to -2} \left( \frac{3x+11}{x-3}\right)
+&amp;= \lim_{x\to -2} \left( \frac{A_1(x+2)}{x-3} + A_2 \right) \\
+\frac{3(-2)+11}{-2-3} &amp;= A_2 \\
+A_2 &amp;= -1
+\end{align}\]</div>
+<p>This procedure can be implemented conveniently by “covering up” the relevant
+factor in the original fraction!</p>
+<aside class="topic">
+<p class="topic-title">Heaviside cover-up method</p>
+<p>To evaluate the unknown coefficient of the <strong>highest power of a linear factor</strong>
+in a partial fraction decomposition, cover-up the factor in the original
+fraction, then evaluate the fraction with the value of <em>x</em> that makes the factor
+zero.</p>
+</aside>
+<p>Note that this procedure only works for the highest powers of linear factors,
+but it can be used in combination with other techniques to more easily obtain
+the remaining factors.</p>
+<p>For example, given:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-184b92c0-87e5-4f4a-9888-8bb664995122">
+<span class="eqno">(1.89)<a class="headerlink" href="#equation-184b92c0-87e5-4f4a-9888-8bb664995122" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\frac{x^2-29x+5}{(x-4)^2 (x^2 +3)}
+= \frac{A_1}{x-4} + \frac{A_2}{(x-4)^2} + \frac{A_3x + B_3}{x^2 +3}
+\end{equation}\]</div>
+<p><span class="math notranslate nohighlight">\(A_2\)</span> can be solved for using the Heaviside cover-up method because it
+corresponds to the highest power of the factor <span class="math notranslate nohighlight">\(x-4\)</span>.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4ee0e861-0641-4e34-93be-a2db70c8a858">
+<span class="eqno">(1.90)<a class="headerlink" href="#equation-4ee0e861-0641-4e34-93be-a2db70c8a858" title="Permalink to this equation">#</a></span>\[\begin{equation}
+A_2 = \frac{4^2 - 29 \cdot 4 + 5}{4^2 + 3} = -5
+\end{equation}\]</div>
+<p>Cross-multiplication must be used to solve for <span class="math notranslate nohighlight">\(A_1\)</span>, <span class="math notranslate nohighlight">\(A_3\)</span>, and <span class="math notranslate nohighlight">\(B_3\)</span>.</p>
+</section>
+<section id="polynomial-division">
+<h2><span class="section-number">1.9.2. </span>Polynomial division<a class="headerlink" href="#polynomial-division" title="Link to this heading">#</a></h2>
+<p>Polynomial division is a method used to simplify rational functions when the
+degree of the numerator <span class="math notranslate nohighlight">\(P\)</span> is higher than the degree of the denominator <span class="math notranslate nohighlight">\(Q\)</span>.
+The remaineder from the division should then be suitable for partial fraction
+decomposition.</p>
+<p>For example, to integrate:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-fd161152-e2e3-4470-bf23-b11d91f6bb4f">
+<span class="eqno">(1.91)<a class="headerlink" href="#equation-fd161152-e2e3-4470-bf23-b11d91f6bb4f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\int \frac{x^4 - 5x^3 + 6x^2 -18}{x^3 -3x^2} \d{x}
+\end{equation}\]</div>
+<p>Partial fraction decomposition seems useful, but the degree of the numerator
+<em>P</em> is 4 but the degree of denominator <em>Q</em> is 3, so we must carry out polynomial
+division first.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{r}
+x-2 \phantom{5x^3+6x^2-18}\\
+x^3-3x^2{\overline{\smash{\big)}\, x^4-5x^3+6x^2-18}}
+\\
+\underline{-~(x^4-3x^3)}\phantom{+6x^2-18} \\
+-2x^3+6x^2-18 \\
+\underline{-~(-2x^3+6x^2)}\phantom{-18} \\
+-18 \\
+\end{array}
+\end{split}\]</div>
+<p>The result is</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6e23abd4-1426-4cb8-a7ba-5159c20ff172">
+<span class="eqno">(1.92)<a class="headerlink" href="#equation-6e23abd4-1426-4cb8-a7ba-5159c20ff172" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\frac{x^4 - 5x^3 + 6x^2 -18}{x^3 -3x^2} = x - 2 - \frac{18}{x^3-3x^2}
+\end{equation}\]</div>
+<p>Use partial fraction decomposition for the fractional term:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e05a4434-b575-44ca-b8ff-01aea0ab194b">
+<span class="eqno">(1.93)<a class="headerlink" href="#equation-e05a4434-b575-44ca-b8ff-01aea0ab194b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\frac{-18}{x^2 (x-3)} = \frac{A_1}{x} + \frac{A_2}{x^2} + \frac{A_3}{x-3}
+\end{equation}\]</div>
+<p>Find <span class="math notranslate nohighlight">\(A_2\)</span> and <span class="math notranslate nohighlight">\(A_3\)</span> using the Heaviside cover-up method:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ce9ef9bc-70e0-4962-80db-e3902454a54a">
+<span class="eqno">(1.94)<a class="headerlink" href="#equation-ce9ef9bc-70e0-4962-80db-e3902454a54a" title="Permalink to this equation">#</a></span>\[\begin{align}
+A_2 &amp;= \frac{-18}{0-3} = 6 \\
+A_3 &amp;= \frac{-18}{3^2} = -2
+\end{align}\]</div>
+<p>Find <span class="math notranslate nohighlight">\(A_1\)</span> by substituting <span class="math notranslate nohighlight">\(A_2\)</span> and <span class="math notranslate nohighlight">\(A_3\)</span>, then cross-multiplying:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-de1713ac-1455-4404-bb0c-4bb3bd5525ae">
+<span class="eqno">(1.95)<a class="headerlink" href="#equation-de1713ac-1455-4404-bb0c-4bb3bd5525ae" title="Permalink to this equation">#</a></span>\[\begin{equation}
+-18 = A_1 x (x-3) + 6(x-3) - 2x^2
+\end{equation}\]</div>
+<p>We could collect powers of <em>x</em>, but plugging in <span class="math notranslate nohighlight">\(x=1\)</span> then solving for <span class="math notranslate nohighlight">\(A_1\)</span>
+is a little easier:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-171d9d41-d664-4ccb-aa00-cac777b6fff4">
+<span class="eqno">(1.96)<a class="headerlink" href="#equation-171d9d41-d664-4ccb-aa00-cac777b6fff4" title="Permalink to this equation">#</a></span>\[\begin{align}
+-18 &amp;= A_1 \cdot 1 \cdot -2 + 6 \cdot -2 - 2 = -2A_1 - 14 \\
+A_1 &amp;= 2
+\end{align}\]</div>
+<p>Last, integrate:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-48a5b665-908f-41ec-9c67-d30edd94ac70">
+<span class="eqno">(1.97)<a class="headerlink" href="#equation-48a5b665-908f-41ec-9c67-d30edd94ac70" title="Permalink to this equation">#</a></span>\[\begin{align}
+&amp;\int \frac{x^4 - 5x^3 + 6x^2 -18}{x^3 -3x^2} \d{x} \\
+&amp;= \int \left(x - 2 + \frac{2}{x} + \frac{6}{x^2} - \frac{2}{x-3} \right) \d{x} \\
+&amp;= \frac{x^2}{2} -2x + 2\ln|x| - \frac{6}{x} - 2\ln|x-3| + c
+\end{align}\]</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./calculus"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="integration-by-parts.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">1.8. </span>Integration by parts</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../multivariable-calculus/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Multivariable calculus</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heaviside-cover-up-method">1.9.1. Heaviside cover-up method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomial-division">1.9.2. Polynomial division</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Michael P. Howard
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
