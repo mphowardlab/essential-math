@@ -1,6 +1,6 @@
 # Undetermined coefficients
 
-### Skill Builder - Method of Undetermined Coefficients 
+## Skill builder problems
 
 **Solve the differential equation:**
 
