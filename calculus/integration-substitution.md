@@ -50,11 +50,15 @@ Plugging *u* back in gives the final answer:
 \begin{equation}
 y = \int (x+2)\ln(x) \, dx
 \end{equation}
-Select Values 
+
+Select u and dv to find du and v:
+
 \begin{align}
 u &= \ln(x), & dv &= (x+2)\,dx \\
 du &= \frac{1}{x}\,dx, & v &= \frac{x^2}{2} + 2x
 \end{align}
+
+Apply integration by parts: $uv - \int vdu$
 
 \begin{align}
 y &=\left( \frac{x^2}{2} + 2x \right)\ln(x) - \int \left( \frac{x^2}{2} + 2x \right) \frac{1}{x} \, dx \\
@@ -106,11 +110,11 @@ y = \int e^xcos(x)dx
 Assign values for u and dv to find values for du and v. 
 
 \begin{align}
-u &= \cos(x), & dv &= e^x,dx\  
-du &= \-sin(x),dx, & v & = e^x   
+u &= cos(x), & dv &= e^x,dx \
+du &= -sin(x),dx, & v &= e^x 
 \end{align}
 
-Apply integration by parts: uv - $\int vdu$
+Apply integration by parts: $uv - \int vdu$
 
 = e^xcos(x) + \int e^x(sin(x))dx
 
@@ -119,11 +123,11 @@ Assign new values for u and dv, find du and v again.
 u &= \sin(x), &dv&= e^x,dx\  
 du &= \cos(x),dx,&v&= e^x  
 
-Apply integration by parts: uv - \int vdu
+Apply integration by parts: $uv - \int vdu$
 
 = e^xcos(x)+[e^xsin(x)-\int e^xcos(x)dx]
 
-/int e^xcos(x)dx appears again, so we can add them together to get:
+$/int e^xcos(x)dx$ appears again, so we can add them together to get:
 
 = 2\int e^xcos(x)dx = e^xcos(x)+e^xsin(x)  
 
