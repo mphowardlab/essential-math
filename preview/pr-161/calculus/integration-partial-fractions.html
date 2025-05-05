@@ -443,6 +443,141 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="partial-fraction-decomposition">
 <h1><span class="section-number">1.9. </span>Partial fraction decomposition<a class="headerlink" href="#partial-fraction-decomposition" title="Link to this heading">#</a></h1>
+<p>Integrals like</p>
+<div class="amsmath math notranslate nohighlight" id="equation-508cc566-a4c2-4064-904c-f452baeae149">
+<span class="eqno">(1.69)<a class="headerlink" href="#equation-508cc566-a4c2-4064-904c-f452baeae149" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\int \frac{3x+11}{x^2-x-6} \d{x}
+\end{equation}\]</div>
+<p>can be evaluated by breaking them apart into simpler integrals. Let’s try to
+break the integrand up into the factors of its denominator:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-56bf6263-651c-4b95-bc18-4f24afb07b95">
+<span class="eqno">(1.70)<a class="headerlink" href="#equation-56bf6263-651c-4b95-bc18-4f24afb07b95" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\frac{3x+11}{x^2-x-6} = \frac{3x+11}{(x-3)(x+2)} = \frac{A_1}{x-3} + \frac{A_2}{x+2}
+\end{equation}\]</div>
+<p>To find <span class="math notranslate nohighlight">\(A_1\)</span> and <span class="math notranslate nohighlight">\(A_2\)</span>, first cross multiply to eliminate the denominator, then
+combine like powers of <em>x</em>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b639cf87-19f2-43d5-8d90-78342670d945">
+<span class="eqno">(1.71)<a class="headerlink" href="#equation-b639cf87-19f2-43d5-8d90-78342670d945" title="Permalink to this equation">#</a></span>\[\begin{align}
+3x + 11 &amp;= A_1(x+2) + A_2(x-3) \\
+3x + 11 &amp;= (A_1 + A_2)x + (2A_1 - 3A_2) \\
+\end{align}\]</div>
+<p>If our proposed form will work, all the coefficients of <em>x</em> must match on both
+sides, so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9445fbe9-e35e-4e3e-ad77-452a961d3e96">
+<span class="eqno">(1.72)<a class="headerlink" href="#equation-9445fbe9-e35e-4e3e-ad77-452a961d3e96" title="Permalink to this equation">#</a></span>\[\begin{align}
+A_1  + A_2 &amp;= 3 \\
+2A_1 - 3A_2 &amp;= 11
+\end{align}\]</div>
+<p>This is a system of linear equations that can be solved, e.g., using a matrix
+technique. Form the augmented matrix then perform Gauss-Jordan elimination:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a6940851-7089-46ff-9323-61f1fad2b408">
+<span class="eqno">(1.73)<a class="headerlink" href="#equation-a6940851-7089-46ff-9323-61f1fad2b408" title="Permalink to this equation">#</a></span>\[\begin{align}
+\begin{bmatrix} 1 &amp; 1 &amp; 3\\ 2 &amp; -3 &amp; 11 \end{bmatrix}
+\begin{matrix}\vphantom{R_1} \\ -2 R_1 \end{matrix}
+&amp;\to \begin{bmatrix} 1 &amp; 1 &amp; 3\\ 0 &amp; -5 &amp; 5 \end{bmatrix}
+\begin{matrix}\vphantom{R_1} \\ \div -5 \end{matrix} \\
+&amp;\to \begin{bmatrix} 1 &amp; 1 &amp; 3\\ 0 &amp; 1 &amp; -1 \end{bmatrix}
+\begin{matrix} -R_2 \\ \vphantom{R_2} \end{matrix} \\
+&amp;\to \begin{bmatrix} 1 &amp; 0 &amp; 4\\ 0 &amp; 1 &amp; -1 \end{bmatrix}
+\end{align}\]</div>
+<p>so <span class="math notranslate nohighlight">\(A_1 = 4\)</span> and <span class="math notranslate nohighlight">\(A_2 = -1\)</span>. Once you have coefficients, you can integrate:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7e327db4-c15e-400e-8557-3fdd96ee9da5">
+<span class="eqno">(1.74)<a class="headerlink" href="#equation-7e327db4-c15e-400e-8557-3fdd96ee9da5" title="Permalink to this equation">#</a></span>\[\begin{align}
+\int \frac{3x+11}{x^2-x-6} \d{x}
+&amp;= \int\left(\frac{4}{x-3}-\frac{1}{x+2} \right) \d{x} \\
+&amp;= 4\ln| x-3 | - \ln|x+2| + c
+\end{align}\]</div>
+<p>We can formalize this technique, called <em>partial fraction decomposition</em>.</p>
+<aside class="topic">
+<p class="topic-title">Partial fraction decomposition</p>
+<p>For a rational polynomial <span class="math notranslate nohighlight">\(P(x)/Q(x)\)</span> where <em>Q</em> is expressed using either
+linear or irreducible quadratic factors and the degree of <em>P</em> is less than <em>Q</em>,
+propose the following decomposition:</p>
+<ul>
+<li><p>Linear factor <span class="math notranslate nohighlight">\(ax+b\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-83e2e189-a911-4e00-81b1-ac2a3684524e">
+<span class="eqno">(1.75)<a class="headerlink" href="#equation-83e2e189-a911-4e00-81b1-ac2a3684524e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\frac{A}{ax+b}
+\end{equation}\]</div>
+</li>
+<li><p>Repeated linear factor <span class="math notranslate nohighlight">\((ax+b)^k\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-029cc30a-f72e-45f3-ab11-747f93592c12">
+<span class="eqno">(1.76)<a class="headerlink" href="#equation-029cc30a-f72e-45f3-ab11-747f93592c12" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\frac{A_1}{ax+b} + \cdots + \frac{A_k}{(ax+b)^k}
+\end{equation}\]</div>
+</li>
+<li><p>Irreducible quadratic factor <span class="math notranslate nohighlight">\(ax^2 + bx + c\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-92173a50-0ba5-40e3-94de-1584d37075b4">
+<span class="eqno">(1.77)<a class="headerlink" href="#equation-92173a50-0ba5-40e3-94de-1584d37075b4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\frac{Ax+B}{ax^2+bx+c}
+\end{equation}\]</div>
+</li>
+<li><p>Repeated irreducible quadratic factor <span class="math notranslate nohighlight">\((ax^2 + bx+c)^k\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-ebe5e776-7766-49ad-9c5f-7e156fcca5c8">
+<span class="eqno">(1.78)<a class="headerlink" href="#equation-ebe5e776-7766-49ad-9c5f-7e156fcca5c8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\frac{A_1 x + B_1}{ax^2+bx+c} + \cdots + \frac{A_k x + B_k}{(ax^2+bx+c)^k}
+\end{equation}\]</div>
+</li>
+</ul>
+</aside>
+<p>To demonstrate this technique, let’s try to take the integral</p>
+<div class="amsmath math notranslate nohighlight" id="equation-89914ae9-1955-49b8-8fc4-eeb1eede455d">
+<span class="eqno">(1.79)<a class="headerlink" href="#equation-89914ae9-1955-49b8-8fc4-eeb1eede455d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\int \frac{x^2-29x+5}{(x-4)^2 (x^2+3)} \d{x}
+\end{equation}\]</div>
+<p>First, expand the denominator and put placeholder coefficient terms in the numerator.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b9d96ed9-4743-4364-88e0-9d458adddbf2">
+<span class="eqno">(1.80)<a class="headerlink" href="#equation-b9d96ed9-4743-4364-88e0-9d458adddbf2" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\frac{x^2-29x+5}{\left(x-4 \right)^2 \left(x^2+3 \right)}
+= \frac{A_1}{x-4} + \frac{A_2}{(x-4)^2} + \frac{A_3x+ B_3}{x^2+3}
+\end{equation}\]</div>
+<p>Next, cross multiply, expand, and collect like powers of <em>x</em>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-27cdd751-61bf-4991-9924-6523084bb93c">
+<span class="eqno">(1.81)<a class="headerlink" href="#equation-27cdd751-61bf-4991-9924-6523084bb93c" title="Permalink to this equation">#</a></span>\[\begin{align}
+x^2-29x+5 &amp;= A_1 \left(x-4 \right) \left(x^2+3 \right) +
+ A_2 \left(x^2+3 \right) \\
+ &amp;\quad + \left(A_3x+B_3 \right) \left(x-4 \right)^2 \\
+&amp;= A_1 \left(x^3-4x^2+3x-12 \right) + A_2 \left(x^2+3 \right) \\
+ &amp;\quad +\left(A_3x+B_3 \right)\left(x^2-8x+16 \right) \\
+&amp;=\left(A_1+A_3\right)x^3+\left(-4A_1+A_2-8A_3+B_3\right)x^2 \\
+ &amp;\quad + \left(3A_1+16A_3-8B_3\right)x+\left(-12A_1+3A_2+16B_3\right)
+\end{align}\]</div>
+<p>Finally, form the linear system of equations for the coefficients of <em>x</em>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-56ea04e0-5138-474f-9756-11cbac8a8fb6">
+<span class="eqno">(1.82)<a class="headerlink" href="#equation-56ea04e0-5138-474f-9756-11cbac8a8fb6" title="Permalink to this equation">#</a></span>\[\begin{align}
+A_1+A_3 &amp;= 0 \\
+-4A_1 + A_2-8A_3 + B_3 &amp;=1 \\
+3A_1 + 16A_3 - 8B_3 &amp;= -29 \\
+-12A_1+3A_2+16B_3 &amp;=5 \\
+\end{align}\]</div>
+<p>These linear equations can be written using a matrix and vectors</p>
+<div class="amsmath math notranslate nohighlight" id="equation-79648577-844c-4e36-a5b7-ba277dc2be0b">
+<span class="eqno">(1.83)<a class="headerlink" href="#equation-79648577-844c-4e36-a5b7-ba277dc2be0b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\begin{bmatrix}
+1 &amp; 0 &amp; 1 &amp; 0\\
+-4 &amp; 1 &amp; -8 &amp; 1\\
+3 &amp; 0 &amp; 16 &amp; -8\\
+-12 &amp; 3 &amp; 0 &amp; 16
+\end{bmatrix}
+\begin{bmatrix} A_1 \\ A_2\\ A_3\\ B_3 \end{bmatrix}
+= \begin{bmatrix} 0\\ 1\\ -29 \\ 5 \end{bmatrix}
+\end{equation}\]</div>
+<p>Solving numerically gives <span class="math notranslate nohighlight">\(A_1 = 1\)</span>, <span class="math notranslate nohighlight">\(A_2 = -5\)</span>, <span class="math notranslate nohighlight">\(A_3 = -1\)</span>, and <span class="math notranslate nohighlight">\(B_3 =2\)</span>.
+Finally,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-30e78309-f307-4a63-952c-e6c9e114b2ec">
+<span class="eqno">(1.84)<a class="headerlink" href="#equation-30e78309-f307-4a63-952c-e6c9e114b2ec" title="Permalink to this equation">#</a></span>\[\begin{align}
+\int &amp;\frac{x^2-29x+5}{(x-4)^2 (x^2+3)} \d{x} \\
+&amp;= \int\Biggl(\frac{1}{x-4}-\frac{5}{(x-4)^2}
+  -\frac{x}{x^2+3}+\frac{2}{x^2+3}\Biggr) \d{x} \\
+&amp;= \ln|x-4|+\frac{5}{x-4} -\frac{1}{2} \ln|x^2 + 3| +
+  \frac{2}{\sqrt{3}} \arctan\left( \frac{x}{\sqrt{3}} \right) + c
+\end{align}\]</div>
+<p>using <em>u</em> substitution in</p>
+<div class="amsmath math notranslate nohighlight" id="equation-67bfd73b-8cd6-4f09-9918-4412c6727893">
+<span class="eqno">(1.85)<a class="headerlink" href="#equation-67bfd73b-8cd6-4f09-9918-4412c6727893" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\int \frac{\d{x}}{1+x^2} = \arctan x
+\end{equation}\]</div>
+<p>to evaluate the last integral.</p>
 <section id="heaviside-cover-up-method">
 <h2><span class="section-number">1.9.1. </span>Heaviside cover-up method<a class="headerlink" href="#heaviside-cover-up-method" title="Link to this heading">#</a></h2>
 <p>The Heaviside cover-up method is a simplified approach to finding the
@@ -450,21 +585,21 @@ coefficients in partial fraction decomposition for linear factors. Its main
 advantage is avoiding cross-multiplication, which can be time-consuming, by
 covering up a factor and substituting the appropriate value into the expression.</p>
 <p>We will demonstrate the approach by example. Given the decomposition:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-15a95428-6109-464d-ad60-84cb8bd638ac">
-<span class="eqno">(1.59)<a class="headerlink" href="#equation-15a95428-6109-464d-ad60-84cb8bd638ac" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f16185ce-015f-4d45-9597-ca9305908ff6">
+<span class="eqno">(1.86)<a class="headerlink" href="#equation-f16185ce-015f-4d45-9597-ca9305908ff6" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{3x+11}{(x-3)(x+2)} = \frac{A_1}{x-3} + \frac{A_2}{x+2}
 \end{equation}\]</div>
 <p>Multiply by both sides by the first factor and take the limit to find <span class="math notranslate nohighlight">\(A_1\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4aaf3656-6f56-449a-a3ee-c777d0829b55">
-<span class="eqno">(1.60)<a class="headerlink" href="#equation-4aaf3656-6f56-449a-a3ee-c777d0829b55" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-778c472c-49c1-4caa-847f-f75e8d14a1dd">
+<span class="eqno">(1.87)<a class="headerlink" href="#equation-778c472c-49c1-4caa-847f-f75e8d14a1dd" title="Permalink to this equation">#</a></span>\[\begin{align}
 \lim_{x\to 3} \left( \frac{3x+11}{x+2} \right)
 &amp;= \lim_{x \to 3} \left( A_1 + \frac{A_2(x-3)}{x+2} \right) \\
 \frac{3(3)+11}{3+2} &amp;= A_1 \\
 A_1 &amp;= 4
 \end{align}\]</div>
 <p>You can do the same for the second factor to get <span class="math notranslate nohighlight">\(A_2\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ccdfa002-ebf0-4c40-a3bf-c402f8f4d464">
-<span class="eqno">(1.61)<a class="headerlink" href="#equation-ccdfa002-ebf0-4c40-a3bf-c402f8f4d464" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c3731120-7627-4ed0-9431-93f4a7cbd195">
+<span class="eqno">(1.88)<a class="headerlink" href="#equation-c3731120-7627-4ed0-9431-93f4a7cbd195" title="Permalink to this equation">#</a></span>\[\begin{align}
 \lim_{x\to -2} \left( \frac{3x+11}{x-3}\right)
 &amp;= \lim_{x\to -2} \left( \frac{A_1(x+2)}{x-3} + A_2 \right) \\
 \frac{3(-2)+11}{-2-3} &amp;= A_2 \\
@@ -483,15 +618,15 @@ zero.</p>
 but it can be used in combination with other techniques to more easily obtain
 the remaining factors.</p>
 <p>For example, given:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-afdf9b7e-db11-4b95-aaf8-8044700b46f2">
-<span class="eqno">(1.62)<a class="headerlink" href="#equation-afdf9b7e-db11-4b95-aaf8-8044700b46f2" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-aee308ae-622b-4109-8ce5-98726963ef59">
+<span class="eqno">(1.89)<a class="headerlink" href="#equation-aee308ae-622b-4109-8ce5-98726963ef59" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{x^2-29x+5}{(x-4)^2 (x^2 +3)}
 = \frac{A_1}{x-4} + \frac{A_2}{(x-4)^2} + \frac{A_3x + B_3}{x^2 +3}
 \end{equation}\]</div>
 <p><span class="math notranslate nohighlight">\(A_2\)</span> can be solved for using the Heaviside cover-up method because it
 corresponds to the highest power of the factor <span class="math notranslate nohighlight">\(x-4\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f9f77f5f-fe86-4499-a27b-cf7e8423b3be">
-<span class="eqno">(1.63)<a class="headerlink" href="#equation-f9f77f5f-fe86-4499-a27b-cf7e8423b3be" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-5b467876-d99e-4a81-9e9b-1d5b87e45126">
+<span class="eqno">(1.90)<a class="headerlink" href="#equation-5b467876-d99e-4a81-9e9b-1d5b87e45126" title="Permalink to this equation">#</a></span>\[\begin{equation}
 A_2 = \frac{4^2 - 29 \cdot 4 + 5}{4^2 + 3} = -5
 \end{equation}\]</div>
 <p>Cross-multiplication must be used to solve for <span class="math notranslate nohighlight">\(A_1\)</span>, <span class="math notranslate nohighlight">\(A_3\)</span>, and <span class="math notranslate nohighlight">\(B_3\)</span>.</p>
@@ -503,8 +638,8 @@ degree of the numerator <span class="math notranslate nohighlight">\(P\)</span> 
 The remaineder from the division should then be suitable for partial fraction
 decomposition.</p>
 <p>For example, to integrate:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-086a7455-cdfd-4e7b-89a5-3c5715b74ea3">
-<span class="eqno">(1.64)<a class="headerlink" href="#equation-086a7455-cdfd-4e7b-89a5-3c5715b74ea3" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7a4f8171-74b2-427b-8511-ce86a1916be7">
+<span class="eqno">(1.91)<a class="headerlink" href="#equation-7a4f8171-74b2-427b-8511-ce86a1916be7" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \int \frac{x^4 - 5x^3 + 6x^2 -18}{x^3 -3x^2} \d{x}
 \end{equation}\]</div>
 <p>Partial fraction decomposition seems useful, but the degree of the numerator
@@ -523,36 +658,36 @@ x^3-3x^2{\overline{\smash{\big)}\, x^4-5x^3+6x^2-18}}
 \end{array}
 \end{split}\]</div>
 <p>The result is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-115c232b-1ccd-4c63-9826-d90a817e48d1">
-<span class="eqno">(1.65)<a class="headerlink" href="#equation-115c232b-1ccd-4c63-9826-d90a817e48d1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-480ea581-1cbd-43b3-be19-8531a1420bf2">
+<span class="eqno">(1.92)<a class="headerlink" href="#equation-480ea581-1cbd-43b3-be19-8531a1420bf2" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{x^4 - 5x^3 + 6x^2 -18}{x^3 -3x^2} = x - 2 - \frac{18}{x^3-3x^2}
 \end{equation}\]</div>
 <p>Use partial fraction decomposition for the fractional term:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-aaf647c0-73a2-4808-a1cb-bad67b5aecf9">
-<span class="eqno">(1.66)<a class="headerlink" href="#equation-aaf647c0-73a2-4808-a1cb-bad67b5aecf9" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-95592248-fca8-4936-8621-313df8b4c587">
+<span class="eqno">(1.93)<a class="headerlink" href="#equation-95592248-fca8-4936-8621-313df8b4c587" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{-18}{x^2 (x-3)} = \frac{A_1}{x} + \frac{A_2}{x^2} + \frac{A_3}{x-3}
 \end{equation}\]</div>
 <p>Find <span class="math notranslate nohighlight">\(A_2\)</span> and <span class="math notranslate nohighlight">\(A_3\)</span> using the Heaviside cover-up method:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-605642d5-bacd-4be5-b106-3caab9ce7046">
-<span class="eqno">(1.67)<a class="headerlink" href="#equation-605642d5-bacd-4be5-b106-3caab9ce7046" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f76eff95-0361-43d8-ab9b-6c3109432084">
+<span class="eqno">(1.94)<a class="headerlink" href="#equation-f76eff95-0361-43d8-ab9b-6c3109432084" title="Permalink to this equation">#</a></span>\[\begin{align}
 A_2 &amp;= \frac{-18}{0-3} = 6 \\
 A_3 &amp;= \frac{-18}{3^2} = -2
 \end{align}\]</div>
 <p>Find <span class="math notranslate nohighlight">\(A_1\)</span> by substituting <span class="math notranslate nohighlight">\(A_2\)</span> and <span class="math notranslate nohighlight">\(A_3\)</span>, then cross-multiplying:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e7a5a665-f4f8-46b5-b456-35f85a225e0c">
-<span class="eqno">(1.68)<a class="headerlink" href="#equation-e7a5a665-f4f8-46b5-b456-35f85a225e0c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1de726de-5a77-45b0-8e2d-7f0ea7ecc655">
+<span class="eqno">(1.95)<a class="headerlink" href="#equation-1de726de-5a77-45b0-8e2d-7f0ea7ecc655" title="Permalink to this equation">#</a></span>\[\begin{equation}
 -18 = A_1 x (x-3) + 6(x-3) - 2x^2
 \end{equation}\]</div>
 <p>We could collect powers of <em>x</em>, but plugging in <span class="math notranslate nohighlight">\(x=1\)</span> then solving for <span class="math notranslate nohighlight">\(A_1\)</span>
 is a little easier:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d4b669fe-aa10-4f97-8892-6e3193b70509">
-<span class="eqno">(1.69)<a class="headerlink" href="#equation-d4b669fe-aa10-4f97-8892-6e3193b70509" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-8112f957-fdc1-4944-8800-c7dcc6068006">
+<span class="eqno">(1.96)<a class="headerlink" href="#equation-8112f957-fdc1-4944-8800-c7dcc6068006" title="Permalink to this equation">#</a></span>\[\begin{align}
 -18 &amp;= A_1 \cdot 1 \cdot -2 + 6 \cdot -2 - 2 = -2A_1 - 14 \\
 A_1 &amp;= 2
 \end{align}\]</div>
 <p>Last, integrate:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-570869dd-6e06-46cb-bb03-95344fb9a707">
-<span class="eqno">(1.70)<a class="headerlink" href="#equation-570869dd-6e06-46cb-bb03-95344fb9a707" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e09b2ea0-02e0-4f23-85e2-6ccb2be0db1d">
+<span class="eqno">(1.97)<a class="headerlink" href="#equation-e09b2ea0-02e0-4f23-85e2-6ccb2be0db1d" title="Permalink to this equation">#</a></span>\[\begin{align}
 &amp;\int \frac{x^4 - 5x^3 + 6x^2 -18}{x^3 -3x^2} \d{x} \\
 &amp;= \int \left(x - 2 + \frac{2}{x} + \frac{6}{x^2} - \frac{2}{x-3} \right) \d{x} \\
 &amp;= \frac{x^2}{2} -2x + 2\ln|x| - \frac{6}{x} - 2\ln|x-3| + c
