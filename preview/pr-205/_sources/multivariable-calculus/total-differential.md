@@ -102,8 +102,10 @@ Express the following:
    \end{align}
    ```
 
+---
 
 Given:
+
 \begin{align}
 f &= \cos(4x+y^2) + x^2y\\
 x &= 2ut\\
@@ -111,6 +113,17 @@ y &= t^2
 \end{align}
 
 Evaluate:
+
+7. $\displaystyle\td{}{f}{t}{u}$
+
+   ```{solution}
+   ```
+
+8. $\displaystyle\td{}{f}{u}{t}$
+
+   ```{solution}
+   ```
+
 \begin{align}
 (g)\ \left(\frac{\partial f}{\partial t}\right)_u &= \left(\frac{\partial f}{\partial x}\right)_y\left(\frac{\partial x}{\partial t}\right)_u + \left(\frac{\partial f}{\partial y}\right)_x\left(\frac{\partial y}{\partial t}\right)_u\\
 \\
