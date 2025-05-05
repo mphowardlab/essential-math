@@ -47,7 +47,6 @@ Plugging *u* back in gives the final answer:
 (1) $y' = (x+2)\ln(x)$
 
 ```{solution}
-
 \begin{equation}
 y = \int (x+2)\ln(x) \, dx
 \end{equation}
@@ -67,7 +66,7 @@ y &=\left( \frac{x^2}{2} + 2x \right)\ln(x) - \int \left( \frac{x^2}{2} + 2x \ri
 (2) $y' = x^5\sin(x)$
 
 ```{solution}
-$$
+
 \begin{equation}
 y = \int x^5\sin(x) \ dx 
 \end{equation}
@@ -80,13 +79,13 @@ dv: \ sin(x) \\ -cos(x) \\ -sin(x) \\ cos(x) \\ sin(x) \\ -cos(x) \\ -sin(x)
 =-x^5cos(x)+5x^4sin(x)+20x^3cos(x)-60x^2sin(x)-120xcos(x)+120sin(x)+C
   
 (-x^5+20x^3-120x)cos(x)+(5x^4-60x^2+120)sin(x)+C  
-$$
+
 ```
 
 (3) $y' = e^x\cos(x)$ 
 
 ```{solution}  
-$$
+
 \begin{equation}
 y = \int e^xcos(x)dx 
 \end{equation}
@@ -118,5 +117,5 @@ $/int e^xcos(x)dx$ appears again, so we can add them together to get:
 Divide both sides by 2, and don't forget + C
 
 \int e^x \cos(x)dx = \frac{e^x}{2}(\cos(x) + \sin(x)) + C
-$$
+
 ```
