@@ -90,20 +90,32 @@ $$
 \begin{equation}
 y = \int e^xcos(x)dx 
 \end{equation}
-  
+
+Assign values for u and dv to find values for du and v. 
+
 \begin{align}
 u = cos(x) dv = e^x dx  
 du = -sin(x)dx  v = e^x   
 \end{align}
-  
+
+Apply integration by parts: uv - $\int vdu$
+
 = e^xcos(x) + \int e^x(sin(x))dx
+
+Assign new values for u and dv, find du and v again.
 
 u = sin(x) dv = e^x dx  
 du = cos(x) v = e^x  
 
+Apply integration by parts: uv - $\int vdu$
+
 = e^xcos(x)+[e^xsin(x)-\int e^xcos(x)dx]
 
+$/int e^xcos(x)dx$ appears again, so we can add them together to get:
+
 = 2\int e^xcos(x)dx = e^xcos(x)+e^xsin(x)  
+
+Divide both sides by 2, and don't forget + C
 
 \int e^x \cos(x)dx = \frac{e^x}{2}(\cos(x) + \sin(x)) + C
 $$
