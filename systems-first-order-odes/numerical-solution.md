@@ -95,5 +95,5 @@ Calling $y_1 = c_{\rm A}$ and $y_2 = V$:
 | 4    | 0.8    | 0.6669 | 9.2     | -0.2972  | -1       |
 | 5    | 1.0    | .6075  | 9       |          |          |
 
-The concentration after 1 minute is approximately 0.6075 M.
+The concentration after 1 minute is approximately 0.6 M.
 ````
