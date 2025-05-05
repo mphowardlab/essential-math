@@ -1,5 +1,200 @@
 # Homogeneous linear second-order ODEs with constant coefficients
 
+Equations of the form:
+
+\begin{equation}
+y'' + ay' + by = 0
+\end{equation}
+
+come up often in chemical engineering, particularly in steady-state heat and
+mass diffusion, so it is important to know how to solve them!
+
+Guess a solution $y=e^{\lambda x}$, then substitute into the differential
+equation:
+
+\begin{align}
+\lambda^2 e^{\lambda x} + a (\lambda e^{\lambda x}) + b e^{\lambda x} &= 0\\
+\lambda^2 + a \lambda + b &= 0
+\end{align}
+
+This *characteristic polynomial* has two roots $\lambda_1$ and $\lambda_2$, and
+the general solution for *y* is obtained by superposition of both.
+
+```{topic} Homogeneous linear second-order ODEs with constant coefficients
+
+For ODEs of the form
+
+\begin{equation}
+y'' + ay' + by = 0
+\end{equation}
+
+The roots of the characteristic polynomial
+
+\begin{equation}
+\lambda^2 + a \lambda + b = 0
+\end{equation}
+
+give the solution type:
+
+1. $\lambda_1$ and $\lambda_2$ are real and distinct:
+
+   \begin{equation}
+   y = c_1 e^{\lambda_1 x} + c_2 e^{\lambda_2 x}
+   \end{equation}
+
+2. $\lambda_{1,2} = \alpha \pm i \omega$ are complex:
+
+   \begin{equation}
+   y = e^{\omega x} \left[c_1 \cos(\omega x) + c_2 \sin(\omega x)\right]
+   \end{equation}
+
+3. $\lambda_1 = \lambda_2 = \lambda $ is real and repeated:
+
+   \begin{equation}
+   y=(c_1 + c_2 x) e^{\lambda x}
+   \end{equation}
+```
+
+We will consider an example of each case next.
+
+## Real distinct roots
+
+To solve
+
+\begin{equation}
+y'' + y' - 2y = 0, \quad y(0)=4, \quad y'(0)=-5
+\end{equation}
+
+First write and solve the characteristic polynomial,
+
+\begin{align}
+\lambda^2 + \lambda -2 &= 0 \\
+(\lambda + 2)(\lambda + 1) &= 0
+\end{align}
+
+so $\lambda_1 = -2$ and $\lambda_2 =1$. The general solution and its first
+derivative are:
+
+\begin{align}
+y &= c_1 e^{-2x} + c_2 e^{x}  \\
+y'&= -2c_1 e^{-2x} + c_2 e^{x} \qquad
+\end{align}
+
+So applying the initial conditions:
+
+\begin{align}
+y(0) &= c_1 + c_2 = 4 \\
+y'(0) &= -2c_1 + c_2 = -5
+\end{align}
+
+These coefficients can be solved by Gauss-Jordan elimination:
+
+\begin{align}
+\begin{bmatrix}
+1 & 1 & 4 \\
+-2 & 1 & -5
+\end{bmatrix}
+\begin{matrix}\vphantom{R_1} \\ +2 R_1 \end{matrix}
+&\to
+\begin{bmatrix}
+1 & 1 & 4 \\
+0 & 3 & 3
+\end{bmatrix}
+\begin{matrix}\vphantom{R_1} \\ \div 3 \end{matrix} \\
+&\to
+\begin{bmatrix}
+1 & 1 & 4 \\
+0 & 1 & 1
+\end{bmatrix}
+\begin{matrix} -R_2 \\ \vphantom{R_1} \end{matrix} \\
+&\to
+\begin{bmatrix}
+1 & 0 & 3 \\
+0 & 1 & 1
+\end{bmatrix}
+\end{align}
+
+so $c_1 = 3$ and $c_2 = 1$. The final solution is:
+
+\begin{equation}
+y = 3 e^{-2x} + e^x
+\end{equation}
+
+## Complex roots
+
+To solve:
+
+\begin{equation}
+y'' + 0.4y' + 9.04y = 0, \quad y(0)=0, \quad y'(0)=3
+\end{equation}
+
+Write and solve the characteristic polynomial,
+
+\begin{align}
+\lambda^{2} &+ 0.4\lambda + 9.04 = 0 \\
+\lambda_{1,2} &= \frac{-0.4\pm\sqrt{0.4^2- 4 \cdot 9.04}}{2} = -0.2\pm 3i
+\end{align}
+
+Once values of $\lambda$ are known, write out the general solution and plug in
+the first initial condition to solve for $c_1$.
+
+\begin{align}
+y &= e^{-0.2x}(c_1\cos3x + c_2\sin3x) \\
+y(0) &= c_1  = 0
+\end{align}
+
+Hence the first term can be dropped from the solution. In order to solve for
+$c_2$, write out the derivative and plug in the second condition:
+
+\begin{align}
+y' &= e^{-0.2x}(3c_2\cos3x) - 0.2e^{-0.2x}c_2\sin 3x \\
+y'(0) &= 3c_2 = 3
+\end{align}
+
+Since $c_2=1$, the final solution is:
+
+\begin{equation}
+y = e^{-0.2x}\sin 3x
+\end{equation}
+
+## Real repeated roots
+
+To solve:
+
+\begin{align}
+y'' + y' + \frac{1}{4}y=0, \quad y(0)=3, \quad y'(0)= -\frac{7}{2}
+\end{align}
+
+Write and solve the characteristic polynomial,
+
+\begin{align}
+\lambda^2 + \lambda + \frac{1}{4} = 0 \\
+\left(\lambda + \frac{1}{2}\right)^2 = 0
+\end{align}
+
+So $\lambda = -1/2$ is a real and repeated root. Write out the general equation
+and its derivative,
+
+\begin{align}
+y &=(c_1 + c_2x)e^{-x/2} \\
+y' &=(c_1 + c_2x)(-\frac{1}{2}e^{-x/2}) + c_2 e^{-x/2}
+\end{align}
+
+Use the given conditions to solve for $c_1$ and $c_2$:
+
+\begin{align}
+y(0) &= c_1 = 3 \\
+y'(0) &= -\frac{c_1}{2} + c_2 = -\frac{7}{2} \to c_2 = -2
+\end{align}
+
+The final solution is:
+
+\begin{equation}
+y = (3-2x)e^{-x/2}
+\end{equation}
+
+## Applications
+
 ````{example} Spring and dashpot
 We are analyzing how the drag force affects the spring oscilations. This is a
 mechanics example, but models like this are also used for the rheology of
