@@ -50,4 +50,3 @@ $f(x) = \frac{1}{x^4} \ times x^3 -3x^2 +2x = x^-1 -3x^-2 +2x^-3$
 $f'(x) = -\frac{1}{x^2} + \frac{6}{x^3} - \frac{6}{x^4}$
 Fastest way depends on the problem! 
 ````
- 
