@@ -62,7 +62,11 @@ Apply integration by parts: $uv - \int vdu$
 
 \begin{align}
 y &=\left( \frac{x^2}{2} + 2x \right)\ln(x) - \int \left( \frac{x^2}{2} + 2x \right) \frac{1}{x} \, dx \\
+\end{align}
 
+Solve the integral, don't forget + C
+
+\begin{align}
 &= \left( \frac{x^2}{2} + 2x \right)\ln(x) - \frac{x^2}{4} - 2x + C
 \end{align}
 
@@ -116,18 +120,23 @@ du &= -\sin(x)\,dx, & v &= e^x
 
 Apply integration by parts: $uv - \int vdu$
 
-= e^xcos(x) + \int e^x(sin(x))dx
+\begin{align}
+y = e^xcos(x) + \int e^x(sin(x))dx
+\end{align}
 
 Assign new values for u and dv, find du and v again.
-
-u &= \sin(x), &dv&= e^x,dx\  
-du &= \cos(x),dx,&v&= e^x  
+\begin{align}
+u &= \sin(x), & dv &= e^x\,dx \\  
+du &= \cos(x)\,dx, & v &= e^x  
+\end{align}
 
 Apply integration by parts: $uv - \int vdu$
 
+\begin{align}
 = e^xcos(x)+[e^xsin(x)-\int e^xcos(x)dx]
+\end{align}
 
-$/int e^xcos(x)dx$ appears again, so we can add them together to get:
+$ \int e^xcos(x)dx$ appears again, so we can add them together to get:
 
 = 2\int e^xcos(x)dx = e^xcos(x)+e^xsin(x)  
 
