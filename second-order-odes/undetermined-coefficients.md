@@ -88,9 +88,20 @@ Use the following steps:
    y = 0.002 \cos x + 1.5 \sin x + 0.001x^2 - 0.002
    \end{equation}
 
-Ex. $y''+3y'+2.25y=-10e^-1.5x+cosx$
+Ex. 
+\begin{equation}
+y''+3y'+2.25y=-10e^-1.5x+\cosx
+\end{equation
 
-1. Find $y_n$: $y{_n}''+3y{_n}'+2.25y_n =0 ->
-   \lambda^2 +3\lambda+2.25 =(\lambda+1.5)^2 = 0 ->
-   \lambda=-1.5 -> y_n = (c_1 + c{_2}x)e^{-1.5x}$
-2. Guess $y_p$: $y_p = k_1 x^2 e^{-1.5 x} + (k_2 \cos(x) +k_3 \sin(x))$
+
+1. Find $y_n$:
+   \begin{align}
+   $y{_n}''+3y{_n}'+2.25y_n =0 -> \\
+   \lambda^2 +3\lambda+2.25 =(\lambda+1.5)^2 = 0 -> \\
+   \lambda=-1.5 -> y_n = (c_1 + c{_2}x)e^{-1.5x}
+   \end{align}
+   
+2. Guess $y_p$:
+   \begin{align}
+   y_p = k_1 x^2 e^{-1.5 x} + (k_2 \cos(x) +k_3 \sin(x))
+   \end{align}
