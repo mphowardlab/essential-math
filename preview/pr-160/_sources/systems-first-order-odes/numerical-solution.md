@@ -20,7 +20,7 @@ initially 1 M concentration in the reactant A and has 10 L of solution. A feed
 stream that has a reactant concentration of 1 M enters at 1 L / min, while
 well-mixed solution exits at 2 L / min.
 
-```{image} ./_images/euler_diagram.png
+```{image} ./_images/euler_diagram_new.png
 :alt: Reactions in draining tank.
 :align: center
 :width: 300px
@@ -89,11 +89,11 @@ Calling $y_1 = c_{\rm A}$ and $y_2 = V$:
 |  $n$ |  $t$   | $y_1$  | $y_2$   | $f_1$    |  $f_2$   |
 |------|--------|--------|---------|----------|----------|
 | 0    | 0      | 1      | 10      | -0.5     | -1       |
-| 1    | 0.2    |        |         |          |          |
-| 2    | 0.4    |        |         |          |          |
-| 3    | 0.6    |        |         |          |          |
-| 4    | 0.8    |        |         |          |          |
-| 5    | 1.0    |        |         |          |          |
+| 1    | 0.2    | 0.9    | 9.8     | -0.4398  | -1       |
+| 2    | 0.4    | 0.8120 | 9.6     | -0.3864  | -1       |
+| 3    | 0.6    | 0.7347 | 9.4     | -0.3389  | -1       |
+| 4    | 0.8    | 0.6669 | 9.2     | -0.2972  | -1       |
+| 5    | 1.0    | .6075  | 9       |          |          |
 
-The concentration after 1 minute is approximately X M.
+The concentration after 1 minute is approximately 0.6075 M.
 ````
