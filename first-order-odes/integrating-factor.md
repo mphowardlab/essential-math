@@ -76,4 +76,3 @@ f(x, y) = e^x + xy - e^{-y} + c
 ```{math}
 \boxed{e^x + xy - e^{-y} = c}
 ```
-```
