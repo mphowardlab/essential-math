@@ -16,7 +16,7 @@ $$
 
 ---
 
-### Homogeneous Solution:
+Homogeneous solution:
 $$
 y'' - y' - 12y = 0 
 $$ 
