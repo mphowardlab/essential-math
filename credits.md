@@ -40,6 +40,7 @@ This work (c) 2025 is licensed under
 - Meg Nettles
 - Jeffe Old
 - Ella Ortbals
+- Jack Raynor
 - Kendall Reeves
 - Olivia Robinson
 - Brent Russell
