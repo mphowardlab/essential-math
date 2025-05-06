@@ -14,6 +14,7 @@ W is the Wronskian determinant
 ```
 
 ```
+Example,
 \begin{equation}
 y'' + y = \sec x
 \end{equation}
