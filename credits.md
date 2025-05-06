@@ -14,6 +14,7 @@ This work (c) 2025 is licensed under
 - Paine Cole
 - Oscar Earhart
 - Sarah Eldridge
+- Sam Faulkner
 - Alexis Florit
 - Ella Governale
 - Parker Green
