@@ -13,7 +13,7 @@ f^{'}(x) &= 3\frac{d}{dx}(\cos{x})+4\frac{d}{dx}(\sin{x})\\
 u &= \sin{x} \quad v = \cos{x}\\
 u^{'} &= \cos{x} \quad v^{'} = -\sin{x}\\
 &= 2[\sin{x}(-\sin{x})+\cos{x}(\cos{x})]\\
-&= 2(\cos{x}^{2}-\sin^{2}{x})\\
+&= 2(\cos{2}^{x}-\sin^{2}{x})\\
 &= 2\cos{2x}\\
 \end{align}
 
