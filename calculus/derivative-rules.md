@@ -103,10 +103,10 @@ f'(x) = \frac{\cos(\cos(x)) - \sin(-\sin(x))}{\cos^2(x)} = \frac{\sin^2(x) + \co
 \textbf{Proof of derivative of $\csc(x)$}
 
 \begin{align}
-f(x) = \csc(x) = (\sin(x))^(-1) \\
-u = \sin(x) \; f(u) = u^(-1) \\
-u'(x) = \cos(x) \; f'(u) = -u^(-2) \\
-f'(x) = -u^(-2) u' = -(\sin(x))^(-2) \cosx = \frac{-1}{\sin(x)} \frac{\cos(x)}{\sin(x)} = -\csc(x) \cot(x)
+f(x) = \csc(x) = (\sin(x))^{-1} \\
+u = \sin(x) \; f(u) = u^{-1} \\
+u'(x) = \cos(x) \; f'(u) = -u^{-2} \\
+f'(x) = -u^{-2} u' = -(\sin(x))^{-2} \cosx = \frac{-1}{\sin(x)} \frac{\cos(x)}{\sin(x)} = -\csc(x) \cot(x)
 \end{align}
 
 
