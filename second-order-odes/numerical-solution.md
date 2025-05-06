@@ -48,12 +48,13 @@ where *a* is unknown value that we need to figure out so $y(\frac{\pi}{6}) = 4$.
 
 How do we do this when we have only numbers? *Shooting method*.
 
-```{image} ./_images/graph_of_lines.jpg  
+```{image} ./_images/graph.jpg  
 :alt: Graph of Lines  
 :align: center  
 :width: 200px 
 
-![](./images/grapofline3.jpg)
+![](./images/graph.jpg)
+
 - Formuate system of ODEs with () *initial* condtion is know
 
 
@@ -87,4 +88,12 @@ y_2'=\frac{K}{D}y_1'y_2(0)=a
 
 \end {align}
 
-vary a and solve numerically for $\underline{y}(L)$ until $y_2(L)=0$!
+vary a and solve numerically for 
+\begin {equation}
+\vv{y}(L)
+\end {equation}
+
+ until 
+ \begin {equation}
+ y_2(L)=0!
+ \end {equation}
