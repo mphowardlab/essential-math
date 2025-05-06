@@ -41,8 +41,7 @@ How do we solve this? Hard in general, but in this case, we can work in order!
    \dd{}{c_{\rm B}}{t} + k_{2} c_{B}=k_{1} c_{A,0}e^{-k_{1}t}
    \end{align}
 
-
-$\quad$ $\frac{dc_B}{dt} + k_{2} c_{B}=k_{1} c_{A,0}e^{-k_{1}t}$
+   Apply the integrating factor $F= e^{\int p \d{t}}$  and $\int Fr\ d{t}$, such that $p=k_{2}$ and $r=k_{1} c_{A,0}e^{-k_{1}t}$
 
 $\qquad$ Integrating factor: $F= e^{\int p\ dt} = e^{\int k_{2}\ dt} = e^{k_{2}t}$\
  $\qquad$ $\int Fr\ dt = \int e^{k_{2}t}k_{1}c_{A,0}e^{-k_{1}t}\ dt= k_{1}c_{A,0} \int e^{(k_{2}-k_{1})t}\ dt = \frac{k_{1}c_{A,0}}{k_{2}-k_{1}} e^{(k_{2}-k_{1})t}$
