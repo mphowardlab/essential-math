@@ -63,7 +63,7 @@
     <link rel="canonical" href="https://mphowardlab.github.io/essential-math/second-order-odes/substitution.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="7.2. Reduction of order" href="reduction.html" />
+    <link rel="next" title="7.3. Reduction of order" href="reduction.html" />
     <link rel="prev" title="7. Second-order ordinary differential equations" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -225,12 +225,13 @@
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">7. Second-order ordinary differential equations</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">7.1. Systems of first-order ordinary differential equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reduction.html">7.2. Reduction of order</a></li>
-<li class="toctree-l2"><a class="reference internal" href="linearity.html">7.3. Linearity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="homogeneous-constant-coefficient.html">7.4. Homogeneous linear second-order ODEs with constant coefficients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="undetermined-coefficients.html">7.5. Undetermined coefficients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="variation-of-parameters.html">7.6. Variation of parameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numerical-solution.html">7.7. Numerical solution methods</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="reduction.html">7.3. Reduction of order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linearity.html">7.4. Linearity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="homogeneous-constant-coefficient.html">7.5. Homogeneous linear second-order ODEs with constant coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="undetermined-coefficients.html">7.6. Undetermined coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variation-of-parameters.html">7.7. Variation of parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numerical-solution.html">7.8. Numerical solution methods</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../credits.html">8. Credits</a></li>
@@ -429,8 +430,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#odes-involving-second-derivatives-appear-often-in-engineering-because-of-their-role-in-physical-processes">7.1.1. ODES involving second derivatives appear often in engineering because of their role in physical processes</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">7.1. Systems of first-order ordinary differential equations</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#odes-involving-second-derivatives-appear-often-in-engineering-because-of-their-role-in-physical-processes">7.2. ODES involving second derivatives appear often in engineering because of their role in physical processes</a></li>
 </ul>
+
             </nav>
         </div>
     </div>
@@ -443,8 +446,9 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="systems-of-first-order-ordinary-differential-equations">
 <h1><span class="section-number">7.1. </span>Systems of first-order ordinary differential equations<a class="headerlink" href="#systems-of-first-order-ordinary-differential-equations" title="Link to this heading">#</a></h1>
-<section id="odes-involving-second-derivatives-appear-often-in-engineering-because-of-their-role-in-physical-processes">
-<h2><span class="section-number">7.1.1. </span>ODES involving second derivatives appear often in engineering because of their role in physical processes<a class="headerlink" href="#odes-involving-second-derivatives-appear-often-in-engineering-because-of-their-role-in-physical-processes" title="Link to this heading">#</a></h2>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="odes-involving-second-derivatives-appear-often-in-engineering-because-of-their-role-in-physical-processes">
+<h1><span class="section-number">7.2. </span>ODES involving second derivatives appear often in engineering because of their role in physical processes<a class="headerlink" href="#odes-involving-second-derivatives-appear-often-in-engineering-because-of-their-role-in-physical-processes" title="Link to this heading">#</a></h1>
 <ul class="simple">
 <li><p>Newton’s second law : <span class="math notranslate nohighlight">\(F=ma\)</span></p>
 <ul>
@@ -478,15 +482,16 @@ document.write(`
 <p>is working</p>
 <p>Ex: Incompressible flow in a cylinder (momentum transport)</p>
 <img src="https://github.com/user-attachments/assets/cc9937aa-c09f-46ed-a159-edaad1f20dc6" alt="Your Image" width="500"/>
+<p>Navier-Stokes equation reduces to</p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned} Navier-Stokes equation reduces to\\\begin{split}\begin{aligned}
+\[\begin{split}\begin{aligned}
 &amp;\mu \frac{1}{r} \frac{d}{dr} \left( r \frac{du_z}{dr} \right) = -\frac{\Delta P}{L} \\
 &amp;v = r \frac{du_z}{dr} \\
 &amp;\int dv = \int \frac{-1}{\mu} \frac{\Delta P}{L} r\,dr 
 \to v = r \frac{du_z}{dr} = -\frac{1}{2\mu} \frac{\Delta P}{L} r^2 + C_1 \ln(r) + C_2 \\
 &amp;\int du_z = \int \left( -\frac{1}{2\mu} \frac{\Delta P}{L} r + \frac{C_1}{r} \right) dr 
 \to u_z = -\frac{1}{4\mu} \frac{\Delta P}{L} r^2 + C_1 \ln(r) + C_2
-\end{aligned}\end{split}\end{aligned}\end{align} \]</div>
+\end{aligned}\end{split}\]</div>
 <p>We want no slip</p>
 <div class="math notranslate nohighlight">
 \[
@@ -505,14 +510,12 @@ u_z(0)
 \[ \begin{align}\begin{aligned}
 \frac{du_z}{dr}=0  \to &#64;r=0
 $$.\\Either way,\end{aligned}\end{align} \]</div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>C_1 = 0
-$$. So,
-$$
+<p>C_1 = 0
+$$. So,</p>
+<div class="math notranslate nohighlight">
+\[
 u_z(r)=\frac{1}{4μ}\frac{△P}{L}(R^2-r^2)
-$$
-</pre></div>
-</div>
-</section>
+\]</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -559,7 +562,7 @@ $$
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">7.2. </span>Reduction of order</p>
+        <p class="prev-next-title"><span class="section-number">7.3. </span>Reduction of order</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -579,8 +582,10 @@ $$
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#odes-involving-second-derivatives-appear-often-in-engineering-because-of-their-role-in-physical-processes">7.1.1. ODES involving second derivatives appear often in engineering because of their role in physical processes</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">7.1. Systems of first-order ordinary differential equations</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#odes-involving-second-derivatives-appear-often-in-engineering-because-of-their-role-in-physical-processes">7.2. ODES involving second derivatives appear often in engineering because of their role in physical processes</a></li>
 </ul>
+
   </nav></div>
 
 </div></div>
