@@ -39,7 +39,7 @@ How do we solve this? Hard in general, but in this case, we can work in order!
    \begin{align}
    \dd{}{c_{\rm B}}{t} = k_{1} c_{A,0}e^{-k_{1}t} -k_{2} C_{B} \\
    \dd{}{c_{\rm B}}{t} + k_{2} c_{B}=k_{1} c_{A,0}e^{-k_{1}t}
-   \begin{align}
+   \end{align}
 
 
 $\quad$ $\frac{dc_B}{dt} + k_{2} c_{B}=k_{1} c_{A,0}e^{-k_{1}t}$
