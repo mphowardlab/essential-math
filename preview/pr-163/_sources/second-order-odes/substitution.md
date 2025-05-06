@@ -36,12 +36,15 @@ $$
 
 $$
 
+is working
 
 Ex: Incompressible flow in a cylinder (momentum transport)
-- Navier-Stokes equation reduces to
+
 <img src="https://github.com/user-attachments/assets/cc9937aa-c09f-46ed-a159-edaad1f20dc6" alt="Your Image" width="500"/>
 
 $$
+
+ Navier-Stokes equation reduces to
 
 \begin{aligned}
 &\mu \frac{1}{r} \frac{d}{dr} \left( r \frac{du_z}{dr} \right) = -\frac{\Delta P}{L} \\
