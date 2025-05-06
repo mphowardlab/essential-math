@@ -57,6 +57,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"d": ["{\\operatorname{d}\\!{#1}}", 1], "dd": ["{\\d{}^{#1} #2 \\over \\d{#3}^{#1}}", 3], "pp": ["{\\partial^{#1} #2 \\over \\partial #3^{#1}}", 3], "td": ["{\\left(\\pp{#1}{#2}{#3} \\right)_{#4}}", 4], "ubar": ["\\underline{#1}", 1], "vv": ["\\mathbf{#1}", 1]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'second-order-odes/undetermined-coefficients';</script>
     <link rel="canonical" href="https://mphowardlab.github.io/essential-math/second-order-odes/undetermined-coefficients.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -403,7 +405,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -419,6 +423,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill-builder-problems">7.4.1. Skill builder problems</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -430,6 +442,270 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="undetermined-coefficients">
 <h1><span class="section-number">7.4. </span>Undetermined coefficients<a class="headerlink" href="#undetermined-coefficients" title="Link to this heading">#</a></h1>
+<aside class="topic">
+<p class="topic-title">Undetermined coefficients</p>
+<p>If a nonhomogeneous linear second-order ODE has constant coefficients</p>
+<div class="amsmath math notranslate nohighlight" id="equation-63a8bc32-faa0-46f0-9733-4b9bbfc8ac61">
+<span class="eqno">(7.71)<a class="headerlink" href="#equation-63a8bc32-faa0-46f0-9733-4b9bbfc8ac61" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y'' + a y' + b y = r(x)
+\end{equation}\]</div>
+<p>we can “guess” a solution as follows:</p>
+<!-- markdownlint-disable MD013 -->
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(r\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(y_{\rm p}\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(k e^{\gamma x}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(k e^{\gamma x}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(k x^n (n=0,1,\ldots)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(k_n x^n + k_{n-1} x^{n-1} + \cdots + k_1 x + k_0\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(k e^{\alpha x} \cos{\omega x}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(e^{\alpha x}(k_1 \cos{\omega x} + k_2 \sin{\omega x})\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(k e^{\alpha x} \sin{\omega x}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(e^{\alpha x}(k_1 \cos{\omega x} + k_2 \sin{\omega x})\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- markdownlint-enable MD013 -->
+<ul class="simple">
+<li><p>If <em>r</em> has multiple terms, add guesses for each together.</p></li>
+<li><p>If the guess for <span class="math notranslate nohighlight">\(y_{\rm p}\)</span> is a homogeneous solution <span class="math notranslate nohighlight">\(y_{\rm h}\)</span>, multiply
+by <em>x</em> unless this solution is a repeated root - then multiply by <span class="math notranslate nohighlight">\(x^2\)</span>!</p></li>
+</ul>
+</aside>
+<p>For example, to solve:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8b65b2f4-84ae-4198-8ab4-92cea2400e07">
+<span class="eqno">(7.72)<a class="headerlink" href="#equation-8b65b2f4-84ae-4198-8ab4-92cea2400e07" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y'' + y = 0.001 x^2, \quad y(0) = 0, \quad y'(0) = 1.5
+\end{equation}\]</div>
+<p>Use the following steps:</p>
+<ol class="arabic">
+<li><p>Find <span class="math notranslate nohighlight">\(y_{\rm h}\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-da5caf89-8349-4471-b936-cd33bde53012">
+<span class="eqno">(7.73)<a class="headerlink" href="#equation-da5caf89-8349-4471-b936-cd33bde53012" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_{\rm h}'' + y_{\rm h} &amp;= 0 \\
+\lambda^2 + 1 &amp;= 0
+\end{align}\]</div>
+<p>so <span class="math notranslate nohighlight">\(\lambda = \pm i\)</span> and</p>
+<div class="amsmath math notranslate nohighlight" id="equation-61dfc4dd-941f-4435-bfbf-3e94bf4c3faf">
+<span class="eqno">(7.74)<a class="headerlink" href="#equation-61dfc4dd-941f-4435-bfbf-3e94bf4c3faf" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y_{\rm h} = c_1 \cos x +c_2 \sin x
+\end{equation}\]</div>
+</li>
+<li><p>Guess <span class="math notranslate nohighlight">\(y_{\rm p}\)</span> and solve for undetermined coefficients:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4bdfddbb-cf82-46f8-95ab-c0efde69e554">
+<span class="eqno">(7.75)<a class="headerlink" href="#equation-4bdfddbb-cf82-46f8-95ab-c0efde69e554" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_{p} &amp;= k_2 x^2 + k_1 x + k_0 \\
+y_{\rm p}' &amp;= 2k_2 x + k_1 \\
+y_{\rm p}'' &amp;= 2k_2
+\end{align}\]</div>
+<p>So</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e57219fa-944f-4d56-8082-d4337de1b045">
+<span class="eqno">(7.76)<a class="headerlink" href="#equation-e57219fa-944f-4d56-8082-d4337de1b045" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y_{\rm p}'' + y_{p} = 2 k_2 + k_2 x^2 + k_1 x + k_0 = 0.001x^2
+\end{equation}\]</div>
+<p>Equating coefficients of like powers of <em>x</em> gives the system</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c1539946-0158-4235-ac04-77d996880b35">
+<span class="eqno">(7.77)<a class="headerlink" href="#equation-c1539946-0158-4235-ac04-77d996880b35" title="Permalink to this equation">#</a></span>\[\begin{align}
+k_2 &amp;= 0.001 \\
+k_1 &amp;= 0 \\
+2k_2 + k_0 &amp;= 0 \\
+\end{align}\]</div>
+<p>which gives <span class="math notranslate nohighlight">\(k_0 = -0.002\)</span>.</p>
+</li>
+<li><p>Combine solutions and solve IVP.</p>
+<p>The general solution and its first derivative are:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-48d45b07-75c1-4fd2-9c89-da4e57bcb07c">
+<span class="eqno">(7.78)<a class="headerlink" href="#equation-48d45b07-75c1-4fd2-9c89-da4e57bcb07c" title="Permalink to this equation">#</a></span>\[\begin{align}
+y &amp;= y_{\rm h} + y_{\rm p} = c_1  \cos x + c_2  \sin x  + 0.001x^2 - 0.002 \\
+y' &amp;= -c_1 \sin x + c_2 \cos x + 0.002x
+\end{align}\]</div>
+<p>Substituting in the first boundary condition:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-480f9731-c35a-41f8-8601-4c41b610ab13">
+<span class="eqno">(7.79)<a class="headerlink" href="#equation-480f9731-c35a-41f8-8601-4c41b610ab13" title="Permalink to this equation">#</a></span>\[\begin{align}
+y(0) &amp;= c_1 - 0.002 = 0\\
+y'(0) &amp;= c_2 = 1.5
+\end{align}\]</div>
+<p>Hence, <span class="math notranslate nohighlight">\(c_1 = 0.002\)</span>, <span class="math notranslate nohighlight">\(c_2 = 1.5\)</span>, and</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4dad8549-44a6-441a-a8f8-b6567c805e01">
+<span class="eqno">(7.80)<a class="headerlink" href="#equation-4dad8549-44a6-441a-a8f8-b6567c805e01" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y = 0.002 \cos x + 1.5 \sin x + 0.001x^2 - 0.002
+\end{equation}\]</div>
+</li>
+</ol>
+<hr class="docutils" />
+<p>As a more complex example, let’s find the form of the particular solution for:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-56f89dca-cd59-4a03-b7d4-0ab349a4e599">
+<span class="eqno">(7.81)<a class="headerlink" href="#equation-56f89dca-cd59-4a03-b7d4-0ab349a4e599" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y'' + 3y' + 2.25y = -10e^-1.5x + \cos x
+\end{equation}\]</div>
+<ol class="arabic">
+<li><p>Find <span class="math notranslate nohighlight">\(y_{\rm h}\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ef9dd4ee-d291-418b-886f-54991d716bcd">
+<span class="eqno">(7.82)<a class="headerlink" href="#equation-ef9dd4ee-d291-418b-886f-54991d716bcd" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_{\rm h}''+3y_{\rm h}'+2.25y_{\rm h} &amp;= 0 \\
+\lambda^2 +3\lambda+2.25 = 0 \\
+(\lambda+1.5)^2 &amp;= 0 \\
+\end{align}\]</div>
+<p>so <span class="math notranslate nohighlight">\(\lambda = -1.5\)</span>. This is a real repeated root, so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b9aa2cd0-227d-4c84-83c5-b957eab64921">
+<span class="eqno">(7.83)<a class="headerlink" href="#equation-b9aa2cd0-227d-4c84-83c5-b957eab64921" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y_{\rm h} = (c_1 + c_2 x)e^{-1.5x}
+\end{equation}\]</div>
+</li>
+<li><p>Guess <span class="math notranslate nohighlight">\(y_{\rm p}\)</span>:</p>
+<p>We should add guesses for both terms in <em>r</em>. Our first term is an
+exponential, but it needs to be multiplied by <span class="math notranslate nohighlight">\(x^2\)</span> because it is the same
+as the homogeneous solution, which is a real repeated root. Our second
+term is a sum of cosine and sine.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-96732522-9fcd-4240-80ee-aa72fb561fb9">
+<span class="eqno">(7.84)<a class="headerlink" href="#equation-96732522-9fcd-4240-80ee-aa72fb561fb9" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_{\rm p} = k_1 x^2 e^{-1.5 x} + (k_2 \cos x  +k_3 \sin x)
+\end{align}\]</div>
+</li>
+</ol>
+<section id="skill-builder-problems">
+<h2><span class="section-number">7.4.1. </span>Skill builder problems<a class="headerlink" href="#skill-builder-problems" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p>Solve:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6c1ffe2a-3ca4-4b1f-a9c7-0145f0121e97">
+<span class="eqno">(7.85)<a class="headerlink" href="#equation-6c1ffe2a-3ca4-4b1f-a9c7-0145f0121e97" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y'' + 3y' + 2y = 30e^{2x}, \quad y(0) = 1, \quad y'(0) = 0
+\end{equation}\]</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic">
+<li><p class="sd-card-text">Find homogeneous solution <span class="math notranslate nohighlight">\(y_{\rm h}\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-25896d3b-c9d0-4c06-87a5-52730020e402">
+<span class="eqno">(7.86)<a class="headerlink" href="#equation-25896d3b-c9d0-4c06-87a5-52730020e402" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_{\rm h}'' + 3y_{\rm h}' + 2y_{\rm h} &amp;= 0 \\
+\lambda^{2} + 3\lambda + 2 &amp;= 0 \\
+(\lambda + 1)(\lambda + 2) &amp;= 0
+\end{align}\]</div>
+<p class="sd-card-text">so <span class="math notranslate nohighlight">\(\lambda_1 = -1\)</span> and <span class="math notranslate nohighlight">\(\lambda_2 = -2\)</span>. Then,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8e021fcc-51cc-4ec4-9939-d513d5792190">
+<span class="eqno">(7.87)<a class="headerlink" href="#equation-8e021fcc-51cc-4ec4-9939-d513d5792190" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y_{\rm h} = c_1 e^{x} + c_2 e^{-2x}
+\end{equation}\]</div>
+</li>
+<li><p class="sd-card-text">Find particular solution <span class="math notranslate nohighlight">\(y_{\rm p}\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-01e9cfe6-f0ee-4dd9-9649-66af3dc45d60">
+<span class="eqno">(7.88)<a class="headerlink" href="#equation-01e9cfe6-f0ee-4dd9-9649-66af3dc45d60" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_{\rm p} &amp;= ke^{2x} \\
+y_{\rm p}' &amp;= 2ke^{2x}  \\
+y_{\rm p}'' &amp;= 4ke^{2x}
+\end{align}\]</div>
+<p class="sd-card-text">Combine and solve for <em>k</em>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-86c7e42d-88b2-4e19-8cc2-60f07d16e487">
+<span class="eqno">(7.89)<a class="headerlink" href="#equation-86c7e42d-88b2-4e19-8cc2-60f07d16e487" title="Permalink to this equation">#</a></span>\[\begin{align}
+4ke^{2x} e^{2x} &amp;+ 6ke^{2x} e^{2x} + 2ke^{2x} e^{2x} = 30e^2x e^{2x} \\
+12k &amp;= 30
+\end{align}\]</div>
+<p class="sd-card-text">so <span class="math notranslate nohighlight">\(k = 5/2\)</span> and</p>
+<div class="amsmath math notranslate nohighlight" id="equation-76d7187f-75ab-4c2e-a969-37257230fe8b">
+<span class="eqno">(7.90)<a class="headerlink" href="#equation-76d7187f-75ab-4c2e-a969-37257230fe8b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y_{\rm p} = \frac{5}{2} e^{2x}
+\end{equation}\]</div>
+</li>
+<li><p class="sd-card-text">Combine and apply initial conditions:</p>
+<p class="sd-card-text">The general solution and its first derivative are</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9c93f9cb-6dfc-4027-bd65-c6e1d803459d">
+<span class="eqno">(7.91)<a class="headerlink" href="#equation-9c93f9cb-6dfc-4027-bd65-c6e1d803459d" title="Permalink to this equation">#</a></span>\[\begin{align}
+y &amp;= c_1 e^{-x} + c_2 e^-{2x} + \frac{5}{2} e^{2x} \\
+y' &amp;= -c_1 e^{-x} - 2c_2 e^{-2x} + 5e^{2x}
+\end{align}\]</div>
+<p class="sd-card-text">Plugging in initial conditions</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d7b206ec-837c-4c82-a629-5175b0811a05">
+<span class="eqno">(7.92)<a class="headerlink" href="#equation-d7b206ec-837c-4c82-a629-5175b0811a05" title="Permalink to this equation">#</a></span>\[\begin{align}
+y(0) &amp;= c_1 + c_2 + \frac{5}{2} = 1 \\
+y'(0) &amp;= -c_1 - 2c_2 + 5 = 0
+\end{align}\]</div>
+<p class="sd-card-text">This is a system of linear equations:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a242dfc4-6efd-40f2-8e55-e9ead982c411">
+<span class="eqno">(7.93)<a class="headerlink" href="#equation-a242dfc4-6efd-40f2-8e55-e9ead982c411" title="Permalink to this equation">#</a></span>\[\begin{align}
+c_1 + c_2 &amp;= -\frac{3}{2} \\
+c_1 + 2c_2 &amp;= 5 \\
+\end{align}\]</div>
+<p class="sd-card-text">that can be solved to give <span class="math notranslate nohighlight">\(c_1 = -8\)</span> and <span class="math notranslate nohighlight">\(c_2 = 13/2\)</span>.</p>
+</li>
+</ol>
+<p class="sd-card-text">The final solution is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-fef36270-9925-491c-96d4-69b0abf5437c">
+<span class="eqno">(7.94)<a class="headerlink" href="#equation-fef36270-9925-491c-96d4-69b0abf5437c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y = -8e^{-x} + \frac{13}{2} e^{-2x} = \frac{5}{2} e^{2x}
+\end{equation}\]</div>
+</div>
+</details></li>
+<li><p>Solve:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-87ae7c65-cf3d-49c5-9130-7114181e81de">
+<span class="eqno">(7.95)<a class="headerlink" href="#equation-87ae7c65-cf3d-49c5-9130-7114181e81de" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y'' + 4y = 16 \cos 2x , \quad y(0), \quad y'(0) = 0
+\end{equation}\]</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic">
+<li><p class="sd-card-text">Find homogeneous solution <span class="math notranslate nohighlight">\(y_{\rm h}\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-613e47fc-1b5d-448e-b092-5843a5f03fc3">
+<span class="eqno">(7.96)<a class="headerlink" href="#equation-613e47fc-1b5d-448e-b092-5843a5f03fc3" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_{\rm h}'' + 4y_{\rm h} &amp;= 0 \\
+\lambda^{2} + 4 &amp;= 0  \\
+\end{align}\]</div>
+<p class="sd-card-text">so <span class="math notranslate nohighlight">\(\lambda_{1,2} = \pm 2i\)</span> and</p>
+<div class="amsmath math notranslate nohighlight" id="equation-521fbdaa-6bb8-45db-ae86-e1170060caff">
+<span class="eqno">(7.97)<a class="headerlink" href="#equation-521fbdaa-6bb8-45db-ae86-e1170060caff" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y_{\rm h} = c_1 \cos 2x + c_2 \sin 2x
+\end{equation}\]</div>
+</li>
+<li><p class="sd-card-text">Find the particular solution <span class="math notranslate nohighlight">\(y_{\rm p}\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-63be3692-c74d-4ed9-9de7-c9a37deefbc0">
+<span class="eqno">(7.98)<a class="headerlink" href="#equation-63be3692-c74d-4ed9-9de7-c9a37deefbc0" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_{\rm p} &amp;= x(k_1 \cos 2x + k_2 \sin 2x) \\
+y_{\rm p}' &amp;= x(-2k_1 \sin 2x + 2k_2 \cos 2x) +
+  (k_1 \cos 2x + k_2 \sin 2x) \\
+y_{\rm p}'' &amp;= x(-4k_1 \cos 2x - 4k_2 \sin 2x) +
+  2(-2k_1 \sin 2x + 2k_2 \cos 2x)
+\end{align}\]</div>
+<p class="sd-card-text">Combine:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7bf8d8bb-9be3-48f3-bfcc-7f1396a95e44">
+<span class="eqno">(7.99)<a class="headerlink" href="#equation-7bf8d8bb-9be3-48f3-bfcc-7f1396a95e44" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y_{\rm p}'' + 4y_{\rm p} = 2(-2k_1 \sin 2x + 2k_2 \cos 2x) = 16\cos 2x
+\end{equation}\]</div>
+<p class="sd-card-text">Comparing terms gives <span class="math notranslate nohighlight">\(k_1 = 0\)</span> and <span class="math notranslate nohighlight">\(k_2 = 4\)</span>.</p>
+</li>
+<li><p class="sd-card-text">Combine and apply initial conditions:</p>
+<p class="sd-card-text">The general solution and its first derivative are</p>
+<div class="amsmath math notranslate nohighlight" id="equation-634d52e7-6e27-44f8-befc-559ad9380257">
+<span class="eqno">(7.100)<a class="headerlink" href="#equation-634d52e7-6e27-44f8-befc-559ad9380257" title="Permalink to this equation">#</a></span>\[\begin{align}
+y &amp;= c_1 \cos 2x + c_2 \sin 2x + 4x \sin 2x \\
+y' &amp;= -2c_1 \sin 2x + 2c_2 \cos 2x + 4x(2 \cos 2x) + 4 \sin 2x
+\end{align}\]</div>
+<p class="sd-card-text">Plugging in the initial conditions:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e8142fff-66c0-4c84-95ee-5434afc9c4fe">
+<span class="eqno">(7.101)<a class="headerlink" href="#equation-e8142fff-66c0-4c84-95ee-5434afc9c4fe" title="Permalink to this equation">#</a></span>\[\begin{align}
+y(0) &amp;= c_1 = 0 \\
+y'(0) &amp;= 2c_2 = 0
+\end{align}\]</div>
+<p class="sd-card-text">gives <span class="math notranslate nohighlight">\(c_1 = 0\)</span> and <span class="math notranslate nohighlight">\(c_2 = 0\)</span>.</p>
+</li>
+</ol>
+<p class="sd-card-text">The final solution is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-5d7ec83c-a83e-420b-97b9-ac1530ce8ac5">
+<span class="eqno">(7.102)<a class="headerlink" href="#equation-5d7ec83c-a83e-420b-97b9-ac1530ce8ac5" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y = 4x \sin 2x
+\end{equation}\]</div>
+</div>
+</details></li>
+</ol>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -486,6 +762,21 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill-builder-problems">7.4.1. Skill builder problems</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
