@@ -86,7 +86,7 @@ What if $k_{1}=k_{2}$?
    \end{equation}
    Use L'Hôpital's Rule to evaluate
    \begin{align}
-   \lim_{k_{2} \to k_{1}} c_{\rm B}&=C_{\rm A,0}k_{1}\lim_{k_{2} \to k_{1}}\frac {\frac{\partial}{\partial k_{2}}(e^{-k_{1}t}-e^{-k_{2}t})}{\frac{\partial}{\partial k_{2}}(k_{2}-k_{1})}\\
+   \lim_{k_{2} \to k_{1}} c_{\rm B}&=c_{\rm A,0}k_{1}\lim_{k_{2} \to k_{1}}\frac {\frac{\partial}{\partial k_{2}}(e^{-k_{1}t}-e^{-k_{2}t})}{\frac{\partial}{\partial k_{2}}(k_{2}-k_{1})}\\
    &= c_{\rm A,0}k_{1}\lim_{k_{2} \to k_{1}} \frac {te^{-k_{2}t}}{1}\\
    &= c_{\rm A,0}k_{1}te^{-k_{1}t}
    \end{align}
