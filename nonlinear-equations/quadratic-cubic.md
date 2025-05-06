@@ -1,35 +1,52 @@
 # Quadratic and cubic polynomials
-\begin{document}
 
+A polynomial of degree $n$
 
-Nonlinear equations are those that cannot be written in the form $Ax = b$.
-Such equations come up in many places
-\begin{itemize}
-  \item Equations of state $P(T, V) \rightarrow$ thermodynamics
-  \item Navier-Stokes equations $\rightarrow$ fluid mechanics
-  \item Second-order reactions $A + B \rightarrow C$ $r_A = -kC_AC_B \rightarrow$ reactions
-  \item Optimization/process design of full systems $\rightarrow$ design
+\begin{equation}
+a_n x^n + \cdots + a_1 x_1 + a_0 = 0
+\end{equation}
 
-\textbf{Ex:} An open-top box will be made from an $8 \frac{1}{2}'' \times 11''$ piece of paper by cutting out a square and folding the flaps. What size square should be cut to make the biggest box?
+has $n$ roots, which may be real or complex. Real roots may be distinct or
+repeated. Complex roots always come in *conjugate pairs*, $a \pm bi$, where
+*a* is called the real part, $\pm b$ is called the imaginary part, and
+$i = \sqrt{-1}$ is the imaginary unit.
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.5\linewidth]{Image 5-6-25 at 1.43 PM.jpg}
-    \label{fig:enter-label}
-\end{figure}
+## Quadratic polynomials
 
-$V(x) = (8.5 - 2x)(11-2x)x$
+Quadratic polynomials can have three types of roots:
 
-$= (8.5-2x)(11x-2x^2)$
+- Two real roots
+- One (repeated) root
+- Two complex roots
 
-$= 4x^3 - 39x^2 + 93.5x$
+Graphically, two real roots occur as two intersections of a parabola with the
+*y*-axis. For example, the roots of $x^2 - 1 = 0$ occur at $x = \pm 1$:
 
-At a max./min. $V'(x) = 0$
-$V'(x) = 12x^2 - 78x + 93.5$
+```{image} ./_images/Two_Real_Solutions.png
+:alt: Two Real Solutions
+:align: center
+:width: 200px
+```
 
-Solve for $V'(x) = 0$ \ldots how?
+One repeated root occurs as a single point of a parabola (its minimum or
+maximum) touching the *y*-axis. For example, the root of $(x-1)^2 = 0$ occurs at
+$x = 1$:
 
-\section*{1. Quadratic Polynomials}
+```{image} ./_images/One_Duplicate_Solution.png
+:alt: One Duplicate Solution
+:align: center
+:width: 200px
+```
+
+Complex roots do not appear as intersections on a graph. For example, the roots
+of $x^2 + 1 = 0$ are $x = \pm i$:
+
+```{image} ./_images/Complex_Solution.png
+:alt: Complex Solution
+:align: center
+:width: 200px
+```
+
 \begin{enumerate}[label=\alph*.]
   \item Factor
   \begin{enumerate}[label=\roman*.]
@@ -54,12 +71,56 @@ Solve for $V'(x) = 0$ \ldots how?
   \end{enumerate}
 \end{enumerate}
 
-\textbf{Back to example:}
+```{example} Box size optimization
+An open-top box will be made from an $8 \frac{1}{2}'' \times 11''$ piece of paper by cutting out a square and folding the flaps. What size square should be cut to make the biggest box?
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{Image 5-6-25 at 1.43 PM.jpg}
+    \label{fig:enter-label}
+\end{figure}
+
+$V(x) = (8.5 - 2x)(11-2x)x$
+
+$= (8.5-2x)(11x-2x^2)$
+
+$= 4x^3 - 39x^2 + 93.5x$
+
+At a max./min. $V'(x) = 0$
+$V'(x) = 12x^2 - 78x + 93.5$
+
+Solve for $V'(x) = 0$ \ldots how?
 
 $a = 12$ $b = -78$ $c = 93.5$
 
 $x^* = \frac{78 \pm \sqrt{(-78)^2 - 4 \cdot 12 \cdot (-93.5)}}{2 \cdot 12} = 1.59'' \text{ or } 4.91''$
 
 Which is right? $1.59''$ because there is not enough material for $4.91''$! It is unphysical.
+```
 
-\end{document}
+```{example} Complex roots
+Find the roots of
+
+\begin{equation}
+x^2 - 10x + 34 = 0
+\end{equation}
+
+---
+
+I will use the technique of completing the square:
+
+\begin{align}
+x^2 - 10x &= -34 \\
+x^2 - 10x + 25 &= -34 + 25 \\
+(x - 5)^2 &= -9 \\
+x - 5 &= \pm \sqrt{-9} \\
+x &= 5 \pm 3\sqrt{-1} \\
+x &= 5 \pm 3i
+\end{align}
+```
+
+## Cubic (and higher) polynomials
+
+General formulas for roots of cubic and quartic polynomials are known but
+complicated. No such formula exists for higher-order polynomials. In these
+cases, numerical methods are needed!
