@@ -81,8 +81,7 @@ The results match! Some additional examples:
      \frac{-4}{(1 + 2x)^2}
    \end{equation}
 
-```{example}
-Physics example: harmonic oscillator
+```{example} Harmonic oscillator
 
 ![Diagram of a harmonic oscillator](_images/oscillating-diagram.png)
 
