@@ -48,7 +48,11 @@ examples:
 
 To be differentiable, this limit must exist. A function would not be differentiable at a jump, cusp, coner, or vertical tangent
 
-*insert graph*
+```{image} ./_images/fx_1_x.png
+:alt: Function and derivative
+:align: center
+:width: 300px
+```
 
 ## Higher order derivatives
 
@@ -82,7 +86,11 @@ x & x' & x'' \\
 
 ```{example} Ballistic motion
 
-*insert graph*
+```{image} ./_images/fx_x+1.png
+:alt: Function and derivative
+:align: center
+:width: 300px
+```
 
 \begin{align}
 x(t) &= u_ot & v &= y' &= v_o -gt \\
