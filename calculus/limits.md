@@ -254,3 +254,56 @@ $\lim_{x \to 1} f(x)$ does not exist.
 However, $\lim_{x \to 2^-} f(x) = 1$ and $\lim_{x \to 2^+} f(x) = 1$, so
 $\lim_{x \to 2} f(x) = 1$, even though $f(2) = 2$.
 ````
+
+## Infinite Limits
+
+Some functions tend to $\pm\infty$ at a value, even if they do not have a limit.
+
+\begin{align}
+<div style="display: flex; justify-content: space-around; align-items: center; text-align: center;">
+
+  <div>
+    $f(x) = \frac{1}{x^2}$  
+    <img src="./images/fx_plot_infinite_limits.png" width="300"/>  
+    $\lim_{x \to 0} f(x) = +\infty$
+  </div>
+&
+  <div>
+    $g(x) = \frac{1}{x}$  
+    <img src="./images/gx_plot_infinite_limits.png" width="300"/>  
+    $\lim_{x \to 0^+} g(x) = +\infty$ and \\
+    $\lim_{x \to 0^-} g(x) = -\infty$, so \\
+    $\lim_{x \to 0} g(x) =$ DNE
+  </div>
+\end{align}
+
+$f(x)$ approaches $\infty$ as $x$ approaches $x_0$
+
+\begin{equation}
+\lim_{x\to\infty}f(x) = \infty
+\end{equation}
+
+if for every real B there exists $\delta > 0$ such that for all x if $0 < |x - x_0| < \delta$ then $f(x) >$ B.
+(Analogous for approaching $-\infty$).
+
+*Definition*: A line $x=a$ is a vertical asymptote of $y=f(x)$ if 
+\begin{align}
+\lim_{x\to\a^+}f(x) = \pm\infty & or & \lim_{x\to\a^-}f(x) = \pm\infty
+\end{align}
+
+```{example} Infinite Limits
+Find the horizontal and vertical asymptote of $f(x)=\frac{x+3}{x+2}$.
+
+---
+\begin{align}
+<div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+  $$f(x) = \frac{x+3}{x+2}$$
+  <img src="fx_rational_asymptotes.png" width="250"/>
+</div>
+
+_Horizontal_: $\lim_{x\to\infty}f(x) = \frac{1+\frac{3}{x}}{1+\frac{2}{x}} = 1 \quad \to \quad \underline{y=1}$
+_Vertical_: See x = -2 in denominator as a "zero" \\
+$\lim_{x\to -2^+}f(x) = \frac{x+3}{x+2} = +\infty \quad \to \quad \underline{x=-2}$
+\end{align}
+
+```
