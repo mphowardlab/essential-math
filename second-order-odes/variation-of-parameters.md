@@ -5,7 +5,7 @@ What if the ODE does not have constant coefficients or r is not in the table of 
 If $y'' + p(x)y' + q(x)y = r(x)$ and $y_h = C_1y_1 + C_2y_2$ solves the homogenous ODE $y'' + p(x)y' + q(x)y = 0$, then 
 
 \begin{align}
-y_p &= -y_1\int\fract {y_2r}{W}dx + y_2\int\fract {y_1r}{W}dx \\
+y_p &= -y_1\int\frac{y_2r}{W}dx + y_2\int\frac{y_1r}{W}dx \\
 W &= y_1y_2' -y_2y_1'
 \end{align}
 
@@ -35,7 +35,7 @@ Hence,
 
 \begin{align}
 &y_p = -\cos x\int\sin x\sec xdx +\sin x\int\cos x\sec xdx \\
-&= \cos x\int \fract {-\sinx}{\cosx}dx + \sin x\intdx \\
+&= \cos x\int \frac{-\sinx}{\cosx}dx + \sin x\intdx \\
 &\rightarrow y_p = \cos x\ln|\cos x| + x\sin x
 \end{align}
 
