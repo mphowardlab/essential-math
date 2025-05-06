@@ -37,8 +37,10 @@ How do we solve this? Hard in general, but in this case, we can work in order!
 
 2. Next, solve $\dd{}{c_{\rm B}}{t}$ by substituting in $c_{\rm B}$:
    \begin{align}
-   \dd{}{c_{\rm B}}{t}=k_{1} c_{A,0}e^{-k_{1}t} -k_{2} C_{B}
+   \dd{}{c_{\rm B}}{t} = k_{1} c_{A,0}e^{-k_{1}t} -k_{2} C_{B}
 \begin{align}
+
+
 $\quad$ $\frac{dc_B}{dt} + k_{2} c_{B}=k_{1} c_{A,0}e^{-k_{1}t}$
 
 $\qquad$ Integrating factor: $F= e^{\int p\ dt} = e^{\int k_{2}\ dt} = e^{k_{2}t}$\
