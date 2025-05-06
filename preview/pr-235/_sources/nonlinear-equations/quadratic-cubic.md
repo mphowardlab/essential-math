@@ -1,0 +1,126 @@
+# Quadratic and cubic polynomials
+
+A polynomial of degree $n$
+
+\begin{equation}
+a_n x^n + \cdots + a_1 x_1 + a_0 = 0
+\end{equation}
+
+has $n$ roots, which may be real or complex. Real roots may be distinct or
+repeated. Complex roots always come in *conjugate pairs*, $a \pm bi$, where
+*a* is called the real part, $\pm b$ is called the imaginary part, and
+$i = \sqrt{-1}$ is the imaginary unit.
+
+## Quadratic polynomials
+
+Quadratic polynomials can have three types of roots:
+
+- Two real roots
+- One (repeated) root
+- Two complex roots
+
+Graphically, two real roots occur as two intersections of a parabola with the
+*y*-axis. For example, the roots of $x^2 - 1 = 0$ occur at $x = \pm 1$:
+
+```{image} ./_images/Two_Real_Solutions.png
+:alt: Two Real Solutions
+:align: center
+:width: 200px
+```
+
+One repeated root occurs as a single point of a parabola (its minimum or
+maximum) touching the *y*-axis. For example, the root of $(x-1)^2 = 0$ occurs at
+$x = 1$:
+
+```{image} ./_images/One_Duplicate_Solution.png
+:alt: One Duplicate Solution
+:align: center
+:width: 200px
+```
+
+Complex roots do not appear as intersections on a graph. For example, the roots
+of $x^2 + 1 = 0$ are $x = \pm i$:
+
+```{image} ./_images/Complex_Solution.png
+:alt: Complex Solution
+:align: center
+:width: 200px
+```
+
+\begin{enumerate}[label=\alph*.]
+  \item Factor
+  \begin{enumerate}[label=\roman*.]
+    \item $X^2 + 8x - 9 = 0 \rightarrow (x+9)(x-1) = 0 \rightarrow x = -9 \text{ or } 1$
+  \end{enumerate}
+  
+  \item Complete the square
+  \begin{enumerate}[label=\roman*.]
+    \item $x^2 + 8x = 9 \rightarrow x^2 + 8x + 16 = 9 + 16 \rightarrow (x+4)^2 = 25 \rightarrow x + 4 = \pm \sqrt{25}$
+    $= -4 \pm 5 = -9 \text{ or } 1$
+  \end{enumerate}
+  
+  \item Quadratic formula
+  \begin{enumerate}[label=\roman*.]
+    \item $ax^2 + bx + c = 0$ $a = 1$ $b = 8$ $c = -9$
+    
+    $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$ $x = \frac{-8 \pm \sqrt{(8)^2 - 4 \cdot 1 \cdot (-9)}}{2}$
+    
+    $= \frac{-8 \pm \sqrt{100}}{2}$
+    
+    $= -9 \text{ or } 1$
+  \end{enumerate}
+\end{enumerate}
+
+```{example} Box size optimization
+An open-top box will be made from an $8 \frac{1}{2}'' \times 11''$ piece of paper by cutting out a square and folding the flaps. What size square should be cut to make the biggest box?
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{Image 5-6-25 at 1.43 PM.jpg}
+    \label{fig:enter-label}
+\end{figure}
+
+$V(x) = (8.5 - 2x)(11-2x)x$
+
+$= (8.5-2x)(11x-2x^2)$
+
+$= 4x^3 - 39x^2 + 93.5x$
+
+At a max./min. $V'(x) = 0$
+$V'(x) = 12x^2 - 78x + 93.5$
+
+Solve for $V'(x) = 0$ \ldots how?
+
+$a = 12$ $b = -78$ $c = 93.5$
+
+$x^* = \frac{78 \pm \sqrt{(-78)^2 - 4 \cdot 12 \cdot (-93.5)}}{2 \cdot 12} = 1.59'' \text{ or } 4.91''$
+
+Which is right? $1.59''$ because there is not enough material for $4.91''$! It is unphysical.
+```
+
+```{example} Complex roots
+Find the roots of
+
+\begin{equation}
+x^2 - 10x + 34 = 0
+\end{equation}
+
+---
+
+I will use the technique of completing the square:
+
+\begin{align}
+x^2 - 10x &= -34 \\
+x^2 - 10x + 25 &= -34 + 25 \\
+(x - 5)^2 &= -9 \\
+x - 5 &= \pm \sqrt{-9} \\
+x &= 5 \pm 3\sqrt{-1} \\
+x &= 5 \pm 3i
+\end{align}
+```
+
+## Cubic (and higher) polynomials
+
+General formulas for roots of cubic and quartic polynomials are known but
+complicated. No such formula exists for higher-order polynomials. In these
+cases, numerical methods are needed!
