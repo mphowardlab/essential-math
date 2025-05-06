@@ -134,7 +134,7 @@ y' + 2y = 8 \quad y(0) = 1
 
 \begin{align}
 L[y' + 2y] &= L[8] \\
-sY(s) - y(0) + 2Y &= \frac{8}{s} \\
+sY - y(0) + 2Y &= \frac{8}{s} \\
 (s+2) Y - 1 &= \frac{8}{s} \\
 \end{align}
 
