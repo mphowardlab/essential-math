@@ -48,7 +48,7 @@ examples:
 
 To be differentiable, this limit must exist. A function would not be differentiable at a jump, cusp, coner, or vertical tangent
 
-```{image} ./_images/IMG_0484.jpeg
+```{image} ./_images/IMG_0485.jpeg
 :alt: Function and derivative
 :align: center
 :width: 300px
