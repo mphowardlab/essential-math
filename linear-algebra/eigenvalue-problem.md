@@ -1,4 +1,4 @@
-# Eigenvalue Problems
+# Eigenvalue problem
 
 ````{example} a. Upper Triangular Matrix
 
