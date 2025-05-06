@@ -36,9 +36,9 @@ $$
 
 $$
 
-is working
 
-Ex: Incompressible flow in a cylinder (momentum transport)
+
+Example : Incompressible flow in a cylinder (momentum transport)
 
 <img src="https://github.com/user-attachments/assets/cc9937aa-c09f-46ed-a159-edaad1f20dc6" alt="Your Image" width="500"/>
 
