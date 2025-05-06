@@ -4,10 +4,9 @@
 
 A *tangent line* touches a curve exactly once.
 
-```{example} Tangent line
-
-```{image} ./_images/tangent line and curve.png
-:alt: Graph of tangent line as slope of curve```
+```{image} ./_images/tangent.png
+:alt: Graph of tangent line as slope of curve
+```
 
 How to estimate slope of line at $x_0$? 
 \begin{itemize}
@@ -19,7 +18,6 @@ How to estimate slope of line at $x_0$?
 \begin{equation}
 f'(x_0)=m \approx \frac{f(x_1)-f(x_0)}{x_1-x_0}
 \end{equation}
-```
 
 We call the slope of the tangent at $x$ the *derivative* and define it as a limit. 
 
@@ -40,7 +38,7 @@ $\to$ h is distance between $x_0$ and $x_1$, make *small*
 ```
 
 The derivative represents how fast the function is changing *(rate of change)*. 
-```{example} Ball moving with constant velocity $v$
+````{example} Ball moving with constant velocity $v$
 \begin{equation}
 \x(t) = x_0 + v\cdot t 
 \end{equation}
@@ -50,8 +48,9 @@ start $\to x_0$
 velocity $\to v$ and 
 time $\to t$
 
-```{image} ./_images/Ball moving example.png
-:alt: Ball with constant velocity example```
+```{image} ./_images/ball.png
+:alt: Ball with constant velocity example
+```
 
 \begin{align}
 x'(t) &= \lim_{h\to \infty} \frac{x(t+h)-x(t)}{h} \\
@@ -61,7 +60,7 @@ x'(t) &= \lim_{h\to \infty} \frac{x(t+h)-x(t)}{h} \\
 \end{align}
 
 The *velocity* is the rate of change of *position*
-```
+````
 
 ## Formal definition
 
