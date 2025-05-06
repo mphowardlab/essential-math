@@ -157,9 +157,12 @@ c(t) &= \frac{A}{k}
 ````
 
 ## Skill Builder
-```{problem}
-(c) Solve the differential equation:
+1.Solve the differential equation:
+   \begin{align}
+y' = -\frac{e^{x+y} + ye^y}{x e^y - 1}
+   \end{align}
 
+   ```{solution}
 ```math
 y' = -\frac{e^{x+y} + ye^y}{x e^y - 1}
 ```
@@ -192,11 +195,7 @@ Multiply the equation by \( e^{-y} \):
 
 ```math
 e^{-y}(e^{x+y} + ye^y) \, dx + e^{-y}(x e^y - 1) \, dy = 0
-```
 
-Simplifying:
-
-```math
 (e^x + y) \, dx + (x - e^{-y}) \, dy = 0
 ```
 
