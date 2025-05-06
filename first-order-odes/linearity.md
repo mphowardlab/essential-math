@@ -37,33 +37,35 @@ How do we solve this? Hard in general, but in this case, we can work in order!
 
 2. Next, solve $\dd{}{c_{\rm B}}{t}$ by substituting in $c_{\rm A}$:
    \begin{align}
-   \dd{}{c_{\rm B}}{t} = k_{1} c_{A,0}e^{-k_{1}t} -k_{2} c_{B} \\
-   \dd{}{c_{\rm B}}{t} + k_{2} c_{B}=k_{1} c_{A,0}e^{-k_{1}t}
+   \dd{}{c_{\rm B}}{t} &= k_{1} c_{A,0}e^{-k_{1}t} -k_{2} c_{B} \\
+   \dd{}{c_{\rm B}}{t} + k_{2} c_{B}&=k_{1} c_{A,0}e^{-k_{1}t}
    \end{align}
 
 Apply the integrating factor:
    \begin{align}
-   F= e^{\int p \d{t}} \\
-   c_{\rm B}=\int Fr\ d{t}
+   F &= e^{\int p \d{t}} \\
+   c_{\rm B} &=\int Fr\ d{t}
    \end{align}
 such that:
    \begin{align}
-   p=k_{2}\\
-   r=k_{1} c_{A,0}e^{-k_{1}t}
+   p &=k_{2}\\
+   r &=k_{1} c_{A,0}e^{-k_{1}t}
    \end{align}
 So,
    \begin{align}
-   F=e^{\int k_{2}\ d{t}}\\
-   F=e^{k_{2}t}\\
-   c_{\rm B}=\int e^{k_{2}t}k_{1}c_{A,0}e^{-k_{1}t} \d{t}\\
-   c_{\rm B}=k_{1}c_{A,0} \int e^{(k_{2}-k_{1})t} \d{t}\\
-   c_{\rm B}=\frac{k_{1}c_{A,0}}{k_{2}-k_{1}}e^{(k_{2}-k_{1})t + K}
+   F &=e^{\int k_{2}\ d{t}}\\
+   F &=e^{k_{2}t}\\
+   c_{\rm B} &=\int e^{k_{2}t}k_{1}c_{A,0}e^{-k_{1}t} \d{t}\\
+   c_{\rm B} &=k_{1}c_{A,0} \int e^{(k_{2}-k_{1})t} \d{t}\\
+   c_{\rm B} &=\frac{k_{1}c_{A,0}}{k_{2}-k_{1}}e^{(k_{2}-k_{1})t + K}
    \end{align}
 
 Plug in the initial value of $c_{\rm B}$:
-\begin{align}
+   \begin{align}
+   c_{B}(0)=0=\frac{k_{1}c_{A,0}}{k_{2}-k_{1}} + K\\
+   K=-\frac{k_{1}c_{A,0}}{k_{2}-k_{1}}
+   \end{align}
 
-$\qquad$ $C_{B}= e^{-k_{2}t}[\frac{k_{1}C_{A,0}}{k_{2}-k_{1}} e^{(k_{2}-k_{1})t}+K]= c_{A,0} \frac{k_{1}}{k_{2}-k_{1}}(e^{-k_{1}t}-e^{-k_{2}t})= c_B$\
 $\qquad$ $0=c_{B}(0)=\frac{k_{1}c_{A,0}}{k_{2}-k_{1}} + K$ $\xrightarrow{}$ $K=-\frac{k_{1}c_{A,0}}{k_{2}-k_{1}}$
 
 (3) $\frac{dC_C}{dt}= k_{2} c_{B}=\frac{k_{1}k_{2}c_{A,0}}{k_{2}-k_{1}}(e^{-k_{1}t}-e^{-k_{2}t})$\
