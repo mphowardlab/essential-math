@@ -405,7 +405,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -421,6 +423,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limits-at-infinity">1.2.1. Limits at infinity</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -432,60 +442,87 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="limits">
 <h1><span class="section-number">1.2. </span>Limits<a class="headerlink" href="#limits" title="Link to this heading">#</a></h1>
-<ol class="arabic">
-<li><p>How do functions behave when x gets “big”?</p>
-<p>If x is time, this represents waiting a long time to reach a “steady state”.</p>
-<p>Ex: Population dynamics
-[See “Carrying capacity (Resource limitation) where <span class="math notranslate nohighlight">\(\lim_{t \to \infty} P(t)\)</span>”]</p>
-<p>Proportional-integral control (e.g., of servo, value, etc.)
-[See “Set point (Target) where <span class="math notranslate nohighlight">\(\lim_{t \to \infty} f(t)\)</span>”]</p>
-</li>
-<li><p>Formal definition</p>
-<div class="math notranslate nohighlight">
-\[
-    \lim_{x \to \infty} f(x) = L
-    \]</div>
-<p>if for every <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span>, there exists a value M such that for all x, if x &gt; M, <span class="math notranslate nohighlight">\(\left| f(x) - L \right|\)</span> <span class="math notranslate nohighlight">\(&lt; \epsilon\)</span>.</p>
-<p>i.e., f gets close to L when x is “big” :)</p>
-<p>Important limits at infinity:</p>
-<div class="math notranslate nohighlight">
-\[
-    \lim_{x \to \pm\infty} k = k
-    \]</div>
-<div class="math notranslate nohighlight">
-\[
-    \lim_{x \to \pm\infty} \frac{1}{x} = 0
-    \]</div>
-<div class="math notranslate nohighlight">
-\[
-    \lim_{x \to -\infty} e^x = 0
-    \]</div>
-<p>Other limit laws (sum, quotient, etc.) also hold at infinity!</p>
-</li>
-<li><p>Taking limits at infinity</p>
-<p>If function is already in a convenient form, use known limits</p>
-<div class="math notranslate nohighlight">
-\[
-    \lim_{x \to \infty} 5 + \frac{1}{x} = \lim_{x \to \infty} 5 + \lim_{x \to \infty} \frac{1}{x} = 5 + 0 = 5
-    \]</div>
-<p>For rational functions \frac{P(x)}{Q(x)}, divide by largest power of x in denominator</p>
-<div class="math notranslate nohighlight">
-\[
-    \lim_{x \to -\infty} \frac{11x + 2}{2x^3-1} = \lim_{x \to -\infty} \frac{ \frac{11x}{x^3} + \frac{2}{x^3} }{ \frac{2x^3}{x^3} + \frac{1}{x^3}} = \frac{0 + 0}{2 - 0} = 0
-    \]</div>
-<div class="math notranslate nohighlight">
-\[
-    \lim_{x \to \infty} \frac{5x^2+8x-3}{3x^2+4} = \lim_{x \to \infty} \frac{ 5 + \frac{8}{x} - \frac{3}{x^2} }{ 3 + \frac{2}{x^2} } = \frac{5+0-0}{3 - 0} = \frac{5}{3}
-    \]</div>
+<section id="limits-at-infinity">
+<h2><span class="section-number">1.2.1. </span>Limits at infinity<a class="headerlink" href="#limits-at-infinity" title="Link to this heading">#</a></h2>
+<p>How do functions behave when x gets “big”? For example, if the independent
+variable is time, the behavior after waiting a long time may be a “steady state”.</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Population dynamics</div>
+<a class="reference internal image-reference" href="../_images/carrying_capacity.jpg"><img alt="Population carrying capacity" class="align-center" src="../_images/carrying_capacity.jpg" style="width: 300px;" />
+</a>
+<p class="sd-card-text">This may represent, for example, a population with limited resources.</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Proportional-integral control</div>
+<a class="reference internal image-reference" href="../_images/set_point.jpg"><img alt="Controller response" class="align-center" src="../_images/set_point.jpg" style="width: 300px;" />
+</a>
+<p class="sd-card-text">This may represent, for example, the response of a servo or valve over time.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<aside class="topic">
+<p class="topic-title">Limit at infinity</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b27eb50d-3b1f-4904-be2f-81af2f041ac8">
+<span class="eqno">(1.1)<a class="headerlink" href="#equation-b27eb50d-3b1f-4904-be2f-81af2f041ac8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\lim_{x \to \infty} f(x) = L
+\end{equation}\]</div>
+<p>if for every <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span>, there exists a value <em>M</em> such that for all <em>x</em>,
+if <span class="math notranslate nohighlight">\(x &gt; M\)</span>, <span class="math notranslate nohighlight">\(|f(x) - L| &lt; \epsilon\)</span>.</p>
+</aside>
+<p>i.e., f gets close to L when x is “big”.</p>
+<p>Some important limits at infinity:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x \to \pm\infty} k = k\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x \to \pm\infty} \dfrac{1}{x} = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle\lim_{x \to -\infty} e^x = 0\)</span></p></li>
+</ul>
+<p>Other limit laws (sum, quotient, etc.) also hold at infinity! If function is
+already in a convenient form, use known limits to evaluate unknown ones. For
+example,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-765e336c-5492-4c17-8c63-42b131e3c165">
+<span class="eqno">(1.2)<a class="headerlink" href="#equation-765e336c-5492-4c17-8c63-42b131e3c165" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\lim_{x \to \infty} 5 + \frac{1}{x} =
+  \lim_{x \to \infty} 5 + \lim_{x \to \infty} \frac{1}{x} =
+  5 + 0 = 5
+\end{equation}\]</div>
+<p>For rational functions <span class="math notranslate nohighlight">\(f(x) = p(x) / q(x)\)</span>, divide by largest power of <em>x</em> in
+denominator:</p>
+<!--markdownlint-disable MD013 -->
+<div class="amsmath math notranslate nohighlight" id="equation-deb0c24f-b051-40eb-8e9f-974b3cfe9383">
+<span class="eqno">(1.3)<a class="headerlink" href="#equation-deb0c24f-b051-40eb-8e9f-974b3cfe9383" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\lim_{x \to -\infty} \frac{11x + 2}{2x^3-1} =
+  \lim_{x \to -\infty} \frac{ \dfrac{11x}{x^3} + \dfrac{2}{x^3} }{ \dfrac{2x^3}{x^3} + \dfrac{1}{x^3}}
+  = \frac{0 + 0}{2 - 0} = 0
+\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-294fdf25-b628-4035-af54-d6770f810e4c">
+<span class="eqno">(1.4)<a class="headerlink" href="#equation-294fdf25-b628-4035-af54-d6770f810e4c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\lim_{x \to \infty} \frac{5x^2+8x-3}{3x^2+4} =
+  \lim_{x \to \infty} \frac{ 5 + \dfrac{8}{x} - \dfrac{3}{x^2} }{ 3 + \dfrac{2}{x^2} } =
+  \frac{5+0-0}{3 - 0} = \frac{5}{3}
+\end{equation}\]</div>
+<!--markdownlint-enable MD013 -->
 <p>Not all functions have limits at infinity. Some “blow up”!</p>
-<div class="math notranslate nohighlight">
-\[
-    \lim_{x \to \infty} \frac{2x^2-3}{7x+4} = \lim_{x \to \infty} \frac{ 2x - \frac{3}{x} }{ 7 + \frac{4}{x} }
-    \]</div>
-<p>= does not exist</p>
-<p>Shortcut: check coefficients of highest powers in numerator and denominator!</p>
-</li>
-</ol>
+<!--markdownlint-disable MD013 -->
+<div class="amsmath math notranslate nohighlight" id="equation-1c312a02-4466-40de-92d4-0c3247410a8e">
+<span class="eqno">(1.5)<a class="headerlink" href="#equation-1c312a02-4466-40de-92d4-0c3247410a8e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\lim_{x \to \infty} \frac{2x^2-3}{7x+4} = \lim_{x \to \infty} \frac{ 2x - \frac{3}{x} }{ 7 + \frac{4}{x} }
+\end{equation}\]</div>
+<!--markdownlint-enable MD013 -->
+<p>This limit does not exist. A helpful shortcut for rational polynomials: check
+coefficients of highest powers in numerator and denominator!</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -542,6 +579,21 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limits-at-infinity">1.2.1. Limits at infinity</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
