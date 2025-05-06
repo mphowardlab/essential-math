@@ -37,12 +37,11 @@ x_2 &= \begin{bmatrix} 1 \\ -4 \end{bmatrix}
 \end{align}
 ````
 
-````{example} b. 2x2 General Matrix
-
-Find the eigenvalues and eigenvectors of the following matrix:
-\begin{equation}
+2. \begin{equation}
 \vv{A} = \begin{bmatrix} 5 & -2 \\ 9 & -6 \end{bmatrix}
 \end{equation}
+
+```{solution}
 
 First, find the eigenvalues:
 
@@ -74,14 +73,11 @@ x_2 = \begin{bmatrix} 2 \\ 9 \end{bmatrix}
 \end{equation}
 ````
 
-````{example} c. 3x3 Matrix
-
-Find the eigenvalues and eigenvectors of the following matrix:
-
-\begin{equation}
+3. \begin{equation}
 \vv{A} = \begin{bmatrix} 6 & 2 & -2 \\ 2 & 5 & 0 \\ -2 & 0 & 7 \end{bmatrix}
 \end{equation}
 
+```{solution}
 First, find the eigenvalues:
 
 \begin{equation}
