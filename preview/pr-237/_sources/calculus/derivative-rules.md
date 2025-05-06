@@ -106,7 +106,7 @@ f'(x) = \frac{\cos(\cos(x)) - \sin(-\sin(x))}{\cos^2(x)} = \frac{\sin^2(x) + \co
 f(x) = \csc(x) = (\sin(x))^{-1} \\
 u = \sin(x) \hspace{2cm} f(u) = u^{-1} \\
 u'(x) = \cos(x) \hspace{2cm} f'(u) = -u^{-2} \\
-f'(x) = -u^{-2} u' = -\cos (\sin(x))^{-2} = \frac{-1}{\sin(x)} \frac{\cos(x)}{\sin(x)} = -\csc(x) \cot(x)
+f'(x) = -u^{-2} u' = -\cos(x) (\sin(x))^{-2} = \frac{-1}{\sin(x)} \frac{\cos(x)}{\sin(x)} = -\csc(x) \cot(x)
 \end{align}
 
 
