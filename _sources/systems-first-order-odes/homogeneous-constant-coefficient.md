@@ -183,6 +183,226 @@ type of critical point using the eigenvalues.
 
 1. For:
 
+   \begin{equation}
+   \vv{A} = \begin{bmatrix} -2 & 0  \\ 0 & -2  \end{bmatrix}
+   \end{equation}
+
+   ```{solution}
+
+   **A** is upper triangular, so its eigenvalues are on its diagonal,
+   $\lambda_1 = \lambda_2 = -2$. Its eigenvectors are:
+
+   \begin{equation}
+   \vv{x}_1 = \begin{bmatrix} 1 \\ 0  \end{bmatrix} \qquad
+   \vv{x}_2 = \begin{bmatrix} 0  \\  1  \end{bmatrix}
+   \end{equation}
+
+   since $\vv{A} - \lambda_{1,2} \vv{I} = 0$. The general solution is:
+
+   \begin{equation}
+   \vv{y} = c_1 e^{-2t} \begin{bmatrix} 1 \\ 0 \end{bmatrix} +
+     c_2 e^{-2t} \begin{bmatrix} 0 \\ 1 \end{bmatrix}
+   \end{equation}
+
+   To solve for the initial condition, form the augmented matrix for
+   $\vv{X}\vv{c} = \vv{y}(0)$,
+
+   \begin{equation}
+   \begin{bmatrix} 1 & 0 & 1 \\ 0 & 1 & 0 \end{bmatrix}
+   \end{equation}
+
+   so $c_1 = 1$ and $c_2 = 0$.
+
+   Hence,
+   \begin{equation}
+   \vv{y} =e ^{-2t} \begin{bmatrix} 1 \\ 0 \end{bmatrix}
+   \end{equation}
+
+   or
+
+   \begin{align}
+   y_1 &= e^{-2t} \\
+   y_2 &= 0
+   \end{align}
+
+   The critical point is a stable proper node because
+   $\lambda_{1} = \lambda_{2} < 0$ and **A** is a multiple of **I**.
+   ```
+
+2. For:
+
+   \begin{equation}
+   \vv{A} = \begin{bmatrix} 0 & 3 \\ 12 & 0 \end{bmatrix}
+   \end{equation}
+
+   ```{solution}
+   First, find the eigenvalues of **A**:
+
+   \begin{align}
+   |\vv{A}-\lambda \vv{I}|
+   &= \begin{vmatrix}  -\lambda & 3  \\ 12 & -\lambda \end{vmatrix} \\
+   &= \lambda^{2}-36=0 \\
+   \lambda_{1,2} &= \pm 6
+   \end{align}
+
+   For $\lambda_1 = 6$,
+
+   \begin{equation}
+   \vv{A}-\lambda_1\vv{I} =
+   \begin{bmatrix} -6 & 3 \\ 12 & -6 \end{bmatrix}
+   \to \vv{x}_1 = \begin{bmatrix} 1 \\ 2 \end{bmatrix}
+   \end{equation}
+
+   For $\lambda_2 = -6$,
+
+   \begin{equation}
+   \vv{A}-\lambda_2\vv{I} =
+   \begin{bmatrix} 6 & 3 \\ 12 & 6 \end{bmatrix}
+   \to \vv{x}_2 = \begin{bmatrix} 1 \\ -2 \end{bmatrix}
+   \end{equation}
+
+   The general solution is:
+
+   \begin{equation}
+   \vv{y} = c_1 e^{6t} \begin{bmatrix} 1 \\ 2 \end{bmatrix} +
+     c_2 e^{-6t} \begin{bmatrix} 1 \\ -2 \end{bmatrix}
+   \end{equation}
+
+   To solve for the initial condition, form the augmented matrix for
+   $\vv{X}\vv{c} = \vv{y}(0)$,
+
+   \begin{align}
+   \begin{bmatrix} 1 & 2 & 1 \\ 2 & -2 & 0 \end{bmatrix}
+   \begin{matrix} \vphantom{R_1} \\ -R_1 \end{matrix}
+   & \to \begin{bmatrix} 1 & 1 & 1 \\ 0 & -4 & -2 \end{bmatrix}
+   \begin{matrix} \vphantom{R_1} \\ \div -4 \end{matrix} \\
+   & \to \begin{bmatrix} 1 & 1 & 1 \\ 0 & 1 & \frac{1}{2} \end{bmatrix}
+   \begin{matrix} -R_2 \\ \vphantom{R_2} \end{matrix} \\
+   & \to \begin{bmatrix} 1 & 0 & \frac{1}{2} \\ 0 & 1 & \frac{1}{2}  \end{bmatrix}
+   \end{align}
+
+   so $c_1 = 1/2$ and $c_2 = 1/2$ and
+
+   \begin{equation}
+   \vv{y} = \frac{1}{2}e^{-6t} \begin{bmatrix} 1 \\ 2 \end{bmatrix} +
+     \frac{1}{2}e^{-6t} \begin{bmatrix} 1 \\ -2 \end{bmatrix}
+   \end{equation}
+
+   or
+
+   \begin{align}
+   y_1 & =\frac{1}{2}(e^{6t}+e^{-6t}) \\
+   y_2 &= e^{6t}+e^{-6t}
+   \end{align}
+
+   The critical point is a saddle because the eigenvalues are real and
+   $\lambda_1 > 0$ but $\lambda_2 < 0$.
+   ```
+
+3. For:
+
+   \begin{equation}
+   \vv{A} = \begin{bmatrix} 0 & 4 \\ -4 & 0 \end{bmatrix}
+   \end{equation}
+
+   ``` {solution}
+   First, find the eigenvalues of **A**:
+
+   \begin{align}
+   |\vv{A} - \lambda \vv{I}|
+   &= \begin{vmatrix} -\lambda & 4 \\ -4 & -\lambda \end{vmatrix} \\
+   &= \lambda^2 + 16 = 0 \\
+   \lambda_{1,2} &= \pm 4i
+   \end{align}
+
+   For $\lambda_1 = 4i$,
+
+   \begin{equation}
+   \vv{A}-\lambda_1\vv{I} =
+   \begin{bmatrix} -4i & 4 \\ -4 & -4i \end{bmatrix}
+   \to \vv{x}_1 = \begin{bmatrix} -i \\ 1 \end{bmatrix}
+   \end{equation}
+
+
+   For $\lambda_2 = -4i$,
+
+   \begin{equation}
+   \vv{A}-\lambda_2\vv{I} =
+   \begin{bmatrix} 4i & 4 \\ -4 & 4i \end{bmatrix}
+   \to \vv{x}_2 = \begin{bmatrix} i \\ 1 \end{bmatrix}
+   \end{equation}
+
+   The general solution is:
+
+   \begin{equation}
+   \vv{y} = c_1 e^{4it} \begin{bmatrix} -i \\ 1 \end{bmatrix} +
+   c_2 e^{-4it} \begin{bmatrix} i \\ 1 \end{bmatrix}
+   \end{equation}
+
+   To solve for the initial condition, form the augmented matrix for
+   $\vv{X}\vv{c} = \vv{y}(0)$,
+
+   \begin{align}
+   \begin{bmatrix}
+   -i & i & 1 \\
+   1 & 1 & 0
+   \end{bmatrix}
+   \begin{matrix} {\rm swap} \\ \vphantom{R_2}\end{matrix}
+   &\to
+   \begin{bmatrix}
+   1 & 1 & 0 \\
+   -i & i & 1
+   \end{bmatrix}
+   \begin{matrix} \vphantom{R_1} \\ -R_1 \end{matrix} \\
+   &\to
+   \begin{bmatrix}
+   1 & 1 & 0 \\
+   0 & 2i & 1
+   \end{bmatrix}
+   \begin{matrix} \vphantom{R_1} \\ \div 2i \end{matrix} \\
+   &\to
+   \begin{bmatrix}
+   1 & 1 & 0 \\
+   0 & 1 & \frac{1}{2i}
+   \end{bmatrix}
+   \begin{matrix} -R_2 \\ \vphantom{R_2} \end{matrix} \\
+   &\to
+   \begin{bmatrix}
+   1 & 0 & -\frac{1}{2i} \\
+   0 & 1 & \frac{1}{2i}
+   \end{bmatrix}
+   \end{align}
+
+   so $c_1 = -1/(2i) = i/2$ and $c_2 = 1/(2i) = -i/2$ and
+
+   \begin{equation}
+   \vv{y} = \frac{i}{2} e^{4it} \begin{bmatrix} -i \\ 1 \end{bmatrix}
+   - \frac{i}{2} e^{-4it} \begin{bmatrix} i \\ 1 \end{bmatrix}
+   \end{equation}
+
+   This solution is acceptable, but we can simplify it further using Euler's
+   identity:
+
+   \begin{align}
+   \vv{y} &= \frac{1}{2} \left( \cos 4t + i \sin 4t \right)
+     \begin{bmatrix} 1 \\ i \end{bmatrix}
+   - \frac{1}{2} \left( \cos 4t - i \sin 4t \right)
+     \begin{bmatrix} -1 \\ i \end{bmatrix} \\
+   &= \begin{bmatrix} \cos 4t \\ -\sin 4t \end{bmatrix}
+   \end{align}
+
+   so
+
+   \begin{align}
+   y_1 &= \cos 4 t \\
+   y_2 &= -\sin 4t
+   \end{align}
+
+   The critial point is a center because the eigenvalues are purely imaginary.
+   ```
+
+4. For:
+
    \begin{equation} \vv{A} =
    \begin{bmatrix}
    2 & -2\\
@@ -285,106 +505,4 @@ type of critical point using the eigenvalues.
 
    The critical point is an unstable spiral because the eigenvalues are complex,
    and the real part is positive.
-   ```
-
-2. For:
-
-   \begin{equation}
-   \vv{A} = \begin{bmatrix} 0 & 4 \\ -4 & 0 \end{bmatrix}
-   \end{equation}
-
-   ``` {solution}
-   First, find the eigenvalues of **A**:
-
-   \begin{align}
-   |\vv{A} - \lambda \vv{I}|
-   &= \begin{vmatrix} -\lambda & 4 \\ -4 & -\lambda \end{vmatrix} \\
-   &= \lambda^2 + 16 = 0 \\
-   \lambda_{1,2} &= \pm 4i
-   \end{align}
-
-   For $\lambda_1 = 4i$,
-
-   \begin{equation}
-   \vv{A}-\lambda_1\vv{I} =
-   \begin{bmatrix} -4i & 4 \\ -4 & -4i \end{bmatrix}
-   \to \vv{x}_1 = \begin{bmatrix} -i \\ 1 \end{bmatrix}
-   \end{equation}
-
-
-   For $\lambda_2 = -4i$,
-
-   \begin{equation}
-   \vv{A}-\lambda_2\vv{I} =
-   \begin{bmatrix} 4i & 4 \\ -4 & 4i \end{bmatrix}
-   \to \vv{x}_2 = \begin{bmatrix} i \\ 1 \end{bmatrix}
-   \end{equation}
-
-   The general solution is:
-
-   \begin{equation}
-   \vv{y} = c_1 e^{4it} \begin{bmatrix} -i \\ 1 \end{bmatrix} +
-   c_2 e^{-4it} \begin{bmatrix} i \\ 1 \end{bmatrix}
-   \end{equation}
-
-   To solve for the initial condition, form the augmented matrix for
-   $\vv{X}\vv{c} = \vv{y}(0)$,
-
-   \begin{align}
-   \begin{bmatrix}
-   -i & i & 1 \\
-   1 & 1 & 0
-   \end{bmatrix}
-   \begin{matrix} {\rm swap} \\ \vphantom{R_2}\end{matrix}
-   &\to
-   \begin{bmatrix}
-   1 & 1 & 0 \\
-   -i & i & 1
-   \end{bmatrix}
-   \begin{matrix} \vphantom{R_1} \\ -R_1 \end{matrix} \\
-   &\to
-   \begin{bmatrix}
-   1 & 1 & 0 \\
-   0 & 2i & 1
-   \end{bmatrix}
-   \begin{matrix} \vphantom{R_1} \\ \div 2i \end{matrix} \\
-   &\to
-   \begin{bmatrix}
-   1 & 1 & 0 \\
-   0 & 1 & \frac{1}{2i}
-   \end{bmatrix}
-   \begin{matrix} -R_2 \\ \vphantom{R_2} \end{matrix} \\
-   &\to
-   \begin{bmatrix}
-   1 & 0 & -\frac{1}{2i} \\
-   0 & 1 & \frac{1}{2i}
-   \end{bmatrix}
-   \end{align}
-
-   so $c_1 = -1/(2i) = i/2$ and $c_2 = 1/(2i) = -i/2$ and
-
-   \begin{equation}
-   \vv{y} = \frac{i}{2} e^{4it} \begin{bmatrix} -i \\ 1 \end{bmatrix}
-   - \frac{i}{2} e^{-4it} \begin{bmatrix} i \\ 1 \end{bmatrix}
-   \end{equation}
-
-   This solution is acceptable, but we can simplify it further using Euler's
-   identity:
-
-   \begin{align}
-   \vv{y} &= \frac{1}{2} \left( \cos 4t + i \sin 4t \right)
-     \begin{bmatrix} 1 \\ i \end{bmatrix}
-   - \frac{1}{2} \left( \cos 4t - i \sin 4t \right)
-     \begin{bmatrix} -1 \\ i \end{bmatrix} \\
-   &= \begin{bmatrix} \cos 4t \\ -\sin 4t \end{bmatrix}
-   \end{align}
-
-   so
-
-   \begin{align}
-   y_1 &= \cos 4 t \\
-   y_2 &= -\sin 4t
-   \end{align}
-
-   The critial point is a center because the eigenvalues are purely imaginary.
    ```
