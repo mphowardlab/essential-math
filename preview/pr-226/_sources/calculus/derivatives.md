@@ -77,7 +77,7 @@ The second derivative tells us how to find the first derivative changes.
 |          |    v     |      v'      |
 |          |          |      a       |
 
-```{example} Ballistic motion
+Ex: Ballistic motion
 
 ```{image} ./_images/IMG_0484.jpeg
 :alt: Function and derivative
@@ -91,4 +91,4 @@ y(t) &= v_ot - \frac{1}{2}gt^2 & a = = v' = y'' = -g
 \end{align}
 
 Newton's law: $F = ma = -mg (gravity!)
-```
+
