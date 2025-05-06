@@ -71,6 +71,14 @@ x_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}
 \longrightarrow
 x_2 = \begin{bmatrix} 2 \\ 9 \end{bmatrix}
 \end{equation}
+
+So,
+\begin{align}
+\lambda_1 &= 3 \\
+x_1 &= \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+\lambda_2 &= -4
+x_2 &= \begin{bmatrix} 2 \\ 9 \end{bmatrix}
+\end{align}
 ````
 
 3. \begin{equation}
