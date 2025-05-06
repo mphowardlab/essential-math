@@ -179,10 +179,10 @@ Analytical solution:
 $$
 y^' - y = 5 * sin(2*pi*t)
 $$
+First, find the integrating factor
+$$
+F = e^(\int(p{dt})) = e^{(-1) * (t)}
+$$
 
 $$
-F = e^(\int(p{dt})) = e^((-1) * (
-$$
-
-$$
-(\int(F*r* {dt})) = (\int((e^((-1) * (t)))* ((5) * (sin((2) * (pi) * (t)))) * ({dt}))) =
+(\int(F*r* {dt})) = (\int((e^((-1) * (t)))* ((5) * (sin((2) * (pi) * (t)))) * (\d{t}))) = {{5 * e^{((-1) * t)}} / {((4) * {(pi)^2} + 1}}
