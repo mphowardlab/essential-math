@@ -13,7 +13,6 @@ W &= y_1y_2' -y_2y_1'
 W is the Wronskian determinant
 ```
 
-```{example}
 \begin{equation}
 y'' + y = \secx
 \end{equation}
@@ -46,7 +45,6 @@ y = C_1\cosx + C_2\sinx + \cosx\ln|\cosx| + x\sinx
 \end{equation}
 
 which is our solution.
-```
 
 ```{example} Steady heat diffusion with internal source
 We are solving the steady-state heat diffusion equation with an internal source:
