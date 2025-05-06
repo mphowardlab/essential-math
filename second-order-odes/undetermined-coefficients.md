@@ -1,5 +1,6 @@
 # Undetermined coefficients
 
+```{topic} Undetermined coefficients
 If a nonhomogeneous linear second-order ODE has constant coefficients
 
 \begin{equation}
@@ -20,6 +21,7 @@ we can "guess" a solution as follows:
 - If *r* has multiple terms, add guesses for each together.
 - If the guess for $y_{\rm p}$ is a homogeneous solution $y_{\rm h}$, multiply
   by *x* unless this solution is a repeated root - then multiply by $x^2$!
+```
 
 For example, to solve:
 
@@ -88,20 +90,35 @@ Use the following steps:
    y = 0.002 \cos x + 1.5 \sin x + 0.001x^2 - 0.002
    \end{equation}
 
-Ex. 
+---
+
+As a more complex example, let's find the form of the particular solution for:
+
 \begin{equation}
-y''+3y'+2.25y=-10e^-1.5x+\cosx
-\end{equation
+y'' + 3y' + 2.25y = -10e^-1.5x + \cos x
+\end{equation}
 
+1. Find $y_{\rm h}$:
 
-1. Find $y_n$:
    \begin{align}
-   $y{_n}''+3y{_n}'+2.25y_n =0 -> \\
-   \lambda^2 +3\lambda+2.25 =(\lambda+1.5)^2 = 0 -> \\
-   \lambda=-1.5 -> y_n = (c_1 + c{_2}x)e^{-1.5x}
+   y_{\rm h}''+3y_{\rm h}'+2.25y_{\rm h} &= 0 \\
+   \lambda^2 +3\lambda+2.25 = 0 \\
+   (\lambda+1.5)^2 &= 0 \\
    \end{align}
-   
-2. Guess $y_p$:
+
+   so $\lambda = -1.5$. This is a real repeated root, so
+
+   \begin{equation}
+   y_{\rm h} = (c_1 + c_2 x)e^{-1.5x}
+   \end{equation}
+
+2. Guess $y_{\rm p}$:
+
+   We should add guesses for both terms in *r*. Our first term is an
+   exponential, but it needs to be multiplied by $x^2$ because it is the same
+   as the homogeneous solution, which is a real repeated root. Our second
+   term is a sum of cosine and sine.
+
    \begin{align}
-   y_p = k_1 x^2 e^{-1.5 x} + (k_2 \cos(x) +k_3 \sin(x))
+   y_{\rm p} = k_1 x^2 e^{-1.5 x} + (k_2 \cos x  +k_3 \sin x)
    \end{align}
