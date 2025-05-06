@@ -34,8 +34,8 @@ W = \cos^2 x - (-\sin^2 x) = 1
 Hence,
 
 \begin{align}
-&y_p = -\cos x\int\sin x\sec xdx +\sin x\int\cos x\sec xdx
-&= \cos x\int \fract {-\sinx}{\cosx}dx + \sin x\intdx
+&y_p = -\cos x\int\sin x\sec xdx +\sin x\int\cos x\sec xdx \\
+&= \cos x\int \fract {-\sinx}{\cosx}dx + \sin x\intdx \\
 &\rightarrow y_p = \cos x\ln|\cos x| + x\sin x
 \end{align}
 
