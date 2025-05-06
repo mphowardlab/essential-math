@@ -230,7 +230,6 @@
 <li class="toctree-l2"><a class="reference internal" href="undetermined-coefficients.html">7.4. Undetermined coefficients</a></li>
 <li class="toctree-l2"><a class="reference internal" href="variation-of-parameters.html">7.5. Variation of parameters</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">7.6. Numerical solution methods</a></li>
-
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../credits.html">8. Credits</a></li>
@@ -429,10 +428,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">7.6. Numerical solution methods</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#boundary-value-problems-shooting-method">7.7. 4. Boundary value problems : shooting method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boundary-value-problems-shooting-method">7.6.1. Boundary value problems : shooting method</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -445,10 +442,9 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="numerical-solution-methods">
 <h1><span class="section-number">7.6. </span>Numerical solution methods<a class="headerlink" href="#numerical-solution-methods" title="Link to this heading">#</a></h1>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="boundary-value-problems-shooting-method">
-<h1><span class="section-number">7.7. </span>4. Boundary value problems : shooting method<a class="headerlink" href="#boundary-value-problems-shooting-method" title="Link to this heading">#</a></h1>
-<p>We can solve <u> initial</u> value problems for second-order ODEs by converting to a system and using methods we know. What about BVPs?</p>
+<section id="boundary-value-problems-shooting-method">
+<h2><span class="section-number">7.6.1. </span>Boundary value problems : shooting method<a class="headerlink" href="#boundary-value-problems-shooting-method" title="Link to this heading">#</a></h2>
+<p>We can solve <em>initial</em> value problems for second-order ODEs by converting to a system and using methods we know. What about BVPs?</p>
 <p>Let’s say we want to solve  <span class="math notranslate nohighlight">\(y''+y=0\)</span>   <span class="math notranslate nohighlight">\(y(0)=0\)</span>   <span class="math notranslate nohighlight">\(y(\frac{\pi}{6})=4\)</span>
 using normal approch:</p>
 <div class="math notranslate nohighlight">
@@ -493,6 +489,42 @@ a
 \[
 \text{Figure this out so that } y_1\left( \frac{\pi}{2} \right) = 4
 \]</div>
+<p>여기까지</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e31f2737-8117-4acd-bdc9-a8c62072c039">
+<span class="eqno">(7.141)<a class="headerlink" href="#equation-e31f2737-8117-4acd-bdc9-a8c62072c039" title="Permalink to this equation">#</a></span>\[\begin{equation}  
+y'' + y = 0, \quad y(0) = 0, \quad y(\frac{\pi}{6}) = 4  
+\end{equation}  \]</div>
+<p>Using normal approach:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1d9b181c-6af0-4c91-ad5e-c1de0d73d16c">
+<span class="eqno">(7.142)<a class="headerlink" href="#equation-1d9b181c-6af0-4c91-ad5e-c1de0d73d16c" title="Permalink to this equation">#</a></span>\[\begin{align}  
+y &amp;= c_1 \cos x + c_2 \sin x \\  
+0 &amp;= y(0) = c_1 \\  
+4 &amp;= y(\frac{\pi}{6}) = c_2 \frac{1}{2} \\  
+c_2 &amp;= 8  
+\end{align}  \]</div>
+<p>so,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-65a111d8-53f6-4505-a5b0-c547ad527fbb">
+<span class="eqno">(7.143)<a class="headerlink" href="#equation-65a111d8-53f6-4505-a5b0-c547ad527fbb" title="Permalink to this equation">#</a></span>\[\begin{equation}  
+y = 8 \sin x  
+\end{equation}  \]</div>
+<p>What if we needed to do this numerically? Try converting to system:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-31f38dab-0738-4e29-a730-9ebdeccb6c8d">
+<span class="eqno">(7.144)<a class="headerlink" href="#equation-31f38dab-0738-4e29-a730-9ebdeccb6c8d" title="Permalink to this equation">#</a></span>\[\begin{equation}  
+y_1 = y \quad y_2 = y' \quad y'' = -y  
+\end{equation}  \]</div>
+<p>Then,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-48df3390-effb-4990-9ce8-6ed5526ef1ed">
+<span class="eqno">(7.145)<a class="headerlink" href="#equation-48df3390-effb-4990-9ce8-6ed5526ef1ed" title="Permalink to this equation">#</a></span>\[\begin{align}  
+y_1' &amp;= y_2 &amp; y_1(0) &amp;= 0 \\  
+y_2' &amp;= -y_1 &amp; y_2(0) &amp;= a  
+\end{align}  \]</div>
+<p>where <em>a</em> is unknown value that we need to figure out so <span class="math notranslate nohighlight">\(y(\frac{\pi}{6}) = 4\)</span>. We can write:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e8251f7e-df8c-4b25-9478-718a0e2e9fd1">
+<span class="eqno">(7.146)<a class="headerlink" href="#equation-e8251f7e-df8c-4b25-9478-718a0e2e9fd1" title="Permalink to this equation">#</a></span>\[\begin{equation}  
+\vv{y}' = \begin{bmatrix} 0 &amp; 1 \\ -1 &amp; 0 \end{bmatrix} \vv{y}, 
+\quad \vv{y}(0) = \begin{bmatrix} 0 \\ a \end{bmatrix}  
+\end{equation}  \]</div>
+<p>여기까지</p>
 <hr class="docutils" />
 <p>How do we do this when we have only numbers? <u>Shooting method.</u></p>
 <p><img alt="" src="../_images/grapofline3.jpg" /></p>
@@ -519,7 +551,13 @@ y_2'=\frac{K}{D}y_1'\quad\quad\quad y_2(0)=a
 \end{array}
 \right.
 \end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}
+\left\{\\\begin{split}y_1'=y_2\quad\quad\quad\quad y_1(0)=C_0\\
+y_2'=\frac{K}{D}y_1'\quad\quad\quad y_2(0)=a\end{split}\\\right.
+\end{aligned}\end{align} \]</div>
 <p>vary a and solve numerically for <span class="math notranslate nohighlight">\(\underline{y}(L)\)</span> until <span class="math notranslate nohighlight">\(y_2(L)=0\)</span>!</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -586,10 +624,8 @@ y_2'=\frac{K}{D}y_1'\quad\quad\quad y_2(0)=a
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">7.6. Numerical solution methods</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#boundary-value-problems-shooting-method">7.7. 4. Boundary value problems : shooting method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boundary-value-problems-shooting-method">7.6.1. Boundary value problems : shooting method</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>

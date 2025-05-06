@@ -1,8 +1,8 @@
 # Numerical solution methods
-# 4. Boundary value problems : shooting method
+## Boundary value problems : shooting method
 
 
- We can solve <u> initial</u> value problems for second-order ODEs by converting to a system and using methods we know. What about BVPs?
+ We can solve *initial* value problems for second-order ODEs by converting to a system and using methods we know. What about BVPs?
 
 
 Let's say we want to solve&nbsp; $y''+y=0$ &nbsp; $y(0)=0$ &nbsp; $y(\frac{\pi}{6})=4$
@@ -53,6 +53,54 @@ $$
 $$
 \text{Figure this out so that } y_1\left( \frac{\pi}{2} \right) = 4
 $$
+여기까지 
+
+\begin{equation}  
+y'' + y = 0, \quad y(0) = 0, \quad y(\frac{\pi}{6}) = 4  
+\end{equation}  
+
+Using normal approach:  
+
+\begin{align}  
+y &= c_1 \cos x + c_2 \sin x \\  
+0 &= y(0) = c_1 \\  
+4 &= y(\frac{\pi}{6}) = c_2 \frac{1}{2} \\  
+c_2 &= 8  
+\end{align}  
+
+so,  
+
+\begin{equation}  
+y = 8 \sin x  
+\end{equation}  
+
+What if we needed to do this numerically? Try converting to system:  
+
+\begin{equation}  
+y_1 = y \quad y_2 = y' \quad y'' = -y  
+\end{equation}  
+
+Then, 
+
+\begin{align}  
+y_1' &= y_2 & y_1(0) &= 0 \\  
+y_2' &= -y_1 & y_2(0) &= a  
+\end{align}  
+
+where *a* is unknown value that we need to figure out so $y(\frac{\pi}{6}) = 4$. We can write:  
+
+\begin{equation}  
+\vv{y}' = \begin{bmatrix} 0 & 1 \\ -1 & 0 \end{bmatrix} \vv{y}, 
+\quad \vv{y}(0) = \begin{bmatrix} 0 \\ a \end{bmatrix}  
+\end{equation}  
+
+
+
+
+
+
+여기까지
+
 
 
 ------
@@ -86,5 +134,12 @@ y_2'=\frac{K}{D}y_1'\quad\quad\quad y_2(0)=a
 \right.
 $$
 
+$$
+\left\{
 
+y_1'=y_2\quad\quad\quad\quad y_1(0)=C_0\\
+y_2'=\frac{K}{D}y_1'\quad\quad\quad y_2(0)=a
+
+\right.
+$$
 vary a and solve numerically for $\underline{y}(L)$ until $y_2(L)=0$!
