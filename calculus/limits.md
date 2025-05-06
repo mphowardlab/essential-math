@@ -1,48 +1,49 @@
 # Limits
 
 ```{topic} Limit Laws
-Constant:
+<u>Constant:</u>
 \begin{equation}
 \lim_{x \to c} k = k
 \end{equation}
 
-Identity:
+<u>Identity:</u>
 \begin{equation}
 \lim_{x \to c} x = c
 \end{equation}
 
-Continuous Function:
+<u>Continuous Function:</u>
 \begin{equation}
 \lim_{x \to c} f(x) = f(c)
 \end{equation}
 
 - If f is "continuous" at x (no jumps or holes).
 
-<u>If $\lim_{x \to c} f(x) = L$ and $\lim_{x \to c} g(x) = M$ , then</u>
 
-Sum:
+**If $\lim_{x \to c} f(x) = L$ and $\lim_{x \to c} g(x) = M$ , then**
+
+<u>Sum:</u>
 \begin{equation}
 \lim_{x \to c} f(x) + g(x) = L + M
 \end{equation}
 
-Difference:
+<u>Difference:</u>
 \begin{equation}
 \lim_{x \to c} f(x) - g(x) = L - M
 \end{equation}
 
-Product:
+<u>Product:</u>
 \begin{equation}
 \lim_{x \to c} f(x)g(x) = LM
 \end{equation}
 
-Quotient:
+<u>Quotient:</u>
 \begin{equation}
 \lim_{x \to c} \frac{f(x)}{g(x)} = \frac{L}{M}
 \end{equation}
 
 - If $M \neq 0$
 
-Power:
+<u>Power:</u>
 \begin{equation}
 \lim_{x \to c} f(x)^{\frac{r}{s}} = L^{\frac{r}{s}}
 \end{equation}
