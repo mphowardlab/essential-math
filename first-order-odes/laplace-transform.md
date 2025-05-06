@@ -1,5 +1,78 @@
 # Laplace transform
 
+## Definition and properties
+
+The Laplace transform is used in signals/controls. It is also a way to solve
+*differential* equations using *algebra*. It is defined as:
+
+\begin{equation}
+F(s) = L[f(t)] = \int_0^\infty e^{-st} f(t) \d{t}
+\end{equation}
+
+The inverse Laplace transform of *F* is *f*, i.e., $f(t) = L^{-1}[F(s)]$. The
+Laplace transform of many functions can be computed using integration by parts.
+For example, the Laplace transform of $f(t) = t$ is:
+
+\begin{align}
+L[t] &= \int_0^\infty e^{-st} t \d{t} \\
+  &= \left.-\frac{te^{-st}}{s}\right|_0^\infty
+     + \int_0^\infty \frac{e^{-st}}{s} \d{t} \\
+  &= -\left.\frac{e^{-st}}{s^2}\right|_0^\infty \\
+  &= \frac{1}{s^2}
+\end{align}
+
+Importantly, the Laplace transform of the first derivative of an unknown
+function $f(t) = y'(t)$ is:
+
+\begin{align}
+L[y'(t)] &= \int_0^\infty e^{-st} y'(t) \d{t} \\
+  &= \left.e^{-st} y(t)\right|_0^\infty -
+    \int_0^\infty y(t) \left(-s e^{-st}\right) \d{t} \\
+  &= [0 - y (0)] + s \int_0^\infty e^{-st} y \d{t} \\
+  &= -y(0) + s L[y(t)] \\
+  &= s Y(s) - y(0)
+\end{align}
+
+using $u = e^{-st}$ and $\d{v} = y'(t) \d{t}$. Some common Laplace transforms
+are:
+
+| $f(t)$             | $F(s) = L[f(t)]$                |
+|--------------------|---------------------------------|
+| $t^n$, $n=0, 1, 2, \cdots$ | $\dfrac{n!}{s^{n+1}}$   |
+| $e^{at}$           | $\dfrac{1}{s - a}$              |
+| $\sin(at)$         | $\dfrac{a}{s^2 + a^2}$          |
+| $\cos(at)$         | $\dfrac{s}{s^2 + a^2}$          |
+| $e^{at} \sin(bt)$  | $\dfrac{b}{(s - a)^2 + b^2}$    |
+| $e^{at} \cos(bt)$  | $\dfrac{s - a}{(s - a)^2 + b^2}$|
+
+The Laplace transform is a linear operator, so
+
+\begin{align}
+L[kf] &= kL[f] \\
+L[f + g] &= L[f] + L[g]
+\end{align}
+
+## Solving first-order ODEs
+
+Nonhomogeneous, first-order ODEs with constant coefficients are nice to solve
+with Laplace transforms:
+
+\begin{equation}
+y' + by = r(t), \quad y(0) = y_0
+\end{equation}
+
+Apply the Laplace transform to both sides of the equation:
+
+\begin{align}
+L[y' + by] &= L[r] \\
+L[y'] + bL[y] &= L[r]\\
+\left(sY - y_0\right) + bY &= R\\
+Y &= \frac{y_0 + R}{s+b}
+\end{align}
+
+where $Y = L[y(t)]$ and $R = L[r(t)]$. If we can invert $y = L^{-1}[Y]$ using
+tables, we have a solution!
+
 ```{example} Laplace transform
 Solve the initial value problem
 
