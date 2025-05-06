@@ -75,9 +75,11 @@ $$
 We also know 
 
 $$
-u_z(0)
+u_z(0) is finite
 $$ 
-is finite -or- that u has radial symmetry, so 
+
+
+or that u has radial symmetry, so 
 
 $$
 \frac{du_z}{dr}=0  \to @r=0
