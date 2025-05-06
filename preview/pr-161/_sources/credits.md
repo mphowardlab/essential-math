@@ -16,6 +16,7 @@ This work (c) 2025 is licensed under
 - Sarah Eldridge
 - Alexis Florit
 - Ella Governale
+- Parker Green
 - Connor Habig
 - Anna Grace Hawkins
 - Kennedi Hawkins
