@@ -89,6 +89,83 @@ Therefore, by the chain rule:
 
 This matches our previous result for the derivative!
 
+---
+
+Sometimes, the variables that are held constant in a derivative are
+inconvenient. The "triple product rule" (sometimes called the cyclic or *xyz*-1
+rule) lets us replace such a derivative by two other derivatives of involving
+that variable.
+
+```{topic} Triple product rule
+
+If $x(y, z)$, $y(x, z)$, and $z(x, y)$, then:
+
+\begin{equation}
+\td{}{x}{y}{z} \td{}{y}{z}{x} \td{}{z}{x}{y} = -1
+\end{equation}
+
+or equivalently:
+
+\begin{equation}
+\td{}{x}{y}{z} = -\frac{(\partial z/\partial y)_x}{(\partial z/\partial x)_y}
+\end{equation}
+
+using the inversion rule.
+```
+
+To demonstrate use of this rule, use $x = y^2/z$, which has the inverse functions
+$y = \sqrt{xz}$ and $z = y^2/x$. Compute the relevant partial derivatives:
+
+\begin{align}
+\td{}{x}{y}{z} &= \frac{2y}{z} \\
+\td{}{y}{z}{x} &= \frac{1}{2} \sqrt{\frac{x}{z}} \\
+\td{}{z}{x}{y} &= -\frac{y^2}{x^2}
+\end{align}
+
+Now plug into the triple product rule, substituting the definition of *x*:
+
+\begin{equation}
+\left( \frac{2y}{z} \right)
+\left( \frac{y}{2z} \right)
+\left( -\frac{z^2}{y^2} \right) = -1
+\end{equation}
+
+This confirms the rule!
+
+---
+
+We can use these rules to manipulate thermodynamic derivatives. Choosing the
+right rules to use is like solving a puzzle, and you'll get better at it with
+practice.
+
+```{example} Constant-volume heat capacity
+Express $(\partial S/\partial T)_V$ for a pure substance using the
+constant-volume heat capacity
+
+\begin{equation}
+c_v = \td{}{U}{T}{V}
+\end{equation}
+
+where *S* is the molar entropy, *T* is the temperature, *V* is the molar volume,
+and *U* is the molar internal energy, given that
+
+\begin{equation}
+\d{U} = T\d{S} - P\d{V}
+\end{equation}
+
+---
+
+Using the chain rule, we can introduce *U*, then invert the *S* derivative:
+
+\begin{align}
+\td{}{S}{T}{V} &= \td{}{S}{U}{V} \td{}{U}{T}{V} \\
+  &= \frac{(\partial U/\partial T)_V}{(\partial U /\partial S)_V} \\
+  &= \frac{c_V}{T}
+\end{align}
+
+The last line follows from the definition of the heat capacity.
+```
+
 ## Derivatives as functions
 
 The first law of thermodynamics for a pure substance is:
@@ -260,3 +337,47 @@ Putting it all together:
 This total differential is now suitable for integration with respect to *T*
 and *P* using only measurable quantities!
 ```
+
+## Skill builder problems
+
+Given
+
+\begin{equation}
+\d{f} = p \d{x} - q \d{y}
+\end{equation}
+
+Evaluate the following for $f=\cos(4x+y^2)+x^2y$
+
+1. $\displaystyle\td{}{x}{f}{y}$
+
+   ```{solution}
+   \begin{align}
+   \td{}{x}{f}{y} &= \frac{1}{(\partial f/\partial x)_y} \\
+   &= \frac{1}{p} \\
+   &= \left(-4\sin(4x+y^2)+ 2xy\right)^{-1}
+   \end{align}
+   ```
+
+2. $\displaystyle\td{}{f}{p}{y}$
+
+   ```{solution}
+   \begin{align}
+   \td{}{f}{p}{y} &= \td{}{f}{x}{y} \td{}{x}{p}{y} \\
+   &=\frac{(\partial f/\partial x)_y}{(\partial p/\partial x)_y} \\
+   &=\frac{p}{(\partial p/\partial x)_y} \\
+   &=\frac{-4 \sin(4x+y^2)+2xy}{-16 \cos(4x+y^2)+2y}
+   \end{align}
+   ```
+
+3. $\displaystyle\td{}{x}{y}{f}$
+
+   ```{solution}
+   \begin{align}
+   \td{}{x}{y}{f} & \td{}{y}{f}{x} \td{}{f}{x}{y} = -1 \\
+   \td{}{x}{y}{f} &=
+   -\frac{1}{(\partial y/\partial f)_x(\partial f/\partial x)_y} \\
+   &= -\frac{(\partial f/\partial y)_x}{(\partial f/\partial x)_y} \\
+   &= \frac{q}{p} \\
+   &=\frac{2y\sin(4x+y^2)+x^2}{-4\sin(4x+y^2)+2xy}
+   \end{align}
+   ```
