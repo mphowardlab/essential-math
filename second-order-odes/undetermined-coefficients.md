@@ -17,11 +17,12 @@ $$
 ---
 
 
-```{solution}
+
 Homogeneous solution:
+
 $$
 y'' - y' - 12y = 0 
-$$ 
+$$
 
 $$
 \lambda^2 - \lambda - 12 = 0
@@ -41,7 +42,7 @@ $$
 
 ---
 
-### Particular Solution:
+Particular Solution:
 
 Guess:
 
@@ -85,14 +86,15 @@ $$
 2k_2 - k_3 - 12k_4 = \frac{25}{2} \quad \Rightarrow \quad 12k_4 = 2(-3) - ('\frac{13}{2}) - \frac{25}{2} = 0 \quad \Rightarrow \quad k_4 = 0
   $$
 
-\begin{equation}
+$$
 y_p = -12x_3 + 3x^2 - \frac{13}{2}x
-\end{equation}
+$$
   
 ---
 
-### Boundary Conditions:
- $$
+Boundary Conditions:
+
+$$
  y = C_1 e^{4x} + C_2 e^{-3x} - 12x^3 + 3x^2 - \frac{13}{2}x
 $$
 
@@ -100,10 +102,10 @@ $$
 y' = 4C_1 e^{4x} - 3C_2e^{-3X} - 36x^2 + 6x - \frac{13}{2}
 $$
 
-\begin{alignat*}{4}
+$$\begin{alignat*}{4}
 5 &= y(0) &&= C_1 + C_2 &&\Rightarrow  C_1 + C_2 &= 5 \\
 -\frac{1}{2} &= y'(0) &&= 4C_1 - 3C_2 - \frac{13}{2} &&\Rightarrow  4C_1 - 3C_2 &= 6
-\end{alignat*}
+\end{alignat*}$$
 
 $$\begin{equation}
 \begin{bmatrix} 1 & 1 & 5 \\\ 4 & -3 & 6 \end{bmatrix} \quad \Rightarrow
@@ -114,11 +116,9 @@ $$\begin{equation}
 
 ---
 
-### Final Answer:
+Final Answer:
 
 $$
 \boxed{y = 3e^{4x} + 2e^{-3x} - 12x^3 + 3x^2 - \frac{13}{2}x}
 $$
-```
-
 
