@@ -48,7 +48,7 @@ examples:
 
 To be differentiable, this limit must exist. A function would not be differentiable at a jump, cusp, coner, or vertical tangent
 
-```{image} ./_images/IMG_0484.jpeg
+```{image} ./_images/IMG_0485.jpeg
 :alt: Function and derivative
 :align: center
 :width: 300px
@@ -87,7 +87,7 @@ The second derivative tells us how to find the first derivative changes.
 
 \begin{align}
 x(t) &= u_ot & v &= y' &= v_o -gt \\
-y(t) &= v_ot - \frac{1}{2}gt^2 & a &= &= v' &= y''&= -g 
+y(t) &= v_ot - \frac{1}{2}gt^2 & a = = v' = y'' = -g 
 \end{align}
 
 Newton's law: $F = ma = -mg (gravity!)
