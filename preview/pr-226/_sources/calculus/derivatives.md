@@ -86,7 +86,7 @@ Ex: Ballistic motion
 ```
 
 \begin{align}
-x(t) &= u_ot & v &= y' &= v_o -gt \\
+x(t) &= u_ot & v &= y' = v_o -gt \\
 y(t) &= v_ot - \frac{1}{2}gt^2 & a = = v' = y'' = -g 
 \end{align}
 
