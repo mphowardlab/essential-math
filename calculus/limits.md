@@ -1,7 +1,6 @@
 # Limits
-**Limit Laws**
 
-```{topic}
+```{topic} Limit Laws
 Constant:
 \begin{equation}
 \lim_{x \to c} k = k
