@@ -80,3 +80,32 @@ The results match! Some additional examples:
    f'(x) = \dd{}{f}{u} \dd{}{u}{x} = -2u^{-2} \cdot \dd{}{u}{x} =
      \frac{-4}{(1 + 2x)^2}
    \end{equation}
+
+
+  ## Derivatives of Trigonometric Functions
+| $f(x)$     | $f'(x)$    | $f(x)$    | $f'(x)$            |
+|------------|------------|-----------|--------------------|
+| $\sin(x)$  | $\cos(x)$  | $\csc(x)$ | $-\csc(x) \cot(x)$ |
+| $\cos(x)$  | $-\sin(x)$ | $\sec(x)$ | $\sec(x) \tan(x)   |
+| $\tan(x)$  | $\sec^2(x)$| $\cot(x)$ | $-\csc^2(x)        |
+
+All of these follow from knowing only two derivatives: $\sin(x)$ and $\cos(x)$!
+
+##Proof of derivative of $\tan(x)$
+
+\begin{align}
+f(x) = \tan(x) \ frac{\sin(x)}{\cos(x)} \\
+u = \sin(x) \; v = \cos(x) \\
+u' = \cos(x) \; v' = -\sin(x) \\ 
+f'(x) = frac{\cos(\cos(x)) - \sin(-\sin(x))}{\cos^2(x)} = frac{\sin^2(x) + \cos^2(x)}{\cos^2(x)} = frac{1}{\cos^2(x)} = \sec^2(x)
+\end{align}
+
+##Proof of derivative of $\csc(x)$
+
+\begin{align}
+f(x) = \csc(x) = (\sin(x))^(-1) \\
+u = \sin(x) \; f(u) = u^(-1) \\
+u'(x) = \cos(x) \; f'(u) = -u^(-2) \\
+f'(x) = -u^(-2) u' = -(\sin(x))^(-2) \cosx = frac{-1}{\sin(x)} frac{\cos(x)}{\sin(x)} = -\csc(x) \cot(x)
+
+
