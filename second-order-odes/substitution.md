@@ -1,5 +1,5 @@
 # Systems of first-order ordinary differential equations
-# ODES involving second derivatives appear often in engineering because of their role in physical processes
+ODES involving second derivatives appear often in engineering because of their role in physical processes
 - Newton's second law : $F=ma$
     - $a = acceleration$
     - $a = v'$
@@ -60,12 +60,12 @@ $$
 
 $$
 
-
 We want no slip 
 
 $$
 u_z(R)= 0
-$$,
+$$
+
 so 
 
 $$
@@ -83,11 +83,11 @@ $$
 \frac{du_z}{dr}=0  \to @r=0
 $$.
 
-Either way,
+Either way
 
 $$
 C_1 = 0
-$$. So,
+$$. So
 
 $$
 u_z(r)=\frac{1}{4μ}\frac{△P}{L}(R^2-r^2)
