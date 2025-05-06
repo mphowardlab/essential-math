@@ -52,13 +52,13 @@ such that:
    r=k_{1} c_{A,0}e^{-k_{1}t}
    \end{align}
 So,
-\begin{align}
-F=e^{\int k_{2}\ d{t}\\
-F=e^{k_{2}t}\\
-c_{\rm B}=\int e^{k_{2}t}k_{1}c_{A,0}e^{-k_{1}t} \d{t}\\
-c_{\rm B}=k_{1}c_{A,0} \int e^{(k_{2}-k_{1})t} \d{t}\\
-c_{\rm B=\frac{k_{1}c_{A,0}}{k_{2}-k_{1}}e^{(k_{2}-k_{1})t}
-\end{align}
+   \begin{align}
+   F=e^{\int k_{2}\ d{t}\\
+   F=e^{k_{2}t}\\
+   c_{\rm B}=\int e^{k_{2}t}k_{1}c_{A,0}e^{-k_{1}t} \d{t}\\
+   c_{\rm B}=k_{1}c_{A,0} \int e^{(k_{2}-k_{1})t} \d{t}\\
+   c_{\rm B=\frac{k_{1}c_{A,0}}{k_{2}-k_{1}}e^{(k_{2}-k_{1})t}
+   \end{align}
 
  $\qquad$ $\int Fr\ dt = \int e^{k_{2}t}k_{1}c_{A,0}e^{-k_{1}t}\ dt= k_{1}c_{A,0} \int e^{(k_{2}-k_{1})t}\ dt = \frac{k_{1}c_{A,0}}{k_{2}-k_{1}} e^{(k_{2}-k_{1})t}$
 
