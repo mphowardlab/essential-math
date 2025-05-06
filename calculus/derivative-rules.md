@@ -34,5 +34,13 @@ f^{'}(x) &= \sec^{2}{u}u^{'}\\
 \end{align}
 
 \begin{align}
-(5) \quad f(x) &= e^{\cos^{2}{x}}
+(5) \quad f(x) &= e^{\cos^{2}{x}}\\
+u &= \cos^{2}{x} \quad f(u) = e^{u}\\
+u^{'}(x) &= \frac{d}{dx}(\cos^{2}{x}) \quad f^{'}(u) = e^{u}\\
+f^{'}(x) &= e^{u}u^{'} = e^{\cos^{2}{x}}\frac{d}{dx}(\cos^{2}{x})\\
+u &= \cos{x} \quad f(u) = u^{2}\\
+u^{'}(x) &= -\sin{x} \quad f^{'}(u) = 2u\\
+&= e^{\cos^{2}{x}}(2uu^{'})\\
+&= e^{\cos^{2}{x}}(2\cos{x}\cdot-\sin{x})\\
+&= -2\sin{x}\cos{x}e^{\cos^{2}{x}}\\
 \end{align}
