@@ -52,8 +52,6 @@ To be differentiable, this limit must exist. A function would not be differentia
 
 ## Higher order derivatives
 
-Differentiating f' gives f'', the second derivative. This process can be repeated for higher order(e.g. third) derivatives.
-
 Example:
 
 \begin{equation}
@@ -62,15 +60,21 @@ f(x)=x^2, f'(x)=2x
 
 \begin{align}
 f''(x)=lim_{h \to 0}{\frac{f'(x+h)-f'(x)}{h}} \\
-&= lim_{h \to 0}{\frac{(2(x+h)-2x)}{h}} \\
-&= lim_{h \to 0}{\frac{2h}{2}} \\
-= 2
+    &= lim_{h \to 0}{\frac{(2(x+h)-2x)}{h}} \\
+    &= lim_{h \to 0}{\frac{2h}{2}} \\
+    &= 2
 \end{align}
 
 The second derivative tells us how to find the first derivative changes.
 
+| Position | Velocity | Acceleration |
+|----------|----------|--------------|
+|    x     |    x'    |      x''     |
+|          |    v     |      v'      |
+|          |          |      a       |
+
 \begin{align}
-position \to velocity \to acceleration \\
+position & velocity & acceleration \\
 x & x' & x'' \\
 0 & v & v' \\
 0 & 0 & a
