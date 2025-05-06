@@ -1,12 +1,12 @@
 # Eigenvalue problem
 
-````{example} a. Upper Triangular Matrix
+Find the eigenvalues and eigenvectors of the following matrices:
 
-Find the eigenvalues and eigenvectors of the following matrix:
-\begin{equation}
+1. \begin{equation}
 \vv{A} = \begin{bmatrix} 4 & 2 \\ 0 & -4 \end{bmatrix}
 \end{equation}
 
+```{solution}
 Since A is **upper triangular**, the eigenvalues are the diagonal entries:
 
 \begin{align}
