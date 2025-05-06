@@ -33,7 +33,7 @@ So.
 \lambda_1 &= 4 \\
 x_1 &= \begin{bmatrix} 1 \\ 0 \end{bmatrix} \\
 \lambda_2 &= -4 \\
-x_2 = \begin{bmatrix} 1 \\ -4 \end{bmatrix}
+x_2 &= \begin{bmatrix} 1 \\ -4 \end{bmatrix}
 \end{align}
 ````
 
