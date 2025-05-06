@@ -80,13 +80,12 @@ x_2 = \begin{bmatrix} 2 \\ 9 \end{bmatrix}
 ```{solution}
 First, find the eigenvalues:
 
-\begin{equation}
-|A-\lambda I| = \begin{bmatrix} 6 - \lambda & 2 & -2 \\ 2 & 5 - \lambda & 0 \\ -2 & 0 & 7 - \lambda \end{bmatrix} = -2 \begin{bmatrix} 2 & -2 \\ 0 & 7 - \lambda \end{bmatrix} + (5 - \lambda) \begin{bmatrix} 6 - \lambda & -2 \\ -2 & 7 - \lambda \end{bmatrix}
-\end{equation}
-
-\begin{equation}
-(-2)(2)(7 - \lambda) + (5 - \lambda)[(\lambda - 6)(\lambda - 7) - 4] = -\lambda^3 + 18\lambda^2 - 99\lambda + 162 = 0
-\end{equation}
+\begin{align}
+|A-\lambda I| &= \begin{bmatrix} 6 - \lambda & 2 & -2 \\ 2 & 5 - \lambda & 0 \\ -2 & 0 & 7 - \lambda \end{bmatrix} \\
+ &= -2 \begin{bmatrix} 2 & -2 \\ 0 & 7 - \lambda \end{bmatrix} + (5 - \lambda) \begin{bmatrix} 6 - \lambda & -2 \\ -2 & 7 - \lambda \end{bmatrix} \\
+ &= (-2)(2)(7 - \lambda) + (5 - \lambda)[(\lambda - 6)(\lambda - 7) - 4] \\ 
+ &= -\lambda^3 + 18\lambda^2 - 99\lambda + 162 = 0
+\end{align}
 
 \begin{align}
 \lambda_1 &= 9 \\
