@@ -157,6 +157,7 @@ c(t) &= \frac{A}{k}
 ````
 
 ## Skill Builder
+```{problem}
 1.Solve the differential equation:
    \begin{align}
 y' = -\frac{e^{x+y} + ye^y}{x e^y - 1}
