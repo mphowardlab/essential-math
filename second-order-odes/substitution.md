@@ -1,5 +1,5 @@
 # Systems of first-order ordinary differential equations
-## ODES involving second derivatives appear often in engineering because of their role in physical processes
+# ODES involving second derivatives appear often in engineering because of their role in physical processes
 - Newton's second law : $F=ma$
     - $a = acceleration$
     - $a = v'$
@@ -42,9 +42,11 @@ Ex: Incompressible flow in a cylinder (momentum transport)
 
 <img src="https://github.com/user-attachments/assets/cc9937aa-c09f-46ed-a159-edaad1f20dc6" alt="Your Image" width="500"/>
 
-$$
 
- Navier-Stokes equation reduces to
+
+Navier-Stokes equation reduces to
+
+$$
 
 \begin{aligned}
 &\mu \frac{1}{r} \frac{d}{dr} \left( r \frac{du_z}{dr} \right) = -\frac{\Delta P}{L} \\
@@ -54,6 +56,7 @@ $$
 &\int du_z = \int \left( -\frac{1}{2\mu} \frac{\Delta P}{L} r + \frac{C_1}{r} \right) dr 
 \to u_z = -\frac{1}{4\mu} \frac{\Delta P}{L} r^2 + C_1 \ln(r) + C_2
 \end{aligned}
+
 
 $$
 
@@ -82,9 +85,10 @@ $$.
 
 Either way,
 
-    $$
-    C_1 = 0
-    $$. So,
-    $$
-    u_z(r)=\frac{1}{4μ}\frac{△P}{L}(R^2-r^2)
-    $$
+$$
+C_1 = 0
+$$. So,
+
+$$
+u_z(r)=\frac{1}{4μ}\frac{△P}{L}(R^2-r^2)
+$$
