@@ -34,7 +34,7 @@ u' &= 1 & v' &= 1
 
 This example is a little silly, but the product rule is a life saver for functions that are hard to expand!
 \begin{equation}
-$f(x) = \underbrace{(x+1)}_u \cdot \underbrace{(2x^2+5)(5x^3-4)}_v$
+f(x) = \underbrace{(x+1)}_u \cdot \underbrace{(2x^2+5)(5x^3-4)}_v
 \end{equation}
 \begin{align}
 u &= x+1   and  v &= (2x^2+5)(5x^3-4) \\
