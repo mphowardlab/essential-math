@@ -35,7 +35,7 @@ How do we solve this? Hard in general, but in this case, we can work in order!
    c_{\rm A} = c_{{\rm A}, 0} e^{-k_1 t}
    \end{equation}
 
-2. Next, solve $\dd{}{c_{\rm B}}{t}$ by substituting in $c_{\rn A}:
+2. Next, solve $\dd{}{c_{\rm B}}{t}$ by substituting in $c_{\rm B}$:
    \begin{align}
    \dd{}{c_{\rm B}}{t}=k_{1} c_{A,0}e^{-k_{1}t} -k_{2} C_{B}
 \begin{align}
