@@ -405,7 +405,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -421,6 +423,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill-builder-problems">6.4.1. Skill builder problems</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -432,20 +442,76 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="numerical-solution-methods">
 <h1><span class="section-number">6.4. </span>Numerical solution methods<a class="headerlink" href="#numerical-solution-methods" title="Link to this heading">#</a></h1>
-<p>Determine <span class="math notranslate nohighlight">\(y_1(5)\)</span> and <span class="math notranslate nohighlight">\(y_2(5)\)</span> for</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1ceaa8c8-e2e5-448d-b098-e80e61ab5436">
-<span class="eqno">(6.39)<a class="headerlink" href="#equation-1ceaa8c8-e2e5-448d-b098-e80e61ab5436" title="Permalink to this equation">#</a></span>\[\begin{equation}
-y'_1 = \frac{2}{3} y_1 - \frac{4}{3} y_1 y_2 \hspace{1cm} y(0) = 1.5
+<p>Systems of first-order ODEs can also be solved numerically using similar
+approaches as for
+<a class="reference internal" href="../first-order-odes/numerical-solution.html"><span class="std std-doc">single first-order ODEs</span></a>, but now
+all dependent variables must be advanced simultaneously. The methods we use
+for single first-order ODES can be straightforwardly extended to systems using
+the explicit-form vector notation <span class="math notranslate nohighlight">\(\vv{y}' = \vv{f}(t, \vv{y})\)</span>. For example,
+Euler’s method becomes:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-017f4be5-8d24-48fc-aefc-aaf965a096be">
+<span class="eqno">(6.48)<a class="headerlink" href="#equation-017f4be5-8d24-48fc-aefc-aaf965a096be" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\vv{y}(t+\Delta t) \approx \vv{y}(t) + \vv{f}(t, \vv{y}) \Delta t
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-e2b9915f-27b2-4036-86ed-6eafce244d64">
-<span class="eqno">(6.40)<a class="headerlink" href="#equation-e2b9915f-27b2-4036-86ed-6eafce244d64" title="Permalink to this equation">#</a></span>\[\begin{equation}
-y'_2 = y_1 y_2 - y_2 \hspace{1.5cm} y(0) = 1 
+<p>We are “just” adding columns to our calculations!</p>
+<div class="admonition-example-first-order-reaction-in-a-draining-tank admonition">
+<p class="admonition-title">Example: First-order reaction in a draining tank</p>
+<p>A first-order reaction (rate constant <em>k</em>) is taking place in a tank that is
+initially 1 M concentration in the reactant A and has 10 L of solution. A feed
+stream that has a reactant concentration of 1 M enters at 1 L / min, while
+well-mixed solution exits at 2 L / min.</p>
+<a class="reference internal image-reference" href="../_images/euler_diagram.png"><img alt="Reactions in draining tank." class="align-center" src="../_images/euler_diagram.png" style="width: 300px;" />
+</a>
+<p>Estimate the concentration of A after 1 minute if <span class="math notranslate nohighlight">\(k = 0.5/{\rm min}\)</span>.</p>
+<hr class="docutils" />
+<p>Start from an unsteady mole balance on A:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8cf65e47-3bba-47ce-866b-afa034faab9d">
+<span class="eqno">(6.49)<a class="headerlink" href="#equation-8cf65e47-3bba-47ce-866b-afa034faab9d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\dd{}{n_{\rm A}}{t} = \dot n_{{\rm A},{\rm in}} - \dot n_{{\rm A},{\rm out}} +
+  r_A V
 \end{equation}\]</div>
-<p>using the Euler method with <span class="math notranslate nohighlight">\(\Delta t = 0.5\)</span>. Compare to ode45.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b36518a8-5ae3-43ea-9937-24c7daecd262">
-<span class="eqno">(6.41)<a class="headerlink" href="#equation-b36518a8-5ae3-43ea-9937-24c7daecd262" title="Permalink to this equation">#</a></span>\[\begin{equation}
-f_1 = \frac{2}{3} y_1 - \frac{4}{3} y_1 y_2 \hspace{.5cm} f_2 = y_1 y_2 - y_2 \hspace{.5cm} \vv{y}(t+\Delta t) \approx \vv{y}(t) + \vv{f}(t, \vv{y}) \Delta tn
-\end{equation}\]</div>
+<p>The number of moles in the tank, the molar flow rate in, and the molar flow
+rate out are:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7b08fe66-fbbe-407d-ad83-981f1dad9548">
+<span class="eqno">(6.50)<a class="headerlink" href="#equation-7b08fe66-fbbe-407d-ad83-981f1dad9548" title="Permalink to this equation">#</a></span>\[\begin{align}
+n_{\rm A} &amp;= c_{\rm A} V \\
+\dot n_{{\rm A},{\rm in}} &amp;= c_{{\rm A},{\rm in}} \dot V_{\rm in} = 1 \\
+\dot n_{{\rm A},{\rm out}} &amp;= c_{\rm A} \dot V_{\rm out}  = 2c_A
+\end{align}\]</div>
+<p>so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7ba2dba0-cc35-4e4c-a67e-e35b770e06f6">
+<span class="eqno">(6.51)<a class="headerlink" href="#equation-7ba2dba0-cc35-4e4c-a67e-e35b770e06f6" title="Permalink to this equation">#</a></span>\[\begin{align}
+\dd{}{(Vc_{\rm A})}{t} &amp;= 1 - 2 c_A - k c_A V \\
+V \dd{}{c_{\rm A}}{t} + c_{\rm A} \dd{}{V}{t} &amp;= 1 - 2 c_A - k c_A V
+\end{align}\]</div>
+<p>Since the volume <em>V</em> is changing, write a mass balance on the tank assuming
+that the solution density <span class="math notranslate nohighlight">\(\rho\)</span> does not depend on concentration:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d05a4be0-7c68-45e3-883e-1aec7b446ad3">
+<span class="eqno">(6.52)<a class="headerlink" href="#equation-d05a4be0-7c68-45e3-883e-1aec7b446ad3" title="Permalink to this equation">#</a></span>\[\begin{align}
+\dd{}{m}{t} = \dot m_{\rm in} - \dot m_{\rm out}
+\end{align}\]</div>
+<p>with the mass in the tank, mass flow rate in, and mass flow rate out:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-021bca81-d2f6-4e0e-9e56-a6f67442811a">
+<span class="eqno">(6.53)<a class="headerlink" href="#equation-021bca81-d2f6-4e0e-9e56-a6f67442811a" title="Permalink to this equation">#</a></span>\[\begin{align}
+m &amp;= \rho V \\
+\dot m_{\rm in} &amp;= \rho \dot V_{\rm in} = \rho \\
+\dot m_{\rm out} &amp;= \rho \dot V_{\rm out} = 2 \rho
+\end{align}\]</div>
+<p>so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-06d44c24-d252-4d89-a0fd-da3eb9c0fbaf">
+<span class="eqno">(6.54)<a class="headerlink" href="#equation-06d44c24-d252-4d89-a0fd-da3eb9c0fbaf" title="Permalink to this equation">#</a></span>\[\begin{align}
+\dd{}{(V\rho)}{t} = \rho \dd{}{V}{t} &amp;= -\rho \\
+\dd{}{V}{t} &amp;= - 1
+\end{align}\]</div>
+<p>Substituting for <span class="math notranslate nohighlight">\(\dd{}{V}{t}\)</span> in the unsteady mole balance and rearranging
+gives the system of first-order ODES:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-417e339f-651c-4ebf-a2dd-f01511c1be28">
+<span class="eqno">(6.55)<a class="headerlink" href="#equation-417e339f-651c-4ebf-a2dd-f01511c1be28" title="Permalink to this equation">#</a></span>\[\begin{align}
+\dd{}{c_{\rm A}}{t} &amp;= \frac{1}{V}
+  \left(1 - c_A - 0.5Vc_A\right),&amp; c_{\rm A}(0) &amp;= 1 \\
+\dd{}{V}{t} &amp;= -1, &amp; V(0) &amp;= 10
+\end{align}\]</div>
+<p>Calling <span class="math notranslate nohighlight">\(y_1 = c_{\rm A}\)</span> and <span class="math notranslate nohighlight">\(y_2 = V\)</span>:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(n\)</span></p></th>
@@ -459,90 +525,162 @@ f_1 = \frac{2}{3} y_1 - \frac{4}{3} y_1 y_2 \hspace{.5cm} f_2 = y_1 y_2 - y_2 \h
 <tbody>
 <tr class="row-even"><td><p>0</p></td>
 <td><p>0</p></td>
-<td><p>1.500</p></td>
-<td><p>1.000</p></td>
-<td><p>-1.000</p></td>
-<td><p>0.500</p></td>
+<td><p>1</p></td>
+<td><p>10</p></td>
+<td><p>-0.5</p></td>
+<td><p>-1</p></td>
 </tr>
 <tr class="row-odd"><td><p>1</p></td>
-<td><p>0.5</p></td>
-<td><p>1.000</p></td>
-<td><p>1.250</p></td>
-<td><p>-1.000</p></td>
-<td><p>0.000</p></td>
+<td><p>0.2</p></td>
+<td><p>0.9</p></td>
+<td><p>9.8</p></td>
+<td><p>-0.4398</p></td>
+<td><p>-1</p></td>
 </tr>
 <tr class="row-even"><td><p>2</p></td>
-<td><p>1.0</p></td>
-<td><p>0.500</p></td>
-<td><p>1.250</p></td>
-<td><p>-0.500</p></td>
-<td><p>-0.625</p></td>
+<td><p>0.4</p></td>
+<td><p>0.8120</p></td>
+<td><p>9.6</p></td>
+<td><p>-0.3864</p></td>
+<td><p>-1</p></td>
 </tr>
 <tr class="row-odd"><td><p>3</p></td>
-<td><p>1.5</p></td>
-<td><p>0.250</p></td>
-<td><p>0.938</p></td>
-<td><p>-0.146</p></td>
-<td><p>-0.703</p></td>
+<td><p>0.6</p></td>
+<td><p>0.7347</p></td>
+<td><p>9.4</p></td>
+<td><p>-0.3389</p></td>
+<td><p>-1</p></td>
 </tr>
 <tr class="row-even"><td><p>4</p></td>
-<td><p>2.0</p></td>
-<td><p>0.177</p></td>
-<td><p>0.586</p></td>
-<td><p>-0.020</p></td>
-<td><p>-0.482</p></td>
+<td><p>0.8</p></td>
+<td><p>0.6669</p></td>
+<td><p>9.2</p></td>
+<td><p>-0.2972</p></td>
+<td><p>-1</p></td>
 </tr>
 <tr class="row-odd"><td><p>5</p></td>
-<td><p>2.5</p></td>
-<td><p>0.167</p></td>
-<td><p>0.345</p></td>
-<td><p>0.035</p></td>
-<td><p>-0.287</p></td>
-</tr>
-<tr class="row-even"><td><p>6</p></td>
-<td><p>3.0</p></td>
-<td><p>0.184</p></td>
-<td><p>0.201</p></td>
-<td><p>0.073</p></td>
-<td><p>-0.164</p></td>
-</tr>
-<tr class="row-odd"><td><p>7</p></td>
-<td><p>3.5</p></td>
-<td><p>0.221</p></td>
-<td><p>0.120</p></td>
-<td><p>0.112</p></td>
-<td><p>-0.093</p></td>
-</tr>
-<tr class="row-even"><td><p>8</p></td>
-<td><p>4.0</p></td>
-<td><p>0.277</p></td>
-<td><p>0.073</p></td>
-<td><p>0.158</p></td>
-<td><p>-0.053</p></td>
-</tr>
-<tr class="row-odd"><td><p>9</p></td>
-<td><p>4.5</p></td>
-<td><p>0.356</p></td>
-<td><p>0.046</p></td>
-<td><p>0.215</p></td>
-<td><p>-0.030</p></td>
-</tr>
-<tr class="row-even"><td><p>10</p></td>
-<td><p>5.0</p></td>
-<td><p>0.464</p></td>
-<td><p>0.032</p></td>
+<td><p>1.0</p></td>
+<td><p>.6075</p></td>
+<td><p>9</p></td>
 <td><p></p></td>
 <td><p></p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="amsmath math notranslate nohighlight" id="equation-cbb161b8-8dba-4885-b2dc-7f9e5c7dbbe2">
-<span class="eqno">(6.42)<a class="headerlink" href="#equation-cbb161b8-8dba-4885-b2dc-7f9e5c7dbbe2" title="Permalink to this equation">#</a></span>\[\begin{equation}
-y_1(5) = 0.464 \hspace{1cm} y_2(5) = 0.032
-\end{equation}\]</div>
-<p>MATLAB(see attached) gives <span class="math notranslate nohighlight">\(y_1(5) = 0.888\)</span> and <span class="math notranslate nohighlight">\(y_2(5) = 0.165\)</span>.
-Hence, the absolute errors are 0.424 and 0.133 for <span class="math notranslate nohighlight">\(y_1\)</span> and <span class="math notranslate nohighlight">\(y_2\)</span> respectively.</p>
+<p>The concentration after 1 minute is approximately 0.6 M.</p>
+</div>
+<section id="skill-builder-problems">
+<h2><span class="section-number">6.4.1. </span>Skill builder problems<a class="headerlink" href="#skill-builder-problems" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p>Determine <span class="math notranslate nohighlight">\(y_1(5)\)</span> and <span class="math notranslate nohighlight">\(y_2(5)\)</span> for</p>
+<div class="amsmath math notranslate nohighlight" id="equation-31dd2f98-ed1a-471a-8895-213061c4b00c">
+<span class="eqno">(6.56)<a class="headerlink" href="#equation-31dd2f98-ed1a-471a-8895-213061c4b00c" title="Permalink to this equation">#</a></span>\[\begin{align}
+y'_1 &amp;= \frac{2}{3} y_1 - \frac{4}{3} y_1 y_2, &amp; y(0) &amp;= 1.5 \\
+y'_2 &amp;= y_1 y_2 - y_2, &amp; y(0) &amp;= 1
+\end{align}\]</div>
+<p>using the Euler method with <span class="math notranslate nohighlight">\(\Delta t = 0.5\)</span>.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The ODE is already in explicit form, so start solving from the initial
+condition.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p class="sd-card-text"><span class="math notranslate nohighlight">\(n\)</span></p></th>
+<th class="head"><p class="sd-card-text"><span class="math notranslate nohighlight">\(t\)</span></p></th>
+<th class="head"><p class="sd-card-text"><span class="math notranslate nohighlight">\(y_1\)</span></p></th>
+<th class="head"><p class="sd-card-text"><span class="math notranslate nohighlight">\(y_2\)</span></p></th>
+<th class="head"><p class="sd-card-text"><span class="math notranslate nohighlight">\(f_1\)</span></p></th>
+<th class="head"><p class="sd-card-text"><span class="math notranslate nohighlight">\(f_2\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p class="sd-card-text">0</p></td>
+<td><p class="sd-card-text">0</p></td>
+<td><p class="sd-card-text">1.500</p></td>
+<td><p class="sd-card-text">1.000</p></td>
+<td><p class="sd-card-text">-1.000</p></td>
+<td><p class="sd-card-text">0.500</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">1</p></td>
+<td><p class="sd-card-text">0.5</p></td>
+<td><p class="sd-card-text">1.000</p></td>
+<td><p class="sd-card-text">1.250</p></td>
+<td><p class="sd-card-text">-1.000</p></td>
+<td><p class="sd-card-text">0.000</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">2</p></td>
+<td><p class="sd-card-text">1.0</p></td>
+<td><p class="sd-card-text">0.500</p></td>
+<td><p class="sd-card-text">1.250</p></td>
+<td><p class="sd-card-text">-0.500</p></td>
+<td><p class="sd-card-text">-0.625</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">3</p></td>
+<td><p class="sd-card-text">1.5</p></td>
+<td><p class="sd-card-text">0.250</p></td>
+<td><p class="sd-card-text">0.938</p></td>
+<td><p class="sd-card-text">-0.146</p></td>
+<td><p class="sd-card-text">-0.703</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">4</p></td>
+<td><p class="sd-card-text">2.0</p></td>
+<td><p class="sd-card-text">0.177</p></td>
+<td><p class="sd-card-text">0.586</p></td>
+<td><p class="sd-card-text">-0.020</p></td>
+<td><p class="sd-card-text">-0.482</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">5</p></td>
+<td><p class="sd-card-text">2.5</p></td>
+<td><p class="sd-card-text">0.167</p></td>
+<td><p class="sd-card-text">0.345</p></td>
+<td><p class="sd-card-text">0.035</p></td>
+<td><p class="sd-card-text">-0.287</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">6</p></td>
+<td><p class="sd-card-text">3.0</p></td>
+<td><p class="sd-card-text">0.184</p></td>
+<td><p class="sd-card-text">0.201</p></td>
+<td><p class="sd-card-text">0.073</p></td>
+<td><p class="sd-card-text">-0.164</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">7</p></td>
+<td><p class="sd-card-text">3.5</p></td>
+<td><p class="sd-card-text">0.221</p></td>
+<td><p class="sd-card-text">0.120</p></td>
+<td><p class="sd-card-text">0.112</p></td>
+<td><p class="sd-card-text">-0.093</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">8</p></td>
+<td><p class="sd-card-text">4.0</p></td>
+<td><p class="sd-card-text">0.277</p></td>
+<td><p class="sd-card-text">0.073</p></td>
+<td><p class="sd-card-text">0.158</p></td>
+<td><p class="sd-card-text">-0.053</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">9</p></td>
+<td><p class="sd-card-text">4.5</p></td>
+<td><p class="sd-card-text">0.356</p></td>
+<td><p class="sd-card-text">0.046</p></td>
+<td><p class="sd-card-text">0.215</p></td>
+<td><p class="sd-card-text">-0.030</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">10</p></td>
+<td><p class="sd-card-text">5.0</p></td>
+<td><p class="sd-card-text">0.464</p></td>
+<td><p class="sd-card-text">0.032</p></td>
+<td><p class="sd-card-text"></p></td>
+<td><p class="sd-card-text"></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="sd-card-text">The final result is <span class="math notranslate nohighlight">\(y_1(5) = 0.464\)</span> and <span class="math notranslate nohighlight">\(y_2(5) = 0.032\)</span>.</p>
+</div>
+</details></li>
+</ol>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -599,6 +737,21 @@ Hence, the absolute errors are 0.424 and 0.133 for <span class="math notranslate
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill-builder-problems">6.4.1. Skill builder problems</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
