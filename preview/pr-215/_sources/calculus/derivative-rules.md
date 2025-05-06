@@ -13,7 +13,7 @@ f^{'}(x) &= 3\frac{d}{dx}(\cos{x})+4\frac{d}{dx}(\sin{x})\\
 u &= \sin{x} \quad v = \cos{x}\\
 u^{'} &= \cos{x} \quad v^{'} = -\sin{x}\\
 &= 2[\sin{x}(-\sin{x})+\cos{x}(\cos{x})]\\
-&= 2(\cos{x}^{2}-\sin^2{x})\\
+&= 2(\cos{x}^{2}-\sin^{2}{x})\\
 &= 2\cos{2x}\\
 \end{align}
 
@@ -28,9 +28,9 @@ f^{'}(x) &= \cos{u}u^{'}\\
 \begin{align}
 (4) \quad f(x) &= \tan{(x^{2}+2x+3)}\\
 u &= x^{2}+2x+3 \quad f(u) = \tan{u}\\
-u^{'} &= 2x+2 \quad f^{'}(u) = \sec^{'}{u}\\
+u^{'} &= 2x+2 \quad f^{'}(u) = \sec^{2}{u}\\
 f^{'}(x) &= \sec^{2}{u}u^{'}\\
-&= (2x+2)\sec^{'}{(x^{2}+2x+3)}\\
+&= (2x+2)\sec^{2}{(x^{2}+2x+3)}\\
 \end{align}
 
 \begin{align}
