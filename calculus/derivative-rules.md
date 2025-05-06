@@ -95,8 +95,8 @@ All of these follow from knowing only two derivatives: $\sin(x)$ and $\cos(x)$!
 
 \begin{align}
 f(x) = \tan(x) \frac{\sin(x)}{\cos(x)} \\
-u = \sin(x) \; v = \cos(x) \\
-u' = \cos(x) \; v' = -\sin(x) \\ 
+u = \sin(x) \hspace{2cm} v = \cos(x) \\
+u' = \cos(x) \hspace{2cm} v' = -\sin(x) \\ 
 f'(x) = \frac{\cos(\cos(x)) - \sin(-\sin(x))}{\cos^2(x)} = \frac{\sin^2(x) + \cos^2(x)}{\cos^2(x)} = \frac{1}{\cos^2(x)} = \sec^2(x)
 \end{align}
 
@@ -104,8 +104,8 @@ f'(x) = \frac{\cos(\cos(x)) - \sin(-\sin(x))}{\cos^2(x)} = \frac{\sin^2(x) + \co
 
 \begin{align}
 f(x) = \csc(x) = (\sin(x))^{-1} \\
-u = \sin(x) \; f(u) = u^{-1} \\
-u'(x) = \cos(x) \; f'(u) = -u^{-2} \\
+u = \sin(x) \hspace{2cm} f(u) = u^{-1} \\
+u'(x) = \cos(x) \hspace{2cm} f'(u) = -u^{-2} \\
 f'(x) = -u^{-2} u' = -\cos (\sin(x))^{-2} = \frac{-1}{\sin(x)} \frac{\cos(x)}{\sin(x)} = -\csc(x) \cot(x)
 \end{align}
 
