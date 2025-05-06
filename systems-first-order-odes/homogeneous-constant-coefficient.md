@@ -305,14 +305,20 @@ type of critical point using the eigenvalues.
 
    For $\lambda_1 = 4i$,
 
-   \begin{bmatrix} -4i & 4 \\ -4 & -4i \end{bmatrix} x_1 = 0
-   \Rightarrow x_1 = \begin{bmatrix} -i \\ 1 \end{bmatrix}
+   \begin{equation}
+   \vv{A}-\lambda_1\vv{I} =
+   \begin{bmatrix} -4i & 4 \\ -4 & -4i \end{bmatrix}
+   \to \vv{x}_1 = \begin{bmatrix} -i \\ 1 \end{bmatrix}
+   \end{equation}
 
 
    For $\lambda_2 = -4i$,
 
-   \begin{bmatrix} 4i & 4 \\ -4 & 4i \end{bmatrix} x_2 = 0
-   \Rightarrow x_2 = \begin{bmatrix} i \\ 1 \end{bmatrix}
+   \begin{equation}
+   \vv{A}-\lambda_2\vv{I} =
+   \begin{bmatrix} 4i & 4 \\ -4 & 4i \end{bmatrix}
+   \to \vv{x}_2 = \begin{bmatrix} i \\ 1 \end{bmatrix}
+   \end{equation}
 
    The general solution is:
 
@@ -324,42 +330,36 @@ type of critical point using the eigenvalues.
    To solve for the initial condition, form the augmented matrix for
    $\vv{X}\vv{c} = \vv{y}(0)$,
 
-   $$
-   \left[
-   \begin{array}{cc|c}
+   \begin{align}
+   \begin{bmatrix}
    -i & i & 1 \\
    1 & 1 & 0
-   \end{array}
-   \right]
-   \rightarrow
-   \left[
-   \begin{array}{cc|c}
+   \end{bmatrix}
+   \begin{matrix} {\rm swap} \\ \vphantom{R_2}\end{matrix}
+   &\to
+   \begin{bmatrix}
    1 & 1 & 0 \\
    -i & i & 1
-   \end{array}
-   \right]
-   \rightarrow
-   \left[
-   \begin{array}{cc|c}
+   \end{bmatrix}
+   \begin{matrix} \vphantom{R_1} \\ -R_1 \end{matrix} \\
+   &\to
+   \begin{bmatrix}
    1 & 1 & 0 \\
    0 & 2i & 1
-   \end{array}
-   \right]
-   \rightarrow
-   \left[
-   \begin{array}{cc|c}
+   \end{bmatrix}
+   \begin{matrix} \vphantom{R_1} \\ \div 2i \end{matrix} \\
+   &\to
+   \begin{bmatrix}
    1 & 1 & 0 \\
    0 & 1 & \frac{1}{2i}
-   \end{array}
-   \right]
-   \rightarrow
-   \left[
-   \begin{array}{cc|c}
+   \end{bmatrix}
+   \begin{matrix} -R_2 \\ \vphantom{R_2} \end{matrix} \\
+   &\to
+   \begin{bmatrix}
    1 & 0 & -\frac{1}{2i} \\
    0 & 1 & \frac{1}{2i}
-   \end{array}
-   \right]
-   $$
+   \end{bmatrix}
+   \end{align}
 
    so $c_1 = -1/(2i) = i/2$ and $c_2 = 1/(2i) = -i/2$ and
 
