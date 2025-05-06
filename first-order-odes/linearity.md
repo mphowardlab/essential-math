@@ -1,21 +1,25 @@
 # Linearity
 ```{example} Reaction network
+
 We are analyzing a simple reaction sequence:
 \begin{equation}
 A \xrightarrow{k_1} B \xrightarrow{k_2} C
 \end{equation}
+
 At $t = 0$, only species *A* is present at concentration  $c_{{\rm A},0}$. We set up the differential equations:
 \begin{align}
 \dd{}{c_{\rm A}}{t} &= -k_{1} c_{\rm A} \\
 \dd{}{c_{\rm B}}{t} &= k_{1} c_{\rm A} - k_{2} c_{\rm B} \\
 \dd{}{c_{\rm C}}{t} &= k_{2} c_{\rm B}
 \end{align}
+
 The equations can be represented in matrix form:
 \begin{equation}
 \vv{c}' = \begin{bmatrix} -k_1 & 0 & 0 \\ k_1 & -k_2 & 0 \\ 0 & k_2 & 0 \end{bmatrix} \vv{c}, \quad
 \vv{c}(0) = \begin{bmatrix} c_{{\rm A},0} \\ 0 \\ 0 \end{bmatrix}
 \end{equation}
 ---
+
 How do we solve this? Hard in general, but in this case, we can work in order!
 1. First, solve $\dd{}{c_{\rm A}}{t}$:
    \begin{equation}
@@ -30,9 +34,12 @@ How do we solve this? Hard in general, but in this case, we can work in order!
    \begin{equation}
    c_{\rm A} = c_{{\rm A}, 0} e^{-k_1 t}
    \end{equation}
- 
-(2) $\frac{dC_B}{dt}= k_{1} c_{A} -k_{2} c_{B} = \frac{dc_B}{dt}= k_{1} c_{A,0}e^{-k_{1}t} -k_{2} C_{B}$\
-$\quad$ $\frac{dC_B}{dt} + k_{2} c_{B}=k_{1} c_{A,0}e^{-k_{1}t}$
+
+2. Next, solve $\dd{}{c_{\rm B}}{t}$ by substituting in $c_{\rn A}:
+   \begin{align}
+   \dd{}{c_{\rm B}}{t}=k_{1} c_{A,0}e^{-k_{1}t} -k_{2} C_{B}
+\begin{align}
+$\quad$ $\frac{dc_B}{dt} + k_{2} c_{B}=k_{1} c_{A,0}e^{-k_{1}t}$
 
 $\qquad$ Integrating factor: $F= e^{\int p\ dt} = e^{\int k_{2}\ dt} = e^{k_{2}t}$\
  $\qquad$ $\int Fr\ dt = \int e^{k_{2}t}k_{1}c_{A,0}e^{-k_{1}t}\ dt= k_{1}c_{A,0} \int e^{(k_{2}-k_{1})t}\ dt = \frac{k_{1}c_{A,0}}{k_{2}-k_{1}} e^{(k_{2}-k_{1})t}$
