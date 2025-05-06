@@ -57,6 +57,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"d": ["{\\operatorname{d}\\!{#1}}", 1], "dd": ["{\\d{}^{#1} #2 \\over \\d{#3}^{#1}}", 3], "pp": ["{\\partial^{#1} #2 \\over \\partial #3^{#1}}", 3], "td": ["{\\left(\\pp{#1}{#2}{#3} \\right)_{#4}}", 4], "ubar": ["\\underline{#1}", 1], "vv": ["\\mathbf{#1}", 1]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'first-order-odes/integrating-factor';</script>
     <link rel="canonical" href="https://mphowardlab.github.io/essential-math/first-order-odes/integrating-factor.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -215,9 +217,10 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../systems-first-order-odes/index.html">6. Systems of first-order ordinary differential equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/linearity.html">6.1. Linearity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/homogeneous-constant-coefficient.html">6.2. Homogeneous linear first-order ODEs with constant coefficients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/numerical-solution.html">6.3. Numerical solution methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/definition.html">6.1. Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/linearity.html">6.2. Linearity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/homogeneous-constant-coefficient.html">6.3. Homogeneous linear first-order ODEs with constant coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/numerical-solution.html">6.4. Numerical solution methods</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../second-order-odes/index.html">7. Second-order ordinary differential equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -429,6 +432,138 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="integrating-factor">
 <h1><span class="section-number">5.7. </span>Integrating factor<a class="headerlink" href="#integrating-factor" title="Link to this heading">#</a></h1>
+<div class="admonition-example-mole-balance-on-a-tank-with-increasing-inlet-outlet-flow-rate admonition">
+<p class="admonition-title">Example: Mole balance on a tank with increasing inlet/outlet flow rate.</p>
+<p>A stream with concentration <span class="math notranslate nohighlight">\(c_{{\rm f},{\rm A}}\)</span> of solute A flows into a tank
+with initial volume <em>V</em> at a continuously increasing volumetric flow rate
+<span class="math notranslate nohighlight">\(Q = \dot q t\)</span>, where <span class="math notranslate nohighlight">\(\dot q\)</span> is the rate of increase in the flow rate and
+<em>t</em> is time. A well-mixed stream is withdrawn from the tank at the same rate.</p>
+<a class="reference internal image-reference" href="../_images/Integrating_factors_image.jpg"><img alt="Tank with inlet and outlet flows and varying concentrations" class="align-center" src="../_images/Integrating_factors_image.jpg" style="width: 300px;" />
+</a>
+<p>If there are initial <span class="math notranslate nohighlight">\(n_{{\rm A},0}\)</span> moles of the solute, derive an expression
+for the number of moles in the tank <span class="math notranslate nohighlight">\(n_{\rm A}\)</span> as a function of time.</p>
+<hr class="docutils" />
+<p>Formulate overall mole balances based on entering and exit streams.</p>
+<div class="math notranslate nohighlight">
+\[
+\dd{}{n_{\rm A}}{t} = \dot{n}_{{\rm A},\rm{in}} - \dot{n}_{{\rm A},\rm{out}}
+\]</div>
+<p>Replace the molar flowrates with the equivalent concentrations and volumetric
+flow rates</p>
+<div class="amsmath math notranslate nohighlight" id="equation-3d45e8e4-e3be-423d-b12a-6d831dfa15e5">
+<span class="eqno">(5.95)<a class="headerlink" href="#equation-3d45e8e4-e3be-423d-b12a-6d831dfa15e5" title="Permalink to this equation">#</a></span>\[\begin{align}
+\dot{n}_{{\rm A},\rm{in}} &amp;= c_{{\rm f},{\rm A}} Q =
+  c_{{\rm f},{\rm A}} \dot{q}t \\
+\dot{n}_{{\rm A},\rm{out}} &amp;= \frac{n_{\rm A}}{V} Q =
+  \frac{n_{\rm A}}{V} \dot{q}
+\end{align}\]</div>
+<p>so the initial value problem is</p>
+<div class="amsmath math notranslate nohighlight" id="equation-3fa42e6e-4554-4a85-be12-4f17436eca54">
+<span class="eqno">(5.96)<a class="headerlink" href="#equation-3fa42e6e-4554-4a85-be12-4f17436eca54" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\dot{n}_{\rm A} = c_{{\rm f},{\rm A}}\dot{q}t - \frac{n_{\rm A}}{V} \dot{q}t,
+\quad n_{\rm A}(0) = n_{{\rm A},0}
+\end{equation}\]</div>
+<p>Rewrite in standard form</p>
+<div class="amsmath math notranslate nohighlight" id="equation-99ff3e56-6508-4f75-8375-4dd153796ba0">
+<span class="eqno">(5.97)<a class="headerlink" href="#equation-99ff3e56-6508-4f75-8375-4dd153796ba0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\dot{n}_{A} + \left(\frac{\dot{q}t}{V}\right) n_{\rm A} = c_{{\rm f},{\rm A}} \dot{q}t
+\end{equation}\]</div>
+<p>This is a linear first-order ODE with</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f71293c9-9100-4e88-8104-87d82ba81740">
+<span class="eqno">(5.98)<a class="headerlink" href="#equation-f71293c9-9100-4e88-8104-87d82ba81740" title="Permalink to this equation">#</a></span>\[\begin{equation}
+p = \frac{\dot{q}t}{V} \qquad r = c_{{\rm f},{\rm A}} \dot{q}t
+\end{equation}\]</div>
+<p>that can be solved using an integrating factor:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-10b862cb-72e8-40e8-bb95-0c0025dd82a4">
+<span class="eqno">(5.99)<a class="headerlink" href="#equation-10b862cb-72e8-40e8-bb95-0c0025dd82a4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+F = e^{\int p \d{t}} = \exp\left(\int{\frac{\dot{q}t}{V} \d{t}}\right) =
+  \exp\left(\frac{1}{2}\frac{\dot{q} t^2}{V}\right)
+\end{equation}\]</div>
+<p>Then, evaluate the integral</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b1ea384b-f9e6-4d4e-8954-c45943229822">
+<span class="eqno">(5.100)<a class="headerlink" href="#equation-b1ea384b-f9e6-4d4e-8954-c45943229822" title="Permalink to this equation">#</a></span>\[\begin{align}
+\int F r \d{t} &amp;= \int \exp\left(\frac{1}{2}\frac{\dot{q} t^2}{V}\right)
+  c_{{\rm f},{\rm A}}\dot{q}t \d{t} \\
+&amp;= \int{e^{u}c_{{\rm f},{\rm A}}Vdu} \\
+&amp;= c_{{\rm f},{\rm A}}V e^u \\
+&amp;= c_{{\rm f},{\rm A}}V \exp\left(\frac{1}{2}\frac{\dot{q}t^2}{V}\right)
+\end{align}\]</div>
+<p>using the <em>u</em> substitution:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-edf64783-5640-48ad-a83d-8ea4c48b3f85">
+<span class="eqno">(5.101)<a class="headerlink" href="#equation-edf64783-5640-48ad-a83d-8ea4c48b3f85" title="Permalink to this equation">#</a></span>\[\begin{align}
+u &amp;= \frac{1}{2}\frac{\dot{q} t^2}{V} \\
+\d{u} &amp;= \frac{\dot{q} t}{V} \d{t}
+\end{align}\]</div>
+<p>Last, combine the results:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-0377e12f-8c53-4d48-abb4-72e6a2a1bbe9">
+<span class="eqno">(5.102)<a class="headerlink" href="#equation-0377e12f-8c53-4d48-abb4-72e6a2a1bbe9" title="Permalink to this equation">#</a></span>\[\begin{align}
+n_{\rm A}(t) &amp;= \frac{1}{F} \left(\int F r \d{t} + c \right) \\
+&amp;= c_{{\rm f},{\rm A}} V + c \exp\left(-\frac{1}{2}\frac{\dot{q}t^2}{V}\right)
+\end{align}\]</div>
+<p>Use the inital conditions to evaluate the integration constant:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b720ca3d-1395-4f37-969b-d984ccae5a85">
+<span class="eqno">(5.103)<a class="headerlink" href="#equation-b720ca3d-1395-4f37-969b-d984ccae5a85" title="Permalink to this equation">#</a></span>\[\begin{align}
+n_{\rm A}(0) &amp;= c_{{\rm f},{\rm A}}V + c = n_{{\rm A},0} \\
+c &amp;= n_{{\rm A}, 0} - c_{{\rm f},{\rm A}} V
+\end{align}\]</div>
+<p>The final result is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-43809121-4011-40d1-af56-f1d14da3314f">
+<span class="eqno">(5.104)<a class="headerlink" href="#equation-43809121-4011-40d1-af56-f1d14da3314f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+n_{\rm A}(t) = c_{{\rm f},{\rm A}}V + (n_{{\rm A},0} - c_{{\rm f},{\rm A}}V) \exp\left(-\frac{1}{2}\frac{\dot{q}t^2}{V}\right)
+\end{equation}\]</div>
+</div>
+<div class="admonition-example-hormone-level-again admonition">
+<p class="admonition-title">Example: Hormone level (again)</p>
+<p>We had</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7d4a89a5-7e8b-49f0-a4a6-72ba8aaccbc3">
+<span class="eqno">(5.105)<a class="headerlink" href="#equation-7d4a89a5-7e8b-49f0-a4a6-72ba8aaccbc3" title="Permalink to this equation">#</a></span>\[\begin{equation}
+c' + kc = A + B\cos\left(\frac{\pi t}{12}\right), \quad c(0) = c_0
+\end{equation}\]</div>
+<p>This is a linear first-order ODE with:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2d3200da-1b7d-4a08-b92f-ae03df02368a">
+<span class="eqno">(5.106)<a class="headerlink" href="#equation-2d3200da-1b7d-4a08-b92f-ae03df02368a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+p = kc \qquad r = A + B\cos\left(\frac{\pi t}{12}\right)
+\end{equation}\]</div>
+<p>that can be solved using an integrating factor:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-3e70200e-21d1-490d-a720-c9217a22d6a7">
+<span class="eqno">(5.107)<a class="headerlink" href="#equation-3e70200e-21d1-490d-a720-c9217a22d6a7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+F = e^{\int k \d{t}} = e^{kt}
+\end{equation}\]</div>
+<p>Then, evaluate the integral using the table of integrals or integration by parts
+to evaluate the second integral in the equation</p>
+<div class="amsmath math notranslate nohighlight" id="equation-934e19b9-a401-4b1a-ad7d-e8eda7c6ae11">
+<span class="eqno">(5.108)<a class="headerlink" href="#equation-934e19b9-a401-4b1a-ad7d-e8eda7c6ae11" title="Permalink to this equation">#</a></span>\[\begin{align}
+\int F r \d{t} &amp;= \int e^{kt}
+  \left[A+B\cos\left(\frac{\pi t}{12}\right)\right]\d{t} \\
+&amp;= A\int e^{kt} \d{t} + B \int e^{kt} \cos\left(\frac{\pi t}{12}\right)\d{t} \\
+&amp;= \frac{A}{k} e^{kt} + B \frac{e^{kt}}{k^{2}+(\pi/12)^2}
+  \Biggl[k \cos{(\frac{\pi t}{12})} +
+  \frac{\pi}{12}\sin{\left(\frac{\pi t}{12}\right)}\Biggr]
+\end{align}\]</div>
+<p>The general solution is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8902422a-5bdb-4c99-8759-05ec54c5e09e">
+<span class="eqno">(5.109)<a class="headerlink" href="#equation-8902422a-5bdb-4c99-8759-05ec54c5e09e" title="Permalink to this equation">#</a></span>\[\begin{align}
+c(t) &amp;= \frac{1}{F} \left(\int F r \d{t} + c^* \right) \\
+     &amp;= \frac{A}{k} + \frac{B}{k^{2}+(\pi/12)^2}
+  \Biggl[k \cos\left(\frac{\pi t}{12}\right)
+         + \frac{\pi}{12}\sin{\left(\frac{\pi t}{12}\right)}\Biggr]
+  + c^* e^{-kt}
+\end{align}\]</div>
+<p>Use the inital condition to evaluate the integration constant:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-defee692-5b31-4fcc-8eac-f8b2f71075e0">
+<span class="eqno">(5.110)<a class="headerlink" href="#equation-defee692-5b31-4fcc-8eac-f8b2f71075e0" title="Permalink to this equation">#</a></span>\[\begin{align}
+c(0) &amp;= \frac{A}{k} + \frac{B}{k^{2}+(\pi/12)^2} k + c^* = c_0 \\
+c^* &amp;= c_0 - \frac{A}{k} - \frac{B}{k^{2}+(\pi/12)^2} k
+\end{align}\]</div>
+<p>The final solution is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-840cff7f-23b9-4afb-941e-cd3502dfd532">
+<span class="eqno">(5.111)<a class="headerlink" href="#equation-840cff7f-23b9-4afb-941e-cd3502dfd532" title="Permalink to this equation">#</a></span>\[\begin{align}
+c(t) &amp;= \frac{A}{k}
+  + \frac{B}{k^{2}+(\pi/12)^2} \Biggl[k \cos\left(\frac{\pi t}{12}\right) +
+  \frac{\pi}{12}\sin{\left(\frac{\pi t}{12}\right)}\Biggr] \\
+  &amp;+ \Biggl[c_0 - \frac{A}{k} - \frac{Bk}{k^{2}+(\pi/12)^2} \Biggr] e^{-kt}
+\end{align}\]</div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
