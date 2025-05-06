@@ -15,8 +15,8 @@ At $t = 0$, only species *A* is present at concentration  $c_{{\rm A},0}$. We se
 
 The equations can be represented in matrix form:
 \begin{equation}
-\vv{c}' = \begin{bmatrix} -k_1 & 0 & 0 \\ k_1 & -k_2 & 0 \\ 0 & k_2 & 0 \end{bmatrix} \vv{c}, \quad
-\vv{c}(0) = \begin{bmatrix} c_{{\rm A},0} \\ 0 \\ 0 \end{bmatrix}
+\underline{\vv{c}}' = \begin{bmatrix} -k_1 & 0 & 0 \\ k_1 & -k_2 & 0 \\ 0 & k_2 & 0 \end{bmatrix} \underline{\vv{c}}, \quad
+\underline{\vv{c}}(0) = \begin{bmatrix} c_{{\rm A},0} \\ 0 \\ 0 \end{bmatrix}
 \end{equation}
 ---
 
@@ -82,12 +82,12 @@ Plug in the initial value of $c_{\rm B}$:
 What if $k_{1}=k_{2}$?
    Cannot just evaluate since there would be 0/0, so use limits
    \begin{equation}
-   \lim_{k_{2} \to k_{1}} C_{\rm B}= C_{\rm A,0}k_{1} \lim_{k_{2} \to k_{1}} \frac{e^{-k_{1}t}-e^{-k_{2}t}}{k_{2}-k_{1}}
+   \lim_{k_{2} \to k_{1}} c_{\rm B}= c_{\rm A,0}k_{1} \lim_{k_{2} \to k_{1}} \frac{e^{-k_{1}t}-e^{-k_{2}t}}{k_{2}-k_{1}}
    \end{equation}
-   The limit evaluates to 0/0, so use L'Hôpital's Rule
+   Use L'Hôpital's Rule to evaluate
    \begin{align}
-   \lim_{k_{2} \to k_{1}} C_{\rm B}&=C_{\rm A,0}k_{1}\lim_{k_{2} \to k_{1}}\frac {\frac{\partial}{\partial k_{2}}(e^{-k_{1}t}-e^{-k_{2}t})}{\frac{\partial}{\partial k_{2}}(k_{2}-k_{1})}\\
-   &= C_{\rm A,0}k_{1}\lim_{k_{2} \to k_{1}} \frac {te^{-k_{2}t}}{1}\\
-   &= C_{\rm A,0}k_{1}te^{-k_{1}t}
+   \lim_{k_{2} \to k_{1}} c_{\rm B}&=C_{\rm A,0}k_{1}\lim_{k_{2} \to k_{1}}\frac {\frac{\partial}{\partial k_{2}}(e^{-k_{1}t}-e^{-k_{2}t})}{\frac{\partial}{\partial k_{2}}(k_{2}-k_{1})}\\
+   &= c_{\rm A,0}k_{1}\lim_{k_{2} \to k_{1}} \frac {te^{-k_{2}t}}{1}\\
+   &= c_{\rm A,0}k_{1}te^{-k_{1}t}
    \end{align}
 ```
