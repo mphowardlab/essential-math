@@ -48,7 +48,7 @@ examples:
 
 To be differentiable, this limit must exist. A function would not be differentiable at a jump, cusp, coner, or vertical tangent
 
-```{image} ./_images/fx_1_x.png
+```{image} ./_images/IMG_0484.jpeg
 :alt: Function and derivative
 :align: center
 :width: 300px
@@ -79,7 +79,7 @@ The second derivative tells us how to find the first derivative changes.
 
 ```{example} Ballistic motion
 
-```{image} ./_images/fx_x+1.png
+```{image} ./_images/IMG_0484.jpeg
 :alt: Function and derivative
 :align: center
 :width: 300px
