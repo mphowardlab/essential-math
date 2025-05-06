@@ -91,7 +91,7 @@ The results match! Some additional examples:
 
 All of these follow from knowing only two derivatives: $\sin(x)$ and $\cos(x)$!
 
-\mathbf{Proof of derivative of \tan(x)}
+\textbf{Proof of derivative of $\tan(x)$}
 
 \begin{align}
 f(x) = \tan(x) \frac{\sin(x)}{\cos(x)} \\
@@ -100,7 +100,7 @@ u' = \cos(x) \hspace{2cm} v' = -\sin(x) \\
 f'(x) = \frac{\cos(\cos(x)) - \sin(-\sin(x))}{\cos^2(x)} = \frac{\sin^2(x) + \cos^2(x)}{\cos^2(x)} = \frac{1}{\cos^2(x)} = \sec^2(x)
 \end{align}
 
-\mathbf{Proof of derivative of \csc(x)}
+\textbf{Proof of derivative of $\csc(x)$}
 
 \begin{align}
 f(x) = \csc(x) = (\sin(x))^{-1} \\
