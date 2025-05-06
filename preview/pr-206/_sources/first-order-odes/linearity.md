@@ -62,15 +62,15 @@ So,
 
 Plug in the initial value of $c_{\rm B}$:
    \begin{align}
-   c_{\rm B}(0)=0$=\frac{k_{1}c_{\rm A,0}}{k_{2}-k_{1}} + K\\
-   K&=-\frac{k_{1}c_{\km A,0}}{k_{2}-k_{1}}\\
+   c_{\rm B}(0)=0&=\frac{k_{1}c_{\rm A,0}}{k_{2}-k_{1}} + K\\
+   K&=-\frac{k_{1}c_{\rm A,0}}{k_{2}-k_{1}}\\
    c_{\rm B} &=\frac{k_{1}c_{\rm A,0}}{k_{2}-k_{1}}e^{(k_{2}-k_{1})t} -\frac{k_{1}c_{\rm A,0}}{k_{2}-k_{1}}
    \end{align}
 
 3. Finally, use the equation of $c_{\rm B}$ to solve $\dd{}{c_{\rm C}}{t}$:
    \begin{align}
-   \dd{}{c_{\rm C}}{t} $= k_{2} c_{\rm B} \\
-    $=\frac{k_{1}k_{2}c_{\rm A,0}}{k_{2}-k_{1}}(e^{-k_{1}t}-e^{-k_{2}t})
+   \dd{}{c_{\rm C}}{t} &= k_{2} c_{\rm B} \\
+    &=\frac{k_{1}k_{2}c_{\rm A,0}}{k_{2}-k_{1}}(e^{-k_{1}t}-e^{-k_{2}t})
    \end{align}
 
    Integrate both sides and apply initial value of $c_{\rm C}$:
@@ -78,10 +78,16 @@ Plug in the initial value of $c_{\rm B}$:
    c_{\rm C} &=\frac{k_{1}k_{2}c_{\rm A,0}}{k_{2}-k_{1}} \int_0^t (e^{-k_{1}t}-e^{-k_{2}t})\ d{t}\\
    &= c_{\rm A,0}(1- \frac{k_2}{k_{2}-k_{1}}e^{-k_{1}t}+\frac{k_1}{k_{2}-k_{1}}e^{-k_{2}t})
    \end{align}
-
-
-### What if $k_{1}=k_{2}$?
-Cannot just evaluate since there would be 0/0, so use limits
-
-$\lim_{k_{2} \to k_{1}} C_{B}= C_{A,0}k_{1} \lim_{k_{2} \to k_{1}} \frac{e^{-k_{1}t}-e^{-k_{2}t}}{k_{2}-k_{1}}= C_{A,0}k_{1}\lim_{k_{2} \to k_{1}}\frac {\frac{\partial}{\partial k_{2}}(e^{-k_{1}t}-e^{-k_{2}t})}{\frac{\partial}{\partial k_{2}}(k_{2}-k_{1})}$\
-$\qquad$ $\qquad$ $\quad$ $= C_{A,0}k_{1}\lim_{k_{2} \to k_{1}} \frac {te^{-k_{2}t}}{1}= C_{A,0}k_{1}te^{-k_{1}t}$
+---
+What if $k_{1}=k_{2}$?
+   Cannot just evaluate since there would be 0/0, so use limits
+   \begin{equation}
+   \lim_{k_{2} \to k_{1}} C_{\rm B}= C_{\rm A,0}k_{1} \lim_{k_{2} \to k_{1}} \frac{e^{-k_{1}t}-e^{-k_{2}t}}{k_{2}-k_{1}}
+   \end{equation}
+   The limit evaluates to 0/0, so use L'Hôpital's Rule
+   \begin{align}
+   \lim_{k_{2} \to k_{1}} C_{\rm B}&=C_{\rm A,0}k_{1}\lim_{k_{2} \to k_{1}}\frac {\frac{\partial}{\partial k_{2}}(e^{-k_{1}t}-e^{-k_{2}t})}{\frac{\partial}{\partial k_{2}}(k_{2}-k_{1})}\\
+   &= C_{\rm A,0}k_{1}\lim_{k_{2} \to k_{1}} \frac {te^{-k_{2}t}}{1}\\
+   &= C_{\rm A,0}k_{1}te^{-k_{1}t}
+   \end{align}
+```
