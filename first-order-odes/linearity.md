@@ -35,10 +35,10 @@ How do we solve this? Hard in general, but in this case, we can work in order!
    c_{\rm A} = c_{{\rm A}, 0} e^{-k_1 t}
    \end{equation}
 
-2. Next, solve $\dd{}{c_{\rm B}}{t}$ by substituting in $c_{\rm A}$:
+2. Next, use the equation of $c_{\rm A}$ to solve $\dd{}{c_{\rm B}}{t}$:
    \begin{align}
-   \dd{}{c_{\rm B}}{t} &= k_{1} c_{A,0}e^{-k_{1}t} -k_{2} c_{B} \\
-   \dd{}{c_{\rm B}}{t} + k_{2} c_{B}&=k_{1} c_{A,0}e^{-k_{1}t}
+   \dd{}{c_{\rm B}}{t} &= k_{1} c_{\rm A,0}e^{-k_{1}t} -k_{2} c_{\rm B} \\
+   \dd{}{c_{\rm B}}{t} + k_{2} c_{\rm B}&=k_{1} c_{\rm A,0}e^{-k_{1}t}
    \end{align}
 
 Apply the integrating factor:
@@ -49,27 +49,36 @@ Apply the integrating factor:
 such that:
    \begin{align}
    p &=k_{2}\\
-   r &=k_{1} c_{A,0}e^{-k_{1}t}
+   r &=k_{1} c_{\rm A,0}e^{-k_{1}t}
    \end{align}
 So,
    \begin{align}
    F &=e^{\int k_{2}\ d{t}}\\
    F &=e^{k_{2}t}\\
-   c_{\rm B} &=\int e^{k_{2}t}k_{1}c_{A,0}e^{-k_{1}t} \d{t}\\
-   c_{\rm B} &=k_{1}c_{A,0} \int e^{(k_{2}-k_{1})t} \d{t}\\
-   c_{\rm B} &=\frac{k_{1}c_{A,0}}{k_{2}-k_{1}}e^{(k_{2}-k_{1})t + K}
+   c_{\rm B} &=\int e^{k_{2}t}k_{1}c_{\rm A,0}e^{-k_{1}t} \d{t}\\
+    &=k_{1}c_{\rm A,0} \int e^{(k_{2}-k_{1})t} \d{t}\\
+    &=\frac{k_{1}c_{\rm A,0}}{k_{2}-k_{1}}e^{(k_{2}-k_{1})t} + K
    \end{align}
 
 Plug in the initial value of $c_{\rm B}$:
    \begin{align}
-   c_{B}(0)=0=\frac{k_{1}c_{A,0}}{k_{2}-k_{1}} + K\\
-   K=-\frac{k_{1}c_{A,0}}{k_{2}-k_{1}}
+   c_{\rm B}(0)=0$=\frac{k_{1}c_{\rm A,0}}{k_{2}-k_{1}} + K\\
+   K&=-\frac{k_{1}c_{\km A,0}}{k_{2}-k_{1}}\\
+   c_{\rm B} &=\frac{k_{1}c_{\rm A,0}}{k_{2}-k_{1}}e^{(k_{2}-k_{1})t} -\frac{k_{1}c_{\rm A,0}}{k_{2}-k_{1}}
    \end{align}
 
-$\qquad$ $0=c_{B}(0)=\frac{k_{1}c_{A,0}}{k_{2}-k_{1}} + K$ $\xrightarrow{}$ $K=-\frac{k_{1}c_{A,0}}{k_{2}-k_{1}}$
+3. Finally, use the equation of $c_{\rm B}$ to solve $\dd{}{c_{\rm C}}{t}$:
+   \begin{align}
+   \dd{}{c_{\rm C}}{t} $= k_{2} c_{\rm B} \\
+    $=\frac{k_{1}k_{2}c_{\rm A,0}}{k_{2}-k_{1}}(e^{-k_{1}t}-e^{-k_{2}t})
+   \end{align}
 
-(3) $\frac{dC_C}{dt}= k_{2} c_{B}=\frac{k_{1}k_{2}c_{A,0}}{k_{2}-k_{1}}(e^{-k_{1}t}-e^{-k_{2}t})$\
-$\quad$ $c_{C}=\frac{k_{1}k_{2}c_{A,0}}{k_{2}-k_{1}} \int_0^t (e^{-k_{1}t}-e^{-k_{2}t})\ dt = c_{A,0}(1- \frac{k_2}{k_{2}-k_{1}}e^{-k_{1}t}+\frac{k_1}{k_{2}-k_{1}}e^{-k_{2}t})$
+   Integrate both sides and apply initial value of $c_{\rm C}$:
+   \begin{align}
+   c_{\rm C} &=\frac{k_{1}k_{2}c_{\rm A,0}}{k_{2}-k_{1}} \int_0^t (e^{-k_{1}t}-e^{-k_{2}t})\ d{t}\\
+   &= c_{\rm A,0}(1- \frac{k_2}{k_{2}-k_{1}}e^{-k_{1}t}+\frac{k_1}{k_{2}-k_{1}}e^{-k_{2}t})
+   \end{align}
+
 
 ### What if $k_{1}=k_{2}$?
 Cannot just evaluate since there would be 0/0, so use limits
