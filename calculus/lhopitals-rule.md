@@ -48,12 +48,41 @@ Differentiate the numerator and denominator until $\frac{0}{0} does not occur:
 To solve:
 
 \begin{align}
-\lim_{x\to 0\infty} \frac{\ln(x)}{2\sqrt{x}} = \frac{\infty}{\infty}
+\lim_{x\to \infty} \frac{\ln(x)}{2\sqrt{x}} = \frac{\infty}{\infty}
 \end{align}
 
 Begin by differentiating the numerator and denominator until \frac{\infty}{\infty} does not occur:
 \begin{align}
-\lim_{x\to 0\infty} \frac{1/x}{1/\sqrt{x}} = \frac{\infty}{\infty}\\
-\lim_{x\to 0\infty} \frac{1}{\sqrt{x}} = 0
+\lim_{x\to \infty} \frac{1/x}{1/\sqrt{x}} = \frac{\infty}{\infty}\\
+\lim_{x\to \infty} \frac{1}{\sqrt{x}} = 0
 \end{align}
+
+'''
+
+To solve:
+
+\begin{align}
+\lim_{x\to \infty} \frac{e^x}{x^2} = \frac{\infty}{\infty}
+\end{align}
+
+Begin by differentiating the numerator and denominator until \frac{\infty}{\infty} does not occur:
+
+\begin{align}
+\lim_{x\to \infty} \frac{e^x}{2x} = \frac{\infty}{\infty} \\
+\lim_{x\to \infty} \frac{e^x}{2} = \infty
+\end{align}
+
+Other forms can also sometimes be made $\frac{0}{0}$ or $\frac{\infty}{0}
+
+To solve:
+\begin{align}
+\lim_{x\to \infty} xsin(\frac{1}{x}) = \infty \cdot 0 \\
+\lim_{x\to \infty} \frac{sin/x}{\frac{1}{x}} = \frac{0}{0} \\
+\lim_{x\to \infty} \frac{cos(\frac{1}{x})\frac{-1}{x^2}}{\frac{-1}{x^2}} = 1 \\
+\end{align}
+
+Another option to solve this problem is, is to treat $y=\frac{1}{x}$:
+\begin{align}
+\lim_{y\to 0} \frac{sin(y)}{y} = 1
+
 
