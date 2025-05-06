@@ -21,7 +21,7 @@ Continuous Function:
 
 ```
 
-```{topic}If $\lim_{x \to c} f(x) = L$ and $\lim_{x \to c} g(x) = M$ , then
+```{topic} If $\lim_{x \to c} f(x) = L$ and $\lim_{x \to c} g(x) = M$ , then
 
 Sum:
 \begin{equation}
