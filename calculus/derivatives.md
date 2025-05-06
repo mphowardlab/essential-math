@@ -13,7 +13,12 @@ Example:
 
 $$f(x)=x^2, f'(x)=2x$$
 
-$$f''(x)=lim_{h \to 0\frac{f'(x+h)-f'(x)}{h}} = lim_{h \to 0\frac{(2(x+h)-2x)}{h}} = lim_{h \to 0\frac{2h}{2} = 2}$$
+\begin{align}
+f''(x)=lim_{h \to 0}{\frac{f'(x+h)-f'(x)}{h}} \\
+&= lim_{h \to 0}{\frac{(2(x+h)-2x)}{h}} \\
+&= lim_{h \to 0}{\frac{2h}{2}} \\
+= 2
+\end{align}
 
 The second derivative tells us how to find the first derivative changes.
 
