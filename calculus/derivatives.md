@@ -63,7 +63,7 @@ f(x)=x^2, f'(x)=2x
 \end{equation}
 
 \begin{align}
-f''(x)=lim_{h \to 0}{\frac{f'(x+h)-f'(x)}{h}} \\
+f''(x) &= lim_{h \to 0}{\frac{f'(x+h)-f'(x)}{h}} \\
     &= lim_{h \to 0}{\frac{(2(x+h)-2x)}{h}} \\
     &= lim_{h \to 0}{\frac{2h}{2}} \\
     &= 2
@@ -76,13 +76,6 @@ The second derivative tells us how to find the first derivative changes.
 |    x     |    x'    |      x''     |
 |          |    v     |      v'      |
 |          |          |      a       |
-
-\begin{align}
-position & velocity & acceleration \\
-x & x' & x'' \\
-0 & v & v' \\
-0 & 0 & a
-\end{align}
 
 ```{example} Ballistic motion
 
