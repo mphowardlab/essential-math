@@ -181,7 +181,7 @@ Solve the inital value problem $ \vv{y}' = \vv{A}\vv{y}$ with
 $\vv{y}(0) = [1 \quad 0]^{\rm T}$ for the following matrices. Also classify the
 type of critical point using the eigenvalues.
 
-1. Solve:
+1. For:
 
    \begin{equation} \vv{A} =
    \begin{bmatrix}
@@ -233,7 +233,7 @@ type of critical point using the eigenvalues.
    + c_2 e^{-2it} \begin{bmatrix} -i\\ 1 \end{bmatrix}\Biggr)
    \end{align}
 
-   To solve for the initial condition, for the augmented matrix for
+   To solve for the initial condition, form the augmented matrix for
    $\vv{X}\vv{c} = \vv{y}(0)$,
 
    \begin{align}
@@ -279,10 +279,112 @@ type of critical point using the eigenvalues.
    across the rows gives
 
    \begin{align}
-   y_2 &= e^{2t} \cos 2t\\
+   y_1 &= e^{2t} \cos 2t\\
    y_2 &= e^{2t} \sin 2t
    \end{align}
 
    The critical point is an unstable spiral because the eigenvalues are complex,
    and the real part is positive.
+   ```
+
+2. For:
+
+   \begin{equation}
+   \vv{A} = \begin{bmatrix} 0 & 4 \\ -4 & 0 \end{bmatrix}
+   \end{equation}
+
+   ``` {solution}
+   First, find the eigenvalues of **A**:
+
+   \begin{align}
+   |\vv{A} - \lambda \vv{I}|
+   &= \begin{vmatrix} -\lambda & 4 \\ -4 & -\lambda \end{vmatrix} \\
+   &= \lambda^2 + 16 = 0 \\
+   \lambda_{1,2} &= \pm 4i
+   \end{align}
+
+   For $\lambda_1 = 4i$,
+
+   \begin{equation}
+   \vv{A}-\lambda_1\vv{I} =
+   \begin{bmatrix} -4i & 4 \\ -4 & -4i \end{bmatrix}
+   \to \vv{x}_1 = \begin{bmatrix} -i \\ 1 \end{bmatrix}
+   \end{equation}
+
+
+   For $\lambda_2 = -4i$,
+
+   \begin{equation}
+   \vv{A}-\lambda_2\vv{I} =
+   \begin{bmatrix} 4i & 4 \\ -4 & 4i \end{bmatrix}
+   \to \vv{x}_2 = \begin{bmatrix} i \\ 1 \end{bmatrix}
+   \end{equation}
+
+   The general solution is:
+
+   \begin{equation}
+   \vv{y} = c_1 e^{4it} \begin{bmatrix} -i \\ 1 \end{bmatrix} +
+   c_2 e^{-4it} \begin{bmatrix} i \\ 1 \end{bmatrix}
+   \end{equation}
+
+   To solve for the initial condition, form the augmented matrix for
+   $\vv{X}\vv{c} = \vv{y}(0)$,
+
+   \begin{align}
+   \begin{bmatrix}
+   -i & i & 1 \\
+   1 & 1 & 0
+   \end{bmatrix}
+   \begin{matrix} {\rm swap} \\ \vphantom{R_2}\end{matrix}
+   &\to
+   \begin{bmatrix}
+   1 & 1 & 0 \\
+   -i & i & 1
+   \end{bmatrix}
+   \begin{matrix} \vphantom{R_1} \\ -R_1 \end{matrix} \\
+   &\to
+   \begin{bmatrix}
+   1 & 1 & 0 \\
+   0 & 2i & 1
+   \end{bmatrix}
+   \begin{matrix} \vphantom{R_1} \\ \div 2i \end{matrix} \\
+   &\to
+   \begin{bmatrix}
+   1 & 1 & 0 \\
+   0 & 1 & \frac{1}{2i}
+   \end{bmatrix}
+   \begin{matrix} -R_2 \\ \vphantom{R_2} \end{matrix} \\
+   &\to
+   \begin{bmatrix}
+   1 & 0 & -\frac{1}{2i} \\
+   0 & 1 & \frac{1}{2i}
+   \end{bmatrix}
+   \end{align}
+
+   so $c_1 = -1/(2i) = i/2$ and $c_2 = 1/(2i) = -i/2$ and
+
+   \begin{equation}
+   \vv{y} = \frac{i}{2} e^{4it} \begin{bmatrix} -i \\ 1 \end{bmatrix}
+   - \frac{i}{2} e^{-4it} \begin{bmatrix} i \\ 1 \end{bmatrix}
+   \end{equation}
+
+   This solution is acceptable, but we can simplify it further using Euler's
+   identity:
+
+   \begin{align}
+   \vv{y} &= \frac{1}{2} \left( \cos 4t + i \sin 4t \right)
+     \begin{bmatrix} 1 \\ i \end{bmatrix}
+   - \frac{1}{2} \left( \cos 4t - i \sin 4t \right)
+     \begin{bmatrix} -1 \\ i \end{bmatrix} \\
+   &= \begin{bmatrix} \cos 4t \\ -\sin 4t \end{bmatrix}
+   \end{align}
+
+   so
+
+   \begin{align}
+   y_1 &= \cos 4 t \\
+   y_2 &= -\sin 4t
+   \end{align}
+
+   The critial point is a center because the eigenvalues are purely imaginary.
    ```
