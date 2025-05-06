@@ -406,7 +406,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -422,6 +424,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill-builder-problems">7.2.1. Skill builder problems</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -437,44 +447,132 @@ document.write(`
 We will learn how to get <span class="math notranslate nohighlight">\(y_2\)</span> if a <span class="math notranslate nohighlight">\(y_1\)</span> is found (e.g, by guessing).</p>
 <aside class="topic">
 <p class="topic-title">Reduction of Order</p>
-<p>If a solution <span class="math notranslate nohighlight">\(y_1\)</span> of <span class="math notranslate nohighlight">\(y'' + P(x)y' + q(x)y = 0\)</span> is known, then</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9dbef54d-8345-405e-af36-31bd796af03a">
-<span class="eqno">(7.1)<a class="headerlink" href="#equation-9dbef54d-8345-405e-af36-31bd796af03a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<p>If a solution <span class="math notranslate nohighlight">\(y_1\)</span> of <span class="math notranslate nohighlight">\(y'' + p(x) y' + q(x) y = 0\)</span> is known, then</p>
+<div class="amsmath math notranslate nohighlight" id="equation-84ec0090-2d7c-4ca9-86c2-ba4b85d3b884">
+<span class="eqno">(7.1)<a class="headerlink" href="#equation-84ec0090-2d7c-4ca9-86c2-ba4b85d3b884" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_2 &amp;= y_1\int u\d{x} \\
 u &amp;= \frac{1}{y_1^2}\ e^{-\int p\d{x}}
 \end{align}\]</div>
 <p>is another solution.</p>
 </aside>
 <p>For example, to solve:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-af7db812-d32e-4f61-bef0-efdc4a097498">
-<span class="eqno">(7.2)<a class="headerlink" href="#equation-af7db812-d32e-4f61-bef0-efdc4a097498" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-50fed70a-8aeb-40ed-b379-019a262a586c">
+<span class="eqno">(7.2)<a class="headerlink" href="#equation-50fed70a-8aeb-40ed-b379-019a262a586c" title="Permalink to this equation">#</a></span>\[\begin{equation}
 (x^2 - x)y'' - xy' + y = 0
 \end{equation}\]</div>
 <p>We can guess that <span class="math notranslate nohighlight">\(y_1 = x\)</span> is a solution because <span class="math notranslate nohighlight">\(y_1' = 1\)</span> and <span class="math notranslate nohighlight">\(y_1'' = 0\)</span>.
 We can now use reduction of order to find <span class="math notranslate nohighlight">\(y_2\)</span>. First, rewrite the ODE in
 standard form by dividing through by <span class="math notranslate nohighlight">\(x^2-x\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b6af0b41-0c30-45d6-997f-7a84ef85806c">
-<span class="eqno">(7.3)<a class="headerlink" href="#equation-b6af0b41-0c30-45d6-997f-7a84ef85806c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-fc22845e-a608-4ecf-bc06-dacf34818cd0">
+<span class="eqno">(7.3)<a class="headerlink" href="#equation-fc22845e-a608-4ecf-bc06-dacf34818cd0" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y'' + \frac{1}{1 - x} y' + \frac{1}{x^2 - x}y = 0
 \end{equation}\]</div>
 <p>Then, calculate <em>u</em>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-02744dd5-4ea9-44b1-bf70-ccdcb890e0d5">
-<span class="eqno">(7.4)<a class="headerlink" href="#equation-02744dd5-4ea9-44b1-bf70-ccdcb890e0d5" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5a33bcdd-a4aa-44f7-9440-8bae6d429497">
+<span class="eqno">(7.4)<a class="headerlink" href="#equation-5a33bcdd-a4aa-44f7-9440-8bae6d429497" title="Permalink to this equation">#</a></span>\[\begin{align}
 u &amp;= \frac{1}{x^2} \exp\left(-\int \frac{1}{1-x} \d{x} \right) \\
   &amp;= \frac{1}{x^2}\ e^{\ln(1-x)} \\
   &amp;= \frac{1-x}{x^2}
 \end{align}\]</div>
 <p>Finally, integrate <em>u</em> to obtain <span class="math notranslate nohighlight">\(y_2\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a8bdd93b-7f30-44b8-9937-dd61a021e654">
-<span class="eqno">(7.5)<a class="headerlink" href="#equation-a8bdd93b-7f30-44b8-9937-dd61a021e654" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d296b35d-0ad2-4860-bcb0-43ebf56c7bdf">
+<span class="eqno">(7.5)<a class="headerlink" href="#equation-d296b35d-0ad2-4860-bcb0-43ebf56c7bdf" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_2 &amp;= \frac{1}{x^2} \int \left( \frac{1}{x^2} - \frac{1}{x} \right)\d{x} \\
 &amp;= x \left(-\frac{1}{x}-\ln{x}\right)
 \end{align}\]</div>
 <p>Absorbing the minus sign into the unknown coefficient, the general solution is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bceaa52c-a4a8-4a6d-b0cd-15858391511d">
-<span class="eqno">(7.6)<a class="headerlink" href="#equation-bceaa52c-a4a8-4a6d-b0cd-15858391511d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-526de963-8244-4439-af63-c32c58f6316e">
+<span class="eqno">(7.6)<a class="headerlink" href="#equation-526de963-8244-4439-af63-c32c58f6316e" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y = c_1 x + c_2 (1 + \ln x)
 \end{equation}\]</div>
+<section id="skill-builder-problems">
+<h2><span class="section-number">7.2.1. </span>Skill builder problems<a class="headerlink" href="#skill-builder-problems" title="Link to this heading">#</a></h2>
+<p>Solve the following:</p>
+<ol class="arabic">
+<li><p><span class="math notranslate nohighlight">\(xy'' + 2y' + xy = 0\)</span>, given <span class="math notranslate nohighlight">\(y_1 = \cos x / x\)</span></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Rearrange in standard form:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c946033f-238c-4f2f-b0bc-031cc73d676a">
+<span class="eqno">(7.7)<a class="headerlink" href="#equation-c946033f-238c-4f2f-b0bc-031cc73d676a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y'' + \frac{2}{x}y' + y = 0
+\end{equation}\]</div>
+<p class="sd-card-text">This ODE is linear and homogeneous, so use reduction of order for <span class="math notranslate nohighlight">\(y_2\)</span>.
+First compute <em>u</em>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7ce9c76d-2a3e-4587-9323-b2ececdc61e6">
+<span class="eqno">(7.8)<a class="headerlink" href="#equation-7ce9c76d-2a3e-4587-9323-b2ececdc61e6" title="Permalink to this equation">#</a></span>\[\begin{align}
+u &amp;= \frac{1}{y_1^2}e^{-\int p \d{x}} \\
+  &amp;= \frac{x^2}{\cos^2 x} \exp\left(-\int \frac{2}{x} \d{x}\right) \\
+  &amp;= \frac{x^2}{\cos^2 x} \exp\left(-2\ln(x)\right) \\
+  &amp;= \frac{x^2}{\cos^2 x}x^{-2} \\
+  &amp;= \sec^2 x
+\end{align}\]</div>
+<p class="sd-card-text">Then compute <span class="math notranslate nohighlight">\(y_2\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-18054bff-bca6-47e6-8b12-665a7a0b8b7c">
+<span class="eqno">(7.9)<a class="headerlink" href="#equation-18054bff-bca6-47e6-8b12-665a7a0b8b7c" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_{2} &amp;= y_{1} \int u \d{x} \\
+      &amp;= \frac{\cos x}{x} \int \sec^2 x \d{x} \\
+      &amp;= x^{-1}\cos x \tan x \\
+      &amp;= \frac{\sin x}{x}
+\end{align}\]</div>
+<p class="sd-card-text">Hence, the general solution is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-0f82d92d-8225-4985-af7b-615c52749be8">
+<span class="eqno">(7.10)<a class="headerlink" href="#equation-0f82d92d-8225-4985-af7b-615c52749be8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y = c_{1}\frac{\cos x}{x} + c_{2}\frac{\sin x}{x}
+\end{equation}\]</div>
+</div>
+</details></li>
+<li><p><span class="math notranslate nohighlight">\((1-x^2)y'' - 2xy' + 2y = 0\)</span></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">By inspection <span class="math notranslate nohighlight">\(y_{1} = x\)</span> is a solution because <span class="math notranslate nohighlight">\(y_{1}' = 1\)</span> and <span class="math notranslate nohighlight">\(y_{1}'' = 0\)</span>.
+So, find <span class="math notranslate nohighlight">\(y_{2}\)</span> using reduction of order. The standard form of the ODE is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1183a111-4af0-4b3f-b14b-9126b618e822">
+<span class="eqno">(7.11)<a class="headerlink" href="#equation-1183a111-4af0-4b3f-b14b-9126b618e822" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y'' - \frac{2x}{1-x^2}y' + \frac{2}{1-x^2}y = 0
+\end{equation}\]</div>
+<p class="sd-card-text">Now compute <em>u</em></p>
+<div class="amsmath math notranslate nohighlight" id="equation-8bfe32d6-6e05-495a-9cf8-21a7e8650c3e">
+<span class="eqno">(7.12)<a class="headerlink" href="#equation-8bfe32d6-6e05-495a-9cf8-21a7e8650c3e" title="Permalink to this equation">#</a></span>\[\begin{align}
+u &amp;= \frac{1}{y_{2}^2}e^{-\int p \d{x}} \\
+  &amp;= \frac{1}{x^2} \exp\left(\int \frac{2x}{1-x^2} \d{x}\right) \\
+  &amp;= \frac{1}{x^2} \exp\left[-\ln(1 - x^2)\right] \\
+  &amp;= \frac{1}{x^2(1 - x^2)}
+\end{align}\]</div>
+<p class="sd-card-text">Then <span class="math notranslate nohighlight">\(y_2\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6904c3f3-7983-41db-8ec9-a212a3f8d173">
+<span class="eqno">(7.13)<a class="headerlink" href="#equation-6904c3f3-7983-41db-8ec9-a212a3f8d173" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_{2} &amp;= y_{1} \int u \d{x} \\
+      &amp;= x \int \frac{1}{x^2(1 - x^2)} \d{x}
+\end{align}\]</div>
+<p class="sd-card-text">Use partial-fraction decomposition to evaluate the integral:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-537b0f1d-565a-429b-add6-834ec4f076f4">
+<span class="eqno">(7.14)<a class="headerlink" href="#equation-537b0f1d-565a-429b-add6-834ec4f076f4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\frac{1}{x^2(1 - x)(1 + x)} = \frac{A}{x} + \frac{B}{x^2} +
+\frac{C}{1 + x} + \frac{D}{1 - x}
+\end{equation}\]</div>
+<p class="sd-card-text">Use the coverup method to get <span class="math notranslate nohighlight">\(B = 1\)</span>, <span class="math notranslate nohighlight">\(C = 1/2\)</span>, and <span class="math notranslate nohighlight">\(D = 1/2\)</span>. Cross
+multiplying and collecting terms shows that <span class="math notranslate nohighlight">\(A = 0\)</span>. So,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-0279c845-89a0-4321-b9a9-97c5311b7058">
+<span class="eqno">(7.15)<a class="headerlink" href="#equation-0279c845-89a0-4321-b9a9-97c5311b7058" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_2 &amp;= x \int \left[ \frac{1}{x^2} + \frac{1}{2(1 + x)}
+      + \frac{1}{2(1 - x)} \right] \d{x} \\
+    &amp;= x \left[ -\frac{1}{x} + \frac{1}{2}\ln(1 + x)
+- \frac{1}{2}\ln(1 - x) \right] \\
+    &amp;= -1 - \frac{x}{2} \ln \left( \frac{1 - x}{1 + x} \right)
+\end{align}\]</div>
+<p class="sd-card-text">Hence, the general solution is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-48eae69e-dfc8-4508-a843-9f9aaf6fca3c">
+<span class="eqno">(7.16)<a class="headerlink" href="#equation-48eae69e-dfc8-4508-a843-9f9aaf6fca3c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y = c_{1}x + c_{2} \left[ 1 + \frac{x}{2}
+\ln \left( \frac{1 - x}{1 + x} \right) \right]
+\end{equation}\]</div>
+</div>
+</details></li>
+</ol>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -531,6 +629,21 @@ y = c_1 x + c_2 (1 + \ln x)
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill-builder-problems">7.2.1. Skill builder problems</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

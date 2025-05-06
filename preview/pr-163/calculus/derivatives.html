@@ -57,6 +57,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"d": ["{\\operatorname{d}\\!{#1}}", 1], "dd": ["{\\d{}^{#1} #2 \\over \\d{#3}^{#1}}", 3], "pp": ["{\\partial^{#1} #2 \\over \\partial #3^{#1}}", 3], "td": ["{\\left(\\pp{#1}{#2}{#3} \\right)_{#4}}", 4], "ubar": ["\\underline{#1}", 1], "vv": ["\\mathbf{#1}", 1]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'calculus/derivatives';</script>
     <link rel="canonical" href="https://mphowardlab.github.io/essential-math/calculus/derivatives.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -404,7 +406,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -420,6 +424,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formal-definition">1.3.1. Formal definition</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -431,6 +443,47 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="derivatives">
 <h1><span class="section-number">1.3. </span>Derivatives<a class="headerlink" href="#derivatives" title="Link to this heading">#</a></h1>
+<section id="formal-definition">
+<h2><span class="section-number">1.3.1. </span>Formal definition<a class="headerlink" href="#formal-definition" title="Link to this heading">#</a></h2>
+<p>The derivative is also a function!</p>
+<a class="reference internal image-reference" href="../_images/derivative_function.png"><img alt="Function and derivative" class="align-center" src="../_images/derivative_function.png" style="width: 300px;" />
+</a>
+<p>For example, if <span class="math notranslate nohighlight">\(f(x) = x^2\)</span>,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-80355a60-94f4-4707-b125-8053b1eadb20">
+<span class="eqno">(1.28)<a class="headerlink" href="#equation-80355a60-94f4-4707-b125-8053b1eadb20" title="Permalink to this equation">#</a></span>\[\begin{align}
+f'(x) &amp;= \lim_{h \to 0} \frac{(x+h)^2 - x^2}{h} \\
+    &amp;= \lim_{h \to 0} \frac{x^2 + 2xh + h^2 - x^2}{h} \\
+    &amp;= \lim_{h \to 0} \frac{2xh + h^2}{h} \\
+    &amp;= \lim_{h \to 0} (2x + h) \\
+    &amp;= 2x
+\end{align}\]</div>
+<p>This function represents how the slope of the line tangent to <em>f</em> is changing
+with <em>x</em>. For this function, the slope continually increases! Some additional
+examples:</p>
+<ol class="arabic">
+<li><p><span class="math notranslate nohighlight">\(f(x) = (x - 1)^2 + 1\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-3b8644cc-c4bd-48b8-bc5c-476fa6589058">
+<span class="eqno">(1.29)<a class="headerlink" href="#equation-3b8644cc-c4bd-48b8-bc5c-476fa6589058" title="Permalink to this equation">#</a></span>\[\begin{align}
+f'(x) &amp;= \lim_{h \to 0} \frac{[(x + h - 1)^2 + 1] - [(x - 1)^2 + 1]}{h} \\
+    &amp;= \lim_{h \to 0} \frac{(x - 1)^2 +
+       2(x - 1)h + h^2 + 1 - (x - 1)^2 - 1}{h} \\
+    &amp;= \lim_{h \to 0} \frac{2(x - 1)h + h^2}{h} \\
+    &amp;= \lim_{h \to 0} 2(x - 1) + h \\
+    &amp;= 2(x - 1)
+\end{align}\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(f(x) = 1/x\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-da13b22a-d847-4fdf-8790-7ac253544e7c">
+<span class="eqno">(1.30)<a class="headerlink" href="#equation-da13b22a-d847-4fdf-8790-7ac253544e7c" title="Permalink to this equation">#</a></span>\[\begin{align}
+f'(x) &amp;= \lim_{h \to 0} \frac{\dfrac{1}{x+h} - \dfrac{1}{x}}{h} \\
+    &amp;= \lim_{h \to 0} \frac{\dfrac{x - (x + h)}{x(x+h)}}{h}  \\
+    &amp;= \lim_{h \to 0} \frac{\dfrac{- h}{x(x+h)}}{h}  \\
+    &amp;= \lim_{h \to 0} \frac{-1}{(x+h)x} \\
+    &amp;= \frac{-1}{x^2}
+\end{align}\]</div>
+</li>
+</ol>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -487,6 +540,21 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formal-definition">1.3.1. Formal definition</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

@@ -57,6 +57,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"d": ["{\\operatorname{d}\\!{#1}}", 1], "dd": ["{\\d{}^{#1} #2 \\over \\d{#3}^{#1}}", 3], "pp": ["{\\partial^{#1} #2 \\over \\partial #3^{#1}}", 3], "td": ["{\\left(\\pp{#1}{#2}{#3} \\right)_{#4}}", 4], "ubar": ["\\underline{#1}", 1], "vv": ["\\mathbf{#1}", 1]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'calculus/derivative-rules';</script>
     <link rel="canonical" href="https://mphowardlab.github.io/essential-math/calculus/derivative-rules.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -404,7 +406,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -420,6 +424,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chain-rule">1.4.1. Chain Rule</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -431,6 +443,80 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="product-quotient-and-chain-rule">
 <h1><span class="section-number">1.4. </span>Product, quotient, and chain rule<a class="headerlink" href="#product-quotient-and-chain-rule" title="Link to this heading">#</a></h1>
+<section id="chain-rule">
+<h2><span class="section-number">1.4.1. </span>Chain Rule<a class="headerlink" href="#chain-rule" title="Link to this heading">#</a></h2>
+<p>The chain rule is used to differentiate composite functions, when the “inside”
+of the function is more complicated than what we know.</p>
+<aside class="topic">
+<p class="topic-title">Chain rule</p>
+<p>If a function <span class="math notranslate nohighlight">\(f(x)\)</span> can be written as <span class="math notranslate nohighlight">\(f(u(x))\)</span>, then:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-14f7fc53-b297-4a3c-961f-193105f2014d">
+<span class="eqno">(1.31)<a class="headerlink" href="#equation-14f7fc53-b297-4a3c-961f-193105f2014d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+f'(x) = \dd{}{f}{u} \dd{}{u}{x} = f'(u) u'(x)
+\end{equation}\]</div>
+</aside>
+<p>To demonstrate this rule, consider <span class="math notranslate nohighlight">\(f(x) = (x-1)^2\)</span>. Previously, we would have
+needed to expand this function before differentiating:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ef04e1ed-c3af-4429-ac77-aac6d89bda48">
+<span class="eqno">(1.32)<a class="headerlink" href="#equation-ef04e1ed-c3af-4429-ac77-aac6d89bda48" title="Permalink to this equation">#</a></span>\[\begin{align}
+f(x) &amp;= x^2 - 2x + 1 \\
+f'(x) &amp;= 2x - 2
+\end{align}\]</div>
+<p>With the chain rule, instead we recognize</p>
+<div class="amsmath math notranslate nohighlight" id="equation-58847c34-8d5b-4f50-90f7-ac580c7d0137">
+<span class="eqno">(1.33)<a class="headerlink" href="#equation-58847c34-8d5b-4f50-90f7-ac580c7d0137" title="Permalink to this equation">#</a></span>\[\begin{align}
+u &amp;= x - 1  &amp;  f &amp;= u^2 \\
+u' &amp;= 1  &amp;  f' &amp;= 2u
+\end{align}\]</div>
+<p>so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4bf9c322-db8f-423d-bf9e-ae7a57bf6066">
+<span class="eqno">(1.34)<a class="headerlink" href="#equation-4bf9c322-db8f-423d-bf9e-ae7a57bf6066" title="Permalink to this equation">#</a></span>\[\begin{equation}
+f'(x) = \dd{}{f}{u} \dd{}{u}{x} = 2u \dd{}{u}{x} = 2(x-1) \cdot 1 = 2x - 2
+\end{equation}\]</div>
+<p>The results match! Some additional examples:</p>
+<ol class="arabic">
+<li><p><span class="math notranslate nohighlight">\(f(x) = e^{x^2}\)</span></p>
+<p>Make the replacement <span class="math notranslate nohighlight">\(u = x^2\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1c157dcf-7b8b-489d-bb4e-f052564ae5d1">
+<span class="eqno">(1.35)<a class="headerlink" href="#equation-1c157dcf-7b8b-489d-bb4e-f052564ae5d1" title="Permalink to this equation">#</a></span>\[\begin{align}
+u &amp;= x^2  &amp;  f &amp;= e^u \\
+u' &amp;= 2x  &amp;  f' &amp;= e^u
+\end{align}\]</div>
+<p>so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-3d455a7a-0ae5-4c08-8748-d07912285453">
+<span class="eqno">(1.36)<a class="headerlink" href="#equation-3d455a7a-0ae5-4c08-8748-d07912285453" title="Permalink to this equation">#</a></span>\[\begin{equation}
+f'(x) = \dd{}{f}{u} \dd{}{u}{x} = e^{u} \dd{}{u}{x} = e^{x^2} \cdot 2x
+\end{equation}\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(f(x) = \ln(1 + 2x)\)</span></p>
+<p>Make the replacement <span class="math notranslate nohighlight">\(u = 1+2x\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ef53242e-2728-4ff0-8d85-790efab71669">
+<span class="eqno">(1.37)<a class="headerlink" href="#equation-ef53242e-2728-4ff0-8d85-790efab71669" title="Permalink to this equation">#</a></span>\[\begin{align}
+u &amp;= 1 + 2x  &amp; f &amp;= \ln u \\
+u' &amp;= 2  &amp;  f' &amp;= \frac{1}{u}
+\end{align}\]</div>
+<p>so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ac638afd-02db-47d9-b7ba-219f8227b815">
+<span class="eqno">(1.38)<a class="headerlink" href="#equation-ac638afd-02db-47d9-b7ba-219f8227b815" title="Permalink to this equation">#</a></span>\[\begin{equation}
+f'(x) = \dd{}{f}{u} \dd{}{u}{x} = \frac{1}{u} \dd{}{u}{x} = \frac{2}{1 + 2x}
+\end{equation}\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(f(x) = \dfrac{2}{1 + 2x}\)</span></p>
+<p>Make the replacement <span class="math notranslate nohighlight">\(u = 1+2x\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-5d25211b-ae8e-4c64-9c74-d9aa7e72aee1">
+<span class="eqno">(1.39)<a class="headerlink" href="#equation-5d25211b-ae8e-4c64-9c74-d9aa7e72aee1" title="Permalink to this equation">#</a></span>\[\begin{align}
+u &amp;= 1 + 2x  &amp; f &amp;= 2u^{-1} \\
+u' &amp;= 2  &amp;  f' &amp;= -2u^{-2}
+\end{align}\]</div>
+<p>so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c2edd0e7-6789-4321-96b4-bbc919738fa1">
+<span class="eqno">(1.40)<a class="headerlink" href="#equation-c2edd0e7-6789-4321-96b4-bbc919738fa1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+f'(x) = \dd{}{f}{u} \dd{}{u}{x} = -2u^{-2} \cdot \dd{}{u}{x} =
+  \frac{-4}{(1 + 2x)^2}
+\end{equation}\]</div>
+</li>
+</ol>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -487,6 +573,21 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chain-rule">1.4.1. Chain Rule</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
