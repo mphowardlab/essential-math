@@ -71,24 +71,20 @@ D \dd{2}{c}{x} - k c^2 = 0, \quad c(0) = c_0, \quad -D c'(L) = 0
 
 ---  
 
-formulate&nbsp; &nbsp; &nbsp; $y'=C$ &nbsp; &nbsp; &nbsp; $y_2=C_2$ &nbsp; &nbsp; &nbsp; $C''=\frac{K}{D}C^2$
+formulate,
+
+\begin {equation}
+y' = C \\
+y_2=C_1 \\
+C''=\frac{K}{D}C^2
+\end {equation}
+
+\begin {align}
+
+y_1'=y_2y_1(0)=C_0 \\
+y_2'=\frac{K}{D}y_1'y_2(0)=a
 
 
-$$
-\left\{
-\begin{array}{l}
-y_1'=y_2\quad\quad\quad\quad y_1(0)=C_0\\
-y_2'=\frac{K}{D}y_1'\quad\quad\quad y_2(0)=a
-\end{array}
-\right.
-$$
+\end {align}
 
-$$
-\left\{
-
-y_1'=y_2\quad\quad\quad\quad y_1(0)=C_0\\
-y_2'=\frac{K}{D}y_1'\quad\quad\quad y_2(0)=a
-
-\right.
-$$
 vary a and solve numerically for $\underline{y}(L)$ until $y_2(L)=0$!
