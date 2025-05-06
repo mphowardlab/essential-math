@@ -53,7 +53,8 @@ $$
 $$
 \text{Figure this out so that } y_1\left( \frac{\pi}{2} \right) = 4
 $$
-여기까지 
+-----++
+Let's say we want to solve:  
 
 \begin{equation}  
 y'' + y = 0, \quad y(0) = 0, \quad y(\frac{\pi}{6}) = 4  
@@ -94,16 +95,7 @@ where *a* is unknown value that we need to figure out so $y(\frac{\pi}{6}) = 4$.
 \quad \vv{y}(0) = \begin{bmatrix} 0 \\ a \end{bmatrix}  
 \end{equation}  
 
-
-
-
-
-
-여기까지
-
-
-
-------
+------++
 How do we do this when we have only numbers? <u>Shooting method.</u>
 
 ![](./images/grapofline3.jpg)
