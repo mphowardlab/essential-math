@@ -81,13 +81,15 @@ is finite -or- that u has radial symmetry, so
 
 $$
 \frac{du_z}{dr}=0  \to @r=0
-$$.
+$$
 
 Either way
 
 $$
 C_1 = 0
-$$. So
+$$
+
+So
 
 $$
 u_z(r)=\frac{1}{4μ}\frac{△P}{L}(R^2-r^2)
