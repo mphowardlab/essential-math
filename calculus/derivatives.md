@@ -83,7 +83,7 @@ The second derivative tells us how to find the first derivative changes.
 :alt: Function and derivative
 :align: center
 :width: 300px
-```
+
 
 \begin{align}
 x(t) &= u_ot & v &= y' &= v_o -gt \\
