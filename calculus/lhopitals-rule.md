@@ -16,6 +16,7 @@ In order to fix this problem, we will keep differentating the numerator and deno
 
 We will consider some example of how to use this method to solve limits. 
 
+
 ## Examples
 
 To solve: 
