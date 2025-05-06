@@ -85,3 +85,97 @@ Not all functions have limits at infinity. Some "blow up"!
 
 This limit does not exist. A helpful shortcut for rational polynomials: check
 coefficients of highest powers in numerator and denominator!
+
+## One-sided limits
+
+How do functions behave as you approach a point $x_0$ from a direction? One
+physical example of this is an old question in statistical mechanics: when you
+have vapor-liquid phase coexistence, does the density change stepwise or
+continuously at the interface?
+
+```{image} ./_images/liquid_vapor_graph.png
+:width: 300px
+:align: center
+```
+
+If the density as a function of distance from the interface is $\rho(z)$,
+the liquid density can be denoted as $\lim_{z \to 0^-} \rho(z)$, while the
+vapor density can be denoted as $\lim_{z \to 0^+} \rho(z)$.
+
+```{topic} One-sided limit
+
+If *f* is defined on the interval $x_0 < x < b$ and $f(x)$ approaches
+arbitrarily close to $L$ as $x$ approaches $x_0$, then $f$ has a right-hand
+limit $L$ at $x_0$:
+
+\begin{equation}
+\lim_{x \to x_0^+} f(x) = L
+\end{equation}
+
+(This limit can also be written more formally in $\delta$-$\epsilon$ form.)
+The same can be done for the left-hand limit if $a < x < x_0$
+
+\begin{equation}
+\lim_{x \to x_0^-} f(x) = L
+\end{equation}
+
+The two-sided limit exists if and only if both one-sided limits exist and have
+the same value:
+\begin{equation}
+\lim_{x \to x_0} f(x) = L \Leftrightarrow
+\lim_{x \to x_0^+} f(x) = \lim_{x \to x_0^-} f(x) = L
+\end{equation}
+```
+
+For example, if
+
+\begin{equation}
+f(x) = \frac{|x|}{x} = \begin{cases}
+-1, & x<0\\
+1, & x>0
+\end{cases}
+\end{equation}
+
+We see that $\lim_{x \to 0^+} f(x) = 1$ (the value from the right), while
+$\lim_{x \to 0^-} f(x) = -1$ (the value from the left). Thus,
+$\lim_{x \to 0} f(x)$ does not exist.
+
+Normal limit laws also still apply to one-sided limits:
+
+\begin{equation}
+\lim_{x \to -2^+} \left( \frac{x}{x+1} \right) \left( \frac{2x + 5}{x^2 + x} \right)
+= \left( \frac{-2}{-2 + 1} \right) \left( \frac{-4 + 5}{4 - 2} \right) = 1
+\end{equation}
+
+However, be careful about which piece of the function applies:
+
+\begin{align}
+\lim_{x \to -2^-} (x + 3) \frac{|x + 2|}{x + 2}
+&= \left( \lim_{x \to -2^-} x + 3 \right)
+\left( \lim_{x \to -2^-} \frac{|x + 2|}{x + 2} \right) \\
+&= (-2 + 3)(-1) = -1
+\end{align}
+
+where we used the limit we already found of $f(x) = |x|/x$ above to evaluate
+the second limit.
+
+````{example} One-sided limit challenge
+
+Using
+
+```{image} ./_images/limit_image.png
+:alt: One-sided limit function
+:width: 300px
+:align: center
+```
+
+Find the limits at $x = 1$ and $x = 2$.
+
+---
+
+From the graph, $\lim_{x \to 1^-} f(x) = 0$ and $\lim_{x \to 1^+} f(x) = 1$, so
+$\lim_{x \to 1} f(x)$ does not exist.
+
+However, $\lim_{x \to 2^-} f(x) = 1$ and $\lim_{x \to 2^+} f(x) = 1$, so
+$\lim_{x \to 2} f(x) = 1$, even though $f(2) = 2$.
+````
