@@ -1,5 +1,53 @@
 # Variation of parameters
 
+What if the ODE does not have constant coefficients or r is not in the table of known functions?
+
+If $y'' + p(x)y' + q(x)y = r(x)$ and $y_h = C_1y_1 + C_2y_2$ solves the homogenous ODE $y'' + p(x)y' + q(x)y = 0$, then 
+
+\begin{align}
+y_p &= -y_1\int\fract{y_2r}{W}dx + y_2\int\fract{y_1r}{W}dx \\
+W &= y_1y_2' -y_2y_1'
+\end{align}
+
+```{topic} W - "Wronksian"
+W is the Wronskian determinant
+```
+
+```{example}
+\begin{equation}
+y'' + y = \secx
+\end{equation}
+
+The homogenous ODE is solved by $y_1 = \cosx$, $y_2 = \sinx$ so
+
+\begin{align}
+y_1 &= \cosx \quad y_2 &= \sinx \\
+y_1' &= -\sinx \quad y_2' &= \cosx
+\end{align}
+
+and
+
+\begin{equation}
+W = \cos^2x - (-\sin^2x) = 1
+\end{equation}
+
+Hence,
+
+\begin{align}
+y_p &= -\cosx\int\sinx\secxdx +\sinx\int\cosx\secxdx
+&= \cosx\int\fract{-\sinx}{\cosx}dx + \sinx\intdx
+&\rightarrow y_p = \cosx\ln|\cosx| + x\sinx
+\end{align}
+
+and 
+
+\begin{equation}
+y = C_1\cosx + C_2\sinx + \cosx\ln|\cosx| + x\sinx
+\end{equation}
+
+which is our solution.
+```
+
 ```{example} Steady heat diffusion with internal source
 We are solving the steady-state heat diffusion equation with an internal source:
 
