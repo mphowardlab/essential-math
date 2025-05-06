@@ -145,4 +145,10 @@ x_3 = \begin{bmatrix} 2 \\ -2 \\ 1 \end{bmatrix}
 So,
 \begin{align}
 \lambda_1 &= 9 \\
+x_1 &= \begin{bmatrix} -2 \\ -1 \\ 2 \end{bmatrix} \\
+\lambda_2 &= 6 \\
+x_2 &= \begin{bmatrix} 1 \\ 2 \\ 2 \end{bmatrix} \\
+\lambda_3 &= 3 \\
+x_3 &= \begin{bmatrix} 2 \\ -2 \\ 1 \end{bmatrix}
+\end{align}
 ````
