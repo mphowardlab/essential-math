@@ -13,38 +13,40 @@ W &= y_1y_2' -y_2y_1'
 W is the Wronskian determinant
 ```
 
+```
 \begin{equation}
-y'' + y = \secx
+y'' + y = \sec x
 \end{equation}
 
-The homogenous ODE is solved by $y_1 = \cosx$, $y_2 = \sinx$ so
+The homogenous ODE is solved by $y_1 = \cos x$, $y_2 = \sin x$ so
 
 \begin{align}
-y_1 &= \cosx \quad y_2 &= \sinx \\
-y_1' &= -\sinx \quad y_2' &= \cosx
+&y_1 = \cos x \quad &y_2 = \sin x \\
+&y_1' = -\sin x \quad &y_2' &= \cos x
 \end{align}
 
 and
 
 \begin{equation}
-W = \cos^2x - (-\sin^2x) = 1
+W = \cos^2 x - (-\sin^2 x) = 1
 \end{equation}
 
 Hence,
 
 \begin{align}
-y_p &= -\cosx\int\sinx\secxdx +\sinx\int\cosx\secxdx
-&= \cosx\int\fract{-\sinx}{\cosx}dx + \sinx\intdx
-&\rightarrow y_p = \cosx\ln|\cosx| + x\sinx
+y_p &= -\cos x\int\sin x\sec xdx +\sin x\int\cos x\sec xdx
+&= \cos x\int\fract{-\sinx}{\cosx}dx + \sin x\intdx
+&\rightarrow y_p = \cos x\ln|\cos x| + x\sin x
 \end{align}
 
 and 
 
 \begin{equation}
-y = C_1\cosx + C_2\sinx + \cosx\ln|\cosx| + x\sinx
+y = C_1\cos x + C_2\sin x + \cos x\ln|\cos x| + x\sin x
 \end{equation}
 
 which is our solution.
+```
 
 ```{example} Steady heat diffusion with internal source
 We are solving the steady-state heat diffusion equation with an internal source:
