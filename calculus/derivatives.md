@@ -11,7 +11,9 @@ Differentiating f' gives f'', the second derivative. This process can be repeate
 
 Example:
 
-$$f(x)=x^2, f'(x)=2x$$
+\begin{equation}
+f(x)=x^2, f'(x)=2x
+\end{equation}
 
 \begin{align}
 f''(x)=lim_{h \to 0}{\frac{f'(x+h)-f'(x)}{h}} \\
@@ -22,4 +24,21 @@ f''(x)=lim_{h \to 0}{\frac{f'(x+h)-f'(x)}{h}} \\
 
 The second derivative tells us how to find the first derivative changes.
 
+\begin{align}
+position \to velocity \to acceleration \\
+x & x' & x'' \\
+0 & v & v' \\
+0 & 0 & a
+\end{align}
+
+```{example} Ballistic motion
+
+*insert graph*
+
+\begin{align}
+x(t) &= u_ot & v &= y' &= v_o -gt \\
+y(t) &= v_ot - \frac{1}{2}gt^2 & a &= &= v' &= y''&= -g 
+\end{align}
+
+Newton's law: $F = ma = -mg (gravity!)
 
