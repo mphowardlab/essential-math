@@ -76,30 +76,27 @@ Solve the integral, don't forget + C
 
 ```{solution}
 
-\begin{equation}
 y = \int x^5 \sin(x) \, dx
-\end{equation}
 
-\[
-\begin{array}{c c}
-u & dv \\
-\hline
-x^5 & \sin(x) \\
-5x^4 & -\cos(x) \\
-20x^3 & -\sin(x) \\
-60x^2 & \cos(x) \\
-120x & \sin(x) \\
-120 & -\cos(x) \\
-0 & -\sin(x) \\
-\end{array}
-\]
+**Integration by parts table:**  
+
+| $u$ | $dv$ |
+| --- | --- |
+| $x^5$ | $\sin(x)$ |
+| $5x^4$ | $-\cos(x)$ |
+| $20x^3$ | $-\sin(x)$ |
+| $60x^2$ | $\cos(x)$ |
+| $120x$ | $\sin(x)$ |
+| $120$ | $-\cos(x)$ |
+| $0$ | $-\sin(x)$ |
 
 
-\begin{align}
+\begin{aligned}
 y &= -x^5 \cos(x) + 5x^4 \sin(x) + 20x^3 \cos(x) - 60x^2 \sin(x) \\
   &\quad - 120x \cos(x) + 120 \sin(x) + C \\
   &= (-x^5 + 20x^3 - 120x) \cos(x) + (5x^4 - 60x^2 + 120) \sin(x) + C
-\end{align}
+\end{aligned}
+
 
 
 ```
