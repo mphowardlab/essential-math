@@ -76,7 +76,11 @@ Solve the integral, don't forget + C
 
 ```{solution}
 
+\begin{align}
 y = \int x^5 \sin(x) \, dx
+\end{align}
+
+Since $x^5$ is to the fifth order, integration by parts must be used 5 times. Use a table for this. 
 
 **Integration by parts table:**  
 
@@ -90,12 +94,13 @@ y = \int x^5 \sin(x) \, dx
 | $120$ | $-\cos(x)$ |
 | $0$ | $-\sin(x)$ |
 
+Multiply down the diagonals and add your + C
 
-\begin{aligned}
+\begin{align}
 y &= -x^5 \cos(x) + 5x^4 \sin(x) + 20x^3 \cos(x) - 60x^2 \sin(x) \\
   &\quad - 120x \cos(x) + 120 \sin(x) + C \\
   &= (-x^5 + 20x^3 - 120x) \cos(x) + (5x^4 - 60x^2 + 120) \sin(x) + C
-\end{aligned}
+\end{align}
 
 
 
