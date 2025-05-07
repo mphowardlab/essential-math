@@ -73,7 +73,7 @@ This was obviously harder than the old way, but there are other cases where it i
    f'(x) = \frac{x^4 \cdot (x - 1) \cdot (2x - 2) - (x - 1) \cdot (x^2 -2x) \cdot (4x^3)}{x^8}
    \end{equation}
 
-   so
+   v.s
 
    \being{equation}
    f(x) = \frac{1}{x^4} \cdot x^3 -3x^2 +2x = x^-1 -3x^-2 +2x^-3
