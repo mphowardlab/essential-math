@@ -190,7 +190,7 @@ $$
 $$
 Then, solve for y. 
 $$
-y = (\frac{1}{F})*[\int F r \d{t} + C] = (\frac{-5} {((4) * (pi^2))+1}) * ((sin(2 * pi * t))+((2* pi) * (cos(2 * pi * t)))) _ ((C) * (e^t))
+y = (\frac{1}{F})*[\int F r \d{t} + C] = (\frac{-5} {((4)*(pi^2))+1})*(sin(2 * pi t))+((2*pi)*(cos(2*pi t))) + ((C) * (e^t))
 $$
 
 Next, use initial conditions in to find C.
@@ -200,10 +200,20 @@ $$
 $$
 
 $$
-C = 1 + (\frac{(10 * pi)}{(((4) * (pi^2)) + 1)})
+C = 1 + (\frac{(10 * pi)}{((4) * (pi^2)) + 1})
 $$
 
 Put C value in equation for y.
 
 $$
-y(t) = (1 + (\frac{(10 * pi)}{(((4) * (pi^2))+1})
+y(t) = (1 + (\frac{(10 * pi)}{(((4) * (pi^2))+1})*((e^t)) - (\frac{5}{((4)*(pi^2))+1})*((sin(2*pi t)) + ((2*pi)*(cos(2*pi t))))
+$$
+
+Find y at t=1.
+
+$$
+y(1) = (1+(\frac{(10*pi)}{((4)*(pi^2))+1}))*e - (\frac{5}{((4)*(pi^2))+1})*(2*(pi))
+$$
+
+$$
+y(1) = e +(\frac{(10*pi)}{((4)*(pi^2))+1})
