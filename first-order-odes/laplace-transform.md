@@ -268,8 +268,8 @@ Solve the following:
 
 ```{solution}
  Step 1 
- \begin{equation}
- \mathcal{L}\{y' - y} = \mathcal{L}{1 - 2x + \sin(3y)}
+\begin{equation}
+\mathcal{L}\{y' - y\} = \mathcal{L}{1 - 2x + \sin(3y)}
 \end{equation}
 
 \begin{align}
