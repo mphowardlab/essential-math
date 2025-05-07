@@ -180,3 +180,100 @@ The results match! Some additional examples:
    f'(x) = \dd{}{f}{u} \dd{}{u}{x} = -2u^{-2} \cdot \dd{}{u}{x} =
      \frac{-4}{(1 + 2x)^2}
    \end{equation}
+
+## Skill builder problems
+
+1. $f(x) = 3 \cos x + \sin x$
+
+   ```{solution}
+   \begin{align}
+   f' &= 3 \dd{}{}{x}(\cos x) + 4 \dd{}{}{x}(\sin x)\\
+   &= -3\sin x + 4\cos x
+   \end{align}
+   ```
+
+2. $f(x) = 2 \sin x \cos x$
+
+   ```{solution}
+   Use the product rule with:
+
+   \begin{align}
+   u &= \sin x & v &= \cos x\\
+   u' &= \cos x & v' &= -\sin x
+   \end{align}
+
+   so
+
+   \begin{align}
+   f' &= 2[\sin x(-\sin x) + \cos x(\cos x)] \\
+   &= 2(\cos^2 x-\sin^2 x) \\
+   &= 2 \cos 2x\\
+   \end{align}
+   ```
+
+3. $f(x) = \sin 2x$
+
+   ```{solution}
+   Use the chain rule with
+
+   \begin{align}
+   u &= 2x & f &= \sin u \\
+   u' &= 2 & f' = \cos u
+   \end{align}
+
+   so
+
+   \begin{equation}
+   f' = \cos{u} \cdot 2 = 2 \cos 2 x
+   \end{equation}
+   ```
+
+4. $f(x) = \tan({x^2+2x+3})$
+
+   ```{solution}
+   Use the chain rule with
+
+   \begin{align}
+   u &= x^2+2x+3 & f = \tan u\\
+   u' &= 2x+2 & f' = \sec^2 u\\
+   \end{align}
+
+   so
+
+   \begin{align}
+   f' &= \sec^2 u \cdot u'\\
+   &= (2x+2)\sec^2(x^2+2x+3)\\
+   \end{align}
+   ```
+
+5. $f(x) = e^{\cos^2 x}$
+
+   ```{solution}
+   Use the chain rule with
+
+   \begin{align}
+   u &= \cos^2 x & f = e^{u}\\
+   u' &= \dd{}{}{x}(\cos^2 x) & f' = e^{u}
+   \end{align}
+
+   So
+
+   \begin{equation}
+   f' = e^{u} u' = e^{\cos^2 x} \dd{}{}{x}(\cos^2 x)
+   \end{equation}
+
+   Use the chain rule again with
+
+   \begin{align}
+   u &= \cos x & f = u^{2}\\
+   u' &= -\sin x & f' = 2u\\
+   \end{align}
+
+   So
+
+   \begin{align}
+   f' &= e^{\cos^2 x}(2uu')\\
+   &= e^{\cos^2 x}(2\cos x \cdot -\sin x)\\
+   &= -2 \sin x \cos x e^{\cos^2 x}\\
+   \end{align}
+   ```
