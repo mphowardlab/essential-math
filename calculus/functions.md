@@ -63,12 +63,16 @@
 ::::
 
 ## Evaluating and Manipulating Trigonometric Functions
-![fishy](./images/MAtappunitcircle.png)
+```{image} ./_images/MAtappunitcircle66.png
+:alt: Unit Circle
+:width: 300px
+:align: center
+```
  Each quadrant of the unit circle corresponds to a positive trigonometric function as represented by "A(all)+", "T(tangent)+", "S(sine)+", "C(cosine)+".
 
 The given unit circle has a triangle drawn within which represents how trigonometric functions are related to lengths and heights of the sides of right traingles. 
-The circle has a radius and is centered at (0,0). A point on the circle is defined by angle \theta measured counterclockwise from the positive x-axis.
-The trigonometric functions describe how the coordinates of a point on the unit circle relate to the angle \theta.
+The circle has a radius and is centered at (0,0). A point on the circle is defined by angle $\theta$ measured counterclockwise from the positive x-axis.
+The trigonometric functions describe how the coordinates of a point on the unit circle relate to the angle $\theta$.
 \begin{align}
 \sin(\theta)& = \frac{y}{r}& 
 \cos(\theta)& = \frac{x}{r}& 
@@ -88,7 +92,11 @@ Angles can be measured in degrees of radians
 \theta& = 30^{\circ} \frac{\pi}{6}& \theta& = 60^{\circ} \frac{\pi}{3}
 \end{align}
 
-![fishy](./images/306090triangle.png)
+```{image} ./_images/306090triangle.png
+:alt: 30 60 90 Traingle
+:width: 300px
+:align: center
+```
 
 At $ \theta = 30^{\circ} $:
 \begin{align}
@@ -102,7 +110,11 @@ At $ \theta = 60^{\circ} $:
 \cos(\theta)& = \frac{1}{2}& 
 \end{align}
 
-![fishy](./images/454590triangle.png)
+```{image} ./_images/454590triangle.png
+:alt: 45 45 90 Traingle
+:width: 300px
+:align: center
+```
 
 At $ \theta = 45^{\circ} $
 \begin{align}
@@ -114,7 +126,10 @@ What about $ \theta \ge 90^{\circ}(\frac{\pi}{2}) $?
 Take the angle of $\theta$ relative to the x-axis, then apply the sign based on which quadrant the angle falls in.
 
 ```{example} <$\theta = 185^{\circ}$>
-<![fishy](./images/Untitled-4.jpg)
+```{image} ./_images/Untitled-4png.png
+:width: 300px
+:align: center
+```
 
 The graph shows $\theta = \frac{3\pi}{4}$ and $\theta' = \frac{\pi}{4}$ so:
 \begin{align}
@@ -129,7 +144,11 @@ In quadrant two sine is positive so:
 \end{align}>
 
 Trigonometric functions represent waves. The properties of the wave can be encoded by manipulating the function.
-![fishy](./images/1c668276-2784-41eb-b578-39232daf8748.png)
+```{image} ./_images/Triggraph.png
+:alt: Trigonometric Function
+:width: 300px
+:align: center
+```
 
 \begin{align}
 y& = A\sin[(\frac{2\pi}{L})(x + x_{o})] + y_{o}
