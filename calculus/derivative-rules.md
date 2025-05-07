@@ -47,17 +47,17 @@ This was obviously harder than the old way, but there are other cases where it i
    f'(x) = \frac{ (X^4 + 2) \cdot (2x) - (x^2 - 1) \cdot (4x^3)}{(x^4 +2)^2} = \frac{2x^5 + 4x^2 - 4x^5 +4x^3}{x^8 + 2x^4 + 4}
    \end{equation}
 
-2.  $f(x) = \frac{\e^{x}}{1 + x}$
+2.  $f(x) = \frac{e^{x}}{1 + x}$
 
    \begin{align}
-   u &= \e^{x} & v &= 1 + x \\
-   u' &= \e^{x} & v' &= 1
+   u &= e^{x} & v &= 1 + x \\
+   u' &= e^{x} & v' &= 1
    \end{align}
 
    so
 
    \begin{equation}
-   f'(x) = \frac{(1 + x) \cdot \e^{x} - \e^{x} \cdot 1}{(1 + x)^2} = \frac{x \cdot \e^{x}}{(1 + x)^2}
+   f'(x) = \frac{(1 + x) \cdot e^{x} - e^{x} \cdot 1}{(1 + x)^2} = \frac{x \cdot e^{x}}{(1 + x)^2}
    \end{equation}
 
 3. $f(x) = \frac{(x - 1) \cdot (x^2 - 2x)}{x^4}$
