@@ -259,16 +259,23 @@ The average concentration is:
 ```
 <!-- markdownlint-enable MD013 -->
 
-### Skill Builder problems
+## Skill Builder problems
 
-\begin{equation}
-y' - y = 1 - 2x + \sin(3x), \quad y(0) = -1 
+Solve the following:
+
+
+1. $y' - y = 1 - 2x + \sin(3x), \quad y(0) = -1 $
+
+```{solution}
+ Step 1 
+ \begin{equation}
+ \mathcal{L}\{y' - y} = \mathcal{L}{1 - 2x + \sin(3y)}
 \end{equation}
 
----
-
-\begin{equation}
-\mathcal{L}\{y' - y\} = \mathcal{L}\{1 - 2x + \sin(3x)\}
-\end{equation}
+\begin{align}
+sY - y(0) - Y &= \frac{1}{s} - \frac{2}{s^2} + \frac{3}{s^2 + 9} \\
+(s-1)Y &= -1 + \frac{1}{s} - \frac{2}{s^2} + \frac{3}{s^2 + 9} \\
+\\end{align}
+```
 
 
