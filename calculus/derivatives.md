@@ -10,9 +10,9 @@ A *tangent line* touches a curve exactly once.
 
 How to estimate slope of line at $x_0$? 
 \begin{itemize}
-    \item Evaluate $f(x_0)$ at the point
-    \item Evaluate $f(x_1)$ at another point
-    \item Make $x_1$ very close to $x_0$!
+\item Evaluate $f(x_0)$ at the point
+\item Evaluate $f(x_1)$ at another point
+\item Make $x_1$ very close to $x_0$!
 \end{itemize}
 
 \begin{equation}
@@ -23,7 +23,7 @@ We call the slope of the tangent at $x$ the *derivative* and define it as a limi
 
 ```{topic} Derivative as a limit
 \begin{equation}
-f'(x_0)= \lim_{h\to \infty} \frac{f(x+h)-f(x)}{h}
+f'(x_0)= \lim_{h\to 0} \frac{f(x+h)-f(x)}{h}
 \end{equation}
 
 other notations: $\frac{df}{dx}$, $\mathbf{f}$
@@ -31,10 +31,10 @@ other notations: $\frac{df}{dx}$, $\mathbf{f}$
 ---
 
 \begin{align}
-x_0 &=x \\
-\x_1 &=x+h
-\end{align} \
-$\to$ h is distance between $x_0$ and $x_1$, make *small*
+x_0 &= x \\
+x_1 &= x+h
+\end{align} 
+\$\to$ h is distance between $x_0$ and $x_1$, make *small*
 ```
 
 The derivative represents how fast the function is changing *(rate of change)*. 
@@ -43,8 +43,8 @@ The derivative represents how fast the function is changing *(rate of change)*.
 x(t) = x_0 + v\cdot t 
 \end{equation}
 
-Where position $\to x(t)$
-start $\to x_0$
+Where position $\to x(t)$ 
+start $\to x_0$ 
 velocity $\to v$ and 
 time $\to t$
 
