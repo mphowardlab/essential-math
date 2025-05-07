@@ -5,8 +5,9 @@
 If the quotient rule you wish to know, it's "low-d-high less high-d-low" then draw the line and down below, denominator squared will go.
 
 ```{topic} Quotient Rule
+If
 \begin{equation}
-If f(x) = \frac{u(x)}{v(x)}$ and $v(x) \ne 0, then
+f(x) = \frac{u(x)}{v(x)} and v(x) \ne 0, then
 f'(x) = \frac{v u' - u v'}{v^2}
 \end{equation}
 ```
@@ -28,14 +29,14 @@ u' &= 1 & v' &= 1
 so 
 
 \begin{equation}
-f' = \frac{ x1 \cdot 1 - (x-1) \cdot 1 }{x^2} = \frac{1}{x^2}
+f' = \frac{ x \cdot 1 - (x-1) \cdot 1 }{x^2} = \frac{1}{x^2}
 \end{equation}
 
 This was obviously harder than the old way, but there are other cases where it is helpful to do the quotient rule!
 
 
 1. $f(x) = \frac{x^2 -1}{x^4 + 2}$
-\begin{align} 
+\begin{align}
 u &= x^2 -1 & v &= x^4 +2 \\
 u' &= 2x & v' =& 4x^3
 \end{align}
@@ -47,9 +48,9 @@ f'(x) = \frac{ (X^4 + 2) \cdot (2x) - (x^2 - 1) \cdot (4x^3)}{(x^4 +2)^2} = \fra
 \end{equation}
 
 2.  $f(x) = \frac{\exp(x)}{1 + x}$
-\begin{align} 
-u &= \exp(x) & v &= 1 + x \\ 
-u' &= \exp(x) & v' &= 1 
+\begin{align}
+u &= \exp(x) & v &= 1 + x \\
+u' &= \exp(x) & v' &= 1
 \end{align}
 
 so
@@ -70,7 +71,7 @@ so
 f'(x) = \frac{x^4 \cdot (x - 1) \cdot (2x - 2) - (x - 1) \cdot (x^2 -2x) \cdot (4x^3)}{x^8}
 \end{equation}
 
-v.s 
+v.s
 
 \being{equation}
 f(x) = \frac{1}{x^4} \cdot x^3 -3x^2 +2x = x^-1 -3x^-2 +2x^-3
