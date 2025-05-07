@@ -158,6 +158,7 @@ c(t) &= \frac{A}{k}
 
 ## Skill Builder
 ```{problem}
+
 1.Solve the differential equation:
    \begin{align}
 y' = -\frac{e^{x+y} + ye^y}{x e^y - 1}
@@ -169,7 +170,6 @@ y' = -\frac{e^{x+y} + ye^y}{x e^y - 1}
 ```
 
 This can be rewritten as:
-
 ```math
 (e^{x+y} + ye^y) \, dx + (x e^y - 1) \, dy = 0
 ```
