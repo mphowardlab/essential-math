@@ -226,7 +226,7 @@ The results match! Some additional examples:
    \end{equation}
    ```
 
-4. $f(x) = \tan{x^{2}+2x+3}
+4. $f(x) = \tan{x^{2}+2x+3}$
 
 ```{solution}
 Use the chain rule with 
@@ -244,7 +244,7 @@ f^{'}(x) &= \sec^{2}{u}u^{'}\\
 \end{align}
 ```
 
-5. $f(x) = e^{\cos^{2}{x}}
+5. $f(x) = e^{\cos^{2}{x}}$
 
 ```{solution}
 Use the chain rule with 
