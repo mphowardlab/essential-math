@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>3.5. Matrix inversion &#8212; Essential Mathematics for Chemical Engineers</title>
+    <title>3.8. Matrix inversion &#8212; Essential Mathematics for Chemical Engineers</title>
   
   
   
@@ -63,7 +63,7 @@
     <link rel="canonical" href="https://mphowardlab.github.io/essential-math/linear-algebra/inverses.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3.6. Eigenvalue problem" href="eigenvalue-problem.html" />
+    <link rel="next" title="3.9. Eigenvalue problem" href="eigenvalue-problem.html" />
     <link rel="prev" title="3.4. Determinants" href="determinants.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -173,7 +173,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../calculus/functions.html">1.1. Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../calculus/limits.html">1.2. Limits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../calculus/derivatives.html">1.3. Derivatives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../calculus/derivative-rules.html">1.4. Product, quotient, and chain rule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/derivative-rules.html">1.4. Rules for derivatives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../calculus/series-expansion.html">1.5. Series expansion</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../calculus/integration.html">1.6. Integration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../calculus/integration-substitution.html">1.7. Integration using substitution</a></li>
@@ -195,8 +195,11 @@
 <li class="toctree-l2"><a class="reference internal" href="linear-systems.html">3.2. Systems of linear equations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gauss-jordan.html">3.3. Gauss–Jordan elimination</a></li>
 <li class="toctree-l2"><a class="reference internal" href="determinants.html">3.4. Determinants</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.5. Matrix inversion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="eigenvalue-problem.html">3.6. Eigenvalue problem</a></li>
+
+
+
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.8. Matrix inversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eigenvalue-problem.html">3.9. Eigenvalue problem</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../nonlinear-equations/index.html">4. Nonlinear equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -428,10 +431,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation-and-definition">3.5.1. Motivation and definition</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-of-a-2-x-2-matrix">3.5.2. Inverse of a 2 x 2 matrix</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverses-using-gauss-jordan-elimination">3.5.3. Inverses using Gauss-Jordan elimination</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill-builder-problems">3.5.4. Skill builder problems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation-and-definition">3.8.1. Motivation and definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-of-a-2-x-2-matrix">3.8.2. Inverse of a 2 x 2 matrix</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverses-using-gauss-jordan-elimination">3.8.3. Inverses using Gauss-Jordan elimination</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill-builder-problems">3.8.4. Skill builder problems</a></li>
 </ul>
             </nav>
         </div>
@@ -444,17 +447,17 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="matrix-inversion">
-<h1><span class="section-number">3.5. </span>Matrix inversion<a class="headerlink" href="#matrix-inversion" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">3.8. </span>Matrix inversion<a class="headerlink" href="#matrix-inversion" title="Link to this heading">#</a></h1>
 <section id="motivation-and-definition">
-<h2><span class="section-number">3.5.1. </span>Motivation and definition<a class="headerlink" href="#motivation-and-definition" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.8.1. </span>Motivation and definition<a class="headerlink" href="#motivation-and-definition" title="Link to this heading">#</a></h2>
 <p>Gauss-Jordan elimination works well for solving  <strong>Ax</strong> = <strong>b</strong>, but the process
 needs to be repeated for every new <strong>b</strong>. Is there an alternative if we need to
 solve <strong>Ax</strong> = <strong>b</strong> for many different <strong>b</strong>?</p>
 <aside class="topic">
 <p class="topic-title">Matrix inverse</p>
 <p>For a square (<em>n</em> x <em>n</em>) matrix <strong>A</strong>, the inverse <span class="math notranslate nohighlight">\(\vv{A}^{-1}\)</span> satisfies</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3a5c5374-f0f1-43cc-ad9f-7eff15e497bc">
-<span class="eqno">(3.58)<a class="headerlink" href="#equation-3a5c5374-f0f1-43cc-ad9f-7eff15e497bc" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-28d4fc76-3269-4b2e-a61b-0b8559c52c33">
+<span class="eqno">(3.54)<a class="headerlink" href="#equation-28d4fc76-3269-4b2e-a61b-0b8559c52c33" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A} \vv{A}^{-1} = \vv{A}^{-1} \vv{A} = \vv{I}
 \end{equation}\]</div>
 <p>where <strong>I</strong> is the <em>n</em> x <em>n</em> identity matrix.</p>
@@ -468,8 +471,8 @@ solve <strong>Ax</strong> = <strong>b</strong> for many different <strong>b</str
 </aside>
 <p>If the inverse of <strong>A</strong> exists, it is unique and can be used to
 solve <strong>Ax</strong> = <strong>b</strong>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-229d49fd-fdb1-4083-ba5e-0c519e1eb5e0">
-<span class="eqno">(3.59)<a class="headerlink" href="#equation-229d49fd-fdb1-4083-ba5e-0c519e1eb5e0" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2d057f23-319b-42d1-90d1-50309536c904">
+<span class="eqno">(3.55)<a class="headerlink" href="#equation-2d057f23-319b-42d1-90d1-50309536c904" title="Permalink to this equation">#</a></span>\[\begin{align}
 \vv{A} \vv{x} &amp;= \vv{b} \\
 \vv{A}^{-1} \vv{A} \vv{x} &amp;= \vv{A}^{-1} \vv{b} \\
 \vv{x} &amp;= \vv{A}^{-1} \vv{b}
@@ -480,40 +483,40 @@ cover. Instead, we focus on two options: a formula for 2 x 2 matrices, and
 use of Gauss-Jordan elimination for larger matrices.</p>
 </section>
 <section id="inverse-of-a-2-x-2-matrix">
-<h2><span class="section-number">3.5.2. </span>Inverse of a 2 x 2 matrix<a class="headerlink" href="#inverse-of-a-2-x-2-matrix" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.8.2. </span>Inverse of a 2 x 2 matrix<a class="headerlink" href="#inverse-of-a-2-x-2-matrix" title="Link to this heading">#</a></h2>
 <p>For a 2 x 2 matrix,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4caeba78-fbe3-49d4-9f2d-2cad088ba881">
-<span class="eqno">(3.60)<a class="headerlink" href="#equation-4caeba78-fbe3-49d4-9f2d-2cad088ba881" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a374a47a-f483-4944-83a4-d0a80a18a3b9">
+<span class="eqno">(3.56)<a class="headerlink" href="#equation-a374a47a-f483-4944-83a4-d0a80a18a3b9" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A} = \begin{bmatrix} a &amp; b \\ c &amp; d \end{bmatrix},
 \end{equation}\]</div>
 <p>the matrix inverse is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3cfa4a59-ce30-4b7e-9582-477ee6e25842">
-<span class="eqno">(3.61)<a class="headerlink" href="#equation-3cfa4a59-ce30-4b7e-9582-477ee6e25842" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-73eb95a8-33b7-4d3d-8eeb-ad91b145a231">
+<span class="eqno">(3.57)<a class="headerlink" href="#equation-73eb95a8-33b7-4d3d-8eeb-ad91b145a231" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A}^{-1} = \frac{1}{|\vv{A}|} \begin{bmatrix} d &amp; -b \\ -c &amp; a \end{bmatrix}
 \end{equation}\]</div>
 <p>(Flip <em>a</em> and <em>d</em>, change the signs of <em>b</em> and <em>c</em>.)</p>
 <div class="admonition-example-2-x-2-inverse admonition">
 <p class="admonition-title">Example: 2 x 2 inverse</p>
 <p>To find the inverse of</p>
-<div class="amsmath math notranslate nohighlight" id="equation-17ebccbe-11a8-4929-9512-be884df1f4ac">
-<span class="eqno">(3.62)<a class="headerlink" href="#equation-17ebccbe-11a8-4929-9512-be884df1f4ac" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-92512341-e5ac-4608-a84d-0f38fd3c3371">
+<span class="eqno">(3.58)<a class="headerlink" href="#equation-92512341-e5ac-4608-a84d-0f38fd3c3371" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A} = \begin{bmatrix} 3 &amp; 1 \\ 2 &amp; 4 \end{bmatrix}
 \end{equation}\]</div>
 <p>First, compute its determinant:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fa353274-ed76-4233-9885-5d6ed45e5860">
-<span class="eqno">(3.63)<a class="headerlink" href="#equation-fa353274-ed76-4233-9885-5d6ed45e5860" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ddb6bb93-20fe-4ef2-9ce9-3566ec55d18b">
+<span class="eqno">(3.59)<a class="headerlink" href="#equation-ddb6bb93-20fe-4ef2-9ce9-3566ec55d18b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 |\vv{A}| = 3 \times 4 - 2 \times 1 = 12 - 2 = 10
 \end{equation}\]</div>
 <p>Then, compute its inverse</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7866706e-65db-4b2a-8d01-972a4ef6c54a">
-<span class="eqno">(3.64)<a class="headerlink" href="#equation-7866706e-65db-4b2a-8d01-972a4ef6c54a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-481a467e-df98-405c-9f28-597648dcc208">
+<span class="eqno">(3.60)<a class="headerlink" href="#equation-481a467e-df98-405c-9f28-597648dcc208" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A}^{-1} = \frac{1}{10} \begin{bmatrix} 4 &amp; -1 \\ -2 &amp; 3 \end{bmatrix}
 = \begin{bmatrix} 0.4 &amp; -0.1 \\ -0.2 &amp; 0.3 \end{bmatrix}
 \end{equation}\]</div>
 </div>
 </section>
 <section id="inverses-using-gauss-jordan-elimination">
-<h2><span class="section-number">3.5.3. </span>Inverses using Gauss-Jordan elimination<a class="headerlink" href="#inverses-using-gauss-jordan-elimination" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.8.3. </span>Inverses using Gauss-Jordan elimination<a class="headerlink" href="#inverses-using-gauss-jordan-elimination" title="Link to this heading">#</a></h2>
 <p>For larger matrices, we can use <a class="reference internal" href="gauss-jordan.html"><span class="std std-doc">Gauss–Jordan elimination</span></a> to
 solve <span class="math notranslate nohighlight">\(\vv{A} \vv{A}^{-1} = \vv{I}\)</span> as a generalization of <strong>Ax</strong> = <strong>b</strong>.</p>
 <ul class="simple">
@@ -526,8 +529,8 @@ solve <span class="math notranslate nohighlight">\(\vv{A} \vv{A}^{-1} = \vv{I}\)
 <p>We will resolve the problem we used <a class="reference internal" href="gauss-jordan.html"><span class="std std-doc">Gauss-Jordan elimination</span></a>
 for, but now using the matrix inverse. As a reminder, the equations to solve
 were</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ef30527d-7d2b-46a6-8e27-22a3724b4424">
-<span class="eqno">(3.65)<a class="headerlink" href="#equation-ef30527d-7d2b-46a6-8e27-22a3724b4424" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-8e93b957-8f10-4b7e-b6c1-a10edd7c7743">
+<span class="eqno">(3.61)<a class="headerlink" href="#equation-8e93b957-8f10-4b7e-b6c1-a10edd7c7743" title="Permalink to this equation">#</a></span>\[\begin{align}
 Q_1 - Q_2 + Q_3 &amp;= 0 \\
 Q_1 - Q_2 + Q_3 &amp;= 0 \\
 20Q_1 + 10Q_2 + 0Q_3 &amp;= 80 \\
@@ -536,15 +539,15 @@ Q_1 - Q_2 + Q_3 &amp;= 0 \\
 <p>We need a square matrix to calculate the inverse, and we know the second
 equation is redundant of the first. We write this in matrix form <strong>Ax</strong> = <strong>b</strong>
 with</p>
-<div class="amsmath math notranslate nohighlight" id="equation-699bf990-ff6a-4f27-bf04-3df6dd629bc2">
-<span class="eqno">(3.66)<a class="headerlink" href="#equation-699bf990-ff6a-4f27-bf04-3df6dd629bc2" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4c200b84-363a-4f2e-a647-6e3cfb95cbcf">
+<span class="eqno">(3.62)<a class="headerlink" href="#equation-4c200b84-363a-4f2e-a647-6e3cfb95cbcf" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A} = \begin{bmatrix} 1 &amp; -1 &amp; 1 \\ 20 &amp; 10 &amp; 0 \\ 0 &amp; 10 &amp; 25\end{bmatrix}
 \qquad
 \vv{b} = \begin{bmatrix} 0 \\ 80 \\ 90 \end{bmatrix}
 \end{equation}\]</div>
 <p>First, compute the determinant to make sure <strong>A</strong> is invertible</p>
-<div class="amsmath math notranslate nohighlight" id="equation-56e7854d-9f42-46bd-9306-2a2b60127fec">
-<span class="eqno">(3.67)<a class="headerlink" href="#equation-56e7854d-9f42-46bd-9306-2a2b60127fec" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-32197132-b402-4328-8db3-933f75124752">
+<span class="eqno">(3.63)<a class="headerlink" href="#equation-32197132-b402-4328-8db3-933f75124752" title="Permalink to this equation">#</a></span>\[\begin{align}
 |\vv{A}| &amp;= -10 \begin{vmatrix} 1 &amp; 1 \\ 20 &amp; 0 \end{vmatrix} +
 25 \begin{vmatrix} 1 &amp; -1 \\ 20 &amp; 10\end{vmatrix} \\
 &amp;= 10 (0-20) + 25 (10+20) = 950
@@ -552,8 +555,8 @@ with</p>
 <p>The determinant is nonzero, so <span class="math notranslate nohighlight">\(\vv{A}^{-1}\)</span> exists. Form the augmented matrix we
 need to compute, then use a similar sequence of row operations as when we used
 Gauss-Jordan elimination to solve directly:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a5573d6e-7e8d-4e72-9d91-d6afdb1f9de1">
-<span class="eqno">(3.68)<a class="headerlink" href="#equation-a5573d6e-7e8d-4e72-9d91-d6afdb1f9de1" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4ac234d6-3590-4b0f-a8d3-1c01b66c3118">
+<span class="eqno">(3.64)<a class="headerlink" href="#equation-4ac234d6-3590-4b0f-a8d3-1c01b66c3118" title="Permalink to this equation">#</a></span>\[\begin{align}
 &amp;\begin{bmatrix}
 1 &amp; -1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 \\
 20 &amp; 10 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\
@@ -616,8 +619,8 @@ Gauss-Jordan elimination to solve directly:</p>
 \end{bmatrix}
 \end{align}\]</div>
 <p>Solve:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f50721e7-c76b-45b7-80db-5b12d22b0562">
-<span class="eqno">(3.69)<a class="headerlink" href="#equation-f50721e7-c76b-45b7-80db-5b12d22b0562" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-5df864b6-dbd4-4db2-b6d3-bd03ea1bf584">
+<span class="eqno">(3.65)<a class="headerlink" href="#equation-5df864b6-dbd4-4db2-b6d3-bd03ea1bf584" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv {Q}= \vv{A}^{-1}{b} = \begin{bmatrix}
 0.261 &amp; 0.035 &amp; -0.012 \\
 -0.528 &amp; 0.025 &amp; 0.020 \\
@@ -639,11 +642,11 @@ Gauss-Jordan elimination to solve directly:</p>
 </div>
 </section>
 <section id="skill-builder-problems">
-<h2><span class="section-number">3.5.4. </span>Skill builder problems<a class="headerlink" href="#skill-builder-problems" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.8.4. </span>Skill builder problems<a class="headerlink" href="#skill-builder-problems" title="Link to this heading">#</a></h2>
 <ol class="arabic">
 <li><p>Solve using matrix inversion or explain why this is not possible:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6a0be451-89f0-4459-8ea4-105947ad9bdc">
-<span class="eqno">(3.70)<a class="headerlink" href="#equation-6a0be451-89f0-4459-8ea4-105947ad9bdc" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d6571248-30dc-456f-a5ac-2eef6f25b49a">
+<span class="eqno">(3.66)<a class="headerlink" href="#equation-d6571248-30dc-456f-a5ac-2eef6f25b49a" title="Permalink to this equation">#</a></span>\[\begin{align}
 5x_1 - 2x_2 &amp;= 20.9 \\
 -x_1 + 4x_2 &amp;= -19.3
 \end{align}\]</div>
@@ -651,8 +654,8 @@ Gauss-Jordan elimination to solve directly:</p>
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">First, write in matrix form <strong>Ax</strong> = <strong>b</strong> with:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-affd8cf7-97a8-4afd-9fb6-24ed99401527">
-<span class="eqno">(3.71)<a class="headerlink" href="#equation-affd8cf7-97a8-4afd-9fb6-24ed99401527" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b1ed1d27-4757-410b-af5f-3264f7b16874">
+<span class="eqno">(3.67)<a class="headerlink" href="#equation-b1ed1d27-4757-410b-af5f-3264f7b16874" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A} = \begin{bmatrix}
 5 &amp; -2 \\
 -1 &amp; 4
@@ -664,14 +667,14 @@ Gauss-Jordan elimination to solve directly:</p>
 \end{bmatrix}
 \end{equation}\]</div>
 <p class="sd-card-text">Then, evaluate <span class="math notranslate nohighlight">\(|\vv{A}|\)</span> to check if an inverse exists:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-519e716f-e4dd-48f5-8bc7-4c2f45b414fd">
-<span class="eqno">(3.72)<a class="headerlink" href="#equation-519e716f-e4dd-48f5-8bc7-4c2f45b414fd" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1d9d5049-51a4-4e39-b818-4230a4fde743">
+<span class="eqno">(3.68)<a class="headerlink" href="#equation-1d9d5049-51a4-4e39-b818-4230a4fde743" title="Permalink to this equation">#</a></span>\[\begin{equation}
 |\vv{A}| = (5 \cdot 4) - (-1 \cdot -2) = 18
 \end{equation}\]</div>
 <p class="sd-card-text"><span class="math notranslate nohighlight">\(|\vv{A}| \ne 0\)</span>, so an inverse can be found using the formula for a 2x2
 matrix:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cb44656f-92c6-4870-a035-e472778ecddb">
-<span class="eqno">(3.73)<a class="headerlink" href="#equation-cb44656f-92c6-4870-a035-e472778ecddb" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8e30a8f0-b281-4974-8b54-a1337be9fb6b">
+<span class="eqno">(3.69)<a class="headerlink" href="#equation-8e30a8f0-b281-4974-8b54-a1337be9fb6b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A}^{-1} = \frac{1}{18}
 \begin{bmatrix}
 5 &amp; -2 \\
@@ -679,8 +682,8 @@ matrix:</p>
 \end{bmatrix}
 \end{equation}\]</div>
 <p class="sd-card-text">Last, solve for <strong>x</strong>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f2b2209d-cc21-424f-ac0d-5b82ca6d8201">
-<span class="eqno">(3.74)<a class="headerlink" href="#equation-f2b2209d-cc21-424f-ac0d-5b82ca6d8201" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a4afac5a-34c6-4d2d-b617-e96f5fc07bd4">
+<span class="eqno">(3.70)<a class="headerlink" href="#equation-a4afac5a-34c6-4d2d-b617-e96f5fc07bd4" title="Permalink to this equation">#</a></span>\[\begin{align}
 \vv{x} = \vv{A}^{-1}\vv{b} &amp;= \frac{1}{18}
 \begin{bmatrix}
 5 &amp; -2 \\
@@ -704,8 +707,8 @@ matrix:</p>
 </div>
 </details></li>
 <li><p>Solve using matrix inversion or explain why this is not possible:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0a1c8071-deda-433d-83d5-74e3b60fc72d">
-<span class="eqno">(3.75)<a class="headerlink" href="#equation-0a1c8071-deda-433d-83d5-74e3b60fc72d" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ca96cedf-04f5-41c4-a7a5-070d354a6f20">
+<span class="eqno">(3.71)<a class="headerlink" href="#equation-ca96cedf-04f5-41c4-a7a5-070d354a6f20" title="Permalink to this equation">#</a></span>\[\begin{align}
 x_1 + 4x_2 = 8 \\
 2x_1 + 8x_2 = 17
 \end{align}\]</div>
@@ -713,8 +716,8 @@ x_1 + 4x_2 = 8 \\
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">First, write in matrix form <strong>Ax</strong> = <strong>b</strong> with:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-52cf4aed-d028-4d31-a56c-917934951c53">
-<span class="eqno">(3.76)<a class="headerlink" href="#equation-52cf4aed-d028-4d31-a56c-917934951c53" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-02a7296a-f78f-4835-aff6-2dc02afdc092">
+<span class="eqno">(3.72)<a class="headerlink" href="#equation-02a7296a-f78f-4835-aff6-2dc02afdc092" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A} = \begin{bmatrix}
 1 &amp; 4 \\
 2 &amp; 8
@@ -726,8 +729,8 @@ x_1 + 4x_2 = 8 \\
 \end{bmatrix}
 \end{equation}\]</div>
 <p class="sd-card-text">Then, evalaute <span class="math notranslate nohighlight">\(|\vv{A}|\)</span> to check if an inverse exists:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b2b11581-c22d-419b-b707-eab6bad057d0">
-<span class="eqno">(3.77)<a class="headerlink" href="#equation-b2b11581-c22d-419b-b707-eab6bad057d0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8e7e077e-3f16-43ac-9bf7-ee77f2b9b852">
+<span class="eqno">(3.73)<a class="headerlink" href="#equation-8e7e077e-3f16-43ac-9bf7-ee77f2b9b852" title="Permalink to this equation">#</a></span>\[\begin{equation}
 |\vv{A}| = (1 \cdot 8) - (2 \cdot 4) = 0
 \end{equation}\]</div>
 <p class="sd-card-text"><strong>A</strong> is singular because <span class="math notranslate nohighlight">\(|\vv{A}| = 0\)</span>, so these equations cannot be solved
@@ -735,8 +738,8 @@ using an inverse.</p>
 </div>
 </details></li>
 <li><p>Solve using matrix inversion or explain why this is not possible:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c2673b1e-c087-468b-b561-244abb71f169">
-<span class="eqno">(3.78)<a class="headerlink" href="#equation-c2673b1e-c087-468b-b561-244abb71f169" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-05fe36a9-a37d-4450-8319-1ac7cd11154e">
+<span class="eqno">(3.74)<a class="headerlink" href="#equation-05fe36a9-a37d-4450-8319-1ac7cd11154e" title="Permalink to this equation">#</a></span>\[\begin{align}
 x_2 + x_3 = -2 \\
 4x_2 + 6x_3 = -12 \\
 x_1 + x_2 + x_3 = 2
@@ -745,8 +748,8 @@ x_1 + x_2 + x_3 = 2
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">First, write in matrix form <strong>Ax</strong> = <strong>b</strong> with:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-376185a8-ea25-4b10-a69b-a373e1f905b7">
-<span class="eqno">(3.79)<a class="headerlink" href="#equation-376185a8-ea25-4b10-a69b-a373e1f905b7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-de3cb740-6a7b-4008-82e6-26848290ee14">
+<span class="eqno">(3.75)<a class="headerlink" href="#equation-de3cb740-6a7b-4008-82e6-26848290ee14" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A} = \begin{bmatrix}
 0 &amp; 1 &amp; 1 \\
 0 &amp; 4 &amp; 6 \\
@@ -760,8 +763,8 @@ x_1 + x_2 + x_3 = 2
 \end{bmatrix}
 \end{equation}\]</div>
 <p class="sd-card-text">Then, evaluate <span class="math notranslate nohighlight">\(|\vv{A}|\)</span> to check if an inverse exists:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-623653b8-b1ab-4aac-881c-5b4492a10322">
-<span class="eqno">(3.80)<a class="headerlink" href="#equation-623653b8-b1ab-4aac-881c-5b4492a10322" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e7faaeaf-ad7a-429e-8974-7c90368878f1">
+<span class="eqno">(3.76)<a class="headerlink" href="#equation-e7faaeaf-ad7a-429e-8974-7c90368878f1" title="Permalink to this equation">#</a></span>\[\begin{align}
 |\vv{A}| =
 0 \cdot \begin{vmatrix}
 4 &amp; 6 \\
@@ -778,15 +781,15 @@ x_1 + x_2 + x_3 = 2
 1 &amp; 1
 \end{vmatrix}
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-38341ede-03e5-4479-bd7c-fa7af3ec6698">
-<span class="eqno">(3.81)<a class="headerlink" href="#equation-38341ede-03e5-4479-bd7c-fa7af3ec6698" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-61e9811b-c41b-4723-bf61-68201554c856">
+<span class="eqno">(3.77)<a class="headerlink" href="#equation-61e9811b-c41b-4723-bf61-68201554c856" title="Permalink to this equation">#</a></span>\[\begin{equation}
 |\vv{A}| = -1 \cdot (0-6) + 1 \cdot (0-4) = 2
 \end{equation}\]</div>
 <p class="sd-card-text">Since <span class="math notranslate nohighlight">\(|\vv{A}| \ne 0\)</span>, <strong>A</strong> is invertible. Use Gauss-Jordan elimination
 to find the inverse. Start with the augmented matrix <span class="math notranslate nohighlight">\([\vv{A} | \vv{I}]\)</span>,
 then rearrange the rows</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d4a2fbde-947f-436a-bd5d-dcab059aa4b2">
-<span class="eqno">(3.82)<a class="headerlink" href="#equation-d4a2fbde-947f-436a-bd5d-dcab059aa4b2" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b92c2e7e-1de6-4685-85ba-0b1061e62780">
+<span class="eqno">(3.78)<a class="headerlink" href="#equation-b92c2e7e-1de6-4685-85ba-0b1061e62780" title="Permalink to this equation">#</a></span>\[\begin{align}
 \begin{bmatrix}
 0 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 \\
 0 &amp; 4 &amp; 6 &amp; 0 &amp; 1 &amp; 0 \\
@@ -831,8 +834,8 @@ then rearrange the rows</p>
 \end{bmatrix}
 \end{align}\]</div>
 <p class="sd-card-text">Hence,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a23461a3-1765-4346-b37f-730d803634d7">
-<span class="eqno">(3.83)<a class="headerlink" href="#equation-a23461a3-1765-4346-b37f-730d803634d7" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-8228a8dd-6b42-45a5-aa55-26b265ea7089">
+<span class="eqno">(3.79)<a class="headerlink" href="#equation-8228a8dd-6b42-45a5-aa55-26b265ea7089" title="Permalink to this equation">#</a></span>\[\begin{align}
 \vv{A}^{-1} = \begin{bmatrix}
 -1 &amp; 0 &amp; 1 \\
 3 &amp; -0.5 &amp; 0 \\
@@ -840,8 +843,8 @@ then rearrange the rows</p>
 \end{bmatrix}
 \end{align}\]</div>
 <p class="sd-card-text">and</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d5d2120e-4ac0-4b8e-baa5-1d06b57bafff">
-<span class="eqno">(3.84)<a class="headerlink" href="#equation-d5d2120e-4ac0-4b8e-baa5-1d06b57bafff" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-32afe4b9-36d6-4171-9547-4730432433b5">
+<span class="eqno">(3.80)<a class="headerlink" href="#equation-32afe4b9-36d6-4171-9547-4730432433b5" title="Permalink to this equation">#</a></span>\[\begin{align}
 \vv{x} = \vv{A}^{-1} \vv{b} &amp;=
 \begin{bmatrix}
 -1 &amp; 0 &amp; 1 \\
@@ -868,8 +871,8 @@ then rearrange the rows</p>
 </div>
 </details></li>
 <li><p>Solve using matrix inversion or explain why this is not possible:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-87d6e474-7ea8-4c03-b9b1-4ed160362787">
-<span class="eqno">(3.85)<a class="headerlink" href="#equation-87d6e474-7ea8-4c03-b9b1-4ed160362787" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-41aa2d76-29c5-45de-8dbd-5b90e0b54d7d">
+<span class="eqno">(3.81)<a class="headerlink" href="#equation-41aa2d76-29c5-45de-8dbd-5b90e0b54d7d" title="Permalink to this equation">#</a></span>\[\begin{align}
 4x_2 + 4x_3 = 24 \\
 3x_1 - 11x_2 - 2x_3 = -6 \\
 6x_1 - 17x_2 + x_3 = 18
@@ -878,8 +881,8 @@ then rearrange the rows</p>
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">First, write in matrix form <strong>Ax</strong> = <strong>b</strong> with:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d39b4335-f97a-4831-8c84-32b353d15f05">
-<span class="eqno">(3.86)<a class="headerlink" href="#equation-d39b4335-f97a-4831-8c84-32b353d15f05" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2ade8211-d241-4d7a-84b2-8e9afde675ef">
+<span class="eqno">(3.82)<a class="headerlink" href="#equation-2ade8211-d241-4d7a-84b2-8e9afde675ef" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A} = \begin{bmatrix}
 0 &amp; 4 &amp; 4 \\
 3 &amp; -11 &amp; -2 \\
@@ -893,8 +896,8 @@ then rearrange the rows</p>
 \end{bmatrix}
 \end{equation}\]</div>
 <p class="sd-card-text">Then, evaluate <span class="math notranslate nohighlight">\(|\vv{A}|\)</span> to check if an inverse exists:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e507c2e6-9e66-448c-a160-ac81270bbf5c">
-<span class="eqno">(3.87)<a class="headerlink" href="#equation-e507c2e6-9e66-448c-a160-ac81270bbf5c" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ccdabcc9-83b4-46e2-b798-d2ffcfd74748">
+<span class="eqno">(3.83)<a class="headerlink" href="#equation-ccdabcc9-83b4-46e2-b798-d2ffcfd74748" title="Permalink to this equation">#</a></span>\[\begin{align}
 |\vv{A}| =
 0 \cdot \begin{vmatrix}
 -11 &amp; -2 \\
@@ -911,8 +914,8 @@ then rearrange the rows</p>
 6 &amp; -17
 \end{vmatrix}
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-95b9c529-8e77-495c-9a45-87370ec27d08">
-<span class="eqno">(3.88)<a class="headerlink" href="#equation-95b9c529-8e77-495c-9a45-87370ec27d08" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-17f54f15-dd58-42eb-b2eb-151d066e4749">
+<span class="eqno">(3.84)<a class="headerlink" href="#equation-17f54f15-dd58-42eb-b2eb-151d066e4749" title="Permalink to this equation">#</a></span>\[\begin{align}
 |\vv{A}| &amp;= -4 (3 \cdot 1 - 6 \cdot -2) + 4 (3 \cdot -17 - 6 \cdot -11) \\
 &amp;= -4 \cdot 15 + 4 \cdot 15 \\
 &amp;= 0
@@ -921,8 +924,8 @@ then rearrange the rows</p>
 </div>
 </details></li>
 <li><p>Solve using matrix inversion or explain why this is not possible:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-344bf65e-20e0-481c-a09f-0738e80ba8b1">
-<span class="eqno">(3.89)<a class="headerlink" href="#equation-344bf65e-20e0-481c-a09f-0738e80ba8b1" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1bfbc26a-ee23-47b6-a168-691d7dbd79dd">
+<span class="eqno">(3.85)<a class="headerlink" href="#equation-1bfbc26a-ee23-47b6-a168-691d7dbd79dd" title="Permalink to this equation">#</a></span>\[\begin{align}
 2x_1 - x_2 + 3x_3 = -1 \\
 -4x_1 + 2x_2 - 6x_3 = 2
 \end{align}\]</div>
@@ -930,8 +933,8 @@ then rearrange the rows</p>
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">First, write in matrix form <strong>Ax</strong> = <strong>b</strong> with:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a53821a7-cdc7-4d12-a154-5a4d5f58d903">
-<span class="eqno">(3.90)<a class="headerlink" href="#equation-a53821a7-cdc7-4d12-a154-5a4d5f58d903" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e076b476-2a71-4aa1-8783-6b454b30e80f">
+<span class="eqno">(3.86)<a class="headerlink" href="#equation-e076b476-2a71-4aa1-8783-6b454b30e80f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A} = \begin{bmatrix}
 2 &amp; -1 &amp; 3 \\
 -4 &amp; 2 &amp; -6
@@ -993,7 +996,7 @@ then rearrange the rows</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3.6. </span>Eigenvalue problem</p>
+        <p class="prev-next-title"><span class="section-number">3.9. </span>Eigenvalue problem</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1013,10 +1016,10 @@ then rearrange the rows</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation-and-definition">3.5.1. Motivation and definition</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-of-a-2-x-2-matrix">3.5.2. Inverse of a 2 x 2 matrix</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverses-using-gauss-jordan-elimination">3.5.3. Inverses using Gauss-Jordan elimination</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill-builder-problems">3.5.4. Skill builder problems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation-and-definition">3.8.1. Motivation and definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-of-a-2-x-2-matrix">3.8.2. Inverse of a 2 x 2 matrix</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverses-using-gauss-jordan-elimination">3.8.3. Inverses using Gauss-Jordan elimination</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill-builder-problems">3.8.4. Skill builder problems</a></li>
 </ul>
   </nav></div>
 
