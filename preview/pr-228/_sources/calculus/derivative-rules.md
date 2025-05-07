@@ -50,14 +50,14 @@ This was obviously harder than the old way, but there are other cases where it i
 2.  $f(x) = \frac{\exp(x)}{1 + x}$
 
    \begin{align}
-   u &= \exp(x) & v &= 1 + x \\
-   u' &= \exp(x) & v' &= 1
+   u &= \e^{x} & v &= 1 + x \\
+   u' &= \e^{x} & v' &= 1
    \end{align}
 
    so
 
    \begin{equation}
-   f'(x) = \frac{(1 + x) \cdot \exp(x) - \exp(x) \cdot 1}{(1 + x)^2} = \frac{x \cdot \exp(x)}{(1 + x)^2}
+   f'(x) = \frac{(1 + x) \cdot \e^{x} - \e^{x} \cdot 1}{(1 + x)^2} = \frac{x \cdot \e^{x}}{(1 + x)^2}
    \end{equation}
 
 3. $f(x) = \frac{(x - 1) \cdot (x^2 - 2x)}{x^4}$
@@ -75,7 +75,7 @@ This was obviously harder than the old way, but there are other cases where it i
 
    v.s
 
-   \being{equation}
+   \begin{equation}
    f(x) = \frac{1}{x^4} \cdot x^3 -3x^2 +2x = x^-1 -3x^-2 +2x^-3
    f'(x) = -\frac{1}{x^2} + \frac{6}{x^3} - \frac{6}{x^4}
    \end{equation}
