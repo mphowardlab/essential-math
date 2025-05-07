@@ -1,157 +1,163 @@
 # Eigenvalue problem
 
-## Skill Builder Problems
+## Skill builder problems
 
-Find the eigenvalues and eigenvectors of the following matrices:
+Find the eigenvalues and eigenvectors
 
-1. \begin{equation}
-\vv{A} = \begin{bmatrix} 4 & 2 \\ 0 & -4 \end{bmatrix}
-\end{equation}
+1. For:
 
-```{solution}
-Since **A** is **upper triangular**, the eigenvalues are the diagonal entries:
+   \begin{equation}
+   \vv{A} = \begin{bmatrix} 4 & 2 \\ 0 & -4 \end{bmatrix}
+   \end{equation}
 
-\begin{align}
-\lambda_1 &= 4 \\ 
-\lambda_2 &= -4
-\end{align}
+   ```{solution}
+   Since **A** is upper triangular, the eigenvalues are the diagonal entries,
+   $\lambda_1 = 4$ and $\lambda_2 = -4$. Then, use these eigenvalues to find
+   the eigenvectors that solve $(\vv{A}-\lambda \vv{I})\vv{x} = \vv{0}$.
 
-Then, use these eigenvalues to find the eigenvectors:
+   For $\lambda_1 = 4$,
 
-\begin{equation}
-\lambda_1 = 4: \begin{bmatrix} 0 & 2 \\ 0 & -8 \end{bmatrix} \vv{x_1} = 0 
-\longrightarrow
-\vv{x_1} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
-\end{equation}
+   \begin{equation}
+   \vv{A}-\lambda_1\vv{I} =
+   \begin{bmatrix} 0 & 2 \\ 0 & -8 \end{bmatrix}
+   \to \vv{x}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
+   \end{equation}
 
-\begin{equation}
-\lambda_2 = -4: \begin{bmatrix} 8 & 2 \\ 0 & 0 \end{bmatrix} \vv{x_2} = 0 
-\longrightarrow
-\vv{x_2} = \begin{bmatrix} 1 \\ -4 \end{bmatrix}
-\end{equation}
+   For $\lambda_2 = -4$,
 
-So.
-\begin{align}
-\lambda_1 &= 4 \\
-\lambda_2 &= -4 \\
-\vv{x_1} &= \begin{bmatrix} 1 \\ 0 \end{bmatrix} \\
-\vv{x_2} &= \begin{bmatrix} 1 \\ -4 \end{bmatrix}
-\end{align}
-````
+   \begin{equation}
+   \vv{A}-\lambda_2\vv{I} =
+   \begin{bmatrix} 8 & 2 \\ 0 & 0 \end{bmatrix}
+   \to \vv{x}_2 = \begin{bmatrix} 1 \\ -4 \end{bmatrix}
+   \end{equation}
+   ```
 
-2. \begin{equation}
-\vv{A} = \begin{bmatrix} 5 & -2 \\ 9 & -6 \end{bmatrix}
-\end{equation}
+2. For:
 
-```{solution}
+   \begin{equation}
+   \vv{A} = \begin{bmatrix} 5 & -2 \\ 9 & -6 \end{bmatrix}
+   \end{equation}
 
-First, find the eigenvalues:
+   ```{solution}
+   First, find the eigenvalues:
 
-\begin{equation}
-|\vv{A}-\lambda \vv{I}| = \begin{vmatrix} 5 - \lambda & -2 \\ 9 & -6 - \lambda \end{vmatrix} 
-\end{equation}
+   \begin{align}
+   |\vv{A}-\lambda \vv{I}|
+   &= \begin{vmatrix} 5 - \lambda & -2 \\ 9 & -6 - \lambda \end{vmatrix} \\
+   &= (\lambda - 5)(\lambda + 6) + 18 \\
+   &= \lambda^2 + \lambda - 12 \\
+   &= (\lambda - 3)(\lambda + 4) = 0
+   \end{align}
 
-\begin{equation}
-(\lambda - 5)(\lambda + 6) + 18 = \lambda^2 + \lambda - 12 = (\lambda + 4)(\lambda - 3) = 0
-\end{equation}
+   So, $\lambda_1 = 3$ and $\lambda_2 = -4$. For $\lambda_1 = 4$,
 
-\begin{align}
-\lambda_1 &= 3 \\
-\lambda_2 &= -4
-\end{align}
+   \begin{equation}
+   \vv{A}-\lambda_1\vv{I} =
+   \begin{bmatrix} 2 & -2 \\ 9 & -9 \end{bmatrix}
+   \to \vv{x}_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+   \end{equation}
 
-Then, use these eigenvalues to find the eigenvectors:
+   For $\lambda_2 = -4$,
 
-\begin{equation}
-\lambda_1 = 3: \begin{bmatrix} 2 & -2 \\ 9 & -9 \end{bmatrix} \vv{x_1} = 0 
-\longrightarrow
-\vv{x_1} = \begin{bmatrix} 1 \\ 1 \end{bmatrix}
-\end{equation}
+   \begin{equation}
+   \vv{A}-\lambda_2\vv{I} =
+   \begin{bmatrix} 9 & -2 \\ 9 & -2 \end{bmatrix}
+   \to \vv{x}_2 = \begin{bmatrix} 2 \\ 9 \end{bmatrix}
+   \end{equation}
+   ```
 
-\begin{equation}
-\lambda_2 = -4: \begin{bmatrix} 9 & -2 \\ 9 & -2 \end{bmatrix} \vv{x_2} = 0 
-\longrightarrow
-\vv{x_2} = \begin{bmatrix} 2 \\ 9 \end{bmatrix}
-\end{equation}
+3. For:
 
-So,
-\begin{align}
-\lambda_1 &= 3 \\
-\lambda_2 &= -4 \\
-\vv{x_1} &= \begin{bmatrix} 1 \\ 1 \end{bmatrix} \\
-\vv{x_2} &= \begin{bmatrix} 2 \\ 9 \end{bmatrix} \\
-\end{align}
-````
+   \begin{equation}
+   \vv{A} = \begin{bmatrix} 6 & 2 & -2 \\ 2 & 5 & 0 \\ -2 & 0 & 7 \end{bmatrix}
+   \end{equation}
 
-3. \begin{equation}
-\vv{A} = \begin{bmatrix} 6 & 2 & -2 \\ 2 & 5 & 0 \\ -2 & 0 & 7 \end{bmatrix}
-\end{equation}
+   ```{solution}
+   First, find the eigenvalues:
 
-```{solution}
-First, find the eigenvalues:
+   \begin{align}
+   |\vv{A}-\lambda \vv{I}|
+   &= \begin{vmatrix}
+   6 - \lambda & 2 & -2 \\
+   2 & 5 - \lambda & 0 \\
+   -2 & 0 & 7 - \lambda
+   \end{vmatrix} \\
+   &= -2 \begin{vmatrix} 2 & -2 \\ 0 & 7 - \lambda \end{vmatrix} +
+     (5 - \lambda)
+     \begin{vmatrix} 6 - \lambda & -2 \\ -2 & 7 - \lambda \end{vmatrix} \\
+   &= -2 \cdot 2(7 - \lambda) + (5 - \lambda)[(\lambda - 6)(\lambda - 7) - 4] \\
+   &= -\lambda^3 + 18\lambda^2 - 99\lambda + 162 = 0
+   \end{align}
 
-\begin{align}
-|\vv{A}-\lambda \vv{I}| &= \begin{vmatrix} 6 - \lambda & 2 & -2 \\ 2 & 5 - \lambda & 0 \\ -2 & 0 & 7 - \lambda \end{vmatrix} \\
- &= -2 \begin{vmatrix} 2 & -2 \\ 0 & 7 - \lambda \end{vmatrix} + (5 - \lambda) \begin{vmatrix} 6 - \lambda & -2 \\ -2 & 7 - \lambda \end{vmatrix} \\
- &= (-2)(2)(7 - \lambda) + (5 - \lambda)[(\lambda - 6)(\lambda - 7) - 4] \\ 
- &= -28 + 4\lambda + (5 - \lambda)\left(\lambda^2 - 10\lambda + 38 \right) \\
- &= -\lambda^3 + 18\lambda^2 - 99\lambda + 162 = 0
-\end{align}
+   Solving for these roots numerically gives $\lambda_1 = 9$, $\lambda_2 = 6$,
+   and $\lambda_3 = 3$.
 
-\begin{align}
-\lambda_1 &= 9 \\
-\lambda_2 &= 6 \\
-\lambda_3 &= 3
-\end{align}
+   For $\lambda_1 = 9$, using row reduction gives
 
-Then, use these eigenvalues to find the eigenvectors:
+   \begin{equation}
+   \vv{A}-\lambda_1\vv{I} =
+   \begin{bmatrix}
+   -3 & 2 & -2 \\
+   2 & -4 & 0 \\
+   -2 & 0 & -2
+   \end{bmatrix}
+   \to\to
+   \begin{bmatrix}
+   1 & 0 & 1 \\
+   0 & 2 & 1 \\
+   0 & 0 & 0
+   \end{bmatrix}
+   \end{equation}
 
-\begin{equation}
-\lambda_1 = 9: \begin{bmatrix} -3 & 2 & -2 \\ 2 & -4 & 0 \\ -2 & 0 & -2 \end{bmatrix} \vv{x_1} = 0
-\end{equation}
-Reduce the row and choose: 
-\begin{align} 
-x_3 &= 2 
-\end{align}
-\begin{equation}
-\begin{bmatrix} 1 & -2 & 0 \\ 0 & 2 & 1 \\ 0 & 0 & 0 \end{bmatrix} \vv{x_1} = 0
-\longrightarrow
-\vv{x_1} = \begin{bmatrix} -2 \\ -1 \\ 2 \end{bmatrix}
-\end{equation}
+   Choosing $x_3 = 2$ as the free variable gives
 
-\begin{equation}
-\lambda_2 = 6: \begin{bmatrix} 0 & 2 & -2 \\ 2 & -1 & 0 \\ -2 & 0 & 1 \end{bmatrix} \vv{x_2} = 0
-\end{equation}
-Reduce the row and choose: 
-\begin{align} 
-x_3 &= 2 
-\end{align}
-\begin{equation}
-\begin{bmatrix} -2 & 0 & 1 \\ 0 & 1 & -1 \\ 0 & 0 & 0 \end{bmatrix} \vv{x_2} = 0
-\longrightarrow
-\vv{x_2} = \begin{bmatrix} 1 \\ 2 \\ 2 \end{bmatrix}
-\end{equation}
+   \begin{equation}
+   \vv{x}_1 = \begin{bmatrix} -2 \\ -1 \\ 2 \end{bmatrix}
+   \end{equation}
 
-\begin{equation}
-\lambda_3 = 3: \begin{bmatrix} 3 & 2 & -2 \\ 2 & 2 & 0 \\ -2 & 0 & 4 \end{bmatrix} \vv{x_3} = 0
-\end{equation}
-Reduce the row and choose: 
-\begin{align} 
-x_3 &= 1 
-\end{align}
-\begin{equation}
-\begin{bmatrix} 1 & 1 & 0 \\ 0 & 1 & 2 \\ 0 & 0 & 0 \end{bmatrix} \vv{x_3} = 0
-\longrightarrow
-\vv{x_3} = \begin{bmatrix} 2 \\ -2 \\ 1 \end{bmatrix}
-\end{equation}
+   For $\lambda_2 = 6$, using row reduction gives
 
-So,
-\begin{align}
-\lambda_1 &= 9 \\
-\lambda_2 &= 6 \\
-\lambda_3 &= 3 \\
-\vv{x_1} &= \begin{bmatrix} -2 \\ -1 \\ 2 \end{bmatrix} \\
-\vv{x_2} &= \begin{bmatrix} 1 \\ 2 \\ 2 \end{bmatrix} \\
-\vv{x_3} &= \begin{bmatrix} 2 \\ -2 \\ 1 \end{bmatrix}
-\end{align}
-````
+   \begin{equation}
+   \vv{A}-\lambda_2\vv{I} =
+   \begin{bmatrix}
+   0 & 2 & -2 \\
+   2 & -1 & 0 \\
+   -2 & 0 & 1
+   \end{bmatrix}
+   \to\to
+   \begin{bmatrix}
+   -2 & 0 & 1 \\
+   0 & 1 & -1 \\
+   0 & 0 & 0
+   \end{bmatrix}
+   \end{equation}
+
+   Taking $x_3 = 2$ as the free v ariable gives:
+
+   \begin{equation}
+   \vv{x}_2 = \begin{bmatrix} 1 \\ 2 \\ 2 \end{bmatrix}
+   \end{equation}
+
+   For $\lambda_3 = 3$, using row reduction gives
+
+   \begin{equation}
+   \vv{A}-\lambda_3\vv{I} =
+   \begin{bmatrix}
+   3 & 2 & -2 \\
+   2 & 2 & 0 \\
+   -2 & 0 & 4
+   \end{bmatrix}
+   \to\to
+   \begin{bmatrix}
+   1 & 0 & -2 \\
+   0 & 1 & 2 \\
+   0 & 0 & 0
+   \end{bmatrix}
+   \end{equation}
+
+   Choosing $x_3 = 1$ as the free variable gives:
+
+   \begin{equation}
+   \vv{x}_3 = \begin{bmatrix} 2 \\ -2 \\ 1 \end{bmatrix}
+   \end{equation}
+   ```
