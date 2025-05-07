@@ -121,7 +121,7 @@ needed to expand this function before differentiating:
 
    ```{solution}
    \begin{align}
-   f'(x) &= 3\frac{d}{dx}(\cos x) + 4\frac{d}{dx}(\sin x)\\
+   f'(x) &= 3 \dd{}{}{x}(\cos x) + 4 \dd{}{}{x}(\sin x)\\
    &= -3\sin{x} + 4\cos{x}
    \end{align}
    ```
@@ -133,9 +133,9 @@ needed to expand this function before differentiating:
 
    \begin{align}
    u &= \sin x & v &= \cos x\\
-   u' &= \cos x & v' *= -\sin x
+   u' &= \cos x & v' &= -\sin x
    \end{align}
-   
+
    \begin{align}
    f'(x) &= 2[\sin x(-\sin x) + \cos x(\cos x)] \\
    &= 2(\cos^2 x-\sin^2 x) \\
@@ -147,16 +147,16 @@ needed to expand this function before differentiating:
 
    ```{solution}
    Use the chain rule with
-   
+
    \begin{align}
    u &= 2x & f &= \sin u \\
    u' &= 2 & f' = \cos u
    \end{align}
-   
+
    so
-   
+
    \begin{equation}
-   f^{'}(x) &= \cos{u} \cdot 2 = 2 \cos 2 x
+   f'(x) = \cos{u} \cdot 2 = 2 \cos 2 x
    \end{equation}
    ```
 
