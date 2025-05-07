@@ -1,36 +1,45 @@
 # Derivatives
-$$
-\begin{array}{lll}
-\text{Rule} & f(x) & f'(x) \\
-\hline
-\text{Constant} & k & 0 \\
-\text{Power} & x^n & nx^{n-1} \\
-\text{Multiple} & k u(x) & k u'(x) \\
-\text{Sum} & u(x) + v(x) & u'(x) + v'(x) \\
-\text{Difference} & u(x) - v(x) & u'(x) - v'(x) \\
-\text{Exponential} & a^x & \frac{a^x}{\ln a} \\
-\text{Logarithm} & \log_a x & \frac{1}{x \ln a} \\
-\end{array}
-$$
 
-$$
-text{(1) } f(x) = x^3 \quad \rightarrow \quad f'(x) = 3x^{3-1} = 3x^2
+## Formal definition
 
-\text{(2) } f(x) = -x^2 + 3 \quad \rightarrow \quad f'(x) = \frac{d}{dx}(-x^2) + \frac{d}{dx}(3) \\
-= -\frac{d}{dx}(x^2) + \frac{d}{dx}(3) \\
-= -2x^{2-1} + 0 \\
-= -2x
+The derivative is also a function!
 
-\text{(3) } f(x) = \frac{4x^3}{3} - x + 2e^x \quad \rightarrow \quad f'(x) = \frac{4}{3}\frac{d}{dx}(x^3) - \frac{d}{dx}(x) + 2\frac{d}{dx}(e^x) \\
-= \frac{4}{3}(3x^2) -1 + 2e^x \\
-= 4x^2 -1 +2e^x
+```{image} ./_images/derivative_function.png
+:alt: Function and derivative
+:align: center
+:width: 300px
+```
 
-\text{(4) } f(x) = \frac{3}{x^2} + \sqrt{x} \quad \rightarrow \quad f'(x) = 3\frac{d}{dx}(x^{-2}) + \frac{d}{dx}(x^{1/2}) \\
-= 3(-2x^{-3}) + \frac{1}{2}x^{-1/2} \\
-= \frac{-6}{x^3} + \frac{1}{2\sqrt{x}}
+For example, if $f(x) = x^2$,
+\begin{align}
+f'(x) &= \lim_{h \to 0} \frac{(x+h)^2 - x^2}{h} \\
+    &= \lim_{h \to 0} \frac{x^2 + 2xh + h^2 - x^2}{h} \\
+    &= \lim_{h \to 0} \frac{2xh + h^2}{h} \\
+    &= \lim_{h \to 0} (2x + h) \\
+    &= 2x
+\end{align}
 
-\text{(5) } f(x) = \log(4x) \quad \rightarrow \quad f'(x) = \frac{d}{dx}[\log 4 + \log x] \\
-= \frac{d}{dx}(\log 4) + \frac{d}{dx}(\log x) \\
-= 0 + \frac{1}{x \ln 10} \\
-= \frac{1}{x \ln 10}
-$$
+This function represents how the slope of the line tangent to *f* is changing
+with *x*. For this function, the slope continually increases! Some additional
+examples:
+
+1. $f(x) = (x - 1)^2 + 1$
+
+   \begin{align}
+   f'(x) &= \lim_{h \to 0} \frac{[(x + h - 1)^2 + 1] - [(x - 1)^2 + 1]}{h} \\
+       &= \lim_{h \to 0} \frac{(x - 1)^2 +
+          2(x - 1)h + h^2 + 1 - (x - 1)^2 - 1}{h} \\
+       &= \lim_{h \to 0} \frac{2(x - 1)h + h^2}{h} \\
+       &= \lim_{h \to 0} 2(x - 1) + h \\
+       &= 2(x - 1)
+   \end{align}
+
+2. $f(x) = 1/x$
+
+   \begin{align}
+   f'(x) &= \lim_{h \to 0} \frac{\dfrac{1}{x+h} - \dfrac{1}{x}}{h} \\
+       &= \lim_{h \to 0} \frac{\dfrac{x - (x + h)}{x(x+h)}}{h}  \\
+       &= \lim_{h \to 0} \frac{\dfrac{- h}{x(x+h)}}{h}  \\
+       &= \lim_{h \to 0} \frac{-1}{(x+h)x} \\
+       &= \frac{-1}{x^2}
+   \end{align}
