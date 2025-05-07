@@ -179,7 +179,7 @@ This matches our old answer!
 
 Consider a diffusion cell consisting of two compartments with solute concentrations $c_1$ and $c_2$. The concentrations change according to
 
-```{image} ./_images/diffusioncell.jpeg
+```{image} ./_first-order-odes/_images/diffusioncell.jpeg
 :alt: <Diffusion cell>
 :align: center
 :width: 200px
@@ -210,13 +210,14 @@ So, the eigenvalues are
 \lambda_1 = 0, \quad \lambda_2 = -0.2
 \end{align}
 
-TNext, we find eigenvectors:
+Next, we find eigenvectors:
 \begin{align}
 \lambda_1 &= 0: \begin{bmatrix} -0.1 & 0.1 \\ 0.1 & -0.1 \end{bmatrix} \vv{x_1}
  = \vv{0} \\
 \lambda_2 &= -0.2: \begin{bmatrix} 0.1 & 0.1 \\ 0.1 & 0.1 \end{bmatrix} \vv{x_2}
  = \vv{0}  
 \end{align}
+
 so, 
 \begin{equation}
 \vv{x}_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}, \quad \vv{x}_2 = \begin{bmatrix} 1 \\ -1 \end{bmatrix}
