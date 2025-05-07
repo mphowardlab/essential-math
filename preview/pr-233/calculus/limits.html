@@ -174,11 +174,12 @@
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">1.2. Limits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="derivatives.html">1.3. Derivatives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="derivative-rules.html">1.4. Product, quotient, and chain rule</a></li>
-<li class="toctree-l2"><a class="reference internal" href="series-expansion.html">1.5. Series expansion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="integration.html">1.6. Integration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="integration-substitution.html">1.7. Integration using substitution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="integration-by-parts.html">1.8. Integration by parts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="integration-partial-fractions.html">1.9. Partial fraction decomposition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lhopitals-rule.html">1.5. L’Hopital’s Rule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="series-expansion.html">1.6. Series expansion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="integration.html">1.7. Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="integration-substitution.html">1.8. Integration using substitution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="integration-by-parts.html">1.9. Integration by parts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="integration-partial-fractions.html">1.10. Partial fraction decomposition</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../multivariable-calculus/index.html">2. Multivariable calculus</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -454,20 +455,20 @@ For example, what happens to a function near boundaries of its domain? Near
 <p>Let <span class="math notranslate nohighlight">\(f(x)\)</span> be defined on an open interval around <span class="math notranslate nohighlight">\(x_0\)</span>, except possibly at <span class="math notranslate nohighlight">\(x_0\)</span>
 itself. If <span class="math notranslate nohighlight">\(f(x)\)</span> is arbitrarily close to <span class="math notranslate nohighlight">\(L\)</span> for all <span class="math notranslate nohighlight">\(x\)</span> sufficiently close to
 <span class="math notranslate nohighlight">\(x_0\)</span>, we say <span class="math notranslate nohighlight">\(f\)</span> approaches the limit <span class="math notranslate nohighlight">\(L\)</span> as <span class="math notranslate nohighlight">\(x\)</span> approaches <span class="math notranslate nohighlight">\(x_0\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-655541aa-d316-4fbd-a884-cb4d562d8282">
-<span class="eqno">(1.13)<a class="headerlink" href="#equation-655541aa-d316-4fbd-a884-cb4d562d8282" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-96984ba0-cc42-4571-a927-8873beee434a">
+<span class="eqno">(1.13)<a class="headerlink" href="#equation-96984ba0-cc42-4571-a927-8873beee434a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lim_{x \to x_0} f(x) = L
 \end{equation}\]</div>
 </aside>
 <p>Some functions have limits. For example:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0494f967-d2a5-4562-ac54-86dfdc2ebaa6">
-<span class="eqno">(1.14)<a class="headerlink" href="#equation-0494f967-d2a5-4562-ac54-86dfdc2ebaa6" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-16ea8891-179b-4036-8ed2-b0b862f89c73">
+<span class="eqno">(1.14)<a class="headerlink" href="#equation-16ea8891-179b-4036-8ed2-b0b862f89c73" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f(x) = \frac{x^2 - 1}{x - 1}
 \end{equation}\]</div>
 <p>is not defined when <span class="math notranslate nohighlight">\(x=1\)</span>. What happens to it near 1? First, let’s factor and
 simplify:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-59248b6d-6b64-4a2c-add9-b53fb6a88aca">
-<span class="eqno">(1.15)<a class="headerlink" href="#equation-59248b6d-6b64-4a2c-add9-b53fb6a88aca" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0414abd5-b4b3-4d67-a635-1fa441d6c2af">
+<span class="eqno">(1.15)<a class="headerlink" href="#equation-0414abd5-b4b3-4d67-a635-1fa441d6c2af" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f(x) = \frac{(x+1)(x-1)}{x-1} = x+1, \quad x \neq 1
 \end{equation}\]</div>
 <p>So, we expect that <em>f</em> should be well-behaved and have a value that approaches
@@ -504,8 +505,8 @@ f(x) = \frac{(x+1)(x-1)}{x-1} = x+1, \quad x \neq 1
 <a class="reference internal image-reference" href="../_images/fx_x+1.png"><img alt="Limit Exists" class="align-center" src="../_images/fx_x%2B1.png" style="width: 300px;" />
 </a>
 <p>However, some functions do not have limits. For example:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c111c622-56a2-4121-9920-1f02e18a9691">
-<span class="eqno">(1.16)<a class="headerlink" href="#equation-c111c622-56a2-4121-9920-1f02e18a9691" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c1536938-aeba-4eed-9d5c-29b4d6b26f0c">
+<span class="eqno">(1.16)<a class="headerlink" href="#equation-c1536938-aeba-4eed-9d5c-29b4d6b26f0c" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f(x) = \frac{1}{x}
 \end{equation}\]</div>
 <p>is not defined at <span class="math notranslate nohighlight">\(x = 0\)</span>. As <em>x</em> approaches zero from the positive or negative
@@ -570,8 +571,8 @@ Proportional-integral control</div>
 </div>
 <aside class="topic">
 <p class="topic-title">Limit at infinity</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8321c77a-f0c1-46d0-bec6-8acda4a22d53">
-<span class="eqno">(1.17)<a class="headerlink" href="#equation-8321c77a-f0c1-46d0-bec6-8acda4a22d53" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2fa1d985-061e-4faf-9748-f7ed596282c7">
+<span class="eqno">(1.17)<a class="headerlink" href="#equation-2fa1d985-061e-4faf-9748-f7ed596282c7" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lim_{x \to \infty} f(x) = L
 \end{equation}\]</div>
 <p>if for every <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span>, there exists a value <em>M</em> such that for all <em>x</em>,
@@ -587,8 +588,8 @@ if <span class="math notranslate nohighlight">\(x &gt; M\)</span>, <span class="
 <p>Other limit laws (sum, quotient, etc.) also hold at infinity! If function is
 already in a convenient form, use known limits to evaluate unknown ones. For
 example,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3f6cf70b-ea69-4aea-b6f7-5a1dfeff31f2">
-<span class="eqno">(1.18)<a class="headerlink" href="#equation-3f6cf70b-ea69-4aea-b6f7-5a1dfeff31f2" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-544a9478-bd53-4fda-be83-9911cdbd8bf9">
+<span class="eqno">(1.18)<a class="headerlink" href="#equation-544a9478-bd53-4fda-be83-9911cdbd8bf9" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lim_{x \to \infty} 5 + \frac{1}{x} =
   \lim_{x \to \infty} 5 + \lim_{x \to \infty} \frac{1}{x} =
   5 + 0 = 5
@@ -596,14 +597,14 @@ example,</p>
 <p>For rational functions <span class="math notranslate nohighlight">\(f(x) = p(x) / q(x)\)</span>, divide by largest power of <em>x</em> in
 denominator:</p>
 <!--markdownlint-disable MD013 -->
-<div class="amsmath math notranslate nohighlight" id="equation-227e6844-47e0-4f50-a3d0-cd67a8176b74">
-<span class="eqno">(1.19)<a class="headerlink" href="#equation-227e6844-47e0-4f50-a3d0-cd67a8176b74" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a4add7a9-07a5-4b4c-9032-a37d64ebb058">
+<span class="eqno">(1.19)<a class="headerlink" href="#equation-a4add7a9-07a5-4b4c-9032-a37d64ebb058" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lim_{x \to -\infty} \frac{11x + 2}{2x^3-1} =
   \lim_{x \to -\infty} \frac{ \dfrac{11x}{x^3} + \dfrac{2}{x^3} }{ \dfrac{2x^3}{x^3} + \dfrac{1}{x^3}}
   = \frac{0 + 0}{2 - 0} = 0
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-88d34852-7fc7-49a1-82e3-5d723c8bed4d">
-<span class="eqno">(1.20)<a class="headerlink" href="#equation-88d34852-7fc7-49a1-82e3-5d723c8bed4d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-266a02c7-ec44-4f76-9b26-44cd2b9265d6">
+<span class="eqno">(1.20)<a class="headerlink" href="#equation-266a02c7-ec44-4f76-9b26-44cd2b9265d6" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lim_{x \to \infty} \frac{5x^2+8x-3}{3x^2+4} =
   \lim_{x \to \infty} \frac{ 5 + \dfrac{8}{x} - \dfrac{3}{x^2} }{ 3 + \dfrac{2}{x^2} } =
   \frac{5+0-0}{3 - 0} = \frac{5}{3}
@@ -611,8 +612,8 @@ denominator:</p>
 <!--markdownlint-enable MD013 -->
 <p>Not all functions have limits at infinity. Some “blow up”!</p>
 <!--markdownlint-disable MD013 -->
-<div class="amsmath math notranslate nohighlight" id="equation-b06584bd-1371-4d3c-9c22-0e21ac016d67">
-<span class="eqno">(1.21)<a class="headerlink" href="#equation-b06584bd-1371-4d3c-9c22-0e21ac016d67" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-69be7855-26ad-48f7-9a5d-ad568c67e25f">
+<span class="eqno">(1.21)<a class="headerlink" href="#equation-69be7855-26ad-48f7-9a5d-ad568c67e25f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lim_{x \to \infty} \frac{2x^2-3}{7x+4} = \lim_{x \to \infty} \frac{ 2x - \frac{3}{x} }{ 7 + \frac{4}{x} }
 \end{equation}\]</div>
 <!--markdownlint-enable MD013 -->
@@ -635,27 +636,27 @@ vapor density can be denoted as <span class="math notranslate nohighlight">\(\li
 <p>If <em>f</em> is defined on the interval <span class="math notranslate nohighlight">\(x_0 &lt; x &lt; b\)</span> and <span class="math notranslate nohighlight">\(f(x)\)</span> approaches
 arbitrarily close to <span class="math notranslate nohighlight">\(L\)</span> as <span class="math notranslate nohighlight">\(x\)</span> approaches <span class="math notranslate nohighlight">\(x_0\)</span>, then <span class="math notranslate nohighlight">\(f\)</span> has a right-hand
 limit <span class="math notranslate nohighlight">\(L\)</span> at <span class="math notranslate nohighlight">\(x_0\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6a978242-a94b-4eb4-8542-56c55bb82377">
-<span class="eqno">(1.22)<a class="headerlink" href="#equation-6a978242-a94b-4eb4-8542-56c55bb82377" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4a7193ae-4c1c-40ae-8ff1-d31e2d6ebc6b">
+<span class="eqno">(1.22)<a class="headerlink" href="#equation-4a7193ae-4c1c-40ae-8ff1-d31e2d6ebc6b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lim_{x \to x_0^+} f(x) = L
 \end{equation}\]</div>
 <p>(This limit can also be written more formally in <span class="math notranslate nohighlight">\(\delta\)</span>-<span class="math notranslate nohighlight">\(\epsilon\)</span> form.)
 The same can be done for the left-hand limit if <span class="math notranslate nohighlight">\(a &lt; x &lt; x_0\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-165b147b-6d2a-48ba-add9-cd345152bd1e">
-<span class="eqno">(1.23)<a class="headerlink" href="#equation-165b147b-6d2a-48ba-add9-cd345152bd1e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0965c082-ed00-4d06-8c5a-cbd2e9d896ba">
+<span class="eqno">(1.23)<a class="headerlink" href="#equation-0965c082-ed00-4d06-8c5a-cbd2e9d896ba" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lim_{x \to x_0^-} f(x) = L
 \end{equation}\]</div>
 <p>The two-sided limit exists if and only if both one-sided limits exist and have
 the same value:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4b5a41fe-00c9-43d4-8bbd-e20cbfa34896">
-<span class="eqno">(1.24)<a class="headerlink" href="#equation-4b5a41fe-00c9-43d4-8bbd-e20cbfa34896" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-beb3ea2f-2e22-4c0a-b9e9-21783d272dc7">
+<span class="eqno">(1.24)<a class="headerlink" href="#equation-beb3ea2f-2e22-4c0a-b9e9-21783d272dc7" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lim_{x \to x_0} f(x) = L \Leftrightarrow
 \lim_{x \to x_0^+} f(x) = \lim_{x \to x_0^-} f(x) = L
 \end{equation}\]</div>
 </aside>
 <p>For example, if</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a268d193-5413-4e3e-bfc2-6a8aad03f30e">
-<span class="eqno">(1.25)<a class="headerlink" href="#equation-a268d193-5413-4e3e-bfc2-6a8aad03f30e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b531a62d-e7db-43bc-b540-a30819c13b3a">
+<span class="eqno">(1.25)<a class="headerlink" href="#equation-b531a62d-e7db-43bc-b540-a30819c13b3a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f(x) = \frac{|x|}{x} = \begin{cases}
 -1, &amp; x&lt;0\\
 1, &amp; x&gt;0
@@ -665,14 +666,14 @@ f(x) = \frac{|x|}{x} = \begin{cases}
 <span class="math notranslate nohighlight">\(\lim_{x \to 0^-} f(x) = -1\)</span> (the value from the left). Thus,
 <span class="math notranslate nohighlight">\(\lim_{x \to 0} f(x)\)</span> does not exist.</p>
 <p>Normal limit laws also still apply to one-sided limits:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b6786b82-6c2e-4eff-bd0f-103aa47010cc">
-<span class="eqno">(1.26)<a class="headerlink" href="#equation-b6786b82-6c2e-4eff-bd0f-103aa47010cc" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-096248a7-0b05-48f8-a408-abadbe903565">
+<span class="eqno">(1.26)<a class="headerlink" href="#equation-096248a7-0b05-48f8-a408-abadbe903565" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lim_{x \to -2^+} \left( \frac{x}{x+1} \right) \left( \frac{2x + 5}{x^2 + x} \right)
 = \left( \frac{-2}{-2 + 1} \right) \left( \frac{-4 + 5}{4 - 2} \right) = 1
 \end{equation}\]</div>
 <p>However, be careful about which piece of the function applies:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-576f6ed7-fd92-4749-9610-775606896c2f">
-<span class="eqno">(1.27)<a class="headerlink" href="#equation-576f6ed7-fd92-4749-9610-775606896c2f" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-256616fe-4736-494c-90aa-4b56a00e1f3e">
+<span class="eqno">(1.27)<a class="headerlink" href="#equation-256616fe-4736-494c-90aa-4b56a00e1f3e" title="Permalink to this equation">#</a></span>\[\begin{align}
 \lim_{x \to -2^-} (x + 3) \frac{|x + 2|}{x + 2}
 &amp;= \left( \lim_{x \to -2^-} x + 3 \right)
 \left( \lim_{x \to -2^-} \frac{|x + 2|}{x + 2} \right) \\

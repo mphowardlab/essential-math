@@ -63,7 +63,7 @@
     <link rel="canonical" href="https://mphowardlab.github.io/essential-math/calculus/derivative-rules.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1.5. Series expansion" href="series-expansion.html" />
+    <link rel="next" title="1.5. L’Hopital’s Rule" href="lhopitals-rule.html" />
     <link rel="prev" title="1.3. Derivatives" href="derivatives.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -174,11 +174,12 @@
 <li class="toctree-l2"><a class="reference internal" href="limits.html">1.2. Limits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="derivatives.html">1.3. Derivatives</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">1.4. Product, quotient, and chain rule</a></li>
-<li class="toctree-l2"><a class="reference internal" href="series-expansion.html">1.5. Series expansion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="integration.html">1.6. Integration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="integration-substitution.html">1.7. Integration using substitution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="integration-by-parts.html">1.8. Integration by parts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="integration-partial-fractions.html">1.9. Partial fraction decomposition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lhopitals-rule.html">1.5. L’Hopital’s Rule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="series-expansion.html">1.6. Series expansion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="integration.html">1.7. Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="integration-substitution.html">1.8. Integration using substitution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="integration-by-parts.html">1.9. Integration by parts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="integration-partial-fractions.html">1.10. Partial fraction decomposition</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../multivariable-calculus/index.html">2. Multivariable calculus</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -449,67 +450,67 @@ of the function is more complicated than what we know.</p>
 <aside class="topic">
 <p class="topic-title">Chain rule</p>
 <p>If a function <span class="math notranslate nohighlight">\(f(x)\)</span> can be written as <span class="math notranslate nohighlight">\(f(u(x))\)</span>, then:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6342dfae-acd1-413d-8ed1-e917c59a7975">
-<span class="eqno">(1.31)<a class="headerlink" href="#equation-6342dfae-acd1-413d-8ed1-e917c59a7975" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-acdf38fd-c399-4a33-a3a9-828c177d368b">
+<span class="eqno">(1.31)<a class="headerlink" href="#equation-acdf38fd-c399-4a33-a3a9-828c177d368b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f'(x) = \dd{}{f}{u} \dd{}{u}{x} = f'(u) u'(x)
 \end{equation}\]</div>
 </aside>
 <p>To demonstrate this rule, consider <span class="math notranslate nohighlight">\(f(x) = (x-1)^2\)</span>. Previously, we would have
 needed to expand this function before differentiating:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2cb09215-3084-4084-bcd3-371ff3d463e7">
-<span class="eqno">(1.32)<a class="headerlink" href="#equation-2cb09215-3084-4084-bcd3-371ff3d463e7" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-737992b0-8947-4a74-b798-df86c9757602">
+<span class="eqno">(1.32)<a class="headerlink" href="#equation-737992b0-8947-4a74-b798-df86c9757602" title="Permalink to this equation">#</a></span>\[\begin{align}
 f(x) &amp;= x^2 - 2x + 1 \\
 f'(x) &amp;= 2x - 2
 \end{align}\]</div>
 <p>With the chain rule, instead we recognize</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ef0eb366-3c66-4f71-be86-317977c9fd46">
-<span class="eqno">(1.33)<a class="headerlink" href="#equation-ef0eb366-3c66-4f71-be86-317977c9fd46" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-8e121ee2-f0f9-4b70-a230-24d3270919bc">
+<span class="eqno">(1.33)<a class="headerlink" href="#equation-8e121ee2-f0f9-4b70-a230-24d3270919bc" title="Permalink to this equation">#</a></span>\[\begin{align}
 u &amp;= x - 1  &amp;  f &amp;= u^2 \\
 u' &amp;= 1  &amp;  f' &amp;= 2u
 \end{align}\]</div>
 <p>so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8e5aae6e-6410-4299-93fa-b5ab1c8c7e3c">
-<span class="eqno">(1.34)<a class="headerlink" href="#equation-8e5aae6e-6410-4299-93fa-b5ab1c8c7e3c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7a2ec7ae-0c06-4405-bd49-5fcfeb4c6540">
+<span class="eqno">(1.34)<a class="headerlink" href="#equation-7a2ec7ae-0c06-4405-bd49-5fcfeb4c6540" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f'(x) = \dd{}{f}{u} \dd{}{u}{x} = 2u \dd{}{u}{x} = 2(x-1) \cdot 1 = 2x - 2
 \end{equation}\]</div>
 <p>The results match! Some additional examples:</p>
 <ol class="arabic">
 <li><p><span class="math notranslate nohighlight">\(f(x) = e^{x^2}\)</span></p>
 <p>Make the replacement <span class="math notranslate nohighlight">\(u = x^2\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9e0d03fa-a629-4864-9c18-e6adfeeb6dcd">
-<span class="eqno">(1.35)<a class="headerlink" href="#equation-9e0d03fa-a629-4864-9c18-e6adfeeb6dcd" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4674733e-6fa2-4431-8fce-a0ce7a2e4c90">
+<span class="eqno">(1.35)<a class="headerlink" href="#equation-4674733e-6fa2-4431-8fce-a0ce7a2e4c90" title="Permalink to this equation">#</a></span>\[\begin{align}
 u &amp;= x^2  &amp;  f &amp;= e^u \\
 u' &amp;= 2x  &amp;  f' &amp;= e^u
 \end{align}\]</div>
 <p>so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9a299cd2-5697-46b9-a9a6-d1cb58af886c">
-<span class="eqno">(1.36)<a class="headerlink" href="#equation-9a299cd2-5697-46b9-a9a6-d1cb58af886c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8028cf8f-1a27-4271-a436-73aae45607bb">
+<span class="eqno">(1.36)<a class="headerlink" href="#equation-8028cf8f-1a27-4271-a436-73aae45607bb" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f'(x) = \dd{}{f}{u} \dd{}{u}{x} = e^{u} \dd{}{u}{x} = e^{x^2} \cdot 2x
 \end{equation}\]</div>
 </li>
 <li><p><span class="math notranslate nohighlight">\(f(x) = \ln(1 + 2x)\)</span></p>
 <p>Make the replacement <span class="math notranslate nohighlight">\(u = 1+2x\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-07ffc131-b72d-44b7-9dce-eecf6cbf90e9">
-<span class="eqno">(1.37)<a class="headerlink" href="#equation-07ffc131-b72d-44b7-9dce-eecf6cbf90e9" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2624aff7-44c6-4035-8e77-b6fc16f85345">
+<span class="eqno">(1.37)<a class="headerlink" href="#equation-2624aff7-44c6-4035-8e77-b6fc16f85345" title="Permalink to this equation">#</a></span>\[\begin{align}
 u &amp;= 1 + 2x  &amp; f &amp;= \ln u \\
 u' &amp;= 2  &amp;  f' &amp;= \frac{1}{u}
 \end{align}\]</div>
 <p>so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8cb10ec6-e07d-451d-8930-169eeca88e1f">
-<span class="eqno">(1.38)<a class="headerlink" href="#equation-8cb10ec6-e07d-451d-8930-169eeca88e1f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8143af46-d045-4ea5-95f8-c87d94a7f8ae">
+<span class="eqno">(1.38)<a class="headerlink" href="#equation-8143af46-d045-4ea5-95f8-c87d94a7f8ae" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f'(x) = \dd{}{f}{u} \dd{}{u}{x} = \frac{1}{u} \dd{}{u}{x} = \frac{2}{1 + 2x}
 \end{equation}\]</div>
 </li>
 <li><p><span class="math notranslate nohighlight">\(f(x) = \dfrac{2}{1 + 2x}\)</span></p>
 <p>Make the replacement <span class="math notranslate nohighlight">\(u = 1+2x\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c3bd9cae-3bc1-46f0-83aa-090f9e3d5422">
-<span class="eqno">(1.39)<a class="headerlink" href="#equation-c3bd9cae-3bc1-46f0-83aa-090f9e3d5422" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4a65ab30-8900-46db-bc3a-f1dc1b68bc04">
+<span class="eqno">(1.39)<a class="headerlink" href="#equation-4a65ab30-8900-46db-bc3a-f1dc1b68bc04" title="Permalink to this equation">#</a></span>\[\begin{align}
 u &amp;= 1 + 2x  &amp; f &amp;= 2u^{-1} \\
 u' &amp;= 2  &amp;  f' &amp;= -2u^{-2}
 \end{align}\]</div>
 <p>so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-16526dde-77c2-4e40-b23f-a7fcf47ba9b4">
-<span class="eqno">(1.40)<a class="headerlink" href="#equation-16526dde-77c2-4e40-b23f-a7fcf47ba9b4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-43de30a7-24f0-4ce1-b2ce-bdeaac013d66">
+<span class="eqno">(1.40)<a class="headerlink" href="#equation-43de30a7-24f0-4ce1-b2ce-bdeaac013d66" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f'(x) = \dd{}{f}{u} \dd{}{u}{x} = -2u^{-2} \cdot \dd{}{u}{x} =
   \frac{-4}{(1 + 2x)^2}
 \end{equation}\]</div>
@@ -558,11 +559,11 @@ f'(x) = \dd{}{f}{u} \dd{}{u}{x} = -2u^{-2} \cdot \dd{}{u}{x} =
       </div>
     </a>
     <a class="right-next"
-       href="series-expansion.html"
+       href="lhopitals-rule.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1.5. </span>Series expansion</p>
+        <p class="prev-next-title"><span class="section-number">1.5. </span>L’Hopital’s Rule</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
