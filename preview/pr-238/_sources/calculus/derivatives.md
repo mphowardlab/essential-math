@@ -33,8 +33,8 @@ other notations: $\frac{df}{dx}$, $\mathbf{f}$
 \begin{align}
 x_0 &= x \\
 x_1 &= x+h
-\end{align} 
-\$\to$ h is distance between $x_0$ and $x_1$, make *small*
+\end{align} \
+$\to$ h is distance between $x_0$ and $x_1$, make *small*
 ```
 
 The derivative represents how fast the function is changing *(rate of change)*. 
@@ -53,9 +53,9 @@ time $\to t$
 ```
 
 \begin{align}
-x'(t) &= \lim_{h\to \infty} \frac{x(t+h)-x(t)}{h} \\
-&= \lim_{h\to \infty} \frac{[x_0+v(t+h)]-[x_0+vt]}{h} \\
-&=\lim_{h\to \infty} \frac{vh}{h} \\
+x'(t) &= \lim_{h\to 0} \frac{x(t+h)-x(t)}{h} \\
+&= \lim_{h\to 0} \frac{[x_0+v(t+h)]-[x_0+vt]}{h} \\
+&=\lim_{h\to 0} \frac{vh}{h} \\
 &= v
 \end{align}
 
