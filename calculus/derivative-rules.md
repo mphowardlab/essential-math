@@ -1,4 +1,4 @@
-# Product, quotient, and chain rule
+# Rules for derivatives
 
 ## Product rule
 
@@ -180,6 +180,35 @@ The results match! Some additional examples:
    f'(x) = \dd{}{f}{u} \dd{}{u}{x} = -2u^{-2} \cdot \dd{}{u}{x} =
      \frac{-4}{(1 + 2x)^2}
    \end{equation}
+
+## Trigonometric functions
+
+| $f(x)$    | $f'(x)$    | $f(x)$    | $f'(x)$            |
+|-----------|------------|-----------|--------------------|
+| $\sin x$  | $\cos x$   | $\csc x$ | $-\csc x \cot x$ |
+| $\cos x$  | $-\sin x$  | $\sec(x)$ | $\sec x \tan x$  |
+| $\tan x$  | $\sec^2 x$ | $\cot x$ | $-\csc^2 x$       |
+
+All of these follow from knowing only two derivatives: $\sin x$ and $\cos x$!
+For example, to find the derivative of $\tan x$, use the quotient rule:
+
+\begin{align}
+f(x) &= \tan x = \frac{\sin x}{\cos x} \\
+f'(x) &= \frac{\cos x \cdot \cos x - \sin x \cdot (-\sin x)}{\cos^2 x} \\
+  &= \frac{\sin^2 x + \cos^2 x}{\cos^2 x}\\
+  &= \frac{1}{\cos^2 x} \\
+  &= \sec^2 x
+\end{align}
+
+Or, to find the derivative of $\csc x$, use the chain rule:
+
+\begin{align}
+f(x) &= \csc x = (\sin x)^{-1} \\
+f'(x) &= -(\sin x)^{-2} \dd{}{}{x}(\sin x) \\
+  &= (\sin x)^{-2} \cdot (-\cos x) \\
+  &= \frac{-1}{\sin x} \frac{\cos x}{\sin x} \\
+  &= -\csc x \cot x
+\end{align}
 
 ## Skill builder problems
 
