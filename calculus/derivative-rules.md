@@ -35,6 +35,7 @@ This was obviously harder than the old way, but there are other cases where it i
 
 
 1. $f(x) = \frac{x^2 -1}{x^4 + 2}$
+
 \begin{align}
 u &= x^2 -1 & v &= x^4 +2 \\
 u' &= 2x & v' =& 4x^3
@@ -47,6 +48,7 @@ f'(x) = \frac{ (X^4 + 2) \cdot (2x) - (x^2 - 1) \cdot (4x^3)}{(x^4 +2)^2} = \fra
 \end{equation}
 
 2.  $f(x) = \frac{\exp(x)}{1 + x}$
+
 \begin{align}
 u &= \exp(x) & v &= 1 + x \\
 u' &= \exp(x) & v' &= 1
@@ -59,6 +61,7 @@ f'(x) = \frac{(1 + x) \cdot \exp(x) - \exp(x) \cdot 1}{(1 + x)^2} = \frac{x \cdo
 \end{equation}
 
 3. $f(x) = \frac{(x - 1) \cdot (x^2 - 2x)}{x^4}$
+
 \begin{align}
 u &= (x -1) \cdot (x^2 -2x) \\
 u' &= (x - 1) \cdot (2x-2)
