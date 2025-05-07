@@ -223,4 +223,5 @@ $$
 y(1)= **4.052**
 $$
 
-The absolute error is 0.369 for 
+The absolute error is 0.369 for $\Delta t = 0.1$ and 0.730 for $\Delta t = 0.2$. 
+Hence the error decreases by about $(2*x)$ when $(\Delta t)$ is decreased by $(2*x)$.
