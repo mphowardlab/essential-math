@@ -9,13 +9,9 @@ A *tangent line* touches a curve exactly once.
 ```
 
 How to estimate slope of line at $x_0$? \
-```{math}
-\begin{itemize}
-    \item Evaluate $f(x_0)$ at the point
-    \item Evaluate $f(x_1)$ at another point
-    \item Make $x_1$ very close to $x_0$!
-\end{itemize}
-``` 
+- Evaluate $f(x_0)$ at the point
+- Evaluate $f(x_1)$ at another point
+- Make $x_1$ very close to $x_0$!
 
 \begin{equation}
 f'(x_0)=m \approx \frac{f(x_1)-f(x_0)}{x_1-x_0}
