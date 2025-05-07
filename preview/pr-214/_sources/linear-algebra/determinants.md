@@ -61,7 +61,6 @@ Let's use the first definition and pick the first row $i=1$:
 \end{align}
 
 ## Larger matrices
-
 The determinants of larger matrices can be computed by reducing them to sums
 of 2x2 determinants. To do this quickly, it can be helpful to envision
 $(-1)^{i+j}$ as a checkerboard of signs, then visualize the minors.
