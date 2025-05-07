@@ -276,7 +276,7 @@ Step 2
 \begin{align}
 sY - y(0) - Y &= \frac{1}{s} - \frac{2}{s^2} + \frac{3}{s^2 + 9} \\
 (s-1)Y &= -1 + \frac{1}{s} - \frac{2}{s^2} + \frac{3}{s^2 + 9} \\
-Y &= -\frac{1}{s - 1} + \frac{1}{s(s - 1)} - \frac{2}{s^2(s - 1) + \frac{3}{(s^2 + 9)(s - 1)}} \\
+Y &= -\frac{1}{s - 1} + \frac{1}{s(s - 1)} - \frac{2}{s^2(s - 1)} + \frac{3}{(s^2 + 9)(s - 1)} \\
  &= \frac{1}{s - 1} + (\frac{A_1}{s} + \frac{A_2}{s-1}) + (\frac{A_3}{s} + \frac{A_4}{s^2} + \frac{A_5}{s - 1}) + (\frac{A_6s + B_6}{s^2 + 9} + \frac{A_7}{s - 1}) \\
  \end{align}
 
