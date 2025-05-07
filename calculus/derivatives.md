@@ -13,6 +13,7 @@ $$
 \end{array}
 $$
 
+$$
 text{(1) } f(x) = x^3 \quad \rightarrow \quad f'(x) = 3x^{3-1} = 3x^2
 
 \text{(2) } f(x) = -x^2 + 3 \quad \rightarrow \quad f'(x) = \frac{d}{dx}(-x^2) + \frac{d}{dx}(3) \\
@@ -32,3 +33,4 @@ text{(1) } f(x) = x^3 \quad \rightarrow \quad f'(x) = 3x^{3-1} = 3x^2
 = \frac{d}{dx}(\log 4) + \frac{d}{dx}(\log x) \\
 = 0 + \frac{1}{x \ln 10} \\
 = \frac{1}{x \ln 10}
+$$
