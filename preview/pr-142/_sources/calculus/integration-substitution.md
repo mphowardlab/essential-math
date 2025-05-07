@@ -80,7 +80,7 @@ Solve the integral, don't forget +C
 y = \int x^5 \sin(x) \, dx
 \end{align}
 
-Since $x^5$ is to the fifth order, integration by parts must be used 5 times. Use a table for this. 
+Since $x^5$ is to the fifth order, integration by parts must be used 5 times. Use a table for this. Take derivatives of $u$, and integrate $dv$ until $u$ is zero. 
 
 **Integration by parts table:**  
 
