@@ -1,15 +1,7 @@
 # Determinants
-<<<<<<< HEAD
+
 For a square *n*x*n* matrix **A**, the determinant is denoted in a few different ways:
-=======
->>>>>>> 1ab2f72d4b152b21aafeae7c0afe0b30a9d62aa9
 
-<<<<<<< HEAD
-=======
-For a square *n*x*n* matrix **A**, the determinant can be denoted in a few
-different ways:
-
->>>>>>> 1ab2f72d4b152b21aafeae7c0afe0b30a9d62aa9
 \begin{equation}
 \det \vv{A} =|\vv{A}|=\begin{vmatrix}
 A_{11} & \cdots & A_{1n} \\
@@ -18,14 +10,9 @@ A_{n1} & \cdots & A_{nn}
 \end{vmatrix}
 \end{equation}
 
-<<<<<<< HEAD
 The determinant is defined in a recursive way.For  $n=1$, $|\vv{A}|= A_{11}$
  ( the matrix element)
 For $n \ge 2$, |\vv{A}|$ is defined as:
-=======
-The determinant is defined in a recursive way. For $n=1$, $|\vv{A}|= A_{11}$
-(the matrix element). For $n \ge 2$, $|\vv{A}|$ is defined as:
->>>>>>> 1ab2f72d4b152b21aafeae7c0afe0b30a9d62aa9
 
 \begin{equation}
 |\vv{A}|= \sum_{j=1}^n A_{ij} C_{ij} = \sum_{j=1}^n (-1)^{i+j} A_{ij} M_{ij}
@@ -48,25 +35,19 @@ where now *j* is any column of **A**.
 
 ## 2x2 matrix
 
-<<<<<<< HEAD
-```{topic} 2x2 determinant
-=======
 ```{topic} 2x2 determinant
 The determinant of a 2x2 matrix is:
->>>>>>> 1ab2f72d4b152b21aafeae7c0afe0b30a9d62aa9
 
-<<<<<<< HEAD
 The determinant of a 2x2 matrix is:
 \begin{equation}
 \begin{vmatrix}a & b \\ c & d\end{vmatrix} = a d - bc
 \end{equation}
 ```
-=======
+
 \begin{equation}
 \begin{vmatrix}a & b \\ c & d\end{vmatrix} = a d - bc
 \end{equation}
 ```
->>>>>>> 1ab2f72d4b152b21aafeae7c0afe0b30a9d62aa9
 
 We will use the definition of the determinant to show this must be the case!
 Let's use the first definition and pick the first row $i=1$:
