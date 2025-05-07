@@ -63,7 +63,7 @@ First, find the eigenvalues:
 Then, use these eigenvalues to find the eigenvectors:
 
 \begin{equation}
-\lambda_1 = 3: \begin{bmatrix} 2 & -2 \\ 9 & -9 \end{bmatrix} /vv{x_1} = 0 
+\lambda_1 = 3: \begin{bmatrix} 2 & -2 \\ 9 & -9 \end{bmatrix} \vv{x_1} = 0 
 \longrightarrow
 \vv{x_1} = \begin{bmatrix} 1 \\ 1 \end{bmatrix}
 \end{equation}
@@ -133,7 +133,7 @@ x_3 &= 2
 \end{equation}
 
 \begin{equation}
-\lambda_3 = 3: \begin{bmatrix} 3 & 2 & -2 \\ 2 & 2 & 0 \\ -2 & 0 & 4 \end{bmatrix} /vv{x_3} = 0
+\lambda_3 = 3: \begin{bmatrix} 3 & 2 & -2 \\ 2 & 2 & 0 \\ -2 & 0 & 4 \end{bmatrix} \vv{x_3} = 0
 \end{equation}
 Reduce the row and choose: 
 \begin{align} 
