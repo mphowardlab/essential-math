@@ -262,13 +262,10 @@ y'' + 3y' + 2.25y = -10e^-1.5x + \cos x
    \end{equation}
    ```
 
-**Solve the differential equation:**
-
+3. Solve: 
   \begin{equation}
 y'' - y' - 12y = 144x^3 + \frac{25}{2}
   \end{equation}
-
-**with initial conditions:**
 
 \begin{equation}
 y(0) = 5, \quad y'(0) = -\frac{1}{2}
