@@ -179,7 +179,7 @@ This matches our old answer!
 
 Consider a diffusion cell consisting of two compartments with solute concentrations $c_1$ and $c_2$. The concentrations change according to
 
-```{image} ./_first-order-odes/_images/diffusioncell.jpeg
+```{image} ./_images/diffusioncell.jpeg
 :alt: <Diffusion cell>
 :align: center
 :width: 200px
