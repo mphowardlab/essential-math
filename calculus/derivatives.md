@@ -32,7 +32,7 @@ other notations: $\frac{df}{dx}$, $\mathbf{f}$
 
 \begin{align}
 x_0 &= x \\
-x_1 &= x+h \\
+x_1 &= x+h 
 \end{align} \
 $\to$ h is distance between $x_0$ and $x_1$, make *small*
 ```
