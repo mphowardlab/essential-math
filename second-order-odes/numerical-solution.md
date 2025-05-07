@@ -53,7 +53,7 @@ How do we do this when we have only numbers? *Shooting method*.
 :align: center  
 :width: 200px 
 
-![](./images/graph.jpg)
+
 
 - Formuate system of ODEs with () *initial* condtion is know
 
