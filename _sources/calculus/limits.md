@@ -377,3 +377,65 @@ $\lim_{x \to 1} f(x)$ does not exist.
 However, $\lim_{x \to 2^-} f(x) = 1$ and $\lim_{x \to 2^+} f(x) = 1$, so
 $\lim_{x \to 2} f(x) = 1$, even though $f(2) = 2$.
 ````
+
+## Infinite limits
+
+Some functions tend to $\pm\infty$ at a value, even if they do not have a limit.
+
+::::{grid}
+
+:::{grid-item-card}
+
+$$
+f(x) = 1/x^2
+$$
+
+```{image} ./_images/fx_plot_infinite_limits.png
+:alt: Infinite limit exists
+:align: center
+:width: 300px
+```
+
+Limit exists and is $+\infty$.
+
+:::
+
+:::{grid-item-card}
+
+$$
+g(x) = 1/x
+$$
+
+```{image} ./_images/gx_plot_infinite_limits.png
+:alt: Infinite limit does not exist
+:align: center
+:width: 300px
+```
+
+Limit does not exist.
+
+:::
+
+::::
+
+```{topic} Infinite limits
+$f(x)$ approaches $\infty$ as *x* approaches $x_0$
+
+\begin{equation}
+\lim_{x\to\infty}f(x) = \infty
+\end{equation}
+
+if for every real *B* there exists $\delta > 0$ such that for all *x* if
+$0 < |x - x_0| < \delta$ then $f(x) >$ B. There is an analogous definition
+for functions that approach $-\infty$.
+```
+
+This behavior can be used to define a *vertical asymptote* of a function:
+
+```{topic} Vertical asymptote
+A line $x = a$ is a vertical asymptote of $y = f(x)$ if
+
+\begin{equation}
+\lim_{x \to a^+}f(x) = \pm\infty \quad {\rm or} \quad \lim_{x \to a^-}f(x) = \pm\infty
+\end{equation}
+```
