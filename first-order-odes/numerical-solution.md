@@ -185,22 +185,22 @@ F = e^(\int(p{dt})) = e^{(-1) * (t)}
 $$
 
 $$
-(\int(F*r* {dt})) = (\int((e^((-1)*(t)))*((5)*(\sin((2)*(pi)*(t))))*(\d{t}))) = (\frac{5*e^(((-1)*t))}{((4)*(pi^2))+ 1})*[((-1)* (\sin((2 * pi) * (t))))-(((2) * pi) * (\cos(((2) * pi) * (t))))]
+(\int(F*r* {dt})) = (\int((e^((-1)*(t)))*((5)*(\sin(2*pi t))))*(\d{t})) = (\frac{5*e^(((-1)*t))}{((4)*(pi^2))+ 1})*[((-1)* (\sin((2*pi t)))-(((2* pi) * (\cos(2*pi) (t)))))]
 
 $$
 Then, solve for y. 
 $$
-y = (\frac{1}{F})*[\int F r \d{t} + C] = (\frac{-5} {((4)*(pi^2))+1})*(sin(2 * pi t))+((2*pi)*(cos(2*pi t))) + ((C) * (e^t))
+y = (\frac{1}{F})*[\int F r \d{t} + C] = (\frac{-5} {((4)*(pi^2))+1})*(sin(2*pi t))+((2*pi)*(cos(2*pi t))) + ((C) * (e^t))
 $$
 
 Next, use initial conditions in to find C.
 
 $$
-1 = y(0) = (\frac{5} {((4) * (pi^2))}) * (0 + (2*pi)) + C
+1 = y(0) = (\frac{5} {((4)*(pi^2))}) * (0 + (2*pi)) + C
 $$
 
 $$
-C = 1 + (\frac{(10 * pi)}{((4) * (pi^2)) + 1})
+C = 1 + (\frac{(10 * pi)}{((4)*(pi^2)) + 1})
 $$
 
 Put C value in equation for y.
@@ -220,7 +220,7 @@ y(1) = e +(\frac{(10*pi)}{((4)*(pi^2))+1})*(e-1)
 $$
 
 $$
-y(1)= **4.052**
+y(1) = **4.052**
 $$
 
 The absolute error is 0.369 for $\Delta t = 0.1$ and 0.730 for $\Delta t = 0.2$. 
