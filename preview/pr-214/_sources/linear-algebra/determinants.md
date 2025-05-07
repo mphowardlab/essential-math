@@ -1,73 +1,90 @@
 # Determinants
-For a square *nxn* matrix *A*, the *determinant* is denoted:
 
-$$
+For a square *n*x*n* matrix **A**, the determinant can be denoted in a few
+different ways:
 
 \begin{equation}
-\det A =|A|=\begin{bmatrix}
+\det \vv{A} =|\vv{A}|=\begin{vmatrix}
 A_{11} & \cdots & A_{1n} \\
 \vdots &     & \vdots \\
 A_{n1} & \cdots & A_{nn}
-\end{bmatrix}
+\end{vmatrix}
 \end{equation}
-$$
 
+The determinant is defined in a recursive way. For $n=1$, $|\vv{A}|= A_{11}$
+(the matrix element). For $n \ge 2$, $|\vv{A}|$ is defined as:
 
+\begin{equation}
+|\vv{A}|= \sum_{j=1}^n A_{ij} C_{ij} = \sum_{j=1}^n (-1)^{i+j} A_{ij} M_{ij}
+\end{equation}
 
-For  $n=1$, $|A|= A_{11}$ (the element)
+where *i* is any row of **A**, $C_{ij}$ is the *cofactor* of **A**:
 
-For $n \to 2, |A|$ is defined in a sort of recursive way
+\begin{equation}
+C_{ij} = (-1)^{i+j} M_{ij},
+\end{equation}
 
+and $M_{ij}$ is the *minor* of **A**. The minor is the determinant of the matrix
+obtained by removing row *i* and column *j* from **A**. Equivalently,
 
+\begin{equation}
+|\vv{A}| = \sum_{i=1}^n A_{ij} C_{ij} = \sum_{i=1}^n (-1)^{i+j} A_{ij} M_{ij}
+\end{equation}
 
+where now *j* is any column of **A**.
 
-$$ |A|=\left( \sum_{j=1}^n A_{ij} C_{ij} \right) =  \left( \sum_{j=1}^n (-1)^{i+j} \right) A_{ij} M_{ij} $$
-($C_{ij}$ is the *cofactor*) (*i*=1, ..., or *n*: any row)
+## 2x2 matrix
 
-$$ \left( C_{ij} = (-1)^{i+j} M_{ij} \right) $$
-$M_{ij}$- "*minor*": is the determinant of the matrix obtained by removing row *i* and column *j*
+```{topic} 2x2 determinant
+The determinant of a 2x2 matrix is:
 
+\begin{equation}
+\begin{vmatrix}a & b \\ c & d\end{vmatrix} = a d - bc
+\end{equation}
+```
 
-$$ -or- =\left( \sum_{i=1}^n A_{ij} C_{ij} \right)= \left( \sum_{i=1}^n \right) (-1)^{i+j} A_{ij} M_{ij} $$
- (*j*=1,..., or *n*: any column)
+We will use the definition of the determinant to show this must be the case!
+Let's use the first definition and pick the first row $i=1$:
 
+\begin{align}
+\begin{vmatrix}a & b \\ c & d\end{vmatrix}
+&= (-1)^{1+1} \cdot A_{11} M_{11} + (-1)^{1+2} A_{12} M_{12} \\
+&= a \begin{vmatrix} \phantom{a} & \phantom{b} \\ \phantom{c} & d \end{vmatrix} -
+ b \begin{vmatrix} \phantom{a} & \phantom{b} \\ c & \phantom{d} \end{vmatrix} \\
+&= a d - b c
+\end{align}
 
-*Ex:* Determinant of a *2 x 2* matrix *A* 
+## Larger matrices
 
-$$  
-A=\begin{bmatrix}a & b \\ c & d \end{bmatrix} 
-$$
+The determinants of larger matrices can be computed by reducing them to sums
+of 2x2 determinants. To do this quickly, it can be helpful to envision
+$(-1)^{i+j}$ as a checkerboard of signs, then visualize the minors.
 
+For example, to evaluate
 
+\begin{equation}
+\begin{vmatrix}1 & 3 & 0 \\ 2 & 6 & 4 \\ -1 & 0 & 2 \end{vmatrix}
+\end{equation}
 
- we choose *i*=1, ``` a b ``` $$  A=\begin{bmatrix} a & b  \\ c & d \end{bmatrix}= (-1)^{1+1}*(1)* a* M_{11}+ (-1)^{1+2}* (-1) * b * M_{12}= ad-bc $$
+The sign matrix is:
 
+\begin{equation}
+\begin{bmatrix}+ & - & + \\ - & + & - \\ + & - & + \end{bmatrix}
+\end{equation}
 
-$$M_{11}:\begin{bmatrix} 0 & 0 \\ 0 & d \end{bmatrix} \to |d|=d$$
-$$M_{12}:\begin{bmatrix} 0 & 0 \\ c & 0 \end{bmatrix} \to |c|=c $$ 
+Even faster, start from the plus sign in the upper left corner, then alternate
+until you get to your chosen row or column! Let's use row 3:
 
-This is a useful formula to know! *Mneumonic*
+\begin{align}
+|\vv{A}| &= + (-1) \cdot \begin{vmatrix} 3 & 0 \\ 6 & 4 \end{vmatrix} -
+ 0 \cdot \begin{vmatrix}1 & 0 \\ 2 & 4 \end{vmatrix} +
+ 2 \cdot \begin{vmatrix}1 & 3 \\ 2 & 6 \end{vmatrix} \\
+ &= -(3 \cdot 4 - 0 \cdot 6) + 2(1 \cdot 6 - 2 \cdot 3) \\
+ &= -12
+\end{align}
 
-
-Below we cross multiple using positive and negative signs to find the determinant   *ad-bc*
-
-$$ 
-A=\begin{bmatrix}a &  & b  (-) & \\  & X &  \\ c  &  & d (+) \end{bmatrix}= ad-bc
-$$
-
-*Ex:* *3x3* matrix , note that *i*=3 & *j*=3 
-$$ A=\begin{bmatrix}1 & 3 & 0 \\ 2 & 6 & 4 \\ -1 & 0 & 2 \end{bmatrix} $$
-$$ A=\begin{bmatrix}+ & - & + \\ - & + & - \\ + & - & + \end{bmatrix}$$
-
-
-(positive and negative signs form a checker board)
-
-
-$$
-|A|= +(-1)*\begin{bmatrix} 3 & 0 \\ 6 & 4 \end{bmatrix} -(0)*\begin{bmatrix}1 & 0 \\ 2 & 4 \end{bmatrix} +(2)*\begin{bmatrix}1 & 3 \\ 2 & 6 \end{bmatrix} \\ =-((3*4)-(0*6))+2*((1*6)-(2*3))=-12$$
-
-
-
+Note that the same result could be achieved using any row or column. For
+example, column 3 gives:
 
 $$ |A|= +(0)*\begin{bmatrix}2 & 6 \\ -1 & 0 \end{bmatrix} -(4)*\begin{bmatrix}1 & 3 \\ -1 & 0 \end{bmatrix}+(2)*\begin{bmatrix}1 & 3 \\ 2 & 6 \end{bmatrix} 
 
@@ -75,17 +92,15 @@ $$ |A|= +(0)*\begin{bmatrix}2 & 6 \\ -1 & 0 \end{bmatrix} -(4)*\begin{bmatrix}1 
 
 =-4*(0+3)+2*(6-6)= -12$$
 
+It's usually a good idea to expand along the row or column with the most zeros!
+For example, let's evaluate
 
-Its usually a good idea to expand along the row or column with the most zeros! For the 4 by 4 matrix *i*=4 i.e. row ``` 0 0 2 0 ``` { - + - + } and for the 3 by 3 matrix j=3 i.e. column  ```0 0 5``` { + - + }
+\begin{align}
+\begin{vmatrix}1 & -2 & 0 & 0 \\ 4 & 3 & 5 & 0 \\ 0 &2 & 7 & 5 \\ 0 & 0 & 2 & 0 \end{vmatrix}
+&= -2 \cdot \begin{vmatrix}1 & -2 & 0 \\ 4 & 3 & 0 \\ 0 &2 & 5 \end{vmatrix} \\
+&= -2 \cdot 5 \cdot \begin{vmatrix}1 & -2 \\ 4 & 3 \end{vmatrix} \\
+&= -10 (3+8) \\
+&= -110
+\end{align}
 
-
-$ A=\begin{bmatrix}1 & -2 & 0 & 0 \\ 4 & 3 & 5 & 0 \\ 0 &2 & 7 & 5 \\ 0 & 0 & 2 & 0 \end{bmatrix}= (-2)\begin{bmatrix}1 & -2 & 0 \\ 4 & 3 & 0 \\ 0 &2 & 5 \end{bmatrix}=  (-2)(5)\begin{bmatrix}1 & -2 \\ 4 & 3 \end{bmatrix} \\
-=-10*(3+8)=-110$
-
-
-
-How does this help us?
-
-$A$  is invertible (*nonsingular*) if and only if $|A| \neq 0$.
-
-(*This is one of many conditions known as the invertible theorem*)
+where we chose row 4, then column 3 to do the calculation faster!
