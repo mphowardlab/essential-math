@@ -64,7 +64,7 @@ Apply integration by parts: $uv - \int vdu$
 y &=\left( \frac{x^2}{2} + 2x \right)\ln(x) - \int \left( \frac{x^2}{2} + 2x \right) \frac{1}{x} \, dx \\
 \end{align}
 
-Solve the integral, don't forget + C
+Solve the integral, don't forget +C
 
 \begin{align}
 &= \left( \frac{x^2}{2} + 2x \right)\ln(x) - \frac{x^2}{4} - 2x + C
@@ -94,14 +94,14 @@ Since $x^5$ is to the fifth order, integration by parts must be used 5 times. Us
 | $120$ | $-\cos(x)$ |
 | $0$ | $-\sin(x)$ |
 
-Multiply down the diagonals and add your + C
+Multiply down the diagonals and add your +C
 
 \begin{align}
 y &= -x^5 \cos(x) + 5x^4 \sin(x) + 20x^3 \cos(x) - 60x^2 \sin(x) \\
   &\quad - 120x \cos(x) + 120 \sin(x) + C \\
 \end{align}
 
-To make the solution look cleaner, you can group factor out cos(x) and sin(x). 
+To make the solution look cleaner, you can factor out cos(x) and sin(x). 
 
 \begin{align}
   &= (-x^5 + 20x^3 - 120x) \cos(x) + (5x^4 - 60x^2 + 120) \sin(x) + C
@@ -150,7 +150,7 @@ $ \int e^xcos(x)dx$ appears again, so we can add them together to get:
 2\int e^xcos(x)dx = e^xcos(x)+e^xsin(x)  
 \end{align}
 
-Divide both sides by 2, and don't forget + C
+Divide both sides by 2, and don't forget +C
 
 \begin{align}
 \int e^x \cos(x)dx = \frac{e^x}{2}(\cos(x) + \sin(x)) + C
