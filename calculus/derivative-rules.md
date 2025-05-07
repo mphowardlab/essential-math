@@ -226,7 +226,7 @@ The results match! Some additional examples:
    \end{equation}
    ```
 
-4. $f(x) = \tan{x^{2}+2x+3}$
+4. $f(x) = \tan({x^{2}+2x+3})$
 
 ```{solution}
 Use the chain rule with 
