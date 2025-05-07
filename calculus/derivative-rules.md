@@ -5,9 +5,8 @@
 If the quotient rule you wish to know, it's "low-d-high less high-d-low" then draw the line and down below, denominator squared will go.
 
 ```{topic} Quotient Rule
-If
+If a function $f(x)$ can be written as $f (x) = \frac{u(x)}{v(x)}$ and $ v (x) \ne 0$, then:
 \begin{equation}
-f(x) = \frac{u(x)}{v(x)} and v(x) \ne 0, then
 f'(x) = \frac{v u' - u v'}{v^2}
 \end{equation}
 ```
