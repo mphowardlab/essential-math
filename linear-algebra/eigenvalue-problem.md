@@ -1,5 +1,7 @@
 # Eigenvalue problem
 
+## Skill Builder Problems
+
 Find the eigenvalues and eigenvectors of the following matrices:
 
 1. \begin{equation}
@@ -7,7 +9,7 @@ Find the eigenvalues and eigenvectors of the following matrices:
 \end{equation}
 
 ```{solution}
-Since A is **upper triangular**, the eigenvalues are the diagonal entries:
+Since **A** is **upper triangular**, the eigenvalues are the diagonal entries:
 
 \begin{align}
 \lambda_1 &= 4 \\ 
@@ -19,21 +21,21 @@ Then, use these eigenvalues to find the eigenvectors:
 \begin{equation}
 \lambda_1 = 4: \begin{bmatrix} 0 & 2 \\ 0 & -8 \end{bmatrix} x_1 = 0 
 \longrightarrow
-x_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
+\vv{x_1} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
 \end{equation}
 
 \begin{equation}
 \lambda_2 = -4: \begin{bmatrix} 8 & 2 \\ 0 & 0 \end{bmatrix} x_2 = 0 
 \longrightarrow
-x_2 = \begin{bmatrix} 1 \\ -4 \end{bmatrix}
+\vv{x_2} = \begin{bmatrix} 1 \\ -4 \end{bmatrix}
 \end{equation}
 
 So.
 \begin{align}
 \lambda_1 &= 4 \\
-x_1 &= \begin{bmatrix} 1 \\ 0 \end{bmatrix} \\
 \lambda_2 &= -4 \\
-x_2 &= \begin{bmatrix} 1 \\ -4 \end{bmatrix}
+\vv{x_1} &= \begin{bmatrix} 1 \\ 0 \end{bmatrix} \\
+\vv{x_2} &= \begin{bmatrix} 1 \\ -4 \end{bmatrix}
 \end{align}
 ````
 
@@ -46,7 +48,7 @@ x_2 &= \begin{bmatrix} 1 \\ -4 \end{bmatrix}
 First, find the eigenvalues:
 
 \begin{equation}
-|A-\lambda I| = \begin{bmatrix} 5 - \lambda & -2 \\ 9 & -6 - \lambda \end{bmatrix} 
+|\vv{A}-\lambda \vv{I}| = \begin{vmatrix} 5 - \lambda & -2 \\ 9 & -6 - \lambda \end{vmatrix} 
 \end{equation}
 
 \begin{equation}
@@ -63,21 +65,21 @@ Then, use these eigenvalues to find the eigenvectors:
 \begin{equation}
 \lambda_1 = 3: \begin{bmatrix} 2 & -2 \\ 9 & -9 \end{bmatrix} x_1 = 0 
 \longrightarrow
-x_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+\vv{x_1} = \begin{bmatrix} 1 \\ 1 \end{bmatrix}
 \end{equation}
 
 \begin{equation}
 \lambda_2 = -4: \begin{bmatrix} 9 & -2 \\ 9 & -2 \end{bmatrix} x_2 = 0 
 \longrightarrow
-x_2 = \begin{bmatrix} 2 \\ 9 \end{bmatrix}
+\vv{x_2} = \begin{bmatrix} 2 \\ 9 \end{bmatrix}
 \end{equation}
 
 So,
 \begin{align}
 \lambda_1 &= 3 \\
-x_1 &= \begin{bmatrix} 1 \\ 1 \end{bmatrix} \\
 \lambda_2 &= -4 \\
-x_2 &= \begin{bmatrix} 2 \\ 9 \end{bmatrix} \\
+\vv{x_1} &= \begin{bmatrix} 1 \\ 1 \end{bmatrix} \\
+\vv{x_2} &= \begin{bmatrix} 2 \\ 9 \end{bmatrix} \\
 \end{align}
 ````
 
@@ -89,8 +91,8 @@ x_2 &= \begin{bmatrix} 2 \\ 9 \end{bmatrix} \\
 First, find the eigenvalues:
 
 \begin{align}
-|A-\lambda I| &= \begin{bmatrix} 6 - \lambda & 2 & -2 \\ 2 & 5 - \lambda & 0 \\ -2 & 0 & 7 - \lambda \end{bmatrix} \\
- &= -2 \begin{bmatrix} 2 & -2 \\ 0 & 7 - \lambda \end{bmatrix} + (5 - \lambda) \begin{bmatrix} 6 - \lambda & -2 \\ -2 & 7 - \lambda \end{bmatrix} \\
+|\vv{A}-\lambda \vv{I}| &= \begin{vmatrix} 6 - \lambda & 2 & -2 \\ 2 & 5 - \lambda & 0 \\ -2 & 0 & 7 - \lambda \end{vmatrix} \\
+ &= -2 \begin{vmatrix} 2 & -2 \\ 0 & 7 - \lambda \end{vmatrix} + (5 - \lambda) \begin{vmatrix} 6 - \lambda & -2 \\ -2 & 7 - \lambda \end{vmatrix} \\
  &= (-2)(2)(7 - \lambda) + (5 - \lambda)[(\lambda - 6)(\lambda - 7) - 4] \\ 
  &= -\lambda^3 + 18\lambda^2 - 99\lambda + 162 = 0
 \end{align}
@@ -113,7 +115,7 @@ x_3 &= 2
 \begin{equation}
 \begin{bmatrix} 1 & -2 & 0 \\ 0 & 2 & 1 \\ 0 & 0 & 0 \end{bmatrix} x_1 = 0
 \longrightarrow
-x_1 = \begin{bmatrix} -2 \\ -1 \\ 2 \end{bmatrix}
+\vv{x_1} = \begin{bmatrix} -2 \\ -1 \\ 2 \end{bmatrix}
 \end{equation}
 
 \begin{equation}
@@ -126,7 +128,7 @@ x_3 &= 2
 \begin{equation}
 \begin{bmatrix} -2 & 0 & 1 \\ 0 & 1 & -1 \\ 0 & 0 & 0 \end{bmatrix} x_2 = 0
 \longrightarrow
-x_2 = \begin{bmatrix} 1 \\ 2 \\ 2 \end{bmatrix}
+\vv{x_2} = \begin{bmatrix} 1 \\ 2 \\ 2 \end{bmatrix}
 \end{equation}
 
 \begin{equation}
@@ -139,16 +141,16 @@ x_3 &= 1
 \begin{equation}
 \begin{bmatrix} 1 & 1 & 0 \\ 0 & 1 & 2 \\ 0 & 0 & 0 \end{bmatrix} x_3 = 0
 \longrightarrow
-x_3 = \begin{bmatrix} 2 \\ -2 \\ 1 \end{bmatrix}
+\vv{x_3} = \begin{bmatrix} 2 \\ -2 \\ 1 \end{bmatrix}
 \end{equation}
 
 So,
 \begin{align}
 \lambda_1 &= 9 \\
-x_1 &= \begin{bmatrix} -2 \\ -1 \\ 2 \end{bmatrix} \\
 \lambda_2 &= 6 \\
-x_2 &= \begin{bmatrix} 1 \\ 2 \\ 2 \end{bmatrix} \\
 \lambda_3 &= 3 \\
-x_3 &= \begin{bmatrix} 2 \\ -2 \\ 1 \end{bmatrix}
+\vv{x_1} &= \begin{bmatrix} -2 \\ -1 \\ 2 \end{bmatrix} \\
+\vv{x_2} &= \begin{bmatrix} 1 \\ 2 \\ 2 \end{bmatrix} \\
+\vv{x_3} &= \begin{bmatrix} 2 \\ -2 \\ 1 \end{bmatrix}
 \end{align}
 ````
