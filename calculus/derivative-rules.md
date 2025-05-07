@@ -1,158 +1,89 @@
 # Rules for derivatives
 
-## Product rule
+## Quotient Rule 
 
-The product rule is used to differentiate functions that can be written as the
-product of two smaller functions.
+If the quotient rule you wish to know, it's "low-d-high less high-d-low" then draw the line and down below, denominator squared will go.
 
-```{topic} Product rule
-If $f(x) = u(x) v(x)$, then
-
-\begin{align}
-f'(x) &= u v' + v u ' \\
-&= u \dd{}{v}{x} + v \dd{}{u}{x}
-\end{align}
+```{topic} Quotient Rule
+\begin{equation}
+If f(x) = \frac{u(x)}{v(x)}$ and $v(x) \ne 0, then
+f'(x) = \frac{v u' - u v'}{v^2}
+\end{equation}
 ```
 
-To demonstrate this rule, consider $f(x) = (x-3)(x-1)$.
-Previously, we would have needed to expand this function before differentiating:
+To demonstrate this rule, consider $f(x) = \frac{x-1}{x}$. Previously, we would have needed to separate the numerator before differentiating:
 
-\begin{align}
-f(x) &= x^2 - 4x + 3 \\
-f'(x) &= 2x - 4
+\begin{align} 
+f(x) &= 1 - \frac{1}{x} \\ 
+f' &= 0 + \frac{1}{x^2} &= \frac{1}{x^2}
 \end{align}
 
-With the product rule, instead we recognize
+With the qoutient rule, instead we recognize 
 
 \begin{align}
-u &= x-3 &  v &= x-1 \\
-u' &= 1 & v' &= 1
+u &= x - 1 & v &= x \\ 
+u' &= 1 & v' &= 1 
+\end{align}
+
+so 
+
+\begin{equation}
+f' = \frac{ x1 \cdot 1 - (x-1) \cdot 1 }{x^2} = \frac{1}{x^2}
+\end{equation}
+
+This was obviously harder than the old way, but there are other cases where it is helpful to do the quotient rule!
+
+
+1. $f(x) = \frac{x^2 -1}{x^4 + 2}$
+\begin{align} 
+u &= x^2 -1 & v &= x^4 +2 \\
+u' &= 2x & v' =& 4x^3
 \end{align}
 
 so
 
 \begin{equation}
-f'(x) = uv' + vu' = (x-3) \cdot 1 + (x-1) \cdot 1 = 2x - 4
+f'(x) = \frac{ (X^4 + 2) \cdot (2x) - (x^2 - 1) \cdot (4x^3)}{(x^4 +2)^2} = \frac{2x^5 + 4x^2 - 4x^5 +4x^3}{x^8 + 2x^4 + 4}
 \end{equation}
 
-This example is a little silly, but the product rule is a life saver for
-functions that are hard to expand!
+2.  $f(x) = \frac{\exp(x)}{1 + x}$
+\begin{align} 
+u &= \exp(x) & v &= 1 + x \\ 
+u' &= \exp(x) & v' &= 1 
+\end{align}
 
-1. $f(x) = (x+1)(2x^2 + 5)(5x^3-4)$
-
-   Identify:
-
-   \begin{equation}
-   u = x+1  \qquad v = (2x^2+5)(5x^3-4)
-   \end{equation}
-
-   so
-
-   \begin{equation}
-   f'(x) = (x+1)v' + (2x^2 +3)(5x^3-4)(1)
-   \end{equation}
-
-   The derivative $v'$ can be evaluated by a second product rule!
-
-   \begin{align}
-   u &= 2x^2+5 & v &= 5x^3-4 \\
-   u' &= 4x & v' &= 15x^2
-   \end{align}
-
-   finally giving
-
-   <!--markdownlint-disable MD011 -->
-   \begin{align}
-   f'(x) &= (x+1)[(2x^2+3)(15x^2) + (5x^3-4)(4x)] \\
-   &+ (2x^2+5)(5x^3-4)
-   \end{align}
-   <!--markdownlint-enable MD011 -->
-
-2. $f(x) = \dfrac{1}{x} e^x$
-
-   Identify:
-
-   \begin{align}
-   u &= \frac{1}{x} & v &= e^x   \\
-   u' &= -\frac{1}{x^2} & v' &= e^x
-   \end{align}
-
-   so
-
-   \begin{align}
-   f'(x) &= \frac{1}{x}e^x + e^x(-\frac{1}{x^2}) \\
-   &= e^x\left(\frac{1}{x} - \frac{1}{x^2}\right)
-   \end{align}
-
-3. $f(x) = (x^2+3)\ln x$
-
-   Identify:
-
-   \begin{align}
-   u &= x^2+3 &  v &= \ln(x)   \\
-   u' &= 2x & v' &= \frac{1}{x}
-   \end{align}
-
-   so
-
-   \begin{align}
-   f'(x) &= (x^2+3)\cdot\frac{1}{x} + (\ln x)(2x) \\
-   &= \frac{x^2+3}{x} + 2x\ln x
-   \end{align}
-
-```` 2. Quotient Rule 
-
-If the quotient rule you wish to know, it's "low-d-high less high-d-low" then draw the line and down below, denominator squared will go.
+so
 
 \begin{equation}
-If $f(x) = \frac{u(x)}{v(x)}$ and $v(x) \ne 0$, then
-$f'(x) = \frac{v u' - u v'}{v^2}$
+f'(x) = \frac{(1 + x) \cdot \exp(x) - \exp(x) \cdot 1}{(1 + x)^2} = \frac{x \cdot \exp(x)}{(1 + x)^2}
 \end{equation}
 
-````{A ( continued) example:}
+3. $f(x) = \frac{(x - 1) \cdot (x^2 - 2x)}{x^4}$
+\begin{align}
+u &= (x -1) \cdot (x^2 -2x) \\
+u' &= (x - 1) \cdot (2x-2)
+\end{align}
 
-\begin{align} 
-$f(x) = \frac{x-1}{x}$
-Old Way: $f(x) = 1 - \frac{1}{x} \Rightarrow f' = 0 + \frac{1}{x^2} = \frac{1}{x^2}$
-New Way: $f' = \frac{ x(1) - (x-1)(1)}{x^2} = \frac{1}{x^2}$ =\begin{cases} 
-u = x^2 -1 & v = x \\ 
-u' = 1 & v' = 1 
-\end{cases} 
+so
 
-This was obviously harder than the old way, but there are other cases where it is helpful to do the quotient rule!
-````
-
-````Example 1:
-$f(x) = \frac{x^2 -1}{x^4 + 2}$ =\begin{cases} 
-u = x^2 -1 & v = x^4 +2 \\
-u' = 2x & v' 4x^3
-\end{cases}
-$f'(x) = \frac{ (X^4 + 2) \times (2x) - (x^2 - 1) \times (4x^3)}{(x^4 +2)^2} = \frac{2x^5 + 4x^2 - 4x^5 +4x^3}{x^8 + 2x^4 + 4}$
-````
-
-````Example 2: 
-$f(x) = \frac{\exp(x)}{1 + x}$ =\begin{cases} 
-u = \exp(x) & v = 1 + x \\ 
-u' = \exp(x) & v' = 1 
-\end{cases}
-$f'(x) = \frac{(1 + x) \times \exp(x) - \exp(x) \times 1}{(1 + x)^2} = \frac{x \times \exp(x)}{(1 + x)^2}$
-````
-````Example 3:
-$f(x) = \frac{(x - 1) \times (x^2 - 2x)}{x^4}$ =\begin{cases}
-u = $(x -1) \times (x^2 -2x)$ \\
-u' = $(x - 1) \times (2x-2)$
-\end{cases}
-
-$f'(x) = \frac{x^4 \times (x - 1) \times (2x - 2) - (x - 1) \times (x^2 -2x) \times (4x^3)}{x^8}$ 
+\begin{equation}
+f'(x) = \frac{x^4 \cdot (x - 1) \cdot (2x - 2) - (x - 1) \cdot (x^2 -2x) \cdot (4x^3)}{x^8}
+\end{equation}
 
 v.s 
 
-$f(x) = \frac{1}{x^4} \ times x^3 -3x^2 +2x = x^-1 -3x^-2 +2x^-3$
-$f'(x) = -\frac{1}{x^2} + \frac{6}{x^3} - \frac{6}{x^4}$
-Fastest way depends on the problem! 
-````
+\being{equation}
+f(x) = \frac{1}{x^4} \cdot x^3 -3x^2 +2x = x^-1 -3x^-2 +2x^-3
+f'(x) = -\frac{1}{x^2} + \frac{6}{x^3} - \frac{6}{x^4}
+\end{equation}
+Fastest way depends on the problem!
 
+<<<<<<< HEAD
+
+## Chain Rule
+=======
 ## Chain rule
+>>>>>>> 3017a5bb4936fbad4fee252c24033ea8612603bb
 
 The chain rule is used to differentiate composite functions, when the "inside"
 of the function is more complicated than what we know.
