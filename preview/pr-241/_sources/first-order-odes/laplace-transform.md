@@ -275,7 +275,7 @@ Solve the following:
 \begin{align}
 sY - y(0) - Y &= \frac{1}{s} - \frac{2}{s^2} + \frac{3}{s^2 + 9} \\
 (s-1)Y &= -1 + \frac{1}{s} - \frac{2}{s^2} + \frac{3}{s^2 + 9} \\
-\\end{align}
+\end{align}
 ```
 
 
