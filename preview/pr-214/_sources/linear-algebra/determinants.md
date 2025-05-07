@@ -12,7 +12,7 @@ A_{n1} & \cdots & A_{nn}
 
 The determinant is defined in a recursive way.For  $n=1$, $|\vv{A}|= A_{11}$
  ( the matrix element)
-For $n \ge 2$, |\vv{A}|$ is defined as :
+For $n \ge 2$, |\vv{A}|$ is defined as:
 
 \begin{equation}
 |\vv{A}|= \sum_{j=1}^n A_{ij} C_{ij} = \sum_{j=1}^n (-1)^{i+j} A_{ij} M_{ij}
