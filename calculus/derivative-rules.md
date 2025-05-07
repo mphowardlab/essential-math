@@ -187,8 +187,8 @@ The results match! Some additional examples:
 
    ```{solution}
    \begin{align}
-   f'(x) &= 3 \dd{}{}{x}(\cos x) + 4 \dd{}{}{x}(\sin x)\\
-   &= -3\sin{x} + 4\cos{x}
+   f' &= 3 \dd{}{}{x}(\cos x) + 4 \dd{}{}{x}(\sin x)\\
+   &= -3\sin x + 4\cos x
    \end{align}
    ```
 
@@ -202,8 +202,10 @@ The results match! Some additional examples:
    u' &= \cos x & v' &= -\sin x
    \end{align}
 
+   so
+
    \begin{align}
-   f'(x) &= 2[\sin x(-\sin x) + \cos x(\cos x)] \\
+   f' &= 2[\sin x(-\sin x) + \cos x(\cos x)] \\
    &= 2(\cos^2 x-\sin^2 x) \\
    &= 2 \cos 2x\\
    \end{align}
@@ -222,56 +224,56 @@ The results match! Some additional examples:
    so
 
    \begin{equation}
-   f'(x) = \cos{u} \cdot 2 = 2 \cos 2 x
+   f' = \cos{u} \cdot 2 = 2 \cos 2 x
    \end{equation}
    ```
 
-4. $f(x) = \tan({x^{2}+2x+3})$
+4. $f(x) = \tan({x^2+2x+3})$
 
-```{solution}
-Use the chain rule with 
+   ```{solution}
+   Use the chain rule with
 
-\begin{align}
-u &= x^{2}+2x+3 \quad f(u) = \tan{u}\\
-u^{'} &= 2x+2 \quad f^{'}(u) = \sec^{2}{u}\\
-\end{align}
+   \begin{align}
+   u &= x^2+2x+3 & f = \tan u\\
+   u' &= 2x+2 & f' = \sec^2 u\\
+   \end{align}
 
-so 
+   so
 
-\begin{align}
-f^{'}(x) &= \sec^{2}{u}u^{'}\\
-&= (2x+2)\sec^{2}{(x^{2}+2x+3)}\\
-\end{align}
-```
+   \begin{align}
+   f' &= \sec^2 u \cdot u'\\
+   &= (2x+2)\sec^2(x^2+2x+3)\\
+   \end{align}
+   ```
 
-5. $f(x) = e^{\cos^{2}{x}}$
+5. $f(x) = e^{\cos^2 x}$
 
-```{solution}
-Use the chain rule with 
+   ```{solution}
+   Use the chain rule with
 
-\begin{align}
-u &= \cos^{2}{x} \quad f(u) = e^{u}\\
-u^{'}(x) &= \frac{d}{dx}(\cos^{2}{x}) \quad f^{'}(u) = e^{u}\\
-\end{align}
+   \begin{align}
+   u &= \cos^2 x & f = e^{u}\\
+   u' &= \dd{}{}{x}(\cos^2 x) & f' = e^{u}
+   \end{align}
 
-So 
+   So
 
-\begin{align}
-f^{'}(x) &= e^{u}u^{'} = e^{\cos^{2}{x}}\frac{d}{dx}(\cos^{2}{x})\\
-\end{align}
+   \begin{equation}
+   f' = e^{u} u' = e^{\cos^2 x} \dd{}{}{x}(\cos^2 x)
+   \end{equation}
 
-Use the chain rule again with 
+   Use the chain rule again with
 
-\begin{align}
-u &= \cos{x} \quad f(u) = u^{2}\\
-u^{'}(x) &= -\sin{x} \quad f^{'}(u) = 2u\\
-\end{align}
+   \begin{align}
+   u &= \cos x & f = u^{2}\\
+   u' &= -\sin x & f' = 2u\\
+   \end{align}
 
-So 
+   So
 
-\begin{align}
-&= e^{\cos^{2}{x}}(2uu^{'})\\
-&= e^{\cos^{2}{x}}(2\cos{x}\cdot-\sin{x})\\
-&= -2\sin{x}\cos{x}e^{\cos^{2}{x}}\\
-\end{align}
-```
+   \begin{align}
+   f' &= e^{\cos^2 x}(2uu')\\
+   &= e^{\cos^2 x}(2\cos x \cdot -\sin x)\\
+   &= -2 \sin x \cos x e^{\cos^2 x}\\
+   \end{align}
+   ```
