@@ -1,5 +1,5 @@
 
-'''{topic} L'Hopital's Rule
+## L'Hopital's Rule
 
 This method allows you to calculate limits of certain forms using derivatives.
 
