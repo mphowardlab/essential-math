@@ -231,3 +231,62 @@ f(x, y) = e^x + xy - e^{-y} + c
 ```{math}
 \boxed{e^x + xy - e^{-y} = c}
 ```
+```{problem}
+2.Solve the differential equation:
+
+```math
+y' = y + 1 - 2x
+```
+
+Rewrite in linear form:
+
+```math
+y' - y = 1 - 2x
+```
+
+```math
+p(x) = -1, \quad r(x) = 1 - 2x
+```
+
+Find integrating factor:
+
+```math
+F = e^{\int -1 \, dx} = e^{-x}
+```
+
+Multiply through by the integrating factor:
+
+```math
+e^{-x} y' - e^{-x} y = e^{-x}(1 - 2x)
+```
+
+Left-hand side becomes the derivative of \( e^{-x} y \):
+
+```math
+\frac{d}{dx}(e^{-x} y) = e^{-x}(1 - 2x)
+```
+
+```math
+\int \frac{d}{dx}(e^{-x} y) \, dx = \int e^{-x}(1 - 2x) \, dx
+```
+
+Use integration by parts
+
+```math
+\int e^{-x}(1 - 2x) \, dx = -(1 - 2x)e^{-x} + 2e^{-x}
+```
+
+```math
+e^{-x} y = -(1 - 2x)e^{-x} + 2e^{-x} + c
+```
+
+```math
+y = e^x \left[ -(1 - 2x)e^{-x} + 2e^{-x} + c \right] = 1 + 2x + c e^x
+```
+
+Final solution:
+
+```{math}
+\boxed{y = 1 + 2x + c e^x}
+```
+```
