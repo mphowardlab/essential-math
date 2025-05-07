@@ -428,7 +428,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill-builder-problems">6.1.1. Skill builder problems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#successive-substitution">6.1.1. Successive substitution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill-builder-problems">6.1.2. Skill builder problems</a></li>
 </ul>
             </nav>
         </div>
@@ -452,8 +453,8 @@ through a pump and recycled back to Tank 1.</p>
 over time? <span class="math notranslate nohighlight">\(c_1\)</span> and <span class="math notranslate nohighlight">\(c_2\)</span> can be modeled using unsteady mass balances. This
 is a <em>system</em> of first-order ODEs that can be solved simultaneously.</p>
 <p>The general, explicit form of a system of first-order ODEs is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cf0758b2-f690-4724-bf26-0dddcd472020">
-<span class="eqno">(6.1)<a class="headerlink" href="#equation-cf0758b2-f690-4724-bf26-0dddcd472020" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-66446307-5191-4039-8011-37a939ca296b">
+<span class="eqno">(6.1)<a class="headerlink" href="#equation-66446307-5191-4039-8011-37a939ca296b" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_1' &amp;= f_1(t, y_1, \cdots, y_n)\\
 \vdots \\
 y_n' &amp;= f_n(t, y_1, \cdots, y_n)
@@ -462,19 +463,104 @@ y_n' &amp;= f_n(t, y_1, \cdots, y_n)
 dependent variables, and <span class="math notranslate nohighlight">\((f_1, \cdots, f_n)\)</span> are the <em>n</em> right-hand side
 functions of the <em>n</em> ODEs. We will notate this system more compactly using
 vectors</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b07cd42d-f9ea-44b3-bc06-f962bbc9cf4f">
-<span class="eqno">(6.2)<a class="headerlink" href="#equation-b07cd42d-f9ea-44b3-bc06-f962bbc9cf4f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-77afcb1d-6bd3-4d4c-80c2-794e6f75df8b">
+<span class="eqno">(6.2)<a class="headerlink" href="#equation-77afcb1d-6bd3-4d4c-80c2-794e6f75df8b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{y}' = \vv{f}(t, \vv{y})
 \end{equation}\]</div>
 <p>where <strong>y</strong> is the column vector of dependent variables, <strong>f</strong> is the column
 vector of right-hand side functions, and <span class="math notranslate nohighlight">\(\vv{y}'\)</span> is a shorthand for the
 column vector of first derivatives of all dependent variables.</p>
+<section id="successive-substitution">
+<h2><span class="section-number">6.1.1. </span>Successive substitution<a class="headerlink" href="#successive-substitution" title="Link to this heading">#</a></h2>
+<p>Some systems of first-order ODEs have a special structure that allows you to
+solve one equation at a time, then substitute into another that can now be
+solved. This process can be repeated successively to solve for all dependent
+variables.</p>
+<div class="admonition-example-reaction-network admonition">
+<p class="admonition-title">Example: Reaction network</p>
+<p>We are analyzing a simple reaction sequence occuring in a batch reactor:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4ed4533f-6797-4d53-9c5b-80cea4614ee1">
+<span class="eqno">(6.3)<a class="headerlink" href="#equation-4ed4533f-6797-4d53-9c5b-80cea4614ee1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+{\rm A} \xrightarrow{k_1} {\rm B} \xrightarrow{k_2} {\rm C}
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(k_1\)</span> and <span class="math notranslate nohighlight">\(k_2\)</span> are reaction rate constants. At <span class="math notranslate nohighlight">\(t = 0\)</span>, only species A is
+present at concentration <span class="math notranslate nohighlight">\(c_{{\rm A},0}\)</span>. Determine the concentration of B
+as a function of time. What happens in the special case <span class="math notranslate nohighlight">\(k_1 = k_2\)</span>?</p>
+<hr class="docutils" />
+<p>Unsteady mole balances give</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4aa9368f-0c2e-4eb9-bdbe-4ce1a4633fe1">
+<span class="eqno">(6.4)<a class="headerlink" href="#equation-4aa9368f-0c2e-4eb9-bdbe-4ce1a4633fe1" title="Permalink to this equation">#</a></span>\[\begin{align}
+\dd{}{c_{\rm A}}{t} &amp;= -k_1 c_{\rm A} \\
+\dd{}{c_{\rm B}}{t} &amp;= k_1 c_{\rm A} - k_2  c_{\rm B} \\
+\dd{}{c_{\rm C}}{t} &amp;= k_2  c_{\rm B}
+\end{align}\]</div>
+<p>These ODES can be solved by first finding <span class="math notranslate nohighlight">\(c_{\rm A}\)</span>, then <span class="math notranslate nohighlight">\(c_{\rm B}\)</span>, and
+last <span class="math notranslate nohighlight">\(c_{\rm C}\)</span>! The ODE for <span class="math notranslate nohighlight">\(c_{\rm A}\)</span> is separable:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-354c0413-2309-44ef-843d-758280416eee">
+<span class="eqno">(6.5)<a class="headerlink" href="#equation-354c0413-2309-44ef-843d-758280416eee" title="Permalink to this equation">#</a></span>\[\begin{align}
+\int \frac{\d{c_{\rm A}}}{c_{\rm A}} &amp;= \int -k_1 \d{t} \\
+\ln c_{\rm A} &amp;= -k_1 t + K
+\end{align}\]</div>
+<p>Applying the initial condition <span class="math notranslate nohighlight">\(c_{\rm A}(0) = c_{{\rm A},0}\)</span> gives:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e6bc9ca3-1623-47a9-8fe5-df1e41be2c57">
+<span class="eqno">(6.6)<a class="headerlink" href="#equation-e6bc9ca3-1623-47a9-8fe5-df1e41be2c57" title="Permalink to this equation">#</a></span>\[\begin{equation}
+c_{\rm A} = c_{{\rm A}, 0} e^{-k_1 t}
+\end{equation}\]</div>
+<p>Next, use the solution for <span class="math notranslate nohighlight">\(c_{\rm A}\)</span> to solve <span class="math notranslate nohighlight">\(c_{\rm B}\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9a1d31b8-fea8-4055-9164-3a85d7aa86fa">
+<span class="eqno">(6.7)<a class="headerlink" href="#equation-9a1d31b8-fea8-4055-9164-3a85d7aa86fa" title="Permalink to this equation">#</a></span>\[\begin{align}
+\dd{}{c_{\rm B}}{t} &amp;= k_1 c_{\rm A,0}e^{-k_1 t} -k_2 c_{\rm B} \\
+\dd{}{c_{\rm B}}{t} &amp;+ k_2 c_{\rm B} = k_1 c_{\rm A,0}e^{-k_1 t}
+\end{align}\]</div>
+<p>This is a linear first-order ODE with</p>
+<div class="amsmath math notranslate nohighlight" id="equation-cd95345c-3e61-4c93-aaa7-f0465d659ae0">
+<span class="eqno">(6.8)<a class="headerlink" href="#equation-cd95345c-3e61-4c93-aaa7-f0465d659ae0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+p = k_2 \qquad r =k_1 c_{\rm A,0}e^{-k_1 t}
+\end{equation}\]</div>
+<p>that can be solved using an integrating factor:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-506fa959-5795-47ef-9d9c-c82c5608bfd9">
+<span class="eqno">(6.9)<a class="headerlink" href="#equation-506fa959-5795-47ef-9d9c-c82c5608bfd9" title="Permalink to this equation">#</a></span>\[\begin{align}
+F &amp;= e^{\int k_2 \d{t}} = e^{k_2 t} \\
+\int F r \d{t} &amp;= \int e^{k_2 t} k_1 c_{\rm A,0} e^{-k_1 t} \d{t} \\
+  &amp;= k_1 c_{\rm A,0} \int e^{(k_2 -k_1)t} \d{t} \\
+  &amp;= c_{\rm A,0} \frac{k_1}{k_2 -k_1} e^{(k_2 -k_1)t}
+\end{align}\]</div>
+<p>Hence,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-79104149-f14f-4665-ba51-85f48c31d724">
+<span class="eqno">(6.10)<a class="headerlink" href="#equation-79104149-f14f-4665-ba51-85f48c31d724" title="Permalink to this equation">#</a></span>\[\begin{align}
+c_{\rm B} &amp;= \frac{1}{F}\left(\int Fr\d{t} + K \right) \\
+  &amp;= c_{\rm A,0} \frac{k_1}{k_2 - k_1} e^{-k_1 t} + K e^{-k_2 t}
+\end{align}\]</div>
+<p>Applying the initial condition</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c3ca7af1-2d24-48d1-97f5-37290b1c0f66">
+<span class="eqno">(6.11)<a class="headerlink" href="#equation-c3ca7af1-2d24-48d1-97f5-37290b1c0f66" title="Permalink to this equation">#</a></span>\[\begin{align}
+c_{\rm B}(0) &amp;= c_{\rm A,0} \frac{k_1}{k_2 - k_1} + K = 0 \\
+K &amp;= -c_{\rm A,0} \frac{k_1}{k_2 - k_1}
+\end{align}\]</div>
+<p>Hence,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-cffe5751-9a19-4d3f-8884-9c0bf204b25d">
+<span class="eqno">(6.12)<a class="headerlink" href="#equation-cffe5751-9a19-4d3f-8884-9c0bf204b25d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+c_{\rm B}  =c _{\rm A,0} \frac{k_1}{k_2 -k_1} \left(e^{-k_1 t} - e^{-k_2 t} \right)
+\end{equation}\]</div>
+<p>If <span class="math notranslate nohighlight">\(k_1 = k_2\)</span>, the solution appears to have an issue because there is a
+“divide by zero”. However, we can actually evaluate this behavior as a limit!
+Let’s set <span class="math notranslate nohighlight">\(k_1 = k\)</span>, and take the limit as <span class="math notranslate nohighlight">\(k_2 \to k\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-77a7db63-ff42-46b0-8069-a0b13cb2f25e">
+<span class="eqno">(6.13)<a class="headerlink" href="#equation-77a7db63-ff42-46b0-8069-a0b13cb2f25e" title="Permalink to this equation">#</a></span>\[\begin{align}
+\lim_{k_2 \to k} c_{\rm B} &amp;=
+  c_{{\rm A},0} k \lim_{k_2  \to k} \frac{e^{-k t} - e^{-k_2 t}}{k_2 -k_1} \\
+  &amp;= c_{{\rm A},0} k \lim_{k_2 \to k} \frac{t e^{-k_2 t}}{1} \\
+  &amp;= c_{{\rm A},0} k t e^{-k t}
+\end{align}\]</div>
+<p>where in the second line, we made use of L’Hopital’s rule to evaluate the limit.</p>
+</div>
+</section>
 <section id="skill-builder-problems">
-<h2><span class="section-number">6.1.1. </span>Skill builder problems<a class="headerlink" href="#skill-builder-problems" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.1.2. </span>Skill builder problems<a class="headerlink" href="#skill-builder-problems" title="Link to this heading">#</a></h2>
 <ol class="arabic">
 <li><p>Solve the IVP</p>
-<div class="amsmath math notranslate nohighlight" id="equation-14af102c-3391-4cb7-9d4f-7c52ddbe26ad">
-<span class="eqno">(6.3)<a class="headerlink" href="#equation-14af102c-3391-4cb7-9d4f-7c52ddbe26ad" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-8c9cb127-31b0-4eb7-b2ad-363ff5d71424">
+<span class="eqno">(6.14)<a class="headerlink" href="#equation-8c9cb127-31b0-4eb7-b2ad-363ff5d71424" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_1' &amp;= 1-2y_1, &amp; y_1(0) &amp;= 0\\
 y_2' &amp;= 2y_1 - y_1y_2, &amp; y_2(0) &amp;= 0
 \end{align}\]</div>
@@ -483,8 +569,8 @@ y_2' &amp;= 2y_1 - y_1y_2, &amp; y_2(0) &amp;= 0
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">We begin by solving for <span class="math notranslate nohighlight">\(y_1\)</span> in terms of <em>x</em>. The ODE is separable and
 therefore can be solved using separation of variables.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2948c4e8-7052-452a-a0d3-d9db72e8e321">
-<span class="eqno">(6.4)<a class="headerlink" href="#equation-2948c4e8-7052-452a-a0d3-d9db72e8e321" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1b4c2f90-b603-4d00-8801-14b438002037">
+<span class="eqno">(6.15)<a class="headerlink" href="#equation-1b4c2f90-b603-4d00-8801-14b438002037" title="Permalink to this equation">#</a></span>\[\begin{align}
 \int \frac{dy_1}{1-2y_1} &amp;= \int dx \\
 -\frac{1}{2} \ln{\left(1-2y_1\right)} &amp;= x + c_0 \\
 \ln{\left(1-2y_1\right)} &amp;= -2x + c_1 \\
@@ -492,19 +578,19 @@ therefore can be solved using separation of variables.</p>
 y_1 &amp;= \frac{1}{2} \left(1- c_2 e^{-2x}\right) \\
 \end{align}\]</div>
 <p class="sd-card-text">Now, use the initial condition <span class="math notranslate nohighlight">\(y_1(0)= 0\)</span> to solve for <span class="math notranslate nohighlight">\(c_2\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4fe426a9-2c0e-49df-9ea1-bf49f485466d">
-<span class="eqno">(6.5)<a class="headerlink" href="#equation-4fe426a9-2c0e-49df-9ea1-bf49f485466d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-dfc08c8d-d713-4103-9d24-c57e4a915b10">
+<span class="eqno">(6.16)<a class="headerlink" href="#equation-dfc08c8d-d713-4103-9d24-c57e4a915b10" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y_1(0) = \frac{1}{2}\left(1-c_2\right) = 0
 \end{equation}\]</div>
 <p class="sd-card-text">so <span class="math notranslate nohighlight">\(c_2 = 1\)</span> and</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0845e83f-0fe2-40e5-a8cc-d6e9a0ca3adc">
-<span class="eqno">(6.6)<a class="headerlink" href="#equation-0845e83f-0fe2-40e5-a8cc-d6e9a0ca3adc" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6a4286c2-ac86-4ddd-9fe0-169f31052828">
+<span class="eqno">(6.17)<a class="headerlink" href="#equation-6a4286c2-ac86-4ddd-9fe0-169f31052828" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y_1 = \frac{1}{2} \left(1-e^{-2x}\right)
 \end{equation}\]</div>
 <p class="sd-card-text">Now, we can solve for <span class="math notranslate nohighlight">\(y_2\)</span> knowing <span class="math notranslate nohighlight">\(y_1\)</span> and recognizing that <span class="math notranslate nohighlight">\(y_2\)</span> can also
 be solved via separation of variables</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fec09a40-9682-45c8-a0ed-63ad0a119836">
-<span class="eqno">(6.7)<a class="headerlink" href="#equation-fec09a40-9682-45c8-a0ed-63ad0a119836" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7c8114a5-5bf3-44dd-a69a-beef41244035">
+<span class="eqno">(6.18)<a class="headerlink" href="#equation-7c8114a5-5bf3-44dd-a69a-beef41244035" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_2' &amp;= y_1\left(2-y_2\right) \\
 \int \frac{dy_2}{2-y_2} &amp;= \int \frac{1}{2}\left(1-e^{-2x}\right) \d{x} \\
 -\ln{\left(2-y_2\right)} &amp;= \frac{1}{2}\left(x + \frac{1}{2}e^{-2x}\right) + c_0\\
@@ -514,14 +600,14 @@ y_2
   &amp;= 2 - c_1 \exp\left[-\frac{1}{2}\left(x+\frac{1}{2}e^{-2x}\right)\right] \\
 \end{align}\]</div>
 <p class="sd-card-text">Again, use the initial condition <span class="math notranslate nohighlight">\(y_2(0)= 0\)</span> to solve for <span class="math notranslate nohighlight">\(c_1\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cccc7329-6a81-41b9-b14c-3f79ad49a623">
-<span class="eqno">(6.8)<a class="headerlink" href="#equation-cccc7329-6a81-41b9-b14c-3f79ad49a623" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d01ac7d9-bb31-4662-8162-47b8339f6e85">
+<span class="eqno">(6.19)<a class="headerlink" href="#equation-d01ac7d9-bb31-4662-8162-47b8339f6e85" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_2(0) &amp;= 2 - c_1 e^{-1/4} = 0 \\
 c_1 &amp;= 2e^{1/4}
 \end{align}\]</div>
 <p class="sd-card-text">Therefore,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-dd70b8b3-8a01-4eb8-b1b9-0568cfc250d5">
-<span class="eqno">(6.9)<a class="headerlink" href="#equation-dd70b8b3-8a01-4eb8-b1b9-0568cfc250d5" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-64883c55-7740-4246-8985-49ff57cc70d0">
+<span class="eqno">(6.20)<a class="headerlink" href="#equation-64883c55-7740-4246-8985-49ff57cc70d0" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y_2 = 2\left[1-\exp\left(\frac{1}{4}-\frac{x}{2}-\frac{1}{4}e^{-2x}\right)\right]
 \end{equation}\]</div>
 </div>
@@ -594,7 +680,8 @@ y_2 = 2\left[1-\exp\left(\frac{1}{4}-\frac{x}{2}-\frac{1}{4}e^{-2x}\right)\right
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill-builder-problems">6.1.1. Skill builder problems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#successive-substitution">6.1.1. Successive substitution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill-builder-problems">6.1.2. Skill builder problems</a></li>
 </ul>
   </nav></div>
 
