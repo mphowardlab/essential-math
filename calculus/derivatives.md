@@ -49,8 +49,7 @@ velocity $\to v$ and
 time $\to t$
 
 ```{image} ./_images/ball.png
-:alt: Ball with constant velocity example
-```
+:alt: Ball with constant velocity example```
 
 \begin{align}
 x'(t) &= \lim_{h\to \infty} \frac{x(t+h)-x(t)}{h} \\
