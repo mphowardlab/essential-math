@@ -48,7 +48,7 @@ start $\to x_0$
 velocity $\to v$ and 
 time $\to t$
 
-```{image} ./_images/ball.png
+```{image} ./_images/ball example.png
 :alt: Ball with constant velocity example```
 
 \begin{align}
