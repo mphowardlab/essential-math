@@ -428,7 +428,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chain-rule">1.4.1. Chain Rule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#product-rule">1.4.1. Product rule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chain-rule">1.4.2. Chain rule</a></li>
 </ul>
             </nav>
         </div>
@@ -442,74 +443,164 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="product-quotient-and-chain-rule">
 <h1><span class="section-number">1.4. </span>Product, quotient, and chain rule<a class="headerlink" href="#product-quotient-and-chain-rule" title="Link to this heading">#</a></h1>
+<section id="product-rule">
+<h2><span class="section-number">1.4.1. </span>Product rule<a class="headerlink" href="#product-rule" title="Link to this heading">#</a></h2>
+<p>The product rule is used to differentiate functions that can be written as the
+product of two smaller functions.</p>
+<aside class="topic">
+<p class="topic-title">Product rule</p>
+<p>If <span class="math notranslate nohighlight">\(f(x) = u(x) v(x)\)</span>, then</p>
+<div class="amsmath math notranslate nohighlight" id="equation-77de43f2-8d62-4262-b9ac-5e48a7cdec9f">
+<span class="eqno">(1.45)<a class="headerlink" href="#equation-77de43f2-8d62-4262-b9ac-5e48a7cdec9f" title="Permalink to this equation">#</a></span>\[\begin{align}
+f'(x) &amp;= u v' + v u ' \\
+&amp;= u \dd{}{v}{x} + v \dd{}{u}{x}
+\end{align}\]</div>
+</aside>
+<p>To demonstrate this rule, consider <span class="math notranslate nohighlight">\(f(x) = (x-3)(x-1)\)</span>.
+Previously, we would have needed to expand this function before differentiating:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1a245f9f-4e65-471d-a42a-c32d9d7ec216">
+<span class="eqno">(1.46)<a class="headerlink" href="#equation-1a245f9f-4e65-471d-a42a-c32d9d7ec216" title="Permalink to this equation">#</a></span>\[\begin{align}
+f(x) &amp;= x^2 - 4x + 3 \\
+f'(x) &amp;= 2x - 4
+\end{align}\]</div>
+<p>With the product rule, instead we recognize</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6044ed8a-08b6-47e2-8375-63697a840d58">
+<span class="eqno">(1.47)<a class="headerlink" href="#equation-6044ed8a-08b6-47e2-8375-63697a840d58" title="Permalink to this equation">#</a></span>\[\begin{align}
+u &amp;= x-3 &amp;  v &amp;= x-1 \\
+u' &amp;= 1 &amp; v' &amp;= 1
+\end{align}\]</div>
+<p>so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-79617e72-928b-4b41-b3be-e2f808f27301">
+<span class="eqno">(1.48)<a class="headerlink" href="#equation-79617e72-928b-4b41-b3be-e2f808f27301" title="Permalink to this equation">#</a></span>\[\begin{equation}
+f'(x) = uv' + vu' = (x-3) \cdot 1 + (x-1) \cdot 1 = 2x - 4
+\end{equation}\]</div>
+<p>This example is a little silly, but the product rule is a life saver for
+functions that are hard to expand!</p>
+<ol class="arabic">
+<li><p><span class="math notranslate nohighlight">\(f(x) = (x+1)(2x^2 + 5)(5x^3-4)\)</span></p>
+<p>Identify:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c149fe4b-6e81-4633-9c10-3436b8c547ce">
+<span class="eqno">(1.49)<a class="headerlink" href="#equation-c149fe4b-6e81-4633-9c10-3436b8c547ce" title="Permalink to this equation">#</a></span>\[\begin{equation}
+u = x+1  \qquad v = (2x^2+5)(5x^3-4)
+\end{equation}\]</div>
+<p>so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6c846547-5489-4663-ac0a-32e574069cc4">
+<span class="eqno">(1.50)<a class="headerlink" href="#equation-6c846547-5489-4663-ac0a-32e574069cc4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+f'(x) = (x+1)v' + (2x^2 +3)(5x^3-4)(1)
+\end{equation}\]</div>
+<p>The derivative <span class="math notranslate nohighlight">\(v'\)</span> can be evaluated by a second product rule!</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d15bb112-b388-45ab-a161-b19a7d242ff1">
+<span class="eqno">(1.51)<a class="headerlink" href="#equation-d15bb112-b388-45ab-a161-b19a7d242ff1" title="Permalink to this equation">#</a></span>\[\begin{align}
+u &amp;= 2x^2+5 &amp; v &amp;= 5x^3-4 \\
+u' &amp;= 4x &amp; v' &amp;= 15x^2
+\end{align}\]</div>
+<p>finally giving</p>
+<!--markdownlint-disable MD011 -->
+<div class="amsmath math notranslate nohighlight" id="equation-39eff660-2805-4b0a-a7fc-e6905b86725f">
+<span class="eqno">(1.52)<a class="headerlink" href="#equation-39eff660-2805-4b0a-a7fc-e6905b86725f" title="Permalink to this equation">#</a></span>\[\begin{align}
+f'(x) &amp;= (x+1)[(2x^2+3)(15x^2) + (5x^3-4)(4x)] \\
+&amp;+ (2x^2+5)(5x^3-4)
+\end{align}\]</div>
+<!--markdownlint-enable MD011 -->
+</li>
+<li><p><span class="math notranslate nohighlight">\(f(x) = \dfrac{1}{x} e^x\)</span></p>
+<p>Identify:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ccf99074-61f3-4a30-a7f9-51ba005d6716">
+<span class="eqno">(1.53)<a class="headerlink" href="#equation-ccf99074-61f3-4a30-a7f9-51ba005d6716" title="Permalink to this equation">#</a></span>\[\begin{align}
+u &amp;= \frac{1}{x} &amp; v &amp;= e^x   \\
+u' &amp;= -\frac{1}{x^2} &amp; v' &amp;= e^x
+\end{align}\]</div>
+<p>so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c468418c-6e48-4b4c-bfb5-cc031754d1c8">
+<span class="eqno">(1.54)<a class="headerlink" href="#equation-c468418c-6e48-4b4c-bfb5-cc031754d1c8" title="Permalink to this equation">#</a></span>\[\begin{align}
+f'(x) &amp;= \frac{1}{x}e^x + e^x(-\frac{1}{x^2}) \\
+&amp;= e^x\left(\frac{1}{x} - \frac{1}{x^2}\right)
+\end{align}\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(f(x) = (x^2+3)\ln x\)</span></p>
+<p>Identify:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-de394769-95a3-4117-92aa-f3594a3e50c3">
+<span class="eqno">(1.55)<a class="headerlink" href="#equation-de394769-95a3-4117-92aa-f3594a3e50c3" title="Permalink to this equation">#</a></span>\[\begin{align}
+u &amp;= x^2+3 &amp;  v &amp;= \ln(x)   \\
+u' &amp;= 2x &amp; v' &amp;= \frac{1}{x}
+\end{align}\]</div>
+<p>so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8ba5870b-f6b8-4060-8aca-e5f71632926e">
+<span class="eqno">(1.56)<a class="headerlink" href="#equation-8ba5870b-f6b8-4060-8aca-e5f71632926e" title="Permalink to this equation">#</a></span>\[\begin{align}
+f'(x) &amp;= (x^2+3)\cdot\frac{1}{x} + (\ln x)(2x) \\
+&amp;= \frac{x^2+3}{x} + 2x\ln x
+\end{align}\]</div>
+</li>
+</ol>
+</section>
 <section id="chain-rule">
-<h2><span class="section-number">1.4.1. </span>Chain Rule<a class="headerlink" href="#chain-rule" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.4.2. </span>Chain rule<a class="headerlink" href="#chain-rule" title="Link to this heading">#</a></h2>
 <p>The chain rule is used to differentiate composite functions, when the “inside”
 of the function is more complicated than what we know.</p>
 <aside class="topic">
 <p class="topic-title">Chain rule</p>
 <p>If a function <span class="math notranslate nohighlight">\(f(x)\)</span> can be written as <span class="math notranslate nohighlight">\(f(u(x))\)</span>, then:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-934117df-eacb-4a97-9ac0-038895399120">
-<span class="eqno">(1.31)<a class="headerlink" href="#equation-934117df-eacb-4a97-9ac0-038895399120" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2ef55309-3796-4518-8cba-0180697b6f29">
+<span class="eqno">(1.57)<a class="headerlink" href="#equation-2ef55309-3796-4518-8cba-0180697b6f29" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f'(x) = \dd{}{f}{u} \dd{}{u}{x} = f'(u) u'(x)
 \end{equation}\]</div>
 </aside>
 <p>To demonstrate this rule, consider <span class="math notranslate nohighlight">\(f(x) = (x-1)^2\)</span>. Previously, we would have
 needed to expand this function before differentiating:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-76290a72-2962-4d08-8785-3f9823ccd48f">
-<span class="eqno">(1.32)<a class="headerlink" href="#equation-76290a72-2962-4d08-8785-3f9823ccd48f" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-81f5f909-eb30-409b-bcb9-82b562786a23">
+<span class="eqno">(1.58)<a class="headerlink" href="#equation-81f5f909-eb30-409b-bcb9-82b562786a23" title="Permalink to this equation">#</a></span>\[\begin{align}
 f(x) &amp;= x^2 - 2x + 1 \\
 f'(x) &amp;= 2x - 2
 \end{align}\]</div>
 <p>With the chain rule, instead we recognize</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a551e6ad-47fb-42ec-9f01-c2e07160196a">
-<span class="eqno">(1.33)<a class="headerlink" href="#equation-a551e6ad-47fb-42ec-9f01-c2e07160196a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-110667a9-7122-478b-bbab-55fc89a72e4e">
+<span class="eqno">(1.59)<a class="headerlink" href="#equation-110667a9-7122-478b-bbab-55fc89a72e4e" title="Permalink to this equation">#</a></span>\[\begin{align}
 u &amp;= x - 1  &amp;  f &amp;= u^2 \\
 u' &amp;= 1  &amp;  f' &amp;= 2u
 \end{align}\]</div>
 <p>so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-26398f20-482a-4d58-bd21-378ea6c6661e">
-<span class="eqno">(1.34)<a class="headerlink" href="#equation-26398f20-482a-4d58-bd21-378ea6c6661e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-828c3645-fd82-48f9-a195-863e23d7d373">
+<span class="eqno">(1.60)<a class="headerlink" href="#equation-828c3645-fd82-48f9-a195-863e23d7d373" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f'(x) = \dd{}{f}{u} \dd{}{u}{x} = 2u \dd{}{u}{x} = 2(x-1) \cdot 1 = 2x - 2
 \end{equation}\]</div>
 <p>The results match! Some additional examples:</p>
 <ol class="arabic">
 <li><p><span class="math notranslate nohighlight">\(f(x) = e^{x^2}\)</span></p>
 <p>Make the replacement <span class="math notranslate nohighlight">\(u = x^2\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5547feb5-22a2-4ce5-b073-422ce77da773">
-<span class="eqno">(1.35)<a class="headerlink" href="#equation-5547feb5-22a2-4ce5-b073-422ce77da773" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f54e86af-e468-42fb-994e-f98850e88c88">
+<span class="eqno">(1.61)<a class="headerlink" href="#equation-f54e86af-e468-42fb-994e-f98850e88c88" title="Permalink to this equation">#</a></span>\[\begin{align}
 u &amp;= x^2  &amp;  f &amp;= e^u \\
 u' &amp;= 2x  &amp;  f' &amp;= e^u
 \end{align}\]</div>
 <p>so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7c48fb37-94fa-42bb-9885-52780ad558f3">
-<span class="eqno">(1.36)<a class="headerlink" href="#equation-7c48fb37-94fa-42bb-9885-52780ad558f3" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f4733c6f-f12c-4910-9431-b38e136b766d">
+<span class="eqno">(1.62)<a class="headerlink" href="#equation-f4733c6f-f12c-4910-9431-b38e136b766d" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f'(x) = \dd{}{f}{u} \dd{}{u}{x} = e^{u} \dd{}{u}{x} = e^{x^2} \cdot 2x
 \end{equation}\]</div>
 </li>
 <li><p><span class="math notranslate nohighlight">\(f(x) = \ln(1 + 2x)\)</span></p>
 <p>Make the replacement <span class="math notranslate nohighlight">\(u = 1+2x\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-aaa2e810-2df2-4599-95df-a62fd554e799">
-<span class="eqno">(1.37)<a class="headerlink" href="#equation-aaa2e810-2df2-4599-95df-a62fd554e799" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-57642529-64a3-411a-9096-27cf8eee56e8">
+<span class="eqno">(1.63)<a class="headerlink" href="#equation-57642529-64a3-411a-9096-27cf8eee56e8" title="Permalink to this equation">#</a></span>\[\begin{align}
 u &amp;= 1 + 2x  &amp; f &amp;= \ln u \\
 u' &amp;= 2  &amp;  f' &amp;= \frac{1}{u}
 \end{align}\]</div>
 <p>so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8e97f7a3-7f30-48f5-a227-d0740386fd7d">
-<span class="eqno">(1.38)<a class="headerlink" href="#equation-8e97f7a3-7f30-48f5-a227-d0740386fd7d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4646c450-93ba-45e3-aeb3-3d00a8f4a0d0">
+<span class="eqno">(1.64)<a class="headerlink" href="#equation-4646c450-93ba-45e3-aeb3-3d00a8f4a0d0" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f'(x) = \dd{}{f}{u} \dd{}{u}{x} = \frac{1}{u} \dd{}{u}{x} = \frac{2}{1 + 2x}
 \end{equation}\]</div>
 </li>
 <li><p><span class="math notranslate nohighlight">\(f(x) = \dfrac{2}{1 + 2x}\)</span></p>
 <p>Make the replacement <span class="math notranslate nohighlight">\(u = 1+2x\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-78f662b5-b9c1-4a47-ab4c-c80c9ceebd0f">
-<span class="eqno">(1.39)<a class="headerlink" href="#equation-78f662b5-b9c1-4a47-ab4c-c80c9ceebd0f" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-fa2d651d-1495-430b-8111-0c79dd147bcb">
+<span class="eqno">(1.65)<a class="headerlink" href="#equation-fa2d651d-1495-430b-8111-0c79dd147bcb" title="Permalink to this equation">#</a></span>\[\begin{align}
 u &amp;= 1 + 2x  &amp; f &amp;= 2u^{-1} \\
 u' &amp;= 2  &amp;  f' &amp;= -2u^{-2}
 \end{align}\]</div>
 <p>so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-10865f00-1590-491e-92a9-e6863c74c5b4">
-<span class="eqno">(1.40)<a class="headerlink" href="#equation-10865f00-1590-491e-92a9-e6863c74c5b4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b6b78a5b-125e-4d91-8d23-850e4da9deb4">
+<span class="eqno">(1.66)<a class="headerlink" href="#equation-b6b78a5b-125e-4d91-8d23-850e4da9deb4" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f'(x) = \dd{}{f}{u} \dd{}{u}{x} = -2u^{-2} \cdot \dd{}{u}{x} =
   \frac{-4}{(1 + 2x)^2}
 \end{equation}\]</div>
@@ -582,7 +673,8 @@ f'(x) = \dd{}{f}{u} \dd{}{u}{x} = -2u^{-2} \cdot \dd{}{u}{x} =
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chain-rule">1.4.1. Chain Rule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#product-rule">1.4.1. Product rule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chain-rule">1.4.2. Chain rule</a></li>
 </ul>
   </nav></div>
 
