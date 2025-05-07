@@ -134,24 +134,24 @@ while choosing an independent combination $x_2 = 0$ and $x_3 = 1$ gives
 
 Matrices may have complex eigenvaules. They always come in conjugate pairs!
 
-$$
-\\vv{A} =
+\begin{equation}
+\vv{A} =
 \begin{bmatrix}
 0 & 1 \\
 -1 & 0
 \end{bmatrix}
-$$
+\end{equation}
 
-$$
-| \vv{A} - \lambda  \vv{I}| =
+\begin{align}
+| \vv{A} - \lambda  \vv{I}| &=
 \begin{vmatrix}
 -\lambda & 1 \\
 -1 & \lambda
 \end{vmatrix} =
 \lambda^2 + 1 = 0 \to \lambda_1 =i , \lambda_2 = -i
-$$
+\end{align}
 
-$$
+\begin{equation}
 \lambda_1 = i:
 \begin{bmatrix}
 -i & 1 \\
@@ -162,9 +162,9 @@ $$
 -i & 1 \\
 0 & 0
 \end{bmatrix}
-$$
+\end{equation}
 
-$$
+\begin{equation}
 -ix_1 + x_2 = 0
 \to
 \vv{x_1} =
@@ -172,9 +172,9 @@ $$
 1 \\
 i
 \end{bmatrix}
-$$
+\end{equation}
 
-$$
+\begin{equation}
 \lambda_2 = -i:
 \begin{bmatrix}
 i & 1 \\
@@ -186,7 +186,7 @@ i & 1 \\
 1 \\
 -i
 \end{bmatrix}
-$$
+\end{equation}
 
 ## Useful tricks
 
