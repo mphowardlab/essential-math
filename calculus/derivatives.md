@@ -8,7 +8,7 @@ A *tangent line* touches a curve exactly once.
 :alt: Graph of tangent line as slope of curve
 ```
 
-How to estimate slope of line at $x_0$? 
+How to estimate slope of line at $x_0$? \
 \begin{itemize}
 \item Evaluate $f(x_0)$ at the point
 \item Evaluate $f(x_1)$ at another point
