@@ -15,7 +15,7 @@ How to estimate slope of line at $x_0$? \
     \item Evaluate $f(x_1)$ at another point
     \item Make $x_1$ very close to $x_0$!
 \end{itemize}
-```
+``` 
 
 \begin{equation}
 f'(x_0)=m \approx \frac{f(x_1)-f(x_0)}{x_1-x_0}
