@@ -188,9 +188,16 @@ $$
 (\int(F*r* {dt})) = (\int((e^((-1) * (t)))* ((5) * (\sin((2) * (pi) * (t)))) * (\d{t}))) = {{5 * e^{((-1) * t)}} \div {((4) * {(pi)^2} )+ 1}} * [((-1) * (\sin((2 * pi) * (t)))) - (((2) * pi) * (\cos(((2) * pi) * (t))))]
 
 $$
+Then, solve for y. 
+$$
+y = (\frac{1}{F})*[\int F r \d{t} + C] = (\frac{-5} {((4) * (pi^2)) +1 }) * ((sin(2 * pi * t)) + ((2* pi) * (cos(2 * pi * t)))) _ ((C) * (e^t))
+$$
+
+Next, use initial conditions in to find C.
 
 $$
-y = (1\div(F))*[\int F r \d{t} + C] = ((-1) * ((5) \div (((4) * (pi^2)) +1 ))) * ((\sin( 2 * pi * (t))) + ((2 * pi) * (\cos(2 * pi * (t))))) + ((C) * e^t)
+1 = y(0) = (\frac{5} {((4) * (pi^2))}) * (0 + (2*pi)) + C
 $$
 
-Next, utilize initial conditions to find C.
+$$
+C = 1 + (\frac{(10 * pi)}{(((4) * (pi^2)) + 1)})
