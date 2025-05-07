@@ -1,98 +1,127 @@
-# Systems of first-order ordinary differential equations
-ODES involving second derivatives appear often in engineering because of their role in physical processes
-- Newton's second law : $F=ma$
-    - $a = acceleration$
-    - $a = v'$
-    - $a=x''$
+# Substitution
 
-Hence, solving kinematic equations according to Newtonian mechanisms requires a second-order ODE in time.
+Some second-order ODEs can be solved by making a substitution
 
-$$
+\begin{equation}
+u = \dd{}{y}{x}
+\end{equation}
 
-\begin{aligned}
-&m\frac{d^2x}{dt^2}=-mg \\
-&v=\frac{dx}{dt} \\
-&\frac{dv}{dt}=-g 
-\to \int\ dv = \int -g\ dt 
-\to v = \frac{dx}{dt} = -gt + C_1 \\
-&\int dx = \int (-gt + C_1)\ dt \to x(t) = -\frac{1}{2}gt^2 + C_1t + C_2 
-\end{aligned}
+Then, you effectively "integrate twice": once to solve for *u*, then once more
+to get *y* from *u*.
 
-$$
+```{example} Kinematics
+Newton's second law is $F = ma$, where *F* is the applied force, *m* is the
+mass, and *a* is the acceleration of a body. We also know that acceleration
+is the derivative of the velocity *v*, which is itself the first derivative
+of position *x*. Hence, Newton's second-law is a second-order ODE:
 
-If the initial position is $x(0) = x_0$ and initial velocity is $v(0)=x(0)=v_0$,
+\begin{equation}
+m \dd{2}{x}{t} = F
+\end{equation}
 
-$$
+Solve for the position of a body *x* as a function of time *t* experience a
+constant gravitational force $F = -mg$, where *g* is the acceleration due to
+gravity.
 
-\begin{aligned}
-&m\frac{d^2x}{dt^2} = -mg \\
-&v = \frac{dx}{dt} \\
-&\frac{d}{dt} \left( \frac{dx}{dt} \right) = \frac{dv}{dt} = -g 
-\to \int dv = \int -g\ dt 
-\to v = \frac{dx}{dt} = -gt + C_1 \\
-&\int dx = \int (-gt + C_1)\ dt 
-\to x(t) = -\frac{1}{2}gt^2 + C_1t + C_2 
-\end{aligned}
+---
 
-$$
+Substitute the gravitational force and simplify
 
+\begin{align}
+m \dd{2}{x}{t} &= -mg \\
+\dd{2}{x}{t} &= -g
+\end{align}
 
+Make the substitution $v = \d{x}/\d{t}$, then integrate because the ODE is
+separable
 
-Example : Incompressible flow in a cylinder (momentum transport)
+\begin{align}
+\dd{}{v}{t} &= -g \\
+\int \d{v} &= \int -g \d{t} \\
+v &= -g t + c_1
+\end{align}
+
+Replace *v* and integrate again:
+
+\begin{align}
+\dd{}{x}{t} &= -g t + c_1 \\
+\int \d{x} &= \int\left(-g t + c_1 \right)\d{t} \\
+x &= -\frac{1}{2} g t^2 + c_1 t + c_2
+\end{align}
+
+If the initial position is $x(0) = x_0$ and initial velocity is
+$v(0)=x'(0)=v_0$, then
+
+\begin{align}
+x(0) &= c_2 = x_0 \\
+v(0) &= c_1 = v_0
+\end{align}
+
+so
+
+\begin{equation}
+x(t) = -\frac{1}{2} g t^2 + v_0 t + x_0
+\end{equation}
+
+This is the classic equation of ballistic motion!
+```
+
+````{example} Incompressible flow in a cylinder
+Steady, laminar pressure-driven flow in a cylindrical pipe is governed by the
+simplified Navier-Stokes equation
+
+\begin{equation}
+\mu \frac{1}{r} \dd{}{}{r} \left( r \dd{}{u_z}{r} \right) = -\frac{\Delta P}{L}
+\end{equation}
+
+where $u_z$ is the velocity along the pipe axis, $\Delta P$ is the difference
+between the pressure at the inlet and at the outlet, *L* is the length of the
+pipe, and $\mu$ is the dynamic viscosity.
 
 <img src="https://github.com/user-attachments/assets/cc9937aa-c09f-46ed-a159-edaad1f20dc6" alt="Your Image" width="500"/>
 
+The pipe walls have no-slip boundary conditions, meaning the velocity is zero
+there. Derive an expression for $u_z(r)$.
 
+---
 
-Navier-Stokes equation reduces to
+Make the substitution $v = r \d{u_z}/\d{r}$, then rearrangeso
 
-$$
+\begin{align}
+\mu \frac{1}{r} \dd{}{v}{r} &= -\frac{\Delta P}{\mu L} \\
+\int \d{v} &= \int -\frac{1}{\mu} \frac{\Delta P}{L} r \d{r} \\
+v &=  -\frac{1}{2\mu} \frac{\Delta P}{L} r^2 + c_1
+\end{align}
 
-\begin{aligned}
-&\mu \frac{1}{r} \frac{d}{dr} \left( r \frac{du_z}{dr} \right) = -\frac{\Delta P}{L} \\
-&v = r \frac{du_z}{dr} \\
-&\int dv = \int \frac{-1}{\mu} \frac{\Delta P}{L} r\,dr 
-\to v = r \frac{du_z}{dr} = -\frac{1}{2\mu} \frac{\Delta P}{L} r^2 + C_1 \ln(r) + C_2 \\
-&\int du_z = \int \left( -\frac{1}{2\mu} \frac{\Delta P}{L} r + \frac{C_1}{r} \right) dr 
-\to u_z = -\frac{1}{4\mu} \frac{\Delta P}{L} r^2 + C_1 \ln(r) + C_2
-\end{aligned}
+Then, substitute for *v*, separate, and integrate again:
 
+\begin{align}
+r \dd{}{u_z}{r} &= -\frac{1}{2\mu} \frac{\Delta P}{L} r^2 + c_1 \\
+\int \d{u_z} &= \int \Biggl( -\frac{1}{2\mu} \frac{\Delta P}{L} r +
+  \frac{c_1}{r} \Biggr) \d{r} \\
+u_z &= -\frac{1}{4\mu} \frac{\Delta P}{L} r^2 + c_1 \ln r + c_2
+\end{align}
 
-$$
+The walls have no-slip boundary conditions so $u_z(R) = 0$. Additionally, the
+pipe must have radial symmetry so $u_z'(0) = 0$. Applying these boundary
+conditions requires:
 
-We want no slip 
+\begin{align}
+\lim_{r \to 0} u_z'(r) &= \lim_{r \to 0} \frac{c_1}{r} = 0 \\
+u_z(R) &= -\frac{1}{4\mu} \frac{\Delta P}{L} R^2 + c_1 \ln R + c_2 = 0
+\end{align}
 
-$$
-u_z(R)= 0
-$$
+The first equation requires $c_1 = 0$. The second equation then gives
 
-so 
+\begin{equation}
+c_2 = \frac{1}{4\mu} \frac{\Delta P}{L} R^2
+\end{equation}
 
-$$
-0=u_z(R) = -\frac{1}{4μ}\frac{△P}{L}r^2+C_1(ln(r))+C_2 \to C_2 = -\frac{1}{4μ}\frac{△P}{L}R^2-C_1(ln(r))
-$$
+All together,
 
-We also know 
+\begin{equation}
+u_z(r)=\frac{1}{4 \mu}\frac{\Delta P}{L}(R^2-r^2)
+\end{equation}
 
-$$
-u_z(0) is finite
-$$ 
-
-
-or that u has radial symmetry, so 
-
-$$
-\frac{du_z}{dr}=0  \to @r=0
-$$
-
-Either way
-
-$$
-C_1 = 0
-$$
-
-So
-
-$$
-u_z(r)=\frac{1}{4μ}\frac{△P}{L}(R^2-r^2)
-$$
+This is the classic Hagen-Poiseuille flow profile.
+````
