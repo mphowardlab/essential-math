@@ -1,4 +1,4 @@
-# Product, quotient, and chain rule
+# Rules for derivatives
 
 ## Product rule
 
@@ -181,35 +181,34 @@ The results match! Some additional examples:
      \frac{-4}{(1 + 2x)^2}
    \end{equation}
 
+## Trigonometric functions
 
-## Derivatives of Trigonometric Functions
+| $f(x)$    | $f'(x)$    | $f(x)$    | $f'(x)$            |
+|-----------|------------|-----------|--------------------|
+| $\sin x$  | $\cos x$   | $\csc x$ | $-\csc x \cot x$ |
+| $\cos x$  | $-\sin x$  | $\sec(x)$ | $\sec x \tan x$  |
+| $\tan x$  | $\sec^2 x$ | $\cot x$ | $-\csc^2 x$       |
 
-| $f(x)$     | $f'(x)$    | $f(x)$    | $f'(x)$            |
-|------------|------------|-----------|--------------------|
-| $\sin(x)$  | $\cos(x)$  | $\csc(x)$ | $-\csc(x) \cot(x)$ |
-| $\cos(x)$  | $-\sin(x)$ | $\sec(x)$ | $\sec(x) \tan(x)$   |
-| $\tan(x)$  | $\sec^2(x)$| $\cot(x)$ | $-\csc^2(x)$        |
-
-All of these follow from knowing only two derivatives: $\sin(x)$ and $\cos(x)$!
-
-Proof of derivative of $\tan(x)$:
+All of these follow from knowing only two derivatives: $\sin x$ and $\cos x$!
+For example, to find the derivative of $\tan x$, use the quotient rule:
 
 \begin{align}
-f(x) = \tan(x) \frac{\sin(x)}{\cos(x)} \\
-u = \sin(x) \hspace{2cm} v = \cos(x) \\
-u' = \cos(x) \hspace{2cm} v' = -\sin(x) \\ 
-f'(x) = \frac{\cos(\cos(x)) - \sin(-\sin(x))}{\cos^2(x)} = \frac{\sin^2(x) + \cos^2(x)}{\cos^2(x)} = \frac{1}{\cos^2(x)} = \sec^2(x)
+f(x) &= \tan x = \frac{\sin x}{\cos x} \\
+f'(x) &= \frac{\cos x \cdot \cos x - \sin x \cdot (-\sin x)}{\cos^2 x} \\
+  &= \frac{\sin^2 x + \cos^2 x}{\cos^2 x}\\
+  &= \frac{1}{\cos^2 x} \\
+  &= \sec^2 x
 \end{align}
 
-Proof of derivative of $\csc(x)$:
+Or, to find the derivative of $\csc x$, use the chain rule:
 
 \begin{align}
-f(x) = \csc(x) = (\sin(x))^{-1} \\
-u = \sin(x) \hspace{2cm} f(u) = u^{-1} \\
-u'(x) = \cos(x) \hspace{2cm} f'(u) = -u^{-2} \\
-f'(x) = -u^{-2} u' = -\cos(x) (\sin(x))^{-2} = \frac{-1}{\sin(x)} \frac{\cos(x)}{\sin(x)} = -\csc(x) \cot(x)
+f(x) &= \csc x = (\sin x)^{-1} \\
+f'(x) &= -(\sin x)^{-2} \dd{}{}{x}(\sin x) \\
+  &= (\sin x)^{-2} \cdot (-\cos x) \\
+  &= \frac{-1}{\sin x} \frac{\cos x}{\sin x} \\
+  &= -\csc x \cot x
 \end{align}
-
 
 ## Skill builder problems
 
