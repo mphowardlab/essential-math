@@ -99,6 +99,11 @@ Multiply down the diagonals and add your + C
 \begin{align}
 y &= -x^5 \cos(x) + 5x^4 \sin(x) + 20x^3 \cos(x) - 60x^2 \sin(x) \\
   &\quad - 120x \cos(x) + 120 \sin(x) + C \\
+\end{align}
+
+To make the solution look cleaner, you can group factor out cos(x) and sin(x). 
+
+\begin{align}
   &= (-x^5 + 20x^3 - 120x) \cos(x) + (5x^4 - 60x^2 + 120) \sin(x) + C
 \end{align}
 
