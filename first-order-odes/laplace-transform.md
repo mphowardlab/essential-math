@@ -258,3 +258,17 @@ The average concentration is:
 \end{align}
 ```
 <!-- markdownlint-enable MD013 -->
+
+### Skill Builder problems
+
+\begin{equation}
+y' - y = 1 - 2x + \sin(3x), \quad y(0) = -1 
+\end{equation}
+
+---
+
+\begin{equation}
+\mathcal{L}\{y' - y\} = \mathcal{L}\{1 - 2x + \sin(3x)\}
+\end{equation}
+
+
