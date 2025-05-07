@@ -79,6 +79,7 @@ This was obviously harder than the old way, but there are other cases where it i
    f(x) = \frac{1}{x^4} \cdot x^3 -3x^2 +2x = x^-1 -3x^-2 +2x^-3
    f'(x) = -\frac{1}{x^2} + \frac{6}{x^3} - \frac{6}{x^4}
    \end{equation}
+   
 Fastest way depends on the problem!
 
 <<<<<<< HEAD
