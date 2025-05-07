@@ -264,41 +264,40 @@ y'' + 3y' + 2.25y = -10e^-1.5x + \cos x
 
 **Solve the differential equation:**
 
-$$
+  \begin{equation}
 y'' - y' - 12y = 144x^3 + \frac{25}{2}
-$$
+  \end{equation}
 
 **with initial conditions:**
 
-$$
+\begin{equation}
 y(0) = 5, \quad y'(0) = -\frac{1}{2}
-$$
+\end{equation}
 
 ---
-
+```{solution}
 
 
 Homogeneous solution:
 
-$$
+\begin{equation}
 y'' - y' - 12y = 0 
-$$
-
-$$
+\end{equation}
+\begin{equation}
 \lambda^2 - \lambda - 12 = 0
-$$
+\end{equation}
 
-$$
+\begin{equation}
 (\lambda - 4)(\lambda + 3) = 0
-$$
+\end{equation}
 
-$$
+\begin{equation}
 \lambda_1 = 4, \quad \lambda_2 = -3
-$$
+\end{equation}
 
-$$
+\begin{equation}
 y_h = C_1 e^{4x} + C_2 e^{-3x}
-$$
+\end{equation}
 
 ---
 
@@ -306,61 +305,61 @@ Particular Solution:
 
 Guess:
 
-$$
+\begin{equation}
 y_p = k_1 x^3 + k_2 x^2 + k_3 x + k_4
-$$
+\end{equation}
 
-$$
+\begin{equation}
 y_p' = 3k_1x^2 + 2k_2x + k_3
-$$
+\end{equation}
 
-$$
+\begin{equation}
 y_p'' = 6k_1x + 2k_2
-$$
+\end{equation}
 
-$$
+\begin{equation}
 (6k_1x + 2k_2) - (3k_1x^2 + 2k_2x + k_3) - 12(k_1x^3 + k_2x^2 + k_3x + k_4)
-$$
+\end{equation}
 
-$$
+\begin{equation}
 = -12k_1x^3 + (-3k_1 - 12k_2)x^2 + (6k_1 - 2k_2 - 12k_3)x + (2k_2 - k_3 - 12k_4)
-$$
+\end{equation}
 
-  $$
+\begin{equation}
   -12k_1 = 144 \quad \Rightarrow \quad k_1 = -12
-  $$
+  \end{equation}
 
-  $$
+\begin{equation}
   -3k_1 - 12k_2 = 0
-  $$
+  \end{equation}
   
-  $$
+\begin{equation}
   36 - 12k_2 = 0 \quad \Rightarrow \quad k_2 = 3
-  $$
+  \end{equation}
 
-  $$
+\begin{equation}
   6k_1 - 2k_2 - 12k_3 = 0 \quad \Rightarrow \quad k_3 = \frac{6k_1 -2k_2}{12} = -\frac{13}{2}
-  $$
+  \end{equation}
 
-  $$
+\begin{equation}
 2k_2 - k_3 - 12k_4 = \frac{25}{2} \quad \Rightarrow \quad 12k_4 = 2(-3) - ('\frac{13}{2}) - \frac{25}{2} = 0 \quad \Rightarrow \quad k_4 = 0
-  $$
+  \end{equation}
 
-$$
+\begin{equation}
 y_p = -12x_3 + 3x^2 - \frac{13}{2}x
-$$
+\end{equation}
   
 ---
 
 Boundary Conditions:
 
-$$
+\begin{equation}
  y = C_1 e^{4x} + C_2 e^{-3x} - 12x^3 + 3x^2 - \frac{13}{2}x
-$$
+\end{equation}
 
-$$
+\begin{equation}
 y' = 4C_1 e^{4x} - 3C_2e^{-3X} - 36x^2 + 6x - \frac{13}{2}
-$$
+\end{equation}
 
 $$\begin{alignat*}{4}
 5 &= y(0) &&= C_1 + C_2 &&\Rightarrow  C_1 + C_2 &= 5 \\
@@ -378,6 +377,7 @@ $$\begin{equation}
 
 Final Answer:
 
-$$
+\begin{equation}
 \boxed{y = 3e^{4x} + 2e^{-3x} - 12x^3 + 3x^2 - \frac{13}{2}x}
-$$
+\end{equation}
+```
