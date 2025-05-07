@@ -38,16 +38,11 @@ where now *j* is any column of **A**.
 ```{topic} 2x2 determinant
 The determinant of a 2x2 matrix is:
 
-The determinant of a 2x2 matrix is:
 \begin{equation}
 \begin{vmatrix}a & b \\ c & d\end{vmatrix} = a d - bc
 \end{equation}
 ```
 
-\begin{equation}
-\begin{vmatrix}a & b \\ c & d\end{vmatrix} = a d - bc
-\end{equation}
-```
 
 We will use the definition of the determinant to show this must be the case!
 Let's use the first definition and pick the first row $i=1$:
