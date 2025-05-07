@@ -14,8 +14,10 @@ This work (c) 2025 is licensed under
 - Paine Cole
 - Oscar Earhart
 - Sarah Eldridge
+- Sam Faulkner
 - Alexis Florit
 - Ella Governale
+- Parker Green
 - Connor Habig
 - Anna Grace Hawkins
 - Kennedi Hawkins
@@ -39,15 +41,18 @@ This work (c) 2025 is licensed under
 - Meg Nettles
 - Jeffe Old
 - Ella Ortbals
+- Jack Raynor
 - Kendall Reeves
 - Olivia Robinson
 - Brent Russell
 - Michelle Schindler
+- Andrea Smith
 - Katie Sorensen
 - Mary Frances Springfield
 - Lauren Thompson
 - Madelyn Torrance
 - Debora Vasconcelos
+- Annabelle Walker
 - Luke Walters
 - Morgan Wootton
 
