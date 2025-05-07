@@ -78,7 +78,7 @@ Begin by differentiating the numerator and denominator until $\frac{\infty}{\inf
 \lim_{x\to \infty} \frac{e^x}{2} = \infty
 \end{align}
 
-Other forms can also sometimes be made $\frac{0}{0}$ or $\frac{\infty}{0}$.
+Other forms can also sometimes be made: $\frac{0}{0}$ or $\frac{\infty}{0}$.
 
 To solve:
 
