@@ -428,7 +428,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chain-rule">1.4.1. Chain Rule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#product-rule">1.4.1. Product rule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chain-rule">1.4.2. Chain rule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill-builder-problems">1.4.3. Skill builder problems</a></li>
 </ul>
             </nav>
         </div>
@@ -442,78 +444,268 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="product-quotient-and-chain-rule">
 <h1><span class="section-number">1.4. </span>Product, quotient, and chain rule<a class="headerlink" href="#product-quotient-and-chain-rule" title="Link to this heading">#</a></h1>
+<section id="product-rule">
+<h2><span class="section-number">1.4.1. </span>Product rule<a class="headerlink" href="#product-rule" title="Link to this heading">#</a></h2>
+<p>The product rule is used to differentiate functions that can be written as the
+product of two smaller functions.</p>
+<aside class="topic">
+<p class="topic-title">Product rule</p>
+<p>If <span class="math notranslate nohighlight">\(f(x) = u(x) v(x)\)</span>, then</p>
+<div class="amsmath math notranslate nohighlight" id="equation-21eb1aaa-9efe-42bc-beb9-8896ab591626">
+<span class="eqno">(1.47)<a class="headerlink" href="#equation-21eb1aaa-9efe-42bc-beb9-8896ab591626" title="Permalink to this equation">#</a></span>\[\begin{align}
+f'(x) &amp;= u v' + v u ' \\
+&amp;= u \dd{}{v}{x} + v \dd{}{u}{x}
+\end{align}\]</div>
+</aside>
+<p>To demonstrate this rule, consider <span class="math notranslate nohighlight">\(f(x) = (x-3)(x-1)\)</span>.
+Previously, we would have needed to expand this function before differentiating:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8665ff81-3cfd-43da-aa74-9764a459b281">
+<span class="eqno">(1.48)<a class="headerlink" href="#equation-8665ff81-3cfd-43da-aa74-9764a459b281" title="Permalink to this equation">#</a></span>\[\begin{align}
+f(x) &amp;= x^2 - 4x + 3 \\
+f'(x) &amp;= 2x - 4
+\end{align}\]</div>
+<p>With the product rule, instead we recognize</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1aba1c73-5535-4d2e-bf94-f2efbab7dad1">
+<span class="eqno">(1.49)<a class="headerlink" href="#equation-1aba1c73-5535-4d2e-bf94-f2efbab7dad1" title="Permalink to this equation">#</a></span>\[\begin{align}
+u &amp;= x-3 &amp;  v &amp;= x-1 \\
+u' &amp;= 1 &amp; v' &amp;= 1
+\end{align}\]</div>
+<p>so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7d2b2418-c0c9-4598-a01d-f594544934b1">
+<span class="eqno">(1.50)<a class="headerlink" href="#equation-7d2b2418-c0c9-4598-a01d-f594544934b1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+f'(x) = uv' + vu' = (x-3) \cdot 1 + (x-1) \cdot 1 = 2x - 4
+\end{equation}\]</div>
+<p>This example is a little silly, but the product rule is a life saver for
+functions that are hard to expand!</p>
+<ol class="arabic">
+<li><p><span class="math notranslate nohighlight">\(f(x) = (x+1)(2x^2 + 5)(5x^3-4)\)</span></p>
+<p>Identify:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7082f363-6477-46da-ab79-28483a4f7472">
+<span class="eqno">(1.51)<a class="headerlink" href="#equation-7082f363-6477-46da-ab79-28483a4f7472" title="Permalink to this equation">#</a></span>\[\begin{equation}
+u = x+1  \qquad v = (2x^2+5)(5x^3-4)
+\end{equation}\]</div>
+<p>so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-313374de-e420-4d4b-b24a-232558e15fa4">
+<span class="eqno">(1.52)<a class="headerlink" href="#equation-313374de-e420-4d4b-b24a-232558e15fa4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+f'(x) = (x+1)v' + (2x^2 +3)(5x^3-4)(1)
+\end{equation}\]</div>
+<p>The derivative <span class="math notranslate nohighlight">\(v'\)</span> can be evaluated by a second product rule!</p>
+<div class="amsmath math notranslate nohighlight" id="equation-078ea438-8193-47d4-9b4f-e02a181eb24b">
+<span class="eqno">(1.53)<a class="headerlink" href="#equation-078ea438-8193-47d4-9b4f-e02a181eb24b" title="Permalink to this equation">#</a></span>\[\begin{align}
+u &amp;= 2x^2+5 &amp; v &amp;= 5x^3-4 \\
+u' &amp;= 4x &amp; v' &amp;= 15x^2
+\end{align}\]</div>
+<p>finally giving</p>
+<!--markdownlint-disable MD011 -->
+<div class="amsmath math notranslate nohighlight" id="equation-1387f2e5-0c6a-4f56-879c-8728d50a349e">
+<span class="eqno">(1.54)<a class="headerlink" href="#equation-1387f2e5-0c6a-4f56-879c-8728d50a349e" title="Permalink to this equation">#</a></span>\[\begin{align}
+f'(x) &amp;= (x+1)[(2x^2+3)(15x^2) + (5x^3-4)(4x)] \\
+&amp;+ (2x^2+5)(5x^3-4)
+\end{align}\]</div>
+<!--markdownlint-enable MD011 -->
+</li>
+<li><p><span class="math notranslate nohighlight">\(f(x) = \dfrac{1}{x} e^x\)</span></p>
+<p>Identify:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-190c0eb2-4413-42df-9557-88e9d5724079">
+<span class="eqno">(1.55)<a class="headerlink" href="#equation-190c0eb2-4413-42df-9557-88e9d5724079" title="Permalink to this equation">#</a></span>\[\begin{align}
+u &amp;= \frac{1}{x} &amp; v &amp;= e^x   \\
+u' &amp;= -\frac{1}{x^2} &amp; v' &amp;= e^x
+\end{align}\]</div>
+<p>so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9208a19c-eacb-49b7-ae8f-bf9cca577540">
+<span class="eqno">(1.56)<a class="headerlink" href="#equation-9208a19c-eacb-49b7-ae8f-bf9cca577540" title="Permalink to this equation">#</a></span>\[\begin{align}
+f'(x) &amp;= \frac{1}{x}e^x + e^x(-\frac{1}{x^2}) \\
+&amp;= e^x\left(\frac{1}{x} - \frac{1}{x^2}\right)
+\end{align}\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(f(x) = (x^2+3)\ln x\)</span></p>
+<p>Identify:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f94b6048-ebe7-4912-ac45-fa40e8d7cb6e">
+<span class="eqno">(1.57)<a class="headerlink" href="#equation-f94b6048-ebe7-4912-ac45-fa40e8d7cb6e" title="Permalink to this equation">#</a></span>\[\begin{align}
+u &amp;= x^2+3 &amp;  v &amp;= \ln(x)   \\
+u' &amp;= 2x &amp; v' &amp;= \frac{1}{x}
+\end{align}\]</div>
+<p>so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ef1a304e-ca44-4eb8-ac2c-c1b8cbb166b4">
+<span class="eqno">(1.58)<a class="headerlink" href="#equation-ef1a304e-ca44-4eb8-ac2c-c1b8cbb166b4" title="Permalink to this equation">#</a></span>\[\begin{align}
+f'(x) &amp;= (x^2+3)\cdot\frac{1}{x} + (\ln x)(2x) \\
+&amp;= \frac{x^2+3}{x} + 2x\ln x
+\end{align}\]</div>
+</li>
+</ol>
+</section>
 <section id="chain-rule">
-<h2><span class="section-number">1.4.1. </span>Chain Rule<a class="headerlink" href="#chain-rule" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.4.2. </span>Chain rule<a class="headerlink" href="#chain-rule" title="Link to this heading">#</a></h2>
 <p>The chain rule is used to differentiate composite functions, when the “inside”
 of the function is more complicated than what we know.</p>
 <aside class="topic">
 <p class="topic-title">Chain rule</p>
 <p>If a function <span class="math notranslate nohighlight">\(f(x)\)</span> can be written as <span class="math notranslate nohighlight">\(f(u(x))\)</span>, then:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0c8aba06-2805-4e87-b6d1-df957c2eafb0">
-<span class="eqno">(1.35)<a class="headerlink" href="#equation-0c8aba06-2805-4e87-b6d1-df957c2eafb0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3dfadb0b-e2d4-42c7-92eb-afd000346cef">
+<span class="eqno">(1.59)<a class="headerlink" href="#equation-3dfadb0b-e2d4-42c7-92eb-afd000346cef" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f'(x) = \dd{}{f}{u} \dd{}{u}{x} = f'(u) u'(x)
 \end{equation}\]</div>
 </aside>
 <p>To demonstrate this rule, consider <span class="math notranslate nohighlight">\(f(x) = (x-1)^2\)</span>. Previously, we would have
 needed to expand this function before differentiating:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-017e34dc-4452-47b2-920c-97282ca67c7b">
-<span class="eqno">(1.36)<a class="headerlink" href="#equation-017e34dc-4452-47b2-920c-97282ca67c7b" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-71179f72-68da-411f-9a66-92beb829bc14">
+<span class="eqno">(1.60)<a class="headerlink" href="#equation-71179f72-68da-411f-9a66-92beb829bc14" title="Permalink to this equation">#</a></span>\[\begin{align}
 f(x) &amp;= x^2 - 2x + 1 \\
 f'(x) &amp;= 2x - 2
 \end{align}\]</div>
 <p>With the chain rule, instead we recognize</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8d26ac36-874d-4e00-9612-df3348367cec">
-<span class="eqno">(1.37)<a class="headerlink" href="#equation-8d26ac36-874d-4e00-9612-df3348367cec" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5bcc3300-8f22-458b-9a44-fc8bd6091464">
+<span class="eqno">(1.61)<a class="headerlink" href="#equation-5bcc3300-8f22-458b-9a44-fc8bd6091464" title="Permalink to this equation">#</a></span>\[\begin{align}
 u &amp;= x - 1  &amp;  f &amp;= u^2 \\
 u' &amp;= 1  &amp;  f' &amp;= 2u
 \end{align}\]</div>
 <p>so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f426046e-9a3d-4ac7-93d2-0ab41f30ffa0">
-<span class="eqno">(1.38)<a class="headerlink" href="#equation-f426046e-9a3d-4ac7-93d2-0ab41f30ffa0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3c822b72-6a53-447c-8e13-d0bbcdaa5d0e">
+<span class="eqno">(1.62)<a class="headerlink" href="#equation-3c822b72-6a53-447c-8e13-d0bbcdaa5d0e" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f'(x) = \dd{}{f}{u} \dd{}{u}{x} = 2u \dd{}{u}{x} = 2(x-1) \cdot 1 = 2x - 2
 \end{equation}\]</div>
 <p>The results match! Some additional examples:</p>
 <ol class="arabic">
 <li><p><span class="math notranslate nohighlight">\(f(x) = e^{x^2}\)</span></p>
 <p>Make the replacement <span class="math notranslate nohighlight">\(u = x^2\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b0e969b4-95c3-4e9b-9421-9302db0cd0b1">
-<span class="eqno">(1.39)<a class="headerlink" href="#equation-b0e969b4-95c3-4e9b-9421-9302db0cd0b1" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ec8e83c6-5111-4722-a438-16d7e8006739">
+<span class="eqno">(1.63)<a class="headerlink" href="#equation-ec8e83c6-5111-4722-a438-16d7e8006739" title="Permalink to this equation">#</a></span>\[\begin{align}
 u &amp;= x^2  &amp;  f &amp;= e^u \\
 u' &amp;= 2x  &amp;  f' &amp;= e^u
 \end{align}\]</div>
 <p>so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-02d723f2-f661-48a2-85cb-d2e7929b87cb">
-<span class="eqno">(1.40)<a class="headerlink" href="#equation-02d723f2-f661-48a2-85cb-d2e7929b87cb" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-533188be-21f4-4d8f-88b2-9fa88146bed0">
+<span class="eqno">(1.64)<a class="headerlink" href="#equation-533188be-21f4-4d8f-88b2-9fa88146bed0" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f'(x) = \dd{}{f}{u} \dd{}{u}{x} = e^{u} \dd{}{u}{x} = e^{x^2} \cdot 2x
 \end{equation}\]</div>
 </li>
 <li><p><span class="math notranslate nohighlight">\(f(x) = \ln(1 + 2x)\)</span></p>
 <p>Make the replacement <span class="math notranslate nohighlight">\(u = 1+2x\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9aeb24c4-b814-43a3-821a-dcc924e64037">
-<span class="eqno">(1.41)<a class="headerlink" href="#equation-9aeb24c4-b814-43a3-821a-dcc924e64037" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ff4c1c80-ee5f-4e17-8bdc-2020c8cf3c2e">
+<span class="eqno">(1.65)<a class="headerlink" href="#equation-ff4c1c80-ee5f-4e17-8bdc-2020c8cf3c2e" title="Permalink to this equation">#</a></span>\[\begin{align}
 u &amp;= 1 + 2x  &amp; f &amp;= \ln u \\
 u' &amp;= 2  &amp;  f' &amp;= \frac{1}{u}
 \end{align}\]</div>
 <p>so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-248bf8c2-cfc3-44ca-91eb-282905960183">
-<span class="eqno">(1.42)<a class="headerlink" href="#equation-248bf8c2-cfc3-44ca-91eb-282905960183" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b4073f58-2ef7-4db1-85d5-357d9ea48b7c">
+<span class="eqno">(1.66)<a class="headerlink" href="#equation-b4073f58-2ef7-4db1-85d5-357d9ea48b7c" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f'(x) = \dd{}{f}{u} \dd{}{u}{x} = \frac{1}{u} \dd{}{u}{x} = \frac{2}{1 + 2x}
 \end{equation}\]</div>
 </li>
 <li><p><span class="math notranslate nohighlight">\(f(x) = \dfrac{2}{1 + 2x}\)</span></p>
 <p>Make the replacement <span class="math notranslate nohighlight">\(u = 1+2x\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fc8dfcdd-3a55-4b3e-ab77-6c40ceabbc1a">
-<span class="eqno">(1.43)<a class="headerlink" href="#equation-fc8dfcdd-3a55-4b3e-ab77-6c40ceabbc1a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-cf44dc5a-6b06-4929-9257-f79036814a28">
+<span class="eqno">(1.67)<a class="headerlink" href="#equation-cf44dc5a-6b06-4929-9257-f79036814a28" title="Permalink to this equation">#</a></span>\[\begin{align}
 u &amp;= 1 + 2x  &amp; f &amp;= 2u^{-1} \\
 u' &amp;= 2  &amp;  f' &amp;= -2u^{-2}
 \end{align}\]</div>
 <p>so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3a88a694-a93d-43d3-bcd0-3171a10554fc">
-<span class="eqno">(1.44)<a class="headerlink" href="#equation-3a88a694-a93d-43d3-bcd0-3171a10554fc" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c63d54d4-50eb-49e7-b5ab-4a0d4231a007">
+<span class="eqno">(1.68)<a class="headerlink" href="#equation-c63d54d4-50eb-49e7-b5ab-4a0d4231a007" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f'(x) = \dd{}{f}{u} \dd{}{u}{x} = -2u^{-2} \cdot \dd{}{u}{x} =
   \frac{-4}{(1 + 2x)^2}
 \end{equation}\]</div>
 </li>
+</ol>
+</section>
+<section id="skill-builder-problems">
+<h2><span class="section-number">1.4.3. </span>Skill builder problems<a class="headerlink" href="#skill-builder-problems" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p><span class="math notranslate nohighlight">\(f(x) = 3 \cos x + \sin x\)</span></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="amsmath math notranslate nohighlight" id="equation-aa145fb6-3787-4e4a-8d29-a9e7f115ce74">
+<span class="eqno">(1.69)<a class="headerlink" href="#equation-aa145fb6-3787-4e4a-8d29-a9e7f115ce74" title="Permalink to this equation">#</a></span>\[\begin{align}
+f' &amp;= 3 \dd{}{}{x}(\cos x) + 4 \dd{}{}{x}(\sin x)\\
+&amp;= -3\sin x + 4\cos x
+\end{align}\]</div>
+</div>
+</details></li>
+<li><p><span class="math notranslate nohighlight">\(f(x) = 2 \sin x \cos x\)</span></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Use the product rule with:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-40e1e91f-d31d-46cd-9f14-4f32f5ac7833">
+<span class="eqno">(1.70)<a class="headerlink" href="#equation-40e1e91f-d31d-46cd-9f14-4f32f5ac7833" title="Permalink to this equation">#</a></span>\[\begin{align}
+u &amp;= \sin x &amp; v &amp;= \cos x\\
+u' &amp;= \cos x &amp; v' &amp;= -\sin x
+\end{align}\]</div>
+<p class="sd-card-text">so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-68c659f1-17e1-48b8-b428-f75c84e864e6">
+<span class="eqno">(1.71)<a class="headerlink" href="#equation-68c659f1-17e1-48b8-b428-f75c84e864e6" title="Permalink to this equation">#</a></span>\[\begin{align}
+f' &amp;= 2[\sin x(-\sin x) + \cos x(\cos x)] \\
+&amp;= 2(\cos^2 x-\sin^2 x) \\
+&amp;= 2 \cos 2x\\
+\end{align}\]</div>
+</div>
+</details></li>
+<li><p><span class="math notranslate nohighlight">\(f(x) = \sin 2x\)</span></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Use the chain rule with</p>
+<div class="amsmath math notranslate nohighlight" id="equation-97c906e7-cd92-4b23-93a5-58357c918eb4">
+<span class="eqno">(1.72)<a class="headerlink" href="#equation-97c906e7-cd92-4b23-93a5-58357c918eb4" title="Permalink to this equation">#</a></span>\[\begin{align}
+u &amp;= 2x &amp; f &amp;= \sin u \\
+u' &amp;= 2 &amp; f' = \cos u
+\end{align}\]</div>
+<p class="sd-card-text">so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f0b2f077-4302-4b9f-bb4c-c44cbb95c17d">
+<span class="eqno">(1.73)<a class="headerlink" href="#equation-f0b2f077-4302-4b9f-bb4c-c44cbb95c17d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+f' = \cos{u} \cdot 2 = 2 \cos 2 x
+\end{equation}\]</div>
+</div>
+</details></li>
+<li><p><span class="math notranslate nohighlight">\(f(x) = \tan({x^2+2x+3})\)</span></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Use the chain rule with</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2595ebab-7947-4a9e-896d-e63044160e5f">
+<span class="eqno">(1.74)<a class="headerlink" href="#equation-2595ebab-7947-4a9e-896d-e63044160e5f" title="Permalink to this equation">#</a></span>\[\begin{align}
+u &amp;= x^2+2x+3 &amp; f = \tan u\\
+u' &amp;= 2x+2 &amp; f' = \sec^2 u\\
+\end{align}\]</div>
+<p class="sd-card-text">so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-360e433f-ad3d-488a-9b18-df736c8f88d8">
+<span class="eqno">(1.75)<a class="headerlink" href="#equation-360e433f-ad3d-488a-9b18-df736c8f88d8" title="Permalink to this equation">#</a></span>\[\begin{align}
+f' &amp;= \sec^2 u \cdot u'\\
+&amp;= (2x+2)\sec^2(x^2+2x+3)\\
+\end{align}\]</div>
+</div>
+</details></li>
+<li><p><span class="math notranslate nohighlight">\(f(x) = e^{\cos^2 x}\)</span></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Use the chain rule with</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7757bf5a-0e57-47fa-bf03-72ca7368ee03">
+<span class="eqno">(1.76)<a class="headerlink" href="#equation-7757bf5a-0e57-47fa-bf03-72ca7368ee03" title="Permalink to this equation">#</a></span>\[\begin{align}
+u &amp;= \cos^2 x &amp; f = e^{u}\\
+u' &amp;= \dd{}{}{x}(\cos^2 x) &amp; f' = e^{u}
+\end{align}\]</div>
+<p class="sd-card-text">So</p>
+<div class="amsmath math notranslate nohighlight" id="equation-34bed5b8-046a-43d6-8150-f06c45601de2">
+<span class="eqno">(1.77)<a class="headerlink" href="#equation-34bed5b8-046a-43d6-8150-f06c45601de2" title="Permalink to this equation">#</a></span>\[\begin{equation}
+f' = e^{u} u' = e^{\cos^2 x} \dd{}{}{x}(\cos^2 x)
+\end{equation}\]</div>
+<p class="sd-card-text">Use the chain rule again with</p>
+<div class="amsmath math notranslate nohighlight" id="equation-35a001cc-cd50-4057-ba25-8962979862d3">
+<span class="eqno">(1.78)<a class="headerlink" href="#equation-35a001cc-cd50-4057-ba25-8962979862d3" title="Permalink to this equation">#</a></span>\[\begin{align}
+u &amp;= \cos x &amp; f = u^{2}\\
+u' &amp;= -\sin x &amp; f' = 2u\\
+\end{align}\]</div>
+<p class="sd-card-text">So</p>
+<div class="amsmath math notranslate nohighlight" id="equation-058d9a11-004c-4c6c-920e-03a11b633445">
+<span class="eqno">(1.79)<a class="headerlink" href="#equation-058d9a11-004c-4c6c-920e-03a11b633445" title="Permalink to this equation">#</a></span>\[\begin{align}
+f' &amp;= e^{\cos^2 x}(2uu')\\
+&amp;= e^{\cos^2 x}(2\cos x \cdot -\sin x)\\
+&amp;= -2 \sin x \cos x e^{\cos^2 x}\\
+\end{align}\]</div>
+</div>
+</details></li>
 </ol>
 </section>
 </section>
@@ -582,7 +774,9 @@ f'(x) = \dd{}{f}{u} \dd{}{u}{x} = -2u^{-2} \cdot \dd{}{u}{x} =
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chain-rule">1.4.1. Chain Rule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#product-rule">1.4.1. Product rule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chain-rule">1.4.2. Chain rule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill-builder-problems">1.4.3. Skill builder problems</a></li>
 </ul>
   </nav></div>
 
