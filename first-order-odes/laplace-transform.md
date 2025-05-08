@@ -324,13 +324,10 @@ y &= -\frac{1}{s-1} - \frac{1}{s} + \frac{1}{s-1} + \frac{2}{s} + \frac{2}{s^2} 
  ---
 
  \begin{equation}
-y &= \mathcal{L}^{-1}\{y\} = \mathcal{L}^{-1}\{\frac{1}{s}\} + 2\mathcal{L}^{-1}\{\frac{1}{s^2}\} - \frac{17}{10}\mathcal{L}^{-1}\{\frac{1}{s-1}\} - \frac{1}{10}\mathcal{L}^{-1}\{\frac{3}{s^2+9}} - \frac{3}{10}\mathcal{L}^{-1}\{\frac{s}{s^2+9}}
+y = \mathcal{L}^{-1}\{y\} = \mathcal{L}^{-1}\{\frac{1}{s}\} + 2\mathcal{L}^{-1}\{\frac{1}{s^2}\} - \frac{17}{10}\mathcal{L}^{-1}\{\frac{1}{s-1}\} - \frac{1}{10}\mathcal{L}^{-1}\{\frac{3}{s^2+9}} - \frac{3}{10}\mathcal{L}^{-1}\{\frac{s}{s^2+9}}
 \end{equation}
 
-
-
-
-
+\boxed{y = 1 +2x \frac{17}{10} e^x - \frac{1}{10} \sin(3x) - \frac{3}{10} \cos(3x)}
 
 ```
 
