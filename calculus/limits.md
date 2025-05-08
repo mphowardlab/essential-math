@@ -95,6 +95,8 @@ If ε = 1, 3 < f < 5 if 3 < x < 5, ie. δ = 1.
             ( δ = ε )
 
 ```{image} ./_images/First.jpg
+:alt: Limit Graph
+```
 
 Hence, 
 \begin{equation}
@@ -104,6 +106,8 @@ lim_{x \to 4} = 4
 Such a 8 cannot always be found for all ε for certain functions! There, the limit does not exist.
 
 ```{image} ./_images/Second.jpg
+:alt: Limit Graph 2
+```
 
 f(x) = { x, x < 4 ; x-2, x >= 4
   \begin{equation}
