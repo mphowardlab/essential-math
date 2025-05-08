@@ -1,6 +1,7 @@
 # Determinants
 
-For a square *n*x*n* matrix **A**, the determinant is denoted in a few different ways:
+For a square *n*x*n* matrix **A**, the determinant is denoted in a few different
+ways:
 
 \begin{equation}
 \det \vv{A} =|\vv{A}|=\begin{vmatrix}
@@ -43,7 +44,6 @@ The determinant of a 2x2 matrix is:
 \end{equation}
 ```
 
-
 We will use the definition of the determinant to show this must be the case!
 Let's use the first definition and pick the first row $i=1$:
 
@@ -56,6 +56,7 @@ Let's use the first definition and pick the first row $i=1$:
 \end{align}
 
 ## Larger matrices
+
 The determinants of larger matrices can be computed by reducing them to sums
 of 2x2 determinants. To do this quickly, it can be helpful to envision
 $(-1)^{i+j}$ as a checkerboard of signs, then visualize the minors.
@@ -86,9 +87,13 @@ until you get to your chosen row or column! Let's use row 3:
 Note that the same result could be achieved using any row or column. For
 example, column 3 gives:
 
-$$ |A|= +(0)*\begin{bmatrix}2 & 6 \\ -1 & 0 \end{bmatrix} -(4)*\begin{bmatrix}1 & 3 \\ -1 & 0 \end{bmatrix}+(2)*\begin{bmatrix}1 & 3 \\ 2 & 6 \end{bmatrix} 
-\\
-=-4*(0+3)+2*(6-6)= -12$$
+\begin{align}
+|\vv{A}|&= +(0) \cdot \begin{vmatrix}2 & 6 \\ -1 & 0 \end{vmatrix} -
+  4 \cdot \begin{vmatrix}1 & 3 \\ -1 & 0 \end{vmatrix} +
+  2 \cdot \begin{vmatrix}1 & 3 \\ 2 & 6 \end{vmatrix} \\
+  &= -4 \cdot (0+3) + 2 \cdot (6-6)\\
+  &= -12
+\end{align}
 
 It's usually a good idea to expand along the row or column with the most zeros!
 For example, let's evaluate
@@ -97,7 +102,7 @@ For example, let's evaluate
 \begin{vmatrix}1 & -2 & 0 & 0 \\ 4 & 3 & 5 & 0 \\ 0 &2 & 7 & 5 \\ 0 & 0 & 2 & 0 \end{vmatrix}
 &= -2 \cdot \begin{vmatrix}1 & -2 & 0 \\ 4 & 3 & 0 \\ 0 &2 & 5 \end{vmatrix} \\
 &= -2 \cdot 5 \cdot \begin{vmatrix}1 & -2 \\ 4 & 3 \end{vmatrix} \\
-&= -10 (3+8) \\
+&= -10 \cdot (3+8) \\
 &= -110
 \end{align}
 
