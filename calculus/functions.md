@@ -139,7 +139,7 @@ In quadrant two sine is positive so:
 \begin{align}
 \sin(\theta)& = \frac{1}{\sqrt{2}}&
 \cos(\theta)& = -\frac{1}{\sqrt{2}}
-\end{align}>
+\end{align}
 ````
 
 Trigonometric functions represent waves. The properties of the wave can be encoded by manipulating the function.
