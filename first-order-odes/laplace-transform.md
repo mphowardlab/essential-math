@@ -264,7 +264,7 @@ The average concentration is:
 Solve the following:
 
 
-1. $y' - y = 1 - 2x + \sin(3x), \quad y(0) = -1 $
+3. $y' - y = 1 - 2x + \sin(3x), \quad y(0) = -1 $
 
    ```{solution}
    
@@ -302,32 +302,33 @@ Solve the following:
 
 \begin{align}
 3 &= (A_6s + B_6s)(s-1) + \frac{3}{10}(s^2+9) \\
-s^2 &: A_6 + \frac{3}{10} = 0 \rightarrow A_6 = -\frac{3}{10} \\
-s^0 &: -B_6 + \frac{27}{10} = 3 \rightarrow B_6 = -\frac{3}{10} \\
+s^2 &: A_6 + \frac{3}{10} = 0  A_6 = -\frac{3}{10} \\
+s^0 &: -B_6 + \frac{27}{10} = 3 B_6 = -\frac{3}{10} \\
 \end{align}
 
 ---
 
-
+Simplify your y:
 
 \begin{align}
-\text{So,}\quad
 y &= -\frac{1}{s-1} - \frac{1}{s} + \frac{1}{s-1} + \frac{2}{s} + \frac{2}{s^2} - \frac{2}{s-1} - \frac{3}{10} \frac{s+1}{s^2+9} + \frac{3}{10} \frac{1}{s-1} \\
   &= \frac{1}{s} + \frac{2}{s^2} - \frac{17}{10} \frac{1}{s-1} - \frac{3}{10} \frac{1}{s^2+9} - \frac{3}{10} \frac{s}{s^2+9} \\
  \end{align}
 
- ---
+ Apply inverse laplace across the equation:
 
  \begin{equation}
-y = \mathcal{L}^{-1} \left\{ \frac{1}{s} \right\}
-  + 2 \mathcal{L}^{-1} \left\{ \frac{1}{s^2} \right\}
-  - \frac{17}{10} \mathcal{L}^{-1} \left\{ \frac{1}{s - 1} \right\}
-  - \frac{1}{10} \mathcal{L}^{-1} \left\{ \frac{3}{s^2 + 9} \right\}
-  - \frac{3}{10} \mathcal{L}^{-1} \left\{ \frac{s}{s^2 + 9} \right\}
+y = L^{-1}[\frac{1}{s}]
+  + 2 L^{-1}[\frac{1}{s^2} ]
+  - \frac{17}{10} L^{-1}[\frac{1}{s - 1}]
+  - \frac{1}{10} L^{-1}[\frac{3}{s^2 + 9}]
+  - \frac{3}{10} L^{-1}[\frac{s}{s^2 + 9}]
 \end{equation}
 
+so, the solution is
+
 \begin{equation}
-\boxed{y = 1 +2x - \frac{17}{10} e^x - \frac{1}{10} \sin(3x) - \frac{3}{10} \cos(3x)}
+y = 1 + 2x - \frac{17}{10} e^x - \frac{1}{10} \sin(3x) - \frac{3}{10} \cos(3x)
 \end{equation}
 ```
 
