@@ -47,9 +47,9 @@ $$
 $$
 
 $$
-\begin{equation}
-\frac{\partial ( F P)}{\partial y} &= -\frac{\partial (F Q)}{\partial x}
-\end{equation}
+\begin{align}
+\frac{\partial ( F P)}{\partial y} &= \frac{\partial (F Q)}{\partial x}
+\end{align}
 $$
 
 **Now the equation is exact.**
