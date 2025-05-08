@@ -272,6 +272,8 @@ Solve the following:
 \mathcal{L}\{y' - y\} = \mathcal{L}\{1 - 2x + \sin(3y)\}
 \end{equation}
 
+---
+
 Step 2
 \begin{align}
 sY - y(0) - Y &= \frac{1}{s} - \frac{2}{s^2} + \frac{3}{s^2 + 9} \\
@@ -280,11 +282,29 @@ Y &= -\frac{1}{s - 1} + \frac{1}{s(s - 1)} - \frac{2}{s^2(s - 1)} + \frac{3}{(s^
  &= \frac{1}{s - 1} + (\frac{A_1}{s} + \frac{A_2}{s-1}) + (\frac{A_3}{s} + \frac{A_4}{s^2} + \frac{A_5}{s - 1}) + (\frac{A_6s + B_6}{s^2 + 9} + \frac{A_7}{s - 1}) \\
  \end{align}
 
+ ---
+
 Step 3
 
 \begin{align*}
-\text{Cover up:}\quad & A_1 =\frac{1}{0-1} = -1 \\ & A_2 =\frac{1}{1} = 1 \\ & A_4 = \frac{-2}{0 - 1} = 2 \\ & A_5 = \frac{-2}{1} = -2 \\ & A_7 = \frac{3}{1^2 + 9} = \frac{3}{10} 
+\text{Cover up:}\quad 
+& A_1 =\frac{1}{0-1} = -1 \\ 
+& A_2 =\frac{1}{1} = 1 \\ 
+& A_4 = \frac{-2}{0 - 1} = 2 \\ 
+& A_5 = \frac{-2}{1} = 2 \\ 
+& A_7 = \frac{3}{1^2 + 9} = \frac{3}{10} 
 \end{align*}
+
+---
+
+Step 4
+\begin{align*}
+\text{Finish the rest...} 
+2 &= A_3s(s-1) + 2(s-1) - 2s^2 \\
+  &= A_3(-1)(-1-1) + 2(-1-1) - 2(-1) \quad\quad \text{plug in $s = -1$} \\
+  &= 2A_3 - 4 + 2 \rightarrow A_3 = 2
+\end{align*}
+
 
 
 
