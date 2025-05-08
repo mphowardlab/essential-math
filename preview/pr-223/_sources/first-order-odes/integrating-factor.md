@@ -375,7 +375,7 @@ Solve the following differential equations:
    \frac{\partial Q}{\partial x} = e^y
   \end{align}
 
-   These are not equal, so the equation is not exact. To make it exact, find integrating F:
+   These are not equal, so the equation is not exact. To make it exact, find integrating factor F:
 
   \begin{align}
    \mu(y) = e^{\int -dy} = e^{-y}
