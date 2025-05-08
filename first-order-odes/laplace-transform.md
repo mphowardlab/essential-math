@@ -313,6 +313,16 @@ s^0 &: -B_6 + \frac{27}{10} = 3 \rightarrow B_6 = -\frac{3}{10} \\
 
 ---
 
+Step 5 
+
+\begin{align}
+\text{So,}\quad
+y &= -\frac{1}{s-1} - \frac{1}{s} + \frac{1}{s-1} + \frac{2}{s} + \frac{2}{s^2} - \frac{2}{s-1} - \frac{3}{10} \frac{s+1}{s^2+9} + \frac{3}{10} \frac{1}{s-1} \\
+ &= \frac{1}{s} + \frac{2}{s^2} - \frac{17}{10} \frac{1}(s-1) - \frac{3}{10} \frac{1}{s^2+9} - \frac{3}{10} \frac{s}{s^2+9} \\
+ \end{align}
+
+ 
+
 
 
 
