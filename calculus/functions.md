@@ -83,9 +83,9 @@ The trigonometric functions describe how the coordinates of a point on the unit 
 \end{align}
 
 Angles can be measured in degrees of radians
-\begin{align}
-\theta(rad.)& = \theta(deg.)(\frac{\pi}{180^{\circ}})
-\end{align}
+\begin{equation}
+\theta(rad.) = \theta(deg.)(\frac{\pi}{180^{\circ}})
+\end{equation}
 
 ### Special Angles
 \begin{align}
@@ -99,16 +99,14 @@ Angles can be measured in degrees of radians
 ```
 
 At $ \theta = 30^{\circ} $:
-\begin{align}
-\sin(\theta)& = \frac{1}{2}& 
-\cos(\theta)& = \frac{\sqrt{3}}{2}
-\end{align}
+\begin{equation}
+\sin(\theta) = \frac{1}{2} \quad \cos(\theta) = \frac{\sqrt{3}}{2}
+\end{equation}
 
 At $ \theta = 60^{\circ} $:
-\begin{align}
-\sin(\theta)& = \frac{\sqrt{3}}{2}&
-\cos(\theta)& = \frac{1}{2}& 
-\end{align}
+\begin{equation}
+\sin(\theta) = \frac{\sqrt{3}}{2} \quad \cos(\theta)& = \frac{1}{2}& 
+\end{equation}
 
 ```{image} ./_images/454590triangle.png
 :alt: 45 45 90 Traingle
@@ -142,6 +140,7 @@ In quadrant two sine is positive so:
 \sin(\theta)& = \frac{1}{\sqrt{2}}&
 \cos(\theta)& = -\frac{1}{\sqrt{2}}
 \end{align}>
+```
 
 Trigonometric functions represent waves. The properties of the wave can be encoded by manipulating the function.
 ```{image} ./_images/Triggraph.png
