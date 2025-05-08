@@ -62,6 +62,7 @@ Apply integration by parts: $uv - \int vdu$
 
 \begin{align}
 y &=\left( \frac{x^2}{2} + 2x \right)\ln(x) - \int \left( \frac{x^2}{2} + 2x \right) \frac{1}{x} \, dx \\
+&=\left( \frac{x^2}{2} + 2x \right)\ln(x) - \int \left( \frac{x}{2} + 2 \right) \, dx
 \end{align}
 
 Solve the integral, don't forget $+C$
@@ -97,8 +98,8 @@ Since $x^5$ is to the fifth order, integration by parts must be used 5 times. Us
 Multiply down the diagonals and add your +C
 
 \begin{align}
-y &= -x^5 \cos(x) + 5x^4 \sin(x) + 20x^3 \cos(x) - 60x^2 \sin(x) \\
-  &\quad - 120x \cos(x) + 120 \sin(x) + C \\
+y = &-x^5 \cos(x) + 5x^4 \sin(x) + 20x^3 \cos(x) - 60x^2 \sin(x) \\
+  &-120x \cos(x) + 120 \sin(x) + C
 \end{align}
 
 To make the solution look cleaner, you can factor out cos(x) and sin(x). 
