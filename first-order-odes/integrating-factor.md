@@ -4,12 +4,12 @@
 **Example 1:**
 
 $$
-\begin{align}
-  -y \, dx + x \, dy &= 0 \quad \text{(given)} \\
-  P &= -y, \quad Q = x \\
-  \frac{\partial P}{\partial y} &= -1, \quad \frac{\partial Q}{\partial x} = 1 \\
+\begin{aligned}
+  -y \, dx + x \, dy &= 0 \quad && \text{(given)} \\
+  P &= -y, \quad && Q = x \\
+  \frac{\partial P}{\partial y} &= -1, \quad && \frac{\partial Q}{\partial x} = 1 \\
   &\Rightarrow \text{Not exact!}
-\end{align}
+\end{aligned}
 $$
 
 When solving ODEs, we take the partial derivatives of P and Q.
