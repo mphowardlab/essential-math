@@ -188,7 +188,7 @@ F = e^{\int(p dt)} = e^{-\int dt} = e^{-t}
 Then, solve for y. 
 \begin{equation}
 y = \frac{1}{F}*[\int F r \d{t} + C] = \frac{-5}{4\pi^2 +1} \sin(2\pi t) + 2\pi cos(2\pi t) + C e^{t}
-$$
+\end{equation}
 
 Next, use initial conditions in to find C.
 
