@@ -302,8 +302,8 @@ Solve the following:
 
 \begin{align}
 3 &= (A_6s + B_6s)(s-1) + \frac{3}{10}(s^2+9) \\
-s^2 &: A_6 + \frac{3}{10} = 0  A_6 = -\frac{3}{10} \\
-s^0 &: -B_6 + \frac{27}{10} = 3 B_6 = -\frac{3}{10} \\
+s^2 &: A_6 + \frac{3}{10} = 0  \quad A_6 = -\frac{3}{10} \\
+s^0 &: -B_6 + \frac{27}{10} = 3 \quad B_6 = -\frac{3}{10} \\
 \end{align}
 
 
