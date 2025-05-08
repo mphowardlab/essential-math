@@ -1,5 +1,105 @@
 # Rules for derivatives
 
+## Product rule
+
+The product rule is used to differentiate functions that can be written as the
+product of two smaller functions.
+
+```{topic} Product rule
+If $f(x) = u(x) v(x)$, then
+
+\begin{align}
+f'(x) &= u v' + v u ' \\
+&= u \dd{}{v}{x} + v \dd{}{u}{x}
+\end{align}
+```
+
+To demonstrate this rule, consider $f(x) = (x-3)(x-1)$.
+Previously, we would have needed to expand this function before differentiating:
+
+\begin{align}
+f(x) &= x^2 - 4x + 3 \\
+f'(x) &= 2x - 4
+\end{align}
+
+With the product rule, instead we recognize
+
+\begin{align}
+u &= x-3 &  v &= x-1 \\
+u' &= 1 & v' &= 1
+\end{align}
+
+so
+
+\begin{equation}
+f'(x) = uv' + vu' = (x-3) \cdot 1 + (x-1) \cdot 1 = 2x - 4
+\end{equation}
+
+This example is a little silly, but the product rule is a life saver for
+functions that are hard to expand!
+
+1. $f(x) = (x+1)(2x^2 + 5)(5x^3-4)$
+
+   Identify:
+
+   \begin{equation}
+   u = x+1  \qquad v = (2x^2+5)(5x^3-4)
+   \end{equation}
+
+   so
+
+   \begin{equation}
+   f'(x) = (x+1)v' + (2x^2 +3)(5x^3-4)(1)
+   \end{equation}
+
+   The derivative $v'$ can be evaluated by a second product rule!
+
+   \begin{align}
+   u &= 2x^2+5 & v &= 5x^3-4 \\
+   u' &= 4x & v' &= 15x^2
+   \end{align}
+
+   finally giving
+
+   <!--markdownlint-disable MD011 -->
+   \begin{align}
+   f'(x) &= (x+1)[(2x^2+3)(15x^2) + (5x^3-4)(4x)] \\
+   &+ (2x^2+5)(5x^3-4)
+   \end{align}
+   <!--markdownlint-enable MD011 -->
+
+2. $f(x) = \dfrac{1}{x} e^x$
+
+   Identify:
+
+   \begin{align}
+   u &= \frac{1}{x} & v &= e^x   \\
+   u' &= -\frac{1}{x^2} & v' &= e^x
+   \end{align}
+
+   so
+
+   \begin{align}
+   f'(x) &= \frac{1}{x}e^x + e^x(-\frac{1}{x^2}) \\
+   &= e^x\left(\frac{1}{x} - \frac{1}{x^2}\right)
+   \end{align}
+
+3. $f(x) = (x^2+3)\ln x$
+
+   Identify:
+
+   \begin{align}
+   u &= x^2+3 &  v &= \ln(x)   \\
+   u' &= 2x & v' &= \frac{1}{x}
+   \end{align}
+
+   so
+
+   \begin{align}
+   f'(x) &= (x^2+3)\cdot\frac{1}{x} + (\ln x)(2x) \\
+   &= \frac{x^2+3}{x} + 2x\ln x
+   \end{align}
+
 ## Quotient Rule 
 
 If the quotient rule you wish to know, it's "low-d-high less high-d-low" then draw the line and down below, denominator squared will go.
@@ -82,12 +182,7 @@ This was obviously harder than the old way, but there are other cases where it i
 
 Fastest way depends on the problem!
 
-<<<<<<< HEAD
-
-## Chain Rule
-=======
 ## Chain rule
->>>>>>> 3017a5bb4936fbad4fee252c24033ea8612603bb
 
 The chain rule is used to differentiate composite functions, when the "inside"
 of the function is more complicated than what we know.
@@ -196,6 +291,69 @@ f'(x) &= -(\sin x)^{-2} \dd{}{}{x}(\sin x) \\
   &= \frac{-1}{\sin x} \frac{\cos x}{\sin x} \\
   &= -\csc x \cot x
 \end{align}
+
+````{example} Harmonic oscillator
+A harmonic oscillator is a mass *m* on a Hookean spring. The spring force is
+$F = -kx$, where *k* is the spring constant and *x* is the displacement of the
+mass.
+
+```{image} ./_images/oscillating-diagram.png
+:alt: Harmonic oscillator
+:width: 300px
+:align: center
+```
+
+If the mass is initially displaced to $x(0)$, it will then move according to:
+
+\begin{equation}
+x(t) = x(0) \cos\left(\frac{2\pi t}{T}\right)
+\end{equation}
+
+where
+
+\begin{equation}
+T = \frac{1}{2\pi} \sqrt{\frac{m}{k}}
+\end{equation}
+
+```{image} ./_images/oscillating-graph.png
+:alt: Oscillator displacement
+:width: 300px
+:align: center
+```
+
+How fast is the oscillator moving at any given time? When is the oscillator
+moving fastest?
+
+---
+
+We want to calculate the velocity $v = x'(t)$. Use the chain rule with:
+
+\begin{align}
+u &= \frac{2\pi t}{T} & f &= x(0) \cos u \\
+u' &= \frac{2\pi}{T} & f' &= -x(0) \sin u
+\end{align}
+
+so
+
+\begin{align}
+v &= \dd{}{x}{t} = f'(u) \cdot u' \\
+  &= -x(0) \sin u \cdot u' \\
+  &= -\frac{2\pi x(0)}{T} \sin\left(\frac{2\pi t}{T}\right)
+\end{align}
+
+A function is at an *extrema* when its derivative is zero. If the function is
+velocity, this derivative is the acceleration *a* and is equal to zero,
+$a = v' = 0$. This means the mass is not accelerating! Using the chain rule
+again:
+
+\begin{equation}
+a = v' =
+  -\left(\frac{2\pi}{T}\right)^2 x(0) \cos\left(\frac{2\pi t}{T}\right) = 0
+\end{equation}
+
+The roots occur at $t = T/4$ or $3T/4$, when $x = 0$ and the spring is no longer
+stretched. All potential energy has been converted to kinetic energy!
+````
 
 ## Skill builder problems
 

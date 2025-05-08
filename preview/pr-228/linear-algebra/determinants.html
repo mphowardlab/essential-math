@@ -57,6 +57,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"d": ["{\\operatorname{d}\\!{#1}}", 1], "dd": ["{\\d{}^{#1} #2 \\over \\d{#3}^{#1}}", 3], "pp": ["{\\partial^{#1} #2 \\over \\partial #3^{#1}}", 3], "td": ["{\\left(\\pp{#1}{#2}{#3} \\right)_{#4}}", 4], "ubar": ["\\underline{#1}", 1], "vv": ["\\mathbf{#1}", 1]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'linear-algebra/determinants';</script>
     <link rel="canonical" href="https://mphowardlab.github.io/essential-math/linear-algebra/determinants.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -403,7 +405,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -419,6 +423,15 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#x2-matrix">3.4.1. 2x2 matrix</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#larger-matrices">3.4.2. Larger matrices</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -430,6 +443,103 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="determinants">
 <h1><span class="section-number">3.4. </span>Determinants<a class="headerlink" href="#determinants" title="Link to this heading">#</a></h1>
+<p>For a square <em>n</em>x<em>n</em> matrix <strong>A</strong>, the determinant is denoted in a few different
+ways:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2fbf05a4-704a-4537-92a2-6ae13da8a40b">
+<span class="eqno">(3.48)<a class="headerlink" href="#equation-2fbf05a4-704a-4537-92a2-6ae13da8a40b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\det \vv{A} =|\vv{A}|=\begin{vmatrix}
+A_{11} &amp; \cdots &amp; A_{1n} \\
+\vdots &amp;     &amp; \vdots \\
+A_{n1} &amp; \cdots &amp; A_{nn}
+\end{vmatrix}
+\end{equation}\]</div>
+<p>The determinant is defined in a recursive way.For  <span class="math notranslate nohighlight">\(n=1\)</span>, <span class="math notranslate nohighlight">\(|\vv{A}|= A_{11}\)</span>
+( the matrix element)
+For <span class="math notranslate nohighlight">\(n \ge 2\)</span>, <span class="math notranslate nohighlight">\(|\vv{A}|\)</span> is defined as:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-fa2c2531-82ce-48fb-a490-93e1377bf035">
+<span class="eqno">(3.49)<a class="headerlink" href="#equation-fa2c2531-82ce-48fb-a490-93e1377bf035" title="Permalink to this equation">#</a></span>\[\begin{equation}
+|\vv{A}|= \sum_{j=1}^n A_{ij} C_{ij} = \sum_{j=1}^n (-1)^{i+j} A_{ij} M_{ij}
+\end{equation}\]</div>
+<p>where <em>i</em> is any row of <strong>A</strong>, <span class="math notranslate nohighlight">\(C_{ij}\)</span> is the <em>cofactor</em> of <strong>A</strong>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ef4bbc7f-ba3f-4bc7-ad5e-6b99c33343ca">
+<span class="eqno">(3.50)<a class="headerlink" href="#equation-ef4bbc7f-ba3f-4bc7-ad5e-6b99c33343ca" title="Permalink to this equation">#</a></span>\[\begin{equation}
+C_{ij} = (-1)^{i+j} M_{ij},
+\end{equation}\]</div>
+<p>and <span class="math notranslate nohighlight">\(M_{ij}\)</span> is the <em>minor</em> of <strong>A</strong>. The minor is the determinant of the matrix
+obtained by removing row <em>i</em> and column <em>j</em> from <strong>A</strong>. Equivalently,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-775cdeb5-ab7a-4e2f-a3b2-6f32ec7b6e58">
+<span class="eqno">(3.51)<a class="headerlink" href="#equation-775cdeb5-ab7a-4e2f-a3b2-6f32ec7b6e58" title="Permalink to this equation">#</a></span>\[\begin{equation}
+|\vv{A}| = \sum_{i=1}^n A_{ij} C_{ij} = \sum_{i=1}^n (-1)^{i+j} A_{ij} M_{ij}
+\end{equation}\]</div>
+<p>where now <em>j</em> is any column of <strong>A</strong>.</p>
+<section id="x2-matrix">
+<h2><span class="section-number">3.4.1. </span>2x2 matrix<a class="headerlink" href="#x2-matrix" title="Link to this heading">#</a></h2>
+<aside class="topic">
+<p class="topic-title">2x2 determinant</p>
+<p>The determinant of a 2x2 matrix is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-93326f2b-e6d0-46b4-9d2c-9dedc3c926b7">
+<span class="eqno">(3.52)<a class="headerlink" href="#equation-93326f2b-e6d0-46b4-9d2c-9dedc3c926b7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\begin{vmatrix}a &amp; b \\ c &amp; d\end{vmatrix} = a d - bc
+\end{equation}\]</div>
+</aside>
+<p>We will use the definition of the determinant to show this must be the case!
+Let’s use the first definition and pick the first row <span class="math notranslate nohighlight">\(i=1\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-cfd268ac-f517-469a-9f06-7d4ea0f364fe">
+<span class="eqno">(3.53)<a class="headerlink" href="#equation-cfd268ac-f517-469a-9f06-7d4ea0f364fe" title="Permalink to this equation">#</a></span>\[\begin{align}
+\begin{vmatrix}a &amp; b \\ c &amp; d\end{vmatrix}
+&amp;= (-1)^{1+1} \cdot A_{11} M_{11} + (-1)^{1+2} A_{12} M_{12} \\
+&amp;= a \begin{vmatrix} \phantom{a} &amp; \phantom{b} \\ \phantom{c} &amp; d \end{vmatrix} -
+ b \begin{vmatrix} \phantom{a} &amp; \phantom{b} \\ c &amp; \phantom{d} \end{vmatrix} \\
+&amp;= a d - b c
+\end{align}\]</div>
+</section>
+<section id="larger-matrices">
+<h2><span class="section-number">3.4.2. </span>Larger matrices<a class="headerlink" href="#larger-matrices" title="Link to this heading">#</a></h2>
+<p>The determinants of larger matrices can be computed by reducing them to sums
+of 2x2 determinants. To do this quickly, it can be helpful to envision
+<span class="math notranslate nohighlight">\((-1)^{i+j}\)</span> as a checkerboard of signs, then visualize the minors.</p>
+<p>For example, to evaluate</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a847fc45-b8ec-4a4c-be05-4035741f4776">
+<span class="eqno">(3.54)<a class="headerlink" href="#equation-a847fc45-b8ec-4a4c-be05-4035741f4776" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\begin{vmatrix}1 &amp; 3 &amp; 0 \\ 2 &amp; 6 &amp; 4 \\ -1 &amp; 0 &amp; 2 \end{vmatrix}
+\end{equation}\]</div>
+<p>The sign matrix is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1cf528e7-e81e-4eba-9152-9cbb2535037a">
+<span class="eqno">(3.55)<a class="headerlink" href="#equation-1cf528e7-e81e-4eba-9152-9cbb2535037a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\begin{bmatrix}+ &amp; - &amp; + \\ - &amp; + &amp; - \\ + &amp; - &amp; + \end{bmatrix}
+\end{equation}\]</div>
+<p>Even faster, start from the plus sign in the upper left corner, then alternate
+until you get to your chosen row or column! Let’s use row 3:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9ffe7bcf-d5fc-4616-ae85-7d14675ce238">
+<span class="eqno">(3.56)<a class="headerlink" href="#equation-9ffe7bcf-d5fc-4616-ae85-7d14675ce238" title="Permalink to this equation">#</a></span>\[\begin{align}
+|\vv{A}| &amp;= + (-1) \cdot \begin{vmatrix} 3 &amp; 0 \\ 6 &amp; 4 \end{vmatrix} -
+ 0 \cdot \begin{vmatrix}1 &amp; 0 \\ 2 &amp; 4 \end{vmatrix} +
+ 2 \cdot \begin{vmatrix}1 &amp; 3 \\ 2 &amp; 6 \end{vmatrix} \\
+ &amp;= -(3 \cdot 4 - 0 \cdot 6) + 2(1 \cdot 6 - 2 \cdot 3) \\
+ &amp;= -12
+\end{align}\]</div>
+<p>Note that the same result could be achieved using any row or column. For
+example, column 3 gives:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f08b6174-7c82-47ae-8a68-3edc380ea936">
+<span class="eqno">(3.57)<a class="headerlink" href="#equation-f08b6174-7c82-47ae-8a68-3edc380ea936" title="Permalink to this equation">#</a></span>\[\begin{align}
+|\vv{A}|&amp;= +(0) \cdot \begin{vmatrix}2 &amp; 6 \\ -1 &amp; 0 \end{vmatrix} -
+  4 \cdot \begin{vmatrix}1 &amp; 3 \\ -1 &amp; 0 \end{vmatrix} +
+  2 \cdot \begin{vmatrix}1 &amp; 3 \\ 2 &amp; 6 \end{vmatrix} \\
+  &amp;= -4 \cdot (0+3) + 2 \cdot (6-6)\\
+  &amp;= -12
+\end{align}\]</div>
+<p>It’s usually a good idea to expand along the row or column with the most zeros!
+For example, let’s evaluate</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8641775a-ce01-469e-8fa7-5458cddef0f1">
+<span class="eqno">(3.58)<a class="headerlink" href="#equation-8641775a-ce01-469e-8fa7-5458cddef0f1" title="Permalink to this equation">#</a></span>\[\begin{align}
+\begin{vmatrix}1 &amp; -2 &amp; 0 &amp; 0 \\ 4 &amp; 3 &amp; 5 &amp; 0 \\ 0 &amp;2 &amp; 7 &amp; 5 \\ 0 &amp; 0 &amp; 2 &amp; 0 \end{vmatrix}
+&amp;= -2 \cdot \begin{vmatrix}1 &amp; -2 &amp; 0 \\ 4 &amp; 3 &amp; 0 \\ 0 &amp;2 &amp; 5 \end{vmatrix} \\
+&amp;= -2 \cdot 5 \cdot \begin{vmatrix}1 &amp; -2 \\ 4 &amp; 3 \end{vmatrix} \\
+&amp;= -10 \cdot (3+8) \\
+&amp;= -110
+\end{align}\]</div>
+<p>where we chose row 4, then column 3 to do the calculation faster!</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -486,6 +596,22 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#x2-matrix">3.4.1. 2x2 matrix</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#larger-matrices">3.4.2. Larger matrices</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
