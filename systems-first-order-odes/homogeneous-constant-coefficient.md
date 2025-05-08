@@ -177,14 +177,15 @@ This matches our old answer!
 
 ````{example} Diffusion cell
 Consider a diffusion cell consisting of two compartments with solute
-concentrations $c_1$ and $c_2$ separated by a membrane. The concentrations
-change according to
+concentrations $c_1$ and $c_2$ separated by a membrane.
 
-```{image} ./_images/diffusioncell.jpg
+```{image} ./_images/diffusioncell.png
 :alt: Diffusion cell
 :align: center
-:width: 200px
+:width: 300px
 ```
+
+Based on unsteady mole balances, the concentrations change according to:
 
 \begin{align}
 c_1' &= -0.1c_1 + 0.1c_2 \\
