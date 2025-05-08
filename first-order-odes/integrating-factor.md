@@ -240,128 +240,123 @@ Solve the following differential equations:
 2. $\displaystyle y' = -\frac{e^{x+y} + ye^y}{x e^y - 1}$
 
    ````{solution}
-   ```{math}
-   y' = -\frac{e^{x+y} + ye^y}{x e^y - 1}
-   ```
+  
+   This ODE is not in the standard form, so we need to first rearrange:
 
-   This can be rewritten as:
-
-   ```{math}
+  \begin{align}
    (e^{x+y} + ye^y) \d{x} + (x e^y - 1) \d{y} = 0
-   ```
+   \end{align}
 
    Check if the differential equation is exact:
 
    Let
-   ```{math}
-   P(x, y) = e^{x+y} + ye^y, \quad Q(x, y) = x e^y - 1
-   ```
+  \begin{align}
+   P&= e^{x+y} + ye^y
+   Q&= x e^y - 1
+  \end{align}
 
-   ```{math}
+   \begin{align}
    \frac{\partial P}{\partial y} = e^{x+y} + y e^y + e^y, \quad
    \frac{\partial Q}{\partial x} = e^y
-   ```
+  \end{align}
 
-   These are not equal, so the equation is not exact. Find integrating factor:
+   These are not equal, so the equation is not exact. To make it exact, find integrating F:
 
-   Let
-   ```{math}
+  \begin{align}
    \mu(y) = e^{\int -dy} = e^{-y}
-   ```
+  \end{align}
 
    Multiply the equation by \( e^{-y} \):
 
-   ```{math}
+  \begin{align}
    e^{-y}(e^{x+y} + ye^y) \, dx + e^{-y}(x e^y - 1) \, dy = 0
 
    (e^x + y) \, dx + (x - e^{-y}) \, dy = 0
-   ```
+  \end{align}
 
    Now the equation is exact
 
-   ```{math}
+  \begin{align}
    \frac{\partial f}{\partial x} = e^x + y \Rightarrow f(x, y) = e^x + xy + k(y)
-   ```
+  \end{align}
 
    Now differentiate \( f(x, y) \) with respect to \( y \):
 
-   ```{math}
+  \begin{align}
    \frac{\partial f}{\partial y} = x + k'(y)
-   ```
+  \end{align}
 
-   Set equal to the second term from the exact equation:
-
-   ```{math}
+  \begin{align}
    x + k'(y) = x - e^{-y} \Rightarrow k'(y) = -e^{-y}
-   ```
+  \end{align}
 
    Integrate:
 
-   ```{math}
+  \begin{align}
    k(y) = \int -e^{-y} \, dy = -e^{-y} + c
-   ```
+  \end{align}
 
-   ```{math}
+  \begin{align}
    f(x, y) = e^x + xy - e^{-y} + c
-   ```
+  \end{align}
 
-   ```{math}
-   \boxed{e^x + xy - e^{-y} = c}
-   ```
-   ````
+  \begin{align}
+  {e^x + xy - e^{-y} = c}
+  \end{align}
+  
+  is an emplicit solution for the ODE
 
-3. $y' = y + 1 - 2x$
+3. $\displaystyle y' = y + 1 - 2x$
 
    ````{solution}
    Rewrite in linear form:
 
-   ```{math}
+  \begin{align}
    y' - y = 1 - 2x
-   ```
+  \end{align}
 
-   ```{math}
+  \begin{align}
    p(x) = -1, \quad r(x) = 1 - 2x
-   ```
+  \end{align}
 
    Find integrating factor:
 
-   ```{math}
+  \begin{align}
    F = e^{\int -1 \, dx} = e^{-x}
-   ```
+  \end{align}
 
    Multiply through by the integrating factor:
 
-   ```{math}
+  \begin{align}
    e^{-x} y' - e^{-x} y = e^{-x}(1 - 2x)
-   ```
+  \end{align}
 
    Left-hand side becomes the derivative of \( e^{-x} y \):
 
-   ```{math}
+  \begin{align}
    \frac{d}{dx}(e^{-x} y) = e^{-x}(1 - 2x)
-   ```
+  \end{align}
 
-   ```{math}
+  \begin{align}
    \int \frac{d}{dx}(e^{-x} y) \, dx = \int e^{-x}(1 - 2x) \, dx
-   ```
+  \end{align}
 
    Use integration by parts
 
-   ```{math}
+  \begin{align}
    \int e^{-x}(1 - 2x) \, dx = -(1 - 2x)e^{-x} + 2e^{-x}
-   ```
+  \end{align}
 
-   ```{math}
+   \begin{align}
    e^{-x} y = -(1 - 2x)e^{-x} + 2e^{-x} + c
-   ```
+   \end{align}
 
-   ```{math}
+  \begin{align}
    y = e^x \left[ -(1 - 2x)e^{-x} + 2e^{-x} + c \right] = 1 + 2x + c e^x
-   ```
+  \end{align}
 
    Final solution:
 
-   ```{math}
-   \boxed{y = 1 + 2x + c e^x}
-   ```
-   ````
+  \begin{align}
+  {y = 1 + 2x + c e^x}
+  \end{align}
