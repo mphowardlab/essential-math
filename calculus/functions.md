@@ -84,7 +84,7 @@ The trigonometric functions describe how the coordinates of a point on the unit 
 
 Angles can be measured in degrees of radians
 \begin{equation}
-\theta(rad.) = \theta(deg.)(\frac{\pi}{180^{\circ}})
+\theta(rad.) = \theta(deg.)\left( \frac{\pi}{180^{\circ}} \right)
 \end{equation}
 
 ### Special Angles
