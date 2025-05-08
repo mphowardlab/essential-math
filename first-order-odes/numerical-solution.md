@@ -127,13 +127,10 @@ We are given the initial value problem:
 y' = y + 5\sin(2\pi t), \quad y(0) = 1
 \end{equation}
 
-Using the **Euler method**, we compute approximations for $y(1)$ using two step sizes:
-
-Using the Euler method, we compute approximations for $y(1)$ using two step sizes:
-
-Step size $\Delta t = 0.1$
+Using the **Euler method**, we compute approximations for $y(1)$ using two step sizes: $\Delta t = 0.1$ and $\Delta t = 0.2$.
 
 Let $f(t, y) = y + 5\sin(2\pi t)$
+The following table uses $\Delta t = 0.1$
 
 | $n$ | $t_n$ | $y_n$ | $f(t_n, y_n)$ |
 |----:|------:|------:|---------------:|
