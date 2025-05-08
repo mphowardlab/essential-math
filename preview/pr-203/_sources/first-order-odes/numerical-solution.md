@@ -192,33 +192,33 @@ $$
 
 Next, use initial conditions in to find C.
 
-$$
+\begin{equation}
 1 = y(0) = \frac{5}{4\pi^2+1} * (0 + (2*pi)) + C
-$$
+\end{equation}
 
-$$
+\begin{equation}
 C = 1 + \frac{10\pi}{4\pi^2 + 1}
-$$
+\end{equation}
 
 Put C value in equation for y.
 
-$$
+\begin{equation}
 y(t) = (1 + \frac{10\pi}{4\pi^2 + 1}) e^{t} - (\frac{5}{4\pi^2 + 1} sin(2\pi t)) + 2\pi cos(2\pi t)
-$$
+\end{equation}
 
 Find y at t=1.
 
-$$
+\begin{equation}
 y(1) = \left(1 + \frac{10*pi}{4\pi^2+1}\right) e - \frac{5}{4\pi^2+1} \left(2\pi\right)
-$$
+\end{equation}
 
-$$
+\begin{equation}
 y(1) = e + \frac{10\pi}{4\pi^2 + 1} \left(e-1\right)
-$$
+\end{equation}
 
-$$
-y(1) = **4.052**
-$$
+\begin{equation}
+y(1) = 4.052
+\end{equation}
 
 The absolute error is 0.369 for $\Delta t = 0.1$ and 0.730 for $\Delta t = 0.2$. 
 Hence the error decreases by about $2*x$ when $\Delta t$ is decreased by $2*x$.
