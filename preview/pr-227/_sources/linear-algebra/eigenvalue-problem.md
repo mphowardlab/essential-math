@@ -28,7 +28,8 @@ If $\vv{A} - \lambda \vv{I}$ is invertible, we have only $\lambda = \underline{0
 
 This determinant creates a $\underline{ characteristic polynomial}$ for $\lambda$ that can be solved. Then, the $\underline{x}$ that corresponds to a given $\lambda$ can be determined.
 
-Ex:\begin{align}
+Ex:
+\begin{align}
 \vv{A} = \begin{bmatrix} -5 & 2\\ 2 & 2 \end{bmatrix}  
 \\
 |\vv{A} -\lambda \vv{I} = \begin{bmatrix} -5-\lambda & 2 \\ 2 & -2-\lambda \end{bmatrix} = (-5 -\lambda)(-2-\lambda)-2\cdot2 =(\lambda + 5)(\lambda +2) -4
