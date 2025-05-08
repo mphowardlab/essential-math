@@ -173,7 +173,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../calculus/functions.html">1.1. Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../calculus/limits.html">1.2. Limits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../calculus/derivatives.html">1.3. Derivatives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../calculus/derivative-rules.html">1.4. Product, quotient, and chain rule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/derivative-rules.html">1.4. Rules for derivatives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../calculus/series-expansion.html">1.5. Series expansion</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../calculus/integration.html">1.6. Integration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../calculus/integration-substitution.html">1.7. Integration using substitution</a></li>
@@ -442,54 +442,105 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="variation-of-parameters">
 <h1><span class="section-number">7.5. </span>Variation of parameters<a class="headerlink" href="#variation-of-parameters" title="Link to this heading">#</a></h1>
+<p>Nonhomogeneous ODEs that don’t have constant coefficients or an <span class="math notranslate nohighlight">\(r(x)\)</span> in our
+table can’t be solved using the
+<a class="reference internal" href="undetermined-coefficients.html"><span class="std std-doc">method of undetermined coefficients</span></a>. An
+alternative for such ODEs is the method of variation of parameters.</p>
+<aside class="topic">
+<p class="topic-title">Variation of parameters</p>
+<p>For a nonhomogeneous linear second-order ODE <span class="math notranslate nohighlight">\(y'' + p(x)y' + q(x)y = r(x)\)</span>,
+if <span class="math notranslate nohighlight">\(y_{\rm h} = c_1 y_1 + c_2 y_2\)</span> solves the corresponding homogenous ODE
+<span class="math notranslate nohighlight">\(y_{\rm h}'' + p(x) y_{\rm h}' + q(x) y_{\rm h} = 0\)</span>, then the particular
+solution <span class="math notranslate nohighlight">\(y_{\rm p}\)</span> is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-86f3c05d-2c33-4cff-818a-e9c43388d8af">
+<span class="eqno">(7.114)<a class="headerlink" href="#equation-86f3c05d-2c33-4cff-818a-e9c43388d8af" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y_{\rm p} = -y_1 \int\frac{y_2 r}{W} \d{x} + y_2 \int \frac{y_1 r}{W} \d{x}
+\end{equation}\]</div>
+<p>where</p>
+<div class="amsmath math notranslate nohighlight" id="equation-52e3ea2c-9817-43ad-b68c-fc3890a6af1b">
+<span class="eqno">(7.115)<a class="headerlink" href="#equation-52e3ea2c-9817-43ad-b68c-fc3890a6af1b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+W = \begin{vmatrix}y_1 &amp; y_2 \\y_1' &amp; y_2'\end{vmatrix} = y_1 y_2' - y_2 y_1'
+\end{equation}\]</div>
+<p>is the Wronksi determinant (or “Wronskian”).</p>
+</aside>
+<p>For example, consider the ODE</p>
+<div class="amsmath math notranslate nohighlight" id="equation-baa7843b-aa62-43bf-8e25-f632dc160b7b">
+<span class="eqno">(7.116)<a class="headerlink" href="#equation-baa7843b-aa62-43bf-8e25-f632dc160b7b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y'' + y = \sec x
+\end{equation}\]</div>
+<p>The secant is not in our table of right-hand sides, so we will use variation
+of parameters to find a particular solution. The homogenous ODE is solved by
+<span class="math notranslate nohighlight">\(y_1 = \cos x\)</span> and <span class="math notranslate nohighlight">\(y_2 = \sin x\)</span> so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e7d22d65-e915-457a-8eab-747c6c5b600b">
+<span class="eqno">(7.117)<a class="headerlink" href="#equation-e7d22d65-e915-457a-8eab-747c6c5b600b" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_1 &amp;= \cos x &amp; y_2 &amp;= \sin x \\
+y_1' &amp;= -\sin x &amp; y_2' &amp;= \cos x
+\end{align}\]</div>
+<p>and</p>
+<div class="amsmath math notranslate nohighlight" id="equation-562ae8a8-788c-4034-9701-5850b7c85e5f">
+<span class="eqno">(7.118)<a class="headerlink" href="#equation-562ae8a8-788c-4034-9701-5850b7c85e5f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+W = \cos^2 x - (-\sin^2 x) = 1
+\end{equation}\]</div>
+<p>Hence,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-18a62989-4233-4a51-a59a-5892658004a1">
+<span class="eqno">(7.119)<a class="headerlink" href="#equation-18a62989-4233-4a51-a59a-5892658004a1" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_{\rm p} &amp;= -\cos x\int\sin x\sec x\d{x} +\sin x\int\cos x\sec x\d{x} \\
+&amp;= \cos x\int \frac{-\sin x}{\cos x}\d{x} + \sin x \int \d{x} \\
+&amp;= \cos x\ln|\cos x| + x\sin x
+\end{align}\]</div>
+<p>and</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1dd8e1df-7ea4-41cc-a26b-6162cdb7cf43">
+<span class="eqno">(7.120)<a class="headerlink" href="#equation-1dd8e1df-7ea4-41cc-a26b-6162cdb7cf43" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y = c_1 \cos x + c_2 \sin x + \cos x\ln|\cos x| + x\sin x
+\end{equation}\]</div>
 <div class="admonition-example-steady-heat-diffusion-with-internal-source admonition">
 <p class="admonition-title">Example: Steady heat diffusion with internal source</p>
 <p>We are solving the steady-state heat diffusion equation with an internal source:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f8ffc5db-cebb-4f4c-9522-d2b938f8e221">
-<span class="eqno">(7.35)<a class="headerlink" href="#equation-f8ffc5db-cebb-4f4c-9522-d2b938f8e221" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a5959d88-b272-481e-a1c7-ec794e71196a">
+<span class="eqno">(7.121)<a class="headerlink" href="#equation-a5959d88-b272-481e-a1c7-ec794e71196a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \alpha \dd{2}{T}{x} + qx \sin x = 0
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\alpha\)</span> is thermal diffusivity, and <span class="math notranslate nohighlight">\(qx \sin x\)</span> is the heat source. The
 boundary conditions are:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ac1caa82-ba5e-4e9a-8a9c-27291c0a0ccb">
-<span class="eqno">(7.36)<a class="headerlink" href="#equation-ac1caa82-ba5e-4e9a-8a9c-27291c0a0ccb" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-5a391828-2078-4f46-b4c3-f578ecb4ce81">
+<span class="eqno">(7.122)<a class="headerlink" href="#equation-5a391828-2078-4f46-b4c3-f578ecb4ce81" title="Permalink to this equation">#</a></span>\[\begin{equation}
 T(-1) = T(1) = 1
 \end{equation}\]</div>
 <hr class="docutils" />
 <p>In standard form,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3c9d5f5f-0109-4b72-aefc-189dfdf6c700">
-<span class="eqno">(7.37)<a class="headerlink" href="#equation-3c9d5f5f-0109-4b72-aefc-189dfdf6c700" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a9f011cf-326a-47a4-877b-d354a7eb0f58">
+<span class="eqno">(7.123)<a class="headerlink" href="#equation-a9f011cf-326a-47a4-877b-d354a7eb0f58" title="Permalink to this equation">#</a></span>\[\begin{equation}
 T'' = -q x \sin x
 \end{equation}\]</div>
 <ol class="arabic">
 <li><p>Find homogeneous solution:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a7143fa2-e61c-431e-9baa-68f01c5f6bb9">
-<span class="eqno">(7.38)<a class="headerlink" href="#equation-a7143fa2-e61c-431e-9baa-68f01c5f6bb9" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4e4f857d-b2a4-43c9-accf-e4c458c18ca9">
+<span class="eqno">(7.124)<a class="headerlink" href="#equation-4e4f857d-b2a4-43c9-accf-e4c458c18ca9" title="Permalink to this equation">#</a></span>\[\begin{align}
 \alpha T_{\rm h}'' &amp;= 0 \\
 \alpha \lambda^2 &amp;= 0 \\
 \lambda &amp;= 0
 \end{align}\]</div>
 <p>so,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f8488ecb-0fb9-4e20-ad24-286865ed3137">
-<span class="eqno">(7.39)<a class="headerlink" href="#equation-f8488ecb-0fb9-4e20-ad24-286865ed3137" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d1e83016-85b3-473f-89a3-7f4900fb46e5">
+<span class="eqno">(7.125)<a class="headerlink" href="#equation-d1e83016-85b3-473f-89a3-7f4900fb46e5" title="Permalink to this equation">#</a></span>\[\begin{equation}
 T_{\rm h} = c_1 + c_2 x
 \end{equation}\]</div>
 </li>
 <li><p>Find particular solution using variation of parameters:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9f891933-730c-4b03-9b80-06cfac86ec7e">
-<span class="eqno">(7.40)<a class="headerlink" href="#equation-9f891933-730c-4b03-9b80-06cfac86ec7e" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f750038e-bdd2-419b-ab1b-a79423043af1">
+<span class="eqno">(7.126)<a class="headerlink" href="#equation-f750038e-bdd2-419b-ab1b-a79423043af1" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_1 &amp;= 1, \quad y_2 = x \\
 y_1' &amp;= 0, \quad y_2' = 1
 \end{align}\]</div>
 <p>so the Wronskian is <span class="math notranslate nohighlight">\(W = 1 \cdot 1 - 0 \cdot x = 1\)</span>. The right-hand side
 function is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-aeb0c996-f3c7-492c-b516-e01cfa6cb87c">
-<span class="eqno">(7.41)<a class="headerlink" href="#equation-aeb0c996-f3c7-492c-b516-e01cfa6cb87c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0025f1f2-13be-4b10-b03f-4bfe06dedf30">
+<span class="eqno">(7.127)<a class="headerlink" href="#equation-0025f1f2-13be-4b10-b03f-4bfe06dedf30" title="Permalink to this equation">#</a></span>\[\begin{equation}
 r = -\frac{qx \sin x}{\alpha}
 \end{equation}\]</div>
 <p>so the particular solution is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-197b9a7a-c7c4-4f52-bffe-b20fdaf188a3">
-<span class="eqno">(7.42)<a class="headerlink" href="#equation-197b9a7a-c7c4-4f52-bffe-b20fdaf188a3" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4a6f56fe-f35c-4353-8c4c-cfde0e078a9c">
+<span class="eqno">(7.128)<a class="headerlink" href="#equation-4a6f56fe-f35c-4353-8c4c-cfde0e078a9c" title="Permalink to this equation">#</a></span>\[\begin{align}
 T_{\rm p} &amp;= -1 \int x \left( \frac{-q x \sin x}{\alpha} \right) \, \d{x}
   + x \int \left( \frac{-q x \sin x}{\alpha} \right) \, \d{x} \\
 &amp;= \frac{q}{\alpha} \int x^2 \sin x \, \d{x}
@@ -529,24 +580,24 @@ use the tabular method:</p>
 </table>
 </div>
 <p>so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ebbb65e2-cacc-47e1-af03-c9d0fbdf86b3">
-<span class="eqno">(7.43)<a class="headerlink" href="#equation-ebbb65e2-cacc-47e1-af03-c9d0fbdf86b3" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-024dc68e-a7df-41f4-9d5f-7ecb60e3f35f">
+<span class="eqno">(7.129)<a class="headerlink" href="#equation-024dc68e-a7df-41f4-9d5f-7ecb60e3f35f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \int x^2 \sin x \, \d{x} = -x^2 \cos x + 2x \sin x + 2 \cos x
 \end{equation}\]</div>
 <p>For the second integral, use</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9e358506-35a2-4138-b044-e89ba32b2dbe">
-<span class="eqno">(7.44)<a class="headerlink" href="#equation-9e358506-35a2-4138-b044-e89ba32b2dbe" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-cb81deb2-254e-49e1-8d3c-abc1de4f879f">
+<span class="eqno">(7.130)<a class="headerlink" href="#equation-cb81deb2-254e-49e1-8d3c-abc1de4f879f" title="Permalink to this equation">#</a></span>\[\begin{align}
 u &amp;= x &amp; \d{v} &amp;= \sin x \d{x} \\
 \d{u} &amp;= 1 \d{x} &amp; v &amp;= -\cos{x}
 \end{align}\]</div>
 <p>so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-79da8d7f-86d1-4c3a-89a5-eda09ab25c08">
-<span class="eqno">(7.45)<a class="headerlink" href="#equation-79da8d7f-86d1-4c3a-89a5-eda09ab25c08" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d85f0043-0942-47ef-ac01-2304a3144849">
+<span class="eqno">(7.131)<a class="headerlink" href="#equation-d85f0043-0942-47ef-ac01-2304a3144849" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \int x \sin x \d{x} = -x \cos x + \int \cos x \d{x} = -x \cos x + \sin x
 \end{equation}\]</div>
 <p>Substitute everything back:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-26cdfe27-4d47-4ce3-bd17-3d5cbc3de112">
-<span class="eqno">(7.46)<a class="headerlink" href="#equation-26cdfe27-4d47-4ce3-bd17-3d5cbc3de112" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-534bb6b7-f70b-4498-926c-793a326c75bb">
+<span class="eqno">(7.132)<a class="headerlink" href="#equation-534bb6b7-f70b-4498-926c-793a326c75bb" title="Permalink to this equation">#</a></span>\[\begin{align}
 T_{\rm p} &amp;= \frac{q}{\alpha} \left[ -x^2 \cos x + 2x \sin x + 2 \cos x \right]
   - \frac{q}{\alpha} x \left[ -x \cos x + \sin x \right] \\
 &amp;= \frac{q}{\alpha} [2 \cos x + x \sin x]
@@ -554,13 +605,13 @@ T_{\rm p} &amp;= \frac{q}{\alpha} \left[ -x^2 \cos x + 2x \sin x + 2 \cos x \rig
 </li>
 <li><p>Combine and apply boundary conditions.</p>
 <p>The general solution is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-408de0f2-2de8-4d68-becd-951dbfae1350">
-<span class="eqno">(7.47)<a class="headerlink" href="#equation-408de0f2-2de8-4d68-becd-951dbfae1350" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3eeb31e9-8529-469c-9f5b-5b792da0d165">
+<span class="eqno">(7.133)<a class="headerlink" href="#equation-3eeb31e9-8529-469c-9f5b-5b792da0d165" title="Permalink to this equation">#</a></span>\[\begin{equation}
 T = c_1 + c_2 x + \frac{q}{\alpha}(2\cos x + x \sin x)
 \end{equation}\]</div>
 <p>The boundary conditions are:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8ecf9696-9a10-4316-8053-213bc55fbf2f">
-<span class="eqno">(7.48)<a class="headerlink" href="#equation-8ecf9696-9a10-4316-8053-213bc55fbf2f" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-3a5d4d60-153c-4e54-8ecc-2af5a8832bbf">
+<span class="eqno">(7.134)<a class="headerlink" href="#equation-3a5d4d60-153c-4e54-8ecc-2af5a8832bbf" title="Permalink to this equation">#</a></span>\[\begin{align}
 
 T(-1) &amp;= c_1 - c_2 + \frac{q}{\alpha}[2\cos(-1) - \sin(-1)] = 1\\
   &amp;= c_1 - c_2 + \frac{q}{\alpha}[2\cos 1 + \sin 1] \\
@@ -568,21 +619,21 @@ T(1) &amp;= c_1 + c_2 + \frac{q}{\alpha}[2\cos 1 + \sin 1] = 1
 \end{align}\]</div>
 <p>This is a system of linear equations that can be solved for <span class="math notranslate nohighlight">\(c_1\)</span> and <span class="math notranslate nohighlight">\(c_2\)</span>.
 Subtracting the two equations gives:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a23a7a36-0315-4237-82fb-fda98f5bf848">
-<span class="eqno">(7.49)<a class="headerlink" href="#equation-a23a7a36-0315-4237-82fb-fda98f5bf848" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-217879be-fff4-484a-a606-a880960e6b7c">
+<span class="eqno">(7.135)<a class="headerlink" href="#equation-217879be-fff4-484a-a606-a880960e6b7c" title="Permalink to this equation">#</a></span>\[\begin{equation}
 0 = 2 c_2
 \end{equation}\]</div>
 <p>so <span class="math notranslate nohighlight">\(c_2 = 0\)</span>. Plugging back in and solving for <span class="math notranslate nohighlight">\(c_1\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-780d765f-f990-40e7-96f3-ca11d050adf2">
-<span class="eqno">(7.50)<a class="headerlink" href="#equation-780d765f-f990-40e7-96f3-ca11d050adf2" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e4ee374d-e868-4fbe-91d6-4da2a486f235">
+<span class="eqno">(7.136)<a class="headerlink" href="#equation-e4ee374d-e868-4fbe-91d6-4da2a486f235" title="Permalink to this equation">#</a></span>\[\begin{align}
 1 &amp;= c_1 + \frac{q}{\alpha}(2\cos 1 + \sin 1) \\
 c_1 &amp;= 1 - \frac{q}{\alpha}(2\cos 1 + \sin 1)
 \end{align}\]</div>
 </li>
 </ol>
 <p>The final result is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-238ee4da-60ca-400d-814c-8577d107b0bf">
-<span class="eqno">(7.51)<a class="headerlink" href="#equation-238ee4da-60ca-400d-814c-8577d107b0bf" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-65dd81ff-fd2b-4e99-82a3-32b290a74728">
+<span class="eqno">(7.137)<a class="headerlink" href="#equation-65dd81ff-fd2b-4e99-82a3-32b290a74728" title="Permalink to this equation">#</a></span>\[\begin{equation}
 T = 1 + \frac{q}{\alpha}\left[2(\cos x - \cos 1) + x \sin x - \sin 1\right]
 \end{equation}\]</div>
 </div>
@@ -590,8 +641,8 @@ T = 1 + \frac{q}{\alpha}\left[2(\cos x - \cos 1) + x \sin x - \sin 1\right]
 <h2><span class="section-number">7.5.1. </span>Skill builder problems<a class="headerlink" href="#skill-builder-problems" title="Link to this heading">#</a></h2>
 <ol class="arabic">
 <li><p>Solve the differential equation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9772d5c9-f8eb-4895-bfa8-831ad5e2a690">
-<span class="eqno">(7.52)<a class="headerlink" href="#equation-9772d5c9-f8eb-4895-bfa8-831ad5e2a690" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7db8049d-c3dc-4e44-b1b4-1d70d752d5af">
+<span class="eqno">(7.138)<a class="headerlink" href="#equation-7db8049d-c3dc-4e44-b1b4-1d70d752d5af" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y'' - 4y' + 4y = x^{2} e^{x},  \quad y(0) = 0, \quad y'(0) = 0
 \end{equation}\]</div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -599,33 +650,33 @@ y'' - 4y' + 4y = x^{2} e^{x},  \quad y(0) = 0, \quad y'(0) = 0
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <ol class="arabic">
 <li><p class="sd-card-text">Find homogeneous solution <span class="math notranslate nohighlight">\(y_{\rm h}\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-03bde4c0-2fd4-49df-b26e-d232f0230bc5">
-<span class="eqno">(7.53)<a class="headerlink" href="#equation-03bde4c0-2fd4-49df-b26e-d232f0230bc5" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7bc61c4d-b49a-411f-8baf-07fba05633f8">
+<span class="eqno">(7.139)<a class="headerlink" href="#equation-7bc61c4d-b49a-411f-8baf-07fba05633f8" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_{\rm h}'' - 4y_{\rm h}' + 4y_{\rm h} &amp;= 0 \\
 \lambda^2 - 4\lambda + 4 &amp;= 0 \\
 (\lambda -2)^2 &amp;= 0
 \end{align}\]</div>
 <p class="sd-card-text">so <span class="math notranslate nohighlight">\(\lambda = 2\)</span> is a repeated eigenvalue and</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f3244736-7949-438d-84cb-6d7e6ad0199b">
-<span class="eqno">(7.54)<a class="headerlink" href="#equation-f3244736-7949-438d-84cb-6d7e6ad0199b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-52f26378-fcbb-4c0f-9d21-d5a5f1e10510">
+<span class="eqno">(7.140)<a class="headerlink" href="#equation-52f26378-fcbb-4c0f-9d21-d5a5f1e10510" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y_{\rm h} = (c_1 + c_2 x) e^{2x}
 \end{equation}\]</div>
 </li>
 <li><p class="sd-card-text">Find particular solution <span class="math notranslate nohighlight">\(y_{\rm p}\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-361cf005-b600-413a-a3f3-042694ec9ea2">
-<span class="eqno">(7.55)<a class="headerlink" href="#equation-361cf005-b600-413a-a3f3-042694ec9ea2" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5b802460-3669-4846-a97e-5f0d79d728ee">
+<span class="eqno">(7.141)<a class="headerlink" href="#equation-5b802460-3669-4846-a97e-5f0d79d728ee" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_1   &amp;= e^{2x}          &amp;\quad y_2&amp;= x e^{2x} \\
 y_1'  &amp;= 2 e^{2x}        &amp;\quad y_2'&amp;= (1 + 2x) e^{2x}
 \end{align}\]</div>
 <p class="sd-card-text">so the Wronskian is <span class="math notranslate nohighlight">\(W =(1 + 2x) \cdot e^{4x} - 2x \cdot e^{4x} = e^{4x}\)</span>.
 The right-hand side function is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7f581116-bf2e-4077-af23-49958bab4ead">
-<span class="eqno">(7.56)<a class="headerlink" href="#equation-7f581116-bf2e-4077-af23-49958bab4ead" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ab6aa595-d726-4338-8fae-8ccb47b84932">
+<span class="eqno">(7.142)<a class="headerlink" href="#equation-ab6aa595-d726-4338-8fae-8ccb47b84932" title="Permalink to this equation">#</a></span>\[\begin{equation}
 r = x^{2} e^{x}
 \end{equation}\]</div>
 <p class="sd-card-text">so the particular solution is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1c72855b-3dae-468a-8cce-1030a2b40d00">
-<span class="eqno">(7.57)<a class="headerlink" href="#equation-1c72855b-3dae-468a-8cce-1030a2b40d00" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a465f8dd-879d-4ce5-ba0e-a6b43e19329a">
+<span class="eqno">(7.143)<a class="headerlink" href="#equation-a465f8dd-879d-4ce5-ba0e-a6b43e19329a" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_{\rm p} &amp;= -e^{2x} \int \frac{x e^{2x} (x^{2} e^{x})}{e^{4x}} \d{x} +
  x e^{2x} \int \frac{e^{2x} (x^{2} e^{x})}{e^{4x}} \d{x} \\
  &amp;= -e^{2x} \int x^{3} e^{-x} \d{x} + x e^{2x} \int x^{2} e^{-x} \d{x}
@@ -668,8 +719,8 @@ y_{\rm p} &amp;= -e^{2x} \int \frac{x e^{2x} (x^{2} e^{x})}{e^{4x}} \d{x} +
 </table>
 </div>
 <p class="sd-card-text">so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8aed19bd-b387-4ed5-8e77-e534b18a2035">
-<span class="eqno">(7.58)<a class="headerlink" href="#equation-8aed19bd-b387-4ed5-8e77-e534b18a2035" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2de68a71-cc65-47c4-a222-61567b3104eb">
+<span class="eqno">(7.144)<a class="headerlink" href="#equation-2de68a71-cc65-47c4-a222-61567b3104eb" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \int x^3 e^{-x} \d{x} = -x^3 e^{-x} - 3x^2 e^{-x} - 6x e^{-x}- 6 e^{-x}
 \end{equation}\]</div>
 <p class="sd-card-text">For the second</p>
@@ -705,13 +756,13 @@ y_{\rm p} &amp;= -e^{2x} \int \frac{x e^{2x} (x^{2} e^{x})}{e^{4x}} \d{x} +
 </table>
 </div>
 <p class="sd-card-text">so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c8691f72-71f5-443c-94ac-3300876f9640">
-<span class="eqno">(7.59)<a class="headerlink" href="#equation-c8691f72-71f5-443c-94ac-3300876f9640" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-af617890-ba14-44ab-a03a-da412957e911">
+<span class="eqno">(7.145)<a class="headerlink" href="#equation-af617890-ba14-44ab-a03a-da412957e911" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \int x^2 e^{-x} \d{x} = -x^2 e^{-x} - 2x e^{-x} - 2 e^{-x}
 \end{equation}\]</div>
 <p class="sd-card-text">Substitute everything back:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4b731695-147b-449e-8670-afbfb7a60ef4">
-<span class="eqno">(7.60)<a class="headerlink" href="#equation-4b731695-147b-449e-8670-afbfb7a60ef4" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7e488f37-8a06-44b6-9ef1-c70a20f6e885">
+<span class="eqno">(7.146)<a class="headerlink" href="#equation-7e488f37-8a06-44b6-9ef1-c70a20f6e885" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_{\rm p} &amp;= -e^{2x}
   \left( -x^3 e^{-x} - 3x^2 e^{-x} - 6x e^{-x} - 6 e^{-x} \right) \\
   &amp;\quad + x e^{2x} \left( -x^2 e^{-x} - 2x e^{-x} - 2 e^{-x} \right) \\
@@ -720,14 +771,14 @@ y_{\rm p} &amp;= -e^{2x}
 </li>
 <li><p class="sd-card-text">Combine and apply initial conditions:</p>
 <p class="sd-card-text">The general solution and its first derivative are</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1cf8090f-2eaf-416b-8fc9-8c0c456eb58d">
-<span class="eqno">(7.61)<a class="headerlink" href="#equation-1cf8090f-2eaf-416b-8fc9-8c0c456eb58d" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-9f6e7a9f-7414-469b-a30e-d17c6b1d92c7">
+<span class="eqno">(7.147)<a class="headerlink" href="#equation-9f6e7a9f-7414-469b-a30e-d17c6b1d92c7" title="Permalink to this equation">#</a></span>\[\begin{align}
 y &amp;= (c_1 + c_2 x) e^{2x}+(x^{2}+4x+6)e^{x} \\
 y' &amp;= 2(c_1 + c_2 x) e^{2x} + c_2e^{2x} + (x^{2}+4x+6) e^{x} + (2x+4)e^{x}
 \end{align}\]</div>
 <p class="sd-card-text">Plugging in intial conditions</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2c944a3e-3d2c-45ac-8256-1541f9ba4b34">
-<span class="eqno">(7.62)<a class="headerlink" href="#equation-2c944a3e-3d2c-45ac-8256-1541f9ba4b34" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b484087e-0d9b-44d0-ad91-b7d42026848d">
+<span class="eqno">(7.148)<a class="headerlink" href="#equation-b484087e-0d9b-44d0-ad91-b7d42026848d" title="Permalink to this equation">#</a></span>\[\begin{align}
 y(0) &amp;= c_1 + 6 = 0
 y'(0) &amp;= 2 c_1 + c_2 + 10 = 0
 \end{align}\]</div>
@@ -735,15 +786,15 @@ y'(0) &amp;= 2 c_1 + c_2 + 10 = 0
 </li>
 </ol>
 <p class="sd-card-text">The final solution is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-86294c2e-f094-41b5-a5e0-a46caf489c99">
-<span class="eqno">(7.63)<a class="headerlink" href="#equation-86294c2e-f094-41b5-a5e0-a46caf489c99" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-04919b24-50e4-431f-8360-f7708830a037">
+<span class="eqno">(7.149)<a class="headerlink" href="#equation-04919b24-50e4-431f-8360-f7708830a037" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y = (2 x - 6) e^{2x} + (x^{2}+4x+6)e^{x}
 \end{equation}\]</div>
 </div>
 </details></li>
 <li><p>Solve the differential equation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8febc0dd-1f5a-46fd-bc9d-174a685725e8">
-<span class="eqno">(7.64)<a class="headerlink" href="#equation-8febc0dd-1f5a-46fd-bc9d-174a685725e8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-466ff166-21ff-48b7-8e3d-3250584c7368">
+<span class="eqno">(7.150)<a class="headerlink" href="#equation-466ff166-21ff-48b7-8e3d-3250584c7368" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y'' + y = \csc x, \quad y(\pi/2), \quad y'(\pi/2) = 0
 \end{equation}\]</div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -751,32 +802,32 @@ y'' + y = \csc x, \quad y(\pi/2), \quad y'(\pi/2) = 0
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <ol class="arabic">
 <li><p class="sd-card-text">Find homogeneous solution <span class="math notranslate nohighlight">\(y_{\rm h}\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-51d2269d-18b4-4c6c-9762-8fd40fa5be51">
-<span class="eqno">(7.65)<a class="headerlink" href="#equation-51d2269d-18b4-4c6c-9762-8fd40fa5be51" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e3f36969-c04d-48fe-a36e-8f0de0f5396d">
+<span class="eqno">(7.151)<a class="headerlink" href="#equation-e3f36969-c04d-48fe-a36e-8f0de0f5396d" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_{\rm h}' + y_{\rm h} &amp;= 0 \\
 \lambda^2 + 1 &amp;= 0
 \end{align}\]</div>
 <p class="sd-card-text">so <span class="math notranslate nohighlight">\(\lambda_{1,2} = \pm i\)</span> and:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4790534b-0b13-490b-9a12-bfee8b192534">
-<span class="eqno">(7.66)<a class="headerlink" href="#equation-4790534b-0b13-490b-9a12-bfee8b192534" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d5d457aa-616c-41ea-8fd4-f44901f28321">
+<span class="eqno">(7.152)<a class="headerlink" href="#equation-d5d457aa-616c-41ea-8fd4-f44901f28321" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y_{\rm h} = c_1 \cos x + c_2 \sin_x
 \end{equation}\]</div>
 </li>
 <li><p class="sd-card-text">Find particular solution <span class="math notranslate nohighlight">\(y_{\rm p}\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6d74ed00-2a3b-40f3-8466-15625498ba98">
-<span class="eqno">(7.67)<a class="headerlink" href="#equation-6d74ed00-2a3b-40f3-8466-15625498ba98" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-33904ff9-fe3d-4e67-9ebe-a033a15e616b">
+<span class="eqno">(7.153)<a class="headerlink" href="#equation-33904ff9-fe3d-4e67-9ebe-a033a15e616b" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_1 &amp;= \cos x , \quad y_2 = \sin x \\
 y_1' &amp;= -\sin x, \quad y_2'= \cos x
 \end{align}\]</div>
 <p class="sd-card-text">so the Wronskian is <span class="math notranslate nohighlight">\(W = \cos^2 x + \sin^2 x = 1\)</span>. The right-hand side
 function is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5793126b-a191-49a1-8a6a-55cb4ff69ba3">
-<span class="eqno">(7.68)<a class="headerlink" href="#equation-5793126b-a191-49a1-8a6a-55cb4ff69ba3" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-59059cdc-9d07-4992-8ad5-abbe06108041">
+<span class="eqno">(7.154)<a class="headerlink" href="#equation-59059cdc-9d07-4992-8ad5-abbe06108041" title="Permalink to this equation">#</a></span>\[\begin{equation}
 r = \csc x
 \end{equation}\]</div>
 <p class="sd-card-text">so the particular solution is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f83de0e7-1a2d-40d7-af26-09e6dbe73deb">
-<span class="eqno">(7.69)<a class="headerlink" href="#equation-f83de0e7-1a2d-40d7-af26-09e6dbe73deb" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-737a7182-df39-4aac-bfae-c69ab12de9fc">
+<span class="eqno">(7.155)<a class="headerlink" href="#equation-737a7182-df39-4aac-bfae-c69ab12de9fc" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_p &amp;=  -\cos x \int \sin x\csc(x) \d{x} + \sin x\int \cos x\csc(x) \d{x} \\
     &amp;= -\cos x \int \d{x} + \sin x \int \frac{\cos x}{\sin x} \d{x} \\
     &amp;= -x \cos x + \sin x \ln|x|
@@ -784,16 +835,16 @@ y_p &amp;=  -\cos x \int \sin x\csc(x) \d{x} + \sin x\int \cos x\csc(x) \d{x} \\
 </li>
 <li><p class="sd-card-text">Combine and apply initial conditions:</p>
 <p class="sd-card-text">The general solution and its first derivative are</p>
-<div class="amsmath math notranslate nohighlight" id="equation-95f32251-371a-42d5-ace0-d5129dbdf206">
-<span class="eqno">(7.70)<a class="headerlink" href="#equation-95f32251-371a-42d5-ace0-d5129dbdf206" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-34a582a3-80d9-4c7b-adb5-d2767c9fe3cc">
+<span class="eqno">(7.156)<a class="headerlink" href="#equation-34a582a3-80d9-4c7b-adb5-d2767c9fe3cc" title="Permalink to this equation">#</a></span>\[\begin{align}
 y &amp;= c_1 \cos x + c_2 \sin x \\
   &amp; \quad + \sin x \ln\left| \sin x \right| - x \cos x \\
 y' &amp;= -c_1 \sin x + c_2 \cos x \\
    &amp; \quad + \cos x (1 + \ln\left| \sin x \right|) + x \sin x - \cos x
 \end{align}\]</div>
 <p class="sd-card-text">Plugging in intial conditions</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ca60beea-93a8-4f1a-bdc6-20e97564d8e9">
-<span class="eqno">(7.71)<a class="headerlink" href="#equation-ca60beea-93a8-4f1a-bdc6-20e97564d8e9" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-be4ea4d5-1c7f-4860-a40f-e845db396ca9">
+<span class="eqno">(7.157)<a class="headerlink" href="#equation-be4ea4d5-1c7f-4860-a40f-e845db396ca9" title="Permalink to this equation">#</a></span>\[\begin{align}
 y(\pi/2) &amp;= c_2 = 0\\
 y'(\pi/2) &amp;= -c_1 + \pi/2 = 0
 \end{align}\]</div>
@@ -801,8 +852,8 @@ y'(\pi/2) &amp;= -c_1 + \pi/2 = 0
 </li>
 </ol>
 <p class="sd-card-text">The final solution is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b9746ba3-b50b-43af-8247-c7a8c4bec3ff">
-<span class="eqno">(7.72)<a class="headerlink" href="#equation-b9746ba3-b50b-43af-8247-c7a8c4bec3ff" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ab880152-b17f-43a9-bb24-9eb889915438">
+<span class="eqno">(7.158)<a class="headerlink" href="#equation-ab880152-b17f-43a9-bb24-9eb889915438" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y = \frac{\pi}{2} \cos x + \sin x \ln \left| \sin x \right| - x \cos x
 \end{equation}\]</div>
 </div>
