@@ -193,27 +193,27 @@ $$
 Next, use initial conditions in to find C.
 
 $$
-1 = y(0) = (\frac{5}{((4)*(pi^2))+1}) * (0 + (2*pi)) + C
+1 = y(0) = \frac{5}{4\pi^2+1} * (0 + (2*pi)) + C
 $$
 
 $$
-C = 1 + (\frac{(10 * pi)}{((4)*(pi^2)) + 1})
+C = 1 + \frac{10\pi}{4\pi^2 + 1}
 $$
 
 Put C value in equation for y.
 
 $$
-y(t) = (1 + (\frac{(10 * pi)}{((4) * (pi^2))+1}))*((e^t)) - (\frac{5}{((4)*(pi^2))+1})*((sin(2*pi t)) + ((2*pi)*(cos(2*pi t))))
+y(t) = (1 + \frac{10\pi}{4\pi^2 + 1}) e^{t} - (\frac{5}{4\pi^2 + 1} sin(2\pi t)) + 2\pi cos(2\pi t)
 $$
 
 Find y at t=1.
 
 $$
-y(1) = (1+(\frac{(10*pi)}{((4)*(pi^2))+1}))*e - (\frac{5}{((4)*(pi^2))+1})*(2*(pi))
+y(1) = \left(1 + \frac{10*pi}{4\pi^2+1}\right) e - \frac{5}{4\pi^2+1} \left(2\pi\right)
 $$
 
 $$
-y(1) = e +(\frac{(10*pi)}{((4)*(pi^2))+1})*(e-1)
+y(1) = e + \frac{10\pi}{4\pi^2 + 1} \left(e-1\right)
 $$
 
 $$
