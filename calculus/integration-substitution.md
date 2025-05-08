@@ -101,7 +101,7 @@ Since $x^5$ is to the fifth order, integration by parts must be used 5 times. Us
 Multiply down the diagonals and add your $+C$
 
 \begin{equation}
-y = &-x^5 \cos(x) + 5x^4 \sin(x) + 20x^3 \cos(x) - 60x^2 \sin(x) \-120x \cos(x) + 120 \sin(x) + C
+y = -x^5 \cos(x) + 5x^4 \sin(x) + 20x^3 \cos(x) - 60x^2 \sin(x) - 120x \cos(x) + 120 \sin(x) + C
 \end{equation}
 
 To make the solution look cleaner, you can factor out $cos(x)$ and $sin(x)$. 
