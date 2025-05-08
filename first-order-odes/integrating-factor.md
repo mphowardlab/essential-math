@@ -115,7 +115,7 @@ $$
 $$
 \begin{align}
 S &= -\frac{Q}{P} \cdot R = -\frac{x}{-y} \cdot \left( \frac{-2}{x}\right) = \frac{-2}{y} 
- \end{align}
+\end{align}
 $$
 
 **Thus:** 
@@ -146,7 +146,7 @@ A **linear first-order ODE** has the form:
 
 $$ 
 \begin{equation}
-y' + p(x)\,y = r(x)
+y' + p(x)y = r(x)
 \end{equation}
 $$
 
