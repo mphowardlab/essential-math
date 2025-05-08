@@ -13,13 +13,18 @@ and vector $\underline{x}$ such that :
 We want $\underline{nontrivial}$ solutions $(\underline{x} \ne \underline{0})$. To find them:
 
 \begin{align}
-\vv{A} \underline{x} - \lambda \underline{x} = 0
+\vv{A} \underline{x} - \lambda \underline{x} = \underline{0} \\
 
-\vv{A} \underline{x} - \lambda \vv{I} \underline{x} = 0
+\vv{A} \underline{x} - \lambda \vv{I} \underline{x} = \underline{0} \\
 
-(\vv{A} - \lambda \vv{I} )\underline{x} =  0
+(\vv{A} - \lambda \vv{I} )\underline{x} =  \underline{0}
 \end{align}
 
+If $\vv{A} - \lambda \vv{I}$ is invertible, we have only $\lambda = \underline{0}$ as a solution. Hence, we want this to be singular! This occurs when the determinant is zero:
+
+\begin{align}
+$|\vv{A}- \lambda \vv{I}= 0$
+\end{align}
 
 
 ## Multiple eigenvalues
