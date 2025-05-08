@@ -3,10 +3,10 @@
 ## What do we do when an ODE is not exact?
 **Example 1:**
 \begin{align}
--y \, dx + x \, dy &= 0 && \text{(given)} \\
-P &= -y            && Q = x \\
-\frac{\partial P}{\partial y} &= -1 && \frac{\partial Q}{\partial x} = 1 \\
-& & & \Rightarrow \text{Not exact!}
+  -y \, dx + x \, dy &= 0 \quad \text{(given)} \\
+  P &= -y, \quad Q = x \\
+  \frac{\partial P}{\partial y} &= -1, \quad \frac{\partial Q}{\partial x} = 1 \\
+  &\Rightarrow \text{Not exact!}
 \end{align}
 
 When solving ODEs, we take the partial derivatives of P and Q.
@@ -18,29 +18,41 @@ If the partial derivatives are not equal, the equation is **not exact**:
 
 Multiply by a factor F to make the ODE exact. This is called the **integrating factor**.
 
-$$
-\begin{align*}
-F &= \frac{1}{x^2} \\
-(-y)\left( \frac{1}{x^2} \right) + x\left( \frac{1}{x^2} \right) &= -\frac{y}{x^2} + \frac{1}{x} = 0 \\
+Let: 
+
+\begin{equation}
+F = \frac{1}{x^2}
+\end{equation}
+
+Now multiply the terms:
+
+\begin{align}
+(-y)\left( \frac{1}{x^2} \right) + x\left( \frac{1}{x^2} \right) &= -\frac{y}{x^2} + \frac{1}{x} \\
+&= 0 \quad \text{(exact!)}
+\end{align}
+
+Check the partial derivatives: 
+
+\begin{align}
 \frac{\partial ( F P)}{\partial y} &= -\frac{1}{x^2} \\
 \frac{\partial (F Q)}{\partial x} &= -\frac{1}{x^2} \\
-\end{align*}
-$$
+\end{align}
+
+Now the equation is exact.
+---
 
 
 ## How did we find F?
 
   Using this formula:
   
-$$
-\begin{align*}
-R &= \frac{1}{Q} \left( \frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x} \right)
-\end{align*}
-$$
+\begin{equation}
+R(x) = \frac{1}{Q} \left( \frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x} \right)
+\end{equation}
 
 - If R depends only on x, the integrating factor is:
-$$
-\begin{align*}
+
+\begin{equation}
 F(x) &= \exp\left( \int R(x) \, dx \right) 
 \end{align*}
 $$
