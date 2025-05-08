@@ -88,9 +88,9 @@ Angles can be measured in degrees of radians
 \end{equation}
 
 ### Special Angles
-\begin{align}
-\theta& = 30^{\circ} \frac{\pi}{6}& \theta& = 60^{\circ} \frac{\pi}{3}
-\end{align}
+\begin{equation}
+\theta = 30^{\circ} \frac{\pi}{6} \quad \theta = 60^{\circ} \frac{\pi}{3}
+\end{equation}
 
 ```{image} ./_images/306090triangle.png
 :alt: 30 60 90 Traingle
@@ -115,10 +115,9 @@ At $ \theta = 60^{\circ} $:
 ```
 
 At $ \theta = 45^{\circ} $
-\begin{align}
-\sin(\theta)& = \frac{1}{\sqrt{2}}&
-\cos(\theta)& = \frac{1}{\sqrt{2}}
-\end{align}
+\begin{equation}
+\sin(\theta) = \frac{1}{\sqrt{2}} \quad \cos(\theta) = \frac{1}{\sqrt{2}}
+\end{equation}
 
 What about $ \theta \ge 90^{\circ}(\frac{\pi}{2}) $?
 Take the angle of $\theta$ relative to the x-axis, then apply the sign based on which quadrant the angle falls in.
@@ -130,16 +129,15 @@ Take the angle of $\theta$ relative to the x-axis, then apply the sign based on 
 ```
 
 The graph shows $\theta = \frac{3\pi}{4}$ and $\theta' = \frac{\pi}{4}$ so:
-\begin{align}
-\sin(\theta')& = \frac{1}{\sqrt{2}}&
-\cos(\theta')& = \frac{1}{\sqrt{2}}
-\end{align}
+\begin{equation}
+\sin(\theta') = \frac{1}{\sqrt{2}} \quad \cos(\theta') = \frac{1}{\sqrt{2}}
+\end{equation}
 
 In quadrant two sine is positive so:
-\begin{align}
-\sin(\theta)& = \frac{1}{\sqrt{2}}&
-\cos(\theta)& = -\frac{1}{\sqrt{2}}
-\end{align}
+<<<<<<< HEAD
+\begin{equation}
+\sin(\theta) = \frac{1}{\sqrt{2}} \quad \cos(\theta)& = -\frac{1}{\sqrt{2}}
+\end{equation}>
 ````
 
 Trigonometric functions represent waves. The properties of the wave can be encoded by manipulating the function.
