@@ -53,6 +53,8 @@ x_1 =1, x_2 = 2 \to \underline{x}= \begin{bmatrix} 1 \\ 2
 Repeat for $\lambda = -6$:
 \begin{align}
 \begin{bmatrix} -5 -(-6) & 2 \\ 2 & -2-(-6) \end{bmatrix} \underline{x} = \begin{bmatrix} 1 & 2 \\ 2 & 4 \underline{x} =0
+\end{align}
+
 
 ## Multiple eigenvalues
 
