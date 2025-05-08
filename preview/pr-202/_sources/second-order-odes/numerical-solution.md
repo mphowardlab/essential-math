@@ -1,137 +1,88 @@
 # Numerical solution methods
-## Boundary value problems : shooting method
 
+## Boundary value problems (shooting method)
 
- We can solve *initial* value problems for second-order ODEs by converting to a system and using methods we know. What about BVPs?
+We can solve initial value problems for second-order ODEs by converting to a
+system and using methods we know. What about boundary value problems?
 
+Let's say we want to solve:
 
-Let's say we want to solve&nbsp; $y''+y=0$ &nbsp; $y(0)=0$ &nbsp; $y(\frac{\pi}{6})=4$
-    using normal approch:
-   
-$$
-\text{$y=8sinx$} \quad
-\left\{
-\begin{array}{l}
-y=c_1cosx+c_2sinx\\
-0=y(0)=c_1\\
-4=y(\frac{\pi}{6})=c_2(\frac{1}{2})\rightarrow c_2=8
-\end{array}
-\right.
-$$
+\begin{equation}
+y'' + y = 0, \quad y(0) = 0, \quad y(\pi/6) = 4
+\end{equation}
 
+Using normal approach:
 
- what if we needed to do this numerically? Try converting to system.
+\begin{align}
+y &= c_1 \cos x + c_2 \sin x \\
+y(0) &= c_1 = 0\\
+y(\pi/6) &= c_2 \frac{1}{2} = 4 \to c_2 = 8\\
+\end{align}
 
+so,
 
-$$
-\left\{
-\begin{aligned}
-y_1' &= y_2 \\
-y_2' &= -y_1
-\end{aligned}
-\right.
-\quad
-\begin{aligned}
-y_1(0) &= 0 \\
-y_2(0) &= a  \leftarrow {\footnotesize unknown}
-\end{aligned}
-\quad \Rightarrow \quad
-\mathbf{y}' =
-\begin{bmatrix}
-0 & 1 \\
--1 & 0
-\end{bmatrix}
-\mathbf{y}, \quad
-\mathbf{y}(0) =
-\begin{bmatrix}
-0 \\
-a
-\end{bmatrix}
-$$
+\begin{equation}
+y = 8 \sin x
+\end{equation}
 
+What if we needed to do this numerically? Try converting to system using
+$y_1 = y$ and $y_2 = y'$, so
 
-$$
-\text{Figure this out so that } y_1\left( \frac{\pi}{2} \right) = 4
-$$
------++
-Let's say we want to solve:  
+\begin{equation}
+y'' + y = 0 \to y_2' = -y_1
+\end{equation}
 
-\begin{equation}  
-y'' + y = 0, \quad y(0) = 0, \quad y(\frac{\pi}{6}) = 4  
-\end{equation}  
+and
 
-Using normal approach:  
+\begin{align}
+y_1' &= y_2, & y_1(0) &= 0 \\
+y_2' &= -y_1, & y_2(0) &= a
+\end{align}
 
-\begin{align}  
-y &= c_1 \cos x + c_2 \sin x \\  
-0 &= y(0) = c_1 \\  
-4 &= y(\frac{\pi}{6}) = c_2 \frac{1}{2} \\  
-c_2 &= 8  
-\end{align}  
+where *a* is an unknown value that we need to figure out so that $y(\pi/6) = 4$.
 
-so,  
+We will use the *shooting method* to determine *a*. The idea is to treat the
+boundary condition at the other value of *x* as a function of *a*, then vary *a*
+using a root-finding approach.
 
-\begin{equation}  
-y = 8 \sin x  
-\end{equation}  
+```{image} ./_images/shooting.jpg
+:alt: Graph of Lines
+:align: center
+:width: 300px
+```
 
-What if we needed to do this numerically? Try converting to system:  
+This boundary-condition function is the numerical integration of the system of
+ODEs! Bisection search is well-suited for solving for *a* because it is stable
+and doesn't require a derivative.
 
-\begin{equation}  
-y_1 = y \quad y_2 = y' \quad y'' = -y  
-\end{equation}  
+```{example} Reaction-diffusion with second-order reaction
+We are solving a reaction-diffusion problem with a second-order reaction:
 
-Then, 
+\begin{equation}
+D \dd{2}{c}{x} - k c^2 = 0, \quad c(0) = c_0, \quad -D c'(L) = 0
+\end{equation}
 
-\begin{align}  
-y_1' &= y_2 & y_1(0) &= 0 \\  
-y_2' &= -y_1 & y_2(0) &= a  
-\end{align}  
+Formulate in a form suitable for numerical solution using the shooting method.
 
-where *a* is unknown value that we need to figure out so $y(\frac{\pi}{6}) = 4$. We can write:  
+---
 
-\begin{equation}  
-\vv{y}' = \begin{bmatrix} 0 & 1 \\ -1 & 0 \end{bmatrix} \vv{y}, 
-\quad \vv{y}(0) = \begin{bmatrix} 0 \\ a \end{bmatrix}  
-\end{equation}  
+First, rewrite as a system of first-order ODEs using $y_1 = c$ and $c_2 = c'$.
+The ODE is
 
-------++
-How do we do this when we have only numbers? <u>Shooting method.</u>
+\begin{equation}
+c'' - \frac{k}{D}c^2 \to y_2' = \frac{k}{D} y_1^2
+\end{equation}
 
-![](./images/grapofline3.jpg)
-- Formuate system of ODEs with () <u>initial</u> condtion is know
+so
 
+\begin{align}
+y_1' &= y_2, & y_1(0) &= c_0 \\
+y_2' &= \frac{k}{D} y_1, & y_2(0) &= a
+\end{align}
 
-- Use a root finding method to solve for <u>unknown</u> initial condition in order to satisify remaining boundary condtion.
+where *a* is the unknown value of $y_2(0)$. Vary *a* until
 
-
-    → Bisection is good choice here!
-
-
-5. Example : Reaction-diffusion with <u>second order</u> reaction
-
-
-$$
-D\frac{d^2c}{dx^2}-kc^2=0 \quad \quad C(0)=C_0\quad\quad -DC'(L)=0
-$$
-formulate&nbsp; &nbsp; &nbsp; $y'=C$ &nbsp; &nbsp; &nbsp; $y_2=C_2$ &nbsp; &nbsp; &nbsp; $C''=\frac{K}{D}C^2$
-
-
-$$
-\left\{
-\begin{array}{l}
-y_1'=y_2\quad\quad\quad\quad y_1(0)=C_0\\
-y_2'=\frac{K}{D}y_1'\quad\quad\quad y_2(0)=a
-\end{array}
-\right.
-$$
-
-$$
-\left\{
-
-y_1'=y_2\quad\quad\quad\quad y_1(0)=C_0\\
-y_2'=\frac{K}{D}y_1'\quad\quad\quad y_2(0)=a
-
-\right.
-$$
-vary a and solve numerically for $\underline{y}(L)$ until $y_2(L)=0$!
+\begin{equation}
+-D c'(L) = 0 \to y_2(L) = 0
+\end{equation}
+```

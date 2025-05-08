@@ -173,7 +173,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../calculus/functions.html">1.1. Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../calculus/limits.html">1.2. Limits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../calculus/derivatives.html">1.3. Derivatives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../calculus/derivative-rules.html">1.4. Product, quotient, and chain rule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/derivative-rules.html">1.4. Rules for derivatives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../calculus/series-expansion.html">1.5. Series expansion</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../calculus/integration.html">1.6. Integration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../calculus/integration-substitution.html">1.7. Integration using substitution</a></li>
@@ -428,7 +428,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boundary-value-problems-shooting-method">7.6.1. Boundary value problems : shooting method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boundary-value-problems-shooting-method">7.6.1. Boundary value problems (shooting method)</a></li>
 </ul>
             </nav>
         </div>
@@ -443,120 +443,74 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="numerical-solution-methods">
 <h1><span class="section-number">7.6. </span>Numerical solution methods<a class="headerlink" href="#numerical-solution-methods" title="Link to this heading">#</a></h1>
 <section id="boundary-value-problems-shooting-method">
-<h2><span class="section-number">7.6.1. </span>Boundary value problems : shooting method<a class="headerlink" href="#boundary-value-problems-shooting-method" title="Link to this heading">#</a></h2>
-<p>We can solve <em>initial</em> value problems for second-order ODEs by converting to a system and using methods we know. What about BVPs?</p>
-<p>Let’s say we want to solve  <span class="math notranslate nohighlight">\(y''+y=0\)</span>   <span class="math notranslate nohighlight">\(y(0)=0\)</span>   <span class="math notranslate nohighlight">\(y(\frac{\pi}{6})=4\)</span>
-using normal approch:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\text{$y=8sinx$} \quad
-\left\{
-\begin{array}{l}
-y=c_1cosx+c_2sinx\\
-0=y(0)=c_1\\
-4=y(\frac{\pi}{6})=c_2(\frac{1}{2})\rightarrow c_2=8
-\end{array}
-\right.
-\end{split}\]</div>
-<p>what if we needed to do this numerically? Try converting to system.</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\left\{
-\begin{aligned}
-y_1' &amp;= y_2 \\
-y_2' &amp;= -y_1
-\end{aligned}
-\right.
-\quad
-\begin{aligned}
-y_1(0) &amp;= 0 \\
-y_2(0) &amp;= a  \leftarrow {\footnotesize unknown}
-\end{aligned}
-\quad \Rightarrow \quad
-\mathbf{y}' =
-\begin{bmatrix}
-0 &amp; 1 \\
--1 &amp; 0
-\end{bmatrix}
-\mathbf{y}, \quad
-\mathbf{y}(0) =
-\begin{bmatrix}
-0 \\
-a
-\end{bmatrix}
-\end{split}\]</div>
-<div class="math notranslate nohighlight">
-\[
-\text{Figure this out so that } y_1\left( \frac{\pi}{2} \right) = 4
-\]</div>
-<p>—–++
-Let’s say we want to solve:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9f67b788-b08a-4201-803b-e067692029ed">
-<span class="eqno">(7.141)<a class="headerlink" href="#equation-9f67b788-b08a-4201-803b-e067692029ed" title="Permalink to this equation">#</a></span>\[\begin{equation}  
-y'' + y = 0, \quad y(0) = 0, \quad y(\frac{\pi}{6}) = 4  
-\end{equation}  \]</div>
+<h2><span class="section-number">7.6.1. </span>Boundary value problems (shooting method)<a class="headerlink" href="#boundary-value-problems-shooting-method" title="Link to this heading">#</a></h2>
+<p>We can solve initial value problems for second-order ODEs by converting to a
+system and using methods we know. What about boundary value problems?</p>
+<p>Let’s say we want to solve:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-fe3ff8e3-0c99-4849-8eab-813275579969">
+<span class="eqno">(7.159)<a class="headerlink" href="#equation-fe3ff8e3-0c99-4849-8eab-813275579969" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y'' + y = 0, \quad y(0) = 0, \quad y(\pi/6) = 4
+\end{equation}\]</div>
 <p>Using normal approach:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-26a2bcd0-9eb0-4fff-af31-b1064e45df6a">
-<span class="eqno">(7.142)<a class="headerlink" href="#equation-26a2bcd0-9eb0-4fff-af31-b1064e45df6a" title="Permalink to this equation">#</a></span>\[\begin{align}  
-y &amp;= c_1 \cos x + c_2 \sin x \\  
-0 &amp;= y(0) = c_1 \\  
-4 &amp;= y(\frac{\pi}{6}) = c_2 \frac{1}{2} \\  
-c_2 &amp;= 8  
-\end{align}  \]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-09d047be-f4c6-4276-98e7-8ad8f068035c">
+<span class="eqno">(7.160)<a class="headerlink" href="#equation-09d047be-f4c6-4276-98e7-8ad8f068035c" title="Permalink to this equation">#</a></span>\[\begin{align}
+y &amp;= c_1 \cos x + c_2 \sin x \\
+y(0) &amp;= c_1 = 0\\
+y(\pi/6) &amp;= c_2 \frac{1}{2} = 4 \to c_2 = 8\\
+\end{align}\]</div>
 <p>so,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e6d2d9f2-d70c-4f04-a793-f97e636895e1">
-<span class="eqno">(7.143)<a class="headerlink" href="#equation-e6d2d9f2-d70c-4f04-a793-f97e636895e1" title="Permalink to this equation">#</a></span>\[\begin{equation}  
-y = 8 \sin x  
-\end{equation}  \]</div>
-<p>What if we needed to do this numerically? Try converting to system:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-de296587-dc56-49bb-9728-0ea44ac5e676">
-<span class="eqno">(7.144)<a class="headerlink" href="#equation-de296587-dc56-49bb-9728-0ea44ac5e676" title="Permalink to this equation">#</a></span>\[\begin{equation}  
-y_1 = y \quad y_2 = y' \quad y'' = -y  
-\end{equation}  \]</div>
-<p>Then,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a9d07ff4-f055-4ee0-b3ad-3d3a9179f67c">
-<span class="eqno">(7.145)<a class="headerlink" href="#equation-a9d07ff4-f055-4ee0-b3ad-3d3a9179f67c" title="Permalink to this equation">#</a></span>\[\begin{align}  
-y_1' &amp;= y_2 &amp; y_1(0) &amp;= 0 \\  
-y_2' &amp;= -y_1 &amp; y_2(0) &amp;= a  
-\end{align}  \]</div>
-<p>where <em>a</em> is unknown value that we need to figure out so <span class="math notranslate nohighlight">\(y(\frac{\pi}{6}) = 4\)</span>. We can write:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-71b31d88-7328-49f9-83bb-2c185df89ba8">
-<span class="eqno">(7.146)<a class="headerlink" href="#equation-71b31d88-7328-49f9-83bb-2c185df89ba8" title="Permalink to this equation">#</a></span>\[\begin{equation}  
-\vv{y}' = \begin{bmatrix} 0 &amp; 1 \\ -1 &amp; 0 \end{bmatrix} \vv{y}, 
-\quad \vv{y}(0) = \begin{bmatrix} 0 \\ a \end{bmatrix}  
-\end{equation}  \]</div>
-<p>——++
-How do we do this when we have only numbers? <u>Shooting method.</u></p>
-<p><img alt="" src="../_images/grapofline3.jpg" /></p>
-<ul>
-<li><p>Formuate system of ODEs with () <u>initial</u> condtion is know</p></li>
-<li><p>Use a root finding method to solve for <u>unknown</u> initial condition in order to satisify remaining boundary condtion.</p>
-<p>→ Bisection is good choice here!</p>
-</li>
-</ul>
-<ol class="arabic simple" start="5">
-<li><p>Example : Reaction-diffusion with <u>second order</u> reaction</p></li>
-</ol>
-<div class="math notranslate nohighlight">
-\[
-D\frac{d^2c}{dx^2}-kc^2=0 \quad \quad C(0)=C_0\quad\quad -DC'(L)=0
-\]</div>
-<p>formulate      <span class="math notranslate nohighlight">\(y'=C\)</span>       <span class="math notranslate nohighlight">\(y_2=C_2\)</span>       <span class="math notranslate nohighlight">\(C''=\frac{K}{D}C^2\)</span></p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\left\{
-\begin{array}{l}
-y_1'=y_2\quad\quad\quad\quad y_1(0)=C_0\\
-y_2'=\frac{K}{D}y_1'\quad\quad\quad y_2(0)=a
-\end{array}
-\right.
-\end{split}\]</div>
-<div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}
-\left\{\\\begin{split}y_1'=y_2\quad\quad\quad\quad y_1(0)=C_0\\
-y_2'=\frac{K}{D}y_1'\quad\quad\quad y_2(0)=a\end{split}\\\right.
-\end{aligned}\end{align} \]</div>
-<p>vary a and solve numerically for <span class="math notranslate nohighlight">\(\underline{y}(L)\)</span> until <span class="math notranslate nohighlight">\(y_2(L)=0\)</span>!</p>
+<div class="amsmath math notranslate nohighlight" id="equation-67bca240-439f-407e-8822-f80a7e130a1c">
+<span class="eqno">(7.161)<a class="headerlink" href="#equation-67bca240-439f-407e-8822-f80a7e130a1c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y = 8 \sin x
+\end{equation}\]</div>
+<p>What if we needed to do this numerically? Try converting to system using
+<span class="math notranslate nohighlight">\(y_1 = y\)</span> and <span class="math notranslate nohighlight">\(y_2 = y'\)</span>, so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ab3fff57-0312-4d7c-8155-04860ff6c480">
+<span class="eqno">(7.162)<a class="headerlink" href="#equation-ab3fff57-0312-4d7c-8155-04860ff6c480" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y'' + y = 0 \to y_2' = -y_1
+\end{equation}\]</div>
+<p>and</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c281b4cf-2b54-417d-bb24-e78c4144c183">
+<span class="eqno">(7.163)<a class="headerlink" href="#equation-c281b4cf-2b54-417d-bb24-e78c4144c183" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_1' &amp;= y_2, &amp; y_1(0) &amp;= 0 \\
+y_2' &amp;= -y_1, &amp; y_2(0) &amp;= a
+\end{align}\]</div>
+<p>where <em>a</em> is an unknown value that we need to figure out so that <span class="math notranslate nohighlight">\(y(\pi/6) = 4\)</span>.</p>
+<p>We will use the <em>shooting method</em> to determine <em>a</em>. The idea is to treat the
+boundary condition at the other value of <em>x</em> as a function of <em>a</em>, then vary <em>a</em>
+using a root-finding approach.</p>
+<a class="reference internal image-reference" href="../_images/shooting.jpg"><img alt="Graph of Lines" class="align-center" src="../_images/shooting.jpg" style="width: 300px;" />
+</a>
+<p>This boundary-condition function is the numerical integration of the system of
+ODEs! Bisection search is well-suited for solving for <em>a</em> because it is stable
+and doesn’t require a derivative.</p>
+<div class="admonition-example-reaction-diffusion-with-second-order-reaction admonition">
+<p class="admonition-title">Example: Reaction-diffusion with second-order reaction</p>
+<p>We are solving a reaction-diffusion problem with a second-order reaction:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1138bd03-4519-47cf-9e8b-2380f01438d6">
+<span class="eqno">(7.164)<a class="headerlink" href="#equation-1138bd03-4519-47cf-9e8b-2380f01438d6" title="Permalink to this equation">#</a></span>\[\begin{equation}
+D \dd{2}{c}{x} - k c^2 = 0, \quad c(0) = c_0, \quad -D c'(L) = 0
+\end{equation}\]</div>
+<p>Formulate in a form suitable for numerical solution using the shooting method.</p>
+<hr class="docutils" />
+<p>First, rewrite as a system of first-order ODEs using <span class="math notranslate nohighlight">\(y_1 = c\)</span> and <span class="math notranslate nohighlight">\(c_2 = c'\)</span>.
+The ODE is</p>
+<div class="amsmath math notranslate nohighlight" id="equation-3bd34d3b-32cf-4564-aec7-bd58a68edb9f">
+<span class="eqno">(7.165)<a class="headerlink" href="#equation-3bd34d3b-32cf-4564-aec7-bd58a68edb9f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+c'' - \frac{k}{D}c^2 \to y_2' = \frac{k}{D} y_1^2
+\end{equation}\]</div>
+<p>so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-db083c87-87fe-46ff-af86-0061a1dc7081">
+<span class="eqno">(7.166)<a class="headerlink" href="#equation-db083c87-87fe-46ff-af86-0061a1dc7081" title="Permalink to this equation">#</a></span>\[\begin{align}
+y_1' &amp;= y_2, &amp; y_1(0) &amp;= c_0 \\
+y_2' &amp;= \frac{k}{D} y_1, &amp; y_2(0) &amp;= a
+\end{align}\]</div>
+<p>where <em>a</em> is the unknown value of <span class="math notranslate nohighlight">\(y_2(0)\)</span>. Vary <em>a</em> until</p>
+<div class="amsmath math notranslate nohighlight" id="equation-65644cdf-9229-4429-819a-0516ee0b1e4e">
+<span class="eqno">(7.167)<a class="headerlink" href="#equation-65644cdf-9229-4429-819a-0516ee0b1e4e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+-D c'(L) = 0 \to y_2(L) = 0
+\end{equation}\]</div>
+</div>
 </section>
 </section>
 
@@ -624,7 +578,7 @@ y_2'=\frac{K}{D}y_1'\quad\quad\quad y_2(0)=a\end{split}\\\right.
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boundary-value-problems-shooting-method">7.6.1. Boundary value problems : shooting method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boundary-value-problems-shooting-method">7.6.1. Boundary value problems (shooting method)</a></li>
 </ul>
   </nav></div>
 
