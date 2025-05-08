@@ -7,11 +7,17 @@ and vector $\underline{x}$ such that :
 
 
 \begin{align}
-\underline{\underline{A}}   \underline{x} =\lambda\underline{x} 
+\vv{A}   \underline{x} =\lambda\underline{x} 
 \end{align}
 
+We want \underline{nontrivial} solutions (\underline{x} \ne \underline{0}). To find them:
 
+\begin{align}
+\vv{A} \underline{x} - \lambda \underline{x} = \underline{0}
 
+\vv{A} \underline{x} - \lambda \vv{I} \underline{x} = \underline{0}
+
+(\vv{A} - \lambda \vv{I} )\underline{x} =  \underline{0}
 
 
 
