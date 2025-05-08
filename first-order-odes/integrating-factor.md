@@ -129,7 +129,7 @@ $$
 $$
 \boxed{
   \begin{aligned}
-  F(x) &= \frac{1}{x^2} \\
+  F(x) = \frac{1}{x^2} \\
   F(y) = \frac{1}{y^2}
   \end{aligned}
 }
