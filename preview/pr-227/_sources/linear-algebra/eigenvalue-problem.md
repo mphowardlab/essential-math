@@ -26,7 +26,7 @@ If $\vv{A} - \lambda \vv{I}$ is invertible, we have only $\lambda = \underline{0
 |\vv{A}- \lambda \vv{I}|= 0
 \end{align}
 
-This determinant creates a $\underline{ characteristic polynomial}$ for $\lambda$ that can be solved. Then, the $\underline{x}$ that corresponds to a given $\lambda$ can be determined.
+This determinant creates a $\underline{ characteristic \, polynomial}$ for $\lambda$ that can be solved. Then, the $\underline{x}$ that corresponds to a given $\lambda$ can be determined.
 
 Ex:
 \begin{align}
