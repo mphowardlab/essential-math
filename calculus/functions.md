@@ -123,7 +123,7 @@ At $ \theta = 45^{\circ} $
 What about $ \theta \ge 90^{\circ}(\frac{\pi}{2}) $?
 Take the angle of $\theta$ relative to the x-axis, then apply the sign based on which quadrant the angle falls in.
 
-````{example} <$\theta = 185^{\circ}$>
+````{example} $\theta = 185^{\circ}$
 ```{image} ./_images/Untitled-4png.png
 :width: 300px
 :align: center
