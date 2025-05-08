@@ -1,5 +1,120 @@
 # Integrating factor
 
+What do we do when an ODE is not exact? For example,
+
+\begin{equation}
+-y \d{x} + x \d{y} = 0
+\end{equation}
+
+has
+
+\begin{align}
+P &= -y  & Q &= x \\
+\pp{}{P}{y} &= -1 & \pp{}{Q}{x} &= 1
+\end{align}
+
+so it is not exact. However, we may be able to make it exact if we multiply by
+an *integrating factor*. For example, let's try a factor $F = 1/x^2$.
+Multiplying through by *F*:
+
+\begin{align}
+-\frac{y}{x^2} \d{x} + \frac{1}{x} \d{y} = 0
+\end{align}
+
+so
+
+\begin{align}
+P &= -\frac{y}{x^2}  & Q &= \frac{1}{x} \\
+\pp{}{P}{y} &= -\frac{1}{x^2} & \pp{}{Q}{x} &= -\frac{1}{x}^2
+\end{align}
+
+Now the ODE is exact and can be solved using techniques we learned previously.
+
+## Finding the integrating factor
+
+```{topic} General integrating factor
+To find an integrating factor for a generic ODE that is not exact
+
+\begin{equation}
+P \d{x} + Q \d{y} = 0
+\end{equation}
+
+Calculate:
+
+\begin{equation}
+R = \frac{1}{Q} \Biggl( \frac{\partial P}{\partial y} -
+  \frac{\partial Q}{\partial x} \Biggr)
+\end{equation}
+
+If *R* depends only on *x*, the integrating factor is:
+
+\begin{equation}
+F = \exp\left( \int R \d{x} \right)
+\end{equation}
+
+If not, calculate
+
+\begin{equation}
+S = \frac{1}{P} \Biggl( \frac{\partial Q}{\partial x} -
+  \frac{\partial P}{\partial y} \Biggr) = -\frac{Q}{P} R
+\end{equation}
+
+If *S* depends only on *y*, the integrating factor is:
+
+\begin{equation}
+F = \exp\left( \int S \d{y} \right)
+\end{equation}
+
+If neither works, you can try guessing, but this can be difficult.
+```
+
+Let's use these formulas to arrive at the integrating factor we used above:
+
+\begin{equation}
+R = \frac{1}{x}(-1 - 1) = -\frac{2}{x}
+\end{equation}
+
+is a function of only *x* so
+
+\begin{align}
+F(x) &= \exp\left( \int -\frac{2}{x} \d{x} \right) \\
+&= \exp\left( -2 \ln x\right) \\
+&= \left( e^{\ln x} \right)^{-2} \\
+&= \frac{1}{x^2}
+\end{align}
+
+Note that this is not the only suitable integrating factor! Let's try the *S*
+route for fun:
+
+\begin{equation}
+S = -\frac{Q}{P} R = -\frac{x}{-y} \left( -\frac{2}{x}\right) = -\frac{2}{y}
+\end{equation}
+
+*S* is a function of only *y* so
+
+\begin{equation}
+F = \exp\left( \int -\frac{2}{y} \d{y} \right) = \frac{1}{y^2}
+\end{equation}
+
+is another suitable integrating factor.
+
+## Application to linear first-order ODEs
+
+```{topic} Integrating factor for linear first-order ODEs
+For linear first-order ODES,
+
+\begin{equation}
+y' + p(x)y = r(x)
+\end{equation}
+
+Use of an integrating factor *F* gives the general solution:
+
+\begin{align}
+y(x) &= \frac{1}{F} \left( \int F r \d{x} + c \right) \\
+F &= \exp\left(\int p \d{x}\right)
+\end{align}
+```
+
 ````{example} Mole balance on a tank with increasing inlet/outlet flow rate.
 
 A stream with concentration $c_{{\rm f},{\rm A}}$ of solute A flows into a tank
