@@ -39,7 +39,7 @@ Ex:
 
 $\lambda=-1$:
 \begin{align}
-\begin{bmatrix} -5 -(-1) & 2 \\ 2 & -2-(-1) \end{bmatrix} \underline{x}= \begin{bmatrix} -4 & 2 \\ 2 & 1 \end{bmatrix} \underline{x} =0 
+\begin{bmatrix} -5 -(-1) & 2 \\ 2 & -2-(-1) \end{bmatrix} \underline{x}= \begin{bmatrix} -4 & 2 \\ 2 & -1 \end{bmatrix} \underline{x} =0 
 \\
 \begin{bmatrix} -4 & 2 & 0 \\ 2 & -1 & 0 \end{bmatrix} \to \begin{bmatrix} -4 & 2 & 0 \\ 0 & 0 & 0 \end{bmatrix} \to \begin{bmatrix} 1 & -1/2 & 0 \\ 0 & 0 & 0 \end{bmatrix} \to x_1 -\frac{x_2}{2} =0 \\
 x_2 free
