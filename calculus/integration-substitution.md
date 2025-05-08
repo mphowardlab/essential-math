@@ -60,10 +60,13 @@ du &= \frac{1}{x}\,dx, & v &= \frac{x^2}{2} + 2x
 
 Apply integration by parts: $uv - \int vdu$
 
-\begin{align}
-y &=\left( \frac{x^2}{2} + 2x \right)\ln(x) - \int \left( \frac{x^2}{2} + 2x \right) \frac{1}{x} \, dx \\
-&=\left( \frac{x^2}{2} + 2x \right)\ln(x) - \int \left( \frac{x}{2} + 2 \right) \, dx
-\end{align}
+\begin{equation}
+y = \left( \frac{x^2}{2} + 2x \right)\ln(x) - \int \left( \frac{x^2}{2} + 2x \right) \frac{1}{x} \, dx \\
+\end{equation}
+
+\begin{equation}
+y = \left( \frac{x^2}{2} + 2x \right)\ln(x) - \int \left( \frac{x}{2} + 2 \right) \, dx
+\end{equation}
 
 Solve the integral, don't forget $+C$
 
@@ -77,9 +80,9 @@ y = \left( \frac{x^2}{2} + 2x \right)\ln(x) - \frac{x^2}{4} - 2x + C
 
 ```{solution}
 
-\begin{align}
+\begin{equation}
 y = \int x^5 \sin(x) \, dx
-\end{align}
+\end{equation}
 
 Since $x^5$ is to the fifth order, integration by parts must be used 5 times. Use a table for this. Take derivatives of $u$, and integrate $dv$ until $u$ is zero. 
 
@@ -95,18 +98,17 @@ Since $x^5$ is to the fifth order, integration by parts must be used 5 times. Us
 | $120$ | $-\cos(x)$ |
 | $0$ | $-\sin(x)$ |
 
-Multiply down the diagonals and add your +C
+Multiply down the diagonals and add your $+C$
 
-\begin{align}
-y = &-x^5 \cos(x) + 5x^4 \sin(x) + 20x^3 \cos(x) - 60x^2 \sin(x) \\
-  &-120x \cos(x) + 120 \sin(x) + C
-\end{align}
+\begin{equation}
+y = &-x^5 \cos(x) + 5x^4 \sin(x) + 20x^3 \cos(x) - 60x^2 \sin(x) &-120x \cos(x) + 120 \sin(x) + C
+\end{equation}
 
-To make the solution look cleaner, you can factor out cos(x) and sin(x). 
+To make the solution look cleaner, you can factor out $cos(x)$ and $sin(x)$. 
 
-\begin{align}
-  &= (-x^5 + 20x^3 - 120x) \cos(x) + (5x^4 - 60x^2 + 120) \sin(x) + C
-\end{align}
+\begin{equation}
+  y = (-x^5 + 20x^3 - 120x) \cos(x) + (5x^4 - 60x^2 + 120) \sin(x) + C
+\end{equation}
 
 
 
@@ -129,9 +131,9 @@ du &= -\sin(x)\,dx, & v &= e^x
 
 Apply integration by parts: $uv - \int vdu$
 
-\begin{align}
+\begin{equation}
 \int e^xcos(x)dx = e^xcos(x) + \int e^x(sin(x))dx
-\end{align}
+\end{equation}
 
 Assign new values for u and dv, find du and v again.
 \begin{align}
@@ -141,19 +143,19 @@ du &= \cos(x)\,dx, & v &= e^x
 
 Apply integration by parts: $uv - \int vdu$
 
-\begin{align}
+\begin{equation}
 \int e^xcos(x)dx = e^xcos(x)+[e^xsin(x)-\int e^xcos(x)dx]
-\end{align}
+\end{equation}
 
 $ \int e^xcos(x)dx$ appears again, so we can add them together to get:
 
-\begin{align}
+\begin{equation}
 2\int e^xcos(x)dx = e^xcos(x)+e^xsin(x)  
-\end{align}
+\end{equation}
 
-Divide both sides by 2, and don't forget +C
+Divide both sides by 2, and don't forget $+C$
 
-\begin{align}
+\begin{equation}
 \int e^x \cos(x)dx = \frac{e^x}{2}(\cos(x) + \sin(x)) + C
-\end{align}
+\end{equation}
 ```
