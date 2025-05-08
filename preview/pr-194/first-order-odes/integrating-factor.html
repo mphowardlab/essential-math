@@ -57,6 +57,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"d": ["{\\operatorname{d}\\!{#1}}", 1], "dd": ["{\\d{}^{#1} #2 \\over \\d{#3}^{#1}}", 3], "pp": ["{\\partial^{#1} #2 \\over \\partial #3^{#1}}", 3], "td": ["{\\left(\\pp{#1}{#2}{#3} \\right)_{#4}}", 4], "ubar": ["\\underline{#1}", 1], "vv": ["\\mathbf{#1}", 1]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'first-order-odes/integrating-factor';</script>
     <link rel="canonical" href="https://mphowardlab.github.io/essential-math/first-order-odes/integrating-factor.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -171,7 +173,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../calculus/functions.html">1.1. Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../calculus/limits.html">1.2. Limits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../calculus/derivatives.html">1.3. Derivatives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../calculus/derivative-rules.html">1.4. Product, quotient, and chain rule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/derivative-rules.html">1.4. Rules for derivatives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../calculus/series-expansion.html">1.5. Series expansion</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../calculus/integration.html">1.6. Integration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../calculus/integration-substitution.html">1.7. Integration using substitution</a></li>
@@ -403,7 +405,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -419,6 +423,15 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-integrating-factor">5.7.1. Finding the integrating factor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application-to-linear-first-order-odes">5.7.2. Application to linear first-order ODEs</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -430,6 +443,239 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="integrating-factor">
 <h1><span class="section-number">5.7. </span>Integrating factor<a class="headerlink" href="#integrating-factor" title="Link to this heading">#</a></h1>
+<p>What do we do when an ODE is not exact? For example,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9ec549aa-d54d-4585-a08d-08d6c969f2d6">
+<span class="eqno">(5.86)<a class="headerlink" href="#equation-9ec549aa-d54d-4585-a08d-08d6c969f2d6" title="Permalink to this equation">#</a></span>\[\begin{equation}
+-y \d{x} + x \d{y} = 0
+\end{equation}\]</div>
+<p>has</p>
+<div class="amsmath math notranslate nohighlight" id="equation-3436d33e-8070-48cb-aa51-5dea702e96de">
+<span class="eqno">(5.87)<a class="headerlink" href="#equation-3436d33e-8070-48cb-aa51-5dea702e96de" title="Permalink to this equation">#</a></span>\[\begin{align}
+P &amp;= -y  &amp; Q &amp;= x \\
+\pp{}{P}{y} &amp;= -1 &amp; \pp{}{Q}{x} &amp;= 1
+\end{align}\]</div>
+<p>so it is not exact. However, we may be able to make it exact if we multiply by
+an <em>integrating factor</em>. For example, let’s try a factor <span class="math notranslate nohighlight">\(F = 1/x^2\)</span>.
+Multiplying through by <em>F</em>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-07bcaf88-5e16-4e17-96c7-5644aa3fc7e0">
+<span class="eqno">(5.88)<a class="headerlink" href="#equation-07bcaf88-5e16-4e17-96c7-5644aa3fc7e0" title="Permalink to this equation">#</a></span>\[\begin{align}
+-\frac{y}{x^2} \d{x} + \frac{1}{x} \d{y} = 0
+\end{align}\]</div>
+<p>so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9c850890-4058-4202-a650-46cd20266b3e">
+<span class="eqno">(5.89)<a class="headerlink" href="#equation-9c850890-4058-4202-a650-46cd20266b3e" title="Permalink to this equation">#</a></span>\[\begin{align}
+P &amp;= -\frac{y}{x^2}  &amp; Q &amp;= \frac{1}{x} \\
+\pp{}{P}{y} &amp;= -\frac{1}{x^2} &amp; \pp{}{Q}{x} &amp;= -\frac{1}{x}^2
+\end{align}\]</div>
+<p>Now the ODE is exact and can be solved using techniques we learned previously.</p>
+<section id="finding-the-integrating-factor">
+<h2><span class="section-number">5.7.1. </span>Finding the integrating factor<a class="headerlink" href="#finding-the-integrating-factor" title="Link to this heading">#</a></h2>
+<aside class="topic">
+<p class="topic-title">General integrating factor</p>
+<p>To find an integrating factor for a generic ODE that is not exact</p>
+<div class="amsmath math notranslate nohighlight" id="equation-39628379-4e6a-4ae6-a8a8-100c1420759c">
+<span class="eqno">(5.90)<a class="headerlink" href="#equation-39628379-4e6a-4ae6-a8a8-100c1420759c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+P \d{x} + Q \d{y} = 0
+\end{equation}\]</div>
+<p>Calculate:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-17339ff3-8a79-4275-997a-bfd413f76715">
+<span class="eqno">(5.91)<a class="headerlink" href="#equation-17339ff3-8a79-4275-997a-bfd413f76715" title="Permalink to this equation">#</a></span>\[\begin{equation}
+R = \frac{1}{Q} \Biggl( \frac{\partial P}{\partial y} -
+  \frac{\partial Q}{\partial x} \Biggr)
+\end{equation}\]</div>
+<p>If <em>R</em> depends only on <em>x</em>, the integrating factor is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-20a7ffab-8ebe-4b60-aebe-5cca7df59d66">
+<span class="eqno">(5.92)<a class="headerlink" href="#equation-20a7ffab-8ebe-4b60-aebe-5cca7df59d66" title="Permalink to this equation">#</a></span>\[\begin{equation}
+F = \exp\left( \int R \d{x} \right)
+\end{equation}\]</div>
+<p>If not, calculate</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ffc6245a-6199-4679-aee1-4069f2597cf1">
+<span class="eqno">(5.93)<a class="headerlink" href="#equation-ffc6245a-6199-4679-aee1-4069f2597cf1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+S = \frac{1}{P} \Biggl( \frac{\partial Q}{\partial x} -
+  \frac{\partial P}{\partial y} \Biggr) = -\frac{Q}{P} R
+\end{equation}\]</div>
+<p>If <em>S</em> depends only on <em>y</em>, the integrating factor is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-22574ecb-c134-45fe-912d-f5ebd9ab6ba3">
+<span class="eqno">(5.94)<a class="headerlink" href="#equation-22574ecb-c134-45fe-912d-f5ebd9ab6ba3" title="Permalink to this equation">#</a></span>\[\begin{equation}
+F = \exp\left( \int S \d{y} \right)
+\end{equation}\]</div>
+<p>If neither works, you can try guessing, but this can be difficult.</p>
+</aside>
+<p>Let’s use these formulas to arrive at the integrating factor we used above:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-bd47a68b-2c10-47a0-89f6-6772a9348950">
+<span class="eqno">(5.95)<a class="headerlink" href="#equation-bd47a68b-2c10-47a0-89f6-6772a9348950" title="Permalink to this equation">#</a></span>\[\begin{equation}
+R = \frac{1}{x}(-1 - 1) = -\frac{2}{x}
+\end{equation}\]</div>
+<p>is a function of only <em>x</em> so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9a724f49-1b40-4645-a59a-d523b7954c5b">
+<span class="eqno">(5.96)<a class="headerlink" href="#equation-9a724f49-1b40-4645-a59a-d523b7954c5b" title="Permalink to this equation">#</a></span>\[\begin{align}
+F(x) &amp;= \exp\left( \int -\frac{2}{x} \d{x} \right) \\
+&amp;= \exp\left( -2 \ln x\right) \\
+&amp;= \left( e^{\ln x} \right)^{-2} \\
+&amp;= \frac{1}{x^2}
+\end{align}\]</div>
+<p>Note that this is not the only suitable integrating factor! Let’s try the <em>S</em>
+route for fun:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-36405c5f-1580-414f-8b02-4af54f46d65e">
+<span class="eqno">(5.97)<a class="headerlink" href="#equation-36405c5f-1580-414f-8b02-4af54f46d65e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+S = -\frac{Q}{P} R = -\frac{x}{-y} \left( -\frac{2}{x}\right) = -\frac{2}{y}
+\end{equation}\]</div>
+<p><em>S</em> is a function of only <em>y</em> so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-df058509-e4d5-44e1-9500-2cea40316806">
+<span class="eqno">(5.98)<a class="headerlink" href="#equation-df058509-e4d5-44e1-9500-2cea40316806" title="Permalink to this equation">#</a></span>\[\begin{equation}
+F = \exp\left( \int -\frac{2}{y} \d{y} \right) = \frac{1}{y^2}
+\end{equation}\]</div>
+<p>is another suitable integrating factor.</p>
+</section>
+<section id="application-to-linear-first-order-odes">
+<h2><span class="section-number">5.7.2. </span>Application to linear first-order ODEs<a class="headerlink" href="#application-to-linear-first-order-odes" title="Link to this heading">#</a></h2>
+<aside class="topic">
+<p class="topic-title">Integrating factor for linear first-order ODEs</p>
+<p>For linear first-order ODES,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f053ae74-40a4-4c61-88bc-e5e32cc59e5a">
+<span class="eqno">(5.99)<a class="headerlink" href="#equation-f053ae74-40a4-4c61-88bc-e5e32cc59e5a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y' + p(x)y = r(x)
+\end{equation}\]</div>
+<p>Use of an integrating factor <em>F</em> gives the general solution:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b9b06b52-9227-43c9-82c6-35439e3a5a72">
+<span class="eqno">(5.100)<a class="headerlink" href="#equation-b9b06b52-9227-43c9-82c6-35439e3a5a72" title="Permalink to this equation">#</a></span>\[\begin{align}
+y(x) &amp;= \frac{1}{F} \left( \int F r \d{x} + c \right) \\
+F &amp;= \exp\left(\int p \d{x}\right)
+\end{align}\]</div>
+</aside>
+<div class="admonition-example-mole-balance-on-a-tank-with-increasing-inlet-outlet-flow-rate admonition">
+<p class="admonition-title">Example: Mole balance on a tank with increasing inlet/outlet flow rate.</p>
+<p>A stream with concentration <span class="math notranslate nohighlight">\(c_{{\rm f},{\rm A}}\)</span> of solute A flows into a tank
+with initial volume <em>V</em> at a continuously increasing volumetric flow rate
+<span class="math notranslate nohighlight">\(Q = \dot q t\)</span>, where <span class="math notranslate nohighlight">\(\dot q\)</span> is the rate of increase in the flow rate and
+<em>t</em> is time. A well-mixed stream is withdrawn from the tank at the same rate.</p>
+<a class="reference internal image-reference" href="../_images/Integrating_factors_image.jpg"><img alt="Tank with inlet and outlet flows and varying concentrations" class="align-center" src="../_images/Integrating_factors_image.jpg" style="width: 300px;" />
+</a>
+<p>If there are initial <span class="math notranslate nohighlight">\(n_{{\rm A},0}\)</span> moles of the solute, derive an expression
+for the number of moles in the tank <span class="math notranslate nohighlight">\(n_{\rm A}\)</span> as a function of time.</p>
+<hr class="docutils" />
+<p>Formulate overall mole balances based on entering and exit streams.</p>
+<div class="math notranslate nohighlight">
+\[
+\dd{}{n_{\rm A}}{t} = \dot{n}_{{\rm A},\rm{in}} - \dot{n}_{{\rm A},\rm{out}}
+\]</div>
+<p>Replace the molar flowrates with the equivalent concentrations and volumetric
+flow rates</p>
+<div class="amsmath math notranslate nohighlight" id="equation-aa5f7a8b-c6af-4c93-9a9f-11fad08cf208">
+<span class="eqno">(5.101)<a class="headerlink" href="#equation-aa5f7a8b-c6af-4c93-9a9f-11fad08cf208" title="Permalink to this equation">#</a></span>\[\begin{align}
+\dot{n}_{{\rm A},\rm{in}} &amp;= c_{{\rm f},{\rm A}} Q =
+  c_{{\rm f},{\rm A}} \dot{q}t \\
+\dot{n}_{{\rm A},\rm{out}} &amp;= \frac{n_{\rm A}}{V} Q =
+  \frac{n_{\rm A}}{V} \dot{q}
+\end{align}\]</div>
+<p>so the initial value problem is</p>
+<div class="amsmath math notranslate nohighlight" id="equation-24e89340-0a5d-4c2c-8278-5958609c2837">
+<span class="eqno">(5.102)<a class="headerlink" href="#equation-24e89340-0a5d-4c2c-8278-5958609c2837" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\dot{n}_{\rm A} = c_{{\rm f},{\rm A}}\dot{q}t - \frac{n_{\rm A}}{V} \dot{q}t,
+\quad n_{\rm A}(0) = n_{{\rm A},0}
+\end{equation}\]</div>
+<p>Rewrite in standard form</p>
+<div class="amsmath math notranslate nohighlight" id="equation-aea26c6d-092a-4c99-b968-1d7439678101">
+<span class="eqno">(5.103)<a class="headerlink" href="#equation-aea26c6d-092a-4c99-b968-1d7439678101" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\dot{n}_{A} + \left(\frac{\dot{q}t}{V}\right) n_{\rm A} = c_{{\rm f},{\rm A}} \dot{q}t
+\end{equation}\]</div>
+<p>This is a linear first-order ODE with</p>
+<div class="amsmath math notranslate nohighlight" id="equation-73a1ca7a-114e-49ac-a179-fd76520d223a">
+<span class="eqno">(5.104)<a class="headerlink" href="#equation-73a1ca7a-114e-49ac-a179-fd76520d223a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+p = \frac{\dot{q}t}{V} \qquad r = c_{{\rm f},{\rm A}} \dot{q}t
+\end{equation}\]</div>
+<p>that can be solved using an integrating factor:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f86ca586-226a-4d91-81f9-681929bb8b8a">
+<span class="eqno">(5.105)<a class="headerlink" href="#equation-f86ca586-226a-4d91-81f9-681929bb8b8a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+F = e^{\int p \d{t}} = \exp\left(\int{\frac{\dot{q}t}{V} \d{t}}\right) =
+  \exp\left(\frac{1}{2}\frac{\dot{q} t^2}{V}\right)
+\end{equation}\]</div>
+<p>Then, evaluate the integral</p>
+<div class="amsmath math notranslate nohighlight" id="equation-fa25855e-5fdb-4128-a481-b6caf8cec4d7">
+<span class="eqno">(5.106)<a class="headerlink" href="#equation-fa25855e-5fdb-4128-a481-b6caf8cec4d7" title="Permalink to this equation">#</a></span>\[\begin{align}
+\int F r \d{t} &amp;= \int \exp\left(\frac{1}{2}\frac{\dot{q} t^2}{V}\right)
+  c_{{\rm f},{\rm A}}\dot{q}t \d{t} \\
+&amp;= \int{e^{u}c_{{\rm f},{\rm A}}Vdu} \\
+&amp;= c_{{\rm f},{\rm A}}V e^u \\
+&amp;= c_{{\rm f},{\rm A}}V \exp\left(\frac{1}{2}\frac{\dot{q}t^2}{V}\right)
+\end{align}\]</div>
+<p>using the <em>u</em> substitution:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e7f5b647-ae16-49ea-bde1-6ddd704bf210">
+<span class="eqno">(5.107)<a class="headerlink" href="#equation-e7f5b647-ae16-49ea-bde1-6ddd704bf210" title="Permalink to this equation">#</a></span>\[\begin{align}
+u &amp;= \frac{1}{2}\frac{\dot{q} t^2}{V} \\
+\d{u} &amp;= \frac{\dot{q} t}{V} \d{t}
+\end{align}\]</div>
+<p>Last, combine the results:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9ba77e1b-8119-4c3d-a1a5-fcaebd811a8a">
+<span class="eqno">(5.108)<a class="headerlink" href="#equation-9ba77e1b-8119-4c3d-a1a5-fcaebd811a8a" title="Permalink to this equation">#</a></span>\[\begin{align}
+n_{\rm A}(t) &amp;= \frac{1}{F} \left(\int F r \d{t} + c \right) \\
+&amp;= c_{{\rm f},{\rm A}} V + c \exp\left(-\frac{1}{2}\frac{\dot{q}t^2}{V}\right)
+\end{align}\]</div>
+<p>Use the inital conditions to evaluate the integration constant:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-56611872-a0eb-4e99-a2ef-6458e1b48809">
+<span class="eqno">(5.109)<a class="headerlink" href="#equation-56611872-a0eb-4e99-a2ef-6458e1b48809" title="Permalink to this equation">#</a></span>\[\begin{align}
+n_{\rm A}(0) &amp;= c_{{\rm f},{\rm A}}V + c = n_{{\rm A},0} \\
+c &amp;= n_{{\rm A}, 0} - c_{{\rm f},{\rm A}} V
+\end{align}\]</div>
+<p>The final result is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b30a43b0-45a6-432d-919b-5ed0f4e483ee">
+<span class="eqno">(5.110)<a class="headerlink" href="#equation-b30a43b0-45a6-432d-919b-5ed0f4e483ee" title="Permalink to this equation">#</a></span>\[\begin{equation}
+n_{\rm A}(t) = c_{{\rm f},{\rm A}}V + (n_{{\rm A},0} - c_{{\rm f},{\rm A}}V) \exp\left(-\frac{1}{2}\frac{\dot{q}t^2}{V}\right)
+\end{equation}\]</div>
+</div>
+<div class="admonition-example-hormone-level-again admonition">
+<p class="admonition-title">Example: Hormone level (again)</p>
+<p>We had</p>
+<div class="amsmath math notranslate nohighlight" id="equation-36ae3068-7226-42df-b45e-1f4a7bf4e01f">
+<span class="eqno">(5.111)<a class="headerlink" href="#equation-36ae3068-7226-42df-b45e-1f4a7bf4e01f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+c' + kc = A + B\cos\left(\frac{\pi t}{12}\right), \quad c(0) = c_0
+\end{equation}\]</div>
+<p>This is a linear first-order ODE with:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-3949321c-4eee-4e72-9f6c-26688f323079">
+<span class="eqno">(5.112)<a class="headerlink" href="#equation-3949321c-4eee-4e72-9f6c-26688f323079" title="Permalink to this equation">#</a></span>\[\begin{equation}
+p = kc \qquad r = A + B\cos\left(\frac{\pi t}{12}\right)
+\end{equation}\]</div>
+<p>that can be solved using an integrating factor:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a72aea23-f2df-4dee-ae2e-7c9a41ecd537">
+<span class="eqno">(5.113)<a class="headerlink" href="#equation-a72aea23-f2df-4dee-ae2e-7c9a41ecd537" title="Permalink to this equation">#</a></span>\[\begin{equation}
+F = e^{\int k \d{t}} = e^{kt}
+\end{equation}\]</div>
+<p>Then, evaluate the integral using the table of integrals or integration by parts
+to evaluate the second integral in the equation</p>
+<div class="amsmath math notranslate nohighlight" id="equation-85f21aa3-95c2-4a26-b7ef-29dc02e5e409">
+<span class="eqno">(5.114)<a class="headerlink" href="#equation-85f21aa3-95c2-4a26-b7ef-29dc02e5e409" title="Permalink to this equation">#</a></span>\[\begin{align}
+\int F r \d{t} &amp;= \int e^{kt}
+  \left[A+B\cos\left(\frac{\pi t}{12}\right)\right]\d{t} \\
+&amp;= A\int e^{kt} \d{t} + B \int e^{kt} \cos\left(\frac{\pi t}{12}\right)\d{t} \\
+&amp;= \frac{A}{k} e^{kt} + B \frac{e^{kt}}{k^{2}+(\pi/12)^2}
+  \Biggl[k \cos{(\frac{\pi t}{12})} +
+  \frac{\pi}{12}\sin{\left(\frac{\pi t}{12}\right)}\Biggr]
+\end{align}\]</div>
+<p>The general solution is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-3df97537-f5a5-4a30-96fb-abc602c2e850">
+<span class="eqno">(5.115)<a class="headerlink" href="#equation-3df97537-f5a5-4a30-96fb-abc602c2e850" title="Permalink to this equation">#</a></span>\[\begin{align}
+c(t) &amp;= \frac{1}{F} \left(\int F r \d{t} + c^* \right) \\
+     &amp;= \frac{A}{k} + \frac{B}{k^{2}+(\pi/12)^2}
+  \Biggl[k \cos\left(\frac{\pi t}{12}\right)
+         + \frac{\pi}{12}\sin{\left(\frac{\pi t}{12}\right)}\Biggr]
+  + c^* e^{-kt}
+\end{align}\]</div>
+<p>Use the inital condition to evaluate the integration constant:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-010bf40a-8de9-40b2-b178-5b65f5ad24ef">
+<span class="eqno">(5.116)<a class="headerlink" href="#equation-010bf40a-8de9-40b2-b178-5b65f5ad24ef" title="Permalink to this equation">#</a></span>\[\begin{align}
+c(0) &amp;= \frac{A}{k} + \frac{B}{k^{2}+(\pi/12)^2} k + c^* = c_0 \\
+c^* &amp;= c_0 - \frac{A}{k} - \frac{B}{k^{2}+(\pi/12)^2} k
+\end{align}\]</div>
+<p>The final solution is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1673f27b-d40d-4e34-9dca-207991f5f8ee">
+<span class="eqno">(5.117)<a class="headerlink" href="#equation-1673f27b-d40d-4e34-9dca-207991f5f8ee" title="Permalink to this equation">#</a></span>\[\begin{align}
+c(t) &amp;= \frac{A}{k}
+  + \frac{B}{k^{2}+(\pi/12)^2} \Biggl[k \cos\left(\frac{\pi t}{12}\right) +
+  \frac{\pi}{12}\sin{\left(\frac{\pi t}{12}\right)}\Biggr] \\
+  &amp;+ \Biggl[c_0 - \frac{A}{k} - \frac{Bk}{k^{2}+(\pi/12)^2} \Biggr] e^{-kt}
+\end{align}\]</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -486,6 +732,22 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-integrating-factor">5.7.1. Finding the integrating factor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application-to-linear-first-order-odes">5.7.2. Application to linear first-order ODEs</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
