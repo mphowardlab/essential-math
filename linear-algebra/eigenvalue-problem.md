@@ -45,6 +45,15 @@ $\lambda=-1$:
 x_2 free
 \end{align}
 
+This solution is not unique, which makes sense from the equation. We may then choose x_1 or x_2 so that the eigenvector has a nice norm or values. e.g.,
+\begin{align}
+x_1 =1, x_2 = 2 \to \underline{x}= \begin{bmatrix} 1 \\ 2 
+\end{align}
+
+Repeat for $\lambda = -6$:
+\begin{align}
+\begin{bmatrix} -5 -(-6) & 2 \\ 2 & -2-(-6) \end{bmatrix} \underline{x} = \begin{bmatrix} 1 & 2 \\ 2 & 4 \underline{x} =0
+
 ## Multiple eigenvalues
 
 An *n* x *n* matrix has *n* eigenvalues, but they may not be distinct! For
