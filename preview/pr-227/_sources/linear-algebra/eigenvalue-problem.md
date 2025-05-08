@@ -55,6 +55,17 @@ Repeat for $\lambda = -6$:
 \begin{bmatrix} -5 -(-6) & 2 \\ 2 & -2-(-6) \end{bmatrix} \underline{x} = \begin{bmatrix} 1 & 2 \\ 2 & 4 \end{bmatrix}\underline{x} =0
 \end{align}
 
+Row 2 is 2x Row 1, so we can just use Row 1!(This will be a pattern for 2x2 matricies).
+
+\begin{align}
+x_1 +2x_2 =0 \to \underline{x}=\begin{bmatrix} 2 \\ -1 \end{bmatrix}
+\end{align}
+
+Hence, the eigenvalues and eigenvectors are:
+\begin{align}
+\lambda_1 , \underline{x_1}= \begin{bmatrix} 1 \\ 2 \end{bmatrix} and \lambda_2 = -6, \underline{x_2}= \begin{bmatrix} 2 \\ -1 \end{bmatrix}
+\end{align}
+
 
 ## Multiple eigenvalues
 
