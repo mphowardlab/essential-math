@@ -27,6 +27,7 @@ This work (c) 2025 is licensed under
 - Evan M. Hughes
 - Tony Jasso
 - Esther Laiming
+- Hyeongju Lee
 - Gwyneth A. Lovell
 - Abby Lucas
 - Dylan Lunsford
