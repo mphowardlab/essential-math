@@ -264,11 +264,12 @@ The average concentration is:
 Solve the following:
 
 
-3. $y' - y = 1 - 2x + \sin(3x), \quad y(0) = -1 $
+ 3. $y' - y = 1 - 2x + \sin(3x), \quad y(0) = -1 $
 
-   ```{solution}
-   
-   \begin{align}
+```{solution}
+.
+
+ \begin{align}
    L[y' - y] &= L[1 - 2x + \sin(3x)] \\
    sY - y(0) - Y &= \frac{1}{s} - \frac{2}{s^2} + \frac{3}{s^2 + 9} \\
    (s-1)Y &= -1 + \frac{1}{s} - \frac{2}{s^2} + \frac{3}{s^2 + 9} 
@@ -305,7 +306,6 @@ Solve the following:
 s^2 &: A_6 + \frac{3}{10} = 0  \quad A_6 = -\frac{3}{10} \\
 s^0 &: -B_6 + \frac{27}{10} = 3 \quad B_6 = -\frac{3}{10} \\
 \end{align}
-
 
 
 Simplify your y:
