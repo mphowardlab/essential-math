@@ -34,6 +34,7 @@ This work (c) 2025 is licensed under
 - John R. Marshall, IV
 - Davis McCaleb
 - Amber N. McMillan
+- Arthur McPherson
 - Lilli Midgette
 - Maison Miller
 - Mason Miller
