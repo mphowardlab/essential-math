@@ -30,9 +30,9 @@ This determinant creates a $\underline{ characteristic \, polynomial}$ for $\lam
 
 Ex:
 \begin{align}
-\vv{A} = \begin{bmatrix} -5 & 2\\ 2 & 2 \end{bmatrix}  
+\vv{A} = \begin{bmatrix} -5 & 2\\ 2 & -2 \end{bmatrix}  
 \\
-|\vv{A} -\lambda \vv{I}| = \begin{bmatrix} -5-\lambda & 2 \\ 2 & -2-\lambda \end{bmatrix} = (-5 -\lambda)(-2-\lambda)-2\cdot2 =(\lambda + 5)(\lambda +2) -4
+| \vv{A} -\lambda \vv{I} | = \begin{bmatrix} -5-\lambda & 2 \\ 2 & -2-\lambda \end{bmatrix} = (-5 -\lambda)(-2-\lambda)-2\cdot2 =(\lambda + 5)(\lambda +2) -4
 \\
 =\lambda^2 +7\lambda + 6 = (\lambda +1)(\lambda +6)=0 \to \underline{\lambda = -1, -6}
 \end{align}
