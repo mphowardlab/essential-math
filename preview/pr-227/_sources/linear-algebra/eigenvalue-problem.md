@@ -18,8 +18,7 @@ We want $\underline{nontrivial}$ solutions $(\underline{x} \ne \underline{0})$. 
 \vv{A} \underline{x} - \lambda \vv{I} \underline{x} = 0
 
 (\vv{A} - \lambda \vv{I} )\underline{x} =  0
-
-
+\end{align}
 
 
 
