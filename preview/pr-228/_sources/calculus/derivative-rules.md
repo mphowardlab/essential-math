@@ -9,7 +9,7 @@ product of two smaller functions.
 If $f(x) = u(x) v(x)$, then
 
 \begin{align}
-f'(x) &= u v' + v u ' \\
+f' &= u v' + v u ' \\
 &= u \dd{}{v}{x} + v \dd{}{u}{x}
 \end{align}
 ```
@@ -100,54 +100,62 @@ functions that are hard to expand!
    &= \frac{x^2+3}{x} + 2x\ln x
    \end{align}
 
-## Quotient Rule 
-
-If the quotient rule you wish to know, it's "low-d-high less high-d-low" then draw the line and down below, denominator squared will go.
+## Quotient Rule
 
 ```{topic} Quotient Rule
-If a function $f(x)$ can be written as $f (x) = \frac{u(x)}{v(x)}$ and $ v (x) \ne 0$, then:
+If a function $f(x) = u(x) / v(x)$ and $v(x) \ne 0$, then:
+
 \begin{equation}
-f'(x) = \frac{v u' - u v'}{v^2}
+f' = \frac{v u' - u v'}{v^2}
 \end{equation}
 ```
 
-To demonstrate this rule, consider $f(x) = \frac{x-1}{x}$. Previously, we would have needed to separate the numerator before differentiating:
+```{hint}
+One mnemonic that may or may not help remember this:
 
-\begin{align} 
-f(x) &= 1 - \frac{1}{x} \\ 
-f' &= 0 + \frac{1}{x^2} &= \frac{1}{x^2}
-\end{align}
+If the quotient rule you wish to know, it's "low-d-high less high-d-low"... then
+draw the line and, down below, denominator squared will go.
+```
 
-With the qoutient rule, instead we recognize 
+To demonstrate this rule, consider $f(x) = (x-1)/x$. Previously, we would
+have needed to separate the numerator before differentiating:
 
 \begin{align}
-u &= x - 1 & v &= x \\ 
-u' &= 1 & v' &= 1 
+f(x) &= 1 - \frac{1}{x} \\
+f'(x) &= \frac{1}{x^2}
 \end{align}
 
-so 
+With the qoutient rule, instead we recognize
+
+\begin{align}
+u &= x - 1 & v &= x \\
+u' &= 1 & v' &= 1
+\end{align}
+
+so
 
 \begin{equation}
-f' = \frac{ x \cdot 1 - (x-1) \cdot 1 }{x^2} = \frac{1}{x^2}
+f' = \frac{ x \cdot 1 - (x-1) \cdot 1}{x^2} = \frac{1}{x^2}
 \end{equation}
 
-This was obviously harder than the old way, but there are other cases where it is helpful to do the quotient rule!
+This was obviously harder than the old way, but there are other cases where it
+is helpful to do the quotient rule!
 
-
-1. $f(x) = \frac{x^2 -1}{x^4 + 2}$
+1. $\displaystyle f(x) = \frac{x^2 -1}{x^4 + 2}$
 
    \begin{align}
    u &= x^2 -1 & v &= x^4 +2 \\
-   u' &= 2x & v' =& 4x^3
+   u' &= 2x & v' &= 4x^3
    \end{align}
 
    so
 
-   \begin{equation}
-   f'(x) = \frac{ (x^4 + 2) \cdot (2x) - (x^2 - 1) \cdot (4x^3)}{(x^4 +2)^2} = \frac{2x^5 + 4x^2 - 4x^5 +4x^3}{x^8 + 2x^4 + 4}
-   \end{equation}
+   \begin{align}
+   f'(x) &= \frac{ (x^4 + 2) \cdot (2x) - (x^2 - 1) \cdot (4x^3)}{(x^4 +2)^2}\\
+    &= \frac{2x^5 + 4x^2 - 4x^5 +4x^3}{x^8 + 2x^4 + 4}
+   \end{align}
 
-2.  $f(x) = \frac{e^{x}}{1 + x}$
+2. $\displaystyle f(x) = \frac{e^{x}}{1 + x}$
 
    \begin{align}
    u &= e^{x} & v &= 1 + x \\
@@ -156,31 +164,29 @@ This was obviously harder than the old way, but there are other cases where it i
 
    so
 
-   \begin{equation}
-   f'(x) = \frac{(1 + x) \cdot e^{x} - e^{x} \cdot 1}{(1 + x)^2} = \frac{x \cdot e^{x}}{(1 + x)^2}
-   \end{equation}
+   \begin{align}
+   f'(x) &= \frac{(1 + x) \cdot e^{x} - e^{x} \cdot 1}{(1 + x)^2} \\
+   &= \frac{x e^{x}}{(1 + x)^2}
+   \end{align}
 
-3. $f(x) = \frac{(x - 1) \cdot (x^2 - 2x)}{x^4}$
+3. $\displaystyle f(x) = \frac{(x - 1)(x^2 - 2x)}{x^4}$
 
    \begin{align}
-   u &= (x -1) \cdot (x^2 -2x) \\
-   u' &= (x - 1) \cdot (2x-2)
+   u &=  & v &= x^4\\
+   u' &= 3x^2 - 6x + 2 & v' &= 4x^3 \\
    \end{align}
 
    so
 
-   \begin{equation}
-   f'(x) = \frac{x^4 \cdot (x - 1) \cdot (2x - 2) - (x - 1) \cdot (x^2 -2x) \cdot (4x^3)}{x^8}
-   \end{equation}
+   \begin{align}
+   f'(x) &= \frac{x^4 \cdot (3x^2-6x+2) - (x^3 -3x^2 +2x) \cdot 4x^3}{x^8} \\
+     &= \frac{-x^6 + 6x^5 - 6x^4}{x^8} \\
+     &= -\frac{1}{x^2} + \frac{6}{x^3} - \frac{6}{x^4}
+   \end{align}
 
-   v.s
-
-   \begin{equation}
-   f(x) = \frac{1}{x^4} \cdot x^3 -3x^2 +2x = x^-1 -3x^-2 +2x^-3
-   f'(x) = -\frac{1}{x^2} + \frac{6}{x^3} - \frac{6}{x^4}
-   \end{equation}
-
-Fastest way depends on the problem!
+   Note, though, that in this case we could also have expanded the numerator,
+   divided through by $x^8$, and differentiated term-by-term to arrive at the
+   same answer. The faster route depends on the problem!
 
 ## Chain rule
 
@@ -190,7 +196,7 @@ of the function is more complicated than what we know.
 ```{topic} Chain rule
 If a function $f(x)$ can be written as $f(u(x))$, then:
 \begin{equation}
-f'(x) = \dd{}{f}{u} \dd{}{u}{x} = f'(u) u'(x)
+f' = \dd{}{f}{u} \dd{}{u}{x} = f'(u(x)) u'(x)
 \end{equation}
 ```
 
