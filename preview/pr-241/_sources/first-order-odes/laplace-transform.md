@@ -267,14 +267,14 @@ Solve the following:
 1. $y' - y = 1 - 2x + \sin(3x), \quad y(0) = -1 $
 
 ```{solution}
- Step 1 
+.
 \begin{equation}
 \mathcal{L}\{y' - y\} = \mathcal{L}\{1 - 2x + \sin(3y)\}
 \end{equation}
 
 ---
 
-Step 2
+
 \begin{align}
 sY - y(0) - Y &= \frac{1}{s} - \frac{2}{s^2} + \frac{3}{s^2 + 9} \\
 (s-1)Y &= -1 + \frac{1}{s} - \frac{2}{s^2} + \frac{3}{s^2 + 9} \\
@@ -284,7 +284,7 @@ Y &= -\frac{1}{s - 1} + \frac{1}{s(s - 1)} - \frac{2}{s^2(s - 1)} + \frac{3}{(s^
 
  ---
 
-Step 3
+
 
 \begin{align}
 \text{Cover up:}\quad 
@@ -297,7 +297,7 @@ Step 3
 
 ---
 
-Step 4
+
 \begin{align}
 \text{Finish the rest...}\quad 
 2 &= A_3s(s-1) + 2(s-1) - 2s^2 \\
@@ -313,7 +313,7 @@ s^0 &: -B_6 + \frac{27}{10} = 3 \rightarrow B_6 = -\frac{3}{10} \\
 
 ---
 
-Step 5 
+
 
 \begin{align}
 \text{So,}\quad
@@ -324,7 +324,11 @@ y &= -\frac{1}{s-1} - \frac{1}{s} + \frac{1}{s-1} + \frac{2}{s} + \frac{2}{s^2} 
  ---
 
  \begin{equation}
-y = \mathcal{L}^{-1}\{y\} = \mathcal{L}^{-1}\{\frac{1}{s}\} + 2\mathcal{L}^{-1}\{\frac{1}{s^2}\} - \frac{17}{10}\mathcal{L}^{-1}\{\frac{1}{s-1}\} - \frac{1}{10}\mathcal{L}^{-1}\{\frac{3}{s^2+9}} - \frac{3}{10}\mathcal{L}^{-1}\{\frac{s}{s^2+9}}
+y = \mathcal{L}^{-1} \left\{ \frac{1}{s} \right\}
+  + 2 \mathcal{L}^{-1} \left\{ \frac{1}{s^2} \right\}
+  - \frac{17}{10} \mathcal{L}^{-1} \left\{ \frac{1}{s - 1} \right\}
+  - \frac{1}{10} \mathcal{L}^{-1} \left\{ \frac{3}{s^2 + 9} \right\}
+  - \frac{3}{10} \mathcal{L}^{-1} \left\{ \frac{s}{s^2 + 9} \right\}
 \end{equation}
 
 \boxed{y = 1 +2x \frac{17}{10} e^x - \frac{1}{10} \sin(3x) - \frac{3}{10} \cos(3x)}
