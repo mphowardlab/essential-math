@@ -306,7 +306,7 @@ s^2 &: A_6 + \frac{3}{10} = 0  A_6 = -\frac{3}{10} \\
 s^0 &: -B_6 + \frac{27}{10} = 3 B_6 = -\frac{3}{10} \\
 \end{align}
 
----
+
 
 Simplify your y:
 
