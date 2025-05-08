@@ -134,7 +134,6 @@ The graph shows $\theta = \frac{3\pi}{4}$ and $\theta' = \frac{\pi}{4}$ so:
 \end{equation}
 
 In quadrant two sine is positive so:
-<<<<<<< HEAD
 \begin{equation}
 \sin(\theta) = \frac{1}{\sqrt{2}} \quad \cos(\theta)& = -\frac{1}{\sqrt{2}}
 \end{equation}>
