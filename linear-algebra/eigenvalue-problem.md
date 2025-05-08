@@ -10,14 +10,14 @@ and vector $\underline{x}$ such that :
 \vv{A}   \underline{x} =\lambda\underline{x} 
 \end{align}
 
-We want \underline{nontrivial} solutions (\underline{x} \ne \underline{0}). To find them:
+We want $\underline{nontrivial}$ solutions $(\underline{x} \ne \underline{0})$. To find them:
 
 \begin{align}
-\vv{A} \underline{x} - \lambda \underline{x} = \underline{0}
+\vv{A} \underline{x} - \lambda \underline{x} = 0
 
-\vv{A} \underline{x} - \lambda \vv{I} \underline{x} = \underline{0}
+\vv{A} \underline{x} - \lambda \vv{I} \underline{x} = 0
 
-(\vv{A} - \lambda \vv{I} )\underline{x} =  \underline{0}
+(\vv{A} - \lambda \vv{I} )\underline{x} =  0
 
 
 
