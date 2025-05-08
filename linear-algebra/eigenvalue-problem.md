@@ -1,12 +1,15 @@
 # Eigenvalue problem
 
+<<<<<<< HEAD
+For an $n\times n$ square matrix $\underline{\underline{A}$  , there is a scalar $\lambda$ 
+and vector $\underline{x}$ such that :
 
 For an n\timesn square matrix $\underline{\underline{A}$}  , there is a scalar \lambda 
 and vector \underline{x} such that :
 
 
+
 \begin{align}
-\underline{\underline{A}} \underline{x} =\lamda\underline{x} 
 \underline{\underline{A}}   \underline{x} =\lambda\underline{x} 
 \end{align}
 
