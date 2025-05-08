@@ -283,7 +283,7 @@ Y &= -\frac{1}{s - 1} + \frac{1}{s(s - 1)} - \frac{2}{s^2(s - 1)} + \frac{3}{(s^
 Step 3
 
 \begin{align*}
-\text{Cover up:}\quad & A_1 =\frac{1}{0-1} = -1 \\ & A_2 =\frac{1}{1} = 1 \\ & A_4 = \frac{-2}{0 - 1} = 2 \\ & A_5 = \frac{-2}{1} = -2 \\ & A_7 = \frac{3}{12 + 8} = \frac{3}{20} 
+\text{Cover up:}\quad & A_1 =\frac{1}{0-1} = -1 \\ & A_2 =\frac{1}{1} = 1 \\ & A_4 = \frac{-2}{0 - 1} = 2 \\ & A_5 = \frac{-2}{1} = -2 \\ & A_7 = \frac{3}{1^2 + 9} = \frac{3}{10} 
 \end{align*}
 
 
