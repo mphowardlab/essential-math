@@ -63,7 +63,7 @@ x_1 +2x_2 =0 \to \underline{x}=\begin{bmatrix} 2 \\ -1 \end{bmatrix}
 
 Hence, the eigenvalues and eigenvectors are:
 \begin{align}
-\lambda_1 = -1 , \underline{x_1}= \begin{bmatrix} 1 \\ 2 \end{bmatrix} \, \text{and} \, \lambda_2 = -6, \underline{x_2}= \begin{bmatrix} 2 \\ -1 \end{bmatrix}
+\lambda_1 = -1 , \underline{x_1}= \begin{bmatrix} 1 \\ 2 \end{bmatrix} \quad \text{and} \quad \lambda_2 = -6, \underline{x_2}= \begin{bmatrix} 2 \\ -1 \end{bmatrix}
 \end{align}
 
 
