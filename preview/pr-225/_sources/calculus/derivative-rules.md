@@ -210,59 +210,68 @@ f'(x) &= -(\sin x)^{-2} \dd{}{}{x}(\sin x) \\
   &= -\csc x \cot x
 \end{align}
 
-```{example} Harmonic oscillator
+````{example} Harmonic oscillator
+A harmonic oscillator is a mass *m* on a Hookean spring. The spring force is
+$F = -kx$, where *k* is the spring constant and *x* is the displacement of the
+mass.
 
-![Diagram of a harmonic oscillator](_images/oscillating-diagram.png)
-
-\begin{equation*}
-F=-kx
-\end{equation*}
-
-\begin{equation*}
-x(t)=x(0)\cos\left(\frac{2\pi t}{T}\right) 
-\end{equation*}
-
-\begin{equation*}
-T = \frac{1}{2\pi} \sqrt{\frac{m}{k}}
-\end{equation*}
-
-![Plot of T vs x](_images/oscillating-graph.png)
-
-How fast is the oscillator moving?
-
-\begin{align*}
-u &= \frac{2\pi t}{T} \\
-f(u) &= x(0)\cos(u) \\
-f'(u) &= -x(0)\sin(u) \\
-u' &= \frac{2\pi}{T} \\
-v(t) &= \frac{d}{dt}x(t) = f'(u) \cdot u' = -x(0)\sin\left(\frac{2\pi t}{T}\right) \cdot \frac{2\pi}{T}
-\end{align*}
-
-\begin{equation*}
-v(t)=-\frac{2\pi x(0)}{T} \sin\left(\frac{2\pi t}{T}\right)
-\end{equation*}
-
-When is the oscillator moving *fastest*?
-
-A function is at an *extrema* when its derivative is zero. If the function is velocity, this is
-\begin{equation*}
-a=v'=0
-\end{equation*}
-i.e., it's not accelerating!
-
-\begin{align*}
-a&=v'=-\left(\frac{2\pi}{T}\right)^2 x(0) \cos\left(\frac{2\pi t}{T}\right) = 0 \\
-t&= {T/4} \text{or} {3T/4}
-\end{align*}
-
-This is when
-\begin{equation*}
-x(t)=0  
-\end{equation*}
-and the spring is not stretched!
-
-Under these conditions, all of the potential energy is kinetic energy. 
+```{image} ./_images/oscillating-diagram.png
+:alt: Harmonic oscillator
+:width: 300px
+:align: center
 ```
+
+If the mass is initially displaced to $x(0)$, it will then move according to:
+
+\begin{equation}
+x(t) = x(0) \cos\left(\frac{2\pi t}{T}\right)
+\end{equation}
+
+where
+
+\begin{equation}
+T = \frac{1}{2\pi} \sqrt{\frac{m}{k}}
+\end{equation}
+
+```{image} ./_images/oscillating-graph.png
+:alt: Oscillator displacement
+:width: 300px
+:align: center
+```
+
+How fast is the oscillator moving at any given time? When is the oscillator
+moving fastest?
+
+---
+
+We want to calculate the velocity $v = x'(t)$. Use the chain rule with:
+
+\begin{align}
+u &= \frac{2\pi t}{T} & f &= x(0) \cos u \\
+u' &= \frac{2\pi}{T} & f' &= -x(0) \sin u
+\end{align}
+
+so
+
+\begin{align}
+v &= \dd{}{x}{t} = f'(u) \cdot u' \\
+  &= -x(0) \sin u \cdot u' \\
+  &= -\frac{2\pi x(0)}{T} \sin\left(\frac{2\pi t}{T}\right)
+\end{align}
+
+A function is at an *extrema* when its derivative is zero. If the function is
+velocity, this derivative is the acceleration *a* and is equal to zero,
+$a = v' = 0$. This means the mass is not accelerating! Using the chain rule
+again:
+
+\begin{equation}
+a = v' =
+  -\left(\frac{2\pi}{T}\right)^2 x(0) \cos\left(\frac{2\pi t}{T}\right) = 0
+\end{equation}
+
+The roots occur at $t = T/4$ or $3T/4$, when $x = 0$ and the spring is no longer
+stretched. All potential energy has been converted to kinetic energy!
+````
 
 ## Skill builder problems
 
