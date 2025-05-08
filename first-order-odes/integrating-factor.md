@@ -6,8 +6,8 @@
 $$
 \begin{aligned}
   -y \, dx + x \, dy &= 0 \quad && \text{(given)} \\
-  P &= -y, \quad && Q = x \\
-  \frac{\partial P}{\partial y} &= -1, \quad && \frac{\partial Q}{\partial x} = 1 \\
+  P = -y, \quad && Q = x \\
+  \frac{\partial P}{\partial y} = -1, \quad && \frac{\partial Q}{\partial x} = 1 \\
   &\Rightarrow \text{Not exact!}
 \end{aligned}
 $$
@@ -104,7 +104,7 @@ $$
 
 $$
 \begin{align}
-F(x) &= \exp\left( \int \frac{-2}{x} \, dx \right)
+F(x) = \exp\left( \int \frac{-2}{x} \, dx \right)
 = \exp( -2 \ln(x)) = \left( e^{\ln(x)} \right)^{-2} = \frac{1}{x^2}
 \end{align}
 $$
@@ -113,7 +113,7 @@ $$
 
 $$
 \begin{align}
-S &= -\frac{Q}{P} \cdot R = -\frac{x}{-y} \cdot \left( \frac{-2}{x}\right) = \frac{-2}{y} 
+S = -\frac{Q}{P} \cdot R = -\frac{x}{-y} \cdot \left( \frac{-2}{x}\right) = \frac{-2}{y} 
 \end{align}
 $$
 
@@ -121,7 +121,7 @@ $$
 
 $$
 \begin{align}
-F(y) &= \exp\left( \int \frac{-2}{y} \, dy \right) 
+F(y) = \exp\left( \int \frac{-2}{y} \, dy \right) 
 = \frac{1}{y^2}
 \end{align}
 $$
