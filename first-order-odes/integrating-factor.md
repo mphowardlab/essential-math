@@ -43,11 +43,16 @@ $$
 \begin{align}
 \frac{\partial ( F P)}{\partial y} &= -\frac{1}{x^2} \\
 \frac{\partial (F Q)}{\partial x} &= -\frac{1}{x^2} \\
-\quad && \text{(exact!)}
 \end{align}
 $$
 
-### Now the equation is exact.
+$$
+\begin{equation}
+\frac{\partial ( F P)}{\partial y} &= -\frac{\partial (F Q)}{\partial x}
+\end{equation}
+$$
+
+**Now the equation is exact.**
 
 
 ---
