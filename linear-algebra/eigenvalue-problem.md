@@ -26,16 +26,17 @@ If $\vv{A} - \lambda \vv{I}$ is invertible, we have only $\lambda = \underline{0
 |\vv{A}- \lambda \vv{I}= 0
 \end{align}
 
-This determinant creates a $\underline{ characteristic polynomial}$ for $\lambda$ that can be solved. Then, the $\underline{x}$ that corresponds to a given $\lambda$ can be determined.
+This determinant creates a $\underline{ characteristic  polynomial}$ for $\lambda$ that can be solved. Then, the $\underline{x}$ that corresponds to a given $\lambda$ can be determined.
 
 Ex:
 \begin{align}
 \vv{A} = \begin{bmatrix} -5 & 2\\ 2 & 2 \end{bmatrix}  
-
+\\
 |\vv{A} -\lambda \vv{I} = \begin{bmatrix} -5-\lambda & 2 \\ 2 & -2-\lambda \end{bmatrix} = (\lambda + 5)(\lambda +2) -4
-
+\\
 =\lambda^2 +7\lambda + 6 = (\lambda +1)(\lambda +6)=0 \to \lambda = -1, -6
 \end{align}
+
 
 ## Multiple eigenvalues
 
