@@ -293,7 +293,7 @@ Step 3
 & A_4 = \frac{-2}{0 - 1} = 2 \\ 
 & A_5 = \frac{-2}{1} = 2 \\ 
 & A_7 = \frac{3}{1^2 + 9} = \frac{3}{10} 
-\end{align*}
+\end{align}
 
 ---
 
