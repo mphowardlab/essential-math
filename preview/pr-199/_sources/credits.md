@@ -35,6 +35,7 @@ This work (c) 2025 is licensed under
 - Davis McCaleb
 - Amber N. McMillan
 - Lilli Midgette
+- Maison Miller
 - Mason Miller
 - Clara Mitchell
 - Elijah  C. Mitchell
@@ -49,6 +50,7 @@ This work (c) 2025 is licensed under
 - Andrea Smith
 - Katie Sorensen
 - Mary Frances Springfield
+- Nicole Teper
 - Lauren Thompson
 - Madelyn Torrance
 - Debora Vasconcelos
