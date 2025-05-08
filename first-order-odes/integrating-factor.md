@@ -33,8 +33,7 @@ Now multiply the terms:
 
 $$
 \begin{align}
-(-y)\left( \frac{1}{x^2} \right) + x\left( \frac{1}{x^2} \right) &= -\frac{y}{x^2} + \frac{1}{x} \\
-&= 0 \quad \text{(exact!)}
+(-y)\left( \frac{1}{x^2} \right) + x\left( \frac{1}{x^2} \right) &= -\frac{y}{x^2} + \frac{1}{x} = 0 \quad && \text{(exact!)}
 \end{align}
 $$
 
