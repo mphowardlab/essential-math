@@ -83,7 +83,7 @@ $$
 
 $$ 
 \begin{equation}
-F(y) &= \exp\left( \int S(y) \, dy \right) 
+F(y) = \exp\left( \int S(y) \, dy \right) 
 \end{equation}
 $$
 
