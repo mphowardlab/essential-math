@@ -133,6 +133,7 @@ while choosing an independent combination $x_2 = 0$ and $x_3 = 1$ gives
 ## Complex eigenvalues
 
 Matrices may have complex eigenvaules. They always come in conjugate pairs!
+For example, for the matrix:
 
 \begin{equation}
 \vv{A} =
@@ -142,18 +143,23 @@ Matrices may have complex eigenvaules. They always come in conjugate pairs!
 \end{bmatrix}
 \end{equation}
 
+We evaluate the determinant:
+
 \begin{align}
-| \vv{A} - \lambda  \vv{I}| &=
-\begin{vmatrix}
+|\vv{A} - \lambda  \vv{I}|
+&= \begin{vmatrix}
 -\lambda & 1 \\
 -1 & \lambda
-\end{vmatrix} =
-\lambda^2 + 1 = 0 \to \lambda_1 =i , \lambda_2 = -i
+\end{vmatrix} \\
+&= \lambda^2 + 1 = 0 \\
+\lambda_{1,2} = \pm i
 \end{align}
 
+For $\lambda_1 = i$:
+
 \begin{equation}
-\lambda_1 = i:
-\begin{bmatrix}
+\vv{A} - \lambda_1 \vv{I}
+= \begin{bmatrix}
 -i & 1 \\
 -1 & i
 \end{bmatrix}
@@ -164,28 +170,43 @@ Matrices may have complex eigenvaules. They always come in conjugate pairs!
 \end{bmatrix}
 \end{equation}
 
-\begin{equation}
--ix_1 + x_2 = 0
-\to
-\vv{x_1} =
-\begin{bmatrix}
-1 \\
-i
-\end{bmatrix}
-\end{equation}
+This matrix is equivalent to
 
 \begin{equation}
-\lambda_2 = -i:
-\begin{bmatrix}
+-ix_1 + x_2 = 0
+\end{equation}
+
+with $x_2$ free. Choosing $x_2 = i$ gives
+
+\begin{equation}
+\vv{x}_1 = \begin{bmatrix} 1 \\ i\end{bmatrix}
+\end{equation}
+
+For $\lambda_2 = -i$:
+
+\begin{equation}
+\vv{A} - \lambda_1 \vv{I}
+= \begin{bmatrix}
 i & 1 \\
 -1 & i
 \end{bmatrix}
 \to
-\vv{x_2} =
 \begin{bmatrix}
-1 \\
--i
+i & 1 \\
+0 & 0
 \end{bmatrix}
+\end{equation}
+
+This matrix is equivalent to
+
+\begin{equation}
+i x_1 + x_2 = 0
+\end{equation}
+
+with $x_2$ free. Choosing $x_2 = -i$ gives
+
+\begin{equation}
+\vv{x}_2 =\begin{bmatrix} 1 \\ -i \end{bmatrix}
 \end{equation}
 
 ## Useful tricks
