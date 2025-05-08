@@ -67,19 +67,20 @@ $$
 
 $$
 \begin{equation}
-F(x) &= \exp\left( \int R(x) \, dx \right) 
+F(x) = \exp\left( \int R(x) \, dx \right) 
 \end{equation}
 $$
 
 If not, check: 
 
 $$
-\begin{align}
-S &= \frac{1}{P} \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) = -\frac{Q}{P} R 
-\end{align}
+\begin{equation}
+S = \frac{1}{P} \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) = -\frac{Q}{P} R 
+\end{equation}
 $$
 
 - If S depends only on y, the integrating factor is: 
+
 $$ 
 \begin{equation}
 F(y) &= \exp\left( \int S(y) \, dy \right) 
@@ -95,32 +96,30 @@ If neither R nor S are simple functions of only x or y:
 **R Calculation:**
 
 $$
-\begin{equation}
+\begin{align}
 R &= \frac{1}{x}(-1 - 1) = \frac{-2}{x}
-\end{equation}
+\end{align}
 $$
 
-Thus: 
+**Thus:**
 
 $$
 \begin{align}
 F(x) &= \exp\left( \int \frac{-2}{x} \, dx \right)
-= \exp( -2 \ln(x))
-= \left( e^{\ln(x)} \right)^{-2}
-= \frac{1}{x^2}
+= \exp( -2 \ln(x)) = \left( e^{\ln(x)} \right)^{-2} = \frac{1}{x^2}
 \end{align}
 $$
 
 **S Calculation:**
+
 $$
 \begin{align}
-S &= -\frac{Q}{P} \cdot R 
-= -\frac{x}{-y} \cdot \left( \frac{-2}{x} \right)
- = \frac{-2}{y} \\
+S &= -\frac{Q}{P} \cdot R = -\frac{x}{-y} \cdot \left( \frac{-2}{x}\right) = \frac{-2}{y} 
  \end{align}
 $$
 
-Thus:
+**Thus:** 
+
 $$
 \begin{align}
 F(y) &= \exp\left( \int \frac{-2}{y} \, dy \right) 
@@ -130,31 +129,41 @@ $$
 
 $$
 \boxed{
-  \begin{align}
+  \begin{aligned}
   F(x) &= \frac{1}{x^2} \\
   F(y) = \frac{1}{y^2}
-  \end{align}
+  \end{aligned}
 }
 $$
+
+
 **These are valid integrating factors.**
 
 
-# Application to Linear First-Order ODEs:
+## Application to Linear First-Order ODEs:
+
 A **linear first-order ODE** has the form: 
+
 $$ 
-\begin{align}
-y' + p(x) \, y = r(x)
-\end{align}
+\begin{equation}
+y' + p(x)\,y = r(x)
+\end{equation}
 $$
 
 Using an **integrating factor**, we can show that:
 
 $$
-\boxed{
-  \begin{align}
-   y(x) &= \frac{1}{F(x)} \left( \int F(x) \, r(x) \, dx + C \right) \\
-F(x) &= e^{\int p(x) \, dx}
-\end{align}}
+\begin{equation}
+   y(x) = \frac{1}{F(x)} \left( \int F(x)\,r(x) \, dx + C \right)
+\end{equation}
+$$
+
+where the integrating factor is: 
+
+$$ 
+\begin{equation}
+F(x) = e^{\int p(x) \, dx}
+\end{equation}
 $$
 
 ````{example} Mole balance on a tank with increasing inlet/outlet flow rate.
