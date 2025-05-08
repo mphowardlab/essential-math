@@ -66,9 +66,9 @@ y &=\left( \frac{x^2}{2} + 2x \right)\ln(x) - \int \left( \frac{x^2}{2} + 2x \ri
 
 Solve the integral, don't forget $+C$
 
-\begin{align}
-&= \left( \frac{x^2}{2} + 2x \right)\ln(x) - \frac{x^2}{4} - 2x + C
-\end{align}
+\begin{equation}
+y = \left( \frac{x^2}{2} + 2x \right)\ln(x) - \frac{x^2}{4} - 2x + C
+\end{equation}
 
 ```
 
