@@ -1,8 +1,8 @@
 # Eigenvalue problem
 
 
-For an n\timesn square matrix $\underline{\underline{A}$}  , there is a scalar \lambda 
-and vector \underline{x} such that :
+For an *n* x *n* square matrix $ \vv{A} $  , there is a scalar $\lambda$ 
+and vector $\underline{x}$ such that :
 
 
 
