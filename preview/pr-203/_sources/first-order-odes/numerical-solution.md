@@ -119,12 +119,13 @@ the field of numerical stability (not covered here).
 ## Skill builder problems
 
 Solving $y' = y + 5 \sin(2\pi t)$ using Euler's Method
+```{solution}
 
 We are given the initial value problem:
 
-$$
+\begin{equation}
 y' = y + 5\sin(2\pi t), \quad y(0) = 1
-$$
+\end{equation}
 
 Using the **Euler method**, we compute approximations for $y(1)$ using two step sizes:
 
@@ -172,7 +173,7 @@ Therefore, for $\Delta t = 0.2$:
 $$
 y(1) \approx 3.322
 $$
-
+`````
 ---
 
 Analytical solution:
