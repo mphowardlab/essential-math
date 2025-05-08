@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>5.9. Numerical solution methods &#8212; Essential Mathematics for Chemical Engineers</title>
+    <title>5.8. Numerical solution methods &#8212; Essential Mathematics for Chemical Engineers</title>
   
   
   
@@ -173,7 +173,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../calculus/functions.html">1.1. Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../calculus/limits.html">1.2. Limits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../calculus/derivatives.html">1.3. Derivatives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../calculus/derivative-rules.html">1.4. Product, quotient, and chain rule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/derivative-rules.html">1.4. Rules for derivatives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../calculus/series-expansion.html">1.5. Series expansion</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../calculus/integration.html">1.6. Integration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../calculus/integration-substitution.html">1.7. Integration using substitution</a></li>
@@ -213,8 +213,7 @@
 <li class="toctree-l2"><a class="reference internal" href="undetermined-coefficients.html">5.5. Undetermined coefficients</a></li>
 <li class="toctree-l2"><a class="reference internal" href="laplace-transform.html">5.6. Laplace transform</a></li>
 <li class="toctree-l2"><a class="reference internal" href="integrating-factor.html">5.7. Integrating factor</a></li>
-
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">5.9. Numerical solution methods</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">5.8. Numerical solution methods</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../systems-first-order-odes/index.html">6. Systems of first-order ordinary differential equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -429,7 +428,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#error-in-approximation">5.9.1. Error in approximation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#error-in-approximation">5.8.1. Error in approximation</a></li>
 </ul>
             </nav>
         </div>
@@ -442,7 +441,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="numerical-solution-methods">
-<h1><span class="section-number">5.9. </span>Numerical solution methods<a class="headerlink" href="#numerical-solution-methods" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">5.8. </span>Numerical solution methods<a class="headerlink" href="#numerical-solution-methods" title="Link to this heading">#</a></h1>
 <p>Some ODEs are hard (or impossible!) to solve analytically… or maybe you just
 don’t want to! Numerical approximations to the solution can be very valuable in
 these cases.</p>
@@ -451,13 +450,13 @@ these cases.</p>
 <p>To solve the the first-order ODE <span class="math notranslate nohighlight">\(y' = f(t, y)\)</span>, approximate <span class="math notranslate nohighlight">\(y(t)\)</span> using a
 Taylor series:</p>
 <div class="math notranslate nohighlight" id="equation-euler-method">
-<span class="eqno">(5.104)<a class="headerlink" href="#equation-euler-method" title="Link to this equation">#</a></span>\[y(t + \Delta t) \approx y(t) + f(t, y) \Delta t\]</div>
+<span class="eqno">(5.100)<a class="headerlink" href="#equation-euler-method" title="Link to this equation">#</a></span>\[y(t + \Delta t) \approx y(t) + f(t, y) \Delta t\]</div>
 <p>This update can be applied repeatedly to approximate <em>y</em> as a function of <em>t</em>.
 To start, <em>t</em> is initialized to <span class="math notranslate nohighlight">\(t_0\)</span> and <em>y</em> is started from the initial
 condition <span class="math notranslate nohighlight">\(y_0 = y(t_0)\)</span>. Then, going from <span class="math notranslate nohighlight">\(n = 0\)</span>, advance <span class="math notranslate nohighlight">\(t_n\)</span> and <span class="math notranslate nohighlight">\(y_n\)</span>
 for a step size <span class="math notranslate nohighlight">\(\Delta t\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-db3933ad-c277-4178-94fd-a69d3579d53f">
-<span class="eqno">(5.105)<a class="headerlink" href="#equation-db3933ad-c277-4178-94fd-a69d3579d53f" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-3c89f7fe-b464-4aee-bb18-71a46d275922">
+<span class="eqno">(5.101)<a class="headerlink" href="#equation-3c89f7fe-b464-4aee-bb18-71a46d275922" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_{n+1} &amp;= y_n + f(t_n, y_n) \\
 t_{n+1} &amp;= t_n + \Delta t
 \end{align}\]</div>
@@ -580,7 +579,7 @@ smaller timestep typically produces a better solution, but at the cost of doing
 additional calculations. We will discuss next how the error depends on the step
 size.</p>
 <section id="error-in-approximation">
-<h2><span class="section-number">5.9.1. </span>Error in approximation<a class="headerlink" href="#error-in-approximation" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">5.8.1. </span>Error in approximation<a class="headerlink" href="#error-in-approximation" title="Link to this heading">#</a></h2>
 <p>Because we are using truncated Taylor series, we accrue an error:</p>
 <a class="reference internal image-reference" href="../_images/Euler.png"><img alt="Euler's method error" class="align-center" src="../_images/Euler.png" style="width: 300px;" />
 </a>
@@ -656,7 +655,7 @@ the field of numerical stability (not covered here).</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#error-in-approximation">5.9.1. Error in approximation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#error-in-approximation">5.8.1. Error in approximation</a></li>
 </ul>
   </nav></div>
 
