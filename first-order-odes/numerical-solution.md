@@ -181,9 +181,9 @@ First, find the integrating factor
 F = e^{\int(p dt)} = e^{-\int dt} = e^{-t}
 \end{equation}
 
-$$
-(\int(F*r* {dt})) = (\int((e^((-1)*(t)))*((5)*(\sin(2*pi t))))*(\d{t})) = (\frac{5*e^(((-1)*t))}{((4)*(pi^2))+ 1})*[((-1)* (\sin((2*pi t)))-(((2*pi) * (\cos(2*pi) (t)))))]
-
+\begin{align}
+\int(F*r* {dt}) &= (\int((e^((-1)*(t)))*((5)*(\sin(2*pi t))))*(\d{t})) \\ &= (\frac{5*e^(((-1)*t))}{((4)*(pi^2))+ 1})*[((-1)* (\sin((2*pi t)))-(((2*pi) * (\cos(2*pi) (t)))))]
+\end{align}
 $$
 Then, solve for y. 
 $$
