@@ -105,6 +105,15 @@ Such a 8 cannot always be found for all ε for certain functions! There, the lim
 
 \image{Second.jpg}
 
+f(x) = { x, x < 4 ; x-2, x >= 4
+  \begin{equation}
+lim_{x \to 4} f(x) = 3?
+\end{equation}
+
+If ε = 0.5, there is no δ that contains f around x₀ = 4 \to Limit does not exsit
+
+What do we use this for? To prove rules (limit laws) we can just apply to solve problems!
+
 
 ## Limit laws
 
