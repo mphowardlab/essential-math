@@ -12,6 +12,7 @@ This work (c) 2025 is licensed under
 - Zachary Bradford
 - Andrew Castel
 - Paine Cole
+- Kovar Coley
 - Oscar Earhart
 - Sarah Eldridge
 - Sam Faulkner
