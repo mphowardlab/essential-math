@@ -23,7 +23,7 @@ We want $\underline{nontrivial}$ solutions $(\underline{x} \ne \underline{0})$. 
 If $\vv{A} - \lambda \vv{I}$ is invertible, we have only $\lambda = \underline{0}$ as a solution. Hence, we want this to be singular! This occurs when the determinant is zero:
 
 \begin{align}
-|\vv{A}- \lambda \vv{I}= 0
+|\vv{A}- \lambda \vv{I}|= 0
 \end{align}
 
 This determinant creates a $\underline{ characteristic polynomial}$ for $\lambda$ that can be solved. Then, the $\underline{x}$ that corresponds to a given $\lambda$ can be determined.
