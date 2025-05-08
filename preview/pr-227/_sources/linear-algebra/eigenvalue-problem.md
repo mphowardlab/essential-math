@@ -34,9 +34,16 @@ Ex:
 \\
 |\vv{A} -\lambda \vv{I} = \begin{bmatrix} -5-\lambda & 2 \\ 2 & -2-\lambda \end{bmatrix} = (-5 -\lambda)(-2-\lambda)-2\cdot2 =(\lambda + 5)(\lambda +2) -4
 \\
-=\lambda^2 +7\lambda + 6 = (\lambda +1)(\lambda +6)=0 \to \lambda = -1, -6
+=\lambda^2 +7\lambda + 6 = (\lambda +1)(\lambda +6)=0 \to \underline{\lambda = -1, -6}
 \end{align}
 
+$\lambda=-1$:
+\begin{align}
+\begin{bmatrix} -5 -(-1) & 2 \\ 2 & -2-(-1) \end{bmatrix} \underline{x}= \begin{bmatrix} -4 & 2 \\ 2 & 1 \end{bmatrix} \underline{x} =0 
+\\
+\begin{bmatrix} -4 & 2 & 0 \\ 2 & 1 & 0 \end{bmatrix} \to \begin{bmatrix} -4 & 2 & 0 \\ 0 & 0 & 0 \end{bmatrix} \to \begin{bmatrix} 1 & -1/2 & 0 \\ 0 & 0 & 0 \end{bmatrix} \to x_1 -x_2 /2 =0 
+x_2 free
+\end{align}
 
 ## Multiple eigenvalues
 
