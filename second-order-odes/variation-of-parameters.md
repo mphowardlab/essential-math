@@ -1,5 +1,64 @@
 # Variation of parameters
 
+Nonhomogeneous ODEs that don't have constant coefficients or an $r(x)$ in our
+table can't be solved using the
+[method of undetermined coefficients](./undetermined-coefficients.md). An
+alternative for such ODEs is the method of variation of parameters.
+
+```{topic} Variation of parameters
+
+For a nonhomogeneous linear second-order ODE $y'' + p(x)y' + q(x)y = r(x)$,
+if $y_{\rm h} = c_1 y_1 + c_2 y_2$ solves the corresponding homogenous ODE
+$y_{\rm h}'' + p(x) y_{\rm h}' + q(x) y_{\rm h} = 0$, then the particular
+solution $y_{\rm p}$ is:
+
+\begin{equation}
+y_{\rm p} = -y_1 \int\frac{y_2 r}{W} \d{x} + y_2 \int \frac{y_1 r}{W} \d{x}
+\end{equation}
+
+where
+\begin{equation}
+W = \begin{vmatrix}y_1 & y_2 \\y_1' & y_2'\end{vmatrix} = y_1 y_2' - y_2 y_1'
+\end{equation}
+
+is the Wronksi determinant (or "Wronskian").
+```
+
+For example, consider the ODE
+
+\begin{equation}
+y'' + y = \sec x
+\end{equation}
+
+The secant is not in our table of right-hand sides, so we will use variation
+of parameters to find a particular solution. The homogenous ODE is solved by
+$y_1 = \cos x$ and $y_2 = \sin x$ so
+
+\begin{align}
+y_1 &= \cos x & y_2 &= \sin x \\
+y_1' &= -\sin x & y_2' &= \cos x
+\end{align}
+
+and
+
+\begin{equation}
+W = \cos^2 x - (-\sin^2 x) = 1
+\end{equation}
+
+Hence,
+
+\begin{align}
+y_{\rm p} &= -\cos x\int\sin x\sec x\d{x} +\sin x\int\cos x\sec x\d{x} \\
+&= \cos x\int \frac{-\sin x}{\cos x}\d{x} + \sin x \int \d{x} \\
+&= \cos x\ln|\cos x| + x\sin x
+\end{align}
+
+and
+
+\begin{equation}
+y = c_1 \cos x + c_2 \sin x + \cos x\ln|\cos x| + x\sin x
+\end{equation}
+
 ```{example} Steady heat diffusion with internal source
 We are solving the steady-state heat diffusion equation with an internal source:
 
