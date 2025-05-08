@@ -299,11 +299,19 @@ Step 3
 
 Step 4
 \begin{align}
-\text{Finish the rest...} 
+\text{Finish the rest...}\quad 
 2 &= A_3s(s-1) + 2(s-1) - 2s^2 \\
   &= A_3(-1)(-1-1) + 2(-1-1) - 2(-1) \quad\quad \text{plug in $s = -1$} \\
   &= 2A_3 - 4 + 2 \rightarrow A_3 = 2
 \end{align}
+
+\begin{align}
+3 &= (A_6s + B_6s)(s-1) + \frac{3}{10}(s^2+9) \\
+s^2 &: A_6 + \frac{3}{10} = 0 \rightarrow A_6 = -\frac{3}{10} \\
+s^0 &: -B_6 + \frac{27}{10} = 3 \rightarrow B_6 = -\frac{3}{10} \\
+\end{align}
+
+---
 
 
 
