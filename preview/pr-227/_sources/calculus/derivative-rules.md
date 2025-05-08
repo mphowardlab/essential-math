@@ -9,7 +9,7 @@ product of two smaller functions.
 If $f(x) = u(x) v(x)$, then
 
 \begin{align}
-f'(x) &= u v' + v u ' \\
+f' &= u v' + v u ' \\
 &= u \dd{}{v}{x} + v \dd{}{u}{x}
 \end{align}
 ```
@@ -100,6 +100,94 @@ functions that are hard to expand!
    &= \frac{x^2+3}{x} + 2x\ln x
    \end{align}
 
+## Quotient Rule
+
+```{topic} Quotient Rule
+If a function $f(x) = u(x) / v(x)$ and $v(x) \ne 0$, then:
+
+\begin{equation}
+f' = \frac{v u' - u v'}{v^2}
+\end{equation}
+```
+
+```{hint}
+One mnemonic that may or may not help remember this:
+
+If the quotient rule you wish to know, it's "low-d-high less high-d-low"... then
+draw the line and, down below, denominator squared will go.
+```
+
+To demonstrate this rule, consider $f(x) = (x-1)/x$. Previously, we would
+have needed to separate the numerator before differentiating:
+
+\begin{align}
+f(x) &= 1 - \frac{1}{x} \\
+f'(x) &= \frac{1}{x^2}
+\end{align}
+
+With the qoutient rule, instead we recognize
+
+\begin{align}
+u &= x - 1 & v &= x \\
+u' &= 1 & v' &= 1
+\end{align}
+
+so
+
+\begin{equation}
+f' = \frac{ x \cdot 1 - (x-1) \cdot 1}{x^2} = \frac{1}{x^2}
+\end{equation}
+
+This was obviously harder than the old way, but there are other cases where it
+is helpful to do the quotient rule!
+
+1. $\displaystyle f(x) = \frac{x^2 -1}{x^4 + 2}$
+
+   \begin{align}
+   u &= x^2 -1 & v &= x^4 +2 \\
+   u' &= 2x & v' &= 4x^3
+   \end{align}
+
+   so
+
+   \begin{align}
+   f'(x) &= \frac{ (x^4 + 2) \cdot (2x) - (x^2 - 1) \cdot (4x^3)}{(x^4 +2)^2}\\
+    &= \frac{2x^5 + 4x^2 - 4x^5 +4x^3}{x^8 + 2x^4 + 4}
+   \end{align}
+
+2. $\displaystyle f(x) = \frac{e^{x}}{1 + x}$
+
+   \begin{align}
+   u &= e^{x} & v &= 1 + x \\
+   u' &= e^{x} & v' &= 1
+   \end{align}
+
+   so
+
+   \begin{align}
+   f'(x) &= \frac{(1 + x) \cdot e^{x} - e^{x} \cdot 1}{(1 + x)^2} \\
+   &= \frac{x e^{x}}{(1 + x)^2}
+   \end{align}
+
+3. $\displaystyle f(x) = \frac{(x - 1)(x^2 - 2x)}{x^4}$
+
+   \begin{align}
+   u &=  & v &= x^4\\
+   u' &= 3x^2 - 6x + 2 & v' &= 4x^3 \\
+   \end{align}
+
+   so
+
+   \begin{align}
+   f'(x) &= \frac{x^4 \cdot (3x^2-6x+2) - (x^3 -3x^2 +2x) \cdot 4x^3}{x^8} \\
+     &= \frac{-x^6 + 6x^5 - 6x^4}{x^8} \\
+     &= -\frac{1}{x^2} + \frac{6}{x^3} - \frac{6}{x^4}
+   \end{align}
+
+   Note, though, that in this case we could also have expanded the numerator,
+   divided through by $x^8$, and differentiated term-by-term to arrive at the
+   same answer. The faster route depends on the problem!
+
 ## Chain rule
 
 The chain rule is used to differentiate composite functions, when the "inside"
@@ -108,7 +196,7 @@ of the function is more complicated than what we know.
 ```{topic} Chain rule
 If a function $f(x)$ can be written as $f(u(x))$, then:
 \begin{equation}
-f'(x) = \dd{}{f}{u} \dd{}{u}{x} = f'(u) u'(x)
+f' = \dd{}{f}{u} \dd{}{u}{x} = f'(u(x)) u'(x)
 \end{equation}
 ```
 
@@ -209,6 +297,69 @@ f'(x) &= -(\sin x)^{-2} \dd{}{}{x}(\sin x) \\
   &= \frac{-1}{\sin x} \frac{\cos x}{\sin x} \\
   &= -\csc x \cot x
 \end{align}
+
+````{example} Harmonic oscillator
+A harmonic oscillator is a mass *m* on a Hookean spring. The spring force is
+$F = -kx$, where *k* is the spring constant and *x* is the displacement of the
+mass.
+
+```{image} ./_images/oscillating-diagram.png
+:alt: Harmonic oscillator
+:width: 300px
+:align: center
+```
+
+If the mass is initially displaced to $x(0)$, it will then move according to:
+
+\begin{equation}
+x(t) = x(0) \cos\left(\frac{2\pi t}{T}\right)
+\end{equation}
+
+where
+
+\begin{equation}
+T = \frac{1}{2\pi} \sqrt{\frac{m}{k}}
+\end{equation}
+
+```{image} ./_images/oscillating-graph.png
+:alt: Oscillator displacement
+:width: 300px
+:align: center
+```
+
+How fast is the oscillator moving at any given time? When is the oscillator
+moving fastest?
+
+---
+
+We want to calculate the velocity $v = x'(t)$. Use the chain rule with:
+
+\begin{align}
+u &= \frac{2\pi t}{T} & f &= x(0) \cos u \\
+u' &= \frac{2\pi}{T} & f' &= -x(0) \sin u
+\end{align}
+
+so
+
+\begin{align}
+v &= \dd{}{x}{t} = f'(u) \cdot u' \\
+  &= -x(0) \sin u \cdot u' \\
+  &= -\frac{2\pi x(0)}{T} \sin\left(\frac{2\pi t}{T}\right)
+\end{align}
+
+A function is at an *extrema* when its derivative is zero. If the function is
+velocity, this derivative is the acceleration *a* and is equal to zero,
+$a = v' = 0$. This means the mass is not accelerating! Using the chain rule
+again:
+
+\begin{equation}
+a = v' =
+  -\left(\frac{2\pi}{T}\right)^2 x(0) \cos\left(\frac{2\pi t}{T}\right) = 0
+\end{equation}
+
+The roots occur at $t = T/4$ or $3T/4$, when $x = 0$ and the spring is no longer
+stretched. All potential energy has been converted to kinetic energy!
+````
 
 ## Skill builder problems
 
