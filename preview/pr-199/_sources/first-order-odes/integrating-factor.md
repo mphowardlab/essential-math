@@ -33,7 +33,7 @@ Now multiply the terms:
 
 $$
 \begin{align}
-(-y)\left( \frac{1}{x^2} \right) + x\left( \frac{1}{x^2} \right) &= -\frac{y}{x^2} + \frac{1}{x} = 0 
+(-y)\left( \frac{1}{x^2} \right) + x\left( \frac{1}{x^2} \right) = -\frac{y}{x^2} + \frac{1}{x} = 0 
 \end{align}
 $$
 
@@ -41,8 +41,8 @@ Check the partial derivatives:
 
 $$
 \begin{align}
-\frac{\partial ( F P)}{\partial y} &= -\frac{1}{x^2} \\
-\frac{\partial (F Q)}{\partial x} &= -\frac{1}{x^2} \\
+\frac{\partial ( F P)}{\partial y} = -\frac{1}{x^2} \\
+\frac{\partial (F Q)}{\partial x} = -\frac{1}{x^2} \\
 \end{align}
 $$
 
