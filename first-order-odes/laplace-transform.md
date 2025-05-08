@@ -332,7 +332,7 @@ y = \mathcal{L}^{-1} \left\{ \frac{1}{s} \right\}
 \end{equation}
 
 \begin{equation}
-\boxed{y = 1 +2x \frac{17}{10} e^x - \frac{1}{10} \sin(3x) - \frac{3}{10} \cos(3x)}
+\boxed{y = 1 +2x - \frac{17}{10} e^x - \frac{1}{10} \sin(3x) - \frac{3}{10} \cos(3x)}
 \end{equation}
 ```
 
