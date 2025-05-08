@@ -62,6 +62,7 @@ Apply integration by parts: $uv - \int vdu$
 
 \begin{align}
 y &=\left( \frac{x^2}{2} + 2x \right)\ln(x) - \int \left( \frac{x^2}{2} + 2x \right) \frac{1}{x} \, dx \\
+&=\left( \frac{x^2}{2} + 2x \right)\ln(x) - \int \left( \frac{x}{2} + 2 \right) \, dx
 \end{align}
 
 Solve the integral, don't forget $+C$
