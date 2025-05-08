@@ -152,7 +152,6 @@ $$
 y(1) \approx 3.683
 $$
 
-Step size $\Delta t = 0.2$
 
 Step size $\Delta t = 0.2$
 
