@@ -286,7 +286,7 @@ Y &= -\frac{1}{s - 1} + \frac{1}{s(s - 1)} - \frac{2}{s^2(s - 1)} + \frac{3}{(s^
 
 Step 3
 
-\begin{align*}
+\begin{align}
 \text{Cover up:}\quad 
 & A_1 =\frac{1}{0-1} = -1 \\ 
 & A_2 =\frac{1}{1} = 1 \\ 
@@ -298,12 +298,12 @@ Step 3
 ---
 
 Step 4
-\begin{align*}
+\begin{align}
 \text{Finish the rest...} 
 2 &= A_3s(s-1) + 2(s-1) - 2s^2 \\
   &= A_3(-1)(-1-1) + 2(-1-1) - 2(-1) \quad\quad \text{plug in $s = -1$} \\
   &= 2A_3 - 4 + 2 \rightarrow A_3 = 2
-\end{align*}
+\end{align}
 
 
 
