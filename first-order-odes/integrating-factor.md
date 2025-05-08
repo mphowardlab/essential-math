@@ -1,175 +1,119 @@
 # Integrating factor
 
-## What do we do when an ODE is not exact?
-**Example 1:**
+What do we do when an ODE is not exact? For example,
 
-$$
-\begin{aligned}
-  -y \, dx + x \, dy &= 0 \quad && \text{(given)} \\
-  P = -y, \quad && Q = x \\
-  \frac{\partial P}{\partial y} = -1, \quad && \frac{\partial Q}{\partial x} = 1 \\
-  &\Rightarrow \text{Not exact!}
-\end{aligned}
-$$
-
-When solving ODEs, we take the partial derivatives of P and Q.
-If the partial derivatives are not equal, the equation is **not exact**: 
-
----
-
-## Finding the Integrating Factor
-
-Multiply by a factor F to make the ODE exact. This is called the **integrating factor**.
-
-Let: 
-
-$$
 \begin{equation}
-F = \frac{1}{x^2}
+-y \d{x} + x \d{y} = 0
 \end{equation}
-$$
 
-Now multiply the terms:
+has
 
-$$
 \begin{align}
-(-y)\left( \frac{1}{x^2} \right) + x\left( \frac{1}{x^2} \right) = -\frac{y}{x^2} + \frac{1}{x} = 0 
+P &= -y  & Q &= x \\
+\pp{}{P}{y} &= -1 & \pp{}{Q}{x} &= 1
 \end{align}
-$$
 
-Check the partial derivatives: 
+so it is not exact. However, we may be able to make it exact if we multiply by
+an *integrating factor*. For example, let's try a factor $F = 1/x^2$.
+Multiplying through by *F*:
 
-$$
 \begin{align}
-\frac{\partial ( F P)}{\partial y} = -\frac{1}{x^2} \\
-\frac{\partial (F Q)}{\partial x} = -\frac{1}{x^2} \\
+-\frac{y}{x^2} \d{x} + \frac{1}{x} \d{y} = 0
 \end{align}
-$$
 
-$$
+so
+
 \begin{align}
-\frac{\partial ( F P)}{\partial y} = \frac{\partial (F Q)}{\partial x}
+P &= -\frac{y}{x^2}  & Q &= \frac{1}{x} \\
+\pp{}{P}{y} &= -\frac{1}{x^2} & \pp{}{Q}{x} &= -\frac{1}{x}^2
 \end{align}
-$$
 
-**Now the equation is exact.**
+Now the ODE is exact and can be solved using techniques we learned previously.
 
+## Finding the integrating factor
 
----
+```{topic} General integrating factor
+To find an integrating factor for a generic ODE that is not exact
 
-
-## How did we find F?
-
-  Using this formula:
-  
-$$
 \begin{equation}
-R(x) = \frac{1}{Q} \left( \frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x} \right)
+P \d{x} + Q \d{y} = 0
 \end{equation}
-$$
 
-- If R depends only on x, the integrating factor is:
+Calculate:
 
-$$
 \begin{equation}
-F(x) = \exp\left( \int R(x) \, dx \right) 
+R = \frac{1}{Q} \Biggl( \frac{\partial P}{\partial y} -
+  \frac{\partial Q}{\partial x} \Biggr)
 \end{equation}
-$$
 
-If not, check: 
+If *R* depends only on *x*, the integrating factor is:
 
-$$
 \begin{equation}
-S = \frac{1}{P} \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) = -\frac{Q}{P} R 
+F = \exp\left( \int R \d{x} \right)
 \end{equation}
-$$
 
-- If S depends only on y, the integrating factor is: 
+If not, calculate
 
-$$ 
 \begin{equation}
-F(y) = \exp\left( \int S(y) \, dy \right) 
+S = \frac{1}{P} \Biggl( \frac{\partial Q}{\partial x} -
+  \frac{\partial P}{\partial y} \Biggr) = -\frac{Q}{P} R
 \end{equation}
-$$
 
-If neither R nor S are simple functions of only x or y:
-> **You must guess an integrating factor.**
+If *S* depends only on *y*, the integrating factor is:
 
----
-## Example 1 (continued)
+\begin{equation}
+F = \exp\left( \int S \d{y} \right)
+\end{equation}
 
-**R Calculation:**
+If neither works, you can try guessing, but this can be difficult.
+```
 
-$$
+Let's use these formulas to arrive at the integrating factor we used above:
+
+\begin{equation}
+R = \frac{1}{x}(-1 - 1) = -\frac{2}{x}
+\end{equation}
+
+is a function of only *x* so
+
 \begin{align}
-R &= \frac{1}{x}(-1 - 1) = \frac{-2}{x}
+F(x) &= \exp\left( \int -\frac{2}{x} \d{x} \right) \\
+&= \exp\left( -2 \ln x\right) \\
+&= \left( e^{\ln x} \right)^{-2} \\
+&= \frac{1}{x^2}
 \end{align}
-$$
 
-**Thus:**
+Note that this is not the only suitable integrating factor! Let's try the *S*
+route for fun:
 
-$$
-\begin{align}
-F(x) = \exp\left( \int \frac{-2}{x} \, dx \right)
-= \exp( -2 \ln(x)) = \left( e^{\ln(x)} \right)^{-2} = \frac{1}{x^2}
-\end{align}
-$$
+\begin{equation}
+S = -\frac{Q}{P} R = -\frac{x}{-y} \left( -\frac{2}{x}\right) = -\frac{2}{y}
+\end{equation}
 
-**S Calculation:**
+*S* is a function of only *y* so
 
-$$
-\begin{align}
-S = -\frac{Q}{P} \cdot R = -\frac{x}{-y} \cdot \left( \frac{-2}{x}\right) = \frac{-2}{y} 
-\end{align}
-$$
+\begin{equation}
+F = \exp\left( \int -\frac{2}{y} \d{y} \right) = \frac{1}{y^2}
+\end{equation}
 
-**Thus:** 
+is another suitable integrating factor.
 
-$$
-\begin{align}
-F(y) = \exp\left( \int \frac{-2}{y} \, dy \right) 
-= \frac{1}{y^2}
-\end{align}
-$$
+## Application to linear first-order ODEs
 
-$$
-\boxed{
-  \begin{aligned}
-  F(x) = \frac{1}{x^2} \\
-  F(y) = \frac{1}{y^2}
-  \end{aligned}
-}
-$$
+```{topic} Integrating factor for linear first-order ODEs
+For linear first-order ODES,
 
-
-**These are valid integrating factors.**
-
-
-## Application to Linear First-Order ODEs:
-
-A **linear first-order ODE** has the form: 
-
-$$ 
 \begin{equation}
 y' + p(x)y = r(x)
 \end{equation}
-$$
 
-Using an **integrating factor**, we can show that:
+Use of an integrating factor *F* gives the general solution:
 
-$$
-\begin{equation}
-   y(x) = \frac{1}{F(x)} \left( \int F(x)\,r(x) \, dx + C \right)
-\end{equation}
-$$
-
-where the integrating factor is: 
-
-$$ 
-\begin{equation}
-F(x) = e^{\int p(x) \, dx}
-\end{equation}
-$$
+\begin{align}
+y(x) &= \frac{1}{F} \left( \int F r \d{x} + c \right) \\
+F &= \exp\left(\int p \d{x}\right)
+\end{align}
+```
 
 ````{example} Mole balance on a tank with increasing inlet/outlet flow rate.
 
