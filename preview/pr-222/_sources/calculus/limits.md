@@ -92,9 +92,11 @@ If ε = 1, 3 < f < 5 if 3 < x < 5, ie. δ = 1.
     For any ε, 4 - ε < f < 4 + ε if 
             4 - δ < x < 4 + δ
         \to |x - 4| < ε , |x-4| < δ 
-            δ = ε
+            ( δ = ε )
 
-\image{First.jpg}
+```{image} ./_images/First.jpg
+:alt: Limit Graph
+```
 
 Hence, 
 \begin{equation}
@@ -103,7 +105,9 @@ lim_{x \to 4} = 4
 
 Such a 8 cannot always be found for all ε for certain functions! There, the limit does not exist.
 
-\image{Second.jpg}
+```{image} ./_images/Second.jpg
+:alt: Limit Graph 2
+```
 
 f(x) = { x, x < 4 ; x-2, x >= 4
   \begin{equation}
