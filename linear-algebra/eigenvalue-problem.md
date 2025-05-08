@@ -47,7 +47,7 @@ x_2 free
 
 This solution is not unique, which makes sense from the equation. We may then choose x_1 or x_2 so that the eigenvector has a nice norm or values. e.g.,
 \begin{align}
-x_1 =1, x_2 = 2 \to \underline{x}= \begin{bmatrix} 1 \\ 2 
+x_1 =1, x_2 = 2 \to \underline{x}= \begin{bmatrix} 1 \\ 2 end{bmatrix}
 \end{align}
 
 Repeat for $\lambda = -6$:
