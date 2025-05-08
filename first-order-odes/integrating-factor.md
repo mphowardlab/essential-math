@@ -48,7 +48,7 @@ $$
 
 $$
 \begin{align}
-\frac{\partial ( F P)}{\partial y} &= \frac{\partial (F Q)}{\partial x}
+\frac{\partial ( F P)}{\partial y} = \frac{\partial (F Q)}{\partial x}
 \end{align}
 $$
 
