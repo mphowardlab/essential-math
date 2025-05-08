@@ -350,9 +350,66 @@ $$ \begin{aligned}
 0 & \color{green}{1} & 0 & 18 \\
 0 & 0 & \color{green}{1} & 12
 \end{array}\right] \\\
-&\rightarrow \boxed{3 \ columns \ and \ 3 \ pivots: Solution \ at \ x_1 =-15; x_2 = 18; x_3 = 12}
+&\rightarrow \boxed{Solution \ at \ x_1 =-15; x_2 = 18; x_3 = 12}
 \end{aligned}
 $$
+
+- #### Infinite solutions if there are fewer than $ n $ pivots. 
+Example: 
+$$ \begin{aligned}
+&\left[\begin{array}{ccc|c}
+3 & 2 & 1 & 3 \\
+2 & 1 & 1 & 0 \\
+6 & 2 & 4 & -6           
+\end{array}\right]
+\xrightarrow{ R_2 - \frac{2}{3} \cdot R_1}
+\left[\begin{array}{ccc|c}
+3 & 2 & 1 & 3 \\
+0 & -\frac{1}{3} & \frac{1}{3} & -2 \\
+6 & 2 & 4 & -6
+\end{array}\right]
+\xrightarrow{ 3 \cdot R_2} \\
+&\left[\begin{array}{ccc|c}
+3 & 2 & 1 & 3 \\
+0 & -1 & 1 & -6 \\
+6 & 2 & 4 & -6
+\end{array}\right]
+\xrightarrow{ R_3 - 2 \cdot R_1}
+\left[\begin{array}{ccc|c}
+3 & 2 & 1 & 3 \\
+0 & -1 & 1 & -6 \\
+0 & -2 & 2 & -12
+\end{array}\right] 
+\xrightarrow{ R_3 - 2 \cdot R_2} \\
+&\left[\begin{array}{ccc|c}
+\color{green}{3} & 2 & 1 & 3 \\
+0 & \color{green}{-1} & 1 & -6 \\
+0 & 0 & 0 & 0
+\end{array}\right]
+\xrightarrow{ -1 \cdot R_2}
+\left[\begin{array}{ccc|c}
+3 & 2 & 1 & 3 \\
+0 & 1 & -1 & 6 \\
+0 & 0 & 0 & 0
+\end{array}\right]
+\xrightarrow{ R_1 - 2 \cdot R_2} \\
+&\left[\begin{array}{ccc|c}
+3 & 0 & 3 & -9 \\
+0 & 1 & -1 & 6 \\
+0 & 0 & 0 & 0
+\end{array}\right]
+\xrightarrow{ R_1 \div 3}
+\left[\begin{array}{ccc|c}
+1 & 0 & 1 & -3 \\
+0 & 1 & -1 & 6 \\
+0 & 0 & 0 & 0
+\end{array}\right] \\\
+
+&\rightarrow \boxed{x_1 = -3 - x_3; x_2 = 6 + x_3; x_3 \ is \ free}
+\end{aligned}
+$$
+- #### Related concept discussed elsewhere: Linear independence of equations, vectors.
+
 
 ## Skill builder problems
 
@@ -458,3 +515,5 @@ $$
    so $x_1 = 4$, $x_2 = 0$, and $x_3 = -2$.
    ```
 >>>>>>> main
+
+>>>>>>> 54003c9bea5e92b4e1aa2b753fb68f7c96651736

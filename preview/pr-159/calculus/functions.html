@@ -57,6 +57,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"d": ["{\\operatorname{d}\\!{#1}}", 1], "dd": ["{\\d{}^{#1} #2 \\over \\d{#3}^{#1}}", 3], "pp": ["{\\partial^{#1} #2 \\over \\partial #3^{#1}}", 3], "td": ["{\\left(\\pp{#1}{#2}{#3} \\right)_{#4}}", 4], "ubar": ["\\underline{#1}", 1], "vv": ["\\mathbf{#1}", 1]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'calculus/functions';</script>
     <link rel="canonical" href="https://mphowardlab.github.io/essential-math/calculus/functions.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -171,7 +173,7 @@
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">1.1. Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="limits.html">1.2. Limits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="derivatives.html">1.3. Derivatives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="derivative-rules.html">1.4. Product, quotient, and chain rule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="derivative-rules.html">1.4. Rules for derivatives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="series-expansion.html">1.5. Series expansion</a></li>
 <li class="toctree-l2"><a class="reference internal" href="integration.html">1.6. Integration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="integration-substitution.html">1.7. Integration using substitution</a></li>
@@ -403,7 +405,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -419,6 +423,20 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulating-functions">1.1.1. Manipulating functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identities">1.1.2. Identities</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trigonmetric-functions">1.1.2.1. Trigonmetric functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exponential-functions">1.1.2.2. Exponential functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithmic-functions">1.1.2.3. Logarithmic functions</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -430,6 +448,150 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="functions">
 <h1><span class="section-number">1.1. </span>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h1>
+<section id="manipulating-functions">
+<h2><span class="section-number">1.1.1. </span>Manipulating functions<a class="headerlink" href="#manipulating-functions" title="Link to this heading">#</a></h2>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Horizontal shift</div>
+<ul class="simple">
+<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(f(x+a)\)</span> shifts <em>f</em> left by <em>a</em>.</p></li>
+<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(f(x-a)\)</span> shifts <em>f</em> right by <em>a</em>.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/Shifting_X_direction.jpg"><img alt="Shifting in X direction" class="align-center" src="../_images/Shifting_X_direction.jpg" style="width: 300px;" />
+</a>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Vertical shift</div>
+<ul class="simple">
+<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(f(x)+b\)</span> shifts <em>f</em> up by <em>b</em>.</p></li>
+<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(f(x)-b\)</span> shifts <em>f</em> down by <em>b</em>.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/Shifting_Y_direction.jpg"><img alt="Shifting in Y direction" class="align-center" src="../_images/Shifting_Y_direction.jpg" style="width: 300px;" />
+</a>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Horizontal scaling</div>
+<ul class="simple">
+<li><p class="sd-card-text">Scaling <span class="math notranslate nohighlight">\(f(cx)\)</span> compresses <em>f</em> horizontally by <em>c</em>.</p></li>
+<li><p class="sd-card-text">Scaling <span class="math notranslate nohighlight">\(f(x/c)\)</span> stretches <em>f</em> horizontally by <em>c</em>.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/Horizontal_Compression.jpg"><img alt="Horizontal Compression" class="align-center" src="../_images/Horizontal_Compression.jpg" style="width: 300px;" />
+</a>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Vertical scaling</div>
+<ul class="simple">
+<li><p class="sd-card-text">Scaling <span class="math notranslate nohighlight">\(f(x)/c\)</span> compresses <em>f</em> vertically by <em>c</em>.</p></li>
+<li><p class="sd-card-text">Scaling <span class="math notranslate nohighlight">\(cf(x)\)</span> streches <em>f</em> vertically by <em>c</em>.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/Vertical_Stretch.jpg"><img alt="Vertical Stretch" class="align-center" src="../_images/Vertical_Stretch.jpg" style="width: 300px;" />
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="identities">
+<h2><span class="section-number">1.1.2. </span>Identities<a class="headerlink" href="#identities" title="Link to this heading">#</a></h2>
+<section id="trigonmetric-functions">
+<h3><span class="section-number">1.1.2.1. </span>Trigonmetric functions<a class="headerlink" href="#trigonmetric-functions" title="Link to this heading">#</a></h3>
+<div class="amsmath math notranslate nohighlight" id="equation-304c76b0-442e-4f30-bea9-595e816d436e">
+<span class="eqno">(1.1)<a class="headerlink" href="#equation-304c76b0-442e-4f30-bea9-595e816d436e" title="Permalink to this equation">#</a></span>\[\begin{align}
+\sin \theta &amp;= \frac{y}{r} &amp; \csc \theta &amp;= \frac{r}{x} = \frac{1}{\cos \theta} \\
+\cos \theta &amp;= \frac{x}{r} &amp; \sec \theta &amp;= \frac{r}{x} = \frac{1}{\cos \theta} \\
+\tan \theta &amp;= \frac{y}{x} = \frac{\sin \theta}{\cos \theta} &amp;
+\cot \theta &amp;= \frac{x}{y} = \frac{\cos \theta}{\sin \theta}
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-6bc6a009-e488-40ff-b46c-d0d24dfb88a7">
+<span class="eqno">(1.2)<a class="headerlink" href="#equation-6bc6a009-e488-40ff-b46c-d0d24dfb88a7" title="Permalink to this equation">#</a></span>\[\begin{align}
+\sin^2 \theta + \cos^2 \theta = 1 \\
+1 + \tan^2 \theta = \sec^2 \theta \\
+1 + \cot^2 \theta = \csc^2 \theta
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-5da7ac53-6349-4b4b-baac-3045efc6359a">
+<span class="eqno">(1.3)<a class="headerlink" href="#equation-5da7ac53-6349-4b4b-baac-3045efc6359a" title="Permalink to this equation">#</a></span>\[\begin{align}
+\cos(A+B) = \cos A \cos B - \sin A \sin B \\
+\sin(A+B) = \sin A \cos B - \cos A \sin B
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-7c0920a6-f189-43f8-9f6b-481fde8c73b8">
+<span class="eqno">(1.4)<a class="headerlink" href="#equation-7c0920a6-f189-43f8-9f6b-481fde8c73b8" title="Permalink to this equation">#</a></span>\[\begin{align}
+\cos 2 \theta = \cos^2 \theta - \sin^2 \theta \\
+\sin 2 \theta = 2 \sin \theta \cos \theta
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-c038da84-0edd-4993-8b60-50d8c12bedfc">
+<span class="eqno">(1.5)<a class="headerlink" href="#equation-c038da84-0edd-4993-8b60-50d8c12bedfc" title="Permalink to this equation">#</a></span>\[\begin{align}
+\cos^2 \theta = \frac{1 + \cos 2 \theta}{2} \\
+\sin^2 \theta = \frac{1 - \cos 2 \theta}{2}
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-8fcab794-a549-4db6-8621-79c3f47b53de">
+<span class="eqno">(1.6)<a class="headerlink" href="#equation-8fcab794-a549-4db6-8621-79c3f47b53de" title="Permalink to this equation">#</a></span>\[\begin{align}
+\sin(\theta + 2 \pi) = \sin \theta \\
+\cos(\theta + 2 \pi) = \cos \theta
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-e69f3ce0-542f-4804-81b0-0b4829eedff7">
+<span class="eqno">(1.7)<a class="headerlink" href="#equation-e69f3ce0-542f-4804-81b0-0b4829eedff7" title="Permalink to this equation">#</a></span>\[\begin{align}
+\sin(- \theta) = - \sin \theta \\
+\cos(- \theta) = cos \theta
+\end{align}\]</div>
+</section>
+<section id="exponential-functions">
+<h3><span class="section-number">1.1.2.2. </span>Exponential functions<a class="headerlink" href="#exponential-functions" title="Link to this heading">#</a></h3>
+<div class="amsmath math notranslate nohighlight" id="equation-db15b3ce-bcc0-4d05-b6c3-75ab88649b3b">
+<span class="eqno">(1.8)<a class="headerlink" href="#equation-db15b3ce-bcc0-4d05-b6c3-75ab88649b3b" title="Permalink to this equation">#</a></span>\[\begin{align}
+a^x a^y &amp;= a^{x+y} \\
+\frac{a^x}{a^y} &amp;= a^{x-y} \\
+(a^x)^y = (a^y)^x &amp;= a^{xy} \\
+a^x b^x &amp;= (ab)^x \\
+\frac{a^x}{b^x} &amp;= \left (\frac{a}{b} \right)^x
+\end{align}\]</div>
+</section>
+<section id="logarithmic-functions">
+<h3><span class="section-number">1.1.2.3. </span>Logarithmic functions<a class="headerlink" href="#logarithmic-functions" title="Link to this heading">#</a></h3>
+<p>Definition:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f959c950-8835-4669-aebd-f23dba6ed432">
+<span class="eqno">(1.9)<a class="headerlink" href="#equation-f959c950-8835-4669-aebd-f23dba6ed432" title="Permalink to this equation">#</a></span>\[\begin{align}
+y &amp;= \log_{a}x \\
+x &amp;= a^y
+\end{align}\]</div>
+<p>Natural Log:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7481e2be-bcb5-4148-a505-2315ff2ad304">
+<span class="eqno">(1.10)<a class="headerlink" href="#equation-7481e2be-bcb5-4148-a505-2315ff2ad304" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\ln x = \log_{e} x
+\end{equation}\]</div>
+<p>Common log:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e59f11c8-8df6-46b6-815c-a455f383e0db">
+<span class="eqno">(1.11)<a class="headerlink" href="#equation-e59f11c8-8df6-46b6-815c-a455f383e0db" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\log x = \log_{10} x
+\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-64907988-0da3-420e-b906-090078b73077">
+<span class="eqno">(1.12)<a class="headerlink" href="#equation-64907988-0da3-420e-b906-090078b73077" title="Permalink to this equation">#</a></span>\[\begin{align}
+\ln(bx) &amp;= \ln(b) + \ln(x) \\
+\ln\left(\frac{b}{x}\right) &amp;= \ln(b) - \ln(x) \\
+\ln(x^r) &amp;= r \ln(x) \\
+\log_{a}x &amp;= \frac{\ln(x)}{\ln(a)} \\
+\end{align}\]</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -486,6 +648,27 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulating-functions">1.1.1. Manipulating functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identities">1.1.2. Identities</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trigonmetric-functions">1.1.2.1. Trigonmetric functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exponential-functions">1.1.2.2. Exponential functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithmic-functions">1.1.2.3. Logarithmic functions</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
