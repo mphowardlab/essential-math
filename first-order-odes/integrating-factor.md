@@ -156,137 +156,212 @@ c(t) &= \frac{A}{k}
 
 ````
 
-## Skill Builder
-```{problem}
+## Skill builder problems
 
-1.Solve the differential equation:
-   \begin{align}
-y' = -\frac{e^{x+y} + ye^y}{x e^y - 1}
-   \end{align}
+Solve the following differential equations:
+
+1. $\displaystyle y' = \frac{x^4 + y^2}{xy}$
 
    ```{solution}
-```math
-y' = -\frac{e^{x+y} + ye^y}{x e^y - 1}
-```
+   This ODE is not in the standard form, so we need to first rearrange:
 
-This can be rewritten as:
-```math
-(e^{x+y} + ye^y) \, dx + (x e^y - 1) \, dy = 0
-```
+   \begin{align}
+   xy \d{y} = (x^4+y^2) \d{x} \\
+   (x^4 + y^2) \d{x} - xy \d{y} = 0
+   \end{align}
 
-Check if the differential equation is exact:
+   so:
 
-Let 
-```math
-P(x, y) = e^{x+y} + ye^y, \quad Q(x, y) = x e^y - 1
-```
+   \begin{align}
+   P &= x^4 + y^2 \\
+   Q &= -xy
+   \end{align}
 
-```math
-\frac{\partial P}{\partial y} = e^{x+y} + y e^y + e^y, \quad \frac{\partial Q}{\partial x} = e^y
-```
+   Check to see if the ODE is exact:
 
-These are not equal, so the equation is not exact. Find integrating factor:
+   \begin{align}
+   \td{}{P}{y}{x} &= 2y \\
+   \td{}{Q}{x}{y} &= -y
+   \end{align}
 
-Let 
-```math
-\mu(y) = e^{\int -dy} = e^{-y}
-```
+   The two partial derivatives are not equal, so the ODE is not exact. In
+   order to make it exact, we need to find an integrating factor *F*. First,
+   compute:
 
-Multiply the equation by \( e^{-y} \):
+   \begin{align}
+   R &= \frac{1}{Q}\left[\td{}{P}{y}{x} - \td{}{Q}{x}{y} \right] \\
+     &=\frac{1}{-xy}(2y-(-y)) \\
+     &= -\frac{3}{x}
+   \end{align}
 
-```math
-e^{-y}(e^{x+y} + ye^y) \, dx + e^{-y}(x e^y - 1) \, dy = 0
+   *R* is a function of only *x*, so use it to compute *F*
 
-(e^x + y) \, dx + (x - e^{-y}) \, dy = 0
-```
+   \begin{equation}
+   F = \exp\left(\int \frac{-3}{x} \d{x}\right) = e^{-3\ln(x)} = x^{-3}
+   \end{equation}
 
-Now the equation is exact
+   Apply the integrating factor to the original ODE:
 
-```math
-\frac{\partial f}{\partial x} = e^x + y \Rightarrow f(x, y) = e^x + xy + k(y)
-```
+   \begin{align}
+   x^{-3}(x^4+y^2) \d{x} - x^{-3}(xy) \d{y} &= 0 \\
+   \left(x+\frac{y^2}{x^{-3}}\right) \d{x} - \frac{y}{x^2} \d{y} &= 0
+   \end{align}
 
-Now differentiate \( f(x, y) \) with respect to \( y \):
+   Integrate the *Q* of our exact ODE with respect to *y*:
 
-```math
-\frac{\partial f}{\partial y} = x + k'(y)
-```
+   \begin{equation}
+   f(x,y) = \int -\frac{y}{x^2} \d{y} = \frac{-y^2}{2x^2}+k(x)
+   \end{equation}
 
-Set equal to the second term from the exact equation:
+   where *k* is an unknown function of *x*. Then, differentiate *f* with respect
+   to *x* and compare to *P* of the exact ODE:
 
-```math
-x + k'(y) = x - e^{-y} \Rightarrow k'(y) = -e^{-y}
-```
+   \begin{align}
+   \td{}{f}{x}{y} = \frac{y^2}{x^3} + k'(x) &= P = x + \frac{y^2}{x^3} \\
+   k'(x) &= x \\
+   \end{align}
 
-Integrate:
+   This ODE for *k* can be integrated directly (neglecting the integration
+   constant)
 
-```math
-k(y) = \int -e^{-y} \, dy = -e^{-y} + c
-```
+   \begin{equation}
+   k = \int x \d{x} = \frac{x^2}{2}
+   \end{equation}
 
-```math
-f(x, y) = e^x + xy - e^{-y} + c
-```
+   Putting it all together,
 
-```{math}
-\boxed{e^x + xy - e^{-y} = c}
-```
-```{problem}
-2.Solve the differential equation:
+   \begin{align}
+   f = \frac{-y^2}{2x^2} + \frac{x^2}{2} = c
+   \end{align}
 
-```math
-y' = y + 1 - 2x
-```
+   is an implicit solution of the ODE.
+   ```
 
-Rewrite in linear form:
+2. $\displaystyle y' = -\frac{e^{x+y} + ye^y}{x e^y - 1}$
 
-```math
-y' - y = 1 - 2x
-```
+   ````{solution}
+   ```{math}
+   y' = -\frac{e^{x+y} + ye^y}{x e^y - 1}
+   ```
 
-```math
-p(x) = -1, \quad r(x) = 1 - 2x
-```
+   This can be rewritten as:
 
-Find integrating factor:
+   ```{math}
+   (e^{x+y} + ye^y) \d{x} + (x e^y - 1) \d{y} = 0
+   ```
 
-```math
-F = e^{\int -1 \, dx} = e^{-x}
-```
+   Check if the differential equation is exact:
 
-Multiply through by the integrating factor:
+   Let
+   ```{math}
+   P(x, y) = e^{x+y} + ye^y, \quad Q(x, y) = x e^y - 1
+   ```
 
-```math
-e^{-x} y' - e^{-x} y = e^{-x}(1 - 2x)
-```
+   ```{math}
+   \frac{\partial P}{\partial y} = e^{x+y} + y e^y + e^y, \quad
+   \frac{\partial Q}{\partial x} = e^y
+   ```
 
-Left-hand side becomes the derivative of \( e^{-x} y \):
+   These are not equal, so the equation is not exact. Find integrating factor:
 
-```math
-\frac{d}{dx}(e^{-x} y) = e^{-x}(1 - 2x)
-```
+   Let
+   ```{math}
+   \mu(y) = e^{\int -dy} = e^{-y}
+   ```
 
-```math
-\int \frac{d}{dx}(e^{-x} y) \, dx = \int e^{-x}(1 - 2x) \, dx
-```
+   Multiply the equation by \( e^{-y} \):
 
-Use integration by parts
+   ```{math}
+   e^{-y}(e^{x+y} + ye^y) \, dx + e^{-y}(x e^y - 1) \, dy = 0
 
-```math
-\int e^{-x}(1 - 2x) \, dx = -(1 - 2x)e^{-x} + 2e^{-x}
-```
+   (e^x + y) \, dx + (x - e^{-y}) \, dy = 0
+   ```
 
-```math
-e^{-x} y = -(1 - 2x)e^{-x} + 2e^{-x} + c
-```
+   Now the equation is exact
 
-```math
-y = e^x \left[ -(1 - 2x)e^{-x} + 2e^{-x} + c \right] = 1 + 2x + c e^x
-```
+   ```{math}
+   \frac{\partial f}{\partial x} = e^x + y \Rightarrow f(x, y) = e^x + xy + k(y)
+   ```
 
-Final solution:
+   Now differentiate \( f(x, y) \) with respect to \( y \):
 
-```{math}
-\boxed{y = 1 + 2x + c e^x}
-```
-```
+   ```{math}
+   \frac{\partial f}{\partial y} = x + k'(y)
+   ```
+
+   Set equal to the second term from the exact equation:
+
+   ```{math}
+   x + k'(y) = x - e^{-y} \Rightarrow k'(y) = -e^{-y}
+   ```
+
+   Integrate:
+
+   ```{math}
+   k(y) = \int -e^{-y} \, dy = -e^{-y} + c
+   ```
+
+   ```{math}
+   f(x, y) = e^x + xy - e^{-y} + c
+   ```
+
+   ```{math}
+   \boxed{e^x + xy - e^{-y} = c}
+   ```
+   ````
+
+3. $y' = y + 1 - 2x$
+
+   ````{solution}
+   Rewrite in linear form:
+
+   ```{math}
+   y' - y = 1 - 2x
+   ```
+
+   ```{math}
+   p(x) = -1, \quad r(x) = 1 - 2x
+   ```
+
+   Find integrating factor:
+
+   ```{math}
+   F = e^{\int -1 \, dx} = e^{-x}
+   ```
+
+   Multiply through by the integrating factor:
+
+   ```{math}
+   e^{-x} y' - e^{-x} y = e^{-x}(1 - 2x)
+   ```
+
+   Left-hand side becomes the derivative of \( e^{-x} y \):
+
+   ```{math}
+   \frac{d}{dx}(e^{-x} y) = e^{-x}(1 - 2x)
+   ```
+
+   ```{math}
+   \int \frac{d}{dx}(e^{-x} y) \, dx = \int e^{-x}(1 - 2x) \, dx
+   ```
+
+   Use integration by parts
+
+   ```{math}
+   \int e^{-x}(1 - 2x) \, dx = -(1 - 2x)e^{-x} + 2e^{-x}
+   ```
+
+   ```{math}
+   e^{-x} y = -(1 - 2x)e^{-x} + 2e^{-x} + c
+   ```
+
+   ```{math}
+   y = e^x \left[ -(1 - 2x)e^{-x} + 2e^{-x} + c \right] = 1 + 2x + c e^x
+   ```
+
+   Final solution:
+
+   ```{math}
+   \boxed{y = 1 + 2x + c e^x}
+   ```
+   ````
