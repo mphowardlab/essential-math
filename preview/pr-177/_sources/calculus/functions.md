@@ -149,9 +149,9 @@ Trigonometric functions represent waves. The properties of the wave can be encod
 :align: center
 ```
 
-\begin{align}
-y& = A\sin[(\frac{2\pi}{L})(x + x_{o})] + y_{o}
-\end{align}
+\begin{equation}
+y = A\sin\left[ \frac{2\pi}{L}(x + x_{o}) \right] + y_{o}
+\end{equation}
 Where: A = amplitude, $\frac{2\pi}{L}$ = period, $x_{0}$ = horizontal shift, and $y_{o}$ = vertical shift
 
 ## Identities
