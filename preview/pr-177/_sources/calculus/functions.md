@@ -105,7 +105,7 @@ At $ \theta = 30^{\circ} $:
 
 At $ \theta = 60^{\circ} $:
 \begin{equation}
-\sin(\theta) = \frac{\sqrt{3}}{2} \quad \cos(\theta)& = \frac{1}{2}& 
+\sin(\theta) = \frac{\sqrt{3}}{2} \quad \cos(\theta) = \frac{1}{2}
 \end{equation}
 
 ```{image} ./_images/454590triangle.png
