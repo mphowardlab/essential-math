@@ -87,6 +87,7 @@ examples:
 
 1. $f(x) = (x - 1)^2 + 1$
 
+   ```{solution}
    \begin{align}
    f'(x) &= \lim_{h \to 0} \frac{[(x + h - 1)^2 + 1] - [(x - 1)^2 + 1]}{h} \\
        &= \lim_{h \to 0} \frac{(x - 1)^2 +
@@ -95,9 +96,11 @@ examples:
        &= \lim_{h \to 0} 2(x - 1) + h \\
        &= 2(x - 1)
    \end{align}
+   ```
 
 2. $f(x) = 1/x$
 
+   ```{solution}
    \begin{align}
    f'(x) &= \lim_{h \to 0} \frac{\dfrac{1}{x+h} - \dfrac{1}{x}}{h} \\
        &= \lim_{h \to 0} \frac{\dfrac{x - (x + h)}{x(x+h)}}{h}  \\
@@ -105,6 +108,7 @@ examples:
        &= \lim_{h \to 0} \frac{-1}{(x+h)x} \\
        &= \frac{-1}{x^2}
    \end{align}
+   ```
 
 ## Differentiability
 
