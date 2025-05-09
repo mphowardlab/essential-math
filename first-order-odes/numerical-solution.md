@@ -166,13 +166,21 @@ Step size $\Delta t = 0.2$
 
 Therefore, for $\Delta t = 0.2$:
 
-$$
+\begin{equation}
 y(1) \approx 3.322
-$$
+\end{equation}
 `````
 ---
 
 Analytical solution:
+
+
+For this example,
+
+$p = -1$
+
+$ r = 5\sin(2\pi t)$
+
 \begin{equation}
 y^' - y = 5 \sin(2\pi t)
 \end{equation}
