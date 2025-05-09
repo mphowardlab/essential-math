@@ -187,14 +187,15 @@ y^' - y = 5\sin(2\pi t)
 
 First, find the integrating factor
 \begin{equation}
-F = e^{\int p dt} = e^{-\int dt} = e^{-t}
+F = e^{\int p \d{t}} = e^{-\int \d{t}} = e^{-t}
 \end{equation}
 
 \begin{align}
-\intF*r* dt &= \int e^{-t} 5\sin(2\pi t dt) \\ &= \frac{5 e^{-t}}{4\pi^2+ 1}\left[ -1\sin(2\pi t)- 2\pi \cos(2\pi t)\right]
+\intF r \d{t} &= \int e^{-t} 5\sin(2\pi t \d{t}) \\ &= \frac{5 e^{-t}}{4\pi^2 + 1}\left[ -1\sin(2\pi t) - 2\pi \cos(2\pi t)\right]
 \end{align}
 
 Then, solve for $y$. 
+
 \begin{equation}
 y = \frac{1}{F} \left[\int F r dt + C \right] = \frac{-5}{4\pi^2 +1} left\(\sin(2\pi t) + 2\pi cos(2\pi t)\right) + C e^{t}
 \end{equation}
