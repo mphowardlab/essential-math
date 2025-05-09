@@ -270,3 +270,216 @@ c(t) &= \frac{A}{k}
 \end{align}
 
 ````
+
+## Skill builder problems
+
+Solve the following differential equations:
+
+1. $\displaystyle y' = \frac{x^4 + y^2}{xy}$
+
+   ```{solution}
+   This ODE is not in the standard form, so we need to first rearrange:
+
+   \begin{align}
+   xy \d{y} = (x^4+y^2) \d{x} \\
+   (x^4 + y^2) \d{x} - xy \d{y} = 0
+   \end{align}
+
+   so:
+
+   \begin{align}
+   P &= x^4 + y^2 \\
+   Q &= -xy
+   \end{align}
+
+   Check to see if the ODE is exact:
+
+   \begin{align}
+   \td{}{P}{y}{x} &= 2y \\
+   \td{}{Q}{x}{y} &= -y
+   \end{align}
+
+   The two partial derivatives are not equal, so the ODE is not exact. In
+   order to make it exact, we need to find an integrating factor *F*. First,
+   compute:
+
+   \begin{align}
+   R &= \frac{1}{Q}\left[\td{}{P}{y}{x} - \td{}{Q}{x}{y} \right] \\
+     &=\frac{1}{-xy}(2y-(-y)) \\
+     &= -\frac{3}{x}
+   \end{align}
+
+   *R* is a function of only *x*, so use it to compute *F*
+
+   \begin{equation}
+   F = \exp\left(\int \frac{-3}{x} \d{x}\right) = e^{-3\ln(x)} = x^{-3}
+   \end{equation}
+
+   Apply the integrating factor to the original ODE:
+
+   \begin{align}
+   x^{-3}(x^4+y^2) \d{x} - x^{-3}(xy) \d{y} &= 0 \\
+   \left(x+\frac{y^2}{x^{-3}}\right) \d{x} - \frac{y}{x^2} \d{y} &= 0
+   \end{align}
+
+   Integrate the *Q* of our exact ODE with respect to *y*:
+
+   \begin{equation}
+   f(x,y) = \int -\frac{y}{x^2} \d{y} = \frac{-y^2}{2x^2}+k(x)
+   \end{equation}
+
+   where *k* is an unknown function of *x*. Then, differentiate *f* with respect
+   to *x* and compare to *P* of the exact ODE:
+
+   \begin{align}
+   \td{}{f}{x}{y} = \frac{y^2}{x^3} + k'(x) &= P = x + \frac{y^2}{x^3} \\
+   k'(x) &= x \\
+   \end{align}
+
+   This ODE for *k* can be integrated directly (neglecting the integration
+   constant)
+
+   \begin{equation}
+   k = \int x \d{x} = \frac{x^2}{2}
+   \end{equation}
+
+   Putting it all together,
+
+   \begin{align}
+   f = \frac{-y^2}{2x^2} + \frac{x^2}{2} = c
+   \end{align}
+
+   is an implicit solution of the ODE.
+   ```
+
+2. $\displaystyle y' = -\frac{e^{x+y} + ye^y}{x e^y - 1}$
+
+   ````{solution}
+   This ODE is not in the standard form, so we need to first rearrange:
+
+   \begin{align}
+   (e^{x+y} + ye^y) \d{x} + (x e^y - 1) \d{y} = 0
+   \end{align}
+
+   so
+
+   \begin{align}
+   P &= e^{x+y} + ye^y \\
+   Q &= x e^y - 1
+   \end{align}
+
+   Check if the differential equation is exact:
+
+   \begin{align}
+   \td{}{P}{y}{x} &= e^{x+y} + y e^y + e^y \\
+   \td{}{Q}{x}{y} &= e^y
+   \end{align}
+
+   These are not equal, so the equation is not exact. To make it exact, find
+   integrating factor *F*. The *R* formula gives:
+
+   \begin{align}
+   R &= \frac{1}{Q}\left[\td{}{P}{y}{x} - \td{}{Q}{x}{y} \right] \\
+     &=\frac{1}{x e^y - 1}(e^{x+y} + y e^y + e^y - e^y) \\
+     &= \frac{e^y(e^x + y)}{x e^y - 1}
+   \end{align}
+
+   this is not a function of only *x*, so try the *S* formula:
+
+   \begin{align}
+   S &= -\frac{Q}{P} R \\
+     &= -\frac{e^y(e^x + y)}{e^{x+y} + y e^y} \\
+     &= -1
+   \end{align}
+
+   This is a function of, at most, *y* so:
+
+   \begin{equation}
+   F = \exp\left(\int S\d{y} \right) = e^{-y}
+   \end{equation}
+
+   Multiply the equation by *F*:
+
+   \begin{equation}
+   (e^x + y) \d{x} + (x - e^{-y}) \d{y} = 0
+   \end{equation}
+
+   Now the equation is exact so integrate the new *P* with respect to *x*:
+
+   \begin{equation}
+   f(x,y) = \int (e^x + y) \d{x} = e^x + xy + k(y)
+   \end{equation}
+
+   where *k* is an unknown function of *y*. Then, differentiate *f* with respect
+   to *y* and compare to *Q*:
+
+   \begin{align}
+   \td{}{f}{x}{y} = x + k'(y) &= Q = x - e^{-y} \\
+   k' &= -e^{-y}
+   \end{align}
+
+   This ODE for *k* can be integrated directly (neglecting the integration constant)
+
+   \begin{align}
+   k(y) = \int -e^{-y} \d{y} = e^{-y}
+   \end{align}
+
+   Putting it all together,
+
+   \begin{align}
+   f(x, y) = e^x + e^{-y} + xy = c
+   \end{align}
+
+   is an implicit solution for the ODE.
+   ````
+
+3. $\displaystyle y' = y + 1 - 2x$
+
+   ````{solution}
+   Rewrite in linear form:
+
+   \begin{align}
+   y' - y = 1 - 2x
+   \end{align}
+
+   where
+
+   \begin{align}
+   p = -1 \qquad r = 1 - 2x
+   \end{align}
+
+   Find integrating factor:
+
+   \begin{align}
+   F = e^{\int p\d{x}} = e^{\int -1 \d{x}} = e^{-x}
+   \end{align}
+
+   Then, evaluate the integral
+
+   \begin{equation}
+   \int F r \d{x} = \int e^{-x} (1-2x) \d{x}
+   \end{equation}
+
+   This integral can be evaluated by parts using the tabular method:
+
+   | sign | $u$    | $\d{v}$   |
+   |------|--------|-----------|
+   |      |        | $e^{-x}$  |
+   |  $+$ | $1-2x$ | $-e^{-x}$ |
+   |  $-$ | $-2$   | $e^{-x}$  |
+   |      | $0$    |           |
+
+   so
+
+   \begin{equation}
+   \int F r \d{x} = (2x-1)e^{-x} + 2 e^{-x} = (2x + 1) e^{-x}
+   \end{equation}
+
+   Putting it all together:
+
+   \begin{align}
+   y &= \frac{1}{F}\left(\int F r \d{x} + c \right) \\
+     &= e^x \left[ (2x + 1) e^{-x} + c \right] \\
+     &= 1 + 2x + c e^x
+   \end{align}
+   ````
