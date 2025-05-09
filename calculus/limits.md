@@ -76,6 +76,191 @@ This divergence is clear on a plot:
 
 We say that such a limit does not exist.
 
+## Formal definition
+
+```{topic} Limit (formal)
+The limit of $f$ as $x$ approaches $x_0$ is *L*, denoted
+
+\begin{equation}
+\lim_{x \to x_0} f(x) = L
+\end{equation}
+
+if for every $\epsilon > 0$ there exists $\delta > 0$ such that for all *x*,
+if $0 < |x-x_0| < \delta$ then $|f(x)-L| < \epsilon$.
+```
+
+$\epsilon$ is a *tolerance* setting how close *f* needs to be to *L*. Given
+any $\epsilon$, we need to find a "window" of *x* values within $\delta$ of
+$x_0$ so that *f* stays within $\epsilon$ of *L*. For example, consider the
+following:
+
+```{image} ./_images/delta_epsilon_limit.jpg
+:alt: Limit Graph
+:width: 300px
+:align: center
+```
+
+Based on this plot, if $\epsilon = 1$, $3 < f < 5$ if $3 < x < 5$
+(i.e., $\delta = 1$). For a general $\epsilon$,
+$4 - \epsilon < f < 4 + \epsilon$ if $4 - \delta < x < 4 + \delta$ or
+equivalently, $|x-4| < \epsilon$. We hence identify $\delta = \epsilon$ and
+have proven that
+
+\begin{equation}
+\lim_{x \to 4} f = 4
+\end{equation}
+
+However, such a $\delta$ cannot always be found for all $\epsilon$ for certain
+functions! There, the limit does not exist. For example, consider
+
+\begin{equation}
+f(x) = \begin{cases}
+x,& x < 4 \\
+x-2,& x \ge 4
+\end{cases}
+\end{equation}
+
+```{image} ./_images/delta_epsilon_no_limit.jpg
+:alt: Limit Graph 2
+:width: 300px
+:align: center
+```
+
+Does the limit
+
+\begin{equation}
+\lim_{x \to 4} f(x) = 3
+\end{equation}
+
+exist? If \epsilon = 0.5, there is no $\delta$ that contains *f* around
+$x_0 = 4$. Therefore, this limit does not exsit
+
+This math formalism is powerful, but clunky to apply. We will now move onto
+using rules (limit laws) that have been proven using them!
+
+## Limit laws
+
+There are some simple limits and rules for combining them that are convenient
+to know because they can be used to evaluate limits of more complicated
+functions:
+
+- Constant
+
+  \begin{equation}
+  \lim_{x \to c} k = k
+  \end{equation}
+
+- Identity
+
+  \begin{equation}
+  \lim_{x \to c} x = c
+  \end{equation}
+
+- Continuous function
+
+  \begin{equation}
+  \lim_{x \to c} f(x) = f(c)
+  \end{equation}
+
+  if $f(x)$ is continuous at *x* (no jumps or holes).
+
+- Sum
+
+  \begin{equation}
+  \lim_{x \to c} \left(f(x) + g(x)\right) =
+    \lim_{x \to c} f(x) + \lim_{x \to c} g(x)
+  \end{equation}
+
+- Difference
+
+  \begin{equation}
+  \lim_{x \to c} \left(f(x) - g(x)\right) =
+    \lim_{x \to c} f(x) - \lim_{x \to c} g(x)
+  \end{equation}
+
+- Product
+
+  \begin{equation}
+  \lim_{x \to c} f(x)g(x) =
+    \left(\lim_{x \to c} f(x)\right)\left(\lim_{x \to c} g(x)\right)
+  \end{equation}
+
+- Quotient
+
+  \begin{equation}
+  \lim_{x \to c} \frac{f(x)}{g(x)} =
+    \dfrac{\lim_{x \to c} f(x)}{\lim_{x \to c} g(x)}
+  \end{equation}
+
+- Power
+
+  \begin{equation}
+  \lim_{x \to c} f(x)^{r/s} = \left(\lim_{x \to c} f(x)\right)^{r/s}
+  \end{equation}
+
+  where *r* and $s \ne 0$ are integers. The limit of *f* must be positive if
+  *s* is even.
+
+## Taking limits
+
+"Nice" functions can be evaluated directly
+
+\begin{align}
+\lim_{x \to -1} x^3 + 4x^2 -3 &= (-1)^3 + 4(-1)^2 -3 \\
+&= -1 + 4 -3 \\
+&= 0
+\end{align}
+
+This works even if they are complicated
+
+\begin{align}
+\lim_{x \to 4} \left(\frac{x^2 + 9}{x + 1} \right)^{1/2}
+&= \left(\frac{4^2 + 9}{4 + 1} \right)^{1/2} \\
+&= \left(\frac{25}{5}\right)^{1/2} \\
+&= \sqrt{5}
+\end{align}
+
+Limits are most useful when functions have "holes" (function is not defined at
+$x_0$)
+
+\begin{align}
+\lim_{x \to 1} \frac{x^2 + x -2}{x^2 - x}
+&= \lim_{x \to 1} \frac{(x+2)(x+1)}{x(x+1)} \\
+&= \lim_{x \to 1} \frac{x+2}{x} \\
+&= 3
+\end{align}
+
+Note that this function had a "hole" at $x = 1$ that we removed by factoring.
+This works even if the factors are "ugly":
+
+\begin{align}
+\lim_{x \to 4} \frac{4x - x^2}{2 - \sqrt{x}}
+&= \lim_{x \to 4} \frac{x(4 - x)}{2 - \sqrt{x}} \\
+&= \lim_{x \to 4} \frac{x(2 + \sqrt{x})(2 - \sqrt{x})}{2 - \sqrt{x}} \\
+&= \lim_{x \to 4} x(2 + \sqrt{x}) \\
+&= 4(2 + \sqrt{4}) \\
+&= 16
+\end{align}
+
+Here, we made use of the difference of squares identity:
+
+\begin{equation}
+a^2 - b^2 = (a + b)(a - b)
+\end{equation}
+
+Another useful trick is to multiply by a factor of "1" that makes a difference
+of squares (multiply by conjugate)
+
+\begin{align}
+\lim_{x \to 0} \frac{\sqrt{3x + 1} - 1}{x}
+&= \lim_{x \to 0}
+  \frac{(\sqrt{3x + 1} - 1)(\sqrt{3x + 1} + 1)}{x(\sqrt{3x + 1} + 1)} \\
+&= \lim_{x \to 0} \frac{(\sqrt{3x + 1})^2 - 1^2}{x(\sqrt{3x + 1} + 1)} \\
+&= \lim_{x \to 0} \frac{3x + 1 - 1}{x(\sqrt{3x + 1} + 1)} \\
+&= \lim_{x \to 0} \frac{3}{\sqrt{3x + 1} + 1} \\
+&= \frac{3}{2}
+\end{align}
+
 ## Limits at infinity
 
 How do functions behave when x gets "big"? For example, if the independent
@@ -254,3 +439,65 @@ $\lim_{x \to 1} f(x)$ does not exist.
 However, $\lim_{x \to 2^-} f(x) = 1$ and $\lim_{x \to 2^+} f(x) = 1$, so
 $\lim_{x \to 2} f(x) = 1$, even though $f(2) = 2$.
 ````
+
+## Infinite limits
+
+Some functions tend to $\pm\infty$ at a value, even if they do not have a limit.
+
+::::{grid}
+
+:::{grid-item-card}
+
+$$
+f(x) = 1/x^2
+$$
+
+```{image} ./_images/fx_plot_infinite_limits.png
+:alt: Infinite limit exists
+:align: center
+:width: 300px
+```
+
+Limit exists and is $+\infty$.
+
+:::
+
+:::{grid-item-card}
+
+$$
+g(x) = 1/x
+$$
+
+```{image} ./_images/gx_plot_infinite_limits.png
+:alt: Infinite limit does not exist
+:align: center
+:width: 300px
+```
+
+Limit does not exist.
+
+:::
+
+::::
+
+```{topic} Infinite limits
+$f(x)$ approaches $\infty$ as *x* approaches $x_0$
+
+\begin{equation}
+\lim_{x\to\infty}f(x) = \infty
+\end{equation}
+
+if for every real *B* there exists $\delta > 0$ such that for all *x* if
+$0 < |x - x_0| < \delta$ then $f(x) >$ B. There is an analogous definition
+for functions that approach $-\infty$.
+```
+
+This behavior can be used to define a *vertical asymptote* of a function:
+
+```{topic} Vertical asymptote
+A line $x = a$ is a vertical asymptote of $y = f(x)$ if
+
+\begin{equation}
+\lim_{x \to a^+}f(x) = \pm\infty \quad {\rm or} \quad \lim_{x \to a^-}f(x) = \pm\infty
+\end{equation}
+```
