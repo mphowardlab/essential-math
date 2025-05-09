@@ -41,13 +41,13 @@ $\lambda=-1$:
 \begin{align}
 \begin{bmatrix} -5 -(-1) & 2 \\ 2 & -2-(-1) \end{bmatrix} \vv{x}= \begin{bmatrix} -4 & 2 \\ 2 & -1 \end{bmatrix} \vv{x} =0 
 \\
-\begin{bmatrix} -4 & 2 & 0 \\ 2 & -1 & 0 \end{bmatrix} \to \begin{bmatrix} -4 & 2 & 0 \\ 0 & 0 & 0 \end{bmatrix} \to \begin{bmatrix} 1 & -1/2 & 0 \\ 0 & 0 & 0 \end{bmatrix} \to x_1 -\frac{x_2}{2} =0 \\
-x_2 free
+\begin{bmatrix} -4 & 2 & 0 \\ 2 & -1 & 0 \end{bmatrix} \to \begin{bmatrix} -4 & 2 & 0 \\ 0 & 0 & 0 \end{bmatrix} \to \begin{bmatrix} 1 & -1/2 & 0 \\ 0 & 0 & 0 \end{bmatrix} \to \vv{x_1} -\frac{\vv{x_2}}{2} =0 \\
+\vv{x_2} free
 \end{align}
 
 This solution is not unique, which makes sense from the equation. We may then choose $x_1$ or $x_2$ so that the eigenvector has a nice norm or values. e.g.,
 \begin{align}
-x_1 =1, x_2 = 2 \to \vv{x}= \begin{bmatrix} 1 \\ 2 \end{bmatrix}
+\vv{x_1} =1, \vv{x_2} = 2 \to \vv{x}= \begin{bmatrix} 1 \\ 2 \end{bmatrix}
 \end{align}
 
 Repeat for $\lambda = -6$:
@@ -58,12 +58,12 @@ Repeat for $\lambda = -6$:
 Row 2 is 2x Row 1, so we can just use Row 1!(This will be a pattern for 2x2 matricies).
 
 \begin{align}
-x_1 +2x_2 =0 \to \vv{x}=\begin{bmatrix} 2 \\ -1 \end{bmatrix}
+\vv{x_1} +2\vv{x_2} =0 \to \vv{x}=\begin{bmatrix} 2 \\ -1 \end{bmatrix}
 \end{align}
 
 Hence, the eigenvalues and eigenvectors are:
 \begin{align}
-\lambda_1 = -1 , \underline{x_1}= \begin{bmatrix} 1 \\ 2 \end{bmatrix} \quad \text{and} \quad \lambda_2 = -6, \underline{x_2}= \begin{bmatrix} 2 \\ -1 \end{bmatrix}
+\lambda_1 = -1 , \vv{x_1}= \begin{bmatrix} 1 \\ 2 \end{bmatrix} \quad \text{and} \quad \lambda_2 = -6, \vv{x_2}= \begin{bmatrix} 2 \\ -1 \end{bmatrix}
 \end{align}
 
 
