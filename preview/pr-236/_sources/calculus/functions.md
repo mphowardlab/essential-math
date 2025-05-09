@@ -21,6 +21,11 @@ A function can be represented by:
 \end{equation}
 
 - A table:
+```{image} ./_images/x_f(x)_table.jpg
+:alt: x vs f(x) Table
+:width: 150px
+```
+
 \begin{array}{c|c}
 x & f(x) \\
 \hline
@@ -29,14 +34,18 @@ x & f(x) \\
 2 & 4
 \end{array}
 
-- A graph: [parabola graph representation]
+- A graph:
+```{image} ./_images/quadratic_graph.jpg
+:alt: x vs f(x) Graph
+:width: 150px
+```
 - A description: "square x"
 
 \textbf{Not all curves are functions!} f must uniquely map x
 
-\begin{align}
-x^2 + y^2 = 4 \text{ [circle equation]}
-\end{align}
+\begin{equation}
+x^2 + y^2 = 4
+\end{equation}
 
 \textbf{Vertical line test:} a vertical line cannot intersect a function twice
 
