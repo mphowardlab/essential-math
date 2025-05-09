@@ -320,75 +320,74 @@ Solve the following IVPs using Laplace transforms:
      &= 4 - 3e^{-2x}
    \end{align}
    ```
-Solve the following:
 
-3. $y' - y = 1 - 2x + \sin(3x), \quad y(0) = -1 $
+3. $y' - y = 1 - 2x + \sin(3x), \quad y(0) = -1$
 
    ```{solution}
    \begin{align}
-   L[y' - y] &= L[1 - 2x + \sin(3x)] \\
+   L[y' - y] &= L[1 - 2x + \sin 3x ] \\
    sY - y(0) - Y &= \frac{1}{s} - \frac{2}{s^2} + \frac{3}{s^2 + 9} \\
-   (s-1)Y &= -1 + \frac{1}{s} - \frac{2}{s^2} + \frac{3}{s^2 + 9} 
+   (s-1)Y &= -1 + \frac{1}{s} - \frac{2}{s^2} + \frac{3}{s^2 + 9} \\
+   Y &= -\frac{1}{s - 1} + \frac{1}{s(s - 1)} - \frac{2}{s^2(s - 1)} +
+     \frac{3}{(s^2 + 9)(s - 1)}
    \end{align}
-   
+
    Use partial fractions:
-   
+
    \begin{align}
-   Y &= -\frac{1}{s - 1} + \frac{1}{s(s - 1)} - \frac{2}{s^2(s - 1)} + \frac{3}{(s^2 + 9)(s - 1)} \\
-   &= -\frac{1}{s - 1} + \left(\frac{A_1}{s} + \frac{A_2}{s-1}\right) + \left(\frac{A_3}{s} + \frac{A_4}{s^2} + \frac{A_5}{s - 1}\right) + \left(\frac{A_6s + B_6}{s^2 + 9} + \frac{A_7}{s - 1}\right)
+   \frac{1}{s(s-1)} &= \frac{A_1}{s} + \frac{A_2}{s-1} \\
+   \frac{-2}{s^2(s - 1)} &= \frac{A_3}{s} + \frac{A_4}{s^2} + \frac{A_5}{s - 1} \\
+   \frac{3}{(s^2 + 9)(s - 1)} &= \frac{A_6s + B_6}{s^2 + 9} + \frac{A_7}{s - 1}
    \end{align}
-   
+
    Cover up to find:
-   
-   \begin{align}
-   A_1 &=\frac{1}{0-1} = -1 \\ 
-   A_2 &=\frac{1}{1} = 1 \\ 
-   A_4 &= \frac{-2}{0 - 1} = 2 \\ 
-   A_5 &= \frac{-2}{1} = -2 \\ 
-   A_7 &= \frac{3}{1^2 + 9} = \frac{3}{10} 
-   \end{align}
-   
-   Finish the rest:
 
    \begin{align}
-   2 &= A_3s(s-1) + 2(s-1) - 2s^2 \\
-   2 &= A_3(-1)(-1-1) + 2(-1-1) - 2(-1)\\
-   2 &= 2A_3 - 4 + 2 \\
-   A_3 &= 2
+   A_1 &=\frac{1}{0-1} = -1 & A_4 &= \frac{-2}{0 - 1} = 2 &
+     A_7 &= \frac{3}{1^2 + 9} = \frac{3}{10} \\
+   A_2 &=\frac{1}{1} = 1 & A_5 &= \frac{-2}{1} = -2
    \end{align}
 
-   \begin{align}
-   3 &= (A_6s + B_6s)(s-1) + \frac{3}{10}(s^2+9) \\
-   s^2 &: A_6 + \frac{3}{10} = 0   \\
-   s^0 &: -B_6 + \frac{27}{10} = 3 \\
-   \end{align}
-
-   \begin{align}
-   A_6 &= -\frac{3}{10} \\
-   B_6 &= -\frac{3}{10} \\
-   \end{align}
-
-   Simplify your y:
-
-   \begin{align}
-   y &= -\frac{1}{s-1} - \frac{1}{s} + \frac{1}{s-1} + \frac{2}{s} + \frac{2}{s^2} - \frac{2}{s-1} - \frac{3}{10} \frac{s+1}{s^2+9} + \frac{3}{10} \frac{1}{s-1} \\
-   &= \frac{1}{s} + \frac{2}{s^2} - \frac{17}{10} \frac{1}{s-1} - \frac{3}{10} \frac{1}{s^2+9} - \frac{3}{10} \frac{s}{s^2+9} \\
-   \end{align}
-
-   Apply inverse laplace across the equation:
+   Finish the rest by cross-multiplying or pluggin in values. For the first
+   fraction, plug in $s=-1$ and known coefficients:
 
    \begin{equation}
-   y = L^{-1}[\frac{1}{s}]
-   + 2 L^{-1}[\frac{1}{s^2} ]
-   - \frac{17}{10} L^{-1}[\frac{1}{s - 1}]
-   - \frac{1}{10} L^{-1}[\frac{3}{s^2 + 9}]
-   - \frac{3}{10} L^{-1}[\frac{s}{s^2 + 9}]
+   1 &= -A_3 + 2 + 1
+   \end{equation}
+
+   then solve $A_3 = 2$. For the third fraction, cross-multiply
+
+   \begin{equation}
+   3 = (A_6 s + B_6)(s-1) + \frac{3}{10}(s^2+9)
+   \end{equation}
+
+   Then compare like powers of $s$. Here, I use $s^2$ and $s^0$:
+
+   \begin{align}
+   A_6 + \frac{3}{10} &= 0   \\
+   -B_6 + \frac{27}{10} &= 3
+   \end{align}
+
+   so $A_6 = -3/10$ and $B_6 = -3/10$. Simplify *Y*
+
+   \begin{equation}
+   Y = \frac{1}{s} + \frac{2}{s^2} - \frac{17}{10} \frac{1}{s-1} -
+     \frac{3}{10} \frac{1}{s^2+9} - \frac{3}{10} \frac{s}{s^2+9}
+   \end{equation}
+
+   Apply inverse Laplace transform across the equation:
+
+   \begin{equation}
+   y = L^{-1}\left[\frac{1}{s}\right]
+   + 2 L^{-1}\left[\frac{1}{s^2}\right]
+   - \frac{17}{10} L^{-1}\left[\frac{1}{s - 1}\right]
+   - \frac{1}{10} L^{-1}\left[\frac{3}{s^2 + 9}\right]
+   - \frac{3}{10} L^{-1}\left[\frac{s}{s^2 + 9}\right]
     \end{equation}
 
    So, the solution is
 
    \begin{equation}
-   y = 1 + 2x - \frac{17}{10} e^x - \frac{1}{10} \sin(3x) - \frac{3}{10} \cos(3x)
+   y = 1 + 2x - \frac{17}{10} e^x - \frac{1}{10} \sin 3x - \frac{3}{10} \cos 3x
    \end{equation}
    ```
-
