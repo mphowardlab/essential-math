@@ -2,7 +2,7 @@
 
 
 For an *n* x *n* square matrix $ \vv{A} $  , there is a scalar $\lambda$ 
-and vector $\underline{x}$ such that :
+and vector $\vv{x}$ such that :
 
 
 
