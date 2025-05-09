@@ -45,7 +45,7 @@ $\lambda=-1$:
 \vv{x_2} free
 \end{align}
 
-This solution is not unique, which makes sense from the equation. We may then choose $x_1$ or $x_2$ so that the eigenvector has a nice norm or values. e.g.,
+This solution is not unique, which makes sense from the equation. We may then choose $\vv{x_1}$ or $\vv{x_2}$ so that the eigenvector has a nice norm or values. e.g.,
 \begin{align}
 \vv{x_1} =1, \vv{x_2} = 2 \to \vv{x}= \begin{bmatrix} 1 \\ 2 \end{bmatrix}
 \end{align}
