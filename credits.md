@@ -57,6 +57,7 @@ This work (c) 2025 is licensed under
 - Andrea Smith
 - Katie Sorensen
 - Mary Frances Springfield
+- Drew Stanley
 - Nicole Teper
 - Lauren Thompson
 - Madelyn Torrance
