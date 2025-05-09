@@ -10,11 +10,14 @@ This work (c) 2025 is licensed under
 - Payton Baxter
 - Jacob Bowling
 - Zachary Bradford
+- Michaela Bush
 - Logan Brose
 - Abigail Cain
 - Andrew Castel
+- Jinny Cha
 - Paine Cole
 - Kovar Coley
+- W. Kwabena Darko
 - Oscar Earhart
 - Sarah Eldridge
 - Sam Faulkner
