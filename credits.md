@@ -9,13 +9,23 @@ This work (c) 2025 is licensed under
 
 - Payton Baxter
 - Jacob Bowling
+- Zachary Bradford
+- Logan Brose
+- Abigail Cain
 - Andrew Castel
 - Paine Cole
+- Kovar Coley
 - Oscar Earhart
 - Sarah Eldridge
+- Sam Faulkner
 - Alexis Florit
+- Jackson Gilson
 - Ella Governale
+- Parker Green
+- Becca Gulley
 - Connor Habig
+- Charles Hamlett
+- Luke Harrison
 - Anna Grace Hawkins
 - Kennedi Hawkins
 - Joshua R. Hegar
@@ -24,6 +34,7 @@ This work (c) 2025 is licensed under
 - Evan M. Hughes
 - Tony Jasso
 - Esther Laiming
+- Hyeongju Lee
 - Gwyneth A. Lovell
 - Abby Lucas
 - Dylan Lunsford
@@ -31,20 +42,30 @@ This work (c) 2025 is licensed under
 - John R. Marshall, IV
 - Davis McCaleb
 - Amber N. McMillan
+- Arthur McPherson
 - Lilli Midgette
+- Maison Miller
 - Mason Miller
 - Clara Mitchell
 - Elijah  C. Mitchell
 - Meg Nettles
 - Jeffe Old
+- Ella Ortbals
+- Jack Raynor
 - Kendall Reeves
 - Olivia Robinson
 - Brent Russell
 - Michelle Schindler
+- Andrea Smith
 - Katie Sorensen
+- Mary Frances Springfield
+- Drew Stanley
+- Nicole Teper
 - Lauren Thompson
 - Madelyn Torrance
 - Debora Vasconcelos
+- Annabelle Walker
+- Luke Walters
 - Morgan Wootton
 
 ## Attributions

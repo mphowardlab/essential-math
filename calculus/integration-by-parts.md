@@ -180,3 +180,97 @@ The result is:
 &+ 12x^2 (8e^{x/2}) - 24x (16e^{x/2}) + 24 (32e^{x/2}) \\
 &= (2x^4 - 16x^3 + 96x^2 - 384x + 768) e^{x/2}
 \end{align}
+
+## Skill builder problems
+
+Evaluate the following
+
+1. $\displaystyle \int (x+2)\ln x \d{x}$
+
+   ```{solution}
+   Select the following parts:
+
+   \begin{align}
+   u &= \ln x & \d{v} &= (x+2)\d{x} \\
+   \d{u} &= \frac{1}{x}\d{x} & v &= \frac{x^2}{2} + 2x
+   \end{align}
+
+   so
+
+   \begin{align}
+   \int (x+2)\ln x \d{x} &= \left( \frac{x^2}{2} + 2x \right)\ln x -
+     \int \left( \frac{x^2}{2} + 2x \right) \frac{1}{x} \d{x} \\
+     &= \left( \frac{x^2}{2} + 2x \right)\ln x -
+     \int \left( \frac{x}{2} + 2 \right) \d{x} \\
+     &= \left( \frac{x^2}{2} + 2x \right)\ln x - \frac{x^2}{4} - 2x + c
+   \end{align}
+   ```
+
+2. $\displaystyle \int x^5\sin x \d{x}$
+
+   ```{solution}
+   Since $x^5$ is to the fifth order, integration by parts must be used 5 times.
+   Use the tabular method for this.
+
+   | sign | $u$     | $\d{v}$   |
+   |------|---------|-----------|
+   |      |         | $\sin x$  |
+   |  $+$ | $x^5$   | $-\cos x$ |
+   |  $-$ | $5x^4$  | $-\sin x$ |
+   |  $+$ | $20x^3$ | $\cos x$  |
+   |  $-$ | $60x^2$ | $\sin x$  |
+   |  $+$ | $120x$  | $-\cos x$ |
+   |  $-$ | $120$   | $-\sin x$ |
+   |      | $0$     |           |
+
+   so
+
+   \begin{equation}
+   \int x^5\sin x \d{x} = -x^5 \cos x + 5x^4 \sin x + 20x^3 \cos x -
+     60x^2 \sin x - 120x \cos x + 120 \sin x + c
+   \end{equation}
+
+   To make the solution look cleaner, you can factor out $\cos x$ and $\ sin x$.
+
+   \begin{equation}
+   \int x^5\sin x \d{x} = (-x^5 + 20x^3 - 120x) \cos x +
+     (5x^4 - 60x^2 + 120) \sin x + c
+   \end{equation}
+   ```
+
+3. $\displaystyle \int e^x\cos x \d{x}$
+
+   ```{solution}
+   Select the following parts:
+
+   \begin{align}
+   u &= \cos x & \d{v} &= e^x\d{x} \\
+   \d{u} &= -\sin x\d{x} & v &= e^x
+   \end{align}
+
+   so
+
+   \begin{equation}
+   \int e^x \cos x \d{x} = e^x \cos x + \int e^x \sin x \d{x}
+   \end{equation}
+
+   To evaluate this integral, select new parts:
+
+   \begin{align}
+   u &= \sin x, & \d{v} &= e^x\d{x} \\
+   \d{u} &= \cos x\d{x} & v &= e^x
+   \end{align}
+
+   so
+
+   \begin{equation}
+   \int e^x \cos x \d{x} = e^x \cos x+ \left[e^x \sin x - \int e^x \cos x \d{x}\right]
+   \end{equation}
+
+   The same integral appears on both sides! Add them together and solve:
+
+   \begin{align}
+   2 \int e^x \cos x \d{x} &= e^x \cos x + e^x \sin x \\
+   \int e^x \cos x \d{x} &= \frac{e^x}{2}(\cos x + \sin x) + c
+   \end{align}
+   ```
