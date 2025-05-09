@@ -94,7 +94,7 @@ any $\epsilon$, we need to find a "window" of *x* values within $\delta$ of
 $x_0$ so that *f* stays within $\epsilon$ of *L*. For example, consider the
 following:
 
-```{image} ./_images/First.jpg
+```{image} ./_images/delta_epsilon_limit.jpg
 :alt: Limit Graph
 :width: 300px
 :align: center
@@ -120,7 +120,7 @@ x-2,& x \ge 4
 \end{cases}
 \end{equation}
 
-```{image} ./_images/Second.jpg
+```{image} ./_images/delta_epsilon_no_limit.jpg
 :alt: Limit Graph 2
 :width: 300px
 :align: center
