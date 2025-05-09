@@ -76,6 +76,68 @@ This divergence is clear on a plot:
 
 We say that such a limit does not exist.
 
+## Formal definition
+
+```{topic} Limit (formal)
+The limit of $f$ as $x$ approaches $x_0$ is *L*, denoted
+
+\begin{equation}
+\lim_{x \to x_0} f(x) = L
+\end{equation}
+
+if for every $\epsilon > 0$ there exists $\delta > 0$ such that for all *x*,
+if $0 < |x-x_0| < \delta$ then $|f(x)-L| < \epsilon$.
+```
+
+$\epsilon$ is a *tolerance* setting how close *f* needs to be to *L*. Given
+any $\epsilon$, we need to find a "window" of *x* values within $\delta$ of
+$x_0$ so that *f* stays within $\epsilon$ of *L*. For example, consider the
+following:
+
+```{image} ./_images/delta_epsilon_limit.jpg
+:alt: Limit Graph
+:width: 300px
+:align: center
+```
+
+Based on this plot, if $\epsilon = 1$, $3 < f < 5$ if $3 < x < 5$
+(i.e., $\delta = 1$). For a general $\epsilon$,
+$4 - \epsilon < f < 4 + \epsilon$ if $4 - \delta < x < 4 + \delta$ or
+equivalently, $|x-4| < \epsilon$. We hence identify $\delta = \epsilon$ and
+have proven that
+
+\begin{equation}
+\lim_{x \to 4} f = 4
+\end{equation}
+
+However, such a $\delta$ cannot always be found for all $\epsilon$ for certain
+functions! There, the limit does not exist. For example, consider
+
+\begin{equation}
+f(x) = \begin{cases}
+x,& x < 4 \\
+x-2,& x \ge 4
+\end{cases}
+\end{equation}
+
+```{image} ./_images/delta_epsilon_no_limit.jpg
+:alt: Limit Graph 2
+:width: 300px
+:align: center
+```
+
+Does the limit
+
+\begin{equation}
+\lim_{x \to 4} f(x) = 3
+\end{equation}
+
+exist? If \epsilon = 0.5, there is no $\delta$ that contains *f* around
+$x_0 = 4$. Therefore, this limit does not exsit
+
+This math formalism is powerful, but clunky to apply. We will now move onto
+using rules (limit laws) that have been proven using them!
+
 ## Limit laws
 
 There are some simple limits and rules for combining them that are convenient
