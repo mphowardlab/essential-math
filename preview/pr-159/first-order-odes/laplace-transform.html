@@ -224,12 +224,13 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../second-order-odes/index.html">7. Second-order ordinary differential equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/reduction.html">7.1. Reduction of order</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/linearity.html">7.2. Linearity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/homogeneous-constant-coefficient.html">7.3. Homogeneous linear second-order ODEs with constant coefficients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/undetermined-coefficients.html">7.4. Undetermined coefficients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/variation-of-parameters.html">7.5. Variation of parameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/numerical-solution.html">7.6. Numerical solution methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/substitution.html">7.1. Substitution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/reduction.html">7.2. Reduction of order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/linearity.html">7.3. Linearity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/homogeneous-constant-coefficient.html">7.4. Homogeneous linear second-order ODEs with constant coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/undetermined-coefficients.html">7.5. Undetermined coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/variation-of-parameters.html">7.6. Variation of parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/numerical-solution.html">7.7. Numerical solution methods</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../credits.html">8. Credits</a></li>
@@ -447,15 +448,15 @@ document.write(`
 <h2><span class="section-number">5.6.1. </span>Definition and properties<a class="headerlink" href="#definition-and-properties" title="Link to this heading">#</a></h2>
 <p>The Laplace transform is used in signals/controls. It is also a way to solve
 <em>differential</em> equations using <em>algebra</em>. It is defined as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cfcef5ed-b4da-438b-9864-38cfad1638c8">
-<span class="eqno">(5.58)<a class="headerlink" href="#equation-cfcef5ed-b4da-438b-9864-38cfad1638c8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-79a42454-3b76-405d-ae96-1b8f1e4fc1e7">
+<span class="eqno">(5.48)<a class="headerlink" href="#equation-79a42454-3b76-405d-ae96-1b8f1e4fc1e7" title="Permalink to this equation">#</a></span>\[\begin{equation}
 F(s) = L[f(t)] = \int_0^\infty e^{-st} f(t) \d{t}
 \end{equation}\]</div>
 <p>The inverse Laplace transform of <em>F</em> is <em>f</em>, i.e., <span class="math notranslate nohighlight">\(f(t) = L^{-1}[F(s)]\)</span>. The
 Laplace transform of many functions can be computed using integration by parts.
 For example, the Laplace transform of <span class="math notranslate nohighlight">\(f(t) = t\)</span> is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e5298c64-7e9e-4222-a55c-0ccc7f851d98">
-<span class="eqno">(5.59)<a class="headerlink" href="#equation-e5298c64-7e9e-4222-a55c-0ccc7f851d98" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4ad71d6e-0202-4404-b614-420e22e975c1">
+<span class="eqno">(5.49)<a class="headerlink" href="#equation-4ad71d6e-0202-4404-b614-420e22e975c1" title="Permalink to this equation">#</a></span>\[\begin{align}
 L[t] &amp;= \int_0^\infty e^{-st} t \d{t} \\
   &amp;= \left.-\frac{te^{-st}}{s}\right|_0^\infty
      + \int_0^\infty \frac{e^{-st}}{s} \d{t} \\
@@ -464,8 +465,8 @@ L[t] &amp;= \int_0^\infty e^{-st} t \d{t} \\
 \end{align}\]</div>
 <p>Importantly, the Laplace transform of the first derivative of an unknown
 function <span class="math notranslate nohighlight">\(f(t) = y'(t)\)</span> is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5eb0950b-204c-4946-8d46-7f16b600b9a6">
-<span class="eqno">(5.60)<a class="headerlink" href="#equation-5eb0950b-204c-4946-8d46-7f16b600b9a6" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-563ef54c-8511-4e63-b5d9-538cb1430407">
+<span class="eqno">(5.50)<a class="headerlink" href="#equation-563ef54c-8511-4e63-b5d9-538cb1430407" title="Permalink to this equation">#</a></span>\[\begin{align}
 L[y'(t)] &amp;= \int_0^\infty e^{-st} y'(t) \d{t} \\
   &amp;= \left.e^{-st} y(t)\right|_0^\infty -
     \int_0^\infty y(t) \left(-s e^{-st}\right) \d{t} \\
@@ -504,8 +505,8 @@ are:</p>
 </table>
 </div>
 <p>The Laplace transform is a linear operator, so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bf04ca38-a68c-448f-876b-c4ea4fd83252">
-<span class="eqno">(5.61)<a class="headerlink" href="#equation-bf04ca38-a68c-448f-876b-c4ea4fd83252" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-34d74d71-cfb6-4d51-891c-11ad19a58d8b">
+<span class="eqno">(5.51)<a class="headerlink" href="#equation-34d74d71-cfb6-4d51-891c-11ad19a58d8b" title="Permalink to this equation">#</a></span>\[\begin{align}
 L[kf] &amp;= kL[f] \\
 L[f + g] &amp;= L[f] + L[g]
 \end{align}\]</div>
@@ -514,13 +515,13 @@ L[f + g] &amp;= L[f] + L[g]
 <h2><span class="section-number">5.6.2. </span>Solving first-order ODEs<a class="headerlink" href="#solving-first-order-odes" title="Link to this heading">#</a></h2>
 <p>Nonhomogeneous, first-order ODEs with constant coefficients are nice to solve
 with Laplace transforms:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9a918999-5aec-40e4-88ec-134bdbf81a10">
-<span class="eqno">(5.62)<a class="headerlink" href="#equation-9a918999-5aec-40e4-88ec-134bdbf81a10" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-de1cd99d-ae2f-44b7-b13f-74a865790e6b">
+<span class="eqno">(5.52)<a class="headerlink" href="#equation-de1cd99d-ae2f-44b7-b13f-74a865790e6b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y' + by = r(t), \quad y(0) = y_0
 \end{equation}\]</div>
 <p>Apply the Laplace transform to both sides of the equation:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4a1461e2-bf4d-47f7-a457-b287bf4aeb0a">
-<span class="eqno">(5.63)<a class="headerlink" href="#equation-4a1461e2-bf4d-47f7-a457-b287bf4aeb0a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-8f911615-0785-4001-8e02-ad178efba24c">
+<span class="eqno">(5.53)<a class="headerlink" href="#equation-8f911615-0785-4001-8e02-ad178efba24c" title="Permalink to this equation">#</a></span>\[\begin{align}
 L[y' + by] &amp;= L[r] \\
 L[y'] + bL[y] &amp;= L[r]\\
 \left(sY - y_0\right) + bY &amp;= R\\
@@ -531,14 +532,14 @@ tables, we have a solution!</p>
 <div class="admonition-example-laplace-transform admonition">
 <p class="admonition-title">Example: Laplace transform</p>
 <p>Solve the initial value problem</p>
-<div class="amsmath math notranslate nohighlight" id="equation-52e6604a-4a03-4e6a-b35e-4d86a0559bd0">
-<span class="eqno">(5.64)<a class="headerlink" href="#equation-52e6604a-4a03-4e6a-b35e-4d86a0559bd0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b07ebaf1-20f1-4541-b9bd-2ecdb171ce48">
+<span class="eqno">(5.54)<a class="headerlink" href="#equation-b07ebaf1-20f1-4541-b9bd-2ecdb171ce48" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y' =-ky, \quad y(0) =2
 \end{equation}\]</div>
 <hr class="docutils" />
 <p>Rearrange, apply Laplace transform <span class="math notranslate nohighlight">\(Y = L[y]\)</span>, and solve for <span class="math notranslate nohighlight">\(Y\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-544ba854-61ac-4d39-8bf7-01cb4a65c0d8">
-<span class="eqno">(5.65)<a class="headerlink" href="#equation-544ba854-61ac-4d39-8bf7-01cb4a65c0d8" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-39cc6299-6a40-43be-b095-393226054c4b">
+<span class="eqno">(5.55)<a class="headerlink" href="#equation-39cc6299-6a40-43be-b095-393226054c4b" title="Permalink to this equation">#</a></span>\[\begin{align}
 y'+ ky &amp;= 0 \\
 L[y'+ky] &amp;= L[0] \\
 L[y']+kL[y] &amp;= L[0] \\
@@ -547,22 +548,22 @@ sY - y(0) + k Y &amp;= 0 \\
 Y &amp;= \frac{2}{s+k}
 \end{align}\]</div>
 <p>Invert Laplace transform:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-84eccf6a-5e96-40c2-8d9e-891ffcfc46c6">
-<span class="eqno">(5.66)<a class="headerlink" href="#equation-84eccf6a-5e96-40c2-8d9e-891ffcfc46c6" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-60f04c18-5c30-4538-babf-ca7a8675e960">
+<span class="eqno">(5.56)<a class="headerlink" href="#equation-60f04c18-5c30-4538-babf-ca7a8675e960" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y = L^{-1}\left[\frac{2}{s+k}\right] = 2L^{-1}\left[\frac{1}{s+k}\right] = 2 e^{-kt}
 \end{equation}\]</div>
 </div>
 <div class="admonition-example-laplace-transform-with-partial-fractions admonition">
 <p class="admonition-title">Example: Laplace transform with partial fractions</p>
 <p>Solve the initial value problem:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-babd2ee6-b95a-4bfa-b31a-9465a1cfe858">
-<span class="eqno">(5.67)<a class="headerlink" href="#equation-babd2ee6-b95a-4bfa-b31a-9465a1cfe858" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-73d13882-4dfc-4ff7-b459-456a14479347">
+<span class="eqno">(5.57)<a class="headerlink" href="#equation-73d13882-4dfc-4ff7-b459-456a14479347" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y'-y = t, \quad y(0) = 1
 \end{equation}\]</div>
 <hr class="docutils" />
 <p>Rearrange, apply Laplace transform <span class="math notranslate nohighlight">\(Y = L[y]\)</span>, and solve for <span class="math notranslate nohighlight">\(Y\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c45e3cd6-3d9d-40ed-a099-ab74d19f332d">
-<span class="eqno">(5.68)<a class="headerlink" href="#equation-c45e3cd6-3d9d-40ed-a099-ab74d19f332d" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-652885f0-11f1-4ac3-8b0b-37ea10e9f951">
+<span class="eqno">(5.58)<a class="headerlink" href="#equation-652885f0-11f1-4ac3-8b0b-37ea10e9f951" title="Permalink to this equation">#</a></span>\[\begin{align}
 L[y'-y] &amp;= L[t]\\
 L[y']-L[y] &amp;= L[t]\\
 sY - y(0) - Y &amp;= \frac{1}{s^2}\\
@@ -572,34 +573,34 @@ Y &amp;= \frac{1}{s-1} + \frac{1}{s^2(s-1)}
 <p>These terms do not immediately correspond to the Laplace transform table, but
 we can separate them using
 <a class="reference internal" href="../calculus/integration-partial-fractions.html"><span class="std std-doc">partial fraction decomposition</span></a>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e23ff7ae-9a1d-4b54-b310-f808f42d8836">
-<span class="eqno">(5.69)<a class="headerlink" href="#equation-e23ff7ae-9a1d-4b54-b310-f808f42d8836" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-394b6ae0-b310-4968-884c-a4efefb88c64">
+<span class="eqno">(5.59)<a class="headerlink" href="#equation-394b6ae0-b310-4968-884c-a4efefb88c64" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{1}{(s-1) s^2} = \frac{A_1}{s-1} + \frac{A_2}{s} + \frac{A_3}{s^2}
 \end{equation}\]</div>
 <p><span class="math notranslate nohighlight">\(A_1\)</span> and <span class="math notranslate nohighlight">\(A_3\)</span> can be found using the coverup method:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-378dae1a-72a4-47b6-a35e-6724a8529b2c">
-<span class="eqno">(5.70)<a class="headerlink" href="#equation-378dae1a-72a4-47b6-a35e-6724a8529b2c" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ac718ce2-72d0-4223-b4fe-23cabbdcdacf">
+<span class="eqno">(5.60)<a class="headerlink" href="#equation-ac718ce2-72d0-4223-b4fe-23cabbdcdacf" title="Permalink to this equation">#</a></span>\[\begin{align}
 A_1 &amp;= \frac{1}{1^2} = 1 \\
 A_3 &amp;= \frac{1}{0-1} = -1
 \end{align}\]</div>
 <p>To find <span class="math notranslate nohighlight">\(A_2\)</span>, substitute and cross multiply:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c5c84d5a-f86a-4520-acb0-f7ab29ffa189">
-<span class="eqno">(5.71)<a class="headerlink" href="#equation-c5c84d5a-f86a-4520-acb0-f7ab29ffa189" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a4b00d2e-7352-433c-bee4-c05c006678ed">
+<span class="eqno">(5.61)<a class="headerlink" href="#equation-a4b00d2e-7352-433c-bee4-c05c006678ed" title="Permalink to this equation">#</a></span>\[\begin{equation}
 1 = s^2 + A_2(s-1)s - (s-1)
 \end{equation}\]</div>
 <p>then compare the coefficient of the <span class="math notranslate nohighlight">\(s^2\)</span> terms on either side:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-feb923ab-f8dd-4693-8e83-e44c17c605b9">
-<span class="eqno">(5.72)<a class="headerlink" href="#equation-feb923ab-f8dd-4693-8e83-e44c17c605b9" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b24a110f-aece-42ea-a3eb-97f21d400b5a">
+<span class="eqno">(5.62)<a class="headerlink" href="#equation-b24a110f-aece-42ea-a3eb-97f21d400b5a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 1 + A_2 = 0 \to A_2 = -1
 \end{equation}\]</div>
 <p>So, all together:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-aae1f4c7-7420-498d-84a5-942b4e05f7ac">
-<span class="eqno">(5.73)<a class="headerlink" href="#equation-aae1f4c7-7420-498d-84a5-942b4e05f7ac" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0b8161d8-d413-4c93-99f0-a62520082931">
+<span class="eqno">(5.63)<a class="headerlink" href="#equation-0b8161d8-d413-4c93-99f0-a62520082931" title="Permalink to this equation">#</a></span>\[\begin{equation}
 Y = \frac{2}{s-1} - \frac{1}{s} - \frac{1}{s^2}
 \end{equation}\]</div>
 <p>Solve for <span class="math notranslate nohighlight">\(y\)</span> by applying the inverse Laplace transform</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8c0ea4eb-8ab1-4066-8c58-735c8c83e131">
-<span class="eqno">(5.74)<a class="headerlink" href="#equation-8c0ea4eb-8ab1-4066-8c58-735c8c83e131" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-14dc7b17-bebc-4e3a-b67b-a5774e296f3f">
+<span class="eqno">(5.64)<a class="headerlink" href="#equation-14dc7b17-bebc-4e3a-b67b-a5774e296f3f" title="Permalink to this equation">#</a></span>\[\begin{align}
 y &amp;=L^{-1}[Y]\\
   &amp;=2L^{-1}\left[\frac{1}{s-1}\right]-L^{-1}\left[\frac{1}{s}\right]-L^{-1}\left[\frac{1}{s^2}\right]\\
   &amp;=2e^t-1-t
@@ -610,16 +611,16 @@ y &amp;=L^{-1}[Y]\\
 <p class="admonition-title">Example: Hormone level</p>
 <p>The concentration of a hormone in the blood <em>c</em> varies due to sinusoidal
 production by the thyroid and continuous removal according to:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a818caf4-517c-4050-b584-19d9ec7b8949">
-<span class="eqno">(5.75)<a class="headerlink" href="#equation-a818caf4-517c-4050-b584-19d9ec7b8949" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0040a0ca-e2e2-41c4-8060-27dfd890ffac">
+<span class="eqno">(5.65)<a class="headerlink" href="#equation-0040a0ca-e2e2-41c4-8060-27dfd890ffac" title="Permalink to this equation">#</a></span>\[\begin{equation}
 c' = A + B\cos\left(\frac{\pi t}{12}\right) - kc
 \end{equation}\]</div>
 <p>The concentration is <span class="math notranslate nohighlight">\(c_0\)</span> at 6 AM (<span class="math notranslate nohighlight">\(t = 0\)</span>). What is the average concentration
 between 6 PM and 6 AM the same day?</p>
 <hr class="docutils" />
 <p>To solve, rearrange and use the Laplace transform:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-314a19ee-afcb-464a-8574-ebe344eebb5c">
-<span class="eqno">(5.76)<a class="headerlink" href="#equation-314a19ee-afcb-464a-8574-ebe344eebb5c" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-387fdf07-d728-4611-977d-ce58206628df">
+<span class="eqno">(5.66)<a class="headerlink" href="#equation-387fdf07-d728-4611-977d-ce58206628df" title="Permalink to this equation">#</a></span>\[\begin{align}
 c' + kc &amp;= A + B\cos\left(\frac{\pi t}{12}\right) \\
 [sC(s) - c_0] + kC(s) &amp;= L\left[A + B\cos\left(\frac{\pi t}{12}\right)\right] \\
 (s+k) C - c_0 &amp;= \frac{A}{s} + \frac{Bs}{s^2 + (\pi/12)^2} \\
@@ -628,59 +629,59 @@ C(s) &amp;= \left(\frac{1}{s + k}\right)\left[c_0 + \frac{A}{s} + \frac{Bs}{s^2 
  + \frac{Bs}{[s^2 + (\pi/12)^2](s + k)}
 \end{align}\]</div>
 <p>Use partial fraction decomposition on both fractions. The first one is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9ed72779-578f-40a2-9868-02cadf2fac7f">
-<span class="eqno">(5.77)<a class="headerlink" href="#equation-9ed72779-578f-40a2-9868-02cadf2fac7f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4d387c92-ce25-4f2f-a881-cd893812c681">
+<span class="eqno">(5.67)<a class="headerlink" href="#equation-4d387c92-ce25-4f2f-a881-cd893812c681" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{1}{s(s + k)} = \frac{c_1}{s} + \frac{c_2}{s + k}
 \end{equation}\]</div>
 <p>and the cover-up method gives <span class="math notranslate nohighlight">\(c_1 = 1/k\)</span> and <span class="math notranslate nohighlight">\(c_2 = -1/k\)</span>. For the next one:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-851dd357-2f93-45ec-abdc-a1e3f19adf4b">
-<span class="eqno">(5.78)<a class="headerlink" href="#equation-851dd357-2f93-45ec-abdc-a1e3f19adf4b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-364ba16b-1cec-4ca9-812c-602bc6edaa94">
+<span class="eqno">(5.68)<a class="headerlink" href="#equation-364ba16b-1cec-4ca9-812c-602bc6edaa94" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{s}{[s^2 + (\pi/12)^2](s + k)}
   = \frac{c_1 s + c_2}{s^2 + (\pi/12)^2} + \frac{c_3}{s + k}
 \end{equation}\]</div>
 <p>The cover-up method gives</p>
-<div class="amsmath math notranslate nohighlight" id="equation-62791816-fb2f-4c72-b4ac-c9c3da5e2551">
-<span class="eqno">(5.79)<a class="headerlink" href="#equation-62791816-fb2f-4c72-b4ac-c9c3da5e2551" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-23081ec0-f5a6-46f5-9855-982ba0a15695">
+<span class="eqno">(5.69)<a class="headerlink" href="#equation-23081ec0-f5a6-46f5-9855-982ba0a15695" title="Permalink to this equation">#</a></span>\[\begin{equation}
 c_3 = \frac{-k}{k^2 + (\pi/12)^2}
 \end{equation}\]</div>
 <p>while cross-multiplying and matching coefficients gives</p>
-<div class="amsmath math notranslate nohighlight" id="equation-61ae8140-2a6e-4cff-b58c-0c8eb3fe80bc">
-<span class="eqno">(5.80)<a class="headerlink" href="#equation-61ae8140-2a6e-4cff-b58c-0c8eb3fe80bc" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a5f90ecc-d71b-4a7e-a5df-ebeba9524f96">
+<span class="eqno">(5.70)<a class="headerlink" href="#equation-a5f90ecc-d71b-4a7e-a5df-ebeba9524f96" title="Permalink to this equation">#</a></span>\[\begin{align}
 s &amp;= (c_1 s + c_2)(s + k) + c_3\left[s^2 + (\pi/12)^2\right] \\
 s &amp;= (c_1 + c_3)s^2 + (c_1 k + c_2)s + c_2 k + c_3(\pi/12)^2
 \end{align}\]</div>
 <p>so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f68fb8f4-f599-42ab-81c1-02bbd7bb45fe">
-<span class="eqno">(5.81)<a class="headerlink" href="#equation-f68fb8f4-f599-42ab-81c1-02bbd7bb45fe" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-dc6d221b-f3cd-485e-9d55-080360d19b1e">
+<span class="eqno">(5.71)<a class="headerlink" href="#equation-dc6d221b-f3cd-485e-9d55-080360d19b1e" title="Permalink to this equation">#</a></span>\[\begin{align}
 c_1 + c_3 &amp;= 0 \\
 c_1 k + c_2 &amp;= 1 \\
 c_2 k + c_3 (\pi/12)^2 &amp;= 0
 \end{align}\]</div>
 <p>Using our solution for <span class="math notranslate nohighlight">\(c_3\)</span> in the first equation gives <span class="math notranslate nohighlight">\(c_1\)</span> and in the third
 equation gives <span class="math notranslate nohighlight">\(c_2\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-27e17fb0-066e-4e34-8b97-58d961ac6fb0">
-<span class="eqno">(5.82)<a class="headerlink" href="#equation-27e17fb0-066e-4e34-8b97-58d961ac6fb0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-879d7bdb-e562-495e-a683-480add78b32d">
+<span class="eqno">(5.72)<a class="headerlink" href="#equation-879d7bdb-e562-495e-a683-480add78b32d" title="Permalink to this equation">#</a></span>\[\begin{equation}
 c_1 = \frac{k}{k^2 + \left(\frac{\pi}{12}\right)^2}, \quad
 c_2 = \frac{(\pi/12)^2}{k^2 + (\pi/12)^2}
 \end{equation}\]</div>
 <p>All together,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a2d3b85d-5e5b-448d-b0af-779e1c7e8c53">
-<span class="eqno">(5.83)<a class="headerlink" href="#equation-a2d3b85d-5e5b-448d-b0af-779e1c7e8c53" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-51ee5661-789e-4f28-b52d-89c0e620027b">
+<span class="eqno">(5.73)<a class="headerlink" href="#equation-51ee5661-789e-4f28-b52d-89c0e620027b" title="Permalink to this equation">#</a></span>\[\begin{align}
 C(s) &amp;= \frac{c_0}{s + k} + \frac{A}{k} \left[\frac{1}{s} - \frac{1}{s+k} \right] \\
  &amp;+ \frac{B}{k^2 + (\pi/12)^2}
  \left[\frac{ks}{s^2 + (\pi/12)^2} + \frac{(\pi/12)^2}{s^2 + (\pi/12)^2} - \frac{k}{s+k} \right]
 \end{align}\]</div>
 <p>Invert the Laplace transforms term by term:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1dc6e0c2-9002-44ce-92ff-9c605c3195b6">
-<span class="eqno">(5.84)<a class="headerlink" href="#equation-1dc6e0c2-9002-44ce-92ff-9c605c3195b6" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7d7b11ad-c172-41c7-8777-1e31c5d38b5c">
+<span class="eqno">(5.74)<a class="headerlink" href="#equation-7d7b11ad-c172-41c7-8777-1e31c5d38b5c" title="Permalink to this equation">#</a></span>\[\begin{align}
 c(t) &amp;= c_0 e^{-kt} + \frac{A}{k} \left(1 - e^{-kt}\right) \\
  &amp;+ \frac{B}{k^2 + (\pi/12)^2} \left[k \cos\left(\frac{\pi t}{12}\right) + \frac{\pi}{12} \sin\left(\frac{\pi t}{12}\right) - k e^{-kt}\right] \\
   &amp;= \frac{A}{k} + \frac{B}{k^2 + (\pi/12)^2} \left[k \cos\left(\frac{\pi t}{12}\right) + \frac{\pi}{12} \sin\left(\frac{\pi t}{12}\right)\right] \\
   &amp;+ \left[c_0 - \frac{A}{k} - \frac{Bk}{k^2 + \left(\frac{\pi}{12}\right)^2}\right] e^{-kt}
 \end{align}\]</div>
 <p>The average concentration is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9e230776-2cf0-4da6-b0c7-5989c540c8ab">
-<span class="eqno">(5.85)<a class="headerlink" href="#equation-9e230776-2cf0-4da6-b0c7-5989c540c8ab" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-eacce6cd-5c44-4f1f-9419-ac00d07f69c8">
+<span class="eqno">(5.75)<a class="headerlink" href="#equation-eacce6cd-5c44-4f1f-9419-ac00d07f69c8" title="Permalink to this equation">#</a></span>\[\begin{align}
 \langle c \rangle &amp;= \frac{1}{t_1-t_0} \int_{t_0}^{t_1} c(t) \d{t} \\
 &amp;= \frac{1}{24 - 12} \int_{12}^{24} \Biggl( \frac{A}{k} + \frac{B}{k^2 + (\pi/12)^2} \left[k \cos\left(\frac{\pi t}{12}\right) + \frac{\pi}{12} \sin\left(\frac{\pi t}{12}\right)\right] \\
   &amp;+ \left[c_0 - \frac{A}{k} - \frac{Bk}{k^2 + (\pi/12)^2}\right] e^{-kt} \Biggr) \d{t} \\

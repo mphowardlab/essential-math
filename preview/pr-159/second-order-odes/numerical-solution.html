@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>7.6. Numerical solution methods &#8212; Essential Mathematics for Chemical Engineers</title>
+    <title>7.7. Numerical solution methods &#8212; Essential Mathematics for Chemical Engineers</title>
   
   
   
@@ -64,7 +64,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="8. Credits" href="../credits.html" />
-    <link rel="prev" title="7.5. Variation of parameters" href="variation-of-parameters.html" />
+    <link rel="prev" title="7.6. Variation of parameters" href="variation-of-parameters.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -224,12 +224,13 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">7. Second-order ordinary differential equations</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="reduction.html">7.1. Reduction of order</a></li>
-<li class="toctree-l2"><a class="reference internal" href="linearity.html">7.2. Linearity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="homogeneous-constant-coefficient.html">7.3. Homogeneous linear second-order ODEs with constant coefficients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="undetermined-coefficients.html">7.4. Undetermined coefficients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="variation-of-parameters.html">7.5. Variation of parameters</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">7.6. Numerical solution methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="substitution.html">7.1. Substitution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reduction.html">7.2. Reduction of order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linearity.html">7.3. Linearity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="homogeneous-constant-coefficient.html">7.4. Homogeneous linear second-order ODEs with constant coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="undetermined-coefficients.html">7.5. Undetermined coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variation-of-parameters.html">7.6. Variation of parameters</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">7.7. Numerical solution methods</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../credits.html">8. Credits</a></li>
@@ -428,7 +429,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boundary-value-problems-shooting-method">7.6.1. Boundary value problems (shooting method)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boundary-value-problems-shooting-method">7.7.1. Boundary value problems (shooting method)</a></li>
 </ul>
             </nav>
         </div>
@@ -441,37 +442,37 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="numerical-solution-methods">
-<h1><span class="section-number">7.6. </span>Numerical solution methods<a class="headerlink" href="#numerical-solution-methods" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">7.7. </span>Numerical solution methods<a class="headerlink" href="#numerical-solution-methods" title="Link to this heading">#</a></h1>
 <section id="boundary-value-problems-shooting-method">
-<h2><span class="section-number">7.6.1. </span>Boundary value problems (shooting method)<a class="headerlink" href="#boundary-value-problems-shooting-method" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.7.1. </span>Boundary value problems (shooting method)<a class="headerlink" href="#boundary-value-problems-shooting-method" title="Link to this heading">#</a></h2>
 <p>We can solve initial value problems for second-order ODEs by converting to a
 system and using methods we know. What about boundary value problems?</p>
 <p>Let’s say we want to solve:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a7f28e02-cb78-4981-b6ae-504d6468f795">
-<span class="eqno">(7.159)<a class="headerlink" href="#equation-a7f28e02-cb78-4981-b6ae-504d6468f795" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a811f8fc-831b-4783-b0a8-e3af3d293f83">
+<span class="eqno">(7.172)<a class="headerlink" href="#equation-a811f8fc-831b-4783-b0a8-e3af3d293f83" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y'' + y = 0, \quad y(0) = 0, \quad y(\pi/6) = 4
 \end{equation}\]</div>
 <p>Using normal approach:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0a1a8bd7-c44b-43a9-b143-3e9c16eba146">
-<span class="eqno">(7.160)<a class="headerlink" href="#equation-0a1a8bd7-c44b-43a9-b143-3e9c16eba146" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4d255ec1-a1c9-44fc-b4a7-3b9914f6e337">
+<span class="eqno">(7.173)<a class="headerlink" href="#equation-4d255ec1-a1c9-44fc-b4a7-3b9914f6e337" title="Permalink to this equation">#</a></span>\[\begin{align}
 y &amp;= c_1 \cos x + c_2 \sin x \\
 y(0) &amp;= c_1 = 0\\
 y(\pi/6) &amp;= c_2 \frac{1}{2} = 4 \to c_2 = 8\\
 \end{align}\]</div>
 <p>so,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-28aa7e3c-e607-46b0-9afb-aaf0b8f5c44f">
-<span class="eqno">(7.161)<a class="headerlink" href="#equation-28aa7e3c-e607-46b0-9afb-aaf0b8f5c44f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3fedd093-3d60-4e37-bc80-d03165d36acf">
+<span class="eqno">(7.174)<a class="headerlink" href="#equation-3fedd093-3d60-4e37-bc80-d03165d36acf" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y = 8 \sin x
 \end{equation}\]</div>
 <p>What if we needed to do this numerically? Try converting to system using
 <span class="math notranslate nohighlight">\(y_1 = y\)</span> and <span class="math notranslate nohighlight">\(y_2 = y'\)</span>, so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7a0f4853-e029-4739-969c-e99656742eb6">
-<span class="eqno">(7.162)<a class="headerlink" href="#equation-7a0f4853-e029-4739-969c-e99656742eb6" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-00a914ee-d51e-4ae2-81a7-328772ba3f74">
+<span class="eqno">(7.175)<a class="headerlink" href="#equation-00a914ee-d51e-4ae2-81a7-328772ba3f74" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y'' + y = 0 \to y_2' = -y_1
 \end{equation}\]</div>
 <p>and</p>
-<div class="amsmath math notranslate nohighlight" id="equation-40acac8e-f2f6-400c-915d-51d21a1a8648">
-<span class="eqno">(7.163)<a class="headerlink" href="#equation-40acac8e-f2f6-400c-915d-51d21a1a8648" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-3f286882-20be-49a3-8599-24da69502fa5">
+<span class="eqno">(7.176)<a class="headerlink" href="#equation-3f286882-20be-49a3-8599-24da69502fa5" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_1' &amp;= y_2, &amp; y_1(0) &amp;= 0 \\
 y_2' &amp;= -y_1, &amp; y_2(0) &amp;= a
 \end{align}\]</div>
@@ -487,27 +488,27 @@ and doesn’t require a derivative.</p>
 <div class="admonition-example-reaction-diffusion-with-second-order-reaction admonition">
 <p class="admonition-title">Example: Reaction-diffusion with second-order reaction</p>
 <p>We are solving a reaction-diffusion problem with a second-order reaction:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-42928132-2b78-4f8d-970f-c5ac0efa0674">
-<span class="eqno">(7.164)<a class="headerlink" href="#equation-42928132-2b78-4f8d-970f-c5ac0efa0674" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0da7e910-ea07-4580-841f-ac7d413ce382">
+<span class="eqno">(7.177)<a class="headerlink" href="#equation-0da7e910-ea07-4580-841f-ac7d413ce382" title="Permalink to this equation">#</a></span>\[\begin{equation}
 D \dd{2}{c}{x} - k c^2 = 0, \quad c(0) = c_0, \quad -D c'(L) = 0
 \end{equation}\]</div>
 <p>Formulate in a form suitable for numerical solution using the shooting method.</p>
 <hr class="docutils" />
 <p>First, rewrite as a system of first-order ODEs using <span class="math notranslate nohighlight">\(y_1 = c\)</span> and <span class="math notranslate nohighlight">\(c_2 = c'\)</span>.
 The ODE is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ea4916a2-025f-43f0-9add-380a7f80b0a7">
-<span class="eqno">(7.165)<a class="headerlink" href="#equation-ea4916a2-025f-43f0-9add-380a7f80b0a7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-29edb152-9513-48b3-bc43-adf5a497746c">
+<span class="eqno">(7.178)<a class="headerlink" href="#equation-29edb152-9513-48b3-bc43-adf5a497746c" title="Permalink to this equation">#</a></span>\[\begin{equation}
 c'' - \frac{k}{D}c^2 \to y_2' = \frac{k}{D} y_1^2
 \end{equation}\]</div>
 <p>so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-89e3359c-7cbe-4a3d-944f-89919f3e6952">
-<span class="eqno">(7.166)<a class="headerlink" href="#equation-89e3359c-7cbe-4a3d-944f-89919f3e6952" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0b4ed308-6be6-4d60-b2be-ab4778fbc80d">
+<span class="eqno">(7.179)<a class="headerlink" href="#equation-0b4ed308-6be6-4d60-b2be-ab4778fbc80d" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_1' &amp;= y_2, &amp; y_1(0) &amp;= c_0 \\
 y_2' &amp;= \frac{k}{D} y_1, &amp; y_2(0) &amp;= a
 \end{align}\]</div>
 <p>where <em>a</em> is the unknown value of <span class="math notranslate nohighlight">\(y_2(0)\)</span>. Vary <em>a</em> until</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d1dca0c2-3f8a-4a79-80f8-53f6c99c2a3d">
-<span class="eqno">(7.167)<a class="headerlink" href="#equation-d1dca0c2-3f8a-4a79-80f8-53f6c99c2a3d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ffeeb0e3-7057-44cd-9e76-a77e05b10a12">
+<span class="eqno">(7.180)<a class="headerlink" href="#equation-ffeeb0e3-7057-44cd-9e76-a77e05b10a12" title="Permalink to this equation">#</a></span>\[\begin{equation}
 -D c'(L) = 0 \to y_2(L) = 0
 \end{equation}\]</div>
 </div>
@@ -550,7 +551,7 @@ y_2' &amp;= \frac{k}{D} y_1, &amp; y_2(0) &amp;= a
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">7.5. </span>Variation of parameters</p>
+        <p class="prev-next-title"><span class="section-number">7.6. </span>Variation of parameters</p>
       </div>
     </a>
     <a class="right-next"
@@ -578,7 +579,7 @@ y_2' &amp;= \frac{k}{D} y_1, &amp; y_2(0) &amp;= a
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boundary-value-problems-shooting-method">7.6.1. Boundary value problems (shooting method)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boundary-value-problems-shooting-method">7.7.1. Boundary value problems (shooting method)</a></li>
 </ul>
   </nav></div>
 
