@@ -1,95 +1,96 @@
 # Functions
 
-## 1. What is a function?
-
-A rule "f" that assigns a $\textbf{unique}$ value $f(x)$ to an input $x$
+A function is a rule that assigns a unique value $f(x)$ to an input $x$.
 
 ```{image} ./_images/x_to_f(x).jpg
 :alt: Unique Value
 :width: 300px
+:align: center
 ```
 
-\begin{align}
-\text{x: independent variable} \hspace{2cm} \text{domain: all possible x}\\
-\text{y: dependent variable} \hspace{2cm} \text{range: all possible y}
-\end{align}
+We call *x* the *independent variable* and $y = f(x)$ the *dependent variable*.
+The *domain* of *f* is all possible values of *x*, while the *range* of *f* is
+all possible values of *y*.
 
 A function can be represented by:
-- An equation:
-$f(x) = x^2$
 
-- A table:
-```{image} ./_images/x_f(x)_table.jpg
-:alt: x vs f(x) Table
-:width: 150px
-```
+- An equation
+
+  $$f(x) = x^2$$
+
+- A table
+
+  | $x$ | $f$ |
+  |-----|-----|
+  | 0   |  0  |
+  | 1   |  1  |
+  | 2   |  4  |
 
 - A graph:
-```{image} ./_images/quadratic_graph.jpg
-:alt: x vs f(x) Graph
-:width: 150px
+
+  ```{image} ./_images/quadratic_graph.jpg
+  :alt: x vs f(x) Graph
+  :width: 150px
+  :align: center
+  ```
+
+- A description
+
+  > "Square x."
+
+Not all curves are functions! *f* must uniquely map *x*. For example, the
+circle $x^2 + y^2 = 4$, or equivalently, $y = \pm\sqrt{4-x^2}$ is not a function
+because one value of *x* can map to multiple values of *y*. Graphically,
+this fails the "vertical line test":
+
+```{topic} Vertical line test
+A vertical line cannot intersect a function twice.
 ```
-- A description: "square x"
 
-$\textbf{Not all curves are functions!}$ $f$ must uniquely map $x$
+## Common functions
 
-$x^2 + y^2 = 4$
+- Linear functions (lines)
 
-$\textbf{Vertical line test:}$ a vertical line cannot intersect a function twice
+  $$y = mx + b$$
 
-## 2. Common functions
+  where *m* is the slope and *b* is the *y*-intercept.
 
-### Linear functions
-\begin{align}
-y = mx + b \text{ ("lines")}
-\end{align}
-- m: slope
-- b: intercept
+- Power functions ("power law")
 
-### Power functions
-\begin{align}
-y = kx^a \text{ ("power law")}
-\end{align}
-- k: prefactor
-- a: power
+  $$y = kx^a$$
 
-### Polynomials
-\begin{align}
-y = a_n x^n + a_{n-1}x^{n-1} + \ldots + a_1x + a_0
-\end{align}
-- n: degree
+  where *k* is the prefactor and *a* is the power.
 
-\begin{align}
-n=1&: \text{linear}\\  
-n=2&: \text{quadratic}\\  
-n=3&: \text{cubic}
-\end{align}
+- Polynomials
 
-### Exponential
-\begin{align}
-y = a^x \text{ (a > 0, a $\neq$ 1)}
-\end{align}
-- a: base
+  $$y = a_n x^n + \ldots + a_1x + a_0$$
 
-Special case: a = e (≈ 2.718...) = Euler's number
+  where *n* is the degree and $a_i$ is the coefficient of the *i*-th power of
+  *x*. The polynomial is quadratic when $n=2$, cubic when $n=3$, and quartic
+  when $n=4$.
 
-### Logarithmic
-\begin{align}
-y = \log_a x \text{ (a > 0, a $\neq$ 1)}
-\end{align}
+- Exponential
 
-Special cases:
-\begin{align}
-a = e &\Rightarrow \log_e = \ln = \text{natural logarithm}\\
-a = 10 &\Rightarrow \log_{10} = \log = \text{common logarithm}
-\end{align}
+  $$y = a^x$$
 
-### Trigonometric
-\begin{align}
-\sin x \hspace{1cm} \csc x\\  
-\cos x \hspace{1cm} \sec x\\  
-\tan x \hspace{1cm} \cot x
-\end{align}
+  where *a* is the base ($a > 0$, $a \ne 1$). A special case is $a = e$,
+  Euler's number (2.718...).
+
+- Logarithmic
+
+  $$y = \log_a x$$
+
+  where *a* is the base ($a > 0$, $a \neq 1$). Two special cases are $a = e$,
+  which we call the *natural logarithm* $\ln$, and $a = 10$, which we call the
+  *common logarithm*, $\log_{10}$.
+
+- Trigonometric
+
+  $$
+  \sin x \qquad \csc x\\
+  \cos x \qquad \sec x\\
+  \tan x \qquad \cot x
+  $$
 
 ## Manipulating functions
 
