@@ -1,37 +1,76 @@
 # Rules for derivatives
 
-$$
-\begin{array}{lll}
-\text{Rule} & f(x) & f'(x) \\
-\hline
-\text{Constant} & k & 0 \\
-\text{Power} & x^n & nx^{n-1} \\
-\text{Multiple} & k u(x) & k u'(x) \\
-\text{Sum} & u(x) + v(x) & u'(x) + v'(x) \\
-\text{Difference} & u(x) - v(x) & u'(x) - v'(x) \\
-\text{Exponential} & a^x & \frac{a^x}{\ln a} \\
-\text{Logarithm} & \log_a x & \frac{1}{x \ln a} \\
-\end{array}
-$$
+Some useful rules for derivatives to apply are:
 
-$$
-\begin{align*}
-\text{(1)} \quad f(x) &= x^3 \quad \to \quad f'(x) = 3x^{3-1} = 3x^2 \\[10pt]
-\text{(2)} \quad f(x) &= -x^2 + 3 \quad \to \quad f'(x) = \frac{d}{dx}(-x^2) + \frac{d}{dx}(3) \\
-&= -\frac{d}{dx}(x^2) + \frac{d}{dx}(3) \\
-&= -2x^{2-1} + 0 \\
-&= -2x \\[10pt]
-\text{(3)} \quad f(x) &= \frac{4x^3}{3} - x + 2e^x \quad \to \quad f'(x) = \frac{4}{3} \frac{d}{dx}(x^3) - \frac{d}{dx}(x) + 2 \frac{d}{dx}(e^x) \\
-&= \frac{4}{3}(3x^2) - 1 + 2e^x \\
-&= 4x^2 - 1 + 2e^x \\[10pt]
-\text{(4)} \quad f(x) &= \frac{3}{x^2} + \sqrt{x} \quad \to \quad f'(x) = 3 \frac{d}{dx}(x^{-2}) + \frac{d}{dx}(x^{1/2}) \\
-&= 3(-2x^{-3}) + \frac{1}{2} x^{-1/2} \\
-&= \frac{-6}{x^3} + \frac{1}{2\sqrt{x}} \\[10pt]
-\text{(5)} \quad f(x) &= \log(4x) \quad \to \quad f'(x) = \frac{d}{dx} [\log 4 + \log x] \\
-&= \frac{d}{dx}(\log 4) + \frac{d}{dx}(\log x) \\
-&= 0 + \frac{1}{x \ln 10}
-\end{align*}
-$$
+| Rule        | $f(x)$           | $f'(x)$              |
+|-------------|------------------|----------------------|
+| Constant    | $k$              | $0$                  |
+| Power       | $x^n$, $n \ne 0$ | $nx^{n-1}$           |
+| Multiple    | $k u(x)$         | $k u'(x)$            |
+| Sum         | $u(x) + v(x)$    | $u'(x) + v'(x)$      |
+| Difference  | $u(x) - v(x)$    | $u'(x) - v'(x)$      |
+| Exponential | $a^x$            | $a^x \ln a$          |
+| Logarithm   | $\log_a x$       | $\dfrac{1}{x \ln a}$ |
+
+Note that two special cases of the last two derivatives occur when $a = e$:
+
+\begin{equation}
+\dd{}{e^x}{x} = e^x \qquad \dd{}{\ln x}{x} = \frac{1}{x}
+\end{equation}
+
+1. $\displaystyle f(x) = x^3$
+
+   ```{solution}
+   \begin{equation}
+   f'(x) = 3x^{3-1} = 3x^2
+   \end{equation}
+   ```
+
+2. $\displaystyle f(x) = -x^2 + 3$
+
+   ```{solution}
+   \begin{align}
+   f'(x) &= \frac{d}{dx}(-x^2) + \frac{d}{dx}(3) \\
+         &= -\frac{d}{dx}(x^2) + \frac{d}{dx}(3) \\
+         &= -2x^{2-1} + 0 \\
+         &= -2x
+   \end{align}
+   ```
+
+3. $\displaystyle f(x) = \frac{4x^3}{3} - x + 2e^x$
+
+   ```{solution}
+   \begin{align}
+   f'(x) &= \frac{4}{3} \frac{d}{dx}(x^3) - \frac{d}{dx}(x) +
+     2 \frac{d}{dx}(e^x) \\
+     &= \frac{4}{3}(3x^2) - 1 + 2e^x \\
+     &= 4x^2 - 1 + 2e^x
+   \end{align}
+   ```
+
+4. $\displaystyle f(x) = \frac{3}{x^2} + \sqrt{x}$
+
+   ```{solution}
+   \begin{align}
+   f'(x) &= 3 \frac{d}{dx}(x^{-2}) + \frac{d}{dx}(x^{1/2}) \\
+     &= 3(-2x^{-3}) + \frac{1}{2} x^{-1/2} \\
+     &= \frac{-6}{x^3} + \frac{1}{2\sqrt{x}}
+   \end{align}
+   ```
+
+5. $f(x) = \log(4x)$
+
+   ```{solution}
+   \begin{align}
+   f'(x) &= \frac{d}{dx} [\log 4 + \log x] \\
+     &= \frac{d}{dx}(\log 4) + \frac{d}{dx}(\log x) \\
+     &= 0 + \frac{1}{x \ln 10}
+   \end{align}
+   ```
+
+There are other rules related to functions that are products, quotients,
+compositions, or trigonometric. We will go over each of those in more detail
+next.
 
 ## Product rule
 
