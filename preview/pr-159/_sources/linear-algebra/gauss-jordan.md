@@ -244,172 +244,127 @@ Turning back into an equivalent system of equations gives the final solution,
 $Q_1 = 2$, $Q_2 = 4$, and $Q_3 = 2$.
 ````
 
-## Types of systems you may encounter for a $mxn$ matrix $ \underline{\underline{A}} $
-- #### Overdetermined: More equations (rows) than unknowns (columns); $ m > n  \leftarrow $ May not be solvable
-- #### Determined: $ m = n \leftarrow $ May not be solvable
-- #### Undetermined: $ m < n \leftarrow $ No unique solution
+## Number of solutions
 
-## So, how many solutions do we have?
-- #### No solution if there's a row of zeroes with a nonzero last column.
+The number of solutions for the system of linear equations can be determined
+from the row-reduced augmented matrix.
 
-Example: 
-$$ \begin{aligned}
-&\left[\begin{array}{ccc|c}
-3 & 2 & 1 & 3 \\
-2 & 1 & 1 & 0 \\
-6 & 2 & 4 & 6           
-\end{array}\right]
-\xrightarrow{ R_2 - \frac{2}{3} \cdot R_1}
-\left[\begin{array}{ccc|c}
-3 & 2 & 1 & 3 \\
-0 & -\frac{1}{3} & \frac{1}{3} & -2 \\
-6 & 2 & 4 & 6
-\end{array}\right]
-\xrightarrow{ 3 \cdot R_2} \\
-&\left[\begin{array}{ccc|c}
-3 & 2 & 1 & 3 \\
-0 & -1 & 1 & -6 \\
-6 & 2 & 4 & 6
-\end{array}\right]
-\xrightarrow{ R_3 - 2R_1}
-\left[\begin{array}{ccc|c}
-3 & 2 & 1 & 3 \\
-0 & -1 & 1 & -6 \\
-0 & -2 & 2 & 0
-\end{array}\right] 
-\xrightarrow{ R_3 - 2R_2} \\
+- There is no solution if there is a row of zeroes with a nonzero last column.
 
-&\left[\begin{array}{ccc|c}
-3 & 2 & 1 & 3 \\
-0 & -1 & 1 & -6 \\
-\color{red}{0} & \color{red}{0} & \color{red}{0} & \color{red}{12}
-\end{array}\right]
-\rightarrow \boxed{False \ Row: 0 \ne 12}
-\end{aligned}
-$$
+  \begin{align}
+  \begin{bmatrix}
+  3 & 2 & 1 & 3 \\
+  2 & 1 & 1 & 0 \\
+  6 & 2 & 4 & 6
+  \end{bmatrix}
+  \begin{matrix}\vphantom{R_1} \\ -(2/3) R_1 \\ -2 R_1 \end{matrix}
+  &\to \begin{bmatrix}
+  3 & 2 & 1 & 3 \\
+  0 & -1/3 & 1/3 & -2 \\
+  0 & -2 & 2 & 0
+  \end{bmatrix}
+  \begin{matrix}\vphantom{R_1} \\ \times -3 \\ \div 2\end{matrix} \\
+  &\to \begin{bmatrix}
+  3 & 2 & 1 & 3 \\
+  0 & 1 & -1 & 6 \\
+  0 & -1 & 1 & 0
+  \end{bmatrix}
+  \begin{matrix}\vphantom{R_1} \\ \vphantom{R_2} \\ +R_2 \end{matrix} \\
+  &\to \begin{bmatrix}
+  3 & 2 & 1 & 3 \\
+  0 & 1 & -1 & 6 \\
+  0 & 0 & 0 & 12
+  \end{bmatrix}
+  \end{align}
 
-- #### One solution if there are $ n $ pivots.
-Example: 
-$$ \begin{aligned}
-&\left[\begin{array}{ccc|c}
-3 & 2 & 1 & 3 \\
-2 & 1 & 1 & 0 \\
-6 & 2 & 5 & 6           
-\end{array}\right]
-\xrightarrow{ R_2 - \frac{2}{3} \cdot R_1}
-\left[\begin{array}{ccc|c}
-3 & 2 & 1 & 3 \\
-0 & -\frac{1}{3} & \frac{1}{3} & -2 \\
-6 & 2 & 5 & 6
-\end{array}\right]
-\xrightarrow{ 3 \cdot R_2} \\
-&\left[\begin{array}{ccc|c}
-3 & 2 & 1 & 3 \\
-0 & -1 & 1 & -6 \\
-6 & 2 & 5 & 6
-\end{array}\right]
-\xrightarrow{ R_3 - 2 \cdot R_1}
-\left[\begin{array}{ccc|c}
-3 & 2 & 1 & 3 \\
-0 & -1 & 1 & -6 \\
-0 & -2 & 3 & 0
-\end{array}\right] 
-\xrightarrow{ R_3 - 2 \cdot R_2} \\
-&\left[\begin{array}{ccc|c}
-\color{green}{3} & 2 & 1 & 3 \\
-0 & \color{green}{-1} & 1 & -6 \\
-0 & 0 & \color{green}{1} & 12
-\end{array}\right]
-\xrightarrow{ -1 \cdot R_2}
-\left[\begin{array}{ccc|c}
-3 & 2 & 1 & 3 \\
-0 & 1 & -1 & 6 \\
-0 & 0 & 1 & 12
-\end{array}\right]
-\xrightarrow{ R_2 + R_3} \\
-&\left[\begin{array}{ccc|c}
-3 & 2 & 1 & 3 \\
-0 & 1 & 0 & 18 \\
-0 & 0 & 1 & 12
-\end{array}\right]
-\xrightarrow{ R_1 - R_3}
-\left[\begin{array}{ccc|c}
-3 & 2 & 0 & -9 \\
-0 & 1 & 0 & 18 \\
-0 & 0 & 1 & 12
-\end{array}\right]
-\xrightarrow{ R_1- 2 \cdot R_2} \\
-&\left[\begin{array}{ccc|c}
-3 & 0 & 0 & -45 \\
-0 & 1 & 0 & 18 \\
-0 & 0 & 1 & 12
-\end{array}\right]
-\xrightarrow{ R_1 \div 3} 
-\left[\begin{array}{ccc|c}
-\color{green}{1} & 0 & 0 & -15 \\
-0 & \color{green}{1} & 0 & 18 \\
-0 & 0 & \color{green}{1} & 12
-\end{array}\right] \\\
-&\rightarrow \boxed{Solution \ at \ x_1 =-15; x_2 = 18; x_3 = 12}
-\end{aligned}
-$$
+  Since the last row is equivalent to $0 =  12$, there is a false equation and
+  the system has no solution.
 
-- #### Infinite solutions if there are fewer than $ n $ pivots. 
-Example: 
-$$ \begin{aligned}
-&\left[\begin{array}{ccc|c}
-3 & 2 & 1 & 3 \\
-2 & 1 & 1 & 0 \\
-6 & 2 & 4 & -6           
-\end{array}\right]
-\xrightarrow{ R_2 - \frac{2}{3} \cdot R_1}
-\left[\begin{array}{ccc|c}
-3 & 2 & 1 & 3 \\
-0 & -\frac{1}{3} & \frac{1}{3} & -2 \\
-6 & 2 & 4 & -6
-\end{array}\right]
-\xrightarrow{ 3 \cdot R_2} \\
-&\left[\begin{array}{ccc|c}
-3 & 2 & 1 & 3 \\
-0 & -1 & 1 & -6 \\
-6 & 2 & 4 & -6
-\end{array}\right]
-\xrightarrow{ R_3 - 2 \cdot R_1}
-\left[\begin{array}{ccc|c}
-3 & 2 & 1 & 3 \\
-0 & -1 & 1 & -6 \\
-0 & -2 & 2 & -12
-\end{array}\right] 
-\xrightarrow{ R_3 - 2 \cdot R_2} \\
-&\left[\begin{array}{ccc|c}
-\color{green}{3} & 2 & 1 & 3 \\
-0 & \color{green}{-1} & 1 & -6 \\
-0 & 0 & 0 & 0
-\end{array}\right]
-\xrightarrow{ -1 \cdot R_2}
-\left[\begin{array}{ccc|c}
-3 & 2 & 1 & 3 \\
-0 & 1 & -1 & 6 \\
-0 & 0 & 0 & 0
-\end{array}\right]
-\xrightarrow{ R_1 - 2 \cdot R_2} \\
-&\left[\begin{array}{ccc|c}
-3 & 0 & 3 & -9 \\
-0 & 1 & -1 & 6 \\
-0 & 0 & 0 & 0
-\end{array}\right]
-\xrightarrow{ R_1 \div 3}
-\left[\begin{array}{ccc|c}
-1 & 0 & 1 & -3 \\
-0 & 1 & -1 & 6 \\
-0 & 0 & 0 & 0
-\end{array}\right] \\\
+- There is one solution if there is one pivot for each unknown.
 
-&\rightarrow \boxed{x_1 = -3 - x_3; x_2 = 6 + x_3; x_3 \ is \ free}
-\end{aligned}
-$$
-- #### Related concept discussed elsewhere: Linear independence of equations, vectors.
+  \begin{align}
+  \begin{bmatrix}
+  3 & 2 & 1 & 3 \\
+  2 & 1 & 1 & 0 \\
+  6 & 2 & 5 & 6
+  \end{bmatrix}
+  \begin{matrix}\vphantom{R_1} \\ -(2/3) R_1 \\ -2 R_1 \end{matrix}
+  &\to \begin{bmatrix}
+  3 & 2 & 1 & 3 \\
+  0 & -1/3 & 1/3 & -2 \\
+  0 & -2 & 3 & 0
+  \end{bmatrix}
+  \begin{matrix}\vphantom{R_1} \\ \times -3 \\ \vphantom{R_3} \end{matrix} \\
+  &\to \begin{bmatrix}
+  3 & 2 & 1 & 3 \\
+  0 & 1 & -1 & 6 \\
+  0 & -2 & 3 & 0
+  \end{bmatrix}
+  \begin{matrix}\vphantom{R_1} \\ \vphantom{R_2} \\ +2 R_2 \end{matrix} \\
+  &\to \begin{bmatrix}
+  3 & 2 & 1 & 3 \\
+  0 & 1 & -1 & 6 \\
+  0 & 0 & 1 & 12
+  \end{bmatrix}
+  \begin{matrix} -R_3 \\ +R_3 \\ \vphantom{R_3} \end{matrix} \\
+  &\to \begin{bmatrix}
+  3 & 2 & 0 & -9 \\
+  0 & 1 & 0 & 18 \\
+  0 & 0 & 1 & 12
+  \end{bmatrix}
+  \begin{matrix} -2R_2 \\ \vphantom{R_3} \end{matrix} \\
+  &\to \begin{bmatrix}
+  3 & 0 & 0 & -45 \\
+  0 & 1 & 0 & 18 \\
+  0 & 0 & 1 & 12
+  \end{bmatrix}
+  \begin{matrix} \div 3 \\ \vphantom{R_3} \end{matrix} \\
+  &\to \begin{bmatrix}
+  1 & 0 & 0 & -15 \\
+  0 & 1 & 0 & 18 \\
+  0 & 0 & 1 & 12
+  \end{bmatrix}
+  \end{align}
 
+  There are 3 pivot points and 3 unknowns, the solution is $x_1 = -15$,
+  $x_2 = 18$, and $x_3 = 12$.
+
+- There are infinitely many solutions if there are fewer pivots than unknowns.
+
+  \begin{align}
+  \begin{bmatrix}
+  3 & 2 & 1 & 3 \\
+  2 & 1 & 1 & 0 \\
+  6 & 2 & 4 & -6
+  \end{bmatrix}
+  \begin{matrix}\vphantom{R_1} \\ -(2/3) R_1 \\ -2 R_1 \end{matrix}
+  &\to \begin{bmatrix}
+  3 & 2 & 1 & 3 \\
+  0 & -1/3 & 1/3 & -2 \\
+  0 & -2 & 2 & -12
+  \end{bmatrix}
+  \begin{matrix}\vphantom{R_1} \\ \times -3 \\ \div -2\end{matrix} \\
+  &\to \begin{bmatrix}
+  3 & 2 & 1 & 3 \\
+  0 & 1 & -1 & 6 \\
+  0 & 1 & -1 & 6
+  \end{bmatrix}
+  \begin{matrix}-2 R_2 \\ \vphantom{R_2} \\ \vphantom{R_3} \end{matrix} \\
+  &\to \begin{bmatrix}
+  3 & 0 & 3 & -9 \\
+  0 & 1 & -1 & 6 \\
+  0 & 0 & 0 & 0
+  \end{bmatrix}
+  \begin{matrix}\div 3 \\ \vphantom{R_2} \\ \vphantom{R_3} \end{matrix} \\
+  &\to \begin{bmatrix}
+  1 & 0 & 1 & -3 \\
+  0 & 1 & -1 & 6 \\
+  0 & 0 & 0 & 0
+  \end{bmatrix}
+  \end{align}
+
+  There are 2 pivot points but 3 unknowns, so there is one free variable. The
+  solution is $x_1 = -x_3 - 3$ and $x_2 = x_3 + 6$, with $x_3$ free.
 
 ## Skill builder problems
 
@@ -514,6 +469,3 @@ $$
 
    so $x_1 = 4$, $x_2 = 0$, and $x_3 = -2$.
    ```
->>>>>>> main
-
->>>>>>> 54003c9bea5e92b4e1aa2b753fb68f7c96651736
