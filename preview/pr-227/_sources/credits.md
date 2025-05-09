@@ -25,6 +25,7 @@ This work (c) 2025 is licensed under
 - Becca Gulley
 - Connor Habig
 - Charles Hamlett
+- Charlotte Hann
 - Luke Harrison
 - Anna Grace Hawkins
 - Kennedi Hawkins
