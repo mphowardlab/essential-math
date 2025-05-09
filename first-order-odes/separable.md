@@ -175,3 +175,94 @@ t &= 2 \left(\frac{1}{0.01}\right)^2 \sqrt{\frac{2}{2 \cdot 9.8}} = 6400
 This time is in seconds because all units are SI, so the tank drains in about
 1.8 hours.
 ````
+
+## Skill builder problems
+
+Solve the following:
+
+1. $y'+(x+2)y^2 = 0 ; \quad y(1) = 1$
+
+```{solution}
+\begin{align}
+\frac{dy}{dx} &= -(x+2)y^2 \\
+\int\frac{dy}{y^2} &= \int-(x+2)dx \\
+-\frac{1}{y} &= -\left(\frac{x^2}{2} + 2x\right) + C \\
+\end{align}
+Isolate $y'$ and then integrate both sides.
+``
+When using variable names within text, wrap them in $$.
+
+\begin{equation}
+y(1) = -1 = -\left(\frac{1}{2} + 2 \right) + C \quad \to \quad C = \frac{3}{2}
+\end{equation}
+Use the initial condition to find the value of C.
+
+\begin{equation}
+y = \frac{2}{x^2+4x-3}
+\end{equation}
+Plug in the value for C and solve for y.
+```
+
+(b)
+
+\begin{equation}
+yy'+4x = 0 ; \quad y(0) = 3
+\end{equation}
+
+```{solution}
+\begin{align}
+y*\frac{dy}{dx} &= -4x \\
+\int y*dy &= \int-4x*dx \\
+-\frac{y^2}{2} &= -2x^2 + C \\
+\end{align}
+Use the initial condition to find the value of C.
+
+\begin{equation}
+y(0) = \frac{9}{2} = C \to y^2 = 9-4x^2
+\end{equation}
+Plug in the value for C and solve for y.
+
+\begin{equation}
+y = ±\sqrt{9-4x^2}
+\end{equation}
+The negative does not meet the initial condition, so choose the positive.
+
+\begin{equation}
+y = \sqrt{9-4x^2}
+\end{equation}
+```
+
+(c)
+
+\begin{equation}
+y' = \frac{x-1}{y}e^{-y^2} \quad y(0) = 1
+\end{equation}
+
+```{solution}
+\begin{align}
+\int ye^{y^2} = \int (x-1)dx\\
+\frac{1}{2}e^{y^2} = \frac{x^2}{2}-x + C
+\end{align}
+
+Use the initial condition to find the value of C.
+\begin{equation}
+y(0) = 1 \to \frac{1}{2}e^{1^2} = C
+\end{equation}
+
+
+Plug in the value for C and divide everything by 1/2.
+
+\begin{equation}
+e^{y^2} = x^2-2x+e
+end{equation}
+
+\begin{equation}
+y^2 = ln(x^2-2x+e)
+\end{equation}
+Take the natural log of both sides.
+
+\begin{equation}
+y = \sqrt{ln(x^2-2x+e)}
+\end{equation}
+The negative does not meet the initial condition, so choose the positive.
+```
