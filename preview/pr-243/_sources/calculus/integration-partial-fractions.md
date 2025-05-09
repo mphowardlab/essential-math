@@ -279,3 +279,93 @@ Last, integrate:
 &= \int \left(x - 2 + \frac{2}{x} + \frac{6}{x^2} - \frac{2}{x-3} \right) \d{x} \\
 &= \frac{x^2}{2} -2x + 2\ln|x| - \frac{6}{x} - 2\ln|x-3| + c
 \end{align}
+
+## Skill builder problems
+
+Integrate the following:
+
+1. $\displaystyle \int \frac{2x+16}{x^2-16} \d{x}$
+
+   ```{solution}
+   Fractional decomposition:
+
+   \begin{equation}
+   \frac{2x+16}{(x+4)(x-4)} = \frac{A_1}{x+4} + \frac{A_2}{x-4}
+   \end{equation}
+
+   Cover up:
+
+   \begin{align}
+   A_1 &= \frac{2(-4)+16}{-4-4} = -1 \\
+   A_2 &= \frac{2(4)+16}{4+4} = 3
+   \end{align}
+
+   so
+
+   \begin{align}
+   \int\frac{2x+16}{x^2-16} \d{x}
+   &= \int\left( -\frac{1}{x+4}+\frac{3}{x-4} \right) \d{x} \\
+   &= -\ln|x+4| + 3\ln|x-4| + c
+   \end{align}
+   ```
+
+2. $\displaystyle \int \frac{8}{x^2+2x} \d{x}$
+
+   ```{solution}
+   Fractional decomposition:
+
+   \begin{equation}
+   \frac{8}{x(x+2)} = \frac{A_1}{x} + \frac{A_2}{x+2}
+   \end{equation}
+
+   Cover up:
+
+   \begin{align}
+   A_1 &= \frac{8}{0+2} = 4 \\
+   A_2 &= \frac{8}{-2} = -4
+   \end{align}
+
+   so
+
+   \begin{align}
+   \int\frac{8}{x^2+2x} \d{x}
+     &= \int\left(\frac{4}{x} - \frac{4}{x+2}\right) \d{x} \\
+     &= 4\ln|x| - 4\ln|x+2| + c
+   \end{align}
+   ```
+
+3. $\displaystyle \int \frac{5+12x^2-x^3}{x^2(x-9)(x-1)} \d{x}$
+
+   ```{solution}
+   Fractional decomposition
+
+   \begin{equation}
+   \frac{5+12x^2-x^3}{x^2(x-9)(x-1)} = \frac{A_1}{x} + \frac{A_2}{x^2} +
+     \frac{A_3}{x-9} + \frac{A_4}{x-1}
+   \end{equation}
+
+   Cover up:
+
+   \begin{align}
+   A_2 &= \frac{5+12(0^2)-0^3}{(0-9)(0-1)} = \frac{5}{9} \\
+   A_3 &= \frac{5+12(9^2)-9^3}{9^2(9-1)} = \frac{31}{81} \\
+   A_4 &= \frac{5+12(1^2)-1^3}{1^2(1-9)} = -2
+   \end{align}
+
+   To obtain $A_1$, plugin $x = -1$
+
+   \begin{align}
+   \frac{9}{10} &= -A_1 + \frac{5}{9} - \frac{1}{10}\cdot\frac{31}{81} + 1 \\
+   A_1 &= \frac{50}{81}
+   \end{align}
+
+   so
+
+   \begin{align}
+   \int\frac{5+12x^2-x^3}{(x^2)(x-9)(x-1)} \d{x}
+   & =\int\Biggl(\frac{50}{81}\frac{1}{x} + \frac{5}{9}\frac{1}{x^2} +
+     \frac{31}{81}\frac{1}{x-9} - \frac{2}{x-1}\Biggr) \d{x} \\
+   &= \frac{50}{81}\ln|x| - \frac{5}{9}\frac{1}{x} + \frac{31}{81}\ln|x-5| -
+     2\ln|x-1| + c
+   \end{align}
+   ```

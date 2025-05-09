@@ -1,5 +1,77 @@
 # Rules for derivatives
 
+Some useful rules for derivatives to apply are:
+
+| Rule        | $f(x)$           | $f'(x)$              |
+|-------------|------------------|----------------------|
+| Constant    | $k$              | $0$                  |
+| Power       | $x^n$, $n \ne 0$ | $nx^{n-1}$           |
+| Multiple    | $k u(x)$         | $k u'(x)$            |
+| Sum         | $u(x) + v(x)$    | $u'(x) + v'(x)$      |
+| Difference  | $u(x) - v(x)$    | $u'(x) - v'(x)$      |
+| Exponential | $a^x$            | $a^x \ln a$          |
+| Logarithm   | $\log_a x$       | $\dfrac{1}{x \ln a}$ |
+
+Note that two special cases of the last two derivatives occur when $a = e$:
+
+\begin{equation}
+\dd{}{e^x}{x} = e^x \qquad \dd{}{\ln x}{x} = \frac{1}{x}
+\end{equation}
+
+1. $\displaystyle f(x) = x^3$
+
+   ```{solution}
+   \begin{equation}
+   f'(x) = 3x^{3-1} = 3x^2
+   \end{equation}
+   ```
+
+2. $\displaystyle f(x) = -x^2 + 3$
+
+   ```{solution}
+   \begin{align}
+   f'(x) &= \frac{d}{dx}(-x^2) + \frac{d}{dx}(3) \\
+         &= -\frac{d}{dx}(x^2) + \frac{d}{dx}(3) \\
+         &= -2x^{2-1} + 0 \\
+         &= -2x
+   \end{align}
+   ```
+
+3. $\displaystyle f(x) = \frac{4x^3}{3} - x + 2e^x$
+
+   ```{solution}
+   \begin{align}
+   f'(x) &= \frac{4}{3} \frac{d}{dx}(x^3) - \frac{d}{dx}(x) +
+     2 \frac{d}{dx}(e^x) \\
+     &= \frac{4}{3}(3x^2) - 1 + 2e^x \\
+     &= 4x^2 - 1 + 2e^x
+   \end{align}
+   ```
+
+4. $\displaystyle f(x) = \frac{3}{x^2} + \sqrt{x}$
+
+   ```{solution}
+   \begin{align}
+   f'(x) &= 3 \frac{d}{dx}(x^{-2}) + \frac{d}{dx}(x^{1/2}) \\
+     &= 3(-2x^{-3}) + \frac{1}{2} x^{-1/2} \\
+     &= \frac{-6}{x^3} + \frac{1}{2\sqrt{x}}
+   \end{align}
+   ```
+
+5. $f(x) = \log(4x)$
+
+   ```{solution}
+   \begin{align}
+   f'(x) &= \frac{d}{dx} [\log 4 + \log x] \\
+     &= \frac{d}{dx}(\log 4) + \frac{d}{dx}(\log x) \\
+     &= 0 + \frac{1}{x \ln 10}
+   \end{align}
+   ```
+
+There are other rules related to functions that are products, quotients,
+compositions, or trigonometric. We will go over each of those in more detail
+next.
+
 ## Product rule
 
 The product rule is used to differentiate functions that can be written as the
@@ -40,6 +112,7 @@ functions that are hard to expand!
 
 1. $f(x) = (x+1)(2x^2 + 5)(5x^3-4)$
 
+   ```{solution}
    Identify:
 
    \begin{equation}
@@ -67,9 +140,11 @@ functions that are hard to expand!
    &+ (2x^2+5)(5x^3-4)
    \end{align}
    <!--markdownlint-enable MD011 -->
+   ```
 
 2. $f(x) = \dfrac{1}{x} e^x$
 
+   ```{solution}
    Identify:
 
    \begin{align}
@@ -83,9 +158,11 @@ functions that are hard to expand!
    f'(x) &= \frac{1}{x}e^x + e^x(-\frac{1}{x^2}) \\
    &= e^x\left(\frac{1}{x} - \frac{1}{x^2}\right)
    \end{align}
+   ```
 
 3. $f(x) = (x^2+3)\ln x$
 
+   ```{solution}
    Identify:
 
    \begin{align}
@@ -99,6 +176,7 @@ functions that are hard to expand!
    f'(x) &= (x^2+3)\cdot\frac{1}{x} + (\ln x)(2x) \\
    &= \frac{x^2+3}{x} + 2x\ln x
    \end{align}
+   ```
 
 ## Quotient Rule
 
@@ -143,6 +221,7 @@ is helpful to do the quotient rule!
 
 1. $\displaystyle f(x) = \frac{x^2 -1}{x^4 + 2}$
 
+   ```{solution}
    \begin{align}
    u &= x^2 -1 & v &= x^4 +2 \\
    u' &= 2x & v' &= 4x^3
@@ -154,9 +233,11 @@ is helpful to do the quotient rule!
    f'(x) &= \frac{ (x^4 + 2) \cdot (2x) - (x^2 - 1) \cdot (4x^3)}{(x^4 +2)^2}\\
     &= \frac{2x^5 + 4x^2 - 4x^5 +4x^3}{x^8 + 2x^4 + 4}
    \end{align}
+   ```
 
 2. $\displaystyle f(x) = \frac{e^{x}}{1 + x}$
 
+   ```{solution}
    \begin{align}
    u &= e^{x} & v &= 1 + x \\
    u' &= e^{x} & v' &= 1
@@ -168,9 +249,11 @@ is helpful to do the quotient rule!
    f'(x) &= \frac{(1 + x) \cdot e^{x} - e^{x} \cdot 1}{(1 + x)^2} \\
    &= \frac{x e^{x}}{(1 + x)^2}
    \end{align}
+   ```
 
 3. $\displaystyle f(x) = \frac{(x - 1)(x^2 - 2x)}{x^4}$
 
+   ```{solution}
    \begin{align}
    u &=  & v &= x^4\\
    u' &= 3x^2 - 6x + 2 & v' &= 4x^3 \\
@@ -187,6 +270,7 @@ is helpful to do the quotient rule!
    Note, though, that in this case we could also have expanded the numerator,
    divided through by $x^8$, and differentiated term-by-term to arrive at the
    same answer. The faster route depends on the problem!
+   ```
 
 ## Chain rule
 
@@ -225,6 +309,7 @@ The results match! Some additional examples:
 
 1. $f(x) = e^{x^2}$
 
+   ```{solution}
    Make the replacement $u = x^2$:
 
    \begin{align}
@@ -237,9 +322,11 @@ The results match! Some additional examples:
    \begin{equation}
    f'(x) = \dd{}{f}{u} \dd{}{u}{x} = e^{u} \dd{}{u}{x} = e^{x^2} \cdot 2x
    \end{equation}
+   ```
 
 2. $f(x) = \ln(1 + 2x)$
 
+   ```{solution}
    Make the replacement $u = 1+2x$:
 
    \begin{align}
@@ -252,9 +339,11 @@ The results match! Some additional examples:
    \begin{equation}
    f'(x) = \dd{}{f}{u} \dd{}{u}{x} = \frac{1}{u} \dd{}{u}{x} = \frac{2}{1 + 2x}
    \end{equation}
+   ```
 
 3. $f(x) = \dfrac{2}{1 + 2x}$
 
+   ```{solution}
    Make the replacement $u = 1+2x$:
 
    \begin{align}
@@ -268,6 +357,7 @@ The results match! Some additional examples:
    f'(x) = \dd{}{f}{u} \dd{}{u}{x} = -2u^{-2} \cdot \dd{}{u}{x} =
      \frac{-4}{(1 + 2x)^2}
    \end{equation}
+   ```
 
 ## Trigonometric functions
 
@@ -360,8 +450,6 @@ a = v' =
 The roots occur at $t = T/4$ or $3T/4$, when $x = 0$ and the spring is no longer
 stretched. All potential energy has been converted to kinetic energy!
 ````
-
-## Skill builder problems
 
 1. $f(x) = 3 \cos x + \sin x$
 

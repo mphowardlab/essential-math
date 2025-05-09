@@ -263,6 +263,134 @@ c_2(t) &= \frac{1}{2} \left(1 - e^{-0.2 t}\right)
 
 ````
 
+## Types of critical points
+
+We can use the eigenvalues and eigenvectors to anticipate what solutions
+around *critical points* ($\vv{y}' = \vv{0}$, or steady states) look like. We
+will focus our discussion on only 2 x 2 systems.
+
+- If the eigenvalues are real and distinct, $\lambda_1 \ne \lambda_2$:
+
+  ::::{grid}
+  :::{grid-item-card} Unstable improper node
+
+  $$
+  \lambda_1 > \lambda_2 > 0
+  $$
+
+  ```{image} ./_images/unstable_improper_node.png
+  :alt: Unstable improper node
+  :width: 150px
+  :align: center
+  ```
+
+  :::
+  :::{grid-item-card} Stable improper node
+
+  $$
+  \lambda_1 < \lambda_2 < 0
+  $$
+
+  ```{image} ./_images/stable_improper_node.png
+  :alt: Unstable improper node
+  :width: 150px
+  :align: center
+  ```
+
+  :::
+  :::{grid-item-card} Saddle
+
+  $$
+  \lambda_1 > 0, \quad \lambda_2 < 0
+  $$
+
+  ```{image} ./_images/saddle.png
+  :alt: Saddle
+  :width: 150px
+  :align: center
+  ```
+
+  :::
+  ::::
+
+- If the eigenvalues are complex, $\lambda_{1,2} = \alpha \pm  i\omega$:
+
+  ::::{grid}
+  :::{grid-item-card} Unstable spiral
+
+  $$
+  \alpha > 0
+  $$
+
+  ```{image} ./_images/unstable_spiral.png
+  :alt: Unstable spiral
+  :width: 150px
+  :align: center
+  ```
+
+  :::
+  :::{grid-item-card} Stable spiral
+
+  $$
+  \alpha < 0
+  $$
+
+  ```{image} ./_images/stable_spiral.png
+  :alt: Stable spiral
+  :width: 150px
+  :align: center
+  ```
+
+  :::
+  :::{grid-item-card} Center
+
+  $$
+  \alpha = 0
+  $$
+
+  ```{image} ./_images/center.png
+  :alt: Center
+  :width: 150px
+  :align: center
+  ```
+
+  :::
+  ::::
+
+  The direction of the orbit depends on the matrix and can be checked for
+  some point. If
+
+  \begin{equation}
+  \vv{A} = \begin{bmatrix}a & b \\ c & d\end{bmatrix}
+  \end{equation}
+
+  The orbit is clockwise if $b > c$ and counterclockwise if $c < b$.
+
+- If the eigenvalues are real and repeated, $\lambda_1 = \lambda_2$:
+
+  ::::{grid}
+  :::{grid-item-card} Proper node / star
+
+  **A** is a multiple of **I**.
+
+  ```{image} ./_images/proper_node.png
+  :alt: Proper node
+  :width: 150px
+  :align: center
+  ```
+
+  :::
+  :::{grid-item-card} Degenerate node
+
+  ```{image} ./_images/degenerate_node.png
+  :alt: Degenerate node
+  :width: 150px
+  :align: center
+  ```
+
+  :::
+  ::::
+
 ## Skill builder problems
 
 Solve the inital value problem $ \vv{y}' = \vv{A}\vv{y}$ with
