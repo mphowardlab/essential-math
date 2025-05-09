@@ -355,123 +355,131 @@ Solve the following differential equations:
 2. $\displaystyle y' = -\frac{e^{x+y} + ye^y}{x e^y - 1}$
 
    ````{solution}
-  
    This ODE is not in the standard form, so we need to first rearrange:
 
-  \begin{align}
+   \begin{align}
    (e^{x+y} + ye^y) \d{x} + (x e^y - 1) \d{y} = 0
+   \end{align}
+
+   so
+
+   \begin{align}
+   P &= e^{x+y} + ye^y \\
+   Q &= x e^y - 1
    \end{align}
 
    Check if the differential equation is exact:
 
-   Let
-  \begin{align}
-   P&= e^{x+y} + ye^y
-   Q&= x e^y - 1
-  \end{align}
+   \begin{align}
+   \td{}{P}{y}{x} &= e^{x+y} + y e^y + e^y \\
+   \td{}{Q}{x}{y} &= e^y
+   \end{align}
+
+   These are not equal, so the equation is not exact. To make it exact, find
+   integrating factor *F*. The *R* formula gives:
 
    \begin{align}
-   \frac{\partial P}{\partial y} = e^{x+y} + y e^y + e^y, \quad
-   \frac{\partial Q}{\partial x} = e^y
-  \end{align}
+   R &= \frac{1}{Q}\left[\td{}{P}{y}{x} - \td{}{Q}{x}{y} \right] \\
+     &=\frac{1}{x e^y - 1}(e^{x+y} + y e^y + e^y - e^y) \\
+     &= \frac{e^y(e^x + y)}{x e^y - 1}
+   \end{align}
 
-   These are not equal, so the equation is not exact. To make it exact, find integrating factor F:
+   this is not a function of only *x*, so try the *S* formula:
 
-  \begin{align}
-   \mu(y) = e^{\int -dy} = e^{-y}
-  \end{align}
+   \begin{align}
+   S &= -\frac{Q}{P} R \\
+     &= -\frac{e^y(e^x + y)}{e^{x+y} + y e^y} \\
+     &= -1
+   \end{align}
 
-   Multiply the equation by \( e^{-y} \):
+   This is a function of, at most, *y* so:
 
-  \begin{align}
-   e^{-y}(e^{x+y} + ye^y) \, dx + e^{-y}(x e^y - 1) \, dy = 0
+   \begin{equation}
+   F = \exp\left(\int S\d{y} \right) = e^{-y}
+   \end{equation}
 
-   (e^x + y) \, dx + (x - e^{-y}) \, dy = 0
-  \end{align}
+   Multiply the equation by *F*:
 
-   Now the equation is exact
+   \begin{equation}
+   (e^x + y) \d{x} + (x - e^{-y}) \d{y} = 0
+   \end{equation}
 
-  \begin{align}
-   \frac{\partial f}{\partial x} = e^x + y \Rightarrow f(x, y) = e^x + xy + k(y)
-  \end{align}
+   Now the equation is exact so integrate the new *P* with respect to *x*:
 
-   Now differentiate \( f(x, y) \) with respect to \( y \):
+   \begin{equation}
+   f(x,y) = \int (e^x + y) \d{x} = e^x + xy + k(y)
+   \end{equation}
 
-  \begin{align}
-   \frac{\partial f}{\partial y} = x + k'(y)
-  \end{align}
+   where *k* is an unknown function of *y*. Then, differentiate *f* with respect
+   to *y* and compare to *Q*:
 
-  \begin{align}
-   x + k'(y) = x - e^{-y} \Rightarrow k'(y) = -e^{-y}
-  \end{align}
+   \begin{align}
+   \td{}{f}{x}{y} = x + k'(y) &= Q = x - e^{-y} \\
+   k' &= -e^{-y}
+   \end{align}
 
-   Integrate:
+   This ODE for *k* can be integrated directly (neglecting the integration constant)
 
-  \begin{align}
-   k(y) = \int -e^{-y} \, dy = -e^{-y} + c
-  \end{align}
+   \begin{align}
+   k(y) = \int -e^{-y} \d{y} = e^{-y}
+   \end{align}
 
-  \begin{align}
-   f(x, y) = e^x + xy - e^{-y} + c
-  \end{align}
+   Putting it all together,
 
-  \begin{align}
-  {e^x + xy - e^{-y} = c}
-  \end{align}
-  
-  is an emplicit solution for the ODE
+   \begin{align}
+   f(x, y) = e^x + e^{-y} + xy = c
+   \end{align}
+
+   is an implicit solution for the ODE.
+   ````
 
 3. $\displaystyle y' = y + 1 - 2x$
 
    ````{solution}
    Rewrite in linear form:
 
-  \begin{align}
+   \begin{align}
    y' - y = 1 - 2x
-  \end{align}
+   \end{align}
 
-  \begin{align}
-   p(x) = -1, \quad r(x) = 1 - 2x
-  \end{align}
+   where
+
+   \begin{align}
+   p = -1 \qquad r = 1 - 2x
+   \end{align}
 
    Find integrating factor:
 
-  \begin{align}
-   F = e^{\int -1 \, dx} = e^{-x}
-  \end{align}
-
-   Multiply through by the integrating factor:
-
-  \begin{align}
-   e^{-x} y' - e^{-x} y = e^{-x}(1 - 2x)
-  \end{align}
-
-   Left-hand side becomes the derivative of \( e^{-x} y \):
-
-  \begin{align}
-   \frac{d}{dx}(e^{-x} y) = e^{-x}(1 - 2x)
-  \end{align}
-
-  \begin{align}
-   \int \frac{d}{dx}(e^{-x} y) \, dx = \int e^{-x}(1 - 2x) \, dx
-  \end{align}
-
-   Use integration by parts
-
-  \begin{align}
-   \int e^{-x}(1 - 2x) \, dx = -(1 - 2x)e^{-x} + 2e^{-x}
-  \end{align}
-
    \begin{align}
-   e^{-x} y = -(1 - 2x)e^{-x} + 2e^{-x} + c
+   F = e^{\int p\d{x}} = e^{\int -1 \d{x}} = e^{-x}
    \end{align}
 
-  \begin{align}
-   y = e^x \left[ -(1 - 2x)e^{-x} + 2e^{-x} + c \right] = 1 + 2x + c e^x
-  \end{align}
+   Then, evaluate the integral
 
-   Final solution:
+   \begin{equation}
+   \int F r \d{x} = \int e^{-x} (1-2x) \d{x}
+   \end{equation}
 
-  \begin{align}
-  {y = 1 + 2x + c e^x}
-  \end{align}
+   This integral can be evaluated by parts using the tabular method:
+
+   | sign | $u$    | $\d{v}$   |
+   |------|--------|-----------|
+   |      |        | $e^{-x}$  |
+   |  $+$ | $1-2x$ | $-e^{-x}$ |
+   |  $-$ | $-2$   | $e^{-x}$  |
+   |      | $0$    |           |
+
+   so
+
+   \begin{equation}
+   \int F r \d{x} = (2x-1)e^{-x} + 2 e^{-x} = (2x + 1) e^{-x}
+   \end{equation}
+
+   Putting it all together:
+
+   \begin{align}
+   y &= \frac{1}{F}\left(\int F r \d{x} + c \right) \\
+     &= e^x \left[ (2x + 1) e^{-x} + c \right] \\
+     &= 1 + 2x + c e^x
+   \end{align}
+   ````
