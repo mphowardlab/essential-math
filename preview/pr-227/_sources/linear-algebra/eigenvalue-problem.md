@@ -1,71 +1,144 @@
 # Eigenvalue problem
 
-
-For an *n* x *n* square matrix $ \vv{A} $  , there is a scalar $\lambda$ 
-and vector $\vv{x}$ such that :
-
-
+For an *n* x *n* square matrix **A**, we seek a scalar $\lambda$ and vector
+**x** such that:
 
 \begin{align}
-\vv{A}   \vv{x} =\lambda\vv{x} 
+\vv{A} \vv{x} = \lambda \vv{x}
 \end{align}
 
-We want $\underline{nontrivial}$ solutions $(\vv{x} \ne \underline{0})$. To find them:
+We want a *nontrivial* solution ($\vv{x} \ne \vv{0}$). This pair represents a
+vector **x** that, when multiplied into **A**, does not change its direction.
+However, it may adopt a new magnitude $\lambda$. Borrowing from a German word
+for "own", we call **x** an *eigenvector* and $\lambda$ an *eigenvalue* of
+**A**.
+
+To find the eigenvalues of **A**, rearrange:
 
 \begin{align}
-\vv{A} \vv{x} - \lambda \vv{x} = \underline{0} \\
-
-\vv{A} \vv{x} - \lambda \vv{I} \vv{x} = \underline{0} \\
-
-(\vv{A} - \lambda \vv{I} )\vv{x} =  \underline{0}
+\vv{A} \vv{x} - \lambda \vv{x} &= \vv{0} \\
+(\vv{A} - \lambda \vv{I}) \vv{x} &= \vv{0}
 \end{align}
 
-If $\vv{A} - \lambda \vv{I}$ is invertible, we have only $\lambda = \underline{0}$ as a solution. Hence, we want this to be singular! This occurs when the determinant is zero:
+If $\vv{A} - \lambda \vv{I}$ is invertible, we have only $\vv{x} = \vv{0}$ as a
+solution. Hence, we require this matrix to be singular! This occurs when its
+[determinant](./determinants.md) is zero:
 
 \begin{align}
-|\vv{A}- \lambda \vv{I}|= 0
+|\vv{A}- \lambda \vv{I}| = 0
 \end{align}
 
-This determinant creates a $\underline{ characteristic \, polynomial}$ for $\lambda$ that can be solved. Then, the $\vv{x}$ that corresponds to a given $\lambda$ can be determined.
+This equation creates a characeristic polynomial of degree *n* for $\lambda$
+that can be solved. Then, the eigenvector **x** that corresponds to each root
+$\lambda$ can be determined. For example, to find the eigenvalues of:
 
-Ex:
-\begin{align}
-\vv{A} = \begin{bmatrix} -5 & 2\\ 2 & -2 \end{bmatrix}  
-\\
-| \vv{A} -\lambda \vv{I} | = \begin{bmatrix} -5-\lambda & 2 \\ 2 & -2-\lambda \end{bmatrix} = (-5 -\lambda)(-2-\lambda)-2\cdot2 =(\lambda + 5)(\lambda +2) -4
-\\
-=\lambda^2 +7\lambda + 6 = (\lambda +1)(\lambda +6)=0 \to \underline{\lambda = -1, -6}
-\end{align}
+\begin{equation}
+\vv{A} = \begin{bmatrix} -5 & 2\\ 2 & -2 \end{bmatrix}
+\end{equation}
 
-$\lambda=-1$:
-\begin{align}
-\begin{bmatrix} -5 -(-1) & 2 \\ 2 & -2-(-1) \end{bmatrix} \vv{x}= \begin{bmatrix} -4 & 2 \\ 2 & -1 \end{bmatrix} \vv{x} =0 
-\\
-\begin{bmatrix} -4 & 2 & 0 \\ 2 & -1 & 0 \end{bmatrix} \to \begin{bmatrix} -4 & 2 & 0 \\ 0 & 0 & 0 \end{bmatrix} \to \begin{bmatrix} 1 & -1/2 & 0 \\ 0 & 0 & 0 \end{bmatrix} \to \vv{x_1} -\frac{\vv{x_2}}{2} =0 \\
-\vv{x_2} free
-\end{align}
-
-This solution is not unique, which makes sense from the equation. We may then choose $\vv{x_1}$ or $\vv{x_2}$ so that the eigenvector has a nice norm or values. e.g.,
-\begin{align}
-\vv{x_1} =1, \vv{x_2} = 2 \to \vv{x}= \begin{bmatrix} 1 \\ 2 \end{bmatrix}
-\end{align}
-
-Repeat for $\lambda = -6$:
-\begin{align}
-\begin{bmatrix} -5 -(-6) & 2 \\ 2 & -2-(-6) \end{bmatrix} \vv{x} = \begin{bmatrix} 1 & 2 \\ 2 & 4 \end{bmatrix}\vv{x} =0
-\end{align}
-
-Row 2 is 2x Row 1, so we can just use Row 1!(This will be a pattern for 2x2 matricies).
+First compute the determinant:
 
 \begin{align}
-\vv{x_1} +2\vv{x_2} =0 \to \vv{x}=\begin{bmatrix} 2 \\ -1 \end{bmatrix}
+|\vv{A} -\lambda \vv{I}|
+&= \begin{vmatrix} -5-\lambda & 2 \\ 2 & -2-\lambda \end{vmatrix} \\
+&= (-5 -\lambda)(-2-\lambda) - 2 \cdot 2 \\
+&= \lambda^2 +7\lambda + 6 \\
+&= (\lambda +1)(\lambda +6) = 0
 \end{align}
 
-Hence, the eigenvalues and eigenvectors are:
+Hence, the eigenvalues of **A** are $\lambda_1 = -1$ and $\lambda_2 = -6$. Note
+that the particular ordering of the eigenvalues is not important, and we are
+only labeling them to make it convenient to refer to a particular eigenvalue
+later.
+
+Next, we seek the eigenvector $\vv{x}_1$ that corresponds to $\lambda_1$. This
+vector must solve the system:
+
 \begin{align}
-\lambda_1 = -1 , \vv{x_1}= \begin{bmatrix} 1 \\ 2 \end{bmatrix} \quad \text{and} \quad \lambda_2 = -6, \vv{x_2}= \begin{bmatrix} 2 \\ -1 \end{bmatrix}
+(\vv{A} - \lambda_1 \vv{I}) \vv{x}_1 &= \vv{0} \\
+\begin{bmatrix} -4 & 2 \\ 2 & -1 \end{bmatrix} \vv{x}_1 &= \vv{0}
 \end{align}
 
+We can solve for $\vv{x}_1$ using row reduction. Since the last column of the
+augmented matrix would be only zeros, it is not necessary to include it, and we
+row reduce only the matrix itself:
+
+\begin{equation}
+\begin{bmatrix}
+-4 & 2 \\
+2 & -1
+\end{bmatrix}
+\begin{matrix}\vphantom{R_1} \\ +R_2/2 \end{matrix}
+\to \begin{bmatrix}
+-4 & 2 \\
+0 & 0
+\end{bmatrix}
+\begin{matrix} \div -2 \\ \vphantom{R_2} \end{matrix}
+\to
+\begin{bmatrix}
+1 & -1/2 \\
+0 & 0
+\end{bmatrix}
+\end{equation}
+
+Note that this reduced matrix is equivalent to $x_1 = x_2/2$ (using *x* to
+represent elements of $\vv{x}_1$ for convenience) with $x_2$ being free. This
+means that the eigenvector is not unique, which makes sense both from the
+original equation we are trying to solve and us forcing the matrix to be
+singular! Equivalently, eigenvectors can be scaled up or down by an arbitrary
+nonzero constant. We may then choose $x_2$ so that the eigenvector has either
+nice values (like like integers) or a nice norm (1 is conventional). For
+example, choosing $x_2 = 2$ gives:
+
+\begin{equation}
+\vv{x}_1 = \begin{bmatrix} 1 \\ 2 \end{bmatrix}
+\end{equation}
+
+```{tip}
+For a 2x2 matrix, if the eigenvalue $\lambda$ has been found correctly, one row
+of $\vv{A}-\lambda\vv{I}$ will always be a multiple of the other. This means
+the eigenvector can be determined using only one row. Moreover, the solution
+for **x** can be obtained by swapping the entries in a row and changing the sign
+of one of them! For example, we had
+
+\begin{equation}
+\begin{bmatrix}
+-4 & 2 \\
+2 & -1
+\end{bmatrix}
+\end{equation}
+
+so using the second row, we find:
+
+\begin{equation}
+\vv{x}_1 = \begin{bmatrix}-(-1) \\ 2\end{bmatrix} = \begin{bmatrix}1 \\ 2\end{bmatrix}
+\end{equation}
+
+However, we could also have negated the other entry:
+
+\begin{equation}
+\vv{x}_1 = \begin{bmatrix}-1\\ -2\end{bmatrix}
+\end{equation}
+
+or used the first row:
+
+\begin{equation}
+\vv{x}_1 = \begin{bmatrix}2 \\ 4\end{bmatrix}
+\end{equation}
+
+Both of these are also valid eigenvectors because they are multiples of the one
+we found already.
+```
+
+Let's use the same strategy to get the eigenvector for $\lambda_2 = -6$. We'll
+jump straight to the matrix we need:
+
+\begin{align}
+(\vv{A} - \lambda_2 \vv{I}) = \begin{bmatrix} 1 & 2 \\ 2 & 4 \end{bmatrix}
+\to \vv{x}_2 = \begin{bmatrix}2 \\ -1 \end{bmatrix}
+\end{align}
+
+using the swapping trick on the first row.
 
 ## Multiple eigenvalues
 
@@ -311,7 +384,6 @@ with $x_2$ free. Choosing $x_2 = -i$ gives
 - If **A** is symmetric ($\vv{A}^{\rm T} = \vv{A}$), its eigenvalues are real.
 - If **A** is skew-symmetric ($\vv{A}^{\rm T} = -\vv{A}$), its eigenvalues are
   purely imaginary.
-
 
 ## Skill builder problems
 
