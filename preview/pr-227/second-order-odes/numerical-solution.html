@@ -174,11 +174,12 @@
 <li class="toctree-l2"><a class="reference internal" href="../calculus/limits.html">1.2. Limits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../calculus/derivatives.html">1.3. Derivatives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../calculus/derivative-rules.html">1.4. Rules for derivatives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../calculus/series-expansion.html">1.5. Series expansion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../calculus/integration.html">1.6. Integration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../calculus/integration-substitution.html">1.7. Integration using substitution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../calculus/integration-by-parts.html">1.8. Integration by parts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../calculus/integration-partial-fractions.html">1.9. Partial fraction decomposition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/lhopitals-rule.html">1.5. L’Hôpital’s Rule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/series-expansion.html">1.6. Series expansion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/integration.html">1.7. Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/integration-substitution.html">1.8. Integration using substitution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/integration-by-parts.html">1.9. Integration by parts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/integration-partial-fractions.html">1.10. Partial fraction decomposition</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../multivariable-calculus/index.html">2. Multivariable calculus</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -448,15 +449,15 @@ document.write(`
 <section id="initial-value-problems">
 <h2><span class="section-number">7.7.1. </span>Initial value problems<a class="headerlink" href="#initial-value-problems" title="Link to this heading">#</a></h2>
 <p>We learned previously how to solve systems of first-order ODEs:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-13369a55-326e-41c5-b0dc-bda7047441b8">
-<span class="eqno">(7.179)<a class="headerlink" href="#equation-13369a55-326e-41c5-b0dc-bda7047441b8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2df0ca33-a541-4707-bd63-883cebf41531">
+<span class="eqno">(7.179)<a class="headerlink" href="#equation-2df0ca33-a541-4707-bd63-883cebf41531" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{y}' = \vv{f}(t, \vv{y})
 \end{equation}\]</div>
 <p>using Euler’s method. However, we didn’t learn what to do with higher-order
 derivatives. If a second-order ODE can be written in explicit form and as an
 initial value problem:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cea65f72-16c5-49ad-91ed-3ff199de0b50">
-<span class="eqno">(7.180)<a class="headerlink" href="#equation-cea65f72-16c5-49ad-91ed-3ff199de0b50" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7768e086-d8fa-46e8-b3b7-2aa35016047d">
+<span class="eqno">(7.180)<a class="headerlink" href="#equation-7768e086-d8fa-46e8-b3b7-2aa35016047d" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y'' = f(t, y, y'), \quad y(0) = y_0, \quad y'(0) = y_0'
 \end{equation}\]</div>
 <p>it can be solved by conversion to a system of first-order ODEs!</p>
@@ -464,8 +465,8 @@ y'' = f(t, y, y'), \quad y(0) = y_0, \quad y'(0) = y_0'
 <p class="topic-title">Conversion to a system of first-order ODEs</p>
 <p>For the explicit second-order ODE <span class="math notranslate nohighlight">\(y'' = f(t, y, y')\)</span>, let <span class="math notranslate nohighlight">\(y_1 = y\)</span> and
 <span class="math notranslate nohighlight">\(y_2 = y'\)</span>. Then:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1cb394b4-5f17-44e0-a5ac-eb196c643d39">
-<span class="eqno">(7.181)<a class="headerlink" href="#equation-1cb394b4-5f17-44e0-a5ac-eb196c643d39" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-60a05be2-e55d-47a7-8b74-d57415cee151">
+<span class="eqno">(7.181)<a class="headerlink" href="#equation-60a05be2-e55d-47a7-8b74-d57415cee151" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_1' &amp;= y_2, &amp; y_1(0) &amp;= y(0)\\
 y_2' &amp;= f(t, y_1, y_2), &amp; y_2(0) &amp;= y'(0)
 \end{align}\]</div>
@@ -473,38 +474,38 @@ y_2' &amp;= f(t, y_1, y_2), &amp; y_2(0) &amp;= y'(0)
 system is equal to the highest derivative.</p>
 </aside>
 <p>Let’s verify this works using an ODE that we can solve analytically. Consider:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-34253687-f30a-4b23-bd3a-e6a03aff47ad">
-<span class="eqno">(7.182)<a class="headerlink" href="#equation-34253687-f30a-4b23-bd3a-e6a03aff47ad" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b64a8720-ccd8-44d6-8893-aea66a8b9bcd">
+<span class="eqno">(7.182)<a class="headerlink" href="#equation-b64a8720-ccd8-44d6-8893-aea66a8b9bcd" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y'' + y' - 2y = 0 \quad y(0) = 4, \quad y'(0) = -5
 \end{equation}\]</div>
 <p>We previously showed using the
 <a class="reference internal" href="homogeneous-constant-coefficient.html"><span class="std std-doc">characteristic polynomial</span></a> that the
 solution to this IVP is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c2d2349b-4d8f-43c9-bdde-07693aa9d9cb">
-<span class="eqno">(7.183)<a class="headerlink" href="#equation-c2d2349b-4d8f-43c9-bdde-07693aa9d9cb" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-457b84d8-b124-4d98-8f40-0fb96328e628">
+<span class="eqno">(7.183)<a class="headerlink" href="#equation-457b84d8-b124-4d98-8f40-0fb96328e628" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y = e^x + 3e^{-2x}
 \end{equation}\]</div>
 <p>Now, let’s resolve by converting to a system. Let <span class="math notranslate nohighlight">\(y_1 = y\)</span> and <span class="math notranslate nohighlight">\(y_2 = y'\)</span>.
 Then, the ODE is equivalent to</p>
-<div class="amsmath math notranslate nohighlight" id="equation-49f7080b-7624-496d-bffb-d9cbd4afd22a">
-<span class="eqno">(7.184)<a class="headerlink" href="#equation-49f7080b-7624-496d-bffb-d9cbd4afd22a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-018ae40b-7213-472e-acb8-6617e9f139e0">
+<span class="eqno">(7.184)<a class="headerlink" href="#equation-018ae40b-7213-472e-acb8-6617e9f139e0" title="Permalink to this equation">#</a></span>\[\begin{align}
 y'' &amp;= 2y - y' \\
 y_2' &amp;= 2y_1 - y_2
 \end{align}\]</div>
 <p>and the system of ODEs is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-12dce9ea-3ab8-4697-a61c-8b211d131a12">
-<span class="eqno">(7.185)<a class="headerlink" href="#equation-12dce9ea-3ab8-4697-a61c-8b211d131a12" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e766f994-69c9-43f7-ac62-d64a6f62fb3b">
+<span class="eqno">(7.185)<a class="headerlink" href="#equation-e766f994-69c9-43f7-ac62-d64a6f62fb3b" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_1' &amp;= y_2, &amp; y_1(0) &amp;= 4 \\
 y_2' &amp;= 2y_1 + -y_2, &amp; y_2(0) &amp;= -5
 \end{align}\]</div>
 <p>This system of ODES is in the form <span class="math notranslate nohighlight">\(\vv{y}' = \vv{A}\vv{y}\)</span> with</p>
-<div class="amsmath math notranslate nohighlight" id="equation-755a64df-3836-4649-b379-4f4b70f55289">
-<span class="eqno">(7.186)<a class="headerlink" href="#equation-755a64df-3836-4649-b379-4f4b70f55289" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-235264fc-97fb-4583-a54b-d787b22fef32">
+<span class="eqno">(7.186)<a class="headerlink" href="#equation-235264fc-97fb-4583-a54b-d787b22fef32" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix} 0 &amp; 1 \\ 2 &amp; -1\end{bmatrix}
 \end{equation}\]</div>
 <p>The eigenvalues of the matrix are</p>
-<div class="amsmath math notranslate nohighlight" id="equation-653093f2-ed42-4e1f-8e5c-2986e88c00c6">
-<span class="eqno">(7.187)<a class="headerlink" href="#equation-653093f2-ed42-4e1f-8e5c-2986e88c00c6" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-06929948-d189-4a25-bb8b-74dfb6e460b2">
+<span class="eqno">(7.187)<a class="headerlink" href="#equation-06929948-d189-4a25-bb8b-74dfb6e460b2" title="Permalink to this equation">#</a></span>\[\begin{align}
 |\vv{A}-\lambda \vv{I}|
  &amp;=\begin{vmatrix}-\lambda &amp; 1\\ 2&amp; -1-\lambda \end{vmatrix} \\
  &amp;=\lambda(\lambda+1)-2 \\
@@ -512,8 +513,8 @@ y_2' &amp;= 2y_1 + -y_2, &amp; y_2(0) &amp;= -5
  &amp;= (\lambda-1)(\lambda+2) = 0
 \end{align}\]</div>
 <p>giving <span class="math notranslate nohighlight">\(\lambda_1 = 1\)</span> and <span class="math notranslate nohighlight">\(\lambda_2 = -2\)</span>. The corresponding eigenvectors are:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2e0cdb8c-3484-4cf9-bdaf-e1e37c3c18d5">
-<span class="eqno">(7.188)<a class="headerlink" href="#equation-2e0cdb8c-3484-4cf9-bdaf-e1e37c3c18d5" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-16966d2d-4d5e-45b9-b21e-19b33b5f4356">
+<span class="eqno">(7.188)<a class="headerlink" href="#equation-16966d2d-4d5e-45b9-b21e-19b33b5f4356" title="Permalink to this equation">#</a></span>\[\begin{align}
 \vv{A} - \lambda_1 \vv{I} &amp;=
 \begin{bmatrix} -1 &amp; 1 \\ 2 &amp; -2 \end{bmatrix} \to \vv{x}_1 =
   \begin{bmatrix}1 \\ 1\end{bmatrix} \\
@@ -522,14 +523,14 @@ y_2' &amp;= 2y_1 + -y_2, &amp; y_2(0) &amp;= -5
   \begin{bmatrix}1 \\ -2\end{bmatrix}
 \end{align}\]</div>
 <p>Hence,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cf137a28-cb14-4f23-9001-c2b48b5e00ad">
-<span class="eqno">(7.189)<a class="headerlink" href="#equation-cf137a28-cb14-4f23-9001-c2b48b5e00ad" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-33e3c370-de7d-4129-b7a4-6c58956ab832">
+<span class="eqno">(7.189)<a class="headerlink" href="#equation-33e3c370-de7d-4129-b7a4-6c58956ab832" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{y} = c_1 e^x \begin{bmatrix}1 \\ 1\end{bmatrix} +
   c_2 e^{-2x} \begin{bmatrix}1 \\ -2\end{bmatrix}
 \end{equation}\]</div>
 <p>Apply the initial conditions by solving <span class="math notranslate nohighlight">\(\vv{X} \vv{c} = \vv{y}(0)\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-f029aeff-3de0-40cf-8921-eb8e82e55010">
-<span class="eqno">(7.190)<a class="headerlink" href="#equation-f029aeff-3de0-40cf-8921-eb8e82e55010" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-586d5448-71eb-40ae-b472-5f7175b1a329">
+<span class="eqno">(7.190)<a class="headerlink" href="#equation-586d5448-71eb-40ae-b472-5f7175b1a329" title="Permalink to this equation">#</a></span>\[\begin{align}
 \begin{bmatrix}1 &amp; 1 &amp; 4 \\ 1 &amp; -2 &amp; -5 \end{bmatrix}
 \begin{matrix}\vphantom{R_1} \\ -R_1\end{matrix}
 &amp;\to \begin{bmatrix}1 &amp; 1 &amp; 4 \\ 0 &amp; -3 &amp; -9 \end{bmatrix}
@@ -539,19 +540,19 @@ y_2' &amp;= 2y_1 + -y_2, &amp; y_2(0) &amp;= -5
 &amp;\to \begin{bmatrix}1 &amp; 0 &amp; 1 \\ 0 &amp; 1 &amp; 3 \end{bmatrix}
 \end{align}\]</div>
 <p>so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6e2a5f53-bfb0-4c36-91aa-49b4ce49949a">
-<span class="eqno">(7.191)<a class="headerlink" href="#equation-6e2a5f53-bfb0-4c36-91aa-49b4ce49949a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6a331ff7-62f4-4a38-bf46-03b89c22ee7e">
+<span class="eqno">(7.191)<a class="headerlink" href="#equation-6a331ff7-62f4-4a38-bf46-03b89c22ee7e" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{y} = e^x \begin{bmatrix}1 \\ 1\end{bmatrix} +
   3 e^{-2x} \begin{bmatrix}1 \\ -2\end{bmatrix}
 \end{equation}\]</div>
 <p>or equivalently</p>
-<div class="amsmath math notranslate nohighlight" id="equation-58418b08-f8c9-4d05-beb2-7eb29abe2917">
-<span class="eqno">(7.192)<a class="headerlink" href="#equation-58418b08-f8c9-4d05-beb2-7eb29abe2917" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-74dd7280-dfd5-434c-84e6-4501fb37e565">
+<span class="eqno">(7.192)<a class="headerlink" href="#equation-74dd7280-dfd5-434c-84e6-4501fb37e565" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y = y_1 = e^x + 3 e^{-2x}
 \end{equation}\]</div>
 <p>The solution is the same as before! Note that in the process, we also obtained</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5e2c4acc-4c13-48de-8c58-451e48fa3d77">
-<span class="eqno">(7.193)<a class="headerlink" href="#equation-5e2c4acc-4c13-48de-8c58-451e48fa3d77" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2b35f8c9-c017-480e-bdcc-9b5d2e564126">
+<span class="eqno">(7.193)<a class="headerlink" href="#equation-2b35f8c9-c017-480e-bdcc-9b5d2e564126" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y' = y_2 = e^x - 6 e^{-2x}
 \end{equation}\]</div>
 <p>which is consistent with direct differentiation of <span class="math notranslate nohighlight">\(y\)</span>.</p>
@@ -560,22 +561,22 @@ y' = y_2 = e^x - 6 e^{-2x}
 <p>A mass <em>m</em> on a Hookean spring (constant <em>k</em>) is experiences both a drag force
 (friction coefficient <span class="math notranslate nohighlight">\(\gamma\)</span>) and an oscillating external force
 <span class="math notranslate nohighlight">\(F \cos \omega t\)</span>. Its position <em>x</em> obeys the differential equation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-301b02e5-3fb2-4d09-975c-fb7aa3cea6fb">
-<span class="eqno">(7.194)<a class="headerlink" href="#equation-301b02e5-3fb2-4d09-975c-fb7aa3cea6fb" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b170cf62-5e1a-44a0-be0c-f603660c6532">
+<span class="eqno">(7.194)<a class="headerlink" href="#equation-b170cf62-5e1a-44a0-be0c-f603660c6532" title="Permalink to this equation">#</a></span>\[\begin{equation}
 m x'' + \gamma x' + kx = F \cos\omega t, \quad x(0) = x_0, \quad x'(0) = v_0
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(x_0\)</span> and <span class="math notranslate nohighlight">\(v_0\)</span> are the initial position and velocity of the mass. Write
 this second-order ODE as a system of first-order ODEs.</p>
 <hr class="docutils" />
 <p>Let <span class="math notranslate nohighlight">\(y_1 = x\)</span> and <span class="math notranslate nohighlight">\(y_2 = x'\)</span>. Then, the ODE is equivalent to:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c12fa807-55cd-441d-9deb-50d0b9ff64bb">
-<span class="eqno">(7.195)<a class="headerlink" href="#equation-c12fa807-55cd-441d-9deb-50d0b9ff64bb" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-296ff724-ab51-4d5b-a12d-bc601e86977d">
+<span class="eqno">(7.195)<a class="headerlink" href="#equation-296ff724-ab51-4d5b-a12d-bc601e86977d" title="Permalink to this equation">#</a></span>\[\begin{align}
 x'' = \frac{1}{m}\left(- kx - \gamma x' + F\cos\omega t\right) \\
 y_2' = \frac{1}{m}\left(- k y_1 - \gamma y_2 + F\cos \omega t \right)
 \end{align}\]</div>
 <p>so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e5e874da-31d8-4d4a-a3e7-49a90487df66">
-<span class="eqno">(7.196)<a class="headerlink" href="#equation-e5e874da-31d8-4d4a-a3e7-49a90487df66" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5244bc93-3ebb-40f2-aa57-560274905be5">
+<span class="eqno">(7.196)<a class="headerlink" href="#equation-5244bc93-3ebb-40f2-aa57-560274905be5" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_1' &amp;= y_2, &amp; y_1(0) &amp;= x_0 \\
 y_2' &amp;= \displaystyle
   \frac{1}{m}\left(-\gamma y_2 - k y_1 + F\cos \omega t \right), &amp;
@@ -588,31 +589,31 @@ y_2' &amp;= \displaystyle
 <p>We can solve initial value problems for second-order ODEs by converting to a
 system and using methods we know. What about boundary value problems?</p>
 <p>Let’s say we want to solve:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-00eb8de3-ae02-45a5-8d7b-030b15effdf7">
-<span class="eqno">(7.197)<a class="headerlink" href="#equation-00eb8de3-ae02-45a5-8d7b-030b15effdf7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-40a9644f-d425-4124-80c9-608f3ac7441a">
+<span class="eqno">(7.197)<a class="headerlink" href="#equation-40a9644f-d425-4124-80c9-608f3ac7441a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y'' + y = 0, \quad y(0) = 0, \quad y(\pi/6) = 4
 \end{equation}\]</div>
 <p>Using normal approach:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-96559801-eb77-4410-b736-249e06322413">
-<span class="eqno">(7.198)<a class="headerlink" href="#equation-96559801-eb77-4410-b736-249e06322413" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-55babae8-b727-4ab0-99e3-df51851da458">
+<span class="eqno">(7.198)<a class="headerlink" href="#equation-55babae8-b727-4ab0-99e3-df51851da458" title="Permalink to this equation">#</a></span>\[\begin{align}
 y &amp;= c_1 \cos x + c_2 \sin x \\
 y(0) &amp;= c_1 = 0\\
 y(\pi/6) &amp;= c_2 \frac{1}{2} = 4 \to c_2 = 8\\
 \end{align}\]</div>
 <p>so,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f2a1408f-dfca-4e50-9854-1c35cbedb23f">
-<span class="eqno">(7.199)<a class="headerlink" href="#equation-f2a1408f-dfca-4e50-9854-1c35cbedb23f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-83348f87-44e2-442c-ab12-9dab36367912">
+<span class="eqno">(7.199)<a class="headerlink" href="#equation-83348f87-44e2-442c-ab12-9dab36367912" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y = 8 \sin x
 \end{equation}\]</div>
 <p>What if we needed to do this numerically? Try converting to system using
 <span class="math notranslate nohighlight">\(y_1 = y\)</span> and <span class="math notranslate nohighlight">\(y_2 = y'\)</span>, so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4052a003-8ce0-4b5c-9bbf-7f1782df35ba">
-<span class="eqno">(7.200)<a class="headerlink" href="#equation-4052a003-8ce0-4b5c-9bbf-7f1782df35ba" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0b3bbeb2-586f-483d-8f0d-79efb95a2a17">
+<span class="eqno">(7.200)<a class="headerlink" href="#equation-0b3bbeb2-586f-483d-8f0d-79efb95a2a17" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y'' + y = 0 \to y_2' = -y_1
 \end{equation}\]</div>
 <p>and</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8600a8a1-3750-454b-bda6-82d033d7d416">
-<span class="eqno">(7.201)<a class="headerlink" href="#equation-8600a8a1-3750-454b-bda6-82d033d7d416" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5a82b9ed-9760-48cb-8428-fa6588722389">
+<span class="eqno">(7.201)<a class="headerlink" href="#equation-5a82b9ed-9760-48cb-8428-fa6588722389" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_1' &amp;= y_2, &amp; y_1(0) &amp;= 0 \\
 y_2' &amp;= -y_1, &amp; y_2(0) &amp;= a
 \end{align}\]</div>
@@ -628,27 +629,27 @@ and doesn’t require a derivative.</p>
 <div class="admonition-example-reaction-diffusion-with-second-order-reaction admonition">
 <p class="admonition-title">Example: Reaction-diffusion with second-order reaction</p>
 <p>We are solving a reaction-diffusion problem with a second-order reaction:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6efbf522-1f1b-45eb-86e1-b7bae6029765">
-<span class="eqno">(7.202)<a class="headerlink" href="#equation-6efbf522-1f1b-45eb-86e1-b7bae6029765" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c5937dcf-c20c-4f7f-b040-58cd09d0a128">
+<span class="eqno">(7.202)<a class="headerlink" href="#equation-c5937dcf-c20c-4f7f-b040-58cd09d0a128" title="Permalink to this equation">#</a></span>\[\begin{equation}
 D \dd{2}{c}{x} - k c^2 = 0, \quad c(0) = c_0, \quad -D c'(L) = 0
 \end{equation}\]</div>
 <p>Formulate in a form suitable for numerical solution using the shooting method.</p>
 <hr class="docutils" />
 <p>First, rewrite as a system of first-order ODEs using <span class="math notranslate nohighlight">\(y_1 = c\)</span> and <span class="math notranslate nohighlight">\(c_2 = c'\)</span>.
 The ODE is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fc6e97b2-e757-40b7-bac0-574e7bd61cb3">
-<span class="eqno">(7.203)<a class="headerlink" href="#equation-fc6e97b2-e757-40b7-bac0-574e7bd61cb3" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0d815f98-2995-47db-82fa-85671eb75004">
+<span class="eqno">(7.203)<a class="headerlink" href="#equation-0d815f98-2995-47db-82fa-85671eb75004" title="Permalink to this equation">#</a></span>\[\begin{equation}
 c'' - \frac{k}{D}c^2 \to y_2' = \frac{k}{D} y_1^2
 \end{equation}\]</div>
 <p>so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-011d9e75-89f3-450b-a369-4f2fe756c199">
-<span class="eqno">(7.204)<a class="headerlink" href="#equation-011d9e75-89f3-450b-a369-4f2fe756c199" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2461431b-4b4e-45b1-ba88-bbe6a3b6abdc">
+<span class="eqno">(7.204)<a class="headerlink" href="#equation-2461431b-4b4e-45b1-ba88-bbe6a3b6abdc" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_1' &amp;= y_2, &amp; y_1(0) &amp;= c_0 \\
 y_2' &amp;= \frac{k}{D} y_1, &amp; y_2(0) &amp;= a
 \end{align}\]</div>
 <p>where <em>a</em> is the unknown value of <span class="math notranslate nohighlight">\(y_2(0)\)</span>. Vary <em>a</em> until</p>
-<div class="amsmath math notranslate nohighlight" id="equation-14685d5a-cb66-4089-a2fb-07c49890c9e8">
-<span class="eqno">(7.205)<a class="headerlink" href="#equation-14685d5a-cb66-4089-a2fb-07c49890c9e8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-952a6189-43e4-4fdc-a02c-692edbd7fe34">
+<span class="eqno">(7.205)<a class="headerlink" href="#equation-952a6189-43e4-4fdc-a02c-692edbd7fe34" title="Permalink to this equation">#</a></span>\[\begin{equation}
 -D c'(L) = 0 \to y_2(L) = 0
 \end{equation}\]</div>
 </div>
