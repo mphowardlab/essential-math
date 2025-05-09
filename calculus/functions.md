@@ -2,9 +2,12 @@
 
 ## 1. What is a function?
 
-A rule "f" that assigns a \textbf{unique} value f(x) to an input x
+A rule "f" that assigns a \textbf{unique} value $f(x)$ to an input $x$
 
 ```{image} ./_images/x_to_f(x).jpg
+:alt: Unique Value
+:width: 300px
+```
 
 \begin{align}
 \text{x: independent variable} \hspace{2cm} \text{domain: all possible x}\\
@@ -13,9 +16,9 @@ A rule "f" that assigns a \textbf{unique} value f(x) to an input x
 
 A function can be represented by:
 - An equation: 
-\begin{align}
+\begin{equation}
 f(x) = x^2
-\end{align}
+\end{equation}
 
 - A table:
 \begin{array}{c|c}
