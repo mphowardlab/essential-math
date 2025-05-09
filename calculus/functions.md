@@ -2,7 +2,7 @@
 
 ## 1. What is a function?
 
-A rule "f" that assigns a \textbf{unique} value $f(x)$ to an input $x$
+$A rule "f" that assigns a \textbf{unique} value f(x) to an input x$
 
 ```{image} ./_images/x_to_f(x).jpg
 :alt: Unique Value
@@ -16,12 +16,7 @@ A rule "f" that assigns a \textbf{unique} value $f(x)$ to an input $x$
 
 A function can be represented by:
 - An equation:
-\begin{align}
-f(x) = x^2
-\end{align}
-\begin{equation}
-f(x) = x^2
-\end{equation}
+$f(x) = x^2$
 
 - A table:
 ```{image} ./_images/x_f(x)_table.jpg
@@ -36,11 +31,11 @@ f(x) = x^2
 ```
 - A description: "square x"
 
-\textbf{Not all curves are functions!} f must uniquely map x
+$\textbf{Not all curves are functions!} f must uniquely map x$
 
 $x^2 + y^2 = 4$
 
-\textbf{Vertical line test:} a vertical line cannot intersect a function twice
+$\textbf{Vertical line test:} a vertical line cannot intersect a function twice$
 
 ## 2. Common functions
 
