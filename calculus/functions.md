@@ -16,23 +16,13 @@ A rule "f" that assigns a \textbf{unique} value $f(x)$ to an input $x$
 
 A function can be represented by:
 - An equation:
-\begin{equation}
 \f(x) = x^2
-\end{equation}
 
 - A table:
 ```{image} ./_images/x_f(x)_table.jpg
 :alt: x vs f(x) Table
 :width: 150px
 ```
-
-\begin{array}{c|c}
-x & f(x) \\
-\hline
-0 & 0 \\
-1 & 1 \\
-2 & 4
-\end{array}
 
 - A graph:
 ```{image} ./_images/quadratic_graph.jpg
@@ -43,9 +33,7 @@ x & f(x) \\
 
 \textbf{Not all curves are functions!} f must uniquely map x
 
-\begin{equation}
 x^2 + y^2 = 4
-\end{equation}
 
 \textbf{Vertical line test:} a vertical line cannot intersect a function twice
 
