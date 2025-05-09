@@ -101,3 +101,42 @@ Express the following:
    \left(\frac{\partial p}{\partial y}\right)_x
    \end{align}
    ```
+
+---
+
+Given:
+
+\begin{align}
+f &= \cos(4x+y^2) + x^2y\\
+x &= 2ut\\
+y &= t^2
+\end{align}
+
+Evaluate:
+
+<!--markdownlint-disable MD029 -->
+7. $\displaystyle\td{}{f}{t}{u}$
+
+   ```{solution}
+   \begin{align}
+   \td{}{f}{t}{u} &= \td{}{f}{x}{y} \td{}{x}{t}{u} +
+     \td{}{f}{y}{x} \td{}{y}{t}{u} \\
+   &= \left[-4\sin(4x+y^2)+2xy\right](2u) +
+     \left[-2y\sin(4x+y^2)+x^2\right](2t)\\
+   &= \left[-4\sin(8ut+t^4)+4ut^3\right](2u) +
+     \left[-2t^2\sin(8ut+t^4)+4u^2t^2\right](2t)\\
+   &= -4(2u+t^3)\sin(8ut+t^4) + 16u^2t^3
+   \end{align}
+   ```
+
+8. $\displaystyle\td{}{f}{u}{t}$
+
+   ```{solution}
+   \begin{align}
+   \td{}{f}{u}{t} &= \td{}{f}{x}{y} \td{}{x}{u}{t} +
+     \td{}{f}{y}{x} \td{}{y}{u}{t} \\
+   &= \left[-4\sin(4x+y^2)+2xy\right](2t) + 0 \\
+   &= 2t\left[-4\sin(8ut+t^4)+4ut^3\right]
+   \end{align}
+   ```
+<!--markdownlint-enable MD029 -->
