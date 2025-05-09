@@ -458,8 +458,8 @@ Taylor series:</p>
 To start, <em>t</em> is initialized to <span class="math notranslate nohighlight">\(t_0\)</span> and <em>y</em> is started from the initial
 condition <span class="math notranslate nohighlight">\(y_0 = y(t_0)\)</span>. Then, going from <span class="math notranslate nohighlight">\(n = 0\)</span>, advance <span class="math notranslate nohighlight">\(t_n\)</span> and <span class="math notranslate nohighlight">\(y_n\)</span>
 for a step size <span class="math notranslate nohighlight">\(\Delta t\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-40a1d983-36f2-4f6d-841d-ee483f7a02b8">
-<span class="eqno">(5.142)<a class="headerlink" href="#equation-40a1d983-36f2-4f6d-841d-ee483f7a02b8" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4cffd5bc-5abe-41b2-920f-791fd5dbdad8">
+<span class="eqno">(5.142)<a class="headerlink" href="#equation-4cffd5bc-5abe-41b2-920f-791fd5dbdad8" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_{n+1} &amp;= y_n + f(t_n, y_n) \\
 t_{n+1} &amp;= t_n + \Delta t
 \end{align}\]</div>
@@ -594,191 +594,165 @@ the field of numerical stability (not covered here).</p>
 </section>
 <section id="skill-builder-problems">
 <h2><span class="section-number">5.8.2. </span>Skill builder problems<a class="headerlink" href="#skill-builder-problems" title="Link to this heading">#</a></h2>
-<p>Solving <span class="math notranslate nohighlight">\(y' = y + 5 \sin(2\pi t)\)</span> using Euler’s Method</p>
+<ol class="arabic">
+<li><p>Solve <span class="math notranslate nohighlight">\(y' = y + 5 \sin(2\pi t)\)</span> with <span class="math notranslate nohighlight">\(y(0) = 1\)</span> using Euler’s method with
+two step sizes: <span class="math notranslate nohighlight">\(\Delta t = 0.1\)</span> and 0.2 up to <span class="math notranslate nohighlight">\(t = 1\)</span>. Compare the accuracy
+of each to the analytical solution of the same ODE for <span class="math notranslate nohighlight">\(y(1)\)</span>.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">We are given the initial value problem:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e10f2c7a-6d5a-4c0b-ab07-d5ba661ccd68">
-<span class="eqno">(5.143)<a class="headerlink" href="#equation-e10f2c7a-6d5a-4c0b-ab07-d5ba661ccd68" title="Permalink to this equation">#</a></span>\[\begin{equation}
-y' = y + 5\sin(2\pi t), \quad y(0) = 1
-\end{equation}\]</div>
-<p class="sd-card-text">Using the <strong>Euler method</strong>, we compute approximations for <span class="math notranslate nohighlight">\(y(1)\)</span> using two step sizes: <span class="math notranslate nohighlight">\(\Delta t = 0.1\)</span> and <span class="math notranslate nohighlight">\(\Delta t = 0.2\)</span>.</p>
-<p class="sd-card-text">Let <span class="math notranslate nohighlight">\(f(t, y) = y + 5\sin(2\pi t)\)</span>
-The following table uses <span class="math notranslate nohighlight">\(\Delta t = 0.1\)</span></p>
+<p class="sd-card-text">The ODE is already in explicit form, so <span class="math notranslate nohighlight">\(f(t, y) = y + 5 \sin(2\pi t)\)</span>.</p>
+<p class="sd-card-text">Euler’s method with <span class="math notranslate nohighlight">\(\Delta t = 0.1\)</span>:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-right"><p class="sd-card-text"><span class="math notranslate nohighlight">\(n\)</span></p></th>
-<th class="head text-right"><p class="sd-card-text"><span class="math notranslate nohighlight">\(t_n\)</span></p></th>
-<th class="head text-right"><p class="sd-card-text"><span class="math notranslate nohighlight">\(y_n\)</span></p></th>
-<th class="head text-right"><p class="sd-card-text"><span class="math notranslate nohighlight">\(f(t_n, y_n)\)</span></p></th>
+<th class="head"><p class="sd-card-text"><span class="math notranslate nohighlight">\(t\)</span></p></th>
+<th class="head"><p class="sd-card-text"><span class="math notranslate nohighlight">\(y\)</span></p></th>
+<th class="head"><p class="sd-card-text"><span class="math notranslate nohighlight">\(f\)</span></p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-right"><p class="sd-card-text">0</p></td>
-<td class="text-right"><p class="sd-card-text">0.0</p></td>
-<td class="text-right"><p class="sd-card-text">1.000</p></td>
-<td class="text-right"><p class="sd-card-text">1.000</p></td>
+<td><p class="sd-card-text">0.0</p></td>
+<td><p class="sd-card-text">1.000</p></td>
+<td><p class="sd-card-text">1.000</p></td>
 </tr>
 <tr class="row-odd"><td class="text-right"><p class="sd-card-text">1</p></td>
-<td class="text-right"><p class="sd-card-text">0.1</p></td>
-<td class="text-right"><p class="sd-card-text">1.100</p></td>
-<td class="text-right"><p class="sd-card-text">4.039</p></td>
+<td><p class="sd-card-text">0.1</p></td>
+<td><p class="sd-card-text">1.100</p></td>
+<td><p class="sd-card-text">4.039</p></td>
 </tr>
 <tr class="row-even"><td class="text-right"><p class="sd-card-text">2</p></td>
-<td class="text-right"><p class="sd-card-text">0.2</p></td>
-<td class="text-right"><p class="sd-card-text">1.504</p></td>
-<td class="text-right"><p class="sd-card-text">6.257</p></td>
+<td><p class="sd-card-text">0.2</p></td>
+<td><p class="sd-card-text">1.504</p></td>
+<td><p class="sd-card-text">6.257</p></td>
 </tr>
 <tr class="row-odd"><td class="text-right"><p class="sd-card-text">3</p></td>
-<td class="text-right"><p class="sd-card-text">0.3</p></td>
-<td class="text-right"><p class="sd-card-text">2.130</p></td>
-<td class="text-right"><p class="sd-card-text">6.895</p></td>
+<td><p class="sd-card-text">0.3</p></td>
+<td><p class="sd-card-text">2.130</p></td>
+<td><p class="sd-card-text">6.895</p></td>
 </tr>
 <tr class="row-even"><td class="text-right"><p class="sd-card-text">4</p></td>
-<td class="text-right"><p class="sd-card-text">0.4</p></td>
-<td class="text-right"><p class="sd-card-text">2.818</p></td>
-<td class="text-right"><p class="sd-card-text">5.757</p></td>
+<td><p class="sd-card-text">0.4</p></td>
+<td><p class="sd-card-text">2.818</p></td>
+<td><p class="sd-card-text">5.757</p></td>
 </tr>
 <tr class="row-odd"><td class="text-right"><p class="sd-card-text">5</p></td>
-<td class="text-right"><p class="sd-card-text">0.5</p></td>
-<td class="text-right"><p class="sd-card-text">3.394</p></td>
-<td class="text-right"><p class="sd-card-text">3.394</p></td>
+<td><p class="sd-card-text">0.5</p></td>
+<td><p class="sd-card-text">3.394</p></td>
+<td><p class="sd-card-text">3.394</p></td>
 </tr>
 <tr class="row-even"><td class="text-right"><p class="sd-card-text">6</p></td>
-<td class="text-right"><p class="sd-card-text">0.6</p></td>
-<td class="text-right"><p class="sd-card-text">3.733</p></td>
-<td class="text-right"><p class="sd-card-text">0.795</p></td>
+<td><p class="sd-card-text">0.6</p></td>
+<td><p class="sd-card-text">3.733</p></td>
+<td><p class="sd-card-text">0.795</p></td>
 </tr>
 <tr class="row-odd"><td class="text-right"><p class="sd-card-text">7</p></td>
-<td class="text-right"><p class="sd-card-text">0.7</p></td>
-<td class="text-right"><p class="sd-card-text">3.813</p></td>
-<td class="text-right"><p class="sd-card-text">-0.942</p></td>
+<td><p class="sd-card-text">0.7</p></td>
+<td><p class="sd-card-text">3.813</p></td>
+<td><p class="sd-card-text">-0.942</p></td>
 </tr>
 <tr class="row-even"><td class="text-right"><p class="sd-card-text">8</p></td>
-<td class="text-right"><p class="sd-card-text">0.8</p></td>
-<td class="text-right"><p class="sd-card-text">3.719</p></td>
-<td class="text-right"><p class="sd-card-text">-1.037</p></td>
+<td><p class="sd-card-text">0.8</p></td>
+<td><p class="sd-card-text">3.719</p></td>
+<td><p class="sd-card-text">-1.037</p></td>
 </tr>
 <tr class="row-odd"><td class="text-right"><p class="sd-card-text">9</p></td>
-<td class="text-right"><p class="sd-card-text">0.9</p></td>
-<td class="text-right"><p class="sd-card-text">3.615</p></td>
-<td class="text-right"><p class="sd-card-text">0.676</p></td>
+<td><p class="sd-card-text">0.9</p></td>
+<td><p class="sd-card-text">3.615</p></td>
+<td><p class="sd-card-text">0.676</p></td>
 </tr>
 <tr class="row-even"><td class="text-right"><p class="sd-card-text">10</p></td>
-<td class="text-right"><p class="sd-card-text">1.0</p></td>
-<td class="text-right"><p class="sd-card-text"><strong>3.683</strong></p></td>
-<td class="text-right"><p class="sd-card-text">—</p></td>
+<td><p class="sd-card-text">1.0</p></td>
+<td><p class="sd-card-text">3.683</p></td>
+<td><p class="sd-card-text"></p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p class="sd-card-text">So, for <span class="math notranslate nohighlight">\(\Delta t = 0.1\)</span>, the Euler approximation gives:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-355a7990-2f9c-435a-a9c7-84fd4866ba8e">
-<span class="eqno">(5.144)<a class="headerlink" href="#equation-355a7990-2f9c-435a-a9c7-84fd4866ba8e" title="Permalink to this equation">#</a></span>\[\begin{equation}
-y(1) \approx 3.683
-\end{equation}\]</div>
-<p class="sd-card-text">Step size <span class="math notranslate nohighlight">\(\Delta t = 0.2\)</span></p>
+<p class="sd-card-text">gives <span class="math notranslate nohighlight">\(y(1) \approx 3.683\)</span>.</p>
+<p class="sd-card-text">Euler’s method with <span class="math notranslate nohighlight">\(\Delta t = 0.2\)</span>:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="head text-right"><p class="sd-card-text"><span class="math notranslate nohighlight">\(n\)</span></p></th>
-<th class="head text-right"><p class="sd-card-text"><span class="math notranslate nohighlight">\(t_n\)</span></p></th>
-<th class="head text-right"><p class="sd-card-text"><span class="math notranslate nohighlight">\(y_n\)</span></p></th>
-<th class="head text-right"><p class="sd-card-text"><span class="math notranslate nohighlight">\(f(t_n, y_n)\)</span></p></th>
+<tr class="row-odd"><th class="head"><p class="sd-card-text"><span class="math notranslate nohighlight">\(n\)</span></p></th>
+<th class="head"><p class="sd-card-text"><span class="math notranslate nohighlight">\(t\)</span></p></th>
+<th class="head"><p class="sd-card-text"><span class="math notranslate nohighlight">\(y\)</span></p></th>
+<th class="head"><p class="sd-card-text"><span class="math notranslate nohighlight">\(f\)</span></p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-right"><p class="sd-card-text">0</p></td>
-<td class="text-right"><p class="sd-card-text">0.0</p></td>
-<td class="text-right"><p class="sd-card-text">1.000</p></td>
-<td class="text-right"><p class="sd-card-text">1.000</p></td>
+<tr class="row-even"><td><p class="sd-card-text">0</p></td>
+<td><p class="sd-card-text">0.0</p></td>
+<td><p class="sd-card-text">1.000</p></td>
+<td><p class="sd-card-text">1.000</p></td>
 </tr>
-<tr class="row-odd"><td class="text-right"><p class="sd-card-text">1</p></td>
-<td class="text-right"><p class="sd-card-text">0.2</p></td>
-<td class="text-right"><p class="sd-card-text">1.200</p></td>
-<td class="text-right"><p class="sd-card-text">6.955</p></td>
+<tr class="row-odd"><td><p class="sd-card-text">1</p></td>
+<td><p class="sd-card-text">0.2</p></td>
+<td><p class="sd-card-text">1.200</p></td>
+<td><p class="sd-card-text">6.955</p></td>
 </tr>
-<tr class="row-even"><td class="text-right"><p class="sd-card-text">2</p></td>
-<td class="text-right"><p class="sd-card-text">0.4</p></td>
-<td class="text-right"><p class="sd-card-text">2.591</p></td>
-<td class="text-right"><p class="sd-card-text">5.330</p></td>
+<tr class="row-even"><td><p class="sd-card-text">2</p></td>
+<td><p class="sd-card-text">0.4</p></td>
+<td><p class="sd-card-text">2.591</p></td>
+<td><p class="sd-card-text">5.330</p></td>
 </tr>
-<tr class="row-odd"><td class="text-right"><p class="sd-card-text">3</p></td>
-<td class="text-right"><p class="sd-card-text">0.6</p></td>
-<td class="text-right"><p class="sd-card-text">3.657</p></td>
-<td class="text-right"><p class="sd-card-text">0.576</p></td>
+<tr class="row-odd"><td><p class="sd-card-text">3</p></td>
+<td><p class="sd-card-text">0.6</p></td>
+<td><p class="sd-card-text">3.657</p></td>
+<td><p class="sd-card-text">0.576</p></td>
 </tr>
-<tr class="row-even"><td class="text-right"><p class="sd-card-text">4</p></td>
-<td class="text-right"><p class="sd-card-text">0.8</p></td>
-<td class="text-right"><p class="sd-card-text">3.772</p></td>
-<td class="text-right"><p class="sd-card-text">-1.155</p></td>
+<tr class="row-even"><td><p class="sd-card-text">4</p></td>
+<td><p class="sd-card-text">0.8</p></td>
+<td><p class="sd-card-text">3.772</p></td>
+<td><p class="sd-card-text">-1.155</p></td>
 </tr>
-<tr class="row-odd"><td class="text-right"><p class="sd-card-text">5</p></td>
-<td class="text-right"><p class="sd-card-text">1.0</p></td>
-<td class="text-right"><p class="sd-card-text"><strong>3.322</strong></p></td>
-<td class="text-right"><p class="sd-card-text">—</p></td>
+<tr class="row-odd"><td><p class="sd-card-text">5</p></td>
+<td><p class="sd-card-text">1.0</p></td>
+<td><p class="sd-card-text">3.322</p></td>
+<td><p class="sd-card-text"></p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p class="sd-card-text">Therefore, for <span class="math notranslate nohighlight">\(\Delta t = 0.2\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-81d4c979-cf46-49d5-8d6d-f17f324ef8c4">
-<span class="eqno">(5.145)<a class="headerlink" href="#equation-81d4c979-cf46-49d5-8d6d-f17f324ef8c4" title="Permalink to this equation">#</a></span>\[\begin{equation}
-y(1) \approx 3.322
+<p class="sd-card-text">gives <span class="math notranslate nohighlight">\(y(1) = 3.322\)</span>.</p>
+<p class="sd-card-text">To find the analytical solution, note that this is a linear first-order ODE</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ce45a709-7822-4cf8-8084-c80198ac612c">
+<span class="eqno">(5.143)<a class="headerlink" href="#equation-ce45a709-7822-4cf8-8084-c80198ac612c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y' - y = 5 \sin(2\pi t)
 \end{equation}\]</div>
-<hr class="docutils" />
-<p class="sd-card-text">Analytical solution:</p>
-<p class="sd-card-text">For this example,</p>
-<p class="sd-card-text"><span class="math notranslate nohighlight">\(p = -1\)</span></p>
-<p class="sd-card-text"><span class="math notranslate nohighlight">\(r = 5\sin(2\pi t)\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-3c7f1f41-17aa-425a-978a-d009a1eb2e1e">
-<span class="eqno">(5.146)<a class="headerlink" href="#equation-3c7f1f41-17aa-425a-978a-d009a1eb2e1e" title="Permalink to this equation">#</a></span>\[\begin{equation}
-y^' - y = 5\sin(2\pi t)
-\end{equation}\]</div>
-<p class="sd-card-text">First, find the integrating factor</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9ac3e8a5-94d8-4953-a749-a562f9421311">
-<span class="eqno">(5.147)<a class="headerlink" href="#equation-9ac3e8a5-94d8-4953-a749-a562f9421311" title="Permalink to this equation">#</a></span>\[\begin{equation}
-F = e^{\int p \d{t}} = e^{-\int \d{t}} = e^{-t}
-\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-9a32a0bc-daa7-4c06-8b21-985e38128457">
-<span class="eqno">(5.148)<a class="headerlink" href="#equation-9a32a0bc-daa7-4c06-8b21-985e38128457" title="Permalink to this equation">#</a></span>\[\begin{align}
-\intF r \d{t} &amp;= \int e^{-t} 5\sin(2\pi t \d{t}) \\ &amp;= \frac{5 e^{-t}}{4\pi^2 + 1}\left[ -1\sin(2\pi t) - 2\pi \cos(2\pi t)\right]
+<p class="sd-card-text">with <span class="math notranslate nohighlight">\(p = -1\)</span> and <span class="math notranslate nohighlight">\(r = 5 \sin (2\pi t)\)</span>. The integrating factor and required
+integral are:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-635244ea-5b41-4708-8ba7-464a4233e5b7">
+<span class="eqno">(5.144)<a class="headerlink" href="#equation-635244ea-5b41-4708-8ba7-464a4233e5b7" title="Permalink to this equation">#</a></span>\[\begin{align}
+F &amp;= e^{\int p \d{t}} = e^{-t} \\
+\int F r \d{t} &amp;= 5 \int e^{-t} \sin(2\pi t) \d{t} \\
+  &amp;= \frac{5 e^{-t}}{4\pi^2 + 1}\left[ -\sin(2\pi t) - 2\pi \cos(2\pi t)\right]
 \end{align}\]</div>
-<p class="sd-card-text">Then, solve for <span class="math notranslate nohighlight">\(y\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f93c5f6b-6bc9-4f35-8550-ba0a05638d5f">
-<span class="eqno">(5.149)<a class="headerlink" href="#equation-f93c5f6b-6bc9-4f35-8550-ba0a05638d5f" title="Permalink to this equation">#</a></span>\[\begin{align}
-y = \frac{1}{F} \left[\int F r \d{t} + C \right] \\ &amp;= \frac{-5}{4\pi^2 + 1} left\(\sin(2\pi t) + 2\pi cos(2\pi t)\right) + C e^{t}
+<p class="sd-card-text">where the integral was evaluated using a table of integrals. Then, solve for <em>y</em></p>
+<div class="amsmath math notranslate nohighlight" id="equation-a244bcf8-9060-43a2-a3ba-8bbbc82f1441">
+<span class="eqno">(5.145)<a class="headerlink" href="#equation-a244bcf8-9060-43a2-a3ba-8bbbc82f1441" title="Permalink to this equation">#</a></span>\[\begin{align}
+y &amp;= \frac{1}{F} \left[\int F r \d{t} + c \right] \\
+  &amp;= -\frac{5}{4\pi^2 + 1} \left(\sin(2\pi t) + 2\pi \cos(2\pi t)\right) +
+    c e^{t}
 \end{align}\]</div>
-<p class="sd-card-text">Next, use initial conditions in to find <span class="math notranslate nohighlight">\(C\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e90b6092-596d-4f23-9a15-8c0706780de6">
-<span class="eqno">(5.150)<a class="headerlink" href="#equation-e90b6092-596d-4f23-9a15-8c0706780de6" title="Permalink to this equation">#</a></span>\[\begin{equation}
-1 = y(0) = \frac{-5}{4\pi^2 + 1} \left(0 + (2\pi)\right) + C
+<p class="sd-card-text">Finally, apply the initial condition:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-33221078-d588-4fb9-aa20-03a91f47a5fc">
+<span class="eqno">(5.146)<a class="headerlink" href="#equation-33221078-d588-4fb9-aa20-03a91f47a5fc" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y(0) = \frac{-10 \pi}{4\pi^2 + 1} + c = 1
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-a5c10a9e-761e-422a-ada1-9f2c595bba0a">
-<span class="eqno">(5.151)<a class="headerlink" href="#equation-a5c10a9e-761e-422a-ada1-9f2c595bba0a" title="Permalink to this equation">#</a></span>\[\begin{equation}
-C = 1 + \frac{10\pi}{4\pi^2 + 1}
+<p class="sd-card-text">so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-62b7a52a-f65a-4b90-b1d4-72c066eb8804">
+<span class="eqno">(5.147)<a class="headerlink" href="#equation-62b7a52a-f65a-4b90-b1d4-72c066eb8804" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y = \left(1 + \frac{10\pi}{4\pi^2 + 1}\right) e^{t} -
+  \frac{5}{4\pi^2 + 1} \left[\sin(2\pi t) + 2\pi \cos(2\pi t)\right]
 \end{equation}\]</div>
-<p class="sd-card-text">Put <span class="math notranslate nohighlight">\(C\)</span> value in equation for <span class="math notranslate nohighlight">\(y\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fd32091f-df84-4f8f-b98a-b68737969fc9">
-<span class="eqno">(5.152)<a class="headerlink" href="#equation-fd32091f-df84-4f8f-b98a-b68737969fc9" title="Permalink to this equation">#</a></span>\[\begin{equation}
-y(t) = \left(1 + \frac{10\pi}{4\pi^2 + 1}\right) e^{t} - \frac{5}{4\pi^2 + 1} \left(sin(2\pi t) + 2\pi cos(2\pi t)\right)
-\end{equation}\]</div>
-<p class="sd-card-text">Find <span class="math notranslate nohighlight">\(y\)</span> at <span class="math notranslate nohighlight">\(t=1\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-987145a4-7ab5-4880-a911-b5c51bd0f1e3">
-<span class="eqno">(5.153)<a class="headerlink" href="#equation-987145a4-7ab5-4880-a911-b5c51bd0f1e3" title="Permalink to this equation">#</a></span>\[\begin{equation}
-y(1) = \left(1 + \frac{10\pi}{4\pi^2 + 1}\right) e - \frac{5}{4\pi^2 + 1} \left(2\pi\right)
-\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-74c42d7c-cbad-43ba-b591-3faf9cf70f8a">
-<span class="eqno">(5.154)<a class="headerlink" href="#equation-74c42d7c-cbad-43ba-b591-3faf9cf70f8a" title="Permalink to this equation">#</a></span>\[\begin{equation}
-y(1) = e + \frac{10\pi}{4\pi^2 + 1} \left(e - 1\right)
-\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-2d00f418-6844-4d12-b450-15db0ba89279">
-<span class="eqno">(5.155)<a class="headerlink" href="#equation-2d00f418-6844-4d12-b450-15db0ba89279" title="Permalink to this equation">#</a></span>\[\begin{equation}
-y(1) = 4.052
-\end{equation}\]</div>
+<p class="sd-card-text">Evaluating this at <span class="math notranslate nohighlight">\(t = 1\)</span> gives <span class="math notranslate nohighlight">\(y(1) = 4.052\)</span>.</p>
+<p class="sd-card-text">The absolute error is 0.369 for <span class="math notranslate nohighlight">\(\Delta t = 0.1\)</span> and 0.730 for <span class="math notranslate nohighlight">\(\Delta t = 0.2\)</span>.
+Hence the error decreases by about a factor of 2 when <span class="math notranslate nohighlight">\(\Delta t\)</span> is also
+decreased by a factor of 2.</p>
 </div>
-</details><p>The absolute error is 0.369 for <span class="math notranslate nohighlight">\(\Delta t = 0.1\)</span> and 0.730 for <span class="math notranslate nohighlight">\(\Delta t = 0.2\)</span>.
-Hence the error decreases by about <span class="math notranslate nohighlight">\(2 x\)</span> when <span class="math notranslate nohighlight">\(\Delta t\)</span> is decreased by <span class="math notranslate nohighlight">\(2 x\)</span>.</p>
+</details></li>
+</ol>
 </section>
 </section>
 

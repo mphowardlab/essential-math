@@ -11,6 +11,7 @@ This work (c) 2025 is licensed under
 - Jacob Bowling
 - Zachary Bradford
 - Logan Brose
+- Abigail Cain
 - Andrew Castel
 - Paine Cole
 - Kovar Coley

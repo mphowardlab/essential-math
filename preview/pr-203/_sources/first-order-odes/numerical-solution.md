@@ -118,117 +118,83 @@ the field of numerical stability (not covered here).
 
 ## Skill builder problems
 
-Solving $y' = y + 5 \sin(2\pi t)$ using Euler's Method
-```{solution}
+1. Solve $y' = y + 5 \sin(2\pi t)$ with $y(0) = 1$ using Euler's method with
+   two step sizes: $\Delta t = 0.1$ and 0.2 up to $t = 1$. Compare the accuracy
+   of each to the analytical solution of the same ODE for $y(1)$.
 
-We are given the initial value problem:
+   ```{solution}
+   The ODE is already in explicit form, so $f(t, y) = y + 5 \sin(2\pi t)$.
 
-\begin{equation}
-y' = y + 5\sin(2\pi t), \quad y(0) = 1
-\end{equation}
+   Euler's method with $\Delta t = 0.1$:
 
-Using the **Euler method**, we compute approximations for $y(1)$ using two step sizes: $\Delta t = 0.1$ and $\Delta t = 0.2$.
+   | $n$ | $t$ | $y$   | $f$    |
+   |----:|-----|-------|--------|
+   | 0   | 0.0 | 1.000 | 1.000  |
+   | 1   | 0.1 | 1.100 | 4.039  |
+   | 2   | 0.2 | 1.504 | 6.257  |
+   | 3   | 0.3 | 2.130 | 6.895  |
+   | 4   | 0.4 | 2.818 | 5.757  |
+   | 5   | 0.5 | 3.394 | 3.394  |
+   | 6   | 0.6 | 3.733 | 0.795  |
+   | 7   | 0.7 | 3.813 | -0.942 |
+   | 8   | 0.8 | 3.719 | -1.037 |
+   | 9   | 0.9 | 3.615 | 0.676  |
+   | 10  | 1.0 | 3.683 |        |
 
-Let $f(t, y) = y + 5\sin(2\pi t)$
-The following table uses $\Delta t = 0.1$
+   gives $y(1) \approx 3.683$.
 
-| $n$ | $t_n$ | $y_n$ | $f(t_n, y_n)$ |
-|----:|------:|------:|---------------:|
-| 0   | 0.0   | 1.000 | 1.000          |
-| 1   | 0.1   | 1.100 | 4.039          |
-| 2   | 0.2   | 1.504 | 6.257          |
-| 3   | 0.3   | 2.130 | 6.895          |
-| 4   | 0.4   | 2.818 | 5.757          |
-| 5   | 0.5   | 3.394 | 3.394          |
-| 6   | 0.6   | 3.733 | 0.795          |
-| 7   | 0.7   | 3.813 | -0.942         |
-| 8   | 0.8   | 3.719 | -1.037         |
-| 9   | 0.9   | 3.615 | 0.676          |
-| 10  | 1.0   | **3.683** | —         |
+   Euler's method with $\Delta t = 0.2$:
 
-So, for $\Delta t = 0.1$, the Euler approximation gives:
+   | $n$ | $t$ | $y$   | $f$    |
+   |-----|-----|-------|--------|
+   | 0   | 0.0 | 1.000 | 1.000  |
+   | 1   | 0.2 | 1.200 | 6.955  |
+   | 2   | 0.4 | 2.591 | 5.330  |
+   | 3   | 0.6 | 3.657 | 0.576  |
+   | 4   | 0.8 | 3.772 | -1.155 |
+   | 5   | 1.0 | 3.322 |        |
 
-\begin{equation}
-y(1) \approx 3.683
-\end{equation}
+   gives $y(1) = 3.322$.
 
+   To find the analytical solution, note that this is a linear first-order ODE
 
-Step size $\Delta t = 0.2$
+   \begin{equation}
+   y' - y = 5 \sin(2\pi t)
+   \end{equation}
 
-| $n$ | $t_n$ | $y_n$ | $f(t_n, y_n)$ |
-|----:|------:|------:|---------------:|
-| 0   | 0.0   | 1.000 | 1.000          |
-| 1   | 0.2   | 1.200 | 6.955          |
-| 2   | 0.4   | 2.591 | 5.330          |
-| 3   | 0.6   | 3.657 | 0.576          |
-| 4   | 0.8   | 3.772 | -1.155         |
-| 5   | 1.0   | **3.322** | —         |
+   with $p = -1$ and $r = 5 \sin (2\pi t)$. The integrating factor and required
+   integral are:
 
-Therefore, for $\Delta t = 0.2$:
+   \begin{align}
+   F &= e^{\int p \d{t}} = e^{-t} \\
+   \int F r \d{t} &= 5 \int e^{-t} \sin(2\pi t) \d{t} \\
+     &= \frac{5 e^{-t}}{4\pi^2 + 1}\left[ -\sin(2\pi t) - 2\pi \cos(2\pi t)\right]
+   \end{align}
 
-\begin{equation}
-y(1) \approx 3.322
-\end{equation}
+   where the integral was evaluated using a table of integrals. Then, solve for *y*
 
----
+   \begin{align}
+   y &= \frac{1}{F} \left[\int F r \d{t} + c \right] \\
+     &= -\frac{5}{4\pi^2 + 1} \left(\sin(2\pi t) + 2\pi \cos(2\pi t)\right) +
+       c e^{t}
+   \end{align}
 
-Analytical solution:
+   Finally, apply the initial condition:
 
+   \begin{equation}
+   y(0) = \frac{-10 \pi}{4\pi^2 + 1} + c = 1
+   \end{equation}
 
-For this example,
+   so
 
-$p = -1$
+   \begin{equation}
+   y = \left(1 + \frac{10\pi}{4\pi^2 + 1}\right) e^{t} -
+     \frac{5}{4\pi^2 + 1} \left[\sin(2\pi t) + 2\pi \cos(2\pi t)\right]
+   \end{equation}
 
-$r = 5\sin(2\pi t)$
+   Evaluating this at $t = 1$ gives $y(1) = 4.052$.
 
-\begin{equation}
-y^' - y = 5\sin(2\pi t)
-\end{equation}
-
-First, find the integrating factor
-\begin{equation}
-F = e^{\int p \d{t}} = e^{-\int \d{t}} = e^{-t}
-\end{equation}
-
-\begin{align}
-\intF r \d{t} &= \int e^{-t} 5\sin(2\pi t \d{t}) \\ &= \frac{5 e^{-t}}{4\pi^2 + 1}\left[ -1\sin(2\pi t) - 2\pi \cos(2\pi t)\right]
-\end{align}
-
-Then, solve for $y$. 
-
-\begin{align}
-y = \frac{1}{F} \left[\int F r \d{t} + C \right] \\ &= \frac{-5}{4\pi^2 + 1} left\(\sin(2\pi t) + 2\pi cos(2\pi t)\right) + C e^{t}
-\end{align}
-
-Next, use initial conditions in to find $C$.
-
-\begin{equation}
-1 = y(0) = \frac{-5}{4\pi^2 + 1} \left(0 + (2\pi)\right) + C
-\end{equation}
-
-\begin{equation}
-C = 1 + \frac{10\pi}{4\pi^2 + 1}
-\end{equation}
-
-Put $C$ value in equation for $y$.
-
-\begin{equation}
-y(t) = \left(1 + \frac{10\pi}{4\pi^2 + 1}\right) e^{t} - \frac{5}{4\pi^2 + 1} \left(sin(2\pi t) + 2\pi cos(2\pi t)\right)
-\end{equation}
-
-Find $y$ at $t=1$.
-
-\begin{equation}
-y(1) = \left(1 + \frac{10\pi}{4\pi^2 + 1}\right) e - \frac{5}{4\pi^2 + 1} \left(2\pi\right)
-\end{equation}
-
-\begin{equation}
-y(1) = e + \frac{10\pi}{4\pi^2 + 1} \left(e - 1\right)
-\end{equation}
-
-\begin{equation}
-y(1) = 4.052
-\end{equation}
-```
-The absolute error is 0.369 for $\Delta t = 0.1$ and 0.730 for $\Delta t = 0.2$. 
-Hence the error decreases by about $2 x$ when $\Delta t$ is decreased by $2 x$.
+   The absolute error is 0.369 for $\Delta t = 0.1$ and 0.730 for $\Delta t = 0.2$.
+   Hence the error decreases by about a factor of 2 when $\Delta t$ is also
+   decreased by a factor of 2.
+   ```
