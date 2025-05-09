@@ -244,6 +244,128 @@ Turning back into an equivalent system of equations gives the final solution,
 $Q_1 = 2$, $Q_2 = 4$, and $Q_3 = 2$.
 ````
 
+## Number of solutions
+
+The number of solutions for the system of linear equations can be determined
+from the row-reduced augmented matrix.
+
+- There is no solution if there is a row of zeroes with a nonzero last column.
+
+  \begin{align}
+  \begin{bmatrix}
+  3 & 2 & 1 & 3 \\
+  2 & 1 & 1 & 0 \\
+  6 & 2 & 4 & 6
+  \end{bmatrix}
+  \begin{matrix}\vphantom{R_1} \\ -(2/3) R_1 \\ -2 R_1 \end{matrix}
+  &\to \begin{bmatrix}
+  3 & 2 & 1 & 3 \\
+  0 & -1/3 & 1/3 & -2 \\
+  0 & -2 & 2 & 0
+  \end{bmatrix}
+  \begin{matrix}\vphantom{R_1} \\ \times -3 \\ \div 2\end{matrix} \\
+  &\to \begin{bmatrix}
+  3 & 2 & 1 & 3 \\
+  0 & 1 & -1 & 6 \\
+  0 & -1 & 1 & 0
+  \end{bmatrix}
+  \begin{matrix}\vphantom{R_1} \\ \vphantom{R_2} \\ +R_2 \end{matrix} \\
+  &\to \begin{bmatrix}
+  3 & 2 & 1 & 3 \\
+  0 & 1 & -1 & 6 \\
+  0 & 0 & 0 & 12
+  \end{bmatrix}
+  \end{align}
+
+  Since the last row is equivalent to $0 =  12$, there is a false equation and
+  the system has no solution.
+
+- There is one solution if there is one pivot for each unknown.
+
+  \begin{align}
+  \begin{bmatrix}
+  3 & 2 & 1 & 3 \\
+  2 & 1 & 1 & 0 \\
+  6 & 2 & 5 & 6
+  \end{bmatrix}
+  \begin{matrix}\vphantom{R_1} \\ -(2/3) R_1 \\ -2 R_1 \end{matrix}
+  &\to \begin{bmatrix}
+  3 & 2 & 1 & 3 \\
+  0 & -1/3 & 1/3 & -2 \\
+  0 & -2 & 3 & 0
+  \end{bmatrix}
+  \begin{matrix}\vphantom{R_1} \\ \times -3 \\ \vphantom{R_3} \end{matrix} \\
+  &\to \begin{bmatrix}
+  3 & 2 & 1 & 3 \\
+  0 & 1 & -1 & 6 \\
+  0 & -2 & 3 & 0
+  \end{bmatrix}
+  \begin{matrix}\vphantom{R_1} \\ \vphantom{R_2} \\ +2 R_2 \end{matrix} \\
+  &\to \begin{bmatrix}
+  3 & 2 & 1 & 3 \\
+  0 & 1 & -1 & 6 \\
+  0 & 0 & 1 & 12
+  \end{bmatrix}
+  \begin{matrix} -R_3 \\ +R_3 \\ \vphantom{R_3} \end{matrix} \\
+  &\to \begin{bmatrix}
+  3 & 2 & 0 & -9 \\
+  0 & 1 & 0 & 18 \\
+  0 & 0 & 1 & 12
+  \end{bmatrix}
+  \begin{matrix} -2R_2 \\ \vphantom{R_3} \end{matrix} \\
+  &\to \begin{bmatrix}
+  3 & 0 & 0 & -45 \\
+  0 & 1 & 0 & 18 \\
+  0 & 0 & 1 & 12
+  \end{bmatrix}
+  \begin{matrix} \div 3 \\ \vphantom{R_3} \end{matrix} \\
+  &\to \begin{bmatrix}
+  1 & 0 & 0 & -15 \\
+  0 & 1 & 0 & 18 \\
+  0 & 0 & 1 & 12
+  \end{bmatrix}
+  \end{align}
+
+  There are 3 pivot points and 3 unknowns, the solution is $x_1 = -15$,
+  $x_2 = 18$, and $x_3 = 12$.
+
+- There are infinitely many solutions if there are fewer pivots than unknowns.
+
+  \begin{align}
+  \begin{bmatrix}
+  3 & 2 & 1 & 3 \\
+  2 & 1 & 1 & 0 \\
+  6 & 2 & 4 & -6
+  \end{bmatrix}
+  \begin{matrix}\vphantom{R_1} \\ -(2/3) R_1 \\ -2 R_1 \end{matrix}
+  &\to \begin{bmatrix}
+  3 & 2 & 1 & 3 \\
+  0 & -1/3 & 1/3 & -2 \\
+  0 & -2 & 2 & -12
+  \end{bmatrix}
+  \begin{matrix}\vphantom{R_1} \\ \times -3 \\ \div -2\end{matrix} \\
+  &\to \begin{bmatrix}
+  3 & 2 & 1 & 3 \\
+  0 & 1 & -1 & 6 \\
+  0 & 1 & -1 & 6
+  \end{bmatrix}
+  \begin{matrix}-2 R_2 \\ \vphantom{R_2} \\ \vphantom{R_3} \end{matrix} \\
+  &\to \begin{bmatrix}
+  3 & 0 & 3 & -9 \\
+  0 & 1 & -1 & 6 \\
+  0 & 0 & 0 & 0
+  \end{bmatrix}
+  \begin{matrix}\div 3 \\ \vphantom{R_2} \\ \vphantom{R_3} \end{matrix} \\
+  &\to \begin{bmatrix}
+  1 & 0 & 1 & -3 \\
+  0 & 1 & -1 & 6 \\
+  0 & 0 & 0 & 0
+  \end{bmatrix}
+  \end{align}
+
+  There are 2 pivot points but 3 unknowns, so there is one free variable. The
+  solution is $x_1 = -x_3 - 3$ and $x_2 = x_3 + 6$, with $x_3$ free.
+
 ## Skill builder problems
 
 1. Solve using Gauss-Jordan elimination
@@ -346,4 +468,95 @@ $Q_1 = 2$, $Q_2 = 4$, and $Q_3 = 2$.
    \end{align}
 
    so $x_1 = 4$, $x_2 = 0$, and $x_3 = -2$.
+   ```
+
+4. Solve using Gauss-Jordan elimination
+
+   \begin{align}
+   4x_2 - 11x_3 &= 24 \\
+   3x_1 - 11x_2 - 2x_3 &= -6 \\
+   6x_1 - 17x_2 + x_3 &= 18
+   \end{align}
+
+   ```{solution}
+   \begin{align}
+   \begin{bmatrix}
+   0 & 4 & 4 & 24 \\
+   3 & -11 & -2 & -6 \\
+   6 & - 17 & 1 & 18
+   \end{bmatrix}
+   \begin{matrix}{\rm swap}\,R_2 \\ \vphantom{R_2} \\ \vphantom{R_3}\end{matrix}
+   &\to \begin{bmatrix}
+   3 & -11 & -2 & -6 \\
+   0 & -4 & 4 & 24 \\
+   6 & - 17 & 1 & 18
+   \end{bmatrix}
+   \begin{matrix}\vphantom{R_1} \\ \vphantom{R_2} \\ -2 R_1\end{matrix}\\
+   &\to \begin{bmatrix}
+   3 & -11 & -2 & -6 \\
+   0 & 4 & 4 & 24 \\
+   0 & 5 & 5 & 30
+   \end{bmatrix}
+   \begin{matrix}\vphantom{R_1} \\ \div 4 \\ \div 5\end{matrix}\\
+   &\to \begin{bmatrix}
+   3 & -11 & -2 & -6 \\
+   0 & 1 & 1 & 6 \\
+   0 & 1 & 1 & 6
+   \end{bmatrix}
+   \begin{matrix}\vphantom{R_1} \\ \vphantom{R_2} \\ -R_2\end{matrix}\\
+   &\to \begin{bmatrix}
+   3 & -11 & -2 & -6 \\
+   0 & 1 & 1 & 6 \\
+   0 & 0 & 0 & 0
+   \end{bmatrix}
+   \begin{matrix}+11 R_2 \\ \vphantom{R_2} \\ \vphantom{R_3}\end{matrix}\\
+   &\to \begin{bmatrix}
+   3 & 0 & 9 & 60 \\
+   0 & 1 & 1 & 6 \\
+   0 & 0 & 0 & 0
+   \end{bmatrix}
+   \begin{matrix}\div 3 \\ \vphantom{R_2} \\ \vphantom{R_3}\end{matrix}\\
+   &\to \begin{bmatrix}
+   1 & 0 & 3 & 20 \\
+   0 & 1 & 1 & 6 \\
+   0 & 0 & 0 & 0
+   \end{bmatrix}
+   \end{align}
+
+   Hence,
+
+   \begin{align}
+   x_1 - 3x_3 &= 20 \to & x_1 &= 3 x_3 + 20 \\
+   x_2 + x_3 &= 6 \to & x_2 &= x_3 + 6
+   \end{align}
+
+   with $x_3$ free.
+   ```
+
+5. Solve using Gauss-Jordan elimination:
+
+   \begin{align}
+   2x_1 - x_2 + 3x_3 &= -1 \\
+   -4x_1 + 2x_2 - 6x_{3} &= 2
+   \end{align}
+
+   ```{solution}
+   \begin{align}
+   \begin{bmatrix}
+   2 & -1 & 3 & -1 \\
+   -4 & 2 & -6 & -2
+   \end{bmatrix}
+   \begin{matrix}\vphantom{R_1} \\ +2R_1\end{matrix}
+   \to \begin{bmatrix}
+   2 & -1 & 3 & -1 \\
+   0 & 0& 0 & 0
+   \end{bmatrix}
+   \end{align}
+
+   Hence,
+
+   \begin{equation}
+   2x_1 - x_2 + 3x_3 = -1 \to \quad x_1 = \frac{1}{2}(x_2 + x_3 - 1)
+   \end{equation}
+   with $x_2$ and $x_3$ free.
    ```
