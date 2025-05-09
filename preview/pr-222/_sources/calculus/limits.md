@@ -78,46 +78,65 @@ We say that such a limit does not exist.
 
 ## Formal definition
 
+```{topic} Limit (formal)
+The limit of $f$ as $x$ approaches $x_0$ is *L*, denoted
+
 \begin{equation}
-lim_{x \to x₀} = f(x) = l
+\lim_{x \to x_0} f(x) = L
 \end{equation}
 
-if for every ε > 0 there exists δ > 0 such that for all x, if 0 < |x-x₀| < δ the |f(x)-L| < ε.
+if for every $\epsilon > 0$ there exists $\delta > 0$ such that for all *x*,
+if $0 < |x-x_0| < \delta$ then $|f(x)-L| < \epsilon$.
+```
 
-~ ε is a "tolerance" \to how close does f need to be to L?
-
-~ Given any ε, need to find a "window" of x values within δ of x₀ so that f stays within ε of L.
-
-If ε = 1, 3 < f < 5 if 3 < x < 5, ie. δ = 1.
-    For any ε, 4 - ε < f < 4 + ε if 
-            4 - δ < x < 4 + δ
-        \to |x - 4| < ε , |x-4| < δ 
-            ( δ = ε )
+$\epsilon$ is a *tolerance* setting how close *f* needs to be to *L*. Given
+any $\epsilon$, we need to find a "window" of *x* values within $\delta$ of
+$x_0$ so that *f* stays within $\epsilon$ of *L*. For example, consider the
+following:
 
 ```{image} ./_images/First.jpg
 :alt: Limit Graph
+:width: 300px
+:align: center
 ```
 
-Hence, 
+Based on this plot, if $\epsilon = 1$, $3 < f < 5$ if $3 < x < 5$
+(i.e., $\delta = 1$). For a general $\epsilon$,
+$4 - \epsilon < f < 4 + \epsilon$ if $4 - \delta < x < 4 + \delta$ or
+equivalently, $|x-4| < \epsilon$. We hence identify $\delta = \epsilon$ and
+have proven that
+
 \begin{equation}
-lim_{x \to 4} = 4
+\lim_{x \to 4} f = 4
 \end{equation}
 
-Such a 8 cannot always be found for all ε for certain functions! There, the limit does not exist.
+However, such a $\delta$ cannot always be found for all $\epsilon$ for certain
+functions! There, the limit does not exist. For example, consider
+
+\begin{equation}
+f(x) = \begin{cases}
+x,& x < 4 \\
+x-2,& x \ge 4
+\end{cases}
+\end{equation}
 
 ```{image} ./_images/Second.jpg
 :alt: Limit Graph 2
+:width: 300px
+:align: center
 ```
 
-f(x) = { x, x < 4 ; x-2, x >= 4
-  \begin{equation}
-lim_{x \to 4} f(x) = 3?
+Does the limit
+
+\begin{equation}
+\lim_{x \to 4} f(x) = 3
 \end{equation}
 
-If ε = 0.5, there is no δ that contains f around x₀ = 4 \to Limit does not exsit
+exist? If \epsilon = 0.5, there is no $\delta$ that contains *f* around
+$x_0 = 4$. Therefore, this limit does not exsit
 
-What do we use this for? To prove rules (limit laws) we can just apply to solve problems!
-
+This math formalism is powerful, but clunky to apply. We will now move onto
+using rules (limit laws) that have been proven using them!
 
 ## Limit laws
 
