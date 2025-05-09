@@ -1,0 +1,1016 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>5.7. Integrating factor &#8212; Essential Mathematics for Chemical Engineers</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"d": ["{\\operatorname{d}\\!{#1}}", 1], "dd": ["{\\d{}^{#1} #2 \\over \\d{#3}^{#1}}", 3], "pp": ["{\\partial^{#1} #2 \\over \\partial #3^{#1}}", 3], "td": ["{\\left(\\pp{#1}{#2}{#3} \\right)_{#4}}", 4], "ubar": ["\\underline{#1}", 1], "vv": ["\\mathbf{#1}", 1]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'first-order-odes/integrating-factor';</script>
+    <link rel="canonical" href="https://mphowardlab.github.io/essential-math/first-order-odes/integrating-factor.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5.8. Numerical solution methods" href="numerical-solution.html" />
+    <link rel="prev" title="5.6. Laplace transform" href="laplace-transform.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Essential Mathematics for Chemical Engineers</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../calculus/index.html">1. Calculus</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/functions.html">1.1. Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/limits.html">1.2. Limits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/derivatives.html">1.3. Derivatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/derivative-rules.html">1.4. Rules for derivatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/series-expansion.html">1.5. Series expansion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/integration.html">1.6. Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/integration-substitution.html">1.7. Integration using substitution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/integration-by-parts.html">1.8. Integration by parts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/integration-partial-fractions.html">1.9. Partial fraction decomposition</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../multivariable-calculus/index.html">2. Multivariable calculus</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../multivariable-calculus/derivatives.html">2.1. Derivatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multivariable-calculus/total-differential.html">2.2. Total differential</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multivariable-calculus/manipulating-derivatives.html">2.3. Manipulating partial derivatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multivariable-calculus/series-expansion.html">2.4. Series expansion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multivariable-calculus/integration.html">2.5. Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multivariable-calculus/line-integral.html">2.6. Line integral</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../linear-algebra/index.html">3. Linear algebra</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../linear-algebra/matrices.html">3.1. Matrices and vectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linear-algebra/linear-systems.html">3.2. Systems of linear equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linear-algebra/gauss-jordan.html">3.3. Gauss–Jordan elimination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linear-algebra/determinants.html">3.4. Determinants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linear-algebra/inverses.html">3.5. Matrix inversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linear-algebra/eigenvalue-problem.html">3.6. Eigenvalue problem</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../nonlinear-equations/index.html">4. Nonlinear equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../nonlinear-equations/definition.html">4.1. Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nonlinear-equations/quadratic-cubic.html">4.2. Quadratic and cubic polynomials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nonlinear-equations/root-finding.html">4.3. Root finding methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nonlinear-equations/linearization.html">4.4. Linearization</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">5. First-order ordinary differential equations</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="definition.html">5.1. Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="separable.html">5.2. Separable differential equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exact.html">5.3. Exact differential equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linearity.html">5.4. Linearity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="undetermined-coefficients.html">5.5. Undetermined coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="laplace-transform.html">5.6. Laplace transform</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">5.7. Integrating factor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numerical-solution.html">5.8. Numerical solution methods</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../systems-first-order-odes/index.html">6. Systems of first-order ordinary differential equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/definition.html">6.1. Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/linearity.html">6.2. Linearity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/homogeneous-constant-coefficient.html">6.3. Homogeneous linear first-order ODEs with constant coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/numerical-solution.html">6.4. Numerical solution methods</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../second-order-odes/index.html">7. Second-order ordinary differential equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/substitution.html">7.1. Substitution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/linearity.html">7.2. Linearity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/reduction.html">7.3. Reduction of order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/homogeneous-constant-coefficient.html">7.4. Homogeneous linear second-order ODEs with constant coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/undetermined-coefficients.html">7.5. Undetermined coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/variation-of-parameters.html">7.6. Variation of parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/numerical-solution.html">7.7. Numerical solution methods</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../credits.html">8. Credits</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/mphowardlab/essential-math" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/mphowardlab/essential-math/issues/new?title=Issue%20on%20page%20%2Ffirst-order-odes/integrating-factor.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/first-order-odes/integrating-factor.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Integrating factor</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-integrating-factor">5.7.1. Finding the integrating factor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application-to-linear-first-order-odes">5.7.2. Application to linear first-order ODEs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill-builder-problems">5.7.3. Skill builder problems</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="integrating-factor">
+<h1><span class="section-number">5.7. </span>Integrating factor<a class="headerlink" href="#integrating-factor" title="Link to this heading">#</a></h1>
+<p>What do we do when an ODE is not exact? For example,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-18158855-b389-4fdb-b62f-f4d19fd7753d">
+<span class="eqno">(5.82)<a class="headerlink" href="#equation-18158855-b389-4fdb-b62f-f4d19fd7753d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+-y \d{x} + x \d{y} = 0
+\end{equation}\]</div>
+<p>has</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f5a6728a-d9d8-479c-b620-b19d1c2fa274">
+<span class="eqno">(5.83)<a class="headerlink" href="#equation-f5a6728a-d9d8-479c-b620-b19d1c2fa274" title="Permalink to this equation">#</a></span>\[\begin{align}
+P &amp;= -y  &amp; Q &amp;= x \\
+\pp{}{P}{y} &amp;= -1 &amp; \pp{}{Q}{x} &amp;= 1
+\end{align}\]</div>
+<p>so it is not exact. However, we may be able to make it exact if we multiply by
+an <em>integrating factor</em>. For example, let’s try a factor <span class="math notranslate nohighlight">\(F = 1/x^2\)</span>.
+Multiplying through by <em>F</em>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1fb6386e-6c6d-4e31-9fe8-28571b873514">
+<span class="eqno">(5.84)<a class="headerlink" href="#equation-1fb6386e-6c6d-4e31-9fe8-28571b873514" title="Permalink to this equation">#</a></span>\[\begin{align}
+-\frac{y}{x^2} \d{x} + \frac{1}{x} \d{y} = 0
+\end{align}\]</div>
+<p>so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a1e970d8-d612-4396-9292-094de5e314b3">
+<span class="eqno">(5.85)<a class="headerlink" href="#equation-a1e970d8-d612-4396-9292-094de5e314b3" title="Permalink to this equation">#</a></span>\[\begin{align}
+P &amp;= -\frac{y}{x^2}  &amp; Q &amp;= \frac{1}{x} \\
+\pp{}{P}{y} &amp;= -\frac{1}{x^2} &amp; \pp{}{Q}{x} &amp;= -\frac{1}{x}^2
+\end{align}\]</div>
+<p>Now the ODE is exact and can be solved using techniques we learned previously.</p>
+<section id="finding-the-integrating-factor">
+<h2><span class="section-number">5.7.1. </span>Finding the integrating factor<a class="headerlink" href="#finding-the-integrating-factor" title="Link to this heading">#</a></h2>
+<aside class="topic">
+<p class="topic-title">General integrating factor</p>
+<p>To find an integrating factor for a generic ODE that is not exact</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1a6aea78-5a33-4c17-a3f5-bec4ddff4011">
+<span class="eqno">(5.86)<a class="headerlink" href="#equation-1a6aea78-5a33-4c17-a3f5-bec4ddff4011" title="Permalink to this equation">#</a></span>\[\begin{equation}
+P \d{x} + Q \d{y} = 0
+\end{equation}\]</div>
+<p>Calculate:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-513cdb28-de27-4786-bb48-dede5672f081">
+<span class="eqno">(5.87)<a class="headerlink" href="#equation-513cdb28-de27-4786-bb48-dede5672f081" title="Permalink to this equation">#</a></span>\[\begin{equation}
+R = \frac{1}{Q} \Biggl( \frac{\partial P}{\partial y} -
+  \frac{\partial Q}{\partial x} \Biggr)
+\end{equation}\]</div>
+<p>If <em>R</em> depends only on <em>x</em>, the integrating factor is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a5ef4538-c71e-4c6e-8643-a04b73454c91">
+<span class="eqno">(5.88)<a class="headerlink" href="#equation-a5ef4538-c71e-4c6e-8643-a04b73454c91" title="Permalink to this equation">#</a></span>\[\begin{equation}
+F = \exp\left( \int R \d{x} \right)
+\end{equation}\]</div>
+<p>If not, calculate</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a4eb8d59-2beb-4677-82e7-be5acdf04a77">
+<span class="eqno">(5.89)<a class="headerlink" href="#equation-a4eb8d59-2beb-4677-82e7-be5acdf04a77" title="Permalink to this equation">#</a></span>\[\begin{equation}
+S = \frac{1}{P} \Biggl( \frac{\partial Q}{\partial x} -
+  \frac{\partial P}{\partial y} \Biggr) = -\frac{Q}{P} R
+\end{equation}\]</div>
+<p>If <em>S</em> depends only on <em>y</em>, the integrating factor is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e94ee12a-b287-4dd1-9309-c56bbef7b9db">
+<span class="eqno">(5.90)<a class="headerlink" href="#equation-e94ee12a-b287-4dd1-9309-c56bbef7b9db" title="Permalink to this equation">#</a></span>\[\begin{equation}
+F = \exp\left( \int S \d{y} \right)
+\end{equation}\]</div>
+<p>If neither works, you can try guessing, but this can be difficult.</p>
+</aside>
+<p>Let’s use these formulas to arrive at the integrating factor we used above:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a76c31f1-60b3-4aaf-9ef3-38de80b88e96">
+<span class="eqno">(5.91)<a class="headerlink" href="#equation-a76c31f1-60b3-4aaf-9ef3-38de80b88e96" title="Permalink to this equation">#</a></span>\[\begin{equation}
+R = \frac{1}{x}(-1 - 1) = -\frac{2}{x}
+\end{equation}\]</div>
+<p>is a function of only <em>x</em> so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d77ed4a6-d142-4dfe-908b-66b5e27e276b">
+<span class="eqno">(5.92)<a class="headerlink" href="#equation-d77ed4a6-d142-4dfe-908b-66b5e27e276b" title="Permalink to this equation">#</a></span>\[\begin{align}
+F(x) &amp;= \exp\left( \int -\frac{2}{x} \d{x} \right) \\
+&amp;= \exp\left( -2 \ln x\right) \\
+&amp;= \left( e^{\ln x} \right)^{-2} \\
+&amp;= \frac{1}{x^2}
+\end{align}\]</div>
+<p>Note that this is not the only suitable integrating factor! Let’s try the <em>S</em>
+route for fun:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1c2498ca-3218-489a-9f7b-96938c7e73e4">
+<span class="eqno">(5.93)<a class="headerlink" href="#equation-1c2498ca-3218-489a-9f7b-96938c7e73e4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+S = -\frac{Q}{P} R = -\frac{x}{-y} \left( -\frac{2}{x}\right) = -\frac{2}{y}
+\end{equation}\]</div>
+<p><em>S</em> is a function of only <em>y</em> so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1aebf5e4-8ac9-4471-9939-7bb85e8dda9a">
+<span class="eqno">(5.94)<a class="headerlink" href="#equation-1aebf5e4-8ac9-4471-9939-7bb85e8dda9a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+F = \exp\left( \int -\frac{2}{y} \d{y} \right) = \frac{1}{y^2}
+\end{equation}\]</div>
+<p>is another suitable integrating factor.</p>
+</section>
+<section id="application-to-linear-first-order-odes">
+<h2><span class="section-number">5.7.2. </span>Application to linear first-order ODEs<a class="headerlink" href="#application-to-linear-first-order-odes" title="Link to this heading">#</a></h2>
+<aside class="topic">
+<p class="topic-title">Integrating factor for linear first-order ODEs</p>
+<p>For linear first-order ODES,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d0a0e4f4-7ccc-403b-9b86-c8d3cbfc6e50">
+<span class="eqno">(5.95)<a class="headerlink" href="#equation-d0a0e4f4-7ccc-403b-9b86-c8d3cbfc6e50" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y' + p(x)y = r(x)
+\end{equation}\]</div>
+<p>Use of an integrating factor <em>F</em> gives the general solution:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1dace94e-fbf9-43f3-b507-3e54df3c124a">
+<span class="eqno">(5.96)<a class="headerlink" href="#equation-1dace94e-fbf9-43f3-b507-3e54df3c124a" title="Permalink to this equation">#</a></span>\[\begin{align}
+y(x) &amp;= \frac{1}{F} \left( \int F r \d{x} + c \right) \\
+F &amp;= \exp\left(\int p \d{x}\right)
+\end{align}\]</div>
+</aside>
+<div class="admonition-example-mole-balance-on-a-tank-with-increasing-inlet-outlet-flow-rate admonition">
+<p class="admonition-title">Example: Mole balance on a tank with increasing inlet/outlet flow rate.</p>
+<p>A stream with concentration <span class="math notranslate nohighlight">\(c_{{\rm f},{\rm A}}\)</span> of solute A flows into a tank
+with initial volume <em>V</em> at a continuously increasing volumetric flow rate
+<span class="math notranslate nohighlight">\(Q = \dot q t\)</span>, where <span class="math notranslate nohighlight">\(\dot q\)</span> is the rate of increase in the flow rate and
+<em>t</em> is time. A well-mixed stream is withdrawn from the tank at the same rate.</p>
+<a class="reference internal image-reference" href="../_images/Integrating_factors_image.jpg"><img alt="Tank with inlet and outlet flows and varying concentrations" class="align-center" src="../_images/Integrating_factors_image.jpg" style="width: 300px;" />
+</a>
+<p>If there are initial <span class="math notranslate nohighlight">\(n_{{\rm A},0}\)</span> moles of the solute, derive an expression
+for the number of moles in the tank <span class="math notranslate nohighlight">\(n_{\rm A}\)</span> as a function of time.</p>
+<hr class="docutils" />
+<p>Formulate overall mole balances based on entering and exit streams.</p>
+<div class="math notranslate nohighlight">
+\[
+\dd{}{n_{\rm A}}{t} = \dot{n}_{{\rm A},\rm{in}} - \dot{n}_{{\rm A},\rm{out}}
+\]</div>
+<p>Replace the molar flowrates with the equivalent concentrations and volumetric
+flow rates</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6ec7a9ce-88d8-4419-af70-785b13c003ac">
+<span class="eqno">(5.97)<a class="headerlink" href="#equation-6ec7a9ce-88d8-4419-af70-785b13c003ac" title="Permalink to this equation">#</a></span>\[\begin{align}
+\dot{n}_{{\rm A},\rm{in}} &amp;= c_{{\rm f},{\rm A}} Q =
+  c_{{\rm f},{\rm A}} \dot{q}t \\
+\dot{n}_{{\rm A},\rm{out}} &amp;= \frac{n_{\rm A}}{V} Q =
+  \frac{n_{\rm A}}{V} \dot{q}
+\end{align}\]</div>
+<p>so the initial value problem is</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1aff46a9-3100-4aef-9658-24b29ff5ee47">
+<span class="eqno">(5.98)<a class="headerlink" href="#equation-1aff46a9-3100-4aef-9658-24b29ff5ee47" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\dot{n}_{\rm A} = c_{{\rm f},{\rm A}}\dot{q}t - \frac{n_{\rm A}}{V} \dot{q}t,
+\quad n_{\rm A}(0) = n_{{\rm A},0}
+\end{equation}\]</div>
+<p>Rewrite in standard form</p>
+<div class="amsmath math notranslate nohighlight" id="equation-37c7389f-5fba-4082-a75a-74563b0b1d23">
+<span class="eqno">(5.99)<a class="headerlink" href="#equation-37c7389f-5fba-4082-a75a-74563b0b1d23" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\dot{n}_{A} + \left(\frac{\dot{q}t}{V}\right) n_{\rm A} = c_{{\rm f},{\rm A}} \dot{q}t
+\end{equation}\]</div>
+<p>This is a linear first-order ODE with</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7409b605-f8ed-4e12-b28b-f41b63dcf746">
+<span class="eqno">(5.100)<a class="headerlink" href="#equation-7409b605-f8ed-4e12-b28b-f41b63dcf746" title="Permalink to this equation">#</a></span>\[\begin{equation}
+p = \frac{\dot{q}t}{V} \qquad r = c_{{\rm f},{\rm A}} \dot{q}t
+\end{equation}\]</div>
+<p>that can be solved using an integrating factor:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-04aa74bb-ede7-44c8-af1d-417a5356305c">
+<span class="eqno">(5.101)<a class="headerlink" href="#equation-04aa74bb-ede7-44c8-af1d-417a5356305c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+F = e^{\int p \d{t}} = \exp\left(\int{\frac{\dot{q}t}{V} \d{t}}\right) =
+  \exp\left(\frac{1}{2}\frac{\dot{q} t^2}{V}\right)
+\end{equation}\]</div>
+<p>Then, evaluate the integral</p>
+<div class="amsmath math notranslate nohighlight" id="equation-193497ed-527d-4a48-b703-493ce0e70db8">
+<span class="eqno">(5.102)<a class="headerlink" href="#equation-193497ed-527d-4a48-b703-493ce0e70db8" title="Permalink to this equation">#</a></span>\[\begin{align}
+\int F r \d{t} &amp;= \int \exp\left(\frac{1}{2}\frac{\dot{q} t^2}{V}\right)
+  c_{{\rm f},{\rm A}}\dot{q}t \d{t} \\
+&amp;= \int{e^{u}c_{{\rm f},{\rm A}}Vdu} \\
+&amp;= c_{{\rm f},{\rm A}}V e^u \\
+&amp;= c_{{\rm f},{\rm A}}V \exp\left(\frac{1}{2}\frac{\dot{q}t^2}{V}\right)
+\end{align}\]</div>
+<p>using the <em>u</em> substitution:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-737f450c-4bc7-4adc-98b9-2c2ba62fb397">
+<span class="eqno">(5.103)<a class="headerlink" href="#equation-737f450c-4bc7-4adc-98b9-2c2ba62fb397" title="Permalink to this equation">#</a></span>\[\begin{align}
+u &amp;= \frac{1}{2}\frac{\dot{q} t^2}{V} \\
+\d{u} &amp;= \frac{\dot{q} t}{V} \d{t}
+\end{align}\]</div>
+<p>Last, combine the results:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f626fa32-5a53-4c35-b1fa-ea3c245ad3c7">
+<span class="eqno">(5.104)<a class="headerlink" href="#equation-f626fa32-5a53-4c35-b1fa-ea3c245ad3c7" title="Permalink to this equation">#</a></span>\[\begin{align}
+n_{\rm A}(t) &amp;= \frac{1}{F} \left(\int F r \d{t} + c \right) \\
+&amp;= c_{{\rm f},{\rm A}} V + c \exp\left(-\frac{1}{2}\frac{\dot{q}t^2}{V}\right)
+\end{align}\]</div>
+<p>Use the inital conditions to evaluate the integration constant:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-fd5e0b49-0e85-4763-b096-1ce54f18ab20">
+<span class="eqno">(5.105)<a class="headerlink" href="#equation-fd5e0b49-0e85-4763-b096-1ce54f18ab20" title="Permalink to this equation">#</a></span>\[\begin{align}
+n_{\rm A}(0) &amp;= c_{{\rm f},{\rm A}}V + c = n_{{\rm A},0} \\
+c &amp;= n_{{\rm A}, 0} - c_{{\rm f},{\rm A}} V
+\end{align}\]</div>
+<p>The final result is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f4efed0e-e5ad-482a-8860-4551b2fb1d8a">
+<span class="eqno">(5.106)<a class="headerlink" href="#equation-f4efed0e-e5ad-482a-8860-4551b2fb1d8a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+n_{\rm A}(t) = c_{{\rm f},{\rm A}}V + (n_{{\rm A},0} - c_{{\rm f},{\rm A}}V) \exp\left(-\frac{1}{2}\frac{\dot{q}t^2}{V}\right)
+\end{equation}\]</div>
+</div>
+<div class="admonition-example-hormone-level-again admonition">
+<p class="admonition-title">Example: Hormone level (again)</p>
+<p>We had</p>
+<div class="amsmath math notranslate nohighlight" id="equation-070483aa-e2c7-49e4-ac16-406ec575b3cc">
+<span class="eqno">(5.107)<a class="headerlink" href="#equation-070483aa-e2c7-49e4-ac16-406ec575b3cc" title="Permalink to this equation">#</a></span>\[\begin{equation}
+c' + kc = A + B\cos\left(\frac{\pi t}{12}\right), \quad c(0) = c_0
+\end{equation}\]</div>
+<p>This is a linear first-order ODE with:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-720498e4-c098-4c26-ac86-61a5af5a38d0">
+<span class="eqno">(5.108)<a class="headerlink" href="#equation-720498e4-c098-4c26-ac86-61a5af5a38d0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+p = kc \qquad r = A + B\cos\left(\frac{\pi t}{12}\right)
+\end{equation}\]</div>
+<p>that can be solved using an integrating factor:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6ec1e576-ed8d-49b7-bdfc-d6be449d6bb6">
+<span class="eqno">(5.109)<a class="headerlink" href="#equation-6ec1e576-ed8d-49b7-bdfc-d6be449d6bb6" title="Permalink to this equation">#</a></span>\[\begin{equation}
+F = e^{\int k \d{t}} = e^{kt}
+\end{equation}\]</div>
+<p>Then, evaluate the integral using the table of integrals or integration by parts
+to evaluate the second integral in the equation</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b0b5cd4a-fbeb-4d22-a195-577403379568">
+<span class="eqno">(5.110)<a class="headerlink" href="#equation-b0b5cd4a-fbeb-4d22-a195-577403379568" title="Permalink to this equation">#</a></span>\[\begin{align}
+\int F r \d{t} &amp;= \int e^{kt}
+  \left[A+B\cos\left(\frac{\pi t}{12}\right)\right]\d{t} \\
+&amp;= A\int e^{kt} \d{t} + B \int e^{kt} \cos\left(\frac{\pi t}{12}\right)\d{t} \\
+&amp;= \frac{A}{k} e^{kt} + B \frac{e^{kt}}{k^{2}+(\pi/12)^2}
+  \Biggl[k \cos{(\frac{\pi t}{12})} +
+  \frac{\pi}{12}\sin{\left(\frac{\pi t}{12}\right)}\Biggr]
+\end{align}\]</div>
+<p>The general solution is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-5536f83e-a1f2-45f3-813b-11afb4c89d07">
+<span class="eqno">(5.111)<a class="headerlink" href="#equation-5536f83e-a1f2-45f3-813b-11afb4c89d07" title="Permalink to this equation">#</a></span>\[\begin{align}
+c(t) &amp;= \frac{1}{F} \left(\int F r \d{t} + c^* \right) \\
+     &amp;= \frac{A}{k} + \frac{B}{k^{2}+(\pi/12)^2}
+  \Biggl[k \cos\left(\frac{\pi t}{12}\right)
+         + \frac{\pi}{12}\sin{\left(\frac{\pi t}{12}\right)}\Biggr]
+  + c^* e^{-kt}
+\end{align}\]</div>
+<p>Use the inital condition to evaluate the integration constant:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8ec3b043-b0d5-4e23-bbf7-45e0e4b7fe61">
+<span class="eqno">(5.112)<a class="headerlink" href="#equation-8ec3b043-b0d5-4e23-bbf7-45e0e4b7fe61" title="Permalink to this equation">#</a></span>\[\begin{align}
+c(0) &amp;= \frac{A}{k} + \frac{B}{k^{2}+(\pi/12)^2} k + c^* = c_0 \\
+c^* &amp;= c_0 - \frac{A}{k} - \frac{B}{k^{2}+(\pi/12)^2} k
+\end{align}\]</div>
+<p>The final solution is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a9f85643-55b3-4ecb-b4b2-444f741c0a21">
+<span class="eqno">(5.113)<a class="headerlink" href="#equation-a9f85643-55b3-4ecb-b4b2-444f741c0a21" title="Permalink to this equation">#</a></span>\[\begin{align}
+c(t) &amp;= \frac{A}{k}
+  + \frac{B}{k^{2}+(\pi/12)^2} \Biggl[k \cos\left(\frac{\pi t}{12}\right) +
+  \frac{\pi}{12}\sin{\left(\frac{\pi t}{12}\right)}\Biggr] \\
+  &amp;+ \Biggl[c_0 - \frac{A}{k} - \frac{Bk}{k^{2}+(\pi/12)^2} \Biggr] e^{-kt}
+\end{align}\]</div>
+</div>
+</section>
+<section id="skill-builder-problems">
+<h2><span class="section-number">5.7.3. </span>Skill builder problems<a class="headerlink" href="#skill-builder-problems" title="Link to this heading">#</a></h2>
+<p>Solve the following differential equations:</p>
+<ol class="arabic">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle y' = \frac{x^4 + y^2}{xy}\)</span></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">This ODE is not in the standard form, so we need to first rearrange:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-5ebbb0c6-8362-46f0-8abc-e181573c2e65">
+<span class="eqno">(5.114)<a class="headerlink" href="#equation-5ebbb0c6-8362-46f0-8abc-e181573c2e65" title="Permalink to this equation">#</a></span>\[\begin{align}
+xy \d{y} = (x^4+y^2) \d{x} \\
+(x^4 + y^2) \d{x} - xy \d{y} = 0
+\end{align}\]</div>
+<p class="sd-card-text">so:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e3ce5623-6c09-4ffa-add5-c7d0594a5c96">
+<span class="eqno">(5.115)<a class="headerlink" href="#equation-e3ce5623-6c09-4ffa-add5-c7d0594a5c96" title="Permalink to this equation">#</a></span>\[\begin{align}
+P &amp;= x^4 + y^2 \\
+Q &amp;= -xy
+\end{align}\]</div>
+<p class="sd-card-text">Check to see if the ODE is exact:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-fcdc614a-c364-440d-8fb2-ef73a9fa72c9">
+<span class="eqno">(5.116)<a class="headerlink" href="#equation-fcdc614a-c364-440d-8fb2-ef73a9fa72c9" title="Permalink to this equation">#</a></span>\[\begin{align}
+\td{}{P}{y}{x} &amp;= 2y \\
+\td{}{Q}{x}{y} &amp;= -y
+\end{align}\]</div>
+<p class="sd-card-text">The two partial derivatives are not equal, so the ODE is not exact. In
+order to make it exact, we need to find an integrating factor <em>F</em>. First,
+compute:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-dfa30ba8-9f97-4924-b975-7a1654557e0e">
+<span class="eqno">(5.117)<a class="headerlink" href="#equation-dfa30ba8-9f97-4924-b975-7a1654557e0e" title="Permalink to this equation">#</a></span>\[\begin{align}
+R &amp;= \frac{1}{Q}\left[\td{}{P}{y}{x} - \td{}{Q}{x}{y} \right] \\
+  &amp;=\frac{1}{-xy}(2y-(-y)) \\
+  &amp;= -\frac{3}{x}
+\end{align}\]</div>
+<p class="sd-card-text"><em>R</em> is a function of only <em>x</em>, so use it to compute <em>F</em></p>
+<div class="amsmath math notranslate nohighlight" id="equation-72897e0e-cb98-40a4-918c-b98abc9afab8">
+<span class="eqno">(5.118)<a class="headerlink" href="#equation-72897e0e-cb98-40a4-918c-b98abc9afab8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+F = \exp\left(\int \frac{-3}{x} \d{x}\right) = e^{-3\ln(x)} = x^{-3}
+\end{equation}\]</div>
+<p class="sd-card-text">Apply the integrating factor to the original ODE:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-0e72734a-540d-4d1c-8ec1-b21e34c8a2aa">
+<span class="eqno">(5.119)<a class="headerlink" href="#equation-0e72734a-540d-4d1c-8ec1-b21e34c8a2aa" title="Permalink to this equation">#</a></span>\[\begin{align}
+x^{-3}(x^4+y^2) \d{x} - x^{-3}(xy) \d{y} &amp;= 0 \\
+\left(x+\frac{y^2}{x^{-3}}\right) \d{x} - \frac{y}{x^2} \d{y} &amp;= 0
+\end{align}\]</div>
+<p class="sd-card-text">Integrate the <em>Q</em> of our exact ODE with respect to <em>y</em>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1bdae292-bdc9-4d78-a750-46d4cf7babdf">
+<span class="eqno">(5.120)<a class="headerlink" href="#equation-1bdae292-bdc9-4d78-a750-46d4cf7babdf" title="Permalink to this equation">#</a></span>\[\begin{equation}
+f(x,y) = \int -\frac{y}{x^2} \d{y} = \frac{-y^2}{2x^2}+k(x)
+\end{equation}\]</div>
+<p class="sd-card-text">where <em>k</em> is an unknown function of <em>x</em>. Then, differentiate <em>f</em> with respect
+to <em>x</em> and compare to <em>P</em> of the exact ODE:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-0d5b8fee-9e42-4371-aa2e-15e83eb43274">
+<span class="eqno">(5.121)<a class="headerlink" href="#equation-0d5b8fee-9e42-4371-aa2e-15e83eb43274" title="Permalink to this equation">#</a></span>\[\begin{align}
+\td{}{f}{x}{y} = \frac{y^2}{x^3} + k'(x) &amp;= P = x + \frac{y^2}{x^3} \\
+k'(x) &amp;= x \\
+\end{align}\]</div>
+<p class="sd-card-text">This ODE for <em>k</em> can be integrated directly (neglecting the integration
+constant)</p>
+<div class="amsmath math notranslate nohighlight" id="equation-fa439355-d72b-4ce1-a675-4053da94f600">
+<span class="eqno">(5.122)<a class="headerlink" href="#equation-fa439355-d72b-4ce1-a675-4053da94f600" title="Permalink to this equation">#</a></span>\[\begin{equation}
+k = \int x \d{x} = \frac{x^2}{2}
+\end{equation}\]</div>
+<p class="sd-card-text">Putting it all together,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-0e149c5c-74ed-4e3f-96fa-80b09bb113f8">
+<span class="eqno">(5.123)<a class="headerlink" href="#equation-0e149c5c-74ed-4e3f-96fa-80b09bb113f8" title="Permalink to this equation">#</a></span>\[\begin{align}
+f = \frac{-y^2}{2x^2} + \frac{x^2}{2} = c
+\end{align}\]</div>
+<p class="sd-card-text">is an implicit solution of the ODE.</p>
+</div>
+</details></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle y' = -\frac{e^{x+y} + ye^y}{x e^y - 1}\)</span></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">This ODE is not in the standard form, so we need to first rearrange:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4f2fe94c-d047-4c1c-aa27-f96bfbb62a66">
+<span class="eqno">(5.124)<a class="headerlink" href="#equation-4f2fe94c-d047-4c1c-aa27-f96bfbb62a66" title="Permalink to this equation">#</a></span>\[\begin{align}
+(e^{x+y} + ye^y) \d{x} + (x e^y - 1) \d{y} = 0
+\end{align}\]</div>
+<p class="sd-card-text">so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b84239c4-1e39-43c4-b808-f2c8ad722ecc">
+<span class="eqno">(5.125)<a class="headerlink" href="#equation-b84239c4-1e39-43c4-b808-f2c8ad722ecc" title="Permalink to this equation">#</a></span>\[\begin{align}
+P &amp;= e^{x+y} + ye^y \\
+Q &amp;= x e^y - 1
+\end{align}\]</div>
+<p class="sd-card-text">Check if the differential equation is exact:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e748ca67-8a84-47af-b758-a855513dabb4">
+<span class="eqno">(5.126)<a class="headerlink" href="#equation-e748ca67-8a84-47af-b758-a855513dabb4" title="Permalink to this equation">#</a></span>\[\begin{align}
+\td{}{P}{y}{x} &amp;= e^{x+y} + y e^y + e^y \\
+\td{}{Q}{x}{y} &amp;= e^y
+\end{align}\]</div>
+<p class="sd-card-text">These are not equal, so the equation is not exact. To make it exact, find
+integrating factor <em>F</em>. The <em>R</em> formula gives:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-bbe677e3-1fbf-42d1-be93-7cd067449c6d">
+<span class="eqno">(5.127)<a class="headerlink" href="#equation-bbe677e3-1fbf-42d1-be93-7cd067449c6d" title="Permalink to this equation">#</a></span>\[\begin{align}
+R &amp;= \frac{1}{Q}\left[\td{}{P}{y}{x} - \td{}{Q}{x}{y} \right] \\
+  &amp;=\frac{1}{x e^y - 1}(e^{x+y} + y e^y + e^y - e^y) \\
+  &amp;= \frac{e^y(e^x + y)}{x e^y - 1}
+\end{align}\]</div>
+<p class="sd-card-text">this is not a function of only <em>x</em>, so try the <em>S</em> formula:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c815b9e7-7163-4f56-bc26-55e24afd34c9">
+<span class="eqno">(5.128)<a class="headerlink" href="#equation-c815b9e7-7163-4f56-bc26-55e24afd34c9" title="Permalink to this equation">#</a></span>\[\begin{align}
+S &amp;= -\frac{Q}{P} R \\
+  &amp;= -\frac{e^y(e^x + y)}{e^{x+y} + y e^y} \\
+  &amp;= -1
+\end{align}\]</div>
+<p class="sd-card-text">This is a function of, at most, <em>y</em> so:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-76670bb0-13be-4f6d-9574-e369da42d85b">
+<span class="eqno">(5.129)<a class="headerlink" href="#equation-76670bb0-13be-4f6d-9574-e369da42d85b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+F = \exp\left(\int S\d{y} \right) = e^{-y}
+\end{equation}\]</div>
+<p class="sd-card-text">Multiply the equation by <em>F</em>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6d8ed783-1993-4380-8110-f63e4ed15833">
+<span class="eqno">(5.130)<a class="headerlink" href="#equation-6d8ed783-1993-4380-8110-f63e4ed15833" title="Permalink to this equation">#</a></span>\[\begin{equation}
+(e^x + y) \d{x} + (x - e^{-y}) \d{y} = 0
+\end{equation}\]</div>
+<p class="sd-card-text">Now the equation is exact so integrate the new <em>P</em> with respect to <em>x</em>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b01dbdae-5b0e-4af4-b545-80334b858d35">
+<span class="eqno">(5.131)<a class="headerlink" href="#equation-b01dbdae-5b0e-4af4-b545-80334b858d35" title="Permalink to this equation">#</a></span>\[\begin{equation}
+f(x,y) = \int (e^x + y) \d{x} = e^x + xy + k(y)
+\end{equation}\]</div>
+<p class="sd-card-text">where <em>k</em> is an unknown function of <em>y</em>. Then, differentiate <em>f</em> with respect
+to <em>y</em> and compare to <em>Q</em>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-72ace389-bd88-4284-bc14-f96488bd3653">
+<span class="eqno">(5.132)<a class="headerlink" href="#equation-72ace389-bd88-4284-bc14-f96488bd3653" title="Permalink to this equation">#</a></span>\[\begin{align}
+\td{}{f}{x}{y} = x + k'(y) &amp;= Q = x - e^{-y} \\
+k' &amp;= -e^{-y}
+\end{align}\]</div>
+<p class="sd-card-text">This ODE for <em>k</em> can be integrated directly (neglecting the integration constant)</p>
+<div class="amsmath math notranslate nohighlight" id="equation-bf380418-6c4d-4ed1-b5b6-e10113f99618">
+<span class="eqno">(5.133)<a class="headerlink" href="#equation-bf380418-6c4d-4ed1-b5b6-e10113f99618" title="Permalink to this equation">#</a></span>\[\begin{align}
+k(y) = \int -e^{-y} \d{y} = e^{-y}
+\end{align}\]</div>
+<p class="sd-card-text">Putting it all together,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7e854e9f-6e6b-43b6-a0c2-88e4a3bbde5b">
+<span class="eqno">(5.134)<a class="headerlink" href="#equation-7e854e9f-6e6b-43b6-a0c2-88e4a3bbde5b" title="Permalink to this equation">#</a></span>\[\begin{align}
+f(x, y) = e^x + e^{-y} + xy = c
+\end{align}\]</div>
+<p class="sd-card-text">is an implicit solution for the ODE.</p>
+</div>
+</details></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle y' = y + 1 - 2x\)</span></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Rewrite in linear form:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4ceedcbc-bdf4-4da9-bf74-b0c665dceb45">
+<span class="eqno">(5.135)<a class="headerlink" href="#equation-4ceedcbc-bdf4-4da9-bf74-b0c665dceb45" title="Permalink to this equation">#</a></span>\[\begin{align}
+y' - y = 1 - 2x
+\end{align}\]</div>
+<p class="sd-card-text">where</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e640588d-f596-4c34-b25f-1f60560c4ed5">
+<span class="eqno">(5.136)<a class="headerlink" href="#equation-e640588d-f596-4c34-b25f-1f60560c4ed5" title="Permalink to this equation">#</a></span>\[\begin{align}
+p = -1 \qquad r = 1 - 2x
+\end{align}\]</div>
+<p class="sd-card-text">Find integrating factor:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-54c1af19-03f4-4881-9b0f-b83711815855">
+<span class="eqno">(5.137)<a class="headerlink" href="#equation-54c1af19-03f4-4881-9b0f-b83711815855" title="Permalink to this equation">#</a></span>\[\begin{align}
+F = e^{\int p\d{x}} = e^{\int -1 \d{x}} = e^{-x}
+\end{align}\]</div>
+<p class="sd-card-text">Then, evaluate the integral</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e62057bf-6813-4ab3-be08-93d91ac0592f">
+<span class="eqno">(5.138)<a class="headerlink" href="#equation-e62057bf-6813-4ab3-be08-93d91ac0592f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\int F r \d{x} = \int e^{-x} (1-2x) \d{x}
+\end{equation}\]</div>
+<p class="sd-card-text">This integral can be evaluated by parts using the tabular method:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p class="sd-card-text">sign</p></th>
+<th class="head"><p class="sd-card-text"><span class="math notranslate nohighlight">\(u\)</span></p></th>
+<th class="head"><p class="sd-card-text"><span class="math notranslate nohighlight">\(\d{v}\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p class="sd-card-text"></p></td>
+<td><p class="sd-card-text"></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(e^{-x}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text"><span class="math notranslate nohighlight">\(+\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(1-2x\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(-e^{-x}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text"><span class="math notranslate nohighlight">\(-\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(-2\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(e^{-x}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text"></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td><p class="sd-card-text"></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="sd-card-text">so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-0fc8d480-9640-42ac-80d0-6e9606f4520f">
+<span class="eqno">(5.139)<a class="headerlink" href="#equation-0fc8d480-9640-42ac-80d0-6e9606f4520f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\int F r \d{x} = (2x-1)e^{-x} + 2 e^{-x} = (2x + 1) e^{-x}
+\end{equation}\]</div>
+<p class="sd-card-text">Putting it all together:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-93b1258d-7e50-4f29-abb2-2318e14d3aba">
+<span class="eqno">(5.140)<a class="headerlink" href="#equation-93b1258d-7e50-4f29-abb2-2318e14d3aba" title="Permalink to this equation">#</a></span>\[\begin{align}
+y &amp;= \frac{1}{F}\left(\int F r \d{x} + c \right) \\
+  &amp;= e^x \left[ (2x + 1) e^{-x} + c \right] \\
+  &amp;= 1 + 2x + c e^x
+\end{align}\]</div>
+</div>
+</details></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./first-order-odes"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="laplace-transform.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">5.6. </span>Laplace transform</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="numerical-solution.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">5.8. </span>Numerical solution methods</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-integrating-factor">5.7.1. Finding the integrating factor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application-to-linear-first-order-odes">5.7.2. Application to linear first-order ODEs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill-builder-problems">5.7.3. Skill builder problems</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Michael P. Howard
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

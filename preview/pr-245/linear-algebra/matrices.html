@@ -1,0 +1,949 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>3.1. Matrices and vectors &#8212; Essential Mathematics for Chemical Engineers</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"d": ["{\\operatorname{d}\\!{#1}}", 1], "dd": ["{\\d{}^{#1} #2 \\over \\d{#3}^{#1}}", 3], "pp": ["{\\partial^{#1} #2 \\over \\partial #3^{#1}}", 3], "td": ["{\\left(\\pp{#1}{#2}{#3} \\right)_{#4}}", 4], "ubar": ["\\underline{#1}", 1], "vv": ["\\mathbf{#1}", 1]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'linear-algebra/matrices';</script>
+    <link rel="canonical" href="https://mphowardlab.github.io/essential-math/linear-algebra/matrices.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3.2. Systems of linear equations" href="linear-systems.html" />
+    <link rel="prev" title="3. Linear algebra" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Essential Mathematics for Chemical Engineers</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../calculus/index.html">1. Calculus</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/functions.html">1.1. Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/limits.html">1.2. Limits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/derivatives.html">1.3. Derivatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/derivative-rules.html">1.4. Rules for derivatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/series-expansion.html">1.5. Series expansion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/integration.html">1.6. Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/integration-substitution.html">1.7. Integration using substitution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/integration-by-parts.html">1.8. Integration by parts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/integration-partial-fractions.html">1.9. Partial fraction decomposition</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../multivariable-calculus/index.html">2. Multivariable calculus</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../multivariable-calculus/derivatives.html">2.1. Derivatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multivariable-calculus/total-differential.html">2.2. Total differential</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multivariable-calculus/manipulating-derivatives.html">2.3. Manipulating partial derivatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multivariable-calculus/series-expansion.html">2.4. Series expansion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multivariable-calculus/integration.html">2.5. Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multivariable-calculus/line-integral.html">2.6. Line integral</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">3. Linear algebra</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.1. Matrices and vectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear-systems.html">3.2. Systems of linear equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gauss-jordan.html">3.3. Gauss–Jordan elimination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="determinants.html">3.4. Determinants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inverses.html">3.5. Matrix inversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eigenvalue-problem.html">3.6. Eigenvalue problem</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../nonlinear-equations/index.html">4. Nonlinear equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../nonlinear-equations/definition.html">4.1. Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nonlinear-equations/quadratic-cubic.html">4.2. Quadratic and cubic polynomials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nonlinear-equations/root-finding.html">4.3. Root finding methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nonlinear-equations/linearization.html">4.4. Linearization</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../first-order-odes/index.html">5. First-order ordinary differential equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/definition.html">5.1. Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/separable.html">5.2. Separable differential equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/exact.html">5.3. Exact differential equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/linearity.html">5.4. Linearity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/undetermined-coefficients.html">5.5. Undetermined coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/laplace-transform.html">5.6. Laplace transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/integrating-factor.html">5.7. Integrating factor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-order-odes/numerical-solution.html">5.8. Numerical solution methods</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../systems-first-order-odes/index.html">6. Systems of first-order ordinary differential equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/definition.html">6.1. Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/linearity.html">6.2. Linearity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/homogeneous-constant-coefficient.html">6.3. Homogeneous linear first-order ODEs with constant coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../systems-first-order-odes/numerical-solution.html">6.4. Numerical solution methods</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../second-order-odes/index.html">7. Second-order ordinary differential equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/substitution.html">7.1. Substitution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/linearity.html">7.2. Linearity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/reduction.html">7.3. Reduction of order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/homogeneous-constant-coefficient.html">7.4. Homogeneous linear second-order ODEs with constant coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/undetermined-coefficients.html">7.5. Undetermined coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/variation-of-parameters.html">7.6. Variation of parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/numerical-solution.html">7.7. Numerical solution methods</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../credits.html">8. Credits</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/mphowardlab/essential-math" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/mphowardlab/essential-math/issues/new?title=Issue%20on%20page%20%2Flinear-algebra/matrices.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/linear-algebra/matrices.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Matrices and vectors</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">3.1.1. Definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#addition-and-scalar-multiplication">3.1.2. Addition and scalar multiplication</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-multiplication">3.1.3. Matrix multiplication</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transpose">3.1.4. Transpose</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill-builder-problems">3.1.5. Skill builder problems</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="matrices-and-vectors">
+<h1><span class="section-number">3.1. </span>Matrices and vectors<a class="headerlink" href="#matrices-and-vectors" title="Link to this heading">#</a></h1>
+<p>Matrices and vectors are convenient tools for representing linear systems with
+compact notation that can be processed by a computer.</p>
+<div class="admonition-example-flash-distillation admonition">
+<p class="admonition-title">Example: Flash distillation</p>
+<p>You are analyzing the molar flow rates resulting from a flash distillation
+process.</p>
+<img alt="Flash distillation process" src="../_images/flash.svg" />
+<p>The steady-state mole balances for the total process and component A are</p>
+<div class="amsmath math notranslate nohighlight" id="equation-777fc168-e0f9-45db-88e6-0cca15451b99">
+<span class="eqno">(3.1)<a class="headerlink" href="#equation-777fc168-e0f9-45db-88e6-0cca15451b99" title="Permalink to this equation">#</a></span>\[\begin{align}
+10 &amp;= \dot L + \dot V \\
+5 &amp;= 0.3 \dot L + 0.8 \dot V
+\end{align}\]</div>
+<p>These equations can equivalently be represented using matrices and vectors as</p>
+<div class="amsmath math notranslate nohighlight" id="equation-91a7a8d1-eb21-4b3b-8c06-be379130f8b8">
+<span class="eqno">(3.2)<a class="headerlink" href="#equation-91a7a8d1-eb21-4b3b-8c06-be379130f8b8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\begin{bmatrix} 10 \\ 5 \end{bmatrix} =
+\begin{bmatrix} 1 &amp; 1 \\ 0.3 &amp; 0.8 \end{bmatrix}
+\begin{bmatrix} \dot L \\ \dot V \end{bmatrix}
+\end{equation}\]</div>
+<p>We will learn why these representations are equivalent shortly. Importantly,
+because our mole balances can be written in this way, they are a <em>system of
+linear equations</em> that can be solved using techniques of linear algebra.</p>
+</div>
+<section id="definition">
+<h2><span class="section-number">3.1.1. </span>Definition<a class="headerlink" href="#definition" title="Link to this heading">#</a></h2>
+<p>A <em>matrix</em> is a rectangular array of quantities, which we call its <em>elements</em>,
+that are laid out in horizontal <em>rows</em> and vertical <em>columns</em>. We will typically
+denote a matrix by a bold, capital letter such as <strong>A</strong>.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2e827c78-7472-4f18-902c-bad876c02c9e">
+<span class="eqno">(3.3)<a class="headerlink" href="#equation-2e827c78-7472-4f18-902c-bad876c02c9e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\vv{A} = \begin{bmatrix} 0.3 &amp; 1 &amp; -5 \\ 0 &amp; -0.2 &amp; 16 \end{bmatrix}
+\end{equation}\]</div>
+<p>An <em>m</em> x <em>n</em> matrix has <em>m</em> rows and <em>n</em> columns. <strong>A</strong> is a 2 x 3 matrix. We
+will sometimes refer to elements of a matrix by their row and column</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7a162c07-2a3d-4a73-94d1-e077792e7839">
+<span class="eqno">(3.4)<a class="headerlink" href="#equation-7a162c07-2a3d-4a73-94d1-e077792e7839" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\vv{A} = \begin{bmatrix} A_{11} &amp; A_{12} &amp;
+A_{13} \\ A_{21} &amp; A_{22} &amp; A_{23} \end{bmatrix}
+\end{equation}\]</div>
+<p>For example, <span class="math notranslate nohighlight">\(A_{12} = 1\)</span> and <span class="math notranslate nohighlight">\(A_{23} = 16\)</span> for <strong>A</strong> given above.</p>
+<p>A <em>vector</em> is a matrix with either one column (a <em>column vector</em>) or one row (a
+<em>row vector</em>). We will typically denote a vector by a bold, lowercase letter
+such as <strong>b</strong></p>
+<div class="amsmath math notranslate nohighlight" id="equation-9c8a8695-bef8-4d66-b9e5-723fae353493">
+<span class="eqno">(3.5)<a class="headerlink" href="#equation-9c8a8695-bef8-4d66-b9e5-723fae353493" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\vv{b} = \begin{bmatrix} 1 \\ 2 \end{bmatrix} \qquad
+\vv{c} = \begin{bmatrix} -1 &amp; 0 &amp; 1 \end{bmatrix}
+\end{equation}\]</div>
+<p><strong>b</strong> is a 2-element column vector that is also a 2 x 1 matrix, while <strong>c</strong> is a
+3-element row vector that is also a 1 x 3 matrix. When referring to elements of
+a vector, it typical to only use one index</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4e8bee78-7c81-4b70-8d09-5acd59df7246">
+<span class="eqno">(3.6)<a class="headerlink" href="#equation-4e8bee78-7c81-4b70-8d09-5acd59df7246" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\vv{b} = \begin{bmatrix} b_1 \\ b_2 \end{bmatrix} \qquad
+\vv{c} = \begin{bmatrix} c_1 &amp; c_2 &amp; c_3 \end{bmatrix}
+\end{equation}\]</div>
+<p>For <strong>b</strong> and <strong>c</strong> given above, <span class="math notranslate nohighlight">\(b_2 = 2\)</span> and <span class="math notranslate nohighlight">\(c_2 = 0\)</span>. Note that it becomes
+ambiguous whether you have a column vector or a row vector if you are refering
+to elements in this way.</p>
+<p>There are some other types of “special” matrices.</p>
+<ul>
+<li><p><em>Square matrix</em>: a matrix with equal numbers of rows and columns (an <em>n</em> x <em>n</em>
+matrix).</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b3b02c9f-86bd-4c5d-b738-785560c42430">
+<span class="eqno">(3.7)<a class="headerlink" href="#equation-b3b02c9f-86bd-4c5d-b738-785560c42430" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\begin{bmatrix} 1 &amp; 2 \\ 4 &amp; 3 \end{bmatrix}
+\end{equation}\]</div>
+</li>
+<li><p><em>Diagonal matrix</em>: a square matrix with nonzero entries only for the elements
+on the diagonal, <span class="math notranslate nohighlight">\(A_{ii}\)</span> for <span class="math notranslate nohighlight">\(i = 1, ..., n\)</span>.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-feaa2308-f13b-4c54-b02b-23d5524cf838">
+<span class="eqno">(3.8)<a class="headerlink" href="#equation-feaa2308-f13b-4c54-b02b-23d5524cf838" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 3 \end{bmatrix}
+\end{equation}\]</div>
+</li>
+<li><p><em>Upper triangular matrix</em>: a square matrix with nonzero entries only on the
+diagonal or above, <span class="math notranslate nohighlight">\(A_{ij}\)</span> for <span class="math notranslate nohighlight">\(i = 1, ..., n\)</span> and <span class="math notranslate nohighlight">\(j \ge i\)</span>. on the
+diagonal, <span class="math notranslate nohighlight">\(A_{ii}\)</span>.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-db5b9c6b-265f-405f-b723-5cee467d74fb">
+<span class="eqno">(3.9)<a class="headerlink" href="#equation-db5b9c6b-265f-405f-b723-5cee467d74fb" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\begin{bmatrix} 1 &amp; 2 \\ 0 &amp; 3 \end{bmatrix}
+\end{equation}\]</div>
+</li>
+<li><p><em>Lower triangular matrix</em>: a square matrix with nonzero entries only on the
+diagonal or below, <span class="math notranslate nohighlight">\(A_{ij}\)</span> for <span class="math notranslate nohighlight">\(i = 1, ..., n\)</span> and <span class="math notranslate nohighlight">\(j \le i\)</span>.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4889aa81-6e5e-4d1d-88a4-fb07ab727177">
+<span class="eqno">(3.10)<a class="headerlink" href="#equation-4889aa81-6e5e-4d1d-88a4-fb07ab727177" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\begin{bmatrix} 1 &amp; 0 \\ 4 &amp; 3 \end{bmatrix}
+\end{equation}\]</div>
+</li>
+<li><p><em>Identity matrix</em>: a diagonal matrix of ones, typically denoted <strong>I</strong>.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f406a01d-76fa-4b37-a903-ee6e7d69d5ac">
+<span class="eqno">(3.11)<a class="headerlink" href="#equation-f406a01d-76fa-4b37-a903-ee6e7d69d5ac" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{bmatrix}
+\end{equation}\]</div>
+</li>
+</ul>
+<p>There are several other types of special matrices, but we will leave those for a
+longer course on linear algebra!</p>
+</section>
+<section id="addition-and-scalar-multiplication">
+<h2><span class="section-number">3.1.2. </span>Addition and scalar multiplication<a class="headerlink" href="#addition-and-scalar-multiplication" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><em>Equality</em>: <span class="math notranslate nohighlight">\(\vv{A} = \vv{B}\)</span> if and only if <strong>A</strong> and <strong>B</strong> have the same
+size and all their corresponding elements are equal.</p></li>
+<li><p><em>Addition</em>: <span class="math notranslate nohighlight">\(\vv{C} = \vv{A} + \vv{B}\)</span> is defined if <strong>A</strong> and <strong>B</strong> have the
+samesize. Then, the matrix elements are added element-wise:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-55361096-675e-469d-833f-2ecbd53b989d">
+<span class="eqno">(3.12)<a class="headerlink" href="#equation-55361096-675e-469d-833f-2ecbd53b989d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+C_{ij} = A_{ij} + B_{ij}
+\end{equation}\]</div>
+<p>Example:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-84b64df7-f6d6-4461-9820-2c92cd71c6db">
+<span class="eqno">(3.13)<a class="headerlink" href="#equation-84b64df7-f6d6-4461-9820-2c92cd71c6db" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\begin{bmatrix} 5 &amp; -1 &amp; 0 \\ 3 &amp; 1 &amp; 0 \end{bmatrix} +
+\begin{bmatrix} 1 &amp; 5 &amp; 3 \\ 3 &amp; 2 &amp; 2 \end{bmatrix} =
+\begin{bmatrix} -4 &amp; 6 &amp; 3 \\ 0 &amp; 1 &amp; 2 \end{bmatrix}
+\end{equation}\]</div>
+</li>
+<li><p><em>Scalar multiplication</em>: <span class="math notranslate nohighlight">\(\vv{B} = k\vv{A}\)</span> multiplies each element of <strong>A</strong>
+by <em>k</em>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-09c02804-1a88-41d1-b5c0-cdb752c95fcf">
+<span class="eqno">(3.14)<a class="headerlink" href="#equation-09c02804-1a88-41d1-b5c0-cdb752c95fcf" title="Permalink to this equation">#</a></span>\[\begin{equation}
+B_{ij} = kA_{ij}
+\end{equation}\]</div>
+<p>Example:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7c1315e7-e348-450c-9cc7-fb45e655a753">
+<span class="eqno">(3.15)<a class="headerlink" href="#equation-7c1315e7-e348-450c-9cc7-fb45e655a753" title="Permalink to this equation">#</a></span>\[\begin{equation}
+-2 \begin{bmatrix} 1 &amp; 0  \\ 0 &amp; -2  \end{bmatrix}
+= \begin{bmatrix} -2 \times 1 &amp; -2 \times 0 \\ -2 \times 0 &amp; -2 \times 4 \end{bmatrix}
+= \begin{bmatrix} -2 &amp; 0 \\ 0 &amp; 4 \end{bmatrix}
+\end{equation}\]</div>
+</li>
+<li><p><em>Subtraction</em>: same as addition of negative
+<span class="math notranslate nohighlight">\(\vv{C} = \vv{A} - \vv{B} = \vv{A} + (-\vv{B})\)</span> so</p>
+<div class="amsmath math notranslate nohighlight" id="equation-de4c82b5-c683-41ed-b770-2df4dcbfcbe4">
+<span class="eqno">(3.16)<a class="headerlink" href="#equation-de4c82b5-c683-41ed-b770-2df4dcbfcbe4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+C_{ij} = A_{ij} - B_{ij}
+\end{equation}\]</div>
+</li>
+</ul>
+<aside class="topic">
+<p class="topic-title">Rules of addition and scalar multiplication</p>
+<ul class="simple">
+<li><p><em>Commutative</em>: <span class="math notranslate nohighlight">\(\vv{A} + \vv{B} = \vv{B} + \vv{A}\)</span></p></li>
+<li><p><em>Associative</em>: <span class="math notranslate nohighlight">\((\vv{A} + \vv{B}) + \vv{C} = \vv{A} + (\vv{B} + \vv{C})\)</span></p></li>
+<li><p><em>Distributive</em>: <span class="math notranslate nohighlight">\(k(\vv{A} + \vv{B}) = k\vv{A} + k\vv{B}\)</span></p></li>
+</ul>
+</aside>
+<div class="admonition-example-matrix-addition-and-scalar-multiplication admonition">
+<p class="admonition-title">Example: Matrix addition and scalar multiplication</p>
+<p>Given</p>
+<div class="amsmath math notranslate nohighlight" id="equation-81304c6c-5a27-4d8f-b860-b6b4214df3e5">
+<span class="eqno">(3.17)<a class="headerlink" href="#equation-81304c6c-5a27-4d8f-b860-b6b4214df3e5" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\vv{A} = \begin{bmatrix} -1 &amp; 2  \\ 0 &amp; 5  \end{bmatrix} \qquad
+\vv{B} = \begin{bmatrix} 1 &amp; 0  \\ 0 &amp; 1  \end{bmatrix}
+\end{equation}\]</div>
+<p>Compute <span class="math notranslate nohighlight">\(2\vv{A} - \vv{B}\)</span>.</p>
+<hr class="docutils" />
+<div class="amsmath math notranslate nohighlight" id="equation-4ebdb5c3-8f2f-4918-b859-ff1dd6117575">
+<span class="eqno">(3.18)<a class="headerlink" href="#equation-4ebdb5c3-8f2f-4918-b859-ff1dd6117575" title="Permalink to this equation">#</a></span>\[\begin{align}
+2\vv{A}-\vv{B} &amp;= 2 \begin{bmatrix} -1 &amp; 2  \\ 0 &amp; 5  \end{bmatrix} -
+\begin{bmatrix} 1 &amp; 0  \\ 0 &amp; 1  \end{bmatrix} \\
+&amp;= \begin{bmatrix} -2 &amp; 4  \\ 0 &amp; 10  \end{bmatrix} -
+\begin{bmatrix} 1 &amp; 0  \\ 0 &amp; 1  \end{bmatrix} \\
+&amp;= \begin{bmatrix} -3 &amp; 4  \\ 0 &amp; 9  \end{bmatrix}
+\end{align}\]</div>
+</div>
+</section>
+<section id="matrix-multiplication">
+<h2><span class="section-number">3.1.3. </span>Matrix multiplication<a class="headerlink" href="#matrix-multiplication" title="Link to this heading">#</a></h2>
+<p><strong>C</strong> = <strong>AB</strong> is defined if <strong>A</strong> has the same number of columns as <strong>B</strong> has
+rows. If <strong>A</strong> is <em>m</em> x <em>p</em> and <strong>B</strong> is <em>p</em> x <em>n</em>, <strong>C</strong> is <em>m</em> x <em>n</em> and its
+elements are</p>
+<div class="amsmath math notranslate nohighlight" id="equation-67606acf-e677-4066-8860-c0dba91f1e54">
+<span class="eqno">(3.19)<a class="headerlink" href="#equation-67606acf-e677-4066-8860-c0dba91f1e54" title="Permalink to this equation">#</a></span>\[\begin{equation}
+C_{ij} = \sum_{k=1}^p A_{ik} B_{kj}
+\end{equation}\]</div>
+<p>Example:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2853ef16-0846-4aab-bd69-a9a823296fff">
+<span class="eqno">(3.20)<a class="headerlink" href="#equation-2853ef16-0846-4aab-bd69-a9a823296fff" title="Permalink to this equation">#</a></span>\[\begin{align}
+\begin{bmatrix} 3 &amp; 5 \\ 4 &amp; 0 \\ -6 &amp; -3 \end{bmatrix}
+\begin{bmatrix} 2 &amp; -2 \\ 5 &amp; 0 \end{bmatrix}
+&amp;= \begin{bmatrix} 3\times2 + 5\times5 &amp; 3\times-2 + 5\times0 \\
+4\times2 + 0\times5 &amp; 4\times-2 + 0\times0 \\
+-6\times2 + -3\times5 &amp;   -6\times-2 + -3\times0 \end{bmatrix} \\
+&amp;= \begin{bmatrix} 31 &amp; -6 \\ 8 &amp; -8 \\ -27 &amp; 12 \end{bmatrix}
+\end{align}\]</div>
+<p>Multiplying with a vector works the same!</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a8b5322a-5679-4de8-ad02-b24560db8e4d">
+<span class="eqno">(3.21)<a class="headerlink" href="#equation-a8b5322a-5679-4de8-ad02-b24560db8e4d" title="Permalink to this equation">#</a></span>\[\begin{align}
+\begin{bmatrix} 3 &amp; 5 \\ 4 &amp; 0 \\ -6 &amp; -3 \end{bmatrix}
+\begin{bmatrix} 1 \\ 2 \end{bmatrix}
+&amp;= \begin{bmatrix} 3 \times 1 + 5 \times 2 \\
+4 \times 1 + 0 \times 2 \\
+-6 \times 1 + -3 \times 2
+\end{bmatrix} \\
+&amp;= \begin{bmatrix} 8 \\ 4 \\ -12 \end{bmatrix}
+\end{align}\]</div>
+<aside class="topic">
+<p class="topic-title">Rules of matrix multiplication</p>
+<ul class="simple">
+<li><p><em>Associative</em>: <span class="math notranslate nohighlight">\(\vv{A}(\vv{B}\vv{C}) = (\vv{A}\vv{B})\vv{C}\)</span></p></li>
+<li><p><em>Distributive</em>: <span class="math notranslate nohighlight">\((\vv{A} + \vv{B})\vv{C} = \vv{A}\vv{C} + \vv{B}\vv{C}\)</span></p></li>
+<li><p><strong>Not</strong> generally commutative, i.e., <span class="math notranslate nohighlight">\(\vv{A}\vv{B} \ne \vv{B}\vv{A}\)</span> for all
+matrices.</p></li>
+</ul>
+</aside>
+</section>
+<section id="transpose">
+<h2><span class="section-number">3.1.4. </span>Transpose<a class="headerlink" href="#transpose" title="Link to this heading">#</a></h2>
+<p><span class="math notranslate nohighlight">\(\vv{A}^{\rm T}\)</span> is the transpose of <strong>A</strong>, and its elements are obtained by
+“flipping” the rows and columns:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6fb3ef10-7e5c-49f8-96fb-0119691b1af5">
+<span class="eqno">(3.22)<a class="headerlink" href="#equation-6fb3ef10-7e5c-49f8-96fb-0119691b1af5" title="Permalink to this equation">#</a></span>\[\begin{equation}
+A_{ij}^{\rm T} = A_{ji}
+\end{equation}\]</div>
+<p>Example:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-dd069523-577b-4fff-8d5c-a2ca831e4758">
+<span class="eqno">(3.23)<a class="headerlink" href="#equation-dd069523-577b-4fff-8d5c-a2ca831e4758" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\begin{bmatrix} 1 &amp; 2 \\ 4 &amp; 3 \end{bmatrix}^{\rm T} =
+\begin{bmatrix} 1 &amp; 4 \\ 2 &amp; 3 \end{bmatrix}
+\end{equation}\]</div>
+<p>A matrix is called <em>symmetric</em> if <span class="math notranslate nohighlight">\(\vv{A}^{\rm T} = \vv{A}\)</span>.</p>
+<aside class="topic">
+<p class="topic-title">Rules for transposition</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\((\vv{A}^{\rm T})^{\rm T} = \vv{A}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((\vv{A} + \vv{B})^{\rm T} = \vv{A}^{\rm T} + \vv{B}^{\rm T}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((\vv{A}\vv{B})^{\rm T} = \vv{B}^{\rm T} + \vv{A}^{\rm T}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((k \vv{A})^{\rm T} = k\vv{A}^{\rm T}\)</span></p></li>
+</ul>
+</aside>
+</section>
+<section id="skill-builder-problems">
+<h2><span class="section-number">3.1.5. </span>Skill builder problems<a class="headerlink" href="#skill-builder-problems" title="Link to this heading">#</a></h2>
+<p>Given the matrices:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\vv{A} = \begin{bmatrix} 0 &amp; 2 \\ 2 &amp; 4 \\ 1 &amp; 3 \\ \end{bmatrix}
+\quad
+\vv{B} = \begin{bmatrix} 0 &amp; 2 &amp;1 \\ 2 &amp; 4 &amp; 3 \end{bmatrix}
+\quad
+\vv{C} = \begin{bmatrix} 3 &amp; 0 &amp; 4 \\ -1 &amp; 2 &amp; 2 \\ 6 &amp; 5 &amp; -4 \end{bmatrix}
+\quad
+\vv{D} = \begin{bmatrix} 0 &amp; -5 &amp; -3 \\ -5 &amp; 2 &amp; 4 \\ -3 &amp; 4 &amp; 0 \end{bmatrix}
+\end{split}\]</div>
+<p>and vectors:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\vv{a} = \begin{bmatrix} 1 \\ 3 \end{bmatrix}
+\quad
+\vv{b} = \begin{bmatrix} 0 &amp; 2 \end{bmatrix}
+\quad
+\vv{c} = \begin{bmatrix} 2 \\ 0 \\ -1 \end{bmatrix}
+\end{split}\]</div>
+<p>Compute the following or explain why it is undefined.</p>
+<ol class="arabic">
+<li><p><span class="math notranslate nohighlight">\(2\vv{A}\)</span></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="math notranslate nohighlight">
+\[\begin{split}
+2\vv{A}
+= \begin{bmatrix}
+2 \cdot 0 &amp; 2 \cdot 2 \\
+2 \cdot 2 &amp; 2 \cdot 4 \\
+2 \cdot 1 &amp; 2 \cdot 3 \end{bmatrix}
+= \begin{bmatrix} 0 &amp; 4 \\ 4 &amp; 8 \\ 2 &amp; 6 \end{bmatrix}
+\end{split}\]</div>
+</div>
+</details></li>
+<li><p><span class="math notranslate nohighlight">\(\vv{A + B}\)</span></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Undefined because the shape of <strong>A</strong> (3×2) is different from the shape of
+<strong>B</strong> (2×3).</p>
+</div>
+</details></li>
+<li><p><span class="math notranslate nohighlight">\(\vv{A}^{\rm T} + \vv{B}\)</span></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\vv{A}^{\rm T} + \vv{B}
+&amp;= \begin{bmatrix} 0 &amp; 2 &amp; 1 \\ 2 &amp; 4 &amp; 3 \end{bmatrix}
++ \begin{bmatrix} 0 &amp; 2 &amp; 1\\ 2 &amp; 4 &amp; 3 \end{bmatrix} \\
+&amp;= \begin{bmatrix} 0+0 &amp; 2+2 &amp; 1+1 \\ 2+2 &amp; 4+4 &amp; 3+3 \end{bmatrix} \\
+&amp;= \begin{bmatrix} 0 &amp; 4 &amp; 2 \\ 4 &amp; 8 &amp; 6 \end{bmatrix}
+\end{split}\]</div>
+<p class="sd-card-text">(or, <span class="math notranslate nohighlight">\(\vv{A}^{\rm T} = \vv{B}\)</span> so <span class="math notranslate nohighlight">\(\vv{A}^{\rm T} + \vv{B} = 2\vv{B}\)</span>.)</p>
+</div>
+</details></li>
+<li><p><span class="math notranslate nohighlight">\(\vv{C - D}\)</span></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\vv{C} -\vv{D}
+&amp;= \begin{bmatrix}
+3-0 &amp; 0-(-5) &amp; 4-(-3) \\
+-1-(-5) &amp; 2-2 &amp; 2-4 \\
+6-(-3) &amp; 5-4 &amp; -4-0 \end{bmatrix} \\
+&amp;= \begin{bmatrix} 3 &amp; 5 &amp; 7 \\ 4 &amp; 0 &amp; -2 \\ 9 &amp; 1 &amp; -4 \end{bmatrix}
+\end{split}\]</div>
+</div>
+</details></li>
+<li><p><span class="math notranslate nohighlight">\(\vv{Aa}\)</span></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\vv{Aa}
+&amp;= \begin{bmatrix}
+0 \cdot 1 + 2 \cdot 3 \\
+2 \cdot 1 + 4 \cdot 3 \\
+1 \cdot 1 + 3 \cdot 3 \end{bmatrix} \\
+&amp;= \begin{bmatrix} 6 \\ 14 \\ 10 \end{bmatrix}
+\end{split}\]</div>
+</div>
+</details></li>
+<li><p><span class="math notranslate nohighlight">\(\vv{Ab}\)</span></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Undefined because <strong>A</strong> has 2 columns but <strong>b</strong> has 1 row.</p>
+</div>
+</details></li>
+<li><p><span class="math notranslate nohighlight">\(\vv{Ac}\)</span></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Undefined because <strong>A</strong> has 2 columns but <strong>c</strong> has 3 rows.</p>
+</div>
+</details></li>
+<li><p><span class="math notranslate nohighlight">\(\vv{Bc}\)</span></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\vv{Bc}
+&amp;= \begin{bmatrix}
+0 \cdot 2 + 2 \cdot 0 + 1 \cdot -1 \\
+2 \cdot 2 + 4 \cdot 0 + 3 \cdot -1 \end{bmatrix} \\
+&amp;= \begin{bmatrix} -1 \\ 1 \end{bmatrix}
+\end{split}\]</div>
+</div>
+</details></li>
+<li><p><span class="math notranslate nohighlight">\(\vv{c}^{\rm T}\vv{A}\)</span></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\vv{c}^{\rm T} \vv{A}
+&amp;= \begin{bmatrix} 0 &amp; 2 &amp; -1\end{bmatrix}
+  \begin{bmatrix} 0 &amp; 2 \\ 2 &amp; 4 \\ 1 &amp;3 \end{bmatrix} \\
+&amp;= \begin{bmatrix}
+2 \cdot 0 + 0 \cdot 2 + -1 \cdot 1 &amp;
+2 \cdot 2 + 0 \cdot 4 \cdot -1 \cdot 3 \end{bmatrix} \\
+&amp;= \begin{bmatrix} -1 &amp; 1 \end{bmatrix}
+\end{split}\]</div>
+</div>
+</details></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./linear-algebra"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Linear algebra</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="linear-systems.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3.2. </span>Systems of linear equations</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">3.1.1. Definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#addition-and-scalar-multiplication">3.1.2. Addition and scalar multiplication</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-multiplication">3.1.3. Matrix multiplication</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transpose">3.1.4. Transpose</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill-builder-problems">3.1.5. Skill builder problems</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Michael P. Howard
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
