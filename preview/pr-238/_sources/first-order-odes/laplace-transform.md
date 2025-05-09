@@ -258,3 +258,65 @@ The average concentration is:
 \end{align}
 ```
 <!-- markdownlint-enable MD013 -->
+
+## Skill builder problems
+
+Solve the following IVPs using Laplace transforms:
+
+1. $y' + 4y = e^{4x}$, $y(0) = 0$
+
+   ```{solution}
+
+   \begin{align}
+   L[y' + 4y] &= L[e^{4x}] \\
+   sY - y(0) + 4Y &= \frac{1}{s-4} \\
+   (s+4) Y &= \frac{1}{s-4} \\
+   Y &= \frac{1}{(s+4)(s-4)}
+   \end{align}
+
+   Use partial fractions
+
+   \begin{equation}
+   \frac{1}{(s+4)(s-4)} = \frac{A_1}{s+4} + \frac{A_2}{s-4}
+   \end{equation}
+
+   and cover up to find $A_1 = -1/8$ and $A_2 = 1/8$.
+
+   Solve by inverting the Laplace transforms:
+
+   \begin{align}
+   Y &= \frac{1}{8} \left(\frac{1}{s-4} - \frac{1}{s+4} \right) \\
+   y = L^{-1}[Y]
+     &= \frac{1}{8}\left( L^{-1}\left[\frac{1}{s-4}\right] -
+       L^{-1}\left[\frac{1}{s+4}\right] \right) \\
+     &= \frac{1}{8}(e^{4x} - e^{-4x})
+   \end{align}
+   ```
+
+2. $y' + 2y = 8$, $y(0) = 1$
+
+   ```{solution}
+
+   \begin{align}
+   L[y' + 2y] &= L[8] \\
+   sY - y(0) + 2Y &= \frac{8}{s} \\
+   (s+2) Y - 1 &= \frac{8}{s} \\
+   Y &= \frac{1}{s+2} + \frac{8}{s(s+2)}
+   \end{align}
+
+   Use partial fractions and the cover-up method for the second fraction:
+
+   \begin{equation}
+   \frac{8}{s(s+2)} = \frac{A_1}{s} + \frac{A_2}{s+2}
+   \end{equation}
+
+   to find $A_1 = 4$ and $A_2 = -4$.  Solve by simplifying and inverting the
+   Laplace transforms:
+
+   \begin{align}
+   Y &= \frac{4}{s} - \frac{3}{s+2} \\
+   y = L^{-1}[Y]
+     &= 4L^{-1}\left[\frac{1}{s}\right] - 3L^{-1}\left[\frac{1}{s+2}\right] \\
+     &= 4 - 3e^{-2x}
+   \end{align}
+   ```
