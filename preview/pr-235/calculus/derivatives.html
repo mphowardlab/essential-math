@@ -63,7 +63,7 @@
     <link rel="canonical" href="https://mphowardlab.github.io/essential-math/calculus/derivatives.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1.4. Product, quotient, and chain rule" href="derivative-rules.html" />
+    <link rel="next" title="1.4. Rules for derivatives" href="derivative-rules.html" />
     <link rel="prev" title="1.2. Limits" href="limits.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -173,7 +173,7 @@
 <li class="toctree-l2"><a class="reference internal" href="functions.html">1.1. Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="limits.html">1.2. Limits</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">1.3. Derivatives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="derivative-rules.html">1.4. Product, quotient, and chain rule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="derivative-rules.html">1.4. Rules for derivatives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="series-expansion.html">1.5. Series expansion</a></li>
 <li class="toctree-l2"><a class="reference internal" href="integration.html">1.6. Integration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="integration-substitution.html">1.7. Integration using substitution</a></li>
@@ -225,12 +225,13 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../second-order-odes/index.html">7. Second-order ordinary differential equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/reduction.html">7.1. Reduction of order</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/linearity.html">7.2. Linearity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/homogeneous-constant-coefficient.html">7.3. Homogeneous linear second-order ODEs with constant coefficients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/undetermined-coefficients.html">7.4. Undetermined coefficients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/variation-of-parameters.html">7.5. Variation of parameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/numerical-solution.html">7.6. Numerical solution methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/substitution.html">7.1. Substitution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/reduction.html">7.2. Reduction of order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/linearity.html">7.3. Linearity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/homogeneous-constant-coefficient.html">7.4. Homogeneous linear second-order ODEs with constant coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/undetermined-coefficients.html">7.5. Undetermined coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/variation-of-parameters.html">7.6. Variation of parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/numerical-solution.html">7.7. Numerical solution methods</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../credits.html">8. Credits</a></li>
@@ -430,6 +431,8 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formal-definition">1.3.1. Formal definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differentiability">1.3.2. Differentiability</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#higher-order-derivatives">1.3.3. Higher-order derivatives</a></li>
 </ul>
             </nav>
         </div>
@@ -449,8 +452,8 @@ document.write(`
 <a class="reference internal image-reference" href="../_images/derivative_function.png"><img alt="Function and derivative" class="align-center" src="../_images/derivative_function.png" style="width: 300px;" />
 </a>
 <p>For example, if <span class="math notranslate nohighlight">\(f(x) = x^2\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9ebcaa20-d42d-44d6-b709-85e4851a6663">
-<span class="eqno">(1.28)<a class="headerlink" href="#equation-9ebcaa20-d42d-44d6-b709-85e4851a6663" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-941b17d5-4f8a-4808-8c23-5ebed696db47">
+<span class="eqno">(1.52)<a class="headerlink" href="#equation-941b17d5-4f8a-4808-8c23-5ebed696db47" title="Permalink to this equation">#</a></span>\[\begin{align}
 f'(x) &amp;= \lim_{h \to 0} \frac{(x+h)^2 - x^2}{h} \\
     &amp;= \lim_{h \to 0} \frac{x^2 + 2xh + h^2 - x^2}{h} \\
     &amp;= \lim_{h \to 0} \frac{2xh + h^2}{h} \\
@@ -462,8 +465,8 @@ with <em>x</em>. For this function, the slope continually increases! Some additi
 examples:</p>
 <ol class="arabic">
 <li><p><span class="math notranslate nohighlight">\(f(x) = (x - 1)^2 + 1\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-0ef2e019-7112-4785-8fa2-a6e1ea56d6de">
-<span class="eqno">(1.29)<a class="headerlink" href="#equation-0ef2e019-7112-4785-8fa2-a6e1ea56d6de" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b1624815-c345-4ee9-82da-57bbaacd3fdd">
+<span class="eqno">(1.53)<a class="headerlink" href="#equation-b1624815-c345-4ee9-82da-57bbaacd3fdd" title="Permalink to this equation">#</a></span>\[\begin{align}
 f'(x) &amp;= \lim_{h \to 0} \frac{[(x + h - 1)^2 + 1] - [(x - 1)^2 + 1]}{h} \\
     &amp;= \lim_{h \to 0} \frac{(x - 1)^2 +
        2(x - 1)h + h^2 + 1 - (x - 1)^2 - 1}{h} \\
@@ -473,8 +476,8 @@ f'(x) &amp;= \lim_{h \to 0} \frac{[(x + h - 1)^2 + 1] - [(x - 1)^2 + 1]}{h} \\
 \end{align}\]</div>
 </li>
 <li><p><span class="math notranslate nohighlight">\(f(x) = 1/x\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-91b91174-2746-4626-96b7-6917eeaeefb9">
-<span class="eqno">(1.30)<a class="headerlink" href="#equation-91b91174-2746-4626-96b7-6917eeaeefb9" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-44fd1500-7d52-4366-ac84-47c981b490cc">
+<span class="eqno">(1.54)<a class="headerlink" href="#equation-44fd1500-7d52-4366-ac84-47c981b490cc" title="Permalink to this equation">#</a></span>\[\begin{align}
 f'(x) &amp;= \lim_{h \to 0} \frac{\dfrac{1}{x+h} - \dfrac{1}{x}}{h} \\
     &amp;= \lim_{h \to 0} \frac{\dfrac{x - (x + h)}{x(x+h)}}{h}  \\
     &amp;= \lim_{h \to 0} \frac{\dfrac{- h}{x(x+h)}}{h}  \\
@@ -483,6 +486,93 @@ f'(x) &amp;= \lim_{h \to 0} \frac{\dfrac{1}{x+h} - \dfrac{1}{x}}{h} \\
 \end{align}\]</div>
 </li>
 </ol>
+</section>
+<section id="differentiability">
+<h2><span class="section-number">1.3.2. </span>Differentiability<a class="headerlink" href="#differentiability" title="Link to this heading">#</a></h2>
+<p>To be differentiable, this limit must exist. A function would not be
+differentiable at a jump, cusp, coner, or vertical tangent</p>
+<a class="reference internal image-reference" href="../_images/nondifferentiable.jpg"><img alt="Function and derivative" class="align-center" src="../_images/nondifferentiable.jpg" style="width: 400px;" />
+</a>
+</section>
+<section id="higher-order-derivatives">
+<h2><span class="section-number">1.3.3. </span>Higher-order derivatives<a class="headerlink" href="#higher-order-derivatives" title="Link to this heading">#</a></h2>
+<p>We can try to take the derivative of any function, including the derivative
+itself! For example, consider <span class="math notranslate nohighlight">\(f(x) = x^2\)</span>, which has <span class="math notranslate nohighlight">\(f'(x) = 2x\)</span>. We can
+evaluate the derivative of <span class="math notranslate nohighlight">\(f'\)</span>, which we will denote <span class="math notranslate nohighlight">\(f''\)</span> using the same
+formal definition:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b0359ce1-1f00-4615-8c88-89791cf9ef7b">
+<span class="eqno">(1.55)<a class="headerlink" href="#equation-b0359ce1-1f00-4615-8c88-89791cf9ef7b" title="Permalink to this equation">#</a></span>\[\begin{align}
+f''(x) &amp;= \lim_{h \to 0}{\frac{f'(x+h)-f'(x)}{h}} \\
+    &amp;= \lim_{h \to 0}{\frac{2(x+h)-2x}{h}} \\
+    &amp;= \lim_{h \to 0}{\frac{2h}{2}} \\
+    &amp;= 2
+\end{align}\]</div>
+<p>We call <span class="math notranslate nohighlight">\(f''\)</span> the second derivative of <em>f</em>. Repeating the process we can obtain
+even higher-order derivatives. These may be denoted by additional primes
+(e.g., <span class="math notranslate nohighlight">\(f'''\)</span>), but often by a superscript (e.g., <span class="math notranslate nohighlight">\(f^{(3)}\)</span>) since it gets
+clunky to count too many primes.</p>
+<p>Higher-order derivatives tell us about how lower-order derivatives are
+changing. For example, the second derivative tells us how the first derivative
+changes.</p>
+<p>In a physical setting, we may have names for these different derivatives. For
+example, if we have the position <em>x</em>, the velocity <em>v</em> is the first derivative
+of <em>x</em>, while the acceleration <em>a</em> is the first derivative of <em>v</em> and second
+derivative of <em>x</em>.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Position</p></th>
+<th class="head"><p>Velocity</p></th>
+<th class="head"><p>Acceleration</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>x</p></td>
+<td><p>x’</p></td>
+<td><p>x’’</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>v</p></td>
+<td><p>v’</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p></p></td>
+<td><p>a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition-example-ballistic-motion admonition">
+<p class="admonition-title">Example: Ballistic motion</p>
+<p>Consider the two-dimensional ballistic motion:</p>
+<a class="reference internal image-reference" href="../_images/ballistic.jpg"><img alt="Ballistic motion" class="align-center" src="../_images/ballistic.jpg" style="width: 300px;" />
+</a>
+<p>The equations of motion for the horizontal position <em>x</em> and vertical position
+<em>y</em> are:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-203147a6-8f3d-418b-90c8-a7e42ca5d380">
+<span class="eqno">(1.56)<a class="headerlink" href="#equation-203147a6-8f3d-418b-90c8-a7e42ca5d380" title="Permalink to this equation">#</a></span>\[\begin{align}
+x(t) &amp;= u_0 t &amp;  \\
+y(t) &amp;= v_0 t - \frac{1}{2} g t^2
+\end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(u_0\)</span> and <span class="math notranslate nohighlight">\(v_0\)</span> are the initial <em>x</em> and <em>y</em> components of the velocity,
+and <em>g</em> is the acceleration due to gravity. Find the velocity and acceleration
+in <em>x</em> and <em>y</em>.</p>
+<hr class="docutils" />
+<p>In the <em>x</em> direction, call the velocity <em>u</em>. Then,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-46fa9c82-abbd-44cb-8e23-47cbaf0d01c1">
+<span class="eqno">(1.57)<a class="headerlink" href="#equation-46fa9c82-abbd-44cb-8e23-47cbaf0d01c1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+u = x' = u_0
+\end{equation}\]</div>
+<p>Since <em>u</em> is a constant, the first derivative of <em>u</em> (second derivative of <em>x</em>)
+must be zero, and there is no acceleration in the <em>x</em> direction.</p>
+<p>In the <em>y</em> direction, call the velocity <em>v</em>. Then,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a83ca0dc-5594-44c7-916e-451541220c92">
+<span class="eqno">(1.58)<a class="headerlink" href="#equation-a83ca0dc-5594-44c7-916e-451541220c92" title="Permalink to this equation">#</a></span>\[\begin{align}
+v &amp;= y' = v_0 - gt \\
+a &amp;= v' = y'' = -g
+\end{align}\]</div>
+<p>The velocity in <em>y</em> is constantly increasing from the constant acceleration <em>a</em>
+due to gravity. This makes sense from what we know from physics!</p>
+</div>
 </section>
 </section>
 
@@ -530,7 +620,7 @@ f'(x) &amp;= \lim_{h \to 0} \frac{\dfrac{1}{x+h} - \dfrac{1}{x}}{h} \\
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1.4. </span>Product, quotient, and chain rule</p>
+        <p class="prev-next-title"><span class="section-number">1.4. </span>Rules for derivatives</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -551,6 +641,8 @@ f'(x) &amp;= \lim_{h \to 0} \frac{\dfrac{1}{x+h} - \dfrac{1}{x}}{h} \\
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formal-definition">1.3.1. Formal definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differentiability">1.3.2. Differentiability</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#higher-order-derivatives">1.3.3. Higher-order derivatives</a></li>
 </ul>
   </nav></div>
 

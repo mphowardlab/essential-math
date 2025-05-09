@@ -57,6 +57,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"d": ["{\\operatorname{d}\\!{#1}}", 1], "dd": ["{\\d{}^{#1} #2 \\over \\d{#3}^{#1}}", 3], "pp": ["{\\partial^{#1} #2 \\over \\partial #3^{#1}}", 3], "td": ["{\\left(\\pp{#1}{#2}{#3} \\right)_{#4}}", 4], "ubar": ["\\underline{#1}", 1], "vv": ["\\mathbf{#1}", 1]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'linear-algebra/determinants';</script>
     <link rel="canonical" href="https://mphowardlab.github.io/essential-math/linear-algebra/determinants.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -171,7 +173,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../calculus/functions.html">1.1. Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../calculus/limits.html">1.2. Limits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../calculus/derivatives.html">1.3. Derivatives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../calculus/derivative-rules.html">1.4. Product, quotient, and chain rule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/derivative-rules.html">1.4. Rules for derivatives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../calculus/series-expansion.html">1.5. Series expansion</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../calculus/integration.html">1.6. Integration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../calculus/integration-substitution.html">1.7. Integration using substitution</a></li>
@@ -223,12 +225,13 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../second-order-odes/index.html">7. Second-order ordinary differential equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/reduction.html">7.1. Reduction of order</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/linearity.html">7.2. Linearity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/homogeneous-constant-coefficient.html">7.3. Homogeneous linear second-order ODEs with constant coefficients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/undetermined-coefficients.html">7.4. Undetermined coefficients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/variation-of-parameters.html">7.5. Variation of parameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/numerical-solution.html">7.6. Numerical solution methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/substitution.html">7.1. Substitution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/reduction.html">7.2. Reduction of order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/linearity.html">7.3. Linearity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/homogeneous-constant-coefficient.html">7.4. Homogeneous linear second-order ODEs with constant coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/undetermined-coefficients.html">7.5. Undetermined coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/variation-of-parameters.html">7.6. Variation of parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/numerical-solution.html">7.7. Numerical solution methods</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../credits.html">8. Credits</a></li>
@@ -404,7 +407,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -420,6 +425,15 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#x2-matrix">3.4.1. 2x2 matrix</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#larger-matrices">3.4.2. Larger matrices</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -431,6 +445,103 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="determinants">
 <h1><span class="section-number">3.4. </span>Determinants<a class="headerlink" href="#determinants" title="Link to this heading">#</a></h1>
+<p>For a square <em>n</em>x<em>n</em> matrix <strong>A</strong>, the determinant is denoted in a few different
+ways:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-11fb2bd6-aadd-4609-80cb-a2753d8c0c59">
+<span class="eqno">(3.51)<a class="headerlink" href="#equation-11fb2bd6-aadd-4609-80cb-a2753d8c0c59" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\det \vv{A} =|\vv{A}|=\begin{vmatrix}
+A_{11} &amp; \cdots &amp; A_{1n} \\
+\vdots &amp;     &amp; \vdots \\
+A_{n1} &amp; \cdots &amp; A_{nn}
+\end{vmatrix}
+\end{equation}\]</div>
+<p>The determinant is defined in a recursive way.For  <span class="math notranslate nohighlight">\(n=1\)</span>, <span class="math notranslate nohighlight">\(|\vv{A}|= A_{11}\)</span>
+( the matrix element)
+For <span class="math notranslate nohighlight">\(n \ge 2\)</span>, <span class="math notranslate nohighlight">\(|\vv{A}|\)</span> is defined as:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-bdaf5cc9-74da-4fb9-bae9-8284fc8dfeb4">
+<span class="eqno">(3.52)<a class="headerlink" href="#equation-bdaf5cc9-74da-4fb9-bae9-8284fc8dfeb4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+|\vv{A}|= \sum_{j=1}^n A_{ij} C_{ij} = \sum_{j=1}^n (-1)^{i+j} A_{ij} M_{ij}
+\end{equation}\]</div>
+<p>where <em>i</em> is any row of <strong>A</strong>, <span class="math notranslate nohighlight">\(C_{ij}\)</span> is the <em>cofactor</em> of <strong>A</strong>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7627b9ce-b994-4e30-9c6e-e7d65649a875">
+<span class="eqno">(3.53)<a class="headerlink" href="#equation-7627b9ce-b994-4e30-9c6e-e7d65649a875" title="Permalink to this equation">#</a></span>\[\begin{equation}
+C_{ij} = (-1)^{i+j} M_{ij},
+\end{equation}\]</div>
+<p>and <span class="math notranslate nohighlight">\(M_{ij}\)</span> is the <em>minor</em> of <strong>A</strong>. The minor is the determinant of the matrix
+obtained by removing row <em>i</em> and column <em>j</em> from <strong>A</strong>. Equivalently,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-222ba929-c786-426a-bfd7-378767da2f13">
+<span class="eqno">(3.54)<a class="headerlink" href="#equation-222ba929-c786-426a-bfd7-378767da2f13" title="Permalink to this equation">#</a></span>\[\begin{equation}
+|\vv{A}| = \sum_{i=1}^n A_{ij} C_{ij} = \sum_{i=1}^n (-1)^{i+j} A_{ij} M_{ij}
+\end{equation}\]</div>
+<p>where now <em>j</em> is any column of <strong>A</strong>.</p>
+<section id="x2-matrix">
+<h2><span class="section-number">3.4.1. </span>2x2 matrix<a class="headerlink" href="#x2-matrix" title="Link to this heading">#</a></h2>
+<aside class="topic">
+<p class="topic-title">2x2 determinant</p>
+<p>The determinant of a 2x2 matrix is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-46c2e2cf-c739-4540-96bb-dea69f301520">
+<span class="eqno">(3.55)<a class="headerlink" href="#equation-46c2e2cf-c739-4540-96bb-dea69f301520" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\begin{vmatrix}a &amp; b \\ c &amp; d\end{vmatrix} = a d - bc
+\end{equation}\]</div>
+</aside>
+<p>We will use the definition of the determinant to show this must be the case!
+Let’s use the first definition and pick the first row <span class="math notranslate nohighlight">\(i=1\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-5ef5ad45-9e62-4267-a0ed-2be3a33705c9">
+<span class="eqno">(3.56)<a class="headerlink" href="#equation-5ef5ad45-9e62-4267-a0ed-2be3a33705c9" title="Permalink to this equation">#</a></span>\[\begin{align}
+\begin{vmatrix}a &amp; b \\ c &amp; d\end{vmatrix}
+&amp;= (-1)^{1+1} \cdot A_{11} M_{11} + (-1)^{1+2} A_{12} M_{12} \\
+&amp;= a \begin{vmatrix} \phantom{a} &amp; \phantom{b} \\ \phantom{c} &amp; d \end{vmatrix} -
+ b \begin{vmatrix} \phantom{a} &amp; \phantom{b} \\ c &amp; \phantom{d} \end{vmatrix} \\
+&amp;= a d - b c
+\end{align}\]</div>
+</section>
+<section id="larger-matrices">
+<h2><span class="section-number">3.4.2. </span>Larger matrices<a class="headerlink" href="#larger-matrices" title="Link to this heading">#</a></h2>
+<p>The determinants of larger matrices can be computed by reducing them to sums
+of 2x2 determinants. To do this quickly, it can be helpful to envision
+<span class="math notranslate nohighlight">\((-1)^{i+j}\)</span> as a checkerboard of signs, then visualize the minors.</p>
+<p>For example, to evaluate</p>
+<div class="amsmath math notranslate nohighlight" id="equation-5a501962-f7fd-415a-a452-35fe57030ea5">
+<span class="eqno">(3.57)<a class="headerlink" href="#equation-5a501962-f7fd-415a-a452-35fe57030ea5" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\begin{vmatrix}1 &amp; 3 &amp; 0 \\ 2 &amp; 6 &amp; 4 \\ -1 &amp; 0 &amp; 2 \end{vmatrix}
+\end{equation}\]</div>
+<p>The sign matrix is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4fa26a20-f8b4-4015-8398-c3bd7648622c">
+<span class="eqno">(3.58)<a class="headerlink" href="#equation-4fa26a20-f8b4-4015-8398-c3bd7648622c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\begin{bmatrix}+ &amp; - &amp; + \\ - &amp; + &amp; - \\ + &amp; - &amp; + \end{bmatrix}
+\end{equation}\]</div>
+<p>Even faster, start from the plus sign in the upper left corner, then alternate
+until you get to your chosen row or column! Let’s use row 3:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-71be8221-c926-4367-821f-87e61e0c21a4">
+<span class="eqno">(3.59)<a class="headerlink" href="#equation-71be8221-c926-4367-821f-87e61e0c21a4" title="Permalink to this equation">#</a></span>\[\begin{align}
+|\vv{A}| &amp;= + (-1) \cdot \begin{vmatrix} 3 &amp; 0 \\ 6 &amp; 4 \end{vmatrix} -
+ 0 \cdot \begin{vmatrix}1 &amp; 0 \\ 2 &amp; 4 \end{vmatrix} +
+ 2 \cdot \begin{vmatrix}1 &amp; 3 \\ 2 &amp; 6 \end{vmatrix} \\
+ &amp;= -(3 \cdot 4 - 0 \cdot 6) + 2(1 \cdot 6 - 2 \cdot 3) \\
+ &amp;= -12
+\end{align}\]</div>
+<p>Note that the same result could be achieved using any row or column. For
+example, column 3 gives:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-28c93416-872f-4952-875b-d7dd6c0d0af1">
+<span class="eqno">(3.60)<a class="headerlink" href="#equation-28c93416-872f-4952-875b-d7dd6c0d0af1" title="Permalink to this equation">#</a></span>\[\begin{align}
+|\vv{A}|&amp;= +(0) \cdot \begin{vmatrix}2 &amp; 6 \\ -1 &amp; 0 \end{vmatrix} -
+  4 \cdot \begin{vmatrix}1 &amp; 3 \\ -1 &amp; 0 \end{vmatrix} +
+  2 \cdot \begin{vmatrix}1 &amp; 3 \\ 2 &amp; 6 \end{vmatrix} \\
+  &amp;= -4 \cdot (0+3) + 2 \cdot (6-6)\\
+  &amp;= -12
+\end{align}\]</div>
+<p>It’s usually a good idea to expand along the row or column with the most zeros!
+For example, let’s evaluate</p>
+<div class="amsmath math notranslate nohighlight" id="equation-304e21ab-3d4c-4fa9-9e67-946e65f1b8fc">
+<span class="eqno">(3.61)<a class="headerlink" href="#equation-304e21ab-3d4c-4fa9-9e67-946e65f1b8fc" title="Permalink to this equation">#</a></span>\[\begin{align}
+\begin{vmatrix}1 &amp; -2 &amp; 0 &amp; 0 \\ 4 &amp; 3 &amp; 5 &amp; 0 \\ 0 &amp;2 &amp; 7 &amp; 5 \\ 0 &amp; 0 &amp; 2 &amp; 0 \end{vmatrix}
+&amp;= -2 \cdot \begin{vmatrix}1 &amp; -2 &amp; 0 \\ 4 &amp; 3 &amp; 0 \\ 0 &amp;2 &amp; 5 \end{vmatrix} \\
+&amp;= -2 \cdot 5 \cdot \begin{vmatrix}1 &amp; -2 \\ 4 &amp; 3 \end{vmatrix} \\
+&amp;= -10 \cdot (3+8) \\
+&amp;= -110
+\end{align}\]</div>
+<p>where we chose row 4, then column 3 to do the calculation faster!</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -487,6 +598,22 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#x2-matrix">3.4.1. 2x2 matrix</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#larger-matrices">3.4.2. Larger matrices</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

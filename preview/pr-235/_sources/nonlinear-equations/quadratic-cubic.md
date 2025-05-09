@@ -47,55 +47,78 @@ of $x^2 + 1 = 0$ are $x = \pm i$:
 :width: 200px
 ```
 
-\begin{enumerate}[label=\alph*.]
-  \item Factor
-  \begin{enumerate}[label=\roman*.]
-    \item $X^2 + 8x - 9 = 0 \rightarrow (x+9)(x-1) = 0 \rightarrow x = -9 \text{ or } 1$
-  \end{enumerate}
-  
-  \item Complete the square
-  \begin{enumerate}[label=\roman*.]
-    \item $x^2 + 8x = 9 \rightarrow x^2 + 8x + 16 = 9 + 16 \rightarrow (x+4)^2 = 25 \rightarrow x + 4 = \pm \sqrt{25}$
-    $= -4 \pm 5 = -9 \text{ or } 1$
-  \end{enumerate}
-  
-  \item Quadratic formula
-  \begin{enumerate}[label=\roman*.]
-    \item $ax^2 + bx + c = 0$ $a = 1$ $b = 8$ $c = -9$
-    
-    $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$ $x = \frac{-8 \pm \sqrt{(8)^2 - 4 \cdot 1 \cdot (-9)}}{2}$
-    
-    $= \frac{-8 \pm \sqrt{100}}{2}$
-    
-    $= -9 \text{ or } 1$
-  \end{enumerate}
-\end{enumerate}
+There are several strategies that can be used to find roots of quadratic
+polynomials:
 
-```{example} Box size optimization
-An open-top box will be made from an $8 \frac{1}{2}'' \times 11''$ piece of paper by cutting out a square and folding the flaps. What size square should be cut to make the biggest box?
+- Factoring
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.5\linewidth]{Image 5-6-25 at 1.43 PM.jpg}
-    \label{fig:enter-label}
-\end{figure}
+  \begin{equation}
+  x^2 + 8 x - 9 = (x+9)(x-1) = 0
+  \end{equation}
 
-$V(x) = (8.5 - 2x)(11-2x)x$
+  This equation will be true if either factor is zero, so the roots are
+  $x = -9$ or $x = 1$.
 
-$= (8.5-2x)(11x-2x^2)$
+- Completing the square
 
-$= 4x^3 - 39x^2 + 93.5x$
+  \begin{align}
+  x^2 + 8x &= 9 \\
+  x^2 + 8x + 16 &= 9 + 16 \\
+  (x+4)^2 &= 25 \\
+  x + 4 &= \pm \sqrt{25}
+  x = -4 \pm 5
+  \end{align}
 
-At a max./min. $V'(x) = 0$
-$V'(x) = 12x^2 - 78x + 93.5$
+  This gives the same roots!
 
-Solve for $V'(x) = 0$ \ldots how?
+- Quadratic formula
 
-$a = 12$ $b = -78$ $c = 93.5$
+  ```{topic} Quadratic formula
+  The roots of the general quadratic polynomial $ax^2 + bx + c = 0$ are
 
-$x^* = \frac{78 \pm \sqrt{(-78)^2 - 4 \cdot 12 \cdot (-93.5)}}{2 \cdot 12} = 1.59'' \text{ or } 4.91''$
+  \begin{equation}
+  x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+  \end{equation}
 
-Which is right? $1.59''$ because there is not enough material for $4.91''$! It is unphysical.
+  ```
+
+  For the polynomial $x^2 + 8x - 9 = 0$,
+
+  \begin{align}
+  x &= \frac{-8 \pm \sqrt{8^2 - 4 \cdot 1 \cdot -9}}{2 \cdot 1} \\
+    &= \frac{-8 \pm \sqrt{100}}{2} \\
+    &= -4 \pm 5
+  \end{align}
+
+```{example} Box optimization
+An open-top box will be made from an 8.5" x 11" piece of paper by cutting out a
+square from each corner and folding the flaps. What size square should be cut
+to make the biggest box?
+
+---
+
+The volume of the box that will be obtained by cutting a square of edge length
+*x* is:
+
+\begin{equation}
+V(x) = (8.5 - 2x)(11-2x)x = 4x^3 - 39x^2 + 93.5x
+\end{equation}
+
+The volume will be at an extremum with respect to *x* if $V'(x) = 0$:
+
+\begin{equation}
+V'(x) = 12x^2 - 78x + 93.5 = 0
+\end{equation}
+
+The roots of this quadratic polynomial are:
+
+\begin{align}
+x &= \frac{78 \pm \sqrt{(-78)^2 - 4 \cdot 12 \cdot -93.5}}{2 \cdot 12} \\
+  &= 1.59\, 4.91
+\end{align}
+
+Only the first root, 1.59", is physical because there is not enough material
+to remove 4.91" from two corners!
 ```
 
 ```{example} Complex roots
@@ -124,3 +147,41 @@ x &= 5 \pm 3i
 General formulas for roots of cubic and quartic polynomials are known but
 complicated. No such formula exists for higher-order polynomials. In these
 cases, numerical methods are needed!
+
+## Skill builder problems
+
+Solve all roots to 3 significant figures.
+
+1. $x^2 + 2x + 1 = 0$, by factoring.
+
+   ```{solution}
+   \begin{align}
+   x^2 + 2x + 1 &= 0 \\
+   (x + 1)^2 &= 0 \\
+   x &= -1
+   \end{align}
+   ```
+
+2. $x^2 - 8x + 5 = 0$, by completing the square.
+
+   ```{solution}
+   \begin{align}
+   x^2 - 8x &= -5 \\
+   x^2 - 8x + 16 &= -5 + 16 \\
+   (x - 4)^2 &= 11 \\
+   x &= 4 \pm \sqrt{11} \\
+   x &\approx 0.683,\, 7.32
+   \end{align}
+   ```
+
+3. $x^2 - 7x + 12 = 0$, by quadratic formula.
+
+   ```{solution}
+   \begin{align}
+   x &= \frac{7 \pm \sqrt{(-7)^2 - 4 \cdot 2 \cdot 12}}{2 \cdot 2} \\
+   x &= \frac{7 \pm \sqrt{49 - 96}}{4} \\
+   x &= \frac{7 \pm \sqrt{-47}}{4} \\
+   x &= \frac{7}{4} \pm \frac{\sqrt{47}}{4}i \\
+   x &\approx 1.75 \pm 1.71i
+   \end{align}
+   ```
