@@ -76,6 +76,68 @@ This divergence is clear on a plot:
 
 We say that such a limit does not exist.
 
+## Formal definition
+
+```{topic} Limit (formal)
+The limit of $f$ as $x$ approaches $x_0$ is *L*, denoted
+
+\begin{equation}
+\lim_{x \to x_0} f(x) = L
+\end{equation}
+
+if for every $\epsilon > 0$ there exists $\delta > 0$ such that for all *x*,
+if $0 < |x-x_0| < \delta$ then $|f(x)-L| < \epsilon$.
+```
+
+$\epsilon$ is a *tolerance* setting how close *f* needs to be to *L*. Given
+any $\epsilon$, we need to find a "window" of *x* values within $\delta$ of
+$x_0$ so that *f* stays within $\epsilon$ of *L*. For example, consider the
+following:
+
+```{image} ./_images/delta_epsilon_limit.jpg
+:alt: Limit Graph
+:width: 300px
+:align: center
+```
+
+Based on this plot, if $\epsilon = 1$, $3 < f < 5$ if $3 < x < 5$
+(i.e., $\delta = 1$). For a general $\epsilon$,
+$4 - \epsilon < f < 4 + \epsilon$ if $4 - \delta < x < 4 + \delta$ or
+equivalently, $|x-4| < \epsilon$. We hence identify $\delta = \epsilon$ and
+have proven that
+
+\begin{equation}
+\lim_{x \to 4} f = 4
+\end{equation}
+
+However, such a $\delta$ cannot always be found for all $\epsilon$ for certain
+functions! There, the limit does not exist. For example, consider
+
+\begin{equation}
+f(x) = \begin{cases}
+x,& x < 4 \\
+x-2,& x \ge 4
+\end{cases}
+\end{equation}
+
+```{image} ./_images/delta_epsilon_no_limit.jpg
+:alt: Limit Graph 2
+:width: 300px
+:align: center
+```
+
+Does the limit
+
+\begin{equation}
+\lim_{x \to 4} f(x) = 3
+\end{equation}
+
+exist? If \epsilon = 0.5, there is no $\delta$ that contains *f* around
+$x_0 = 4$. Therefore, this limit does not exsit
+
+This math formalism is powerful, but clunky to apply. We will now move onto
+using rules (limit laws) that have been proven using them!
+
 ## Limit laws
 
 There are some simple limits and rules for combining them that are convenient
@@ -439,3 +501,106 @@ A line $x = a$ is a vertical asymptote of $y = f(x)$ if
 \lim_{x \to a^+}f(x) = \pm\infty \quad {\rm or} \quad \lim_{x \to a^-}f(x) = \pm\infty
 \end{equation}
 ```
+
+## L'Hôpital's Rule
+
+```{note}
+This technique requires you to be comfortable with taking
+[derivatives](./derivatives.md). Come back to it later if you need to study that
+first!
+```
+
+L'Hôpital's rule is a method that allows you to calculate limits of certain
+indeterminate forms using derivatives.
+
+```{topic} L'Hôpital's Rule
+
+If $\lim_{x\to a} f(x) = \lim_{x \to a} g(x) = 0$ or $\pm \infty$, then
+
+\begin{equation}
+\lim_{x\to a} \frac{f(x)}{g(x)} = \lim_{x\to a} \frac{f'(x)}{g'(x)}
+\end{equation}
+
+This process can be repeated until the above situation no longer applies or
+the limit is found not to exist.
+```
+
+Let's work some examples:
+
+1. $\displaystyle \lim_{x\to 0} \frac{\sin x}{x}$
+
+   ```{solution}
+   The limits of the numerator and denominator are both zero, so:
+
+   \begin{equation}
+   \lim_{x\to 0} \frac{\sin x}{x} = \lim_{x\to 0} \frac{\cos x}{1} = 1
+   \end{equation}
+   ```
+
+2. $\displaystyle \lim_{x\to 0} \frac{x-\sin x}{x^3}$
+
+   ```{solution}
+   The limits of the numerator and denominator are both zero, so:
+
+   \begin{align}
+   \lim_{x\to 0} \frac{x-\sin x}{x^3}
+     &= \lim_{x\to 0} \frac{1-\cos x}{3x^2} \\
+     &= \lim_{x\to 0} \frac{\sin x}{6x} \\
+     &= \frac{1}{6} \lim_{x\to 0} \frac{\sin x}{x} = \frac{1}{6}
+   \end{align}
+
+   where we used L'Hôpital's rule twice, then used the result from the first
+   example.
+   ```
+
+3. $\displaystyle \lim_{x\to \infty} \frac{\ln(x)}{2\sqrt{x}}$
+
+   ```{solution}
+   The limits of the numerator and denominator are both $\infty$, so:
+
+   \begin{align}
+   \lim_{x\to \infty} \frac{\ln x}{2\sqrt{x}}
+     &= \lim_{x\to \infty} \frac{1/x}{1/\sqrt{x}} \\
+     &= \lim_{x\to \infty} \frac{1}{\sqrt{x}} = 0
+   \end{align}
+
+   where the last limit is obtained by simplification.
+   ```
+
+4. $\displaystyle \lim_{x\to \infty} \frac{e^x}{x^2}$
+
+   ```{solution}
+   The limits of the numerator and denominator are both $\infty$, so:
+
+   \begin{align}
+   \lim_{x\to \infty} \frac{e^x}{x^2}
+   &= \lim_{x\to \infty} \frac{e^x}{2x} \\
+   &= \lim_{x\to \infty} \frac{e^x}{2} = \infty
+   \end{align}
+
+   Here, we used L'Hôpital's rule twice, but then ultimately found that the
+   limit does not exist.
+   ```
+
+5. $\displaystyle \lim_{x\to \infty} x\sin(1/x)$
+
+   ```{solution}
+   This limit is not in a form that's immediately suitable for L'Hôpital's rule,
+   but it can be made so.
+
+   \begin{align}
+   \lim_{x\to \infty} x\sin(1/x)
+   &= \lim_{x\to \infty} \frac{\sin(1/x)}{1/x} \\
+   &= \lim_{x\to \infty} \frac{\cos(1/x)(-1/x^2)}{-1/x^2} \\
+   &= \lim_{x\to \infty} \cos(1/x) = 1
+   \end{align}
+
+   Another option in this case would be to substitute in $y = 1/x$, then note
+   that $y \to 0$ as $x \to \infty$ so we have
+
+   \begin{equation}
+   \lim_{y\to 0} \frac{\sin y}{y} = 1
+   \end{equation}
+
+   which we already solved!
+   ```

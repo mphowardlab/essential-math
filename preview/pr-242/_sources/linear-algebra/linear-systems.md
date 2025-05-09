@@ -68,3 +68,13 @@ For example, consider the following graphs of different systems of 2 equations:
 
    This system of equations has infinitely many solutions because the two lines
    are parallel and completely overlap.
+
+```{topic} Types of systems
+For a system of linear equations $\vv{A}\vv{x} = \vv{b}$, if the matrix **A**
+is *m* x *n*, then we say that the system is:
+
+- *Undetermined* if $m < n$ (fewer equations than unknowns). The system has no
+  unique solution.
+- *Determined* if $m = n$ (same number of equations and unknowns).
+- *Overdetermined*: $m > n$ (more equations than unknowns)
+```
