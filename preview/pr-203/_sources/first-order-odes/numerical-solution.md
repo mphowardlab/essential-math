@@ -179,7 +179,7 @@ For this example,
 
 $p = -1$
 
-$ r = 5\sin(2\pi t)$
+$r = 5\sin(2\pi t)$
 
 \begin{equation}
 y^' - y = 5\sin(2\pi t)
@@ -227,6 +227,6 @@ y(1) = e + \frac{10\pi}{4\pi^2 + 1} \left(e - 1\right)
 \begin{equation}
 y(1) = 4.052
 \end{equation}
-
+```
 The absolute error is 0.369 for $\Delta t = 0.1$ and 0.730 for $\Delta t = 0.2$. 
 Hence the error decreases by about $2 x$ when $\Delta t$ is decreased by $2 x$.
