@@ -203,7 +203,7 @@ y = \frac{1}{F} \left[\int F r \d{t} + C \right] \\ &= \frac{-5}{4\pi^2 + 1} lef
 Next, use initial conditions in to find $C$.
 
 \begin{equation}
-1 = y(0) = \frac{5}{4\pi^2+1} \left(0 + (2\pi)\right) + C
+1 = y(0) = \frac{-5}{4\pi^2+1} \left(0 + (2\pi)\right) + C
 \end{equation}
 
 \begin{equation}
