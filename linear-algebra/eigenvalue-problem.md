@@ -7,17 +7,17 @@ and vector $\vv{x}$ such that :
 
 
 \begin{align}
-\vv{A}   \underline{x} =\lambda\underline{x} 
+\vv{A}   \vv{x} =\lambda\vv{x} 
 \end{align}
 
-We want $\underline{nontrivial}$ solutions $(\underline{x} \ne \underline{0})$. To find them:
+We want $\underline{nontrivial}$ solutions $(\vv{x} \ne \underline{0})$. To find them:
 
 \begin{align}
-\vv{A} \underline{x} - \lambda \underline{x} = \underline{0} \\
+\vv{A} \vv{x} - \lambda \vv{x} = \underline{0} \\
 
-\vv{A} \underline{x} - \lambda \vv{I} \underline{x} = \underline{0} \\
+\vv{A} \vv{x} - \lambda \vv{I} \vv{x} = \underline{0} \\
 
-(\vv{A} - \lambda \vv{I} )\underline{x} =  \underline{0}
+(\vv{A} - \lambda \vv{I} )\vv{x} =  \underline{0}
 \end{align}
 
 If $\vv{A} - \lambda \vv{I}$ is invertible, we have only $\lambda = \underline{0}$ as a solution. Hence, we want this to be singular! This occurs when the determinant is zero:
@@ -26,7 +26,7 @@ If $\vv{A} - \lambda \vv{I}$ is invertible, we have only $\lambda = \underline{0
 |\vv{A}- \lambda \vv{I}|= 0
 \end{align}
 
-This determinant creates a $\underline{ characteristic \, polynomial}$ for $\lambda$ that can be solved. Then, the $\underline{x}$ that corresponds to a given $\lambda$ can be determined.
+This determinant creates a $\underline{ characteristic \, polynomial}$ for $\lambda$ that can be solved. Then, the $\vv{x}$ that corresponds to a given $\lambda$ can be determined.
 
 Ex:
 \begin{align}
@@ -39,7 +39,7 @@ Ex:
 
 $\lambda=-1$:
 \begin{align}
-\begin{bmatrix} -5 -(-1) & 2 \\ 2 & -2-(-1) \end{bmatrix} \underline{x}= \begin{bmatrix} -4 & 2 \\ 2 & -1 \end{bmatrix} \underline{x} =0 
+\begin{bmatrix} -5 -(-1) & 2 \\ 2 & -2-(-1) \end{bmatrix} \vv{x}= \begin{bmatrix} -4 & 2 \\ 2 & -1 \end{bmatrix} \vv{x} =0 
 \\
 \begin{bmatrix} -4 & 2 & 0 \\ 2 & -1 & 0 \end{bmatrix} \to \begin{bmatrix} -4 & 2 & 0 \\ 0 & 0 & 0 \end{bmatrix} \to \begin{bmatrix} 1 & -1/2 & 0 \\ 0 & 0 & 0 \end{bmatrix} \to x_1 -\frac{x_2}{2} =0 \\
 x_2 free
@@ -47,18 +47,18 @@ x_2 free
 
 This solution is not unique, which makes sense from the equation. We may then choose $x_1$ or $x_2$ so that the eigenvector has a nice norm or values. e.g.,
 \begin{align}
-x_1 =1, x_2 = 2 \to \underline{x}= \begin{bmatrix} 1 \\ 2 \end{bmatrix}
+x_1 =1, x_2 = 2 \to \vv{x}= \begin{bmatrix} 1 \\ 2 \end{bmatrix}
 \end{align}
 
 Repeat for $\lambda = -6$:
 \begin{align}
-\begin{bmatrix} -5 -(-6) & 2 \\ 2 & -2-(-6) \end{bmatrix} \underline{x} = \begin{bmatrix} 1 & 2 \\ 2 & 4 \end{bmatrix}\underline{x} =0
+\begin{bmatrix} -5 -(-6) & 2 \\ 2 & -2-(-6) \end{bmatrix} \vv{x} = \begin{bmatrix} 1 & 2 \\ 2 & 4 \end{bmatrix}\vv{x} =0
 \end{align}
 
 Row 2 is 2x Row 1, so we can just use Row 1!(This will be a pattern for 2x2 matricies).
 
 \begin{align}
-x_1 +2x_2 =0 \to \underline{x}=\begin{bmatrix} 2 \\ -1 \end{bmatrix}
+x_1 +2x_2 =0 \to \vv{x}=\begin{bmatrix} 2 \\ -1 \end{bmatrix}
 \end{align}
 
 Hence, the eigenvalues and eigenvectors are:
