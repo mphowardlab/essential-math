@@ -10,6 +10,7 @@ This work (c) 2025 is licensed under
 - Payton Baxter
 - Jacob Bowling
 - Zachary Bradford
+- Logan Brose
 - Andrew Castel
 - Paine Cole
 - Kovar Coley
