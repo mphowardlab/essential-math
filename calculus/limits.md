@@ -120,7 +120,7 @@ x-2,& x \ge 4
 \end{cases}
 \end{equation}
 
-```{image} ./_images/delta_epsilon_nolimit.jpg
+```{image} ./_images/delta_epsilon_no_limit.jpg
 :alt: Limit Graph 2
 :width: 300px
 :align: center
