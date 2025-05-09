@@ -198,7 +198,7 @@ Then, solve for $y$.
 y = \frac{1}{F} \left[\int F r dt + C \right] = \frac{-5}{4\pi^2 +1} left\(\sin(2\pi t) + 2\pi cos(2\pi t)\right) + C e^{t}
 \end{equation}
 
-Next, use initial conditions in to find C.
+Next, use initial conditions in to find $C$.
 
 \begin{equation}
 1 = y(0) = \frac{5}{4\pi^2+1} \left(0 + (2\pi)\right) + C
@@ -208,7 +208,7 @@ Next, use initial conditions in to find C.
 C = 1 + \frac{10\pi}{4\pi^2 + 1}
 \end{equation}
 
-Put C value in equation for y.
+Put $C$ value in equation for y.
 
 \begin{equation}
 y(t) = \left(1 + \frac{10\pi}{4\pi^2 + 1}\right) e^{t} - \frac{5}{4\pi^2 + 1} \left(sin(2\pi t) + 2\pi cos(2\pi t)\right)
