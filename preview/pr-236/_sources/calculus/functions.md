@@ -1,5 +1,99 @@
 # Functions
-test
+
+## 1. What is a function?
+
+A rule "f" that assigns a \textbf{unique} value $f(x)$ to an input $x$
+
+```{image} ./_images/x_to_f(x).jpg
+:alt: Unique Value
+:width: 300px
+```
+
+\begin{align}
+\text{x: independent variable} \hspace{2cm} \text{domain: all possible x}\\
+\text{y: dependent variable} \hspace{2.2cm} \text{range: all possible y}
+\end{align}
+
+A function can be represented by:
+- An equation: 
+\begin{equation}
+f(x) = x^2
+\end{equation}
+
+- A table:
+\begin{array}{c|c}
+x & f(x) \\
+\hline
+0 & 0 \\
+1 & 1 \\
+2 & 4
+\end{array}
+
+- A graph: [parabola graph representation]
+- A description: "square x"
+
+\textbf{Not all curves are functions!} f must uniquely map x
+
+\begin{align}
+x^2 + y^2 = 4 \text{ [circle equation]}
+\end{align}
+
+\textbf{Vertical line test:} a vertical line cannot intersect a function twice
+
+## 2. Common functions
+
+### Linear functions
+\begin{align}
+y = mx + b \text{ ("lines")}
+\end{align}
+- m: slope
+- b: intercept
+
+### Power functions
+\begin{align}
+y = kx^a \text{ ("power law")}
+\end{align}
+- k: prefactor
+- a: power
+
+### Polynomials
+\begin{align}
+y = a_n x^n + a_{n-1}x^{n-1} + \ldots + a_1x + a_0
+\end{align}
+- n: degree
+
+\begin{align}
+n=1&: \text{linear}\\  
+n=2&: \text{quadratic}\\  
+n=3&: \text{cubic}
+\end{align}
+
+### Exponential
+\begin{align}
+y = a^x \text{ (a > 0, a \neq 1)}
+\end{align}
+- a: base
+
+Special case: a = e (≈ 2.718...) = Euler's number
+
+### Logarithmic
+\begin{align}
+y = \log_a x \text{ (a > 0, a \neq 1)}
+\end{align}
+
+Special cases:
+\begin{align}
+a = e &\Rightarrow \log_e = \ln = \text{natural logarithm}\\
+a = 10 &\Rightarrow \log_{10} = \log = \text{common logarithm}
+\end{align}
+
+### Trigonometric
+\begin{align}
+\sin x \hspace{1cm} \csc x\\  
+\cos x \hspace{1cm} \sec x\\  
+\tan x \hspace{1cm} \cot x
+\end{align}
+
 ## Manipulating functions
 
 ::::{grid}
