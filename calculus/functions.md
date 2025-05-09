@@ -62,94 +62,118 @@
 :::
 ::::
 
-## Evaluating and Manipulating Trigonometric Functions
+## Trigonometric functions
+
+The given unit circle has a triangle drawn within which represents how
+trigonometric functions are related to lengths and heights of the sides of right
+triangles.
+
 ```{image} ./_images/MAtappunitcircle66.png
 :alt: Unit Circle
 :width: 300px
 :align: center
 ```
- Each quadrant of the unit circle corresponds to a positive trigonometric function as represented by "A(all)+", "T(tangent)+", "S(sine)+", "C(cosine)+".
 
-The given unit circle has a triangle drawn within which represents how trigonometric functions are related to lengths and heights of the sides of right traingles. 
-The circle has a radius and is centered at (0,0). A point on the circle is defined by angle $\theta$ measured counterclockwise from the positive x-axis.
-The trigonometric functions describe how the coordinates of a point on the unit circle relate to the angle $\theta$.
+The circle has a radius and is centered at (0,0). A point on the circle is
+defined by angle $\theta$ measured counterclockwise from the positive *x*-axis.
+Angles can be measured in degrees or radians:
+
+\begin{equation}
+\theta({\rm rad.}) = \theta({\rm deg.}) \left( \frac{\pi}{180^{\circ}} \right)
+\end{equation}
+
+The trigonometric functions describe how the coordinates of a point on the unit
+circle relate to the angle $\theta$:
+
 \begin{align}
-\sin(\theta)& = \frac{y}{r}& 
-\cos(\theta)& = \frac{x}{r}& 
+\sin(\theta)& = \frac{y}{r}&
+\cos(\theta)& = \frac{x}{r}&
 \tan(\theta)& = \frac{y}{x}\\
 \csc(\theta)& = \frac{r}{y}&
 \sec(\theta)& = \frac{r}{x}&
 \cot(\theta)& = \frac{x}{y}\\
 \end{align}
 
-Angles can be measured in degrees of radians
-\begin{equation}
-\theta(rad.) = \theta(deg.)\left( \frac{\pi}{180^{\circ}} \right)
-\end{equation}
+Each quadrant of the unit circle corresponds to a positive trigonometric
+function: **A**ll, **S**ine, **T**angent, and **C**osine.
 
-### Special Angles
-\begin{equation}
-\theta = 30^{\circ} \frac{\pi}{6} \quad \theta = 60^{\circ} \frac{\pi}{3}
-\end{equation}
+```{tip}
+A mnemonic to remember this order is "All Students Take Calculus".
+```
+
+### Special angles
+
+::::{grid}
+
+:::{grid-item-card} 30-60-90 triangle
+
+A right triangle with $30^\circ$ ($\pi/6$) and $60^\circ$ ($\pi/3$) angles
+has the following side lengths:
 
 ```{image} ./_images/306090triangle.png
-:alt: 30 60 90 Traingle
+:alt: 30 60 90 triangle
 :width: 300px
 :align: center
 ```
 
-At $ \theta = 30^{\circ} $:
-\begin{equation}
-\sin(\theta) = \frac{1}{2} \quad \cos(\theta) = \frac{\sqrt{3}}{2}
-\end{equation}
+:::
 
-At $ \theta = 60^{\circ} $:
-\begin{equation}
-\sin(\theta) = \frac{\sqrt{3}}{2} \quad \cos(\theta) = \frac{1}{2}
-\end{equation}
+:::{grid-item-card} 45-45-90 triangle
+
+A right triangle with $45^\circ$ ($\pi/4$) angles has the following side lengths:
 
 ```{image} ./_images/454590triangle.png
-:alt: 45 45 90 Traingle
+:alt: 45 45 90 triangle
 :width: 300px
 :align: center
 ```
 
-At $ \theta = 45^{\circ} $
-\begin{equation}
-\sin(\theta) = \frac{1}{\sqrt{2}} \quad \cos(\theta) = \frac{1}{\sqrt{2}}
-\end{equation}
+:::
+::::
 
-What about $ \theta \ge 90^{\circ}(\frac{\pi}{2}) $?
-Take the angle of $\theta$ relative to the x-axis, then apply the sign based on which quadrant the angle falls in.
+and so
 
-````{example} $\theta = 185^{\circ}$
-```{image} ./_images/Untitled-4png.png
+| $\theta$  |         | $\sin \theta$  | $\cos \theta$ |
+|------------|---------|----------------|---------------|
+| $30^\circ$ | $\pi/6$ | $1/2$          | $\sqrt{3}/2$  |
+| $45^\circ$ | $\pi/4$ | $1/\sqrt{2}$   | $1/\sqrt{2}$  |
+| $60^\circ$ | $\pi/3$ | $\sqrt{3}/2$   | $1/2$         |
+
+What about angles greater than $90^\circ$? Take the angle of $\theta$ relative
+to the *x*-axis, then apply the sign based on which quadrant the angle falls in.
+
+```{image} ./_images/supplementary_angles.png
 :width: 300px
 :align: center
 ```
 
-The graph shows $\theta = \frac{3\pi}{4}$ and $\theta' = \frac{\pi}{4}$ so:
-\begin{equation}
-\sin(\theta') = \frac{1}{\sqrt{2}} \quad \cos(\theta') = \frac{1}{\sqrt{2}}
-\end{equation}
+For example, if $\theta = 135^\circ = 3\pi/4$, then the angle relative to the
+*x*-axis is $\theta' = 45^\circ = \pi/4$. Hence,
 
-In quadrant two sine is positive so:
-\begin{equation}
-\sin(\theta) = \frac{1}{\sqrt{2}} \quad \cos(\theta) = -\frac{1}{\sqrt{2}}
-\end{equation}
-````
+\begin{align}
+\sin \theta' &= \frac{1}{\sqrt{2}} & \cos \theta' &= \frac{1}{\sqrt{2}} \\
+\sin \theta &= \frac{1}{\sqrt{2}} & \cos \theta &= -\frac{1}{\sqrt{2}}
+\end{align}
 
-Trigonometric functions represent waves. The properties of the wave can be encoded by manipulating the function.
+### Physical meaning
+
+In addition to their geometric significance, trigonometric functions typically
+represent physical waves.
+
 ```{image} ./_images/Triggraph.png
 :alt: Trigonometric Function
 :width: 300px
 :align: center
 ```
 
+The properties of the wave can be encoded by manipulating the function.
+
 \begin{equation}
-y = A\sin\left[ \frac{2\pi}{L}(x + x_{o}) \right] + y_{o}
+y = A\sin\left[ \frac{2\pi}{L}(x + x_0) \right] + y_0
 \end{equation}
-Where: A = amplitude, $\frac{2\pi}{L}$ = period, $x_{0}$ = horizontal shift, and $y_{o}$ = vertical shift
+
+where *A* is the amplitude of the wave, *L* is the period of the wave, $x_0$ is
+a horizontal (phase) shift, and $y_0$ is a vertical shift.
 
 ## Identities
 
