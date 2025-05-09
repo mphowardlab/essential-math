@@ -200,9 +200,10 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../nonlinear-equations/index.html">4. Nonlinear equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../nonlinear-equations/quadratic-cubic.html">4.1. Quadratic and cubic polynomials</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../nonlinear-equations/root-finding.html">4.2. Root finding methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../nonlinear-equations/linearization.html">4.3. Linearization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nonlinear-equations/definition.html">4.1. Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nonlinear-equations/quadratic-cubic.html">4.2. Quadratic and cubic polynomials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nonlinear-equations/root-finding.html">4.3. Root finding methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nonlinear-equations/linearization.html">4.4. Linearization</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../first-order-odes/index.html">5. First-order ordinary differential equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -224,12 +225,13 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../second-order-odes/index.html">7. Second-order ordinary differential equations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/reduction.html">7.1. Reduction of order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/substitution.html">7.1. Substitution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../second-order-odes/linearity.html">7.2. Linearity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/homogeneous-constant-coefficient.html">7.3. Homogeneous linear second-order ODEs with constant coefficients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/undetermined-coefficients.html">7.4. Undetermined coefficients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/variation-of-parameters.html">7.5. Variation of parameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/numerical-solution.html">7.6. Numerical solution methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/reduction.html">7.3. Reduction of order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/homogeneous-constant-coefficient.html">7.4. Homogeneous linear second-order ODEs with constant coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/undetermined-coefficients.html">7.5. Undetermined coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/variation-of-parameters.html">7.6. Variation of parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../second-order-odes/numerical-solution.html">7.7. Numerical solution methods</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../credits.html">8. Credits</a></li>
@@ -433,39 +435,39 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="integration-using-substitution">
 <h1><span class="section-number">1.7. </span>Integration using substitution<a class="headerlink" href="#integration-using-substitution" title="Link to this heading">#</a></h1>
 <p>When we know an integral</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fd3671da-e0b2-4632-9905-81cebbdd89a7">
-<span class="eqno">(1.135)<a class="headerlink" href="#equation-fd3671da-e0b2-4632-9905-81cebbdd89a7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-cb648a7c-a717-40dc-9f37-5b6294ad06dd">
+<span class="eqno">(1.147)<a class="headerlink" href="#equation-cb648a7c-a717-40dc-9f37-5b6294ad06dd" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \int e^x \d{x} = e^x + c
 \end{equation}\]</div>
 <p>we can evaluate related integrals like:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-243b8a3f-1177-475a-973b-aedc2139b128">
-<span class="eqno">(1.136)<a class="headerlink" href="#equation-243b8a3f-1177-475a-973b-aedc2139b128" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b758c575-b294-4089-87db-340c223f5a86">
+<span class="eqno">(1.148)<a class="headerlink" href="#equation-b758c575-b294-4089-87db-340c223f5a86" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \int e^{-x} \d{x} = -e^{-x} + c
 \end{equation}\]</div>
 <p>by making a <em>substitution</em>. Specifically, we define a new variable <em>u</em>,
 calculate its differential, and then replace both. For example, in this case,
 let <span class="math notranslate nohighlight">\(u = -x\)</span>. Then, <span class="math notranslate nohighlight">\(\d{u} = -\d{x}\)</span>. Equivalently, <span class="math notranslate nohighlight">\(x = -u\)</span> and
 <span class="math notranslate nohighlight">\(\d{x} = -\d{u}\)</span> so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-54f846dc-116b-4327-b136-625e47be3cc7">
-<span class="eqno">(1.137)<a class="headerlink" href="#equation-54f846dc-116b-4327-b136-625e47be3cc7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a3a47d1f-6653-4104-84cb-f5e843f1b1de">
+<span class="eqno">(1.149)<a class="headerlink" href="#equation-a3a47d1f-6653-4104-84cb-f5e843f1b1de" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \int e^{-x} \d{x} = -\int e^u \d{u} = -e^u + c = -e^{-x} + c
 \end{equation}\]</div>
 <div class="admonition-example-u-substitution admonition">
 <p class="admonition-title">Example: <em>u</em>-substitution</p>
 <p>Evaluate the integral</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ab35e268-ee40-4464-bc78-8a150179b429">
-<span class="eqno">(1.138)<a class="headerlink" href="#equation-ab35e268-ee40-4464-bc78-8a150179b429" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-838fecd3-2247-4955-a843-f7fbacc93b93">
+<span class="eqno">(1.150)<a class="headerlink" href="#equation-838fecd3-2247-4955-a843-f7fbacc93b93" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \int x e^{x^2} \d{x}
 \end{equation}\]</div>
 <hr class="docutils" />
 <p>Let <span class="math notranslate nohighlight">\(u=x^2\)</span> so <span class="math notranslate nohighlight">\(\d{u} = 2x \d{x}\)</span>. Then,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fdc71b6b-1051-451a-8ed5-95a1ae6ae52d">
-<span class="eqno">(1.139)<a class="headerlink" href="#equation-fdc71b6b-1051-451a-8ed5-95a1ae6ae52d" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-58e85042-68d9-4873-bdbb-f1e5ab723b11">
+<span class="eqno">(1.151)<a class="headerlink" href="#equation-58e85042-68d9-4873-bdbb-f1e5ab723b11" title="Permalink to this equation">#</a></span>\[\begin{align}
 \int e^{x^2} x\d{x} =  \int e^u \cdot \frac{1}{2}\d{u} = \frac{1}{2} e^u + c
 \end{align}\]</div>
 <p>Plugging <em>u</em> back in gives the final answer:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c2703abc-1c27-48de-9e58-408ef5314839">
-<span class="eqno">(1.140)<a class="headerlink" href="#equation-c2703abc-1c27-48de-9e58-408ef5314839" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a0e00151-a340-44ba-9647-5e6391c65b3f">
+<span class="eqno">(1.152)<a class="headerlink" href="#equation-a0e00151-a340-44ba-9647-5e6391c65b3f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \int xe^{x^2} \d{x} = \frac{1}{2}e^{x^2} + c
 \end{equation}\]</div>
 </div>

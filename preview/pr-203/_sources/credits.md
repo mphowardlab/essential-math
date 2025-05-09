@@ -17,9 +17,13 @@ This work (c) 2025 is licensed under
 - Sarah Eldridge
 - Sam Faulkner
 - Alexis Florit
+- Jackson Gilson
 - Ella Governale
 - Parker Green
+- Becca Gulley
 - Connor Habig
+- Charles Hamlett
+- Luke Harrison
 - Anna Grace Hawkins
 - Kennedi Hawkins
 - Joshua R. Hegar
