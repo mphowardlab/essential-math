@@ -196,9 +196,9 @@ F = e^{\int p \d{t}} = e^{-\int \d{t}} = e^{-t}
 
 Then, solve for $y$. 
 
-\begin{equation}
-y = \frac{1}{F} \left[\int F r \d{t} + C \right] = \frac{-5}{4\pi^2 +1} left\(\sin(2\pi t) + 2\pi cos(2\pi t)\right) + C e^{t}
-\end{equation}
+\begin{align}
+y = \frac{1}{F} \left[\int F r \d{t} + C \right] \\ &= \frac{-5}{4\pi^2 + 1} left\(\sin(2\pi t) + 2\pi cos(2\pi t)\right) + C e^{t}
+\end{align}
 
 Next, use initial conditions in to find $C$.
 
