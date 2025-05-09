@@ -45,7 +45,7 @@ give the solution type:
 2. $\lambda_{1,2} = \alpha \pm i \omega$ are complex:
 
    \begin{equation}
-   y = e^{\omega x} \left[c_1 \cos(\omega x) + c_2 \sin(\omega x)\right]
+   y = e^{\alpha x} \left[c_1 \cos(\omega x) + c_2 \sin(\omega x)\right]
    \end{equation}
 
 3. $\lambda_1 = \lambda_2 = \lambda $ is real and repeated:
