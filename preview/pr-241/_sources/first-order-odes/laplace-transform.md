@@ -259,81 +259,135 @@ The average concentration is:
 ```
 <!-- markdownlint-enable MD013 -->
 
-## Skill Builder problems
+## Skill builder problems
 
-Solve the following:
+Solve the following IVPs using Laplace transforms:
 
+1. $y' + 4y = e^{4x}$, $y(0) = 0$
 
- 3. $y' - y = 1 - 2x + \sin(3x), \quad y(0) = -1 $
-
-```{solution}
-
+   ```{solution}
 
    \begin{align}
-   L[y' - y] &= L[1 - 2x + \sin(3x)] \\
-   sY - y(0) - Y &= \frac{1}{s} - \frac{2}{s^2} + \frac{3}{s^2 + 9} \\
-   (s-1)Y &= -1 + \frac{1}{s} - \frac{2}{s^2} + \frac{3}{s^2 + 9} 
-   \end{align}
-   
-   Use partial fractions:
-   
-   \begin{align}
-   Y &= -\frac{1}{s - 1} + \frac{1}{s(s - 1)} - \frac{2}{s^2(s - 1)} + \frac{3}{(s^2 + 9)(s - 1)} \\
-   &= -\frac{1}{s - 1} + \left(\frac{A_1}{s} + \frac{A_2}{s-1}\right) + \left(\frac{A_3}{s} + \frac{A_4}{s^2} + \frac{A_5}{s - 1}\right) + \left(\frac{A_6s + B_6}{s^2 + 9} + \frac{A_7}{s - 1}\right)
-   \end{align}
-   
-   Cover up to find:
-   
-   \begin{align}
-   A_1 &=\frac{1}{0-1} = -1 \\ 
-   A_2 &=\frac{1}{1} = 1 \\ 
-   A_4 &= \frac{-2}{0 - 1} = 2 \\ 
-   A_5 &= \frac{-2}{1} = -2 \\ 
-   A_7 &= \frac{3}{1^2 + 9} = \frac{3}{10} 
-   \end{align}
-   
-   Finish the rest:
-
-   \begin{align}
-   2 &= A_3s(s-1) + 2(s-1) - 2s^2 \\
-   2 &= A_3(-1)(-1-1) + 2(-1-1) - 2(-1)\\
-   2 &= 2A_3 - 4 + 2 \\
-   A_3 &= 2
+   L[y' + 4y] &= L[e^{4x}] \\
+   sY - y(0) + 4Y &= \frac{1}{s-4} \\
+   (s+4) Y &= \frac{1}{s-4} \\
+   Y &= \frac{1}{(s+4)(s-4)}
    \end{align}
 
-   \begin{align}
-   3 &= (A_6s + B_6s)(s-1) + \frac{3}{10}(s^2+9) \\
-   s^2 &: A_6 + \frac{3}{10} = 0   \\
-   s^0 &: -B_6 + \frac{27}{10} = 3 \\
-   \end{align}
-
-   \begin{align}
-   A_6 &= -\frac{3}{10} \\
-   B_6 &= -\frac{3}{10} \\
-   \end{align}
-
-   Simplify your y:
-
-   \begin{align}
-   y &= -\frac{1}{s-1} - \frac{1}{s} + \frac{1}{s-1} + \frac{2}{s} + \frac{2}{s^2} - \frac{2}{s-1} - \frac{3}{10} \frac{s+1}{s^2+9} + \frac{3}{10} \frac{1}{s-1} \\
-   &= \frac{1}{s} + \frac{2}{s^2} - \frac{17}{10} \frac{1}{s-1} - \frac{3}{10} \frac{1}{s^2+9} - \frac{3}{10} \frac{s}{s^2+9} \\
-   \end{align}
-
-   Apply inverse laplace across the equation:
+   Use partial fractions
 
    \begin{equation}
-   y = L^{-1}[\frac{1}{s}]
-   + 2 L^{-1}[\frac{1}{s^2} ]
-   - \frac{17}{10} L^{-1}[\frac{1}{s - 1}]
-   - \frac{1}{10} L^{-1}[\frac{3}{s^2 + 9}]
-   - \frac{3}{10} L^{-1}[\frac{s}{s^2 + 9}]
+   \frac{1}{(s+4)(s-4)} = \frac{A_1}{s+4} + \frac{A_2}{s-4}
+   \end{equation}
+
+   and cover up to find $A_1 = -1/8$ and $A_2 = 1/8$.
+
+   Solve by inverting the Laplace transforms:
+
+   \begin{align}
+   Y &= \frac{1}{8} \left(\frac{1}{s-4} - \frac{1}{s+4} \right) \\
+   y = L^{-1}[Y]
+     &= \frac{1}{8}\left( L^{-1}\left[\frac{1}{s-4}\right] -
+       L^{-1}\left[\frac{1}{s+4}\right] \right) \\
+     &= \frac{1}{8}(e^{4x} - e^{-4x})
+   \end{align}
+   ```
+
+2. $y' + 2y = 8$, $y(0) = 1$
+
+   ```{solution}
+
+   \begin{align}
+   L[y' + 2y] &= L[8] \\
+   sY - y(0) + 2Y &= \frac{8}{s} \\
+   (s+2) Y - 1 &= \frac{8}{s} \\
+   Y &= \frac{1}{s+2} + \frac{8}{s(s+2)}
+   \end{align}
+
+   Use partial fractions and the cover-up method for the second fraction:
+
+   \begin{equation}
+   \frac{8}{s(s+2)} = \frac{A_1}{s} + \frac{A_2}{s+2}
+   \end{equation}
+
+   to find $A_1 = 4$ and $A_2 = -4$.  Solve by simplifying and inverting the
+   Laplace transforms:
+
+   \begin{align}
+   Y &= \frac{4}{s} - \frac{3}{s+2} \\
+   y = L^{-1}[Y]
+     &= 4L^{-1}\left[\frac{1}{s}\right] - 3L^{-1}\left[\frac{1}{s+2}\right] \\
+     &= 4 - 3e^{-2x}
+   \end{align}
+   ```
+
+3. $y' - y = 1 - 2x + \sin(3x), \quad y(0) = -1$
+
+   ```{solution}
+   \begin{align}
+   L[y' - y] &= L[1 - 2x + \sin 3x ] \\
+   sY - y(0) - Y &= \frac{1}{s} - \frac{2}{s^2} + \frac{3}{s^2 + 9} \\
+   (s-1)Y &= -1 + \frac{1}{s} - \frac{2}{s^2} + \frac{3}{s^2 + 9} \\
+   Y &= -\frac{1}{s - 1} + \frac{1}{s(s - 1)} - \frac{2}{s^2(s - 1)} +
+     \frac{3}{(s^2 + 9)(s - 1)}
+   \end{align}
+
+   Use partial fractions:
+
+   \begin{align}
+   \frac{1}{s(s-1)} &= \frac{A_1}{s} + \frac{A_2}{s-1} \\
+   \frac{-2}{s^2(s - 1)} &= \frac{A_3}{s} + \frac{A_4}{s^2} + \frac{A_5}{s - 1} \\
+   \frac{3}{(s^2 + 9)(s - 1)} &= \frac{A_6s + B_6}{s^2 + 9} + \frac{A_7}{s - 1}
+   \end{align}
+
+   Cover up to find:
+
+   \begin{align}
+   A_1 &=\frac{1}{0-1} = -1 & A_4 &= \frac{-2}{0 - 1} = 2 &
+     A_7 &= \frac{3}{1^2 + 9} = \frac{3}{10} \\
+   A_2 &=\frac{1}{1} = 1 & A_5 &= \frac{-2}{1} = -2
+   \end{align}
+
+   Finish the rest by cross-multiplying or pluggin in values. For the first
+   fraction, plug in $s=-1$ and known coefficients:
+
+   \begin{equation}
+   1 &= -A_3 + 2 + 1
+   \end{equation}
+
+   then solve $A_3 = 2$. For the third fraction, cross-multiply
+
+   \begin{equation}
+   3 = (A_6 s + B_6)(s-1) + \frac{3}{10}(s^2+9)
+   \end{equation}
+
+   Then compare like powers of $s$. Here, I use $s^2$ and $s^0$:
+
+   \begin{align}
+   A_6 + \frac{3}{10} &= 0   \\
+   -B_6 + \frac{27}{10} &= 3
+   \end{align}
+
+   so $A_6 = -3/10$ and $B_6 = -3/10$. Simplify *Y*
+
+   \begin{equation}
+   Y = \frac{1}{s} + \frac{2}{s^2} - \frac{17}{10} \frac{1}{s-1} -
+     \frac{3}{10} \frac{1}{s^2+9} - \frac{3}{10} \frac{s}{s^2+9}
+   \end{equation}
+
+   Apply inverse Laplace transform across the equation:
+
+   \begin{equation}
+   y = L^{-1}\left[\frac{1}{s}\right]
+   + 2 L^{-1}\left[\frac{1}{s^2}\right]
+   - \frac{17}{10} L^{-1}\left[\frac{1}{s - 1}\right]
+   - \frac{1}{10} L^{-1}\left[\frac{3}{s^2 + 9}\right]
+   - \frac{3}{10} L^{-1}\left[\frac{s}{s^2 + 9}\right]
     \end{equation}
 
    So, the solution is
 
    \begin{equation}
-   y = 1 + 2x - \frac{17}{10} e^x - \frac{1}{10} \sin(3x) - \frac{3}{10} \cos(3x)
+   y = 1 + 2x - \frac{17}{10} e^x - \frac{1}{10} \sin 3x - \frac{3}{10} \cos 3x
    \end{equation}
    ```
-
-
