@@ -216,10 +216,10 @@ Put $C$ value in equation for $y$.
 y(t) = \left(1 + \frac{10\pi}{4\pi^2 + 1}\right) e^{t} - \frac{5}{4\pi^2 + 1} \left(sin(2\pi t) + 2\pi cos(2\pi t)\right)
 \end{equation}
 
-Find y at t=1.
+Find $y$ at $t=1$.
 
 \begin{equation}
-y(1) = \left(1 + \frac{10*pi}{4\pi^2+1}\right) e - \frac{5}{4\pi^2+ 1} \left(2\pi\right)
+y(1) = \left(1 + \frac{10\pi}{4\pi^2 + 1}\right) e - \frac{5}{4\pi^2 + 1} \left(2\pi\right)
 \end{equation}
 
 \begin{equation}
