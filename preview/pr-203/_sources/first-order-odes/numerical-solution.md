@@ -148,9 +148,9 @@ The following table uses $\Delta t = 0.1$
 
 So, for $\Delta t = 0.1$, the Euler approximation gives:
 
-$$
+\begin{equation}
 y(1) \approx 3.683
-$$
+\end{equation}
 
 
 Step size $\Delta t = 0.2$
@@ -169,7 +169,7 @@ Therefore, for $\Delta t = 0.2$:
 \begin{equation}
 y(1) \approx 3.322
 \end{equation}
-`````
+
 ---
 
 Analytical solution:
@@ -184,9 +184,10 @@ $r = 5\sin(2\pi t)$
 \begin{equation}
 y^' - y = 5\sin(2\pi t)
 \end{equation}
+
 First, find the integrating factor
 \begin{equation}
-F = e^{\int(p dt)} = e^{-\int dt} = e^{-t}
+F = e^{\int p dt} = e^{-\int dt} = e^{-t}
 \end{equation}
 
 \begin{align}
