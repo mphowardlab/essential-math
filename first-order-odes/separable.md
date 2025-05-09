@@ -175,3 +175,95 @@ t &= 2 \left(\frac{1}{0.01}\right)^2 \sqrt{\frac{2}{2 \cdot 9.8}} = 6400
 This time is in seconds because all units are SI, so the tank drains in about
 1.8 hours.
 ````
+
+## Skill builder problems
+
+Solve the following:
+
+1. $y'+(x+2)y^2 = 0, \quad y(1) = 1$
+
+   ```{solution}
+   Separate and integrate:
+
+   \begin{align}
+   \dd{}{y}{x} &= -(x+2)y^2 \\
+   \int\frac{\d{y}}{y^2} &= -\int (x+2) \d{x} \\
+   -\frac{1}{y} &= -\left(\frac{x^2}{2} + 2x\right) + c
+   \end{align}
+
+   Apply initial condition $y(1) = 1$:
+
+   \begin{equation}
+   -1 = -\left(\frac{1}{2} + 2 \right) + c
+   \end{equation}
+
+   so $c = 3/2$. Hence,
+
+   \begin{equation}
+   y = \frac{2}{x^2+4x-3}
+   \end{equation}
+   ```
+
+2. $yy'+4x = 0, \quad y(0) = 3$
+
+   ```{solution}
+   Separate and integrate:
+
+   \begin{align}
+   y \frac{dy}{dx} &= -4x \\
+   \int y \d{y} &= \int-4x \d{x} \\
+   -\frac{y^2}{2} &= -2x^2 + c \\
+   \end{align}
+
+   Apply initial condition $y(0) = 3$:
+
+   \begin{equation}
+   -\frac{9}{2} = c
+   \end{equation}
+
+   so
+
+   \begin{align}
+   y^2 &= 9-4x^2 \\
+   y &= \pm \sqrt{9-4x^2}
+   \end{align}
+
+   The negative root does not satisfy the initial condition, so choose the
+   positive root:
+
+   \begin{equation}
+   y = \sqrt{9-4x^2}
+   \end{equation}
+   ```
+
+3. $\displaystyle y' = \frac{x-1}{y}e^{-y^2}, \quad y(0) = 1$
+
+   ```{solution}
+   Separate and integrate:
+
+   \begin{align}
+   \int y e^{y^2} \d{y} &= \int (x-1) \d{x} \\
+   \frac{1}{2} e^{y^2} &= \frac{x^2}{2} - x + c
+   \end{align}
+
+   Apply initial condition $y(0) = 1$:
+
+   \begin{equation}
+   \frac{1}{2} e = c
+   \end{equation}
+
+   Hence,
+
+   \begin{align}
+   e^{y^2} &= x^2 - 2x + e \\
+   y^2 &= \ln(x^2 - 2x + e) \\
+   y &= \pm \sqrt{\ln(x^2 - 2x + e)}
+   \end{align}
+
+   The negative root again does not meet the initial condition, so choose the
+   positive one:
+
+   \begin{equation}
+   y = \sqrt{\ln(x^2 - 2x + e)}
+   \end{equation}
+   ```

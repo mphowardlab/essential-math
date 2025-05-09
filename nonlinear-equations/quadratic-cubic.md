@@ -47,6 +47,80 @@ of $x^2 + 1 = 0$ are $x = \pm i$:
 :width: 200px
 ```
 
+There are several strategies that can be used to find roots of quadratic
+polynomials:
+
+- Factoring
+
+  \begin{equation}
+  x^2 + 8 x - 9 = (x+9)(x-1) = 0
+  \end{equation}
+
+  This equation will be true if either factor is zero, so the roots are
+  $x = -9$ or $x = 1$.
+
+- Completing the square
+
+  \begin{align}
+  x^2 + 8x &= 9 \\
+  x^2 + 8x + 16 &= 9 + 16 \\
+  (x+4)^2 &= 25 \\
+  x + 4 &= \pm \sqrt{25}
+  x = -4 \pm 5
+  \end{align}
+
+  This gives the same roots!
+
+- Quadratic formula
+
+  ```{topic} Quadratic formula
+  The roots of the general quadratic polynomial $ax^2 + bx + c = 0$ are
+
+  \begin{equation}
+  x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+  \end{equation}
+
+  ```
+
+  For the polynomial $x^2 + 8x - 9 = 0$,
+
+  \begin{align}
+  x &= \frac{-8 \pm \sqrt{8^2 - 4 \cdot 1 \cdot -9}}{2 \cdot 1} \\
+    &= \frac{-8 \pm \sqrt{100}}{2} \\
+    &= -4 \pm 5
+  \end{align}
+
+```{example} Box optimization
+An open-top box will be made from an 8.5" x 11" piece of paper by cutting out a
+square from each corner and folding the flaps. What size square should be cut
+to make the biggest box?
+
+---
+
+The volume of the box that will be obtained by cutting a square of edge length
+*x* is:
+
+\begin{equation}
+V(x) = (8.5 - 2x)(11-2x)x = 4x^3 - 39x^2 + 93.5x
+\end{equation}
+
+The volume will be at an extremum with respect to *x* if $V'(x) = 0$:
+
+\begin{equation}
+V'(x) = 12x^2 - 78x + 93.5 = 0
+\end{equation}
+
+The roots of this quadratic polynomial are:
+
+\begin{align}
+x &= \frac{78 \pm \sqrt{(-78)^2 - 4 \cdot 12 \cdot -93.5}}{2 \cdot 12} \\
+  &= 1.59\, 4.91
+\end{align}
+
+Only the first root, 1.59", is physical because there is not enough material
+to remove 4.91" from two corners!
+```
+
 ```{example} Complex roots
 Find the roots of
 
