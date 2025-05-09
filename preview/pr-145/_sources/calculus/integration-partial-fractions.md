@@ -285,19 +285,32 @@ Obtain general solutions to
 
 1. $y' = \frac{2x+16}{x^2-16}$
 
+```{solution}
+Fractional decomposition:
+
 \begin{equation}
-\frac{2x+16}{(x+4)(x-4)} = \frac{A1}{x+4} + \frac{A2}{x-4} = -\frac{1}{x+4} + \frac{3}{x-4}
+\frac{2x+16}{(x+4)(x-4)} = \frac{A_1}{x+4} + \frac{A_2}{x-4} = -\frac{1}{x+4} + \frac{3}{x-4}
 \end{equation}
 
-Cover up:\
+Cover up:
+
 \begin{align}
-A1 = \frac{2(-4)+16}{-4-4} = -1\
-A2 = \frac{2(4)+16}{4+4} = 3
+A_1 = \frac{2(-4)+16}{-4-4} = -1 \\
+A_2 = \frac{2(4)+16}{4+4} = 3
 \end{align}
 
 \begin{equation}
-y = \int\frac{2x+16}{x^2-16}dx = \int(-\frac{1}{x+4}+\frac{3}{x-4})dx = -\ln(x+4)+3\ln(x-4)+c
+\frac{2x+16}{(x+4)(x-4)} = -\frac{1}{x+4} + \frac{3}{x-4}
 \end{equation}
+
+Integrate:
+
+\begin{align}
+y &= \int\frac{2x+16}{x^2-16}dx \\
+&= \int\left( -\frac{1}{x+4}+\frac{3}{x-4} \right)dx \\
+&= -\ln|x+4|+3\ln|x-4|+c
+\end{align}
+```
 
 
 2. $y' = \frac{8}{x^2+2x}$
