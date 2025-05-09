@@ -67,14 +67,15 @@ This is the classic equation of ballistic motion!
 ```
 
 ````{example} Incompressible flow in a cylinder
-Steady, laminar pressure-driven flow in a cylindrical pipe is governed by the
-simplified Navier-Stokes equation
+Steady, laminar pressure-driven flow in a cylindrical pipe:
 
-
-```{image} ./incomp_flow
+```{image} ./_images/pipe_flow.jpg
+:alt: Pipe flow
 :width: 300px
+:align: center
 ```
 
+is governed by the simplified Navier-Stokes equation:
 
 \begin{equation}
 \mu \frac{1}{r} \dd{}{}{r} \left( r \dd{}{u_z}{r} \right) = -\frac{\Delta P}{L}
