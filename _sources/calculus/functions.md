@@ -1,5 +1,97 @@
 # Functions
 
+A function is a rule that assigns a unique value $f(x)$ to an input $x$.
+
+```{image} ./_images/x_to_f(x).jpg
+:alt: Unique Value
+:width: 300px
+:align: center
+```
+
+We call *x* the *independent variable* and $y = f(x)$ the *dependent variable*.
+The *domain* of *f* is all possible values of *x*, while the *range* of *f* is
+all possible values of *y*.
+
+A function can be represented by:
+
+- An equation
+
+  $$f(x) = x^2$$
+
+- A table
+
+  | $x$ | $f$ |
+  |-----|-----|
+  | 0   |  0  |
+  | 1   |  1  |
+  | 2   |  4  |
+
+- A graph:
+
+  ```{image} ./_images/quadratic_graph.jpg
+  :alt: x vs f(x) Graph
+  :width: 150px
+  :align: center
+  ```
+
+- A description
+
+  > "Square x."
+
+Not all curves are functions! *f* must uniquely map *x*. For example, the
+circle $x^2 + y^2 = 4$, or equivalently, $y = \pm\sqrt{4-x^2}$ is not a function
+because one value of *x* can map to multiple values of *y*. Graphically,
+this fails the "vertical line test":
+
+```{topic} Vertical line test
+A vertical line cannot intersect a function twice.
+```
+
+## Common functions
+
+- Linear functions (lines)
+
+  $$y = mx + b$$
+
+  where *m* is the slope and *b* is the *y*-intercept.
+
+- Power functions ("power law")
+
+  $$y = kx^a$$
+
+  where *k* is the prefactor and *a* is the power.
+
+- Polynomials
+
+  $$y = a_n x^n + \ldots + a_1x + a_0$$
+
+  where *n* is the degree and $a_i$ is the coefficient of the *i*-th power of
+  *x*. The polynomial is quadratic when $n=2$, cubic when $n=3$, and quartic
+  when $n=4$.
+
+- Exponential
+
+  $$y = a^x$$
+
+  where *a* is the base ($a > 0$, $a \ne 1$). A special case is $a = e$,
+  Euler's number (2.718...).
+
+- Logarithmic
+
+  $$y = \log_a x$$
+
+  where *a* is the base ($a > 0$, $a \neq 1$). Two special cases are $a = e$,
+  which we call the *natural logarithm* $\ln$, and $a = 10$, which we call the
+  *common logarithm*, $\log_{10}$.
+
+- Trigonometric
+
+  $$
+  \sin x \qquad \csc x\\
+  \cos x \qquad \sec x\\
+  \tan x \qquad \cot x
+  $$
+
 ## Manipulating functions
 
 ::::{grid}
