@@ -1,55 +1,58 @@
 # Derivatives
 
-# Tangent line and rate of change
+## Tangent line and rate of change
 
 A *tangent line* touches a curve exactly once.
 
 ```{image} ./_images/tangent.png
 :alt: Graph of tangent line as slope of curve
+:width: 300px
+:align: center
 ```
 
-How to estimate slope of line at $x_0$? 
-- Evaluate $f(x_0)$ at the point
-- Evaluate $f(x_1)$ at another point
-- Make $x_1$ very close to $x_0$!
+How can we estimate the slope of the line at $x_0$? First, evaluate $f(x_0)$.
+Then, evaluate $f(x_1)$ at another point nearby. The slope is:
 
 \begin{equation}
-f'(x_0)=m \approx \frac{f(x_1)-f(x_0)}{x_1-x_0}
+\frac{f(x_1)-f(x_0)}{x_1-x_0}
 \end{equation}
 
-We call the slope of the tangent at $x$ the *derivative* and define it as a limit. 
+If we make $x_1$ very close to $x_0$, we will get the slope of the tangent line.
+This suggests uses of a limit! We call the slope of the tangent to *f* at $x$
+the *derivative* of *f*.
 
 ```{topic} Derivative as a limit
+The first derivative $f'(x)$ of a function $f(x)$ is:
+
 \begin{equation}
-f'(x_0)= \lim_{h\to 0} \frac{f(x+h)-f(x)}{h}
+f'(x)= \lim_{h\to 0} \frac{f(x+h)-f(x)}{h}
 \end{equation}
 
-other notations: $\frac{df}{dx}$, $\mathbf{f}$
-
----
-
-\begin{align}
-x_0 &= x \\
-x_1 &= x+h 
-\end{align} 
-
-$\to$ h is distance between $x_0$ and $x_1$, make *small*
+The derivative is also commonly notated as $\d{f}/\d{x}$ or $\dot f$.
 ```
 
-The derivative represents how fast the function is changing *(rate of change)*. 
-````{example} Ball moving with constant velocity $v$
+The derivative represents how fast the function is changing (rate of change).
+This is especially useful in physics when the function represents a coordinate,
+and the independent variable is time.
+
+````{example} Ball moving with constant velocity
+A ball has position coordinate *x* and is moving with constant velocity *v*, so
+
 \begin{equation}
-x(t) = x_0 + v\cdot t 
+x(t) = x_0 + vt
 \end{equation}
 
-Where position $\to x(t)$ 
-start $\to x_0$ 
-velocity $\to v$ and 
-time $\to t$
+where $x_0$ is the initial position that it starts from.
 
 ```{image} ./_images/ball.png
 :alt: Ball with constant velocity example
+:width: 300px
+:align: center
 ```
+
+Show that the first derivative of the position *x* is the velocity *v*.
+
+---
 
 \begin{align}
 x'(t) &= \lim_{h\to 0} \frac{x(t+h)-x(t)}{h} \\
@@ -57,8 +60,6 @@ x'(t) &= \lim_{h\to 0} \frac{x(t+h)-x(t)}{h} \\
 &=\lim_{h\to 0} \frac{vh}{h} \\
 &= v
 \end{align}
-
-The *velocity* is the rate of change of *position*
 ````
 
 ## Formal definition
