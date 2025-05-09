@@ -303,10 +303,14 @@ Solve the following:
 
    \begin{align}
    3 &= (A_6s + B_6s)(s-1) + \frac{3}{10}(s^2+9) \\
-   s^2 &: A_6 + \frac{3}{10} = 0  \quad A_6 = -\frac{3}{10} \\
-   s^0 &: -B_6 + \frac{27}{10} = 3 \quad B_6 = -\frac{3}{10} \\
+   s^2 &: A_6 + \frac{3}{10} = 0   \\
+   s^0 &: -B_6 + \frac{27}{10} = 3 \\
    \end{align}
 
+   \begin{align}
+   A_6 &= -\frac{3}{10} \\
+   B_6 &= -\frac{3}{10} \\
+   \end{align}
 
    Simplify your y:
 
@@ -325,7 +329,7 @@ Solve the following:
    - \frac{3}{10} L^{-1}[\frac{s}{s^2 + 9}]
     \end{equation}
 
-   so, the solution is
+   So, the solution is
 
    \begin{equation}
    y = 1 + 2x - \frac{17}{10} e^x - \frac{1}{10} \sin(3x) - \frac{3}{10} \cos(3x)
