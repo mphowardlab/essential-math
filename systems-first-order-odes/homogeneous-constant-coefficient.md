@@ -175,6 +175,94 @@ c_{\rm B}(t) &= a_1e^{-k_1t}\frac{-k_1}{k_2} - a_2e^{-k_2t} \\
 This matches our old answer!
 ```
 
+````{example} Diffusion cell
+Consider a diffusion cell consisting of two compartments with solute
+concentrations $c_1$ and $c_2$ separated by a membrane.
+
+```{image} ./_images/diffusioncell.png
+:alt: Diffusion cell
+:align: center
+:width: 300px
+```
+
+Based on unsteady mole balances, the concentrations change according to:
+
+\begin{align}
+c_1' &= -0.1c_1 + 0.1c_2 \\
+c_2' &= 0.1c_1 - 0.1c_2
+\end{align}
+
+Solve for $c_1$ and $c_2$ as a function of time if they are initially 1 M and
+0 M, respectively.
+
+---
+
+Write in matrix form $\vv{c}' = \vv{A} \vv{c}$, where
+
+\begin{equation}
+\vv{c} = \begin{bmatrix}c_1 \\ c_2\end{bmatrix}
+\qquad \vv{A} = \begin{bmatrix} -0.1 & 0.1 \\ 0.1 & -0.1 \end{bmatrix}
+\end{equation}
+
+Since **A** is symmetric, it has real eigenvalues:
+
+\begin{align}
+|\vv{A} - \lambda \vv{I}|
+&= \begin{vmatrix} -0.1 - \lambda & 0.1 \\ 0.1 & -0.1 - \lambda \end{vmatrix}\\
+&= (\lambda + 0.1)^2 - 0.1^2 \\
+&= \lambda^2 + 0.2\lambda \\
+& = \lambda(\lambda + 0.2) = 0
+\end{align}
+
+So, the eigenvalues are $\lambda_1 = 0$ and $\lambda_2 = -0.2$. Next, we find
+the eigenvectors:
+
+\begin{align}
+\vv{A}-\lambda_1 \vv{I} &= \begin{bmatrix} -0.1 & 0.1 \\ 0.1 & -0.1 \end{bmatrix}
+\to \vv{x}_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix} \\
+\vv{A} - \lambda_2 \vv{I} &= \begin{bmatrix} 0.1 & 0.1 \\ 0.1 & 0.1 \end{bmatrix}
+\to \vv{x}_2 = \begin{bmatrix} 1 \\ -1 \end{bmatrix}
+\end{align}
+
+The general solution is:
+
+\begin{align}
+\vv{c}(t) &= a_1 e^{0t} \begin{bmatrix} 1 \\ 1 \end{bmatrix} +
+a_2 e^{-0.2t} \begin{bmatrix} 1 \\ -1 \end{bmatrix} \\
+&= a_1 \begin{bmatrix} 1 \\ 1 \end{bmatrix} + a_2 e^{-0.2t}
+\begin{bmatrix} 1 \\ -1 \end{bmatrix}
+\end{align}
+
+Apply the initial conditions by solving $\vv{X}\vv{a} = \vv{c}(0)$ using
+Gauss-Jordan elimination:
+
+\begin{align}
+\begin{bmatrix} 1 & 1 & 1\\ 1 & -1 & 0\end{bmatrix}
+\begin{matrix}\vphantom{R_1} \\ -R_1 \end{matrix}
+&\to \begin{bmatrix} 1 & 1 & 1\\ 0 & -2 & -1\end{bmatrix}
+\begin{matrix}\vphantom{R_1} \\ \div -2 \end{matrix} \\
+&\to \begin{bmatrix} 1 & 1 & 1\\ 0 & 1 & 1/2\end{bmatrix}
+\begin{matrix} -R_2 \\ \vphantom{R_2} \end{matrix} \\
+&\to \begin{bmatrix} 1 & 0 & 1/2 \\ 0 & 1 & 1/2\end{bmatrix}
+\end{align}
+
+so $a_1 = a_2 = 1/2$. Substituting back, the general solution for
+$\vv{c}(t)$ becomes:
+
+\begin{equation}
+\vv{c}(t) = \frac{1}{2} \begin{bmatrix} 1 \\ 1 \end{bmatrix} +
+  \frac{1}{2} e^{-0.2t} \begin{bmatrix} 1 \\ -1 \end{bmatrix}
+\end{equation}
+
+or equivalently
+
+\begin{align}
+c_1(t) &= \frac{1}{2} \left(1 + e^{-0.2 t}\right) \\
+c_2(t) &= \frac{1}{2} \left(1 - e^{-0.2 t}\right)
+\end{align}
+
+````
+
 ## Skill builder problems
 
 Solve the inital value problem $ \vv{y}' = \vv{A}\vv{y}$ with
