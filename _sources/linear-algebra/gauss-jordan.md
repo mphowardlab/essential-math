@@ -469,3 +469,94 @@ from the row-reduced augmented matrix.
 
    so $x_1 = 4$, $x_2 = 0$, and $x_3 = -2$.
    ```
+
+4. Solve using Gauss-Jordan elimination
+
+   \begin{align}
+   4x_2 - 11x_3 &= 24 \\
+   3x_1 - 11x_2 - 2x_3 &= -6 \\
+   6x_1 - 17x_2 + x_3 &= 18
+   \end{align}
+
+   ```{solution}
+   \begin{align}
+   \begin{bmatrix}
+   0 & 4 & 4 & 24 \\
+   3 & -11 & -2 & -6 \\
+   6 & - 17 & 1 & 18
+   \end{bmatrix}
+   \begin{matrix}{\rm swap}\,R_2 \\ \vphantom{R_2} \\ \vphantom{R_3}\end{matrix}
+   &\to \begin{bmatrix}
+   3 & -11 & -2 & -6 \\
+   0 & -4 & 4 & 24 \\
+   6 & - 17 & 1 & 18
+   \end{bmatrix}
+   \begin{matrix}\vphantom{R_1} \\ \vphantom{R_2} \\ -2 R_1\end{matrix}\\
+   &\to \begin{bmatrix}
+   3 & -11 & -2 & -6 \\
+   0 & 4 & 4 & 24 \\
+   0 & 5 & 5 & 30
+   \end{bmatrix}
+   \begin{matrix}\vphantom{R_1} \\ \div 4 \\ \div 5\end{matrix}\\
+   &\to \begin{bmatrix}
+   3 & -11 & -2 & -6 \\
+   0 & 1 & 1 & 6 \\
+   0 & 1 & 1 & 6
+   \end{bmatrix}
+   \begin{matrix}\vphantom{R_1} \\ \vphantom{R_2} \\ -R_2\end{matrix}\\
+   &\to \begin{bmatrix}
+   3 & -11 & -2 & -6 \\
+   0 & 1 & 1 & 6 \\
+   0 & 0 & 0 & 0
+   \end{bmatrix}
+   \begin{matrix}+11 R_2 \\ \vphantom{R_2} \\ \vphantom{R_3}\end{matrix}\\
+   &\to \begin{bmatrix}
+   3 & 0 & 9 & 60 \\
+   0 & 1 & 1 & 6 \\
+   0 & 0 & 0 & 0
+   \end{bmatrix}
+   \begin{matrix}\div 3 \\ \vphantom{R_2} \\ \vphantom{R_3}\end{matrix}\\
+   &\to \begin{bmatrix}
+   1 & 0 & 3 & 20 \\
+   0 & 1 & 1 & 6 \\
+   0 & 0 & 0 & 0
+   \end{bmatrix}
+   \end{align}
+
+   Hence,
+
+   \begin{align}
+   x_1 - 3x_3 &= 20 \to & x_1 &= 3 x_3 + 20 \\
+   x_2 + x_3 &= 6 \to & x_2 &= x_3 + 6
+   \end{align}
+
+   with $x_3$ free.
+   ```
+
+5. Solve using Gauss-Jordan elimination:
+
+   \begin{align}
+   2x_1 - x_2 + 3x_3 &= -1 \\
+   -4x_1 + 2x_2 - 6x_{3} &= 2
+   \end{align}
+
+   ```{solution}
+   \begin{align}
+   \begin{bmatrix}
+   2 & -1 & 3 & -1 \\
+   -4 & 2 & -6 & -2
+   \end{bmatrix}
+   \begin{matrix}\vphantom{R_1} \\ +2R_1\end{matrix}
+   \to \begin{bmatrix}
+   2 & -1 & 3 & -1 \\
+   0 & 0& 0 & 0
+   \end{bmatrix}
+   \end{align}
+
+   Hence,
+
+   \begin{equation}
+   2x_1 - x_2 + 3x_3 = -1 \to \quad x_1 = \frac{1}{2}(x_2 + x_3 - 1)
+   \end{equation}
+   with $x_2$ and $x_3$ free.
+   ```
