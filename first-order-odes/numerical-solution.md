@@ -182,7 +182,7 @@ $p = -1$
 $ r = 5\sin(2\pi t)$
 
 \begin{equation}
-y^' - y = 5 \sin(2\pi t)
+y^' - y = 5\sin(2\pi t)
 \end{equation}
 First, find the integrating factor
 \begin{equation}
@@ -190,18 +190,18 @@ F = e^{\int(p dt)} = e^{-\int dt} = e^{-t}
 \end{equation}
 
 \begin{align}
-\int(F*r* {dt}) &= \int e^{-t} 5\sin(2\pi t dt) \\ &= \frac{5 e^{-t}}{4\pi^2+ 1}[ -1\sin(2\pi t)-((2\pi) (\cos(2\pi) (t)))]
+\intF*r* dt &= \int e^{-t} 5\sin(2\pi t dt) \\ &= \frac{5 e^{-t}}{4\pi^2+ 1}\left[ -1\sin(2\pi t)- 2\pi \cos(2\pi t)\right]
 \end{align}
 
-Then, solve for y. 
+Then, solve for $y$. 
 \begin{equation}
-y = \frac{1}{F}*[\int F r \d{t} + C] = \frac{-5}{4\pi^2 +1} \sin(2\pi t) + 2\pi cos(2\pi t) + C e^{t}
+y = \frac{1}{F} \left[\int F r dt + C \right] = \frac{-5}{4\pi^2 +1} left\(\sin(2\pi t) + 2\pi cos(2\pi t)\right) + C e^{t}
 \end{equation}
 
 Next, use initial conditions in to find C.
 
 \begin{equation}
-1 = y(0) = \frac{5}{4\pi^2+1} * (0 + (2*pi)) + C
+1 = y(0) = \frac{5}{4\pi^2+1} \left(0 + (2\pi)\right) + C
 \end{equation}
 
 \begin{equation}
@@ -211,17 +211,17 @@ C = 1 + \frac{10\pi}{4\pi^2 + 1}
 Put C value in equation for y.
 
 \begin{equation}
-y(t) = (1 + \frac{10\pi}{4\pi^2 + 1}) e^{t} - (\frac{5}{4\pi^2 + 1} sin(2\pi t)) + 2\pi cos(2\pi t)
+y(t) = \left(1 + \frac{10\pi}{4\pi^2 + 1}\right) e^{t} - \frac{5}{4\pi^2 + 1} \left(sin(2\pi t) + 2\pi cos(2\pi t)\right)
 \end{equation}
 
 Find y at t=1.
 
 \begin{equation}
-y(1) = \left(1 + \frac{10*pi}{4\pi^2+1}\right) e - \frac{5}{4\pi^2+1} \left(2\pi\right)
+y(1) = \left(1 + \frac{10*pi}{4\pi^2+1}\right) e - \frac{5}{4\pi^2+ 1} \left(2\pi\right)
 \end{equation}
 
 \begin{equation}
-y(1) = e + \frac{10\pi}{4\pi^2 + 1} \left(e-1\right)
+y(1) = e + \frac{10\pi}{4\pi^2 + 1} \left(e - 1\right)
 \end{equation}
 
 \begin{equation}
@@ -229,4 +229,4 @@ y(1) = 4.052
 \end{equation}
 
 The absolute error is 0.369 for $\Delta t = 0.1$ and 0.730 for $\Delta t = 0.2$. 
-Hence the error decreases by about $2*x$ when $\Delta t$ is decreased by $2*x$.
+Hence the error decreases by about $2 x$ when $\Delta t$ is decreased by $2 x$.
