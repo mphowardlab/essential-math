@@ -11,13 +11,13 @@ A rule "f" that assigns a \textbf{unique} value $f(x)$ to an input $x$
 
 \begin{align}
 \text{x: independent variable} \hspace{2cm} \text{domain: all possible x}\\
-\text{y: dependent variable} \hspace{2.2cm} \text{range: all possible y}
+\text{y: dependent variable} \hspace{2cm} \text{range: all possible y}
 \end{align}
 
 A function can be represented by:
-- An equation: 
+- An equation:
 \begin{equation}
-f(x) = x^2
+\f(x) = x^2
 \end{equation}
 
 - A table:
