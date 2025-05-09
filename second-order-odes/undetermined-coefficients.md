@@ -261,3 +261,95 @@ y'' + 3y' + 2.25y = -10e^-1.5x + \cos x
    y = 4x \sin 2x
    \end{equation}
    ```
+
+3. Solve:
+
+   \begin{equation}
+   y'' - y' - 12y = 144x^3 + \frac{25}{2}, \quad y(0) = 5, \quad y'(0) = -1/2
+   \end{equation}
+
+   ```{solution}
+   1. Find homogeneous solution $y_{\rm h}$:
+
+      \begin{align}
+      y_{\rm h}'' - y_{\rm h}' - 12y_{\rm h} &= 0
+      \lambda^2 - \lambda - 12 &= 0
+      (\lambda - 4)(\lambda + 3) &= 0
+      \end{align}
+
+      so $\lambda_1 = 4$, $\lambda_2 = -3$, and
+
+      \begin{equation}
+      y_{\rm h} = c_1 e^{4x} + c_2 e^{-3x}
+      \end{equation}
+
+   2. Find the particular solution $y_{\rm p}$:
+
+      \begin{align}
+      y_{\rm p} &= k_1 x^3 + k_2 x^2 + k_3 x + k_4 \\
+      y_{\rm p}' &= 3k_1x^2 + 2k_2x + k_3 \\
+      y_{\rm p}'' &= 6k_1x + 2k_2
+      \end{align}
+
+      Substitute in ODE and combine:
+
+      \begin{align}
+      & y_{\rm p}'' - y_{\rm p}' - 12y_{\rm p} \\
+      &= (6k_1x + 2k_2) - (3k_1x^2 + 2k_2x + k_3) -
+        12(k_1x^3 + k_2x^2 + k_3x + k_4) \\
+      &= -12k_1x^3 + (-3k_1 - 12k_2)x^2 + (6k_1 - 2k_2 - 12k_3)x +
+        (2k_2 - k_3 - 12k_4)
+      \end{align}
+
+      Comparing coefficients of powers of *x* gives:
+
+      \begin{align}
+      -12k_1 &= 144 \\
+      -3k_1 - 12k_2 &= 0 \\
+      36 - 12k_2 &= 0 \\
+      6k_1 - 2k_2 - 12k_3 &= 0 \\
+      2k_2 - k_3 - 12k_4 &= \frac{25}{2}
+      \end{align}
+
+      Solving this system of linear equations gives $k_1 = -12$, $k_2 = 3$,
+      $k_3 = -13/2$, and $k_4 = 0$, so:
+
+      \begin{equation}
+      y_{\rm p} = -12x_3 + 3x^2 - \frac{13}{2}x
+      \end{equation}
+
+
+   3. Combine and apply boundary conditions:
+
+      The general solution and its first derivative are
+
+      \begin{align}
+      y &= c_1 e^{4x} + c_2 e^{-3x} - 12x^3 + 3x^2 - \frac{13}{2}x \\
+      y' &= 4c_1 e^{4x} - 3c_2e^{-3X} - 36x^2 + 6x - \frac{13}{2}
+      \end{align}
+
+      Plugging in the initial conditions:
+
+      \begin{align}
+      y(0) &= c_1 + c_2 = 5 \\
+      y'(0) &= 4c_1 - 3c_2 - \frac{13}{2} = -\frac{1}{2}
+      \end{align}
+
+      Solve using matrices:
+
+      \begin{align}
+      \begin{bmatrix} 1 & 1 & 5 \\ 4 & -3 & 6 \end{bmatrix}
+      \begin{matrix} \vphantom{R_1} \\ -4 R_1 \end{matrix}
+      &\to \begin{bmatrix} 1 & 1 & 5 \\ 0 & -7 & 14 \end{bmatrix}
+      \begin{matrix} \vphantom{R_1} \\ \div -7 \end{matrix} \\
+      &\to \begin{bmatrix} 1 & 1 & 5 \\ 0 & 1 & 2  \end{bmatrix}
+      \begin{matrix} -R_2 \\ \vphantom{R_1} \end{matrix} \\
+      &\to \begin{bmatrix} 1 & 0 & 3 \\ 0 & 1 & 2  \end{bmatrix}
+      \end{align}
+
+      so $c_1 = 3$ and $c_2 = 2$. The final solution is:
+
+      \begin{equation}
+      y = 3e^{4x} + 2e^{-3x} - 12x^3 + 3x^2 - \frac{13}{2}x
+      \end{equation}
+   ```
