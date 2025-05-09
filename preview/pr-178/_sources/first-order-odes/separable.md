@@ -220,7 +220,7 @@ Use the initial condition to find the value of C.
 \begin{equation}
 y(0) = \frac{9}{2} = C \to y^2 = 9-4x^2
 \end{equation}
-Plug in the value for C and solve for y. 
+Plug in the value for C and solve for y.
 
 \begin{equation}
 y = ±\sqrt{9-4x^2}
