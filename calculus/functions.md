@@ -67,7 +67,7 @@ n=3&: \text{cubic}
 
 ### Exponential
 \begin{align}
-y = a^x \text{ (a > 0, a \neq 1)}
+y = a^x \text{ (a > 0, a $\neq$ 1)}
 \end{align}
 - a: base
 
@@ -75,7 +75,7 @@ Special case: a = e (≈ 2.718...) = Euler's number
 
 ### Logarithmic
 \begin{align}
-y = \log_a x \text{ (a > 0, a \neq 1)}
+y = \log_a x \text{ (a > 0, a $\neq$ 1)}
 \end{align}
 
 Special cases:
