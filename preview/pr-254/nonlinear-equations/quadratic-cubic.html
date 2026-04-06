@@ -16,41 +16,44 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -67,6 +70,7 @@
     <link rel="prev" title="4.1. Definition" href="definition.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -82,19 +86,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -102,7 +95,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -110,8 +102,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -127,7 +119,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -157,15 +150,11 @@
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
@@ -237,9 +226,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -369,7 +363,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -383,25 +377,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -441,8 +427,8 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="quadratic-and-cubic-polynomials">
 <h1><span class="section-number">4.2. </span>Quadratic and cubic polynomials<a class="headerlink" href="#quadratic-and-cubic-polynomials" title="Link to this heading">#</a></h1>
 <p>A polynomial of degree <span class="math notranslate nohighlight">\(n\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-4917c3a3-b227-4daf-bc07-958cf98e6b2b">
-<span class="eqno">(4.1)<a class="headerlink" href="#equation-4917c3a3-b227-4daf-bc07-958cf98e6b2b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ae6857b1-b65b-43d1-b1b3-ba90fe3cb06a">
+<span class="eqno">(4.1)<a class="headerlink" href="#equation-ae6857b1-b65b-43d1-b1b3-ba90fe3cb06a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 a_n x^n + \cdots + a_1 x_1 + a_0 = 0
 \end{equation}\]</div>
 <p>has <span class="math notranslate nohighlight">\(n\)</span> roots, which may be real or complex. Real roots may be distinct or
@@ -474,16 +460,16 @@ of <span class="math notranslate nohighlight">\(x^2 + 1 = 0\)</span> are <span c
 polynomials:</p>
 <ul>
 <li><p>Factoring</p>
-<div class="amsmath math notranslate nohighlight" id="equation-074a0d75-d16a-4bac-b810-a8e9659fed03">
-<span class="eqno">(4.2)<a class="headerlink" href="#equation-074a0d75-d16a-4bac-b810-a8e9659fed03" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a4011d3d-ac98-42b2-99d0-13417319bbab">
+<span class="eqno">(4.2)<a class="headerlink" href="#equation-a4011d3d-ac98-42b2-99d0-13417319bbab" title="Permalink to this equation">#</a></span>\[\begin{equation}
 x^2 + 8 x - 9 = (x+9)(x-1) = 0
 \end{equation}\]</div>
 <p>This equation will be true if either factor is zero, so the roots are
 <span class="math notranslate nohighlight">\(x = -9\)</span> or <span class="math notranslate nohighlight">\(x = 1\)</span>.</p>
 </li>
 <li><p>Completing the square</p>
-<div class="amsmath math notranslate nohighlight" id="equation-795234d5-b555-495e-a09f-50f61a9a9559">
-<span class="eqno">(4.3)<a class="headerlink" href="#equation-795234d5-b555-495e-a09f-50f61a9a9559" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e42a585b-473f-4b9a-a34d-bd9499d480d1">
+<span class="eqno">(4.3)<a class="headerlink" href="#equation-e42a585b-473f-4b9a-a34d-bd9499d480d1" title="Permalink to this equation">#</a></span>\[\begin{align}
 x^2 + 8x &amp;= 9 \\
 x^2 + 8x + 16 &amp;= 9 + 16 \\
 (x+4)^2 &amp;= 25 \\
@@ -496,14 +482,14 @@ x = -4 \pm 5
 <aside class="topic">
 <p class="topic-title">Quadratic formula</p>
 <p>The roots of the general quadratic polynomial <span class="math notranslate nohighlight">\(ax^2 + bx + c = 0\)</span> are</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2d19bf74-23ab-4933-91fb-28ad790561c0">
-<span class="eqno">(4.4)<a class="headerlink" href="#equation-2d19bf74-23ab-4933-91fb-28ad790561c0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d0577746-36e2-4494-8c8e-1b4a951c247a">
+<span class="eqno">(4.4)<a class="headerlink" href="#equation-d0577746-36e2-4494-8c8e-1b4a951c247a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
 \end{equation}\]</div>
 </aside>
 <p>For the polynomial <span class="math notranslate nohighlight">\(x^2 + 8x - 9 = 0\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-121d8a29-77ed-42e2-962b-b7a9486220a8">
-<span class="eqno">(4.5)<a class="headerlink" href="#equation-121d8a29-77ed-42e2-962b-b7a9486220a8" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c0ebcd47-9dec-47a5-a68b-a35c8b6cfe06">
+<span class="eqno">(4.5)<a class="headerlink" href="#equation-c0ebcd47-9dec-47a5-a68b-a35c8b6cfe06" title="Permalink to this equation">#</a></span>\[\begin{align}
 x &amp;= \frac{-8 \pm \sqrt{8^2 - 4 \cdot 1 \cdot -9}}{2 \cdot 1} \\
   &amp;= \frac{-8 \pm \sqrt{100}}{2} \\
   &amp;= -4 \pm 5
@@ -518,18 +504,18 @@ to make the biggest box?</p>
 <hr class="docutils" />
 <p>The volume of the box that will be obtained by cutting a square of edge length
 <em>x</em> is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-576bdf4a-d0bc-4613-ab38-5c2ee7dfbf33">
-<span class="eqno">(4.6)<a class="headerlink" href="#equation-576bdf4a-d0bc-4613-ab38-5c2ee7dfbf33" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e0013e63-bbad-4270-9f0f-c7a07273ae87">
+<span class="eqno">(4.6)<a class="headerlink" href="#equation-e0013e63-bbad-4270-9f0f-c7a07273ae87" title="Permalink to this equation">#</a></span>\[\begin{equation}
 V(x) = (8.5 - 2x)(11-2x)x = 4x^3 - 39x^2 + 93.5x
 \end{equation}\]</div>
 <p>The volume will be at an extremum with respect to <em>x</em> if <span class="math notranslate nohighlight">\(V'(x) = 0\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cf9a6f09-4f91-4d39-ad4c-27fe68803690">
-<span class="eqno">(4.7)<a class="headerlink" href="#equation-cf9a6f09-4f91-4d39-ad4c-27fe68803690" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-79f77947-1263-4f81-bd14-e59cee162b8e">
+<span class="eqno">(4.7)<a class="headerlink" href="#equation-79f77947-1263-4f81-bd14-e59cee162b8e" title="Permalink to this equation">#</a></span>\[\begin{equation}
 V'(x) = 12x^2 - 78x + 93.5 = 0
 \end{equation}\]</div>
 <p>The roots of this quadratic polynomial are:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c3af656e-0922-4c5c-89e9-3fc63ef4c429">
-<span class="eqno">(4.8)<a class="headerlink" href="#equation-c3af656e-0922-4c5c-89e9-3fc63ef4c429" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f7f3bb4e-d31b-4144-8f23-128bcab816bc">
+<span class="eqno">(4.8)<a class="headerlink" href="#equation-f7f3bb4e-d31b-4144-8f23-128bcab816bc" title="Permalink to this equation">#</a></span>\[\begin{align}
 x &amp;= \frac{78 \pm \sqrt{(-78)^2 - 4 \cdot 12 \cdot -93.5}}{2 \cdot 12} \\
   &amp;= 1.59\, 4.91
 \end{align}\]</div>
@@ -539,14 +525,14 @@ to remove 4.91” from two corners!</p>
 <div class="admonition-example-complex-roots admonition">
 <p class="admonition-title">Example: Complex roots</p>
 <p>Find the roots of</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a08e4bff-8e04-49cf-a9c2-9164aa75f61e">
-<span class="eqno">(4.9)<a class="headerlink" href="#equation-a08e4bff-8e04-49cf-a9c2-9164aa75f61e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-58a2278f-0726-45a0-8fcc-9fc35d3ffc63">
+<span class="eqno">(4.9)<a class="headerlink" href="#equation-58a2278f-0726-45a0-8fcc-9fc35d3ffc63" title="Permalink to this equation">#</a></span>\[\begin{equation}
 x^2 - 10x + 34 = 0
 \end{equation}\]</div>
 <hr class="docutils" />
 <p>I will use the technique of completing the square:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f04aa9cb-b56a-4ba0-a82e-0608ceea8c1c">
-<span class="eqno">(4.10)<a class="headerlink" href="#equation-f04aa9cb-b56a-4ba0-a82e-0608ceea8c1c" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-94783627-f133-4f21-883d-2d407ee48322">
+<span class="eqno">(4.10)<a class="headerlink" href="#equation-94783627-f133-4f21-883d-2d407ee48322" title="Permalink to this equation">#</a></span>\[\begin{align}
 x^2 - 10x &amp;= -34 \\
 x^2 - 10x + 25 &amp;= -34 + 25 \\
 (x - 5)^2 &amp;= -9 \\
@@ -570,8 +556,8 @@ cases, numerical methods are needed!</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<div class="amsmath math notranslate nohighlight" id="equation-bbec1c17-e3c9-4e3c-9ab7-936c3ea5bc50">
-<span class="eqno">(4.11)<a class="headerlink" href="#equation-bbec1c17-e3c9-4e3c-9ab7-936c3ea5bc50" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ab31be7b-d564-4358-8f6c-6ba3f69d3501">
+<span class="eqno">(4.11)<a class="headerlink" href="#equation-ab31be7b-d564-4358-8f6c-6ba3f69d3501" title="Permalink to this equation">#</a></span>\[\begin{align}
 x^2 + 2x + 1 &amp;= 0 \\
 (x + 1)^2 &amp;= 0 \\
 x &amp;= -1
@@ -582,8 +568,8 @@ x &amp;= -1
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<div class="amsmath math notranslate nohighlight" id="equation-2f973720-58c4-49ee-8f38-eed59a9df8d4">
-<span class="eqno">(4.12)<a class="headerlink" href="#equation-2f973720-58c4-49ee-8f38-eed59a9df8d4" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4df7ef9f-e98c-4407-b769-9202460fd79a">
+<span class="eqno">(4.12)<a class="headerlink" href="#equation-4df7ef9f-e98c-4407-b769-9202460fd79a" title="Permalink to this equation">#</a></span>\[\begin{align}
 x^2 - 8x &amp;= -5 \\
 x^2 - 8x + 16 &amp;= -5 + 16 \\
 (x - 4)^2 &amp;= 11 \\
@@ -596,8 +582,8 @@ x &amp;\approx 0.683,\, 7.32
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<div class="amsmath math notranslate nohighlight" id="equation-d60bbc77-0724-4abb-9e38-38298a2ae2dd">
-<span class="eqno">(4.13)<a class="headerlink" href="#equation-d60bbc77-0724-4abb-9e38-38298a2ae2dd" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-8d04178d-206a-453c-bd51-7e1619bbdb1f">
+<span class="eqno">(4.13)<a class="headerlink" href="#equation-8d04178d-206a-453c-bd51-7e1619bbdb1f" title="Permalink to this equation">#</a></span>\[\begin{align}
 x &amp;= \frac{7 \pm \sqrt{(-7)^2 - 4 \cdot 2 \cdot 12}}{2 \cdot 2} \\
 x &amp;= \frac{7 \pm \sqrt{49 - 96}}{4} \\
 x &amp;= \frac{7 \pm \sqrt{-47}}{4} \\
@@ -665,14 +651,16 @@ x &amp;\approx 1.75 \pm 1.71i
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quadratic-polynomials">4.2.1. Quadratic polynomials</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cubic-and-higher-polynomials">4.2.2. Cubic (and higher) polynomials</a></li>
@@ -725,8 +713,8 @@ By Michael P. Howard
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

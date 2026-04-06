@@ -16,41 +16,44 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -67,6 +70,7 @@
     <link rel="prev" title="5.1. Definition" href="definition.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -82,19 +86,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -102,7 +95,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -110,8 +102,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -127,7 +119,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -157,15 +150,11 @@
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
@@ -237,9 +226,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -369,7 +363,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -383,25 +377,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -442,15 +428,15 @@ document.write(`
 <p class="topic-title">Separable first-order ODEs</p>
 <p>If a first-order ODE can be separated so that <em>y</em> and <em>x</em> are on each side, it
 can be solved by integration:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0b4766e0-d651-4aa0-824d-5bae98d08d7f">
-<span class="eqno">(5.10)<a class="headerlink" href="#equation-0b4766e0-d651-4aa0-824d-5bae98d08d7f" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b96e436f-1065-4467-842a-4674d8a44b00">
+<span class="eqno">(5.10)<a class="headerlink" href="#equation-b96e436f-1065-4467-842a-4674d8a44b00" title="Permalink to this equation">#</a></span>\[\begin{align}
 y' &amp;= \frac{f(x)}{g(y)} \\
 \int g(y)\d{y} &amp;= \int f(x) \d{x} + c
 \end{align}\]</div>
 </aside>
 <p>For example, to solve <span class="math notranslate nohighlight">\(y' = xy\)</span>, separate the variables and integrate:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b234fef1-19a1-44db-a1b2-b16f7116fa93">
-<span class="eqno">(5.11)<a class="headerlink" href="#equation-b234fef1-19a1-44db-a1b2-b16f7116fa93" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-600366aa-9b51-4e33-bd7c-ab861848b37d">
+<span class="eqno">(5.11)<a class="headerlink" href="#equation-600366aa-9b51-4e33-bd7c-ab861848b37d" title="Permalink to this equation">#</a></span>\[\begin{align}
 \int \frac{\d{y}}{y} &amp;= \int x \d{x} \\
 \ln y &amp;= \frac{x^2}{2} + c_0 \\
 y &amp;= e^{x^2/2 + c_0} \\
@@ -462,8 +448,8 @@ integration constant (<span class="math notranslate nohighlight">\(c = e^{c_0}\)
 <p class="admonition-title">Example: Chemical reaction kinetics</p>
 <p>A substance is disappearing according to a first-order reaction, so its
 concentration follows</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6bb54214-6031-41e8-815c-e255910a13f4">
-<span class="eqno">(5.12)<a class="headerlink" href="#equation-6bb54214-6031-41e8-815c-e255910a13f4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f81cd443-a5dc-4c4a-afff-59843eaecba4">
+<span class="eqno">(5.12)<a class="headerlink" href="#equation-f81cd443-a5dc-4c4a-afff-59843eaecba4" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \dd{}{c}{t} = -k c
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(k\)</span> is the reaction rate constant. If the initial concentration of the
@@ -471,25 +457,25 @@ reactant was 1.0 M and the concentration after 1 hour has passed is 0.70 M,
 what is the reaction rate constant?</p>
 <hr class="docutils" />
 <p>First, solve the differential equation using separation of variables</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bc9ac7c2-b400-4a45-b671-5a096e496f9c">
-<span class="eqno">(5.13)<a class="headerlink" href="#equation-bc9ac7c2-b400-4a45-b671-5a096e496f9c" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-22b2c566-22cd-4acf-a2f5-6d95f63e0a7a">
+<span class="eqno">(5.13)<a class="headerlink" href="#equation-22b2c566-22cd-4acf-a2f5-6d95f63e0a7a" title="Permalink to this equation">#</a></span>\[\begin{align}
 \int \frac{1}{c} \d{c} &amp;= \int -k \d{t} \\
 \ln c &amp;= -k t + B
 \end{align}\]</div>
 <p>where <em>B</em> is an unknown integration constant. Apply the initial condition that
 <span class="math notranslate nohighlight">\(c(0) = 1\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-09cbad49-9392-49d7-a5c5-4e4537ce4ef2">
-<span class="eqno">(5.14)<a class="headerlink" href="#equation-09cbad49-9392-49d7-a5c5-4e4537ce4ef2" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-16e60469-d53e-4301-8f32-392d02c6615b">
+<span class="eqno">(5.14)<a class="headerlink" href="#equation-16e60469-d53e-4301-8f32-392d02c6615b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \ln 1 = -k \cdot 0 + B \to B = 0
 \end{equation}\]</div>
 <p>Hence,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1522300f-c516-4929-9014-093e72b334c2">
-<span class="eqno">(5.15)<a class="headerlink" href="#equation-1522300f-c516-4929-9014-093e72b334c2" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-568a3dff-7829-4db6-93df-861dfc709660">
+<span class="eqno">(5.15)<a class="headerlink" href="#equation-568a3dff-7829-4db6-93df-861dfc709660" title="Permalink to this equation">#</a></span>\[\begin{equation}
 k = -\frac{\ln c}{t}
 \end{equation}\]</div>
 <p>We know that <span class="math notranslate nohighlight">\(c(1) = 0.70\)</span> so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5263296a-1c8d-4740-a19e-32296caa775b">
-<span class="eqno">(5.16)<a class="headerlink" href="#equation-5263296a-1c8d-4740-a19e-32296caa775b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-76b845c8-eb08-4a42-8d62-fbd7fca98fe3">
+<span class="eqno">(5.16)<a class="headerlink" href="#equation-76b845c8-eb08-4a42-8d62-fbd7fca98fe3" title="Permalink to this equation">#</a></span>\[\begin{equation}
 k = -\frac{\ln 0.7}{1\,{\rm h}} = 0.36\,{\rm h}^{-1}
 \end{equation}\]</div>
 </div>
@@ -498,28 +484,28 @@ k = -\frac{\ln 0.7}{1\,{\rm h}} = 0.36\,{\rm h}^{-1}
 <p>Estimate the temperature <em>T</em> in an office building at 6 a.m. if the heat goes
 off at 10 p.m. when the building is 70°F and the outside temperature <span class="math notranslate nohighlight">\(T_\infty\)</span>
 is 45°F if the <em>T</em> follows</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a0f39a63-57bc-4078-b31c-ffadc0cd6e85">
-<span class="eqno">(5.17)<a class="headerlink" href="#equation-a0f39a63-57bc-4078-b31c-ffadc0cd6e85" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-bb9562ba-ab1c-493d-aac0-b9e2167eb0ef">
+<span class="eqno">(5.17)<a class="headerlink" href="#equation-bb9562ba-ab1c-493d-aac0-b9e2167eb0ef" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \dd{}{T}{t} = -k(T - T_\infty)
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(k = 0.05\,{\rm h}^{-1}\)</span>.</p>
 <hr class="docutils" />
 <p>Separate the differential equation and integrate</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d9d017b8-de8a-462c-aaa6-d2864acb3cfb">
-<span class="eqno">(5.18)<a class="headerlink" href="#equation-d9d017b8-de8a-462c-aaa6-d2864acb3cfb" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1e8481fc-372d-497d-904a-07ef20e8a466">
+<span class="eqno">(5.18)<a class="headerlink" href="#equation-1e8481fc-372d-497d-904a-07ef20e8a466" title="Permalink to this equation">#</a></span>\[\begin{align}
 \int \frac{1}{T - T_\infty} \d{T} &amp;= \int -k \d{t} \\
 \ln(T - T_\infty) &amp;= -kt + c \\
 T - T_\infty &amp;= C e^{-kt} \\
 T &amp;= T_\infty + C e^{-kt}
 \end{align}\]</div>
 <p>Call 10 p.m. the time where <span class="math notranslate nohighlight">\(t = 0\)</span>. Then,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1fb7b379-5ea8-496b-b830-63395c57ed98">
-<span class="eqno">(5.19)<a class="headerlink" href="#equation-1fb7b379-5ea8-496b-b830-63395c57ed98" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4ffa4aab-0ed2-44fc-9b51-77d4f1d82701">
+<span class="eqno">(5.19)<a class="headerlink" href="#equation-4ffa4aab-0ed2-44fc-9b51-77d4f1d82701" title="Permalink to this equation">#</a></span>\[\begin{equation}
 70 = T(0) = 45 + C \to C = 25
 \end{equation}\]</div>
 <p>Last, evaluate the temperature at 6 a.m. when <span class="math notranslate nohighlight">\(t = 8\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4abe9d6b-c066-4299-b442-d550eee76595">
-<span class="eqno">(5.20)<a class="headerlink" href="#equation-4abe9d6b-c066-4299-b442-d550eee76595" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-9380486e-d98c-4c4c-9231-9826aebf276b">
+<span class="eqno">(5.20)<a class="headerlink" href="#equation-9380486e-d98c-4c4c-9231-9826aebf276b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 T(8) = 45 + 25 e^{-0.05 \cdot 8} = 62
 \end{equation}\]</div>
 <p>The temperature is approximately 62°F.</p>
@@ -534,21 +520,21 @@ acceleration due to gravity and <em>g</em> is the height of water above the hole
 <p>If there is 2 m of water in the tank initially, when does it drain?</p>
 <hr class="docutils" />
 <p>Start from the unsteady balance on the mass of water <em>m</em> in the tank</p>
-<div class="amsmath math notranslate nohighlight" id="equation-14c17c6c-c6d9-4fa6-9bd7-12b31dedcdf2">
-<span class="eqno">(5.21)<a class="headerlink" href="#equation-14c17c6c-c6d9-4fa6-9bd7-12b31dedcdf2" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d9063f5a-3c5c-477c-84a9-c37ecbe8b123">
+<span class="eqno">(5.21)<a class="headerlink" href="#equation-d9063f5a-3c5c-477c-84a9-c37ecbe8b123" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \dd{}{m}{t} = -\dot m_{\rm out}
 \end{equation}\]</div>
 <p>The mass of water is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-029b80a0-a752-4e18-87bf-2a47e1164e71">
-<span class="eqno">(5.22)<a class="headerlink" href="#equation-029b80a0-a752-4e18-87bf-2a47e1164e71" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ce4ab8ba-9a18-4fd7-824d-dc3bca3463ab">
+<span class="eqno">(5.22)<a class="headerlink" href="#equation-ce4ab8ba-9a18-4fd7-824d-dc3bca3463ab" title="Permalink to this equation">#</a></span>\[\begin{equation}
 m = \rho V = \rho \frac{\pi D_1^2}{4} h
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\rho\)</span> is the density of water, <em>V</em> is the volume of water in the tank,
 and <span class="math notranslate nohighlight">\(D_1\)</span> = 1 m is the diameter of the tank. <em>V</em> is replaced using the volume of
 a cylinder.</p>
 <p>The mass flow rate out is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-265466e1-60b6-4958-9d38-0015362508b7">
-<span class="eqno">(5.23)<a class="headerlink" href="#equation-265466e1-60b6-4958-9d38-0015362508b7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c3ef37e8-b7cb-40df-a339-55c0d2a403bc">
+<span class="eqno">(5.23)<a class="headerlink" href="#equation-c3ef37e8-b7cb-40df-a339-55c0d2a403bc" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \dot m_{\rm out} = \rho \dot V = \rho \frac{\pi D_2^2}{4} \sqrt{2gh}
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\dot V\)</span> is the volumetric flow rate out of the hole, which we compute
@@ -556,28 +542,28 @@ from the cross-sectional area of the hole (a circle with diameter <span class="m
 = 0.01 m) and the model for the velocity leaving it.</p>
 <p>Inserting both into the unsteady balance, applying rules of differentiation, and
 simplifying gives</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e18e8222-2f35-4bb8-9911-2c8755d79dcb">
-<span class="eqno">(5.24)<a class="headerlink" href="#equation-e18e8222-2f35-4bb8-9911-2c8755d79dcb" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f1a1b930-58ff-44e5-98d3-7fc98bd9a5fd">
+<span class="eqno">(5.24)<a class="headerlink" href="#equation-f1a1b930-58ff-44e5-98d3-7fc98bd9a5fd" title="Permalink to this equation">#</a></span>\[\begin{align}
 \dd{}{}{t}\left(\rho \frac{\pi D_1^2}{4} h\right)
  &amp;= -\rho \frac{\pi D_2^2}{4} \sqrt{2gh} \\
 \rho \frac{\pi D_1^2}{4} \dd{}{h}{t} &amp;= -\rho \frac{\pi D_2^2}{4} \sqrt{2gh} \\
 \frac{dh}{dt} &amp;= -\left(\frac{D_2}{D_1}\right)^2 \sqrt{2gh}
 \end{align}\]</div>
 <p>This is a separable differential equation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-27ae67d5-7a7c-4824-bbed-5a3e90e1f483">
-<span class="eqno">(5.25)<a class="headerlink" href="#equation-27ae67d5-7a7c-4824-bbed-5a3e90e1f483" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-cc30b7c0-b1c8-4514-9a78-f428c3defcdb">
+<span class="eqno">(5.25)<a class="headerlink" href="#equation-cc30b7c0-b1c8-4514-9a78-f428c3defcdb" title="Permalink to this equation">#</a></span>\[\begin{align}
 \int \frac{1}{\sqrt{h}} \d{h}
   &amp;= \int -\left(\frac{D_2}{D_1}\right)^2 \sqrt{2g} \d{t} \\
 2\sqrt{h} &amp;= -t \left(\frac{D_2}{D_1}\right)^2 \sqrt{2g} + c
 \end{align}\]</div>
 <p>Find the integration constant <em>c</em> using the initial condition</p>
-<div class="amsmath math notranslate nohighlight" id="equation-dfdf77b5-8ea1-43ee-a2e8-e2a15998906c">
-<span class="eqno">(5.26)<a class="headerlink" href="#equation-dfdf77b5-8ea1-43ee-a2e8-e2a15998906c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6c458454-48a9-458d-936c-34f499ffe805">
+<span class="eqno">(5.26)<a class="headerlink" href="#equation-6c458454-48a9-458d-936c-34f499ffe805" title="Permalink to this equation">#</a></span>\[\begin{equation}
 2 \sqrt{2} = c
 \end{equation}\]</div>
 <p>The tank drains when <span class="math notranslate nohighlight">\(h = 0\)</span>, so substitute this, <em>c</em>, and numerical values:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1e8b38d8-158f-47c1-b9c7-4319667591d2">
-<span class="eqno">(5.27)<a class="headerlink" href="#equation-1e8b38d8-158f-47c1-b9c7-4319667591d2" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-852e7362-d194-4c8b-9b1c-2c1a401a0311">
+<span class="eqno">(5.27)<a class="headerlink" href="#equation-852e7362-d194-4c8b-9b1c-2c1a401a0311" title="Permalink to this equation">#</a></span>\[\begin{align}
 0 &amp;= -t \left(\frac{0.01}{1}\right)^2 \sqrt{2 \cdot 9.8} + 2 \sqrt{2} \\
 t &amp;= 2 \left(\frac{1}{0.01}\right)^2 \sqrt{\frac{2}{2 \cdot 9.8}} = 6400
 \end{align}\]</div>
@@ -593,20 +579,20 @@ t &amp;= 2 \left(\frac{1}{0.01}\right)^2 \sqrt{\frac{2}{2 \cdot 9.8}} = 6400
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Separate and integrate:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b4e4d675-4726-4020-b013-7e1fa76ed82a">
-<span class="eqno">(5.28)<a class="headerlink" href="#equation-b4e4d675-4726-4020-b013-7e1fa76ed82a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d8cb6d37-1a8c-4b83-8917-e7c9f41871da">
+<span class="eqno">(5.28)<a class="headerlink" href="#equation-d8cb6d37-1a8c-4b83-8917-e7c9f41871da" title="Permalink to this equation">#</a></span>\[\begin{align}
 \dd{}{y}{x} &amp;= -(x+2)y^2 \\
 \int\frac{\d{y}}{y^2} &amp;= -\int (x+2) \d{x} \\
 -\frac{1}{y} &amp;= -\left(\frac{x^2}{2} + 2x\right) + c
 \end{align}\]</div>
 <p class="sd-card-text">Apply initial condition <span class="math notranslate nohighlight">\(y(1) = 1\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-98973696-3527-4b15-b299-5644d32d6bd4">
-<span class="eqno">(5.29)<a class="headerlink" href="#equation-98973696-3527-4b15-b299-5644d32d6bd4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-de34ed9b-46a4-415c-8451-468d6c0cd318">
+<span class="eqno">(5.29)<a class="headerlink" href="#equation-de34ed9b-46a4-415c-8451-468d6c0cd318" title="Permalink to this equation">#</a></span>\[\begin{equation}
 -1 = -\left(\frac{1}{2} + 2 \right) + c
 \end{equation}\]</div>
 <p class="sd-card-text">so <span class="math notranslate nohighlight">\(c = 3/2\)</span>. Hence,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-65196ed5-ac8f-471d-bcd1-1e60f451a83f">
-<span class="eqno">(5.30)<a class="headerlink" href="#equation-65196ed5-ac8f-471d-bcd1-1e60f451a83f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1e7f0269-de18-4e68-9e58-09dec4f643e5">
+<span class="eqno">(5.30)<a class="headerlink" href="#equation-1e7f0269-de18-4e68-9e58-09dec4f643e5" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y = \frac{2}{x^2+4x-3}
 \end{equation}\]</div>
 </div>
@@ -616,27 +602,27 @@ y = \frac{2}{x^2+4x-3}
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Separate and integrate:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fb8c2328-b6d6-4046-94b6-d589bf334edb">
-<span class="eqno">(5.31)<a class="headerlink" href="#equation-fb8c2328-b6d6-4046-94b6-d589bf334edb" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-fcb8be0e-6d10-46d0-8ca5-9e34050bfdc1">
+<span class="eqno">(5.31)<a class="headerlink" href="#equation-fcb8be0e-6d10-46d0-8ca5-9e34050bfdc1" title="Permalink to this equation">#</a></span>\[\begin{align}
 y \frac{dy}{dx} &amp;= -4x \\
 \int y \d{y} &amp;= \int-4x \d{x} \\
 -\frac{y^2}{2} &amp;= -2x^2 + c \\
 \end{align}\]</div>
 <p class="sd-card-text">Apply initial condition <span class="math notranslate nohighlight">\(y(0) = 3\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9804e2ef-7d55-4f6a-aef9-215aa60909a0">
-<span class="eqno">(5.32)<a class="headerlink" href="#equation-9804e2ef-7d55-4f6a-aef9-215aa60909a0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c1039c8f-8564-45ce-9afd-c55ff83f475b">
+<span class="eqno">(5.32)<a class="headerlink" href="#equation-c1039c8f-8564-45ce-9afd-c55ff83f475b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 -\frac{9}{2} = c
 \end{equation}\]</div>
 <p class="sd-card-text">so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f0085572-49fa-4c61-9bca-ddbf61e7f809">
-<span class="eqno">(5.33)<a class="headerlink" href="#equation-f0085572-49fa-4c61-9bca-ddbf61e7f809" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-8bab23b0-eff7-4503-a0bf-f93d26e15e18">
+<span class="eqno">(5.33)<a class="headerlink" href="#equation-8bab23b0-eff7-4503-a0bf-f93d26e15e18" title="Permalink to this equation">#</a></span>\[\begin{align}
 y^2 &amp;= 9-4x^2 \\
 y &amp;= \pm \sqrt{9-4x^2}
 \end{align}\]</div>
 <p class="sd-card-text">The negative root does not satisfy the initial condition, so choose the
 positive root:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-112c1a62-2232-4531-ac77-81275814dc5c">
-<span class="eqno">(5.34)<a class="headerlink" href="#equation-112c1a62-2232-4531-ac77-81275814dc5c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-52ec4e30-671e-44f2-ad64-fafdf286d116">
+<span class="eqno">(5.34)<a class="headerlink" href="#equation-52ec4e30-671e-44f2-ad64-fafdf286d116" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y = \sqrt{9-4x^2}
 \end{equation}\]</div>
 </div>
@@ -646,27 +632,27 @@ y = \sqrt{9-4x^2}
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Separate and integrate:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-32265925-0033-4f9d-bf21-7de84d45aae5">
-<span class="eqno">(5.35)<a class="headerlink" href="#equation-32265925-0033-4f9d-bf21-7de84d45aae5" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4ee07464-f4cb-44f6-b5dc-47bfed0befa9">
+<span class="eqno">(5.35)<a class="headerlink" href="#equation-4ee07464-f4cb-44f6-b5dc-47bfed0befa9" title="Permalink to this equation">#</a></span>\[\begin{align}
 \int y e^{y^2} \d{y} &amp;= \int (x-1) \d{x} \\
 \frac{1}{2} e^{y^2} &amp;= \frac{x^2}{2} - x + c
 \end{align}\]</div>
 <p class="sd-card-text">Apply initial condition <span class="math notranslate nohighlight">\(y(0) = 1\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f7500fe2-880b-4729-a087-d6fbafd764ad">
-<span class="eqno">(5.36)<a class="headerlink" href="#equation-f7500fe2-880b-4729-a087-d6fbafd764ad" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-49849f83-056c-4878-9c2e-1ed1757938d9">
+<span class="eqno">(5.36)<a class="headerlink" href="#equation-49849f83-056c-4878-9c2e-1ed1757938d9" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{1}{2} e = c
 \end{equation}\]</div>
 <p class="sd-card-text">Hence,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d0dfe96b-4bd1-4f3d-91d8-0428b721aebc">
-<span class="eqno">(5.37)<a class="headerlink" href="#equation-d0dfe96b-4bd1-4f3d-91d8-0428b721aebc" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f08bd0fe-9317-4780-ac49-936c5aa342c1">
+<span class="eqno">(5.37)<a class="headerlink" href="#equation-f08bd0fe-9317-4780-ac49-936c5aa342c1" title="Permalink to this equation">#</a></span>\[\begin{align}
 e^{y^2} &amp;= x^2 - 2x + e \\
 y^2 &amp;= \ln(x^2 - 2x + e) \\
 y &amp;= \pm \sqrt{\ln(x^2 - 2x + e)}
 \end{align}\]</div>
 <p class="sd-card-text">The negative root again does not meet the initial condition, so choose the
 positive one:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0d77c3de-3059-42cf-8154-07376ed998ba">
-<span class="eqno">(5.38)<a class="headerlink" href="#equation-0d77c3de-3059-42cf-8154-07376ed998ba" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-5af99f30-5c84-4957-ba96-aff4cb032d5a">
+<span class="eqno">(5.38)<a class="headerlink" href="#equation-5af99f30-5c84-4957-ba96-aff4cb032d5a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y = \sqrt{\ln(x^2 - 2x + e)}
 \end{equation}\]</div>
 </div>
@@ -730,14 +716,16 @@ y = \sqrt{\ln(x^2 - 2x + e)}
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill-builder-problems">5.2.1. Skill builder problems</a></li>
 </ul>
@@ -788,8 +776,8 @@ By Michael P. Howard
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

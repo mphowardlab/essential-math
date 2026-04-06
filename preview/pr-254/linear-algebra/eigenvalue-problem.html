@@ -16,41 +16,44 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -67,6 +70,7 @@
     <link rel="prev" title="3.5. Matrix inversion" href="inverses.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -82,19 +86,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -102,7 +95,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -110,8 +102,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -127,7 +119,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -157,15 +150,11 @@
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
@@ -237,9 +226,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -369,7 +363,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -383,25 +377,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -443,8 +429,8 @@ document.write(`
 <h1><span class="section-number">3.6. </span>Eigenvalue problem<a class="headerlink" href="#eigenvalue-problem" title="Link to this heading">#</a></h1>
 <p>For an <em>n</em> x <em>n</em> square matrix <strong>A</strong>, we seek a scalar <span class="math notranslate nohighlight">\(\lambda\)</span> and vector
 <strong>x</strong> such that:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-be4420b1-e0ca-4c27-9cc4-9e5864a5dc03">
-<span class="eqno">(3.101)<a class="headerlink" href="#equation-be4420b1-e0ca-4c27-9cc4-9e5864a5dc03" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-eeba2176-9354-4b7c-9d83-61509df214d8">
+<span class="eqno">(3.101)<a class="headerlink" href="#equation-eeba2176-9354-4b7c-9d83-61509df214d8" title="Permalink to this equation">#</a></span>\[\begin{align}
 \vv{A} \vv{x} = \lambda \vv{x}
 \end{align}\]</div>
 <p>We want a <em>nontrivial</em> solution (<span class="math notranslate nohighlight">\(\vv{x} \ne \vv{0}\)</span>). This pair represents a
@@ -453,28 +439,28 @@ However, it may adopt a new magnitude <span class="math notranslate nohighlight"
 for “own”, we call <strong>x</strong> an <em>eigenvector</em> and <span class="math notranslate nohighlight">\(\lambda\)</span> an <em>eigenvalue</em> of
 <strong>A</strong>.</p>
 <p>To find the eigenvalues of <strong>A</strong>, rearrange:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-449cdf7a-8c36-43a0-bb93-9fbced152393">
-<span class="eqno">(3.102)<a class="headerlink" href="#equation-449cdf7a-8c36-43a0-bb93-9fbced152393" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5ca2a4d3-fd12-480d-8199-da58fd353bf2">
+<span class="eqno">(3.102)<a class="headerlink" href="#equation-5ca2a4d3-fd12-480d-8199-da58fd353bf2" title="Permalink to this equation">#</a></span>\[\begin{align}
 \vv{A} \vv{x} - \lambda \vv{x} &amp;= \vv{0} \\
 (\vv{A} - \lambda \vv{I}) \vv{x} &amp;= \vv{0}
 \end{align}\]</div>
 <p>If <span class="math notranslate nohighlight">\(\vv{A} - \lambda \vv{I}\)</span> is invertible, we have only <span class="math notranslate nohighlight">\(\vv{x} = \vv{0}\)</span> as a
 solution. Hence, we require this matrix to be singular! This occurs when its
 <a class="reference internal" href="determinants.html"><span class="std std-doc">determinant</span></a> is zero:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c8ebb610-6380-4761-92ed-07d1cf7e6539">
-<span class="eqno">(3.103)<a class="headerlink" href="#equation-c8ebb610-6380-4761-92ed-07d1cf7e6539" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-feb5569d-3301-4d0a-b110-4adf0b3618e0">
+<span class="eqno">(3.103)<a class="headerlink" href="#equation-feb5569d-3301-4d0a-b110-4adf0b3618e0" title="Permalink to this equation">#</a></span>\[\begin{align}
 |\vv{A}- \lambda \vv{I}| = 0
 \end{align}\]</div>
 <p>This equation creates a characeristic polynomial of degree <em>n</em> for <span class="math notranslate nohighlight">\(\lambda\)</span>
 that can be solved. Then, the eigenvector <strong>x</strong> that corresponds to each root
 <span class="math notranslate nohighlight">\(\lambda\)</span> can be determined. For example, to find the eigenvalues of:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f4659241-6bab-4c7c-ada8-bee5ef2f4af9">
-<span class="eqno">(3.104)<a class="headerlink" href="#equation-f4659241-6bab-4c7c-ada8-bee5ef2f4af9" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0b70becd-17b3-403b-a761-ce6efaec1277">
+<span class="eqno">(3.104)<a class="headerlink" href="#equation-0b70becd-17b3-403b-a761-ce6efaec1277" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A} = \begin{bmatrix} -5 &amp; 2\\ 2 &amp; -2 \end{bmatrix}
 \end{equation}\]</div>
 <p>First compute the determinant:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3e8e8efd-37b6-4008-a287-8521a7d77d65">
-<span class="eqno">(3.105)<a class="headerlink" href="#equation-3e8e8efd-37b6-4008-a287-8521a7d77d65" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7556d5e1-42e0-4911-979c-784427073fbb">
+<span class="eqno">(3.105)<a class="headerlink" href="#equation-7556d5e1-42e0-4911-979c-784427073fbb" title="Permalink to this equation">#</a></span>\[\begin{align}
 |\vv{A} -\lambda \vv{I}|
 &amp;= \begin{vmatrix} -5-\lambda &amp; 2 \\ 2 &amp; -2-\lambda \end{vmatrix} \\
 &amp;= (-5 -\lambda)(-2-\lambda) - 2 \cdot 2 \\
@@ -487,16 +473,16 @@ only labeling them to make it convenient to refer to a particular eigenvalue
 later.</p>
 <p>Next, we seek the eigenvector <span class="math notranslate nohighlight">\(\vv{x}_1\)</span> that corresponds to <span class="math notranslate nohighlight">\(\lambda_1\)</span>. This
 vector must solve the system:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6bf779d6-cb85-41db-819e-35f88d2f39a4">
-<span class="eqno">(3.106)<a class="headerlink" href="#equation-6bf779d6-cb85-41db-819e-35f88d2f39a4" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f2ed91f5-7a5d-46f4-8adb-6ab285720766">
+<span class="eqno">(3.106)<a class="headerlink" href="#equation-f2ed91f5-7a5d-46f4-8adb-6ab285720766" title="Permalink to this equation">#</a></span>\[\begin{align}
 (\vv{A} - \lambda_1 \vv{I}) \vv{x}_1 &amp;= \vv{0} \\
 \begin{bmatrix} -4 &amp; 2 \\ 2 &amp; -1 \end{bmatrix} \vv{x}_1 &amp;= \vv{0}
 \end{align}\]</div>
 <p>We can solve for <span class="math notranslate nohighlight">\(\vv{x}_1\)</span> using row reduction. Since the last column of the
 augmented matrix would be only zeros, it is not necessary to include it, and we
 row reduce only the matrix itself:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-adad7b50-b2bf-411d-a3be-abc3405aa740">
-<span class="eqno">(3.107)<a class="headerlink" href="#equation-adad7b50-b2bf-411d-a3be-abc3405aa740" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ca411304-e254-4653-a528-1c3c35ae85cd">
+<span class="eqno">(3.107)<a class="headerlink" href="#equation-ca411304-e254-4653-a528-1c3c35ae85cd" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix}
 -4 &amp; 2 \\
 2 &amp; -1
@@ -521,8 +507,8 @@ singular! Equivalently, eigenvectors can be scaled up or down by an arbitrary
 nonzero constant. We may then choose <span class="math notranslate nohighlight">\(x_2\)</span> so that the eigenvector has either
 nice values (like like integers) or a nice norm (1 is conventional). For
 example, choosing <span class="math notranslate nohighlight">\(x_2 = 2\)</span> gives:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2ae35508-a889-447a-9735-391f06cbbe52">
-<span class="eqno">(3.108)<a class="headerlink" href="#equation-2ae35508-a889-447a-9735-391f06cbbe52" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-37c4dfa6-c906-4737-8ab1-deff5b6f92a2">
+<span class="eqno">(3.108)<a class="headerlink" href="#equation-37c4dfa6-c906-4737-8ab1-deff5b6f92a2" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{x}_1 = \begin{bmatrix} 1 \\ 2 \end{bmatrix}
 \end{equation}\]</div>
 <div class="admonition tip">
@@ -532,26 +518,26 @@ of <span class="math notranslate nohighlight">\(\vv{A}-\lambda\vv{I}\)</span> wi
 the eigenvector can be determined using only one row. Moreover, the solution
 for <strong>x</strong> can be obtained by swapping the entries in a row and changing the sign
 of one of them! For example, we had</p>
-<div class="amsmath math notranslate nohighlight" id="equation-512c6b50-4c15-4f08-9444-050ecaa87add">
-<span class="eqno">(3.109)<a class="headerlink" href="#equation-512c6b50-4c15-4f08-9444-050ecaa87add" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1c5e056e-6107-4f9b-ad72-d0b9759f7ad1">
+<span class="eqno">(3.109)<a class="headerlink" href="#equation-1c5e056e-6107-4f9b-ad72-d0b9759f7ad1" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix}
 -4 &amp; 2 \\
 2 &amp; -1
 \end{bmatrix}
 \end{equation}\]</div>
 <p>so using the second row, we find:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3d75ec3c-69e0-4275-b339-3137eba9e88f">
-<span class="eqno">(3.110)<a class="headerlink" href="#equation-3d75ec3c-69e0-4275-b339-3137eba9e88f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b9ab26a6-4f87-4c8b-bf08-bd365eda0067">
+<span class="eqno">(3.110)<a class="headerlink" href="#equation-b9ab26a6-4f87-4c8b-bf08-bd365eda0067" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{x}_1 = \begin{bmatrix}-(-1) \\ 2\end{bmatrix} = \begin{bmatrix}1 \\ 2\end{bmatrix}
 \end{equation}\]</div>
 <p>However, we could also have negated the other entry:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f40dba43-ad88-46a4-b689-d571d03c30b7">
-<span class="eqno">(3.111)<a class="headerlink" href="#equation-f40dba43-ad88-46a4-b689-d571d03c30b7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b1cb3b6f-d681-4320-8618-50401761a64d">
+<span class="eqno">(3.111)<a class="headerlink" href="#equation-b1cb3b6f-d681-4320-8618-50401761a64d" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{x}_1 = \begin{bmatrix}-1\\ -2\end{bmatrix}
 \end{equation}\]</div>
 <p>or used the first row:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4e43522f-952b-4ea0-a963-2d11383d5cbb">
-<span class="eqno">(3.112)<a class="headerlink" href="#equation-4e43522f-952b-4ea0-a963-2d11383d5cbb" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c1e3eb3e-7649-4b99-a3a2-423336897463">
+<span class="eqno">(3.112)<a class="headerlink" href="#equation-c1e3eb3e-7649-4b99-a3a2-423336897463" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{x}_1 = \begin{bmatrix}2 \\ 4\end{bmatrix}
 \end{equation}\]</div>
 <p>Both of these are also valid eigenvectors because they are multiples of the one
@@ -559,8 +545,8 @@ we found already.</p>
 </div>
 <p>Let’s use the same strategy to get the eigenvector for <span class="math notranslate nohighlight">\(\lambda_2 = -6\)</span>. We’ll
 jump straight to the matrix we need:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-05932192-2222-4f7b-aef8-802f144f73cb">
-<span class="eqno">(3.113)<a class="headerlink" href="#equation-05932192-2222-4f7b-aef8-802f144f73cb" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-18b71b1b-cea2-46d8-bd93-d468ecc2e9a3">
+<span class="eqno">(3.113)<a class="headerlink" href="#equation-18b71b1b-cea2-46d8-bd93-d468ecc2e9a3" title="Permalink to this equation">#</a></span>\[\begin{align}
 (\vv{A} - \lambda_2 \vv{I}) = \begin{bmatrix} 1 &amp; 2 \\ 2 &amp; 4 \end{bmatrix}
 \to \vv{x}_2 = \begin{bmatrix}2 \\ -1 \end{bmatrix}
 \end{align}\]</div>
@@ -569,8 +555,8 @@ jump straight to the matrix we need:</p>
 <h2><span class="section-number">3.6.1. </span>Multiple eigenvalues<a class="headerlink" href="#multiple-eigenvalues" title="Link to this heading">#</a></h2>
 <p>An <em>n</em> x <em>n</em> matrix has <em>n</em> eigenvalues, but they may not be distinct! For
 example, consider the matrix:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0317c7ce-1dde-4b2d-b62b-34ec85aa1c87">
-<span class="eqno">(3.114)<a class="headerlink" href="#equation-0317c7ce-1dde-4b2d-b62b-34ec85aa1c87" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-43f94d2c-dde9-47c2-9e03-12652758420e">
+<span class="eqno">(3.114)<a class="headerlink" href="#equation-43f94d2c-dde9-47c2-9e03-12652758420e" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A} =
 \begin{bmatrix}
 -2 &amp; 2 &amp; -3 \\
@@ -579,8 +565,8 @@ example, consider the matrix:</p>
 \end{bmatrix}
 \end{equation}\]</div>
 <p>We need to evaluate the determinant:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f10cc750-798f-4e99-b3f6-aeac486087d0">
-<span class="eqno">(3.115)<a class="headerlink" href="#equation-f10cc750-798f-4e99-b3f6-aeac486087d0" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e71f7330-a0d5-4db2-bff0-bc4eeedba0b9">
+<span class="eqno">(3.115)<a class="headerlink" href="#equation-e71f7330-a0d5-4db2-bff0-bc4eeedba0b9" title="Permalink to this equation">#</a></span>\[\begin{align}
 |\vv{A} - \lambda  \vv{I}| &amp;=
 \begin{vmatrix}
 -2-\lambda &amp; 2 &amp; -3 \\
@@ -613,8 +599,8 @@ example, consider the matrix:</p>
 <p>The roots of this cubic polynomial are <span class="math notranslate nohighlight">\(\lambda_1 = 5\)</span> and
 <span class="math notranslate nohighlight">\(\lambda_2 = \lambda_3 = -3\)</span>. The eigenvector for <span class="math notranslate nohighlight">\(\lambda_1 = 5\)</span> is obtained
 from</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f0bfe5b8-dd8c-46c5-a729-baa1aeeda231">
-<span class="eqno">(3.116)<a class="headerlink" href="#equation-f0bfe5b8-dd8c-46c5-a729-baa1aeeda231" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7ed13078-3d60-4fb3-94e5-573bae29dcf7">
+<span class="eqno">(3.116)<a class="headerlink" href="#equation-7ed13078-3d60-4fb3-94e5-573bae29dcf7" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A} - \lambda_1 \vv{I} =
 \begin{bmatrix}
 -7 &amp; 2 &amp; -3 \\
@@ -629,14 +615,14 @@ from</p>
 \end{bmatrix}
 \end{equation}\]</div>
 <p>This matrix is equivalent to the system of equations:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cfe53971-e34b-425e-8ae1-34fe6c547c4d">
-<span class="eqno">(3.117)<a class="headerlink" href="#equation-cfe53971-e34b-425e-8ae1-34fe6c547c4d" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b5929acd-de42-423a-94e4-6a4c5b0d9afd">
+<span class="eqno">(3.117)<a class="headerlink" href="#equation-b5929acd-de42-423a-94e4-6a4c5b0d9afd" title="Permalink to this equation">#</a></span>\[\begin{align}
 x_1 + x_3 &amp;= 0 \\
 x_2 + 2 x_3 &amp;= 0
 \end{align}\]</div>
 <p>with <span class="math notranslate nohighlight">\(x_3\)</span> free. Choosing <span class="math notranslate nohighlight">\(x_3 = -1\)</span> gives</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a192e234-38dc-48cf-a453-faa9cd6261dc">
-<span class="eqno">(3.118)<a class="headerlink" href="#equation-a192e234-38dc-48cf-a453-faa9cd6261dc" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d9e06637-0cb1-4045-8c2e-08284880c4cf">
+<span class="eqno">(3.118)<a class="headerlink" href="#equation-d9e06637-0cb1-4045-8c2e-08284880c4cf" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{x}_1 =
 \begin{bmatrix}
 1 \\
@@ -645,8 +631,8 @@ x_2 + 2 x_3 &amp;= 0
 \end{bmatrix}
 \end{equation}\]</div>
 <p>The eigenvectors for <span class="math notranslate nohighlight">\(\lambda_2 = \lambda_3 = -3\)</span> are obtained from</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c2cba362-3a5a-482b-ab6e-72d588dac8b4">
-<span class="eqno">(3.119)<a class="headerlink" href="#equation-c2cba362-3a5a-482b-ab6e-72d588dac8b4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-5921f7c0-9ce2-4e25-95df-cd49c05fcda2">
+<span class="eqno">(3.119)<a class="headerlink" href="#equation-5921f7c0-9ce2-4e25-95df-cd49c05fcda2" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A} - \lambda_2 \vv{I} =
 \begin{bmatrix}
 1 &amp; 2 &amp; -3 \\
@@ -661,14 +647,14 @@ x_2 + 2 x_3 &amp;= 0
 \end{bmatrix}
 \end{equation}\]</div>
 <p>This matrix is equivalent to</p>
-<div class="amsmath math notranslate nohighlight" id="equation-477c5e20-421f-41c2-ae59-f511c8eba308">
-<span class="eqno">(3.120)<a class="headerlink" href="#equation-477c5e20-421f-41c2-ae59-f511c8eba308" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a710d6c2-2301-4bb0-9e9e-593a1cc58d10">
+<span class="eqno">(3.120)<a class="headerlink" href="#equation-a710d6c2-2301-4bb0-9e9e-593a1cc58d10" title="Permalink to this equation">#</a></span>\[\begin{equation}
 x_1 + 2x_2 - 3x_3 = 0
 \end{equation}\]</div>
 <p>with <span class="math notranslate nohighlight">\(x_2\)</span> and <span class="math notranslate nohighlight">\(x_3\)</span> free. Choosing <span class="math notranslate nohighlight">\(x_2 = 1\)</span> and <span class="math notranslate nohighlight">\(x_3 = 0\)</span> gives one
 eigenvector</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0e9175e0-f0f4-4937-a3b0-f02091af2bbd">
-<span class="eqno">(3.121)<a class="headerlink" href="#equation-0e9175e0-f0f4-4937-a3b0-f02091af2bbd" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b7177efc-63e5-4eb2-9868-ff28967e8dc4">
+<span class="eqno">(3.121)<a class="headerlink" href="#equation-b7177efc-63e5-4eb2-9868-ff28967e8dc4" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{x}_2 =
 \begin{bmatrix}
 -2 \\
@@ -677,8 +663,8 @@ eigenvector</p>
 \end{bmatrix}
 \end{equation}\]</div>
 <p>while choosing an independent combination <span class="math notranslate nohighlight">\(x_2 = 0\)</span> and <span class="math notranslate nohighlight">\(x_3 = 1\)</span> gives</p>
-<div class="amsmath math notranslate nohighlight" id="equation-18b429d2-46e3-42d7-bb80-d84321f6512f">
-<span class="eqno">(3.122)<a class="headerlink" href="#equation-18b429d2-46e3-42d7-bb80-d84321f6512f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-af31ab65-4a77-4530-aea1-7532f12d58dd">
+<span class="eqno">(3.122)<a class="headerlink" href="#equation-af31ab65-4a77-4530-aea1-7532f12d58dd" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{x}_3 =
 \begin{bmatrix}
 3 \\
@@ -691,8 +677,8 @@ eigenvector</p>
 <h2><span class="section-number">3.6.2. </span>Complex eigenvalues<a class="headerlink" href="#complex-eigenvalues" title="Link to this heading">#</a></h2>
 <p>Matrices may have complex eigenvaules. They always come in conjugate pairs!
 For example, for the matrix:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4ead23ee-03db-4165-9d21-c681fcca945e">
-<span class="eqno">(3.123)<a class="headerlink" href="#equation-4ead23ee-03db-4165-9d21-c681fcca945e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6ceaf5cd-f970-49ad-8869-f09a99f7db23">
+<span class="eqno">(3.123)<a class="headerlink" href="#equation-6ceaf5cd-f970-49ad-8869-f09a99f7db23" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A} =
 \begin{bmatrix}
 0 &amp; 1 \\
@@ -700,8 +686,8 @@ For example, for the matrix:</p>
 \end{bmatrix}
 \end{equation}\]</div>
 <p>We evaluate the determinant:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e73497da-6595-4440-9278-4926e9956bb2">
-<span class="eqno">(3.124)<a class="headerlink" href="#equation-e73497da-6595-4440-9278-4926e9956bb2" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b81be88a-5428-4ee2-909f-c5903ce3423e">
+<span class="eqno">(3.124)<a class="headerlink" href="#equation-b81be88a-5428-4ee2-909f-c5903ce3423e" title="Permalink to this equation">#</a></span>\[\begin{align}
 |\vv{A} - \lambda  \vv{I}|
 &amp;= \begin{vmatrix}
 -\lambda &amp; 1 \\
@@ -711,8 +697,8 @@ For example, for the matrix:</p>
 \lambda_{1,2} = \pm i
 \end{align}\]</div>
 <p>For <span class="math notranslate nohighlight">\(\lambda_1 = i\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-54ea3ea9-712b-46d7-b1e8-443e9a2e0ace">
-<span class="eqno">(3.125)<a class="headerlink" href="#equation-54ea3ea9-712b-46d7-b1e8-443e9a2e0ace" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-730f3986-d2e5-4abc-ae9c-2393b9fd3bc3">
+<span class="eqno">(3.125)<a class="headerlink" href="#equation-730f3986-d2e5-4abc-ae9c-2393b9fd3bc3" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A} - \lambda_1 \vv{I}
 = \begin{bmatrix}
 -i &amp; 1 \\
@@ -725,18 +711,18 @@ For example, for the matrix:</p>
 \end{bmatrix}
 \end{equation}\]</div>
 <p>This matrix is equivalent to</p>
-<div class="amsmath math notranslate nohighlight" id="equation-eecc4ad2-2e5e-45f4-9988-d378a7e5bdae">
-<span class="eqno">(3.126)<a class="headerlink" href="#equation-eecc4ad2-2e5e-45f4-9988-d378a7e5bdae" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-02d6cf44-8257-4e08-814d-01adfd9639fb">
+<span class="eqno">(3.126)<a class="headerlink" href="#equation-02d6cf44-8257-4e08-814d-01adfd9639fb" title="Permalink to this equation">#</a></span>\[\begin{equation}
 -ix_1 + x_2 = 0
 \end{equation}\]</div>
 <p>with <span class="math notranslate nohighlight">\(x_2\)</span> free. Choosing <span class="math notranslate nohighlight">\(x_2 = i\)</span> gives</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8bc01310-0cc2-414f-9fd6-b305d9f5ebc6">
-<span class="eqno">(3.127)<a class="headerlink" href="#equation-8bc01310-0cc2-414f-9fd6-b305d9f5ebc6" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2c3bcb6f-b128-4dd1-8ad0-d6deaf9444e1">
+<span class="eqno">(3.127)<a class="headerlink" href="#equation-2c3bcb6f-b128-4dd1-8ad0-d6deaf9444e1" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{x}_1 = \begin{bmatrix} 1 \\ i\end{bmatrix}
 \end{equation}\]</div>
 <p>For <span class="math notranslate nohighlight">\(\lambda_2 = -i\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4ff77972-052c-469f-95f4-58d420b78126">
-<span class="eqno">(3.128)<a class="headerlink" href="#equation-4ff77972-052c-469f-95f4-58d420b78126" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-022a7595-2b7a-43e3-928a-6dbc6c609be2">
+<span class="eqno">(3.128)<a class="headerlink" href="#equation-022a7595-2b7a-43e3-928a-6dbc6c609be2" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A} - \lambda_1 \vv{I}
 = \begin{bmatrix}
 i &amp; 1 \\
@@ -749,13 +735,13 @@ i &amp; 1 \\
 \end{bmatrix}
 \end{equation}\]</div>
 <p>This matrix is equivalent to</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4a6323e2-131b-48d6-82d7-b3eb0010f7ad">
-<span class="eqno">(3.129)<a class="headerlink" href="#equation-4a6323e2-131b-48d6-82d7-b3eb0010f7ad" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7c3faa06-efd1-463d-a8af-6f54c5ffa41a">
+<span class="eqno">(3.129)<a class="headerlink" href="#equation-7c3faa06-efd1-463d-a8af-6f54c5ffa41a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 i x_1 + x_2 = 0
 \end{equation}\]</div>
 <p>with <span class="math notranslate nohighlight">\(x_2\)</span> free. Choosing <span class="math notranslate nohighlight">\(x_2 = -i\)</span> gives</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b752aad4-0b47-44e7-bdb4-d66a117b2c54">
-<span class="eqno">(3.130)<a class="headerlink" href="#equation-b752aad4-0b47-44e7-bdb4-d66a117b2c54" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f11c024c-aef2-42c8-8307-05ae91128e7b">
+<span class="eqno">(3.130)<a class="headerlink" href="#equation-f11c024c-aef2-42c8-8307-05ae91128e7b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{x}_2 =\begin{bmatrix} 1 \\ -i \end{bmatrix}
 \end{equation}\]</div>
 </section>
@@ -764,8 +750,8 @@ i x_1 + x_2 = 0
 <ul>
 <li><p>The eigenvaules of upper triangular matrices are the values on the diagonal.
 For example, the matrix</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e416b95c-f438-4fe7-8a8f-7f0954c1cd9c">
-<span class="eqno">(3.131)<a class="headerlink" href="#equation-e416b95c-f438-4fe7-8a8f-7f0954c1cd9c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b0fc60d2-25d2-4d83-bb55-4c1cf52ffd0e">
+<span class="eqno">(3.131)<a class="headerlink" href="#equation-b0fc60d2-25d2-4d83-bb55-4c1cf52ffd0e" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix}
 1 &amp; 4 &amp; 5 \\
 0 &amp; 2 &amp; 6 \\
@@ -776,8 +762,8 @@ For example, the matrix</p>
 </li>
 <li><p>The transpose <span class="math notranslate nohighlight">\(\vv{A}^{\rm T}\)</span> has the same eigenvalues as <span class="math notranslate nohighlight">\(\vv{A}\)</span>. For
 example, the matrix:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8e6dcc5d-eb54-4957-a867-421b4448ea72">
-<span class="eqno">(3.132)<a class="headerlink" href="#equation-8e6dcc5d-eb54-4957-a867-421b4448ea72" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ccdcacc9-aabb-4b35-bfd4-837197aa2a0e">
+<span class="eqno">(3.132)<a class="headerlink" href="#equation-ccdcacc9-aabb-4b35-bfd4-837197aa2a0e" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix}
 1 &amp; 0 &amp; 0 \\
 4 &amp; 2 &amp; 0 \\
@@ -799,8 +785,8 @@ purely imaginary.</p></li>
 <p>Find the eigenvalues and eigenvectors</p>
 <ol class="arabic">
 <li><p>For:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0401ae5f-4c54-482f-b1c0-4066f8e99a12">
-<span class="eqno">(3.133)<a class="headerlink" href="#equation-0401ae5f-4c54-482f-b1c0-4066f8e99a12" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-60997fa2-51e8-4643-ac2c-d82df5478259">
+<span class="eqno">(3.133)<a class="headerlink" href="#equation-60997fa2-51e8-4643-ac2c-d82df5478259" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A} = \begin{bmatrix} 4 &amp; 2 \\ 0 &amp; -4 \end{bmatrix}
 \end{equation}\]</div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -810,15 +796,15 @@ purely imaginary.</p></li>
 <span class="math notranslate nohighlight">\(\lambda_1 = 4\)</span> and <span class="math notranslate nohighlight">\(\lambda_2 = -4\)</span>. Then, use these eigenvalues to find
 the eigenvectors that solve <span class="math notranslate nohighlight">\((\vv{A}-\lambda \vv{I})\vv{x} = \vv{0}\)</span>.</p>
 <p class="sd-card-text">For <span class="math notranslate nohighlight">\(\lambda_1 = 4\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ae6d4fe5-4d59-4d6e-9242-aae46cab4b8a">
-<span class="eqno">(3.134)<a class="headerlink" href="#equation-ae6d4fe5-4d59-4d6e-9242-aae46cab4b8a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-eef98a2a-9a86-49c8-83a5-45a920a9b628">
+<span class="eqno">(3.134)<a class="headerlink" href="#equation-eef98a2a-9a86-49c8-83a5-45a920a9b628" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A}-\lambda_1\vv{I} =
 \begin{bmatrix} 0 &amp; 2 \\ 0 &amp; -8 \end{bmatrix}
 \to \vv{x}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
 \end{equation}\]</div>
 <p class="sd-card-text">For <span class="math notranslate nohighlight">\(\lambda_2 = -4\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fc549d26-49b1-46ab-94e9-7c9c9eaff406">
-<span class="eqno">(3.135)<a class="headerlink" href="#equation-fc549d26-49b1-46ab-94e9-7c9c9eaff406" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-97e4105f-33e5-4dc7-bae0-3bdbdf886cd1">
+<span class="eqno">(3.135)<a class="headerlink" href="#equation-97e4105f-33e5-4dc7-bae0-3bdbdf886cd1" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A}-\lambda_2\vv{I} =
 \begin{bmatrix} 8 &amp; 2 \\ 0 &amp; 0 \end{bmatrix}
 \to \vv{x}_2 = \begin{bmatrix} 1 \\ -4 \end{bmatrix}
@@ -826,16 +812,16 @@ the eigenvectors that solve <span class="math notranslate nohighlight">\((\vv{A}
 </div>
 </details></li>
 <li><p>For:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6beae992-bd2b-4f2d-8359-50cb18660abe">
-<span class="eqno">(3.136)<a class="headerlink" href="#equation-6beae992-bd2b-4f2d-8359-50cb18660abe" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7b564ccb-d51d-40a9-b7bd-5fe4e51e9e04">
+<span class="eqno">(3.136)<a class="headerlink" href="#equation-7b564ccb-d51d-40a9-b7bd-5fe4e51e9e04" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A} = \begin{bmatrix} 5 &amp; -2 \\ 9 &amp; -6 \end{bmatrix}
 \end{equation}\]</div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">First, find the eigenvalues:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-abc27351-3157-471d-a1bd-83df42ed4e61">
-<span class="eqno">(3.137)<a class="headerlink" href="#equation-abc27351-3157-471d-a1bd-83df42ed4e61" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5c5cd76c-6b6b-4b31-b94f-bedc1089952b">
+<span class="eqno">(3.137)<a class="headerlink" href="#equation-5c5cd76c-6b6b-4b31-b94f-bedc1089952b" title="Permalink to this equation">#</a></span>\[\begin{align}
 |\vv{A}-\lambda \vv{I}|
 &amp;= \begin{vmatrix} 5 - \lambda &amp; -2 \\ 9 &amp; -6 - \lambda \end{vmatrix} \\
 &amp;= (\lambda - 5)(\lambda + 6) + 18 \\
@@ -843,15 +829,15 @@ the eigenvectors that solve <span class="math notranslate nohighlight">\((\vv{A}
 &amp;= (\lambda - 3)(\lambda + 4) = 0
 \end{align}\]</div>
 <p class="sd-card-text">So, <span class="math notranslate nohighlight">\(\lambda_1 = 3\)</span> and <span class="math notranslate nohighlight">\(\lambda_2 = -4\)</span>. For <span class="math notranslate nohighlight">\(\lambda_1 = 4\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-dd1c1e5b-0f25-4a15-b257-692a9ee053be">
-<span class="eqno">(3.138)<a class="headerlink" href="#equation-dd1c1e5b-0f25-4a15-b257-692a9ee053be" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a5272b2e-f2ce-482f-ae55-bad9b933a6df">
+<span class="eqno">(3.138)<a class="headerlink" href="#equation-a5272b2e-f2ce-482f-ae55-bad9b933a6df" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A}-\lambda_1\vv{I} =
 \begin{bmatrix} 2 &amp; -2 \\ 9 &amp; -9 \end{bmatrix}
 \to \vv{x}_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}
 \end{equation}\]</div>
 <p class="sd-card-text">For <span class="math notranslate nohighlight">\(\lambda_2 = -4\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2379c099-ebbf-40ca-bc2a-8aabe94a9bd0">
-<span class="eqno">(3.139)<a class="headerlink" href="#equation-2379c099-ebbf-40ca-bc2a-8aabe94a9bd0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-eed63307-c150-4d99-9edc-81f2b4a22e51">
+<span class="eqno">(3.139)<a class="headerlink" href="#equation-eed63307-c150-4d99-9edc-81f2b4a22e51" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A}-\lambda_2\vv{I} =
 \begin{bmatrix} 9 &amp; -2 \\ 9 &amp; -2 \end{bmatrix}
 \to \vv{x}_2 = \begin{bmatrix} 2 \\ 9 \end{bmatrix}
@@ -859,16 +845,16 @@ the eigenvectors that solve <span class="math notranslate nohighlight">\((\vv{A}
 </div>
 </details></li>
 <li><p>For:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d6c6855d-8d1f-47c4-a281-2b87395305a0">
-<span class="eqno">(3.140)<a class="headerlink" href="#equation-d6c6855d-8d1f-47c4-a281-2b87395305a0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-12d2949d-d8cf-4bde-9431-f3f9edc69392">
+<span class="eqno">(3.140)<a class="headerlink" href="#equation-12d2949d-d8cf-4bde-9431-f3f9edc69392" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A} = \begin{bmatrix} 6 &amp; 2 &amp; -2 \\ 2 &amp; 5 &amp; 0 \\ -2 &amp; 0 &amp; 7 \end{bmatrix}
 \end{equation}\]</div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">First, find the eigenvalues:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8cfcd073-787f-4e9e-893c-983dce65be10">
-<span class="eqno">(3.141)<a class="headerlink" href="#equation-8cfcd073-787f-4e9e-893c-983dce65be10" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f2153845-0cf2-4509-a864-1e90fb33de81">
+<span class="eqno">(3.141)<a class="headerlink" href="#equation-f2153845-0cf2-4509-a864-1e90fb33de81" title="Permalink to this equation">#</a></span>\[\begin{align}
 |\vv{A}-\lambda \vv{I}|
 &amp;= \begin{vmatrix}
 6 - \lambda &amp; 2 &amp; -2 \\
@@ -884,8 +870,8 @@ the eigenvectors that solve <span class="math notranslate nohighlight">\((\vv{A}
 <p class="sd-card-text">Solving for these roots numerically gives <span class="math notranslate nohighlight">\(\lambda_1 = 9\)</span>, <span class="math notranslate nohighlight">\(\lambda_2 = 6\)</span>,
 and <span class="math notranslate nohighlight">\(\lambda_3 = 3\)</span>.</p>
 <p class="sd-card-text">For <span class="math notranslate nohighlight">\(\lambda_1 = 9\)</span>, using row reduction gives</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bb9136d5-6591-4b70-86e6-67ace556bc3f">
-<span class="eqno">(3.142)<a class="headerlink" href="#equation-bb9136d5-6591-4b70-86e6-67ace556bc3f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0674e992-6b3a-4962-b872-8d30535efe21">
+<span class="eqno">(3.142)<a class="headerlink" href="#equation-0674e992-6b3a-4962-b872-8d30535efe21" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A}-\lambda_1\vv{I} =
 \begin{bmatrix}
 -3 &amp; 2 &amp; -2 \\
@@ -900,13 +886,13 @@ and <span class="math notranslate nohighlight">\(\lambda_3 = 3\)</span>.</p>
 \end{bmatrix}
 \end{equation}\]</div>
 <p class="sd-card-text">Choosing <span class="math notranslate nohighlight">\(x_3 = 2\)</span> as the free variable gives</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1a3c49e1-85ec-4088-9787-32f50f47ce5c">
-<span class="eqno">(3.143)<a class="headerlink" href="#equation-1a3c49e1-85ec-4088-9787-32f50f47ce5c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-814601e4-e302-4bd6-88a2-e49da3e88125">
+<span class="eqno">(3.143)<a class="headerlink" href="#equation-814601e4-e302-4bd6-88a2-e49da3e88125" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{x}_1 = \begin{bmatrix} -2 \\ -1 \\ 2 \end{bmatrix}
 \end{equation}\]</div>
 <p class="sd-card-text">For <span class="math notranslate nohighlight">\(\lambda_2 = 6\)</span>, using row reduction gives</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d332e698-255a-4f3b-9b62-e63445396a98">
-<span class="eqno">(3.144)<a class="headerlink" href="#equation-d332e698-255a-4f3b-9b62-e63445396a98" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0e480fce-b958-4604-a1a8-6cccdfda4d1b">
+<span class="eqno">(3.144)<a class="headerlink" href="#equation-0e480fce-b958-4604-a1a8-6cccdfda4d1b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A}-\lambda_2\vv{I} =
 \begin{bmatrix}
 0 &amp; 2 &amp; -2 \\
@@ -921,13 +907,13 @@ and <span class="math notranslate nohighlight">\(\lambda_3 = 3\)</span>.</p>
 \end{bmatrix}
 \end{equation}\]</div>
 <p class="sd-card-text">Taking <span class="math notranslate nohighlight">\(x_3 = 2\)</span> as the free v ariable gives:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cc12b61b-520e-4785-85ec-b4faba9da3ed">
-<span class="eqno">(3.145)<a class="headerlink" href="#equation-cc12b61b-520e-4785-85ec-b4faba9da3ed" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-587912b7-b581-4096-8228-83cfc01a55b4">
+<span class="eqno">(3.145)<a class="headerlink" href="#equation-587912b7-b581-4096-8228-83cfc01a55b4" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{x}_2 = \begin{bmatrix} 1 \\ 2 \\ 2 \end{bmatrix}
 \end{equation}\]</div>
 <p class="sd-card-text">For <span class="math notranslate nohighlight">\(\lambda_3 = 3\)</span>, using row reduction gives</p>
-<div class="amsmath math notranslate nohighlight" id="equation-da680aa4-e7a9-4c54-9f3c-70c7ed1522b0">
-<span class="eqno">(3.146)<a class="headerlink" href="#equation-da680aa4-e7a9-4c54-9f3c-70c7ed1522b0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b04c87f5-12db-4d75-a143-7e0f5cf3f0bd">
+<span class="eqno">(3.146)<a class="headerlink" href="#equation-b04c87f5-12db-4d75-a143-7e0f5cf3f0bd" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A}-\lambda_3\vv{I} =
 \begin{bmatrix}
 3 &amp; 2 &amp; -2 \\
@@ -942,8 +928,8 @@ and <span class="math notranslate nohighlight">\(\lambda_3 = 3\)</span>.</p>
 \end{bmatrix}
 \end{equation}\]</div>
 <p class="sd-card-text">Choosing <span class="math notranslate nohighlight">\(x_3 = 1\)</span> as the free variable gives:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5caa69bc-2567-4769-b801-aa26e20c74c6">
-<span class="eqno">(3.147)<a class="headerlink" href="#equation-5caa69bc-2567-4769-b801-aa26e20c74c6" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7330732a-d3a3-448d-8526-04969ed83567">
+<span class="eqno">(3.147)<a class="headerlink" href="#equation-7330732a-d3a3-448d-8526-04969ed83567" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{x}_3 = \begin{bmatrix} 2 \\ -2 \\ 1 \end{bmatrix}
 \end{equation}\]</div>
 </div>
@@ -1007,14 +993,16 @@ and <span class="math notranslate nohighlight">\(\lambda_3 = 3\)</span>.</p>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-eigenvalues">3.6.1. Multiple eigenvalues</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-eigenvalues">3.6.2. Complex eigenvalues</a></li>
@@ -1068,8 +1056,8 @@ By Michael P. Howard
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

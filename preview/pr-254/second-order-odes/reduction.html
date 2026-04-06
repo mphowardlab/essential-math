@@ -16,41 +16,44 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -67,6 +70,7 @@
     <link rel="prev" title="7.2. Linearity" href="linearity.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -82,19 +86,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -102,7 +95,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -110,8 +102,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -127,7 +119,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -157,15 +150,11 @@
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
@@ -237,9 +226,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -369,7 +363,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -383,25 +377,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -443,41 +429,41 @@ We will learn how to get <span class="math notranslate nohighlight">\(y_2\)</spa
 <aside class="topic">
 <p class="topic-title">Reduction of Order</p>
 <p>If a solution <span class="math notranslate nohighlight">\(y_1\)</span> of <span class="math notranslate nohighlight">\(y'' + p(x) y' + q(x) y = 0\)</span> is known, then</p>
-<div class="amsmath math notranslate nohighlight" id="equation-359f05fc-0565-4a5f-b6b5-8efaa3c8fc27">
-<span class="eqno">(7.24)<a class="headerlink" href="#equation-359f05fc-0565-4a5f-b6b5-8efaa3c8fc27" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-3bfb5b4f-9358-4f66-8e18-990aa12c4e6c">
+<span class="eqno">(7.24)<a class="headerlink" href="#equation-3bfb5b4f-9358-4f66-8e18-990aa12c4e6c" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_2 &amp;= y_1\int u\d{x} \\
 u &amp;= \frac{1}{y_1^2}\ e^{-\int p\d{x}}
 \end{align}\]</div>
 <p>is another solution.</p>
 </aside>
 <p>For example, to solve:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b5e39e21-4138-4e53-bc71-87bd149e41b0">
-<span class="eqno">(7.25)<a class="headerlink" href="#equation-b5e39e21-4138-4e53-bc71-87bd149e41b0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-5b1d3841-77b6-4ef2-b7a7-27a4e49c6829">
+<span class="eqno">(7.25)<a class="headerlink" href="#equation-5b1d3841-77b6-4ef2-b7a7-27a4e49c6829" title="Permalink to this equation">#</a></span>\[\begin{equation}
 (x^2 - x)y'' - xy' + y = 0
 \end{equation}\]</div>
 <p>We can guess that <span class="math notranslate nohighlight">\(y_1 = x\)</span> is a solution because <span class="math notranslate nohighlight">\(y_1' = 1\)</span> and <span class="math notranslate nohighlight">\(y_1'' = 0\)</span>.
 We can now use reduction of order to find <span class="math notranslate nohighlight">\(y_2\)</span>. First, rewrite the ODE in
 standard form by dividing through by <span class="math notranslate nohighlight">\(x^2-x\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-32ba84c9-bbb3-44de-b501-a5f8f574a5f4">
-<span class="eqno">(7.26)<a class="headerlink" href="#equation-32ba84c9-bbb3-44de-b501-a5f8f574a5f4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8c53e598-c1dc-441a-9b14-c13799a552a0">
+<span class="eqno">(7.26)<a class="headerlink" href="#equation-8c53e598-c1dc-441a-9b14-c13799a552a0" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y'' + \frac{1}{1 - x} y' + \frac{1}{x^2 - x}y = 0
 \end{equation}\]</div>
 <p>Then, calculate <em>u</em>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4e21c631-02c9-481d-a6a7-7fbc33bf2832">
-<span class="eqno">(7.27)<a class="headerlink" href="#equation-4e21c631-02c9-481d-a6a7-7fbc33bf2832" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c112634b-8b3d-44d3-86ec-ccbe7125e2a9">
+<span class="eqno">(7.27)<a class="headerlink" href="#equation-c112634b-8b3d-44d3-86ec-ccbe7125e2a9" title="Permalink to this equation">#</a></span>\[\begin{align}
 u &amp;= \frac{1}{x^2} \exp\left(-\int \frac{1}{1-x} \d{x} \right) \\
   &amp;= \frac{1}{x^2}\ e^{\ln(1-x)} \\
   &amp;= \frac{1-x}{x^2}
 \end{align}\]</div>
 <p>Finally, integrate <em>u</em> to obtain <span class="math notranslate nohighlight">\(y_2\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a8937552-dc0e-4282-9e48-75ede9fe2b79">
-<span class="eqno">(7.28)<a class="headerlink" href="#equation-a8937552-dc0e-4282-9e48-75ede9fe2b79" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-017eeb96-69d9-448d-89c7-83005c3a0a4f">
+<span class="eqno">(7.28)<a class="headerlink" href="#equation-017eeb96-69d9-448d-89c7-83005c3a0a4f" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_2 &amp;= \frac{1}{x^2} \int \left( \frac{1}{x^2} - \frac{1}{x} \right)\d{x} \\
 &amp;= x \left(-\frac{1}{x}-\ln{x}\right)
 \end{align}\]</div>
 <p>Absorbing the minus sign into the unknown coefficient, the general solution is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-96df8e0e-b85f-4b91-9704-3eb76a0be905">
-<span class="eqno">(7.29)<a class="headerlink" href="#equation-96df8e0e-b85f-4b91-9704-3eb76a0be905" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e50e347c-4414-44f2-874c-b76778481b3c">
+<span class="eqno">(7.29)<a class="headerlink" href="#equation-e50e347c-4414-44f2-874c-b76778481b3c" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y = c_1 x + c_2 (1 + \ln x)
 \end{equation}\]</div>
 <section id="skill-builder-problems">
@@ -489,14 +475,14 @@ y = c_1 x + c_2 (1 + \ln x)
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Rearrange in standard form:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-edeef413-0883-4b44-8647-bf221a803d54">
-<span class="eqno">(7.30)<a class="headerlink" href="#equation-edeef413-0883-4b44-8647-bf221a803d54" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-79fde4bf-b93f-460e-95cd-7cd31c404371">
+<span class="eqno">(7.30)<a class="headerlink" href="#equation-79fde4bf-b93f-460e-95cd-7cd31c404371" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y'' + \frac{2}{x}y' + y = 0
 \end{equation}\]</div>
 <p class="sd-card-text">This ODE is linear and homogeneous, so use reduction of order for <span class="math notranslate nohighlight">\(y_2\)</span>.
 First compute <em>u</em>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-63053b93-93aa-471b-986b-211e1cefc7b6">
-<span class="eqno">(7.31)<a class="headerlink" href="#equation-63053b93-93aa-471b-986b-211e1cefc7b6" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-38f1e9f1-ea30-490b-96e1-91c53cd0ca64">
+<span class="eqno">(7.31)<a class="headerlink" href="#equation-38f1e9f1-ea30-490b-96e1-91c53cd0ca64" title="Permalink to this equation">#</a></span>\[\begin{align}
 u &amp;= \frac{1}{y_1^2}e^{-\int p \d{x}} \\
   &amp;= \frac{x^2}{\cos^2 x} \exp\left(-\int \frac{2}{x} \d{x}\right) \\
   &amp;= \frac{x^2}{\cos^2 x} \exp\left(-2\ln(x)\right) \\
@@ -504,16 +490,16 @@ u &amp;= \frac{1}{y_1^2}e^{-\int p \d{x}} \\
   &amp;= \sec^2 x
 \end{align}\]</div>
 <p class="sd-card-text">Then compute <span class="math notranslate nohighlight">\(y_2\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2d6e6192-24e8-4053-90e7-e2ebdc4e6b9d">
-<span class="eqno">(7.32)<a class="headerlink" href="#equation-2d6e6192-24e8-4053-90e7-e2ebdc4e6b9d" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-281a5136-df21-48a5-9071-6107778101c2">
+<span class="eqno">(7.32)<a class="headerlink" href="#equation-281a5136-df21-48a5-9071-6107778101c2" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_{2} &amp;= y_{1} \int u \d{x} \\
       &amp;= \frac{\cos x}{x} \int \sec^2 x \d{x} \\
       &amp;= x^{-1}\cos x \tan x \\
       &amp;= \frac{\sin x}{x}
 \end{align}\]</div>
 <p class="sd-card-text">Hence, the general solution is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3dfa624c-4d60-403b-a02d-ded1a96a19de">
-<span class="eqno">(7.33)<a class="headerlink" href="#equation-3dfa624c-4d60-403b-a02d-ded1a96a19de" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-272187c0-e40b-4358-ac7d-65fc755b8d52">
+<span class="eqno">(7.33)<a class="headerlink" href="#equation-272187c0-e40b-4358-ac7d-65fc755b8d52" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y = c_{1}\frac{\cos x}{x} + c_{2}\frac{\sin x}{x}
 \end{equation}\]</div>
 </div>
@@ -524,34 +510,34 @@ y = c_{1}\frac{\cos x}{x} + c_{2}\frac{\sin x}{x}
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">By inspection <span class="math notranslate nohighlight">\(y_{1} = x\)</span> is a solution because <span class="math notranslate nohighlight">\(y_{1}' = 1\)</span> and <span class="math notranslate nohighlight">\(y_{1}'' = 0\)</span>.
 So, find <span class="math notranslate nohighlight">\(y_{2}\)</span> using reduction of order. The standard form of the ODE is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-976518af-90ed-485e-9455-5604012fb7c7">
-<span class="eqno">(7.34)<a class="headerlink" href="#equation-976518af-90ed-485e-9455-5604012fb7c7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ac498389-2bfc-441f-9340-32f560eb8eb7">
+<span class="eqno">(7.34)<a class="headerlink" href="#equation-ac498389-2bfc-441f-9340-32f560eb8eb7" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y'' - \frac{2x}{1-x^2}y' + \frac{2}{1-x^2}y = 0
 \end{equation}\]</div>
 <p class="sd-card-text">Now compute <em>u</em></p>
-<div class="amsmath math notranslate nohighlight" id="equation-d868ebed-3c45-4e0a-a6b8-e98bd0ea76cd">
-<span class="eqno">(7.35)<a class="headerlink" href="#equation-d868ebed-3c45-4e0a-a6b8-e98bd0ea76cd" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d2027ceb-f231-4054-b89a-7f9da644ba8b">
+<span class="eqno">(7.35)<a class="headerlink" href="#equation-d2027ceb-f231-4054-b89a-7f9da644ba8b" title="Permalink to this equation">#</a></span>\[\begin{align}
 u &amp;= \frac{1}{y_{2}^2}e^{-\int p \d{x}} \\
   &amp;= \frac{1}{x^2} \exp\left(\int \frac{2x}{1-x^2} \d{x}\right) \\
   &amp;= \frac{1}{x^2} \exp\left[-\ln(1 - x^2)\right] \\
   &amp;= \frac{1}{x^2(1 - x^2)}
 \end{align}\]</div>
 <p class="sd-card-text">Then <span class="math notranslate nohighlight">\(y_2\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9b78a3b3-81b6-4033-b7ea-4917f3005b16">
-<span class="eqno">(7.36)<a class="headerlink" href="#equation-9b78a3b3-81b6-4033-b7ea-4917f3005b16" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-cd8762c6-35a3-49f5-9560-ad29e9c9beb9">
+<span class="eqno">(7.36)<a class="headerlink" href="#equation-cd8762c6-35a3-49f5-9560-ad29e9c9beb9" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_{2} &amp;= y_{1} \int u \d{x} \\
       &amp;= x \int \frac{1}{x^2(1 - x^2)} \d{x}
 \end{align}\]</div>
 <p class="sd-card-text">Use partial-fraction decomposition to evaluate the integral:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3a822bbc-4b9a-41fc-9ab1-a453d944e54b">
-<span class="eqno">(7.37)<a class="headerlink" href="#equation-3a822bbc-4b9a-41fc-9ab1-a453d944e54b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-5b6b9062-090e-4e65-b9c7-a3f1c1345c63">
+<span class="eqno">(7.37)<a class="headerlink" href="#equation-5b6b9062-090e-4e65-b9c7-a3f1c1345c63" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{1}{x^2(1 - x)(1 + x)} = \frac{A}{x} + \frac{B}{x^2} +
 \frac{C}{1 + x} + \frac{D}{1 - x}
 \end{equation}\]</div>
 <p class="sd-card-text">Use the coverup method to get <span class="math notranslate nohighlight">\(B = 1\)</span>, <span class="math notranslate nohighlight">\(C = 1/2\)</span>, and <span class="math notranslate nohighlight">\(D = 1/2\)</span>. Cross
 multiplying and collecting terms shows that <span class="math notranslate nohighlight">\(A = 0\)</span>. So,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7a00d932-c564-4300-84bd-c02d200bf265">
-<span class="eqno">(7.38)<a class="headerlink" href="#equation-7a00d932-c564-4300-84bd-c02d200bf265" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-750c91c3-de84-4197-95bd-9c0bb6585bfc">
+<span class="eqno">(7.38)<a class="headerlink" href="#equation-750c91c3-de84-4197-95bd-9c0bb6585bfc" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_2 &amp;= x \int \left[ \frac{1}{x^2} + \frac{1}{2(1 + x)}
       + \frac{1}{2(1 - x)} \right] \d{x} \\
     &amp;= x \left[ -\frac{1}{x} + \frac{1}{2}\ln(1 + x)
@@ -559,8 +545,8 @@ y_2 &amp;= x \int \left[ \frac{1}{x^2} + \frac{1}{2(1 + x)}
     &amp;= -1 - \frac{x}{2} \ln \left( \frac{1 - x}{1 + x} \right)
 \end{align}\]</div>
 <p class="sd-card-text">Hence, the general solution is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fd174bf2-3a6c-4251-b1b9-437d2a320753">
-<span class="eqno">(7.39)<a class="headerlink" href="#equation-fd174bf2-3a6c-4251-b1b9-437d2a320753" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ba028ae4-6579-4f2a-a54b-8e746f5458ef">
+<span class="eqno">(7.39)<a class="headerlink" href="#equation-ba028ae4-6579-4f2a-a54b-8e746f5458ef" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y = c_{1}x + c_{2} \left[ 1 + \frac{x}{2}
 \ln \left( \frac{1 - x}{1 + x} \right) \right]
 \end{equation}\]</div>
@@ -625,14 +611,16 @@ y = c_{1}x + c_{2} \left[ 1 + \frac{x}{2}
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill-builder-problems">7.3.1. Skill builder problems</a></li>
 </ul>
@@ -683,8 +671,8 @@ By Michael P. Howard
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

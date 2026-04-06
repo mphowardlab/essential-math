@@ -16,41 +16,44 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -67,6 +70,7 @@
     <link rel="prev" title="1.8. Integration by parts" href="integration-by-parts.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -82,19 +86,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -102,7 +95,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -110,8 +102,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -127,7 +119,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -157,15 +150,11 @@
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
@@ -237,9 +226,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -369,7 +363,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -383,25 +377,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -441,34 +427,34 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="partial-fraction-decomposition">
 <h1><span class="section-number">1.9. </span>Partial fraction decomposition<a class="headerlink" href="#partial-fraction-decomposition" title="Link to this heading">#</a></h1>
 <p>Integrals like</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6048d884-9dff-491b-bf8a-30836281c95b">
-<span class="eqno">(1.193)<a class="headerlink" href="#equation-6048d884-9dff-491b-bf8a-30836281c95b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-245ac7c0-62b9-4368-98a9-7dc23fc8b91a">
+<span class="eqno">(1.193)<a class="headerlink" href="#equation-245ac7c0-62b9-4368-98a9-7dc23fc8b91a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \int \frac{3x+11}{x^2-x-6} \d{x}
 \end{equation}\]</div>
 <p>can be evaluated by breaking them apart into simpler integrals. Let’s try to
 break the integrand up into the factors of its denominator:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3eda162a-9ba2-400e-958a-05d2587bba3c">
-<span class="eqno">(1.194)<a class="headerlink" href="#equation-3eda162a-9ba2-400e-958a-05d2587bba3c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f93aa0c6-9588-46ab-8588-2b0d294614b9">
+<span class="eqno">(1.194)<a class="headerlink" href="#equation-f93aa0c6-9588-46ab-8588-2b0d294614b9" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{3x+11}{x^2-x-6} = \frac{3x+11}{(x-3)(x+2)} = \frac{A_1}{x-3} + \frac{A_2}{x+2}
 \end{equation}\]</div>
 <p>To find <span class="math notranslate nohighlight">\(A_1\)</span> and <span class="math notranslate nohighlight">\(A_2\)</span>, first cross multiply to eliminate the denominator, then
 combine like powers of <em>x</em>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4feeafb5-d4ca-4423-8f5f-6ac28f1a86c1">
-<span class="eqno">(1.195)<a class="headerlink" href="#equation-4feeafb5-d4ca-4423-8f5f-6ac28f1a86c1" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-53524d86-fe98-4691-9fc3-5a4b51090ac4">
+<span class="eqno">(1.195)<a class="headerlink" href="#equation-53524d86-fe98-4691-9fc3-5a4b51090ac4" title="Permalink to this equation">#</a></span>\[\begin{align}
 3x + 11 &amp;= A_1(x+2) + A_2(x-3) \\
 3x + 11 &amp;= (A_1 + A_2)x + (2A_1 - 3A_2) \\
 \end{align}\]</div>
 <p>If our proposed form will work, all the coefficients of <em>x</em> must match on both
 sides, so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-73a53f9e-04e8-4508-a7c6-3ea39b353bb3">
-<span class="eqno">(1.196)<a class="headerlink" href="#equation-73a53f9e-04e8-4508-a7c6-3ea39b353bb3" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-688b9dbb-0ae1-4092-9d62-5763d3ed6872">
+<span class="eqno">(1.196)<a class="headerlink" href="#equation-688b9dbb-0ae1-4092-9d62-5763d3ed6872" title="Permalink to this equation">#</a></span>\[\begin{align}
 A_1  + A_2 &amp;= 3 \\
 2A_1 - 3A_2 &amp;= 11
 \end{align}\]</div>
 <p>This is a system of linear equations that can be solved, e.g., using a matrix
 technique. Form the augmented matrix then perform Gauss-Jordan elimination:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e66460d7-4ba9-4d3c-b0c7-e918d6397ebf">
-<span class="eqno">(1.197)<a class="headerlink" href="#equation-e66460d7-4ba9-4d3c-b0c7-e918d6397ebf" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-3ca602b8-9d0b-47b8-bce8-69849a1e5aad">
+<span class="eqno">(1.197)<a class="headerlink" href="#equation-3ca602b8-9d0b-47b8-bce8-69849a1e5aad" title="Permalink to this equation">#</a></span>\[\begin{align}
 \begin{bmatrix} 1 &amp; 1 &amp; 3\\ 2 &amp; -3 &amp; 11 \end{bmatrix}
 \begin{matrix}\vphantom{R_1} \\ -2 R_1 \end{matrix}
 &amp;\to \begin{bmatrix} 1 &amp; 1 &amp; 3\\ 0 &amp; -5 &amp; 5 \end{bmatrix}
@@ -478,8 +464,8 @@ technique. Form the augmented matrix then perform Gauss-Jordan elimination:</p>
 &amp;\to \begin{bmatrix} 1 &amp; 0 &amp; 4\\ 0 &amp; 1 &amp; -1 \end{bmatrix}
 \end{align}\]</div>
 <p>so <span class="math notranslate nohighlight">\(A_1 = 4\)</span> and <span class="math notranslate nohighlight">\(A_2 = -1\)</span>. Once you have coefficients, you can integrate:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0a4eace3-ff69-43a3-9049-49186bfdde20">
-<span class="eqno">(1.198)<a class="headerlink" href="#equation-0a4eace3-ff69-43a3-9049-49186bfdde20" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-eb82f560-b3ca-4032-97b7-ef0c2812ed80">
+<span class="eqno">(1.198)<a class="headerlink" href="#equation-eb82f560-b3ca-4032-97b7-ef0c2812ed80" title="Permalink to this equation">#</a></span>\[\begin{align}
 \int \frac{3x+11}{x^2-x-6} \d{x}
 &amp;= \int\left(\frac{4}{x-3}-\frac{1}{x+2} \right) \d{x} \\
 &amp;= 4\ln| x-3 | - \ln|x+2| + c
@@ -492,45 +478,45 @@ linear or irreducible quadratic factors and the degree of <em>P</em> is less tha
 propose the following decomposition:</p>
 <ul>
 <li><p>Linear factor <span class="math notranslate nohighlight">\(ax+b\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-2c37e089-260a-454b-9a4f-cf680c60f75a">
-<span class="eqno">(1.199)<a class="headerlink" href="#equation-2c37e089-260a-454b-9a4f-cf680c60f75a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-88e49f0a-87c3-49e7-9595-3ca3d46f3232">
+<span class="eqno">(1.199)<a class="headerlink" href="#equation-88e49f0a-87c3-49e7-9595-3ca3d46f3232" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{A}{ax+b}
 \end{equation}\]</div>
 </li>
 <li><p>Repeated linear factor <span class="math notranslate nohighlight">\((ax+b)^k\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-6dd31968-ef55-4ad8-a07f-f0ff78c10a17">
-<span class="eqno">(1.200)<a class="headerlink" href="#equation-6dd31968-ef55-4ad8-a07f-f0ff78c10a17" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a6a739c0-5b12-4972-9d8c-c7a41c7e3e5d">
+<span class="eqno">(1.200)<a class="headerlink" href="#equation-a6a739c0-5b12-4972-9d8c-c7a41c7e3e5d" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{A_1}{ax+b} + \cdots + \frac{A_k}{(ax+b)^k}
 \end{equation}\]</div>
 </li>
 <li><p>Irreducible quadratic factor <span class="math notranslate nohighlight">\(ax^2 + bx + c\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-a21d633c-7019-4211-88ed-d8f21718ca53">
-<span class="eqno">(1.201)<a class="headerlink" href="#equation-a21d633c-7019-4211-88ed-d8f21718ca53" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-39008fe9-a6fe-41cb-98d8-b85c994e2f49">
+<span class="eqno">(1.201)<a class="headerlink" href="#equation-39008fe9-a6fe-41cb-98d8-b85c994e2f49" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{Ax+B}{ax^2+bx+c}
 \end{equation}\]</div>
 </li>
 <li><p>Repeated irreducible quadratic factor <span class="math notranslate nohighlight">\((ax^2 + bx+c)^k\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-346e34a5-b627-4ca7-8746-3c8453e9fafd">
-<span class="eqno">(1.202)<a class="headerlink" href="#equation-346e34a5-b627-4ca7-8746-3c8453e9fafd" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-31b7fe08-ea61-4ac3-b180-5a96392bac2e">
+<span class="eqno">(1.202)<a class="headerlink" href="#equation-31b7fe08-ea61-4ac3-b180-5a96392bac2e" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{A_1 x + B_1}{ax^2+bx+c} + \cdots + \frac{A_k x + B_k}{(ax^2+bx+c)^k}
 \end{equation}\]</div>
 </li>
 </ul>
 </aside>
 <p>To demonstrate this technique, let’s try to take the integral</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6e562290-11d2-46ba-ab86-6b35f1cfdbb5">
-<span class="eqno">(1.203)<a class="headerlink" href="#equation-6e562290-11d2-46ba-ab86-6b35f1cfdbb5" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0dc00d14-6fa4-4e3d-9f1d-a32cb103a09d">
+<span class="eqno">(1.203)<a class="headerlink" href="#equation-0dc00d14-6fa4-4e3d-9f1d-a32cb103a09d" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \int \frac{x^2-29x+5}{(x-4)^2 (x^2+3)} \d{x}
 \end{equation}\]</div>
 <p>First, expand the denominator and put placeholder coefficient terms in the numerator.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0473ac31-3a45-4336-8131-f66f5d8a1c44">
-<span class="eqno">(1.204)<a class="headerlink" href="#equation-0473ac31-3a45-4336-8131-f66f5d8a1c44" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b5911733-ffa1-49a9-8e1f-594ea3a0bccb">
+<span class="eqno">(1.204)<a class="headerlink" href="#equation-b5911733-ffa1-49a9-8e1f-594ea3a0bccb" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{x^2-29x+5}{\left(x-4 \right)^2 \left(x^2+3 \right)}
 = \frac{A_1}{x-4} + \frac{A_2}{(x-4)^2} + \frac{A_3x+ B_3}{x^2+3}
 \end{equation}\]</div>
 <p>Next, cross multiply, expand, and collect like powers of <em>x</em>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ee149751-c7c8-4678-845c-33339d4b0b61">
-<span class="eqno">(1.205)<a class="headerlink" href="#equation-ee149751-c7c8-4678-845c-33339d4b0b61" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0659d762-44ef-4bfb-9495-19f93c0b79a0">
+<span class="eqno">(1.205)<a class="headerlink" href="#equation-0659d762-44ef-4bfb-9495-19f93c0b79a0" title="Permalink to this equation">#</a></span>\[\begin{align}
 x^2-29x+5 &amp;= A_1 \left(x-4 \right) \left(x^2+3 \right) +
  A_2 \left(x^2+3 \right) \\
  &amp;\quad + \left(A_3x+B_3 \right) \left(x-4 \right)^2 \\
@@ -540,16 +526,16 @@ x^2-29x+5 &amp;= A_1 \left(x-4 \right) \left(x^2+3 \right) +
  &amp;\quad + \left(3A_1+16A_3-8B_3\right)x+\left(-12A_1+3A_2+16B_3\right)
 \end{align}\]</div>
 <p>Finally, form the linear system of equations for the coefficients of <em>x</em>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-32ad2899-803d-49b9-883c-4057e1b73bfb">
-<span class="eqno">(1.206)<a class="headerlink" href="#equation-32ad2899-803d-49b9-883c-4057e1b73bfb" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-3381cf81-a2d4-40e6-bec6-7ae136001feb">
+<span class="eqno">(1.206)<a class="headerlink" href="#equation-3381cf81-a2d4-40e6-bec6-7ae136001feb" title="Permalink to this equation">#</a></span>\[\begin{align}
 A_1+A_3 &amp;= 0 \\
 -4A_1 + A_2-8A_3 + B_3 &amp;=1 \\
 3A_1 + 16A_3 - 8B_3 &amp;= -29 \\
 -12A_1+3A_2+16B_3 &amp;=5 \\
 \end{align}\]</div>
 <p>These linear equations can be written using a matrix and vectors</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e905347a-25d5-4320-a222-aa73402e1425">
-<span class="eqno">(1.207)<a class="headerlink" href="#equation-e905347a-25d5-4320-a222-aa73402e1425" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ea1c3ed0-52c3-4531-b5ab-1c2bf7fcd1ce">
+<span class="eqno">(1.207)<a class="headerlink" href="#equation-ea1c3ed0-52c3-4531-b5ab-1c2bf7fcd1ce" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix}
 1 &amp; 0 &amp; 1 &amp; 0\\
 -4 &amp; 1 &amp; -8 &amp; 1\\
@@ -561,8 +547,8 @@ A_1+A_3 &amp;= 0 \\
 \end{equation}\]</div>
 <p>Solving numerically gives <span class="math notranslate nohighlight">\(A_1 = 1\)</span>, <span class="math notranslate nohighlight">\(A_2 = -5\)</span>, <span class="math notranslate nohighlight">\(A_3 = -1\)</span>, and <span class="math notranslate nohighlight">\(B_3 =2\)</span>.
 Finally,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a2069c13-3f53-461a-8518-3aa51b934cc4">
-<span class="eqno">(1.208)<a class="headerlink" href="#equation-a2069c13-3f53-461a-8518-3aa51b934cc4" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d2eb1360-cd9b-4979-81c9-18c97b6d6b14">
+<span class="eqno">(1.208)<a class="headerlink" href="#equation-d2eb1360-cd9b-4979-81c9-18c97b6d6b14" title="Permalink to this equation">#</a></span>\[\begin{align}
 \int &amp;\frac{x^2-29x+5}{(x-4)^2 (x^2+3)} \d{x} \\
 &amp;= \int\Biggl(\frac{1}{x-4}-\frac{5}{(x-4)^2}
   -\frac{x}{x^2+3}+\frac{2}{x^2+3}\Biggr) \d{x} \\
@@ -570,8 +556,8 @@ Finally,</p>
   \frac{2}{\sqrt{3}} \arctan\left( \frac{x}{\sqrt{3}} \right) + c
 \end{align}\]</div>
 <p>using <em>u</em> substitution in</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7b1e473d-ce11-4ca3-8175-a31743f79f43">
-<span class="eqno">(1.209)<a class="headerlink" href="#equation-7b1e473d-ce11-4ca3-8175-a31743f79f43" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-88175e53-e23f-49b7-88a4-0cb9bb5a8718">
+<span class="eqno">(1.209)<a class="headerlink" href="#equation-88175e53-e23f-49b7-88a4-0cb9bb5a8718" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \int \frac{\d{x}}{1+x^2} = \arctan x
 \end{equation}\]</div>
 <p>to evaluate the last integral.</p>
@@ -582,21 +568,21 @@ coefficients in partial fraction decomposition for linear factors. Its main
 advantage is avoiding cross-multiplication, which can be time-consuming, by
 covering up a factor and substituting the appropriate value into the expression.</p>
 <p>We will demonstrate the approach by example. Given the decomposition:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-af6999dc-bc05-434f-aa86-bb870c0bc5d4">
-<span class="eqno">(1.210)<a class="headerlink" href="#equation-af6999dc-bc05-434f-aa86-bb870c0bc5d4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b7fae911-16b3-4825-a496-1e2149c2c2ba">
+<span class="eqno">(1.210)<a class="headerlink" href="#equation-b7fae911-16b3-4825-a496-1e2149c2c2ba" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{3x+11}{(x-3)(x+2)} = \frac{A_1}{x-3} + \frac{A_2}{x+2}
 \end{equation}\]</div>
 <p>Multiply by both sides by the first factor and take the limit to find <span class="math notranslate nohighlight">\(A_1\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c162eb59-c201-4737-a8e1-aeac7d862542">
-<span class="eqno">(1.211)<a class="headerlink" href="#equation-c162eb59-c201-4737-a8e1-aeac7d862542" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1b767677-40e3-4dec-ac8d-b4217ba2e1ea">
+<span class="eqno">(1.211)<a class="headerlink" href="#equation-1b767677-40e3-4dec-ac8d-b4217ba2e1ea" title="Permalink to this equation">#</a></span>\[\begin{align}
 \lim_{x\to 3} \left( \frac{3x+11}{x+2} \right)
 &amp;= \lim_{x \to 3} \left( A_1 + \frac{A_2(x-3)}{x+2} \right) \\
 \frac{3(3)+11}{3+2} &amp;= A_1 \\
 A_1 &amp;= 4
 \end{align}\]</div>
 <p>You can do the same for the second factor to get <span class="math notranslate nohighlight">\(A_2\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-673d4880-ebdf-4f0f-a5e1-b9cec6bd2e59">
-<span class="eqno">(1.212)<a class="headerlink" href="#equation-673d4880-ebdf-4f0f-a5e1-b9cec6bd2e59" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5b1c662c-ac97-4faf-a64d-3780740cde3d">
+<span class="eqno">(1.212)<a class="headerlink" href="#equation-5b1c662c-ac97-4faf-a64d-3780740cde3d" title="Permalink to this equation">#</a></span>\[\begin{align}
 \lim_{x\to -2} \left( \frac{3x+11}{x-3}\right)
 &amp;= \lim_{x\to -2} \left( \frac{A_1(x+2)}{x-3} + A_2 \right) \\
 \frac{3(-2)+11}{-2-3} &amp;= A_2 \\
@@ -615,15 +601,15 @@ zero.</p>
 but it can be used in combination with other techniques to more easily obtain
 the remaining factors.</p>
 <p>For example, given:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1b5fe80c-a3f6-4efb-8558-5f3f8a91d15e">
-<span class="eqno">(1.213)<a class="headerlink" href="#equation-1b5fe80c-a3f6-4efb-8558-5f3f8a91d15e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-9e62116f-5ca9-4668-a395-14853c37d4c9">
+<span class="eqno">(1.213)<a class="headerlink" href="#equation-9e62116f-5ca9-4668-a395-14853c37d4c9" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{x^2-29x+5}{(x-4)^2 (x^2 +3)}
 = \frac{A_1}{x-4} + \frac{A_2}{(x-4)^2} + \frac{A_3x + B_3}{x^2 +3}
 \end{equation}\]</div>
 <p><span class="math notranslate nohighlight">\(A_2\)</span> can be solved for using the Heaviside cover-up method because it
 corresponds to the highest power of the factor <span class="math notranslate nohighlight">\(x-4\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-85b1dade-983c-4e22-ad27-b9100d8dc631">
-<span class="eqno">(1.214)<a class="headerlink" href="#equation-85b1dade-983c-4e22-ad27-b9100d8dc631" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3283ca6d-4bae-4fab-831e-1e71fb8b4187">
+<span class="eqno">(1.214)<a class="headerlink" href="#equation-3283ca6d-4bae-4fab-831e-1e71fb8b4187" title="Permalink to this equation">#</a></span>\[\begin{equation}
 A_2 = \frac{4^2 - 29 \cdot 4 + 5}{4^2 + 3} = -5
 \end{equation}\]</div>
 <p>Cross-multiplication must be used to solve for <span class="math notranslate nohighlight">\(A_1\)</span>, <span class="math notranslate nohighlight">\(A_3\)</span>, and <span class="math notranslate nohighlight">\(B_3\)</span>.</p>
@@ -635,8 +621,8 @@ degree of the numerator <span class="math notranslate nohighlight">\(P\)</span> 
 The remaineder from the division should then be suitable for partial fraction
 decomposition.</p>
 <p>For example, to integrate:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0efaa8ad-5391-45a2-9af3-a74f6fa21b97">
-<span class="eqno">(1.215)<a class="headerlink" href="#equation-0efaa8ad-5391-45a2-9af3-a74f6fa21b97" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-773ac4d3-84a2-4913-a6cc-f9a1168ccd54">
+<span class="eqno">(1.215)<a class="headerlink" href="#equation-773ac4d3-84a2-4913-a6cc-f9a1168ccd54" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \int \frac{x^4 - 5x^3 + 6x^2 -18}{x^3 -3x^2} \d{x}
 \end{equation}\]</div>
 <p>Partial fraction decomposition seems useful, but the degree of the numerator
@@ -655,36 +641,36 @@ x^3-3x^2{\overline{\smash{\big)}\, x^4-5x^3+6x^2-18}}
 \end{array}
 \end{split}\]</div>
 <p>The result is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a36a0e9c-2ece-4a3d-a691-7c6829eab369">
-<span class="eqno">(1.216)<a class="headerlink" href="#equation-a36a0e9c-2ece-4a3d-a691-7c6829eab369" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2aaa7c9e-1db5-4b79-8517-828151ef7476">
+<span class="eqno">(1.216)<a class="headerlink" href="#equation-2aaa7c9e-1db5-4b79-8517-828151ef7476" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{x^4 - 5x^3 + 6x^2 -18}{x^3 -3x^2} = x - 2 - \frac{18}{x^3-3x^2}
 \end{equation}\]</div>
 <p>Use partial fraction decomposition for the fractional term:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9dd0f789-38ed-4c5e-9ba0-cd958a30a5f8">
-<span class="eqno">(1.217)<a class="headerlink" href="#equation-9dd0f789-38ed-4c5e-9ba0-cd958a30a5f8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0b752c5c-f581-4900-8f8d-06f5fdcdb03f">
+<span class="eqno">(1.217)<a class="headerlink" href="#equation-0b752c5c-f581-4900-8f8d-06f5fdcdb03f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{-18}{x^2 (x-3)} = \frac{A_1}{x} + \frac{A_2}{x^2} + \frac{A_3}{x-3}
 \end{equation}\]</div>
 <p>Find <span class="math notranslate nohighlight">\(A_2\)</span> and <span class="math notranslate nohighlight">\(A_3\)</span> using the Heaviside cover-up method:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5340f638-03de-4e44-b391-01986d833073">
-<span class="eqno">(1.218)<a class="headerlink" href="#equation-5340f638-03de-4e44-b391-01986d833073" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-fc901c58-ddbe-41a4-9115-b9b6c4663aa7">
+<span class="eqno">(1.218)<a class="headerlink" href="#equation-fc901c58-ddbe-41a4-9115-b9b6c4663aa7" title="Permalink to this equation">#</a></span>\[\begin{align}
 A_2 &amp;= \frac{-18}{0-3} = 6 \\
 A_3 &amp;= \frac{-18}{3^2} = -2
 \end{align}\]</div>
 <p>Find <span class="math notranslate nohighlight">\(A_1\)</span> by substituting <span class="math notranslate nohighlight">\(A_2\)</span> and <span class="math notranslate nohighlight">\(A_3\)</span>, then cross-multiplying:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6d02d27d-8d2e-4e56-9ea2-c20b41205d0e">
-<span class="eqno">(1.219)<a class="headerlink" href="#equation-6d02d27d-8d2e-4e56-9ea2-c20b41205d0e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6ec01974-245d-43a1-99eb-9282d7e39556">
+<span class="eqno">(1.219)<a class="headerlink" href="#equation-6ec01974-245d-43a1-99eb-9282d7e39556" title="Permalink to this equation">#</a></span>\[\begin{equation}
 -18 = A_1 x (x-3) + 6(x-3) - 2x^2
 \end{equation}\]</div>
 <p>We could collect powers of <em>x</em>, but plugging in <span class="math notranslate nohighlight">\(x=1\)</span> then solving for <span class="math notranslate nohighlight">\(A_1\)</span>
 is a little easier:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e9449f7f-8bdb-4537-aabd-5467ff445ac2">
-<span class="eqno">(1.220)<a class="headerlink" href="#equation-e9449f7f-8bdb-4537-aabd-5467ff445ac2" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b4053cfa-b8f7-4c69-9ff5-29c3edb391a7">
+<span class="eqno">(1.220)<a class="headerlink" href="#equation-b4053cfa-b8f7-4c69-9ff5-29c3edb391a7" title="Permalink to this equation">#</a></span>\[\begin{align}
 -18 &amp;= A_1 \cdot 1 \cdot -2 + 6 \cdot -2 - 2 = -2A_1 - 14 \\
 A_1 &amp;= 2
 \end{align}\]</div>
 <p>Last, integrate:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8187f02d-ab1f-40b5-924c-b55c406690b2">
-<span class="eqno">(1.221)<a class="headerlink" href="#equation-8187f02d-ab1f-40b5-924c-b55c406690b2" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e694432b-a738-4211-967d-2e0dd7760bc2">
+<span class="eqno">(1.221)<a class="headerlink" href="#equation-e694432b-a738-4211-967d-2e0dd7760bc2" title="Permalink to this equation">#</a></span>\[\begin{align}
 &amp;\int \frac{x^4 - 5x^3 + 6x^2 -18}{x^3 -3x^2} \d{x} \\
 &amp;= \int \left(x - 2 + \frac{2}{x} + \frac{6}{x^2} - \frac{2}{x-3} \right) \d{x} \\
 &amp;= \frac{x^2}{2} -2x + 2\ln|x| - \frac{6}{x} - 2\ln|x-3| + c
@@ -699,19 +685,19 @@ A_1 &amp;= 2
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Fractional decomposition:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c1b421ea-7f6a-4d08-87cf-70659c76eef5">
-<span class="eqno">(1.222)<a class="headerlink" href="#equation-c1b421ea-7f6a-4d08-87cf-70659c76eef5" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d8b36bb3-84fa-449b-b624-8121444412bd">
+<span class="eqno">(1.222)<a class="headerlink" href="#equation-d8b36bb3-84fa-449b-b624-8121444412bd" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{2x+16}{(x+4)(x-4)} = \frac{A_1}{x+4} + \frac{A_2}{x-4}
 \end{equation}\]</div>
 <p class="sd-card-text">Cover up:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-408054d4-b868-45b2-b967-5b2c9eae56e6">
-<span class="eqno">(1.223)<a class="headerlink" href="#equation-408054d4-b868-45b2-b967-5b2c9eae56e6" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0376c457-1938-4088-a558-59e2ee338916">
+<span class="eqno">(1.223)<a class="headerlink" href="#equation-0376c457-1938-4088-a558-59e2ee338916" title="Permalink to this equation">#</a></span>\[\begin{align}
 A_1 &amp;= \frac{2(-4)+16}{-4-4} = -1 \\
 A_2 &amp;= \frac{2(4)+16}{4+4} = 3
 \end{align}\]</div>
 <p class="sd-card-text">so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7f88243a-e2c5-45a2-af24-6da2ac13bcc7">
-<span class="eqno">(1.224)<a class="headerlink" href="#equation-7f88243a-e2c5-45a2-af24-6da2ac13bcc7" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-34ec5070-65e1-4fa4-ba80-9473ad8354df">
+<span class="eqno">(1.224)<a class="headerlink" href="#equation-34ec5070-65e1-4fa4-ba80-9473ad8354df" title="Permalink to this equation">#</a></span>\[\begin{align}
 \int\frac{2x+16}{x^2-16} \d{x}
 &amp;= \int\left( -\frac{1}{x+4}+\frac{3}{x-4} \right) \d{x} \\
 &amp;= -\ln|x+4| + 3\ln|x-4| + c
@@ -723,19 +709,19 @@ A_2 &amp;= \frac{2(4)+16}{4+4} = 3
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Fractional decomposition:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-224a2078-ed5d-4435-b5cd-058266ab7495">
-<span class="eqno">(1.225)<a class="headerlink" href="#equation-224a2078-ed5d-4435-b5cd-058266ab7495" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2c89cb21-673c-4540-a407-8cd7462bccb2">
+<span class="eqno">(1.225)<a class="headerlink" href="#equation-2c89cb21-673c-4540-a407-8cd7462bccb2" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{8}{x(x+2)} = \frac{A_1}{x} + \frac{A_2}{x+2}
 \end{equation}\]</div>
 <p class="sd-card-text">Cover up:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4325fc20-376d-4200-9545-1e51e9bd098b">
-<span class="eqno">(1.226)<a class="headerlink" href="#equation-4325fc20-376d-4200-9545-1e51e9bd098b" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ab0b0901-469d-449a-aba3-b5573c75b8e0">
+<span class="eqno">(1.226)<a class="headerlink" href="#equation-ab0b0901-469d-449a-aba3-b5573c75b8e0" title="Permalink to this equation">#</a></span>\[\begin{align}
 A_1 &amp;= \frac{8}{0+2} = 4 \\
 A_2 &amp;= \frac{8}{-2} = -4
 \end{align}\]</div>
 <p class="sd-card-text">so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d3a6ec38-a550-4fdb-b5f6-fac698578d9e">
-<span class="eqno">(1.227)<a class="headerlink" href="#equation-d3a6ec38-a550-4fdb-b5f6-fac698578d9e" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f9c09848-1317-4311-9931-559199cd4dff">
+<span class="eqno">(1.227)<a class="headerlink" href="#equation-f9c09848-1317-4311-9931-559199cd4dff" title="Permalink to this equation">#</a></span>\[\begin{align}
 \int\frac{8}{x^2+2x} \d{x}
   &amp;= \int\left(\frac{4}{x} - \frac{4}{x+2}\right) \d{x} \\
   &amp;= 4\ln|x| - 4\ln|x+2| + c
@@ -747,27 +733,27 @@ A_2 &amp;= \frac{8}{-2} = -4
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Fractional decomposition</p>
-<div class="amsmath math notranslate nohighlight" id="equation-39c85f98-15e6-43d9-b313-f6acaecf018c">
-<span class="eqno">(1.228)<a class="headerlink" href="#equation-39c85f98-15e6-43d9-b313-f6acaecf018c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ce118991-c36d-40c4-a371-9029aa5a598e">
+<span class="eqno">(1.228)<a class="headerlink" href="#equation-ce118991-c36d-40c4-a371-9029aa5a598e" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{5+12x^2-x^3}{x^2(x-9)(x-1)} = \frac{A_1}{x} + \frac{A_2}{x^2} +
   \frac{A_3}{x-9} + \frac{A_4}{x-1}
 \end{equation}\]</div>
 <p class="sd-card-text">Cover up:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e2196f5d-ca6c-4bd6-9b38-414b567b49b6">
-<span class="eqno">(1.229)<a class="headerlink" href="#equation-e2196f5d-ca6c-4bd6-9b38-414b567b49b6" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f8ad209a-0fde-42ce-b5e5-94cd2967487b">
+<span class="eqno">(1.229)<a class="headerlink" href="#equation-f8ad209a-0fde-42ce-b5e5-94cd2967487b" title="Permalink to this equation">#</a></span>\[\begin{align}
 A_2 &amp;= \frac{5+12(0^2)-0^3}{(0-9)(0-1)} = \frac{5}{9} \\
 A_3 &amp;= \frac{5+12(9^2)-9^3}{9^2(9-1)} = \frac{31}{81} \\
 A_4 &amp;= \frac{5+12(1^2)-1^3}{1^2(1-9)} = -2
 \end{align}\]</div>
 <p class="sd-card-text">To obtain <span class="math notranslate nohighlight">\(A_1\)</span>, plugin <span class="math notranslate nohighlight">\(x = -1\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-3d5acca0-e6d5-47eb-abbc-d1b5322edb98">
-<span class="eqno">(1.230)<a class="headerlink" href="#equation-3d5acca0-e6d5-47eb-abbc-d1b5322edb98" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f26bec43-818a-4277-9d27-379b0ad0a881">
+<span class="eqno">(1.230)<a class="headerlink" href="#equation-f26bec43-818a-4277-9d27-379b0ad0a881" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{9}{10} &amp;= -A_1 + \frac{5}{9} - \frac{1}{10}\cdot\frac{31}{81} + 1 \\
 A_1 &amp;= \frac{50}{81}
 \end{align}\]</div>
 <p class="sd-card-text">so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e312c1d5-7ae0-4926-89c2-7642b3bd3d23">
-<span class="eqno">(1.231)<a class="headerlink" href="#equation-e312c1d5-7ae0-4926-89c2-7642b3bd3d23" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-54ab12af-2577-4aee-9a3e-5bec5d48aa81">
+<span class="eqno">(1.231)<a class="headerlink" href="#equation-54ab12af-2577-4aee-9a3e-5bec5d48aa81" title="Permalink to this equation">#</a></span>\[\begin{align}
 \int\frac{5+12x^2-x^3}{(x^2)(x-9)(x-1)} \d{x}
 &amp; =\int\Biggl(\frac{50}{81}\frac{1}{x} + \frac{5}{9}\frac{1}{x^2} +
   \frac{31}{81}\frac{1}{x-9} - \frac{2}{x-1}\Biggr) \d{x} \\
@@ -835,14 +821,16 @@ A_1 &amp;= \frac{50}{81}
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heaviside-cover-up-method">1.9.1. Heaviside cover-up method</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomial-division">1.9.2. Polynomial division</a></li>
@@ -895,8 +883,8 @@ By Michael P. Howard
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

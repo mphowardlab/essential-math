@@ -16,41 +16,44 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -67,6 +70,7 @@
     <link rel="prev" title="5.2. Separable differential equations" href="separable.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -82,19 +86,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -102,7 +95,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -110,8 +102,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -127,7 +119,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -157,15 +150,11 @@
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
@@ -237,9 +226,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -369,7 +363,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -383,25 +377,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -440,8 +426,8 @@ document.write(`
 <h1><span class="section-number">5.3. </span>Exact differential equations<a class="headerlink" href="#exact-differential-equations" title="Link to this heading">#</a></h1>
 <p>Remember that a function <span class="math notranslate nohighlight">\(f(x,y)\)</span> has the
 <a class="reference internal" href="../multivariable-calculus/total-differential.html"><span class="std std-doc">total differential</span></a></p>
-<div class="amsmath math notranslate nohighlight" id="equation-34ea843d-8ceb-4d5f-ba02-bcd35cea23c2">
-<span class="eqno">(5.39)<a class="headerlink" href="#equation-34ea843d-8ceb-4d5f-ba02-bcd35cea23c2" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-44e3b00b-e313-4ec8-ab17-cb8e6c77fae7">
+<span class="eqno">(5.39)<a class="headerlink" href="#equation-44e3b00b-e313-4ec8-ab17-cb8e6c77fae7" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \d{f}= \td{}{f}{x}{y} \d{x} + \td{}{f}{y}{x} \d{y}
 \end{equation}\]</div>
 <p>Also note that if <span class="math notranslate nohighlight">\(f = c\)</span> (a constant), then <span class="math notranslate nohighlight">\(\d{f} = 0\)</span>. How does this apply
@@ -450,8 +436,8 @@ to ODEs?</p>
 <div class="math notranslate nohighlight" id="equation-exactode">
 <span class="eqno">(5.40)<a class="headerlink" href="#equation-exactode" title="Link to this equation">#</a></span>\[P(x,y) \d{x} + Q(x,y) \d{y} = 0\]</div>
 <p>If we can show that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e3fe1e4e-baea-4491-9a4d-bd6938fbffc4">
-<span class="eqno">(5.41)<a class="headerlink" href="#equation-e3fe1e4e-baea-4491-9a4d-bd6938fbffc4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-896a241d-18ea-469a-820e-252a4a2abc47">
+<span class="eqno">(5.41)<a class="headerlink" href="#equation-896a241d-18ea-469a-820e-252a4a2abc47" title="Permalink to this equation">#</a></span>\[\begin{equation}
 P = \td{}{f}{x}{y} \qquad Q = \td{}{f}{y}{x}
 \end{equation}\]</div>
 <p>for some <span class="math notranslate nohighlight">\(f\)</span>, then we know that <span class="math notranslate nohighlight">\(f(x,y) = c\)</span> is an implicit solution of the
@@ -460,8 +446,8 @@ function exists and what it is?</p>
 <aside class="topic">
 <p class="topic-title">Test for exactness</p>
 <p>A differential equation in the form of Eq. <a class="reference internal" href="#equation-exactode">(5.40)</a> is exact if</p>
-<div class="amsmath math notranslate nohighlight" id="equation-08142c65-65ee-44ea-9146-5231a9965a8a">
-<span class="eqno">(5.42)<a class="headerlink" href="#equation-08142c65-65ee-44ea-9146-5231a9965a8a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ae0c3d1c-6653-4d5c-ac20-a2d956634ae4">
+<span class="eqno">(5.42)<a class="headerlink" href="#equation-ae0c3d1c-6653-4d5c-ac20-a2d956634ae4" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \td{}{P}{y}{x} = \td{}{Q}{x}{y}
 \end{equation}\]</div>
 </aside>
@@ -474,14 +460,14 @@ function exists and what it is?</p>
 \end{equation}\]</div>
 <hr class="docutils" />
 <p>For the given ODE,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3ceb65fe-5691-4871-a22c-3bfc6221eafa">
-<span class="eqno">(5.44)<a class="headerlink" href="#equation-3ceb65fe-5691-4871-a22c-3bfc6221eafa" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-96042520-7927-4bf6-bfd8-b5da5cec6d97">
+<span class="eqno">(5.44)<a class="headerlink" href="#equation-96042520-7927-4bf6-bfd8-b5da5cec6d97" title="Permalink to this equation">#</a></span>\[\begin{align}
 P &amp;= \cos(x+y) \\
 \td{}{P}{y}{x} &amp;= -\sin(x+y)
 \end{align}\]</div>
 <p>and</p>
-<div class="amsmath math notranslate nohighlight" id="equation-476fb4f5-248b-4f10-88f7-c6183871130f">
-<span class="eqno">(5.45)<a class="headerlink" href="#equation-476fb4f5-248b-4f10-88f7-c6183871130f" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-cce3a5b1-2c5b-47e6-960f-d7bab09949f7">
+<span class="eqno">(5.45)<a class="headerlink" href="#equation-cce3a5b1-2c5b-47e6-960f-d7bab09949f7" title="Permalink to this equation">#</a></span>\[\begin{align}
 Q &amp;= 3y^2 + 2y + \cos(x+y) \\
 \td{}{Q}{x}{y} &amp;= -\sin(x+y)
 \end{align}\]</div>
@@ -490,8 +476,8 @@ Q &amp;= 3y^2 + 2y + \cos(x+y) \\
 <p>If an ODE is exact, we can integrate <em>P</em> or <em>Q</em> to get <em>f</em>, then solve for the
 integration constant with <em>Q</em> or <em>P</em>. For the ODE given by
 Eq. <a class="reference internal" href="#equation-exactode-example">(5.43)</a>, first integrate <em>P</em> with respect to <em>x</em>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-06df0b80-2762-4d5f-9453-45c942f1698b">
-<span class="eqno">(5.46)<a class="headerlink" href="#equation-06df0b80-2762-4d5f-9453-45c942f1698b" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-af8b281e-4b1e-4dda-91a4-3ab29cc8a123">
+<span class="eqno">(5.46)<a class="headerlink" href="#equation-af8b281e-4b1e-4dda-91a4-3ab29cc8a123" title="Permalink to this equation">#</a></span>\[\begin{align}
 f &amp;= \int P \d{x} \\
 &amp;= \int \cos(x+y) \d{x} \\
 &amp;= \sin(x+y) + k(y)
@@ -499,43 +485,43 @@ f &amp;= \int P \d{x} \\
 <p>Note that this integration adds an unknown function <em>k</em> of the variable that was
 held constant (in this case, <em>y</em>). To determine this function, differentiate and
 equate with <em>Q</em>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7b377737-cf9a-4486-a069-ca47c016740c">
-<span class="eqno">(5.47)<a class="headerlink" href="#equation-7b377737-cf9a-4486-a069-ca47c016740c" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c12d507e-555c-4b6f-802e-fa71a5bf174b">
+<span class="eqno">(5.47)<a class="headerlink" href="#equation-c12d507e-555c-4b6f-802e-fa71a5bf174b" title="Permalink to this equation">#</a></span>\[\begin{align}
 \td{}{f}{y}{x} &amp;= Q \\
 \cos(x+y) + k' &amp;= 3y^2+2y+\cos(x+y) \\
 k' &amp;= 3y^2+2y
 \end{align}\]</div>
 <p>This is a first-order ODE for <em>k</em> that can be solved using separation of
 variables:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-89c1f765-8303-4b4b-815d-51e3d6e974de">
-<span class="eqno">(5.48)<a class="headerlink" href="#equation-89c1f765-8303-4b4b-815d-51e3d6e974de" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-25cfd3c8-47b1-4203-b696-3458cab4e96c">
+<span class="eqno">(5.48)<a class="headerlink" href="#equation-25cfd3c8-47b1-4203-b696-3458cab4e96c" title="Permalink to this equation">#</a></span>\[\begin{align}
 \int \d{k} &amp;= \int (3y^2+2y) \d{y} \\
 k &amp;= y^3 + y^2 + k_0
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(k_0\)</span> is another unknown integration constant. Since we know that the ODE
 was exact, the solution <em>f</em> must be equal to a constant <em>c</em>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3bf256a9-b5aa-45a0-aea7-ca874fe14360">
-<span class="eqno">(5.49)<a class="headerlink" href="#equation-3bf256a9-b5aa-45a0-aea7-ca874fe14360" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-72342af7-94dc-4fab-9b10-97daecdb2685">
+<span class="eqno">(5.49)<a class="headerlink" href="#equation-72342af7-94dc-4fab-9b10-97daecdb2685" title="Permalink to this equation">#</a></span>\[\begin{align}
 f = \sin(x+y) + y^3 +y^2 + k_0 = c
 \end{align}\]</div>
 <p>Note that the coefficient <span class="math notranslate nohighlight">\(k_0\)</span> can be absorbed into <em>c</em>. This will be a common
 pattern for these problems, so moving forward, we will neglect writing the
 integration constant for <em>k</em>. The general, implicit solution to the ODE is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5645bc2f-41a3-4972-921e-e7746be29cdb">
-<span class="eqno">(5.50)<a class="headerlink" href="#equation-5645bc2f-41a3-4972-921e-e7746be29cdb" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8c31950d-ba75-4900-a8e8-53d92f9f3233">
+<span class="eqno">(5.50)<a class="headerlink" href="#equation-8c31950d-ba75-4900-a8e8-53d92f9f3233" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \sin(x+y) + y^3 + y^2 = c
 \end{equation}\]</div>
 <p>Note that order of integration does not matter. We could also have integrated
 with respect to <em>y</em> first</p>
-<div class="amsmath math notranslate nohighlight" id="equation-af1ddb19-1dc9-46c2-9d39-7cd68f33faaa">
-<span class="eqno">(5.51)<a class="headerlink" href="#equation-af1ddb19-1dc9-46c2-9d39-7cd68f33faaa" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f6956a20-6fd7-4971-a098-8ab0b5005a94">
+<span class="eqno">(5.51)<a class="headerlink" href="#equation-f6956a20-6fd7-4971-a098-8ab0b5005a94" title="Permalink to this equation">#</a></span>\[\begin{align}
 f &amp;=\int Q \d{y} \\
 &amp;= \int \left[3y^2+2y+\cos(x+y) \right] \d{y} \\
 &amp;=y^3+y^2+\sin(x+y)+k(x)
 \end{align}\]</div>
 <p>Then differentiated with respect to <em>x</em> and equated with <em>P</em>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f6ff48af-ae42-4ead-9bea-7820f5e8a310">
-<span class="eqno">(5.52)<a class="headerlink" href="#equation-f6ff48af-ae42-4ead-9bea-7820f5e8a310" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-98d29a9f-5bbb-4ea8-9013-2fcb49acfd0a">
+<span class="eqno">(5.52)<a class="headerlink" href="#equation-98d29a9f-5bbb-4ea8-9013-2fcb49acfd0a" title="Permalink to this equation">#</a></span>\[\begin{align}
 \td{}{f}{x}{y} &amp;= P \\
 \cos(x+y) + k' &amp;= \cos(x+y) \\
 k'&amp;=0
@@ -550,40 +536,40 @@ k'&amp;=0
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">The ODE is already in the standard form so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f7b72c86-ab1f-40db-800e-cd1830cc1305">
-<span class="eqno">(5.53)<a class="headerlink" href="#equation-f7b72c86-ab1f-40db-800e-cd1830cc1305" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b16e99fc-565a-4f90-b549-6a6990e0ec1e">
+<span class="eqno">(5.53)<a class="headerlink" href="#equation-b16e99fc-565a-4f90-b549-6a6990e0ec1e" title="Permalink to this equation">#</a></span>\[\begin{align}
 P &amp;= -2xy \sin(x^2) \\
 Q &amp;= \cos(x^2) \\
 \end{align}\]</div>
 <p class="sd-card-text">Check to see if the ODE is exact:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e94e3810-41bc-4b3c-8de4-06e5a9def3aa">
-<span class="eqno">(5.54)<a class="headerlink" href="#equation-e94e3810-41bc-4b3c-8de4-06e5a9def3aa" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-256a6aa3-10bb-47f7-b9ec-4a25f8aaa5e7">
+<span class="eqno">(5.54)<a class="headerlink" href="#equation-256a6aa3-10bb-47f7-b9ec-4a25f8aaa5e7" title="Permalink to this equation">#</a></span>\[\begin{align}
 \td{}{P}{y}{x} &amp;= -2x \sin(x^2) \\
 \td{}{Q}{x}{y} &amp;= -2x \sin(x^2)
 \end{align}\]</div>
 <p class="sd-card-text">The two partial derivatives are equal, so the ODE is exact. You can proceed
 directly to integration. First, integrate <em>Q</em> with respect <em>y</em></p>
-<div class="amsmath math notranslate nohighlight" id="equation-9840aea0-080f-49ee-92cc-053d2aaa8596">
-<span class="eqno">(5.55)<a class="headerlink" href="#equation-9840aea0-080f-49ee-92cc-053d2aaa8596" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-53b73900-c9cc-43ae-8fb9-0ff680f4c196">
+<span class="eqno">(5.55)<a class="headerlink" href="#equation-53b73900-c9cc-43ae-8fb9-0ff680f4c196" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f(x,y) = \int \cos(x^2) \d{y} = y \cos(x^2) + k(x)
 \end{equation}\]</div>
 <p class="sd-card-text">where <em>k</em> is an unknown function of <em>x</em>. Then, differentiate <em>f</em> with respect
 to <em>x</em> and compare to <em>P</em>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-956cdab8-bc67-4cf4-90a1-d362a182a6ed">
-<span class="eqno">(5.56)<a class="headerlink" href="#equation-956cdab8-bc67-4cf4-90a1-d362a182a6ed" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e0a96909-d69d-4189-8ce9-75352b959212">
+<span class="eqno">(5.56)<a class="headerlink" href="#equation-e0a96909-d69d-4189-8ce9-75352b959212" title="Permalink to this equation">#</a></span>\[\begin{align}
 \td{}{f}{x}{y} = -2xy \sin(x^2) + k'(x) &amp;= P = -2xy \sin(x^2) \\
 k'(x) &amp;= 0
 \end{align}\]</div>
 <p class="sd-card-text">This simple ODE has <span class="math notranslate nohighlight">\(k = 0\)</span> as a solution (neglecting the integration
 constant). Putting it all together,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-38702c7a-7a64-4e6b-a7d9-826086e6fa36">
-<span class="eqno">(5.57)<a class="headerlink" href="#equation-38702c7a-7a64-4e6b-a7d9-826086e6fa36" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ee948d60-aab1-49fc-afb1-f83c86e74712">
+<span class="eqno">(5.57)<a class="headerlink" href="#equation-ee948d60-aab1-49fc-afb1-f83c86e74712" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f = y \cos(x^2) = c
 \end{equation}\]</div>
 <p class="sd-card-text">is an implicit solution of the ODE, which we can manipulate to an explicit
 solution:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-79c0bde8-7723-45a3-baea-299f0cc1b7e2">
-<span class="eqno">(5.58)<a class="headerlink" href="#equation-79c0bde8-7723-45a3-baea-299f0cc1b7e2" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-33c75b42-7466-49ac-9c8a-4009fc44799a">
+<span class="eqno">(5.58)<a class="headerlink" href="#equation-33c75b42-7466-49ac-9c8a-4009fc44799a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y = \frac{c}{\cos(x^2)}
 \end{equation}\]</div>
 </div>
@@ -647,14 +633,16 @@ y = \frac{c}{\cos(x^2)}
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill-builder-problems">5.3.1. Skill builder problems</a></li>
 </ul>
@@ -705,8 +693,8 @@ By Michael P. Howard
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

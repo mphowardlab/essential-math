@@ -16,41 +16,44 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -67,6 +70,7 @@
     <link rel="prev" title="1.2. Function identities" href="function-identities.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -82,19 +86,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -102,7 +95,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -110,8 +102,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -127,7 +119,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -157,15 +150,11 @@
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
@@ -237,9 +226,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -369,7 +363,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -383,25 +377,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -455,20 +441,20 @@ For example, what happens to a function near boundaries of its domain? Near
 <p>Let <span class="math notranslate nohighlight">\(f(x)\)</span> be defined on an open interval around <span class="math notranslate nohighlight">\(x_0\)</span>, except possibly at <span class="math notranslate nohighlight">\(x_0\)</span>
 itself. If <span class="math notranslate nohighlight">\(f(x)\)</span> is arbitrarily close to <span class="math notranslate nohighlight">\(L\)</span> for all <span class="math notranslate nohighlight">\(x\)</span> sufficiently close to
 <span class="math notranslate nohighlight">\(x_0\)</span>, we say <span class="math notranslate nohighlight">\(f\)</span> approaches the limit <span class="math notranslate nohighlight">\(L\)</span> as <span class="math notranslate nohighlight">\(x\)</span> approaches <span class="math notranslate nohighlight">\(x_0\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fd8722f8-15d9-47cc-af83-0b1c627725cc">
-<span class="eqno">(1.17)<a class="headerlink" href="#equation-fd8722f8-15d9-47cc-af83-0b1c627725cc" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-aba2548b-1cef-4722-88be-509cea9d07cc">
+<span class="eqno">(1.17)<a class="headerlink" href="#equation-aba2548b-1cef-4722-88be-509cea9d07cc" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lim_{x \to x_0} f(x) = L
 \end{equation}\]</div>
 </aside>
 <p>Some functions have limits. For example:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-872142b3-4689-4929-9724-f9fcd0201b91">
-<span class="eqno">(1.18)<a class="headerlink" href="#equation-872142b3-4689-4929-9724-f9fcd0201b91" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-57702d28-a485-4940-89bb-12e81ced7a37">
+<span class="eqno">(1.18)<a class="headerlink" href="#equation-57702d28-a485-4940-89bb-12e81ced7a37" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f(x) = \frac{x^2 - 1}{x - 1}
 \end{equation}\]</div>
 <p>is not defined when <span class="math notranslate nohighlight">\(x=1\)</span>. What happens to it near 1? First, let’s factor and
 simplify:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-67d671cd-63a1-4b01-a1f5-b82c2ddaec4b">
-<span class="eqno">(1.19)<a class="headerlink" href="#equation-67d671cd-63a1-4b01-a1f5-b82c2ddaec4b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e8d0b53d-a840-4d9e-a4d8-fdd872300127">
+<span class="eqno">(1.19)<a class="headerlink" href="#equation-e8d0b53d-a840-4d9e-a4d8-fdd872300127" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f(x) = \frac{(x+1)(x-1)}{x-1} = x+1, \quad x \neq 1
 \end{equation}\]</div>
 <p>So, we expect that <em>f</em> should be well-behaved and have a value that approaches
@@ -505,8 +491,8 @@ f(x) = \frac{(x+1)(x-1)}{x-1} = x+1, \quad x \neq 1
 <a class="reference internal image-reference" href="../_images/fx_x+1.png"><img alt="Limit Exists" class="align-center" src="../_images/fx_x%2B1.png" style="width: 300px;" />
 </a>
 <p>However, some functions do not have limits. For example:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-89245984-e070-44df-8d3e-6ee770850009">
-<span class="eqno">(1.20)<a class="headerlink" href="#equation-89245984-e070-44df-8d3e-6ee770850009" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0fd06458-c34f-4173-8c29-04dae2b8baff">
+<span class="eqno">(1.20)<a class="headerlink" href="#equation-0fd06458-c34f-4173-8c29-04dae2b8baff" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f(x) = \frac{1}{x}
 \end{equation}\]</div>
 <p>is not defined at <span class="math notranslate nohighlight">\(x = 0\)</span>. As <em>x</em> approaches zero from the positive or negative
@@ -544,8 +530,8 @@ is positive or negative.</p>
 <aside class="topic">
 <p class="topic-title">Limit (formal)</p>
 <p>The limit of <span class="math notranslate nohighlight">\(f\)</span> as <span class="math notranslate nohighlight">\(x\)</span> approaches <span class="math notranslate nohighlight">\(x_0\)</span> is <em>L</em>, denoted</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8b9525a3-5268-467e-8cf0-048137c566cf">
-<span class="eqno">(1.21)<a class="headerlink" href="#equation-8b9525a3-5268-467e-8cf0-048137c566cf" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0554711c-21c0-4975-9639-64dbca9c9e38">
+<span class="eqno">(1.21)<a class="headerlink" href="#equation-0554711c-21c0-4975-9639-64dbca9c9e38" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lim_{x \to x_0} f(x) = L
 \end{equation}\]</div>
 <p>if for every <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span> there exists <span class="math notranslate nohighlight">\(\delta &gt; 0\)</span> such that for all <em>x</em>,
@@ -562,14 +548,14 @@ following:</p>
 <span class="math notranslate nohighlight">\(4 - \epsilon &lt; f &lt; 4 + \epsilon\)</span> if <span class="math notranslate nohighlight">\(4 - \delta &lt; x &lt; 4 + \delta\)</span> or
 equivalently, <span class="math notranslate nohighlight">\(|x-4| &lt; \epsilon\)</span>. We hence identify <span class="math notranslate nohighlight">\(\delta = \epsilon\)</span> and
 have proven that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f4da3646-b40a-488e-9cb6-5f9bd00a979f">
-<span class="eqno">(1.22)<a class="headerlink" href="#equation-f4da3646-b40a-488e-9cb6-5f9bd00a979f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2de8e1db-ea88-4550-8145-0077faf63f1b">
+<span class="eqno">(1.22)<a class="headerlink" href="#equation-2de8e1db-ea88-4550-8145-0077faf63f1b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lim_{x \to 4} f = 4
 \end{equation}\]</div>
 <p>However, such a <span class="math notranslate nohighlight">\(\delta\)</span> cannot always be found for all <span class="math notranslate nohighlight">\(\epsilon\)</span> for certain
 functions! There, the limit does not exist. For example, consider</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6165320d-a114-4b88-b11f-da7aebb75892">
-<span class="eqno">(1.23)<a class="headerlink" href="#equation-6165320d-a114-4b88-b11f-da7aebb75892" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-5bbfcd74-7be1-401b-8f57-3f0fd693fb84">
+<span class="eqno">(1.23)<a class="headerlink" href="#equation-5bbfcd74-7be1-401b-8f57-3f0fd693fb84" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f(x) = \begin{cases}
 x,&amp; x &lt; 4 \\
 x-2,&amp; x \ge 4
@@ -578,8 +564,8 @@ x-2,&amp; x \ge 4
 <a class="reference internal image-reference" href="../_images/delta_epsilon_no_limit.jpg"><img alt="Limit Graph 2" class="align-center" src="../_images/delta_epsilon_no_limit.jpg" style="width: 300px;" />
 </a>
 <p>Does the limit</p>
-<div class="amsmath math notranslate nohighlight" id="equation-08d5a724-78eb-4e50-a30a-6a0b172c999a">
-<span class="eqno">(1.24)<a class="headerlink" href="#equation-08d5a724-78eb-4e50-a30a-6a0b172c999a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1b221caf-bfb5-4b82-bd64-559865cd5dee">
+<span class="eqno">(1.24)<a class="headerlink" href="#equation-1b221caf-bfb5-4b82-bd64-559865cd5dee" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lim_{x \to 4} f(x) = 3
 \end{equation}\]</div>
 <p>exist? If \epsilon = 0.5, there is no <span class="math notranslate nohighlight">\(\delta\)</span> that contains <em>f</em> around
@@ -594,55 +580,55 @@ to know because they can be used to evaluate limits of more complicated
 functions:</p>
 <ul>
 <li><p>Constant</p>
-<div class="amsmath math notranslate nohighlight" id="equation-af2912b1-36c6-40c4-8bd1-a4a654c9fb41">
-<span class="eqno">(1.25)<a class="headerlink" href="#equation-af2912b1-36c6-40c4-8bd1-a4a654c9fb41" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d13a285a-fc8f-4785-a691-7cdebe09fbbb">
+<span class="eqno">(1.25)<a class="headerlink" href="#equation-d13a285a-fc8f-4785-a691-7cdebe09fbbb" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lim_{x \to c} k = k
 \end{equation}\]</div>
 </li>
 <li><p>Identity</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d7d1b546-eb8b-4402-abe9-407cc86151a2">
-<span class="eqno">(1.26)<a class="headerlink" href="#equation-d7d1b546-eb8b-4402-abe9-407cc86151a2" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c2d6fe30-13d6-452b-a55b-96948041ceeb">
+<span class="eqno">(1.26)<a class="headerlink" href="#equation-c2d6fe30-13d6-452b-a55b-96948041ceeb" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lim_{x \to c} x = c
 \end{equation}\]</div>
 </li>
 <li><p>Continuous function</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f94f2904-f1a2-4213-a37b-86f4553eb7a9">
-<span class="eqno">(1.27)<a class="headerlink" href="#equation-f94f2904-f1a2-4213-a37b-86f4553eb7a9" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f55dbfc0-79fe-4b44-9b8e-a6b249cebbb4">
+<span class="eqno">(1.27)<a class="headerlink" href="#equation-f55dbfc0-79fe-4b44-9b8e-a6b249cebbb4" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lim_{x \to c} f(x) = f(c)
 \end{equation}\]</div>
 <p>if <span class="math notranslate nohighlight">\(f(x)\)</span> is continuous at <em>x</em> (no jumps or holes).</p>
 </li>
 <li><p>Sum</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2a229bb3-ba14-404e-bd66-2cd099441b71">
-<span class="eqno">(1.28)<a class="headerlink" href="#equation-2a229bb3-ba14-404e-bd66-2cd099441b71" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4cf5dcac-4a20-4dbf-aad0-15229df8e004">
+<span class="eqno">(1.28)<a class="headerlink" href="#equation-4cf5dcac-4a20-4dbf-aad0-15229df8e004" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lim_{x \to c} \left(f(x) + g(x)\right) =
   \lim_{x \to c} f(x) + \lim_{x \to c} g(x)
 \end{equation}\]</div>
 </li>
 <li><p>Difference</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b5ed5fbf-db21-49fd-86ff-99af2557e63b">
-<span class="eqno">(1.29)<a class="headerlink" href="#equation-b5ed5fbf-db21-49fd-86ff-99af2557e63b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-97357f2f-1566-4f6d-acba-2c596e1d6ae4">
+<span class="eqno">(1.29)<a class="headerlink" href="#equation-97357f2f-1566-4f6d-acba-2c596e1d6ae4" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lim_{x \to c} \left(f(x) - g(x)\right) =
   \lim_{x \to c} f(x) - \lim_{x \to c} g(x)
 \end{equation}\]</div>
 </li>
 <li><p>Product</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b4a2ed23-2067-49e1-ba46-3012ab1cfc04">
-<span class="eqno">(1.30)<a class="headerlink" href="#equation-b4a2ed23-2067-49e1-ba46-3012ab1cfc04" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-dc767a0d-a97b-4dae-a068-56c064a2fb2f">
+<span class="eqno">(1.30)<a class="headerlink" href="#equation-dc767a0d-a97b-4dae-a068-56c064a2fb2f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lim_{x \to c} f(x)g(x) =
   \left(\lim_{x \to c} f(x)\right)\left(\lim_{x \to c} g(x)\right)
 \end{equation}\]</div>
 </li>
 <li><p>Quotient</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1042097a-4a87-4aad-820a-15634b73bde8">
-<span class="eqno">(1.31)<a class="headerlink" href="#equation-1042097a-4a87-4aad-820a-15634b73bde8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f787bf61-d369-4f66-95cd-fd3e27d587de">
+<span class="eqno">(1.31)<a class="headerlink" href="#equation-f787bf61-d369-4f66-95cd-fd3e27d587de" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lim_{x \to c} \frac{f(x)}{g(x)} =
   \dfrac{\lim_{x \to c} f(x)}{\lim_{x \to c} g(x)}
 \end{equation}\]</div>
 </li>
 <li><p>Power</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a9ea8c10-435c-49ee-bf66-6776470939f5">
-<span class="eqno">(1.32)<a class="headerlink" href="#equation-a9ea8c10-435c-49ee-bf66-6776470939f5" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f825c586-fc90-440c-99ee-a1815a950569">
+<span class="eqno">(1.32)<a class="headerlink" href="#equation-f825c586-fc90-440c-99ee-a1815a950569" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lim_{x \to c} f(x)^{r/s} = \left(\lim_{x \to c} f(x)\right)^{r/s}
 \end{equation}\]</div>
 <p>where <em>r</em> and <span class="math notranslate nohighlight">\(s \ne 0\)</span> are integers. The limit of <em>f</em> must be positive if
@@ -653,15 +639,15 @@ functions:</p>
 <section id="taking-limits">
 <h2><span class="section-number">1.3.4. </span>Taking limits<a class="headerlink" href="#taking-limits" title="Link to this heading">#</a></h2>
 <p>“Nice” functions can be evaluated directly</p>
-<div class="amsmath math notranslate nohighlight" id="equation-28a87e73-db40-4772-babf-267ebd11621d">
-<span class="eqno">(1.33)<a class="headerlink" href="#equation-28a87e73-db40-4772-babf-267ebd11621d" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7f7003cb-6377-4503-a5b7-4674dbc2927c">
+<span class="eqno">(1.33)<a class="headerlink" href="#equation-7f7003cb-6377-4503-a5b7-4674dbc2927c" title="Permalink to this equation">#</a></span>\[\begin{align}
 \lim_{x \to -1} x^3 + 4x^2 -3 &amp;= (-1)^3 + 4(-1)^2 -3 \\
 &amp;= -1 + 4 -3 \\
 &amp;= 0
 \end{align}\]</div>
 <p>This works even if they are complicated</p>
-<div class="amsmath math notranslate nohighlight" id="equation-65fcbfe9-e387-4543-97bb-2158a07bcc6b">
-<span class="eqno">(1.34)<a class="headerlink" href="#equation-65fcbfe9-e387-4543-97bb-2158a07bcc6b" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-eb497b3c-b623-4e8d-a6dc-8d0f8decc137">
+<span class="eqno">(1.34)<a class="headerlink" href="#equation-eb497b3c-b623-4e8d-a6dc-8d0f8decc137" title="Permalink to this equation">#</a></span>\[\begin{align}
 \lim_{x \to 4} \left(\frac{x^2 + 9}{x + 1} \right)^{1/2}
 &amp;= \left(\frac{4^2 + 9}{4 + 1} \right)^{1/2} \\
 &amp;= \left(\frac{25}{5}\right)^{1/2} \\
@@ -669,8 +655,8 @@ functions:</p>
 \end{align}\]</div>
 <p>Limits are most useful when functions have “holes” (function is not defined at
 <span class="math notranslate nohighlight">\(x_0\)</span>)</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d10b7a94-0354-4b4c-97e2-384855e411e0">
-<span class="eqno">(1.35)<a class="headerlink" href="#equation-d10b7a94-0354-4b4c-97e2-384855e411e0" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-596795cd-3fbe-4bbf-8b38-b26ab5cb49ff">
+<span class="eqno">(1.35)<a class="headerlink" href="#equation-596795cd-3fbe-4bbf-8b38-b26ab5cb49ff" title="Permalink to this equation">#</a></span>\[\begin{align}
 \lim_{x \to 1} \frac{x^2 + x -2}{x^2 - x}
 &amp;= \lim_{x \to 1} \frac{(x+2)(x+1)}{x(x+1)} \\
 &amp;= \lim_{x \to 1} \frac{x+2}{x} \\
@@ -678,8 +664,8 @@ functions:</p>
 \end{align}\]</div>
 <p>Note that this function had a “hole” at <span class="math notranslate nohighlight">\(x = 1\)</span> that we removed by factoring.
 This works even if the factors are “ugly”:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3a8b41e8-89fa-4343-959a-0dd8f3745b9c">
-<span class="eqno">(1.36)<a class="headerlink" href="#equation-3a8b41e8-89fa-4343-959a-0dd8f3745b9c" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-9ed86b93-f040-436f-82bd-5af3476ec808">
+<span class="eqno">(1.36)<a class="headerlink" href="#equation-9ed86b93-f040-436f-82bd-5af3476ec808" title="Permalink to this equation">#</a></span>\[\begin{align}
 \lim_{x \to 4} \frac{4x - x^2}{2 - \sqrt{x}}
 &amp;= \lim_{x \to 4} \frac{x(4 - x)}{2 - \sqrt{x}} \\
 &amp;= \lim_{x \to 4} \frac{x(2 + \sqrt{x})(2 - \sqrt{x})}{2 - \sqrt{x}} \\
@@ -688,14 +674,14 @@ This works even if the factors are “ugly”:</p>
 &amp;= 16
 \end{align}\]</div>
 <p>Here, we made use of the difference of squares identity:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-66fbeb39-e450-471f-8274-212901c64d72">
-<span class="eqno">(1.37)<a class="headerlink" href="#equation-66fbeb39-e450-471f-8274-212901c64d72" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-dc629d7f-ff98-40a8-b872-60279d4a1ad5">
+<span class="eqno">(1.37)<a class="headerlink" href="#equation-dc629d7f-ff98-40a8-b872-60279d4a1ad5" title="Permalink to this equation">#</a></span>\[\begin{equation}
 a^2 - b^2 = (a + b)(a - b)
 \end{equation}\]</div>
 <p>Another useful trick is to multiply by a factor of “1” that makes a difference
 of squares (multiply by conjugate)</p>
-<div class="amsmath math notranslate nohighlight" id="equation-28cec43d-d470-45ed-8523-f8564099d351">
-<span class="eqno">(1.38)<a class="headerlink" href="#equation-28cec43d-d470-45ed-8523-f8564099d351" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-80e8bfae-0a72-4d96-ac44-a989cc39feba">
+<span class="eqno">(1.38)<a class="headerlink" href="#equation-80e8bfae-0a72-4d96-ac44-a989cc39feba" title="Permalink to this equation">#</a></span>\[\begin{align}
 \lim_{x \to 0} \frac{\sqrt{3x + 1} - 1}{x}
 &amp;= \lim_{x \to 0}
   \frac{(\sqrt{3x + 1} - 1)(\sqrt{3x + 1} + 1)}{x(\sqrt{3x + 1} + 1)} \\
@@ -737,8 +723,8 @@ Proportional-integral control</div>
 </div>
 <aside class="topic">
 <p class="topic-title">Limit at infinity</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3802a12c-edca-4711-9a6d-00292b2c2e5d">
-<span class="eqno">(1.39)<a class="headerlink" href="#equation-3802a12c-edca-4711-9a6d-00292b2c2e5d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b78bb9b2-539c-4073-84b1-8d7cd0cef03c">
+<span class="eqno">(1.39)<a class="headerlink" href="#equation-b78bb9b2-539c-4073-84b1-8d7cd0cef03c" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lim_{x \to \infty} f(x) = L
 \end{equation}\]</div>
 <p>if for every <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span>, there exists a value <em>M</em> such that for all <em>x</em>,
@@ -754,8 +740,8 @@ if <span class="math notranslate nohighlight">\(x &gt; M\)</span>, <span class="
 <p>Other limit laws (sum, quotient, etc.) also hold at infinity! If function is
 already in a convenient form, use known limits to evaluate unknown ones. For
 example,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cf3bf7a5-f56c-4a61-a0c3-a0ce5a15772b">
-<span class="eqno">(1.40)<a class="headerlink" href="#equation-cf3bf7a5-f56c-4a61-a0c3-a0ce5a15772b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c73a9fa7-8e94-4ed6-85e5-6db917bdff74">
+<span class="eqno">(1.40)<a class="headerlink" href="#equation-c73a9fa7-8e94-4ed6-85e5-6db917bdff74" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lim_{x \to \infty} 5 + \frac{1}{x} =
   \lim_{x \to \infty} 5 + \lim_{x \to \infty} \frac{1}{x} =
   5 + 0 = 5
@@ -763,14 +749,14 @@ example,</p>
 <p>For rational functions <span class="math notranslate nohighlight">\(f(x) = p(x) / q(x)\)</span>, divide by largest power of <em>x</em> in
 denominator:</p>
 <!--markdownlint-disable MD013 -->
-<div class="amsmath math notranslate nohighlight" id="equation-e60da41c-b8ca-40c5-8243-8b56ffcee18a">
-<span class="eqno">(1.41)<a class="headerlink" href="#equation-e60da41c-b8ca-40c5-8243-8b56ffcee18a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6aab5025-1cb1-4ef8-b1c7-d771ad14eec4">
+<span class="eqno">(1.41)<a class="headerlink" href="#equation-6aab5025-1cb1-4ef8-b1c7-d771ad14eec4" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lim_{x \to -\infty} \frac{11x + 2}{2x^3-1} =
   \lim_{x \to -\infty} \frac{ \dfrac{11x}{x^3} + \dfrac{2}{x^3} }{ \dfrac{2x^3}{x^3} + \dfrac{1}{x^3}}
   = \frac{0 + 0}{2 - 0} = 0
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-785c20fe-4928-4092-96b5-012a9773ca9c">
-<span class="eqno">(1.42)<a class="headerlink" href="#equation-785c20fe-4928-4092-96b5-012a9773ca9c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4cff378c-08e6-4ea0-b228-8da914d25805">
+<span class="eqno">(1.42)<a class="headerlink" href="#equation-4cff378c-08e6-4ea0-b228-8da914d25805" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lim_{x \to \infty} \frac{5x^2+8x-3}{3x^2+4} =
   \lim_{x \to \infty} \frac{ 5 + \dfrac{8}{x} - \dfrac{3}{x^2} }{ 3 + \dfrac{2}{x^2} } =
   \frac{5+0-0}{3 - 0} = \frac{5}{3}
@@ -778,8 +764,8 @@ denominator:</p>
 <!--markdownlint-enable MD013 -->
 <p>Not all functions have limits at infinity. Some “blow up”!</p>
 <!--markdownlint-disable MD013 -->
-<div class="amsmath math notranslate nohighlight" id="equation-d0930315-cc53-4091-b084-3039e3a12f1b">
-<span class="eqno">(1.43)<a class="headerlink" href="#equation-d0930315-cc53-4091-b084-3039e3a12f1b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-10279773-d39c-4112-89de-5b886cd95304">
+<span class="eqno">(1.43)<a class="headerlink" href="#equation-10279773-d39c-4112-89de-5b886cd95304" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lim_{x \to \infty} \frac{2x^2-3}{7x+4} = \lim_{x \to \infty} \frac{ 2x - \frac{3}{x} }{ 7 + \frac{4}{x} }
 \end{equation}\]</div>
 <!--markdownlint-enable MD013 -->
@@ -802,27 +788,27 @@ vapor density can be denoted as <span class="math notranslate nohighlight">\(\li
 <p>If <em>f</em> is defined on the interval <span class="math notranslate nohighlight">\(x_0 &lt; x &lt; b\)</span> and <span class="math notranslate nohighlight">\(f(x)\)</span> approaches
 arbitrarily close to <span class="math notranslate nohighlight">\(L\)</span> as <span class="math notranslate nohighlight">\(x\)</span> approaches <span class="math notranslate nohighlight">\(x_0\)</span>, then <span class="math notranslate nohighlight">\(f\)</span> has a right-hand
 limit <span class="math notranslate nohighlight">\(L\)</span> at <span class="math notranslate nohighlight">\(x_0\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-241c517b-d3b3-4dbe-a5be-9b061e171629">
-<span class="eqno">(1.44)<a class="headerlink" href="#equation-241c517b-d3b3-4dbe-a5be-9b061e171629" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-888491e0-65ad-4a42-90ef-b8f78f9e0811">
+<span class="eqno">(1.44)<a class="headerlink" href="#equation-888491e0-65ad-4a42-90ef-b8f78f9e0811" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lim_{x \to x_0^+} f(x) = L
 \end{equation}\]</div>
 <p>(This limit can also be written more formally in <span class="math notranslate nohighlight">\(\delta\)</span>-<span class="math notranslate nohighlight">\(\epsilon\)</span> form.)
 The same can be done for the left-hand limit if <span class="math notranslate nohighlight">\(a &lt; x &lt; x_0\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-bd7b2523-f613-4ee1-97c0-723e05c425eb">
-<span class="eqno">(1.45)<a class="headerlink" href="#equation-bd7b2523-f613-4ee1-97c0-723e05c425eb" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2d6271b6-c4d3-4f12-9bc9-a9bde49bddad">
+<span class="eqno">(1.45)<a class="headerlink" href="#equation-2d6271b6-c4d3-4f12-9bc9-a9bde49bddad" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lim_{x \to x_0^-} f(x) = L
 \end{equation}\]</div>
 <p>The two-sided limit exists if and only if both one-sided limits exist and have
 the same value:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9848a588-e1f5-4fa5-847b-08bc3f4f9529">
-<span class="eqno">(1.46)<a class="headerlink" href="#equation-9848a588-e1f5-4fa5-847b-08bc3f4f9529" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e335bf9a-bc44-4771-9f99-a77a58e9bf49">
+<span class="eqno">(1.46)<a class="headerlink" href="#equation-e335bf9a-bc44-4771-9f99-a77a58e9bf49" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lim_{x \to x_0} f(x) = L \Leftrightarrow
 \lim_{x \to x_0^+} f(x) = \lim_{x \to x_0^-} f(x) = L
 \end{equation}\]</div>
 </aside>
 <p>For example, if</p>
-<div class="amsmath math notranslate nohighlight" id="equation-efd97b83-3b36-4778-b24d-bfc4c6abe8d2">
-<span class="eqno">(1.47)<a class="headerlink" href="#equation-efd97b83-3b36-4778-b24d-bfc4c6abe8d2" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-59b24049-eae1-4b2d-9ee7-cf85f5bab997">
+<span class="eqno">(1.47)<a class="headerlink" href="#equation-59b24049-eae1-4b2d-9ee7-cf85f5bab997" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f(x) = \frac{|x|}{x} = \begin{cases}
 -1, &amp; x&lt;0\\
 1, &amp; x&gt;0
@@ -832,14 +818,14 @@ f(x) = \frac{|x|}{x} = \begin{cases}
 <span class="math notranslate nohighlight">\(\lim_{x \to 0^-} f(x) = -1\)</span> (the value from the left). Thus,
 <span class="math notranslate nohighlight">\(\lim_{x \to 0} f(x)\)</span> does not exist.</p>
 <p>Normal limit laws also still apply to one-sided limits:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-eb88007f-ad5d-4354-be8b-6e265b944ec6">
-<span class="eqno">(1.48)<a class="headerlink" href="#equation-eb88007f-ad5d-4354-be8b-6e265b944ec6" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-327e95f2-cbd6-4fba-8627-054ba80e8a23">
+<span class="eqno">(1.48)<a class="headerlink" href="#equation-327e95f2-cbd6-4fba-8627-054ba80e8a23" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lim_{x \to -2^+} \left( \frac{x}{x+1} \right) \left( \frac{2x + 5}{x^2 + x} \right)
 = \left( \frac{-2}{-2 + 1} \right) \left( \frac{-4 + 5}{4 - 2} \right) = 1
 \end{equation}\]</div>
 <p>However, be careful about which piece of the function applies:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-62bf95d4-3b64-4559-a9f5-cda0e121ed94">
-<span class="eqno">(1.49)<a class="headerlink" href="#equation-62bf95d4-3b64-4559-a9f5-cda0e121ed94" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7580011d-e3f7-4dd9-829b-663b5bc854e0">
+<span class="eqno">(1.49)<a class="headerlink" href="#equation-7580011d-e3f7-4dd9-829b-663b5bc854e0" title="Permalink to this equation">#</a></span>\[\begin{align}
 \lim_{x \to -2^-} (x + 3) \frac{|x + 2|}{x + 2}
 &amp;= \left( \lim_{x \to -2^-} x + 3 \right)
 \left( \lim_{x \to -2^-} \frac{|x + 2|}{x + 2} \right) \\
@@ -896,8 +882,8 @@ g(x) = 1/x
 <aside class="topic">
 <p class="topic-title">Infinite limits</p>
 <p><span class="math notranslate nohighlight">\(f(x)\)</span> approaches <span class="math notranslate nohighlight">\(\infty\)</span> as <em>x</em> approaches <span class="math notranslate nohighlight">\(x_0\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-b4ff464a-d4b0-4ea4-8b19-ac3a44181a6c">
-<span class="eqno">(1.50)<a class="headerlink" href="#equation-b4ff464a-d4b0-4ea4-8b19-ac3a44181a6c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7e5d9eb5-f9df-49d7-a909-79bc46cfecf5">
+<span class="eqno">(1.50)<a class="headerlink" href="#equation-7e5d9eb5-f9df-49d7-a909-79bc46cfecf5" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lim_{x\to\infty}f(x) = \infty
 \end{equation}\]</div>
 <p>if for every real <em>B</em> there exists <span class="math notranslate nohighlight">\(\delta &gt; 0\)</span> such that for all <em>x</em> if
@@ -908,8 +894,8 @@ for functions that approach <span class="math notranslate nohighlight">\(-\infty
 <aside class="topic">
 <p class="topic-title">Vertical asymptote</p>
 <p>A line <span class="math notranslate nohighlight">\(x = a\)</span> is a vertical asymptote of <span class="math notranslate nohighlight">\(y = f(x)\)</span> if</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e791736b-9366-475d-a84d-74359612456d">
-<span class="eqno">(1.51)<a class="headerlink" href="#equation-e791736b-9366-475d-a84d-74359612456d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c856bee1-a5a2-4a5b-a2dd-b63a25f8d4b5">
+<span class="eqno">(1.51)<a class="headerlink" href="#equation-c856bee1-a5a2-4a5b-a2dd-b63a25f8d4b5" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lim_{x \to a^+}f(x) = \pm\infty \quad {\rm or} \quad \lim_{x \to a^-}f(x) = \pm\infty
 \end{equation}\]</div>
 </aside>
@@ -927,8 +913,8 @@ indeterminate forms using derivatives.</p>
 <aside class="topic">
 <p class="topic-title">L’Hôpital’s Rule</p>
 <p>If <span class="math notranslate nohighlight">\(\lim_{x\to a} f(x) = \lim_{x \to a} g(x) = 0\)</span> or <span class="math notranslate nohighlight">\(\pm \infty\)</span>, then</p>
-<div class="amsmath math notranslate nohighlight" id="equation-13530c6f-fcd9-4216-8491-69fbdabee32f">
-<span class="eqno">(1.52)<a class="headerlink" href="#equation-13530c6f-fcd9-4216-8491-69fbdabee32f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-32e14fc4-ed96-471c-acb9-bd38148815bb">
+<span class="eqno">(1.52)<a class="headerlink" href="#equation-32e14fc4-ed96-471c-acb9-bd38148815bb" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lim_{x\to a} \frac{f(x)}{g(x)} = \lim_{x\to a} \frac{f'(x)}{g'(x)}
 \end{equation}\]</div>
 <p>This process can be repeated until the above situation no longer applies or
@@ -941,8 +927,8 @@ the limit is found not to exist.</p>
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">The limits of the numerator and denominator are both zero, so:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4f495a63-bc0a-4697-bf1a-24951b7cd8a1">
-<span class="eqno">(1.53)<a class="headerlink" href="#equation-4f495a63-bc0a-4697-bf1a-24951b7cd8a1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8c3e1c39-d9b8-464b-acc6-3a17db663a19">
+<span class="eqno">(1.53)<a class="headerlink" href="#equation-8c3e1c39-d9b8-464b-acc6-3a17db663a19" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lim_{x\to 0} \frac{\sin x}{x} = \lim_{x\to 0} \frac{\cos x}{1} = 1
 \end{equation}\]</div>
 </div>
@@ -952,8 +938,8 @@ the limit is found not to exist.</p>
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">The limits of the numerator and denominator are both zero, so:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-572c8b3f-d605-4a1a-bcaf-4aa0723a4631">
-<span class="eqno">(1.54)<a class="headerlink" href="#equation-572c8b3f-d605-4a1a-bcaf-4aa0723a4631" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-61999b71-652d-4be2-af4b-c124cc606ed7">
+<span class="eqno">(1.54)<a class="headerlink" href="#equation-61999b71-652d-4be2-af4b-c124cc606ed7" title="Permalink to this equation">#</a></span>\[\begin{align}
 \lim_{x\to 0} \frac{x-\sin x}{x^3}
   &amp;= \lim_{x\to 0} \frac{1-\cos x}{3x^2} \\
   &amp;= \lim_{x\to 0} \frac{\sin x}{6x} \\
@@ -968,8 +954,8 @@ example.</p>
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">The limits of the numerator and denominator are both <span class="math notranslate nohighlight">\(\infty\)</span>, so:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-118402da-b4b0-4ce9-927e-00c5b0b9c77d">
-<span class="eqno">(1.55)<a class="headerlink" href="#equation-118402da-b4b0-4ce9-927e-00c5b0b9c77d" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-8d6253ac-3533-4a31-9263-4187c1292e22">
+<span class="eqno">(1.55)<a class="headerlink" href="#equation-8d6253ac-3533-4a31-9263-4187c1292e22" title="Permalink to this equation">#</a></span>\[\begin{align}
 \lim_{x\to \infty} \frac{\ln x}{2\sqrt{x}}
   &amp;= \lim_{x\to \infty} \frac{1/x}{1/\sqrt{x}} \\
   &amp;= \lim_{x\to \infty} \frac{1}{\sqrt{x}} = 0
@@ -982,8 +968,8 @@ example.</p>
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">The limits of the numerator and denominator are both <span class="math notranslate nohighlight">\(\infty\)</span>, so:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-96401a84-f82d-436e-9629-e67c1f5c79ad">
-<span class="eqno">(1.56)<a class="headerlink" href="#equation-96401a84-f82d-436e-9629-e67c1f5c79ad" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-534e68ce-0130-4400-9b31-29904134dae4">
+<span class="eqno">(1.56)<a class="headerlink" href="#equation-534e68ce-0130-4400-9b31-29904134dae4" title="Permalink to this equation">#</a></span>\[\begin{align}
 \lim_{x\to \infty} \frac{e^x}{x^2}
 &amp;= \lim_{x\to \infty} \frac{e^x}{2x} \\
 &amp;= \lim_{x\to \infty} \frac{e^x}{2} = \infty
@@ -998,8 +984,8 @@ limit does not exist.</p>
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">This limit is not in a form that’s immediately suitable for L’Hôpital’s rule,
 but it can be made so.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-83bc4ea8-c041-4c9b-852c-37461aeeb7f9">
-<span class="eqno">(1.57)<a class="headerlink" href="#equation-83bc4ea8-c041-4c9b-852c-37461aeeb7f9" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-093ccf28-a23e-4ffb-a600-23cb3b2dce37">
+<span class="eqno">(1.57)<a class="headerlink" href="#equation-093ccf28-a23e-4ffb-a600-23cb3b2dce37" title="Permalink to this equation">#</a></span>\[\begin{align}
 \lim_{x\to \infty} x\sin(1/x)
 &amp;= \lim_{x\to \infty} \frac{\sin(1/x)}{1/x} \\
 &amp;= \lim_{x\to \infty} \frac{\cos(1/x)(-1/x^2)}{-1/x^2} \\
@@ -1007,8 +993,8 @@ but it can be made so.</p>
 \end{align}\]</div>
 <p class="sd-card-text">Another option in this case would be to substitute in <span class="math notranslate nohighlight">\(y = 1/x\)</span>, then note
 that <span class="math notranslate nohighlight">\(y \to 0\)</span> as <span class="math notranslate nohighlight">\(x \to \infty\)</span> so we have</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b5613261-e51e-43c4-a144-a3a3b5e1b15c">
-<span class="eqno">(1.58)<a class="headerlink" href="#equation-b5613261-e51e-43c4-a144-a3a3b5e1b15c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e5ed7154-0467-4385-a6bd-5a4bd4efbe44">
+<span class="eqno">(1.58)<a class="headerlink" href="#equation-e5ed7154-0467-4385-a6bd-5a4bd4efbe44" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lim_{y\to 0} \frac{\sin y}{y} = 1
 \end{equation}\]</div>
 <p class="sd-card-text">which we already solved!</p>
@@ -1073,14 +1059,16 @@ that <span class="math notranslate nohighlight">\(y \to 0\)</span> as <span clas
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">1.3.1. Motivation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formal-definition">1.3.2. Formal definition</a></li>
@@ -1138,8 +1126,8 @@ By Michael P. Howard
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

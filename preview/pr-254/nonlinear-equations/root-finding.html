@@ -16,41 +16,44 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -67,6 +70,7 @@
     <link rel="prev" title="4.2. Quadratic and cubic polynomials" href="quadratic-cubic.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -82,19 +86,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -102,7 +95,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -110,8 +102,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -127,7 +119,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -157,15 +150,11 @@
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
@@ -237,9 +226,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -369,7 +363,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -383,25 +377,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -445,21 +431,21 @@ document.write(`
 <h2><span class="section-number">4.3.1. </span>Fixed point iteration<a class="headerlink" href="#fixed-point-iteration" title="Link to this heading">#</a></h2>
 <p>If we want to numerically solve <span class="math notranslate nohighlight">\(f(x) = 0\)</span>, rearrange <span class="math notranslate nohighlight">\(f(x)\)</span> to get <span class="math notranslate nohighlight">\(g(x) = x\)</span>.
 Then, choose an inital guess <span class="math notranslate nohighlight">\(x_0\)</span> and iterate:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c91c8bb3-8787-4329-b517-f0f842ca218a">
-<span class="eqno">(4.14)<a class="headerlink" href="#equation-c91c8bb3-8787-4329-b517-f0f842ca218a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-680eff80-0a71-4119-94dd-3804f4e1592a">
+<span class="eqno">(4.14)<a class="headerlink" href="#equation-680eff80-0a71-4119-94dd-3804f4e1592a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 x_{n+1} = g(x_n)
 \end{equation}\]</div>
 <p>until <span class="math notranslate nohighlight">\(x_{n+1} = x_n\)</span> to the desired precision (error tolerance).</p>
 <div class="admonition-example-using-fixed-point-iteration admonition">
 <p class="admonition-title">Example: Using fixed point iteration</p>
 <p>To solve</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e67edc15-2876-4f01-b839-82bb8308b3b8">
-<span class="eqno">(4.15)<a class="headerlink" href="#equation-e67edc15-2876-4f01-b839-82bb8308b3b8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-59b5f1e6-5df5-4464-b6eb-507df94a4980">
+<span class="eqno">(4.15)<a class="headerlink" href="#equation-59b5f1e6-5df5-4464-b6eb-507df94a4980" title="Permalink to this equation">#</a></span>\[\begin{equation}
 e^{-x^2} - x = 0
 \end{equation}\]</div>
 <p>First rearrange</p>
-<div class="amsmath math notranslate nohighlight" id="equation-dab4cbd5-adc5-4c01-9fe6-b5ffdb274aee">
-<span class="eqno">(4.16)<a class="headerlink" href="#equation-dab4cbd5-adc5-4c01-9fe6-b5ffdb274aee" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0712f77f-efde-4196-be27-a988de9c5644">
+<span class="eqno">(4.16)<a class="headerlink" href="#equation-0712f77f-efde-4196-be27-a988de9c5644" title="Permalink to this equation">#</a></span>\[\begin{align}
 x = e^{-x^2} = g(x)
 \end{align}\]</div>
 <p>Then, guess <span class="math notranslate nohighlight">\(x_0 = 0\)</span> and set up a table:</p>
@@ -504,13 +490,13 @@ will guide your choice of rearrangement.</p>
 <div class="admonition-example-rearranging-functions admonition">
 <p class="admonition-title">Example: Rearranging functions</p>
 <p>To solve</p>
-<div class="amsmath math notranslate nohighlight" id="equation-797df1ba-bfd6-45cf-b7a8-62dcc61f92d3">
-<span class="eqno">(4.17)<a class="headerlink" href="#equation-797df1ba-bfd6-45cf-b7a8-62dcc61f92d3" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7aff8881-1859-4060-ae76-24426a6bdf07">
+<span class="eqno">(4.17)<a class="headerlink" href="#equation-7aff8881-1859-4060-ae76-24426a6bdf07" title="Permalink to this equation">#</a></span>\[\begin{equation}
 e^x - x^3 = 0
 \end{equation}\]</div>
 <p>One possible rearrangement is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f04e4f42-91d0-46d8-bcc1-acd45568ce4e">
-<span class="eqno">(4.18)<a class="headerlink" href="#equation-f04e4f42-91d0-46d8-bcc1-acd45568ce4e" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-8c5bbe1d-2c66-4488-a3b3-5a10cd0af164">
+<span class="eqno">(4.18)<a class="headerlink" href="#equation-8c5bbe1d-2c66-4488-a3b3-5a10cd0af164" title="Permalink to this equation">#</a></span>\[\begin{align}
 e^x &amp;= x^3 \\
 x &amp;= \ln(x^3) = 3 \ln x = g(x)
 \end{align}\]</div>
@@ -519,8 +505,8 @@ x &amp;= \ln(x^3) = 3 \ln x = g(x)
 initial guess or rearrangement may help. Additionally, you can try to improve
 the stability of the method by slowly “mixing” solutions:</p>
 <!-- markdownlint-disable MD037 -->
-<div class="amsmath math notranslate nohighlight" id="equation-bd407fc8-7a3b-4dc2-b548-deb6eb5ac786">
-<span class="eqno">(4.19)<a class="headerlink" href="#equation-bd407fc8-7a3b-4dc2-b548-deb6eb5ac786" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4a08a3b0-3fd5-4e65-868c-e7fa5a9f6b9c">
+<span class="eqno">(4.19)<a class="headerlink" href="#equation-4a08a3b0-3fd5-4e65-868c-e7fa5a9f6b9c" title="Permalink to this equation">#</a></span>\[\begin{align}
 x_{n+1}^* &amp;= g(x_n) \\
 x_{n+1} &amp;= \alpha x_{n+1}^* + (1-\alpha) x_n
 \end{align}\]</div>
@@ -551,8 +537,8 @@ else, <span class="math notranslate nohighlight">\(b_{n+1} = x_n\)</span></p></l
 <div class="admonition-example-using-bisection-search admonition">
 <p class="admonition-title">Example: Using bisection search</p>
 <p>To solve</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c47a9771-9ad5-4633-82c8-c501488f62a8">
-<span class="eqno">(4.20)<a class="headerlink" href="#equation-c47a9771-9ad5-4633-82c8-c501488f62a8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f39b77b7-a6b4-47bb-9106-5e96dfc8eeba">
+<span class="eqno">(4.20)<a class="headerlink" href="#equation-f39b77b7-a6b4-47bb-9106-5e96dfc8eeba" title="Permalink to this equation">#</a></span>\[\begin{equation}
 e^{-x^2} - x = f(x) = 0
 \end{equation}\]</div>
 <p>Start with <span class="math notranslate nohighlight">\(a_0 = 0\)</span> and <span class="math notranslate nohighlight">\(b_0 = 1\)</span>, then make a table to implement the
@@ -620,8 +606,8 @@ so <span class="math notranslate nohighlight">\(b_2\)</span> = <span class="math
 <h2><span class="section-number">4.3.3. </span>Newton-Raphson method<a class="headerlink" href="#newton-raphson-method" title="Link to this heading">#</a></h2>
 <p>Although we cannot immediately solve the nonlinear equation <span class="math notranslate nohighlight">\(f(x) = 0\)</span>, we can
 first <em>linearize</em> it, then solve the linear problem.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-232d2d49-04b7-4de2-aaa4-565d8165051a">
-<span class="eqno">(4.21)<a class="headerlink" href="#equation-232d2d49-04b7-4de2-aaa4-565d8165051a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d459aad7-990c-4e27-8505-0b249a40887f">
+<span class="eqno">(4.21)<a class="headerlink" href="#equation-d459aad7-990c-4e27-8505-0b249a40887f" title="Permalink to this equation">#</a></span>\[\begin{align}
 f(x) &amp;\approx f(x_0) + f'(x_0)(x - x_0) = 0 \\
 x &amp;\approx x_0 - \frac{f(x_0)}{f'(x_0)}
 \end{align}\]</div>
@@ -722,8 +708,8 @@ We choose an initial guess <span class="math notranslate nohighlight">\(x_0 = 0\
 <section id="skill-builder-problems">
 <h2><span class="section-number">4.3.4. </span>Skill builder problems<a class="headerlink" href="#skill-builder-problems" title="Link to this heading">#</a></h2>
 <p>Solve all roots of</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7e67d771-ea7c-4249-bc40-d336796f8329">
-<span class="eqno">(4.23)<a class="headerlink" href="#equation-7e67d771-ea7c-4249-bc40-d336796f8329" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6a02b033-b25d-4c10-97a1-ef0bbeca4927">
+<span class="eqno">(4.23)<a class="headerlink" href="#equation-6a02b033-b25d-4c10-97a1-ef0bbeca4927" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \cos x - x = 0
 \end{equation}\]</div>
 <p>to 3 significant figures by:</p>
@@ -733,8 +719,8 @@ We choose an initial guess <span class="math notranslate nohighlight">\(x_0 = 0\
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Rearrange as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1819b61c-eb77-46fc-8440-f4d596ffa2e3">
-<span class="eqno">(4.24)<a class="headerlink" href="#equation-1819b61c-eb77-46fc-8440-f4d596ffa2e3" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-04c1d3be-b0b3-4558-b15f-de059e2b3fe5">
+<span class="eqno">(4.24)<a class="headerlink" href="#equation-04c1d3be-b0b3-4558-b15f-de059e2b3fe5" title="Permalink to this equation">#</a></span>\[\begin{equation}
 x = \cos(x) = g(x)
 \end{equation}\]</div>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -919,14 +905,14 @@ x = \cos(x) = g(x)
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">For</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3b0cc4d8-5dd6-43d4-a5f3-3108b1c92bdf">
-<span class="eqno">(4.25)<a class="headerlink" href="#equation-3b0cc4d8-5dd6-43d4-a5f3-3108b1c92bdf" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2a6ebf3d-a65a-4565-bba4-2ab489e65d22">
+<span class="eqno">(4.25)<a class="headerlink" href="#equation-2a6ebf3d-a65a-4565-bba4-2ab489e65d22" title="Permalink to this equation">#</a></span>\[\begin{align}
 f(x) &amp;= \cos x - x \\
 f'(x) &amp;= -\sin x - 1
 \end{align}\]</div>
 <p class="sd-card-text">The Newton-Raphson update is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-48711f5c-9e62-457d-a5bc-3c410d459274">
-<span class="eqno">(4.26)<a class="headerlink" href="#equation-48711f5c-9e62-457d-a5bc-3c410d459274" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1e0c0030-1369-4583-80a6-5bb58005a715">
+<span class="eqno">(4.26)<a class="headerlink" href="#equation-1e0c0030-1369-4583-80a6-5bb58005a715" title="Permalink to this equation">#</a></span>\[\begin{equation}
 x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}
 \end{equation}\]</div>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -1028,14 +1014,16 @@ x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fixed-point-iteration">4.3.1. Fixed point iteration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bisection-search">4.3.2. Bisection search</a></li>
@@ -1089,8 +1077,8 @@ By Michael P. Howard
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -16,41 +16,44 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -67,6 +70,7 @@
     <link rel="prev" title="3.3. Gauss–Jordan elimination" href="gauss-jordan.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -82,19 +86,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -102,7 +95,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -110,8 +102,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -127,7 +119,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -157,15 +150,11 @@
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
@@ -237,9 +226,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -369,7 +363,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -383,25 +377,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -441,8 +427,8 @@ document.write(`
 <h1><span class="section-number">3.4. </span>Determinants<a class="headerlink" href="#determinants" title="Link to this heading">#</a></h1>
 <p>For a square <em>n</em>x<em>n</em> matrix <strong>A</strong>, the determinant is denoted in a few different
 ways:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cafa3507-7b7c-4c35-9df5-55b99ab93e4e">
-<span class="eqno">(3.57)<a class="headerlink" href="#equation-cafa3507-7b7c-4c35-9df5-55b99ab93e4e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e948d29f-037f-41fe-9202-ab4890e466ed">
+<span class="eqno">(3.57)<a class="headerlink" href="#equation-e948d29f-037f-41fe-9202-ab4890e466ed" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \det \vv{A} =|\vv{A}|=\begin{vmatrix}
 A_{11} &amp; \cdots &amp; A_{1n} \\
 \vdots &amp;     &amp; \vdots \\
@@ -452,19 +438,19 @@ A_{n1} &amp; \cdots &amp; A_{nn}
 <p>The determinant is defined in a recursive way.For  <span class="math notranslate nohighlight">\(n=1\)</span>, <span class="math notranslate nohighlight">\(|\vv{A}|= A_{11}\)</span>
 ( the matrix element)
 For <span class="math notranslate nohighlight">\(n \ge 2\)</span>, <span class="math notranslate nohighlight">\(|\vv{A}|\)</span> is defined as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f337ccfe-199d-420f-8357-44a43beaf796">
-<span class="eqno">(3.58)<a class="headerlink" href="#equation-f337ccfe-199d-420f-8357-44a43beaf796" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b40a14e9-0db3-46be-930c-051430097379">
+<span class="eqno">(3.58)<a class="headerlink" href="#equation-b40a14e9-0db3-46be-930c-051430097379" title="Permalink to this equation">#</a></span>\[\begin{equation}
 |\vv{A}|= \sum_{j=1}^n A_{ij} C_{ij} = \sum_{j=1}^n (-1)^{i+j} A_{ij} M_{ij}
 \end{equation}\]</div>
 <p>where <em>i</em> is any row of <strong>A</strong>, <span class="math notranslate nohighlight">\(C_{ij}\)</span> is the <em>cofactor</em> of <strong>A</strong>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-aa2e8c21-6129-487a-bc7d-8c674deda73e">
-<span class="eqno">(3.59)<a class="headerlink" href="#equation-aa2e8c21-6129-487a-bc7d-8c674deda73e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-934bfc8a-0b58-4215-90fb-d6882d27a47b">
+<span class="eqno">(3.59)<a class="headerlink" href="#equation-934bfc8a-0b58-4215-90fb-d6882d27a47b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 C_{ij} = (-1)^{i+j} M_{ij},
 \end{equation}\]</div>
 <p>and <span class="math notranslate nohighlight">\(M_{ij}\)</span> is the <em>minor</em> of <strong>A</strong>. The minor is the determinant of the matrix
 obtained by removing row <em>i</em> and column <em>j</em> from <strong>A</strong>. Equivalently,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-de3fcf5f-b537-4a19-be6a-84570c16ba17">
-<span class="eqno">(3.60)<a class="headerlink" href="#equation-de3fcf5f-b537-4a19-be6a-84570c16ba17" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a358c291-5b89-4a3b-8441-ddbd72692723">
+<span class="eqno">(3.60)<a class="headerlink" href="#equation-a358c291-5b89-4a3b-8441-ddbd72692723" title="Permalink to this equation">#</a></span>\[\begin{equation}
 |\vv{A}| = \sum_{i=1}^n A_{ij} C_{ij} = \sum_{i=1}^n (-1)^{i+j} A_{ij} M_{ij}
 \end{equation}\]</div>
 <p>where now <em>j</em> is any column of <strong>A</strong>.</p>
@@ -473,15 +459,15 @@ obtained by removing row <em>i</em> and column <em>j</em> from <strong>A</strong
 <aside class="topic">
 <p class="topic-title">2x2 determinant</p>
 <p>The determinant of a 2x2 matrix is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d208a40c-8cb8-40bb-9ab1-b5c7a941c5eb">
-<span class="eqno">(3.61)<a class="headerlink" href="#equation-d208a40c-8cb8-40bb-9ab1-b5c7a941c5eb" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-62d3058b-0374-4c62-8555-885895bf42d6">
+<span class="eqno">(3.61)<a class="headerlink" href="#equation-62d3058b-0374-4c62-8555-885895bf42d6" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{vmatrix}a &amp; b \\ c &amp; d\end{vmatrix} = a d - bc
 \end{equation}\]</div>
 </aside>
 <p>We will use the definition of the determinant to show this must be the case!
 Let’s use the first definition and pick the first row <span class="math notranslate nohighlight">\(i=1\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c3c4e271-b19f-49ae-b287-dc58a9594b02">
-<span class="eqno">(3.62)<a class="headerlink" href="#equation-c3c4e271-b19f-49ae-b287-dc58a9594b02" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-601e3dab-33fc-45f9-a2be-37fc32e14d63">
+<span class="eqno">(3.62)<a class="headerlink" href="#equation-601e3dab-33fc-45f9-a2be-37fc32e14d63" title="Permalink to this equation">#</a></span>\[\begin{align}
 \begin{vmatrix}a &amp; b \\ c &amp; d\end{vmatrix}
 &amp;= (-1)^{1+1} \cdot A_{11} M_{11} + (-1)^{1+2} A_{12} M_{12} \\
 &amp;= a \begin{vmatrix} \phantom{a} &amp; \phantom{b} \\ \phantom{c} &amp; d \end{vmatrix} -
@@ -495,19 +481,19 @@ Let’s use the first definition and pick the first row <span class="math notran
 of 2x2 determinants. To do this quickly, it can be helpful to envision
 <span class="math notranslate nohighlight">\((-1)^{i+j}\)</span> as a checkerboard of signs, then visualize the minors.</p>
 <p>For example, to evaluate</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f6827630-d12f-41cc-ac68-2f7e5ac882e0">
-<span class="eqno">(3.63)<a class="headerlink" href="#equation-f6827630-d12f-41cc-ac68-2f7e5ac882e0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-fc043c99-daa5-4576-b386-da080868edf8">
+<span class="eqno">(3.63)<a class="headerlink" href="#equation-fc043c99-daa5-4576-b386-da080868edf8" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{vmatrix}1 &amp; 3 &amp; 0 \\ 2 &amp; 6 &amp; 4 \\ -1 &amp; 0 &amp; 2 \end{vmatrix}
 \end{equation}\]</div>
 <p>The sign matrix is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ca77fe03-7ec7-4f73-82aa-d04ad7f97665">
-<span class="eqno">(3.64)<a class="headerlink" href="#equation-ca77fe03-7ec7-4f73-82aa-d04ad7f97665" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f079ac08-a58a-4f31-a5f4-5d1d3d61d8cf">
+<span class="eqno">(3.64)<a class="headerlink" href="#equation-f079ac08-a58a-4f31-a5f4-5d1d3d61d8cf" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix}+ &amp; - &amp; + \\ - &amp; + &amp; - \\ + &amp; - &amp; + \end{bmatrix}
 \end{equation}\]</div>
 <p>Even faster, start from the plus sign in the upper left corner, then alternate
 until you get to your chosen row or column! Let’s use row 3:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-41b50762-e744-4358-9c97-8b661160425d">
-<span class="eqno">(3.65)<a class="headerlink" href="#equation-41b50762-e744-4358-9c97-8b661160425d" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-378ae13f-e205-4d93-8d79-59921fc5df10">
+<span class="eqno">(3.65)<a class="headerlink" href="#equation-378ae13f-e205-4d93-8d79-59921fc5df10" title="Permalink to this equation">#</a></span>\[\begin{align}
 |\vv{A}| &amp;= + (-1) \cdot \begin{vmatrix} 3 &amp; 0 \\ 6 &amp; 4 \end{vmatrix} -
  0 \cdot \begin{vmatrix}1 &amp; 0 \\ 2 &amp; 4 \end{vmatrix} +
  2 \cdot \begin{vmatrix}1 &amp; 3 \\ 2 &amp; 6 \end{vmatrix} \\
@@ -516,8 +502,8 @@ until you get to your chosen row or column! Let’s use row 3:</p>
 \end{align}\]</div>
 <p>Note that the same result could be achieved using any row or column. For
 example, column 3 gives:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-464e52d8-281d-4796-a5b6-855dd033d06b">
-<span class="eqno">(3.66)<a class="headerlink" href="#equation-464e52d8-281d-4796-a5b6-855dd033d06b" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a73916a3-b9f3-443c-89e9-856525dfe6a9">
+<span class="eqno">(3.66)<a class="headerlink" href="#equation-a73916a3-b9f3-443c-89e9-856525dfe6a9" title="Permalink to this equation">#</a></span>\[\begin{align}
 |\vv{A}|&amp;= +(0) \cdot \begin{vmatrix}2 &amp; 6 \\ -1 &amp; 0 \end{vmatrix} -
   4 \cdot \begin{vmatrix}1 &amp; 3 \\ -1 &amp; 0 \end{vmatrix} +
   2 \cdot \begin{vmatrix}1 &amp; 3 \\ 2 &amp; 6 \end{vmatrix} \\
@@ -526,8 +512,8 @@ example, column 3 gives:</p>
 \end{align}\]</div>
 <p>It’s usually a good idea to expand along the row or column with the most zeros!
 For example, let’s evaluate</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b4520318-803e-4564-a24b-44652e663f79">
-<span class="eqno">(3.67)<a class="headerlink" href="#equation-b4520318-803e-4564-a24b-44652e663f79" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-cc97a668-3876-4fef-963c-59d30f006759">
+<span class="eqno">(3.67)<a class="headerlink" href="#equation-cc97a668-3876-4fef-963c-59d30f006759" title="Permalink to this equation">#</a></span>\[\begin{align}
 \begin{vmatrix}1 &amp; -2 &amp; 0 &amp; 0 \\ 4 &amp; 3 &amp; 5 &amp; 0 \\ 0 &amp;2 &amp; 7 &amp; 5 \\ 0 &amp; 0 &amp; 2 &amp; 0 \end{vmatrix}
 &amp;= -2 \cdot \begin{vmatrix}1 &amp; -2 &amp; 0 \\ 4 &amp; 3 &amp; 0 \\ 0 &amp;2 &amp; 5 \end{vmatrix} \\
 &amp;= -2 \cdot 5 \cdot \begin{vmatrix}1 &amp; -2 \\ 4 &amp; 3 \end{vmatrix} \\
@@ -593,14 +579,16 @@ For example, let’s evaluate</p>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#x2-matrix">3.4.1. 2x2 matrix</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#larger-matrices">3.4.2. Larger matrices</a></li>
@@ -652,8 +640,8 @@ By Michael P. Howard
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

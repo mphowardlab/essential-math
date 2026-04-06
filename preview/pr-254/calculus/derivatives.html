@@ -16,41 +16,44 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -67,6 +70,7 @@
     <link rel="prev" title="1.3. Limits" href="limits.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -82,19 +86,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -102,7 +95,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -110,8 +102,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -127,7 +119,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -157,15 +150,11 @@
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
@@ -237,9 +226,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -369,7 +363,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -383,25 +377,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -448,8 +434,8 @@ document.write(`
 </a>
 <p>How can we estimate the slope of the line at <span class="math notranslate nohighlight">\(x_0\)</span>? First, evaluate <span class="math notranslate nohighlight">\(f(x_0)\)</span>.
 Then, evaluate <span class="math notranslate nohighlight">\(f(x_1)\)</span> at another point nearby. The slope is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c5472f56-3bc5-41f2-8e86-c55f459b0016">
-<span class="eqno">(1.59)<a class="headerlink" href="#equation-c5472f56-3bc5-41f2-8e86-c55f459b0016" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1413788b-6ac9-49b1-9f50-db1abe3c27a9">
+<span class="eqno">(1.59)<a class="headerlink" href="#equation-1413788b-6ac9-49b1-9f50-db1abe3c27a9" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{f(x_1)-f(x_0)}{x_1-x_0}
 \end{equation}\]</div>
 <p>If we make <span class="math notranslate nohighlight">\(x_1\)</span> very close to <span class="math notranslate nohighlight">\(x_0\)</span>, we will get the slope of the tangent line.
@@ -458,8 +444,8 @@ the <em>derivative</em> of <em>f</em>.</p>
 <aside class="topic">
 <p class="topic-title">Derivative as a limit</p>
 <p>The first derivative <span class="math notranslate nohighlight">\(f'(x)\)</span> of a function <span class="math notranslate nohighlight">\(f(x)\)</span> is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1f05dbbb-dad7-4db8-ada3-3bfb5403133d">
-<span class="eqno">(1.60)<a class="headerlink" href="#equation-1f05dbbb-dad7-4db8-ada3-3bfb5403133d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0596f566-7f4c-47eb-a591-358c485579de">
+<span class="eqno">(1.60)<a class="headerlink" href="#equation-0596f566-7f4c-47eb-a591-358c485579de" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f'(x)= \lim_{h\to 0} \frac{f(x+h)-f(x)}{h}
 \end{equation}\]</div>
 <p>The derivative is also commonly notated as <span class="math notranslate nohighlight">\(\d{f}/\d{x}\)</span> or <span class="math notranslate nohighlight">\(\dot f\)</span>.</p>
@@ -470,8 +456,8 @@ and the independent variable is time.</p>
 <div class="admonition-example-ball-moving-with-constant-velocity admonition">
 <p class="admonition-title">Example: Ball moving with constant velocity</p>
 <p>A ball has position coordinate <em>x</em> and is moving with constant velocity <em>v</em>, so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9bfa4e7e-638f-4dc5-92a6-02c7f4c0dda7">
-<span class="eqno">(1.61)<a class="headerlink" href="#equation-9bfa4e7e-638f-4dc5-92a6-02c7f4c0dda7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-82bca164-71b0-4a62-964d-de405af1e060">
+<span class="eqno">(1.61)<a class="headerlink" href="#equation-82bca164-71b0-4a62-964d-de405af1e060" title="Permalink to this equation">#</a></span>\[\begin{equation}
 x(t) = x_0 + vt
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(x_0\)</span> is the initial position that it starts from.</p>
@@ -479,8 +465,8 @@ x(t) = x_0 + vt
 </a>
 <p>Show that the first derivative of the position <em>x</em> is the velocity <em>v</em>.</p>
 <hr class="docutils" />
-<div class="amsmath math notranslate nohighlight" id="equation-2e0b4bf3-48b5-418d-a4c1-b88b07b5b8e9">
-<span class="eqno">(1.62)<a class="headerlink" href="#equation-2e0b4bf3-48b5-418d-a4c1-b88b07b5b8e9" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2b8aeaa7-8e7b-46f3-83a5-dd339599601a">
+<span class="eqno">(1.62)<a class="headerlink" href="#equation-2b8aeaa7-8e7b-46f3-83a5-dd339599601a" title="Permalink to this equation">#</a></span>\[\begin{align}
 x'(t) &amp;= \lim_{h\to 0} \frac{x(t+h)-x(t)}{h} \\
 &amp;= \lim_{h\to 0} \frac{[x_0+v(t+h)]-[x_0+vt]}{h} \\
 &amp;=\lim_{h\to 0} \frac{vh}{h} \\
@@ -494,8 +480,8 @@ x'(t) &amp;= \lim_{h\to 0} \frac{x(t+h)-x(t)}{h} \\
 <a class="reference internal image-reference" href="../_images/derivative_function.png"><img alt="Function and derivative" class="align-center" src="../_images/derivative_function.png" style="width: 300px;" />
 </a>
 <p>For example, if <span class="math notranslate nohighlight">\(f(x) = x^2\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2b69f79f-e6b6-4809-a21f-0d466b77c04d">
-<span class="eqno">(1.63)<a class="headerlink" href="#equation-2b69f79f-e6b6-4809-a21f-0d466b77c04d" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6da5794f-577d-4d4b-8e51-d2e72b3c2332">
+<span class="eqno">(1.63)<a class="headerlink" href="#equation-6da5794f-577d-4d4b-8e51-d2e72b3c2332" title="Permalink to this equation">#</a></span>\[\begin{align}
 f'(x) &amp;= \lim_{h \to 0} \frac{(x+h)^2 - x^2}{h} \\
     &amp;= \lim_{h \to 0} \frac{x^2 + 2xh + h^2 - x^2}{h} \\
     &amp;= \lim_{h \to 0} \frac{2xh + h^2}{h} \\
@@ -510,8 +496,8 @@ examples:</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<div class="amsmath math notranslate nohighlight" id="equation-16421d07-01d1-45b5-b240-ed031845de85">
-<span class="eqno">(1.64)<a class="headerlink" href="#equation-16421d07-01d1-45b5-b240-ed031845de85" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5347bbd0-be90-4cc1-a5e9-104505f2b6b3">
+<span class="eqno">(1.64)<a class="headerlink" href="#equation-5347bbd0-be90-4cc1-a5e9-104505f2b6b3" title="Permalink to this equation">#</a></span>\[\begin{align}
 f'(x) &amp;= \lim_{h \to 0} \frac{[(x + h - 1)^2 + 1] - [(x - 1)^2 + 1]}{h} \\
     &amp;= \lim_{h \to 0} \frac{(x - 1)^2 +
        2(x - 1)h + h^2 + 1 - (x - 1)^2 - 1}{h} \\
@@ -525,8 +511,8 @@ f'(x) &amp;= \lim_{h \to 0} \frac{[(x + h - 1)^2 + 1] - [(x - 1)^2 + 1]}{h} \\
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<div class="amsmath math notranslate nohighlight" id="equation-81c8493a-8679-4e7e-8218-b19889c2c87e">
-<span class="eqno">(1.65)<a class="headerlink" href="#equation-81c8493a-8679-4e7e-8218-b19889c2c87e" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b3140f0f-1edb-46fc-82a9-1cc702381c6a">
+<span class="eqno">(1.65)<a class="headerlink" href="#equation-b3140f0f-1edb-46fc-82a9-1cc702381c6a" title="Permalink to this equation">#</a></span>\[\begin{align}
 f'(x) &amp;= \lim_{h \to 0} \frac{\dfrac{1}{x+h} - \dfrac{1}{x}}{h} \\
     &amp;= \lim_{h \to 0} \frac{\dfrac{x - (x + h)}{x(x+h)}}{h}  \\
     &amp;= \lim_{h \to 0} \frac{\dfrac{- h}{x(x+h)}}{h}  \\
@@ -550,8 +536,8 @@ differentiable at a jump, cusp, coner, or vertical tangent</p>
 itself! For example, consider <span class="math notranslate nohighlight">\(f(x) = x^2\)</span>, which has <span class="math notranslate nohighlight">\(f'(x) = 2x\)</span>. We can
 evaluate the derivative of <span class="math notranslate nohighlight">\(f'\)</span>, which we will denote <span class="math notranslate nohighlight">\(f''\)</span> using the same
 formal definition:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7bec68d3-6c14-4473-912b-3afe534f3d8c">
-<span class="eqno">(1.66)<a class="headerlink" href="#equation-7bec68d3-6c14-4473-912b-3afe534f3d8c" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b2fbca7c-eb95-4b49-acd8-1b4c169b2bb8">
+<span class="eqno">(1.66)<a class="headerlink" href="#equation-b2fbca7c-eb95-4b49-acd8-1b4c169b2bb8" title="Permalink to this equation">#</a></span>\[\begin{align}
 f''(x) &amp;= \lim_{h \to 0}{\frac{f'(x+h)-f'(x)}{h}} \\
     &amp;= \lim_{h \to 0}{\frac{2(x+h)-2x}{h}} \\
     &amp;= \lim_{h \to 0}{\frac{2h}{2}} \\
@@ -598,8 +584,8 @@ derivative of <em>x</em>.</p>
 </a>
 <p>The equations of motion for the horizontal position <em>x</em> and vertical position
 <em>y</em> are:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-532b8be0-933c-4219-b4e9-6d322f6e608a">
-<span class="eqno">(1.67)<a class="headerlink" href="#equation-532b8be0-933c-4219-b4e9-6d322f6e608a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-871fe5ef-d0ab-427e-9d0d-606bcb54e0f2">
+<span class="eqno">(1.67)<a class="headerlink" href="#equation-871fe5ef-d0ab-427e-9d0d-606bcb54e0f2" title="Permalink to this equation">#</a></span>\[\begin{align}
 x(t) &amp;= u_0 t &amp;  \\
 y(t) &amp;= v_0 t - \frac{1}{2} g t^2
 \end{align}\]</div>
@@ -608,15 +594,15 @@ and <em>g</em> is the acceleration due to gravity. Find the velocity and acceler
 in <em>x</em> and <em>y</em>.</p>
 <hr class="docutils" />
 <p>In the <em>x</em> direction, call the velocity <em>u</em>. Then,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c96d74fb-fc29-4530-959c-babba6e1f2d5">
-<span class="eqno">(1.68)<a class="headerlink" href="#equation-c96d74fb-fc29-4530-959c-babba6e1f2d5" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-efd50a9a-afe9-4f5d-af6e-f2b0f7e400d8">
+<span class="eqno">(1.68)<a class="headerlink" href="#equation-efd50a9a-afe9-4f5d-af6e-f2b0f7e400d8" title="Permalink to this equation">#</a></span>\[\begin{equation}
 u = x' = u_0
 \end{equation}\]</div>
 <p>Since <em>u</em> is a constant, the first derivative of <em>u</em> (second derivative of <em>x</em>)
 must be zero, and there is no acceleration in the <em>x</em> direction.</p>
 <p>In the <em>y</em> direction, call the velocity <em>v</em>. Then,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-51df8d5a-4f9e-4e4e-acc3-4d15c8d94ecd">
-<span class="eqno">(1.69)<a class="headerlink" href="#equation-51df8d5a-4f9e-4e4e-acc3-4d15c8d94ecd" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-39c6c3bb-4ab1-44d8-8e16-b6370b70e0fc">
+<span class="eqno">(1.69)<a class="headerlink" href="#equation-39c6c3bb-4ab1-44d8-8e16-b6370b70e0fc" title="Permalink to this equation">#</a></span>\[\begin{align}
 v &amp;= y' = v_0 - gt \\
 a &amp;= v' = y'' = -g
 \end{align}\]</div>
@@ -681,14 +667,16 @@ due to gravity. This makes sense from what we know from physics!</p>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tangent-line-and-rate-of-change">1.4.1. Tangent line and rate of change</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formal-definition">1.4.2. Formal definition</a></li>
@@ -742,8 +730,8 @@ By Michael P. Howard
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

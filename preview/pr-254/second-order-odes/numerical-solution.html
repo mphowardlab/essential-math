@@ -16,41 +16,44 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -67,6 +70,7 @@
     <link rel="prev" title="7.6. Variation of parameters" href="variation-of-parameters.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -82,19 +86,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -102,7 +95,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -110,8 +102,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -127,7 +119,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -157,15 +150,11 @@
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
@@ -237,9 +226,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -369,7 +363,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -383,25 +377,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -442,15 +428,15 @@ document.write(`
 <section id="initial-value-problems">
 <h2><span class="section-number">7.7.1. </span>Initial value problems<a class="headerlink" href="#initial-value-problems" title="Link to this heading">#</a></h2>
 <p>We learned previously how to solve systems of first-order ODEs:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7cce3921-fa00-4fb1-ab82-2bbf8ef54d50">
-<span class="eqno">(7.179)<a class="headerlink" href="#equation-7cce3921-fa00-4fb1-ab82-2bbf8ef54d50" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-60a66bfe-acc3-4a4e-9885-135450ca450d">
+<span class="eqno">(7.179)<a class="headerlink" href="#equation-60a66bfe-acc3-4a4e-9885-135450ca450d" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{y}' = \vv{f}(t, \vv{y})
 \end{equation}\]</div>
 <p>using Euler’s method. However, we didn’t learn what to do with higher-order
 derivatives. If a second-order ODE can be written in explicit form and as an
 initial value problem:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9331db22-0e58-4597-a006-def9c130ac2d">
-<span class="eqno">(7.180)<a class="headerlink" href="#equation-9331db22-0e58-4597-a006-def9c130ac2d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3ca1805f-65c4-4e30-8833-3e33a35860dd">
+<span class="eqno">(7.180)<a class="headerlink" href="#equation-3ca1805f-65c4-4e30-8833-3e33a35860dd" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y'' = f(t, y, y'), \quad y(0) = y_0, \quad y'(0) = y_0'
 \end{equation}\]</div>
 <p>it can be solved by conversion to a system of first-order ODEs!</p>
@@ -458,8 +444,8 @@ y'' = f(t, y, y'), \quad y(0) = y_0, \quad y'(0) = y_0'
 <p class="topic-title">Conversion to a system of first-order ODEs</p>
 <p>For the explicit second-order ODE <span class="math notranslate nohighlight">\(y'' = f(t, y, y')\)</span>, let <span class="math notranslate nohighlight">\(y_1 = y\)</span> and
 <span class="math notranslate nohighlight">\(y_2 = y'\)</span>. Then:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4de0d7f5-2588-4208-93ce-76f197d6c71b">
-<span class="eqno">(7.181)<a class="headerlink" href="#equation-4de0d7f5-2588-4208-93ce-76f197d6c71b" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a28a68ca-f749-41fb-bb50-c140846cd961">
+<span class="eqno">(7.181)<a class="headerlink" href="#equation-a28a68ca-f749-41fb-bb50-c140846cd961" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_1' &amp;= y_2, &amp; y_1(0) &amp;= y(0)\\
 y_2' &amp;= f(t, y_1, y_2), &amp; y_2(0) &amp;= y'(0)
 \end{align}\]</div>
@@ -467,38 +453,38 @@ y_2' &amp;= f(t, y_1, y_2), &amp; y_2(0) &amp;= y'(0)
 system is equal to the highest derivative.</p>
 </aside>
 <p>Let’s verify this works using an ODE that we can solve analytically. Consider:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a422e890-933b-4063-abcb-c129392815f5">
-<span class="eqno">(7.182)<a class="headerlink" href="#equation-a422e890-933b-4063-abcb-c129392815f5" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2f28ed8b-c6cd-44cf-8b45-e27aa4bc656f">
+<span class="eqno">(7.182)<a class="headerlink" href="#equation-2f28ed8b-c6cd-44cf-8b45-e27aa4bc656f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y'' + y' - 2y = 0 \quad y(0) = 4, \quad y'(0) = -5
 \end{equation}\]</div>
 <p>We previously showed using the
 <a class="reference internal" href="homogeneous-constant-coefficient.html"><span class="std std-doc">characteristic polynomial</span></a> that the
 solution to this IVP is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ab8abcf7-a7bd-4e09-9f9b-78a4e3801c14">
-<span class="eqno">(7.183)<a class="headerlink" href="#equation-ab8abcf7-a7bd-4e09-9f9b-78a4e3801c14" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1783015e-1c96-4e2b-961f-b66990926661">
+<span class="eqno">(7.183)<a class="headerlink" href="#equation-1783015e-1c96-4e2b-961f-b66990926661" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y = e^x + 3e^{-2x}
 \end{equation}\]</div>
 <p>Now, let’s resolve by converting to a system. Let <span class="math notranslate nohighlight">\(y_1 = y\)</span> and <span class="math notranslate nohighlight">\(y_2 = y'\)</span>.
 Then, the ODE is equivalent to</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fadc2331-1964-4b85-ae72-db053573495b">
-<span class="eqno">(7.184)<a class="headerlink" href="#equation-fadc2331-1964-4b85-ae72-db053573495b" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d4de7211-b5f4-4e05-bc5f-253ccb86f87c">
+<span class="eqno">(7.184)<a class="headerlink" href="#equation-d4de7211-b5f4-4e05-bc5f-253ccb86f87c" title="Permalink to this equation">#</a></span>\[\begin{align}
 y'' &amp;= 2y - y' \\
 y_2' &amp;= 2y_1 - y_2
 \end{align}\]</div>
 <p>and the system of ODEs is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c123c003-84c5-4f38-accc-61c0fbf1f97a">
-<span class="eqno">(7.185)<a class="headerlink" href="#equation-c123c003-84c5-4f38-accc-61c0fbf1f97a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4b411c46-bfdc-42df-b40b-266f80d8fe32">
+<span class="eqno">(7.185)<a class="headerlink" href="#equation-4b411c46-bfdc-42df-b40b-266f80d8fe32" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_1' &amp;= y_2, &amp; y_1(0) &amp;= 4 \\
 y_2' &amp;= 2y_1 + -y_2, &amp; y_2(0) &amp;= -5
 \end{align}\]</div>
 <p>This system of ODES is in the form <span class="math notranslate nohighlight">\(\vv{y}' = \vv{A}\vv{y}\)</span> with</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5bcdeb20-b3cf-43dc-813c-c741eeb40447">
-<span class="eqno">(7.186)<a class="headerlink" href="#equation-5bcdeb20-b3cf-43dc-813c-c741eeb40447" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-bc3a260b-15c4-403f-a01f-2bdd4cc36ebe">
+<span class="eqno">(7.186)<a class="headerlink" href="#equation-bc3a260b-15c4-403f-a01f-2bdd4cc36ebe" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix} 0 &amp; 1 \\ 2 &amp; -1\end{bmatrix}
 \end{equation}\]</div>
 <p>The eigenvalues of the matrix are</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1080dcc5-1c8c-4424-8405-cec45a90539c">
-<span class="eqno">(7.187)<a class="headerlink" href="#equation-1080dcc5-1c8c-4424-8405-cec45a90539c" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7e672e42-d322-442b-9681-62981c63d140">
+<span class="eqno">(7.187)<a class="headerlink" href="#equation-7e672e42-d322-442b-9681-62981c63d140" title="Permalink to this equation">#</a></span>\[\begin{align}
 |\vv{A}-\lambda \vv{I}|
  &amp;=\begin{vmatrix}-\lambda &amp; 1\\ 2&amp; -1-\lambda \end{vmatrix} \\
  &amp;=\lambda(\lambda+1)-2 \\
@@ -506,8 +492,8 @@ y_2' &amp;= 2y_1 + -y_2, &amp; y_2(0) &amp;= -5
  &amp;= (\lambda-1)(\lambda+2) = 0
 \end{align}\]</div>
 <p>giving <span class="math notranslate nohighlight">\(\lambda_1 = 1\)</span> and <span class="math notranslate nohighlight">\(\lambda_2 = -2\)</span>. The corresponding eigenvectors are:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-123445ce-4115-4df3-97cb-ed0b0f6d5b6a">
-<span class="eqno">(7.188)<a class="headerlink" href="#equation-123445ce-4115-4df3-97cb-ed0b0f6d5b6a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c59a9b98-4683-45f8-ac63-45cb8425c261">
+<span class="eqno">(7.188)<a class="headerlink" href="#equation-c59a9b98-4683-45f8-ac63-45cb8425c261" title="Permalink to this equation">#</a></span>\[\begin{align}
 \vv{A} - \lambda_1 \vv{I} &amp;=
 \begin{bmatrix} -1 &amp; 1 \\ 2 &amp; -2 \end{bmatrix} \to \vv{x}_1 =
   \begin{bmatrix}1 \\ 1\end{bmatrix} \\
@@ -516,14 +502,14 @@ y_2' &amp;= 2y_1 + -y_2, &amp; y_2(0) &amp;= -5
   \begin{bmatrix}1 \\ -2\end{bmatrix}
 \end{align}\]</div>
 <p>Hence,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-529e6a2c-db10-4156-8449-4dbb6b695ec0">
-<span class="eqno">(7.189)<a class="headerlink" href="#equation-529e6a2c-db10-4156-8449-4dbb6b695ec0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-123aa1cd-1544-4dc7-93c9-c81c5cd0cd1f">
+<span class="eqno">(7.189)<a class="headerlink" href="#equation-123aa1cd-1544-4dc7-93c9-c81c5cd0cd1f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{y} = c_1 e^x \begin{bmatrix}1 \\ 1\end{bmatrix} +
   c_2 e^{-2x} \begin{bmatrix}1 \\ -2\end{bmatrix}
 \end{equation}\]</div>
 <p>Apply the initial conditions by solving <span class="math notranslate nohighlight">\(\vv{X} \vv{c} = \vv{y}(0)\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-49994a8c-b3b8-4451-962f-f65567a82043">
-<span class="eqno">(7.190)<a class="headerlink" href="#equation-49994a8c-b3b8-4451-962f-f65567a82043" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4051ccc1-9030-47a2-a7f5-1d1c8ee789e9">
+<span class="eqno">(7.190)<a class="headerlink" href="#equation-4051ccc1-9030-47a2-a7f5-1d1c8ee789e9" title="Permalink to this equation">#</a></span>\[\begin{align}
 \begin{bmatrix}1 &amp; 1 &amp; 4 \\ 1 &amp; -2 &amp; -5 \end{bmatrix}
 \begin{matrix}\vphantom{R_1} \\ -R_1\end{matrix}
 &amp;\to \begin{bmatrix}1 &amp; 1 &amp; 4 \\ 0 &amp; -3 &amp; -9 \end{bmatrix}
@@ -533,19 +519,19 @@ y_2' &amp;= 2y_1 + -y_2, &amp; y_2(0) &amp;= -5
 &amp;\to \begin{bmatrix}1 &amp; 0 &amp; 1 \\ 0 &amp; 1 &amp; 3 \end{bmatrix}
 \end{align}\]</div>
 <p>so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-90cfa492-fe2d-4346-a6ab-cb205dd7467a">
-<span class="eqno">(7.191)<a class="headerlink" href="#equation-90cfa492-fe2d-4346-a6ab-cb205dd7467a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4d4f63fc-bad6-4585-98db-21402f6c32e0">
+<span class="eqno">(7.191)<a class="headerlink" href="#equation-4d4f63fc-bad6-4585-98db-21402f6c32e0" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{y} = e^x \begin{bmatrix}1 \\ 1\end{bmatrix} +
   3 e^{-2x} \begin{bmatrix}1 \\ -2\end{bmatrix}
 \end{equation}\]</div>
 <p>or equivalently</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a5556ddb-3214-40d7-ba8e-41b7c5d1cf33">
-<span class="eqno">(7.192)<a class="headerlink" href="#equation-a5556ddb-3214-40d7-ba8e-41b7c5d1cf33" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-5102b94c-c4ff-4b76-b53f-c77661a5b031">
+<span class="eqno">(7.192)<a class="headerlink" href="#equation-5102b94c-c4ff-4b76-b53f-c77661a5b031" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y = y_1 = e^x + 3 e^{-2x}
 \end{equation}\]</div>
 <p>The solution is the same as before! Note that in the process, we also obtained</p>
-<div class="amsmath math notranslate nohighlight" id="equation-01eeeffc-b2a7-41b5-85f9-54f22b772040">
-<span class="eqno">(7.193)<a class="headerlink" href="#equation-01eeeffc-b2a7-41b5-85f9-54f22b772040" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f093b39b-c1e6-4391-adb9-b7aa582d8a57">
+<span class="eqno">(7.193)<a class="headerlink" href="#equation-f093b39b-c1e6-4391-adb9-b7aa582d8a57" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y' = y_2 = e^x - 6 e^{-2x}
 \end{equation}\]</div>
 <p>which is consistent with direct differentiation of <span class="math notranslate nohighlight">\(y\)</span>.</p>
@@ -554,22 +540,22 @@ y' = y_2 = e^x - 6 e^{-2x}
 <p>A mass <em>m</em> on a Hookean spring (constant <em>k</em>) is experiences both a drag force
 (friction coefficient <span class="math notranslate nohighlight">\(\gamma\)</span>) and an oscillating external force
 <span class="math notranslate nohighlight">\(F \cos \omega t\)</span>. Its position <em>x</em> obeys the differential equation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2375424b-7325-4f43-906c-dfa446a252b9">
-<span class="eqno">(7.194)<a class="headerlink" href="#equation-2375424b-7325-4f43-906c-dfa446a252b9" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2660095c-cd78-402b-9239-133bbb510130">
+<span class="eqno">(7.194)<a class="headerlink" href="#equation-2660095c-cd78-402b-9239-133bbb510130" title="Permalink to this equation">#</a></span>\[\begin{equation}
 m x'' + \gamma x' + kx = F \cos\omega t, \quad x(0) = x_0, \quad x'(0) = v_0
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(x_0\)</span> and <span class="math notranslate nohighlight">\(v_0\)</span> are the initial position and velocity of the mass. Write
 this second-order ODE as a system of first-order ODEs.</p>
 <hr class="docutils" />
 <p>Let <span class="math notranslate nohighlight">\(y_1 = x\)</span> and <span class="math notranslate nohighlight">\(y_2 = x'\)</span>. Then, the ODE is equivalent to:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d892021b-7fde-454f-a366-7c25144535a1">
-<span class="eqno">(7.195)<a class="headerlink" href="#equation-d892021b-7fde-454f-a366-7c25144535a1" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d0c00d99-7680-4868-b00a-52897253a5fa">
+<span class="eqno">(7.195)<a class="headerlink" href="#equation-d0c00d99-7680-4868-b00a-52897253a5fa" title="Permalink to this equation">#</a></span>\[\begin{align}
 x'' = \frac{1}{m}\left(- kx - \gamma x' + F\cos\omega t\right) \\
 y_2' = \frac{1}{m}\left(- k y_1 - \gamma y_2 + F\cos \omega t \right)
 \end{align}\]</div>
 <p>so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c43810dd-3bae-4362-aa30-7a41a958f0ad">
-<span class="eqno">(7.196)<a class="headerlink" href="#equation-c43810dd-3bae-4362-aa30-7a41a958f0ad" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5316b16e-e039-448a-8d9c-834c6a64dbcc">
+<span class="eqno">(7.196)<a class="headerlink" href="#equation-5316b16e-e039-448a-8d9c-834c6a64dbcc" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_1' &amp;= y_2, &amp; y_1(0) &amp;= x_0 \\
 y_2' &amp;= \displaystyle
   \frac{1}{m}\left(-\gamma y_2 - k y_1 + F\cos \omega t \right), &amp;
@@ -582,31 +568,31 @@ y_2' &amp;= \displaystyle
 <p>We can solve initial value problems for second-order ODEs by converting to a
 system and using methods we know. What about boundary value problems?</p>
 <p>Let’s say we want to solve:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1b259346-324e-4dc8-85ce-f091b571f979">
-<span class="eqno">(7.197)<a class="headerlink" href="#equation-1b259346-324e-4dc8-85ce-f091b571f979" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-80d146ec-6fb4-43ec-902f-373a01b5dcd5">
+<span class="eqno">(7.197)<a class="headerlink" href="#equation-80d146ec-6fb4-43ec-902f-373a01b5dcd5" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y'' + y = 0, \quad y(0) = 0, \quad y(\pi/6) = 4
 \end{equation}\]</div>
 <p>Using normal approach:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a9cf8bd0-ad90-47a4-b46f-da2f84620b9d">
-<span class="eqno">(7.198)<a class="headerlink" href="#equation-a9cf8bd0-ad90-47a4-b46f-da2f84620b9d" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0d11d5dd-c31e-4299-9ced-9f8d6a42c1f3">
+<span class="eqno">(7.198)<a class="headerlink" href="#equation-0d11d5dd-c31e-4299-9ced-9f8d6a42c1f3" title="Permalink to this equation">#</a></span>\[\begin{align}
 y &amp;= c_1 \cos x + c_2 \sin x \\
 y(0) &amp;= c_1 = 0\\
 y(\pi/6) &amp;= c_2 \frac{1}{2} = 4 \to c_2 = 8\\
 \end{align}\]</div>
 <p>so,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cea92d3a-0b8c-47b6-b408-2002a7edbaec">
-<span class="eqno">(7.199)<a class="headerlink" href="#equation-cea92d3a-0b8c-47b6-b408-2002a7edbaec" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4cb36e5e-bf78-44a5-83e8-67cb986e3392">
+<span class="eqno">(7.199)<a class="headerlink" href="#equation-4cb36e5e-bf78-44a5-83e8-67cb986e3392" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y = 8 \sin x
 \end{equation}\]</div>
 <p>What if we needed to do this numerically? Try converting to system using
 <span class="math notranslate nohighlight">\(y_1 = y\)</span> and <span class="math notranslate nohighlight">\(y_2 = y'\)</span>, so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-68fd2553-cd31-44cd-8dbe-8461fd592f33">
-<span class="eqno">(7.200)<a class="headerlink" href="#equation-68fd2553-cd31-44cd-8dbe-8461fd592f33" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d9a0db7a-362f-4f16-9b5e-9b8d7bdcb6e2">
+<span class="eqno">(7.200)<a class="headerlink" href="#equation-d9a0db7a-362f-4f16-9b5e-9b8d7bdcb6e2" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y'' + y = 0 \to y_2' = -y_1
 \end{equation}\]</div>
 <p>and</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8046ee9e-0fa6-49fd-bbca-d4a45e22af53">
-<span class="eqno">(7.201)<a class="headerlink" href="#equation-8046ee9e-0fa6-49fd-bbca-d4a45e22af53" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ac472cba-efaf-44db-8fe7-666617d5feef">
+<span class="eqno">(7.201)<a class="headerlink" href="#equation-ac472cba-efaf-44db-8fe7-666617d5feef" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_1' &amp;= y_2, &amp; y_1(0) &amp;= 0 \\
 y_2' &amp;= -y_1, &amp; y_2(0) &amp;= a
 \end{align}\]</div>
@@ -622,27 +608,27 @@ and doesn’t require a derivative.</p>
 <div class="admonition-example-reaction-diffusion-with-second-order-reaction admonition">
 <p class="admonition-title">Example: Reaction-diffusion with second-order reaction</p>
 <p>We are solving a reaction-diffusion problem with a second-order reaction:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-585ecb78-0f51-4578-b31f-f158e1707021">
-<span class="eqno">(7.202)<a class="headerlink" href="#equation-585ecb78-0f51-4578-b31f-f158e1707021" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c8fa1d4d-dc7b-45a9-b958-00508ea8ea68">
+<span class="eqno">(7.202)<a class="headerlink" href="#equation-c8fa1d4d-dc7b-45a9-b958-00508ea8ea68" title="Permalink to this equation">#</a></span>\[\begin{equation}
 D \dd{2}{c}{x} - k c^2 = 0, \quad c(0) = c_0, \quad -D c'(L) = 0
 \end{equation}\]</div>
 <p>Formulate in a form suitable for numerical solution using the shooting method.</p>
 <hr class="docutils" />
 <p>First, rewrite as a system of first-order ODEs using <span class="math notranslate nohighlight">\(y_1 = c\)</span> and <span class="math notranslate nohighlight">\(c_2 = c'\)</span>.
 The ODE is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c8c0aef6-db7a-4d3d-b04c-399fbe7e3668">
-<span class="eqno">(7.203)<a class="headerlink" href="#equation-c8c0aef6-db7a-4d3d-b04c-399fbe7e3668" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-927304bd-4f02-436b-88d2-6fb266cb846f">
+<span class="eqno">(7.203)<a class="headerlink" href="#equation-927304bd-4f02-436b-88d2-6fb266cb846f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 c'' - \frac{k}{D}c^2 \to y_2' = \frac{k}{D} y_1^2
 \end{equation}\]</div>
 <p>so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4e95bd05-1ed2-49d3-b101-983054a6cc23">
-<span class="eqno">(7.204)<a class="headerlink" href="#equation-4e95bd05-1ed2-49d3-b101-983054a6cc23" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-527e34bb-bb4a-4d39-a699-b3cbe82ac2bc">
+<span class="eqno">(7.204)<a class="headerlink" href="#equation-527e34bb-bb4a-4d39-a699-b3cbe82ac2bc" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_1' &amp;= y_2, &amp; y_1(0) &amp;= c_0 \\
 y_2' &amp;= \frac{k}{D} y_1, &amp; y_2(0) &amp;= a
 \end{align}\]</div>
 <p>where <em>a</em> is the unknown value of <span class="math notranslate nohighlight">\(y_2(0)\)</span>. Vary <em>a</em> until</p>
-<div class="amsmath math notranslate nohighlight" id="equation-18d03e60-8bed-4f2f-a744-57e6642d59cd">
-<span class="eqno">(7.205)<a class="headerlink" href="#equation-18d03e60-8bed-4f2f-a744-57e6642d59cd" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3d7d53f2-aaaa-4a3c-ac30-68739427757d">
+<span class="eqno">(7.205)<a class="headerlink" href="#equation-3d7d53f2-aaaa-4a3c-ac30-68739427757d" title="Permalink to this equation">#</a></span>\[\begin{equation}
 -D c'(L) = 0 \to y_2(L) = 0
 \end{equation}\]</div>
 </div>
@@ -704,14 +690,16 @@ y_2' &amp;= \frac{k}{D} y_1, &amp; y_2(0) &amp;= a
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-value-problems">7.7.1. Initial value problems</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boundary-value-problems">7.7.2. Boundary value problems</a></li>
@@ -763,8 +751,8 @@ By Michael P. Howard
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

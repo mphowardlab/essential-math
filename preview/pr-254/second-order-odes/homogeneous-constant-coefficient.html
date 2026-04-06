@@ -16,41 +16,44 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -67,6 +70,7 @@
     <link rel="prev" title="7.3. Reduction of order" href="reduction.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -82,19 +86,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -102,7 +95,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -110,8 +102,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -127,7 +119,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -157,15 +150,11 @@
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
@@ -237,9 +226,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -369,7 +363,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -383,25 +377,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -443,16 +429,16 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="homogeneous-linear-second-order-odes-with-constant-coefficients">
 <h1><span class="section-number">7.4. </span>Homogeneous linear second-order ODEs with constant coefficients<a class="headerlink" href="#homogeneous-linear-second-order-odes-with-constant-coefficients" title="Link to this heading">#</a></h1>
 <p>Equations of the form:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-861c08ac-5053-4653-9966-e57a2f63552b">
-<span class="eqno">(7.40)<a class="headerlink" href="#equation-861c08ac-5053-4653-9966-e57a2f63552b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-59de789e-aca7-48f8-aec1-16e72e8c76cf">
+<span class="eqno">(7.40)<a class="headerlink" href="#equation-59de789e-aca7-48f8-aec1-16e72e8c76cf" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y'' + ay' + by = 0
 \end{equation}\]</div>
 <p>come up often in chemical engineering, particularly in steady-state heat and
 mass diffusion, so it is important to know how to solve them!</p>
 <p>Guess a solution <span class="math notranslate nohighlight">\(y=e^{\lambda x}\)</span>, then substitute into the differential
 equation:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-44a2bb17-12bb-4cdb-81dd-0b0ddb1eb34b">
-<span class="eqno">(7.41)<a class="headerlink" href="#equation-44a2bb17-12bb-4cdb-81dd-0b0ddb1eb34b" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f70632c3-8ebd-40ae-9d19-69993421a096">
+<span class="eqno">(7.41)<a class="headerlink" href="#equation-f70632c3-8ebd-40ae-9d19-69993421a096" title="Permalink to this equation">#</a></span>\[\begin{align}
 \lambda^2 e^{\lambda x} + a (\lambda e^{\lambda x}) + b e^{\lambda x} &amp;= 0\\
 \lambda^2 + a \lambda + b &amp;= 0
 \end{align}\]</div>
@@ -461,32 +447,32 @@ the general solution for <em>y</em> is obtained by superposition of both.</p>
 <aside class="topic">
 <p class="topic-title">Homogeneous linear second-order ODEs with constant coefficients</p>
 <p>For ODEs of the form</p>
-<div class="amsmath math notranslate nohighlight" id="equation-066247ba-af57-47b3-9ff9-a93f4248add5">
-<span class="eqno">(7.42)<a class="headerlink" href="#equation-066247ba-af57-47b3-9ff9-a93f4248add5" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-5260ec79-acf0-4a42-b01f-0bada8bdd4f9">
+<span class="eqno">(7.42)<a class="headerlink" href="#equation-5260ec79-acf0-4a42-b01f-0bada8bdd4f9" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y'' + ay' + by = 0
 \end{equation}\]</div>
 <p>The roots of the characteristic polynomial</p>
-<div class="amsmath math notranslate nohighlight" id="equation-10e49451-ca34-49af-805a-fa48485736f1">
-<span class="eqno">(7.43)<a class="headerlink" href="#equation-10e49451-ca34-49af-805a-fa48485736f1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a35d81cc-eede-4ef1-8186-98d2fbbc33df">
+<span class="eqno">(7.43)<a class="headerlink" href="#equation-a35d81cc-eede-4ef1-8186-98d2fbbc33df" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lambda^2 + a \lambda + b = 0
 \end{equation}\]</div>
 <p>give the solution type:</p>
 <ol class="arabic">
 <li><p><span class="math notranslate nohighlight">\(\lambda_1\)</span> and <span class="math notranslate nohighlight">\(\lambda_2\)</span> are real and distinct:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-beca1f89-6b7e-43f3-a981-5ae757bec336">
-<span class="eqno">(7.44)<a class="headerlink" href="#equation-beca1f89-6b7e-43f3-a981-5ae757bec336" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f404a7a7-94ba-492d-87d5-50035e3220aa">
+<span class="eqno">(7.44)<a class="headerlink" href="#equation-f404a7a7-94ba-492d-87d5-50035e3220aa" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y = c_1 e^{\lambda_1 x} + c_2 e^{\lambda_2 x}
 \end{equation}\]</div>
 </li>
 <li><p><span class="math notranslate nohighlight">\(\lambda_{1,2} = \alpha \pm i \omega\)</span> are complex:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a9efccdb-97ef-42c1-8450-34f9c97e7cf3">
-<span class="eqno">(7.45)<a class="headerlink" href="#equation-a9efccdb-97ef-42c1-8450-34f9c97e7cf3" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a1a8dbce-6680-4908-8743-d51eca1f2f62">
+<span class="eqno">(7.45)<a class="headerlink" href="#equation-a1a8dbce-6680-4908-8743-d51eca1f2f62" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y = e^{\alpha x} \left[c_1 \cos(\omega x) + c_2 \sin(\omega x)\right]
 \end{equation}\]</div>
 </li>
 <li><p><span class="math notranslate nohighlight">\(\lambda_1 = \lambda_2 = \lambda \)</span> is real and repeated:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2bcfadea-b28b-47f9-b1bc-0a7880bf30a3">
-<span class="eqno">(7.46)<a class="headerlink" href="#equation-2bcfadea-b28b-47f9-b1bc-0a7880bf30a3" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-49c6a448-7a9b-454c-9cfb-9e066961c259">
+<span class="eqno">(7.46)<a class="headerlink" href="#equation-49c6a448-7a9b-454c-9cfb-9e066961c259" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y=(c_1 + c_2 x) e^{\lambda x}
 \end{equation}\]</div>
 </li>
@@ -496,32 +482,32 @@ y=(c_1 + c_2 x) e^{\lambda x}
 <section id="real-distinct-roots">
 <h2><span class="section-number">7.4.1. </span>Real distinct roots<a class="headerlink" href="#real-distinct-roots" title="Link to this heading">#</a></h2>
 <p>To solve</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9513ee85-47d4-410b-b655-e890870ac41d">
-<span class="eqno">(7.47)<a class="headerlink" href="#equation-9513ee85-47d4-410b-b655-e890870ac41d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-51643d16-541c-43cc-b3df-d7cd4902b284">
+<span class="eqno">(7.47)<a class="headerlink" href="#equation-51643d16-541c-43cc-b3df-d7cd4902b284" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y'' + y' - 2y = 0, \quad y(0)=4, \quad y'(0)=-5
 \end{equation}\]</div>
 <p>First write and solve the characteristic polynomial,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5478a5f6-a366-4e8e-9a7c-8c7f8ead3e8a">
-<span class="eqno">(7.48)<a class="headerlink" href="#equation-5478a5f6-a366-4e8e-9a7c-8c7f8ead3e8a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-dad1f500-6276-44f5-b7ea-4aa6aa59ff56">
+<span class="eqno">(7.48)<a class="headerlink" href="#equation-dad1f500-6276-44f5-b7ea-4aa6aa59ff56" title="Permalink to this equation">#</a></span>\[\begin{align}
 \lambda^2 + \lambda -2 &amp;= 0 \\
 (\lambda + 2)(\lambda + 1) &amp;= 0
 \end{align}\]</div>
 <p>so <span class="math notranslate nohighlight">\(\lambda_1 = -2\)</span> and <span class="math notranslate nohighlight">\(\lambda_2 =1\)</span>. The general solution and its first
 derivative are:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e71a51e6-60c7-4c98-b86e-5ff7488b8ec5">
-<span class="eqno">(7.49)<a class="headerlink" href="#equation-e71a51e6-60c7-4c98-b86e-5ff7488b8ec5" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f261fe53-9d05-4ec4-810f-c07b68044698">
+<span class="eqno">(7.49)<a class="headerlink" href="#equation-f261fe53-9d05-4ec4-810f-c07b68044698" title="Permalink to this equation">#</a></span>\[\begin{align}
 y &amp;= c_1 e^{-2x} + c_2 e^{x}  \\
 y'&amp;= -2c_1 e^{-2x} + c_2 e^{x} \qquad
 \end{align}\]</div>
 <p>So applying the initial conditions:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-00bfbd55-f3a5-43c0-9be6-b330463b0145">
-<span class="eqno">(7.50)<a class="headerlink" href="#equation-00bfbd55-f3a5-43c0-9be6-b330463b0145" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-8bab2d6b-f4a8-4c08-884b-2b4a388f28dd">
+<span class="eqno">(7.50)<a class="headerlink" href="#equation-8bab2d6b-f4a8-4c08-884b-2b4a388f28dd" title="Permalink to this equation">#</a></span>\[\begin{align}
 y(0) &amp;= c_1 + c_2 = 4 \\
 y'(0) &amp;= -2c_1 + c_2 = -5
 \end{align}\]</div>
 <p>These coefficients can be solved by Gauss-Jordan elimination:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c8e4d62e-371d-48bf-a575-4b8920f5554a">
-<span class="eqno">(7.51)<a class="headerlink" href="#equation-c8e4d62e-371d-48bf-a575-4b8920f5554a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-bfa6178e-3fb9-4a60-a731-3dba4feba849">
+<span class="eqno">(7.51)<a class="headerlink" href="#equation-bfa6178e-3fb9-4a60-a731-3dba4feba849" title="Permalink to this equation">#</a></span>\[\begin{align}
 \begin{bmatrix}
 1 &amp; 1 &amp; 4 \\
 -2 &amp; 1 &amp; -5
@@ -546,73 +532,73 @@ y'(0) &amp;= -2c_1 + c_2 = -5
 \end{bmatrix}
 \end{align}\]</div>
 <p>so <span class="math notranslate nohighlight">\(c_1 = 3\)</span> and <span class="math notranslate nohighlight">\(c_2 = 1\)</span>. The final solution is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3891a94d-e6cd-4278-9bad-f4deac782fb9">
-<span class="eqno">(7.52)<a class="headerlink" href="#equation-3891a94d-e6cd-4278-9bad-f4deac782fb9" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-866e4aa4-c4c7-446e-bd0f-aa8316f1922a">
+<span class="eqno">(7.52)<a class="headerlink" href="#equation-866e4aa4-c4c7-446e-bd0f-aa8316f1922a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y = 3 e^{-2x} + e^x
 \end{equation}\]</div>
 </section>
 <section id="complex-roots">
 <h2><span class="section-number">7.4.2. </span>Complex roots<a class="headerlink" href="#complex-roots" title="Link to this heading">#</a></h2>
 <p>To solve:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8be15c38-cdfd-4d10-ba5f-63d55de99911">
-<span class="eqno">(7.53)<a class="headerlink" href="#equation-8be15c38-cdfd-4d10-ba5f-63d55de99911" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-feb85949-0eb5-4108-92e6-71b0d6c15d3b">
+<span class="eqno">(7.53)<a class="headerlink" href="#equation-feb85949-0eb5-4108-92e6-71b0d6c15d3b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y'' + 0.4y' + 9.04y = 0, \quad y(0)=0, \quad y'(0)=3
 \end{equation}\]</div>
 <p>Write and solve the characteristic polynomial,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7bf145b0-2ae1-4081-af8e-90820524ee9a">
-<span class="eqno">(7.54)<a class="headerlink" href="#equation-7bf145b0-2ae1-4081-af8e-90820524ee9a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-30523c95-59bd-40f1-9805-f586f6638767">
+<span class="eqno">(7.54)<a class="headerlink" href="#equation-30523c95-59bd-40f1-9805-f586f6638767" title="Permalink to this equation">#</a></span>\[\begin{align}
 \lambda^{2} &amp;+ 0.4\lambda + 9.04 = 0 \\
 \lambda_{1,2} &amp;= \frac{-0.4\pm\sqrt{0.4^2- 4 \cdot 9.04}}{2} = -0.2\pm 3i
 \end{align}\]</div>
 <p>Once values of <span class="math notranslate nohighlight">\(\lambda\)</span> are known, write out the general solution and plug in
 the first initial condition to solve for <span class="math notranslate nohighlight">\(c_1\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-586f41e3-7dd5-4f86-b3cd-b98075f4b385">
-<span class="eqno">(7.55)<a class="headerlink" href="#equation-586f41e3-7dd5-4f86-b3cd-b98075f4b385" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-8933fd58-9275-422a-9103-b148cba2a0dd">
+<span class="eqno">(7.55)<a class="headerlink" href="#equation-8933fd58-9275-422a-9103-b148cba2a0dd" title="Permalink to this equation">#</a></span>\[\begin{align}
 y &amp;= e^{-0.2x}(c_1\cos3x + c_2\sin3x) \\
 y(0) &amp;= c_1  = 0
 \end{align}\]</div>
 <p>Hence the first term can be dropped from the solution. In order to solve for
 <span class="math notranslate nohighlight">\(c_2\)</span>, write out the derivative and plug in the second condition:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-56c6b84c-f68d-4e6a-9443-383ce63d9cc7">
-<span class="eqno">(7.56)<a class="headerlink" href="#equation-56c6b84c-f68d-4e6a-9443-383ce63d9cc7" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-77ec9832-ec66-4b62-bc10-2f914d0927b2">
+<span class="eqno">(7.56)<a class="headerlink" href="#equation-77ec9832-ec66-4b62-bc10-2f914d0927b2" title="Permalink to this equation">#</a></span>\[\begin{align}
 y' &amp;= e^{-0.2x}(3c_2\cos3x) - 0.2e^{-0.2x}c_2\sin 3x \\
 y'(0) &amp;= 3c_2 = 3
 \end{align}\]</div>
 <p>Since <span class="math notranslate nohighlight">\(c_2=1\)</span>, the final solution is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0c6e9da8-a7f2-44ed-81bc-8aeeecf8de8c">
-<span class="eqno">(7.57)<a class="headerlink" href="#equation-0c6e9da8-a7f2-44ed-81bc-8aeeecf8de8c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-965c771e-7939-49a0-8e56-b8b081c160cc">
+<span class="eqno">(7.57)<a class="headerlink" href="#equation-965c771e-7939-49a0-8e56-b8b081c160cc" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y = e^{-0.2x}\sin 3x
 \end{equation}\]</div>
 </section>
 <section id="real-repeated-roots">
 <h2><span class="section-number">7.4.3. </span>Real repeated roots<a class="headerlink" href="#real-repeated-roots" title="Link to this heading">#</a></h2>
 <p>To solve:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-887e4a5d-044e-47c6-b827-5f3943b7bd9f">
-<span class="eqno">(7.58)<a class="headerlink" href="#equation-887e4a5d-044e-47c6-b827-5f3943b7bd9f" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-260914a7-3311-4324-8973-7560e7b4c2ff">
+<span class="eqno">(7.58)<a class="headerlink" href="#equation-260914a7-3311-4324-8973-7560e7b4c2ff" title="Permalink to this equation">#</a></span>\[\begin{align}
 y'' + y' + \frac{1}{4}y=0, \quad y(0)=3, \quad y'(0)= -\frac{7}{2}
 \end{align}\]</div>
 <p>Write and solve the characteristic polynomial,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-edb2eb24-98d4-43da-9dba-64056f2ad20b">
-<span class="eqno">(7.59)<a class="headerlink" href="#equation-edb2eb24-98d4-43da-9dba-64056f2ad20b" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5570ded6-c2eb-48ab-a353-0cf3591c79b3">
+<span class="eqno">(7.59)<a class="headerlink" href="#equation-5570ded6-c2eb-48ab-a353-0cf3591c79b3" title="Permalink to this equation">#</a></span>\[\begin{align}
 \lambda^2 + \lambda + \frac{1}{4} = 0 \\
 \left(\lambda + \frac{1}{2}\right)^2 = 0
 \end{align}\]</div>
 <p>So <span class="math notranslate nohighlight">\(\lambda = -1/2\)</span> is a real and repeated root. Write out the general equation
 and its derivative,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-69aa0105-4b0c-41fa-b6e4-a9ca9fe1c12a">
-<span class="eqno">(7.60)<a class="headerlink" href="#equation-69aa0105-4b0c-41fa-b6e4-a9ca9fe1c12a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-8afad4e6-7908-46cc-8fdd-36c8f581ed38">
+<span class="eqno">(7.60)<a class="headerlink" href="#equation-8afad4e6-7908-46cc-8fdd-36c8f581ed38" title="Permalink to this equation">#</a></span>\[\begin{align}
 y &amp;=(c_1 + c_2x)e^{-x/2} \\
 y' &amp;=(c_1 + c_2x)(-\frac{1}{2}e^{-x/2}) + c_2 e^{-x/2}
 \end{align}\]</div>
 <p>Use the given conditions to solve for <span class="math notranslate nohighlight">\(c_1\)</span> and <span class="math notranslate nohighlight">\(c_2\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3ffcd6fe-a03d-4d6c-aa3d-061970116eba">
-<span class="eqno">(7.61)<a class="headerlink" href="#equation-3ffcd6fe-a03d-4d6c-aa3d-061970116eba" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5ff45165-e280-4cf3-a155-ef85a9d45902">
+<span class="eqno">(7.61)<a class="headerlink" href="#equation-5ff45165-e280-4cf3-a155-ef85a9d45902" title="Permalink to this equation">#</a></span>\[\begin{align}
 y(0) &amp;= c_1 = 3 \\
 y'(0) &amp;= -\frac{c_1}{2} + c_2 = -\frac{7}{2} \to c_2 = -2
 \end{align}\]</div>
 <p>The final solution is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ab6721b3-8805-4d9b-99f8-9be59df0a7f8">
-<span class="eqno">(7.62)<a class="headerlink" href="#equation-ab6721b3-8805-4d9b-99f8-9be59df0a7f8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e9709ee0-a9f9-488e-91e8-d3fe0f9e0880">
+<span class="eqno">(7.62)<a class="headerlink" href="#equation-e9709ee0-a9f9-488e-91e8-d3fe0f9e0880" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y = (3-2x)e^{-x/2}
 \end{equation}\]</div>
 </section>
@@ -629,8 +615,8 @@ experiences a drag force as it moves with drag coefficient <span class="math not
 </a>
 <p>If <em>x</em> is the displacement of the spring, the governing equation for <em>x</em> is
 given by Newton’s equations:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ecb46bea-1606-4a8d-831b-ad8ba163344b">
-<span class="eqno">(7.63)<a class="headerlink" href="#equation-ecb46bea-1606-4a8d-831b-ad8ba163344b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-eae8d972-6656-463c-b3fc-3b922e980f69">
+<span class="eqno">(7.63)<a class="headerlink" href="#equation-eae8d972-6656-463c-b3fc-3b922e980f69" title="Permalink to this equation">#</a></span>\[\begin{equation}
 m x'' + \gamma x' + k x = 0
 \end{equation}\]</div>
 <p>The first term represents the acceleration of the mass, the second term is the
@@ -639,20 +625,20 @@ drag force, and the third term is the spring force.</p>
 <hr class="docutils" />
 <p>To answer this, first solve the roots of the characteristic polynomial for this
 second-order ODE:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c91721b0-83e5-47ba-a477-d50e7afe29d9">
-<span class="eqno">(7.64)<a class="headerlink" href="#equation-c91721b0-83e5-47ba-a477-d50e7afe29d9" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e182dcc8-d111-4c76-90c4-9c96b37df2d6">
+<span class="eqno">(7.64)<a class="headerlink" href="#equation-e182dcc8-d111-4c76-90c4-9c96b37df2d6" title="Permalink to this equation">#</a></span>\[\begin{align}
 &amp;m \lambda^2 + \gamma \lambda + k = 0 \\
 \lambda_{1,2} &amp;= \frac{ -\gamma \pm \sqrt{\gamma^2 - 4mk}}{2m}
 \end{align}\]</div>
 <p>You will only get oscillations if <span class="math notranslate nohighlight">\(\lambda_{1,2}\)</span> is complex, which only occurs
 when <span class="math notranslate nohighlight">\(\gamma^2 &lt; 4mk\)</span>. In this case:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2636b585-f5c2-4d2d-9ef8-6c200da40ebe">
-<span class="eqno">(7.65)<a class="headerlink" href="#equation-2636b585-f5c2-4d2d-9ef8-6c200da40ebe" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-cb3b2659-ec1e-43c4-8891-d8352d6f45b7">
+<span class="eqno">(7.65)<a class="headerlink" href="#equation-cb3b2659-ec1e-43c4-8891-d8352d6f45b7" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lambda_{1,2} = -\frac{\gamma}{2m} \pm \frac{i}{2m}\sqrt{4mk - \gamma^2}
 \end{equation}\]</div>
 <p>so the general solution for <em>x</em> is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4718032d-9762-450f-8e87-a94a6e2f3251">
-<span class="eqno">(7.66)<a class="headerlink" href="#equation-4718032d-9762-450f-8e87-a94a6e2f3251" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-52087f54-82a5-4387-bd65-1af3a1bcdbbb">
+<span class="eqno">(7.66)<a class="headerlink" href="#equation-52087f54-82a5-4387-bd65-1af3a1bcdbbb" title="Permalink to this equation">#</a></span>\[\begin{equation}
 x(t) = \exp\left(-\frac{\gamma}{2m} t \right)
 \left [ c_1 \cos(\omega t)+ c_2 \sin(\omega t) \right]
 \end{equation}\]</div>
@@ -673,47 +659,47 @@ a solid substrate at <span class="math notranslate nohighlight">\(x=L\)</span> p
 <a class="reference internal image-reference" href="../_images/Reaction_diffuse.svg"><img alt="One-dimensional reaction-diffusion" class="align-center" src="../_images/Reaction_diffuse.svg" style="width: 300px;" />
 </a>
 <p>At steady-state, the reactant concentration <em>c</em> can be modeled by:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-db6b7035-6c55-401f-916c-7c7ffa094498">
-<span class="eqno">(7.67)<a class="headerlink" href="#equation-db6b7035-6c55-401f-916c-7c7ffa094498" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7a40cc05-0708-4345-8a6b-7dd1730d6f55">
+<span class="eqno">(7.67)<a class="headerlink" href="#equation-7a40cc05-0708-4345-8a6b-7dd1730d6f55" title="Permalink to this equation">#</a></span>\[\begin{align}
 D \dd{2}{c}{x} -k c = 0, \quad  c(L) = c_0, \quad -D c'(0) = 0
 \end{align}\]</div>
 <p>where <em>D</em> is the reactant’s diffusion coefficient and <em>k</em> is the reaction rate
 constant. Determine <span class="math notranslate nohighlight">\(c(x)\)</span>.</p>
 <hr class="docutils" />
 <p>First, rewrite in standard form:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-89341c31-f578-43b6-84c1-9af3cc08e8b1">
-<span class="eqno">(7.68)<a class="headerlink" href="#equation-89341c31-f578-43b6-84c1-9af3cc08e8b1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b049cb27-1989-4854-8607-30c25e9033c1">
+<span class="eqno">(7.68)<a class="headerlink" href="#equation-b049cb27-1989-4854-8607-30c25e9033c1" title="Permalink to this equation">#</a></span>\[\begin{equation}
 c'' - \frac{k}{D} c = 0
 \end{equation}\]</div>
 <p>The characteristic polynomial is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5c936e4e-6c90-432b-9dbd-be237ad6679d">
-<span class="eqno">(7.69)<a class="headerlink" href="#equation-5c936e4e-6c90-432b-9dbd-be237ad6679d" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b268b918-cf56-408f-aa60-5ab6b6c98692">
+<span class="eqno">(7.69)<a class="headerlink" href="#equation-b268b918-cf56-408f-aa60-5ab6b6c98692" title="Permalink to this equation">#</a></span>\[\begin{align}
 \lambda^2 - \frac{k}{D} &amp;= 0
 \lambda &amp;= \pm \sqrt{\frac{k}{D}}
 \end{align}\]</div>
 <p>The general solution and its first derivative are:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-65d4352d-29d3-41e1-8282-d00e77c7faa7">
-<span class="eqno">(7.70)<a class="headerlink" href="#equation-65d4352d-29d3-41e1-8282-d00e77c7faa7" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-55285d53-6f23-45a5-8f7f-469a3892b8ab">
+<span class="eqno">(7.70)<a class="headerlink" href="#equation-55285d53-6f23-45a5-8f7f-469a3892b8ab" title="Permalink to this equation">#</a></span>\[\begin{align}
 c &amp;= a_1 e^{x \sqrt{k/D}} + a_2 e^{-x\sqrt{k/D}} \\
 c' &amp;= a_1 \sqrt{\frac{k}{D}} e^{x \sqrt{k/D}} -
   a_2 \sqrt{\frac{k}{D}} e^{-x\sqrt{k/D}}
 \end{align}\]</div>
 <p>Evaluating the boundary conditions:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e7b83b55-4535-401f-8ea7-aafbbd4177e8">
-<span class="eqno">(7.71)<a class="headerlink" href="#equation-e7b83b55-4535-401f-8ea7-aafbbd4177e8" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-457a534c-5a9a-4e70-9dd8-9e977bebc130">
+<span class="eqno">(7.71)<a class="headerlink" href="#equation-457a534c-5a9a-4e70-9dd8-9e977bebc130" title="Permalink to this equation">#</a></span>\[\begin{align}
 c(0) &amp;= a_1 + a_2 = 0 \\
 c'(L) &amp;= a_1 \sqrt{\frac{k}{D}} e^{L \sqrt{k/D}} -
   a_2 \sqrt{\frac{k}{D}} e^{-L \sqrt{k/D}} = 0
 \end{align}\]</div>
 <p>This is a linear system of equations. Solving for <span class="math notranslate nohighlight">\(a_1\)</span> and <span class="math notranslate nohighlight">\(a_2\)</span> simultaneously
 gives</p>
-<div class="amsmath math notranslate nohighlight" id="equation-26c0cd55-9679-4f1d-8d85-833509606796">
-<span class="eqno">(7.72)<a class="headerlink" href="#equation-26c0cd55-9679-4f1d-8d85-833509606796" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-db055223-2073-4d23-a8c7-99c51dafa551">
+<span class="eqno">(7.72)<a class="headerlink" href="#equation-db055223-2073-4d23-a8c7-99c51dafa551" title="Permalink to this equation">#</a></span>\[\begin{equation}
 a_1 = \frac{c_0}{1+e^{2L\sqrt{k/D}}} \qquad a_2 = \frac{c_0}{1+e^{-2L\sqrt{k/D}}}
 \end{equation}\]</div>
 <p>Thus,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-84b6c534-bd21-4960-988e-c0473c5386b1">
-<span class="eqno">(7.73)<a class="headerlink" href="#equation-84b6c534-bd21-4960-988e-c0473c5386b1" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-352b41a9-2ed6-49f7-88c1-b4c2d7d4d95d">
+<span class="eqno">(7.73)<a class="headerlink" href="#equation-352b41a9-2ed6-49f7-88c1-b4c2d7d4d95d" title="Permalink to this equation">#</a></span>\[\begin{align}
 c = c_0\Biggl(\frac{e^{x\sqrt{k/D}}}{1+e^{2L\sqrt{k/D}}}
   +\frac{e^{x\sqrt{k/D}}}{1+e^{-2L\sqrt{k/D}}}\Biggr)
 \end{align}\]</div>
@@ -728,27 +714,27 @@ c = c_0\Biggl(\frac{e^{x\sqrt{k/D}}}{1+e^{2L\sqrt{k/D}}}
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Write and solve the characteristic polynomial:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-abae7591-b82a-4590-a1c0-f016ad8c7915">
-<span class="eqno">(7.74)<a class="headerlink" href="#equation-abae7591-b82a-4590-a1c0-f016ad8c7915" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-44d766bc-ad08-430a-9d47-f68b4c014b73">
+<span class="eqno">(7.74)<a class="headerlink" href="#equation-44d766bc-ad08-430a-9d47-f68b4c014b73" title="Permalink to this equation">#</a></span>\[\begin{align}
 \lambda^2 - 2\lambda - 3 &amp;= 0 \\
 (\lambda - 3)(\lambda + 1) &amp;= 0
 \end{align}\]</div>
 <p class="sd-card-text">so <span class="math notranslate nohighlight">\(\lambda_1 = 3\)</span> and <span class="math notranslate nohighlight">\(\lambda_2 = -1\)</span>. The general solution and its first
 derivative are:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7941b4a5-8ae4-4e1c-aeba-f14aee729b2d">
-<span class="eqno">(7.75)<a class="headerlink" href="#equation-7941b4a5-8ae4-4e1c-aeba-f14aee729b2d" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4bc5c675-fb38-4849-851b-d0c5e0b9d2ff">
+<span class="eqno">(7.75)<a class="headerlink" href="#equation-4bc5c675-fb38-4849-851b-d0c5e0b9d2ff" title="Permalink to this equation">#</a></span>\[\begin{align}
 y &amp;= c_1 e^{3t} + c_2 e^{-t} \\
 y' &amp;= 3c_1 e^{3t} - c_2 e^{-t}
 \end{align}\]</div>
 <p class="sd-card-text">Apply the initial conditions:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5c8b1bbe-85bb-4701-bddc-311d456f4095">
-<span class="eqno">(7.76)<a class="headerlink" href="#equation-5c8b1bbe-85bb-4701-bddc-311d456f4095" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-07525256-4b96-48cd-8f2d-b695c46ca0f0">
+<span class="eqno">(7.76)<a class="headerlink" href="#equation-07525256-4b96-48cd-8f2d-b695c46ca0f0" title="Permalink to this equation">#</a></span>\[\begin{align}
 y(0) &amp;= c_1 + c_2 = 2\\
 y'(0) &amp;= 3c_1 - c_2 = 14
 \end{align}\]</div>
 <p class="sd-card-text">and solve the system for <span class="math notranslate nohighlight">\(c_1\)</span> and <span class="math notranslate nohighlight">\(c_2\)</span> using Gauss-Jordan elimination:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5897cb45-7a3e-40dc-b9d9-4a8df1989aed">
-<span class="eqno">(7.77)<a class="headerlink" href="#equation-5897cb45-7a3e-40dc-b9d9-4a8df1989aed" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ec2e96e9-e262-4ab5-9608-1a0a70d1c0c3">
+<span class="eqno">(7.77)<a class="headerlink" href="#equation-ec2e96e9-e262-4ab5-9608-1a0a70d1c0c3" title="Permalink to this equation">#</a></span>\[\begin{align}
 \begin{bmatrix} 1 &amp; 1 &amp; 2 \\ 3 &amp; -1 &amp; 14 \end{bmatrix}
 \begin{matrix}\vphantom{R_1} \\ -3 R_1 \end{matrix}
 &amp;\to \begin{bmatrix} 1 &amp; 1 &amp; 2 \\ 0 &amp; -4 &amp; 8 \end{bmatrix}
@@ -758,8 +744,8 @@ y'(0) &amp;= 3c_1 - c_2 = 14
 &amp;\to \begin{bmatrix} 1 &amp; 0 &amp; 4 \\ 0 &amp; 1 &amp; -2 \end{bmatrix}
 \end{align}\]</div>
 <p class="sd-card-text">Therefore:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-53c3b45a-70b1-428c-b0e5-99a42396369d">
-<span class="eqno">(7.78)<a class="headerlink" href="#equation-53c3b45a-70b1-428c-b0e5-99a42396369d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-84613d87-8baa-43ca-b166-84bbd98f46a2">
+<span class="eqno">(7.78)<a class="headerlink" href="#equation-84613d87-8baa-43ca-b166-84bbd98f46a2" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y = 4e^{3t} - 2e^{-t}
 \end{equation}\]</div>
 </div>
@@ -769,27 +755,27 @@ y = 4e^{3t} - 2e^{-t}
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Write and solve the characteristic polynomial:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ab185458-0b07-4f16-bae6-3337576c129a">
-<span class="eqno">(7.79)<a class="headerlink" href="#equation-ab185458-0b07-4f16-bae6-3337576c129a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-50482278-6968-4690-9c5b-6cdee9b855b3">
+<span class="eqno">(7.79)<a class="headerlink" href="#equation-50482278-6968-4690-9c5b-6cdee9b855b3" title="Permalink to this equation">#</a></span>\[\begin{align}
 \lambda^2 + 2\lambda + 1 &amp;= 0 \\
 (\lambda + 1)^2 &amp;= 0
 \end{align}\]</div>
 <p class="sd-card-text">so <span class="math notranslate nohighlight">\(\lambda = -1\)</span> (repeated root). The general solution and its first
 derivative are:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e9605d42-c528-4d5d-b3dd-b9560bc80e9d">
-<span class="eqno">(7.80)<a class="headerlink" href="#equation-e9605d42-c528-4d5d-b3dd-b9560bc80e9d" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ec70fbda-4025-4206-9dd0-c7b8eb09015a">
+<span class="eqno">(7.80)<a class="headerlink" href="#equation-ec70fbda-4025-4206-9dd0-c7b8eb09015a" title="Permalink to this equation">#</a></span>\[\begin{align}
 y &amp;= (c_1 + c_2 t) e^{-t} \\
 y' &amp;= (c_1 + c_2 t)(-e^{-t}) + c_2 e^{-t}
 \end{align}\]</div>
 <p class="sd-card-text">Apply the initial conditions:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d270a410-0a19-4943-9a70-79742d809a72">
-<span class="eqno">(7.81)<a class="headerlink" href="#equation-d270a410-0a19-4943-9a70-79742d809a72" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5d27d18c-cdf6-4202-841f-0a67fd7010cd">
+<span class="eqno">(7.81)<a class="headerlink" href="#equation-5d27d18c-cdf6-4202-841f-0a67fd7010cd" title="Permalink to this equation">#</a></span>\[\begin{align}
 y(0) &amp;= c_1 = 4\\
 y'(0) &amp;= -c_1 + c_2 = -6 \to c_2 = -2
 \end{align}\]</div>
 <p class="sd-card-text">Therefore:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-01738083-26d1-4567-84dc-e8e5cf7f857e">
-<span class="eqno">(7.82)<a class="headerlink" href="#equation-01738083-26d1-4567-84dc-e8e5cf7f857e" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-641b6b01-63cc-409f-99b4-bfe6d711e72c">
+<span class="eqno">(7.82)<a class="headerlink" href="#equation-641b6b01-63cc-409f-99b4-bfe6d711e72c" title="Permalink to this equation">#</a></span>\[\begin{align}
 y = (4 - 2t)e^{-t}
 \end{align}\]</div>
 </div>
@@ -799,16 +785,16 @@ y = (4 - 2t)e^{-t}
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Write and solve the characteristic polynomial:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-eaeddb4e-0713-453f-a359-5ab7831209f2">
-<span class="eqno">(7.83)<a class="headerlink" href="#equation-eaeddb4e-0713-453f-a359-5ab7831209f2" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6aa76927-877d-4672-895a-166f7e95fb8f">
+<span class="eqno">(7.83)<a class="headerlink" href="#equation-6aa76927-877d-4672-895a-166f7e95fb8f" title="Permalink to this equation">#</a></span>\[\begin{align}
 10\lambda^2 - 50\lambda + 65 &amp;= 0 \\
 \lambda_{1,2} &amp;= \frac{50 \pm \sqrt{50^2 - 4 \cdot 10 \cdot 65}}{20} \\
 &amp;= \frac{5 \pm i}{2}
 \end{align}\]</div>
 <p class="sd-card-text">Since we have complex roots, the general solution and its first derivative
 are:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fc991d0a-2e45-4292-a911-4a58d17a725c">
-<span class="eqno">(7.84)<a class="headerlink" href="#equation-fc991d0a-2e45-4292-a911-4a58d17a725c" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-31acec4b-18f9-43e2-8667-5fa84b0cb3b1">
+<span class="eqno">(7.84)<a class="headerlink" href="#equation-31acec4b-18f9-43e2-8667-5fa84b0cb3b1" title="Permalink to this equation">#</a></span>\[\begin{align}
 y &amp;= e^{\frac{5t}{2}}
   \left(c_1 \cos\frac{t}{2} + c_2 \sin\frac{t}{2} \right) \\
 y' &amp;= e^{\frac{5t}{2}} \Biggl( -\frac{c_1}{2} \sin\frac{t}{2} +
@@ -816,14 +802,14 @@ y' &amp;= e^{\frac{5t}{2}} \Biggl( -\frac{c_1}{2} \sin\frac{t}{2} +
   \Biggl( c_1 \cos\frac{t}{2} + c_2 \sin\frac{t}{2} \Biggr)
 \end{align}\]</div>
 <p class="sd-card-text">Apply the initial conditions:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-32feb020-ea00-4204-8177-19720d2756ac">
-<span class="eqno">(7.85)<a class="headerlink" href="#equation-32feb020-ea00-4204-8177-19720d2756ac" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f7ee8c64-4d79-4f8a-af19-a942103ceac1">
+<span class="eqno">(7.85)<a class="headerlink" href="#equation-f7ee8c64-4d79-4f8a-af19-a942103ceac1" title="Permalink to this equation">#</a></span>\[\begin{align}
 y(0) &amp;= c_1 = \frac{3}{2} \\
 y'(0) &amp;= \frac{c_2}{2} + \frac{5}{2}c_1 = \frac{3}{2} \to c_2 = -\frac{9}{2}
 \end{align}\]</div>
 <p class="sd-card-text">Therefore:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-21c455f6-d170-43fe-b145-795ea1ed6cd4">
-<span class="eqno">(7.86)<a class="headerlink" href="#equation-21c455f6-d170-43fe-b145-795ea1ed6cd4" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-026bc9c8-ddaa-4bd5-a428-8819beac8b4b">
+<span class="eqno">(7.86)<a class="headerlink" href="#equation-026bc9c8-ddaa-4bd5-a428-8819beac8b4b" title="Permalink to this equation">#</a></span>\[\begin{align}
 y = e^{\frac{5t}{2}}
   \left( \frac{3}{2} \cos\frac{t}{2} - \frac{9}{2} \sin\frac{t}{2} \right)
 \end{align}\]</div>
@@ -834,27 +820,27 @@ y = e^{\frac{5t}{2}}
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Write and solve the characteristic polynomial:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-978d4a71-54f0-406f-b7b0-3d75b86aa050">
-<span class="eqno">(7.87)<a class="headerlink" href="#equation-978d4a71-54f0-406f-b7b0-3d75b86aa050" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-01d2ffb5-d02b-4bca-bd82-c53b937b0721">
+<span class="eqno">(7.87)<a class="headerlink" href="#equation-01d2ffb5-d02b-4bca-bd82-c53b937b0721" title="Permalink to this equation">#</a></span>\[\begin{align}
 \lambda^2 + \pi\lambda &amp;= 0 \\
 \lambda(\lambda + \pi) &amp;= 0
 \end{align}\]</div>
 <p class="sd-card-text">so <span class="math notranslate nohighlight">\(\lambda_1 = 0\)</span> and <span class="math notranslate nohighlight">\(\lambda_2 = -\pi\)</span>. The general solution and its first
 derivative are:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-550ede1a-ebbb-4d89-a60d-e81afb7eaa72">
-<span class="eqno">(7.88)<a class="headerlink" href="#equation-550ede1a-ebbb-4d89-a60d-e81afb7eaa72" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f1d45690-54c9-4c78-a8bb-fac3977136a8">
+<span class="eqno">(7.88)<a class="headerlink" href="#equation-f1d45690-54c9-4c78-a8bb-fac3977136a8" title="Permalink to this equation">#</a></span>\[\begin{align}
 y &amp;= c_1 + c_2 e^{-\pi t} \\
 y' &amp;= -c_2 \pi e^{-\pi t}
 \end{align}\]</div>
 <p class="sd-card-text">Apply the initial conditions:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7459279b-6c67-4ab4-961f-3af8064e8753">
-<span class="eqno">(7.89)<a class="headerlink" href="#equation-7459279b-6c67-4ab4-961f-3af8064e8753" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1f33dd38-fb5e-481b-81dc-be76460fb983">
+<span class="eqno">(7.89)<a class="headerlink" href="#equation-1f33dd38-fb5e-481b-81dc-be76460fb983" title="Permalink to this equation">#</a></span>\[\begin{align}
 y(0) &amp;= c_1 + c_2 = 3 \\
 y'(0) &amp;= -c_2 \pi = -\pi
 \end{align}\]</div>
 <p class="sd-card-text">so <span class="math notranslate nohighlight">\(c_1 = 2\)</span> and <span class="math notranslate nohighlight">\(c_2 = 1\)</span>. Therefore:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4818cb5e-4ad2-4cfc-86d1-509f56a40a4f">
-<span class="eqno">(7.90)<a class="headerlink" href="#equation-4818cb5e-4ad2-4cfc-86d1-509f56a40a4f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-5d7113e8-3735-489d-8152-6db202854a5c">
+<span class="eqno">(7.90)<a class="headerlink" href="#equation-5d7113e8-3735-489d-8152-6db202854a5c" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y = 2 + e^{-\pi t}
 \end{equation}\]</div>
 </div>
@@ -918,14 +904,16 @@ y = 2 + e^{-\pi t}
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#real-distinct-roots">7.4.1. Real distinct roots</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-roots">7.4.2. Complex roots</a></li>
@@ -980,8 +968,8 @@ By Michael P. Howard
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>
