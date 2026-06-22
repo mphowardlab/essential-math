@@ -16,41 +16,44 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -67,6 +70,7 @@
     <link rel="prev" title="6.2. Linearity" href="linearity.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -82,19 +86,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -102,7 +95,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -110,8 +102,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -127,7 +119,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -157,15 +150,11 @@
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
@@ -237,9 +226,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -369,7 +363,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -383,25 +377,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -441,19 +427,19 @@ document.write(`
 <h1><span class="section-number">6.3. </span>Homogeneous linear first-order ODEs with constant coefficients<a class="headerlink" href="#homogeneous-linear-first-order-odes-with-constant-coefficients" title="Link to this heading">#</a></h1>
 <p>Systems of homogeneous linear first-order ODEs with constant coefficients can
 be written in the form:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1e7297c4-6849-45d4-9db0-a4cf7fa3d148">
-<span class="eqno">(6.23)<a class="headerlink" href="#equation-1e7297c4-6849-45d4-9db0-a4cf7fa3d148" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ff8e2b16-cf7e-4d22-83a8-cc0c4c0a4893">
+<span class="eqno">(6.23)<a class="headerlink" href="#equation-ff8e2b16-cf7e-4d22-83a8-cc0c4c0a4893" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{y}' = \vv{A} \vv{y}
 \end{equation}\]</div>
 <p>Let’s guess a solution of the form:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-891b75c9-0332-49cc-a4a8-b193045e428d">
-<span class="eqno">(6.24)<a class="headerlink" href="#equation-891b75c9-0332-49cc-a4a8-b193045e428d" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-38d7d761-0628-40b8-a79d-5fb41248b3b1">
+<span class="eqno">(6.24)<a class="headerlink" href="#equation-38d7d761-0628-40b8-a79d-5fb41248b3b1" title="Permalink to this equation">#</a></span>\[\begin{align}
 \vv{y} &amp;= e^{\lambda t} \vv{x} \\
 \vv{y}' &amp;= \lambda e^{\lambda t} \vv{x}
 \end{align}\]</div>
 <p>Substituting in the ODE:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8dba1e6c-09f1-4413-817c-46a8addf7baa">
-<span class="eqno">(6.25)<a class="headerlink" href="#equation-8dba1e6c-09f1-4413-817c-46a8addf7baa" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ab1a4eee-7224-4d30-931d-c2d7578641b7">
+<span class="eqno">(6.25)<a class="headerlink" href="#equation-ab1a4eee-7224-4d30-931d-c2d7578641b7" title="Permalink to this equation">#</a></span>\[\begin{align}
 \lambda e^{\lambda t} \vv{x} &amp;= \vv{A} e^{\lambda t}\\
 \lambda \vv{x} &amp;= \vv{A} \vv{x}
 \end{align}\]</div>
@@ -464,23 +450,23 @@ linearly independent. What do we do?</p>
 <aside class="topic">
 <p class="topic-title">Superposition principle</p>
 <p>For a linear ODE, if <span class="math notranslate nohighlight">\(\vv{y}_1\)</span> and <span class="math notranslate nohighlight">\(\vv{y}_2\)</span> are both solutions, then:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-34d55b1b-5038-4497-bc0f-ada2bb0f2c93">
-<span class="eqno">(6.26)<a class="headerlink" href="#equation-34d55b1b-5038-4497-bc0f-ada2bb0f2c93" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-24bc4cb3-b0a6-43a6-a3ae-af7b16739d7d">
+<span class="eqno">(6.26)<a class="headerlink" href="#equation-24bc4cb3-b0a6-43a6-a3ae-af7b16739d7d" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{y} = c_1\vv{y_1} + c_2\vv{y_2}
 \end{equation}\]</div>
 <p>is also a solution.</p>
 </aside>
 <p>In practice, this means that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3e33c1c0-1fc1-412b-b5d3-4e740e04905b">
-<span class="eqno">(6.27)<a class="headerlink" href="#equation-3e33c1c0-1fc1-412b-b5d3-4e740e04905b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-62a6ead9-0de7-4a45-ba66-f6db60689091">
+<span class="eqno">(6.27)<a class="headerlink" href="#equation-62a6ead9-0de7-4a45-ba66-f6db60689091" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{y} = \sum_{i=1}^n c_i e^{\lambda_i t} \vv{x}_i
   = c_1 e^{\lambda_1 t}\vv{x}_1 + \cdots + c_n e^{\lambda_n t}\vv{x}_n
 \end{equation}\]</div>
 <p>(There are some cases this fails, but we will not cover them.) To apply the
 initial condition <span class="math notranslate nohighlight">\(\vv{y}(0) = \vv{y}_0\)</span>, substitute and rewrite as a linear
 system:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ee803e91-6a7f-4cbb-a14d-f4b457d49bed">
-<span class="eqno">(6.28)<a class="headerlink" href="#equation-ee803e91-6a7f-4cbb-a14d-f4b457d49bed" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4dd8bd8d-a14d-4e87-802d-5a2d8c78657c">
+<span class="eqno">(6.28)<a class="headerlink" href="#equation-4dd8bd8d-a14d-4e87-802d-5a2d8c78657c" title="Permalink to this equation">#</a></span>\[\begin{align}
 \vv{y}(0) = c_1 \vv{x}_1 + \cdots c_n \vv{x}_n &amp;= \vv{y}_0 \\
 \vv{X} \vv{c} &amp;= \vv{y}_0
 \end{align}\]</div>
@@ -492,14 +478,14 @@ eigenvectors of <strong>A</strong> and <strong>c</strong> is the column vector o
 undergoing a sequence of first-order reactions, <span class="math notranslate nohighlight">\(A \to B \to C\)</span>, where the first
 reaction has rate constant <span class="math notranslate nohighlight">\(k_1\)</span> and the second reaction has rate constant <span class="math notranslate nohighlight">\(k_2\)</span>.
 It gave rise to a system of first-order ODEs:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-65511d5d-ff4d-4934-822a-2363039a0843">
-<span class="eqno">(6.29)<a class="headerlink" href="#equation-65511d5d-ff4d-4934-822a-2363039a0843" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-bca7f7b9-fff6-476e-9887-0faef05dfc30">
+<span class="eqno">(6.29)<a class="headerlink" href="#equation-bca7f7b9-fff6-476e-9887-0faef05dfc30" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{c}' = \vv{A} \vv{c}, \quad
   \vv{c}(0) = \begin{bmatrix} c_{{\rm A},0} \\ 0 \\ 0 \end{bmatrix}
 \end{equation}\]</div>
 <p>where</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2d533a98-f23d-4dba-b59b-b80b6184fcb1">
-<span class="eqno">(6.30)<a class="headerlink" href="#equation-2d533a98-f23d-4dba-b59b-b80b6184fcb1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-46d7d27c-c372-43db-a13c-be986e9ac112">
+<span class="eqno">(6.30)<a class="headerlink" href="#equation-46d7d27c-c372-43db-a13c-be986e9ac112" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{c} = \begin{bmatrix} c_{\rm A} \\ c_{\rm B} \\ c_{\rm C} \end{bmatrix} \qquad
 \vv{A} = \begin{bmatrix} -k_1 &amp; 0 &amp; 0 \\ k_1 &amp; -k_2 &amp; 0 \\ 0 &amp; k_2 &amp; 0 \end{bmatrix}
 \end{equation}\]</div>
@@ -508,59 +494,59 @@ It gave rise to a system of first-order ODEs:</p>
 <p><strong>A</strong> is lower triangular, so its eigenvalues are: <span class="math notranslate nohighlight">\(\lambda_1 = -k_1\)</span>
 <span class="math notranslate nohighlight">\(\lambda_2 = -k_2\)</span>, and <span class="math notranslate nohighlight">\(\lambda_3 = 0\)</span>. We need to find the corresponding
 eigenvectors. Starting with <span class="math notranslate nohighlight">\(\lambda_1 = -k_1\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2e9ae24e-1494-4e88-a52c-6948cdb69126">
-<span class="eqno">(6.31)<a class="headerlink" href="#equation-2e9ae24e-1494-4e88-a52c-6948cdb69126" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e38b837d-03c8-4902-8b0e-c66793f10084">
+<span class="eqno">(6.31)<a class="headerlink" href="#equation-e38b837d-03c8-4902-8b0e-c66793f10084" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A} - \lambda_1 \vv{I} =
 \begin{bmatrix} 0 &amp; 0 &amp; 0 \\ k_1 &amp; -k_2 + k_1 &amp; 0 \\ 0 &amp; k_2 &amp; k_1 \end{bmatrix}
 \end{equation}\]</div>
 <p>from which we obtain two equations:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5072cf33-00d5-49b6-8569-9ec257b560db">
-<span class="eqno">(6.32)<a class="headerlink" href="#equation-5072cf33-00d5-49b6-8569-9ec257b560db" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f857bb93-635b-4765-a888-496ee5ca3b33">
+<span class="eqno">(6.32)<a class="headerlink" href="#equation-f857bb93-635b-4765-a888-496ee5ca3b33" title="Permalink to this equation">#</a></span>\[\begin{align}
 k_1 x_1 - (k_2 - k_1) x_2 &amp;= 0 \\
 k_2 x_2 + k_1 x_3 &amp;= 0 \\
 \end{align}\]</div>
 <p>with <span class="math notranslate nohighlight">\(x_3\)</span> free. Taking <span class="math notranslate nohighlight">\(x_3 = 1\)</span> gives</p>
-<div class="amsmath math notranslate nohighlight" id="equation-691ef637-2d62-410d-995c-4de1f02c805f">
-<span class="eqno">(6.33)<a class="headerlink" href="#equation-691ef637-2d62-410d-995c-4de1f02c805f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-634be921-8edb-4235-847b-b58383a9e0b0">
+<span class="eqno">(6.33)<a class="headerlink" href="#equation-634be921-8edb-4235-847b-b58383a9e0b0" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{x}_1 = \begin{bmatrix} \dfrac{-k_2 - k_1}{k_2} \\ \dfrac{-k_1}{k_2} \\ 1 \end{bmatrix}
 \end{equation}\]</div>
 <p>Next, we will solve with <span class="math notranslate nohighlight">\(\lambda_2 = -k_2\)</span>, which gives:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7472885b-8c56-4119-ae24-eb8891645963">
-<span class="eqno">(6.34)<a class="headerlink" href="#equation-7472885b-8c56-4119-ae24-eb8891645963" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a8518944-42a3-4e52-8b77-cc8ddfaa5a15">
+<span class="eqno">(6.34)<a class="headerlink" href="#equation-a8518944-42a3-4e52-8b77-cc8ddfaa5a15" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A} - \lambda_2 \vv{I} =
 \begin{bmatrix} k_2-k_1 &amp; 0 &amp; 0 \\ k_1 &amp; 0 &amp; 0 \\ 0 &amp; k_2 &amp; k_2 \end{bmatrix}
 \end{equation}\]</div>
 <p>from which we obtain:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-69ba2f4a-5cc2-4786-b433-3c707e9fc4e6">
-<span class="eqno">(6.35)<a class="headerlink" href="#equation-69ba2f4a-5cc2-4786-b433-3c707e9fc4e6" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-64cbab3f-ec00-4583-b86c-056d3f074ffc">
+<span class="eqno">(6.35)<a class="headerlink" href="#equation-64cbab3f-ec00-4583-b86c-056d3f074ffc" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{x}_2 = \begin{bmatrix} 0 \\
 -1 \\
 1 \end{bmatrix}
 \end{equation}\]</div>
 <p>Finally, we solve with <span class="math notranslate nohighlight">\(\lambda_3 = 0\)</span>, which gives:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d2d2268c-96c5-4c25-88d5-ba5bde4bfda9">
-<span class="eqno">(6.36)<a class="headerlink" href="#equation-d2d2268c-96c5-4c25-88d5-ba5bde4bfda9" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a1961e64-aaa6-4ca6-b970-cf99ebaa2623">
+<span class="eqno">(6.36)<a class="headerlink" href="#equation-a1961e64-aaa6-4ca6-b970-cf99ebaa2623" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A} - \lambda_3 \vv{I} =
 \begin{bmatrix} -k_1 &amp; 0 &amp; 0 \\ k_1 &amp; -k_2 &amp; 0 \\ 0 &amp; k_2 &amp; 0 \end{bmatrix}
 \end{equation}\]</div>
 <p>from which we obtain:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c008e47b-6c4c-4cf5-980b-dfbd5bbe4b34">
-<span class="eqno">(6.37)<a class="headerlink" href="#equation-c008e47b-6c4c-4cf5-980b-dfbd5bbe4b34" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d7f88780-a59f-4e62-9cb5-efa36df3d03a">
+<span class="eqno">(6.37)<a class="headerlink" href="#equation-d7f88780-a59f-4e62-9cb5-efa36df3d03a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{x}_3 = \begin{bmatrix} 0\\
 0 \\
 1 \end{bmatrix}
 \end{equation}\]</div>
 <p>Hence, the general solution is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6441a59c-487f-40b3-ab2b-d8b9428498ad">
-<span class="eqno">(6.38)<a class="headerlink" href="#equation-6441a59c-487f-40b3-ab2b-d8b9428498ad" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-de86e370-412a-4457-a4ca-6fb382a01f4b">
+<span class="eqno">(6.38)<a class="headerlink" href="#equation-de86e370-412a-4457-a4ca-6fb382a01f4b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{c} = a_1 e^{-k_1t} \begin{bmatrix}
 \dfrac{-k_2 - k_1}{k_2} \\ \dfrac{-k_1}{k_2} \\ 1 \end{bmatrix}  +
 a_2 e^{-k_2t} \begin{bmatrix} 0 \\ -1 \\ 1 \end{bmatrix} +
 a_3 e^{0 t} \begin{bmatrix} 0\\ 0 \\ 1 \end{bmatrix}
 \end{equation}\]</div>
 <p>Now, we apply the initial condition:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-612b0674-67ae-42b2-bc49-4acb0437ff14">
-<span class="eqno">(6.39)<a class="headerlink" href="#equation-612b0674-67ae-42b2-bc49-4acb0437ff14" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-edcb350f-83f3-4d45-81a3-b8c33d26b5cc">
+<span class="eqno">(6.39)<a class="headerlink" href="#equation-edcb350f-83f3-4d45-81a3-b8c33d26b5cc" title="Permalink to this equation">#</a></span>\[\begin{align}
 \begin{bmatrix}
 \dfrac{-k_2 - k_1}{k_2} &amp; 0 &amp; 0 \\
 \dfrac{-k_1}{k_2} &amp; -1 &amp; 0 \\
@@ -572,16 +558,16 @@ a_1 \\ a_2 \\ a_3
 \begin{bmatrix} c_{{\rm A},0}\\ 0 \\ 0 \end{bmatrix}
 \end{align}\]</div>
 <p>Thus,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2002de57-c8cd-4d12-a6ca-894659f22cec">
-<span class="eqno">(6.40)<a class="headerlink" href="#equation-2002de57-c8cd-4d12-a6ca-894659f22cec" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5222fdd3-b3b5-4f1d-8f4e-ac6873d3e61b">
+<span class="eqno">(6.40)<a class="headerlink" href="#equation-5222fdd3-b3b5-4f1d-8f4e-ac6873d3e61b" title="Permalink to this equation">#</a></span>\[\begin{align}
 a_1 &amp;= -c_{{\rm A},0}\frac{k_2}{k_2-k_1}  \\
 a_2 &amp;= -\frac{k_1}{k_2}a_1 = c_{{\rm A},0}\frac{k_1}{k_2-k_1} \\
 a_3 &amp;= -a_1 - a_2 = c_{{\rm A},0}
 \end{align}\]</div>
 <p>Finally, substitute these constants into the general solution and add across
 the rows to obtain solutions for each concentration:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-99491c25-4273-449d-9b94-2e3f370ac010">
-<span class="eqno">(6.41)<a class="headerlink" href="#equation-99491c25-4273-449d-9b94-2e3f370ac010" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-9ec61e2a-5a1c-45dd-89a0-1276e0f4c3fc">
+<span class="eqno">(6.41)<a class="headerlink" href="#equation-9ec61e2a-5a1c-45dd-89a0-1276e0f4c3fc" title="Permalink to this equation">#</a></span>\[\begin{align}
 c_{\rm A}(t) &amp;= a_1e^{-k_1t}\frac{-k_2-k_1}{k_2} = c_{{\rm A},0}e^{-k_1t}  \\
 c_{\rm B}(t) &amp;= a_1e^{-k_1t}\frac{-k_1}{k_2} - a_2e^{-k_2t} \\
   &amp;= c_{{\rm A},0}\frac{k_1}{k_2 - k_1}(e^{-k_1t} - e^{-k_2t}) \\
@@ -598,8 +584,8 @@ concentrations <span class="math notranslate nohighlight">\(c_1\)</span> and <sp
 <a class="reference internal image-reference" href="../_images/diffusioncell.png"><img alt="Diffusion cell" class="align-center" src="../_images/diffusioncell.png" style="width: 300px;" />
 </a>
 <p>Based on unsteady mole balances, the concentrations change according to:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-26ae2783-829f-435e-952b-b256b85243ac">
-<span class="eqno">(6.42)<a class="headerlink" href="#equation-26ae2783-829f-435e-952b-b256b85243ac" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-712ed70b-6568-4509-8f77-0e84f9544f6b">
+<span class="eqno">(6.42)<a class="headerlink" href="#equation-712ed70b-6568-4509-8f77-0e84f9544f6b" title="Permalink to this equation">#</a></span>\[\begin{align}
 c_1' &amp;= -0.1c_1 + 0.1c_2 \\
 c_2' &amp;= 0.1c_1 - 0.1c_2
 \end{align}\]</div>
@@ -607,14 +593,14 @@ c_2' &amp;= 0.1c_1 - 0.1c_2
 0 M, respectively.</p>
 <hr class="docutils" />
 <p>Write in matrix form <span class="math notranslate nohighlight">\(\vv{c}' = \vv{A} \vv{c}\)</span>, where</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a3e3b8b6-bfef-48be-9a54-929ea8e96f9d">
-<span class="eqno">(6.43)<a class="headerlink" href="#equation-a3e3b8b6-bfef-48be-9a54-929ea8e96f9d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6f8ce236-669c-4c74-beb5-20dad7926ea0">
+<span class="eqno">(6.43)<a class="headerlink" href="#equation-6f8ce236-669c-4c74-beb5-20dad7926ea0" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{c} = \begin{bmatrix}c_1 \\ c_2\end{bmatrix}
 \qquad \vv{A} = \begin{bmatrix} -0.1 &amp; 0.1 \\ 0.1 &amp; -0.1 \end{bmatrix}
 \end{equation}\]</div>
 <p>Since <strong>A</strong> is symmetric, it has real eigenvalues:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6abff45e-c02c-4bd6-852b-db14ccf6da4b">
-<span class="eqno">(6.44)<a class="headerlink" href="#equation-6abff45e-c02c-4bd6-852b-db14ccf6da4b" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-81d3cc19-af14-49be-a24d-2cab3249c891">
+<span class="eqno">(6.44)<a class="headerlink" href="#equation-81d3cc19-af14-49be-a24d-2cab3249c891" title="Permalink to this equation">#</a></span>\[\begin{align}
 |\vv{A} - \lambda \vv{I}|
 &amp;= \begin{vmatrix} -0.1 - \lambda &amp; 0.1 \\ 0.1 &amp; -0.1 - \lambda \end{vmatrix}\\
 &amp;= (\lambda + 0.1)^2 - 0.1^2 \\
@@ -623,16 +609,16 @@ c_2' &amp;= 0.1c_1 - 0.1c_2
 \end{align}\]</div>
 <p>So, the eigenvalues are <span class="math notranslate nohighlight">\(\lambda_1 = 0\)</span> and <span class="math notranslate nohighlight">\(\lambda_2 = -0.2\)</span>. Next, we find
 the eigenvectors:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a53f6228-055a-4530-934e-70faaad92b2f">
-<span class="eqno">(6.45)<a class="headerlink" href="#equation-a53f6228-055a-4530-934e-70faaad92b2f" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e50489da-80e4-42ac-acd9-4cf4b51fa345">
+<span class="eqno">(6.45)<a class="headerlink" href="#equation-e50489da-80e4-42ac-acd9-4cf4b51fa345" title="Permalink to this equation">#</a></span>\[\begin{align}
 \vv{A}-\lambda_1 \vv{I} &amp;= \begin{bmatrix} -0.1 &amp; 0.1 \\ 0.1 &amp; -0.1 \end{bmatrix}
 \to \vv{x}_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix} \\
 \vv{A} - \lambda_2 \vv{I} &amp;= \begin{bmatrix} 0.1 &amp; 0.1 \\ 0.1 &amp; 0.1 \end{bmatrix}
 \to \vv{x}_2 = \begin{bmatrix} 1 \\ -1 \end{bmatrix}
 \end{align}\]</div>
 <p>The general solution is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-37d1a889-2409-46ce-aa43-56fb4757e199">
-<span class="eqno">(6.46)<a class="headerlink" href="#equation-37d1a889-2409-46ce-aa43-56fb4757e199" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-29cf983b-01db-4139-9e7a-7129f86b340a">
+<span class="eqno">(6.46)<a class="headerlink" href="#equation-29cf983b-01db-4139-9e7a-7129f86b340a" title="Permalink to this equation">#</a></span>\[\begin{align}
 \vv{c}(t) &amp;= a_1 e^{0t} \begin{bmatrix} 1 \\ 1 \end{bmatrix} +
 a_2 e^{-0.2t} \begin{bmatrix} 1 \\ -1 \end{bmatrix} \\
 &amp;= a_1 \begin{bmatrix} 1 \\ 1 \end{bmatrix} + a_2 e^{-0.2t}
@@ -640,8 +626,8 @@ a_2 e^{-0.2t} \begin{bmatrix} 1 \\ -1 \end{bmatrix} \\
 \end{align}\]</div>
 <p>Apply the initial conditions by solving <span class="math notranslate nohighlight">\(\vv{X}\vv{a} = \vv{c}(0)\)</span> using
 Gauss-Jordan elimination:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-43fb447b-7ade-4208-9636-f1a82a81fe48">
-<span class="eqno">(6.47)<a class="headerlink" href="#equation-43fb447b-7ade-4208-9636-f1a82a81fe48" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f62694c0-ebbc-425f-8c27-d112fc65a06b">
+<span class="eqno">(6.47)<a class="headerlink" href="#equation-f62694c0-ebbc-425f-8c27-d112fc65a06b" title="Permalink to this equation">#</a></span>\[\begin{align}
 \begin{bmatrix} 1 &amp; 1 &amp; 1\\ 1 &amp; -1 &amp; 0\end{bmatrix}
 \begin{matrix}\vphantom{R_1} \\ -R_1 \end{matrix}
 &amp;\to \begin{bmatrix} 1 &amp; 1 &amp; 1\\ 0 &amp; -2 &amp; -1\end{bmatrix}
@@ -652,14 +638,14 @@ Gauss-Jordan elimination:</p>
 \end{align}\]</div>
 <p>so <span class="math notranslate nohighlight">\(a_1 = a_2 = 1/2\)</span>. Substituting back, the general solution for
 <span class="math notranslate nohighlight">\(\vv{c}(t)\)</span> becomes:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-81242c9a-53a1-4823-8014-30879de63c29">
-<span class="eqno">(6.48)<a class="headerlink" href="#equation-81242c9a-53a1-4823-8014-30879de63c29" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7e981c2a-8116-4a76-9b11-91af2189ca34">
+<span class="eqno">(6.48)<a class="headerlink" href="#equation-7e981c2a-8116-4a76-9b11-91af2189ca34" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{c}(t) = \frac{1}{2} \begin{bmatrix} 1 \\ 1 \end{bmatrix} +
   \frac{1}{2} e^{-0.2t} \begin{bmatrix} 1 \\ -1 \end{bmatrix}
 \end{equation}\]</div>
 <p>or equivalently</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3dd38ccc-99b3-4cb8-abc4-fb4119e6019b">
-<span class="eqno">(6.49)<a class="headerlink" href="#equation-3dd38ccc-99b3-4cb8-abc4-fb4119e6019b" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b4baa135-9021-4b21-a434-60cc11ff7efa">
+<span class="eqno">(6.49)<a class="headerlink" href="#equation-b4baa135-9021-4b21-a434-60cc11ff7efa" title="Permalink to this equation">#</a></span>\[\begin{align}
 c_1(t) &amp;= \frac{1}{2} \left(1 + e^{-0.2 t}\right) \\
 c_2(t) &amp;= \frac{1}{2} \left(1 - e^{-0.2 t}\right)
 \end{align}\]</div>
@@ -767,8 +753,8 @@ Center</div>
 </div>
 <p>The direction of the orbit depends on the matrix and can be checked for
 some point. If</p>
-<div class="amsmath math notranslate nohighlight" id="equation-76678aa8-2977-48f6-867f-a8855091a5fd">
-<span class="eqno">(6.50)<a class="headerlink" href="#equation-76678aa8-2977-48f6-867f-a8855091a5fd" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8f384bc4-d9ed-45ed-b6ec-c6188d34ddb9">
+<span class="eqno">(6.50)<a class="headerlink" href="#equation-8f384bc4-d9ed-45ed-b6ec-c6188d34ddb9" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A} = \begin{bmatrix}a &amp; b \\ c &amp; d\end{bmatrix}
 \end{equation}\]</div>
 <p>The orbit is clockwise if <span class="math notranslate nohighlight">\(b &gt; c\)</span> and counterclockwise if <span class="math notranslate nohighlight">\(c &lt; b\)</span>.</p>
@@ -809,8 +795,8 @@ Degenerate node</div>
 type of critical point using the eigenvalues.</p>
 <ol class="arabic">
 <li><p>For:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c0443fd4-9c18-441f-8570-5858c5cf2cbd">
-<span class="eqno">(6.51)<a class="headerlink" href="#equation-c0443fd4-9c18-441f-8570-5858c5cf2cbd" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2314037d-4a28-4138-bf04-1589400d0406">
+<span class="eqno">(6.51)<a class="headerlink" href="#equation-2314037d-4a28-4138-bf04-1589400d0406" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A} = \begin{bmatrix} -2 &amp; 0  \\ 0 &amp; -2  \end{bmatrix}
 \end{equation}\]</div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -818,32 +804,32 @@ type of critical point using the eigenvalues.</p>
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text"><strong>A</strong> is upper triangular, so its eigenvalues are on its diagonal,
 <span class="math notranslate nohighlight">\(\lambda_1 = \lambda_2 = -2\)</span>. Its eigenvectors are:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-60aaef59-f552-4aa1-9736-8c2f4594066e">
-<span class="eqno">(6.52)<a class="headerlink" href="#equation-60aaef59-f552-4aa1-9736-8c2f4594066e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f25e6b93-722f-4b80-aa3e-40bbbc75409b">
+<span class="eqno">(6.52)<a class="headerlink" href="#equation-f25e6b93-722f-4b80-aa3e-40bbbc75409b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{x}_1 = \begin{bmatrix} 1 \\ 0  \end{bmatrix} \qquad
 \vv{x}_2 = \begin{bmatrix} 0  \\  1  \end{bmatrix}
 \end{equation}\]</div>
 <p class="sd-card-text">since <span class="math notranslate nohighlight">\(\vv{A} - \lambda_{1,2} \vv{I} = 0\)</span>. The general solution is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-36d87d2b-896d-4bdf-9546-2a24046cf425">
-<span class="eqno">(6.53)<a class="headerlink" href="#equation-36d87d2b-896d-4bdf-9546-2a24046cf425" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a7f342f2-c89f-4748-a2ec-7ee50b6d61fd">
+<span class="eqno">(6.53)<a class="headerlink" href="#equation-a7f342f2-c89f-4748-a2ec-7ee50b6d61fd" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{y} = c_1 e^{-2t} \begin{bmatrix} 1 \\ 0 \end{bmatrix} +
   c_2 e^{-2t} \begin{bmatrix} 0 \\ 1 \end{bmatrix}
 \end{equation}\]</div>
 <p class="sd-card-text">To solve for the initial condition, form the augmented matrix for
 <span class="math notranslate nohighlight">\(\vv{X}\vv{c} = \vv{y}(0)\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-05d2ae84-1953-453d-ae98-bf8feddeb8ba">
-<span class="eqno">(6.54)<a class="headerlink" href="#equation-05d2ae84-1953-453d-ae98-bf8feddeb8ba" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-cb37811d-7c2b-41dc-81f8-62fc01dd94f0">
+<span class="eqno">(6.54)<a class="headerlink" href="#equation-cb37811d-7c2b-41dc-81f8-62fc01dd94f0" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix} 1 &amp; 0 &amp; 1 \\ 0 &amp; 1 &amp; 0 \end{bmatrix}
 \end{equation}\]</div>
 <p class="sd-card-text">so <span class="math notranslate nohighlight">\(c_1 = 1\)</span> and <span class="math notranslate nohighlight">\(c_2 = 0\)</span>.</p>
 <p class="sd-card-text">Hence,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-66f88601-0e8c-43e2-a701-6810c96668fd">
-<span class="eqno">(6.55)<a class="headerlink" href="#equation-66f88601-0e8c-43e2-a701-6810c96668fd" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-61964c92-a5a4-4671-9d7c-ea605c4de299">
+<span class="eqno">(6.55)<a class="headerlink" href="#equation-61964c92-a5a4-4671-9d7c-ea605c4de299" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{y} =e ^{-2t} \begin{bmatrix} 1 \\ 0 \end{bmatrix}
 \end{equation}\]</div>
 <p class="sd-card-text">or</p>
-<div class="amsmath math notranslate nohighlight" id="equation-84b498fc-5a58-444a-aee7-8aa0ca91f76a">
-<span class="eqno">(6.56)<a class="headerlink" href="#equation-84b498fc-5a58-444a-aee7-8aa0ca91f76a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1dde3cd7-b8b3-45d7-abb6-165f9084211b">
+<span class="eqno">(6.56)<a class="headerlink" href="#equation-1dde3cd7-b8b3-45d7-abb6-165f9084211b" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_1 &amp;= e^{-2t} \\
 y_2 &amp;= 0
 \end{align}\]</div>
@@ -852,45 +838,45 @@ y_2 &amp;= 0
 </div>
 </details></li>
 <li><p>For:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8e261b63-1cd8-4ab9-93a0-6b9f512c8d03">
-<span class="eqno">(6.57)<a class="headerlink" href="#equation-8e261b63-1cd8-4ab9-93a0-6b9f512c8d03" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3b39d94f-0417-4b3f-af37-92e56d12bb5f">
+<span class="eqno">(6.57)<a class="headerlink" href="#equation-3b39d94f-0417-4b3f-af37-92e56d12bb5f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A} = \begin{bmatrix} 0 &amp; 3 \\ 12 &amp; 0 \end{bmatrix}
 \end{equation}\]</div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">First, find the eigenvalues of <strong>A</strong>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-00ffe54e-ca00-4f08-abaf-869873752968">
-<span class="eqno">(6.58)<a class="headerlink" href="#equation-00ffe54e-ca00-4f08-abaf-869873752968" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-55d4b236-fc7b-4d7b-a121-02668b80310a">
+<span class="eqno">(6.58)<a class="headerlink" href="#equation-55d4b236-fc7b-4d7b-a121-02668b80310a" title="Permalink to this equation">#</a></span>\[\begin{align}
 |\vv{A}-\lambda \vv{I}|
 &amp;= \begin{vmatrix}  -\lambda &amp; 3  \\ 12 &amp; -\lambda \end{vmatrix} \\
 &amp;= \lambda^{2}-36=0 \\
 \lambda_{1,2} &amp;= \pm 6
 \end{align}\]</div>
 <p class="sd-card-text">For <span class="math notranslate nohighlight">\(\lambda_1 = 6\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-16259e9d-8d1f-4cbc-8530-21d6d10c94ae">
-<span class="eqno">(6.59)<a class="headerlink" href="#equation-16259e9d-8d1f-4cbc-8530-21d6d10c94ae" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-afdd1732-32a1-463b-b4b5-7147d7c6898c">
+<span class="eqno">(6.59)<a class="headerlink" href="#equation-afdd1732-32a1-463b-b4b5-7147d7c6898c" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A}-\lambda_1\vv{I} =
 \begin{bmatrix} -6 &amp; 3 \\ 12 &amp; -6 \end{bmatrix}
 \to \vv{x}_1 = \begin{bmatrix} 1 \\ 2 \end{bmatrix}
 \end{equation}\]</div>
 <p class="sd-card-text">For <span class="math notranslate nohighlight">\(\lambda_2 = -6\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-130f8dda-785c-49fa-942b-3e419228e715">
-<span class="eqno">(6.60)<a class="headerlink" href="#equation-130f8dda-785c-49fa-942b-3e419228e715" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-75ecc069-244d-47f5-9633-5c2e71f9b6c2">
+<span class="eqno">(6.60)<a class="headerlink" href="#equation-75ecc069-244d-47f5-9633-5c2e71f9b6c2" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A}-\lambda_2\vv{I} =
 \begin{bmatrix} 6 &amp; 3 \\ 12 &amp; 6 \end{bmatrix}
 \to \vv{x}_2 = \begin{bmatrix} 1 \\ -2 \end{bmatrix}
 \end{equation}\]</div>
 <p class="sd-card-text">The general solution is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0aab27fa-9c45-4e9a-a11e-549ef8f2c4a2">
-<span class="eqno">(6.61)<a class="headerlink" href="#equation-0aab27fa-9c45-4e9a-a11e-549ef8f2c4a2" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ea2e0447-47eb-4ca5-b263-f5bc0ca0094a">
+<span class="eqno">(6.61)<a class="headerlink" href="#equation-ea2e0447-47eb-4ca5-b263-f5bc0ca0094a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{y} = c_1 e^{6t} \begin{bmatrix} 1 \\ 2 \end{bmatrix} +
   c_2 e^{-6t} \begin{bmatrix} 1 \\ -2 \end{bmatrix}
 \end{equation}\]</div>
 <p class="sd-card-text">To solve for the initial condition, form the augmented matrix for
 <span class="math notranslate nohighlight">\(\vv{X}\vv{c} = \vv{y}(0)\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-18c78745-9097-4905-9f93-7f366e3c1844">
-<span class="eqno">(6.62)<a class="headerlink" href="#equation-18c78745-9097-4905-9f93-7f366e3c1844" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-263c426b-6cc5-4874-a835-6dee42252852">
+<span class="eqno">(6.62)<a class="headerlink" href="#equation-263c426b-6cc5-4874-a835-6dee42252852" title="Permalink to this equation">#</a></span>\[\begin{align}
 \begin{bmatrix} 1 &amp; 2 &amp; 1 \\ 2 &amp; -2 &amp; 0 \end{bmatrix}
 \begin{matrix} \vphantom{R_1} \\ -R_1 \end{matrix}
 &amp; \to \begin{bmatrix} 1 &amp; 1 &amp; 1 \\ 0 &amp; -4 &amp; -2 \end{bmatrix}
@@ -900,14 +886,14 @@ y_2 &amp;= 0
 &amp; \to \begin{bmatrix} 1 &amp; 0 &amp; \frac{1}{2} \\ 0 &amp; 1 &amp; \frac{1}{2}  \end{bmatrix}
 \end{align}\]</div>
 <p class="sd-card-text">so <span class="math notranslate nohighlight">\(c_1 = 1/2\)</span> and <span class="math notranslate nohighlight">\(c_2 = 1/2\)</span> and</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5e983486-1a94-4d11-b8ec-ef9c2f460a98">
-<span class="eqno">(6.63)<a class="headerlink" href="#equation-5e983486-1a94-4d11-b8ec-ef9c2f460a98" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-49c4db7a-f868-4f6e-9735-a176e9f7540e">
+<span class="eqno">(6.63)<a class="headerlink" href="#equation-49c4db7a-f868-4f6e-9735-a176e9f7540e" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{y} = \frac{1}{2}e^{-6t} \begin{bmatrix} 1 \\ 2 \end{bmatrix} +
   \frac{1}{2}e^{-6t} \begin{bmatrix} 1 \\ -2 \end{bmatrix}
 \end{equation}\]</div>
 <p class="sd-card-text">or</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7f9b8394-ead2-4978-ad2f-b42321d29774">
-<span class="eqno">(6.64)<a class="headerlink" href="#equation-7f9b8394-ead2-4978-ad2f-b42321d29774" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-79b282ff-2ecd-45df-a3ee-eb2eb29d8133">
+<span class="eqno">(6.64)<a class="headerlink" href="#equation-79b282ff-2ecd-45df-a3ee-eb2eb29d8133" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_1 &amp; =\frac{1}{2}(e^{6t}+e^{-6t}) \\
 y_2 &amp;= e^{6t}+e^{-6t}
 \end{align}\]</div>
@@ -916,45 +902,45 @@ y_2 &amp;= e^{6t}+e^{-6t}
 </div>
 </details></li>
 <li><p>For:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1dace91b-fef3-4c87-bf13-19117702e400">
-<span class="eqno">(6.65)<a class="headerlink" href="#equation-1dace91b-fef3-4c87-bf13-19117702e400" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b08187ab-f2e9-48fc-b941-5ba61b528592">
+<span class="eqno">(6.65)<a class="headerlink" href="#equation-b08187ab-f2e9-48fc-b941-5ba61b528592" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A} = \begin{bmatrix} 0 &amp; 4 \\ -4 &amp; 0 \end{bmatrix}
 \end{equation}\]</div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">First, find the eigenvalues of <strong>A</strong>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5e404208-be4e-47ca-a5a0-b5006246dcfb">
-<span class="eqno">(6.66)<a class="headerlink" href="#equation-5e404208-be4e-47ca-a5a0-b5006246dcfb" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5139b51c-7014-4ab0-a5ae-c69ed4e32e34">
+<span class="eqno">(6.66)<a class="headerlink" href="#equation-5139b51c-7014-4ab0-a5ae-c69ed4e32e34" title="Permalink to this equation">#</a></span>\[\begin{align}
 |\vv{A} - \lambda \vv{I}|
 &amp;= \begin{vmatrix} -\lambda &amp; 4 \\ -4 &amp; -\lambda \end{vmatrix} \\
 &amp;= \lambda^2 + 16 = 0 \\
 \lambda_{1,2} &amp;= \pm 4i
 \end{align}\]</div>
 <p class="sd-card-text">For <span class="math notranslate nohighlight">\(\lambda_1 = 4i\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-24bbada9-3b9a-40ab-b44d-6a1ddac51e99">
-<span class="eqno">(6.67)<a class="headerlink" href="#equation-24bbada9-3b9a-40ab-b44d-6a1ddac51e99" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7cd1e3a8-6dfd-4a77-84ff-cae80286ad21">
+<span class="eqno">(6.67)<a class="headerlink" href="#equation-7cd1e3a8-6dfd-4a77-84ff-cae80286ad21" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A}-\lambda_1\vv{I} =
 \begin{bmatrix} -4i &amp; 4 \\ -4 &amp; -4i \end{bmatrix}
 \to \vv{x}_1 = \begin{bmatrix} -i \\ 1 \end{bmatrix}
 \end{equation}\]</div>
 <p class="sd-card-text">For <span class="math notranslate nohighlight">\(\lambda_2 = -4i\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0491adf2-bfd2-4f11-a552-e237a5f81500">
-<span class="eqno">(6.68)<a class="headerlink" href="#equation-0491adf2-bfd2-4f11-a552-e237a5f81500" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f1a96e6e-153f-4074-a4be-8726e3e1a194">
+<span class="eqno">(6.68)<a class="headerlink" href="#equation-f1a96e6e-153f-4074-a4be-8726e3e1a194" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A}-\lambda_2\vv{I} =
 \begin{bmatrix} 4i &amp; 4 \\ -4 &amp; 4i \end{bmatrix}
 \to \vv{x}_2 = \begin{bmatrix} i \\ 1 \end{bmatrix}
 \end{equation}\]</div>
 <p class="sd-card-text">The general solution is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-79125e7d-2bb8-4e80-99bf-814da1f763dd">
-<span class="eqno">(6.69)<a class="headerlink" href="#equation-79125e7d-2bb8-4e80-99bf-814da1f763dd" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3d14c73c-879d-4a35-9003-bcb85e13eb8b">
+<span class="eqno">(6.69)<a class="headerlink" href="#equation-3d14c73c-879d-4a35-9003-bcb85e13eb8b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{y} = c_1 e^{4it} \begin{bmatrix} -i \\ 1 \end{bmatrix} +
 c_2 e^{-4it} \begin{bmatrix} i \\ 1 \end{bmatrix}
 \end{equation}\]</div>
 <p class="sd-card-text">To solve for the initial condition, form the augmented matrix for
 <span class="math notranslate nohighlight">\(\vv{X}\vv{c} = \vv{y}(0)\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1393c78c-d45f-478f-80c8-68a971614581">
-<span class="eqno">(6.70)<a class="headerlink" href="#equation-1393c78c-d45f-478f-80c8-68a971614581" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f32f452f-7650-47ec-b2db-bb88e791932c">
+<span class="eqno">(6.70)<a class="headerlink" href="#equation-f32f452f-7650-47ec-b2db-bb88e791932c" title="Permalink to this equation">#</a></span>\[\begin{align}
 \begin{bmatrix}
 -i &amp; i &amp; 1 \\
 1 &amp; 1 &amp; 0
@@ -985,15 +971,15 @@ c_2 e^{-4it} \begin{bmatrix} i \\ 1 \end{bmatrix}
 \end{bmatrix}
 \end{align}\]</div>
 <p class="sd-card-text">so <span class="math notranslate nohighlight">\(c_1 = -1/(2i) = i/2\)</span> and <span class="math notranslate nohighlight">\(c_2 = 1/(2i) = -i/2\)</span> and</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b5671f39-171a-463e-b5dc-272a84ba5ed0">
-<span class="eqno">(6.71)<a class="headerlink" href="#equation-b5671f39-171a-463e-b5dc-272a84ba5ed0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-74b11036-7197-4bc6-bd3a-d2ea1d96303c">
+<span class="eqno">(6.71)<a class="headerlink" href="#equation-74b11036-7197-4bc6-bd3a-d2ea1d96303c" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{y} = \frac{i}{2} e^{4it} \begin{bmatrix} -i \\ 1 \end{bmatrix}
 - \frac{i}{2} e^{-4it} \begin{bmatrix} i \\ 1 \end{bmatrix}
 \end{equation}\]</div>
 <p class="sd-card-text">This solution is acceptable, but we can simplify it further using Euler’s
 identity:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-045e9deb-1f4c-447c-be5d-97f69dba7d51">
-<span class="eqno">(6.72)<a class="headerlink" href="#equation-045e9deb-1f4c-447c-be5d-97f69dba7d51" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-636cb08d-9fac-4d4c-b2e7-f8a9d66af5f4">
+<span class="eqno">(6.72)<a class="headerlink" href="#equation-636cb08d-9fac-4d4c-b2e7-f8a9d66af5f4" title="Permalink to this equation">#</a></span>\[\begin{align}
 \vv{y} &amp;= \frac{1}{2} \left( \cos 4t + i \sin 4t \right)
   \begin{bmatrix} 1 \\ i \end{bmatrix}
 - \frac{1}{2} \left( \cos 4t - i \sin 4t \right)
@@ -1001,8 +987,8 @@ identity:</p>
 &amp;= \begin{bmatrix} \cos 4t \\ -\sin 4t \end{bmatrix}
 \end{align}\]</div>
 <p class="sd-card-text">so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3bd8b850-0cb0-4ef3-b028-e1b4642a327a">
-<span class="eqno">(6.73)<a class="headerlink" href="#equation-3bd8b850-0cb0-4ef3-b028-e1b4642a327a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0d248ccd-35c8-4542-8d85-e85ae5214bb4">
+<span class="eqno">(6.73)<a class="headerlink" href="#equation-0d248ccd-35c8-4542-8d85-e85ae5214bb4" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_1 &amp;= \cos 4 t \\
 y_2 &amp;= -\sin 4t
 \end{align}\]</div>
@@ -1010,8 +996,8 @@ y_2 &amp;= -\sin 4t
 </div>
 </details></li>
 <li><p>For:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fda0dc9c-1fc5-4df6-8c1e-7d1c2440ad25">
-<span class="eqno">(6.74)<a class="headerlink" href="#equation-fda0dc9c-1fc5-4df6-8c1e-7d1c2440ad25" title="Permalink to this equation">#</a></span>\[\begin{equation} \vv{A} =
+<div class="amsmath math notranslate nohighlight" id="equation-6b51caf3-ad54-4a93-b8a9-3d8221ac5df0">
+<span class="eqno">(6.74)<a class="headerlink" href="#equation-6b51caf3-ad54-4a93-b8a9-3d8221ac5df0" title="Permalink to this equation">#</a></span>\[\begin{equation} \vv{A} =
 \begin{bmatrix}
 2 &amp; -2\\
 2 &amp; 2
@@ -1021,8 +1007,8 @@ y_2 &amp;= -\sin 4t
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">First, find the eigenvalues of <strong>A</strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-1e5c86cf-fda3-42aa-a57a-070cae0543c2">
-<span class="eqno">(6.75)<a class="headerlink" href="#equation-1e5c86cf-fda3-42aa-a57a-070cae0543c2" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-09bbe469-b4ca-4402-a39c-c4e342d60886">
+<span class="eqno">(6.75)<a class="headerlink" href="#equation-09bbe469-b4ca-4402-a39c-c4e342d60886" title="Permalink to this equation">#</a></span>\[\begin{align}
 \vv{A} - \lambda\vv{I} &amp;= \begin{vmatrix}
 2- \lambda &amp; -2\\
 2 &amp; 2-\lambda
@@ -1031,8 +1017,8 @@ y_2 &amp;= -\sin 4t
 \lambda_{1,2} &amp;= 2 \pm 2i
 \end{align}\]</div>
 <p class="sd-card-text">For <span class="math notranslate nohighlight">\(\lambda_1 = 2+2i\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-80eb959b-d128-489e-965d-217ba56a69da">
-<span class="eqno">(6.76)<a class="headerlink" href="#equation-80eb959b-d128-489e-965d-217ba56a69da" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3a6ded4f-e839-4750-b31a-d502ce27e2b4">
+<span class="eqno">(6.76)<a class="headerlink" href="#equation-3a6ded4f-e839-4750-b31a-d502ce27e2b4" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A}-\lambda_1\vv{I} =
 \begin{bmatrix}
 -2 i &amp; -2\\
@@ -1041,8 +1027,8 @@ y_2 &amp;= -\sin 4t
 \to \vv{x}_1 = \begin{bmatrix} i \\ 1 \end{bmatrix}
 \end{equation}\]</div>
 <p class="sd-card-text">For <span class="math notranslate nohighlight">\(\lambda_2 = 2-2i\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-caea966e-c7bf-4a41-b58d-94e10eb2f9b4">
-<span class="eqno">(6.77)<a class="headerlink" href="#equation-caea966e-c7bf-4a41-b58d-94e10eb2f9b4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1c17dc58-da5b-4916-8f05-6ac6843d8af8">
+<span class="eqno">(6.77)<a class="headerlink" href="#equation-1c17dc58-da5b-4916-8f05-6ac6843d8af8" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A}-\lambda_2\vv{I} =
 \begin{bmatrix}
 2 i &amp; -2\\
@@ -1051,8 +1037,8 @@ y_2 &amp;= -\sin 4t
 \to \vv{x}_2 = \begin{bmatrix} -i \\ 1\end{bmatrix}
 \end{equation}\]</div>
 <p class="sd-card-text">The general solution is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b2b56c79-b07d-4cad-bd2b-f8f2025872f6">
-<span class="eqno">(6.78)<a class="headerlink" href="#equation-b2b56c79-b07d-4cad-bd2b-f8f2025872f6" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ca76f4dd-72f4-48fa-ba2e-f5e247d4021e">
+<span class="eqno">(6.78)<a class="headerlink" href="#equation-ca76f4dd-72f4-48fa-ba2e-f5e247d4021e" title="Permalink to this equation">#</a></span>\[\begin{align}
 \vv{y} &amp;= c_1 e^{(2+2i)t} \begin{bmatrix} i\\ 1 \end{bmatrix} +
   c_2 e^{(2-2i)t} \begin{bmatrix} -i\\ 1 \end{bmatrix} \\
 &amp;= e^{2t} \Biggl( c_1 e^{2it} \begin{bmatrix} i\\ 1 \end{bmatrix} +
@@ -1060,8 +1046,8 @@ y_2 &amp;= -\sin 4t
 \end{align}\]</div>
 <p class="sd-card-text">To solve for the initial condition, form the augmented matrix for
 <span class="math notranslate nohighlight">\(\vv{X}\vv{c} = \vv{y}(0)\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-57598a41-ee2b-49dc-8a2f-1f54f847a2aa">
-<span class="eqno">(6.79)<a class="headerlink" href="#equation-57598a41-ee2b-49dc-8a2f-1f54f847a2aa" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-240176fb-e1cc-46dd-b8b6-47072275dd06">
+<span class="eqno">(6.79)<a class="headerlink" href="#equation-240176fb-e1cc-46dd-b8b6-47072275dd06" title="Permalink to this equation">#</a></span>\[\begin{align}
 \begin{bmatrix}
 i &amp; -i &amp; 1\\
 1 &amp; 1 &amp; 0
@@ -1092,16 +1078,16 @@ i &amp; -i &amp; 1
 \end{bmatrix}
 \end{align}\]</div>
 <p class="sd-card-text">so <span class="math notranslate nohighlight">\(c_1 = 1/(2i) = -i/2\)</span> and <span class="math notranslate nohighlight">\(c_2 = -1/(2i) = i/2\)</span>. Hence,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-34734d02-fd7e-44b2-9c56-5c69d7a86a0e">
-<span class="eqno">(6.80)<a class="headerlink" href="#equation-34734d02-fd7e-44b2-9c56-5c69d7a86a0e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1b14b06c-51a1-4889-9c00-0fc25814a764">
+<span class="eqno">(6.80)<a class="headerlink" href="#equation-1b14b06c-51a1-4889-9c00-0fc25814a764" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{y} = e^{2t} \Biggl(
   - \frac{i}{2} e^{2it} \begin{bmatrix} i \\ 1 \end{bmatrix}
   + \frac{i}{2} e{-2it} \begin{bmatrix} -i\\ 1 \end{bmatrix} \Biggr)
 \end{equation}\]</div>
 <p class="sd-card-text">Simplifying using Euler’s identity <span class="math notranslate nohighlight">\(e^{ix} = \cos x + i \sin x\)</span> and adding
 across the rows gives</p>
-<div class="amsmath math notranslate nohighlight" id="equation-638d0dff-27ab-4133-8444-711933f3deb4">
-<span class="eqno">(6.81)<a class="headerlink" href="#equation-638d0dff-27ab-4133-8444-711933f3deb4" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-be18545c-e764-44f2-a5be-9be7f9939d19">
+<span class="eqno">(6.81)<a class="headerlink" href="#equation-be18545c-e764-44f2-a5be-9be7f9939d19" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_1 &amp;= e^{2t} \cos 2t\\
 y_2 &amp;= e^{2t} \sin 2t
 \end{align}\]</div>
@@ -1168,14 +1154,16 @@ and the real part is positive.</p>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-critical-points">6.3.1. Types of critical points</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill-builder-problems">6.3.2. Skill builder problems</a></li>
@@ -1227,8 +1215,8 @@ By Michael P. Howard
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

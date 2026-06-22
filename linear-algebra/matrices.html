@@ -16,41 +16,44 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -67,6 +70,7 @@
     <link rel="prev" title="3. Linear algebra" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -82,19 +86,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -102,7 +95,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -110,8 +102,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -127,7 +119,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -157,15 +150,11 @@
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
@@ -237,9 +226,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -369,7 +363,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -383,25 +377,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -450,14 +436,14 @@ compact notation that can be processed by a computer.</p>
 process.</p>
 <img alt="Flash distillation process" src="../_images/flash.svg" />
 <p>The steady-state mole balances for the total process and component A are</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a95b9982-9498-4365-a872-46e17fe3b006">
-<span class="eqno">(3.1)<a class="headerlink" href="#equation-a95b9982-9498-4365-a872-46e17fe3b006" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-04f2150f-e9fd-4e74-a659-2ff2f2f3d491">
+<span class="eqno">(3.1)<a class="headerlink" href="#equation-04f2150f-e9fd-4e74-a659-2ff2f2f3d491" title="Permalink to this equation">#</a></span>\[\begin{align}
 10 &amp;= \dot L + \dot V \\
 5 &amp;= 0.3 \dot L + 0.8 \dot V
 \end{align}\]</div>
 <p>These equations can equivalently be represented using matrices and vectors as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0a2c972d-e312-4767-93e2-3d02f3907323">
-<span class="eqno">(3.2)<a class="headerlink" href="#equation-0a2c972d-e312-4767-93e2-3d02f3907323" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a69d3598-d625-43f6-9486-2ca8693c4c18">
+<span class="eqno">(3.2)<a class="headerlink" href="#equation-a69d3598-d625-43f6-9486-2ca8693c4c18" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix} 10 \\ 5 \end{bmatrix} =
 \begin{bmatrix} 1 &amp; 1 \\ 0.3 &amp; 0.8 \end{bmatrix}
 \begin{bmatrix} \dot L \\ \dot V \end{bmatrix}
@@ -471,14 +457,14 @@ linear equations</em> that can be solved using techniques of linear algebra.</p>
 <p>A <em>matrix</em> is a rectangular array of quantities, which we call its <em>elements</em>,
 that are laid out in horizontal <em>rows</em> and vertical <em>columns</em>. We will typically
 denote a matrix by a bold, capital letter such as <strong>A</strong>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f19f9cf0-39a8-4916-bd8b-f8c4dcfe24c4">
-<span class="eqno">(3.3)<a class="headerlink" href="#equation-f19f9cf0-39a8-4916-bd8b-f8c4dcfe24c4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-aff207f7-9e2a-4042-a628-ebf2737a1074">
+<span class="eqno">(3.3)<a class="headerlink" href="#equation-aff207f7-9e2a-4042-a628-ebf2737a1074" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A} = \begin{bmatrix} 0.3 &amp; 1 &amp; -5 \\ 0 &amp; -0.2 &amp; 16 \end{bmatrix}
 \end{equation}\]</div>
 <p>An <em>m</em> x <em>n</em> matrix has <em>m</em> rows and <em>n</em> columns. <strong>A</strong> is a 2 x 3 matrix. We
 will sometimes refer to elements of a matrix by their row and column</p>
-<div class="amsmath math notranslate nohighlight" id="equation-11e6fc21-4bf4-409e-b717-134cda5b8923">
-<span class="eqno">(3.4)<a class="headerlink" href="#equation-11e6fc21-4bf4-409e-b717-134cda5b8923" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-5cac200e-4aaa-486e-a58b-ae4bb1ada3d7">
+<span class="eqno">(3.4)<a class="headerlink" href="#equation-5cac200e-4aaa-486e-a58b-ae4bb1ada3d7" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A} = \begin{bmatrix} A_{11} &amp; A_{12} &amp;
 A_{13} \\ A_{21} &amp; A_{22} &amp; A_{23} \end{bmatrix}
 \end{equation}\]</div>
@@ -486,16 +472,16 @@ A_{13} \\ A_{21} &amp; A_{22} &amp; A_{23} \end{bmatrix}
 <p>A <em>vector</em> is a matrix with either one column (a <em>column vector</em>) or one row (a
 <em>row vector</em>). We will typically denote a vector by a bold, lowercase letter
 such as <strong>b</strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-9dfb4c6d-3db6-40b6-99dd-d22f0f627e28">
-<span class="eqno">(3.5)<a class="headerlink" href="#equation-9dfb4c6d-3db6-40b6-99dd-d22f0f627e28" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-63dd3694-ef19-49ce-80a2-c1b35615e833">
+<span class="eqno">(3.5)<a class="headerlink" href="#equation-63dd3694-ef19-49ce-80a2-c1b35615e833" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{b} = \begin{bmatrix} 1 \\ 2 \end{bmatrix} \qquad
 \vv{c} = \begin{bmatrix} -1 &amp; 0 &amp; 1 \end{bmatrix}
 \end{equation}\]</div>
 <p><strong>b</strong> is a 2-element column vector that is also a 2 x 1 matrix, while <strong>c</strong> is a
 3-element row vector that is also a 1 x 3 matrix. When referring to elements of
 a vector, it typical to only use one index</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2e98da91-0a7f-4edd-b02c-7e2b0b17324e">
-<span class="eqno">(3.6)<a class="headerlink" href="#equation-2e98da91-0a7f-4edd-b02c-7e2b0b17324e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-fbbe6445-6ac6-4eb9-a7dc-0b7c1f5ea5c1">
+<span class="eqno">(3.6)<a class="headerlink" href="#equation-fbbe6445-6ac6-4eb9-a7dc-0b7c1f5ea5c1" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{b} = \begin{bmatrix} b_1 \\ b_2 \end{bmatrix} \qquad
 \vv{c} = \begin{bmatrix} c_1 &amp; c_2 &amp; c_3 \end{bmatrix}
 \end{equation}\]</div>
@@ -506,36 +492,36 @@ to elements in this way.</p>
 <ul>
 <li><p><em>Square matrix</em>: a matrix with equal numbers of rows and columns (an <em>n</em> x <em>n</em>
 matrix).</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c4a9031a-69b5-4914-884a-358c98c5569c">
-<span class="eqno">(3.7)<a class="headerlink" href="#equation-c4a9031a-69b5-4914-884a-358c98c5569c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-400314e1-e71d-4fb3-ba0c-b93b64557e30">
+<span class="eqno">(3.7)<a class="headerlink" href="#equation-400314e1-e71d-4fb3-ba0c-b93b64557e30" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix} 1 &amp; 2 \\ 4 &amp; 3 \end{bmatrix}
 \end{equation}\]</div>
 </li>
 <li><p><em>Diagonal matrix</em>: a square matrix with nonzero entries only for the elements
 on the diagonal, <span class="math notranslate nohighlight">\(A_{ii}\)</span> for <span class="math notranslate nohighlight">\(i = 1, ..., n\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ca3c8412-5e0d-45e5-a88e-ef4e7c709ce0">
-<span class="eqno">(3.8)<a class="headerlink" href="#equation-ca3c8412-5e0d-45e5-a88e-ef4e7c709ce0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-fff20731-0686-438a-8160-a50133d365c0">
+<span class="eqno">(3.8)<a class="headerlink" href="#equation-fff20731-0686-438a-8160-a50133d365c0" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 3 \end{bmatrix}
 \end{equation}\]</div>
 </li>
 <li><p><em>Upper triangular matrix</em>: a square matrix with nonzero entries only on the
 diagonal or above, <span class="math notranslate nohighlight">\(A_{ij}\)</span> for <span class="math notranslate nohighlight">\(i = 1, ..., n\)</span> and <span class="math notranslate nohighlight">\(j \ge i\)</span>. on the
 diagonal, <span class="math notranslate nohighlight">\(A_{ii}\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-12b12389-4780-43a9-93f4-c76c72797c97">
-<span class="eqno">(3.9)<a class="headerlink" href="#equation-12b12389-4780-43a9-93f4-c76c72797c97" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8425d208-c557-48a2-abda-421a22628e9c">
+<span class="eqno">(3.9)<a class="headerlink" href="#equation-8425d208-c557-48a2-abda-421a22628e9c" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix} 1 &amp; 2 \\ 0 &amp; 3 \end{bmatrix}
 \end{equation}\]</div>
 </li>
 <li><p><em>Lower triangular matrix</em>: a square matrix with nonzero entries only on the
 diagonal or below, <span class="math notranslate nohighlight">\(A_{ij}\)</span> for <span class="math notranslate nohighlight">\(i = 1, ..., n\)</span> and <span class="math notranslate nohighlight">\(j \le i\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4d6bf178-d4a3-4e65-a5f4-995db5d31864">
-<span class="eqno">(3.10)<a class="headerlink" href="#equation-4d6bf178-d4a3-4e65-a5f4-995db5d31864" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-538c60af-e338-4d8b-b936-f05fd2c42e87">
+<span class="eqno">(3.10)<a class="headerlink" href="#equation-538c60af-e338-4d8b-b936-f05fd2c42e87" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix} 1 &amp; 0 \\ 4 &amp; 3 \end{bmatrix}
 \end{equation}\]</div>
 </li>
 <li><p><em>Identity matrix</em>: a diagonal matrix of ones, typically denoted <strong>I</strong>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fa5d0a91-956a-4b5f-8f87-674659431b51">
-<span class="eqno">(3.11)<a class="headerlink" href="#equation-fa5d0a91-956a-4b5f-8f87-674659431b51" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f3878645-da9c-43e3-a731-f348752cbb35">
+<span class="eqno">(3.11)<a class="headerlink" href="#equation-f3878645-da9c-43e3-a731-f348752cbb35" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{bmatrix}
 \end{equation}\]</div>
 </li>
@@ -550,13 +536,13 @@ longer course on linear algebra!</p>
 size and all their corresponding elements are equal.</p></li>
 <li><p><em>Addition</em>: <span class="math notranslate nohighlight">\(\vv{C} = \vv{A} + \vv{B}\)</span> is defined if <strong>A</strong> and <strong>B</strong> have the
 samesize. Then, the matrix elements are added element-wise:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-de4d21bf-8e45-4236-b487-ce3516e2643b">
-<span class="eqno">(3.12)<a class="headerlink" href="#equation-de4d21bf-8e45-4236-b487-ce3516e2643b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7e25a0b5-7079-4345-80da-66027ab3408b">
+<span class="eqno">(3.12)<a class="headerlink" href="#equation-7e25a0b5-7079-4345-80da-66027ab3408b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 C_{ij} = A_{ij} + B_{ij}
 \end{equation}\]</div>
 <p>Example:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c362c73f-d9e7-43a6-a0dc-1f617af0e4f9">
-<span class="eqno">(3.13)<a class="headerlink" href="#equation-c362c73f-d9e7-43a6-a0dc-1f617af0e4f9" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e6d2497f-0d4b-4ae2-863c-59da832712ab">
+<span class="eqno">(3.13)<a class="headerlink" href="#equation-e6d2497f-0d4b-4ae2-863c-59da832712ab" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix} 5 &amp; -1 &amp; 0 \\ 3 &amp; 1 &amp; 0 \end{bmatrix} +
 \begin{bmatrix} 1 &amp; 5 &amp; 3 \\ 3 &amp; 2 &amp; 2 \end{bmatrix} =
 \begin{bmatrix} -4 &amp; 6 &amp; 3 \\ 0 &amp; 1 &amp; 2 \end{bmatrix}
@@ -564,13 +550,13 @@ C_{ij} = A_{ij} + B_{ij}
 </li>
 <li><p><em>Scalar multiplication</em>: <span class="math notranslate nohighlight">\(\vv{B} = k\vv{A}\)</span> multiplies each element of <strong>A</strong>
 by <em>k</em>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e66c8470-670f-4780-88bc-3e1de3091cb4">
-<span class="eqno">(3.14)<a class="headerlink" href="#equation-e66c8470-670f-4780-88bc-3e1de3091cb4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6a1e6451-00c0-414d-8eea-d01584076a74">
+<span class="eqno">(3.14)<a class="headerlink" href="#equation-6a1e6451-00c0-414d-8eea-d01584076a74" title="Permalink to this equation">#</a></span>\[\begin{equation}
 B_{ij} = kA_{ij}
 \end{equation}\]</div>
 <p>Example:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6595f267-8957-4f66-aede-4041f0aa990f">
-<span class="eqno">(3.15)<a class="headerlink" href="#equation-6595f267-8957-4f66-aede-4041f0aa990f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d104290f-e5f9-437d-82cc-4c4e909c9eae">
+<span class="eqno">(3.15)<a class="headerlink" href="#equation-d104290f-e5f9-437d-82cc-4c4e909c9eae" title="Permalink to this equation">#</a></span>\[\begin{equation}
 -2 \begin{bmatrix} 1 &amp; 0  \\ 0 &amp; -2  \end{bmatrix}
 = \begin{bmatrix} -2 \times 1 &amp; -2 \times 0 \\ -2 \times 0 &amp; -2 \times 4 \end{bmatrix}
 = \begin{bmatrix} -2 &amp; 0 \\ 0 &amp; 4 \end{bmatrix}
@@ -578,8 +564,8 @@ B_{ij} = kA_{ij}
 </li>
 <li><p><em>Subtraction</em>: same as addition of negative
 <span class="math notranslate nohighlight">\(\vv{C} = \vv{A} - \vv{B} = \vv{A} + (-\vv{B})\)</span> so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-df248247-5393-4009-8ba5-17b00557be6b">
-<span class="eqno">(3.16)<a class="headerlink" href="#equation-df248247-5393-4009-8ba5-17b00557be6b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-de374ba2-fd8c-47ea-8321-79fedb9a6602">
+<span class="eqno">(3.16)<a class="headerlink" href="#equation-de374ba2-fd8c-47ea-8321-79fedb9a6602" title="Permalink to this equation">#</a></span>\[\begin{equation}
 C_{ij} = A_{ij} - B_{ij}
 \end{equation}\]</div>
 </li>
@@ -595,15 +581,15 @@ C_{ij} = A_{ij} - B_{ij}
 <div class="admonition-example-matrix-addition-and-scalar-multiplication admonition">
 <p class="admonition-title">Example: Matrix addition and scalar multiplication</p>
 <p>Given</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9c279a4d-d49d-4b2d-9df7-84b54a51d6dc">
-<span class="eqno">(3.17)<a class="headerlink" href="#equation-9c279a4d-d49d-4b2d-9df7-84b54a51d6dc" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a7ccabae-7566-48de-89c3-6dd9ead9c3b4">
+<span class="eqno">(3.17)<a class="headerlink" href="#equation-a7ccabae-7566-48de-89c3-6dd9ead9c3b4" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{A} = \begin{bmatrix} -1 &amp; 2  \\ 0 &amp; 5  \end{bmatrix} \qquad
 \vv{B} = \begin{bmatrix} 1 &amp; 0  \\ 0 &amp; 1  \end{bmatrix}
 \end{equation}\]</div>
 <p>Compute <span class="math notranslate nohighlight">\(2\vv{A} - \vv{B}\)</span>.</p>
 <hr class="docutils" />
-<div class="amsmath math notranslate nohighlight" id="equation-0c4c208a-c78a-4dd4-b24e-e071fbc352ee">
-<span class="eqno">(3.18)<a class="headerlink" href="#equation-0c4c208a-c78a-4dd4-b24e-e071fbc352ee" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-eb24c5ab-9d92-420b-be48-fa6c31ed49ae">
+<span class="eqno">(3.18)<a class="headerlink" href="#equation-eb24c5ab-9d92-420b-be48-fa6c31ed49ae" title="Permalink to this equation">#</a></span>\[\begin{align}
 2\vv{A}-\vv{B} &amp;= 2 \begin{bmatrix} -1 &amp; 2  \\ 0 &amp; 5  \end{bmatrix} -
 \begin{bmatrix} 1 &amp; 0  \\ 0 &amp; 1  \end{bmatrix} \\
 &amp;= \begin{bmatrix} -2 &amp; 4  \\ 0 &amp; 10  \end{bmatrix} -
@@ -617,13 +603,13 @@ C_{ij} = A_{ij} - B_{ij}
 <p><strong>C</strong> = <strong>AB</strong> is defined if <strong>A</strong> has the same number of columns as <strong>B</strong> has
 rows. If <strong>A</strong> is <em>m</em> x <em>p</em> and <strong>B</strong> is <em>p</em> x <em>n</em>, <strong>C</strong> is <em>m</em> x <em>n</em> and its
 elements are</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ca43c13c-5d32-4d0a-8d83-9088ccef5579">
-<span class="eqno">(3.19)<a class="headerlink" href="#equation-ca43c13c-5d32-4d0a-8d83-9088ccef5579" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-32d5d111-4468-494b-9dda-292cb7cd0b0e">
+<span class="eqno">(3.19)<a class="headerlink" href="#equation-32d5d111-4468-494b-9dda-292cb7cd0b0e" title="Permalink to this equation">#</a></span>\[\begin{equation}
 C_{ij} = \sum_{k=1}^p A_{ik} B_{kj}
 \end{equation}\]</div>
 <p>Example:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1a6ae691-f25e-4d55-9334-2691f1c79f28">
-<span class="eqno">(3.20)<a class="headerlink" href="#equation-1a6ae691-f25e-4d55-9334-2691f1c79f28" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1862123c-17f1-47fa-a5b5-9d8433fa253f">
+<span class="eqno">(3.20)<a class="headerlink" href="#equation-1862123c-17f1-47fa-a5b5-9d8433fa253f" title="Permalink to this equation">#</a></span>\[\begin{align}
 \begin{bmatrix} 3 &amp; 5 \\ 4 &amp; 0 \\ -6 &amp; -3 \end{bmatrix}
 \begin{bmatrix} 2 &amp; -2 \\ 5 &amp; 0 \end{bmatrix}
 &amp;= \begin{bmatrix} 3\times2 + 5\times5 &amp; 3\times-2 + 5\times0 \\
@@ -632,8 +618,8 @@ C_{ij} = \sum_{k=1}^p A_{ik} B_{kj}
 &amp;= \begin{bmatrix} 31 &amp; -6 \\ 8 &amp; -8 \\ -27 &amp; 12 \end{bmatrix}
 \end{align}\]</div>
 <p>Multiplying with a vector works the same!</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0225e8ee-1db7-49cd-a7ae-17bd21886c7a">
-<span class="eqno">(3.21)<a class="headerlink" href="#equation-0225e8ee-1db7-49cd-a7ae-17bd21886c7a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5a735368-a7d8-482a-a192-7b600dec32b3">
+<span class="eqno">(3.21)<a class="headerlink" href="#equation-5a735368-a7d8-482a-a192-7b600dec32b3" title="Permalink to this equation">#</a></span>\[\begin{align}
 \begin{bmatrix} 3 &amp; 5 \\ 4 &amp; 0 \\ -6 &amp; -3 \end{bmatrix}
 \begin{bmatrix} 1 \\ 2 \end{bmatrix}
 &amp;= \begin{bmatrix} 3 \times 1 + 5 \times 2 \\
@@ -656,13 +642,13 @@ matrices.</p></li>
 <h2><span class="section-number">3.1.4. </span>Transpose<a class="headerlink" href="#transpose" title="Link to this heading">#</a></h2>
 <p><span class="math notranslate nohighlight">\(\vv{A}^{\rm T}\)</span> is the transpose of <strong>A</strong>, and its elements are obtained by
 “flipping” the rows and columns:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3c5dd926-ea46-45d6-9bef-1f66ef4aedfa">
-<span class="eqno">(3.22)<a class="headerlink" href="#equation-3c5dd926-ea46-45d6-9bef-1f66ef4aedfa" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ddf4a4c5-c255-42ad-943f-5978f363c670">
+<span class="eqno">(3.22)<a class="headerlink" href="#equation-ddf4a4c5-c255-42ad-943f-5978f363c670" title="Permalink to this equation">#</a></span>\[\begin{equation}
 A_{ij}^{\rm T} = A_{ji}
 \end{equation}\]</div>
 <p>Example:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c7d72fed-f9ea-439a-9621-7f977f729713">
-<span class="eqno">(3.23)<a class="headerlink" href="#equation-c7d72fed-f9ea-439a-9621-7f977f729713" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4336e90c-345f-4b9e-b790-62bc2b6007a1">
+<span class="eqno">(3.23)<a class="headerlink" href="#equation-4336e90c-345f-4b9e-b790-62bc2b6007a1" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix} 1 &amp; 2 \\ 4 &amp; 3 \end{bmatrix}^{\rm T} =
 \begin{bmatrix} 1 &amp; 4 \\ 2 &amp; 3 \end{bmatrix}
 \end{equation}\]</div>
@@ -872,14 +858,16 @@ A_{ij}^{\rm T} = A_{ji}
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">3.1.1. Definition</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#addition-and-scalar-multiplication">3.1.2. Addition and scalar multiplication</a></li>
@@ -934,8 +922,8 @@ By Michael P. Howard
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

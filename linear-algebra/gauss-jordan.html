@@ -16,41 +16,44 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -67,6 +70,7 @@
     <link rel="prev" title="3.2. Systems of linear equations" href="linear-systems.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -82,19 +86,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -102,7 +95,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -110,8 +102,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -127,7 +119,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -157,15 +150,11 @@
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
@@ -237,9 +226,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -369,7 +363,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -383,25 +377,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -440,8 +426,8 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="gaussjordan-elimination">
 <h1><span class="section-number">3.3. </span>Gauss–Jordan elimination<a class="headerlink" href="#gaussjordan-elimination" title="Link to this heading">#</a></h1>
 <p>To solve a system of linear equations like</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fb949331-453d-4aef-a5d6-47657755d998">
-<span class="eqno">(3.27)<a class="headerlink" href="#equation-fb949331-453d-4aef-a5d6-47657755d998" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7b1633fd-57df-45f1-ae64-39eea9def4a0">
+<span class="eqno">(3.27)<a class="headerlink" href="#equation-7b1633fd-57df-45f1-ae64-39eea9def4a0" title="Permalink to this equation">#</a></span>\[\begin{align}
 2x_1 + 5x_2 &amp;= 2\\
 13x_2 &amp;= -26
 \end{align}\]</div>
@@ -465,8 +451,8 @@ another by elementary operations. Row-equivalent systems of linear equations
 have the same set of solutions.</p>
 </aside>
 <p>For example, suppose we instead started with the equations</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e64af83e-97c9-4d0b-852e-fee4cb173427">
-<span class="eqno">(3.28)<a class="headerlink" href="#equation-e64af83e-97c9-4d0b-852e-fee4cb173427" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2eac97a6-9dcb-4e73-be14-44654b734204">
+<span class="eqno">(3.28)<a class="headerlink" href="#equation-2eac97a6-9dcb-4e73-be14-44654b734204" title="Permalink to this equation">#</a></span>\[\begin{align}
 2x_1 + 5x_2 &amp;= 2 \\
 -4x_1 + 3x_2 &amp;= -30
 \end{align}\]</div>
@@ -479,24 +465,24 @@ substitution. This entire procedure is called Gauss-Jordan elimination with
 backsubstitution.</p>
 <ol class="arabic">
 <li><p>Rewrite the equations as <span class="math notranslate nohighlight">\(\vv{A}\vv{x} = \vv{b}\)</span> using a matrix and vectors</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2fb41bba-9d94-4f9b-a7ec-6222f337b1c3">
-<span class="eqno">(3.29)<a class="headerlink" href="#equation-2fb41bba-9d94-4f9b-a7ec-6222f337b1c3" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-102664c7-2d5e-4524-b9a2-3e7a69887a13">
+<span class="eqno">(3.29)<a class="headerlink" href="#equation-102664c7-2d5e-4524-b9a2-3e7a69887a13" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix}2 5 \\ -4 3\end{bmatrix}
 \begin{bmatrix}x_1 \\ x_2\end{bmatrix} =
 \begin{bmatrix}2 \\ -30\end{bmatrix}
 \end{equation}\]</div>
 </li>
 <li><p>Form the “augmented” matrix <span class="math notranslate nohighlight">\([\vv{A} \vv{b}]\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-53e79cbe-91dc-46a2-a142-1d6c4f975d1b">
-<span class="eqno">(3.30)<a class="headerlink" href="#equation-53e79cbe-91dc-46a2-a142-1d6c4f975d1b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-122e8b77-79c1-427c-ad8e-1bc8fb402370">
+<span class="eqno">(3.30)<a class="headerlink" href="#equation-122e8b77-79c1-427c-ad8e-1bc8fb402370" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \mathbf{A} = \begin{bmatrix} 2 &amp; 5 &amp; 2\\ -4 &amp; 3 &amp; -30\end{bmatrix}
 \end{equation}\]</div>
 </li>
 <li><p>Perform elementary operations on rows to create “pivot” points in each row.
 The goal is to get a number on the <em>diagonals</em> and zeros below. It is OK to
 have a zero on the diagonal if there are no nonzero values underneath it.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8500bd6f-040f-4634-b9f9-ac1907765e09">
-<span class="eqno">(3.31)<a class="headerlink" href="#equation-8500bd6f-040f-4634-b9f9-ac1907765e09" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d89b12fc-29ea-40e8-91fa-aa029891e2db">
+<span class="eqno">(3.31)<a class="headerlink" href="#equation-d89b12fc-29ea-40e8-91fa-aa029891e2db" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix} 2 &amp; 5 &amp; 2 \\ -4 &amp; 3 &amp; -30 \end{bmatrix}
 \begin{matrix}\vphantom{R_1} \\ +2 R_1 \end{matrix}
 \to \begin{bmatrix} 2 &amp; 5 &amp; 2 \\ 0 &amp; 13 &amp; -26 \end{bmatrix}
@@ -509,8 +495,8 @@ nonzero last column. This would be equivalent to a false equation
 (like <span class="math notranslate nohighlight">\(0=1\)</span>), meaning there is no solution and no further work is needed.</p></li>
 <li><p>Work back up to turn pivot points into ones and get zeros above in each
 column</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1efec4b5-e8cc-4d9f-bb23-f1f3748e21a4">
-<span class="eqno">(3.32)<a class="headerlink" href="#equation-1efec4b5-e8cc-4d9f-bb23-f1f3748e21a4" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-213481e9-5c43-42d9-a26f-831ddd608dc4">
+<span class="eqno">(3.32)<a class="headerlink" href="#equation-213481e9-5c43-42d9-a26f-831ddd608dc4" title="Permalink to this equation">#</a></span>\[\begin{align}
 \begin{bmatrix} 2 &amp; 5 &amp; 2 \\ 0 &amp; 13 &amp; -26 \end{bmatrix}
 \begin{matrix}\vphantom{R_1} \\ \div 13 \end{matrix}
 &amp;\to \begin{bmatrix} 2 &amp; 5 &amp; 2 \\ 0 &amp; 1 &amp; -2 \end{bmatrix}
@@ -522,8 +508,8 @@ column</p>
 </li>
 <li><p>The solution comes from reexpressing the augmented matrix as
 <span class="math notranslate nohighlight">\(\vv{A} \vv{x} = \vv{b}\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4f81e2df-74f7-47d3-9532-97e1cdf8f96a">
-<span class="eqno">(3.33)<a class="headerlink" href="#equation-4f81e2df-74f7-47d3-9532-97e1cdf8f96a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-dd523b0d-a294-4043-bace-0c9c55354a39">
+<span class="eqno">(3.33)<a class="headerlink" href="#equation-dd523b0d-a294-4043-bace-0c9c55354a39" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{bmatrix}
 \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} =
 \begin{bmatrix} 6 \\ -2 \end{bmatrix}
@@ -534,8 +520,8 @@ column</p>
 <div class="admonition-example-pump-circuit admonition">
 <p class="admonition-title">Example: Pump circuit</p>
 <p>Incompressible flow can be written analogous to an electrical circuit as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5f0ed048-24de-40d0-afda-66d4ca47b162">
-<span class="eqno">(3.34)<a class="headerlink" href="#equation-5f0ed048-24de-40d0-afda-66d4ca47b162" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-5d09b107-fda4-4d1b-bbac-729e6dab86f3">
+<span class="eqno">(3.34)<a class="headerlink" href="#equation-5d09b107-fda4-4d1b-bbac-729e6dab86f3" title="Permalink to this equation">#</a></span>\[\begin{equation}
 -\Delta P = RQ
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\Delta P\)</span> is the pressure change, <em>R</em> is the resistance, and <em>Q</em> is the
@@ -543,8 +529,8 @@ volumetric flow rate. For the following pump “circuit”:</p>
 <a class="reference internal image-reference" href="../_images/FluidCircuitImage.png"><img alt="Fluid System Modeled as Circuit" class="align-center" src="../_images/FluidCircuitImage.png" style="width: 500px;" />
 </a>
 <p>The pressure and mass balances for the nodes and loop give:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-63c613d4-bd1d-4b6d-b7e8-da6e812a1cca">
-<span class="eqno">(3.35)<a class="headerlink" href="#equation-63c613d4-bd1d-4b6d-b7e8-da6e812a1cca" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-3f8fa17a-c6cd-4e6e-924d-23d7208c8468">
+<span class="eqno">(3.35)<a class="headerlink" href="#equation-3f8fa17a-c6cd-4e6e-924d-23d7208c8468" title="Permalink to this equation">#</a></span>\[\begin{align}
 Q_1 &amp;+ Q_3 = Q_2 \\
 Q_2 &amp;= Q_1 + Q_3 \\
 80 &amp;= 10Q_2 + 20Q_1 \\
@@ -553,16 +539,16 @@ Q_2 &amp;= Q_1 + Q_3 \\
 <p>Find <span class="math notranslate nohighlight">\(Q_1\)</span>, <span class="math notranslate nohighlight">\(Q_2\)</span>, and <span class="math notranslate nohighlight">\(Q_3\)</span>.</p>
 <hr class="docutils" />
 <p>First, rearrange the equations into consistent linear form:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c2403caa-a54e-4857-91c0-c9748a90735e">
-<span class="eqno">(3.36)<a class="headerlink" href="#equation-c2403caa-a54e-4857-91c0-c9748a90735e" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-cac2c5a4-efd8-48e8-841a-a7c798b12172">
+<span class="eqno">(3.36)<a class="headerlink" href="#equation-cac2c5a4-efd8-48e8-841a-a7c798b12172" title="Permalink to this equation">#</a></span>\[\begin{align}
 Q_1 - Q_2 + Q_3 &amp;= 0 \\
 Q_1 - Q_2 + Q_3 &amp;= 0 \\
 20Q_1 + 10Q_2 + 0Q_3 &amp;= 80 \\
 0Q_1 + 10Q_2 + 25Q_3 &amp;= 90
 \end{align}\]</div>
 <p>Then, rewrite using matrix representation:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-881c325a-a08d-4d23-8a91-3167b0b74846">
-<span class="eqno">(3.37)<a class="headerlink" href="#equation-881c325a-a08d-4d23-8a91-3167b0b74846" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1136ccfb-1b1f-48aa-a603-3bf064b49704">
+<span class="eqno">(3.37)<a class="headerlink" href="#equation-1136ccfb-1b1f-48aa-a603-3bf064b49704" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix}
 1 &amp; -1 &amp; 1 \\
 1 &amp; -1 &amp; 1 \\
@@ -579,8 +565,8 @@ Q_1 \\ Q_2 \\ Q_3
 <p>Now, perform Gauss-Jordan elimination steps to solve for the unknown flow rates.
 We form the augmented matrix, then use Row 1 to eliminate values in Rows 2 and
 3:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-704a5882-f5a0-4847-bc52-fbd07592651b">
-<span class="eqno">(3.38)<a class="headerlink" href="#equation-704a5882-f5a0-4847-bc52-fbd07592651b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-193f7e2f-d772-4b69-9bae-5c3f3689c145">
+<span class="eqno">(3.38)<a class="headerlink" href="#equation-193f7e2f-d772-4b69-9bae-5c3f3689c145" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix}
 1 &amp; -1 &amp; 1 &amp; 0 \\
 -1 &amp; 1 &amp; -1 &amp; 0 \\
@@ -600,8 +586,8 @@ We form the augmented matrix, then use Row 1 to eliminate values in Rows 2 and
 \end{equation}\]</div>
 <p>Row 2 is all zeros because it was a redundant equation to Row 1. Swap Rows 2 and
 4, then use the new Row 2 to eliminate value in Row 3:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6895c373-f5d2-4c62-ad4a-7daf51b78032">
-<span class="eqno">(3.39)<a class="headerlink" href="#equation-6895c373-f5d2-4c62-ad4a-7daf51b78032" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-49169fe3-bf17-48c2-8564-f4ed20d1994f">
+<span class="eqno">(3.39)<a class="headerlink" href="#equation-49169fe3-bf17-48c2-8564-f4ed20d1994f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix}
 1 &amp; -1 &amp; 1 &amp; 0 \\
 0 &amp; 10 &amp; 25 &amp; 90 \\
@@ -619,8 +605,8 @@ We form the augmented matrix, then use Row 1 to eliminate values in Rows 2 and
 \end{bmatrix}
 \end{equation}\]</div>
 <p>Normalize Row 3 (divide by -95), then eliminate values above in Column 3:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4ed0f448-99ff-4c23-9595-c7b8b5a51120">
-<span class="eqno">(3.40)<a class="headerlink" href="#equation-4ed0f448-99ff-4c23-9595-c7b8b5a51120" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7afede5d-7f82-4aa1-8d0f-50bcb9cd16ce">
+<span class="eqno">(3.40)<a class="headerlink" href="#equation-7afede5d-7f82-4aa1-8d0f-50bcb9cd16ce" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix}
 1 &amp; -1 &amp; 1 &amp; 0 \\
 0 &amp; 10 &amp; 25 &amp; 90 \\
@@ -639,8 +625,8 @@ We form the augmented matrix, then use Row 1 to eliminate values in Rows 2 and
 \end{bmatrix}
 \end{equation}\]</div>
 <p>Normalize Row 2 (divide by 10), then eliminate values above in Column 2:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1e43da6c-3617-4be6-ab1b-9595d88c5019">
-<span class="eqno">(3.41)<a class="headerlink" href="#equation-1e43da6c-3617-4be6-ab1b-9595d88c5019" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-dfdcd553-8e42-47e5-8bc3-d938d14b7bd3">
+<span class="eqno">(3.41)<a class="headerlink" href="#equation-dfdcd553-8e42-47e5-8bc3-d938d14b7bd3" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{bmatrix}
 1 &amp; -1 &amp; 0 &amp; -2 \\
 0 &amp; 1 &amp; 0 &amp; 4 \\
@@ -667,8 +653,8 @@ We form the augmented matrix, then use Row 1 to eliminate values in Rows 2 and
 from the row-reduced augmented matrix.</p>
 <ul>
 <li><p>There is no solution if there is a row of zeroes with a nonzero last column.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-be3181c4-62ba-4ae4-8357-c9959dcc51db">
-<span class="eqno">(3.42)<a class="headerlink" href="#equation-be3181c4-62ba-4ae4-8357-c9959dcc51db" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ff73b6ad-280f-4854-a441-ee791ef26ae8">
+<span class="eqno">(3.42)<a class="headerlink" href="#equation-ff73b6ad-280f-4854-a441-ee791ef26ae8" title="Permalink to this equation">#</a></span>\[\begin{align}
 \begin{bmatrix}
 3 &amp; 2 &amp; 1 &amp; 3 \\
 2 &amp; 1 &amp; 1 &amp; 0 \\
@@ -697,8 +683,8 @@ from the row-reduced augmented matrix.</p>
 the system has no solution.</p>
 </li>
 <li><p>There is one solution if there is one pivot for each unknown.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e7e310fc-0f97-4074-84e3-d16ef29926a2">
-<span class="eqno">(3.43)<a class="headerlink" href="#equation-e7e310fc-0f97-4074-84e3-d16ef29926a2" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e48ff103-f37e-4cec-a66d-8871a82d7aee">
+<span class="eqno">(3.43)<a class="headerlink" href="#equation-e48ff103-f37e-4cec-a66d-8871a82d7aee" title="Permalink to this equation">#</a></span>\[\begin{align}
 \begin{bmatrix}
 3 &amp; 2 &amp; 1 &amp; 3 \\
 2 &amp; 1 &amp; 1 &amp; 0 \\
@@ -745,8 +731,8 @@ the system has no solution.</p>
 <span class="math notranslate nohighlight">\(x_2 = 18\)</span>, and <span class="math notranslate nohighlight">\(x_3 = 12\)</span>.</p>
 </li>
 <li><p>There are infinitely many solutions if there are fewer pivots than unknowns.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-29a92fdc-16f9-46e7-8d82-37567181319a">
-<span class="eqno">(3.44)<a class="headerlink" href="#equation-29a92fdc-16f9-46e7-8d82-37567181319a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1183c0b8-55c3-4194-ba8c-ddcd02d91f4a">
+<span class="eqno">(3.44)<a class="headerlink" href="#equation-1183c0b8-55c3-4194-ba8c-ddcd02d91f4a" title="Permalink to this equation">#</a></span>\[\begin{align}
 \begin{bmatrix}
 3 &amp; 2 &amp; 1 &amp; 3 \\
 2 &amp; 1 &amp; 1 &amp; 0 \\
@@ -786,8 +772,8 @@ solution is <span class="math notranslate nohighlight">\(x_1 = -x_3 - 3\)</span>
 <h2><span class="section-number">3.3.2. </span>Skill builder problems<a class="headerlink" href="#skill-builder-problems" title="Link to this heading">#</a></h2>
 <ol class="arabic">
 <li><p>Solve using Gauss-Jordan elimination</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f076edea-7876-471f-8bde-0b08e44d7a22">
-<span class="eqno">(3.45)<a class="headerlink" href="#equation-f076edea-7876-471f-8bde-0b08e44d7a22" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-17349980-173c-4a92-bbc9-77c0d1b4dca6">
+<span class="eqno">(3.45)<a class="headerlink" href="#equation-17349980-173c-4a92-bbc9-77c0d1b4dca6" title="Permalink to this equation">#</a></span>\[\begin{align}
 5 x_1 - 2 x_2 &amp;= 20.9 \\
 -x_1 + 4x_2 &amp;= -19.3
 \end{align}\]</div>
@@ -795,8 +781,8 @@ solution is <span class="math notranslate nohighlight">\(x_1 = -x_3 - 3\)</span>
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Form the augmented matrix and perform row reduction:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f5827106-87aa-4782-b681-544c1dab744b">
-<span class="eqno">(3.46)<a class="headerlink" href="#equation-f5827106-87aa-4782-b681-544c1dab744b" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-471cb477-934a-454b-9cb7-f37b0453dde7">
+<span class="eqno">(3.46)<a class="headerlink" href="#equation-471cb477-934a-454b-9cb7-f37b0453dde7" title="Permalink to this equation">#</a></span>\[\begin{align}
 \begin{bmatrix} 5 &amp; -2 &amp; 20.9 \\ -1 &amp; 4 &amp; -19.3 \end{bmatrix}
 \begin{matrix} {\rm swap} \\ \vphantom{R_2}\end{matrix}
 &amp;\to \begin{bmatrix} -1 &amp; 4 &amp; -19.3 \\ 5 &amp; -2 &amp; 20.9\end{bmatrix}
@@ -813,16 +799,16 @@ solution is <span class="math notranslate nohighlight">\(x_1 = -x_3 - 3\)</span>
 </div>
 </details></li>
 <li><p>Solve using Gauss-Jordan elimination</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3bd7ac64-d8f0-4dec-8e19-99e0c4f51b10">
-<span class="eqno">(3.47)<a class="headerlink" href="#equation-3bd7ac64-d8f0-4dec-8e19-99e0c4f51b10" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f00fbeaf-c634-46f1-91ad-30270a212c66">
+<span class="eqno">(3.47)<a class="headerlink" href="#equation-f00fbeaf-c634-46f1-91ad-30270a212c66" title="Permalink to this equation">#</a></span>\[\begin{align}
 x_1 + 4 x_2 = 8 \\
 2 x_1 + 8 x_2 = 17
 \end{align}\]</div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<div class="amsmath math notranslate nohighlight" id="equation-4d4c8437-39c4-4c0d-9005-aa2f38de33a0">
-<span class="eqno">(3.48)<a class="headerlink" href="#equation-4d4c8437-39c4-4c0d-9005-aa2f38de33a0" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4e85192b-421f-4b62-bb06-963b5356108e">
+<span class="eqno">(3.48)<a class="headerlink" href="#equation-4e85192b-421f-4b62-bb06-963b5356108e" title="Permalink to this equation">#</a></span>\[\begin{align}
 \begin{bmatrix} 1 &amp; 4 &amp; 8 \\ 2 &amp; 8 &amp; 17 \end{bmatrix}
 \begin{matrix} \vphantom{R_1} \\ -2 R_1\end{matrix}
 &amp;\to \begin{bmatrix} 1 &amp; 4 &amp; 8 \\ 0 &amp; 0 &amp; 1\end{bmatrix}
@@ -831,8 +817,8 @@ x_1 + 4 x_2 = 8 \\
 </div>
 </details></li>
 <li><p>Solve using Gauss-Jordan elimination</p>
-<div class="amsmath math notranslate nohighlight" id="equation-dc52ba4a-39c6-412c-b054-7c115a983e2c">
-<span class="eqno">(3.49)<a class="headerlink" href="#equation-dc52ba4a-39c6-412c-b054-7c115a983e2c" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e26ebd9b-76c1-411f-b036-d31de5eb7cd1">
+<span class="eqno">(3.49)<a class="headerlink" href="#equation-e26ebd9b-76c1-411f-b036-d31de5eb7cd1" title="Permalink to this equation">#</a></span>\[\begin{align}
 x_1 + x_2 + x_2 = 2 \\
 4x_2 + 6 x_3 = -12 \\
 x_1 + x_2 + x_3 = 2
@@ -840,8 +826,8 @@ x_1 + x_2 + x_3 = 2
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<div class="amsmath math notranslate nohighlight" id="equation-36c94ea6-0859-4ef1-b190-0f13f71bd9eb">
-<span class="eqno">(3.50)<a class="headerlink" href="#equation-36c94ea6-0859-4ef1-b190-0f13f71bd9eb" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-576770de-c0e8-4f3d-a9b3-3422e610d07f">
+<span class="eqno">(3.50)<a class="headerlink" href="#equation-576770de-c0e8-4f3d-a9b3-3422e610d07f" title="Permalink to this equation">#</a></span>\[\begin{align}
 \begin{bmatrix}
 0 &amp; 1 &amp; 1 &amp; -2 \\
 0 &amp; 4 &amp; 6 &amp; -12 \\
@@ -890,8 +876,8 @@ x_1 + x_2 + x_3 = 2
 </div>
 </details></li>
 <li><p>Solve using Gauss-Jordan elimination</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5be1269b-e38a-481a-b753-6175e487d40f">
-<span class="eqno">(3.51)<a class="headerlink" href="#equation-5be1269b-e38a-481a-b753-6175e487d40f" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-eee8c440-bfa9-4d6b-9366-d1ea68deaeb2">
+<span class="eqno">(3.51)<a class="headerlink" href="#equation-eee8c440-bfa9-4d6b-9366-d1ea68deaeb2" title="Permalink to this equation">#</a></span>\[\begin{align}
 4x_2 - 11x_3 &amp;= 24 \\
 3x_1 - 11x_2 - 2x_3 &amp;= -6 \\
 6x_1 - 17x_2 + x_3 &amp;= 18
@@ -899,8 +885,8 @@ x_1 + x_2 + x_3 = 2
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<div class="amsmath math notranslate nohighlight" id="equation-1b3833eb-8d7e-452c-be16-2218692ca4b4">
-<span class="eqno">(3.52)<a class="headerlink" href="#equation-1b3833eb-8d7e-452c-be16-2218692ca4b4" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-8dd24cbe-8994-483d-a65d-98daa81db83f">
+<span class="eqno">(3.52)<a class="headerlink" href="#equation-8dd24cbe-8994-483d-a65d-98daa81db83f" title="Permalink to this equation">#</a></span>\[\begin{align}
 \begin{bmatrix}
 0 &amp; 4 &amp; 4 &amp; 24 \\
 3 &amp; -11 &amp; -2 &amp; -6 \\
@@ -944,8 +930,8 @@ x_1 + x_2 + x_3 = 2
 \end{bmatrix}
 \end{align}\]</div>
 <p class="sd-card-text">Hence,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6a8c9eb0-74b6-4e77-bc34-b3a7abaa3da4">
-<span class="eqno">(3.53)<a class="headerlink" href="#equation-6a8c9eb0-74b6-4e77-bc34-b3a7abaa3da4" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-3610faff-b2b5-4678-b5b4-fc8345fb842c">
+<span class="eqno">(3.53)<a class="headerlink" href="#equation-3610faff-b2b5-4678-b5b4-fc8345fb842c" title="Permalink to this equation">#</a></span>\[\begin{align}
 x_1 - 3x_3 &amp;= 20 \to &amp; x_1 &amp;= 3 x_3 + 20 \\
 x_2 + x_3 &amp;= 6 \to &amp; x_2 &amp;= x_3 + 6
 \end{align}\]</div>
@@ -953,16 +939,16 @@ x_2 + x_3 &amp;= 6 \to &amp; x_2 &amp;= x_3 + 6
 </div>
 </details></li>
 <li><p>Solve using Gauss-Jordan elimination:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4e49f19f-4287-4d7c-b811-e376d453ee0a">
-<span class="eqno">(3.54)<a class="headerlink" href="#equation-4e49f19f-4287-4d7c-b811-e376d453ee0a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6dbe2896-7911-45a9-8866-2f822757d6e5">
+<span class="eqno">(3.54)<a class="headerlink" href="#equation-6dbe2896-7911-45a9-8866-2f822757d6e5" title="Permalink to this equation">#</a></span>\[\begin{align}
 2x_1 - x_2 + 3x_3 &amp;= -1 \\
 -4x_1 + 2x_2 - 6x_{3} &amp;= 2
 \end{align}\]</div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<div class="amsmath math notranslate nohighlight" id="equation-0506fb2f-65be-4d5e-bd26-53294f668e41">
-<span class="eqno">(3.55)<a class="headerlink" href="#equation-0506fb2f-65be-4d5e-bd26-53294f668e41" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-44a56fda-284a-4f7a-bc5d-43262400852d">
+<span class="eqno">(3.55)<a class="headerlink" href="#equation-44a56fda-284a-4f7a-bc5d-43262400852d" title="Permalink to this equation">#</a></span>\[\begin{align}
 \begin{bmatrix}
 2 &amp; -1 &amp; 3 &amp; -1 \\
 -4 &amp; 2 &amp; -6 &amp; -2
@@ -974,8 +960,8 @@ x_2 + x_3 &amp;= 6 \to &amp; x_2 &amp;= x_3 + 6
 \end{bmatrix}
 \end{align}\]</div>
 <p class="sd-card-text">Hence,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-50deec05-3bd8-44af-8ea7-7836a014e438">
-<span class="eqno">(3.56)<a class="headerlink" href="#equation-50deec05-3bd8-44af-8ea7-7836a014e438" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-cb19a5e3-5296-4758-aba0-dbede136751d">
+<span class="eqno">(3.56)<a class="headerlink" href="#equation-cb19a5e3-5296-4758-aba0-dbede136751d" title="Permalink to this equation">#</a></span>\[\begin{equation}
 2x_1 - x_2 + 3x_3 = -1 \to \quad x_1 = \frac{1}{2}(x_2 + x_3 - 1)
 \end{equation}\]</div>
 <p class="sd-card-text">with <span class="math notranslate nohighlight">\(x_2\)</span> and <span class="math notranslate nohighlight">\(x_3\)</span> free.</p>
@@ -1040,14 +1026,16 @@ x_2 + x_3 &amp;= 6 \to &amp; x_2 &amp;= x_3 + 6
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#number-of-solutions">3.3.1. Number of solutions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill-builder-problems">3.3.2. Skill builder problems</a></li>
@@ -1099,8 +1087,8 @@ By Michael P. Howard
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

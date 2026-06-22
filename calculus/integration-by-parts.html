@@ -16,41 +16,44 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -67,6 +70,7 @@
     <link rel="prev" title="1.7. Integration using substitution" href="integration-substitution.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -82,19 +86,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -102,7 +95,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -110,8 +102,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -127,7 +119,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -157,15 +150,11 @@
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
@@ -237,9 +226,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -369,7 +363,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -383,25 +377,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -441,38 +427,38 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="integration-by-parts">
 <h1><span class="section-number">1.8. </span>Integration by parts<a class="headerlink" href="#integration-by-parts" title="Link to this heading">#</a></h1>
 <p>Integrals like</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8a7b52b9-3cc8-49e4-b817-d8067211410d">
-<span class="eqno">(1.166)<a class="headerlink" href="#equation-8a7b52b9-3cc8-49e4-b817-d8067211410d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-92c5600d-d400-4834-a75c-f578446c201a">
+<span class="eqno">(1.166)<a class="headerlink" href="#equation-92c5600d-d400-4834-a75c-f578446c201a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \int x e^{-6 x} \d{x}
 \end{equation}\]</div>
 <p>are not solvable by <a class="reference internal" href="integration-substitution.html"><span class="std std-doc">substitution</span></a>, but they look
 like they are related closely enough that you may be able to! What to do here?
 Recall the <a class="reference internal" href="derivative-rules.html"><span class="std std-doc">product rule</span></a> for two functions <em>u</em> and <em>v</em>,
 then integrate:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a2ea31c7-8a3c-4a7c-bb14-10427fe5c16a">
-<span class="eqno">(1.167)<a class="headerlink" href="#equation-a2ea31c7-8a3c-4a7c-bb14-10427fe5c16a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-9b663516-264f-4577-b0c4-de5b694eb1ea">
+<span class="eqno">(1.167)<a class="headerlink" href="#equation-9b663516-264f-4577-b0c4-de5b694eb1ea" title="Permalink to this equation">#</a></span>\[\begin{align}
 (uv)' &amp;= uv' + v u' \\
 uv &amp;= \int u \d{v} + \int v \d{u}
 \end{align}\]</div>
 <p>Rearranging gives the familiar form:</p>
 <aside class="topic">
 <p class="topic-title">Integration by parts</p>
-<div class="amsmath math notranslate nohighlight" id="equation-28f903a9-2e4a-4a2d-b3f3-b777e45f23f3">
-<span class="eqno">(1.168)<a class="headerlink" href="#equation-28f903a9-2e4a-4a2d-b3f3-b777e45f23f3" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-9999055e-4224-465e-8cf3-4a930100cacd">
+<span class="eqno">(1.168)<a class="headerlink" href="#equation-9999055e-4224-465e-8cf3-4a930100cacd" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \int u \d{v} = uv - \int v \d{u}
 \end{equation}\]</div>
 <p>To apply this technique, identify a <em>u</em> and a <span class="math notranslate nohighlight">\(\d{v}\)</span>. Differentiate <span class="math notranslate nohighlight">\(u\)</span> and
 integrate <span class="math notranslate nohighlight">\(\d{v}\)</span>, then apply the formula.</p>
 </aside>
 <p>Let’s try this for the integral above with</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6ece72fa-e433-4741-a8ea-a6c52ec9a7d2">
-<span class="eqno">(1.169)<a class="headerlink" href="#equation-6ece72fa-e433-4741-a8ea-a6c52ec9a7d2" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5d28236a-1405-49f1-a660-0cee63b7c93a">
+<span class="eqno">(1.169)<a class="headerlink" href="#equation-5d28236a-1405-49f1-a660-0cee63b7c93a" title="Permalink to this equation">#</a></span>\[\begin{align}
 u &amp;= x &amp; \d{v} &amp;= e^{-6x} \d{x} \\
 \d{u} &amp;= \d{x} &amp; v &amp;= -\frac{e^{-6x}}{6}
 \end{align}\]</div>
 <p>so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f127295d-1b78-4ed7-ad5d-91b866d622fd">
-<span class="eqno">(1.170)<a class="headerlink" href="#equation-f127295d-1b78-4ed7-ad5d-91b866d622fd" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4f993d4e-e1e6-449c-b934-390e9421da13">
+<span class="eqno">(1.170)<a class="headerlink" href="#equation-4f993d4e-e1e6-449c-b934-390e9421da13" title="Permalink to this equation">#</a></span>\[\begin{align}
 \int x e^{-6x} \d{x}
 &amp;= x\frac{-e^{-6x}}{6} - \int\frac{-1}{6} e^{-6x} \d{x} \\
 &amp;= -\frac{xe^{-6x}}{6} + \frac{1}{6} \int e^{-6x} \d{x} \\
@@ -492,20 +478,20 @@ The acronym L.I.A.T.E. can help make this choice:</p>
 <div class="admonition-example-integration-by-parts-1 admonition">
 <p class="admonition-title">Example: Integration by parts 1</p>
 <p>Evaluate</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ee8caf9c-b32e-49de-94da-9809250068fe">
-<span class="eqno">(1.171)<a class="headerlink" href="#equation-ee8caf9c-b32e-49de-94da-9809250068fe" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-76d33d0e-d571-423e-a3a0-9f1fe2a8630a">
+<span class="eqno">(1.171)<a class="headerlink" href="#equation-76d33d0e-d571-423e-a3a0-9f1fe2a8630a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \int(3x+5)\cos\left(\frac{x}{4}\right) \d{x}
 \end{equation}\]</div>
 <hr class="docutils" />
 <p>Let</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3ec439dd-b033-479b-91c3-64583a67262d">
-<span class="eqno">(1.172)<a class="headerlink" href="#equation-3ec439dd-b033-479b-91c3-64583a67262d" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-fa467ef1-483d-4756-91f6-1daf9991953d">
+<span class="eqno">(1.172)<a class="headerlink" href="#equation-fa467ef1-483d-4756-91f6-1daf9991953d" title="Permalink to this equation">#</a></span>\[\begin{align}
 u &amp;= 3x+5 &amp; \d{v} &amp;= \cos\left(\frac{x}{4}\right) \d{x} \\
 \d{u} &amp;= 3 \d{x} &amp; v &amp;= 4\sin\left(\frac{x}{4}\right)
 \end{align}\]</div>
 <p>so:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-100b3056-9aa4-4731-8b94-8ba69c9129e4">
-<span class="eqno">(1.173)<a class="headerlink" href="#equation-100b3056-9aa4-4731-8b94-8ba69c9129e4" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1dfaeef3-a71c-4e1a-8714-04206424140d">
+<span class="eqno">(1.173)<a class="headerlink" href="#equation-1dfaeef3-a71c-4e1a-8714-04206424140d" title="Permalink to this equation">#</a></span>\[\begin{align}
 \int(3x+5)\cos\left(\frac{x}{4}\right) \d{x}
 &amp;= (3x+5)\left[4\sin\left(\frac{x}{4}\right)\right]
  - \int 4 \sin \left(\frac{x}{4}\right) 3 \d{x} \\
@@ -517,20 +503,20 @@ u &amp;= 3x+5 &amp; \d{v} &amp;= \cos\left(\frac{x}{4}\right) \d{x} \\
 <div class="admonition-example-integration-by-parts-2 admonition">
 <p class="admonition-title">Example: Integration by parts 2</p>
 <p>Evaluate</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c0930771-cd65-4480-9d28-61091899e57c">
-<span class="eqno">(1.174)<a class="headerlink" href="#equation-c0930771-cd65-4480-9d28-61091899e57c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-cb1e646a-80ce-4a62-abe6-9513738f015f">
+<span class="eqno">(1.174)<a class="headerlink" href="#equation-cb1e646a-80ce-4a62-abe6-9513738f015f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \int \ln x \d{x}
 \end{equation}\]</div>
 <hr class="docutils" />
 <p>Let</p>
-<div class="amsmath math notranslate nohighlight" id="equation-caff0e14-5b77-4291-bd40-f6b3cf22e3f1">
-<span class="eqno">(1.175)<a class="headerlink" href="#equation-caff0e14-5b77-4291-bd40-f6b3cf22e3f1" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-68a89959-5f54-42ab-a3f2-e3abc79639d4">
+<span class="eqno">(1.175)<a class="headerlink" href="#equation-68a89959-5f54-42ab-a3f2-e3abc79639d4" title="Permalink to this equation">#</a></span>\[\begin{align}
 u &amp;= \ln x &amp; \d{v} &amp;= \d{x} \\
 \d{u} &amp;= \frac{1}{x} \d{x} &amp; v &amp;= x
 \end{align}\]</div>
 <p>so:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-09539e5c-efa2-4cbf-9f86-e40c33b94a83">
-<span class="eqno">(1.176)<a class="headerlink" href="#equation-09539e5c-efa2-4cbf-9f86-e40c33b94a83" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-923cd01d-803e-4836-9955-4a5bf09e22a8">
+<span class="eqno">(1.176)<a class="headerlink" href="#equation-923cd01d-803e-4836-9955-4a5bf09e22a8" title="Permalink to this equation">#</a></span>\[\begin{align}
 \int \ln x \d{x} &amp;= x \ln x - \int\frac{1}{x} x \d{x} \\
 &amp;= x \ln x - \int \d{x} \\
 &amp;= x \ln x - x + c \\
@@ -539,20 +525,20 @@ u &amp;= \ln x &amp; \d{v} &amp;= \d{x} \\
 <div class="admonition-example-integration-by-parts-3 admonition">
 <p class="admonition-title">Example: Integration by parts 3</p>
 <p>Evaluate</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a8ce63c1-4eed-408a-a2c0-d3be4623586c">
-<span class="eqno">(1.177)<a class="headerlink" href="#equation-a8ce63c1-4eed-408a-a2c0-d3be4623586c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f50ba7c8-aa6e-4d72-982f-6cf4796eace8">
+<span class="eqno">(1.177)<a class="headerlink" href="#equation-f50ba7c8-aa6e-4d72-982f-6cf4796eace8" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \int x^5 \sqrt{x^3+1} \d{x}
 \end{equation}\]</div>
 <hr class="docutils" />
 <p>Let</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bd4e51d5-a2de-413a-9787-099f94feec99">
-<span class="eqno">(1.178)<a class="headerlink" href="#equation-bd4e51d5-a2de-413a-9787-099f94feec99" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-bb3befa8-026e-4cd4-9060-c6fcb5845d51">
+<span class="eqno">(1.178)<a class="headerlink" href="#equation-bb3befa8-026e-4cd4-9060-c6fcb5845d51" title="Permalink to this equation">#</a></span>\[\begin{align}
 u &amp;= x^3 &amp; \d{v} &amp;= x^2\sqrt{x^3+1} \d{x} \\
 \d{u} &amp;= 3x^2 \d{x} &amp; v &amp;= \frac{2}{9}(x^3+1)^{3/2}
 \end{align}\]</div>
 <p>so:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b54aaba1-d986-4b3d-8f6f-54a48a38eb18">
-<span class="eqno">(1.179)<a class="headerlink" href="#equation-b54aaba1-d986-4b3d-8f6f-54a48a38eb18" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-3865d128-daf3-4cba-a39c-fcf299dd880c">
+<span class="eqno">(1.179)<a class="headerlink" href="#equation-3865d128-daf3-4cba-a39c-fcf299dd880c" title="Permalink to this equation">#</a></span>\[\begin{align}
 \int(x^5)(\sqrt(x^3+1))dx
 &amp;= x^3\frac{2}{9}(x^3+1)^{3/2}
  - \int\left[\frac{2}{9}(x^3+1)^{3/2}\right]3x^2dx \\
@@ -565,19 +551,19 @@ u &amp;= x^3 &amp; \d{v} &amp;= x^2\sqrt{x^3+1} \d{x} \\
 <section id="tabular-method">
 <h2><span class="section-number">1.8.2. </span>Tabular method<a class="headerlink" href="#tabular-method" title="Link to this heading">#</a></h2>
 <p>To integrate</p>
-<div class="amsmath math notranslate nohighlight" id="equation-259ae67b-d6a2-498a-b3b2-b93f7a8667e5">
-<span class="eqno">(1.180)<a class="headerlink" href="#equation-259ae67b-d6a2-498a-b3b2-b93f7a8667e5" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f0c487f3-16b2-4530-93ff-0e43aa21b32a">
+<span class="eqno">(1.180)<a class="headerlink" href="#equation-f0c487f3-16b2-4530-93ff-0e43aa21b32a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \int x^4 e^{x/2} \d{x}
 \end{equation}\]</div>
 <p>by parts, let</p>
-<div class="amsmath math notranslate nohighlight" id="equation-396ddcc5-1956-4a65-8d78-02a2f5d5c0d4">
-<span class="eqno">(1.181)<a class="headerlink" href="#equation-396ddcc5-1956-4a65-8d78-02a2f5d5c0d4" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e06784bd-cf64-4696-84c3-0f8a0cd2aed9">
+<span class="eqno">(1.181)<a class="headerlink" href="#equation-e06784bd-cf64-4696-84c3-0f8a0cd2aed9" title="Permalink to this equation">#</a></span>\[\begin{align}
 u &amp;= x^4 &amp; \d{v} &amp;= e^{x/2} \\
 \d{u} &amp;= 4x^3 \d{x} &amp; v &amp;= 2e^{x/2}
 \end{align}\]</div>
 <p>which allows:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-004dce12-a430-4d5f-9aaa-d4a510b4920f">
-<span class="eqno">(1.182)<a class="headerlink" href="#equation-004dce12-a430-4d5f-9aaa-d4a510b4920f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-64116238-94f9-4ccd-be6f-f8baefb05dac">
+<span class="eqno">(1.182)<a class="headerlink" href="#equation-64116238-94f9-4ccd-be6f-f8baefb05dac" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \int x^4e^{x/2} \d{x} = 2 x^4 e^{x/2} - \int 8 x^3 e^{x/2} \d{x}
 \end{equation}\]</div>
 <p>We will need to integrate by parts again, and again, and again… but there is
@@ -624,8 +610,8 @@ last nonzero row for <em>u</em>. Multiply across rows using opposite signs.</p>
 </table>
 </div>
 <p>The result is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-39371094-55df-40c3-833b-1465a6e99a94">
-<span class="eqno">(1.183)<a class="headerlink" href="#equation-39371094-55df-40c3-833b-1465a6e99a94" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-54bfdc63-5c18-4153-b8b6-f82bbb834e67">
+<span class="eqno">(1.183)<a class="headerlink" href="#equation-54bfdc63-5c18-4153-b8b6-f82bbb834e67" title="Permalink to this equation">#</a></span>\[\begin{align}
 \int x^4 e^{x/2} \d{x} &amp;= x^4 (2e^{x/2}) - 4x^3 (4e^{x/2}) \\
 &amp;+ 12x^2 (8e^{x/2}) - 24x (16e^{x/2}) + 24 (32e^{x/2}) \\
 &amp;= (2x^4 - 16x^3 + 96x^2 - 384x + 768) e^{x/2}
@@ -640,14 +626,14 @@ last nonzero row for <em>u</em>. Multiply across rows using opposite signs.</p>
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Select the following parts:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5682d528-5953-4f84-ac74-55330ef621af">
-<span class="eqno">(1.184)<a class="headerlink" href="#equation-5682d528-5953-4f84-ac74-55330ef621af" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b3469798-8216-43db-903e-ac990cdc2b17">
+<span class="eqno">(1.184)<a class="headerlink" href="#equation-b3469798-8216-43db-903e-ac990cdc2b17" title="Permalink to this equation">#</a></span>\[\begin{align}
 u &amp;= \ln x &amp; \d{v} &amp;= (x+2)\d{x} \\
 \d{u} &amp;= \frac{1}{x}\d{x} &amp; v &amp;= \frac{x^2}{2} + 2x
 \end{align}\]</div>
 <p class="sd-card-text">so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a4f49561-9450-4733-9e42-a3816f5dd7a2">
-<span class="eqno">(1.185)<a class="headerlink" href="#equation-a4f49561-9450-4733-9e42-a3816f5dd7a2" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-52483905-da78-4481-8574-16550ae6989a">
+<span class="eqno">(1.185)<a class="headerlink" href="#equation-52483905-da78-4481-8574-16550ae6989a" title="Permalink to this equation">#</a></span>\[\begin{align}
 \int (x+2)\ln x \d{x} &amp;= \left( \frac{x^2}{2} + 2x \right)\ln x -
   \int \left( \frac{x^2}{2} + 2x \right) \frac{1}{x} \d{x} \\
   &amp;= \left( \frac{x^2}{2} + 2x \right)\ln x -
@@ -706,14 +692,14 @@ Use the tabular method for this.</p>
 </table>
 </div>
 <p class="sd-card-text">so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e030e099-8d9d-4256-9ab1-3cfb4b0b0ac5">
-<span class="eqno">(1.186)<a class="headerlink" href="#equation-e030e099-8d9d-4256-9ab1-3cfb4b0b0ac5" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-aab7ec9b-2142-40d2-94af-4d3b4dd3e6b0">
+<span class="eqno">(1.186)<a class="headerlink" href="#equation-aab7ec9b-2142-40d2-94af-4d3b4dd3e6b0" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \int x^5\sin x \d{x} = -x^5 \cos x + 5x^4 \sin x + 20x^3 \cos x -
   60x^2 \sin x - 120x \cos x + 120 \sin x + c
 \end{equation}\]</div>
 <p class="sd-card-text">To make the solution look cleaner, you can factor out <span class="math notranslate nohighlight">\(\cos x\)</span> and <span class="math notranslate nohighlight">\(\ sin x\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3771eac4-2321-4b5f-9310-902d9970f2c0">
-<span class="eqno">(1.187)<a class="headerlink" href="#equation-3771eac4-2321-4b5f-9310-902d9970f2c0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6fb73295-0c07-44de-bb3a-f60fb7d18006">
+<span class="eqno">(1.187)<a class="headerlink" href="#equation-6fb73295-0c07-44de-bb3a-f60fb7d18006" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \int x^5\sin x \d{x} = (-x^5 + 20x^3 - 120x) \cos x +
   (5x^4 - 60x^2 + 120) \sin x + c
 \end{equation}\]</div>
@@ -724,30 +710,30 @@ Use the tabular method for this.</p>
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Select the following parts:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b0637fdd-89af-4fb1-9150-5dc404997d1b">
-<span class="eqno">(1.188)<a class="headerlink" href="#equation-b0637fdd-89af-4fb1-9150-5dc404997d1b" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2afed438-fd7a-475e-bf4b-18d0a61af64e">
+<span class="eqno">(1.188)<a class="headerlink" href="#equation-2afed438-fd7a-475e-bf4b-18d0a61af64e" title="Permalink to this equation">#</a></span>\[\begin{align}
 u &amp;= \cos x &amp; \d{v} &amp;= e^x\d{x} \\
 \d{u} &amp;= -\sin x\d{x} &amp; v &amp;= e^x
 \end{align}\]</div>
 <p class="sd-card-text">so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f7e82841-a19a-401c-8fec-6d47b50e628b">
-<span class="eqno">(1.189)<a class="headerlink" href="#equation-f7e82841-a19a-401c-8fec-6d47b50e628b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e427453d-a437-46b9-a11c-108d710ca201">
+<span class="eqno">(1.189)<a class="headerlink" href="#equation-e427453d-a437-46b9-a11c-108d710ca201" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \int e^x \cos x \d{x} = e^x \cos x + \int e^x \sin x \d{x}
 \end{equation}\]</div>
 <p class="sd-card-text">To evaluate this integral, select new parts:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-137eeda1-2642-4bd9-b502-71e70911d7c9">
-<span class="eqno">(1.190)<a class="headerlink" href="#equation-137eeda1-2642-4bd9-b502-71e70911d7c9" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-74c34b39-e70e-4fc1-99a5-4505f35c9a34">
+<span class="eqno">(1.190)<a class="headerlink" href="#equation-74c34b39-e70e-4fc1-99a5-4505f35c9a34" title="Permalink to this equation">#</a></span>\[\begin{align}
 u &amp;= \sin x, &amp; \d{v} &amp;= e^x\d{x} \\
 \d{u} &amp;= \cos x\d{x} &amp; v &amp;= e^x
 \end{align}\]</div>
 <p class="sd-card-text">so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-52af33ad-1112-497b-bb2f-8dadc696c764">
-<span class="eqno">(1.191)<a class="headerlink" href="#equation-52af33ad-1112-497b-bb2f-8dadc696c764" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-45ec35f4-c656-488f-a2d7-72f20f4f4732">
+<span class="eqno">(1.191)<a class="headerlink" href="#equation-45ec35f4-c656-488f-a2d7-72f20f4f4732" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \int e^x \cos x \d{x} = e^x \cos x+ \left[e^x \sin x - \int e^x \cos x \d{x}\right]
 \end{equation}\]</div>
 <p class="sd-card-text">The same integral appears on both sides! Add them together and solve:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e8588c2a-7372-4313-8736-889ed55ad3c2">
-<span class="eqno">(1.192)<a class="headerlink" href="#equation-e8588c2a-7372-4313-8736-889ed55ad3c2" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-3ac6c8d9-f40f-4bde-b5f3-4285cd585faa">
+<span class="eqno">(1.192)<a class="headerlink" href="#equation-3ac6c8d9-f40f-4bde-b5f3-4285cd585faa" title="Permalink to this equation">#</a></span>\[\begin{align}
 2 \int e^x \cos x \d{x} &amp;= e^x \cos x + e^x \sin x \\
 \int e^x \cos x \d{x} &amp;= \frac{e^x}{2}(\cos x + \sin x) + c
 \end{align}\]</div>
@@ -812,14 +798,16 @@ u &amp;= \sin x, &amp; \d{v} &amp;= e^x\d{x} \\
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-parts">1.8.1. Choosing parts</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabular-method">1.8.2. Tabular method</a></li>
@@ -872,8 +860,8 @@ By Michael P. Howard
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

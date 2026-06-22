@@ -16,41 +16,44 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -67,6 +70,7 @@
     <link rel="prev" title="2.1. Derivatives" href="derivatives.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -82,19 +86,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -102,7 +95,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -110,8 +102,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -127,7 +119,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -157,15 +150,11 @@
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
@@ -237,9 +226,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -369,7 +363,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -383,25 +377,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -440,13 +426,13 @@ document.write(`
 <h1><span class="section-number">2.2. </span>Total differential<a class="headerlink" href="#total-differential" title="Link to this heading">#</a></h1>
 <p>The total differential of <em>f</em> is the sum of partial derivatives and differential
 changes for each variable:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-376c07f6-e100-4d56-bcef-821e8e2dcc05">
-<span class="eqno">(2.17)<a class="headerlink" href="#equation-376c07f6-e100-4d56-bcef-821e8e2dcc05" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1d4fdb97-2a69-4b59-bd81-075b0cb51ad6">
+<span class="eqno">(2.17)<a class="headerlink" href="#equation-1d4fdb97-2a69-4b59-bd81-075b0cb51ad6" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \d{f} = \td{}{f}{x}{y} \d{x} + \td{}{f}{y}{x} \d{y}
 \end{equation}\]</div>
 <p>For example if <span class="math notranslate nohighlight">\(f = x^2 \cos y\)</span>, then</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6987d2fe-739c-464f-b48e-d38ef2db57d8">
-<span class="eqno">(2.18)<a class="headerlink" href="#equation-6987d2fe-739c-464f-b48e-d38ef2db57d8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-72460670-2299-43f7-ab0e-70161f05b447">
+<span class="eqno">(2.18)<a class="headerlink" href="#equation-72460670-2299-43f7-ab0e-70161f05b447" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \d{f} = 2x \cos y \d{x} - x^2 \sin y \d{y}
 \end{equation}\]</div>
 <p>The total differential tells us how <em>f</em> will change in response to small
@@ -457,21 +443,21 @@ to variables that <em>f</em> does not explicitly depend on. For example, suppose
 and <span class="math notranslate nohighlight">\(y(t)\)</span> both depend on one variable <span class="math notranslate nohighlight">\(t\)</span>; then, <em>f</em> is effectively a function
 of only <em>t</em> through its dependencies on <em>x</em> and <em>y</em>. Its orderinary derivative
 can be calculated using the total differential to apply the chain rule:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-213cc958-f96f-4b93-a443-60a501b64039">
-<span class="eqno">(2.19)<a class="headerlink" href="#equation-213cc958-f96f-4b93-a443-60a501b64039" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-33683019-b47f-4ad8-b80c-a7226cfc2880">
+<span class="eqno">(2.19)<a class="headerlink" href="#equation-33683019-b47f-4ad8-b80c-a7226cfc2880" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \dd{}{f}{t} = 2x \cos y \dd{}{x}{t} - x^2 \sin y \dd{}{y}{t}
 \end{equation}\]</div>
 <p>Similarly, if <span class="math notranslate nohighlight">\(x(t,s)\)</span> and <span class="math notranslate nohighlight">\(y(t,s)\)</span> depend on multiple variables <em>t</em> and <em>s</em>,
 partial derivatives can be formed in the same way:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ef83204e-0725-4dbe-b62a-dd31b27c45ac">
-<span class="eqno">(2.20)<a class="headerlink" href="#equation-ef83204e-0725-4dbe-b62a-dd31b27c45ac" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e8e2bf44-f022-4bde-93e9-1a56338f3884">
+<span class="eqno">(2.20)<a class="headerlink" href="#equation-e8e2bf44-f022-4bde-93e9-1a56338f3884" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \td{}{f}{t}{s} = 2x \cos y \td{}{x}{t}{s} - x^2 \sin y \td{}{y}{t}{s}
 \end{equation}\]</div>
 <section id="skill-builder-problems">
 <h2><span class="section-number">2.2.1. </span>Skill builder problems<a class="headerlink" href="#skill-builder-problems" title="Link to this heading">#</a></h2>
 <p>Given</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5ae51647-6513-4ce5-a859-ff93893a2475">
-<span class="eqno">(2.21)<a class="headerlink" href="#equation-5ae51647-6513-4ce5-a859-ff93893a2475" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-37e31a32-0087-4ec5-a7f9-672d42b9c13e">
+<span class="eqno">(2.21)<a class="headerlink" href="#equation-37e31a32-0087-4ec5-a7f9-672d42b9c13e" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \d{f} = p \d{x} - q \d{y}
 \end{equation}\]</div>
 <p>Express the following:</p>
@@ -481,8 +467,8 @@ partial derivatives can be formed in the same way:</p>
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Based on differential:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e7aadb4f-cf11-4c12-9281-37fc5fc58a75">
-<span class="eqno">(2.22)<a class="headerlink" href="#equation-e7aadb4f-cf11-4c12-9281-37fc5fc58a75" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0a898586-5084-4cff-852c-963aecaba3cc">
+<span class="eqno">(2.22)<a class="headerlink" href="#equation-0a898586-5084-4cff-852c-963aecaba3cc" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \td{}{f}{x}{y} = p
 \end{equation}\]</div>
 </div>
@@ -492,8 +478,8 @@ partial derivatives can be formed in the same way:</p>
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Based on differential:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b8922e98-32c3-459d-9cf3-6369fa6a0dd6">
-<span class="eqno">(2.23)<a class="headerlink" href="#equation-b8922e98-32c3-459d-9cf3-6369fa6a0dd6" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ab6aa853-e2cd-48e5-9eec-28681a27e012">
+<span class="eqno">(2.23)<a class="headerlink" href="#equation-ab6aa853-e2cd-48e5-9eec-28681a27e012" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \left(\frac{\partial f}{\partial y}\right)_x = -q
 \end{equation}\]</div>
 </div>
@@ -502,8 +488,8 @@ partial derivatives can be formed in the same way:</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<div class="amsmath math notranslate nohighlight" id="equation-31735699-5cf3-40cc-9b5d-22850bd548d2">
-<span class="eqno">(2.24)<a class="headerlink" href="#equation-31735699-5cf3-40cc-9b5d-22850bd548d2" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-367b4e2b-65f8-43e1-9d68-384810e1c98f">
+<span class="eqno">(2.24)<a class="headerlink" href="#equation-367b4e2b-65f8-43e1-9d68-384810e1c98f" title="Permalink to this equation">#</a></span>\[\begin{align}
 \left(\frac{\partial^2 f}{\partial x^2}\right)_y = \frac{\partial }{\partial x}
   \left(\left(\frac{\partial f}{\partial x}\right)_y \right)_y =
 \left(\frac{\partial p}{\partial x}\right)_y
@@ -514,8 +500,8 @@ partial derivatives can be formed in the same way:</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<div class="amsmath math notranslate nohighlight" id="equation-e9bc7990-8442-4973-983e-c6c2915d22f3">
-<span class="eqno">(2.25)<a class="headerlink" href="#equation-e9bc7990-8442-4973-983e-c6c2915d22f3" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-cf70cebb-914c-4a16-b8d1-c82b685d4d29">
+<span class="eqno">(2.25)<a class="headerlink" href="#equation-cf70cebb-914c-4a16-b8d1-c82b685d4d29" title="Permalink to this equation">#</a></span>\[\begin{align}
 \left(\frac{\partial^2 f}{\partial y^2}\right)_x = \frac{\partial }{\partial y}
   \left(\left(\frac{\partial f}{\partial y}\right)_x \right)_x =
 \left(\frac{\partial (-q)}{\partial y}\right)_x =
@@ -527,8 +513,8 @@ partial derivatives can be formed in the same way:</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<div class="amsmath math notranslate nohighlight" id="equation-1a6a8745-8010-4e46-be24-f65392f429f9">
-<span class="eqno">(2.26)<a class="headerlink" href="#equation-1a6a8745-8010-4e46-be24-f65392f429f9" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4c2e22cb-8e5f-4d9a-b8fd-c5a5980a0f7f">
+<span class="eqno">(2.26)<a class="headerlink" href="#equation-4c2e22cb-8e5f-4d9a-b8fd-c5a5980a0f7f" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{\partial^2 f}{\partial x \partial y} = \frac{\partial }{\partial x}
   \left(\left(\frac{\partial f}{\partial y}\right)_x \right)_y =
 -\left(\frac{\partial q}{\partial x}\right)_y
@@ -539,8 +525,8 @@ partial derivatives can be formed in the same way:</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<div class="amsmath math notranslate nohighlight" id="equation-d7456e32-2ddc-4108-abe6-b1f8731bb9f5">
-<span class="eqno">(2.27)<a class="headerlink" href="#equation-d7456e32-2ddc-4108-abe6-b1f8731bb9f5" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c8eab8e3-0bb9-4989-ac57-fa35b3f967f2">
+<span class="eqno">(2.27)<a class="headerlink" href="#equation-c8eab8e3-0bb9-4989-ac57-fa35b3f967f2" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{\partial^2 f}{\partial y \partial x} = \frac{\partial }{\partial y}
   \left(\left(\frac{\partial f}{\partial x}\right)_y \right)_x =
 \left(\frac{\partial p}{\partial y}\right)_x
@@ -550,8 +536,8 @@ partial derivatives can be formed in the same way:</p>
 </ol>
 <hr class="docutils" />
 <p>Given:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-39737eef-46fe-43ed-8d67-06a1e4123470">
-<span class="eqno">(2.28)<a class="headerlink" href="#equation-39737eef-46fe-43ed-8d67-06a1e4123470" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b2aeb494-3e2f-4914-a854-e5ed4b3e5b66">
+<span class="eqno">(2.28)<a class="headerlink" href="#equation-b2aeb494-3e2f-4914-a854-e5ed4b3e5b66" title="Permalink to this equation">#</a></span>\[\begin{align}
 f &amp;= \cos(4x+y^2) + x^2y\\
 x &amp;= 2ut\\
 y &amp;= t^2
@@ -563,8 +549,8 @@ y &amp;= t^2
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<div class="amsmath math notranslate nohighlight" id="equation-fc048223-f1ca-4785-9344-b2a714bdb288">
-<span class="eqno">(2.29)<a class="headerlink" href="#equation-fc048223-f1ca-4785-9344-b2a714bdb288" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7f73488e-cfd3-46f1-a413-c848ee4d5fc7">
+<span class="eqno">(2.29)<a class="headerlink" href="#equation-7f73488e-cfd3-46f1-a413-c848ee4d5fc7" title="Permalink to this equation">#</a></span>\[\begin{align}
 \td{}{f}{t}{u} &amp;= \td{}{f}{x}{y} \td{}{x}{t}{u} +
   \td{}{f}{y}{x} \td{}{y}{t}{u} \\
 &amp;= \left[-4\sin(4x+y^2)+2xy\right](2u) +
@@ -579,8 +565,8 @@ y &amp;= t^2
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<div class="amsmath math notranslate nohighlight" id="equation-47134abb-680c-4049-a86e-b333e4cb966a">
-<span class="eqno">(2.30)<a class="headerlink" href="#equation-47134abb-680c-4049-a86e-b333e4cb966a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-12bef852-a11f-49a3-950f-57604e9a5c02">
+<span class="eqno">(2.30)<a class="headerlink" href="#equation-12bef852-a11f-49a3-950f-57604e9a5c02" title="Permalink to this equation">#</a></span>\[\begin{align}
 \td{}{f}{u}{t} &amp;= \td{}{f}{x}{y} \td{}{x}{u}{t} +
   \td{}{f}{y}{x} \td{}{y}{u}{t} \\
 &amp;= \left[-4\sin(4x+y^2)+2xy\right](2t) + 0 \\
@@ -648,14 +634,16 @@ y &amp;= t^2
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill-builder-problems">2.2.1. Skill builder problems</a></li>
 </ul>
@@ -706,8 +694,8 @@ By Michael P. Howard
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

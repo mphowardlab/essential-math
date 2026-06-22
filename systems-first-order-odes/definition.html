@@ -16,41 +16,44 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -67,6 +70,7 @@
     <link rel="prev" title="6. Systems of first-order ordinary differential equations" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -82,19 +86,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -102,7 +95,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -110,8 +102,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -127,7 +119,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -157,15 +150,11 @@
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
@@ -237,9 +226,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -369,7 +363,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -383,25 +377,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -449,8 +435,8 @@ through a pump and recycled back to Tank 1.</p>
 over time? <span class="math notranslate nohighlight">\(c_1\)</span> and <span class="math notranslate nohighlight">\(c_2\)</span> can be modeled using unsteady mass balances. This
 is a <em>system</em> of first-order ODEs that can be solved simultaneously.</p>
 <p>The general, explicit form of a system of first-order ODEs is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-413d9f0a-93b3-4c78-a041-065f7d953a4b">
-<span class="eqno">(6.1)<a class="headerlink" href="#equation-413d9f0a-93b3-4c78-a041-065f7d953a4b" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-aff6ffe1-2d26-42ff-b38e-9d4278c82f3e">
+<span class="eqno">(6.1)<a class="headerlink" href="#equation-aff6ffe1-2d26-42ff-b38e-9d4278c82f3e" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_1' &amp;= f_1(t, y_1, \cdots, y_n)\\
 \vdots \\
 y_n' &amp;= f_n(t, y_1, \cdots, y_n)
@@ -459,8 +445,8 @@ y_n' &amp;= f_n(t, y_1, \cdots, y_n)
 dependent variables, and <span class="math notranslate nohighlight">\((f_1, \cdots, f_n)\)</span> are the <em>n</em> right-hand side
 functions of the <em>n</em> ODEs. We will notate this system more compactly using
 vectors</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4626546f-0eeb-4a5d-9b8b-a0e9b64477e1">
-<span class="eqno">(6.2)<a class="headerlink" href="#equation-4626546f-0eeb-4a5d-9b8b-a0e9b64477e1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-72e371c3-54e8-406e-ac46-6a7bb8b9bd9b">
+<span class="eqno">(6.2)<a class="headerlink" href="#equation-72e371c3-54e8-406e-ac46-6a7bb8b9bd9b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vv{y}' = \vv{f}(t, \vv{y})
 \end{equation}\]</div>
 <p>where <strong>y</strong> is the column vector of dependent variables, <strong>f</strong> is the column
@@ -475,8 +461,8 @@ variables.</p>
 <div class="admonition-example-reaction-network admonition">
 <p class="admonition-title">Example: Reaction network</p>
 <p>We are analyzing a simple reaction sequence occuring in a batch reactor:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9600eba8-b32e-43a3-8770-c23722c3fafe">
-<span class="eqno">(6.3)<a class="headerlink" href="#equation-9600eba8-b32e-43a3-8770-c23722c3fafe" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4789547d-b8fd-4073-b6f2-0006b35a5357">
+<span class="eqno">(6.3)<a class="headerlink" href="#equation-4789547d-b8fd-4073-b6f2-0006b35a5357" title="Permalink to this equation">#</a></span>\[\begin{equation}
 {\rm A} \xrightarrow{k_1} {\rm B} \xrightarrow{k_2} {\rm C}
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(k_1\)</span> and <span class="math notranslate nohighlight">\(k_2\)</span> are reaction rate constants. At <span class="math notranslate nohighlight">\(t = 0\)</span>, only species A is
@@ -484,65 +470,65 @@ present at concentration <span class="math notranslate nohighlight">\(c_{{\rm A}
 as a function of time. What happens in the special case <span class="math notranslate nohighlight">\(k_1 = k_2\)</span>?</p>
 <hr class="docutils" />
 <p>Unsteady mole balances give</p>
-<div class="amsmath math notranslate nohighlight" id="equation-780c4ca1-8146-4936-afdd-eeb35d16ae4d">
-<span class="eqno">(6.4)<a class="headerlink" href="#equation-780c4ca1-8146-4936-afdd-eeb35d16ae4d" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6b609f88-1467-4f26-896c-ed0cc16b9304">
+<span class="eqno">(6.4)<a class="headerlink" href="#equation-6b609f88-1467-4f26-896c-ed0cc16b9304" title="Permalink to this equation">#</a></span>\[\begin{align}
 \dd{}{c_{\rm A}}{t} &amp;= -k_1 c_{\rm A} \\
 \dd{}{c_{\rm B}}{t} &amp;= k_1 c_{\rm A} - k_2  c_{\rm B} \\
 \dd{}{c_{\rm C}}{t} &amp;= k_2  c_{\rm B}
 \end{align}\]</div>
 <p>These ODES can be solved by first finding <span class="math notranslate nohighlight">\(c_{\rm A}\)</span>, then <span class="math notranslate nohighlight">\(c_{\rm B}\)</span>, and
 last <span class="math notranslate nohighlight">\(c_{\rm C}\)</span>! The ODE for <span class="math notranslate nohighlight">\(c_{\rm A}\)</span> is separable:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6ba89dc2-4b3b-43d5-8a56-1561e9583700">
-<span class="eqno">(6.5)<a class="headerlink" href="#equation-6ba89dc2-4b3b-43d5-8a56-1561e9583700" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0a5887eb-fa1f-43c7-9985-f57189c1edbd">
+<span class="eqno">(6.5)<a class="headerlink" href="#equation-0a5887eb-fa1f-43c7-9985-f57189c1edbd" title="Permalink to this equation">#</a></span>\[\begin{align}
 \int \frac{\d{c_{\rm A}}}{c_{\rm A}} &amp;= \int -k_1 \d{t} \\
 \ln c_{\rm A} &amp;= -k_1 t + K
 \end{align}\]</div>
 <p>Applying the initial condition <span class="math notranslate nohighlight">\(c_{\rm A}(0) = c_{{\rm A},0}\)</span> gives:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e94feeed-a2e2-4d39-a89f-b88c51717b27">
-<span class="eqno">(6.6)<a class="headerlink" href="#equation-e94feeed-a2e2-4d39-a89f-b88c51717b27" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e39e6183-844d-4a3e-9e8c-72373fe2ed9b">
+<span class="eqno">(6.6)<a class="headerlink" href="#equation-e39e6183-844d-4a3e-9e8c-72373fe2ed9b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 c_{\rm A} = c_{{\rm A}, 0} e^{-k_1 t}
 \end{equation}\]</div>
 <p>Next, use the solution for <span class="math notranslate nohighlight">\(c_{\rm A}\)</span> to solve <span class="math notranslate nohighlight">\(c_{\rm B}\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c2db58cd-8f7f-4d45-adde-99a009242a27">
-<span class="eqno">(6.7)<a class="headerlink" href="#equation-c2db58cd-8f7f-4d45-adde-99a009242a27" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-56844735-b3f8-408f-94fa-0fc010926018">
+<span class="eqno">(6.7)<a class="headerlink" href="#equation-56844735-b3f8-408f-94fa-0fc010926018" title="Permalink to this equation">#</a></span>\[\begin{align}
 \dd{}{c_{\rm B}}{t} &amp;= k_1 c_{\rm A,0}e^{-k_1 t} -k_2 c_{\rm B} \\
 \dd{}{c_{\rm B}}{t} &amp;+ k_2 c_{\rm B} = k_1 c_{\rm A,0}e^{-k_1 t}
 \end{align}\]</div>
 <p>This is a linear first-order ODE with</p>
-<div class="amsmath math notranslate nohighlight" id="equation-12072059-ec75-4bef-82a3-15f5d4fa9f7e">
-<span class="eqno">(6.8)<a class="headerlink" href="#equation-12072059-ec75-4bef-82a3-15f5d4fa9f7e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3d2790a0-69ef-4d31-9500-24b0eda380c9">
+<span class="eqno">(6.8)<a class="headerlink" href="#equation-3d2790a0-69ef-4d31-9500-24b0eda380c9" title="Permalink to this equation">#</a></span>\[\begin{equation}
 p = k_2 \qquad r =k_1 c_{\rm A,0}e^{-k_1 t}
 \end{equation}\]</div>
 <p>that can be solved using an integrating factor:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3a8b739e-0558-411d-abf1-373b6e5bcd4b">
-<span class="eqno">(6.9)<a class="headerlink" href="#equation-3a8b739e-0558-411d-abf1-373b6e5bcd4b" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a0297929-17e8-4568-b860-8e6e362fb5f0">
+<span class="eqno">(6.9)<a class="headerlink" href="#equation-a0297929-17e8-4568-b860-8e6e362fb5f0" title="Permalink to this equation">#</a></span>\[\begin{align}
 F &amp;= e^{\int k_2 \d{t}} = e^{k_2 t} \\
 \int F r \d{t} &amp;= \int e^{k_2 t} k_1 c_{\rm A,0} e^{-k_1 t} \d{t} \\
   &amp;= k_1 c_{\rm A,0} \int e^{(k_2 -k_1)t} \d{t} \\
   &amp;= c_{\rm A,0} \frac{k_1}{k_2 -k_1} e^{(k_2 -k_1)t}
 \end{align}\]</div>
 <p>Hence,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7574cfd2-6f42-4586-a12b-607ef3bbcc3a">
-<span class="eqno">(6.10)<a class="headerlink" href="#equation-7574cfd2-6f42-4586-a12b-607ef3bbcc3a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-fbaa6ba5-4dea-4a0e-a399-34baeb2b879d">
+<span class="eqno">(6.10)<a class="headerlink" href="#equation-fbaa6ba5-4dea-4a0e-a399-34baeb2b879d" title="Permalink to this equation">#</a></span>\[\begin{align}
 c_{\rm B} &amp;= \frac{1}{F}\left(\int Fr\d{t} + K \right) \\
   &amp;= c_{\rm A,0} \frac{k_1}{k_2 - k_1} e^{-k_1 t} + K e^{-k_2 t}
 \end{align}\]</div>
 <p>Applying the initial condition</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ee65098b-32e3-4f65-91ef-92124efa28ed">
-<span class="eqno">(6.11)<a class="headerlink" href="#equation-ee65098b-32e3-4f65-91ef-92124efa28ed" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ce1a1711-ca55-49cf-a08f-c91b5e4ca818">
+<span class="eqno">(6.11)<a class="headerlink" href="#equation-ce1a1711-ca55-49cf-a08f-c91b5e4ca818" title="Permalink to this equation">#</a></span>\[\begin{align}
 c_{\rm B}(0) &amp;= c_{\rm A,0} \frac{k_1}{k_2 - k_1} + K = 0 \\
 K &amp;= -c_{\rm A,0} \frac{k_1}{k_2 - k_1}
 \end{align}\]</div>
 <p>Hence,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-31467da9-7b6a-42ea-b609-3dd2a9b6001d">
-<span class="eqno">(6.12)<a class="headerlink" href="#equation-31467da9-7b6a-42ea-b609-3dd2a9b6001d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-102ab6ee-98a5-41d8-988f-014b1a837785">
+<span class="eqno">(6.12)<a class="headerlink" href="#equation-102ab6ee-98a5-41d8-988f-014b1a837785" title="Permalink to this equation">#</a></span>\[\begin{equation}
 c_{\rm B}  =c _{\rm A,0} \frac{k_1}{k_2 -k_1} \left(e^{-k_1 t} - e^{-k_2 t} \right)
 \end{equation}\]</div>
 <p>If <span class="math notranslate nohighlight">\(k_1 = k_2\)</span>, the solution appears to have an issue because there is a
 “divide by zero”. However, we can actually evaluate this behavior as a limit!
 Let’s set <span class="math notranslate nohighlight">\(k_1 = k\)</span>, and take the limit as <span class="math notranslate nohighlight">\(k_2 \to k\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d97e13c6-6f17-41b8-ad02-afdc5a0a4a4a">
-<span class="eqno">(6.13)<a class="headerlink" href="#equation-d97e13c6-6f17-41b8-ad02-afdc5a0a4a4a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-50396b3f-29ab-455c-adb6-a01419c304c5">
+<span class="eqno">(6.13)<a class="headerlink" href="#equation-50396b3f-29ab-455c-adb6-a01419c304c5" title="Permalink to this equation">#</a></span>\[\begin{align}
 \lim_{k_2 \to k} c_{\rm B} &amp;=
   c_{{\rm A},0} k \lim_{k_2  \to k} \frac{e^{-k t} - e^{-k_2 t}}{k_2 -k_1} \\
   &amp;= c_{{\rm A},0} k \lim_{k_2 \to k} \frac{t e^{-k_2 t}}{1} \\
@@ -555,8 +541,8 @@ Let’s set <span class="math notranslate nohighlight">\(k_1 = k\)</span>, and t
 <h2><span class="section-number">6.1.2. </span>Skill builder problems<a class="headerlink" href="#skill-builder-problems" title="Link to this heading">#</a></h2>
 <ol class="arabic">
 <li><p>Solve the IVP</p>
-<div class="amsmath math notranslate nohighlight" id="equation-58030415-2759-420a-ad18-3f762d502849">
-<span class="eqno">(6.14)<a class="headerlink" href="#equation-58030415-2759-420a-ad18-3f762d502849" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c9a3cb85-578f-4718-86b1-49afc157b6a4">
+<span class="eqno">(6.14)<a class="headerlink" href="#equation-c9a3cb85-578f-4718-86b1-49afc157b6a4" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_1' &amp;= 1-2y_1, &amp; y_1(0) &amp;= 0\\
 y_2' &amp;= 2y_1 - y_1y_2, &amp; y_2(0) &amp;= 0
 \end{align}\]</div>
@@ -565,8 +551,8 @@ y_2' &amp;= 2y_1 - y_1y_2, &amp; y_2(0) &amp;= 0
 <span class="sd-summary-text">Solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">We begin by solving for <span class="math notranslate nohighlight">\(y_1\)</span> in terms of <em>x</em>. The ODE is separable and
 therefore can be solved using separation of variables.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e97a0d28-1b4d-41f0-b452-f8df57781155">
-<span class="eqno">(6.15)<a class="headerlink" href="#equation-e97a0d28-1b4d-41f0-b452-f8df57781155" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-be3064f2-96e7-4ff9-89ed-22f20577c251">
+<span class="eqno">(6.15)<a class="headerlink" href="#equation-be3064f2-96e7-4ff9-89ed-22f20577c251" title="Permalink to this equation">#</a></span>\[\begin{align}
 \int \frac{dy_1}{1-2y_1} &amp;= \int dx \\
 -\frac{1}{2} \ln{\left(1-2y_1\right)} &amp;= x + c_0 \\
 \ln{\left(1-2y_1\right)} &amp;= -2x + c_1 \\
@@ -574,19 +560,19 @@ therefore can be solved using separation of variables.</p>
 y_1 &amp;= \frac{1}{2} \left(1- c_2 e^{-2x}\right) \\
 \end{align}\]</div>
 <p class="sd-card-text">Now, use the initial condition <span class="math notranslate nohighlight">\(y_1(0)= 0\)</span> to solve for <span class="math notranslate nohighlight">\(c_2\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4de8ae5a-f5e1-40c5-911b-24799a9bb73a">
-<span class="eqno">(6.16)<a class="headerlink" href="#equation-4de8ae5a-f5e1-40c5-911b-24799a9bb73a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0f1a89f6-39c0-46d5-bb48-c103a62ac368">
+<span class="eqno">(6.16)<a class="headerlink" href="#equation-0f1a89f6-39c0-46d5-bb48-c103a62ac368" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y_1(0) = \frac{1}{2}\left(1-c_2\right) = 0
 \end{equation}\]</div>
 <p class="sd-card-text">so <span class="math notranslate nohighlight">\(c_2 = 1\)</span> and</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4e23011b-9377-49df-aad9-247c3042b70e">
-<span class="eqno">(6.17)<a class="headerlink" href="#equation-4e23011b-9377-49df-aad9-247c3042b70e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ab401afa-6155-4aad-bba2-791b770c4296">
+<span class="eqno">(6.17)<a class="headerlink" href="#equation-ab401afa-6155-4aad-bba2-791b770c4296" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y_1 = \frac{1}{2} \left(1-e^{-2x}\right)
 \end{equation}\]</div>
 <p class="sd-card-text">Now, we can solve for <span class="math notranslate nohighlight">\(y_2\)</span> knowing <span class="math notranslate nohighlight">\(y_1\)</span> and recognizing that <span class="math notranslate nohighlight">\(y_2\)</span> can also
 be solved via separation of variables</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e9fa1683-728f-4e67-93eb-31d023f1025c">
-<span class="eqno">(6.18)<a class="headerlink" href="#equation-e9fa1683-728f-4e67-93eb-31d023f1025c" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-48289cde-f98c-4772-9b44-0705c5ca5280">
+<span class="eqno">(6.18)<a class="headerlink" href="#equation-48289cde-f98c-4772-9b44-0705c5ca5280" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_2' &amp;= y_1\left(2-y_2\right) \\
 \int \frac{dy_2}{2-y_2} &amp;= \int \frac{1}{2}\left(1-e^{-2x}\right) \d{x} \\
 -\ln{\left(2-y_2\right)} &amp;= \frac{1}{2}\left(x + \frac{1}{2}e^{-2x}\right) + c_0\\
@@ -596,14 +582,14 @@ y_2
   &amp;= 2 - c_1 \exp\left[-\frac{1}{2}\left(x+\frac{1}{2}e^{-2x}\right)\right] \\
 \end{align}\]</div>
 <p class="sd-card-text">Again, use the initial condition <span class="math notranslate nohighlight">\(y_2(0)= 0\)</span> to solve for <span class="math notranslate nohighlight">\(c_1\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1990d66e-b7e6-4acc-8450-e282b0664e2e">
-<span class="eqno">(6.19)<a class="headerlink" href="#equation-1990d66e-b7e6-4acc-8450-e282b0664e2e" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-86cc73c3-f27a-4596-b698-f521bb698557">
+<span class="eqno">(6.19)<a class="headerlink" href="#equation-86cc73c3-f27a-4596-b698-f521bb698557" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_2(0) &amp;= 2 - c_1 e^{-1/4} = 0 \\
 c_1 &amp;= 2e^{1/4}
 \end{align}\]</div>
 <p class="sd-card-text">Therefore,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5c6cd6f6-a6b0-4689-ad85-6f86cb943792">
-<span class="eqno">(6.20)<a class="headerlink" href="#equation-5c6cd6f6-a6b0-4689-ad85-6f86cb943792" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-62ff33dc-c3ec-45be-9afa-61170876ed07">
+<span class="eqno">(6.20)<a class="headerlink" href="#equation-62ff33dc-c3ec-45be-9afa-61170876ed07" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y_2 = 2\left[1-\exp\left(\frac{1}{4}-\frac{x}{2}-\frac{1}{4}e^{-2x}\right)\right]
 \end{equation}\]</div>
 </div>
@@ -667,14 +653,16 @@ y_2 = 2\left[1-\exp\left(\frac{1}{4}-\frac{x}{2}-\frac{1}{4}e^{-2x}\right)\right
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#successive-substitution">6.1.1. Successive substitution</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill-builder-problems">6.1.2. Skill builder problems</a></li>
@@ -726,8 +714,8 @@ By Michael P. Howard
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>
