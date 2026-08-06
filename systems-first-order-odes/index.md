@@ -3,5 +3,6 @@
 This module covers topics in solving systems of first-order ordinary
 differential equations.
 
-```{tableofcontents}
+```{toc}
+:context: children
 ```

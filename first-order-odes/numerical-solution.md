@@ -59,11 +59,11 @@ F = e^{\int -1 \d{t}} = e^{-t}
 
 Integrate by parts:
 
-```{math}
+\begin{align}
 \int F r \d{t} &= \int t e^{-t} \d{t} \\
 &= -t e^{-t} + \int e^{-t} \d{t} \\
 &= -(t + 1) e^{-t}
-```
+\end{align}
 
 So the general solution is:
 

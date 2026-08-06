@@ -94,11 +94,9 @@ A vertical line cannot intersect a function twice.
 
 ## Manipulating functions
 
-::::{grid}
-:gutter: 2
+::::{grid} 1 1 2 2
 
-:::{grid-item-card} Horizontal shift
-:columns: 6
+:::{card} Horizontal shift
 
 - $f(x+a)$ shifts *f* left by *a*.
 - $f(x-a)$ shifts *f* right by *a*.
@@ -111,8 +109,7 @@ A vertical line cannot intersect a function twice.
 
 :::
 
-:::{grid-item-card} Vertical shift
-:columns: 6
+:::{card} Vertical shift
 
 - $f(x)+b$ shifts *f* up by *b*.
 - $f(x)-b$ shifts *f* down by *b*.
@@ -125,8 +122,7 @@ A vertical line cannot intersect a function twice.
 
 :::
 
-:::{grid-item-card} Horizontal scaling
-:columns: 6
+:::{card} Horizontal scaling
 
 - Scaling $f(cx)$ compresses *f* horizontally by *c*.
 - Scaling $f(x/c)$ stretches *f* horizontally by *c*.
@@ -139,8 +135,7 @@ A vertical line cannot intersect a function twice.
 
 :::
 
-:::{grid-item-card} Vertical scaling
-:columns: 6
+:::{card} Vertical scaling
 
 - Scaling $f(x)/c$ compresses *f* vertically by *c*.
 - Scaling $cf(x)$ streches *f* vertically by *c*.
