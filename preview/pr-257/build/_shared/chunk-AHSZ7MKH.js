@@ -1,4 +1,4 @@
-import{b as e}from"https://mphowardlab.github.io/essential-math/build/_shared/chunk-7DW7L33J.js";var l=e(()=>`
+import{b as e}from"https://mphowardlab.github.io/essential-math/preview/pr-257/build/_shared/chunk-7DW7L33J.js";var l=e(()=>`
   /* Font Awesome icon styling - consolidated */
   .label-icon {
     display: inline-block;
