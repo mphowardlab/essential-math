@@ -97,58 +97,82 @@ y &= t^2
 
 Evaluate:
 
-1. $\displaystyle\td{}{f}{x}{y}$
+```{exercise}
+:label: multivariable-derivatives-sb-1
+$\displaystyle\td{}{f}{x}{y}$
+```
 
-   ```{solution}
-   \begin{equation}
-   \td{}{f}{x}{y} = -4\sin(4x+y^2) + 2xy
-   \end{equation}
-   ```
+```{solution} multivariable-derivatives-sb-1
+:class: dropdown
+\begin{equation}
+\td{}{f}{x}{y} = -4\sin(4x+y^2) + 2xy
+\end{equation}
+```
 
-2. $\displaystyle\td{}{f}{y}{x}$
+```{exercise}
+:label: multivariable-derivatives-sb-2
+$\displaystyle\td{}{f}{y}{x}$
+```
 
-   ```{solution}
-   \begin{equation}
-   \td{}{f}{y}{x} = -2y\sin(4x+y^2) + x^2\\
-   \end{equation}
-   ```
+```{solution} multivariable-derivatives-sb-2
+:class: dropdown
+\begin{equation}
+\td{}{f}{y}{x} = -2y\sin(4x+y^2) + x^2\\
+\end{equation}
+```
 
-3. $\displaystyle\td{2}{f}{x}{y}$
+```{exercise}
+:label: multivariable-derivatives-sb-3
+$\displaystyle\td{2}{f}{x}{y}$
+```
 
-   ```{solution}
-   \begin{equation}
-   \td{2}{f}{x}{y} = -16\cos(4x+y^2) + 2y
-   \end{equation}
+```{solution} multivariable-derivatives-sb-3
+:class: dropdown
+\begin{equation}
+\td{2}{f}{x}{y} = -16\cos(4x+y^2) + 2y
+\end{equation}
 
-   (Differentiate #1.)
-   ```
+(Differentiate #1.)
+```
 
-4. $\displaystyle\td{2}{f}{y}{x}$
+```{exercise}
+:label: multivariable-derivatives-sb-4
+$\displaystyle\td{2}{f}{y}{x}$
+```
 
-   ```{solution}
-   \begin{equation}
-   \td{2}{f}{y}{x} = -4y^2\cos(4x+y^2) - 2\sin(4x+y^2)
-   \end{equation}
+```{solution} multivariable-derivatives-sb-4
+:class: dropdown
+\begin{equation}
+\td{2}{f}{y}{x} = -4y^2\cos(4x+y^2) - 2\sin(4x+y^2)
+\end{equation}
 
-   (Differentiate #1.)
-   ```
+(Differentiate #1.)
+```
 
-5. $\displaystyle\frac{\partial^2 f}{\partial x \partial y}$
+```{exercise}
+:label: multivariable-derivatives-sb-5
+$\displaystyle\frac{\partial^2 f}{\partial x \partial y}$
+```
 
-   ```{solution}
-   \begin{equation}
-   \frac{\partial^2 f}{\partial x \partial y} = -8y\cos(4x+y^2) + 2x
-   \end{equation}
+```{solution} multivariable-derivatives-sb-5
+:class: dropdown
+\begin{equation}
+\frac{\partial^2 f}{\partial x \partial y} = -8y\cos(4x+y^2) + 2x
+\end{equation}
 
-   (Differentiate #2.)
-   ```
+(Differentiate #2.)
+```
 
-6. $\displaystyle\frac{\partial^2 f}{\partial y \partial x}$
+```{exercise}
+:label: multivariable-derivatives-sb-6
+$\displaystyle\frac{\partial^2 f}{\partial y \partial x}$
+```
 
-   ```{solution}
-   \begin{equation}
-   \frac{\partial^2 f}{\partial y \partial x} = -8y\cos(4x+y^2) + 2x
-   \end{equation}
+```{solution} multivariable-derivatives-sb-6
+:class: dropdown
+\begin{equation}
+\frac{\partial^2 f}{\partial y \partial x} = -8y\cos(4x+y^2) + 2x
+\end{equation}
 
-   (Same as #5.)
-   ```
+(Same as #5.)
+```
