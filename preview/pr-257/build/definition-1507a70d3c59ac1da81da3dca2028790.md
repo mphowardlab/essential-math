@@ -43,7 +43,8 @@ solve one equation at a time, then substitute into another that can now be
 solved. This process can be repeated successively to solve for all dependent
 variables.
 
-```{example} Reaction network
+## Example: Reaction network
+
 We are analyzing a simple reaction sequence occuring in a batch reactor:
 
 \begin{equation}
@@ -117,7 +118,7 @@ K &= -c_{\rm A,0} \frac{k_1}{k_2 - k_1}
 Hence,
 
 \begin{equation}
-c_{\rm B}  =c _{\rm A,0} \frac{k_1}{k_2 -k_1} \left(e^{-k_1 t} - e^{-k_2 t} \right)
+c_{\rm B}  = c_{\rm A,0} \frac{k_1}{k_2 -k_1} \left(e^{-k_1 t} - e^{-k_2 t} \right)
 \end{equation}
 
 If $k_1 = k_2$, the solution appears to have an issue because there is a
@@ -132,7 +133,6 @@ Let's set $k_1 = k$, and take the limit as $k_2 \to k$:
 \end{align}
 
 where in the second line, we made use of L'Hopital's rule to evaluate the limit.
-```
 
 ## Skill builder problems
 

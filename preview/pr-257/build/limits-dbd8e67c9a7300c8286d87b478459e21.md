@@ -420,7 +420,8 @@ However, be careful about which piece of the function applies:
 where we used the limit we already found of $f(x) = |x|/x$ above to evaluate
 the second limit.
 
-````{example} One-sided limit challenge
+### One-sided limit challenge
+
 Using
 
 ```{image} ./_images/limit_image.png
@@ -431,14 +432,13 @@ Using
 
 Find the limits at $x = 1$ and $x = 2$.
 
----
+```{dropdown}
+Solution
 
 From the graph, $\lim_{x \to 1^-} f(x) = 0$ and $\lim_{x \to 1^+} f(x) = 1$, so
-$\lim_{x \to 1} f(x)$ does not exist.
-
-However, $\lim_{x \to 2^-} f(x) = 1$ and $\lim_{x \to 2^+} f(x) = 1$, so
-$\lim_{x \to 2} f(x) = 1$, even though $f(2) = 2$.
-````
+$\lim_{x \to 1} f(x)$ does not exist. However, $\lim_{x \to 2^-} f(x) = 1$ and
+$\lim_{x \to 2^+} f(x) = 1$, so $\lim_{x \to 2} f(x) = 1$, even though $f(2) = 2$.
+```
 
 ## Infinite limits
 

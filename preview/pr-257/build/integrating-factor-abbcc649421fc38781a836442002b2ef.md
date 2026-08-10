@@ -100,7 +100,6 @@ is another suitable integrating factor.
 
 ## Application to linear first-order ODEs
 
-```{topic} Integrating factor for linear first-order ODEs
 For linear first-order ODES,
 
 \begin{equation}
@@ -113,9 +112,8 @@ Use of an integrating factor *F* gives the general solution:
 y(x) &= \frac{1}{F} \left( \int F r \d{x} + c \right) \\
 F &= \exp\left(\int p \d{x}\right)
 \end{align}
-```
 
-````{example} Mole balance on a tank with increasing inlet/outlet flow rate.
+## Example: Mole balance on a tank with increasing inlet/outlet flow rate
 
 A stream with concentration $c_{{\rm f},{\rm A}}$ of solute A flows into a tank
 with initial volume *V* at a continuously increasing volumetric flow rate
@@ -142,25 +140,31 @@ $$
 Replace the molar flowrates with the equivalent concentrations and volumetric
 flow rates
 
+<!-- markdownlint-disable MD049 -->
 \begin{align}
 \dot{n}_{{\rm A},\rm{in}} &= c_{{\rm f},{\rm A}} Q =
   c_{{\rm f},{\rm A}} \dot{q}t \\
 \dot{n}_{{\rm A},\rm{out}} &= \frac{n_{\rm A}}{V} Q =
   \frac{n_{\rm A}}{V} \dot{q}
 \end{align}
+<!-- markdownlint-enable MD049 -->
 
 so the initial value problem is
 
+<!-- markdownlint-disable MD049 -->
 \begin{equation}
 \dot{n}_{\rm A} = c_{{\rm f},{\rm A}}\dot{q}t - \frac{n_{\rm A}}{V} \dot{q}t,
 \quad n_{\rm A}(0) = n_{{\rm A},0}
 \end{equation}
+<!-- markdownlint-enable MD049 -->
 
 Rewrite in standard form
 
+<!-- markdownlint-disable MD049 -->
 \begin{equation}
 \dot{n}_{A} + \left(\frac{\dot{q}t}{V}\right) n_{\rm A} = c_{{\rm f},{\rm A}} \dot{q}t
 \end{equation}
+<!-- markdownlint-enable MD049 -->
 
 This is a linear first-order ODE with
 
@@ -211,9 +215,9 @@ The final result is:
 \begin{equation}
 n_{\rm A}(t) = c_{{\rm f},{\rm A}}V + (n_{{\rm A},0} - c_{{\rm f},{\rm A}}V) \exp\left(-\frac{1}{2}\frac{\dot{q}t^2}{V}\right)
 \end{equation}
-````
 
-````{example} Hormone level (again)
+## Example: Hormone level (again)
+
 We had
 
 \begin{equation}
@@ -245,31 +249,33 @@ to evaluate the second integral in the equation
 
 The general solution is:
 
+<!-- markdownlint-disable MD037 -->
 \begin{align}
 c(t) &= \frac{1}{F} \left(\int F r \d{t} + c^* \right) \\
      &= \frac{A}{k} + \frac{B}{k^{2}+(\pi/12)^2}
   \Biggl[k \cos\left(\frac{\pi t}{12}\right)
-         + \frac{\pi}{12}\sin{\left(\frac{\pi t}{12}\right)}\Biggr]
-  + c^* e^{-kt}
+         + \frac{\pi}{12}\sin{\left(\frac{\pi t}{12}\right)}\Biggr] +
+  c^* e^{-kt}
 \end{align}
+<!-- markdownlint-enable MD037 -->
 
 Use the inital condition to evaluate the integration constant:
 
+<!-- markdownlint-disable MD037 -->
 \begin{align}
 c(0) &= \frac{A}{k} + \frac{B}{k^{2}+(\pi/12)^2} k + c^* = c_0 \\
 c^* &= c_0 - \frac{A}{k} - \frac{B}{k^{2}+(\pi/12)^2} k
 \end{align}
+<!-- markdownlint-enable MD037 -->
 
 The final solution is:
 
 \begin{align}
-c(t) &= \frac{A}{k}
-  + \frac{B}{k^{2}+(\pi/12)^2} \Biggl[k \cos\left(\frac{\pi t}{12}\right) +
+c(t) &= \frac{A}{k} +
+  \frac{B}{k^{2}+(\pi/12)^2} \Biggl[k \cos\left(\frac{\pi t}{12}\right) +
   \frac{\pi}{12}\sin{\left(\frac{\pi t}{12}\right)}\Biggr] \\
   &+ \Biggl[c_0 - \frac{A}{k} - \frac{Bk}{k^{2}+(\pi/12)^2} \Biggr] e^{-kt}
 \end{align}
-
-````
 
 ## Skill builder problems
 

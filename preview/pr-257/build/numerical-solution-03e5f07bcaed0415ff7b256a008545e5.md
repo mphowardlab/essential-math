@@ -127,7 +127,8 @@ y' = y_2 = e^x - 6 e^{-2x}
 
 which is consistent with direct differentiation of $y$.
 
-```{example} Forced oscillator
+## Example: Forced oscillator
+
 A mass *m* on a Hookean spring (constant *k*) is experiences both a drag force
 (friction coefficient $\gamma$) and an oscillating external force
 $F \cos \omega t$. Its position *x* obeys the differential equation
@@ -156,7 +157,6 @@ y_2' &= \displaystyle
   \frac{1}{m}\left(-\gamma y_2 - k y_1 + F\cos \omega t \right), &
   y_2(0) &= v_0
 \end{align}
-```
 
 ## Boundary value problems
 
@@ -213,7 +213,8 @@ This boundary-condition function is the numerical integration of the system of
 ODEs! Bisection search is well-suited for solving for *a* because it is stable
 and doesn't require a derivative.
 
-```{example} Reaction-diffusion with second-order reaction
+## Example: Reaction-diffusion with second-order reaction
+
 We are solving a reaction-diffusion problem with a second-order reaction:
 
 \begin{equation}
@@ -243,4 +244,3 @@ where *a* is the unknown value of $y_2(0)$. Vary *a* until
 \begin{equation}
 -D c'(L) = 0 \to y_2(L) = 0
 \end{equation}
-```

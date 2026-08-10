@@ -27,6 +27,8 @@ for some $f$, then we know that $f(x,y) = c$ is an implicit solution of the
 ODE! We call ODEs with this property *exact*. But, how do we know if such a
 function exists and what it is?
 
+## Test for exactness
+
 ```{topic} Test for exactness
 A differential equation in the form of Eq. {eq}`exactode` is exact if
 
@@ -35,17 +37,14 @@ A differential equation in the form of Eq. {eq}`exactode` is exact if
 \end{equation}
 ```
 
-````{example} Test for exactness
-Is the following differential equation exact?
+For example, to test if
 
 ```{math}
 :label: exactode-example
 \cos(x+y) \d{x} + \left[3y^2 + 2y + \cos(x+y) \right]\d{y} = 0
 ```
 
----
-
-For the given ODE,
+is exact. First, identify *P* and *Q*, then differentiate:
 
 \begin{align}
 P &= \cos(x+y) \\
@@ -60,7 +59,8 @@ Q &= 3y^2 + 2y + \cos(x+y) \\
 \end{align}
 
 Since these partial derivatives match, the ODE is exact.
-````
+
+## Partial integration
 
 If an ODE is exact, we can integrate *P* or *Q* to get *f*, then solve for the
 integration constant with *Q* or *P*. For the ODE given by

@@ -55,8 +55,7 @@ the matrix inverse is
 
 (Flip *a* and *d*, change the signs of *b* and *c*.)
 
-```{example} 2 x 2 inverse
-To find the inverse of
+For example, to find the inverse of
 
 \begin{equation}
 \vv{A} = \begin{bmatrix} 3 & 1 \\ 2 & 4 \end{bmatrix}
@@ -74,7 +73,6 @@ Then, compute its inverse
 \vv{A}^{-1} = \frac{1}{10} \begin{bmatrix} 4 & -1 \\ -2 & 3 \end{bmatrix}
 = \begin{bmatrix} 0.4 & -0.1 \\ -0.2 & 0.3 \end{bmatrix}
 \end{equation}
-```
 
 ## Inverses using Gauss-Jordan elimination
 
@@ -87,7 +85,8 @@ solve $\vv{A} \vv{A}^{-1} = \vv{I}$ as a generalization of **Ax** = **b**.
 
 - Perform row operations to bring to $[ \vv{I} \, | \, \vv{A}^{-1} ]$.
 
-```{example} Pump circuit
+## Example: Pump circuit
+
 We will resolve the problem we used [Gauss-Jordan elimination](gauss-jordan.md)
 for, but now using the matrix inverse. As a reminder, the equations to solve
 were
@@ -185,8 +184,10 @@ Gauss-Jordan elimination to solve directly:
 \end{align}
 
 Solve:
+
+<!-- markdownlint-disable MD003 MD022 MD025 -->
 \begin{equation}
-\vv {Q}= \vv{A}^{-1}{b} = \begin{bmatrix}
+\vv{Q} = \vv{A}^{-1}{b} = \begin{bmatrix}
 0.261 & 0.035 & -0.012 \\
 -0.528 & 0.025 & 0.020 \\
 0.211 & -0.010 & 0.032
@@ -203,9 +204,9 @@ Solve:
 2.08
 \end{bmatrix}
 \end{equation}
+<!-- markdownlint-enable MD003 MD022 MD025 -->
 
 This is close to the solution we found before, with some errors due to rounding.
-```
 
 ## Skill builder problems
 

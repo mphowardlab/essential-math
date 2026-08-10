@@ -193,9 +193,8 @@ The final solution is:
 y = (3-2x)e^{-x/2}
 \end{equation}
 
-## Applications
+## Example: Spring and dashpot
 
-````{example} Spring and dashpot
 We are analyzing how the drag force affects the spring oscilations. This is a
 mechanics example, but models like this are also used for the rheology of
 viscoelastic materials.
@@ -249,12 +248,8 @@ where $\omega = \sqrt{4mk - \gamma^2}$. What does $\gamma$ do to the solution?
   increases as $\gamma$ decreases, and without it, oscillations go on forever.
 - $\gamma$ also changes the frequency of the oscillations through $\omega$.
 
-````
+## Example: Steady-state reaction-diffusion
 
-Second-order ODEs also come up frequently in steady-state transport problems
-involving diffusion.
-
-````{example} Steady-state reaction-diffusion
 A first-order reaction is occuring in a liquid film of thickness *L*. The
 reactant concentration at $x = 0$ is fixed to the bulk value $c_0$, while
 a solid substrate at $x=L$ prevents any mass flux.
@@ -318,7 +313,6 @@ Thus,
 c = c_0\Biggl(\frac{e^{x\sqrt{k/D}}}{1+e^{2L\sqrt{k/D}}}
   +\frac{e^{x\sqrt{k/D}}}{1+e^{-2L\sqrt{k/D}}}\Biggr)
 \end{align}
-````
 
 ## Skill builder problems
 

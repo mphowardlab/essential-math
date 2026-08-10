@@ -73,7 +73,8 @@ Y &= \frac{y_0 + R}{s+b}
 where $Y = L[y(t)]$ and $R = L[r(t)]$. If we can invert $y = L^{-1}[Y]$ using
 tables, we have a solution!
 
-```{example} Laplace transform
+### Example 1: Laplace transform
+
 Solve the initial value problem
 
 \begin{equation}
@@ -98,9 +99,9 @@ Invert Laplace transform:
 \begin{equation}
 y = L^{-1}\left[\frac{2}{s+k}\right] = 2L^{-1}\left[\frac{1}{s+k}\right] = 2 e^{-kt}
 \end{equation}
-```
 
-```{example} Laplace transform with partial fractions
+### Example 2: Laplace transform with partial fractions
+
 Solve the initial value problem:
 
 \begin{equation}
@@ -159,11 +160,11 @@ y &=L^{-1}[Y]\\
   &=2L^{-1}\left[\frac{1}{s-1}\right]-L^{-1}\left[\frac{1}{s}\right]-L^{-1}\left[\frac{1}{s^2}\right]\\
   &=2e^t-1-t
 \end{align}
-```
 
 <!-- markdownlint-disable MD013 -->
 
-```{example} Hormone level
+## Example: Hormone level
+
 The concentration of a hormone in the blood *c* varies due to sinusoidal
 production by the thyroid and continuous removal according to:
 
@@ -183,8 +184,8 @@ c' + kc &= A + B\cos\left(\frac{\pi t}{12}\right) \\
 [sC(s) - c_0] + kC(s) &= L\left[A + B\cos\left(\frac{\pi t}{12}\right)\right] \\
 (s+k) C - c_0 &= \frac{A}{s} + \frac{Bs}{s^2 + (\pi/12)^2} \\
 C(s) &= \left(\frac{1}{s + k}\right)\left[c_0 + \frac{A}{s} + \frac{Bs}{s^2 + (\pi/12)^2}\right] \\
- &= \frac{c_0}{s + k} + \frac{A}{s(s + k)}
- + \frac{Bs}{[s^2 + (\pi/12)^2](s + k)}
+ &= \frac{c_0}{s + k} + \frac{A}{s(s + k)} +
+ \frac{Bs}{[s^2 + (\pi/12)^2](s + k)}
 \end{align}
 
 Use partial fraction decomposition on both fractions. The first one is:
@@ -256,7 +257,6 @@ The average concentration is:
 &+ \frac{1}{k} \left( \frac{A}{k} + \frac{Bk}{k^2 + (\pi/12)^2} \right) e^{-kt} \Biggr]_{12}^{24} \\
 &= \frac{A}{k} - \frac{1}{6} \frac{B}{k^2 + (\pi/12)^2} - \frac{1}{12}\left[\frac{A}{k^2} + \frac{B}{k^2 + (\pi/12)^2}\right] (e^{-12k} - e^{-24k})
 \end{align}
-```
 <!-- markdownlint-enable MD013 -->
 
 ## Skill builder problems

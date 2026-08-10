@@ -2,6 +2,7 @@
 
 ## Fixed point iteration
 
+```{topic} Fixed point iteration
 If we want to numerically solve $f(x) = 0$, rearrange $f(x)$ to get $g(x) = x$.
 Then, choose an inital guess $x_0$ and iterate:
 
@@ -10,9 +11,11 @@ x_{n+1} = g(x_n)
 \end{equation}
 
 until $x_{n+1} = x_n$ to the desired precision (error tolerance).
+```
 
-```{example} Using fixed point iteration
-To solve
+### Example: Fixed point iteration
+
+Solve
 
 \begin{equation}
 e^{-x^2} - x = 0
@@ -36,30 +39,27 @@ Then, guess $x_0 = 0$ and set up a table:
 
 At each iteration, $g(x_n)$ is used as the new $x_n$ until at $n = 5$, where
 $x_n = 0.6530 \approx 0.6528 = g(x_n)$.
-```
 
-The choice of rearranging $f(x)$ is not unique, and some choices may be better
-than others. For example, convergence is only guaranteed when
+Note that the choice of rearranging $f(x)$ is not unique, and some choices may
+be better than others. For example, convergence is only guaranteed when
 $|g'(x)| \le k < 1$ for all $x$ in an interval around the solution. Experience
 will guide your choice of rearrangement.
 
-```{example} Rearranging functions
-To solve
+For example, to solve
 
 \begin{equation}
 e^x - x^3 = 0
 \end{equation}
 
-One possible rearrangement is
+One possible (but not obviously better) rearrangement is
 
 \begin{align}
 e^x &= x^3 \\
 x &= \ln(x^3) = 3 \ln x = g(x)
 \end{align}
-```
 
-Note that this method may fail spectacularly! In that case, choosing a better
-initial guess or rearrangement may help. Additionally, you can try to improve
+```{warning}
+This method may still fail spectacularly! You can try to improve
 the stability of the method by slowly "mixing" solutions:
 
 <!-- markdownlint-disable MD037 -->
@@ -71,6 +71,7 @@ x_{n+1} &= \alpha x_{n+1}^* + (1-\alpha) x_n
 
 where $\alpha$ is a mixing parameter. Smaller values of $\alpha$ mix more
 slowly, which can be more stable but also requires more iterations.
+```
 
 ## Bisection search
 
@@ -89,15 +90,18 @@ $f(b) < 0$ (or vice versa), then $f(x) = 0$ somewhere in that interval!
 We can apply this concept to find roots using the following procedure, called
 bisection search:
 
+```{topic} Bisection search
 1. Chose $a_0$ and $b_0$ so $f(a)$ and $f(b)$ have opposite signs.
 2. Starting at $n = 0$, evaluate $f(x_n)$ at the midpoint $x_n = (a_n + b_n)/2$.
 3. If $f(x_n) \approx 0$ a solution is found within desired precision.
    Otherwise, if $f(a_n)$ and $f(x_n)$ have the same sign, $a_{n+1} = x_n$;
    else, $b_{n+1} = x_n$
 4. Increase $n$ and repeat from step 2.
+```
 
-```{example} Using bisection search
-To solve
+### Example: Bisection search
+
+Solve
 
 \begin{equation}
 e^{-x^2} - x = f(x) = 0
@@ -116,7 +120,6 @@ procedure:
 
 When $n=0$, $f(x_0)$ > 0 so $a_1$ = $x_0$. Then, when $n=1$, $f(x_1)$ < 0
 so $b_2$ = $x_1$. We continue this procedure until convergence.
-```
 
 ## Newton-Raphson method
 
@@ -130,6 +133,7 @@ x &\approx x_0 - \frac{f(x_0)}{f'(x_0)}
 
 Iterating this process gives the Newton-Raphson method of root finding
 
+````{topic} Newton-Raphson method
 ```{math}
 :label: newtonraphson
 x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}
@@ -140,6 +144,7 @@ The algorithm for the Newton-Raphson method is:
 1. Guess $x_0$ and set $n = 0$.
 2. Compute $f(x_n)$ and $f'(x_n)$. If $f(x_n)$ is "close" to zero, stop.
 3. Update $x_{n+1}$ using eq. {eq}`newtonraphson` then return to step 2.
+````
 
 ```{image} ./_images/newtonraphson.svg
 :alt: Newton-Raphson method
@@ -150,7 +155,8 @@ The algorithm for the Newton-Raphson method is:
 Note that this method can converge much more rapidly than the fixed-point or
 bisection methods. However, it will fail if $f'(x_n) = 0$.
 
-```{example} Newton-Raphson method
+### Example 1: Newton-Raphson method
+
 Solve $x^2 = 2$.
 
 ---
@@ -166,9 +172,9 @@ $f'(x) = 2x$. Let the initial guess be $x_0 = 1$.
 | 3   | 1.414 |                       |           |
 
 This is close to the known value of $\sqrt{2}$!
-```
 
-```{example} Newton-Raphson method 2
+### Example 2: Newton-Raphson method
+
 Solve $e^{-x^2} - x = 0$.
 
 ---
@@ -185,11 +191,9 @@ We choose an initial guess $x_0 = 0$.
 
 Note the rapid convergence compared to the methods above!
 
-```
-
 ## Skill builder problems
 
-Solve all roots of
+Solve
 
 \begin{equation}
 \cos x - x = 0

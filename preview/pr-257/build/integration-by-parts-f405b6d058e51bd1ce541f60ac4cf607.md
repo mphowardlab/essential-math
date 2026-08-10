@@ -53,7 +53,7 @@ The acronym L.I.A.T.E. can help make this choice:
 - **T**rigonometric
 - **E**xponential  (worst choice of *u*)
 
-```{example} Integration by parts 1
+### Example 1
 
 Evaluate
 
@@ -74,15 +74,14 @@ so:
 
 \begin{align}
 \int(3x+5)\cos\left(\frac{x}{4}\right) \d{x}
-&= (3x+5)\left[4\sin\left(\frac{x}{4}\right)\right]
- - \int 4 \sin \left(\frac{x}{4}\right) 3 \d{x} \\
-&= (12x+20) \sin\left(\frac{x}{4}\right)
- - 12\int\sin\left(\frac{x}{4}\right) \d{x} \\
+&= (3x+5)\left[4\sin\left(\frac{x}{4}\right)\right] -
+ \int 4 \sin \left(\frac{x}{4}\right) 3 \d{x} \\
+&= (12x+20) \sin\left(\frac{x}{4}\right) -
+ 12\int\sin\left(\frac{x}{4}\right) \d{x} \\
 &= (12x+20) \sin\left(\frac{x}{4}\right) + 48\cos\left(\frac{x}{4}\right) + c
 \end{align}
-```
 
-```{example} Integration by parts 2
+### Example 2
 
 Evaluate
 
@@ -106,9 +105,8 @@ so:
 &= x \ln x - \int \d{x} \\
 &= x \ln x - x + c \\
 \end{align}
-```
 
-```{example} Integration by parts 3
+### Example 3
 
 Evaluate
 
@@ -129,13 +127,12 @@ so:
 
 \begin{align}
 \int(x^5)(\sqrt(x^3+1))dx
-&= x^3\frac{2}{9}(x^3+1)^{3/2}
- - \int\left[\frac{2}{9}(x^3+1)^{3/2}\right]3x^2dx \\
-&= \frac{2}{9}x^3(x^3+1)^{3/2}
- - \frac{2}{9}\cdot\frac{2}{5}(x^3+1)^{5/2} + c \\
+&= x^3\frac{2}{9}(x^3+1)^{3/2} -
+ \int\left[\frac{2}{9}(x^3+1)^{3/2}\right]3x^2dx \\
+&= \frac{2}{9}x^3(x^3+1)^{3/2} -
+ \frac{2}{9}\cdot\frac{2}{5}(x^3+1)^{5/2} + c \\
 &= \frac{2}{9}x^3(x^3+1)^{3/2} - \frac{4}{45}(x^3+1)^{5/2} + c
 \end{align}
-```
 
 ## Tabular method
 

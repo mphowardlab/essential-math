@@ -55,7 +55,8 @@ system:
 where $\vv{X} = [\vv{x}_1 \cdots \vv{x}_n]$ is the matrix whose columns are the
 eigenvectors of **A** and **c** is the column vector of unknown coefficients.
 
-```{example} Reaction network (again)
+## Example: Reaction network (again)
+
 We previously analyzed the concentration of three species (A, B, and C)
 undergoing a sequence of first-order reactions, $A \to B \to C$, where the first
 reaction has rate constant $k_1$ and the second reaction has rate constant $k_2$.
@@ -173,9 +174,9 @@ c_{\rm B}(t) &= a_1e^{-k_1t}\frac{-k_1}{k_2} - a_2e^{-k_2t} \\
 \end{align}
 
 This matches our old answer!
-```
 
-````{example} Diffusion cell
+## Example: Diffusion cell
+
 Consider a diffusion cell consisting of two compartments with solute
 concentrations $c_1$ and $c_2$ separated by a membrane.
 
@@ -260,8 +261,6 @@ or equivalently
 c_1(t) &= \frac{1}{2} \left(1 + e^{-0.2 t}\right) \\
 c_2(t) &= \frac{1}{2} \left(1 - e^{-0.2 t}\right)
 \end{align}
-
-````
 
 ## Types of critical points
 

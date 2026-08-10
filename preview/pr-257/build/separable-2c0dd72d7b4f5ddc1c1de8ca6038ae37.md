@@ -22,7 +22,8 @@ y &= c e^\frac{x^2}{2}
 Note that here, we are being careful to denote the redefinition of the
 integration constant ($c = e^{c_0}$). This detail may be glossed over at times.
 
-```{example} Chemical reaction kinetics
+## Example: Chemical reaction kinetics
+
 A substance is disappearing according to a first-order reaction, so its
 concentration follows
 
@@ -61,9 +62,9 @@ We know that $c(1) = 0.70$ so
 \begin{equation}
 k = -\frac{\ln 0.7}{1\,{\rm h}} = 0.36\,{\rm h}^{-1}
 \end{equation}
-```
 
-```{example} Newton's law of cooling
+## Example: Newton's law of cooling
+
 Estimate the temperature *T* in an office building at 6 a.m. if the heat goes
 off at 10 p.m. when the building is 70°F and the outside temperature $T_\infty$
 is 45°F if the *T* follows
@@ -98,9 +99,9 @@ T(8) = 45 + 25 e^{-0.05 \cdot 8} = 62
 \end{equation}
 
 The temperature is approximately 62°F.
-```
 
-````{example} Toricelli's Law
+## Example: Toricelli's Law
+
 A 1 cm hole opens at the bottom of a 1 m cylindrical tank. Water exits the
 hole with velocity that follows Toricelli's, $\sqrt{2gh}$ where *g* is the
 acceleration due to gravity and *g* is the height of water above the hole.
@@ -174,7 +175,6 @@ t &= 2 \left(\frac{1}{0.01}\right)^2 \sqrt{\frac{2}{2 \cdot 9.8}} = 6400
 
 This time is in seconds because all units are SI, so the tank drains in about
 1.8 hours.
-````
 
 ## Skill builder problems
 

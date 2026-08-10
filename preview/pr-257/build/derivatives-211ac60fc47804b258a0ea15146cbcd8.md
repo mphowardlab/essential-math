@@ -35,7 +35,8 @@ The derivative represents how fast the function is changing (rate of change).
 This is especially useful in physics when the function represents a coordinate,
 and the independent variable is time.
 
-````{example} Ball moving with constant velocity
+### Example: Ball moving with constant velocity
+
 A ball has position coordinate *x* and is moving with constant velocity *v*, so
 
 \begin{equation}
@@ -60,7 +61,6 @@ x'(t) &= \lim_{h\to 0} \frac{x(t+h)-x(t)}{h} \\
 &=\lim_{h\to 0} \frac{vh}{h} \\
 &= v
 \end{align}
-````
 
 ## Formal definition
 
@@ -155,7 +155,8 @@ derivative of *x*.
 |          |    v     |      v'      |
 |          |          |      a       |
 
-````{example} Ballistic motion
+### Example: Ballistic motion
+
 Consider the two-dimensional ballistic motion:
 
 ```{image} ./_images/ballistic.jpg
@@ -196,4 +197,3 @@ a &= v' = y'' = -g
 
 The velocity in *y* is constantly increasing from the constant acceleration *a*
 due to gravity. This makes sense from what we know from physics!
-````

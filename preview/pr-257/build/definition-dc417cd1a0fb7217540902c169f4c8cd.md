@@ -27,13 +27,14 @@ When do we see first-order ODEs in chemical engineering?
 - Unsteady mass/energy balances
 - Chemical kinetics
 
-## Direction fields and initial value problems
+## Direction fields
 
 ODEs have families of solutions due to integration constants. The direction
 field (or slope field) is obtained by plotting the slope at (*x*, *y*) from
 $y' = f(x, y)$, and it shows how a point will evolve.
 
-````{example} Direction field
+### Example: Direction field
+
 Given the first-order ODE
 
 \begin{equation}
@@ -72,13 +73,15 @@ c x e^{x^2 / 2} &= x (c e^{x^2 / 2})
 \end{align}
 
 shows this is indeed a solution.
-````
+
+## Initial value problems
 
 To obtain a specific solution, an *initial condition* specifying a point
 $y(x_0) = y_0$ is needed. A first-order ODE with an initial condition is called
 an *initial value problem*.
 
-```{example} Applying initial condition
+### Example: Initial value problem
+
 For the first-order ODE above, find the solution when $y(0) = 1$.
 
 ---
@@ -95,4 +98,3 @@ This gives the solution
 \begin{equation}
 y = e^{x^2/2}
 \end{equation}
-```

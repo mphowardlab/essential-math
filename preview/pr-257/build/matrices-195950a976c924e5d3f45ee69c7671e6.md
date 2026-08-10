@@ -3,9 +3,8 @@
 Matrices and vectors are convenient tools for representing linear systems with
 compact notation that can be processed by a computer.
 
-````{example} Flash distillation
-You are analyzing the molar flow rates resulting from a flash distillation
-process.
+For example, say you are analyzing the molar flow rates resulting from a flash
+distillation process.
 
 ```{image} ./_images/flash.svg
 :alt: Flash distillation process
@@ -29,7 +28,6 @@ These equations can equivalently be represented using matrices and vectors as
 We will learn why these representations are equivalent shortly. Importantly,
 because our mole balances can be written in this way, they are a *system of
 linear equations* that can be solved using techniques of linear algebra.
-````
 
 ## Definition
 
@@ -163,8 +161,7 @@ longer course on linear algebra!
 - *Distributive*: $k(\vv{A} + \vv{B}) = k\vv{A} + k\vv{B}$
 ```
 
-```{example} Matrix addition and scalar multiplication
-Given
+For example, given
 
 \begin{equation}
 \vv{A} = \begin{bmatrix} -1 & 2  \\ 0 & 5  \end{bmatrix} \qquad
@@ -182,7 +179,6 @@ Compute $2\vv{A} - \vv{B}$.
 \begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix} \\
 &= \begin{bmatrix} -3 & 4  \\ 0 & 9  \end{bmatrix}
 \end{align}
-```
 
 ## Matrix multiplication
 
