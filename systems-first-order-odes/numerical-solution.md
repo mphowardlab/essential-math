@@ -14,7 +14,8 @@ Euler's method becomes:
 
 We are "just" adding columns to our calculations!
 
-````{example} First-order reaction in a draining tank
+## Example: First-order reaction in a draining tank
+
 A first-order reaction (rate constant *k*) is taking place in a tank that is
 initially 1 M concentration in the reactant A and has 10 L of solution. A feed
 stream that has a reactant concentration of 1 M enters at 1 L / min, while
@@ -96,7 +97,6 @@ Calling $y_1 = c_{\rm A}$ and $y_2 = V$:
 | 5    | 1.0    | .6075  | 9       |          |          |
 
 The concentration after 1 minute is approximately 0.6 M.
-````
 
 ## Skill builder problems
 

@@ -9,7 +9,8 @@ u = \dd{}{y}{x}
 Then, you effectively "integrate twice": once to solve for *u*, then once more
 to get *y* from *u*.
 
-```{example} Kinematics
+## Example: Kinematics
+
 Newton's second law is $F = ma$, where *F* is the applied force, *m* is the
 mass, and *a* is the acceleration of a body. We also know that acceleration
 is the derivative of the velocity *v*, which is itself the first derivative
@@ -64,9 +65,9 @@ x(t) = -\frac{1}{2} g t^2 + v_0 t + x_0
 \end{equation}
 
 This is the classic equation of ballistic motion!
-```
 
-````{example} Incompressible flow in a cylinder
+## Example: Incompressible flow in a cylinder
+
 Steady, laminar pressure-driven flow in a cylindrical pipe:
 
 ```{image} ./_images/pipe_flow.jpg
@@ -84,7 +85,6 @@ is governed by the simplified Navier-Stokes equation:
 where $u_z$ is the velocity along the pipe axis, $\Delta P$ is the difference
 between the pressure at the inlet and at the outlet, *L* is the length of the
 pipe, and $\mu$ is the dynamic viscosity.
-
 
 The pipe walls have no-slip boundary conditions, meaning the velocity is zero
 there. Derive an expression for $u_z(r)$.
@@ -130,4 +130,3 @@ u_z(r)=\frac{1}{4 \mu}\frac{\Delta P}{L}(R^2-r^2)
 \end{equation}
 
 This is the classic Hagen-Poiseuille flow profile.
-````

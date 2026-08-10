@@ -37,6 +37,8 @@ For example, suppose we instead started with the equations
 Adding twice the first equation to the second equation gives $13 x_2 = -26$,
 from which we were able solve before!
 
+## Procedure
+
 This process can be tedious, particularly when there are more variables and
 equations. Matrices provide a systematic approach to both performing elementary
 operations to isolate variables, as well as to carry out subsequent
@@ -98,7 +100,7 @@ backsubstitution.
 
    Or, $x_1 = 6$ and $x_2 = -2$.
 
-````{example} Pump circuit
+## Example: Pump circuit
 
 Incompressible flow can be written analogous to an electrical circuit as
 
@@ -200,6 +202,7 @@ Row 2 is all zeros because it was a redundant equation to Row 1. Swap Rows 2 and
 
 Normalize Row 3 (divide by -95), then eliminate values above in Column 3:
 
+<!-- markdownlint-disable MD007 MD032 -->
 \begin{equation}
 \begin{bmatrix}
 1 & -1 & 1 & 0 \\
@@ -218,9 +221,11 @@ Normalize Row 3 (divide by -95), then eliminate values above in Column 3:
 0 & 0 & 0 & 0
 \end{bmatrix}
 \end{equation}
+<!-- markdownlint-enable MD007 MD032 -->
 
 Normalize Row 2 (divide by 10), then eliminate values above in Column 2:
 
+<!-- markdownlint-disable MD004 MD032 -->
 \begin{equation}
 \begin{bmatrix}
 1 & -1 & 0 & -2 \\
@@ -239,10 +244,10 @@ Normalize Row 2 (divide by 10), then eliminate values above in Column 2:
 0 & 0 & 0 & 0
 \end{bmatrix}
 \end{equation}
+<!-- markdownlint-enable MD004 MD032 -->
 
 Turning back into an equivalent system of equations gives the final solution,
 $Q_1 = 2$, $Q_2 = 4$, and $Q_3 = 2$.
-````
 
 ## Number of solutions
 

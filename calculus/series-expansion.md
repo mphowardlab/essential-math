@@ -33,10 +33,8 @@ where $f^{(n)}$ is the *n*th derivative of *f*. A Taylor series about $x=0$ is
 sometimes called a Maclaurin series.
 ```
 
-```{example} Taylor series
-Compute the Taylor series for $f(x) = \ln x$ about $x_0 = 2$.
-
----
+For example, let's compute the Taylor series for $f(x) = \ln x$ about $x_0 = 2$.
+It's first two derivatives are:
 
 \begin{align}
 f(x) &= \ln x & f(2) &= \ln 2 \\
@@ -49,25 +47,19 @@ Hence,
 \begin{equation}
 f(x) \approx \ln(2) + \frac{1}{2}(x-2) - \frac{1}{2}\cdot\frac{1}{4} (x-2)^2 + \cdots
 \end{equation}
-```
 
 In general, we could determine the infinite series and general expressions for
 coefficients, but for practical purposes, we will usually stop at either first
 or second order polynomials since that is easier to work with.
 
-```{example} Taylor series
-Find the two-term Taylor series for
+For example, let's find the two-term Taylor series for
 
 \begin{equation}
 f(x) = xe^{2 x^2}
 \end{equation}
 
-about $x = 0$.
-
----
-
-We will evaluate the required derivatives. This will be a series of
-[product rule](derivative-rules.md) calculations.
+about $x = 0$. We will evaluate the required derivatives. This will be a series
+of [product rule](derivative-rules.md) calculations.
 
 The value of the function is $f(0) = 0$. The first derivative is:
 
@@ -92,10 +84,9 @@ so $f'''(0) = 12$.
 Putting it all together,
 
 \begin{equation}
-f(x) \approx 0 + 1 \cdot x + \frac{1}{2} \cdot 0 \cdot x^2
-+ \frac{1}{6} \cdot 12 \cdot x^3 + \cdots = x + 2x^3 + \cdots
+f(x) \approx 0 + 1 \cdot x + \frac{1}{2} \cdot 0 \cdot x^2 +
+\frac{1}{6} \cdot 12 \cdot x^3 + \cdots = x + 2x^3 + \cdots
 \end{equation}
-```
 
 ## Combining series
 

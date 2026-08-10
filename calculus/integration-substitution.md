@@ -21,14 +21,11 @@ $\d{x} = -\d{u}$ so
 \int e^{-x} \d{x} = -\int e^u \d{u} = -e^u + c = -e^{-x} + c
 \end{equation}
 
-```{example} *u*-substitution
-Evaluate the integral
+Let's do a more complicated example:
 
 \begin{equation}
 \int x e^{x^2} \d{x}
 \end{equation}
-
----
 
 Let $u=x^2$ so $\d{u} = 2x \d{x}$. Then,
 
@@ -40,4 +37,3 @@ Plugging *u* back in gives the final answer:
 \begin{equation}
 \int xe^{x^2} \d{x} = \frac{1}{2}e^{x^2} + c
 \end{equation}
-```

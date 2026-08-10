@@ -489,7 +489,8 @@ f' &= e^{\cos^2 x}(2uu')\\
 
 Last, let's look at a physics application of these techniques:
 
-````{example} Harmonic oscillator
+### Example: Harmonic oscillator
+
 A harmonic oscillator is a mass *m* on a Hookean spring. The spring force is
 $F = -kx$, where *k* is the spring constant and *x* is the displacement of the
 mass.
@@ -550,4 +551,3 @@ a = v' =
 
 The roots occur at $t = T/4$ or $3T/4$, when $x = 0$ and the spring is no longer
 stretched. All potential energy has been converted to kinetic energy!
-````

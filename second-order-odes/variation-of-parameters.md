@@ -59,7 +59,8 @@ and
 y = c_1 \cos x + c_2 \sin x + \cos x\ln|\cos x| + x\sin x
 \end{equation}
 
-```{example} Steady heat diffusion with internal source
+## Example: Steady heat diffusion with internal source
+
 We are solving the steady-state heat diffusion equation with an internal source:
 
 \begin{equation}
@@ -112,10 +113,10 @@ T'' = -q x \sin x
    so the particular solution is:
 
    \begin{align}
-   T_{\rm p} &= -1 \int x \left( \frac{-q x \sin x}{\alpha} \right) \, \d{x}
-     + x \int \left( \frac{-q x \sin x}{\alpha} \right) \, \d{x} \\
-   &= \frac{q}{\alpha} \int x^2 \sin x \, \d{x}
-     - \frac{q}{\alpha} x \int x \sin x \, \d{x}
+   T_{\rm p} &= -1 \int x \left( \frac{-q x \sin x}{\alpha} \right) \, \d{x} +
+     x \int \left( \frac{-q x \sin x}{\alpha} \right) \, \d{x} \\
+   &= \frac{q}{\alpha} \int x^2 \sin x \, \d{x} -
+     \frac{q}{\alpha} x \int x \sin x \, \d{x}
    \end{align}
 
    These integrals can both be evaluated by parts. For the first integral,
@@ -191,7 +192,6 @@ The final result is:
 \begin{equation}
 T = 1 + \frac{q}{\alpha}\left[2(\cos x - \cos 1) + x \sin x - \sin 1\right]
 \end{equation}
-```
 
 ## Skill builder problems
 

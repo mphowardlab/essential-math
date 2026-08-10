@@ -90,7 +90,8 @@ polynomials:
     &= -4 \pm 5
   \end{align}
 
-```{example} Box optimization
+### Example: Box optimization
+
 An open-top box will be made from an 8.5" x 11" piece of paper by cutting out a
 square from each corner and folding the flaps. What size square should be cut
 to make the biggest box?
@@ -119,9 +120,9 @@ x &= \frac{78 \pm \sqrt{(-78)^2 - 4 \cdot 12 \cdot -93.5}}{2 \cdot 12} \\
 
 Only the first root, 1.59", is physical because there is not enough material
 to remove 4.91" from two corners!
-```
 
-```{example} Complex roots
+### Example: Complex roots
+
 Find the roots of
 
 \begin{equation}
@@ -140,7 +141,6 @@ x - 5 &= \pm \sqrt{-9} \\
 x &= 5 \pm 3\sqrt{-1} \\
 x &= 5 \pm 3i
 \end{align}
-```
 
 ## Cubic (and higher) polynomials
 

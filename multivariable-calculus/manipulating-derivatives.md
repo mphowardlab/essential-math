@@ -3,7 +3,7 @@
 We sometimes need to find derivatives we don't obtain easily from one of these
 potentials. For this, we use some calculus rules.
 
----
+## Inversion rule
 
 The inversion rule states that the partial derivative of each variable with
 respect to each other are reciprocals if the two variables are related through
@@ -51,7 +51,7 @@ Now, use the inversion rule and substitute $x(y,z)$ back in:
 
 The results are the same!
 
----
+## Chain rule
 
 When working with multivariable functions, we often want to compute the
 derivative of one variable with respect to another, even when the relationship
@@ -89,7 +89,7 @@ Therefore, by the chain rule:
 
 This matches our previous result for the derivative!
 
----
+## Triple product rule
 
 Sometimes, the variables that are held constant in a derivative are
 inconvenient. The "triple product rule" (sometimes called the cyclic or *xyz*-1
@@ -132,13 +132,12 @@ Now plug into the triple product rule, substituting the definition of *x*:
 
 This confirms the rule!
 
----
-
 We can use these rules to manipulate thermodynamic derivatives. Choosing the
 right rules to use is like solving a puzzle, and you'll get better at it with
 practice.
 
-```{example} Constant-volume heat capacity
+## Example: Constant-volume heat capacity
+
 Express $(\partial S/\partial T)_V$ for a pure substance using the
 constant-volume heat capacity
 
@@ -164,7 +163,6 @@ Using the chain rule, we can introduce *U*, then invert the *S* derivative:
 \end{align}
 
 The last line follows from the definition of the heat capacity.
-```
 
 ## Derivatives as functions
 
@@ -256,7 +254,8 @@ The reasons for making these definitions are based on a concept called a
 Legendre transformation and this has important implications in thermodynamics
 (e.g., why $\Delta G < 0$ for a spontaneous process at constant *T* and *P*).
 
-```{example} Change in internal energy
+## Example: Change in internal energy
+
 We want to compute the change in molar internal energy $\Delta U$ of a
 substance as we vary the temperature *T* and pressure *P* in terms of quantities
 we can measure. In addition to *T* and *P*, these quantities are the molar
@@ -336,7 +335,6 @@ Putting it all together:
 
 This total differential is now suitable for integration with respect to *T*
 and *P* using only measurable quantities!
-```
 
 ## Skill builder problems
 
