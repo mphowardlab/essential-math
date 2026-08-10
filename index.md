@@ -1,9 +1,11 @@
-<!-- markdownlint-disable MD002 MD041 -->
+---
+numbering: false
+site:
+  hide_authors: false
+---
 
-```{include} README.md
-```
+# Essential Mathematics for Chemical Engineers
 
-## Table of contents
-
-```{tableofcontents}
-```
+This is a digitized collection of course notes and problems developed for CHEN
+2650 Chemical Engineering Applications of Mathematical Techniques at Auburn
+University.

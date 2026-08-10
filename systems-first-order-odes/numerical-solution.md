@@ -14,7 +14,8 @@ Euler's method becomes:
 
 We are "just" adding columns to our calculations!
 
-````{example} First-order reaction in a draining tank
+## Example: First-order reaction in a draining tank
+
 A first-order reaction (rate constant *k*) is taking place in a tank that is
 initially 1 M concentration in the reactant A and has 10 L of solution. A feed
 stream that has a reactant concentration of 1 M enters at 1 L / min, while
@@ -96,36 +97,39 @@ Calling $y_1 = c_{\rm A}$ and $y_2 = V$:
 | 5    | 1.0    | .6075  | 9       |          |          |
 
 The concentration after 1 minute is approximately 0.6 M.
-````
 
 ## Skill builder problems
 
-1. Determine $y_1(5)$ and $y_2(5)$ for
+```{exercise}
+:label: systems-first-order-odes-numerical-solution-sb-1
+Determine $y_1(5)$ and $y_2(5)$ for
 
-   \begin{align}
-   y'_1 &= \frac{2}{3} y_1 - \frac{4}{3} y_1 y_2, & y(0) &= 1.5 \\
-   y'_2 &= y_1 y_2 - y_2, & y(0) &= 1
-   \end{align}
+\begin{align}
+y'_1 &= \frac{2}{3} y_1 - \frac{4}{3} y_1 y_2, & y(0) &= 1.5 \\
+y'_2 &= y_1 y_2 - y_2, & y(0) &= 1
+\end{align}
 
-   using the Euler method with $\Delta t = 0.5$.
+using the Euler method with $\Delta t = 0.5$.
+```
 
-   ```{solution}
-   The ODE is already in explicit form, so start solving from the initial
-   condition.
+```{solution} systems-first-order-odes-numerical-solution-sb-1
+:class: dropdown
+The ODE is already in explicit form, so start solving from the initial
+condition.
 
-   | $n$ | $t$ | $y_1$ | $y_2$ | $f_1$ | $f_2$ |
-   |-----|-----|-------|-------|-------|-------|
-   | 0   | 0   | 1.500 | 1.000 |-1.000 | 0.500 |
-   | 1   | 0.5 | 1.000 | 1.250 |-1.000 | 0.000 |
-   | 2   | 1.0 | 0.500 | 1.250 |-0.500 |-0.625 |
-   | 3   | 1.5 | 0.250 | 0.938 |-0.146 |-0.703 |
-   | 4   | 2.0 | 0.177 | 0.586 |-0.020 |-0.482 |
-   | 5   | 2.5 | 0.167 | 0.345 | 0.035 |-0.287 |
-   | 6   | 3.0 | 0.184 | 0.201 | 0.073 |-0.164 |
-   | 7   | 3.5 | 0.221 | 0.120 | 0.112 |-0.093 |
-   | 8   | 4.0 | 0.277 | 0.073 | 0.158 |-0.053 |
-   | 9   | 4.5 | 0.356 | 0.046 | 0.215 |-0.030 |
-   | 10  | 5.0 | 0.464 | 0.032 |       |       |
+| $n$ | $t$ | $y_1$ | $y_2$ | $f_1$ | $f_2$ |
+|-----|-----|-------|-------|-------|-------|
+| 0   | 0   | 1.500 | 1.000 |-1.000 | 0.500 |
+| 1   | 0.5 | 1.000 | 1.250 |-1.000 | 0.000 |
+| 2   | 1.0 | 0.500 | 1.250 |-0.500 |-0.625 |
+| 3   | 1.5 | 0.250 | 0.938 |-0.146 |-0.703 |
+| 4   | 2.0 | 0.177 | 0.586 |-0.020 |-0.482 |
+| 5   | 2.5 | 0.167 | 0.345 | 0.035 |-0.287 |
+| 6   | 3.0 | 0.184 | 0.201 | 0.073 |-0.164 |
+| 7   | 3.5 | 0.221 | 0.120 | 0.112 |-0.093 |
+| 8   | 4.0 | 0.277 | 0.073 | 0.158 |-0.053 |
+| 9   | 4.5 | 0.356 | 0.046 | 0.215 |-0.030 |
+| 10  | 5.0 | 0.464 | 0.032 |       |       |
 
-   The final result is $y_1(5) = 0.464$ and $y_2(5) = 0.032$.
-   ```
+The final result is $y_1(5) = 0.464$ and $y_2(5) = 0.032$.
+```

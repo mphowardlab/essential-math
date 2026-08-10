@@ -33,10 +33,8 @@ where $f^{(n)}$ is the *n*th derivative of *f*. A Taylor series about $x=0$ is
 sometimes called a Maclaurin series.
 ```
 
-```{example} Taylor series
-Compute the Taylor series for $f(x) = \ln x$ about $x_0 = 2$.
-
----
+For example, let's compute the Taylor series for $f(x) = \ln x$ about $x_0 = 2$.
+It's first two derivatives are:
 
 \begin{align}
 f(x) &= \ln x & f(2) &= \ln 2 \\
@@ -49,25 +47,19 @@ Hence,
 \begin{equation}
 f(x) \approx \ln(2) + \frac{1}{2}(x-2) - \frac{1}{2}\cdot\frac{1}{4} (x-2)^2 + \cdots
 \end{equation}
-```
 
 In general, we could determine the infinite series and general expressions for
 coefficients, but for practical purposes, we will usually stop at either first
 or second order polynomials since that is easier to work with.
 
-```{example} Taylor series
-Find the two-term Taylor series for
+For example, let's find the two-term Taylor series for
 
 \begin{equation}
 f(x) = xe^{2 x^2}
 \end{equation}
 
-about $x = 0$.
-
----
-
-We will evaluate the required derivatives. This will be a series of
-[product rule](derivative-rules.md) calculations.
+about $x = 0$. We will evaluate the required derivatives. This will be a series
+of [product rule](derivative-rules.md) calculations.
 
 The value of the function is $f(0) = 0$. The first derivative is:
 
@@ -92,10 +84,9 @@ so $f'''(0) = 12$.
 Putting it all together,
 
 \begin{equation}
-f(x) \approx 0 + 1 \cdot x + \frac{1}{2} \cdot 0 \cdot x^2
-+ \frac{1}{6} \cdot 12 \cdot x^3 + \cdots = x + 2x^3 + \cdots
+f(x) \approx 0 + 1 \cdot x + \frac{1}{2} \cdot 0 \cdot x^2 +
+\frac{1}{6} \cdot 12 \cdot x^3 + \cdots = x + 2x^3 + \cdots
 \end{equation}
-```
 
 ## Combining series
 
@@ -133,178 +124,218 @@ xe^{2x^2} &= x + 2x^3 + O(x^5)
 
 Expand the following to two terms:
 
-1. $f(x)=\cos x$ at $x=0$
+```{exercise}
+:label: series-expansion-sb-1
+$f(x)=\cos x$ at $x=0$
+```
 
-   ```{solution}
-   The function and its derivatives at $x=0$ are:
+```{solution} series-expansion-sb-1
+:class: dropdown
+The function and its derivatives at $x=0$ are:
 
-   \begin{align}
-   f(x) &= \cos(x) & f(0) &= 1 \\
-   f'(x) &= -\sin(x) & f'(0) &= 0 \\
-   f''(x) &= -\cos(x) & f''(0) &= -1
-   \end{align}
+\begin{align}
+f(x) &= \cos(x) & f(0) &= 1 \\
+f'(x) &= -\sin(x) & f'(0) &= 0 \\
+f''(x) &= -\cos(x) & f''(0) &= -1
+\end{align}
 
-   So:
+So:
 
-   \begin{equation}
-   \cos x \approx 1-\frac{x^2}{2}
-   \end{equation}
-   ```
+\begin{equation}
+\cos x \approx 1-\frac{x^2}{2}
+\end{equation}
+```
 
-2. $f(x)=\sin x$ at $x=0$
+```{exercise}
+:label: series-expansion-sb-2
+$f(x)=\sin x$ at $x=0$
+```
 
-   ```{solution}
-   The function and its derivatives at $x=0$ are:
+```{solution} series-expansion-sb-2
+:class: dropdown
+The function and its derivatives at $x=0$ are:
 
-   \begin{align}
-   f(x) &= \sin(x) & f(0) &= 0\\
-   f'(x) &= \cos(x) & f'(0) &= 1 \\
-   f''(x) &= -\sin(x) & f''(0) &= 0 \\
-   f^{(3)}(x) &= -\cos(x) & f^{(3)}(0) &= -1
-   \end{align}
+\begin{align}
+f(x) &= \sin(x) & f(0) &= 0\\
+f'(x) &= \cos(x) & f'(0) &= 1 \\
+f''(x) &= -\sin(x) & f''(0) &= 0 \\
+f^{(3)}(x) &= -\cos(x) & f^{(3)}(0) &= -1
+\end{align}
 
-   So:
+So:
 
-   \begin{equation}
-   \sin x \approx x-\frac{x^3}{6}
-   \end{equation}
-   ```
+\begin{equation}
+\sin x \approx x-\frac{x^3}{6}
+\end{equation}
+```
 
-3. $f(x)=e^x$ at $x=0$
+```{exercise}
+:label: series-expansion-sb-3
+$f(x)=e^x$ at $x=0$
+```
 
-   ```{solution}
-   The function and its derivatives at $x=0$ are:
+```{solution} series-expansion-sb-3
+:class: dropdown
+The function and its derivatives at $x=0$ are:
 
-   \begin{align}
-   f(x)&=e^x & f(0) &= 1\\
-   f'(x)&=e^x & f'(0) &= 1
-   \end{align}
+\begin{align}
+f(x)&=e^x & f(0) &= 1\\
+f'(x)&=e^x & f'(0) &= 1
+\end{align}
 
-   So:
+So:
 
-   \begin{equation}
-   e^x \approx 1+x
-   \end{equation}
-   ```
+\begin{equation}
+e^x \approx 1+x
+\end{equation}
+```
 
-4. $f(x)=\ln(1+x)$ at $x=0$
+```{exercise}
+:label: series-expansion-sb-4
+$f(x)=\ln(1+x)$ at $x=0$
+```
 
-   ```{solution}
-   The function and its derivatives at $x=0$ are:
+```{solution} series-expansion-sb-4
+:class: dropdown
+The function and its derivatives at $x=0$ are:
 
-   \begin{align}
-   f(x)&=\ln(1+x) & f(0) &= 0\\
-   f'(x)&=\frac{1}{1+x} & f'(0) &= 1\\
-   f''(x)&=-\frac{1}{(1+x)^2} & f''(0) &= -1
-   \end{align}
+\begin{align}
+f(x)&=\ln(1+x) & f(0) &= 0\\
+f'(x)&=\frac{1}{1+x} & f'(0) &= 1\\
+f''(x)&=-\frac{1}{(1+x)^2} & f''(0) &= -1
+\end{align}
 
-   So:
+So:
 
-   \begin{equation}
-   \ln(1+x) \approx x-\frac{x^2}{2}
-   \end{equation}
-   ```
+\begin{equation}
+\ln(1+x) \approx x-\frac{x^2}{2}
+\end{equation}
+```
 
-5. $f(x)=\dfrac{1}{1+x}$ at $x=0$
+```{exercise}
+:label: series-expansion-sb-5
+$f(x)=\dfrac{1}{1+x}$ at $x=0$
+```
 
-   ```{solution}
-   The function and its derivatives at $x=0$ are:
+```{solution} series-expansion-sb-5
+:class: dropdown
+The function and its derivatives at $x=0$ are:
 
-   \begin{align}
-   f(x)&=\frac{1}{1+x} & f(0) &= 1\\
-   f'(x)&=-\frac{1}{(1+x)^2} & f'(0) &= -1
-   \end{align}
+\begin{align}
+f(x)&=\frac{1}{1+x} & f(0) &= 1\\
+f'(x)&=-\frac{1}{(1+x)^2} & f'(0) &= -1
+\end{align}
 
-   So:
+So:
 
-   \begin{equation}
-   \frac{1}{1+x} \approx 1-x
-   \end{equation}
-   ```
+\begin{equation}
+\frac{1}{1+x} \approx 1-x
+\end{equation}
+```
 
-6. $f(x)=\cos(4x)$ at $x=0$
+```{exercise}
+:label: series-expansion-sb-6
+$f(x)=\cos(4x)$ at $x=0$
+```
 
-   ```{solution}
-   Recall:
+```{solution} series-expansion-sb-6
+:class: dropdown
+Recall:
 
-   \begin{equation}
-   \cos x \approx 1-\frac{x^2}{2}
-   \end{equation}
+\begin{equation}
+\cos x \approx 1-\frac{x^2}{2}
+\end{equation}
 
-   So:
+So:
 
-   \begin{equation}
-   \cos(4x) \approx 1-\frac{(4x)^2}{2} = 1-8x^2
-   \end{equation}
-   ```
+\begin{equation}
+\cos(4x) \approx 1-\frac{(4x)^2}{2} = 1-8x^2
+\end{equation}
+```
 
-7. $f(x)=\cos(x-\pi)$ at $x=\pi$
+```{exercise}
+:label: series-expansion-sb-7
+$f(x)=\cos(x-\pi)$ at $x=\pi$
+```
 
-   ```{solution}
-   Recall:
+```{solution} series-expansion-sb-7
+:class: dropdown
+Recall:
 
-   \begin{equation}
-   \cos(x) \approx 1-\frac{x^2}{2}
-   \end{equation}
+\begin{equation}
+\cos(x) \approx 1-\frac{x^2}{2}
+\end{equation}
 
-   So:
+So:
 
-   \begin{equation}
-   \cos(x-\pi) \approx 1-\frac{(x-\pi)^2}{2}
-   \end{equation}
+\begin{equation}
+\cos(x-\pi) \approx 1-\frac{(x-\pi)^2}{2}
+\end{equation}
 
-   about $x_0 = \pi$.
-   ```
+about $x_0 = \pi$.
+```
 
-8. $f(x)=e^x \sin x$ at $x=0$
+```{exercise}
+:label: series-expansion-sb-8
+$f(x)=e^x \sin x$ at $x=0$
+```
 
-   ```{solution}
-   Recall:
+```{solution} series-expansion-sb-8
+:class: dropdown
+Recall:
 
-   \begin{align}
-   e^x &\approx 1+x \\
-   \sin(x) &\approx x-\frac{x^3}{6}
-   \end{align}
+\begin{align}
+e^x &\approx 1+x \\
+\sin(x) &\approx x-\frac{x^3}{6}
+\end{align}
 
-   So:
+So:
 
-   \begin{equation}
-   e^x \sin x \approx (1+x+\cdots)(x-\frac{x^3}{6}+\cdots) = x+x^2
-   \end{equation}
-   ```
+\begin{equation}
+e^x \sin x \approx (1+x+\cdots)(x-\frac{x^3}{6}+\cdots) = x+x^2
+\end{equation}
+```
 
-9. $f(x)=\cos x$ at $x=\pi$
+```{exercise}
+:label: series-expansion-sb-9
+$f(x)=\cos x$ at $x=\pi$
+```
 
-   ```{solution}
-   The function and its derivatives at $x=\pi$ are:
+```{solution} series-expansion-sb-9
+:class: dropdown
+The function and its derivatives at $x=\pi$ are:
 
-   \begin{align}
-   f(x) &= \cos(x) & f(\pi) &= -1 \\
-   f'(x) &= -\sin(x) & f'(\pi) &= 0 \\
-   f''(x) &= -\cos(x) & f''(\pi) &= 1
-   \end{align}
+\begin{align}
+f(x) &= \cos(x) & f(\pi) &= -1 \\
+f'(x) &= -\sin(x) & f'(\pi) &= 0 \\
+f''(x) &= -\cos(x) & f''(\pi) &= 1
+\end{align}
 
-   So:
+So:
 
-   \begin{equation}
-   \cos x \approx -1+\frac{1}{2}(x-\pi)^2
-   \end{equation}
-   at $x = \pi$.
-   ```
+\begin{equation}
+\cos x \approx -1+\frac{1}{2}(x-\pi)^2
+\end{equation}
+at $x = \pi$.
+```
 
-10. $f(x)=7x^2-6x+1$ at $x=2$
+```{exercise}
+:label: series-expansion-sb-10
+$f(x)=7x^2-6x+1$ at $x=2$
+```
 
-    ```{solution}
-    The function and its derivatives at $x=2$ are:
+```{solution} series-expansion-sb-10
+:class: dropdown
+The function and its derivatives at $x=2$ are:
 
-    \begin{align}
-    f(x)&=7x^2-6x+1 & f(2) &= 17\\
-    f'(x)&=14x-6 & f'(2) &= 22
-    \end{align}
+\begin{align}
+f(x)&=7x^2-6x+1 & f(2) &= 17\\
+f'(x)&=14x-6 & f'(2) &= 22
+\end{align}
 
-    So:
+So:
 
-    \begin{equation}
-    f(x) \approx 17+22(x-2)
-    \end{equation}
-    ```
+\begin{equation}
+f(x) \approx 17+22(x-2)
+\end{equation}
+```

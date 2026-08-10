@@ -16,6 +16,9 @@ permissions:
   contents: write
   pull-requests: write
 
+env:
+  BASE_URL: https://mphowardlab.github.io/essential-math/preview/pr-${{ github.event.pull_request.number }}
+
 jobs:
   deploy-preview:
     runs-on: ubuntu-latest
@@ -38,7 +41,7 @@ jobs:
       - name: Build book
         if: github.event.action != 'closed'
         run: |
-          jupyter-book build -W -n --keep-going .
+          jupyter book build --html --strict --check-links
 
       - name: Commit preview to Pages branch
         uses: rossjrw/pr-preview-action@v1

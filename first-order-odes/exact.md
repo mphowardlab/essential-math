@@ -27,6 +27,8 @@ for some $f$, then we know that $f(x,y) = c$ is an implicit solution of the
 ODE! We call ODEs with this property *exact*. But, how do we know if such a
 function exists and what it is?
 
+## Test for exactness
+
 ```{topic} Test for exactness
 A differential equation in the form of Eq. {eq}`exactode` is exact if
 
@@ -35,19 +37,14 @@ A differential equation in the form of Eq. {eq}`exactode` is exact if
 \end{equation}
 ```
 
-````{example} Test for exactness
-Is the following differential equation exact?
+For example, to test if
 
 ```{math}
 :label: exactode-example
-\begin{equation}
 \cos(x+y) \d{x} + \left[3y^2 + 2y + \cos(x+y) \right]\d{y} = 0
-\end{equation}
 ```
 
----
-
-For the given ODE,
+is exact. First, identify *P* and *Q*, then differentiate:
 
 \begin{align}
 P &= \cos(x+y) \\
@@ -62,7 +59,8 @@ Q &= 3y^2 + 2y + \cos(x+y) \\
 \end{align}
 
 Since these partial derivatives match, the ODE is exact.
-````
+
+## Partial integration
 
 If an ODE is exact, we can integrate *P* or *Q* to get *f*, then solve for the
 integration constant with *Q* or *P*. For the ODE given by
@@ -130,48 +128,53 @@ giving $k = k_0$. Substituting, we arrive at the same answer!
 
 Obtain general solutions to:
 
-1. $-2xy \sin( x^2) \d{x} + \cos(x^2) \d{y} = 0$
+```{exercise}
+:label: sb-1
+$-2xy \sin( x^2) \d{x} + \cos(x^2) \d{y} = 0$
+```
 
-   ```{solution}
-   The ODE is already in the standard form so
+```{solution} sb-1
+:class: dropdown
 
-   \begin{align}
-   P &= -2xy \sin(x^2) \\
-   Q &= \cos(x^2) \\
-   \end{align}
+The ODE is already in the standard form so
 
-   Check to see if the ODE is exact:
+\begin{align}
+P &= -2xy \sin(x^2) \\
+Q &= \cos(x^2) \\
+\end{align}
 
-   \begin{align}
-   \td{}{P}{y}{x} &= -2x \sin(x^2) \\
-   \td{}{Q}{x}{y} &= -2x \sin(x^2)
-   \end{align}
+Check to see if the ODE is exact:
 
-   The two partial derivatives are equal, so the ODE is exact. You can proceed
-   directly to integration. First, integrate *Q* with respect *y*
+\begin{align}
+\td{}{P}{y}{x} &= -2x \sin(x^2) \\
+\td{}{Q}{x}{y} &= -2x \sin(x^2)
+\end{align}
 
-   \begin{equation}
-   f(x,y) = \int \cos(x^2) \d{y} = y \cos(x^2) + k(x)
-   \end{equation}
-   where *k* is an unknown function of *x*. Then, differentiate *f* with respect
-   to *x* and compare to *P*:
+The two partial derivatives are equal, so the ODE is exact. You can proceed
+directly to integration. First, integrate *Q* with respect *y*
 
-   \begin{align}
-   \td{}{f}{x}{y} = -2xy \sin(x^2) + k'(x) &= P = -2xy \sin(x^2) \\
-   k'(x) &= 0
-   \end{align}
+\begin{equation}
+f(x,y) = \int \cos(x^2) \d{y} = y \cos(x^2) + k(x)
+\end{equation}
+where *k* is an unknown function of *x*. Then, differentiate *f* with respect
+to *x* and compare to *P*:
 
-   This simple ODE has $k = 0$ as a solution (neglecting the integration
-   constant). Putting it all together,
+\begin{align}
+\td{}{f}{x}{y} = -2xy \sin(x^2) + k'(x) &= P = -2xy \sin(x^2) \\
+k'(x) &= 0
+\end{align}
 
-   \begin{equation}
-   f = y \cos(x^2) = c
-   \end{equation}
+This simple ODE has $k = 0$ as a solution (neglecting the integration
+constant). Putting it all together,
 
-   is an implicit solution of the ODE, which we can manipulate to an explicit
-   solution:
+\begin{equation}
+f = y \cos(x^2) = c
+\end{equation}
 
-   \begin{equation}
-   y = \frac{c}{\cos(x^2)}
-   \end{equation}
-   ```
+is an implicit solution of the ODE, which we can manipulate to an explicit
+solution:
+
+\begin{equation}
+y = \frac{c}{\cos(x^2)}
+\end{equation}
+```

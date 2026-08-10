@@ -12,6 +12,9 @@ concurrency:
 permissions:
   contents: write
 
+env:
+  BASE_URL: https://mphowardlab.github.io/essential-math
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -31,7 +34,7 @@ jobs:
 
       - name: Build book
         run: |
-          jupyter-book build -W -n --keep-going .
+          jupyter book build --html --strict --check-links
 
       - name: Disable Jekyll to serve static HTML
         run: |

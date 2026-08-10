@@ -420,7 +420,8 @@ However, be careful about which piece of the function applies:
 where we used the limit we already found of $f(x) = |x|/x$ above to evaluate
 the second limit.
 
-````{example} One-sided limit challenge
+### One-sided limit challenge
+
 Using
 
 ```{image} ./_images/limit_image.png
@@ -431,14 +432,13 @@ Using
 
 Find the limits at $x = 1$ and $x = 2$.
 
----
+```{dropdown}
+Solution
 
 From the graph, $\lim_{x \to 1^-} f(x) = 0$ and $\lim_{x \to 1^+} f(x) = 1$, so
-$\lim_{x \to 1} f(x)$ does not exist.
-
-However, $\lim_{x \to 2^-} f(x) = 1$ and $\lim_{x \to 2^+} f(x) = 1$, so
-$\lim_{x \to 2} f(x) = 1$, even though $f(2) = 2$.
-````
+$\lim_{x \to 1} f(x)$ does not exist. However, $\lim_{x \to 2^-} f(x) = 1$ and
+$\lim_{x \to 2^+} f(x) = 1$, so $\lim_{x \to 2} f(x) = 1$, even though $f(2) = 2$.
+```
 
 ## Infinite limits
 
@@ -527,80 +527,80 @@ the limit is found not to exist.
 
 Let's work some examples:
 
-1. $\displaystyle \lim_{x\to 0} \frac{\sin x}{x}$
+```{dropdown}
+$\displaystyle \lim_{x\to 0} \frac{\sin x}{x}$
 
-   ```{solution}
-   The limits of the numerator and denominator are both zero, so:
+The limits of the numerator and denominator are both zero, so:
 
-   \begin{equation}
-   \lim_{x\to 0} \frac{\sin x}{x} = \lim_{x\to 0} \frac{\cos x}{1} = 1
-   \end{equation}
-   ```
+\begin{equation}
+\lim_{x\to 0} \frac{\sin x}{x} = \lim_{x\to 0} \frac{\cos x}{1} = 1
+\end{equation}
+```
 
-2. $\displaystyle \lim_{x\to 0} \frac{x-\sin x}{x^3}$
+```{dropdown}
+$\displaystyle \lim_{x\to 0} \frac{x-\sin x}{x^3}$
 
-   ```{solution}
-   The limits of the numerator and denominator are both zero, so:
+The limits of the numerator and denominator are both zero, so:
 
-   \begin{align}
-   \lim_{x\to 0} \frac{x-\sin x}{x^3}
-     &= \lim_{x\to 0} \frac{1-\cos x}{3x^2} \\
-     &= \lim_{x\to 0} \frac{\sin x}{6x} \\
-     &= \frac{1}{6} \lim_{x\to 0} \frac{\sin x}{x} = \frac{1}{6}
-   \end{align}
+\begin{align}
+\lim_{x\to 0} \frac{x-\sin x}{x^3}
+    &= \lim_{x\to 0} \frac{1-\cos x}{3x^2} \\
+    &= \lim_{x\to 0} \frac{\sin x}{6x} \\
+    &= \frac{1}{6} \lim_{x\to 0} \frac{\sin x}{x} = \frac{1}{6}
+\end{align}
 
-   where we used L'Hôpital's rule twice, then used the result from the first
-   example.
-   ```
+where we used L'Hôpital's rule twice, then used the result from the first
+example.
+```
 
-3. $\displaystyle \lim_{x\to \infty} \frac{\ln(x)}{2\sqrt{x}}$
+```{dropdown}
+$\displaystyle \lim_{x\to \infty} \frac{\ln(x)}{2\sqrt{x}}$
 
-   ```{solution}
-   The limits of the numerator and denominator are both $\infty$, so:
+The limits of the numerator and denominator are both $\infty$, so:
 
-   \begin{align}
-   \lim_{x\to \infty} \frac{\ln x}{2\sqrt{x}}
-     &= \lim_{x\to \infty} \frac{1/x}{1/\sqrt{x}} \\
-     &= \lim_{x\to \infty} \frac{1}{\sqrt{x}} = 0
-   \end{align}
+\begin{align}
+\lim_{x\to \infty} \frac{\ln x}{2\sqrt{x}}
+    &= \lim_{x\to \infty} \frac{1/x}{1/\sqrt{x}} \\
+    &= \lim_{x\to \infty} \frac{1}{\sqrt{x}} = 0
+\end{align}
 
-   where the last limit is obtained by simplification.
-   ```
+where the last limit is obtained by simplification.
+```
 
-4. $\displaystyle \lim_{x\to \infty} \frac{e^x}{x^2}$
+```{dropdown}
+$\displaystyle \lim_{x\to \infty} \frac{e^x}{x^2}$
 
-   ```{solution}
-   The limits of the numerator and denominator are both $\infty$, so:
+The limits of the numerator and denominator are both $\infty$, so:
 
-   \begin{align}
-   \lim_{x\to \infty} \frac{e^x}{x^2}
-   &= \lim_{x\to \infty} \frac{e^x}{2x} \\
-   &= \lim_{x\to \infty} \frac{e^x}{2} = \infty
-   \end{align}
+\begin{align}
+\lim_{x\to \infty} \frac{e^x}{x^2}
+&= \lim_{x\to \infty} \frac{e^x}{2x} \\
+&= \lim_{x\to \infty} \frac{e^x}{2} = \infty
+\end{align}
 
-   Here, we used L'Hôpital's rule twice, but then ultimately found that the
-   limit does not exist.
-   ```
+Here, we used L'Hôpital's rule twice, but then ultimately found that the
+limit does not exist.
+```
 
-5. $\displaystyle \lim_{x\to \infty} x\sin(1/x)$
+```{dropdown}
+$\displaystyle \lim_{x\to \infty} x\sin(1/x)$
 
-   ```{solution}
-   This limit is not in a form that's immediately suitable for L'Hôpital's rule,
-   but it can be made so.
+This limit is not in a form that's immediately suitable for L'Hôpital's rule,
+but it can be made so.
 
-   \begin{align}
-   \lim_{x\to \infty} x\sin(1/x)
-   &= \lim_{x\to \infty} \frac{\sin(1/x)}{1/x} \\
-   &= \lim_{x\to \infty} \frac{\cos(1/x)(-1/x^2)}{-1/x^2} \\
-   &= \lim_{x\to \infty} \cos(1/x) = 1
-   \end{align}
+\begin{align}
+\lim_{x\to \infty} x\sin(1/x)
+&= \lim_{x\to \infty} \frac{\sin(1/x)}{1/x} \\
+&= \lim_{x\to \infty} \frac{\cos(1/x)(-1/x^2)}{-1/x^2} \\
+&= \lim_{x\to \infty} \cos(1/x) = 1
+\end{align}
 
-   Another option in this case would be to substitute in $y = 1/x$, then note
-   that $y \to 0$ as $x \to \infty$ so we have
+Another option in this case would be to substitute in $y = 1/x$, then note
+that $y \to 0$ as $x \to \infty$ so we have
 
-   \begin{equation}
-   \lim_{y\to 0} \frac{\sin y}{y} = 1
-   \end{equation}
+\begin{equation}
+\lim_{y\to 0} \frac{\sin y}{y} = 1
+\end{equation}
 
-   which we already solved!
-   ```
+which we already solved!
+```

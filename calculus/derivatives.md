@@ -35,7 +35,8 @@ The derivative represents how fast the function is changing (rate of change).
 This is especially useful in physics when the function represents a coordinate,
 and the independent variable is time.
 
-````{example} Ball moving with constant velocity
+### Example: Ball moving with constant velocity
+
 A ball has position coordinate *x* and is moving with constant velocity *v*, so
 
 \begin{equation}
@@ -60,7 +61,6 @@ x'(t) &= \lim_{h\to 0} \frac{x(t+h)-x(t)}{h} \\
 &=\lim_{h\to 0} \frac{vh}{h} \\
 &= v
 \end{align}
-````
 
 ## Formal definition
 
@@ -85,30 +85,30 @@ This function represents how the slope of the line tangent to *f* is changing
 with *x*. For this function, the slope continually increases! Some additional
 examples:
 
-1. $f(x) = (x - 1)^2 + 1$
+```{dropdown}
+$f(x) = (x - 1)^2 + 1$
 
-   ```{solution}
-   \begin{align}
-   f'(x) &= \lim_{h \to 0} \frac{[(x + h - 1)^2 + 1] - [(x - 1)^2 + 1]}{h} \\
-       &= \lim_{h \to 0} \frac{(x - 1)^2 +
-          2(x - 1)h + h^2 + 1 - (x - 1)^2 - 1}{h} \\
-       &= \lim_{h \to 0} \frac{2(x - 1)h + h^2}{h} \\
-       &= \lim_{h \to 0} 2(x - 1) + h \\
-       &= 2(x - 1)
-   \end{align}
-   ```
+\begin{align}
+f'(x) &= \lim_{h \to 0} \frac{[(x + h - 1)^2 + 1] - [(x - 1)^2 + 1]}{h} \\
+    &= \lim_{h \to 0} \frac{(x - 1)^2 +
+        2(x - 1)h + h^2 + 1 - (x - 1)^2 - 1}{h} \\
+    &= \lim_{h \to 0} \frac{2(x - 1)h + h^2}{h} \\
+    &= \lim_{h \to 0} 2(x - 1) + h \\
+    &= 2(x - 1)
+\end{align}
+```
 
-2. $f(x) = 1/x$
+```{dropdown}
+$f(x) = 1/x$
 
-   ```{solution}
-   \begin{align}
-   f'(x) &= \lim_{h \to 0} \frac{\dfrac{1}{x+h} - \dfrac{1}{x}}{h} \\
-       &= \lim_{h \to 0} \frac{\dfrac{x - (x + h)}{x(x+h)}}{h}  \\
-       &= \lim_{h \to 0} \frac{\dfrac{- h}{x(x+h)}}{h}  \\
-       &= \lim_{h \to 0} \frac{-1}{(x+h)x} \\
-       &= \frac{-1}{x^2}
-   \end{align}
-   ```
+\begin{align}
+f'(x) &= \lim_{h \to 0} \frac{\dfrac{1}{x+h} - \dfrac{1}{x}}{h} \\
+    &= \lim_{h \to 0} \frac{\dfrac{x - (x + h)}{x(x+h)}}{h}  \\
+    &= \lim_{h \to 0} \frac{\dfrac{- h}{x(x+h)}}{h}  \\
+    &= \lim_{h \to 0} \frac{-1}{(x+h)x} \\
+    &= \frac{-1}{x^2}
+\end{align}
+```
 
 ## Differentiability
 
@@ -155,7 +155,8 @@ derivative of *x*.
 |          |    v     |      v'      |
 |          |          |      a       |
 
-````{example} Ballistic motion
+### Example: Ballistic motion
+
 Consider the two-dimensional ballistic motion:
 
 ```{image} ./_images/ballistic.jpg
@@ -196,4 +197,3 @@ a &= v' = y'' = -g
 
 The velocity in *y* is constantly increasing from the constant acceleration *a*
 due to gravity. This makes sense from what we know from physics!
-````

@@ -55,8 +55,7 @@ the matrix inverse is
 
 (Flip *a* and *d*, change the signs of *b* and *c*.)
 
-```{example} 2 x 2 inverse
-To find the inverse of
+For example, to find the inverse of
 
 \begin{equation}
 \vv{A} = \begin{bmatrix} 3 & 1 \\ 2 & 4 \end{bmatrix}
@@ -74,7 +73,6 @@ Then, compute its inverse
 \vv{A}^{-1} = \frac{1}{10} \begin{bmatrix} 4 & -1 \\ -2 & 3 \end{bmatrix}
 = \begin{bmatrix} 0.4 & -0.1 \\ -0.2 & 0.3 \end{bmatrix}
 \end{equation}
-```
 
 ## Inverses using Gauss-Jordan elimination
 
@@ -87,7 +85,8 @@ solve $\vv{A} \vv{A}^{-1} = \vv{I}$ as a generalization of **Ax** = **b**.
 
 - Perform row operations to bring to $[ \vv{I} \, | \, \vv{A}^{-1} ]$.
 
-```{example} Pump circuit
+## Example: Pump circuit
+
 We will resolve the problem we used [Gauss-Jordan elimination](gauss-jordan.md)
 for, but now using the matrix inverse. As a reminder, the equations to solve
 were
@@ -185,8 +184,10 @@ Gauss-Jordan elimination to solve directly:
 \end{align}
 
 Solve:
+
+<!-- markdownlint-disable MD003 MD022 MD025 -->
 \begin{equation}
-\vv {Q}= \vv{A}^{-1}{b} = \begin{bmatrix}
+\vv{Q} = \vv{A}^{-1}{b} = \begin{bmatrix}
 0.261 & 0.035 & -0.012 \\
 -0.528 & 0.025 & 0.020 \\
 0.211 & -0.010 & 0.032
@@ -203,315 +204,336 @@ Solve:
 2.08
 \end{bmatrix}
 \end{equation}
+<!-- markdownlint-enable MD003 MD022 MD025 -->
 
 This is close to the solution we found before, with some errors due to rounding.
-```
 
 ## Skill builder problems
 
-1. Solve using matrix inversion or explain why this is not possible:
+```{exercise}
+:label: inverses-sb-1
+Solve using matrix inversion or explain why this is not possible:
 
-   \begin{align}
-   5x_1 - 2x_2 &= 20.9 \\
-   -x_1 + 4x_2 &= -19.3
-   \end{align}
+\begin{align}
+5x_1 - 2x_2 &= 20.9 \\
+-x_1 + 4x_2 &= -19.3
+\end{align}
+```
 
-   ```{solution}
-   First, write in matrix form **Ax** = **b** with:
-   \begin{equation}
-   \vv{A} = \begin{bmatrix}
-   5 & -2 \\
-   -1 & 4
-   \end{bmatrix}
-   \qquad
-   \vv{b} = \begin{bmatrix}
-   20.9 \\
-   -19.3
-   \end{bmatrix}
-   \end{equation}
+```{solution} inverses-sb-1
+:class: dropdown
+First, write in matrix form **Ax** = **b** with:
+\begin{equation}
+\vv{A} = \begin{bmatrix}
+5 & -2 \\
+-1 & 4
+\end{bmatrix}
+\qquad
+\vv{b} = \begin{bmatrix}
+20.9 \\
+-19.3
+\end{bmatrix}
+\end{equation}
 
-   Then, evaluate $|\vv{A}|$ to check if an inverse exists:
+Then, evaluate $|\vv{A}|$ to check if an inverse exists:
 
-   \begin{equation}
-   |\vv{A}| = (5 \cdot 4) - (-1 \cdot -2) = 18
-   \end{equation}
+\begin{equation}
+|\vv{A}| = (5 \cdot 4) - (-1 \cdot -2) = 18
+\end{equation}
 
-   $|\vv{A}| \ne 0$, so an inverse can be found using the formula for a 2x2
-   matrix:
+$|\vv{A}| \ne 0$, so an inverse can be found using the formula for a 2x2
+matrix:
 
-   \begin{equation}
-   \vv{A}^{-1} = \frac{1}{18}
-   \begin{bmatrix}
-   5 & -2 \\
-   -1 & 4
-   \end{bmatrix}
-   \end{equation}
+\begin{equation}
+\vv{A}^{-1} = \frac{1}{18}
+\begin{bmatrix}
+5 & -2 \\
+-1 & 4
+\end{bmatrix}
+\end{equation}
 
-   Last, solve for **x**:
+Last, solve for **x**:
 
-   \begin{align}
-   \vv{x} = \vv{A}^{-1}\vv{b} &= \frac{1}{18}
-   \begin{bmatrix}
-   5 & -2 \\
-   -1 & 4
-   \end{bmatrix}
-   \begin{bmatrix}
-   20.9 \\
-   -19.3
-   \end{bmatrix} \\
-   &= \frac{1}{18}
-   \begin{bmatrix}
-   4 \cdot 20.9 +  2 \cdot -19.3 \\
-   1 \cdot  20.9 + 5 \cdot -19.3
-   \end{bmatrix} \\
-   &= \begin{bmatrix}
-   2.5 \\
-   -4.2
-   \end{bmatrix}
-   \end{align}
+\begin{align}
+\vv{x} = \vv{A}^{-1}\vv{b} &= \frac{1}{18}
+\begin{bmatrix}
+5 & -2 \\
+-1 & 4
+\end{bmatrix}
+\begin{bmatrix}
+20.9 \\
+-19.3
+\end{bmatrix} \\
+&= \frac{1}{18}
+\begin{bmatrix}
+4 \cdot 20.9 +  2 \cdot -19.3 \\
+1 \cdot  20.9 + 5 \cdot -19.3
+\end{bmatrix} \\
+&= \begin{bmatrix}
+2.5 \\
+-4.2
+\end{bmatrix}
+\end{align}
 
-   Therefore, $x_1 = 2.5$ and $x_2 = -4.2$.
-   ```
+Therefore, $x_1 = 2.5$ and $x_2 = -4.2$.
+```
 
-2. Solve using matrix inversion or explain why this is not possible:
+```{exercise}
+:label: inverses-sb-2
+Solve using matrix inversion or explain why this is not possible:
 
-   \begin{align}
-   x_1 + 4x_2 = 8 \\
-   2x_1 + 8x_2 = 17
-   \end{align}
+\begin{align}
+x_1 + 4x_2 = 8 \\
+2x_1 + 8x_2 = 17
+\end{align}
+```
 
-   ```{solution}
-   First, write in matrix form **Ax** = **b** with:
-   \begin{equation}
-   \vv{A} = \begin{bmatrix}
-   1 & 4 \\
-   2 & 8
-   \end{bmatrix}
-   \qquad
-   \vv{b} = \begin{bmatrix}
-   8 \\
-   17
-   \end{bmatrix}
-   \end{equation}
+```{solution} inverses-sb-2
+:class: dropdown
+First, write in matrix form **Ax** = **b** with:
+\begin{equation}
+\vv{A} = \begin{bmatrix}
+1 & 4 \\
+2 & 8
+\end{bmatrix}
+\qquad
+\vv{b} = \begin{bmatrix}
+8 \\
+17
+\end{bmatrix}
+\end{equation}
 
-   Then, evalaute $|\vv{A}|$ to check if an inverse exists:
+Then, evalaute $|\vv{A}|$ to check if an inverse exists:
 
-   \begin{equation}
-   |\vv{A}| = (1 \cdot 8) - (2 \cdot 4) = 0
-   \end{equation}
+\begin{equation}
+|\vv{A}| = (1 \cdot 8) - (2 \cdot 4) = 0
+\end{equation}
 
-   **A** is singular because $|\vv{A}| = 0$, so these equations cannot be solved
-   using an inverse.
-   ```
+**A** is singular because $|\vv{A}| = 0$, so these equations cannot be solved
+using an inverse.
+```
 
-3. Solve using matrix inversion or explain why this is not possible:
+```{exercise}
+:label: inverses-sb-3
+Solve using matrix inversion or explain why this is not possible:
 
-   \begin{align}
-   x_2 + x_3 = -2 \\
-   4x_2 + 6x_3 = -12 \\
-   x_1 + x_2 + x_3 = 2
-   \end{align}
+\begin{align}
+x_2 + x_3 = -2 \\
+4x_2 + 6x_3 = -12 \\
+x_1 + x_2 + x_3 = 2
+\end{align}
+```
 
-   ```{solution}
-   First, write in matrix form **Ax** = **b** with:
-   \begin{equation}
-   \vv{A} = \begin{bmatrix}
-   0 & 1 & 1 \\
-   0 & 4 & 6 \\
-   1 & 1 & 1
-   \end{bmatrix}
-   \qquad
-   \vv{b} = \begin{bmatrix}
-   -2 \\
-   -12 \\
-   2
-   \end{bmatrix}
-   \end{equation}
+```{solution} inverses-sb-3
+:class: dropdown
+First, write in matrix form **Ax** = **b** with:
+\begin{equation}
+\vv{A} = \begin{bmatrix}
+0 & 1 & 1 \\
+0 & 4 & 6 \\
+1 & 1 & 1
+\end{bmatrix}
+\qquad
+\vv{b} = \begin{bmatrix}
+-2 \\
+-12 \\
+2
+\end{bmatrix}
+\end{equation}
 
-   Then, evaluate $|\vv{A}|$ to check if an inverse exists:
+Then, evaluate $|\vv{A}|$ to check if an inverse exists:
 
-   \begin{align}
-   |\vv{A}| =
-   0 \cdot \begin{vmatrix}
-   4 & 6 \\
-   1 & 1
-   \end{vmatrix}
-   -1 \cdot
-   \begin{vmatrix}
-   0 & 6 \\
-   1 & 1
-   \end{vmatrix}
-   + 1 \cdot
-   \begin{vmatrix}
-   0 & 4 \\
-   1 & 1
-   \end{vmatrix}
-   \end{align}
+\begin{align}
+|\vv{A}| =
+0 \cdot \begin{vmatrix}
+4 & 6 \\
+1 & 1
+\end{vmatrix}
+-1 \cdot
+\begin{vmatrix}
+0 & 6 \\
+1 & 1
+\end{vmatrix}
++ 1 \cdot
+\begin{vmatrix}
+0 & 4 \\
+1 & 1
+\end{vmatrix}
+\end{align}
 
-   \begin{equation}
-   |\vv{A}| = -1 \cdot (0-6) + 1 \cdot (0-4) = 2
-   \end{equation}
+\begin{equation}
+|\vv{A}| = -1 \cdot (0-6) + 1 \cdot (0-4) = 2
+\end{equation}
 
-   Since $|\vv{A}| \ne 0$, **A** is invertible. Use Gauss-Jordan elimination
-   to find the inverse. Start with the augmented matrix $[\vv{A} | \vv{I}]$,
-   then rearrange the rows
+Since $|\vv{A}| \ne 0$, **A** is invertible. Use Gauss-Jordan elimination
+to find the inverse. Start with the augmented matrix $[\vv{A} | \vv{I}]$,
+then rearrange the rows
 
-   \begin{align}
-   \begin{bmatrix}
-   0 & 1 & 1 & 1 & 0 & 0 \\
-   0 & 4 & 6 & 0 & 1 & 0 \\
-   1 & 1 & 1 & 0 & 0 & 1
-   \end{bmatrix}
-   &\to \begin{bmatrix}
-   1 & 1 & 1 & 0 & 0 & 1 \\
-   0 & 1 & 1 & 1 & 0 & 0 \\
-   0 & 4 & 6 & 0 & 1 & 0
-   \end{bmatrix}
-   \begin{matrix}
-   \vphantom{R_1} \\ \vphantom{R_1} \\ -4 R_1
-   \end{matrix} \\
-   &\to \begin{bmatrix}
-   1 & 1 & 1 & 0 & 0 & 1 \\
-   0 & 1 & 1 & 1 & 0 & 0 \\
-   0 & 0 & 2 & -4 & 1 & 0
-   \end{bmatrix}
-   \begin{matrix}
-   \vphantom{R_1} \\ \vphantom{R_1} \\ \div 2
-   \end{matrix} \\
-   &\to \begin{bmatrix}
-   1 & 1 & 1 & 0 & 0 & 1 \\
-   0 & 1 & 1 & 1 & 0 & 0 \\
-   0 & 0 & 1 & -2 & 0.5 & 0
-   \end{bmatrix}
-   \begin{matrix}
-   -R_3 \\ -R_3 \\ \vphantom{R_1}
-   \end{matrix} \\
-   &\to \begin{bmatrix}
-   1 & 1 & 0 & 2 & -0.5 & 1 \\
-   0 & 1 & 0 & 3 & -0.5 & 0 \\
-   0 & 0 & 1 & -2 & 0.5 & 0
-   \end{bmatrix}
-   \begin{matrix}
-   -R_2 \\ \vphantom{R_1} \\ \vphantom{R_1}
-   \end{matrix} \\
-   &\to \begin{bmatrix}
-   1 & 0 & 0 & -1 & 0 & 1 \\
-   0 & 1 & 0 & 3 & -0.5 & 0 \\
-   0 & 0 & 1 & -2 & 0.5 & 0
-   \end{bmatrix}
-   \end{align}
+\begin{align}
+\begin{bmatrix}
+0 & 1 & 1 & 1 & 0 & 0 \\
+0 & 4 & 6 & 0 & 1 & 0 \\
+1 & 1 & 1 & 0 & 0 & 1
+\end{bmatrix}
+&\to \begin{bmatrix}
+1 & 1 & 1 & 0 & 0 & 1 \\
+0 & 1 & 1 & 1 & 0 & 0 \\
+0 & 4 & 6 & 0 & 1 & 0
+\end{bmatrix}
+\begin{matrix}
+\vphantom{R_1} \\ \vphantom{R_1} \\ -4 R_1
+\end{matrix} \\
+&\to \begin{bmatrix}
+1 & 1 & 1 & 0 & 0 & 1 \\
+0 & 1 & 1 & 1 & 0 & 0 \\
+0 & 0 & 2 & -4 & 1 & 0
+\end{bmatrix}
+\begin{matrix}
+\vphantom{R_1} \\ \vphantom{R_1} \\ \div 2
+\end{matrix} \\
+&\to \begin{bmatrix}
+1 & 1 & 1 & 0 & 0 & 1 \\
+0 & 1 & 1 & 1 & 0 & 0 \\
+0 & 0 & 1 & -2 & 0.5 & 0
+\end{bmatrix}
+\begin{matrix}
+-R_3 \\ -R_3 \\ \vphantom{R_1}
+\end{matrix} \\
+&\to \begin{bmatrix}
+1 & 1 & 0 & 2 & -0.5 & 1 \\
+0 & 1 & 0 & 3 & -0.5 & 0 \\
+0 & 0 & 1 & -2 & 0.5 & 0
+\end{bmatrix}
+\begin{matrix}
+-R_2 \\ \vphantom{R_1} \\ \vphantom{R_1}
+\end{matrix} \\
+&\to \begin{bmatrix}
+1 & 0 & 0 & -1 & 0 & 1 \\
+0 & 1 & 0 & 3 & -0.5 & 0 \\
+0 & 0 & 1 & -2 & 0.5 & 0
+\end{bmatrix}
+\end{align}
 
-   Hence,
+Hence,
 
-   \begin{align}
-   \vv{A}^{-1} = \begin{bmatrix}
-   -1 & 0 & 1 \\
-   3 & -0.5 & 0 \\
-   -2 & 0.5 & 0
-   \end{bmatrix}
-   \end{align}
+\begin{align}
+\vv{A}^{-1} = \begin{bmatrix}
+-1 & 0 & 1 \\
+3 & -0.5 & 0 \\
+-2 & 0.5 & 0
+\end{bmatrix}
+\end{align}
 
-   and
+and
 
-   \begin{align}
-   \vv{x} = \vv{A}^{-1} \vv{b} &=
-   \begin{bmatrix}
-   -1 & 0 & 1 \\
-   3 & -0.5 & 0 \\
-   -2 & 0.5 & 0
-   \end{bmatrix}
-   \begin{bmatrix}
-   -2 \\
-   -12 \\
-   2
-   \end{bmatrix} \\
-   & = \begin{bmatrix}
-   -1 \cdot -2 + 1 \cdot 2 \\
-   3 \cdot -2 + -0.5 \cdot -12 \\
-   -2 \cdot -2 + 0.5 \cdot -12
-   \end{bmatrix} \\
-   &= \begin{bmatrix}
-   4 \\
-   0 \\
-   -2
-   \end{bmatrix}
-   \end{align}
+\begin{align}
+\vv{x} = \vv{A}^{-1} \vv{b} &=
+\begin{bmatrix}
+-1 & 0 & 1 \\
+3 & -0.5 & 0 \\
+-2 & 0.5 & 0
+\end{bmatrix}
+\begin{bmatrix}
+-2 \\
+-12 \\
+2
+\end{bmatrix} \\
+& = \begin{bmatrix}
+-1 \cdot -2 + 1 \cdot 2 \\
+3 \cdot -2 + -0.5 \cdot -12 \\
+-2 \cdot -2 + 0.5 \cdot -12
+\end{bmatrix} \\
+&= \begin{bmatrix}
+4 \\
+0 \\
+-2
+\end{bmatrix}
+\end{align}
 
-   So, $x_1 = 4$, $x_2 = 0$, and $x_3 = -2$.
-   ```
+So, $x_1 = 4$, $x_2 = 0$, and $x_3 = -2$.
+```
 
-4. Solve using matrix inversion or explain why this is not possible:
+```{exercise}
+:label: inverses-sb-4
+Solve using matrix inversion or explain why this is not possible:
 
-   \begin{align}
-   4x_2 + 4x_3 = 24 \\
-   3x_1 - 11x_2 - 2x_3 = -6 \\
-   6x_1 - 17x_2 + x_3 = 18
-   \end{align}
+\begin{align}
+4x_2 + 4x_3 = 24 \\
+3x_1 - 11x_2 - 2x_3 = -6 \\
+6x_1 - 17x_2 + x_3 = 18
+\end{align}
+```
 
-   ```{solution}
-   First, write in matrix form **Ax** = **b** with:
-   \begin{equation}
-   \vv{A} = \begin{bmatrix}
-   0 & 4 & 4 \\
-   3 & -11 & -2 \\
-   6 & -17 & 1
-   \end{bmatrix}
-   \qquad
-   \vv{b} = \begin{bmatrix}
-   24 \\
-   -6 \\
-   18
-   \end{bmatrix}
-   \end{equation}
+```{solution} inverses-sb-4
+:class: dropdown
+First, write in matrix form **Ax** = **b** with:
+\begin{equation}
+\vv{A} = \begin{bmatrix}
+0 & 4 & 4 \\
+3 & -11 & -2 \\
+6 & -17 & 1
+\end{bmatrix}
+\qquad
+\vv{b} = \begin{bmatrix}
+24 \\
+-6 \\
+18
+\end{bmatrix}
+\end{equation}
 
-   Then, evaluate $|\vv{A}|$ to check if an inverse exists:
+Then, evaluate $|\vv{A}|$ to check if an inverse exists:
 
-   \begin{align}
-   |\vv{A}| =
-   0 \cdot \begin{vmatrix}
-   -11 & -2 \\
-   -17 & 1
-   \end{vmatrix}
-   -4 \cdot
-   \begin{vmatrix}
-   3 & -2 \\
-   6 & 1
-   \end{vmatrix}
-   + 4 \cdot
-   \begin{vmatrix}
-   3 & -11 \\
-   6 & -17
-   \end{vmatrix}
-   \end{align}
+\begin{align}
+|\vv{A}| =
+0 \cdot \begin{vmatrix}
+-11 & -2 \\
+-17 & 1
+\end{vmatrix}
+-4 \cdot
+\begin{vmatrix}
+3 & -2 \\
+6 & 1
+\end{vmatrix}
++ 4 \cdot
+\begin{vmatrix}
+3 & -11 \\
+6 & -17
+\end{vmatrix}
+\end{align}
 
-   \begin{align}
-   |\vv{A}| &= -4 (3 \cdot 1 - 6 \cdot -2) + 4 (3 \cdot -17 - 6 \cdot -11) \\
-   &= -4 \cdot 15 + 4 \cdot 15 \\
-   &= 0
-   \end{align}
+\begin{align}
+|\vv{A}| &= -4 (3 \cdot 1 - 6 \cdot -2) + 4 (3 \cdot -17 - 6 \cdot -11) \\
+&= -4 \cdot 15 + 4 \cdot 15 \\
+&= 0
+\end{align}
 
-   Since $|\vv{A}| = 0$, **A** is not invertible.
+Since $|\vv{A}| = 0$, **A** is not invertible.
+```
 
-5. Solve using matrix inversion or explain why this is not possible:
+```{exercise}
+:label: inverses-sb-5
+Solve using matrix inversion or explain why this is not possible:
 
-   \begin{align}
-   2x_1 - x_2 + 3x_3 = -1 \\
-   -4x_1 + 2x_2 - 6x_3 = 2
-   \end{align}
+\begin{align}
+2x_1 - x_2 + 3x_3 = -1 \\
+-4x_1 + 2x_2 - 6x_3 = 2
+\end{align}
+```
 
-   ```{solution}
-   First, write in matrix form **Ax** = **b** with:
-   \begin{equation}
-   \vv{A} = \begin{bmatrix}
-   2 & -1 & 3 \\
-   -4 & 2 & -6
-   \end{bmatrix}
-   \qquad
-   \vv{b} = \begin{bmatrix}
-   -1 \\
-   2
-   \end{bmatrix}
-   \end{equation}
+```{solution} inverses-sb-5
+:class: dropdown
+First, write in matrix form **Ax** = **b** with:
+\begin{equation}
+\vv{A} = \begin{bmatrix}
+2 & -1 & 3 \\
+-4 & 2 & -6
+\end{bmatrix}
+\qquad
+\vv{b} = \begin{bmatrix}
+-1 \\
+2
+\end{bmatrix}
+\end{equation}
 
-   Since **A** is not square, **A** is not invertible.
-   ```
+Since **A** is not square, **A** is not invertible.
+```

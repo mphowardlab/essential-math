@@ -3,9 +3,8 @@
 Matrices and vectors are convenient tools for representing linear systems with
 compact notation that can be processed by a computer.
 
-````{example} Flash distillation
-You are analyzing the molar flow rates resulting from a flash distillation
-process.
+For example, say you are analyzing the molar flow rates resulting from a flash
+distillation process.
 
 ```{image} ./_images/flash.svg
 :alt: Flash distillation process
@@ -29,7 +28,6 @@ These equations can equivalently be represented using matrices and vectors as
 We will learn why these representations are equivalent shortly. Importantly,
 because our mole balances can be written in this way, they are a *system of
 linear equations* that can be solved using techniques of linear algebra.
-````
 
 ## Definition
 
@@ -163,8 +161,7 @@ longer course on linear algebra!
 - *Distributive*: $k(\vv{A} + \vv{B}) = k\vv{A} + k\vv{B}$
 ```
 
-```{example} Matrix addition and scalar multiplication
-Given
+For example, given
 
 \begin{equation}
 \vv{A} = \begin{bmatrix} -1 & 2  \\ 0 & 5  \end{bmatrix} \qquad
@@ -182,7 +179,6 @@ Compute $2\vv{A} - \vv{B}$.
 \begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix} \\
 &= \begin{bmatrix} -3 & 4  \\ 0 & 9  \end{bmatrix}
 \end{align}
-```
 
 ## Matrix multiplication
 
@@ -280,99 +276,135 @@ $$
 
 Compute the following or explain why it is undefined.
 
-1. $2\vv{A}$
+```{exercise}
+:label: matrices-sb-1
+$2\vv{A}$
+```
 
-   ```{solution}
-   $$
-   2\vv{A}
-   = \begin{bmatrix}
-   2 \cdot 0 & 2 \cdot 2 \\
-   2 \cdot 2 & 2 \cdot 4 \\
-   2 \cdot 1 & 2 \cdot 3 \end{bmatrix}
-   = \begin{bmatrix} 0 & 4 \\ 4 & 8 \\ 2 & 6 \end{bmatrix}
-   $$
-   ```
+```{solution} matrices-sb-1
+:class: dropdown
+$$
+2\vv{A}
+= \begin{bmatrix}
+2 \cdot 0 & 2 \cdot 2 \\
+2 \cdot 2 & 2 \cdot 4 \\
+2 \cdot 1 & 2 \cdot 3 \end{bmatrix}
+= \begin{bmatrix} 0 & 4 \\ 4 & 8 \\ 2 & 6 \end{bmatrix}
+$$
+```
 
-2. $\vv{A + B}$
+```{exercise}
+:label: matrices-sb-2
+$\vv{A} + \vv{B}$
+```
 
-   ```{solution}
-   Undefined because the shape of **A** (3×2) is different from the shape of
-   **B** (2×3).
-   ```
+```{solution} matrices-sb-2
+:class: dropdown
+Undefined because the shape of **A** (3×2) is different from the shape of
+**B** (2×3).
+```
 
-3. $\vv{A}^{\rm T} + \vv{B}$
+```{exercise}
+:label: matrices-sb-3
+$\vv{A}^{\rm T} + \vv{B}$
+```
 
-   ```{solution}
-   $$
-   \vv{A}^{\rm T} + \vv{B}
-   &= \begin{bmatrix} 0 & 2 & 1 \\ 2 & 4 & 3 \end{bmatrix}
-   + \begin{bmatrix} 0 & 2 & 1\\ 2 & 4 & 3 \end{bmatrix} \\
-   &= \begin{bmatrix} 0+0 & 2+2 & 1+1 \\ 2+2 & 4+4 & 3+3 \end{bmatrix} \\
-   &= \begin{bmatrix} 0 & 4 & 2 \\ 4 & 8 & 6 \end{bmatrix}
-   $$
-   (or, $\vv{A}^{\rm T} = \vv{B}$ so $\vv{A}^{\rm T} + \vv{B} = 2\vv{B}$.)
-   ```
+```{solution} matrices-sb-3
+:class: dropdown
+\begin{align}
+\vv{A}^{\rm T} + \vv{B}
+&= \begin{bmatrix} 0 & 2 & 1 \\ 2 & 4 & 3 \end{bmatrix}
++ \begin{bmatrix} 0 & 2 & 1\\ 2 & 4 & 3 \end{bmatrix} \\
+&= \begin{bmatrix} 0+0 & 2+2 & 1+1 \\ 2+2 & 4+4 & 3+3 \end{bmatrix} \\
+&= \begin{bmatrix} 0 & 4 & 2 \\ 4 & 8 & 6 \end{bmatrix}
+\end{align}
+(or, $\vv{A}^{\rm T} = \vv{B}$ so $\vv{A}^{\rm T} + \vv{B} = 2\vv{B}$.)
+```
 
-4. $\vv{C - D}$
+```{exercise}
+:label: matrices-sb-4
+$\vv{C} - \vv{D}$
+```
 
-   ```{solution}
-   $$
-   \vv{C} -\vv{D}
-   &= \begin{bmatrix}
-   3-0 & 0-(-5) & 4-(-3) \\
-   -1-(-5) & 2-2 & 2-4 \\
-   6-(-3) & 5-4 & -4-0 \end{bmatrix} \\
-   &= \begin{bmatrix} 3 & 5 & 7 \\ 4 & 0 & -2 \\ 9 & 1 & -4 \end{bmatrix}
-   $$
-   ```
+```{solution} matrices-sb-4
+:class: dropdown
+\begin{align}
+\vv{C} -\vv{D}
+&= \begin{bmatrix}
+3-0 & 0-(-5) & 4-(-3) \\
+-1-(-5) & 2-2 & 2-4 \\
+6-(-3) & 5-4 & -4-0 \end{bmatrix} \\
+&= \begin{bmatrix} 3 & 5 & 7 \\ 4 & 0 & -2 \\ 9 & 1 & -4 \end{bmatrix}
+\end{align}
+```
 
-5. $\vv{Aa}$
+```{exercise}
+:label: matrices-sb-5
+$\vv{A}\vv{a}$
+```
 
-   ```{solution}
-   $$
-   \vv{Aa}
-   &= \begin{bmatrix}
-   0 \cdot 1 + 2 \cdot 3 \\
-   2 \cdot 1 + 4 \cdot 3 \\
-   1 \cdot 1 + 3 \cdot 3 \end{bmatrix} \\
-   &= \begin{bmatrix} 6 \\ 14 \\ 10 \end{bmatrix}
-   $$
-   ```
+```{solution} matrices-sb-5
+:class: dropdown
+\begin{align}
+\vv{Aa}
+&= \begin{bmatrix}
+0 \cdot 1 + 2 \cdot 3 \\
+2 \cdot 1 + 4 \cdot 3 \\
+1 \cdot 1 + 3 \cdot 3 \end{bmatrix} \\
+&= \begin{bmatrix} 6 \\ 14 \\ 10 \end{bmatrix}
+\end{align}
+```
 
-6. $\vv{Ab}$
+```{exercise}
+:label: matrices-sb-6
+$\vv{A}\vv{b}$
+```
 
-   ```{solution}
-   Undefined because **A** has 2 columns but **b** has 1 row.
-   ```
+```{solution} matrices-sb-6
+:class: dropdown
+Undefined because **A** has 2 columns but **b** has 1 row.
+```
 
-7. $\vv{Ac}$
+```{exercise}
+:label: matrices-sb-7
+$\vv{A}\vv{c}$
+```
 
-   ```{solution}
-   Undefined because **A** has 2 columns but **c** has 3 rows.
-   ```
+```{solution} matrices-sb-7
+:class: dropdown
+Undefined because **A** has 2 columns but **c** has 3 rows.
+```
 
-8. $\vv{Bc}$
+```{exercise}
+:label: matrices-sb-8
+$\vv{B}\vv{c}$
+```
 
-   ```{solution}
-   $$
-   \vv{Bc}
-   &= \begin{bmatrix}
-   0 \cdot 2 + 2 \cdot 0 + 1 \cdot -1 \\
-   2 \cdot 2 + 4 \cdot 0 + 3 \cdot -1 \end{bmatrix} \\
-   &= \begin{bmatrix} -1 \\ 1 \end{bmatrix}
-   $$
-   ```
+```{solution} matrices-sb-8
+:class: dropdown
+\begin{align}
+\vv{Bc}
+&= \begin{bmatrix}
+0 \cdot 2 + 2 \cdot 0 + 1 \cdot -1 \\
+2 \cdot 2 + 4 \cdot 0 + 3 \cdot -1 \end{bmatrix} \\
+&= \begin{bmatrix} -1 \\ 1 \end{bmatrix}
+\end{align}
+```
 
-9. $\vv{c}^{\rm T}\vv{A}$
+```{exercise}
+:label: matrices-sb-9
+$\vv{c}^{\rm T}\vv{A}$
+```
 
-   ```{solution}
-   $$
-   \vv{c}^{\rm T} \vv{A}
-   &= \begin{bmatrix} 0 & 2 & -1\end{bmatrix}
-     \begin{bmatrix} 0 & 2 \\ 2 & 4 \\ 1 &3 \end{bmatrix} \\
-   &= \begin{bmatrix}
-   2 \cdot 0 + 0 \cdot 2 + -1 \cdot 1 &
-   2 \cdot 2 + 0 \cdot 4 \cdot -1 \cdot 3 \end{bmatrix} \\
-   &= \begin{bmatrix} -1 & 1 \end{bmatrix}
-   $$
-   ```
+```{solution} matrices-sb-9
+:class: dropdown
+\begin{align}
+\vv{c}^{\rm T} \vv{A}
+&= \begin{bmatrix} 0 & 2 & -1\end{bmatrix}
+    \begin{bmatrix} 0 & 2 \\ 2 & 4 \\ 1 &3 \end{bmatrix} \\
+&= \begin{bmatrix}
+2 \cdot 0 + 0 \cdot 2 + -1 \cdot 1 &
+2 \cdot 2 + 0 \cdot 4 \cdot -1 \cdot 3 \end{bmatrix} \\
+&= \begin{bmatrix} -1 & 1 \end{bmatrix}
+\end{align}
+```
