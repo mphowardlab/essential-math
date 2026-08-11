@@ -36,14 +36,14 @@ L[y'(t)] &= \int_0^\infty e^{-st} y'(t) \d{t} \\
 using $u = e^{-st}$ and $\d{v} = y'(t) \d{t}$. Some common Laplace transforms
 are:
 
-| $f(t)$             | $F(s) = L[f(t)]$                |
-|--------------------|---------------------------------|
-| $t^n$, $n=0, 1, 2, \cdots$ | $\dfrac{n!}{s^{n+1}}$   |
-| $e^{at}$           | $\dfrac{1}{s - a}$              |
-| $\sin(at)$         | $\dfrac{a}{s^2 + a^2}$          |
-| $\cos(at)$         | $\dfrac{s}{s^2 + a^2}$          |
-| $e^{at} \sin(bt)$  | $\dfrac{b}{(s - a)^2 + b^2}$    |
-| $e^{at} \cos(bt)$  | $\dfrac{s - a}{(s - a)^2 + b^2}$|
+| $f(t)$                     | $F(s) = L[f(t)]$                 |
+|----------------------------|----------------------------------|
+| $t^n$, $n=0, 1, 2, \cdots$ | $\dfrac{n!}{s^{n+1}}$            |
+| $e^{at}$                   | $\dfrac{1}{s - a}$               |
+| $\sin(at)$                 | $\dfrac{a}{s^2 + a^2}$           |
+| $\cos(at)$                 | $\dfrac{s}{s^2 + a^2}$           |
+| $e^{at} \sin(bt)$          | $\dfrac{b}{(s - a)^2 + b^2}$     |
+| $e^{at} \cos(bt)$          | $\dfrac{s - a}{(s - a)^2 + b^2}$ |
 
 The Laplace transform is a linear operator, so
 

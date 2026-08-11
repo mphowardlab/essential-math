@@ -276,7 +276,8 @@ Last, integrate:
 
 \begin{align}
 &\int \frac{x^4 - 5x^3 + 6x^2 -18}{x^3 -3x^2} \d{x} \\
-&= \int \left(x - 2 + \frac{2}{x} + \frac{6}{x^2} - \frac{2}{x-3} \right) \d{x} \\
+&= \int \left(x - 2 + \frac{2}{x} + \frac{6}{x^2} - \frac{2}{x-3} \right)
+   \d{x} \\
 &= \frac{x^2}{2} -2x + 2\ln|x| - \frac{6}{x} - 2\ln|x-3| + c
 \end{align}
 
