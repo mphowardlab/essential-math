@@ -3,8 +3,10 @@
 ## Trigonmetric functions
 
 \begin{align}
-\sin \theta &= \frac{y}{r} & \csc \theta &= \frac{r}{x} = \frac{1}{\cos \theta} \\
-\cos \theta &= \frac{x}{r} & \sec \theta &= \frac{r}{x} = \frac{1}{\cos \theta} \\
+\sin \theta &= \frac{y}{r} & \csc \theta &= \frac{r}{x} =
+  \frac{1}{\cos \theta} \\
+\cos \theta &= \frac{x}{r} & \sec \theta &= \frac{r}{x} =
+  \frac{1}{\cos \theta} \\
 \tan \theta &= \frac{y}{x} = \frac{\sin \theta}{\cos \theta} &
 \cot \theta &= \frac{x}{y} = \frac{\cos \theta}{\sin \theta}
 \end{align}
