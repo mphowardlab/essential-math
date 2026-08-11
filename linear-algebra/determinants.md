@@ -50,8 +50,10 @@ Let's use the first definition and pick the first row $i=1$:
 \begin{align}
 \begin{vmatrix}a & b \\ c & d\end{vmatrix}
 &= (-1)^{1+1} \cdot A_{11} M_{11} + (-1)^{1+2} A_{12} M_{12} \\
-&= a \begin{vmatrix} \phantom{a} & \phantom{b} \\ \phantom{c} & d \end{vmatrix} -
- b \begin{vmatrix} \phantom{a} & \phantom{b} \\ c & \phantom{d} \end{vmatrix} \\
+&= a \begin{vmatrix} \phantom{a} & \phantom{b} \\
+                     \phantom{c} & d \end{vmatrix} -
+ b \begin{vmatrix} \phantom{a} & \phantom{b} \\
+                    c & \phantom{d} \end{vmatrix} \\
 &= a d - b c
 \end{align}
 
@@ -99,7 +101,12 @@ It's usually a good idea to expand along the row or column with the most zeros!
 For example, let's evaluate
 
 \begin{align}
-\begin{vmatrix}1 & -2 & 0 & 0 \\ 4 & 3 & 5 & 0 \\ 0 &2 & 7 & 5 \\ 0 & 0 & 2 & 0 \end{vmatrix}
+\begin{vmatrix}
+1 & -2 & 0 & 0 \\
+4 & 3 & 5 & 0 \\
+0 & 2 & 7 & 5 \\
+0 & 0 & 2 & 0
+\end{vmatrix}
 &= -2 \cdot \begin{vmatrix}1 & -2 & 0 \\ 4 & 3 & 0 \\ 0 &2 & 5 \end{vmatrix} \\
 &= -2 \cdot 5 \cdot \begin{vmatrix}1 & -2 \\ 4 & 3 \end{vmatrix} \\
 &= -10 \cdot (3+8) \\
