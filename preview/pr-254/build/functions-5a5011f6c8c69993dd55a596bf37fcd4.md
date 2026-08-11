@@ -220,7 +220,7 @@ A right triangle with $45^\circ$ ($\pi/4$) angles has the following side lengths
 
 and so
 
-| $\theta$  |         | $\sin \theta$  | $\cos \theta$ |
+| $\theta$   |         | $\sin \theta$  | $\cos \theta$ |
 |------------|---------|----------------|---------------|
 | $30^\circ$ | $\pi/6$ | $1/2$          | $\sqrt{3}/2$  |
 | $45^\circ$ | $\pi/4$ | $1/\sqrt{2}$   | $1/\sqrt{2}$  |

@@ -13,7 +13,8 @@ To determine the coefficients $c_n$, consider the values of *f* and its
 derivatives at $x_0$
 
 \begin{align}
-f(x) &= c_0 + c_1(x-x_0) + c_2(x-x_0)^2 + c_3(x-x_0)^3 + \cdots & f(x_0) &= c_0 \\
+f(x) &= c_0 + c_1(x-x_0) + c_2(x-x_0)^2 + c_3(x-x_0)^3 +
+    \cdots & f(x_0) &= c_0 \\
 f'(x) &= c_1 + 2 c_2(x-x_0) + 3 c_3(x-x_0)^2 + \cdots & f'(x_0) &= c_1 \\
 f''(x) &= 2 c_2 + 6 c_3(x-x_0) + \cdots & f''(x_0) &= 2 c_2 \\
 f'''(x) &= 6 c_3(x-x_0) + \cdots & f''(x_0) &= 6 c_3

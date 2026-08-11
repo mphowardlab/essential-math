@@ -363,11 +363,11 @@ f'(x) = \dd{}{f}{u} \dd{}{u}{x} = -2u^{-2} \cdot \dd{}{u}{x} =
 
 ## Trigonometric functions
 
-| $f(x)$    | $f'(x)$    | $f(x)$    | $f'(x)$            |
-|-----------|------------|-----------|--------------------|
-| $\sin x$  | $\cos x$   | $\csc x$ | $-\csc x \cot x$ |
+| $f(x)$    | $f'(x)$    | $f(x)$    | $f'(x)$          |
+|-----------|------------|-----------|------------------|
+| $\sin x$  | $\cos x$   | $\csc x$  | $-\csc x \cot x$ |
 | $\cos x$  | $-\sin x$  | $\sec(x)$ | $\sec x \tan x$  |
-| $\tan x$  | $\sec^2 x$ | $\cot x$ | $-\csc^2 x$       |
+| $\tan x$  | $\sec^2 x$ | $\cot x$  | $-\csc^2 x$      |
 
 All of these follow from knowing only two derivatives: $\sin x$ and $\cos x$!
 For example, to find the derivative of $\tan x$, use the quotient rule:
