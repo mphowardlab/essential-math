@@ -20,12 +20,19 @@ m \vv{x}'' = \vv{F}(\vv{x})
 In chemical engineering, differential equations are often used to model the rate
 of change of quantities with respect to time. For example, differential
 equations are needed to model unsteady processes, such as batch reactors, where
-process variables are expected to change over time. Differential equations can
-also be used to model the startup of a process as it comes to steady state, as
-well as how it behaves if it departs from steady state. The latter case is
-especially important for control theory!
+process variables are expected to change over time.
 
-Differential equations are also used to model how quantites change in space.
+```{example} Batch reactor
+
+Batch reactor example.
+
+```
+
+Differential equations can also be used to model the startup of a process as it
+comes to steady state, as well as how it behaves if it departs from steady
+state. The latter case is especially important for control theory!
+
+BeDifferential equations are also used to model how quantities change in space.
 For example, differential equations are needed to model transport phenomena,
 such as diffusion and heat transfer, as well as to design certain types of
 process equipment, such as plug flow reactors.
