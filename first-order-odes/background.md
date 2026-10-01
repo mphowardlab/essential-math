@@ -11,12 +11,14 @@ kernelspec:
 
 # Background
 
+```{important} Directions
 This page contains interactive elements. To enable them, click the "power"
 button, then the "play" button to run all cells.
+```
 
 ```{code-cell}
 :tags: [skip-execution]
-%pip install ipywidgets ipympl
+%pip install ipympl ipywidgets
 ```
 
 ## Definition

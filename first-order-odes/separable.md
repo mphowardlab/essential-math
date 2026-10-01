@@ -1,34 +1,180 @@
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Separable differential equations
 
-```{topic} Separable first-order ODEs
-If a first-order ODE can be separated so that *y* and *x* are on each side, it
-can be solved by integration:
-
-\begin{align}
-y' &= \frac{f(x)}{g(y)} \\
-\int g(y)\d{y} &= \int f(x) \d{x} + c
-\end{align}
+```{important} Directions
+This page contains interactive elements. To enable them, click the "power"
+button, then the "play" button to run all cells.
 ```
 
-For example, to solve $y' = xy$, separate the variables and integrate:
+```{code-cell}
+:tags: [skip-execution]
+%pip install ipympl ipywidgets
+```
+
+## Mathematics
+
+If a first-order ODE can be **separated** so that $y$ and $x$ are on different
+sides, it can be solved by integration:
+
+\begin{align}
+\dd{}{y}{x} &= \frac{f(x)}{g(y)} \\
+\int g(y)\d{y} &= \int f(x) \d{x}
+\end{align}
+
+For example, to solve:
+
+\begin{equation}
+\dd{}{y}{x} = xy
+\end{equation}
+
+Separate the variables and integrate:
 
 \begin{align}
 \int \frac{\d{y}}{y} &= \int x \d{x} \\
-\ln y &= \frac{x^2}{2} + c_0 \\
-y &= e^{x^2/2 + c_0} \\
-y &= c e^\frac{x^2}{2}
+\ln y &= \frac{x^2}{2} + c
 \end{align}
 
-Note that here, we are being careful to denote the redefinition of the
-integration constant ($c = e^{c_0}$). This detail may be glossed over at times.
+At this point, we have a solution for $\ln y$ that contains a constant $c$.
+We can obtain an explicit solution for $y$ by solving for it:
 
-## Example: Chemical reaction kinetics
+\begin{align}
+y &= e^{x^2/2 + c} \\
+y &= \hat{c} e^\frac{x^2}{2}
+\end{align}
 
-A substance is disappearing according to a first-order reaction, so its
-concentration follows
+Finding a particular solution from here is straightforward if we know an initial
+condition: substitute your initial condition and solve for $c$!
+
+```{warning}
+In this example, we were careful to denote the redefinition of the
+unknown constant ($\hat{c} = e^{c}$). This step is frequently glossed over,
+but you may want to be careful if you are applying an initial condition, as
+you must make sure you determine the value of the "right" $c$.
+```
+
+### Skill builder problems
+
+```{trythis}
+To practice separation of variables, solve the following initial value problems.
+```
+
+1. $y'+(x+2)y^2 = 0, \quad y(1) = 1$
+
+   ```{dropdown} Solution
+
+   Separate and integrate:
+
+   \begin{align}
+   \dd{}{y}{x} &= -(x+2)y^2 \\
+   \int\frac{\d{y}}{y^2} &= -\int (x+2) \d{x} \\
+   -\frac{1}{y} &= -\left(\frac{x^2}{2} + 2x\right) + c
+   \end{align}
+
+   Apply initial condition $y(1) = 1$:
+
+   \begin{equation}
+   -1 = -\left(\frac{1}{2} + 2 \right) + c
+   \end{equation}
+
+   so $c = 3/2$. Hence,
+
+   \begin{equation}
+   y = \frac{2}{x^2+4x-3}
+   \end{equation}
+   ```
+
+2. $yy'+4x = 0, \quad y(0) = 3$
+
+   ```{dropdown} Solution
+
+   Separate and integrate:
+
+   \begin{align}
+   y \frac{dy}{dx} &= -4x \\
+   \int y \d{y} &= \int-4x \d{x} \\
+   -\frac{y^2}{2} &= -2x^2 + c \\
+   \end{align}
+
+   Apply initial condition $y(0) = 3$:
+
+   \begin{equation}
+   -\frac{9}{2} = c
+   \end{equation}
+
+   so
+
+   \begin{align}
+   y^2 &= 9-4x^2 \\
+   y &= \pm \sqrt{9-4x^2}
+   \end{align}
+
+   The negative root does not satisfy the initial condition, so choose the
+   positive root:
+
+   \begin{equation}
+   y = \sqrt{9-4x^2}
+   \end{equation}
+   ```
+
+3. $\displaystyle y' = \frac{x-1}{y}e^{-y^2}, \quad y(0) = 1$
+
+   ```{dropdown} Solution
+
+   Separate and integrate:
+
+   \begin{align}
+   \int y e^{y^2} \d{y} &= \int (x-1) \d{x} \\
+   \frac{1}{2} e^{y^2} &= \frac{x^2}{2} - x + c
+   \end{align}
+
+   Apply initial condition $y(0) = 1$:
+
+   \begin{equation}
+   \frac{1}{2} e = c
+   \end{equation}
+
+   Hence,
+
+   \begin{align}
+   e^{y^2} &= x^2 - 2x + e \\
+   y^2 &= \ln(x^2 - 2x + e) \\
+   y &= \pm \sqrt{\ln(x^2 - 2x + e)}
+   \end{align}
+
+   The negative root again does not meet the initial condition, so choose the
+   positive one:
+
+   \begin{equation}
+   y = \sqrt{\ln(x^2 - 2x + e)}
+   \end{equation}
+   ```
+
+## Applications
+
+We will now work through three applications of first-order ODEs in chemical
+engineering that can be solved using separation of variables.
+
+### Chemical reaction kinetics
+
+We previously talked about a [batch reactor](./index.md) as an example of a
+first-order ODE. Let's revisit that example and try solving it.
+
+```{example} Batch reactor
+We previously showed that the concentration of A undergoing a first-order
+reaction in a batch reactor follows the first-order ODE:
 
 \begin{equation}
-\dd{}{c}{t} = -k c
+\dd{}{c_{\rm A}}{t} = -k c_{\rm A}
 \end{equation}
 
 where $k$ is the reaction rate constant. If the initial concentration of the
@@ -37,37 +183,113 @@ what is the reaction rate constant?
 
 ---
 
-First, solve the differential equation using separation of variables
+First, separate the variables and integrate to obtain a general solution to the
+differential equation:
 
 \begin{align}
-\int \frac{1}{c} \d{c} &= \int -k \d{t} \\
-\ln c &= -k t + B
+\int \frac{1}{c_{\rm A}} \d{c_{\rm A}} &= \int -k \d{t} \\
+\ln c_{\rm A} &= -k t + B
 \end{align}
 
-where *B* is an unknown integration constant. Apply the initial condition that
-$c(0) = 1$
+where *B* is an unknown constant. Next, apply the initial condition that
+$c_{\rm A}(0) = 1\,{\rm M}$ to determine $B$:
 
 \begin{equation}
 \ln 1 = -k \cdot 0 + B \to B = 0
 \end{equation}
 
-Hence,
+Hence, the particular solution is:
 
 \begin{equation}
-k = -\frac{\ln c}{t}
+\ln c_{\rm A} = -k t
 \end{equation}
 
-We know that $c(1) = 0.70$ so
+We know that $c_{\rm A}(1) = 0.70$ so substituting into the particular solution
+and rearranging to solve for $k$ gives:
 
 \begin{equation}
 k = -\frac{\ln 0.7}{1\,{\rm h}} = 0.36\,{\rm h}^{-1}
 \end{equation}
+```
 
-## Example: Newton's law of cooling
+Does our answer make sense? We can check in two ways. First, we can verify that
+$k$ has the right dimensions. Both sides of the ODE must have dimensions of
+concentration per time, and since $k$ multiplies $c_{\rm A}$, it must then have
+dimensions of per time. Our answer of $0.36\,{\rm h}^{-1}$ is consistent with
+that.
 
-Estimate the temperature *T* in an office building at 6 a.m. if the heat goes
+Second, we can obtain a solution for $c_{\rm A}(t)$ and verify that it has the
+right behavior. Rearranging gives
+
+\begin{equation}
+c_{\rm A}(t) = e^{-0.36\,{\rm h}^{-1} \, t}
+\end{equation}
+
+Substituting $t = 0\,{\rm h}$ gives 1.0 and $t = 1\,{\rm h}$ gives 0.7, which
+are the two points we knew. Further, a plot of $c_{\rm A}(t)$ (see below)
+decreases with time, which is what we expect to see for a reactant that is being
+consumed by a reaction.
+
+```{trythis}
+Both the rate constant $k$ and the initial concentration in the reactor
+$c_{{\rm A},0}$ affect the concentration in the reactor over time.
+Try changing $k$ and $c_{{\rm A},0}$ using the sliders below. What do you notice
+about both the value of the concentration and the rate of change? Does the
+concentration at long times depend on these values?
+Think about how this connects with the differential equation and your solution.
+How would your solution need to change
+```
+
+```{code-cell}
+:tags: [hide-input]
+
+%matplotlib widget
+import ipywidgets
+import numpy
+import matplotlib.pyplot
+
+fig, ax = matplotlib.pyplot.subplots()
+fig.canvas.header_visible = False
+
+t = numpy.linspace(0, 10)
+def analytical_solution(k, c0):
+    return c0 * numpy.exp(-k * t)
+
+# start plot from solution above
+line = ax.plot(t, analytical_solution(0.36, 1.0), color="#e41a1c")
+
+# vary the rate constant and initial concentration
+@ipywidgets.interact(
+    k=ipywidgets.FloatSlider(
+        value=0.36, min=0.1, max=1.0, step=0.01, description=r"$k$ (1/h)"
+    ),
+    c0=ipywidgets.FloatSlider(
+        value=1, min=0, max=2, step=0.1, description=r"$c_{{\rm A},0}$ (M)"
+    ),
+)
+def update(k, c0):
+    line[0].set_ydata(analytical_solution(k, c0))
+
+# plot styling
+ax.set_xlabel("$t$ (h)")
+ax.set_xlim((t[0], t[-1]))
+ax.set_ylabel(r"$c_{\rm A}$ (M)")
+ax.set_ylim((0, 2));
+
+```
+
+### Heat transfer
+
+We have done examples involving unsteady mole balances, but you can also
+formulate unsteady *energy* balances to study heat transfer processes. We will
+not discuss how to formulate these balances here, but they involve a similar
+process as for unsteady mass or mole balances.
+
+````{trythis} Heat losses from a building
+
+Estimate the temperature $T$ in an office building at 6 a.m. if the heat goes
 off at 10 p.m. when the building is 70°F and the outside temperature $T_\infty$
-is 45°F if the *T* follows
+is 45°F if *T* follows
 
 \begin{equation}
 \dd{}{T}{t} = -k(T - T_\infty)
@@ -79,40 +301,79 @@ where $k = 0.05\,{\rm h}^{-1}$.
 
 Separate the differential equation and integrate
 
+```{dropdown} Check your work
+
 \begin{align}
 \int \frac{1}{T - T_\infty} \d{T} &= \int -k \d{t} \\
-\ln(T - T_\infty) &= -kt + c \\
-T - T_\infty &= C e^{-kt} \\
-T &= T_\infty + C e^{-kt}
+\ln(T - T_\infty) &= -kt + c
+\end{align}
+```
+
+Rearrange your solution explicitly for $T$:
+
+```{dropdown} Check your work
+
+\begin{align}
+T - T_\infty &= c e^{-kt} \\
+T &= T_\infty + c e^{-kt}
 \end{align}
 
-Call 10 p.m. the time where $t = 0$. Then,
+Note that here we have implicitly redefined our unknown constant.
+```
+
+Determine the value of $c$ if we call 10 p.m. the time where $t = 0$.
+
+```{dropdown} Check your work
 
 \begin{equation}
-70 = T(0) = 45 + C \to C = 25
+70 = T(0) = 45 + c \to c = 25
 \end{equation}
+```
 
-Last, evaluate the temperature at 6 a.m. when $t = 8$:
+Last, evaluate the temperature at 6 a.m.
+
+```{dropdown} Check your work
+
+6 a.m. is 8 hours later, so $t = 8$:
 
 \begin{equation}
 T(8) = 45 + 25 e^{-0.05 \cdot 8} = 62
 \end{equation}
 
-The temperature is approximately 62°F.
-
-## Example: Toricelli's Law
-
-A 1 cm hole opens at the bottom of a 1 m cylindrical tank. Water exits the
-hole with velocity that follows Toricelli's, $\sqrt{2gh}$ where *g* is the
-acceleration due to gravity and *g* is the height of water above the hole.
-
-```{image} ./_images/toricelli.jpg
-:alt: Tank draining through a pinhole
-:width: 200px
-:align: center
+The temperature in the building is approximately 62°F.
 ```
+````
 
-If there is 2 m of water in the tank initially, when does it drain?
+### Fluid mechanics
+
+Imbalances in mass flow rates cause process equipment to fill or drain over
+time. There are many interesting "tank filling" or "tank draining" problems,
+which may arise, for example, during startup of a process or when there is a
+leak in some equipment.
+
+Here, we will study what happens when there is a small hole in the bottom of a
+tank that causes it to leak. The velocity of the liquid leaving the hole will
+depend on how much liquid is above it exerting a pressure. If the hole is small,
+fluid mechanics can be used to show that the velocity is $v = \sqrt{2 g h}$,
+where $g$ is the acceleration due to gravity and $h$ is the height of liquid
+above the hole. This result is called **Toricelli's law**.
+
+We can use this velocity to formulate an unsteady mass balance on the tank to
+model how it drains. A few facts from fluid mechanics that are useful to know:
+
+- The volumetric flow rate $\dot{V}$ through an area $A$ can be calculated from
+  the velocity as $\dot{V} = v A$.
+- The mass $m$ contained in a volume $V$ is $m = \rho V$, where $\rho$ is the
+  mass density of the substance.
+- Similarly, the mass flow rate $\dot{m}$ of a stream with volumetric flow rate
+  $\dot{V}$ is $\dot{m} = \rho \dot{V}$.
+
+Now, let's try our problem!
+
+```{example} Leak from a tank
+A 1 cm hole opens at the bottom of a 1 m cylindrical tank. Water exits the
+hole with velocity that follows Toricelli's law. If there is 2 m of water in
+the tank initially, when does it drain?
 
 ---
 
@@ -175,107 +436,4 @@ t &= 2 \left(\frac{1}{0.01}\right)^2 \sqrt{\frac{2}{2 \cdot 9.8}} = 6400
 
 This time is in seconds because all units are SI, so the tank drains in about
 1.8 hours.
-
-## Skill builder problems
-
-Solve the following:
-
-```{exercise}
-:label: separable-sb-1
-$y'+(x+2)y^2 = 0, \quad y(1) = 1$
-```
-
-```{solution} separable-sb-1
-:class: dropdown
-Separate and integrate:
-
-\begin{align}
-\dd{}{y}{x} &= -(x+2)y^2 \\
-\int\frac{\d{y}}{y^2} &= -\int (x+2) \d{x} \\
--\frac{1}{y} &= -\left(\frac{x^2}{2} + 2x\right) + c
-\end{align}
-
-Apply initial condition $y(1) = 1$:
-
-\begin{equation}
--1 = -\left(\frac{1}{2} + 2 \right) + c
-\end{equation}
-
-so $c = 3/2$. Hence,
-
-\begin{equation}
-y = \frac{2}{x^2+4x-3}
-\end{equation}
-```
-
-```{exercise}
-:label: separable-sb-2
-$yy'+4x = 0, \quad y(0) = 3$
-```
-
-```{solution} separable-sb-2
-:class: dropdown
-Separate and integrate:
-
-\begin{align}
-y \frac{dy}{dx} &= -4x \\
-\int y \d{y} &= \int-4x \d{x} \\
--\frac{y^2}{2} &= -2x^2 + c \\
-\end{align}
-
-Apply initial condition $y(0) = 3$:
-
-\begin{equation}
--\frac{9}{2} = c
-\end{equation}
-
-so
-
-\begin{align}
-y^2 &= 9-4x^2 \\
-y &= \pm \sqrt{9-4x^2}
-\end{align}
-
-The negative root does not satisfy the initial condition, so choose the
-positive root:
-
-\begin{equation}
-y = \sqrt{9-4x^2}
-\end{equation}
-```
-
-```{exercise}
-:label: separable-sb-3
-$\displaystyle y' = \frac{x-1}{y}e^{-y^2}, \quad y(0) = 1$
-```
-
-```{solution} separable-sb-3
-:class: dropdown
-Separate and integrate:
-
-\begin{align}
-\int y e^{y^2} \d{y} &= \int (x-1) \d{x} \\
-\frac{1}{2} e^{y^2} &= \frac{x^2}{2} - x + c
-\end{align}
-
-Apply initial condition $y(0) = 1$:
-
-\begin{equation}
-\frac{1}{2} e = c
-\end{equation}
-
-Hence,
-
-\begin{align}
-e^{y^2} &= x^2 - 2x + e \\
-y^2 &= \ln(x^2 - 2x + e) \\
-y &= \pm \sqrt{\ln(x^2 - 2x + e)}
-\end{align}
-
-The negative root again does not meet the initial condition, so choose the
-positive one:
-
-\begin{equation}
-y = \sqrt{\ln(x^2 - 2x + e)}
-\end{equation}
 ```
