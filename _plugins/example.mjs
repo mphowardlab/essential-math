@@ -7,7 +7,7 @@ const exampleAdmonition = {
     arg: { type: String, doc: "Title of the example (default: Example)." },
     body: { type: String, doc: "Body of the example." },
     run(data, vfile, ctx) {
-        const title = (data.arg) ? `Example: ${data.arg}` : "Example"
+        const title = (data.arg) ? `Example: ${data.arg}` : "Example";
         const body = data.body || "";
         const admonition = {
             "type": "admonition",
@@ -17,10 +17,10 @@ const exampleAdmonition = {
                 {
                     "type": "admonitionTitle",
                     "children": ctx.parseMyst(title.trim())["children"][0]["children"]
-                }
+                },
+                ...ctx.parseMyst(body.trim())["children"]
             ]
         };
-        admonition["children"].push(...ctx.parseMyst(body.trim())["children"]);
         return [admonition];
     }
 };
