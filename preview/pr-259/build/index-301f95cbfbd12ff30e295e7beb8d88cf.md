@@ -40,12 +40,11 @@ the reaction is started and before it is stopped. Hence, the concentrations of
 the reactants and products in a batch reactor continuously change as the
 reaction progresses.
 
-The second-order reaction $2 {\rm A} \to {\rm B}$ occurs in a batch reactor. The
-rate of reaction of A per unit volume is $-r_{\rm A} = k c_{\rm A}^2$, where
-$k$ is the rate constant (units of $1/({\rm M}\,{\rm s})$). The liquid volume in
-the reactor is $V$, and it can be assumed to be constant density regardless of
-composition. How does the concentration $c_{\rm A}$ change over time $t$ from
-its initial value of 2 M?
+The first-order reaction ${\rm A} \to {\rm B}$ occurs in a batch reactor. The
+rate of reaction of A per unit volume is $-r_{\rm A} = k c_{\rm A}$, where
+$k$ is the rate constant. The liquid volume in the reactor is $V$, and it can
+be assumed to be constant density regardless of composition. How does the
+concentration $c_{\rm A}$ change over time $t$ from its initial value of 1 M?
 
 ---
 
@@ -62,18 +61,18 @@ Then substitute this relationship, the given rate of reaction, and that there
 are no flows in or out of a batch reactor:
 
 \begin{equation}
-\dd{}{(c_{\rm A} V)}{t} = - k c_{\rm A}^2 V
+\dd{}{(c_{\rm A} V)}{t} = - k c_{\rm A} V
 \end{equation}
 
 Last, since the volume is constant, it can be removed from the derivative:
 
 \begin{equation}
-\dd{}{c_{\rm A}}{t} = -k c_{\rm A}^2
+\dd{}{c_{\rm A}}{t} = -k c_{\rm A}
 \end{equation}
 
 This model is a **first-order ordindary differential equation** for
 $c_{\rm A}$. It describes the rate of change of $c_{\rm A}$ over time. We also
-know that $c_{\rm A}(0) = 2\,{\rm M}$ initially.
+know that $c_{\rm A}(0) = 1\,{\rm M}$ initially.
 
 We will learn how to solve for $c_{\rm A}(t)$ in this chapter!
 ```
