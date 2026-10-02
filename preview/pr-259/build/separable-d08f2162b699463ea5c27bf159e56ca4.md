@@ -66,7 +66,7 @@ To practice separation of variables, solve the following initial value problems.
 
 1. $y'+(x+2)y^2 = 0, \quad y(1) = 1$
 
-   ```{dropdown} Solution
+   ```{dropdown} Check your work
 
    Separate and integrate:
 
@@ -91,7 +91,7 @@ To practice separation of variables, solve the following initial value problems.
 
 2. $yy'+4x = 0, \quad y(0) = 3$
 
-   ```{dropdown} Solution
+   ```{dropdown} Check your work
 
    Separate and integrate:
 
@@ -124,7 +124,7 @@ To practice separation of variables, solve the following initial value problems.
 
 3. $\displaystyle y' = \frac{x-1}{y}e^{-y^2}, \quad y(0) = 1$
 
-   ```{dropdown} Solution
+   ```{dropdown} Check your work
 
    Separate and integrate:
 

@@ -76,7 +76,7 @@ y = c e^{x^2 / 2}
 Verify the general solution by evaluating $y'$, then substituting $y$ and $y'$
 in the ODE to check if it holds for all $x$.
 
-```{dropdown} Check work
+```{dropdown} Check your work
 
 The derivative is:
 
