@@ -11,9 +11,7 @@ kernelspec:
 
 # Background
 
-```{important} Directions
-This page contains interactive elements. To enable them, click the "power"
-button, then the "play" button to run all cells.
+```{interactive-directions}
 ```
 
 ```{code-cell}
@@ -73,24 +71,29 @@ y = c e^{x^2 / 2}
 \label{eq:first-order-odes:background:general}
 \end{equation}
 
-```{admonition} Verification of a general solution
-:class: dropdown
+````{trythis}
 
-Evaluate $y'$:
+Verify the general solution by evaluating $y'$, then substituting $y$ and $y'$
+in the ODE to check if it holds for all $x$.
+
+```{dropdown} Check work
+
+The derivative is:
 
 \begin{equation}
 y' = c x e^{x^2/2}
 \end{equation}
 
-then substitute $y$ and $y'$ in the ODE and check it holds for all $x$:
+so
 
 \begin{align}
-y' &= x y \\
+y' &= xy \\
 c x e^{x^2 / 2} &= x (c e^{x^2 / 2})
 \end{align}
 
 Both sides are equal to each other, so the solution is correct!
 ```
+````
 
 Different functions, all satisfying the ODE, can be created by choosing a value
 of $c$. We call each of these solutions a **particular solution**.
@@ -127,8 +130,8 @@ known point in time or space.
 ## Direction field
 
 Graphically, an explicit first-order ODE can be represented by a **direction
-field** (or slope field) showing the tangent to a particular solution in this
-family at a point $(x,y)$ because $y'$ represents the local rate of change.
+field** (or slope field) showing the tangent to a particular solution
+at a point $(x,y)$ because $y'$ represents the local rate of change.
 Starting from a point in the direction field and tracing a curve through it
 gives a particular solution, which corresponds to a certain value of
 $c$.

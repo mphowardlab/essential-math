@@ -3,9 +3,12 @@
  */
 const exampleAdmonition = {
     name: "example",
-    doc: "A worked example problem.",
-    arg: { type: String, doc: "Title of the example (default: Example)." },
+    doc: "A worked example.",
+    arg: { type: String, doc: "Additional title of example." },
     body: { type: String, doc: "Body of the example." },
+    options: {
+        class: { type: String, doc: "CSS class." },
+    },
     run(data, vfile, ctx) {
         const title = (data.arg) ? `Example: ${data.arg}` : "Example";
         const body = data.body || "";
@@ -21,11 +24,14 @@ const exampleAdmonition = {
                 ...ctx.parseMyst(body.trim())["children"]
             ]
         };
+        if (data.options?.class) {
+            admonition["class"] = data.options?.class;
+        }
         return [admonition];
     }
 };
 const plugin = {
-    name: "Example admonition",
+    name: "Admonition for a worked example",
     directives: [exampleAdmonition],
 };
 

@@ -1,13 +1,15 @@
 /**
- * Directions for something to try.
+ * Something to try.
  */
 const tryThisAdmonition = {
     name: "trythis",
-    doc: "Directions for something to try.",
-    arg: { type: String, doc: "Title of the example (default: Example)." },
+    doc: "Something to try.",
     body: { type: String, doc: "Body of the example." },
+    options: {
+        class: { type: String, doc: "CSS class." },
+    },
     run(data, vfile, ctx) {
-        const title = "Try this!"
+        const title = "Try this!";
         const body = data.body || "";
         const admonition = {
             "type": "admonition",
@@ -16,10 +18,13 @@ const tryThisAdmonition = {
                 {
                     "type": "admonitionTitle",
                     "children": ctx.parseMyst(title.trim())["children"][0]["children"]
-                }
+                },
+                ...ctx.parseMyst(body.trim())["children"]
             ]
         };
-        admonition["children"].push(...ctx.parseMyst(body.trim())["children"]);
+        if (data.options?.class) {
+            admonition["class"] = data.options?.class;
+        }
         return [admonition];
     }
 };
