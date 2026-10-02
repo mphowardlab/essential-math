@@ -15,15 +15,15 @@ force $\vv{F}$ may be a function of $t$, $\vv{x}$, and velocity
 $\vv{v} = \vv{x}'$, depending on the physics:
 
 \begin{equation}
-m \vv{x}'' = \vv{F}(t, \vv{x}, \vv{v})
+m \vv{x}'' = \vv{F}(t, \vv{x}, \vv{x}')
 \end{equation}
 
 In chemical engineering, differential equations are often used to model the rate
-of change of quantities with respect to time or how they vary in space.
-Differential equations are needed to:
+of change of quantities with respect to time or space. For example, differential
+equations are needed to:
 
-- Model unsteady processes, such as batch reactors, where process variables are
-  expected to change over time.
+- Model inherently unsteady processes, such as batch reactors, where process
+  variables are expected to change over time.
 
 - Model the startup of a process as it comes to steady state, as well as how it
   behaves if it departs from steady state. The latter case is especially
@@ -31,10 +31,11 @@ Differential equations are needed to:
 
 - Model how transport processes cause mass or energy to distribute in space.
   For example, differential equations are needed to model transport phenomena,
-  such as diffusion and heat transfer, as well as to design certain types of
-  process equipment, such as plug flow reactors.
+  such as diffusion and thermal conduction, as well as to design certain types
+  of process equipment, such as plug flow reactors.
 
 ```{example} Batch reactor
+
 A **batch reactor** is a closed reaction vessel: no mass enters or exits after
 the reaction is started and before it is stopped. Hence, the concentrations of
 the reactants and products in a batch reactor continuously change as the
@@ -42,14 +43,15 @@ reaction progresses.
 
 The first-order reaction ${\rm A} \to {\rm B}$ occurs in a batch reactor. The
 rate of reaction of A per unit volume is $-r_{\rm A} = k c_{\rm A}$, where
-$k$ is the rate constant. The liquid volume in the reactor is $V$, and it can
-be assumed to be constant density regardless of composition. How does the
-concentration $c_{\rm A}$ change over time $t$ from its initial value of 1 M?
+$k$ is the rate constant and $c_{\rm A}$ is the concentration of A. The total
+liquid volume in the reactor is $V$, and it ca be assumed to be constant
+regardless of composition. Construct a differential equation that models how
+$c_{\rm A}$ change with respect to time $t$ from its initial value of 1 M.
 
 ---
 
 The total number of moles of A, $n_{\rm A}$, is related to the concentration and
-the volume $V$ by $n_{\rm A} = c_{\rm A} V$. Write the unsteady mole balance for
+the volume by $n_{\rm A} = c_{\rm A} V$. Write the unsteady mole balance for
 A:
 
 \begin{equation}
@@ -57,24 +59,25 @@ A:
 + r_{\rm A} V
 \end{equation}
 
-Then substitute this relationship, the given rate of reaction, and that there
-are no flows in or out of a batch reactor:
+Then substitute this relationship for $n_{\rm A}$, the rate of reaction
+$r_{\rm A}$, and that there are no flows in or out of a batch reactor:
 
 \begin{equation}
 \dd{}{(c_{\rm A} V)}{t} = - k c_{\rm A} V
 \end{equation}
 
-Last, since the volume is constant, it can be removed from the derivative:
+Last, since the volume is constant, it can be removed from the derivative and
+cancelled from both sides of the equation:
 
 \begin{equation}
 \dd{}{c_{\rm A}}{t} = -k c_{\rm A}
 \end{equation}
 
 This model is a **first-order ordindary differential equation** for
-$c_{\rm A}$. It describes the rate of change of $c_{\rm A}$ over time. We also
-know that $c_{\rm A}(0) = 1\,{\rm M}$ initially.
+$c_{\rm A}$. It describes the rate of change of $c_{\rm A}$ over time.
 
-We will learn how to solve for $c_{\rm A}(t)$ in this chapter!
+We also know that $c_{\rm A}(0) = 1\,{\rm M}$ initially. We will learn how to
+solve for $c_{\rm A}(t)$ in this chapter!
 ```
 
 ## Learning goals

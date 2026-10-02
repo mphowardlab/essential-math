@@ -11,9 +11,7 @@ kernelspec:
 
 # Separable differential equations
 
-```{important} Directions
-This page contains interactive elements. To enable them, click the "power"
-button, then the "play" button to run all cells.
+```{interactive-directions}
 ```
 
 ```{code-cell}
@@ -21,7 +19,7 @@ button, then the "play" button to run all cells.
 %pip install ipympl ipywidgets
 ```
 
-## Mathematics
+## Separation of variables
 
 If a first-order ODE can be **separated** so that $y$ and $x$ are on different
 sides, it can be solved by integration:
@@ -49,24 +47,22 @@ We can obtain an explicit solution for $y$ by solving for it:
 
 \begin{align}
 y &= e^{x^2/2 + c} \\
-y &= \hat{c} e^\frac{x^2}{2}
+y &= C e^\frac{x^2}{2}
 \end{align}
 
 Finding a particular solution from here is straightforward if we know an initial
-condition: substitute your initial condition and solve for $c$!
+condition: substitute your initial condition and solve for $C$!
 
 ```{warning}
 In this example, we were careful to denote the redefinition of the
-unknown constant ($\hat{c} = e^{c}$). This step is frequently glossed over,
-but you may want to be careful if you are applying an initial condition, as
-you must make sure you determine the value of the "right" $c$.
+unknown constant ($C = e^{c}$). This step is frequently glossed over,
+but you may need to be careful if you are applying an initial condition because
+you must make sure you determine the value of the "right" definition of the
+constant.
 ```
 
-### Skill builder problems
-
-```{trythis}
+````{trythis}
 To practice separation of variables, solve the following initial value problems.
-```
 
 1. $y'+(x+2)y^2 = 0, \quad y(1) = 1$
 
@@ -158,6 +154,7 @@ To practice separation of variables, solve the following initial value problems.
    y = \sqrt{\ln(x^2 - 2x + e)}
    \end{equation}
    ```
+````
 
 ## Applications
 
@@ -170,16 +167,16 @@ We previously talked about a [batch reactor](./index.md) as an example of a
 first-order ODE. Let's revisit that example and try solving it.
 
 ```{example} Batch reactor
-We previously showed that the concentration of A undergoing a first-order
-reaction in a batch reactor follows the first-order ODE:
+The concentration of A, $c_{\rm A}$, for a first-order reaction in a batch
+reactor follows the first-order ODE:
 
 \begin{equation}
 \dd{}{c_{\rm A}}{t} = -k c_{\rm A}
 \end{equation}
 
-where $k$ is the reaction rate constant. If the initial concentration of the
-reactant was 1.0 M and the concentration after 1 hour has passed is 0.70 M,
-what is the reaction rate constant?
+where $k$ is the reaction rate constant. If the initial concentration of A
+was 1.0 M and the concentration of A after 1 hour is 0.70 M, what is the rate
+constant?
 
 ---
 
@@ -191,7 +188,7 @@ differential equation:
 \ln c_{\rm A} &= -k t + B
 \end{align}
 
-where *B* is an unknown constant. Next, apply the initial condition that
+where $B$ is an unknown constant. Next, apply the initial condition that
 $c_{\rm A}(0) = 1\,{\rm M}$ to determine $B$:
 
 \begin{equation}
@@ -212,11 +209,12 @@ k = -\frac{\ln 0.7}{1\,{\rm h}} = 0.36\,{\rm h}^{-1}
 \end{equation}
 ```
 
-Does our answer make sense? We can check in two ways. First, we can verify that
-$k$ has the right dimensions. Both sides of the ODE must have dimensions of
-concentration per time, and since $k$ multiplies $c_{\rm A}$, it must then have
-dimensions of per time. Our answer of $0.36\,{\rm h}^{-1}$ is consistent with
-that.
+Does our answer make sense? We can check in two ways.
+
+First, we can verify that $k$ has the right dimensions. Both sides of the ODE
+must have dimensions of concentration per time, so since $k$ multiplies
+$c_{\rm A}$, it must have dimensions of per time. Our answer of
+$0.36\,{\rm h}^{-1}$ is dimensionally consistent.
 
 Second, we can obtain a solution for $c_{\rm A}(t)$ and verify that it has the
 right behavior. Rearranging gives
@@ -227,8 +225,8 @@ c_{\rm A}(t) = e^{-0.36\,{\rm h}^{-1} \, t}
 
 Substituting $t = 0\,{\rm h}$ gives 1.0 and $t = 1\,{\rm h}$ gives 0.7, which
 are the two points we knew. Further, a plot of $c_{\rm A}(t)$ (see below)
-decreases with time, which is what we expect to see for a reactant that is being
-consumed by a reaction.
+decreases with time, which is what we expect for a reactant that is being
+consumed.
 
 ```{trythis}
 Both the rate constant $k$ and the initial concentration in the reactor
@@ -280,22 +278,28 @@ ax.set_ylim((0, 2));
 
 ### Heat transfer
 
-We have done examples involving unsteady mole balances, but you can also
-formulate unsteady *energy* balances to study heat transfer processes. We will
-not discuss how to formulate these balances here, but they involve a similar
-process as for unsteady mass or mole balances.
+Similarly to unsteady mole balances, unsteady *energy* balances can be
+formulated to study heat transfer processes. These balances account for the
+amount of energy that is stored in a system compared to the amount that is
+transferred in and out of its boundary or generated internally. They also give
+rise to first-order ODEs with respect to time.
 
-````{trythis} Heat losses from a building
+We will try an example that uses **Newton's law of cooling**, which states that
+the rate of heat loss from an object is proportional to the temperature
+difference with its environment.
+
+````{trythis}
 
 Estimate the temperature $T$ in an office building at 6 a.m. if the heat goes
 off at 10 p.m. when the building is 70°F and the outside temperature $T_\infty$
-is 45°F if *T* follows
+is 45°F. The rate of change of $T$ can be modeled as:
 
 \begin{equation}
 \dd{}{T}{t} = -k(T - T_\infty)
 \end{equation}
 
-where $k = 0.05\,{\rm h}^{-1}$.
+where $k = 0.05\,{\rm h}^{-1}$ is a physical parameter accounting for the
+effective heat transfer coefficient and the thermal mass of the building.
 
 ---
 
@@ -347,9 +351,8 @@ The temperature in the building is approximately 62°F.
 ### Fluid mechanics
 
 Imbalances in mass flow rates cause process equipment to fill or drain over
-time. There are many interesting "tank filling" or "tank draining" problems,
-which may arise, for example, during startup of a process or when there is a
-leak in some equipment.
+time, for example, during startup or shutdown of a process or when there is
+damage to equipment.
 
 Here, we will study what happens when there is a small hole in the bottom of a
 tank that causes it to leak. The velocity of the liquid leaving the hole will
@@ -363,24 +366,25 @@ model how it drains. A few facts from fluid mechanics that are useful to know:
 
 - The volumetric flow rate $\dot{V}$ through an area $A$ can be calculated from
   the velocity as $\dot{V} = v A$.
-- The mass $m$ contained in a volume $V$ is $m = \rho V$, where $\rho$ is the
-  mass density of the substance.
-- Similarly, the mass flow rate $\dot{m}$ of a stream with volumetric flow rate
-  $\dot{V}$ is $\dot{m} = \rho \dot{V}$.
+- The mass flow rate $\dot{m}$ of a stream with volumetric flow rate $\dot{V}$
+  is $\dot{m} = \rho \dot{V}$, where $\rho$ is the mass density of the
+  stream.
+- Similarly, the mass $m$ contained in a volume $V$ is $m = \rho V$.
 
 Now, let's try our problem!
 
 ```{example} Leak from a tank
-A 1 cm hole opens at the bottom of a 1 m cylindrical tank. Water exits the
-hole with velocity that follows Toricelli's law. If there is 2 m of water in
-the tank initially, when does it drain?
+A 1 cm hole opens at the bottom of a cylindrical tank with a 1 m diameter.
+Water exits the hole with a velocity that can be modeled using Toricelli's law.
+If the initial height of water in the tank is 2 m, how long does it take to
+drain?
 
 ---
 
-Start from the unsteady balance on the mass of water *m* in the tank
+Start from the unsteady balance on the mass of water $m$ in the tank
 
 \begin{equation}
-\dd{}{m}{t} = -\dot m_{\rm out}
+\dd{}{m}{t} = \dot{m}_{\rm in} -\dot{m}_{\rm out}
 \end{equation}
 
 The mass of water is
@@ -389,19 +393,21 @@ The mass of water is
 m = \rho V = \rho \frac{\pi D_1^2}{4} h
 \end{equation}
 
-where $\rho$ is the density of water, *V* is the volume of water in the tank,
-and $D_1$ = 1 m is the diameter of the tank. *V* is replaced using the volume of
-a cylinder.
+where $\rho$ is the density of water, $V$ is the volume of water in the tank,
+and $D_1 = 1\,{\rm m}$ is the diameter of the tank. $V$ is replaced using the
+volume of a cylinder.
+
+There is no mass flow rate in, so $\dot{m}_{\rm in} = 0$.
 
 The mass flow rate out is
 
 \begin{equation}
-\dot m_{\rm out} = \rho \dot V = \rho \frac{\pi D_2^2}{4} \sqrt{2gh}
+\dot m_{\rm out} = \rho \dot V = \rho A v = \rho \frac{\pi D_2^2}{4} \sqrt{2gh}
 \end{equation}
 
 where $\dot V$ is the volumetric flow rate out of the hole, which we compute
-from the cross-sectional area of the hole (a circle with diameter $D_2$
-= 0.01 m) and the model for the velocity leaving it.
+from the cross-sectional area of the hole (a circle with diameter
+$D_2 = 0.01\,{\rm m}$) and the model for the velocity leaving it.
 
 Inserting both into the unsteady balance, applying rules of differentiation, and
 simplifying gives
