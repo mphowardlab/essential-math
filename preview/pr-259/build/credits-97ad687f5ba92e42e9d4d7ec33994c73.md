@@ -80,3 +80,8 @@ These notes were based on my own studies using the excellent textbook:
 Sons, Inc. Hoboken, NJ, 2006).
 
 Many examples and problem statements were adapted from this text.
+
+## Artificial Intelligence Disclosure
+
+Google Gemini was used to generate widgets (interactive elements) of these
+notes. The final code and examples were verified by the code contributor.
