@@ -1,23 +1,4 @@
----
-jupytext:
-  text_representation:
-    extension: .md
-    format_name: myst
-kernelspec:
-  display_name: Python 3
-  language: python
-  name: python3
----
-
 # Background
-
-```{interactive-directions}
-```
-
-```{code-cell}
-:tags: [skip-execution]
-%pip install ipympl ipywidgets
-```
 
 ## Definition
 
@@ -147,60 +128,6 @@ changes. All the solutions you trace are members of the family of solutions to
 this ODE! Note that $c$ changes with the initial condition too.
 ```
 
-```{code-cell}
-:tags: [hide-input]
-
-%matplotlib widget
-import ipywidgets
-import numpy
-import matplotlib.pyplot
-
-fig, ax = matplotlib.pyplot.subplots()
-fig.canvas.header_visible = False
-
-# direction field, evaluated on a regular 2d grid
-x = numpy.linspace(-2, 2, 17)
-y = numpy.linspace(-2, 2, 17)
-X, Y = numpy.meshgrid(x, y)
-
-dx = numpy.ones_like(X)
-dy = X * Y
-norm = numpy.sqrt(dx**2 + dy**2)
-U = dx / norm
-V = dy / norm
-
-ax.quiver(
-    X, Y, U, V, pivot="mid", angles="xy",
-    headwidth=0, headlength=0, headaxislength=0, color="#377eb8"
-)
-
-# analytical solution to IVP
-def analytical_solution(x, x0, y0):
-    """Analytical solution of ODE."""
-    return (y0 / numpy.exp(x0**2 / 2)) * numpy.exp(x**2 / 2)
-
-# start plot from initial condition (0, 1)
-line = ax.plot(x, analytical_solution(x, 0.0, 1.0), color="#e41a1c")
-pt = ax.plot(0, 1, marker="o", ls="none", color="#e41a1c")
-c = ax.text(0.5, 1.05, "$c = 1$", ha="center", va="bottom", transform=ax.transAxes)
-
-# vary the initial condition
-@ipywidgets.interact(
-    x0=ipywidgets.FloatSlider(value=0, min=x[0], max=x[-1], step=0.1, description=r"$x_0$"),
-    y0=ipywidgets.FloatSlider(value=1, min=y[0], max=y[-1], step=0.1, description=r"$y_0$"),
-)
-def update(x0, y0):
-    x_ = numpy.linspace(x[0], x[-1])
-    c_ = y0 / numpy.exp(x0**2 / 2)
-    line[0].set_data(x_, analytical_solution(x_, x0, y0))
-    pt[0].set_data([x0], [y0])
-    c.set_text(f"$c = {c_:.2f}$")
-
-# plot styling
-ax.axhline(0, x[0], x[-1], color="black", zorder=0)
-ax.axvline(0, y[0], y[-1], color="black", zorder=0)
-ax.set_xlabel("$x$")
-ax.set_xlim((x[0], x[-1]))
-ax.set_ylabel("$y$")
-ax.set_ylim((y[0], y[-1]));
+```{anywidget} ./_widgets/direction_field.mjs
+:css: ./_widgets/direction_field.css
 ```
