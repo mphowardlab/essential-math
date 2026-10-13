@@ -129,5 +129,5 @@ this ODE! Note that $c$ changes with the initial condition too.
 ```
 
 ```{anywidget} ./_widgets/direction_field.mjs
-:css: ./_widgets/direction_field.css
+:css: ./_widgets/ode_widget.css
 ```

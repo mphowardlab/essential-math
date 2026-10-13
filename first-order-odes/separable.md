@@ -220,7 +220,7 @@ How would your solution need to change
 ```
 
 ```{anywidget} ./_widgets/batch_reactor.mjs
-:css: ./_widgets/batch_reactor.css
+:css: ./_widgets/ode_widget.css
 ```
 
 ### Heat transfer
