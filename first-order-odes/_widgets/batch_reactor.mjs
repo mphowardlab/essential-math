@@ -15,7 +15,14 @@ export function render({ el }) {
     // Fixed-size chart scaled by CSS, so Chart.js never has to track the page layout
     const chart = new Chart(el.querySelector('canvas'), {
         type: 'line',
-        data: { labels: t, datasets: [{ borderColor: '#2563eb', pointRadius: 0 }] },
+        data: {
+            labels: t,
+            datasets: [
+                { borderColor: '#2563eb', pointRadius: 0 },
+                // Initial condition (0, cA0), drawn unclipped so it shows on the axis
+                { backgroundColor: '#dc2626', pointRadius: 6, showLine: false, clip: false },
+            ],
+        },
         options: {
             responsive: false,
             animation: false,
@@ -30,6 +37,7 @@ export function render({ el }) {
     // Analytical solution cA(t) = cA0 exp(-k t)
     function update() {
         chart.data.datasets[0].data = t.map((ti) => c0.value * Math.exp(-k.value * ti));
+        chart.data.datasets[1].data = [{ x: 0, y: c0.value }];
         chart.update();
         k.nextElementSibling.value = k.value;
         c0.nextElementSibling.value = c0.value;
