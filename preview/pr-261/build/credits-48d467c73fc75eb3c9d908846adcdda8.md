@@ -55,6 +55,7 @@ This work (c) 2025-2026 is licensed under
 - Meg Nettles
 - Jeffe Old
 - Ella Ortbals
+- C. Levi Petix
 - Jack Raynor
 - Kendall Reeves
 - Olivia Robinson
