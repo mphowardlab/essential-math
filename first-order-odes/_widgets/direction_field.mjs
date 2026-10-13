@@ -2,7 +2,7 @@ import Chart from 'https://cdn.jsdelivr.net/npm/chart.js@4.5.1/auto/+esm';
 
 // Direction field of y' = xy with the particular solution y = c exp(x^2 / 2)
 export function render({ el }) {
-    el.innerHTML = `
+    el.insertAdjacentHTML('beforeend', `
     <div class="ode-plot-card">
       <canvas width="480" height="480" style="width: 100%; height: auto; touch-action: none"></canvas>
       <label><span><i>x</i><sub>0</sub></span>
@@ -10,7 +10,7 @@ export function render({ el }) {
       <label><span><i>y</i><sub>0</sub></span>
         <input type="range" min="-2" max="2" step="0.05" value="1"><output></output></label>
       <p><i>c</i> = <output></output></p>
-    </div>`;
+    </div>`);
     const canvas = el.querySelector('canvas');
     const [x0, y0] = el.querySelectorAll('input');
     const grid = [];
