@@ -18,9 +18,9 @@ export function render({ el }) {
         data: {
             labels: t,
             datasets: [
-                { borderColor: '#2563eb', pointRadius: 0 },
-                // Initial condition (0, cA0), drawn unclipped so it shows on the axis
-                { backgroundColor: '#dc2626', pointRadius: 6, showLine: false, clip: false },
+                { borderColor: '#2563eb', pointRadius: 0, order: 1 },
+                // Initial condition (0, cA0), drawn on top of the line and unclipped
+                { backgroundColor: '#dc2626', pointRadius: 4.5, showLine: false, clip: false, order: 0 },
             ],
         },
         options: {
