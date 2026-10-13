@@ -1,14 +1,14 @@
 import Chart from 'https://cdn.jsdelivr.net/npm/chart.js@4.5.1/auto/+esm';
 
 export function render({ el }) {
-    el.innerHTML = `
+    el.insertAdjacentHTML('beforeend', `
     <div class="ode-plot-card">
       <canvas width="480" height="360" style="width: 100%; height: auto"></canvas>
       <label><span><i>k</i> (h<sup>&minus;1</sup>)</span>
         <input type="range" min="0.1" max="1" step="0.01" value="0.36"><output></output></label>
       <label><span><i>c</i><sub>A,0</sub> (M)</span>
         <input type="range" min="0" max="2" step="0.1" value="1"><output></output></label>
-    </div>`;
+    </div>`);
     const [k, c0] = el.querySelectorAll('input');
     const t = Array.from({ length: 101 }, (_, i) => i / 10);
 
