@@ -55,6 +55,7 @@ This work (c) 2025-2026 is licensed under
 - Meg Nettles
 - Jeffe Old
 - Ella Ortbals
+- C. Levi Petix
 - Jack Raynor
 - Kendall Reeves
 - Olivia Robinson
@@ -83,5 +84,5 @@ Many examples and problem statements were adapted from this text.
 
 ## Artificial Intelligence Disclosure
 
-Google Gemini was used to generate widgets (interactive elements) of these
+Claude Opus 5.5 was used to generate widgets (interactive elements) of these
 notes. The final code and examples were verified by the code contributor.
