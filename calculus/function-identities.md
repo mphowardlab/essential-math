@@ -4,7 +4,7 @@
 
 \begin{align}
 \sin \theta &= \frac{y}{r} & \csc \theta &= \frac{r}{x} =
-  \frac{1}{\cos \theta} \\
+  \frac{1}{\sin \theta} \\
 \cos \theta &= \frac{x}{r} & \sec \theta &= \frac{r}{x} =
   \frac{1}{\cos \theta} \\
 \tan \theta &= \frac{y}{x} = \frac{\sin \theta}{\cos \theta} &
@@ -18,7 +18,7 @@
 \end{align}
 
 \begin{align}
-\cos(A+B) = \cos A \cos B - \sin A \sin B \\
+\cos(A+B) = \cos A \sin B - \sin A \cos B \\
 \sin(A+B) = \sin A \cos B - \cos A \sin B
 \end{align}
 

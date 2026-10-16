@@ -69,7 +69,7 @@ First write and solve the characteristic polynomial,
 
 \begin{align}
 \lambda^2 + \lambda -2 &= 0 \\
-(\lambda + 2)(\lambda + 1) &= 0
+(\lambda + 2)(\lambda - 1) &= 0
 \end{align}
 
 so $\lambda_1 = -2$ and $\lambda_2 =1$. The general solution and its first
@@ -280,7 +280,7 @@ c'' - \frac{k}{D} c = 0
 The characteristic polynomial is
 
 \begin{align}
-\lambda^2 - \frac{k}{D} &= 0
+\lambda^2 - \frac{k}{D} &= 0 \\
 \lambda &= \pm \sqrt{\frac{k}{D}}
 \end{align}
 
