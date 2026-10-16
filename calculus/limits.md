@@ -132,7 +132,7 @@ Does the limit
 \lim_{x \to 4} f(x) = 3
 \end{equation}
 
-exist? If \epsilon = 0.5, there is no $\delta$ that contains *f* around
+exist? If $\epsilon$ = 0.5, there is no $\delta$ that contains *f* around
 $x_0 = 4$. Therefore, this limit does not exsit
 
 This math formalism is powerful, but clunky to apply. We will now move onto
@@ -225,7 +225,7 @@ $x_0$)
 
 \begin{align}
 \lim_{x \to 1} \frac{x^2 + x -2}{x^2 - x}
-&= \lim_{x \to 1} \frac{(x+2)(x+1)}{x(x+1)} \\
+&= \lim_{x \to 1} \frac{(x+2)(x-1)}{x(x-1)} \\
 &= \lim_{x \to 1} \frac{x+2}{x} \\
 &= 3
 \end{align}
