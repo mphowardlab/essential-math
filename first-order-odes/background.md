@@ -128,7 +128,7 @@ changes. All the solutions you trace are members of the family of solutions to
 this ODE! Note that $c$ changes with the initial condition too.
 
 ```{anywidget} ./_widgets/direction_field.mjs
-:css: ./_widgets/ode_widget.css
+:css: /_styles/widget.css
 ```
 
 ````

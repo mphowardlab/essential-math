@@ -219,7 +219,7 @@ Think about how this connects with the differential equation and your solution.
 How would your solution need to change
 
 ```{anywidget} ./_widgets/batch_reactor.mjs
-:css: ./_widgets/ode_widget.css
+:css: /_styles/widget.css
 ```
 
 ````
