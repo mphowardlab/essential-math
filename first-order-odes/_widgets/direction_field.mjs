@@ -1,30 +1,45 @@
-import Chart from 'https://cdn.jsdelivr.net/npm/chart.js@4.5.1/auto/+esm';
+import Chart from 'https://cdn.jsdelivr.net/npm/chart.js@4/auto/+esm';
 
 // Direction field of y' = xy with the particular solution y = c exp(x^2 / 2)
-export function render({ el }) {
+function render({ model, el }) {
     el.insertAdjacentHTML('beforeend', `
-    <div class="ode-plot-card">
-      <canvas width="480" height="480" style="width: 100%; height: auto; touch-action: none"></canvas>
-      <label><span><i>x</i><sub>0</sub></span>
-        <input type="range" min="-2" max="2" step="0.05" value="0"><output></output></label>
-      <label><span><i>y</i><sub>0</sub></span>
-        <input type="range" min="-2" max="2" step="0.05" value="1"><output></output></label>
-      <p><i>c</i> = <output></output></p>
+    <div class="widget">
+      <div class="canvas-container">
+        <canvas style="touch-action: none"></canvas>
+      </div>
+      <label>
+        <span class="math"><i>x</i><sub>0</sub></span>
+        <input type="range" min="-2" max="2" step="0.05" value="0">
+        <output></output>
+      </label>
+      <label>
+        <span class="math"><i>y</i><sub>0</sub></span>
+        <input type="range" min="-2" max="2" step="0.05" value="1">
+        <output></output>
+      </label>
+      <p style="text-align: center">
+        <span class="math"><i>c</i> =</span> <output></output>
+      </p>
     </div>`);
     const canvas = el.querySelector('canvas');
     const [x0, y0] = el.querySelectorAll('input');
+
+    // grid of points for slope field
     const grid = [];
     for (let x = -2; x <= 2; x += 0.25) {
         for (let y = -2; y <= 2; y += 0.25) grid.push({ x, y });
     }
+
+    // sample points for analytical solution
     const xs = Array.from({ length: 201 }, (_, i) => -2 + i / 50);
+
     // Axes through the origin, labeled every 1 (skipping 0) on a white backdrop
     const axis = {
         min: -2, max: 2, grid: { display: false }, border: { color: '#64748b', width: 1.5 },
-        ticks: { stepSize: 1, callback: (v) => v || '', showLabelBackdrop: true },
+        ticks: { stepSize: 1, callback: (v) => v || '' },
     };
 
-    // Fixed-size chart scaled by CSS, so Chart.js never has to track the page layout
+    // chart
     const chart = new Chart(canvas, {
         type: 'scatter',
         data: {
@@ -35,12 +50,14 @@ export function render({ el }) {
                     rotation: ({ raw, chart: { scales } }) =>
                         raw && -Math.atan((raw.x * raw.y * scales.y.height) / scales.x.width) * (180 / Math.PI),
                 },
-                { showLine: true, pointRadius: 0, borderColor: '#2563eb', borderWidth: 2.5, order: 1 },
-                { backgroundColor: '#dc2626', pointRadius: 5, clip: false, order: 0 },
+                { showLine: true, pointRadius: 0, borderColor: '#377eb8', borderWidth: 2.5, order: 1 },
+                { backgroundColor: '#e41a1c', pointRadius: 5, clip: false, order: 0 },
             ],
         },
         options: {
-            responsive: false,
+            responsive: true,
+            maintainAspectRatio: true,
+            aspectRatio: 1,
             animation: false,
             events: [],
             plugins: { legend: { display: false } },
