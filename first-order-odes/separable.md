@@ -218,7 +218,7 @@ concentration at long times depend on these values?
 Think about how this connects with the differential equation and your solution.
 How would your solution need to change
 
-```{anywidget} ./_widgets/batch_reactor.mjs
+```{anywidget} ./_widgets/batch-reactor.mjs
 :css: /_styles/widget.css
 ```
 

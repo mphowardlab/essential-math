@@ -127,7 +127,7 @@ Vary the initial condition using the sliders to see how the particular solution
 changes. All the solutions you trace are members of the family of solutions to
 this ODE! Note that $c$ changes with the initial condition too.
 
-```{anywidget} ./_widgets/direction_field.mjs
+```{anywidget} ./_widgets/direction-field.mjs
 :css: /_styles/widget.css
 ```
 
