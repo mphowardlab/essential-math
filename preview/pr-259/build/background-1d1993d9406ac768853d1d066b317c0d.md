@@ -122,12 +122,13 @@ Eq. {eq}`eq:first-order-odes:background:ode` with a
 {span .text-mpl-red}`particular solution` traced out (line) starting
 from an initial condition $(x_0,y_0)$ (point).
 
-```{trythis}
+````{trythis}
 Vary the initial condition using the sliders to see how the particular solution
 changes. All the solutions you trace are members of the family of solutions to
 this ODE! Note that $c$ changes with the initial condition too.
+
+```{anywidget} ./_widgets/direction-field.mjs
+:css: /_styles/widget.css
 ```
 
-```{anywidget} ./_widgets/direction_field.mjs
-:css: ./_widgets/direction_field.css
-```
+````

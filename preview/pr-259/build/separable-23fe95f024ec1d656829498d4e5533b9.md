@@ -1,23 +1,4 @@
----
-jupytext:
-  text_representation:
-    extension: .md
-    format_name: myst
-kernelspec:
-  display_name: Python 3
-  language: python
-  name: python3
----
-
 # Separable differential equations
-
-```{interactive-directions}
-```
-
-```{code-cell}
-:tags: [skip-execution]
-%pip install ipympl ipywidgets
-```
 
 ## Separation of variables
 
@@ -228,7 +209,7 @@ are the two points we knew. Further, a plot of $c_{\rm A}(t)$ (see below)
 decreases with time, which is what we expect for a reactant that is being
 consumed.
 
-```{trythis}
+````{trythis}
 Both the rate constant $k$ and the initial concentration in the reactor
 $c_{{\rm A},0}$ affect the concentration in the reactor over time.
 Try changing $k$ and $c_{{\rm A},0}$ using the sliders below. What do you notice
@@ -236,45 +217,12 @@ about both the value of the concentration and the rate of change? Does the
 concentration at long times depend on these values?
 Think about how this connects with the differential equation and your solution.
 How would your solution need to change
+
+```{anywidget} ./_widgets/batch-reactor.mjs
+:css: /_styles/widget.css
 ```
 
-```{code-cell}
-:tags: [hide-input]
-
-%matplotlib widget
-import ipywidgets
-import numpy
-import matplotlib.pyplot
-
-fig, ax = matplotlib.pyplot.subplots()
-fig.canvas.header_visible = False
-
-t = numpy.linspace(0, 10)
-def analytical_solution(k, c0):
-    return c0 * numpy.exp(-k * t)
-
-# start plot from solution above
-line = ax.plot(t, analytical_solution(0.36, 1.0), color="#e41a1c")
-
-# vary the rate constant and initial concentration
-@ipywidgets.interact(
-    k=ipywidgets.FloatSlider(
-        value=0.36, min=0.1, max=1.0, step=0.01, description=r"$k$ (1/h)"
-    ),
-    c0=ipywidgets.FloatSlider(
-        value=1, min=0, max=2, step=0.1, description=r"$c_{{\rm A},0}$ (M)"
-    ),
-)
-def update(k, c0):
-    line[0].set_ydata(analytical_solution(k, c0))
-
-# plot styling
-ax.set_xlabel("$t$ (h)")
-ax.set_xlim((t[0], t[-1]))
-ax.set_ylabel(r"$c_{\rm A}$ (M)")
-ax.set_ylim((0, 2));
-
-```
+````
 
 ### Heat transfer
 
