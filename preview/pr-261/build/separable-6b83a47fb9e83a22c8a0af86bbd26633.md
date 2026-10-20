@@ -209,7 +209,7 @@ are the two points we knew. Further, a plot of $c_{\rm A}(t)$ (see below)
 decreases with time, which is what we expect for a reactant that is being
 consumed.
 
-```{trythis}
+````{trythis}
 Both the rate constant $k$ and the initial concentration in the reactor
 $c_{{\rm A},0}$ affect the concentration in the reactor over time.
 Try changing $k$ and $c_{{\rm A},0}$ using the sliders below. What do you notice
@@ -217,11 +217,12 @@ about both the value of the concentration and the rate of change? Does the
 concentration at long times depend on these values?
 Think about how this connects with the differential equation and your solution.
 How would your solution need to change
+
+```{anywidget} ./_widgets/batch-reactor.mjs
+:css: /_styles/widget.css
 ```
 
-```{anywidget} ./_widgets/batch_reactor.mjs
-:css: ./_widgets/ode_widget.css
-```
+````
 
 ### Heat transfer
 
