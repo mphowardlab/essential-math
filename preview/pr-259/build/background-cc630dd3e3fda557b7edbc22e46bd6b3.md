@@ -117,18 +117,43 @@ Starting from a point in the direction field and tracing a curve through it
 gives a particular solution, which corresponds to a certain value of
 $c$.
 
+````{trythis}
 The plot below shows the {span .text-mpl-blue}`direction field` for
 Eq. {eq}`eq:first-order-odes:background:ode` with a
 {span .text-mpl-red}`particular solution` traced out (line) starting
-from an initial condition $(x_0,y_0)$ (point).
+from an initial condition $y(x_0) = y_0$ (point). You can change the initial
+condition using the sliders or by clicking a point on the direction field.
 
-````{trythis}
-Vary the initial condition using the sliders to see how the particular solution
-changes. All the solutions you trace are members of the family of solutions to
-this ODE! Note that $c$ changes with the initial condition too.
+1. Predict what you think will happen to the particular solution if you increase
+   $x_0$ with $y_0$ held constant or increase $x_0$ with $y_0$ held constant.
+   Move the initial condition to a few different points to test your prediction.
+
+2. Find two initial conditions that have the *same* particular solution. (Hint:
+   What must be true about $c$ for the particular solutions to be the same?)
 
 ```{anywidget} ./_widgets/direction-field.mjs
 :css: /_styles/widget.css
 ```
+
+After you are done, answer the following questions:
+
+1. Solve for the unknown constant $c$ when the initial condition is $y(1) = 1$.
+
+   ```{dropdown} Check your work
+
+   \begin{equation}
+   1 = y(1) = c e^{1^2/2} \to c = e^{-1/2} = 0.607
+   \end{equation}
+
+   You can also use the sliders to confirm!
+   ```
+
+2. Explain why the particular solution is a horizontal line when $y(0) = 0$.
+
+   ```{dropdown} Check your work
+
+   The solution is a horizontal line because all slopes are zero when $y = 0$.
+   The curve traced through these slopes must stay horizontal.
+   ```
 
 ````
