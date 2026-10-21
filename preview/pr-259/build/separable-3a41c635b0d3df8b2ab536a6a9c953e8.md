@@ -223,12 +223,6 @@ $c_{{\rm A},0}$ using the sliders.
 2. Set $c_{{\rm A}, 0} = 1\,{\rm M}$. Vary $k$ to find the value of $k$ that
    makes $c_{\rm A} = 0.5\,{\rm M}$ after 2 hours.
 
-Try changing $k$ and $c_{{\rm A},0}$ using the sliders below. What do you notice
-about both the value of the concentration and the rate of change? Does the
-concentration at long times depend on these values?
-Think about how this connects with the differential equation and your solution.
-How would your solution need to change
-
 ```{anywidget} ./_widgets/batch-reactor.mjs
 :css: /_styles/widget.css
 ```
