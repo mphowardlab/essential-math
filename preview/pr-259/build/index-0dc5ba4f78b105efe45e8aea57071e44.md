@@ -75,9 +75,9 @@ cancelled from both sides of the equation:
 
 This model is a **first-order ordindary differential equation** for
 $c_{\rm A}$. It describes the rate of change of $c_{\rm A}$ over time.
+We also know that $c_{\rm A}(0) = 1\,{\rm M}$ initially.
 
-We also know that $c_{\rm A}(0) = 1\,{\rm M}$ initially. We will learn how to
-solve for $c_{\rm A}(t)$ in this chapter!
+We will learn how to solve for $c_{\rm A}(t)$ in this chapter!
 ```
 
 ## Learning goals
@@ -96,6 +96,6 @@ You should make sure you are comfortable with the following:
 
 - Integration techniques, including
   [substitution](../calculus/integration-substitution.md),
-  [by parts](../calculus/integration-by-parts.md), and
+  [integration by parts](../calculus/integration-by-parts.md), and
   [partial fraction decomposition](../calculus/integration-partial-fractions.md).
 - Evaluating [limits](../calculus/limits.md).
