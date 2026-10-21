@@ -153,6 +153,7 @@ reactor follows the first-order ODE:
 
 \begin{equation}
 \dd{}{c_{\rm A}}{t} = -k c_{\rm A}
+\label{eq:first-order-odes:separable:batch}
 \end{equation}
 
 where $k$ is the reaction rate constant. If the initial concentration of A
@@ -211,16 +212,77 @@ consumed.
 
 ````{trythis}
 Both the rate constant $k$ and the initial concentration in the reactor
-$c_{{\rm A},0}$ affect the concentration in the reactor over time.
-Try changing $k$ and $c_{{\rm A},0}$ using the sliders below. What do you notice
-about both the value of the concentration and the rate of change? Does the
-concentration at long times depend on these values?
-Think about how this connects with the differential equation and your solution.
-How would your solution need to change
+$c_{{\rm A},0}$ affect the {span .text-mpl-blue}`concentration of A` in the
+reactor over time, shown in the plot below. You can change $k$ and
+$c_{{\rm A},0}$ using the sliders.
+
+1. Predict what will happen to the concentration curve if $k$ is increased with
+   $c_{{\rm A},0}$ held constant and if $c_{{\rm A}, 0}$ is increased with $k$
+   held constant. Then, test your predictions using the sliders.
+
+2. Set $c_{{\rm A}, 0} = 1\,{\rm M}$. Find a value of $k$ that makes
+   $c_{\rm A} = 0.5\,{\rm M}$ after 2 hours.
 
 ```{anywidget} ./_widgets/batch-reactor.mjs
 :css: /_styles/widget.css
 ```
+
+After you are done exploring, answer the following questions:
+
+1. Solve for the value of $k$ that makes $c_{\rm A} = 0.5\,{\rm M}$ after 2
+   hours when $c_{{\rm A}, 0} = 1.5\,{\rm M}$.
+
+   ```{dropdown} Check your work
+
+   Use the general solution with the new initial condition:
+
+   \begin{equation}
+   \ln 1.5 = -k \cdot 0 + B \to B = \ln 1.5
+   \end{equation}
+
+   then insert $c_{\rm A}(2\,{\rm h}) = 0.5\,{\rm M}$ and solved for $k$:
+
+   \begin{align}
+   \ln 0.5 &= -k \cdot 2 + \ln 1.5 \\
+   k &= \ln 3 / 2 = 0.55
+   \end{align}
+
+   The rate constant is $0.55\,{\rm h}^{-1}$. You can also use the sliders to
+   confirm!
+
+   ```
+
+2. The long-time value of $c_{\rm A}$ is 0 M, regardless of $c_{{\rm A}, 0}$.
+   Explain why using (1) a physical reason and (2) a mathematical reason.
+
+   ```{dropdown} Check your work
+
+   Physically, we have only a forward reaction so if we wait long enough, all A
+   should convert to B and the concentration of A must go to 0 M regardless of
+   how much A you start with.
+
+   Mathematically, we first determine the solution for the initial condition
+   $c_{\rm A}(0) = c_{{\rm A}, 0}$:
+
+   \begin{equation}
+   \ln c_{{\rm A}, 0} = -k \cdot 0 + B \to B = \ln c_{{\rm A}, 0}
+   \end{equation}
+
+   so
+
+   \begin{equation}
+   c_{\rm A}(t) = c_{{\rm A}, 0} e^{-kt}
+   \end{equation}
+
+   The long-time behavior can be evaluated as a limit:
+
+   \begin{equation}
+   \lim_{t \to \infty} c_{\rm A}(t) = 0
+   \end{equation}
+
+   which is zero regardless of $c_{{\rm A}, 0}$.
+
+   ```
 
 ````
 

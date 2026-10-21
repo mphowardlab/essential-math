@@ -40,11 +40,11 @@ function render({ model, el }) {
             datasets: [
                 // Short segments rotated to the slope xy (corrected for the plot's aspect ratio)
                 {
-                    data: grid, pointStyle: 'line', radius: 6, borderColor: '#94a3b8', borderWidth: 1.2, order: 2,
+                    data: grid, pointStyle: 'line', radius: 6, borderColor: '#377eb8', borderWidth: 1.2, order: 2,
                     rotation: ({ raw, chart: { scales } }) =>
                         raw && -Math.atan((raw.x * raw.y * scales.y.height) / scales.x.width) * (180 / Math.PI),
                 },
-                { showLine: true, pointRadius: 0, borderColor: '#377eb8', borderWidth: 2.5, order: 1 },
+                { showLine: true, pointRadius: 0, borderColor: '#e41a1c', borderWidth: 2.5, order: 1 },
                 { backgroundColor: '#e41a1c', pointRadius: 5, clip: false, order: 0 },
             ],
         },
