@@ -28,12 +28,15 @@ function render({ model, el }) {
         data: {
             labels: t,
             datasets: [
-                { borderColor: '#377eb8', pointRadius: 0, order: 1 },
+                { borderColor: '#377eb8', pointRadius: 0 },
             ],
         },
         options: {
             responsive: true,
+            maintainAspectRatio: true,
+            aspectRatio: 1.618,
             animation: false,
+            events: [],
             plugins: { legend: { display: false } },
             scales: {
                 x: {
@@ -42,7 +45,7 @@ function render({ model, el }) {
                     max: 10,
                     ticks: { stepSize: 2 },
                     grid: { drawTicks: false },
-                    title: { display: true, text: 'time (h)' }
+                    title: { display: true, text: 'time (h)' },
                 },
                 y: {
                     type: "linear",
@@ -50,7 +53,7 @@ function render({ model, el }) {
                     max: 2,
                     ticks: { stepSize: 0.5 },
                     grid: { drawTicks: false },
-                    title: { display: true, text: 'concentration of A (M)' }
+                    title: { display: true, text: 'concentration of A (M)' },
                 },
             },
         },

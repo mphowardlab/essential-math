@@ -33,12 +33,6 @@ function render({ model, el }) {
     // sample points for analytical solution
     const xs = Array.from({ length: 201 }, (_, i) => -2 + i / 50);
 
-    // Axes through the origin, labeled every 1 (skipping 0) on a white backdrop
-    const axis = {
-        min: -2, max: 2, grid: { display: false }, border: { color: '#64748b', width: 1.5 },
-        ticks: { stepSize: 1, callback: (v) => v || '' },
-    };
-
     // chart
     const chart = new Chart(canvas, {
         type: 'scatter',
@@ -61,7 +55,27 @@ function render({ model, el }) {
             animation: false,
             events: [],
             plugins: { legend: { display: false } },
-            scales: { x: { ...axis, position: { y: 0 } }, y: { ...axis, position: { x: 0 } } },
+            scales: {
+                x: {
+                    type: "linear",
+                    min: -2,
+                    max: 2,
+                    ticks: { stepSize: 1 },
+                    grid: { display: false },
+                    position: { y: 0 },
+                    border: { color: '#64748b', width: 1.5 },
+                },
+                y: {
+                    type: "linear",
+                    min: -2,
+                    max: 2,
+                    ticks: { stepSize: 1 },
+                    grid: { display: false },
+                    position: { x: 0 },
+                    border: { color: '#64748b', width: 1.5 },
+                }
+                // ...axis, position: { y: 0 } }, y: { ...axis, position: { x: 0 } }
+            },
         },
     });
 
