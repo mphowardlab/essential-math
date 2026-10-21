@@ -24,8 +24,9 @@ F(x, y, y') = 0
 \end{equation}
 
 where $F$ is an arbitrary function of the independent variable $x$, the
-dependent variable (unknown function) $y$, and its derivative $y'$.
-First-order ODEs can sometimes also be written in **explicit form**:
+dependent variable (unknown function) $y$, and the derivative of the dependent
+variable $y'$. First-order ODEs can sometimes also be written in
+**explicit form**:
 
 \begin{equation}
 y' = f(x, y)
@@ -54,8 +55,7 @@ y = c e^{x^2 / 2}
 
 ````{trythis}
 
-Verify the given general solution to
-Eq. {eq}`eq:first-order-odes:background:general`.
+Verify the general solution to Eq. {eq}`eq:first-order-odes:background:general`.
 
 ---
 
@@ -88,11 +88,11 @@ of $c$. We call each of these solutions a **particular solution**.
 Which particular solution is the "right" one? If we know the value
 of the function at a point, we can substitute this point into a
 general solution and solve for $c$. For example, let's say we know that
-$y = 0$ when $x = 0$. Substituting into the general
-solution [Eq. {eq}`eq:first-order-odes:background:general`] gives:
+$y = 1$ when $x = 0$. Substituting into the general solution [Eq.
+{eq}`eq:first-order-odes:background:general`] gives:
 
 \begin{equation}
-1 = c e^0 = c
+1 = y(0) = c e^0 = c
 \end{equation}
 
 so the particular solution is:
@@ -105,7 +105,8 @@ We call a point $(x_0, y_0)$ where we know the value of the function an
 **initial condition**. It is often a starting point if the independent variable
 is time, but it does not have to be: the particular solution is only required to
 pass through this point. In this sense, you can think of the initial condition
-as being a piece of information you know about the function.
+as being a piece of information you know about the function and can use to
+determine $c$.
 
 A first-order ODE paired with an initial condition is called an
 **initial value problem**. Initial value problems are important for
@@ -125,12 +126,12 @@ $c$.
 The plot below shows the {span .text-mpl-blue}`direction field` for
 Eq. {eq}`eq:first-order-odes:background:ode` with a
 {span .text-mpl-red}`particular solution` traced out (line) starting
-from an initial condition $y(x_0) = y_0$ (point). You can change the initial
+for an initial condition $y(x_0) = y_0$ (point). You can change the initial
 condition using the sliders or by clicking a point on the direction field.
 
-1. Predict what you think will happen to the particular solution if you increase
-   $x_0$ with $y_0$ held constant or increase $x_0$ with $y_0$ held constant.
-   Move the initial condition to a few different points to test your prediction.
+1. Predict what will happen to the particular solution if you increase $x_0$
+   with $y_0$ held constant or increase $x_0$ with $y_0$ held constant. Move the
+   initial condition to a few different points to test your predictions.
 
 2. Find two initial conditions that have the *same* particular solution. (Hint:
    What must be true about $c$ for the particular solutions to be the same?)
@@ -149,7 +150,7 @@ After you are done, answer the following questions:
    1 = y(1) = c e^{1^2/2} \to c = e^{-1/2} = 0.607
    \end{equation}
 
-   You can also use the sliders to confirm!
+   You can use the sliders to confirm!
    ```
 
 2. Explain why the particular solution is a horizontal line when $y(0) = 0$.
@@ -157,7 +158,7 @@ After you are done, answer the following questions:
    ```{dropdown} Check your work
 
    The solution is a horizontal line because all slopes are zero when $y = 0$.
-   The curve traced through these slopes must stay horizontal.
+   The curve traced through these slopes must then stay horizontal.
    ```
 
 ````

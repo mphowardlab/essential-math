@@ -157,13 +157,13 @@ reactor follows the first-order ODE:
 \end{equation}
 
 where $k$ is the reaction rate constant. If the initial concentration of A
-was 1.0 M and the concentration of A after 1 hour is 0.70 M, what is the rate
-constant?
+was 1.0 M and the concentration of A after 1 hour is measured to be 0.70 M, what
+is the value of the rate constant?
 
 ---
 
-First, separate the variables and integrate to obtain a general solution to the
-differential equation:
+This differential equation is first-order and separable. First, separate the
+variables and integrate to obtain a general solution:
 
 \begin{align}
 \int \frac{1}{c_{\rm A}} \d{c_{\rm A}} &= \int -k \d{t} \\
@@ -171,7 +171,7 @@ differential equation:
 \end{align}
 
 where $B$ is an unknown constant. Next, apply the initial condition that
-$c_{\rm A}(0) = 1\,{\rm M}$ to determine $B$:
+$c_{\rm A}(0) = 1$ to determine $B$:
 
 \begin{equation}
 \ln 1 = -k \cdot 0 + B \to B = 0
@@ -211,14 +211,14 @@ decreases with time, which is what we expect for a reactant that is being
 consumed.
 
 ````{trythis}
-Both the rate constant $k$ and the initial concentration in the reactor
-$c_{{\rm A},0}$ affect the {span .text-mpl-blue}`concentration of A` in the
-reactor over time, shown in the plot below. You can change $k$ and
-$c_{{\rm A},0}$ using the sliders.
+The plot below shows the {span .text-mpl-blue}`concentration of A` in the
+reactor over time for rate constant $k$ and initial concentration
+$c_{{\rm A},0}$ affect. You can change $k$ and $c_{{\rm A},0}$ using the
+sliders.
 
 1. Predict what will happen to the concentration curve if $k$ is increased with
    $c_{{\rm A},0}$ held constant and if $c_{{\rm A}, 0}$ is increased with $k$
-   held constant. Then, test your predictions using the sliders.
+   held constant. Use the sliders to test your predictions.
 
 2. Set $c_{{\rm A}, 0} = 1\,{\rm M}$. Find a value of $k$ that makes
    $c_{\rm A} = 0.5\,{\rm M}$ after 2 hours.
@@ -227,7 +227,7 @@ $c_{{\rm A},0}$ using the sliders.
 :css: /_styles/widget.css
 ```
 
-After you are done exploring, answer the following questions:
+After you are done, answer the following questions:
 
 1. Solve for the value of $k$ that makes $c_{\rm A} = 0.5\,{\rm M}$ after 2
    hours when $c_{{\rm A}, 0} = 1.5\,{\rm M}$.
@@ -240,7 +240,7 @@ After you are done exploring, answer the following questions:
    \ln 1.5 = -k \cdot 0 + B \to B = \ln 1.5
    \end{equation}
 
-   then insert $c_{\rm A}(2\,{\rm h}) = 0.5\,{\rm M}$ and solved for $k$:
+   then insert $c_{\rm A}(2) = 0.5$ and solve for $k$:
 
    \begin{align}
    \ln 0.5 &= -k \cdot 2 + \ln 1.5 \\
@@ -309,11 +309,12 @@ is 45°F. The rate of change of $T$ can be modeled as:
 \end{equation}
 
 where $k = 0.05\,{\rm h}^{-1}$ is a physical parameter accounting for the
-effective heat transfer coefficient and the thermal mass of the building.
+effective heat transfer coefficient and the thermal mass of the building. The
+outside temperature can be assumed to be roughly constant during this time.
 
 ---
 
-Separate the differential equation and integrate
+This differential equation is first-order and separable. Separate and integrate:
 
 ```{dropdown} Check your work
 
@@ -332,7 +333,7 @@ T - T_\infty &= c e^{-kt} \\
 T &= T_\infty + c e^{-kt}
 \end{align}
 
-Note that here we have implicitly redefined our unknown constant.
+Note that here we have implicitly redefined our unknown constant:
 ```
 
 Determine the value of $c$ if we call 10 p.m. the time where $t = 0$.
@@ -344,7 +345,7 @@ Determine the value of $c$ if we call 10 p.m. the time where $t = 0$.
 \end{equation}
 ```
 
-Last, evaluate the temperature at 6 a.m.
+Evaluate the temperature at 6 a.m.:
 
 ```{dropdown} Check your work
 
@@ -391,13 +392,13 @@ drain?
 
 ---
 
-Start from the unsteady balance on the mass of water $m$ in the tank
+Start from the unsteady balance on the mass of water $m$ in the tank:
 
 \begin{equation}
 \dd{}{m}{t} = \dot{m}_{\rm in} -\dot{m}_{\rm out}
 \end{equation}
 
-The mass of water is
+The mass of water is:
 
 \begin{equation}
 m = \rho V = \rho \frac{\pi D_1^2}{4} h
@@ -409,7 +410,7 @@ volume of a cylinder.
 
 There is no mass flow rate in, so $\dot{m}_{\rm in} = 0$.
 
-The mass flow rate out is
+The mass flow rate out is:
 
 \begin{equation}
 \dot m_{\rm out} = \rho \dot V = \rho A v = \rho \frac{\pi D_2^2}{4} \sqrt{2gh}
@@ -417,7 +418,7 @@ The mass flow rate out is
 
 where $\dot V$ is the volumetric flow rate out of the hole, which we compute
 from the cross-sectional area of the hole (a circle with diameter
-$D_2 = 0.01\,{\rm m}$) and the model for the velocity leaving it.
+$D_2 = 0.01\,{\rm m}$) and Toricelli's law for the velocity.
 
 Inserting both into the unsteady balance, applying rules of differentiation, and
 simplifying gives
@@ -429,7 +430,7 @@ simplifying gives
 \frac{dh}{dt} &= -\left(\frac{D_2}{D_1}\right)^2 \sqrt{2gh}
 \end{align}
 
-This is a separable differential equation
+This differential equation is first-order and separable:
 
 \begin{align}
 \int \frac{1}{\sqrt{h}} \d{h}
@@ -437,19 +438,21 @@ This is a separable differential equation
 2\sqrt{h} &= -t \left(\frac{D_2}{D_1}\right)^2 \sqrt{2g} + c
 \end{align}
 
-Find the integration constant *c* using the initial condition
+Find the integration constant *c* using the initial condition, which is
+$h = 2\,{\rm m}$ when $t = 0\,{\rm s}$. We don't have an explicit solution for
+$h$, but we can still substitute these values in the implicit solution:
 
 \begin{equation}
 2 \sqrt{2} = c
 \end{equation}
 
-The tank drains when $h = 0$, so substitute this, *c*, and numerical values:
+The tank drains when $h = 0$, so substitute this, *c*, and numerical values
+using SI units:
 
 \begin{align}
 0 &= -t \left(\frac{0.01}{1}\right)^2 \sqrt{2 \cdot 9.8} + 2 \sqrt{2} \\
 t &= 2 \left(\frac{1}{0.01}\right)^2 \sqrt{\frac{2}{2 \cdot 9.8}} = 6400
 \end{align}
 
-This time is in seconds because all units are SI, so the tank drains in about
-1.8 hours.
+The tank drains in about 1.8 hours.
 ```
