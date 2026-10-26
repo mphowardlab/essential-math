@@ -90,7 +90,7 @@ We will learn how to solve for $c_{\rm A}(t)$ in this chapter!
    reactors and unsteady energy balances such as those found in heat-transfer
    applications.
 
-## Preqrequisite knowledge
+## Prerequisite knowledge
 
 You should make sure you are comfortable with the following:
 
