@@ -95,7 +95,7 @@ Use the following steps:
 As a more complex example, let's find the form of the particular solution for:
 
 \begin{equation}
-y'' + 3y' + 2.25y = -10e^-1.5x + \cos x
+y'' + 3y' + 2.25y = -10e^{-1.5x} + \cos x
 \end{equation}
 
 1. Find $y_{\rm h}$:
@@ -283,8 +283,8 @@ y'' - y' - 12y = 144x^3 + \frac{25}{2}, \quad y(0) = 5, \quad y'(0) = -1/2
 1. Find homogeneous solution $y_{\rm h}$:
 
     \begin{align}
-    y_{\rm h}'' - y_{\rm h}' - 12y_{\rm h} &= 0
-    \lambda^2 - \lambda - 12 &= 0
+    y_{\rm h}'' - y_{\rm h}' - 12y_{\rm h} &= 0 \\
+    \lambda^2 - \lambda - 12 &= 0 \\
     (\lambda - 4)(\lambda + 3) &= 0
     \end{align}
 

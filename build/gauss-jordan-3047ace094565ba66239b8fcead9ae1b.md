@@ -430,7 +430,7 @@ The equations do not have a solution because the last row is false.
 Solve using Gauss-Jordan elimination
 
    \begin{align}
-   x_1 + x_2 + x_2 = 2 \\
+   x_2 + x_3 = -2 \\
    4x_2 + 6 x_3 = -12 \\
    x_1 + x_2 + x_3 = 2
    \end{align}
@@ -492,7 +492,7 @@ so $x_1 = 4$, $x_2 = 0$, and $x_3 = -2$.
 Solve using Gauss-Jordan elimination
 
 \begin{align}
-4x_2 - 11x_3 &= 24 \\
+4x_2 + 4x_3 &= 24 \\
 3x_1 - 11x_2 - 2x_3 &= -6 \\
 6x_1 - 17x_2 + x_3 &= 18
 \end{align}
@@ -509,7 +509,7 @@ Solve using Gauss-Jordan elimination
 \begin{matrix}{\rm swap}\,R_2 \\ \vphantom{R_2} \\ \vphantom{R_3}\end{matrix}
 &\to \begin{bmatrix}
 3 & -11 & -2 & -6 \\
-0 & -4 & 4 & 24 \\
+0 & 4 & 4 & 24 \\
 6 & - 17 & 1 & 18
 \end{bmatrix}
 \begin{matrix}\vphantom{R_1} \\ \vphantom{R_2} \\ -2 R_1\end{matrix}\\
@@ -569,7 +569,7 @@ Solve using Gauss-Jordan elimination:
 \begin{align}
 \begin{bmatrix}
 2 & -1 & 3 & -1 \\
--4 & 2 & -6 & -2
+-4 & 2 & -6 & 2
 \end{bmatrix}
 \begin{matrix}\vphantom{R_1} \\ +2R_1\end{matrix}
 \to \begin{bmatrix}
