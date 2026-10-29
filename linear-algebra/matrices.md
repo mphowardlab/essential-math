@@ -128,7 +128,7 @@ longer course on linear algebra!
   \begin{equation}
   \begin{bmatrix} 5 & -1 & 0 \\ 3 & 1 & 0 \end{bmatrix} +
   \begin{bmatrix} 1 & 5 & 3 \\ 3 & 2 & 2 \end{bmatrix} =
-  \begin{bmatrix} -4 & 6 & 3 \\ 0 & 1 & 2 \end{bmatrix}
+  \begin{bmatrix} 6 & 4 & 3 \\ 6 & 3 & 2 \end{bmatrix}
   \end{equation}
 
 - *Scalar multiplication*: $\vv{B} = k\vv{A}$ multiplies each element of **A**
@@ -142,7 +142,7 @@ longer course on linear algebra!
 
   \begin{equation}
   -2 \begin{bmatrix} 1 & 0  \\ 0 & -2  \end{bmatrix}
-  = \begin{bmatrix} -2 \times 1 & -2 \times 0 \\ -2 \times 0 & -2 \times 4 \end{bmatrix}
+  = \begin{bmatrix} -2 \times 1 & -2 \times 0 \\ -2 \times 0 & -2 \times -2 \end{bmatrix}
   = \begin{bmatrix} -2 & 0 \\ 0 & 4 \end{bmatrix}
   \end{equation}
 
