@@ -55,6 +55,7 @@ This work (c) 2025-2026 is licensed under
 - Meg Nettles
 - Jeffe Old
 - Ella Ortbals
+- C. Levi Petix
 - Jack Raynor
 - Kendall Reeves
 - Olivia Robinson
@@ -81,3 +82,8 @@ These notes were based on my own studies using the excellent textbook:
 Sons, Inc. Hoboken, NJ, 2006).
 
 Many examples and problem statements were adapted from this text.
+
+## Artificial Intelligence Disclosure
+
+Claude Opus 5.5 was used to generate widgets (interactive elements) of these
+notes. The final code and examples were verified by the code contributor.
