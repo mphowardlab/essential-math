@@ -64,6 +64,7 @@ This work (c) 2025-2026 is licensed under
 - Andrea Smith
 - Katie Sorensen
 - Mary Frances Springfield
+- Tate Stacey
 - Drew Stanley
 - Nicole Teper
 - Lauren Thompson

@@ -41,7 +41,7 @@ of solution contains **all** general solutions for the homogeneous ODE. For
 example, to solve
 
 \begin{equation}
-y' + y = 0 \quad y(0) = 3, \quad y'(0) = -1/2
+y'' + y = 0 \quad y(0) = 3, \quad y'(0) = -1/2
 \end{equation}
 
 You can guess and verify that $y_1 = \cos x$ and $y_2 = \sin x$ are both
