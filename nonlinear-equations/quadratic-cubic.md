@@ -115,7 +115,7 @@ The roots of this quadratic polynomial are:
 
 \begin{align}
 x &= \frac{78 \pm \sqrt{(-78)^2 - 4 \cdot 12 \cdot -93.5}}{2 \cdot 12} \\
-  &= 1.59\, 4.91
+  &= 1.59 ,\ 4.91
 \end{align}
 
 Only the first root, 1.59", is physical because there is not enough material
@@ -184,7 +184,7 @@ x &\approx 0.683,\, 7.32
 
 ```{exercise}
 :label: quadratic-cubic-sb-3
-$x^2 - 7x + 12 = 0$, by quadratic formula.
+$2x^2 - 7x + 12 = 0$, by quadratic formula.
 ```
 
 ```{solution} quadratic-cubic-sb-3

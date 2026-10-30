@@ -124,7 +124,7 @@ u = x+1  \qquad v = (2x^2+5)(5x^3-4)
 so
 
 \begin{equation}
-f'(x) = (x+1)v' + (2x^2 +3)(5x^3-4)(1)
+f'(x) = (x+1)v' + (2x^2 +5)(5x^3-4)(1)
 \end{equation}
 
 The derivative $v'$ can be evaluated by a second product rule!
@@ -138,7 +138,7 @@ finally giving
 
 <!--markdownlint-disable MD011 -->
 \begin{align}
-f'(x) &= (x+1)[(2x^2+3)(15x^2) + (5x^3-4)(4x)] \\
+f'(x) &= (x+1)[(2x^2+5)(15x^2) + (5x^3-4)(4x)] \\
 &+ (2x^2+5)(5x^3-4)
 \end{align}
 <!--markdownlint-enable MD011 -->
@@ -233,7 +233,7 @@ so
 
 \begin{align}
 f'(x) &= \frac{ (x^4 + 2) \cdot (2x) - (x^2 - 1) \cdot (4x^3)}{(x^4 +2)^2}\\
-&= \frac{2x^5 + 4x^2 - 4x^5 +4x^3}{x^8 + 2x^4 + 4}
+&= \frac{-2x^5 + 4x +4x^3}{x^8 + 4x^4 + 4}
 \end{align}
 ```
 
@@ -257,7 +257,7 @@ f'(x) &= \frac{(1 + x) \cdot e^{x} - e^{x} \cdot 1}{(1 + x)^2} \\
 $\displaystyle f(x) = \frac{(x - 1)(x^2 - 2x)}{x^4}$
 
 \begin{align}
-u &=  & v &= x^4\\
+u &= (x-1)(x^2-2x)=x^3-3x^2+2x & v &= x^4\\
 u' &= 3x^2 - 6x + 2 & v' &= 4x^3 \\
 \end{align}
 
@@ -393,7 +393,7 @@ f'(x) &= -(\sin x)^{-2} \dd{}{}{x}(\sin x) \\
 Some additional examples to practice:
 
 ```{dropdown}
-$f(x) = 3 \cos x + \sin x$
+$f(x) = 3 \cos x +4 \sin x$
 
 \begin{align}
 f' &= 3 \dd{}{}{x}(\cos x) + 4 \dd{}{}{x}(\sin x)\\

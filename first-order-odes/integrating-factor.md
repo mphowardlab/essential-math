@@ -25,7 +25,7 @@ so
 
 \begin{align}
 P &= -\frac{y}{x^2}  & Q &= \frac{1}{x} \\
-\pp{}{P}{y} &= -\frac{1}{x^2} & \pp{}{Q}{x} &= -\frac{1}{x}^2
+\pp{}{P}{y} &= -\frac{1}{x^2} & \pp{}{Q}{x} &= -\frac{1}{x^2}
 \end{align}
 
 Now the ODE is exact and can be solved using techniques we learned previously.
