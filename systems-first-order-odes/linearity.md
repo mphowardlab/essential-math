@@ -18,9 +18,12 @@ Note that **A** is now constant and $\vv{g} = \vv{0}$. We will focus on solving
 these types of problems because they come up a lot in chemical engineering
 analysis (e.g., controls).
 
-# Systems of First Order ODEs with Successive Substitution
+## Systems of First Order ODEs with Successive Substitution
 
-As previously discussed, systems of first order ODEs can include multiple unknown variables, making them ineligible to be solved through previous methods (i.e. integrating factor, La'place transform). Consider the reaction network problem from the background page.
+As previously discussed, systems of first order ODEs can include multiple
+unknown variables, making them ineligible to be solved through previous methods
+(i.e. integrating factor, La'place transform). Consider the reaction network
+problem from the background page.
 
 \begin{equation}
 {\rm A} \xrightarrow{k_1} {\rm B} \xrightarrow{k_2} {\rm C}
@@ -34,16 +37,24 @@ This network creates the following system of first order ODEs:
 \frac{dc_{\rm C}}{dt} &= k_2 c_{\rm B}
 \end{align}
 
-The independent variable in this network is $t$, and there are three unknown variables, $c_A$, $c_B$, and $c_C$. The derivative of $c_B$ and $c_C$ with respect to time includes two unknown variables, $c_A$ and $c_B$, and $c_B$ and $c_C$, respectively. The presence of two unknown variables in each of these expressions makes them impossible to solve with previous methods. Attempting to integrate the derivative of $c_C$ as a separable function yields:
+The independent variable in this network is $t$, and there are three unknown
+variables, $c_A$, $c_B$, and $c_C$. The derivative of $c_B$ and $c_C$ with
+respect to time includes two unknown variables, $c_A$ and $c_B$, and $c_B$ and
+$c_C$, respectively. The presence of two unknown variables in each of these
+expressions makes them impossible to solve with previous methods. Attempting to
+integrate the derivative of $c_C$ as a separable function yields:
 
 \begin{align}
 c_{\rm C} &= k_2 c_{\rm B} t +C
 \end{align}
 
-The operation shown above is invalid because $c_B$ is not a constant, it is an unknown function of *t*. 
+The operation shown above is invalid because $c_B$ is not a constant, it is an
+unknown function of *t*.
 
-Despite the challenges in evaluating $c_B$ and $c_C$, what do you notice about the derivative expression for $c_A$? 
-It has an independent variable, t, and one unknown variable, $c_A$. $c_A$ matches the criteria for a linear first order differential ODE. This means we can solve for $c_A$ as a separable function. 
+Despite the challenges in evaluating $c_B$ and $c_C$, what do you notice about
+the derivative expression for $c_A$? It has an independent variable, t, and one
+unknown variable, $c_A$. $c_A$ matches the criteria for a linear first order
+differential ODE. This means we can solve for $c_A$ as a separable function.
 
 ````{trythis}
 
@@ -59,17 +70,22 @@ First, evaluate $c_A$ as a separable ODE
 \ln c_{\rm A} &= -k_1 t + K
 \end{align}
 ```
-Then, apply the initial condition $c_A$(0) = $c_{A0}$ to solve for the explicit solution:
+
+Then, apply the initial condition $c_A$(0) = $c_{A0}$ to solve for the explicit
+solution:
 
 ```{dropdown} Check your work
-\begin{equation}
+\begin{align}
 c_{\rm A} &= Ke^{-k_1 t}\\
 c_{\rm A}(t=0) &= K = c_{\rm A0}\\
 c_{\rm A} &= c_{{\rm A}, 0} e^{-k_1 t}
-\end{equation}
+\end{align}
 ```
 ````
-Because we have $c_A$ in terms of t, we can substitute $c_A$ into the derivative expression of $c_B$. Now, we have made the derivative expression of $c_B$ with one unknown variable, $c_B$.
+
+Because we have $c_A$ in terms of t, we can substitute $c_A$ into the derivative
+expression of $c_B$. Now, we have made the derivative expression of $c_B$ with
+one unknown variable, $c_B$.
 
 \begin{align}
 \dd{}{c_{\rm B}}{t} &= k_1 c_{{\rm A}, 0} e^{-k_1 t} - k_2  c_{\rm B}
@@ -123,28 +139,39 @@ c_{\rm B}  = c_{\rm A,0} \frac{k_1}{k_2 -k_1} \left(e^{-k_1 t} - e^{-k_2 t} \rig
 \end{equation}
 ```
 ````
-We have now solved for $c_A$ as a separable function, and we were able to solve for $c_B$ through **successive substitution**. Solving $c_A$ first removed an unknown from our expression for $c_B$, which allowed us to evaluate $c_B$ as a function of *t*.
+
+We have now solved for $c_A$ as a separable function, and we were able to solve
+for $c_B$ through **successive substitution**. Solving $c_A$ first removed an
+unknown from our expression for $c_B$, which allowed us to evaluate $c_B$ as a
+function of *t*.
 
 ---
-Successive substitution is a great way to solve sequential ODEs by eliminating unknown variables. The graph below is a visual representation of the reaction network. It shows the concentration values over time.
+Successive substitution is a great way to solve sequential ODEs by eliminating
+unknown variables. The graph below is a visual representation of the reaction
+network. It shows the concentration values over time.
 
 ````{trythis}
 1. Predict what will happen if you make $k_1$>>$k_2$? What if $k_2$>>$k_1$?
-2. Predict how an increase or decrease in each of the initial concentrations will affect the reaction progress. What effect does $c_{A0}$ have on $c_B$ and $c_C$? What about $c_C$? Confirm your thinking with the graph.
+2. Predict how an increase or decrease in each of the initial concentrations
+   will affect the reaction progress. What effect does $c_{A0}$ have on $c_B$
+   and $c_C$? What about $c_C$? Confirm your thinking with the graph.
 ---
 
-*Figure of reaction network over time with ability to input different k values and initial concentrations.*
+*Figure of reaction network over time with ability to input different k values*
+*and initial concentrations.*
 
 
-Suppose there is an unknown side reaction occurring. 
+Suppose there is an unknown side reaction occurring.
 \begin{equation}
 {\rm C} \xrightarrow{k_3} {\rm A}
 \end{equation}
 How would that affect the graph above (assuming $k_1=k_2=k_3$)?
-How would the presence of the side reaction affect how we solve the problem? Could we still use successive substitution?
+How would the presence of the side reaction affect how we solve the problem?
+Could we still use successive substitution?
 ````
 
 ## Skill builder problems
+
 ```{exercise}
 :label: systems-first-order-odes-definition-sb-1
 Solve the IVP
@@ -206,20 +233,9 @@ y_2 = 2\left[1-\exp\left(\frac{1}{4}-\frac{x}{2}-\frac{1}{4}e^{-2x}\right)\right
 \end{equation}
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-% The text below is just math stuff I want to remove from intro, thinking it will go on this page with new title.
+<!---
+The text below is just math stuff I want to remove from intro, thinking it will
+go on this page with new title.
 
 I AM KEEPING THIS (info below) FOR REFERENCE. It should not be here on final draft.
 
@@ -390,3 +406,4 @@ Therefore,
 y_2 = 2\left[1-\exp\left(\frac{1}{4}-\frac{x}{2}-\frac{1}{4}e^{-2x}\right)\right]
 \end{equation}
 ```
+--->
