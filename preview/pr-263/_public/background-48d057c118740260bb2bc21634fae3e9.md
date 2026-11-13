@@ -58,51 +58,22 @@ Because of this, we have to use different techniques to solve this system of
 first order ODE. In this module, we will learn how to solve for both $y$ and $g$
 simultaneously.
 
-## Successive Substitution
+## Linearity
 
-It is important to note that while multiple unknown variables can describe an
-explicit ODE, all unknowns are ultimately in terms of the single, independent
-variable. Consider Equation 5. We know $y$ is a function of $t$. Hence it can be
-shown that
-
-\begin{align}
-g'(g,y,t) &= g'(g,y(t),t)
-\end{align}
-so
-\begin{align}
-g'(g,y(t),t) &= g'(g,t)
-\end{align}
-
-By the relationship above, we know that both $y$ and $g$ are in terms of one
-independent variable, $t$. If we can find the solution for one ODE, we can
-substitute it into the expression for the second ODE and evaluate. This is a
-valuable method of solving systems and is called **successive substitution**.
-
-To illustrate this technique, we can observe a reaction network. Consider the
-following reaction:
+A system of first-oder ODEs is linear if it can be written in the form:
 
 \begin{equation}
-{\rm A} \xrightarrow{k_1} {\rm B} \xrightarrow{k_2} {\rm C}
+\vv{y}' = \vv{A}(t) \vv{y} + \vv{g}(t)
 \end{equation}
 
-This network produces the following system of first order ODE.
+Linear systems have unique solutions and special properties we will discuss
+later. An important special case is the homogeneous linear system with constant
+coefficients:
 
-\begin{align}
-\dd{}{c_{\rm A}}{t} &= -k_1 c_{\rm A} \\
-\dd{}{c_{\rm B}}{t} &= k_1 c_{\rm A} - k_2  c_{\rm B} \\
-\dd{}{c_{\rm C}}{t} &= k_2  c_{\rm B}
-\end{align}
+\begin{equation}
+\vv{y}' = \vv{A} \vv{y}
+\end{equation}
 
-While it may not be obvious, we can solve this system through successive
-substitution. The derivative of $c_A$ is a normal, separable first order ODE
-that can be solved using the techniques from unit 5. Once we have the solution
-to $c_A$, $f(t)$, we can substitute that expression into the ODE for $c_B$. This
-will eliminate one of our unknowns, giving us one unknow, $c_B$, and one
-independent variable, t.
-
-\begin{align}
-\dd{}{c_{\rm B}}{t} &= k_1 f(t) - k_2  c_{\rm B}
-\end{align}
-
-This one way in which successive substitution is a valuable tool for solving
-systems of ODE.
+Note that **A** is now constant and $\vv{g} = \vv{0}$. We will focus on solving
+these types of problems because they come up a lot in chemical engineering
+analysis (e.g., controls).
