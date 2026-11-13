@@ -51,7 +51,7 @@ Find the explicit solution for $c_A$.
 
 ---
 
-First, evaluate $c_A$ as a separable
+First, evaluate $c_A$ as a separable ODE
 
 ```{dropdown} Check your work
 \begin{align}
@@ -130,7 +130,7 @@ Successive substitution is a great way to solve sequential ODEs by eliminating u
 
 ````{trythis}
 1. Predict what will happen if you make $k_1$>>$k_2$? What if $k_2$>>$k_1$?
-2. Predict how an increase or decrease in each of the initial concentrations will affect the reaction progress. What effect does $c_{A0}$ have on $c_B$ and $c_C$? What about $c_C$? Conform your ideas by the graph.
+2. Predict how an increase or decrease in each of the initial concentrations will affect the reaction progress. What effect does $c_{A0}$ have on $c_B$ and $c_C$? What about $c_C$? Confirm your thinking with the graph.
 ---
 
 *Figure of reaction network over time with ability to input different k values and initial concentrations.*
