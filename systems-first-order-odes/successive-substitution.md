@@ -1,35 +1,42 @@
-# Linearity
+# Successive substitution
 
-A system of first-oder ODEs is linear if it can be written in the form:
+It is important to note that while multiple unknown variables can describe an
+explicit ODE, all unknowns are ultimately in terms of the single, independent
+variable. Consider Equation 5. We know $y$ is a function of $t$. Hence it can be
+shown that
 
-\begin{equation}
-\vv{y}' = \vv{A}(t) \vv{y} + \vv{g}(t)
-\end{equation}
+\begin{align}
+g'(g,y,t) &= g'(g,y(t),t)
+\end{align}
+so
+\begin{align}
+g'(g,y(t),t) &= g'(g,t)
+\end{align}
 
-Linear systems have unique solutions and special properties we will discuss
-later. An important special case is the homogeneous linear system with constant
-coefficients:
+By the relationship above, we know that both $y$ and $g$ are in terms of one
+independent variable, $t$. If we can find the solution for one ODE, we can
+substitute it into the expression for the second ODE and evaluate. This is a
+valuable method of solving systems and is called **successive substitution**.
 
-\begin{equation}
-\vv{y}' = \vv{A} \vv{y}
-\end{equation}
+While it may not be obvious, we can solve this system through successive
+substitution. The derivative of $c_A$ is a normal, separable first order ODE
+that can be solved using the techniques from unit 5. Once we have the solution
+to $c_A$, $f(t)$, we can substitute that expression into the ODE for $c_B$. This
+will eliminate one of our unknowns, giving us one unknow, $c_B$, and one
+independent variable, t.
 
-Note that **A** is now constant and $\vv{g} = \vv{0}$. We will focus on solving
-these types of problems because they come up a lot in chemical engineering
-analysis (e.g., controls).
+\begin{align}
+\dd{}{c_{\rm B}}{t} &= k_1 f(t) - k_2  c_{\rm B}
+\end{align}
 
-## Systems of First Order ODEs with Successive Substitution
+This one way in which successive substitution is a valuable tool for solving
+systems of ODE.
 
 As previously discussed, systems of first order ODEs can include multiple
 unknown variables, making them ineligible to be solved through previous methods
 (i.e. integrating factor, La'place transform). Consider the reaction network
-problem from the background page.
-
-\begin{equation}
-{\rm A} \xrightarrow{k_1} {\rm B} \xrightarrow{k_2} {\rm C}
-\end{equation}
-
-This network creates the following system of first order ODEs:
+problem from the background page, which has the following system of first order
+ODEs:
 
 \begin{align}
 \frac{dc_{\rm A}}{dt} &= -k_1 c_{\rm A} \\
@@ -145,22 +152,7 @@ for $c_B$ through **successive substitution**. Solving $c_A$ first removed an
 unknown from our expression for $c_B$, which allowed us to evaluate $c_B$ as a
 function of *t*.
 
----
-Successive substitution is a great way to solve sequential ODEs by eliminating
-unknown variables. The graph below is a visual representation of the reaction
-network. It shows the concentration values over time.
-
-````{trythis}
-1. Predict what will happen if you make $k_1$>>$k_2$? What if $k_2$>>$k_1$?
-2. Predict how an increase or decrease in each of the initial concentrations
-   will affect the reaction progress. What effect does $c_{A0}$ have on $c_B$
-   and $c_C$? What about $c_C$? Confirm your thinking with the graph.
----
-
-*Figure of reaction network over time with ability to input different k values*
-*and initial concentrations.*
-
-
+```{trythis}
 Suppose there is an unknown side reaction occurring.
 \begin{equation}
 {\rm C} \xrightarrow{k_3} {\rm A}
@@ -168,7 +160,7 @@ Suppose there is an unknown side reaction occurring.
 How would that affect the graph above (assuming $k_1=k_2=k_3$)?
 How would the presence of the side reaction affect how we solve the problem?
 Could we still use successive substitution?
-````
+```
 
 ## Skill builder problems
 
